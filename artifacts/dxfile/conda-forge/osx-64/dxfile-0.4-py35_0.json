@@ -1,0 +1,28 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/dxfile-0.4-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/dxfile/__init__.py",
+  "lib/python3.5/site-packages/dxfile/dxtomo.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "h5py",
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "dxfile",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.4"
+ },
+ "metadata_version": 1,
+ "name": "dxfile",
+ "raw_recipe": "{% set version = \"0.4\" %}\n\npackage:\n    name: dxfile\n    version: {{ version }}\n\nsource:\n    url: https://github.com/data-exchange/dxfile/archive/v{{ version }}.tar.gz\n    fn: dxfile-{{ version }}.tar.gz\n    sha256: b7729eebdc7c99a66a8b339fc10019aa8565e02bd12708540fb3f47935f004c7\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n\n    run:\n        - python\n        - h5py\n\ntest:\n    imports:\n        - dxfile\n        - dxfile.dxtomo\n\nabout:\n    home: http://dxfile.readthedocs.org\n    license: BSD 3-Clause\n    summary: 'Reader/Writer for Data Exchange files.'\n\nextra:\n    recipe-maintainers:\n        - dgursoy\n        - decarlof\n        - ericdill\n        - licode\n        - ravescovi\n        - tacaswell\n",
+ "rendered_recipe": {},
+ "version": "0.4"
+}

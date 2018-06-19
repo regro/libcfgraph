@@ -1,0 +1,83 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "include/HE5_GctpFunc.h",
+  "include/HE5_HdfEosDef.h",
+  "include/HE5_config.h",
+  "include/cfortHdf.h",
+  "include/cproj.h",
+  "include/ease.h",
+  "include/isin.h",
+  "include/proj.h",
+  "include/tutils.h",
+  "lib/libGctp.a",
+  "lib/libGctp.la",
+  "lib/libhe5_hdfeos.a",
+  "lib/libhe5_hdfeos.la"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "3",
+  "build_number": 3,
+  "depends": [
+   "hdf5 1.8.15.1",
+   "zlib 1.2*"
+  ],
+  "license": "BSD",
+  "name": "hdfeos5",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "5.1.15"
+ },
+ "metadata_version": 1,
+ "name": "hdfeos5",
+ "raw_recipe": "package:\n    name: hdfeos5\n    version: 5.1.15\n\nsource:\n    fn: HDF-EOS5.1.15.tar.Z\n    url: ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos5/latest_release/HDF-EOS5.1.15.tar.Z\n    md5: 5d607a13dd42e559bfc90e278a8ec919\n    patches:\n        # http://hdfeos.org/forums/showthread.php?t=673\n        - EHapi.c.patch\n\nbuild:\n    number: 3\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - hdf5 1.8.15.1\n        - zlib 1.2*\n    run:\n        - hdf5 1.8.15.1\n        - zlib 1.2*\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libGctp.a  # [unix]\n        - test -f ${PREFIX}/lib/libhe5_hdfeos.a  # [unix]\n        - conda inspect linkages -n _test hdfeos5  # [linux]\n\nabout:\n    home: http://hdfeos.org/index.php\n    license: BSD\n    summary: Earth Observing System HDF\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - jhamman\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://hdfeos.org/index.php",
+   "license": "BSD",
+   "summary": "Earth Observing System HDF"
+  },
+  "build": {
+   "number": 3,
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "jhamman"
+   ]
+  },
+  "package": {
+   "name": "hdfeos5",
+   "version": "5.1.15"
+  },
+  "requirements": {
+   "build": [
+    "hdf5 1.8.15.1",
+    "zlib 1.2*"
+   ],
+   "run": [
+    "hdf5 1.8.15.1",
+    "zlib 1.2*"
+   ]
+  },
+  "source": {
+   "fn": "HDF-EOS5.1.15.tar.Z",
+   "md5": "5d607a13dd42e559bfc90e278a8ec919",
+   "patches": [
+    "EHapi.c.patch"
+   ],
+   "url": "ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos5/latest_release/HDF-EOS5.1.15.tar.Z"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/lib/libGctp.a",
+    "test -f ${PREFIX}/lib/libhe5_hdfeos.a",
+    "conda inspect linkages -n _test hdfeos5"
+   ]
+  }
+ },
+ "version": "5.1.15"
+}

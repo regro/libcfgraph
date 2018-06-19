@@ -1,0 +1,169 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://www.x.org/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-1.0-py36_0",
+   "openssl-1.0.2k-1",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_6",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "The X.org Xrandr library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/libXrandr.dylib",
+  "lib/libXrandr.2.dylib",
+  "include/X11/extensions/Xrandr.h",
+  "lib/pkgconfig/xrandr.pc",
+  "lib/libXrandr.a",
+  "lib/libXrandr.la"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "xorg-libx11 1.6.*",
+   "xorg-libxext",
+   "xorg-libxrender",
+   "xorg-randrproto",
+   "xorg-renderproto",
+   "xorg-xextproto"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "xorg-libxrandr",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.5.1"
+ },
+ "metadata_version": 1,
+ "name": "xorg-libxrandr",
+ "raw_recipe": "{% set xorg_name = \"libXrandr\" %}\n{% set xorg_category = \"lib\" %}\n{% set name = \"xorg-\" ~ xorg_name %}\n{% set version = \"1.5.1\" %}\n{% set sha256 = \"1ff9e7fa0e4adea912b16a5f0cfa7c1d35b0dcda0e216831f7715c8a3abcf51a\" %}\n{% set am_version = \"1.15\" %} # keep synchronized with build.sh\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n    - vc14  # [win and py36]\n\nrequirements:\n  build:\n    - m2-autoconf  # [win]\n    - m2-automake{{ am_version }}  # [win]\n    - m2-libtool  # [win]\n    - m2w64-pkg-config  # [win]\n    - m2w64-toolchain  # [win]\n    - pkg-config  # [not win]\n    - posix  # [win]\n    - pthread-stubs\n    - python  # [win]\n    - toolchain\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n    - vc 14  # [win and py36]\n    - xorg-libx11 1.6.*\n    - xorg-libxrender\n    - xorg-libxext\n    - xorg-randrproto\n    - xorg-xextproto\n    - xorg-renderproto\n    - xorg-util-macros\n  run:\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n    - vc 14  # [win and py36]\n    - xorg-libx11 1.6.*\n    - xorg-libxrender\n    - xorg-libxext\n    - xorg-randrproto\n    - xorg-xextproto\n    - xorg-renderproto\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://www.x.org/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'The X.org Xrandr library'\n\nextra:\n  recipe-maintainers:\n    - Xarthisius\n    - pkgw\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://www.x.org/",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "COPYING",
+   "summary": "The X.org Xrandr library"
+  },
+  "build": {
+   "detect_binary_files_with_prefix": "true",
+   "features": "",
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "Xarthisius",
+    "pkgw"
+   ]
+  },
+  "package": {
+   "name": "xorg-libxrandr",
+   "version": "1.5.1"
+  },
+  "requirements": {
+   "build": [
+    "libxcb 1.12 1",
+    "pkg-config 0.29.1 1",
+    "pthread-stubs 0.3 1",
+    "toolchain 2.0.0 0",
+    "xorg-kbproto 1.0.7 1",
+    "xorg-libx11 1.6.4 6",
+    "xorg-libxau 1.0.8 3",
+    "xorg-libxdmcp 1.1.2 3",
+    "xorg-libxext 1.3.3 2",
+    "xorg-libxrender 0.9.10 0",
+    "xorg-randrproto 1.5.0 0",
+    "xorg-renderproto 0.11.1 1",
+    "xorg-util-macros 1.19.0 1",
+    "xorg-xextproto 7.3.0 1",
+    "xorg-xproto 7.0.31 6",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "xorg-libx11 1.6.*",
+    "xorg-libxrender",
+    "xorg-libxext",
+    "xorg-randrproto",
+    "xorg-xextproto",
+    "xorg-renderproto"
+   ]
+  },
+  "source": {
+   "fn": "xorg-libXrandr-1.5.1.tar.bz2",
+   "sha256": "1ff9e7fa0e4adea912b16a5f0cfa7c1d35b0dcda0e216831f7715c8a3abcf51a",
+   "url": "https://www.x.org/releases/individual/lib/libXrandr-1.5.1.tar.bz2"
+  },
+  "test": {
+   "commands": [
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "conda inspect objects -p $PREFIX $PKG_NAME"
+   ]
+  }
+ },
+ "version": "1.5.1"
+}
