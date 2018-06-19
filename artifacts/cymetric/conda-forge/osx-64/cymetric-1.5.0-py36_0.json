@@ -1,0 +1,146 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.0",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "dev_url": "https://github.com/cyclus/cymetric",
+  "doc_url": "http://fuelcycle.org/user/cymetric/index.html",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p481/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://fuelcycle.org",
+  "license": "BSD 3-clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-build-2.1.0-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.2.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Cyclus Metrics"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/cymetric-1.5.0-py3.6.egg-info",
+  "bin/cymetric",
+  "lib/python3.6/site-packages/cymetric/evaluator.py",
+  "lib/python3.6/site-packages/cymetric/schemas.py",
+  "lib/python3.6/site-packages/cymetric/fco_metrics.py",
+  "lib/python3.6/site-packages/cymetric/__init__.py",
+  "lib/python3.6/site-packages/cymetric/tools.py",
+  "lib/python3.6/site-packages/cymetric/brightlite_root_metrics.py",
+  "lib/python3.6/site-packages/cymetric/root_metrics.py",
+  "lib/python3.6/site-packages/cymetric/main.py",
+  "lib/python3.6/site-packages/cymetric/execution.py",
+  "lib/python3.6/site-packages/cymetric/metrics.py",
+  "lib/python3.6/site-packages/cymetric/cycamore_root_metrics.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "cyclus >=1.5.*",
+   "pandas",
+   "python 3.6*"
+  ],
+  "license": "BSD 3-clause",
+  "license_family": "BSD",
+  "name": "cymetric",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.5.0"
+ },
+ "name": "cymetric",
+ "raw_recipe": "{% set version = \"1.5.0\" %}\n{% set org = \"cyclus\" %}\n{% set branch = \"1.5.0\" %}\n{% set sha256 = \"b1c60e68d9ee4421fbdeebf768a1ac48a31fc5a3559583b3f79e3c9b0aa4bb50\" %}\n\npackage:\n  name: cymetric\n  version: {{ version }}\n\nsource:\n  fn: cymetric-{{ version }}-{{ sha256 }}.tar.gz\n  url: https://github.com/{{ org }}/cymetric/archive/{{ branch }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win or py34]\n\nbuild:\n  number: 0\n  script: python setup.py install --prefix ${PREFIX}\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - cyclus >=1.5.*\n    - pandas\n\ntest:\n  requires:\n    - cycamore >=1.5.*\n  #  - nose\n  # Remove the following when conda-forge migrates to conda-build v2.*\n  imports:\n    - cymetric\n  # Use the following when conda-forge migrates to conda-build v2.*\n  #commands:\n  #  - cd \"${SRC_DIR}/tests\"\n  #  - nosetests test_cyclus.py test_evaluator.py test_fco_metrics.py test_root_metrics.py  # [py27]\n  #  - nosetests  # [py35]\n\nabout:\n  home: http://fuelcycle.org\n  license: BSD 3-clause\n  license_family: BSD\n  summary: 'Cyclus Metrics'\n  doc_url: http://fuelcycle.org/user/cymetric/index.html\n  dev_url: https://github.com/cyclus/cymetric\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - gonuke\n    - Baaaaam\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "https://github.com/cyclus/cymetric",
+   "doc_url": "http://fuelcycle.org/user/cymetric/index.html",
+   "home": "http://fuelcycle.org",
+   "license": "BSD 3-clause",
+   "license_family": "BSD",
+   "summary": "Cyclus Metrics"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --prefix ${PREFIX}",
+   "string": "py36_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "scopatz",
+    "gonuke",
+    "Baaaaam"
+   ]
+  },
+  "package": {
+   "name": "cymetric",
+   "version": "1.5.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "cyclus >=1.5.*",
+    "pandas"
+   ]
+  },
+  "source": {
+   "fn": "cymetric-1.5.0-b1c60e68d9ee4421fbdeebf768a1ac48a31fc5a3559583b3f79e3c9b0aa4bb50.tar.gz",
+   "sha256": "b1c60e68d9ee4421fbdeebf768a1ac48a31fc5a3559583b3f79e3c9b0aa4bb50",
+   "url": "https://github.com/cyclus/cymetric/archive/1.5.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "cymetric"
+   ],
+   "requires": [
+    "cycamore >=1.5.*"
+   ]
+  }
+ },
+ "version": "1.5.0"
+}

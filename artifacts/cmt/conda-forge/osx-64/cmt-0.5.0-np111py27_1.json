@@ -1,0 +1,207 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/lucastheis/cmt",
+  "license": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py36_0",
+   "asn1crypto-0.22.0-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.10.0-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.8.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.5-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-1.0-py36_0",
+   "openssl-1.0.2l-0",
+   "packaging-16.8-py36_0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pycosat-0.6.2-py36_0",
+   "pycparser-2.17-py36_0",
+   "conda-forge::pycrypto-2.6.1-py36_1",
+   "pyopenssl-17.0.0-py36_0",
+   "pyparsing-2.1.4-py36_0",
+   "python-3.6.1-2",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.14.2-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Fast implementations of several probabilistic models."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/cmt/tools/masks.py",
+  "lib/python2.7/site-packages/cmt/nonlinear/__init__.py",
+  "lib/python2.7/site-packages/cmt/utils/__init__.py",
+  "lib/python2.7/site-packages/cmt/tools/images.py",
+  "lib/python2.7/site-packages/cmt/tools/spikes.py",
+  "lib/python2.7/site-packages/cmt/transforms/__init__.py",
+  "lib/python2.7/site-packages/cmt-0.5.0-py2.7.egg-info",
+  "lib/python2.7/site-packages/cmt/tools/colors.py",
+  "lib/python2.7/site-packages/cmt/models/__init__.py",
+  "lib/python2.7/site-packages/_cmt.so",
+  "lib/python2.7/site-packages/cmt/tools/__init__.py",
+  "lib/python2.7/site-packages/cmt/__init__.py",
+  "lib/python2.7/site-packages/cmt/transforms/stackedaffinetransform.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_1",
+  "build_number": 1,
+  "depends": [
+   "libgcc",
+   "numpy 1.11*",
+   "pillow",
+   "python 2.7*",
+   "scipy"
+  ],
+  "license": "MIT",
+  "name": "cmt",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.5.0"
+ },
+ "name": "cmt",
+ "raw_recipe": "{% set version = \"0.5.0\" %}\n\npackage:\n  name: cmt\n  version: {{ version }}\n\nsource:\n  fn: cmt-v{{ version }}.tar.gz\n  url: https://github.com/lucastheis/cmt/archive/v{{ version }}.tar.gz\n  sha1: 7482caefa5359a351ac834920a092b5594098d70\n  patches:\n    # Workaround to ensure `gcc` compiler is used on Mac.\n    # See issue ( https://github.com/lucastheis/cmt/issues/10 ).\n    # No patch submitted as this will require discussion with the developer.\n    - setup.py.patch\n    # Incorrect import here makes tests fail and reduces functionality.\n    # See issue ( https://github.com/lucastheis/cmt/issues/14 ).\n    # Patch for this has been submitted.\n    # See pull request ( https://github.com/lucastheis/cmt/pull/18 ).\n    - images.py.patch\n    # Test failure here is caused due to an inability to pickle.\n    # See issue ( https://github.com/lucastheis/cmt/issues/12 ).\n    # Patch for this has been submitted.\n    # See pull request ( https://github.com/lucastheis/cmt/pull/17 ).\n    - mcbm_test.py.patch\n    # Test failure here is caused due to sporadic numerical issue.\n    # See issue ( https://github.com/lucastheis/cmt/issues/16 ).\n    # Patch for this has been submitted.\n    # See pull request ( https://github.com/lucastheis/cmt/pull/20 ).\n    - mcgsm_test.py.patch\n    # Test failure here is caused due to numerical issue.\n    # See issue ( https://github.com/lucastheis/cmt/issues/15 ).\n    # Patch for this has been submitted.\n    # See pull request ( https://github.com/lucastheis/cmt/pull/19 ).\n    - univariate_test.py.patch\n\nbuild:\n  number: 1\n  skip: true      # [win or py3k or np>111]\n\nrequirements:\n  build:\n    - automake\n    - libtool\n    - gcc\n    - python\n    - numpy x.x\n    - scipy\n    - pillow\n\n  run:\n    - libgcc\n    - python\n    - numpy x.x\n    - scipy\n    - pillow\n\ntest:\n  source_files:\n    - code/cmt/python/tests\n\n  imports:\n    - cmt\n\n  commands:\n    - python code/cmt/python/tests/fvbn_test.py\n    - python code/cmt/python/tests/glm_test.py\n    - python code/cmt/python/tests/gsm_test.py\n    # Test failure here is caused due to an inability to pickle.\n    # See issue ( https://github.com/lucastheis/cmt/issues/12 ).\n    - python code/cmt/python/tests/mcbm_test.py\n    # Test failure here is caused due to sporadic numerical issue.\n    # See issue ( https://github.com/lucastheis/cmt/issues/16 ).\n    - python code/cmt/python/tests/mcgsm_test.py\n    - python code/cmt/python/tests/mixture_test.py\n    - python code/cmt/python/tests/mlr_test.py\n    - python code/cmt/python/tests/nonlinear_test.py\n    - python code/cmt/python/tests/preconditioner_test.py\n    - python code/cmt/python/tests/speed.py\n    - python code/cmt/python/tests/stm_test.py\n    # Test failure here is caused due to a missing/incorrect import.\n    # See issue ( https://github.com/lucastheis/cmt/issues/14 ).\n    - python code/cmt/python/tests/tools_test.py\n    # Test failure here is caused due to numerical issue.\n    # See issue ( https://github.com/lucastheis/cmt/issues/15 ).\n    - python code/cmt/python/tests/univariate_test.py\n\nabout:\n  home: https://github.com/lucastheis/cmt\n  license: MIT\n  summary: Fast implementations of several probabilistic models.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/lucastheis/cmt",
+   "license": "MIT",
+   "summary": "Fast implementations of several probabilistic models."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "1",
+   "string": "np111py27_1"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "cmt",
+   "version": "0.5.0"
+  },
+  "requirements": {
+   "build": [
+    "autoconf 2.69 pl5.20.3.1_4",
+    "automake 1.15 pl5.20.3.1_0",
+    "blas 1.1 openblas",
+    "ca-certificates 2017.4.17 0",
+    "cloog 0.18.0 0",
+    "freetype 2.7 1",
+    "gcc 4.8.5 8",
+    "gmp 6.1.2 0",
+    "isl 0.12.2 1",
+    "jpeg 9b 0",
+    "libgfortran 3.0.0 0",
+    "libpng 1.6.28 0",
+    "libtiff 4.0.6 7",
+    "libtool 2.4.6 0",
+    "m4 1.4.17 1",
+    "mpc 1.0.3 4",
+    "mpfr 3.1.5 0",
+    "ncurses 5.9 10",
+    "numpy 1.11.3 py27_blas_openblas_200",
+    "olefile 0.44 py27_0",
+    "openblas 0.2.19 2",
+    "openssl 1.0.2k 0",
+    "perl 5.20.3.1 2",
+    "pillow 4.1.1 py27_0",
+    "python 2.7.13 1",
+    "readline 6.2 0",
+    "scipy 0.19.0 np111py27_blas_openblas_202",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "libgcc",
+    "python",
+    "numpy x.x",
+    "scipy",
+    "pillow"
+   ]
+  },
+  "source": {
+   "fn": "cmt-v0.5.0.tar.gz",
+   "patches": [
+    "setup.py.patch",
+    "images.py.patch",
+    "mcbm_test.py.patch",
+    "mcgsm_test.py.patch",
+    "univariate_test.py.patch"
+   ],
+   "sha1": "7482caefa5359a351ac834920a092b5594098d70",
+   "url": "https://github.com/lucastheis/cmt/archive/v0.5.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python code/cmt/python/tests/fvbn_test.py",
+    "python code/cmt/python/tests/glm_test.py",
+    "python code/cmt/python/tests/gsm_test.py",
+    "python code/cmt/python/tests/mcbm_test.py",
+    "python code/cmt/python/tests/mcgsm_test.py",
+    "python code/cmt/python/tests/mixture_test.py",
+    "python code/cmt/python/tests/mlr_test.py",
+    "python code/cmt/python/tests/nonlinear_test.py",
+    "python code/cmt/python/tests/preconditioner_test.py",
+    "python code/cmt/python/tests/speed.py",
+    "python code/cmt/python/tests/stm_test.py",
+    "python code/cmt/python/tests/tools_test.py",
+    "python code/cmt/python/tests/univariate_test.py"
+   ],
+   "imports": [
+    "cmt"
+   ],
+   "source_files": [
+    "code/cmt/python/tests"
+   ]
+  }
+ },
+ "version": "0.5.0"
+}

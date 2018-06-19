@@ -1,0 +1,167 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Bzip2 is a freely available high-quality data compressor. It typically\ncompresses files to within 10% to 15% of the best available techniques,\nwhilst being around twice as fast at compression and six times faster\nat decompression.\n",
+  "doc_url": "http://www.bzip.org/docs.html",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://www.bzip.org/",
+  "license": "bzip2",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "clyent-1.2.2-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.4-py36_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.1-0",
+   "conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_0",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "high-quality data compressor"
+ },
+ "conda_build_config": {},
+ "files": [
+  "man/man1/bzmore.1",
+  "man/man1/bzless.1",
+  "include/bzlib.h",
+  "bin/bzcat",
+  "bin/bunzip2",
+  "bin/bzgrep",
+  "bin/bzip2",
+  "bin/bzegrep",
+  "man/man1/bzgrep.1",
+  "bin/bzfgrep",
+  "bin/bzip2recover",
+  "man/man1/bzfgrep.1",
+  "bin/bzmore",
+  "bin/bzcmp",
+  "man/man1/bzegrep.1",
+  "man/man1/bzip2.1",
+  "lib/libbz2.a",
+  "bin/bzdiff",
+  "man/man1/bzdiff.1",
+  "bin/bzless",
+  "man/man1/bzcmp.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "bzip2",
+  "license_family": "BSD",
+  "name": "bzip2",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0.6"
+ },
+ "name": "bzip2",
+ "raw_recipe": "{% set version = \"1.0.6\" %}\n\n\npackage:\n  name: bzip2\n  version: {{ version }}\n\nsource:\n  fn: bzip2-{{ version }}.tar.gz\n  url: http://www.bzip.org/{{ version }}/bzip2-{{ version }}.tar.gz\n  md5: 00b516f4704d4a7cb50a1d97e6e8e15b\n\nbuild:\n  number: 0\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py>=35]\n  skip: true  # [win and py36]\n\nrequirements:\n  build:\n    - python  # [win]\n    - toolchain\n\ntest:\n  requires:\n    - python {{ os.environ.get('PY_VER', '') + '*' }}  # [win]\n  commands:\n    - bzip2 --help  # [unix]\n    {% set bzip2_executables = [\n      \"bunzip2\",\n      \"bzcat\",\n      \"bzcmp\",\n      \"bzdiff\",\n      \"bzegrep\",\n      \"bzfgrep\",\n      \"bzgrep\",\n      \"bzip2recover\",\n      \"bzip2\",\n      \"bzless\",\n      \"bzmore\"\n    ] %}\n    {% for executable in bzip2_executables %}\n    - test -f ${PREFIX}/bin/{{ executable }}  # [unix]\n    {% endfor %}\n    - test -f ${PREFIX}/include/bzlib.h  # [unix]\n    - test -f ${PREFIX}/lib/libbz2.a  # [unix]\n    - if not exist %LIBRARY_INC%\\\\bzlib.h exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\\\bzip2.lib exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\bzip2.dll exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\\\libbz2.lib exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\libbz2.dll exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\\\bzip2_static.lib exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\\\libbz2_static.lib exit 1  # [win]\n\nabout:\n  home: http://www.bzip.org/\n  license_family: BSD\n  license_file: LICENSE\n  license: bzip2\n  summary: high-quality data compressor\n  description: |\n    Bzip2 is a freely available high-quality data compressor. It typically\n    compresses files to within 10% to 15% of the best available techniques,\n    whilst being around twice as fast at compression and six times faster\n    at decompression.\n  doc_url: http://www.bzip.org/docs.html\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jjhelmus\n    - pelson\n    - jlanga\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Bzip2 is a freely available high-quality data compressor. It typically\ncompresses files to within 10% to 15% of the best available techniques,\nwhilst being around twice as fast at compression and six times faster\nat decompression.\n",
+   "doc_url": "http://www.bzip.org/docs.html",
+   "home": "http://www.bzip.org/",
+   "license": "bzip2",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "high-quality data compressor"
+  },
+  "build": {
+   "features": "",
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham",
+    "jjhelmus",
+    "pelson",
+    "jlanga"
+   ]
+  },
+  "package": {
+   "name": "bzip2",
+   "version": "1.0.6"
+  },
+  "requirements": {
+   "build": [],
+   "run": []
+  },
+  "source": {
+   "fn": "bzip2-1.0.6.tar.gz",
+   "md5": "00b516f4704d4a7cb50a1d97e6e8e15b",
+   "url": "http://www.bzip.org/1.0.6/bzip2-1.0.6.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "bzip2 --help",
+    "test -f ${PREFIX}/bin/bunzip2",
+    "test -f ${PREFIX}/bin/bzcat",
+    "test -f ${PREFIX}/bin/bzcmp",
+    "test -f ${PREFIX}/bin/bzdiff",
+    "test -f ${PREFIX}/bin/bzegrep",
+    "test -f ${PREFIX}/bin/bzfgrep",
+    "test -f ${PREFIX}/bin/bzgrep",
+    "test -f ${PREFIX}/bin/bzip2recover",
+    "test -f ${PREFIX}/bin/bzip2",
+    "test -f ${PREFIX}/bin/bzless",
+    "test -f ${PREFIX}/bin/bzmore",
+    "test -f ${PREFIX}/include/bzlib.h",
+    "test -f ${PREFIX}/lib/libbz2.a"
+   ],
+   "requires": ""
+  }
+ },
+ "version": "1.0.6"
+}

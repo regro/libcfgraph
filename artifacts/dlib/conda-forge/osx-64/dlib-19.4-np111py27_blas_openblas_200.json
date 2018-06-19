@@ -1,0 +1,187 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://dlib.net/",
+  "license": "Boost 1.0",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Modern C++ toolkit containing machine learning algorithms with Python bindings"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/dlib.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_blas_openblas_200",
+  "build_number": 200,
+  "depends": [
+   "blas 1.1 openblas",
+   "boost 1.63.*",
+   "jpeg 9*",
+   "libpng >=1.6.28,<1.7",
+   "numpy 1.11*",
+   "openblas 0.2.19|0.2.19.*",
+   "python 2.7*",
+   "sqlite 3.13.*"
+  ],
+  "features": "blas_openblas",
+  "license": "Boost 1.0",
+  "name": "dlib",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "19.4"
+ },
+ "name": "dlib",
+ "raw_recipe": "{% set name = \"dlib\" %}\n{% set version = \"19.4\" %}\n{% set blas_variant = \"openblas\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/davisking/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: 2bed9669f1a5c436579498d0806b27a9b60c42a975a9b6e67b594b40f58b1a88\n\n  patches:\n    - osx_jpeg.patch           # [osx]\n    - lapack_sgetrf.patch      # [unix]\n    - win_boost.patch          # [win]\n    - win_png.patch            # [win]\n    - win_jpeg.patch           # [win]\n    - win_release_flags.patch  # [win]\n\nbuild:\n  skip: True                   # [win and py<35]\n  number: 200\n  features:                    # [not win]\n    - blas_{{ blas_variant }}  # [not win]\n\nrequirements:\n  build:\n   - python\n   - cmake\n   - toolchain\n   - openblas 0.2.19|0.2.19.*     # [not win]\n   - blas 1.1 {{ blas_variant }}  # [not win]\n   - numpy x.x\n   - boost 1.63.*\n   - jpeg 9*                      # [not win]\n   - libpng >=1.6.28,<1.7\n   - sqlite 3.13.*                # [not win]\n\n  run:\n   - python\n   - openblas 0.2.19|0.2.19.*     # [not win]\n   - blas 1.1 {{ blas_variant }}  # [not win]\n   - numpy x.x\n   - boost 1.63.*\n   - jpeg 9*                      # [not win]\n   - libpng >=1.6.28,<1.7\n   - sqlite 3.13.*                # [not win]\n\ntest:\n  files:\n    - test_data/face.jpg\n    - test_data/face.png\n    - test_data/images.xml\n\n  requires:\n    - tqdm\n    - pillow\n\n  imports:\n    - dlib\n\nabout:\n  home: http://dlib.net/\n  license: Boost 1.0\n  license_file: dlib/LICENSE.txt\n  summary: Modern C++ toolkit containing machine learning algorithms with Python bindings\n\nextra:\n  recipe-maintainers:\n    - patricksnape\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://dlib.net/",
+   "license": "Boost 1.0",
+   "license_file": "dlib/LICENSE.txt",
+   "summary": "Modern C++ toolkit containing machine learning algorithms with Python bindings"
+  },
+  "build": {
+   "features": [
+    "blas_openblas"
+   ],
+   "noarch": "",
+   "noarch_python": false,
+   "number": "200",
+   "string": "np111py27_blas_openblas_200"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "patricksnape"
+   ]
+  },
+  "package": {
+   "name": "dlib",
+   "version": "19.4"
+  },
+  "requirements": {
+   "build": [
+    "blas 1.1 openblas",
+    "boost 1.63.0 np111py27_6",
+    "boost-cpp 1.63.0 2",
+    "bzip2 1.0.6 1",
+    "ca-certificates 2017.1.23 1",
+    "cmake 3.7.1 4",
+    "curl 7.52.1 0",
+    "expat 2.1.0 2",
+    "icu 58.1 1",
+    "jpeg 9b 0",
+    "jsoncpp 0.10.6 1",
+    "libarchive 3.2.1 2",
+    "libgfortran 3.0.0 0",
+    "libiconv 1.14 4",
+    "libpng 1.6.28 0",
+    "libuv 1.11.0 0",
+    "ncurses 5.9 10",
+    "numpy 1.11.3 py27_blas_openblas_200",
+    "openblas 0.2.19 2",
+    "openssl 1.0.2k 0",
+    "python 2.7.13 0",
+    "readline 6.2 0",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "toolchain 2.0.0 0",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python",
+    "openblas 0.2.19|0.2.19.*",
+    "blas 1.1 openblas",
+    "numpy x.x",
+    "boost 1.63.*",
+    "jpeg 9*",
+    "libpng >=1.6.28,<1.7",
+    "sqlite 3.13.*"
+   ]
+  },
+  "source": {
+   "patches": [
+    "osx_jpeg.patch",
+    "lapack_sgetrf.patch"
+   ],
+   "sha256": "2bed9669f1a5c436579498d0806b27a9b60c42a975a9b6e67b594b40f58b1a88",
+   "url": "https://github.com/davisking/dlib/archive/v19.4.tar.gz"
+  },
+  "test": {
+   "files": [
+    "test_data/face.jpg",
+    "test_data/face.png",
+    "test_data/images.xml"
+   ],
+   "imports": [
+    "dlib"
+   ],
+   "requires": [
+    "tqdm",
+    "pillow"
+   ]
+  }
+ },
+ "version": "19.4"
+}

@@ -1,0 +1,188 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Elastic is a set of python routines for calculation of elastic properties\nof crystals (elastic constants, equation of state, sound velocities, etc.).\nIt is a third version of the code implemented as a extension to the ASE system.\nThe code was a basis for some of my publications and was described briefly\nin these papers. The code was available to anyone, presented at the Workshop\non ab initio Calculations in Geosciences and used by some of my co-workers.\n",
+  "dev_url": "https://github.com/jochym/elastic",
+  "doc_url": "http://elastic.readthedocs.io/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://jochym.github.io/Elastic/",
+  "license": "GPL-3.0",
+  "license_family": "GPL3",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.3-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Elastic is a set of python routines for calculation of elastic properties of crystals"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/elastic-4.0.30.25-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/parcalc/parcalc.py",
+  "lib/python3.5/site-packages/elastic/__init__.py",
+  "lib/python3.5/site-packages/elastic/elastic.py",
+  "lib/python3.5/site-packages/parcalc/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_2",
+  "build_number": 2,
+  "depends": [
+   "ase",
+   "future",
+   "numpy",
+   "python 3.5*",
+   "scipy",
+   "spglib"
+  ],
+  "license": "GPL-3.0",
+  "license_family": "GPL3",
+  "name": "elastic",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "4.0.30.25"
+ },
+ "name": "elastic",
+ "raw_recipe": "{% set name = \"elastic\" %}\n{% set version = \"4.0.30.25\" %}\n{% set sha256 = \"69e1b82a003a2a1d9c179f3cbf63ab022c3162301654d48f2b1805fcba06b23b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 2\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - future\n    - setuptools_scm\n    - sphinx\n  run:\n    - python\n    - ase\n    - numpy\n    - scipy\n    - spglib\n    - future\n\ntest:\n  source_files:\n    - test\n  requires:\n    - hypothesis\n  imports:\n    - elastic\n  commands:\n    - python -m unittest discover -s test -b \n\nabout:\n  home: http://jochym.github.io/Elastic/\n  license: GPL-3.0\n  license_family: GPL3\n  license_file: LICENSE\n  summary: 'Elastic is a set of python routines for calculation of elastic properties of crystals'\n\n  description: |\n     Elastic is a set of python routines for calculation of elastic properties \n     of crystals (elastic constants, equation of state, sound velocities, etc.). \n     It is a third version of the code implemented as a extension to the ASE system. \n     The code was a basis for some of my publications and was described briefly \n     in these papers. The code was available to anyone, presented at the Workshop \n     on ab initio Calculations in Geosciences and used by some of my co-workers. \n  doc_url: http://elastic.readthedocs.io/\n  dev_url: https://github.com/jochym/elastic\n\nextra:\n  recipe-maintainers:\n    - jochym\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Elastic is a set of python routines for calculation of elastic properties\nof crystals (elastic constants, equation of state, sound velocities, etc.).\nIt is a third version of the code implemented as a extension to the ASE system.\nThe code was a basis for some of my publications and was described briefly\nin these papers. The code was available to anyone, presented at the Workshop\non ab initio Calculations in Geosciences and used by some of my co-workers.\n",
+   "dev_url": "https://github.com/jochym/elastic",
+   "doc_url": "http://elastic.readthedocs.io/",
+   "home": "http://jochym.github.io/Elastic/",
+   "license": "GPL-3.0",
+   "license_family": "GPL3",
+   "license_file": "LICENSE",
+   "summary": "Elastic is a set of python routines for calculation of elastic properties of crystals"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "2",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py35_2"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "jochym"
+   ]
+  },
+  "package": {
+   "name": "elastic",
+   "version": "4.0.30.25"
+  },
+  "requirements": {
+   "build": [
+    "alabaster 0.7.10 py35_0",
+    "babel 2.3.4 py35_0",
+    "ca-certificates 2017.1.23 1",
+    "certifi 2017.4.17 py35_0",
+    "docutils 0.13.1 py35_0",
+    "future 0.16.0 py35_0",
+    "imagesize 0.7.1 py35_0",
+    "jinja2 2.9.5 py35_0",
+    "markupsafe 0.23 py35_1",
+    "ncurses 5.9 10",
+    "openssl 1.0.2k 0",
+    "pygments 2.2.0 py35_0",
+    "python 3.5.3 1",
+    "pytz 2017.2 py35_0",
+    "readline 6.2 0",
+    "requests 2.13.0 py35_0",
+    "setuptools 33.1.1 py35_0",
+    "setuptools_scm 1.15.5 py35_1",
+    "six 1.10.0 py35_1",
+    "snowballstemmer 1.2.1 py35_0",
+    "sphinx 1.5.5 py35_0",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python",
+    "ase",
+    "numpy",
+    "scipy",
+    "spglib",
+    "future"
+   ]
+  },
+  "source": {
+   "fn": "elastic-4.0.30.25.tar.gz",
+   "sha256": "69e1b82a003a2a1d9c179f3cbf63ab022c3162301654d48f2b1805fcba06b23b",
+   "url": "https://pypi.io/packages/source/e/elastic/elastic-4.0.30.25.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python -m unittest discover -s test -b"
+   ],
+   "imports": [
+    "elastic"
+   ],
+   "requires": [
+    "hypothesis"
+   ],
+   "source_files": [
+    "test"
+   ]
+  }
+ },
+ "version": "4.0.30.25"
+}

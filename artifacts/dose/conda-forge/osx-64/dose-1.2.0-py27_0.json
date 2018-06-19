@@ -1,0 +1,174 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://github.com/danilobellini/dose",
+  "license": "GPL-3.0",
+  "license_family": "GPL3",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Automated traffic light/signal/semaphore GUI showing the state during test driven development (TDD), mainly written for coding dojos."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/dose/compat.py",
+  "bin/dose",
+  "share/dose/v1.2.0/screenshot_windows.png",
+  "lib/python2.7/site-packages/dose/_legacy.py",
+  "lib/python2.7/site-packages/dose/shared.py",
+  "lib/python2.7/site-packages/dose-1.2.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/dose/__main__.py",
+  "lib/python2.7/site-packages/dose/terminal.py",
+  "lib/python2.7/site-packages/dose/misc.py",
+  "lib/python2.7/site-packages/dose/about.py",
+  "lib/python2.7/site-packages/dose/rest.py",
+  "lib/python2.7/site-packages/dose/__init__.py",
+  "lib/python2.7/site-packages/dose/watcher.py",
+  "share/dose/v1.2.0/screenshot_linux.png",
+  "lib/python2.7/site-packages/dose/help.py",
+  "lib/python2.7/site-packages/dose/runner.py",
+  "share/dose/v1.2.0/screenshot_cygwin.png",
+  "share/dose/v1.2.0/README.rst",
+  "share/dose/v1.2.0/CHANGES.rst",
+  "share/dose/v1.2.0/screenshot_osx.png"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "colorama >=0.3.7",
+   "docutils >=0.12",
+   "python 2.7*",
+   "watchdog >=0.6.0",
+   "wxpython"
+  ],
+  "license": "GPL-3.0",
+  "license_family": "GPL3",
+  "name": "dose",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.2.0"
+ },
+ "name": "dose",
+ "raw_recipe": "{% set version = \"1.2.0\" %}\n\npackage:\n  name: dose\n  version: {{ version }}\n\nsource:\n  fn: dose-{{ version }}.tar.gz\n  url:  https://pypi.io/packages/source/d/dose/dose-{{ version }}.tar.gz\n  sha256: e2a594a3af7919aa7e80f33e17773fba1c888dbf3b159201386c3b71f345a4e8\n\nbuild:\n  number: 0\n  # We can drop this skip when we add wxpython-phoenix.\n  skip: True  # [py3k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - dose = dose.__main__:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - watchdog >=0.6.0\n    - colorama >=0.3.7\n    - docutils >=0.12\n    - wxpython\n\ntest:\n  files:\n    - dose_import_test.py\n  commands:\n    - DISPLAY=localhost:1.0 xvfb-run -a bash -c 'python dose_import_test.py'  # [linux]\n\nabout:\n  home: http://github.com/danilobellini/dose\n  license: GPL-3.0\n  summary: 'Automated traffic light/signal/semaphore GUI showing the state during test driven development (TDD), mainly written for coding dojos.'\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://github.com/danilobellini/dose",
+   "license": "GPL-3.0",
+   "license_family": "GPL3",
+   "summary": "Automated traffic light/signal/semaphore GUI showing the state during test driven development (TDD), mainly written for coding dojos."
+  },
+  "build": {
+   "entry_points": [
+    "dose = dose.__main__:main"
+   ],
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py27_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "dose",
+   "version": "1.2.0"
+  },
+  "requirements": {
+   "build": [
+    "ca-certificates 2017.1.23 1",
+    "certifi 2017.4.17 py27_0",
+    "ncurses 5.9 10",
+    "openssl 1.0.2k 0",
+    "python 2.7.13 1",
+    "readline 6.2 0",
+    "setuptools 33.1.1 py27_0",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python",
+    "watchdog >=0.6.0",
+    "colorama >=0.3.7",
+    "docutils >=0.12",
+    "wxpython"
+   ]
+  },
+  "source": {
+   "fn": "dose-1.2.0.tar.gz",
+   "sha256": "e2a594a3af7919aa7e80f33e17773fba1c888dbf3b159201386c3b71f345a4e8",
+   "url": "https://pypi.io/packages/source/d/dose/dose-1.2.0.tar.gz"
+  },
+  "test": {
+   "commands": "",
+   "files": [
+    "dose_import_test.py"
+   ]
+  }
+ },
+ "version": "1.2.0"
+}

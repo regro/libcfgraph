@@ -1,0 +1,157 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "This is a factored out version of unparse found in the Python source\ndistribution; under Demo/parser in Python 2 and under Tools/parser in\nPython 3.\n",
+  "dev_url": "https://github.com/simonpercivall/astunparse",
+  "doc_url": "http://astunparse.readthedocs.io/en/latest/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/simonpercivall/astunparse",
+  "license": "BSD 3-Clause, PSF 2",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py36_0",
+   "asn1crypto-0.22.0-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.10.0-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.8.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.5-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-1.0-py36_0",
+   "openssl-1.0.2l-0",
+   "packaging-16.8-py36_0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pycosat-0.6.2-py36_0",
+   "pycparser-2.17-py36_0",
+   "conda-forge::pycrypto-2.6.1-py36_1",
+   "pyopenssl-17.0.0-py36_0",
+   "pyparsing-2.1.4-py36_0",
+   "python-3.6.1-2",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.14.2-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "An AST unparser for Python."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/astunparse/printer.py",
+  "lib/python3.5/site-packages/astunparse-1.5.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/astunparse/__init__.py",
+  "lib/python3.5/site-packages/astunparse/__main__.py",
+  "lib/python3.5/site-packages/astunparse/unparser.py",
+  "lib/python3.5/site-packages/astunparse-1.5.0-py3.5.egg-info/not-zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "six >=1.6.1,<2.0"
+  ],
+  "license": "BSD 3-Clause, PSF 2",
+  "name": "astunparse",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.5.0"
+ },
+ "name": "astunparse",
+ "raw_recipe": "{% set name = \"astunparse\" %}\n{% set version = \"1.5.0\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"55df3c2a659d6cb6a9a9041c750a8232a9925523405a8dfeb891b92d45a589cd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - six >=1.6.1,<2.0\n\ntest:\n  imports:\n    - astunparse\n\nabout:\n  home: https://github.com/simonpercivall/astunparse\n  license: BSD 3-Clause, PSF 2\n  license_file: LICENSE\n  summary: An AST unparser for Python.\n  description: |\n    This is a factored out version of unparse found in the Python source\n    distribution; under Demo/parser in Python 2 and under Tools/parser in\n    Python 3.\n  dev_url: https://github.com/simonpercivall/astunparse\n  doc_url: http://astunparse.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "This is a factored out version of unparse found in the Python source\ndistribution; under Demo/parser in Python 2 and under Tools/parser in\nPython 3.\n",
+   "dev_url": "https://github.com/simonpercivall/astunparse",
+   "doc_url": "http://astunparse.readthedocs.io/en/latest/",
+   "home": "https://github.com/simonpercivall/astunparse",
+   "license": "BSD 3-Clause, PSF 2",
+   "license_file": "LICENSE",
+   "summary": "An AST unparser for Python."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt",
+   "string": "py35_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "goanpeca"
+   ]
+  },
+  "package": {
+   "name": "astunparse",
+   "version": "1.5.0"
+  },
+  "requirements": {
+   "build": [
+    "ca-certificates 2017.4.17 0",
+    "certifi 2017.4.17 py35_0",
+    "ncurses 5.9 10",
+    "openssl 1.0.2k 0",
+    "python 3.5.3 3",
+    "readline 6.2 0",
+    "setuptools 33.1.1 py35_0",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python",
+    "six >=1.6.1,<2.0"
+   ]
+  },
+  "source": {
+   "fn": "astunparse-1.5.0.tar.gz",
+   "sha256": "55df3c2a659d6cb6a9a9041c750a8232a9925523405a8dfeb891b92d45a589cd",
+   "url": "https://pypi.io/packages/source/a/astunparse/astunparse-1.5.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "astunparse"
+   ]
+  }
+ },
+ "version": "1.5.0"
+}

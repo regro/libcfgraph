@@ -1,0 +1,159 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "George is a fast and flexible Python library for Gaussian Process Regression.\n",
+  "dev_url": "https://github.com/dfm/george",
+  "doc_url": "http://dan.iel.fm/george/current",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/dfm/george",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.4-py36_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.3-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_0",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "George is a fast and flexible Python library for Gaussian Process Regression."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/george/testing/test_gp.py",
+  "lib/python2.7/site-packages/george/hodlr.so",
+  "lib/python2.7/site-packages/george/testing/test_pickle.py",
+  "lib/python2.7/site-packages/george/hodlr.cpp",
+  "lib/python2.7/site-packages/george/utils.py",
+  "lib/python2.7/site-packages/george/__init__.py",
+  "lib/python2.7/site-packages/george/testing/__init__.py",
+  "lib/python2.7/site-packages/george-0.2.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/george/_kernels.so",
+  "lib/python2.7/site-packages/george/testing/test_solvers.py",
+  "lib/python2.7/site-packages/george/_kernels.cpp",
+  "lib/python2.7/site-packages/george/basic.py",
+  "lib/python2.7/site-packages/george/kernels.py",
+  "lib/python2.7/site-packages/george/generate_kernel_defs.py",
+  "lib/python2.7/site-packages/george/testing/test_tutorial.py",
+  "lib/python2.7/site-packages/george/gp.py",
+  "lib/python2.7/site-packages/george/testing/test_kernels.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_0",
+  "build_number": 0,
+  "depends": [
+   "eigen",
+   "numpy 1.11*",
+   "python 2.7*",
+   "scipy"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "george",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.1"
+ },
+ "name": "george",
+ "raw_recipe": "{% set name = \"george\" %}\n{% set version = \"0.2.1\" %}\n{% set sha256 = \"e5b073f054e7520d898056d51a30aa2ebccce69cbb43b8b2e9c984f251df739a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/g/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script: python setup.py build_ext -I{{environ[\"PREFIX\"]}}/include/eigen3 install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - eigen\n    - numpy x.x\n    - cython\n    - setuptools\n\n  run:\n    - python\n    - eigen\n    - numpy x.x\n    - scipy\n\ntest:\n  imports:\n    - george\n\nabout:\n  home: https://github.com/dfm/george\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'George is a fast and flexible Python library for Gaussian Process Regression.'\n  description: |\n    George is a fast and flexible Python library for Gaussian Process Regression.\n  doc_url: http://dan.iel.fm/george/current\n  dev_url: https://github.com/dfm/george\n\nextra:\n  recipe-maintainers:\n    - hellovenkat\n    - scopatz\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "George is a fast and flexible Python library for Gaussian Process Regression.\n",
+   "dev_url": "https://github.com/dfm/george",
+   "doc_url": "http://dan.iel.fm/george/current",
+   "home": "https://github.com/dfm/george",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "George is a fast and flexible Python library for Gaussian Process Regression."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py build_ext -I/Users/travis/miniconda3/conda-bld/george_1490893702896/_b_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/include/eigen3 install --single-version-externally-managed --record record.txt",
+   "string": "np111py27_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "hellovenkat",
+    "scopatz"
+   ]
+  },
+  "package": {
+   "name": "george",
+   "version": "0.2.1"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "eigen",
+    "numpy x.x",
+    "scipy"
+   ]
+  },
+  "source": {
+   "fn": "george-0.2.1.tar.gz",
+   "sha256": "e5b073f054e7520d898056d51a30aa2ebccce69cbb43b8b2e9c984f251df739a",
+   "url": "https://pypi.python.org/packages/source/g/george/george-0.2.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "george"
+   ]
+  }
+ },
+ "version": "0.2.1"
+}

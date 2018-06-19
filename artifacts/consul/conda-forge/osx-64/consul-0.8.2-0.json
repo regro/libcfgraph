@@ -1,0 +1,128 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Consul is a tool for discovering and configuring services in your\ninfrastructure. It provides several key features, including:\nService Discovery, Health Checking, KV Store, Multi Datacenter.\nConsul is designed to be friendly to both the DevOps community and\napplication developers, making it perfect for modern, elastic infrastructures.\n",
+  "doc_url": "https://www.consul.io/docs/index.html",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://www.consul.io",
+  "license": "MPL 2.0",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-1",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Service discovery and configuration made easy."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/consul"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "MPL 2.0",
+  "name": "consul",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.8.2"
+ },
+ "name": "consul",
+ "raw_recipe": "{% set name = \"consul\" %}\n{% set version = \"0.8.2\" %}\n{% set build_number = 0 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_linux_amd64.zip  # [linux64]\n  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_linux_386.zip  # [linux32]\n  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_darwin_amd64.zip  # [osx]\n  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]\n  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_386.zip  # [win32]\n  fn: {{ name }}-{{ version }}.zip\n  sha256: 63de23c7de3b9b48592353f8427ad40a9dd28da51a66c9f3759f5fdfd6aad136  # [osx]\n  sha256: f60237e24e4f03d8f7fd8a4e31cb246c701c41beb7cb7d1735320a5aa0b331c8  # [linux32]\n  sha256: 6409336d15baea0b9f60abfcf7c28f7db264ba83499aa8e7f608fb0e273514d9  # [linux64]\n  sha256: 98d840c42e255e1d6011e601bcb1a86b0133e381ce836b4d97e92d9d3c882c8b  # [win32]\n  sha256: e3def6d26c26937a5c33327ff2884322aa12bdd29235335d877864e05a12fb52  # [win64]\n\nbuild:\n  number: {{ build_number }}\n\ntest:\n  commands:\n    - consul -v\n\nabout:\n  home: https://www.consul.io\n  license: MPL 2.0\n  summary: Service discovery and configuration made easy.\n  description: |\n    Consul is a tool for discovering and configuring services in your \n    infrastructure. It provides several key features, including: \n    Service Discovery, Health Checking, KV Store, Multi Datacenter.\n    Consul is designed to be friendly to both the DevOps community and \n    application developers, making it perfect for modern, elastic infrastructures.\n\n  doc_url: https://www.consul.io/docs/index.html\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Consul is a tool for discovering and configuring services in your\ninfrastructure. It provides several key features, including:\nService Discovery, Health Checking, KV Store, Multi Datacenter.\nConsul is designed to be friendly to both the DevOps community and\napplication developers, making it perfect for modern, elastic infrastructures.\n",
+   "doc_url": "https://www.consul.io/docs/index.html",
+   "home": "https://www.consul.io",
+   "license": "MPL 2.0",
+   "summary": "Service discovery and configuration made easy."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "sodre"
+   ]
+  },
+  "package": {
+   "name": "consul",
+   "version": "0.8.2"
+  },
+  "requirements": {
+   "build": [],
+   "run": []
+  },
+  "source": {
+   "fn": "consul-0.8.2.zip",
+   "sha256": "63de23c7de3b9b48592353f8427ad40a9dd28da51a66c9f3759f5fdfd6aad136",
+   "url": "https://releases.hashicorp.com/consul/0.8.2/consul_0.8.2_darwin_amd64.zip"
+  },
+  "test": {
+   "commands": [
+    "consul -v"
+   ]
+  }
+ },
+ "version": "0.8.2"
+}

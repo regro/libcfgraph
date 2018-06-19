@@ -1,0 +1,146 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.1",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://www.boost.org/",
+  "license": "Boost-1.0",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.1-py35_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.2-5",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.4-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-32.3.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.8-3"
+  ],
+  "summary": "Free peer-reviewed portable C++ source libraries."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/libboost_python.so",
+  "lib/libboost_python.a",
+  "lib/libboost_python.so.1.63.0"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_3",
+  "build_number": 3,
+  "depends": [
+   "boost-cpp 1.63.0",
+   "bzip2 1.0.*",
+   "icu 56.*",
+   "python 2.7*",
+   "zlib 1.2.*"
+  ],
+  "license": "Boost-1.0",
+  "name": "boost",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.63.0"
+ },
+ "name": "boost",
+ "raw_recipe": "{% set version = \"1.63.0\" %}\n{% set filename = \"boost_%s.tar.bz2\" % version.replace(\".\", \"_\") %}\n\npackage:\n  name: boost\n  version: {{ version }}\n\nsource:\n  fn:  {{ filename }}\n  url: http://sourceforge.net/projects/boost/files/boost/{{ version }}/{{ filename }}\n  sha256: beae2529f759f6b3bf3f4969a19c2e9d6f0c503edcb2de4a61d1428519fcb3b0\n\nbuild:\n  number: 3\n  features:\n    - vc9               # [win and py27]\n    - vc10              # [win and py34]\n    - vc14              # [win and py >= 35]\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - icu 56.*          # [unix]\n    - bzip2 1.0.*       # [unix]\n    - zlib 1.2.*\n    - vc 9              # [win and py27]\n    - vc 10             # [win and py34]\n    - vc 14             # [win and py >= 35]\n    - boost-cpp {{ version }}\n\n  run:\n    - python\n    - icu 56.*          # [unix]\n    - bzip2 1.0.*       # [unix]\n    - zlib 1.2.*\n    - vc 9              # [win and py27]\n    - vc 10             # [win and py34]\n    - vc 14             # [win and py >= 35]\n    - boost-cpp {{ version }}\n\ntest:\n  commands:\n\n    # Verify libraries.\n    {% set win_vstr = \"_\".join(version.split(\".\")[:2]) %}\n    - test -f $PREFIX/lib/libboost_python.a                                                 # [unix]\n    - test -f $PREFIX/lib/libboost_python.dylib                                             # [osx]\n    - test -f $PREFIX/lib/libboost_python.so                                                # [linux]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\boost_python-vc90-mt-{{ win_vstr }}.dll exit 1   # [win and py27]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\boost_python-vc100-mt-{{ win_vstr }}.dll exit 1  # [win and py34]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\boost_python-vc140-mt-{{ win_vstr }}.dll exit 1  # [win and py >= 35]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\boost_python-vc90-mt-{{ win_vstr }}.lib exit 1   # [win and py27]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\boost_python-vc100-mt-{{ win_vstr }}.lib exit 1  # [win and py34]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\boost_python-vc140-mt-{{ win_vstr }}.lib exit 1  # [win and py >= 35]\n\nabout:\n  home: http://www.boost.org/\n  license: Boost-1.0\n  summary: Free peer-reviewed portable C++ source libraries.\n\nextra:\n  recipe-maintainers:\n    - ccordoba12\n    - jakirkham\n    - msarahan\n    - ocefpaf\n    - jschueller\n    - scopatz\n    - isuruf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.boost.org/",
+   "license": "Boost-1.0",
+   "summary": "Free peer-reviewed portable C++ source libraries."
+  },
+  "build": {
+   "features": "",
+   "number": "3",
+   "string": "py27_3"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ccordoba12",
+    "jakirkham",
+    "msarahan",
+    "ocefpaf",
+    "jschueller",
+    "scopatz",
+    "isuruf"
+   ]
+  },
+  "package": {
+   "name": "boost",
+   "version": "1.63.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "icu 56.*",
+    "bzip2 1.0.*",
+    "zlib 1.2.*",
+    "boost-cpp 1.63.0"
+   ]
+  },
+  "source": {
+   "fn": "boost_1_63_0.tar.bz2",
+   "sha256": "beae2529f759f6b3bf3f4969a19c2e9d6f0c503edcb2de4a61d1428519fcb3b0",
+   "url": "http://sourceforge.net/projects/boost/files/boost/1.63.0/boost_1_63_0.tar.bz2"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/lib/libboost_python.a",
+    "test -f $PREFIX/lib/libboost_python.so"
+   ]
+  }
+ },
+ "version": "1.63.0"
+}

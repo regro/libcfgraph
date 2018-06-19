@@ -1,0 +1,155 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "The GLPK (GNU Linear Programming Kit) package is intended for solving\nlarge-scale linear programming (LP), mixed integer programming (MIP), and\nother related problems. It is a set of routines written in ANSI C and\norganized in the form of a callable library.\n",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://www.gnu.org/software/glpk/",
+  "license": "GPL3",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-0",
+   "conda-forge::certifi-2017.1.23-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.4-py35_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.1-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_2",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.12-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "GNU Linear Programming Kit"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/libglpk.a",
+  "include/glpk.h",
+  "lib/libglpk.so.40.2.0",
+  "lib/libglpk.so.40",
+  "lib/libglpk.so",
+  "lib/libglpk.la",
+  "bin/glpsol"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "gmp"
+  ],
+  "license": "GPL3",
+  "name": "glpk",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "4.61"
+ },
+ "name": "glpk",
+ "raw_recipe": "{% set name = \"glpk\" %}\n{% set version = \"4.61\" %}\n{% set sha256 = \"9866de41777782d4ce21da11b88573b66bb7858574f89c28be6967ac22dfaba9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n   number: 0\n   features:\n     - vc9   # [win and py27]\n     - vc10  # [win and py34]\n     - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - gmp     # [not win]\n\n  run:\n    # python is a Windows run dependency in order to get the correct vc feature\n    - python  # [win]\n    - gmp     # [not win]\n\ntest:\n  requires:\n    - python\n    - setuptools\n  files:\n    - test.c\n    - setup.py\n    - spam.c\n    - plan.mps\n    - test_ctypes.py\n\n  commands:\n    # test glpsol executable\n    - glpsol --mps plan.mps\n\n    # test python extension using cython\n    - python setup.py develop test\n\n    # test shared library using python ctypes module\n    - python test_ctypes.py\n\n    - test -f ${PREFIX}/lib/libglpk.a        # [linux]\n    - test -f ${PREFIX}/lib/libglpk.so       # [linux]\n    # static library not available on os x\n    - test -f ${PREFIX}/lib/libglpk.dylib    # [osx]\n\nabout:\n  home: https://www.gnu.org/software/glpk/\n  license: GPL3\n  summary: GNU Linear Programming Kit\n  description: |\n    The GLPK (GNU Linear Programming Kit) package is intended for solving\n    large-scale linear programming (LP), mixed integer programming (MIP), and\n    other related problems. It is a set of routines written in ANSI C and\n    organized in the form of a callable library.\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n    - aebrahim\n    - jakirkham\n    - snorfalorpagus\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "The GLPK (GNU Linear Programming Kit) package is intended for solving\nlarge-scale linear programming (LP), mixed integer programming (MIP), and\nother related problems. It is a set of routines written in ANSI C and\norganized in the form of a callable library.\n",
+   "home": "https://www.gnu.org/software/glpk/",
+   "license": "GPL3",
+   "summary": "GNU Linear Programming Kit"
+  },
+  "build": {
+   "features": "",
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jjhelmus",
+    "aebrahim",
+    "jakirkham",
+    "snorfalorpagus"
+   ]
+  },
+  "package": {
+   "name": "glpk",
+   "version": "4.61"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "gmp"
+   ]
+  },
+  "source": {
+   "fn": "glpk-4.61.tar.gz",
+   "sha256": "9866de41777782d4ce21da11b88573b66bb7858574f89c28be6967ac22dfaba9",
+   "url": "http://ftp.gnu.org/gnu/glpk/glpk-4.61.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "glpsol --mps plan.mps",
+    "python setup.py develop test",
+    "python test_ctypes.py",
+    "test -f ${PREFIX}/lib/libglpk.a",
+    "test -f ${PREFIX}/lib/libglpk.so"
+   ],
+   "files": [
+    "test.c",
+    "setup.py",
+    "spam.c",
+    "plan.mps",
+    "test_ctypes.py"
+   ],
+   "requires": [
+    "python",
+    "setuptools"
+   ]
+  }
+ },
+ "version": "4.61"
+}

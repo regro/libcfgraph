@@ -1,0 +1,143 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Doxygen is the de facto standard tool for\ngenerating documentation from annotated C++ sources,\nbut it also supports other popular programming\nlanguages such as C, Objective-C, C#, PHP, Java,\nPython, IDL (Corba, Microsoft, and UNO/OpenOffice flavors),\nFortran, VHDL, Tcl, and to some extent D.\n",
+  "dev_url": "https://github.com/doxygen/doxygen",
+  "doc_url": "http://www.stack.nl/~dimitri/doxygen/manual/index.html",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://www.stack.nl/~dimitri/doxygen/index.html",
+  "license": "GPL2",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-0",
+   "conda-forge::certifi-2017.1.23-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.4-py35_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.3-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_2",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.12-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Generate documentation from source code"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/doxygen"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [
+   "libiconv",
+   "m4"
+  ],
+  "license": "GPL2",
+  "name": "doxygen",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.8.13"
+ },
+ "name": "doxygen",
+ "raw_recipe": "{% set name = \"doxygen\" %}\n{% set version = \"1.8.13\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.src.tar.gz                                                  # [not win]\n  url: ftp://ftp.stack.nl/pub/users/dimitri/{{ name }}-{{ version }}.src.tar.gz            # [not win]\n  sha256: af667887bd7a87dc0dbf9ac8d86c96b552dfb8ca9c790ed1cbffaa6131573f6b                 # [not win]\n\n  fn: {{ name }}-{{ version }}.windows.bin.zip                                             # [win32]\n  url: http://ftp.stack.nl/pub/users/dimitri/{{ name }}-{{ version }}.windows.bin.zip      # [win32]\n  sha256: 215800d19d0e77fa400694af74685bbd3000463f0d7f18b6c7b743d2d6a1422f                 # [win32]\n\n  fn: {{ name }}-{{ version }}.windows.x64.bin.zip                                         # [win64]\n  url: http://ftp.stack.nl/pub/users/dimitri/{{ name }}-{{ version }}.windows.x64.bin.zip  # [win64]\n  sha256: c59e92ab9f82e156723dd3efb9433948dcb84facc21d6efb50f4d6c2d7aa6c5c                 # [win64]\n\n  patches:                                                                       # [not win]\n    - doxygen_test_patch.diff                                                    # [not win]\n    # CMake finds iconv_open in glibc, but finds iconv.h from libiconv.\n    # Make sure both are found from one place.\n    - find_iconv.patch                                                           # [not win]\n    # Doxygen 1.8.13 sometimes segfaults when building the XML output:\n    # https://github.com/doxygen/doxygen/pull/555\n    - doxygen-1.8.13-NULL-dereference.patch                                      # [not win]\n  \nbuild:\n  number: 1\n  skip: True  # [not py35 and unix]\n  script:                                                  # [win]\n      - mkdir %SCRIPTS%                                    # [win]\n      - copy doxygen.exe %SCRIPTS%\\ || goto :eof           # [win]\n      - copy doxyindexer.exe %SCRIPTS%\\ || goto :eof       # [win]\n      - copy doxysearch.cgi.exe %SCRIPTS%\\ || goto :eof    # [win]\n      - copy libclang.dll %LIBRARY_BIN%\\ || goto :eof      # [win]\n      - copy libclang.dll %LIBRARY_BIN%\\ || goto :eof      # [win]\n      - copy %RECIPE_DIR%\\LICENSE %SRC_DIR%\\ || goto :eof  # [win]\n\nrequirements:    # [not win]\n  build:         # [not win]\n    - cmake      # [not win]\n    - toolchain  # [not win]\n    - flex       # [not win]\n    - bison      # [not win]\n    - python     # [not win]\n    - libiconv   # [not win]\n  run:           # [not win]\n    - m4         # [not win]\n    - libiconv   # [not win]\n\ntest:\n  commands:\n    - doxygen --help\n\nabout:\n  home: http://www.stack.nl/~dimitri/doxygen/index.html\n  license: GPL2\n  license_file: LICENSE\n  summary: 'Generate documentation from source code'\n\n  description: |\n    Doxygen is the de facto standard tool for \n    generating documentation from annotated C++ sources, \n    but it also supports other popular programming \n    languages such as C, Objective-C, C#, PHP, Java, \n    Python, IDL (Corba, Microsoft, and UNO/OpenOffice flavors), \n    Fortran, VHDL, Tcl, and to some extent D.\n  doc_url: http://www.stack.nl/~dimitri/doxygen/manual/index.html\n  dev_url: https://github.com/doxygen/doxygen\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - tadeu\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Doxygen is the de facto standard tool for\ngenerating documentation from annotated C++ sources,\nbut it also supports other popular programming\nlanguages such as C, Objective-C, C#, PHP, Java,\nPython, IDL (Corba, Microsoft, and UNO/OpenOffice flavors),\nFortran, VHDL, Tcl, and to some extent D.\n",
+   "dev_url": "https://github.com/doxygen/doxygen",
+   "doc_url": "http://www.stack.nl/~dimitri/doxygen/manual/index.html",
+   "home": "http://www.stack.nl/~dimitri/doxygen/index.html",
+   "license": "GPL2",
+   "license_file": "LICENSE",
+   "summary": "Generate documentation from source code"
+  },
+  "build": {
+   "number": "1",
+   "string": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "isuruf",
+    "tadeu"
+   ]
+  },
+  "package": {
+   "name": "doxygen",
+   "version": "1.8.13"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "m4",
+    "libiconv"
+   ]
+  },
+  "source": {
+   "fn": "doxygen-1.8.13.src.tar.gz",
+   "patches": [
+    "doxygen_test_patch.diff",
+    "find_iconv.patch",
+    "doxygen-1.8.13-NULL-dereference.patch"
+   ],
+   "sha256": "af667887bd7a87dc0dbf9ac8d86c96b552dfb8ca9c790ed1cbffaa6131573f6b",
+   "url": "ftp://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.13.src.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "doxygen --help"
+   ]
+  }
+ },
+ "version": "1.8.13"
+}
