@@ -1,0 +1,40 @@
+{
+ "about": {
+  "description": "The SDL2_gfx library provides the basic drawing functions such as lines,\ncircles or polygons provided by SDL_gfx on SDL2 against renderers of SDL2.\n",
+  "dev_url": "https://sourceforge.net/projects/sdl2gfx/",
+  "doc_url": "http://www.ferzkopp.net/Software/SDL2_gfx/Docs/html/index.html",
+  "home": "http://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/",
+  "license": "ZLIB",
+  "summary": "Graphics primitives and surface functions for SDL2"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/SDL2_gfx.dll",
+  "Library/include/SDL2/SDL2_framerate.h",
+  "Library/include/SDL2/SDL2_gfxPrimitives.h",
+  "Library/include/SDL2/SDL2_gfxPrimitives_font.h",
+  "Library/include/SDL2/SDL2_imageFilter.h",
+  "Library/include/SDL2/SDL2_rotozoom.h",
+  "Library/lib/SDL2_gfx.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc14_0",
+  "build_number": 0,
+  "depends": [
+   "sdl2",
+   "vc 14"
+  ],
+  "features": "vc14",
+  "license": "ZLIB",
+  "name": "sdl2_gfx",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.1"
+ },
+ "metadata_version": 1,
+ "name": "sdl2_gfx",
+ "raw_recipe": "{% set name = \"SDL2_gfx\" %}\n{% set version = \"1.0.1\" %}\n{% set sha256 = \"ec6a7a0dd24d7824c6b69feb81a309975eda64b5ff8d6a1ab02b27cb95158b16\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://www.ferzkopp.net/Software/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - cmake  # [win]\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n    - sdl2\n    - toolchain\n\n  run:\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n    - sdl2\n\ntest:\n  requires:\n    - python {{ environ['PY_VER'] + '*' }}  # [win]\n  commands:\n    - test -f $PREFIX/lib/libSDL2_gfx.a  # [unix]\n    - test -f $PREFIX/lib/libSDL2_gfx.dylib  # [osx]\n    - test -f $PREFIX/lib/libSDL2_gfx.so  # [linux]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\SDL2_gfx.lib exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\SDL2_gfx.dll exit 1  # [win]\n\nabout:\n  home: http://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/\n  license: ZLIB\n  license_file: COPYING\n  summary: \"Graphics primitives and surface functions for SDL2\"\n  description: |\n    The SDL2_gfx library provides the basic drawing functions such as lines, \n    circles or polygons provided by SDL_gfx on SDL2 against renderers of SDL2.\n  doc_url: http://www.ferzkopp.net/Software/SDL2_gfx/Docs/html/index.html\n  dev_url: https://sourceforge.net/projects/sdl2gfx/\n\nextra:\n  recipe-maintainers:\n    - dschreij\n",
+ "rendered_recipe": {},
+ "version": "1.0.1"
+}

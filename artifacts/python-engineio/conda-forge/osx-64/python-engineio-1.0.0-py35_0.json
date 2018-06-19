@@ -1,0 +1,46 @@
+{
+ "about": {
+  "dev_url": "http://github.com/miguelgrinberg/python-engineio/",
+  "doc_url": "https://python-engineio.readthedocs.io",
+  "home": "http://github.com/miguelgrinberg/python-engineio/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Engine.IO server"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/engineio/__init__.py",
+  "lib/python3.5/site-packages/engineio/async_eventlet.py",
+  "lib/python3.5/site-packages/engineio/async_gevent.py",
+  "lib/python3.5/site-packages/engineio/async_gevent_uwsgi.py",
+  "lib/python3.5/site-packages/engineio/async_threading.py",
+  "lib/python3.5/site-packages/engineio/middleware.py",
+  "lib/python3.5/site-packages/engineio/packet.py",
+  "lib/python3.5/site-packages/engineio/payload.py",
+  "lib/python3.5/site-packages/engineio/server.py",
+  "lib/python3.5/site-packages/engineio/socket.py",
+  "lib/python3.5/site-packages/python_engineio-1.0.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/python_engineio-1.0.0-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/python_engineio-1.0.0-py3.5.egg-info/pbr.json"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "six >=1.9.0"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "python-engineio",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0.0"
+ },
+ "metadata_version": 1,
+ "name": "python-engineio",
+ "raw_recipe": "{%set name = \"python-engineio\" %}\n{%set version = \"1.0.0\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"1fd34c5362d15bbc255a408cb280dded44c97d460076a324eae10515c2a05c6a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six >=1.9.0\n\n  run:\n    - python\n    - six >=1.9.0\n\ntest:\n  imports:\n    - engineio\n    # - engineio.async_eventlet\n    # - engineio.async_gevent\n    # - engineio.async_gevent_uwsgi\n    - engineio.async_threading\n    - engineio.middleware\n    - engineio.packet\n    - engineio.payload\n    - engineio.server\n    - engineio.socket\n\nabout:\n  home: http://github.com/miguelgrinberg/python-engineio/\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: 'Engine.IO server'\n  doc_url: https://python-engineio.readthedocs.io\n  dev_url: http://github.com/miguelgrinberg/python-engineio/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.0.0"
+}

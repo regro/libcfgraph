@@ -1,0 +1,42 @@
+{
+ "about": {
+  "home": "https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home",
+  "license": "Apache License Version 2.0, January 2004",
+  "summary": "ECMWF ecCodes Copyright 2005-2016 ECMWF."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/eccodes-2.0.0-py2.7.egg-info",
+  "lib/python2.7/site-packages/eccodes/__init__.py",
+  "lib/python2.7/site-packages/eccodes/eccodes.py",
+  "lib/python2.7/site-packages/gribapi/__init__.py",
+  "lib/python2.7/site-packages/gribapi/_gribapi_swig.so",
+  "lib/python2.7/site-packages/gribapi/gribapi.py",
+  "lib/python2.7/site-packages/gribapi/gribapi_swig.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27pl5.20.3.1_0",
+  "build_number": 0,
+  "depends": [
+   "boost 1.61.*",
+   "eccodes 2.0.0",
+   "jasper",
+   "libnetcdf 4.4.*",
+   "libpng >=1.6.23,<1.7",
+   "numpy 1.11*",
+   "perl 5.20.3.1*",
+   "python 2.7*"
+  ],
+  "license": "Apache License Version 2.0, January 2004",
+  "name": "python-eccodes",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.0"
+ },
+ "metadata_version": 1,
+ "name": "python-eccodes",
+ "raw_recipe": "{% set version = \"2.0.0\" %}\n\npackage:\n  name: python-eccodes\n  version: {{ version }}\n\nsource:\n  url: https://software.ecmwf.int/wiki/download/attachments/45757960/eccodes-{{ version }}-Source.tar.gz\n  fn: eccodes-{{ version }}-Source.tar.gz\n  sha256: 338b311df338950ace79a8d26ffae17f3425bdc56cb8b36b620a69f5841b64f0\n\nbuild:\n  number: 0\n  skip: True  # [win or py3k]\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - cmake\n    - python\n    - numpy x.x\n    - boost 1.61.*\n    - jasper\n    - libpng >=1.6.23,<1.7\n    - libnetcdf 4.4.*\n    - perl\n    - eccodes {{ version }}\n  run:\n    - python\n    - numpy x.x\n    - boost 1.61.*\n    - jasper\n    - libpng >=1.6.23,<1.7\n    - libnetcdf 4.4.*\n    - perl\n    - eccodes {{ version }}\n\ntest:\n  imports:\n    - eccodes\n    - gribapi\n\nabout:\n  home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home\n  license: Apache License Version 2.0, January 2004\n  summary: ECMWF ecCodes Copyright 2005-2016 ECMWF.\n\nextra:\n  recipe-maintainers:\n    - kmuehlbauer\n    - pelson\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "2.0.0"
+}

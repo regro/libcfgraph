@@ -1,0 +1,43 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/pyflakes",
+  "lib/python2.7/site-packages/pyflakes-1.2.3-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pyflakes-1.2.3-py2.7.egg-info/pbr.json",
+  "lib/python2.7/site-packages/pyflakes/__init__.py",
+  "lib/python2.7/site-packages/pyflakes/__main__.py",
+  "lib/python2.7/site-packages/pyflakes/api.py",
+  "lib/python2.7/site-packages/pyflakes/checker.py",
+  "lib/python2.7/site-packages/pyflakes/messages.py",
+  "lib/python2.7/site-packages/pyflakes/reporter.py",
+  "lib/python2.7/site-packages/pyflakes/scripts/__init__.py",
+  "lib/python2.7/site-packages/pyflakes/scripts/pyflakes.py",
+  "lib/python2.7/site-packages/pyflakes/test/__init__.py",
+  "lib/python2.7/site-packages/pyflakes/test/harness.py",
+  "lib/python2.7/site-packages/pyflakes/test/test_api.py",
+  "lib/python2.7/site-packages/pyflakes/test/test_doctests.py",
+  "lib/python2.7/site-packages/pyflakes/test/test_imports.py",
+  "lib/python2.7/site-packages/pyflakes/test/test_other.py",
+  "lib/python2.7/site-packages/pyflakes/test/test_return_with_arguments_inside_generator.py",
+  "lib/python2.7/site-packages/pyflakes/test/test_undefined_names.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "pyflakes",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.2.3"
+ },
+ "metadata_version": 1,
+ "name": "pyflakes",
+ "raw_recipe": "{%set name = \"pyflakes\" %}\n{%set version = \"1.2.3\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"2e4a1b636d8809d8f0a69f341acf15b2e401a3221ede11be439911d23ce2139e\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: https://github.com/PyCQA/pyflakes\n  license: MIT\n  summary: 'Pyflakes analyzes programs and detects various errors.'\n\nextra:\n  recipe-maintainers:\n    - sigmavirus24\n",
+ "rendered_recipe": {},
+ "version": "1.2.3"
+}

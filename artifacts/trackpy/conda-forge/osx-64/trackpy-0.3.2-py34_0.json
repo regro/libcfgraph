@@ -1,0 +1,60 @@
+{
+ "about": {
+  "description": "trackpy is a Python package for particle tracking in 2D, 3D,\nand higher dimensions.\n",
+  "doc_url": "http://soft-matter.github.io/trackpy",
+  "home": "https://github.com/soft-matter/trackpy",
+  "license": "BSD-3-Clause",
+  "summary": "Python particle tracking toolkit"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/trackpy-0.3.2-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/trackpy/__init__.py",
+  "lib/python3.4/site-packages/trackpy/_version.py",
+  "lib/python3.4/site-packages/trackpy/api.py",
+  "lib/python3.4/site-packages/trackpy/artificial.py",
+  "lib/python3.4/site-packages/trackpy/diag.py",
+  "lib/python3.4/site-packages/trackpy/feature.py",
+  "lib/python3.4/site-packages/trackpy/feature_numba.py",
+  "lib/python3.4/site-packages/trackpy/filtering.py",
+  "lib/python3.4/site-packages/trackpy/framewise_data.py",
+  "lib/python3.4/site-packages/trackpy/linking.py",
+  "lib/python3.4/site-packages/trackpy/masks.py",
+  "lib/python3.4/site-packages/trackpy/motion.py",
+  "lib/python3.4/site-packages/trackpy/plots.py",
+  "lib/python3.4/site-packages/trackpy/predict.py",
+  "lib/python3.4/site-packages/trackpy/preprocessing.py",
+  "lib/python3.4/site-packages/trackpy/static.py",
+  "lib/python3.4/site-packages/trackpy/tracking.py",
+  "lib/python3.4/site-packages/trackpy/try_numba.py",
+  "lib/python3.4/site-packages/trackpy/uncertainty.py",
+  "lib/python3.4/site-packages/trackpy/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib",
+   "numpy >=1.7",
+   "pandas >=0.13",
+   "pims >=0.3.3",
+   "pytables",
+   "python 3.4*",
+   "pyyaml",
+   "scipy >=0.12",
+   "setuptools",
+   "six >=1.8"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "trackpy",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.2"
+ },
+ "metadata_version": 1,
+ "name": "trackpy",
+ "raw_recipe": "{% set version = \"0.3.2\" %}\n\npackage:\n  name: trackpy\n  version: {{ version }}\n\nsource:\n  fn: trackpy-{{ version }}.tar.gz\n  url: https://github.com/soft-matter/trackpy/archive/v{{ version }}.tar.gz\n  sha256: 4d1a1b0adfcef651c65b9155fc851ee094ad4341d637dcf6ac0237a541c260a5\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy >=1.7\n    - scipy >=0.12\n    - six >=1.8\n    - pandas >=0.13\n    - pims >=0.3.3\n    - pyyaml\n    - matplotlib\n  run:\n    - python\n    - setuptools\n    - numpy >=1.7\n    - scipy >=0.12\n    - six >=1.8\n    - pandas >=0.13\n    - pims >=0.3.3\n    - pyyaml\n    - matplotlib\n    - pytables  # optional\n\ntest:\n  imports:\n    - trackpy\n\nabout:\n  home: https://github.com/soft-matter/trackpy\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: 'Python particle tracking toolkit'\n  description: |\n    trackpy is a Python package for particle tracking in 2D, 3D,\n    and higher dimensions.\n  doc_url: http://soft-matter.github.io/trackpy\n\nextra:\n  recipe-maintainers:\n    - danielballan\n    - tacaswell\n    - nkeim\n    - caspervdw\n    - ericdill\n",
+ "rendered_recipe": {},
+ "version": "0.3.2"
+}

@@ -1,0 +1,66 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "include/drstemplates.h",
+  "include/grib2.h",
+  "include/gridtemplates.h",
+  "include/pdstemplates.h",
+  "lib/libgrib2c.a"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "3",
+  "build_number": 3,
+  "depends": [],
+  "license": "BSD",
+  "name": "g2clib",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.5.0"
+ },
+ "metadata_version": 1,
+ "name": "g2clib",
+ "raw_recipe": "package:\n    name: g2clib\n    version: 1.5.0\n\nsource:\n    fn: g2clib-1.5.0-patch.tar.gz\n    url: http://www.ncl.ucar.edu/Download/files/g2clib-1.5.0-patch.tar.gz\n    md5: f857f49a66918316996eb52399e04120\n\nbuild:\n    number: 3\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - libpng\n        - zlib\n        - jpeg 9b\n        - jasper\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libgrib2c.a  # [unix]\n        - conda inspect linkages -n _test g2clib  # [linux]\n\nabout:\n    home: http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/\n    license: BSD\n    summary: C decoder/encoder routines for GRIB edition 2.\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - jhamman\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/",
+   "license": "BSD",
+   "summary": "C decoder/encoder routines for GRIB edition 2."
+  },
+  "build": {
+   "number": 3,
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "jhamman"
+   ]
+  },
+  "package": {
+   "name": "g2clib",
+   "version": "1.5.0"
+  },
+  "requirements": {
+   "build": [
+    "libpng",
+    "zlib",
+    "jpeg 9b",
+    "jasper"
+   ]
+  },
+  "source": {
+   "fn": "g2clib-1.5.0-patch.tar.gz",
+   "md5": "f857f49a66918316996eb52399e04120",
+   "url": "http://www.ncl.ucar.edu/Download/files/g2clib-1.5.0-patch.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/lib/libgrib2c.a",
+    "conda inspect linkages -n _test g2clib"
+   ]
+  }
+ },
+ "version": "1.5.0"
+}
