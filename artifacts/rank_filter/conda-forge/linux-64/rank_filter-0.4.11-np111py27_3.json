@@ -1,0 +1,37 @@
+{
+ "about": {
+  "home": "https://github.com/nanshe-org/rank_filter",
+  "license": "BSD 3-Clause",
+  "summary": "A simple python module containing an in-place linear rank filter optimized in C++."
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/python2.7/rank_filter/rank_filter.hxx",
+  "include/python2.7/rank_filter/rank_filter_base.hxx",
+  "include/python2.7/rank_filter/rank_filter_vigra.hxx",
+  "lib/python2.7/site-packages/rank_filter-0.4.11-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/rank_filter-0.4.11-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/rank_filter-0.4.11-py2.7.egg-info/pbr.json",
+  "lib/python2.7/site-packages/rank_filter.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_3",
+  "build_number": 3,
+  "depends": [
+   "boost 1.61.*",
+   "numpy 1.11*",
+   "numpy >=1.7",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "rank_filter",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.4.11"
+ },
+ "name": "rank_filter",
+ "raw_recipe": "{% set name = \"rank_filter\" %}\n{% set version = \"0.4.11\" %}\n{% set checksum = \"246f5c73ebd03314d9b2cff3ede74330\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ checksum }}\n\nbuild:\n  skip: true  # [win]\n  number: 3\n  script:\n    # FIXME: This is a hack to make sure the environment is activated.\n    # The reason this is required is due to the conda-build issue\n    # mentioned below.\n    #\n    # https://github.com/conda/conda-build/issues/910\n    #\n    - source activate \"${CONDA_DEFAULT_ENV}\"  # [unix]\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - boost 1.61.*\n    - python\n    - setuptools >=18.0\n    - numpy x.x\n    - numpy >=1.7\n    - cython >=0.23\n\n  run:\n    - boost 1.61.*\n    - python\n    - numpy x.x\n    - numpy >=1.7\n\ntest:\n  imports:\n    - rank_filter\n\nabout:\n  home: https://github.com/nanshe-org/rank_filter\n  license: BSD 3-Clause\n  summary: 'A simple python module containing an in-place linear rank filter optimized in C++.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.4.11"
+}

@@ -1,0 +1,60 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Library/etc/conda/activate.d/conda-forge-build-setup_activate.bat"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "anaconda-client",
+   "conda-build",
+   "jinja2"
+  ],
+  "license": "BSD 3-clause",
+  "name": "conda-forge-build-setup",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.0"
+ },
+ "name": "conda-forge-build-setup",
+ "raw_recipe": "package:\n  name: conda-forge-build-setup\n  version: 1.0.0\n\nbuild:\n  number: 0\n  script:\n    - IF NOT EXIST %LIBRARY_PREFIX%\\etc\\conda\\activate.d MKDIR %LIBRARY_PREFIX%\\etc\\conda\\activate.d  # [win]\n    - COPY %RECIPE_DIR%/activate.bat %LIBRARY_PREFIX%\\etc\\conda\\activate.d\\conda-forge-build-setup_activate.bat  # [win]\n    - mkdir -p \"${PREFIX}/etc/conda/activate.d\"  # [unix]\n    - cp \"${RECIPE_DIR}/activate.sh\" \"${PREFIX}/etc/conda/activate.d/conda-forge-build-setup_activate.sh\"  # [unix]\n\nrequirements:\n  run:\n    - conda-build\n    - jinja2\n    - anaconda-client\n\ntest: {}\n\nabout:\n  home: https://github.com/conda-forge/conda-forge-build-setup-feedstock\n  summary: A package installed by conda-forge each time a build is run on CI. This package has side-effects to your conda config.\n  license: BSD 3-clause\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - ocefpaf\n    - pelson\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/conda-forge/conda-forge-build-setup-feedstock",
+   "license": "BSD 3-clause",
+   "summary": "A package installed by conda-forge each time a build is run on CI. This package has side-effects to your conda config."
+  },
+  "build": {
+   "number": 0,
+   "script": [
+    "IF NOT EXIST %LIBRARY_PREFIX%\\etc\\conda\\activate.d MKDIR %LIBRARY_PREFIX%\\etc\\conda\\activate.d",
+    "COPY %RECIPE_DIR%/activate.bat %LIBRARY_PREFIX%\\etc\\conda\\activate.d\\conda-forge-build-setup_activate.bat",
+    "mkdir -p \"${PREFIX}/etc/conda/activate.d\"",
+    "cp \"${RECIPE_DIR}/activate.sh\" \"${PREFIX}/etc/conda/activate.d/conda-forge-build-setup_activate.sh\""
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham",
+    "ocefpaf",
+    "pelson"
+   ]
+  },
+  "package": {
+   "name": "conda-forge-build-setup",
+   "version": "1.0.0"
+  },
+  "requirements": {
+   "run": [
+    "conda-build",
+    "jinja2",
+    "anaconda-client"
+   ]
+  },
+  "test": {}
+ },
+ "version": "1.0.0"
+}

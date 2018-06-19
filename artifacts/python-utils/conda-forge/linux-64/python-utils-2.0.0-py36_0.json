@@ -1,0 +1,151 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Python Utils is a collection of small Python functions and classes which make common patterns shorter and easier. It is by no means a complete collection but it has served me quite a bit in the past and I will keep extending it.\nOne of the libraries using Python Utils is Django Utils.\n",
+  "dev_url": "https://github.com/WoLpH/python-utils",
+  "doc_url": "http://python-utils.readthedocs.io/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/WoLpH/python-utils",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-0",
+   "conda-forge::certifi-2017.1.23-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.4-py35_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.1-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_2",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.12-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Python Utils is a collection of small Python functions and classes which make common patterns shorter and easier."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/python_utils/import_.py",
+  "lib/python3.6/site-packages/python_utils-2.0.0-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/python_utils/converters.py",
+  "lib/python3.6/site-packages/python_utils/compat.py",
+  "lib/python3.6/site-packages/python_utils/formatters.py",
+  "lib/python3.6/site-packages/python_utils/__about__.py",
+  "lib/python3.6/site-packages/python_utils/__init__.py",
+  "lib/python3.6/site-packages/python_utils-2.0.0-py3.6.egg-info/pbr.json",
+  "lib/python3.6/site-packages/python_utils/logger.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.6*",
+   "six"
+  ],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "name": "python-utils",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.0"
+ },
+ "name": "python-utils",
+ "raw_recipe": "{% set name = \"python-utils\" %}\n{% set version = \"2.0.0\" %}\n{% set sha256 = \"746777e47158641cf97da342dffdc5d1f9901823615d1fdab75ce68ce39194dd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - python_utils\n    - python_utils.converters\n    - python_utils.formatters\n\nabout:\n  home: https://github.com/WoLpH/python-utils\n  license: BSD-3-Clause\n  license_family: BSD\n  summary: 'Python Utils is a collection of small Python functions and classes which make common patterns shorter and easier.'\n  description: |\n    Python Utils is a collection of small Python functions and classes which make common patterns shorter and easier. It is by no means a complete collection but it has served me quite a bit in the past and I will keep extending it.\n    One of the libraries using Python Utils is Django Utils.\n  doc_url: http://python-utils.readthedocs.io/\n  dev_url: https://github.com/WoLpH/python-utils\n\nextra:\n  recipe-maintainers:\n    - maartenbreddels\n    - WoLpH\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Python Utils is a collection of small Python functions and classes which make common patterns shorter and easier. It is by no means a complete collection but it has served me quite a bit in the past and I will keep extending it.\nOne of the libraries using Python Utils is Django Utils.\n",
+   "dev_url": "https://github.com/WoLpH/python-utils",
+   "doc_url": "http://python-utils.readthedocs.io/",
+   "home": "https://github.com/WoLpH/python-utils",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "summary": "Python Utils is a collection of small Python functions and classes which make common patterns shorter and easier."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py36_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "maartenbreddels",
+    "WoLpH"
+   ]
+  },
+  "package": {
+   "name": "python-utils",
+   "version": "2.0.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "six"
+   ]
+  },
+  "source": {
+   "fn": "python-utils-2.0.0.tar.gz",
+   "sha256": "746777e47158641cf97da342dffdc5d1f9901823615d1fdab75ce68ce39194dd",
+   "url": "https://pypi.io/packages/source/p/python-utils/python-utils-2.0.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "python_utils",
+    "python_utils.converters",
+    "python_utils.formatters"
+   ]
+  }
+ },
+ "version": "2.0.0"
+}

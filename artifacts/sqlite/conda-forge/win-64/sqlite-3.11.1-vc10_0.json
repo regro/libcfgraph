@@ -1,0 +1,26 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/sqlite3.dll",
+  "Library/bin/sqlite3.exe",
+  "Library/include/sqlite3.h"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc10_0",
+  "build_number": 0,
+  "depends": [],
+  "features": "vc10",
+  "license": "Public-Domain (http://www.sqlite.org/copyright.html)",
+  "license_family": "Public-Domain",
+  "name": "sqlite",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "3.11.1"
+ },
+ "name": "sqlite",
+ "raw_recipe": "{% set version=\"3.11.1\" %}\n{% set version_split=version.split(\".\") %}\n{% set major=version_split[0] %}\n{% set minor=version_split[1]|int * 100 %}\n{% set bugfix=version_split[2]|int * 100 %}\n{% set version_coded=(major ~ (minor|string)[:3] ~ (bugfix|string)[:3]) %}\n\npackage:\n  name: sqlite\n  version: {{ version }}\n\nsource:\n  fn: sqlite-autoconf-{{ version_coded }}.tar.gz\n  url: https://www.sqlite.org/2016/sqlite-autoconf-{{ version_coded }}.tar.gz\n  sha1: c4b4dcd735a4daf5a2e2bb90f374484c8d4dad29\n\nbuild:\n  number: 0\n  features:\n    - vc9    # [win and py27]\n    - vc10   # [win and py34]\n    - vc14   # [win and py35]\n\nrequirements:\n  build:\n    # python is for lining up vc feature (runtime)\n    - python      # [win]\n\ntest:\n  requires:\n    - python  2.7*     # [win and py27]\n    - python  3.4*     # [win and py34]\n    - python  3.5*     # [win and py35]\n  commands:\n    - sqlite3 --version\n\nabout:\n  home: http://www.sqlite.org/\n  license: Public-Domain (http://www.sqlite.org/copyright.html)\n  license_family: Public-Domain\n  summary: implements a self-contained, zero-configuration, SQL database engine\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jjhelmus\n    - msarahan\n",
+ "rendered_recipe": {},
+ "version": "3.11.1"
+}

@@ -1,0 +1,43 @@
+{
+ "about": {
+  "home": "https://scikit-umfpack.github.io/scikit-umfpack",
+  "license": "GPL 2",
+  "summary": "The umfpack scikit provides a wrapper of the UMFPACK sparse direct solver to SciPy."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/scikit_umfpack-0.2.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/scikit_umfpack-0.2.1-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/scikits/__init__.py",
+  "lib/python3.4/site-packages/scikits/umfpack/__init__.py",
+  "lib/python3.4/site-packages/scikits/umfpack/__umfpack.cpython-34m.so",
+  "lib/python3.4/site-packages/scikits/umfpack/_umfpack.py",
+  "lib/python3.4/site-packages/scikits/umfpack/interface.py",
+  "lib/python3.4/site-packages/scikits/umfpack/setup.py",
+  "lib/python3.4/site-packages/scikits/umfpack/tests/test_interface.py",
+  "lib/python3.4/site-packages/scikits/umfpack/tests/test_umfpack.py",
+  "lib/python3.4/site-packages/scikits/umfpack/tests/try_umfpack.py",
+  "lib/python3.4/site-packages/scikits/umfpack/umfpack.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py34_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.11*",
+   "python 3.4*",
+   "scipy",
+   "setuptools",
+   "suitesparse"
+  ],
+  "license": "GPL 2",
+  "name": "scikit-umfpack",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2.1"
+ },
+ "name": "scikit-umfpack",
+ "raw_recipe": "{% set version = \"0.2.1\" %}\n\npackage:\n  name: scikit-umfpack\n  version: {{ version }}\n\nsource:\n  fn: scikit-umfpack--{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/s/scikit-umfpack/scikit-umfpack-{{ version }}.tar.gz\n  sha256: 9ebfb4ac4cd1ec545a9211160c65129a77b6e2fab02d8cfa30b10278f5773fd1\n  patches:\n    # fix osx linking bug using solution from commit 987af60 in master\n    - setup.patch\n    # fix for Python 3 compatiblility as fixed in master by commit 4bdf87a\n    - py3.patch\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - numpy x.x\n    - scipy\n    - suitesparse\n    - swig\n    - setuptools\n  run:\n    - python\n    - numpy x.x\n    - scipy\n    - suitesparse\n    - setuptools\n\ntest:\n  requires:\n    - nose\n  imports:\n    - scikits.umfpack\n\nabout:\n  home: https://scikit-umfpack.github.io/scikit-umfpack\n  license: GPL 2\n  summary: The umfpack scikit provides a wrapper of the UMFPACK sparse direct solver to SciPy.\n\nextra:\n    recipe-maintainers:\n      - grlee77\n",
+ "rendered_recipe": {},
+ "version": "0.2.1"
+}

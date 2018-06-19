@@ -1,0 +1,105 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/gsw-3.0.3-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/gsw/__init__.py",
+  "Lib/site-packages/gsw/gibbs/__init__.py",
+  "Lib/site-packages/gsw/gibbs/constants.py",
+  "Lib/site-packages/gsw/gibbs/conversions.py",
+  "Lib/site-packages/gsw/gibbs/density_enthalpy_48.py",
+  "Lib/site-packages/gsw/gibbs/density_enthalpy_48_ct.py",
+  "Lib/site-packages/gsw/gibbs/density_enthalpy_ct_exact.py",
+  "Lib/site-packages/gsw/gibbs/derivatives.py",
+  "Lib/site-packages/gsw/gibbs/earth.py",
+  "Lib/site-packages/gsw/gibbs/freezing.py",
+  "Lib/site-packages/gsw/gibbs/geostrophic.py",
+  "Lib/site-packages/gsw/gibbs/geostrophic_48.py",
+  "Lib/site-packages/gsw/gibbs/isobaric.py",
+  "Lib/site-packages/gsw/gibbs/library.py",
+  "Lib/site-packages/gsw/gibbs/neutral_nonlinear_48.py",
+  "Lib/site-packages/gsw/gibbs/practical_salinity.py",
+  "Lib/site-packages/gsw/gibbs/steric.py",
+  "Lib/site-packages/gsw/gibbs/thermodynamics_from_t.py",
+  "Lib/site-packages/gsw/gibbs/water_column_48.py",
+  "Lib/site-packages/gsw/test/__init__.py",
+  "Lib/site-packages/gsw/test/check_functions.py",
+  "Lib/site-packages/gsw/test/signatures.py",
+  "Lib/site-packages/gsw/test/test_check_values.py",
+  "Lib/site-packages/gsw/test/test_octave.py",
+  "Lib/site-packages/gsw/test/test_profiles.py",
+  "Lib/site-packages/gsw/test/test_tuples.py",
+  "Lib/site-packages/gsw/utilities/__init__.py",
+  "Lib/site-packages/gsw/utilities/data/gsw_cf.npz",
+  "Lib/site-packages/gsw/utilities/data/gsw_cv_v3_0.npz",
+  "Lib/site-packages/gsw/utilities/data/gsw_data_v3_0.npz",
+  "Lib/site-packages/gsw/utilities/data/gsw_demo_data_v3_0.npz",
+  "Lib/site-packages/gsw/utilities/list_npz.py",
+  "Lib/site-packages/gsw/utilities/mat2npz.py",
+  "Lib/site-packages/gsw/utilities/utilities.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "nose",
+   "numpy",
+   "python 3.4*",
+   "scipy"
+  ],
+  "license": "MIT License",
+  "name": "gsw",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "3.0.3"
+ },
+ "name": "gsw",
+ "raw_recipe": "package:\n    name: gsw\n    version: 3.0.3\n\nsource:\n    fn: gsw-3.0.3.tar.gz\n    url: https://pypi.python.org/packages/source/g/gsw/gsw-3.0.3.tar.gz\n    md5: fa110c94f4b4c9f5fab08256d088d7be\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - numpy\n        - scipy\n        - nose\n    run:\n        - python\n        - numpy\n        - scipy\n        - nose\n\ntest:\n    imports:\n        - gsw\n\nabout:\n    home: http://pypi.python.org/pypi/seawater/\n    license: MIT License\n    summary: Gibbs SeaWater Oceanographic Package of TEOS-10\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://pypi.python.org/pypi/seawater/",
+   "license": "MIT License",
+   "summary": "Gibbs SeaWater Oceanographic Package of TEOS-10"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "gsw",
+   "version": "3.0.3"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "numpy",
+    "scipy",
+    "nose"
+   ],
+   "run": [
+    "python",
+    "numpy",
+    "scipy",
+    "nose"
+   ]
+  },
+  "source": {
+   "fn": "gsw-3.0.3.tar.gz",
+   "md5": "fa110c94f4b4c9f5fab08256d088d7be",
+   "url": "https://pypi.python.org/packages/source/g/gsw/gsw-3.0.3.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "gsw"
+   ]
+  }
+ },
+ "version": "3.0.3"
+}

@@ -1,0 +1,27 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/docstring-coverage",
+  "lib/python2.7/site-packages/docstring_coverage-0.3.4-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/docstringcoverage/__init__.py",
+  "lib/python2.7/site-packages/docstringcoverage/cover.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "docstring-coverage",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.4"
+ },
+ "name": "docstring-coverage",
+ "raw_recipe": "{% set version = \"0.3.4\" %}\n\npackage:\n  name: docstring-coverage\n  version: {{ version }}\n\nsource:\n  fn: docstring-coverage-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/docstring-coverage/docstring-coverage-{{ version }}.tar.gz\n  md5: 460d006800d8045c00b1763583222452\n\nbuild:\n  number: 0\n  skip: true  # [py3k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - docstring-coverage = docstringcoverage.cover:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - docstringcoverage\n\n  commands:\n    - docstring-coverage --help\n\nabout:\n  home: https://bitbucket.org/DataGreed/docstring-coverage/\n  license: MIT\n  summary: A simple audit tool for examining python source files for missing docstrings.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.3.4"
+}
