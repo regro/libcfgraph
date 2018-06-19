@@ -1,0 +1,62 @@
+{
+ "about": {
+  "home": "http://ipython.org/",
+  "license": "BSD 3-clause",
+  "summary": "Configuration system for Python applications"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/traitlets-4.3.0.dist-info/DESCRIPTION.rst",
+  "lib/python3.5/site-packages/traitlets-4.3.0.dist-info/INSTALLER",
+  "lib/python3.5/site-packages/traitlets-4.3.0.dist-info/METADATA",
+  "lib/python3.5/site-packages/traitlets-4.3.0.dist-info/RECORD",
+  "lib/python3.5/site-packages/traitlets-4.3.0.dist-info/WHEEL",
+  "lib/python3.5/site-packages/traitlets-4.3.0.dist-info/metadata.json",
+  "lib/python3.5/site-packages/traitlets/__init__.py",
+  "lib/python3.5/site-packages/traitlets/_version.py",
+  "lib/python3.5/site-packages/traitlets/config/__init__.py",
+  "lib/python3.5/site-packages/traitlets/config/application.py",
+  "lib/python3.5/site-packages/traitlets/config/configurable.py",
+  "lib/python3.5/site-packages/traitlets/config/loader.py",
+  "lib/python3.5/site-packages/traitlets/config/manager.py",
+  "lib/python3.5/site-packages/traitlets/config/tests/__init__.py",
+  "lib/python3.5/site-packages/traitlets/config/tests/test_application.py",
+  "lib/python3.5/site-packages/traitlets/config/tests/test_configurable.py",
+  "lib/python3.5/site-packages/traitlets/config/tests/test_loader.py",
+  "lib/python3.5/site-packages/traitlets/log.py",
+  "lib/python3.5/site-packages/traitlets/tests/__init__.py",
+  "lib/python3.5/site-packages/traitlets/tests/_warnings.py",
+  "lib/python3.5/site-packages/traitlets/tests/test_traitlets.py",
+  "lib/python3.5/site-packages/traitlets/tests/test_traitlets_enum.py",
+  "lib/python3.5/site-packages/traitlets/tests/utils.py",
+  "lib/python3.5/site-packages/traitlets/traitlets.py",
+  "lib/python3.5/site-packages/traitlets/utils/__init__.py",
+  "lib/python3.5/site-packages/traitlets/utils/bunch.py",
+  "lib/python3.5/site-packages/traitlets/utils/getargspec.py",
+  "lib/python3.5/site-packages/traitlets/utils/importstring.py",
+  "lib/python3.5/site-packages/traitlets/utils/sentinel.py",
+  "lib/python3.5/site-packages/traitlets/utils/tests/__init__.py",
+  "lib/python3.5/site-packages/traitlets/utils/tests/test_bunch.py",
+  "lib/python3.5/site-packages/traitlets/utils/tests/test_importstring.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "decorator",
+   "ipython_genutils",
+   "python 3.5*",
+   "six"
+  ],
+  "license": "BSD 3-clause",
+  "name": "traitlets",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "4.3.0"
+ },
+ "name": "traitlets",
+ "raw_recipe": "{% set version = \"4.3.0\" %}\n{% set sha256 = \"8a33cb7b1ef47f2d6dc16e9cf971217d5a4882a3541c070e78a0e8e8edcb3f82\" %}\n\npackage:\n  name: traitlets\n  version: {{ version }}\n\nsource:\n  fn: traitlets-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/t/traitlets/traitlets-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - ipython_genutils\n    - six\n    - decorator\n    - enum34  # [py2k or py33]\n\ntest:\n  imports:\n    - traitlets\n    - traitlets.config\n\nabout:\n  home: http://ipython.org/\n  license: BSD 3-clause\n  summary: Configuration system for Python applications\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n    - minrk\n    - SylvainCorlay\n",
+ "rendered_recipe": {},
+ "version": "4.3.0"
+}

@@ -1,0 +1,35 @@
+{
+ "about": {
+  "home": "http://trac.mystic.cacr.caltech.edu/project/pathos/wiki.html",
+  "license": "BSD 3-Clause",
+  "summary": "parallel graph management and execution in heterogeneous computing"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/pox_launcher.py",
+  "lib/python3.5/site-packages/pox-0.2.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pox-0.2.2-py3.5.egg-info/zip-safe",
+  "lib/python3.5/site-packages/pox/__init__.py",
+  "lib/python3.5/site-packages/pox/_disk.py",
+  "lib/python3.5/site-packages/pox/info.py",
+  "lib/python3.5/site-packages/pox/shutils.py",
+  "lib/python3.5/site-packages/pox/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pox",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2.2"
+ },
+ "name": "pox",
+ "raw_recipe": "{% set version = \"0.2.2\" %}\n\npackage:\n  name: pox\n  version: {{ version }}\n\nsource:\n  fn: pox-0.2.2.tgz\n  url: https://files.pythonhosted.org/packages/6d/ae/40f02d47cdb88363ec7eb3d0851805053dbee95a2710532f7e4955babc3b/pox-0.2.2.tgz\n  md5: 4c50ed714b8661550639dbac9b3c18f4\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - pox\n\nabout:\n  home: http://trac.mystic.cacr.caltech.edu/project/pathos/wiki.html\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: parallel graph management and execution in heterogeneous computing\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
+ "rendered_recipe": {},
+ "version": "0.2.2"
+}

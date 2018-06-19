@@ -1,0 +1,39 @@
+{
+ "about": {
+  "home": "https://github.com/mpld3/mplexporter",
+  "license": "BSD 3-Clause",
+  "summary": "General Matplotlib Exporter."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/mplexporter-0.0.1-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/mplexporter/__init__.py",
+  "Lib/site-packages/mplexporter/_py3k_compat.py",
+  "Lib/site-packages/mplexporter/exporter.py",
+  "Lib/site-packages/mplexporter/renderers/__init__.py",
+  "Lib/site-packages/mplexporter/renderers/base.py",
+  "Lib/site-packages/mplexporter/renderers/fake_renderer.py",
+  "Lib/site-packages/mplexporter/renderers/vega_renderer.py",
+  "Lib/site-packages/mplexporter/renderers/vincent_renderer.py",
+  "Lib/site-packages/mplexporter/tools.py",
+  "Lib/site-packages/mplexporter/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "matplotlib",
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "mplexporter",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.0.1"
+ },
+ "name": "mplexporter",
+ "raw_recipe": "{% set version = \"0.0.1\" %}\n{% set commit = \"577609a60a9680b0114b4576cd0efaebdc59280d\" %}\n\npackage:\n  name: mplexporter\n  version: {{ version }}\n\nsource:\n  fn: {{ commit }}.tar.gz\n  url: https://github.com/mpld3/mplexporter/archive/{{ commit }}.tar.gz\n  sha256: a92c5b634e2c4f241022c7600c31984edc515508450940892823c7fe2197e9d0\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - matplotlib\n\ntest:\n  imports:\n    - mplexporter\n\nabout:\n  home: https://github.com/mpld3/mplexporter\n  license: BSD 3-Clause\n  summary: 'General Matplotlib Exporter.'\n\nextra:\n  recipe-maintainers:\n    - jakevdp\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.0.1"
+}

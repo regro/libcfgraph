@@ -1,0 +1,48 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/mplleaflet-0.0.5-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/mplleaflet/__init__.py",
+  "lib/python3.4/site-packages/mplleaflet/_display.py",
+  "lib/python3.4/site-packages/mplleaflet/leaflet_renderer.py",
+  "lib/python3.4/site-packages/mplleaflet/links.py",
+  "lib/python3.4/site-packages/mplleaflet/maptiles.py",
+  "lib/python3.4/site-packages/mplleaflet/mplexporter/__init__.py",
+  "lib/python3.4/site-packages/mplleaflet/mplexporter/_py3k_compat.py",
+  "lib/python3.4/site-packages/mplleaflet/mplexporter/exporter.py",
+  "lib/python3.4/site-packages/mplleaflet/mplexporter/renderers/__init__.py",
+  "lib/python3.4/site-packages/mplleaflet/mplexporter/renderers/base.py",
+  "lib/python3.4/site-packages/mplleaflet/mplexporter/renderers/fake_renderer.py",
+  "lib/python3.4/site-packages/mplleaflet/mplexporter/renderers/vega_renderer.py",
+  "lib/python3.4/site-packages/mplleaflet/mplexporter/renderers/vincent_renderer.py",
+  "lib/python3.4/site-packages/mplleaflet/mplexporter/tests/__init__.py",
+  "lib/python3.4/site-packages/mplleaflet/mplexporter/tests/test_basic.py",
+  "lib/python3.4/site-packages/mplleaflet/mplexporter/tests/test_utils.py",
+  "lib/python3.4/site-packages/mplleaflet/mplexporter/tools.py",
+  "lib/python3.4/site-packages/mplleaflet/mplexporter/utils.py",
+  "lib/python3.4/site-packages/mplleaflet/templates/__init__.py",
+  "lib/python3.4/site-packages/mplleaflet/templates/base.html",
+  "lib/python3.4/site-packages/mplleaflet/templates/ipynb.html",
+  "lib/python3.4/site-packages/mplleaflet/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "jinja2",
+   "mplexporter",
+   "python 3.4*"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "mplleaflet",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.0.5"
+ },
+ "name": "mplleaflet",
+ "raw_recipe": "{% set version = \"0.0.5\" %}\n\npackage:\n    name: mplleaflet\n    version: {{ version }}\n\nsource:\n    fn: mplleaflet-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/m/mplleaflet/mplleaflet-{{ version }}.tar.gz\n    md5: cf8ec819862e4486f477fb71101477f1\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - jinja2\n        - mplexporter\n\ntest:\n    imports:\n        - mplleaflet\n\nabout:\n    home: https://github.com/jwass/mplleaflet\n    license: BSD-3-Clause\n    summary: Convert Matplotlib plots into Leaflet web maps\n\nextra:\n    recipe-maintainers:\n        - jwass\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.0.5"
+}

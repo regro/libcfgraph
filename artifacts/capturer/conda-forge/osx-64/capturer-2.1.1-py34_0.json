@@ -1,0 +1,26 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/capturer-2.1.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/capturer/__init__.py",
+  "lib/python3.4/site-packages/capturer/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "capturer",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.1.1"
+ },
+ "name": "capturer",
+ "raw_recipe": "{% set version = \"2.1.1\" %}\n\npackage:\n    name: capturer\n    version: {{ version }}\n\nsource:\n    fn: capturer-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/c/capturer/capturer-{{ version }}.tar.gz\n    sha256: 6d892baca28c32ba912d96dfc5d40972090437d7d8d1738453969a0700a272e4\n\nbuild:\n    number: 0\n    skip: True  # [win]\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - capturer\n\nabout:\n    home: https://capturer.readthedocs.org\n    license: MIT\n    summary: 'Easily capture stdout/stderr of the current process and subprocesses.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "2.1.1"
+}
