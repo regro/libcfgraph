@@ -107,6 +107,7 @@
   "subdir": "linux-64",
   "version": "1.1.6"
  },
+ "metadata_version": 1,
  "name": "pandas-plink",
  "raw_recipe": "{% set name = \"pandas-plink\" %}\n{% set version = \"1.1.6\" %}\n{% set sha256 = \"f8c5ec35de98f472aea525a2295825011fad5ab63e5f85a4ea84767c37ec2a21\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 2\n  skip: true  # [win32 or (win64 and py<35)]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cffi >=1.7\n  run:\n    - python\n    - cffi >=1.7\n    - numpy >=1.10\n    - pandas >=0.17\n    - toolz >=0.8\n    - dask >=0.14\n\ntest:\n  requires:\n    - pytest >=3\n  imports:\n    - pandas_plink\n  commands:\n    - python -c \"import sys; import pandas_plink; sys.exit(pandas_plink.test())\"\n\nabout:\n  home: https://github.com/limix/pandas-plink\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Convert PLINK files to Pandas data frame'\n  doc_url: https://pandas-plink.readthedocs.io\n  dev_url: https://github.com/limix/pandas-plink\n\nextra:\n  recipe-maintainers:\n    - Horta\n",
  "rendered_recipe": {

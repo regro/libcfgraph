@@ -192,6 +192,7 @@
   "timestamp": 1525461312238,
   "version": "0.1.137"
  },
+ "metadata_version": 1,
  "name": "earthengine-api",
  "raw_recipe": "{% set name = \"earthengine-api\" %}\n{% set version = \"0.1.137\" %}\n{% set sha256 = \"6dd2e0e8de8214c5cf499c55f13154f6a5109ef5ea673260c80b22f9a2b51c96\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  entry_points:\n    - earthengine = ee.cli.eecli:main\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - google-api-python-client\n    - pyopenssl >=0.11\n\ntest:\n  imports:\n    - ee\n    - ee.cli\n  commands:\n    - earthengine --help\n\nabout:\n  home: https://earthengine.google.com/\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: 'Earth Engine Python API'\n  description: |\n    The Earth Engine Python API allows developers to interact with\n    Google Earth Engine, a web platform for global scale geospatial analysis.\n  doc_url: https://developers.google.com/earth-engine/\n  dev_url: https://github.com/google/earthengine-api/\n\nextra:\n  recipe-maintainers:\n    - tylere\n",
  "rendered_recipe": {

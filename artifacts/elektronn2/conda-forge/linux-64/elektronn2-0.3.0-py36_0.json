@@ -686,6 +686,7 @@
   "subdir": "linux-64",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "elektronn2",
  "raw_recipe": "{% set name = \"elektronn2\" %}\n{% set version = \"0.3.0\" %}\n{% set sha256 = \"8179eff1cdd00454aa02db04f8c0a7971f65a616618257e8354bea5ad542a481\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.org/packages/source/e/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [not linux64]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - theano <0.10\n    - numpy\n    - scipy\n    - matplotlib\n    - scikit-learn\n    - scikit-image\n    - h5py\n    - future\n    - tqdm\n    - numba\n    - colorlog\n    - pydotplus\n    - seaborn\n    - prompt_toolkit\n    - jedi\n    - psutil\n    - ipython\n\ntest:\n  imports:\n    - elektronn2\n    - elektronn2.data\n    - elektronn2.neuromancer\n    - elektronn2.training\n    - elektronn2.utils\n  commands:\n    - elektronn2-train --help\n\nabout:\n  home: http://elektronn2.readthedocs.io/en/latest/elektronn2.html\n  license: GPLv3\n  license_file: LICENSE.txt\n  summary: 'A highly configurable toolkit for training 3d/2d CNNs and general Neural Networks'\n  doc_url: http://elektronn2.readthedocs.io/en/latest/\n  dev_url: https://github.com/ELEKTRONN/ELEKTRONN2\n\nextra:\n  recipe-maintainers:\n    - mdraw\n",
  "rendered_recipe": {

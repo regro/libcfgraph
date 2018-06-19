@@ -765,6 +765,7 @@
   "subdir": "linux-64",
   "version": "0.9.1"
  },
+ "metadata_version": 1,
  "name": "pytest-flake8",
  "raw_recipe": "{% set name = \"pytest-flake8\" %}\n{% set version = \"0.9.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e716072d07a557defdd5c4141984569731e292961370a5663c1697283aa16200\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - configparser  # [py27]\n    - enum34  # [py27]\n    - flake8 >=3.5\n    - pytest >=3.2\n\ntest:\n  imports:\n    - pytest_flake8\n  commands:\n    - pytest --flake8 --help\n\nabout:\n  home: https://github.com/tholo/pytest-flake8\n  license: BSD 2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'pytest plugin to check FLAKE8 requirements'\n\nextra:\n  recipe-maintainers:\n    - kynan\n    - dopplershift\n",
  "rendered_recipe": {

@@ -741,6 +741,7 @@
   "subdir": "linux-64",
   "version": "1.0.0beta9"
  },
+ "metadata_version": 1,
  "name": "emperor",
  "raw_recipe": "{% set version = \"1.0.0beta9\" %}\n\npackage:\n  name: emperor\n  version: {{ version }}\n\nsource:\n  fn: emperor-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/e/emperor/emperor-{{ version }}.tar.gz\n  sha256: f9c2792033a1468a8965cc9a9700775bfdc92db45766341612ee2630794b536a\n\nbuild:\n  number: 2\n  skip: true  # [win]\n  script: python setup.py install --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - scipy >=0.17.0\n    - future\n    - jinja2\n    - scikit-bio >=0.4.1,<0.5.0  # [py2k]\n    - scikit-bio >=0.4.1  # [py3k]\n    - numpy >=1.7\n    - pandas\n    - click\n\n  run:\n    - python\n    - scipy >=0.17.0\n    - future\n    - jinja2\n    - scikit-bio >=0.4.1,<0.5.0  # [py2k]\n    - scikit-bio >=0.4.1  # [py3k]\n    - numpy >=1.7\n    - pandas\n    - click\n\ntest:\n  imports:\n    - emperor\n    - emperor.qiime_backports\n\nabout:\n  home: http://emperor.microbio.me\n  license: BSD 3-Clause\n  summary: 'Emperor a tool for the analysis and visualization of large microbial ecology datasets'\n\nextra:\n    recipe-maintainers:\n        - ElDeveloper\n",
  "rendered_recipe": {

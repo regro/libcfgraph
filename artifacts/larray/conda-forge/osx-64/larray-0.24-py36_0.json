@@ -530,6 +530,7 @@
   "subdir": "osx-64",
   "version": "0.24"
  },
+ "metadata_version": 1,
  "name": "larray",
  "raw_recipe": "{% set name = \"larray\" %}\n{% set version = \"0.24\" %}\n{% set sha256 = \"ba4064fe01179918c9ae90c2491b5a2c3439d3157acc6e9bbd9437d59d4b1133\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/liam2/larray/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n\n  run:\n    - python\n    - numpy >=1.10\n    - pandas\n    - pytest-runner\n\ntest:\n  imports:\n    - larray\n\nabout:\n  home: http://github.com/liam2/larray\n  license: GPL-3.0\n  license_family: GPL\n  license_file: COPYING\n  summary: \"Labeled N-dimensional array.\"\n\nextra:\n  recipe-maintainers:\n    - alixdamman\n    - gdementen\n",
  "rendered_recipe": {

@@ -150,6 +150,7 @@
   "subdir": "win-64",
   "version": "0.9.34"
  },
+ "metadata_version": 1,
  "name": "easydev",
  "raw_recipe": "{% set version = \"0.9.34\" %}\n{% set name = \"easydev\" %}\n{% set sha256 = \"1106bc3d3b497d0eaddaa82c81de9124bda1ff82a9afefe2da0996abe86a52c6\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - easydev_buildPackage=easydev.package:buildPackage\n    - multigit=easydev.multigit:main_func\n    - browse=easydev.browser:main\n    - ibrowse=easydev.browser:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - colorama\n    - pexpect\n\ntest:\n  imports:\n    - easydev\n    - easydev.progressbar\n\nabout:\n  home: 'http://packages.python.org/easydev/'\n  license: \"BSD 3-Clause\"\n  license_family: BSD\n  license_file: COPYING\n  summary: 'Common utilities to ease the development of Python packages'\n  doc_url: http://easydev-python.readthedocs.io/en/latest/\n  dev_url: https://github.com/cokelaer/easydev\n\nextra:\n  recipe-maintainers:\n   - cokelaer\n",
  "rendered_recipe": {

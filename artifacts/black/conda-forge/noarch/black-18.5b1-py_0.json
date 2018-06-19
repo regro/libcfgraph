@@ -143,6 +143,7 @@
   "timestamp": 1528084779932,
   "version": "18.5b1"
  },
+ "metadata_version": 1,
  "name": "black",
  "raw_recipe": "{% set name = \"black\" %}\n{% set version = \"18.5b1\" %}\n{% set sha256 = \"c956857a831e508e75f0dc754b86982bad98d95c96aae39c20749209b3958ad7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - black = black:main\n\nrequirements:\n  build:\n    - python >=3.6\n    - pip\n    - setuptools\n  run:\n    - python >=3.6\n    - click\n    - attrs >=17.4.0\n    - appdirs\n\ntest:\n  commands:\n    - black --help\n\nabout:\n  home: https://github.com/ambv/black\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'The Uncompromising Code Formatter'\n\n  description: |\n    Black is the uncompromising Python code formatter. By using it, you agree\n    to cease control over minutiae of hand-formatting. In return, Black gives\n    you speed, determinism, and freedom from pycodestyle nagging about\n    formatting. You will save time and mental energy for more important matters.\n  doc_url: https://github.com/ambv/black\n  dev_url: https://github.com/ambv/black\n\nextra:\n  recipe-maintainers:\n    - carlodri\n    - ambv\n    - mariusvniekerk\n    - xhochy\n",
  "rendered_recipe": {

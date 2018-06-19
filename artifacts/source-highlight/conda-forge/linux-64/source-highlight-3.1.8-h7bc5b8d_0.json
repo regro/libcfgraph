@@ -546,6 +546,7 @@
   "timestamp": 1525215725945,
   "version": "3.1.8"
  },
+ "metadata_version": 1,
  "name": "source-highlight",
  "raw_recipe": "{% set name = \"source-highlight\" %}\n{% set version = \"3.1.8\" %}\n{% set sha256 = \"01336a7ea1d1ccc374201f7b81ffa94d0aecb33afc7d6903ebf9fbf33a55ada3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://ftp.gnu.org/gnu/src-highlite/source-highlight-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n    - automake\n    - autoconf\n  host:\n    - boost-cpp\n    - libtool\n    - texinfo\n  run:\n    - {{ pin_compatible('boost-cpp', max_pin='x.x.x') }}\n\ntest:\n  commands:\n    - source-highlight --help\n    - conda inspect linkages -p $PREFIX source-highlight  # [not win]\n    - conda inspect objects -p $PREFIX source-highlight  # [osx]\n\nabout:\n  home: https://www.gnu.org/software/src-highlite/\n  license: GPL-3.0\n  license_family: GPL\n  license_file: COPYING\n  summary: 'This program, given a source file, produces a document with syntax highlighting.'\n  doc_url: https://www.gnu.org/software/src-highlite/source-highlight.html\n  dev_url: http://git.savannah.gnu.org/cgit/src-highlite.git\n\nextra:\n  recipe-maintainers:\n    - carlodri\n",
  "rendered_recipe": {

@@ -779,6 +779,7 @@
   "subdir": "linux-64",
   "version": "1.2.0"
  },
+ "metadata_version": 1,
  "name": "laz-perf",
  "raw_recipe": "{% set name = \"laz-perf\" %}\n{% set version = \"1.2.0\" %}\n{% set sha256 = \"eb36d90d470db1f16eb9e3c898d6be98c7f16507dfecd894426e6e2a5fb25bee\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/hobu/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: True  # [win and py!=36]\n  features:\n    - vc14  # [win]\n  \nrequirements:\n  build:\n    - cmake\n    - toolchain\n    - python  # [win]\n    - vc 14  # [win]\n  run:\n    - vc 14  # [win]\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/laz-perf  # [not win]\n    - if not exist %LIBRARY_INC%\\\\laz-perf exit 1  # [win]\n\nabout:\n  home: https://github.com/hobu/laz-perf\n  license: LGPL\n  summary: 'Alternative LAZ implementation for C++ and JavaScript'\n  description: |\n    Alternative LAZ implementation for C++ and JavaScript..\n  doc_url: https://github.com/hobu/laz-perf\n  dev_url: https://github.com/hobu/laz-perf\n\nextra:\n  recipe-maintainers:\n    - chambbj\n",
  "rendered_recipe": {

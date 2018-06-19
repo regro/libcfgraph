@@ -699,6 +699,7 @@
   "subdir": "linux-64",
   "version": "3.3.2"
  },
+ "metadata_version": 1,
  "name": "supervisor",
  "raw_recipe": "{% set name = \"supervisor\" %}\n{% set version = \"3.3.2\" %}\n{% set sha256 = \"bbb870f5b59c5c4fd79f711553e343158b2c64688997a23a1bcb2ce643f57771\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win or py3k]\n\nrequirements:\n  build:\n    - gettext\n    - python\n    - setuptools\n\n  run:\n    - python\n    - meld3 >=1\n\ntest:\n  requires:\n    - pytest >=2.5.2\n    - mock >=0.5.0\n  source_files:\n    - supervisor/tests/\n  commands:\n    - py.test supervisor/tests/\n    - supervisord\n    - supervisorctl status\n    - supervisorctl shutdown\n\nabout:\n  home: https://github.com/Supervisor/supervisor\n  license: BSD 3-clause\n  summary: Supervisor process control system for UNIX\n\nextra:\n  recipe-maintainers:\n    - kalefranz\n    - sodre\n",
  "rendered_recipe": {

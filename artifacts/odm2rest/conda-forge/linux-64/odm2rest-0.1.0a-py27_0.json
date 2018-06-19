@@ -795,6 +795,7 @@
   "subdir": "linux-64",
   "version": "0.1.0a"
  },
+ "metadata_version": 1,
  "name": "odm2rest",
  "raw_recipe": "{% set version = \"0.1.0a\" %}\n\npackage:\n  name: odm2rest\n  version: {{ version }}\n\nsource:\n  # not using the jinja variable for the version b/c the release is not pep440\n  # see https://www.python.org/dev/peps/pep-0440/#id25\n  url: https://github.com/ODM2/ODM2RESTfulWebServices/archive/v0.1.0-alpha.tar.gz\n  sha256: 98d70e107d08cc306148f6b759ea95606d2d20491ec1cffe9749d0985b6fd9ce\n\nbuild:\n  number: 0\n  skip: True  # [py3k]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - django 1.11.*\n    - jsonschema\n    - odm2api 0.7.*\n    - pandas\n    - python\n    - sqlalchemy\n    - djangorestframework 3.6.4\n    - djangorestframework-csv\n    - djangorestframework-xml\n    - djangorestframework-yaml\n\ntest:\n  imports:\n    - odm2rest\n\nabout:\n  home: https://github.com/ODM2/ODM2RESTfulWebServices/\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: \"A  Python RESTful web service inteface for accessing data in an ODM2 database via Django rest swagger APIs.\"\n\nextra:\n  recipe-maintainers:\n    - emiliom\n    - lsetiawan\n    - ocefpaf\n",
  "rendered_recipe": {

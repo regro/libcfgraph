@@ -730,6 +730,7 @@
   "subdir": "linux-64",
   "version": "0.28.1"
  },
+ "metadata_version": 1,
  "name": "octave_kernel",
  "raw_recipe": "{% set version = \"0.28.1\" %}\n\npackage:\n  name: octave_kernel\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/o/octave_kernel/octave_kernel-{{ version }}.tar.gz\n  sha256: 827def2456c3234fc61b0ae1343fd4c56718900fbb1d76cc476beb33f255931c\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - metakernel >=0.20.7\n    - jupyter_client >=4.3.0\n    - ipykernel\n\n  run:\n    - python\n    - metakernel >=0.20.7\n    - jupyter_client >=4.3.0\n    - ipykernel\n\ntest:\n  imports:\n    - octave_kernel\n\nabout:\n  home: https://github.com/Calysto/octave_kernel\n  license: BSD 3-clause\n  summary: 'A Jupyter kernel for Octave.'\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - blink1073\n    - ocefpaf\n",
  "rendered_recipe": {

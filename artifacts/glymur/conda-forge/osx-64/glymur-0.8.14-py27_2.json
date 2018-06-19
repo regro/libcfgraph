@@ -682,6 +682,7 @@
   "subdir": "osx-64",
   "version": "0.8.14"
  },
+ "metadata_version": 1,
  "name": "glymur",
  "raw_recipe": "{% set version = \"0.8.14\" %}\npackage:\n  name: glymur\n  version: {{ version }}\n\nsource:\n  fn: Glymur-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/G/Glymur/Glymur-{{ version }}.tar.gz\n  sha256: a395c619fb9aa095f113967dd79521159a7f68ecad7728e6a3967ae039be0795\n\nbuild:\n  number: 2\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - jp2dump=glymur.command_line:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy\n    - lxml\n    - mock\n    - contextlib2\n\n  run:\n    - python\n    - setuptools\n    - numpy >=1.7.0\n    - lxml >=2.3.2\n    - contextlib2 >=0.4\n    - openjpeg >=2.1.1\n\ntest:\n  # Python imports\n  imports:\n    - glymur\n    - glymur.data\n    - glymur.lib\n\n  commands:\n    - python -c \"import glymur; j = glymur.Jp2k(glymur.data.nemo()); print(j)\"\n    - jp2dump --help\n\nabout:\n  home: https://github.com/quintusdias/glymur\n  license: MIT\n  summary: 'Tools for accessing JPEG2000 files'\n\nextra:\n  recipe-maintainers:\n    - cadair\n    - ehsteve\n    - quintusdias\n",
  "rendered_recipe": {

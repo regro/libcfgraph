@@ -177,6 +177,7 @@
   "subdir": "linux-64",
   "version": "6.0rc2"
  },
+ "metadata_version": 1,
  "name": "cdat-lite",
  "raw_recipe": "{% set version = \"6.0rc2\" %}\n\npackage:\n    name: cdat-lite\n    version: {{ version }}\n\nsource:\n    fn: cdat_lite-{{ version }}.tar.gz\n    url: http://ndg.nerc.ac.uk/dist/cdat_lite-{{ version }}.tar.gz\n    sha256: 6cbfdf9b47fdbc189ca7d2819dafb6cf958116e0f6077b325c375a0ddfab2a95\n\nbuild:\n    number: 2\n    skip: True  # [win or py3k]\n    script:\n        - export NETCDF_HOME=$PREFIX\n        - export HDF5_HOME=$PREFIX\n        - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - numpy\n        - libnetcdf 4.4.*\n    run:\n        - python\n        - numpy\n        - libnetcdf 4.4.*\n\ntest:\n    commands:\n        - cddump -h\n        - cdscan -h\n    imports:\n        - cdat_lite\n        - cdtime\n        - cdms2\n\nabout:\n    home: http://proj.badc.rl.ac.uk/cedaservices/wiki/CdatLite\n    summary: A Python package for managing and analysing climate science data\n    license: http://www-pcmdi.llnl.gov/software-portal/cdat/docs/cdat-license\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
  "rendered_recipe": {},

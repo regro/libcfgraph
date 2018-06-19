@@ -112,6 +112,7 @@
   "subdir": "osx-64",
   "version": "17.0.0"
  },
+ "metadata_version": 1,
  "name": "boltons",
  "raw_recipe": "{% set name = \"boltons\" %}\n{% set version = \"17.0.0\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"02e8407d23d9102b7a19caa9852ed8d6f279cd5adfc8a62c31be67b2581ccdfc\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: '{{ version }}.tar.gz'\n  url: https://github.com/mahmoud/boltons/archive/{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  source_files:\n    - boltons\n    - tests\n  requires:\n    - pytest\n  commands:\n    - 'py.test --doctest-modules boltons tests'\n\nabout:\n  home: https://github.com/mahmoud/boltons\n  license: BSD 3-Clause\n  summary: >\n    boltons should be builtins. Boltons is a set of over 160 BSD-licensed,\n    pure-Python utilities in the same spirit as--and yet conspicuously\n    missing from--the standard library.\n\nextra:\n  recipe-maintainers:\n    - kalefranz\n    - nicoddemus\n",
  "rendered_recipe": {

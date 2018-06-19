@@ -3097,6 +3097,7 @@
   "subdir": "osx-64",
   "version": "4.9.1"
  },
+ "metadata_version": 1,
  "name": "cgal",
  "raw_recipe": "{% set version = \"4.9.1\" %}\n\npackage:\n  name: cgal\n  version: {{ version }}\n\nsource:\n  fn: CGAL-{{ version }}.zip\n  url: https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-{{ version }}/CGAL-{{ version }}.zip\n  sha256: e66c5073513e136ed4d3ee7525cd2cd67cb04f9df9e9ae4fe70d4bc3e800e884\n\nbuild:\n  number: 0\n  features:\n    - vc14  # [win and py>=35]\n  # mpfr only supports vc14\n  skip: true  # [win and py<35]\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - cmake\n    - boost-cpp 1.63.*\n    - mpfr 3.*\n    - eigen\n    - swig\n  run:\n    - python\n    - boost-cpp 1.63.*\n    - mpfr 3.*\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/CGAL/AABB_tree.h  # [unix]\n    - test -f ${PREFIX}/lib/libCGAL.so  # [linux]\n    - test -f ${PREFIX}/lib/libCGAL.dylib  # [osx]\n    - if not exist %LIBRARY_INC%\\CGAL\\AABB_tree.h exit 1  # [win]\n  imports:\n    - CGAL\n\nabout:\n  home: http://www.cgal.org/\n  license: GPL3/LGPL3\n  summary: Computational Geometry Algorithms Library\n\nextra:\n  recipe-maintainers:\n    - xantares\n",
  "rendered_recipe": {

@@ -669,6 +669,7 @@
   "subdir": "osx-64",
   "version": "2018.02.15"
  },
+ "metadata_version": 1,
  "name": "halide-python",
  "raw_recipe": "{% set name = \"halide-python\" %}\n{% set version = \"2018.02.15\" %}\n{% set sha256 = \"0c26375ad8016f0bf96d67b1283020900197329b6d73e5f9fa27c082a38a2742\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/halide/Halide/archive/release_{{ version.replace('.', '_') }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - ldflags.patch\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - pybind11\n    - halide {{ version }}\n    - zlib 1.2.*\n  run:\n    - halide {{ version }}\n    - zlib 1.2.*\n    - python\n    - numpy\n    - pillow\n    - scipy\n\n\ntest:\n  imports:\n    - halide\n\nabout:\n  home: http://halide-lang.org\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'Python bindings for Halide, a language for image processing and computational photography'\n\n  description: |\n    Halide is a programming language designed to make it easier to write\n    high-performance data parallel processing code on modern machines. Its current front end is embedded in\n    C++. Compiler targets include x86/SSE, ARM v7/NEON, CUDA, Hexagon DSP, and OpenCL.\n  doc_url: http://halide-lang.org/docs/\n  dev_url: https://github.com/halide/Halide\n\nextra:\n  recipe-maintainers:\n    - jrk\n    - minrk\n    - steven-johnson\n",
  "rendered_recipe": {

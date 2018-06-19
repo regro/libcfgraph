@@ -148,6 +148,7 @@
   "subdir": "win-64",
   "version": "3.8.2"
  },
+ "metadata_version": 1,
  "name": "cherrypy",
  "raw_recipe": "{% set version = \"3.8.2\" %}\npackage:\n  name: cherrypy\n  version: {{ version }}\n\nsource:\n  fn: CherryPy-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/C/CherryPy/CherryPy-{{ version }}.tar.gz\n  sha256: 423f0d459613604819e99ac4a55217d6bd0aaa9c970b92ba13a13aa17f21c65a\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six\n\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - cherrypy\n    - cherrypy.lib\n    - cherrypy.process\n    - cherrypy.scaffold\n    - cherrypy.test\n    - cherrypy.tutorial\n    - cherrypy.wsgiserver\n\nabout:\n  home: http://www.cherrypy.org\n  license: BSD 3-Clause\n  summary: 'Object-Oriented HTTP framework'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

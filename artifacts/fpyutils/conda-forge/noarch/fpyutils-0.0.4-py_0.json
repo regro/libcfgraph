@@ -126,6 +126,7 @@
   "timestamp": 1527538263950,
   "version": "0.0.4"
  },
+ "metadata_version": 1,
  "name": "fpyutils",
  "raw_recipe": "{% set version = \"0.0.4\" %}\n\npackage:\n  name: fpyutils\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/f/fpyutils/fpyutils-{{ version }}.tar.gz\n  sha256: f431520c31eef748824e809072d211022e4c66933a9e6ee7d040e2edae9ad3e5\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n  run:\n    - python >=3\n\ntest:\n  imports:\n    - fpyutils\n\nabout:\n  home: https://github.com/frnmst/fpyutils\n  license: GPL-3.0\n  license_family: GPL3\n  license_file: LICENSE.txt\n  summary: 'A collection of useful non-standard Python functions which aim to be simple to use, highly readable but not efficient'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

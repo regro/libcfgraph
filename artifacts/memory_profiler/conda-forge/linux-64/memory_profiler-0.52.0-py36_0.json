@@ -765,6 +765,7 @@
   "subdir": "linux-64",
   "version": "0.52.0"
  },
+ "metadata_version": 1,
  "name": "memory_profiler",
  "raw_recipe": "{% set version = \"0.52.0\" %}\n\npackage:\n  name: memory_profiler\n  version: {{ version }}\n\nsource:\n  fn: memory_profiler-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/m/memory_profiler/memory_profiler-{{ version }}.tar.gz\n  sha256: e38627e66ca787f56ad2898699e07cb7ae2049a7dc075d535367cd882c417b9a\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - psutil\n\ntest:\n  imports:\n    - memory_profiler\n  commands:\n    - mprof list\n    - python -m memory_profiler --help\n\nabout:\n  home: http://pypi.python.org/pypi/memory_profiler\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: COPYING\n  summary: A module for monitoring memory usage of a python program\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - carlodri\n",
  "rendered_recipe": {

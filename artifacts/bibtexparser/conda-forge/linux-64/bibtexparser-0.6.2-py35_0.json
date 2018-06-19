@@ -93,6 +93,7 @@
   "subdir": "linux-64",
   "version": "0.6.2"
  },
+ "metadata_version": 1,
  "name": "bibtexparser",
  "raw_recipe": "{% set name = \"bibtexparser\" %}\n{% set version = \"0.6.2\" %}\n{% set sha256 = \"5888219ac5db1c63ae0ad4db52ec7ad87fe7a32bd60e62ee87bceedb8ebf73b8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.org/packages/source/b/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script:\n    - python setup.py install --single-version-externally-managed --record files.txt\n\nrequirements:\n  build:\n    - pyparsing\n    - python\n    - setuptools\n  run:\n    - pyparsing\n    - python\n\ntest:\n  imports:\n    bibtexparser\n\nabout:\n  home: https://bibtexparser.readthedocs.org/\n  license: LGPLv3 or BSD\n  # license_file: COPYING -- file not included in the current distribution\n  summary: 'A module for parsing BibTeX files.'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
  "rendered_recipe": {

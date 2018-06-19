@@ -693,6 +693,7 @@
   "subdir": "osx-64",
   "version": "0.5.0"
  },
+ "metadata_version": 1,
  "name": "r-bold",
  "raw_recipe": "{% set version = '0.5.0' %}\n\npackage:\n  name: r-bold\n  version: {{ version }}\n\nsource:\n  fn: bold_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/bold_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/bold/bold_{{ version }}.tar.gz\n  sha256: f40963b847667cf8d69ba7ba3bd479bc117e1bc4df8bd1482a975dadff58b53d\n\nbuild:\n  number: 0\n  script: R CMD INSTALL --build .\n  skip: True  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-crul >=0.3.8\n    - r-data.table\n    - r-jsonlite\n    - r-plyr\n    - r-reshape\n    - r-stringr\n    - r-tibble\n    - r-xml2\n  run:\n    - r-base\n    - r-crul >=0.3.8\n    - r-data.table\n    - r-jsonlite\n    - r-plyr\n    - r-reshape\n    - r-stringr\n    - r-tibble\n    - r-xml2\n\ntest:\n  commands:\n    - $R -e \"library('bold')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('bold')\\\"\"  # [win]\n\nabout:\n  home: https://cran.r-project.org/web/packages/bold\n  license: MIT\n  license_file: LICENSE\n  summary: A programmatic interface to the Web Service methods provided by Bold Systems (<http\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

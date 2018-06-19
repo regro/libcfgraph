@@ -160,6 +160,7 @@
   "timestamp": 1528994064439,
   "version": "1.2.0"
  },
+ "metadata_version": 1,
  "name": "cvxopt",
  "raw_recipe": "{% set version = \"1.2.0\" %}\n\n{% set variant = \"openblas\" %}\n\n\npackage:\n  name: cvxopt\n  version: {{ version }}\n\nsource:\n  fn: cvxopt-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/cvxopt/cvxopt-{{ version }}.tar.gz\n  sha256: 3296c9d49b7dcb894b20db5d7d1c1a443912b4d82358e03f836575e8398e0d60\n  patches: cvxopt_win_patch.diff   # [win]\n\nbuild:\n  skip: true  # [win and py<35]\n  number: 202\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - blas 1.1 {{ variant }}\n    - openblas\n    - gsl\n    - fftw\n    - dsdp\n    - glpk\n    - suitesparse 4.5.6|4.5.6.*   # [not win]\n    - suitesparse 5.1.*   # [win]\n\n  run:\n    - python\n    - blas 1.1 {{ variant }}\n    - openblas\n    - gsl\n    - fftw\n    - dsdp\n    - glpk\n    - suitesparse 4.5.6|4.5.6.*   # [not win]\n    - suitesparse 5.1.*   # [win]\n\ntest:\n  imports:\n    - cvxopt\n  source_files:\n    - tests/*\n    - examples/*\n  requires:\n    - pytest\n\nabout:\n  home: http://cvxopt.org\n  license: GPL 3\n  license_file: LICENSE\n  summary: Convex optimization package\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jjhelmus\n    - martinandersen\n",
  "rendered_recipe": {

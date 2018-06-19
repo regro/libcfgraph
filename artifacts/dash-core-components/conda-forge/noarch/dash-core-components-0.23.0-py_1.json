@@ -136,6 +136,7 @@
   "timestamp": 1527394857010,
   "version": "0.23.0"
  },
+ "metadata_version": 1,
  "name": "dash-core-components",
  "raw_recipe": "{% set name = \"dash-core-components\" %}\n{% set filename = \"dash_core_components\" %}\n{% set version = \"0.23.0\" %}\n{% set sha256 = \"25df4c6ec08215610ff95544d82bdb4420fbc3e26d0a16f03646314b3c18005a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ filename }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ filename }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python -m pip install --no-deps --ignore-installed .\n  noarch: python\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - dash  # not listed in the setup.py\n\ntest:\n  imports:\n    - dash_core_components\n    - dash_core_components.version\n\nabout:\n  home: https://plot.ly/dash\n  dev_url: https://github.com/plotly/dash-core-components\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'Dash UI core component suite'\n\nextra:\n  recipe-maintainers:\n    - moorepants\n",
  "rendered_recipe": {

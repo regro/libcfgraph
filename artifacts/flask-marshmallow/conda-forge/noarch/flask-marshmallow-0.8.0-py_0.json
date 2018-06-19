@@ -754,6 +754,7 @@
   "subdir": "noarch",
   "version": "0.8.0"
  },
+ "metadata_version": 1,
  "name": "flask-marshmallow",
  "raw_recipe": "{% set name = \"flask-marshmallow\" %}\n{% set version = \"0.8.0\" %}\n{% set sha256 = \"d1457a8ee4cda662b121baacb22267774f3f7834e4adafae606b259bfbeb46b9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - flask\n    - marshmallow >=2.0.0\n    - six >=1.9.0\n\ntest:\n  imports:\n    - flask_marshmallow\n\nabout:\n  home: https://github.com/marshmallow-code/flask-marshmallow\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Flask + marshmallow for beautiful APIs'\n\n  description: |\n    Flask-Marshmallow is a thin integration layer for Flask (a Python web\n    framework) and marshmallow (an object serialization/deserialization\n    library) that adds additional features to marshmallow, including URL and\n    Hyperlinks fields for HATEOAS-ready APIs. It also (optionally) integrates\n    with Flask-SQLAlchemy.\n  doc_url: http://flask-marshmallow.readthedocs.io/\n  dev_url: https://github.com/marshmallow-code/flask-marshmallow\n\nextra:\n  recipe-maintainers:\n    - frol\n    - igortg\n",
  "rendered_recipe": {

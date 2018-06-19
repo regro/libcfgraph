@@ -650,6 +650,7 @@
   "subdir": "linux-64",
   "version": "20140424"
  },
+ "metadata_version": 1,
  "name": "labjackpython",
  "raw_recipe": "{% set name = \"LabJackPython\" %}\n{% set org = \"labjack\" %}\n{% set upstreamversion = \"4-24-2014\" %}\n{% set version = \"20140424\" %}\n{% set sha256 = \"9cf7a6fca9f1308b60a4442dd1410af216fb1d38e49aa5c1ca1e670958c4bcf5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n    fn: {{ name|lower }}-{{version}}-{{ sha256 }}.zip\n    url: https://github.com/{{ org }}/{{ name }}/archive/{{ upstreamversion }}.zip\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n    skip: True  # [py3k]\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\ntest:\n  imports:\n    - u3\n    - u6\n    - ue9\n\nabout:\n  home: http://labjack.com/support/labjackpython\n  summary: \"Python module for communicating with the LabJack U3/U6/UE9/U12.\"\n  license: MIT X-11\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - kastman\n",
  "rendered_recipe": {

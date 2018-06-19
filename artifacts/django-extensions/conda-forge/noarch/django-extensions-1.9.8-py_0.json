@@ -879,6 +879,7 @@
   "subdir": "noarch",
   "version": "1.9.8"
  },
+ "metadata_version": 1,
  "name": "django-extensions",
  "raw_recipe": "{% set name = \"django-extensions\" %}\n\n{% set version = \"1.9.8\" %}\n{% set sha256 = \"9f1c314cfd4b974f03c5589f46f33051aa1d6b5a38cfb7f8824f59e9337768ae\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/django-extensions/django-extensions-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - six >=1.2\n    - django >=1.7\n    - typing\n\ntest:\n  imports:\n    - django_extensions\n\nabout:\n  home: http://github.com/django-extensions/django-extensions\n  license: MIT\n  license_file: LICENSE\n  summary: 'Extensions for Django.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - kwilcox\n",
  "rendered_recipe": {

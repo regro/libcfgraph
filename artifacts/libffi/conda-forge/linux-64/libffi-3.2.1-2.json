@@ -27,6 +27,7 @@
   "subdir": "linux-64",
   "version": "3.2.1"
  },
+ "metadata_version": 1,
  "name": "libffi",
  "raw_recipe": "{% set version = \"3.2.1\" %}\n\npackage:\n  name: libffi\n  version: {{ version }}\n\nsource:\n  fn: libffi-3.2.1.tar.gz\n  url: ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz\n  sha1: 280c265b789e041c02e5c97815793dfc283fb1e6\n\nbuild:\n  number: 2\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - autoconf\n    - automake\n    - libtool\n\ntest:\n  commands:\n    - test -e $PREFIX/lib/libffi.so  # [linux]\n    - test -e $PREFIX/lib/libffi.a  # [osx]\n    - test -e $PREFIX/lib/libffi.dylib  # [osx]\n\nabout:\n  home: https://sourceware.org/libffi/\n  license: Custom\n  summary: A Portable Foreign Function Interface Library.\n\nextra:\n  recipe-maintainers:\n    - stefan-balke\n    - scopatz\n",
  "rendered_recipe": {},

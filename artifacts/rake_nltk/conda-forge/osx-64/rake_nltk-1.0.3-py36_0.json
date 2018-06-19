@@ -137,6 +137,7 @@
   "timestamp": 1525687767743,
   "version": "1.0.3"
  },
+ "metadata_version": 1,
  "name": "rake_nltk",
  "raw_recipe": "{% set name = \"rake_nltk\" %}\n{% set version = \"1.0.3\" %}\n{% set sha256 = \"67759e32ef9be82bbfc78efdb92db56fc43bc7c98053dcd415f6ddf576b4ea62\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - pip\n    - nltk\n    - nltk_data\n  run:\n    - python\n    - nltk\n    - nltk_data\n\ntest:\n  imports:\n    - rake_nltk\n\n\nabout:\n  home: https://github.com/csurfer/rake-nltk\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'RAKE short for Rapid Automatic Keyword Extraction algorithm'\n\n  description: |\n    RAKE short for Rapid Automatic Keyword Extraction algorithm, is a domain independent\n    keyword extraction algorithm which tries to determine key phrases in a body of text\n    by analyzing the frequency of word appearance and its co-occurance with other words\n    in the text.\n  dev_url: https://github.com/csurfer/rake-nltk\n\nextra:\n  recipe-maintainers:\n    - cu8blank\n",
  "rendered_recipe": {

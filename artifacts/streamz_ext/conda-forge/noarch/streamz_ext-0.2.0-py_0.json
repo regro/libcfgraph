@@ -136,6 +136,7 @@
   "timestamp": 1528676276594,
   "version": "0.2.0"
  },
+ "metadata_version": 1,
  "name": "streamz_ext",
  "raw_recipe": "{% set name = \"streamz_ext\" %}\n{% set version = \"0.2.0\" %}\n{% set sha256 = \"e8054418130ecb28272181f626f0c65d7596be73462f97ffa2e584ee75720b49\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/xpdAcq/{{ name }}/releases/download/{{ version }}/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed . \n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - toolz\n    - tornado\n    - streamz\n    - distributed\n\n\ntest:\n  imports:\n    - streamz\n    - streamz.core\n    - streamz.dask\n\nabout:\n  home: https://github.com/xpdAcq/streamz_ext\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Extension of Streamz'\n  dev_url: https://github.com/xpdAcq/streamz_ext\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
  "rendered_recipe": {

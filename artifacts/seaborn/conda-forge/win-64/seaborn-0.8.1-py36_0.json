@@ -509,6 +509,7 @@
   "subdir": "win-64",
   "version": "0.8.1"
  },
+ "metadata_version": 1,
  "name": "seaborn",
  "raw_recipe": "{% set version = \"0.8.1\" %}\n{% set name = \"seaborn\" %}\n{% set sha256 = \"6702978b903d0284446e935916b980dfebae4063c18ad8eb6e8f9e76d0257eae\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - matplotlib\n    - scipy\n    - pandas\n    - statsmodels\n    - patsy\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: http://stanford.edu/~mwaskom/software/seaborn/\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Statistical data visualization\n  description: |\n    Seaborn is a Python visualization library based on matplotlib. It\n    provides a high-level interface for drawing attractive statistical graphics.\n  doc_url: http://stanford.edu/~mwaskom/software/seaborn/\n  dev_url: https://github.com/mwaskom/seaborn\n\nextra:\n  recipe-maintainers:\n    - msarahan\n    - r-jain1\n    - croth1\n",
  "rendered_recipe": {

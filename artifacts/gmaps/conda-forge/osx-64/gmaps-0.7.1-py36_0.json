@@ -718,6 +718,7 @@
   "subdir": "osx-64",
   "version": "0.7.1"
  },
+ "metadata_version": 1,
  "name": "gmaps",
  "raw_recipe": "{% set name = \"gmaps\" %}\n{% set version = \"0.7.1\" %}\n{% set sha256 = \"cea209a9794755a0c19def31e446c68aeb291ca7f3a826b484d6591dbb580844\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - jupyter\n  run:\n    - python\n    - ipywidgets >=7.0.0\n    - geojson >=2.0.0\n\ntest:\n  imports:\n    - gmaps\n\nabout:\n  home: http://github.com/pbugnion/gmaps\n  license: BSD-3-Clause\n  license_family: BSD\n  summary: 'Google maps for Jupyter notebooks'\n  description: |\n    gmaps is a Jupyter plugin for visualizing data on Google maps in Jupyter notebooks.\n  doc_url: http://jupyter-gmaps.readthedocs.io/\n  dev_url: https://github.com/pbugnion/gmaps\n\nextra:\n  recipe-maintainers:\n    - pbugnion\n",
  "rendered_recipe": {

@@ -140,6 +140,7 @@
   "timestamp": 1528980312431,
   "version": "1.8_2"
  },
+ "metadata_version": 1,
  "name": "r-spatstat.utils",
  "raw_recipe": "{% set version = \"1.8-2\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-spatstat.utils\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: spatstat.utils_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/spatstat.utils_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/spatstat.utils/spatstat.utils_{{ version }}.tar.gz\n  sha256: 577811295b7269a20d0d72763639dd29e3226d86fbf03e2a230e41ec21e45bf2\n\nbuild:\n  number: 0\n  script: R CMD INSTALL --build .\n  skip: True  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - posix  # [win]\n    - {{native}}toolchain  # [win]\n    - gcc  # [not win]\n  run:\n    - r-base\n    - libgcc  # [not win]\n\ntest:\n  commands:\n    - $R -e \"library('spatstat.utils')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('spatstat.utils')\\\"\"  # [win]\n\nabout:\n  home: https://cran.r-project.org/web/packages/spatstat.utils\n  license: GPL (>= 2)\n  summary: Contains utility functions for the 'spatstat' package which may also be useful for\n    other purposes.\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

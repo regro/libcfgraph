@@ -86,6 +86,7 @@
   "subdir": "osx-64",
   "version": "1.1.2"
  },
+ "metadata_version": 1,
  "name": "xorg-bigreqsproto",
  "raw_recipe": "{% set xorg_name = \"bigreqsproto\" %}\n{% set xorg_category = \"proto\" %}\n{% set name = \"xorg-\" ~ xorg_name %}\n{% set version = \"1.1.2\" %}\n{% set sha256 = \"462116ab44e41d8121bfde947321950370b285a5316612b8fce8334d50751b1e\" %}\n{% set am_version = \"1.15\" %} # keep synchronized with build.sh\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - m2-autoconf  # [win]\n    - m2-automake{{ am_version }}  # [win]\n    - m2-libtool  # [win]\n    - m2w64-pkg-config  # [win]\n    - m2w64-toolchain  # [win]\n    - pkg-config  # [not win]\n    - posix  # [win]\n    - toolchain\n    - xorg-util-macros\n\ntest:\n  commands:\n    - test -e $PREFIX/include/X11/extensions/bigreqsproto.h  # [not win]\n\nabout:\n  home: https://www.x.org/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'Print extension headers'\n\nextra:\n  recipe-maintainers:\n    - epruesse\n    - pkgw\n",
  "rendered_recipe": {

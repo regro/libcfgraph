@@ -330,6 +330,7 @@
   "subdir": "linux-64",
   "version": "3.1.0"
  },
+ "metadata_version": 1,
  "name": "easybuild-easyblocks",
  "raw_recipe": "{% set version = \"3.1.0\" %}\n\npackage:\n  name: easybuild-easyblocks\n  version: {{ version }}\n\nsource:\n  fn: easybuild-easyblocks-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/e/easybuild-easyblocks/easybuild-easyblocks-{{ version }}.tar.gz\n  sha256: e8da6a49b4441bdead8e7348b8988da686cea537a5a1d2d70c6f72ca3bbff744\n\nbuild:\n  number: 0\n  skip: True  # [win or py3k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - easybuild-framework >=3\n\ntest:\n  imports:\n    - easybuild\n    - easybuild.easyblocks\n    - easybuild.easyblocks.generic\n\nabout:\n  home: http://hpcugent.github.com/easybuild\n  license: GPLv2\n  license_file: LICENSE\n  summary: 'Python modules which implement support for installing particular (groups of) software packages with EasyBuild.'\n  license_family: GPL2\n\nextra:\n  recipe-maintainers:\n    - jerowe\n    - boegel\n",
  "rendered_recipe": {

@@ -608,6 +608,7 @@
   "subdir": "osx-64",
   "version": "2.2.24"
  },
+ "metadata_version": 1,
  "name": "arcsi",
  "raw_recipe": "{% set version = \"2.2.24\" %}\n\npackage:\n  name: arcsi\n  version: {{ version }}\n\nsource:\n  fn: arcsi-{{ version }}.tar.gz\n  url: https://bitbucket.org/petebunting/arcsi/downloads/arcsi-{{ version }}.tar.gz\n  sha256: d92c3023923a2e9c9235d92307a560e519095748c8e7700dc7956510f74b40fe\n\nbuild:\n  number: 0\n  # Windows recipe includes .bat file copy so use bld.bat\n  script: python setup.py install  # [unix]\n  # rsgislib not available due to mpfr only supporting vc14 and above\n  skip: True  # [win and py<35]\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and (py35 or py36)]\n\nrequirements:\n  build:\n    - python\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and (py35 or py36)]\n\n  run:\n    - python\n    - py6s\n    - gdal 2.1.*\n    - rsgislib 3.3.*\n    - rios\n    - scikit-learn\n    - h5py\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and (py35 or py36)]\n\ntest:\n  imports:\n    - arcsilib\n  commands:\n    - arcsi.py -h\n\nabout:\n  home: http://rsgislib.org/arcsi\n  license: GPLv3\n  license_file: LICENSE.txt\n  summary: Software for the Atmospheric and Radiometric Correction of Satellite Imagery (ARCSI)\n\nextra:\n  recipe-maintainers:\n    - danclewley\n    - petebunting\n    - gillins\n",
  "rendered_recipe": {

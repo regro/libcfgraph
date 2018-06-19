@@ -564,6 +564,7 @@
   "subdir": "win-64",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "codar2netcdf",
  "raw_recipe": "{% set name = \"codar2netcdf\" %}\n{% set version = \"1.0.0\" %}\n{% set sha256 = \"6a5f20653942c46cfadaec0a4566ecb8340577361b8b3df7edd2a7ca00b86dcc\" %}\n{% set build = 0 %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/axiom-data-science/codar2netcdf/archive/{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: {{ build }}\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - pandas\n        - netcdf4\n        - pytz\n        - python-dateutil\n\ntest:\n    imports:\n        - codar2netcdf\n        - codar2netcdf.tests\n    requires:\n        - pytest\n\nabout:\n    home: https://github.com/axiom-data-science/codar2netcdf\n    license: MIT\n    summary: 'A utility to convert CODAR total ASCII files into CF NetCDF files.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - kwilcox\n",
  "rendered_recipe": {

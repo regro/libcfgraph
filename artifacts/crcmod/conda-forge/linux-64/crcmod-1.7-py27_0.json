@@ -718,6 +718,7 @@
   "subdir": "linux-64",
   "version": "1.7"
  },
+ "metadata_version": 1,
  "name": "crcmod",
  "raw_recipe": "{% set name = \"crcmod\" %}\n{% set version = \"1.7\" %}\n{% set file_ext = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"dc7051a0db5f2bd48665a990d3ec1cc305a466a77358ca4492826f41f283601e\" %}\n\npackage:\n    name: '{{ name|lower }}'\n    version: '{{ version }}'\n\nsource:\n    fn: '{{ name }}-{{ version }}.{{ file_ext }}'\n    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}\n    '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n    number: 0\n    script: 'python setup.py install'\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n\ntest:\n    imports:\n        - crcmod\n\nabout:\n    home: http://crcmod.sourceforge.net\n    license: MIT\n    license_family: MIT\n    license_file: LICENSE\n    summary: CRC Generator\n    description: \"Python module for generating objects that compute the Cyclic Redundancy Check (CRC)\"\n\nextra:\n    recipe-maintainers:\n        - bgruening\n        - chapmanb\n",
  "rendered_recipe": {

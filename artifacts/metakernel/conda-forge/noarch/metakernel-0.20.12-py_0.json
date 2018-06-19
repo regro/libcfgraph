@@ -807,6 +807,7 @@
   "subdir": "noarch",
   "version": "0.20.12"
  },
+ "metadata_version": 1,
  "name": "metakernel",
  "raw_recipe": "{% set version = \"0.20.12\" %}\n\npackage:\n  name: metakernel\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/m/metakernel/metakernel-{{ version }}.tar.gz\n  sha256: dec73eb3c67f061643e67e7a0d1d9d938d0f0dcb83de30f6d0d44e0438c7e16f\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - ipykernel\n    - pexpect >=4.2\n\ntest:\n  imports:\n    - metakernel\n    - metakernel.magics\n    - metakernel.magics.tests\n    - metakernel.tests\n    - metakernel.utils\n\nabout:\n  home: https://github.com/Calysto/metakernel\n  license: BSD 3-Clause\n  summary: 'Metakernel for Jupyter.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - ericdill\n    - mariusvniekerk\n    - blink1073\n    - dsblank\n",
  "rendered_recipe": {

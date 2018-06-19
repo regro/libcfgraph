@@ -160,6 +160,7 @@
   "subdir": "osx-64",
   "version": "4.8.3"
  },
+ "metadata_version": 1,
  "name": "libgap",
  "raw_recipe": "{% set version = \"4.8.3\" %}\n{% set name = \"libgap\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://bitbucket.org/vbraun/libgap/downloads/{{ name }}-{{ version }}.tar.gz\n  sha256: 58e71683f846f4509cd7ed772ad0b92e2839f620b7cd4ddcd5c3c87538e5e459\n  patches:\n    # Fix for long path issue in gap. conda-forge/gap-feedstock#3\n    - patches/long_path.patch\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - automake\n    - gap {{ version }}\n    - gmp >=5.0.1,<7\n    - mpfr 3.*\n  run:\n    - gap {{ version }}\n    - gmp >=5.0.1,<7\n    - mpfr 3.*\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/gap/gap.h\n    - test -f ${PREFIX}/lib/libgap.a\n    - test -f ${PREFIX}/lib/libgap.dylib     # [osx]\n    - test -f ${PREFIX}/lib/libgap.so        # [linux]\n\nabout:\n  home: https://bitbucket.org/vbraun/libgap\n  license: GPLv3+\n  license_file: COPYING\n  summary: A C library version of the GAP kernel.\n  dev_url: https://bitbucket.org/vbraun/libgap\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

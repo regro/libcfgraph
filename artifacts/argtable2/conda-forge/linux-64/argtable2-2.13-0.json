@@ -119,6 +119,7 @@
   "subdir": "linux-64",
   "version": "2.13"
  },
+ "metadata_version": 1,
  "name": "argtable2",
  "raw_recipe": "{% set name = \"argtable2\" %}\n{% set version = \"2.13\" %}\n{% set sha256 = \"8f77e8a7ced5301af6e22f47302fdbc3b1ff41f2b83c43c77ae5ca041771ddbf\" %}\n\npackage:\n    name: {{ name|lower }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: http://prdownloads.sourceforge.net/argtable/argtable2-13.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n    skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libargtable2.dylib  # [osx]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n    - test -f $PREFIX/lib/libargtable2.so  # [linux]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [linux]\n\nabout:\n    home: http://argtable.sourceforge.net/\n    license: LGPL-2\n    license_family: LGPL\n    license_file: COPYING\n    summary: \"Argtable is an ANSI C command line parser.\"\n\nextra:\n    recipe-maintainers:\n        - hbredin\n",
  "rendered_recipe": {

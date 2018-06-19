@@ -136,6 +136,7 @@
   "timestamp": 1525232012062,
   "version": "0.12.1"
  },
+ "metadata_version": 1,
  "name": "dash-renderer",
  "raw_recipe": "{% set name = \"dash-renderer\" %}\n{% set filename = \"dash_renderer\" %}\n{% set version = \"0.12.1\" %}\n{% set sha256 = \"3a860a60910822a5740b1c0de33567f1714936dfde408075ebb68a7795fdf07a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ filename }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ filename }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  noarch: python\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - dash_renderer\n    - dash_renderer.version\n\nabout:\n  home: https://plot.ly/dash\n  dev_url: https://github.com/plotly/dash-renderer\n  license: MIT\n  license_family: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'Front-end component renderer for dash'\n\nextra:\n  recipe-maintainers:\n    - moorepants\n",
  "rendered_recipe": {

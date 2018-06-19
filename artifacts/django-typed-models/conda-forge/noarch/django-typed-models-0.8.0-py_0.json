@@ -758,6 +758,7 @@
   "subdir": "noarch",
   "version": "0.8.0"
  },
+ "metadata_version": 1,
  "name": "django-typed-models",
  "raw_recipe": "{% set version = \"0.8.0\" %}\n\npackage:\n  name: django-typed-models\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/django-typed-models/django-typed-models-{{ version }}.tar.gz\n  sha256: 58c451c465ac1c20edd159bb5fa5e90693cc3157cc66898906e88a2ba25d7572\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - setuptools\n    - django\n\ntest:\n  imports:\n    - typedmodels\n\nabout:\n  home: http://github.com/craigds/django-typed-models\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Sane single table model inheritance for Django.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - kwilcox\n",
  "rendered_recipe": {

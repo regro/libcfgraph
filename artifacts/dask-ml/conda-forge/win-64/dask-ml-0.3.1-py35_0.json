@@ -592,6 +592,7 @@
   "subdir": "win-64",
   "version": "0.3.1"
  },
+ "metadata_version": 1,
  "name": "dask-ml",
  "raw_recipe": "{% set name = \"dask-ml\" %}\n{% set version = \"0.3.1\" %}\n{% set sha256 = \"445ef02a9930c2d822a91d975072fb1764dfadd3f2b35593677948cbb09cb065\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - toolchain\n    - setuptools\n    - setuptools_scm\n    - cython\n    - numpy 1.9.*  # [py27 or py35]\n    - numpy 1.11.*  # [py36]\n  run:\n    - dask\n    - dask-glm\n    - dask-searchcv\n    - numpy >=1.11.*  # [py36]\n    - numpy >=1.9.*  # [py27 or py35]\n    - pandas\n    - python\n    - scikit-learn\n    - scipy\n    - setuptools\n    - six\n\ntest:\n  imports:\n    - dask_ml\n    - dask_ml.utils\n    - dask_ml.cluster.k_means\n\nabout:\n  home: http://github.com/dask/dask-ml\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Distributed and parallel machine learning using dask.'\n  description: |\n    Distributed and parallel machine learning using dask.\n  doc_url: http://dask-ml.readthedocs.io/\n  dev_url: https://github.com/dask/dask-ml\n\nextra:\n  recipe-maintainers:\n    - TomAugspurger\n",
  "rendered_recipe": {

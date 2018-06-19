@@ -116,6 +116,7 @@
   "subdir": "win-64",
   "version": "1.1.2"
  },
+ "metadata_version": 1,
  "name": "bcolz",
  "raw_recipe": "{% set name = \"bcolz\" %}\n{% set version = \"1.1.2\" %}\n{% set sha256 = \"42b733692cfb194df867f19168da1a9e468145a50c557758ecec911c6e5a4073\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n    - setuptools_scm\n    - cython\n    - numpy x.x\n  run:\n    - python\n    - numpy x.x\n    - numexpr\n    - dask\n    - pandas\n    - pytables\n\ntest:\n  requires:\n    - mock\n  imports:\n    - bcolz\n  commands:\n    - python -c\"import bcolz; bcolz.test(heavy=True)\"\n    - python -c\"import bcolz; assert set(bcolz.blosc_compressor_list()) == set(['blosclz', 'lz4', 'lz4hc', 'snappy', 'zlib', 'zstd'])\"\n\nabout:\n  home: http://github.com/Blosc/bcolz\n  license: MIT\n  license_family: MIT\n  license_file: LICENSES/BCOLZ.txt\n  summary: 'A columnar data container that can be compressed'\n  doc_url: http://bcolz.blosc.org/\n  dev_url: http://github.com/Blosc/bcolz\n\nextra:\n  recipe-maintainers:\n    - alimanfoo\n    - FrancescAlted\n    - CarstVaartjes\n",
  "rendered_recipe": {

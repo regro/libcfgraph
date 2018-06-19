@@ -735,6 +735,7 @@
   "subdir": "linux-64",
   "version": "0.35.1"
  },
+ "metadata_version": 1,
  "name": "jieba3k",
  "raw_recipe": "{% set name = \"jieba3k\" %}\n{% set version = \"0.35.1\" %}\n{% set file_ext = \"zip\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"980a4f2636b778d312518066be90c7697d410dd5a472385f5afced71a2db1c10\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.{{ file_ext }}'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  number: 1\n  script: 'python setup.py install'\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - jieba\n\nabout:\n  home: https://github.com/fxsjy/jieba/tree/jieba3k\n  license: MIT\n  license_family: MIT\n  # See issue https://github.com/fxsjy/jieba/issues/545 for adding LICENSE to src distribution\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: Chinese Words Segementation Utilities\n  description: \"Jieba (Chinese for 'to stutter') Chinese text segmentation: built to be the best Python Chinese word segmentation module.\"\n  dev_url: 'https://github.com/fxsjy/jieba/tree/jieba3k'\n\nextra:\n  recipe-maintainers: \n  - ganeshhubale\n  - synapticarbors\n",
  "rendered_recipe": {

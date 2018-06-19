@@ -651,6 +651,7 @@
   "subdir": "linux-64",
   "version": "1.8.2"
  },
+ "metadata_version": 1,
  "name": "r-checkmate",
  "raw_recipe": "{% set version = '1.8.2' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-checkmate\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: checkmate_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/checkmate_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/checkmate/checkmate_{{ version }}.tar.gz\n  sha256: 8f182f7894bce100fb2ed4af4487fbf2aceb9bd6d07f8301db549f9ae87b0cff\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-backports\n    - posix                # [win]\n    - {{native}}toolchain  # [win]\n    - gcc                  # [not win]\n  run:\n    - r-base\n    - r-backports\n    - libgcc  # [not win]\n\ntest:\n  commands:\n    - $R -e \"library('checkmate')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('checkmate')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/mllg/checkmate\n  license: BSD_3_clause\n  summary: |\n    Tests and assertions to perform frequent argument checks. A substantial part of the\n    package was written in C to minimize any worries about execution time overhead.\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

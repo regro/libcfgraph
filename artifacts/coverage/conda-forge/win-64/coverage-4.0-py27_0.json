@@ -68,6 +68,7 @@
   "subdir": "win-64",
   "version": "4.0"
  },
+ "metadata_version": 1,
  "name": "coverage",
  "raw_recipe": "{% set version = \"4.0\" %}\n{% set md5 = \"13e119b1f111c22b613c3d5cd19a95ac\" %}\n{% set pkgname = \"coverage\" %}\n\npackage:\n  name: {{ pkgname }}\n  version: {{ version }}\n\nsource:\n  fn: {{ pkgname }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ pkgname[0] }}/{{ pkgname }}/{{ pkgname }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 0\n  entry_points:\n    - coverage = coverage.cmdline:main\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - coverage\n\n  commands:\n    - coverage --help\n\nabout:\n  home: https://coverage.readthedocs.io\n  # Version unknown. Switches to Apache in 4.0.0.\n  license: Apache 2.0\n  summary: 'Code coverage measurement for Python'\n\nextra:\n  recipe-maintainers:\n    - ericmjl\n    - jakirkham\n",
  "rendered_recipe": {},

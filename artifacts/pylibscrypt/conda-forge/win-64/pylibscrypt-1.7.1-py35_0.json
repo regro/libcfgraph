@@ -622,6 +622,7 @@
   "subdir": "win-64",
   "version": "1.7.1"
  },
+ "metadata_version": 1,
  "name": "pylibscrypt",
  "raw_recipe": "{% set name = \"pylibscrypt\" %}\n{% set version = \"1.7.1\" %}\n{% set sha256 = \"7aa9424e211a12106c67ea884ccfe609856289372b900d3702faaf66e87f79ac\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256|lower }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - toolchain\n    - openssl 1.0.*                # [not win]\n    - scrypt\n  run:\n    - openssl 1.0.*                # [not win]\n    - python\n    - scrypt\n    - libsodium\n\ntest:\n  imports:\n    - pylibscrypt\n  commands:\n    - conda inspect linkages -p $PREFIX pylibscrypt  # [not win]\n    - conda inspect objects -p $PREFIX pylibscrypt   # [osx]\n    - python -m pylibscrypt.tests                    # [not osx]\n    - python -m pylibscrypt.pylibsodium              # [not osx]\n    - python -m pylibscrypt.pbkdf2                   # [not osx]\n\nabout:\n  home: https://github.com/jvarho/pylibscrypt\n  license: ISC\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  dev_url: https://github.com/jvarho/pylibscrypt\n  doc_url: https://github.com/jvarho/pylibscrypt\n  summary: 'Scrypt for Python'\n\nextra:\n  recipe-maintainers:\n    - holgern\n",
  "rendered_recipe": {

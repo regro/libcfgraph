@@ -757,6 +757,7 @@
   "subdir": "linux-64",
   "version": "1.15"
  },
+ "metadata_version": 1,
  "name": "r-aqp",
  "raw_recipe": "{% set version = '1.15' %}\n\npackage:\n  name: r-aqp\n  version: {{ version }}\n\nsource:\n  fn: aqp_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/aqp_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/aqp/aqp_{{ version }}.tar.gz\n  sha256: fe4d45b78e9ff5cd92408b1bc792873db4806b17c626d27756b5106b4715ff41\n\nbuild:\n  number: 0\n  script: R CMD INSTALL --build .\n  skip: True  # [win]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-hmisc\n    - r-mass\n    - r-rcolorbrewer\n    - r-cluster\n    - r-digest\n    - r-lattice\n    - r-plotrix\n    - r-plyr\n    - r-reshape\n    - r-scales\n    - r-sp\n    - r-stringr\n  run:\n    - r-base\n    - r-hmisc\n    - r-mass\n    - r-rcolorbrewer\n    - r-cluster\n    - r-digest\n    - r-lattice\n    - r-plotrix\n    - r-plyr\n    - r-reshape\n    - r-scales\n    - r-sp\n    - r-stringr\n\ntest:\n  commands:\n    - $R -e \"library('aqp')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('aqp')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/ncss-tech/aqp\n  license: GPL (>= 3)\n  summary: A collection of algorithms related to modeling of soil resources, soil classification,\n    soil profile aggregation, and visualization.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

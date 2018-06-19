@@ -57,6 +57,7 @@
   "subdir": "osx-64",
   "version": "0.11.1"
  },
+ "metadata_version": 1,
  "name": "yapf",
  "raw_recipe": "{% set name = \"yapf\" %}\n{% set version = \"0.11.1\" %}\n{% set sha256 = \"5cbab70d6c5d8323389dd53a4a916db4858e1c004d3015c7009edd8f3335bc51\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/google/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  entry_points:\n    - yapf = yapf:run_main\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  commands:\n    - yapf --help\n    - yapf --version\n\nabout:\n  home: https://github.com/google/yapf\n  license: Apache 2.0\n  summary: A formatter for Python files\n\nextra:\n  recipe-maintainers:\n    - vamega\n",
  "rendered_recipe": {},

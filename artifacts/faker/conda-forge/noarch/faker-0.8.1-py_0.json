@@ -983,6 +983,7 @@
   "subdir": "noarch",
   "version": "0.8.1"
  },
+ "metadata_version": 1,
  "name": "faker",
  "raw_recipe": "{% set name = \"Faker\" %}\n{% set version = \"0.8.1\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"c90e5cae6aa114bcaf17d8f007683b3520df3d31cdf09f3eeeb8ec8e760f9b04\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\n\nbuild:\n  noarch: python\n  entry_points:\n    - faker = faker.cli:execute_from_command_line\n\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - python-dateutil >=2.4\n    - six\n    - email_validator ==1.0.2\n    - ipaddress  # [py27]\n\ntest:\n  files:\n    - run_test.py\n  commands:\n    - faker --help  # [osx]\n    - PYTHONIOENCODING=utf8 faker --help  # [linux]\n    - SET \"PYTHONIOENCODING=utf8\" & faker --help  # [win]\n\nabout:\n  home: https://faker.readthedocs.io\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'Faker is a Python package that generates fake data for you.'\n  dev_url: https://github.com/joke2k/faker\n  doc_url: https://faker.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

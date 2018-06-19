@@ -97,6 +97,7 @@
   "subdir": "linux-64",
   "version": "0.8.6"
  },
+ "metadata_version": 1,
  "name": "hdbscan",
  "raw_recipe": "{% set version = \"0.8.6\" %}\n\npackage:\n  name: hdbscan\n  version: {{ version }}\n\nsource:\n  fn: hdbscan-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/h/hdbscan/hdbscan-{{ version }}.tar.gz\n  sha256: 3011e6744887958a58a8f82cb64845c439615820b3d19e53b47cc4f9513ca5a8\n\nbuild:\n  number: 0\n  script: \n    # FIXME: This is a hack to make sure the environment is activated.\n    # The reason this is required is due to the conda-build issue\n    # mentioned below.\n    #\n    # https://github.com/conda/conda-build/issues/910\n    #\n    - source activate \"${CONDA_DEFAULT_ENV}\"  # [unix]\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n    - scikit-learn >=0.16\n    - cython >=0.17\n\n  run:\n    - python\n    - scikit-learn >=0.16\n\ntest:\n  imports:\n    - hdbscan\n\nabout:\n  home: http://github.com/lmcinnes/hdbscan\n  license: BSD 3-Clause\n  summary: 'Clustering based on density with variable density clusters'\n\nextra:\n  recipe-maintainers:\n    - lmcinnes\n",
  "rendered_recipe": {

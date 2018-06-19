@@ -76,6 +76,7 @@
   "subdir": "osx-64",
   "version": "0.13.0"
  },
+ "metadata_version": 1,
  "name": "owslib",
  "raw_recipe": "{% set version = \"0.13.0\" %}\n\npackage:\n    name: owslib\n    version: {{ version }}\n\nsource:\n    fn: OWSLib-{{ version }}.tar.gz\n    url: https://github.com/geopython/OWSLib/archive/{{ version }}.tar.gz\n    sha256: bad5fb032de216cfc371c99ec1d3a3d6cb4fcd54e8836fee6ffa24037365ed91\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - python-dateutil\n        - pytz\n        - requests\n        - pyproj\n        - lxml\n\ntest:\n    imports:\n        - owslib.coverage\n        - owslib.waterml\n        - owslib.swe.observation\n        - owslib.swe.sensor\n        - owslib\n        - owslib.feature\n        - owslib.swe\n\nabout:\n    home: https://geopython.github.io/OWSLib\n    license: BSD 3-Clause\n    summary: 'OGC Web Service utility library.'\n\nextra:\n    recipe-maintainers:\n        - kalxas\n        - tomkralidis\n        - pelson\n        - ocefpaf\n",
  "rendered_recipe": {},

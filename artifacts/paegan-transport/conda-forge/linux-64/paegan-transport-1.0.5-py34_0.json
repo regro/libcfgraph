@@ -56,6 +56,7 @@
   "subdir": "linux-64",
   "version": "1.0.5"
  },
+ "metadata_version": 1,
  "name": "paegan-transport",
  "raw_recipe": "{% set version = \"1.0.5\" %}\n\npackage:\n    name: paegan-transport\n    version: {{ version }}\n\nsource:\n    fn: paegan-transport-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/p/paegan-transport/paegan-transport-{{ version }}.tar.gz\n    md5: 63ab6779286e2cf42f127f7ccadac32f\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - paegan\n        - fiona\n        - requests\n        - redis-py  # [not win]\n        - geojson\n        - pytables\n\ntest:\n    imports:\n        - paegan.transport\n        - paegan.transport.bathymetry\n        - paegan.transport.controllers  # [not win]\n        - paegan.transport.export\n        - paegan.transport.forcers\n        - paegan.transport.models\n        - paegan.transport.models.behaviors\n        - paegan.transport.parallel_manager\n        - paegan.transport.particles\n        - paegan.transport.shoreline\n\nabout:\n    home: https://github.com/axiom-data-science/paegan-transport\n    license: GPL-3.0\n    summary: Paegan-Transport - The parallellized Langragian transport model for NetCDF/OPeNDAP data, written on top of Paegan\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
  "rendered_recipe": {},

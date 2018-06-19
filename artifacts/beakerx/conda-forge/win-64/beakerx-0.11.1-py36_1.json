@@ -1159,6 +1159,7 @@
   "subdir": "win-64",
   "version": "0.11.1"
  },
+ "metadata_version": 1,
  "name": "beakerx",
  "raw_recipe": "{% set name = \"beakerx\" %}\n{% set version = \"0.11.1\" %}\n{% set sha256 = \"e88b711c37bb9166b9580f68e50a24a868e23ff976ccf08afadbf6dacbfc566f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n  \nsource:\n  git_rev: {{ version }}\n  git_url: https://github.com/twosigma/beakerx.git\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://files.pythonhosted.org/packages/source/b/beakerx/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  \nbuild:\n  number: 1\n  skip: true  # [py2k]\n  skip: true  # [win32]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - jupyter\n    - pandas\n    - pytest\n  run:\n    - python\n    - jupyter\n    - openjdk\n    - maven\n    - pandas\n    - ipywidgets\n    - widgetsnbextension\n    - pytest\n\ntest:\n  imports:\n    - beakerx\n\nabout:\n  home: http://beakerx.com\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Beaker Extensions for Jupyter and Jupyter Lab'\n\n  description: |\n    Beaker Extensions for Jupyter and Jupyter Lab\n  doc_url: http://beakerx.com\n  dev_url: https://github.com/twosigma/beakerx\n\nextra:\n  recipe-maintainers:\n    - scottdraves\n",
  "rendered_recipe": {

@@ -112,6 +112,7 @@
   "timestamp": 1527270396665,
   "version": "1.1.3"
  },
+ "metadata_version": 1,
  "name": "coredns",
  "raw_recipe": "{% set name = \"coredns\" %}\n{% set version = \"1.1.3\" %}\n\n{% set sha256 = \"db43032820a8c4d66741e7f03197868fa9a9b2456f15dfd60a2315ee1579f450\" %}\n{% set sha256_win64 = \"02c7759cf5b73e655f8cae800678aedd23e8412c7763bd6e0e576ddb2dfd9fd3\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/coredns/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]\n  fn: {{ name }}-{{ version }}.tar.gz  # [not win]\n  sha256: {{ sha256 }}  # [not win]\n\n  url: https://github.com/coredns/{{ name }}/releases/download/v{{ version }}/{{ name }}_{{ version }}_windows_amd64.tgz  # [win]\n  fn: {{ name }}-{{ version }}.tgz  # [win]\n  sha256: {{ sha256_win64 }}  # [win]\n\nbuild:\n  skip: True  # [win32]\n  number: 0\n\nrequirements:\n  build:\n    - go 1.9.*  # [not win]\n    - make  # [not win]\n    - toolchain  # [not win]\n\ntest:\n  commands:\n    - coredns --version\n\n    # Ugly hack because etcd&etcdclt are not a dynamic executable\n    - conda inspect linkages -p $PREFIX {{ name|lower }}  # [osx]\n    - conda inspect objects -p $PREFIX {{ name|lower }}  # [osx]\n\nabout:\n  home: https://coredns.io/\n  license: Apache-2.0\n  license_family: Apache\n  summary: CoreDNS is a DNS server written in Go that chains plugins\n  doc_url: https://coredns.io/manual/toc/\n  dev_url: https://github.com/coredns/coredns\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

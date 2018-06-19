@@ -662,6 +662,7 @@
   "subdir": "osx-64",
   "version": "0.2.3"
  },
+ "metadata_version": 1,
  "name": "scikit-umfpack",
  "raw_recipe": "{% set version = \"0.2.3\" %}\n\n# explicitly pin openblas to avoid issue of potential mismatch as seen in gh-8\n{% set variant = \"openblas\" %}\n\npackage:\n  name: scikit-umfpack\n  version: {{ version }}\n\nsource:\n  fn: scikit-umfpack--{{ version }}.tar.gz\n  url: https://files.pythonhosted.org/packages/source/s/scikit-umfpack/scikit-umfpack-{{ version }}.tar.gz\n  sha256: 9c8935717b17e8b43ad8ec989c2ca0e48c1e1b01fe0d1a16e19feecde2ee9524\n\nbuild:\n  skip: True  # [win]\n  number: 202\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.20|0.2.20.*\n    - python\n    - numpy 1.11.*\n    - scipy\n    - suitesparse\n    - swig\n    - setuptools\n  run:\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.20|0.2.20.*\n    - python\n    - numpy >=1.11\n    - scipy\n    - suitesparse\n    - setuptools\n\ntest:\n  requires:\n    - nose\n  imports:\n    - scikits.umfpack\n\nabout:\n  home: https://scikit-umfpack.github.io/scikit-umfpack\n  license: GPL 2\n  summary: The umfpack scikit provides a wrapper of the UMFPACK sparse direct solver to SciPy.\n\nextra:\n    recipe-maintainers:\n      - grlee77\n      - cmutel\n",
  "rendered_recipe": {

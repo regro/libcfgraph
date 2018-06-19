@@ -716,6 +716,7 @@
   "subdir": "noarch",
   "version": "0.2.0"
  },
+ "metadata_version": 1,
  "name": "flask-turbolinks",
  "raw_recipe": "{% set name = \"Flask-Turbolinks\" %}\n{% set version = \"0.2.0\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"9086fa5d425db3530efe7eb96d90067f0531158864f0e7130846e534069d6381\" %}\n\npackage:\n  version: '{{ version }}'\n  name: '{{ name|lower }}'\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  noarch: python\n  script: python setup.py install  --single-version-externally-managed --record=record.txt\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - flask\n\ntest:\n  imports:\n    - flask_turbolinks\n\nabout:\n  doc_url: https://github.com/lepture/flask-turbolinks\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  home: https://github.com/lepture/flask-turbolinks\n  dev_url: https://github.com/lepture/flask-turbolinks\n  summary: Turbolinks for Flask.\n  description: Turbolinks makes following links in your web application faster.\n\nextra:\n  recipe-maintainers:\n    - jenzopr\n",
  "rendered_recipe": {

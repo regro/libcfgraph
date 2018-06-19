@@ -579,6 +579,7 @@
   "subdir": "osx-64",
   "version": "0.6.0"
  },
+ "metadata_version": 1,
  "name": "sanic",
  "raw_recipe": "{% set name = \"sanic\" %}\n{% set version = \"0.6.0\" %}\n{% set sha256 = \"f70fbd2483e372494d023a08259ffbeb757b3bce10bbf4a00b17a405de3ff322\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [py<35 or win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - httptools >=0.0.9\n    - ujson >=1.35\n    - uvloop >=0.5.3  # [not win]\n    - websockets >=3.2\n    - aiofiles >=0.3.0\n\ntest:\n  imports:\n    - sanic\n\nabout:\n  home: https://github.com/channelcat/sanic\n  summary: \"Async Python 3.5+ web server that's written to go fast\"\n  license: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n\nextra:\n  recipe-maintainers:\n    - kszucs\n",
  "rendered_recipe": {

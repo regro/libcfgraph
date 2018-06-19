@@ -689,6 +689,7 @@
   "subdir": "osx-64",
   "version": "4.71"
  },
+ "metadata_version": 1,
  "name": "pyro4",
  "raw_recipe": "{% set version = \"4.71\" %}\n\npackage:\n  name: pyro4\n  version: {{ version }}\n\nsource:\n  fn: Pyro4-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/P/Pyro4/Pyro4-{{ version }}.tar.gz\n  sha256: 78b686b584c180061fe3cfc3adcad4da46b3a7f42be1f9f0d7491cd006541cf3\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - pyro4-ns = Pyro4.naming:main\n    - pyro4-nsc = Pyro4.nsc:main\n    - pyro4-test-echoserver = Pyro4.test.echoserver:main\n    - pyro4-check-config = Pyro4.configuration:main\n    - pyro4-flameserver = Pyro4.utils.flameserver:main\n    - pyro4-httpgateway = Pyro4.utils.httpgateway:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - serpent >=1.23\n\n  run:\n    - python\n    - serpent >=1.23\n\ntest:\n  imports:\n    - Pyro4\n    - Pyro4.socketserver\n    - Pyro4.test\n    - Pyro4.utils\n\n  commands:\n    - pyro4-ns --help\n    - pyro4-nsc --help\n    - pyro4-test-echoserver --help\n    - pyro4-check-config --help\n    - pyro4-flameserver --help\n    - pyro4-httpgateway --help\n\nabout:\n  home: https://pyro4.readthedocs.io\n  license: MIT\n  summary: 'Distributed object middleware for Python (RPC)'\n\nextra:\n  recipe-maintainers:\n    - whart222\n    - irmen\n    - Juanlu001\n",
  "rendered_recipe": {

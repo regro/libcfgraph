@@ -738,6 +738,7 @@
   "subdir": "linux-64",
   "version": "0.9_0"
  },
+ "metadata_version": 1,
  "name": "r-grimport",
  "raw_recipe": "{% set version = '0.9-0' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-grimport\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: grImport_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/grImport_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/grImport/grImport_{{ version }}.tar.gz\n  sha256: 813bde85ee4db0edb63240c3f29de0d4e750240e79362c7364476201ca690eb5\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-xml\n\n  run:\n    - r-base\n    - r-xml\n\ntest:\n  commands:\n    - $R -e \"library('grImport')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('grImport')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=grImport\n  license: GPL (>= 2)\n  summary: Functions for converting, importing, and drawing PostScript  pictures in R plots.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n",
  "rendered_recipe": {

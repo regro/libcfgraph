@@ -110,6 +110,7 @@
   "subdir": "win-64",
   "version": "2.0.1"
  },
+ "metadata_version": 1,
  "name": "cc-plugin-ncei",
  "raw_recipe": "{% set version = \"2.0.1\" %}\n\npackage:\n  name: cc-plugin-ncei\n  version: {{ version }}\n\nsource:\n  fn: cc-plugin-ncei-{{ version }}.tar.gz\n  url: https://github.com/ioos/cc-plugin-ncei/archive/{{ version }}.tar.gz\n  sha256: 420cbc9dbf0e28c454a97ab127dad1d5de377efdc0d48b29908628fa0a981516\n\nbuild:\n  number: 0\n  preserve_egg_dir: True\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - compliance-checker >=1.0.0\n    - isodate\n\ntest:\n  imports:\n    - cc_plugin_ncei\n    - cc_plugin_ncei.tests\n  commands:\n    - compliance-checker -t ncei-trajectory -v https://data.nodc.noaa.gov/thredds/dodsC/testdata/mbiddle/GOLD_STANDARD_NETCDF/1.1/NODC_trajectory_template_v1.1_2016-06-15_133719.365561.nc || true  # [not win]\n\nabout:\n  home: https://github.com/ioos/cc-plugin-ncei/\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: 'Compliance Checker NCEI Templates Compliance plugin.'\n\nextra:\n  recipe-maintainers:\n    - benjwadams\n    - daf\n    - kwilcox\n    - lukecampbell\n    - ocefpaf\n",
  "rendered_recipe": {

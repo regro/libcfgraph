@@ -136,6 +136,7 @@
   "subdir": "linux-64",
   "version": "0.15.0"
  },
+ "metadata_version": 1,
  "name": "biggus",
  "raw_recipe": "{% set version = \"0.15.0\" %}\n\npackage:\n  name: biggus\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/SciTools/biggus/archive/v{{ version }}.tar.gz\n  sha256: 81481f3b3632b7e99fae58c6034c6b351560ceff976ce4860d5c3b2f68713dc7\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - six\n\ntest:\n  imports:\n    - biggus\n\nabout:\n  home: https://pypi.python.org/pypi/Biggus\n  license: LGPL-3.0\n  license_file: COPYING.LESSER\n  summary: 'Virtual large arrays and lazy evaluation.'\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - rhattersley\n    - ocefpaf\n    - marqh\n",
  "rendered_recipe": {

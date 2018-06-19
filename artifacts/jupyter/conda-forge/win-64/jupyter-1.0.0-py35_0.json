@@ -89,6 +89,7 @@
   "subdir": "win-64",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "jupyter",
  "raw_recipe": "{% set version = \"1.0.0\" %}\n\npackage:\n  name: jupyter\n  version: {{ version }}\n\nsource:\n  fn: jupyter-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/j/jupyter/jupyter-{{ version }}.tar.gz\n  sha256: d9dc4b3318f310e34c82951ea5d6683f67bed7def4b259fafbfe4f1beb1d8e5f\n\nbuild:\n  number: 0\n  script: pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - notebook\n    - qtconsole\n    - jupyter_console\n    - nbconvert\n    - ipykernel\n    - ipywidgets\n\ntest:\n  commands:\n    - jupyter --help\n\nabout:\n  home: http://jupyter.org\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'Jupyter metapackage. Install all the Jupyter components in one go.'\n\nextra:\n  recipe-maintainers:\n    - minrk\n    - ocefpaf\n",
  "rendered_recipe": {

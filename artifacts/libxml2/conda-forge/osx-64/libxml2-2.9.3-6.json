@@ -293,6 +293,7 @@
   "subdir": "osx-64",
   "version": "2.9.3"
  },
+ "metadata_version": 1,
  "name": "libxml2",
  "raw_recipe": "{% set version = \"2.9.3\" %}\n\npackage:\n    name: libxml2\n    version: {{ version }}\n\nsource:\n    fn: libxml2-{{ version }}.tar.xz\n    url: https://git.gnome.org/browse/libxml2/snapshot/libxml2-{{ version }}.tar.xz\n    md5: 59d281614c87d0c767134c55de20a8a9\n\nbuild:\n    number: 6\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - autoconf\n        - automake\n        - libtool\n        - pkg-config\n        - icu 56.*\n        - libiconv\n        - zlib 1.2*\n        - xz 5.0.*  # [not win]\n    run:\n        - icu\n        - libiconv\n        - zlib 1.2*\n        - xz 5.0.*  # [not win]\n\ntest:\n    files:\n        - test.xml\n    commands:\n        - xmllint test.xml\n        - conda inspect linkages -n _test libxml2  # [linux]\n\nabout:\n    home: http://xmlsoft.org/\n    license: MIT\n    summary: The XML C parser and toolkit of Gnome\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - jakirkham\n",
  "rendered_recipe": {},

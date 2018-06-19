@@ -504,6 +504,7 @@
   "subdir": "osx-64",
   "version": "16.3.0"
  },
+ "metadata_version": 1,
  "name": "argon2_cffi",
  "raw_recipe": "{% set name = \"argon2_cffi\" %}\n{% set version = \"16.3.0\" %}\n{% set sha256 = \"99a5246d68fb17c33eddc9e8b21cfcb0de1f8360d0bb0b73be5ede20078de3aa\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six\n    - cffi >=1.0.0\n    - enum34  # [py27]\n\n  run:\n    - python\n    - six\n    - cffi >=1.0.0\n    - enum34  # [py27]\n\ntest:\n  imports:\n    - argon2\n\n\nabout:\n  home: https://argon2-cffi.readthedocs.org/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'The secure Argon2 password hashing algorithm.'\n  description: |\n    Argon2 won the Password Hashing Competition and argon2_cffi is the simplest\n    way to use it in Python and PyPy\n  doc_url: https://argon2-cffi.readthedocs.io/en/stable/\n  dev_url: https://github.com/hynek/argon2_cffi/\n\nextra:\n  recipe-maintainers:\n    - stuertz\n",
  "rendered_recipe": {

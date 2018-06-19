@@ -978,6 +978,7 @@
   "subdir": "osx-64",
   "version": "1.5.0"
  },
+ "metadata_version": 1,
  "name": "prov",
  "raw_recipe": "{% set version = \"1.5.0\" %}\n\npackage:\n  name: prov\n  version: {{ version }}\n\nsource:\n  fn: prov-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/prov/prov-{{ version }}.tar.gz\n  sha256: 96a74efa1b3324961ff66246539ed7bdc06245dcbeef538688c755a0ad5777ee\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - python-dateutil >=2.2\n    - networkx >=1.10\n    - lxml >=3.3.5\n    - pydotplus >=2.0.2\n    - six >=1.9.0\n    - rdflib >=4.2.1\n\n  run:\n    - python\n    - python-dateutil >=2.2\n    - networkx >=1.10\n    - lxml >=3.3.5\n    - pydotplus >=2.0.2\n    - six >=1.9.0\n    - rdflib >=4.2.1\n\ntest:\n  # Python imports\n  imports:\n    - prov\n    - prov.serializers\n    - prov.tests\n\nabout:\n  home: https://github.com/trungdong/prov\n  license: MIT\n  summary: 'A library for W3C Provenance Data Model supporting PROV-JSON and PROV-XML'\n\nextra:\n  recipe-maintainers:\n    - chrisfilo\n    - satra\n",
  "rendered_recipe": {

@@ -712,6 +712,7 @@
   "subdir": "noarch",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "conda-devenv",
  "raw_recipe": "{% set name = \"conda-devenv\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/ESSS/{{ name }}.git\n  git_rev: {{ version }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - conda-devenv = conda_devenv.devenv:main\n  noarch_python: True\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - jinja2\n    - pyyaml\n    - six\n\ntest:\n  requires:\n    - pytest >=3\n    - pytest-datadir >=1.0\n    - pytest-mock\n  imports:\n    - conda_devenv\n  commands:\n    - conda-devenv --help\n    - pytest tests\n  source_files:\n    - tests\n\nabout:\n  home: https://github.com/ESSS/conda-devenv\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A tool to work with multiple projects in develop-mode using conda-env.'\n  doc_url: http://conda-devenv.readthedocs.io/\n  dev_url: https://github.com/ESSS/conda-devenv\n\nextra:\n  recipe-maintainers:\n    - edisongustavo\n    - nicoddemus\n    - gqmelo\n    - tadeu\n    - prusse-martin\n",
  "rendered_recipe": {

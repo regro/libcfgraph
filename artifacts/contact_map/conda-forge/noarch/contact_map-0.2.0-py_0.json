@@ -728,6 +728,7 @@
   "subdir": "noarch",
   "version": "0.2.0"
  },
+ "metadata_version": 1,
  "name": "contact_map",
  "raw_recipe": "{% set name = \"contact_map\" %}\n{% set version = \"0.2.0\" %}\n{% set md5 = \"596469eafa9a4da940a63e0a7cb67bfc\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - future\n    - numpy\n    - mdtraj\n    - pandas\n\ntest:\n  imports:\n    - contact_map\n\nabout:\n  home: http://github.com/dwhswenson/contact_map\n  license: LGPL-2.1+\n  license_family: LGPL\n  license_file: LICENSE\n  summary: 'Contact maps based on MDTraj'\n  description: |\n      Contact maps based on MDTraj; useful for studying for intramolecular\n      and intermolecular contacts from simulations of biomolecular systems.\n      For a more detailed description, see package's documentation.\n  dev_url: https://github.com/dwhswenson/contact_map\n\nextra:\n  recipe-maintainers:\n    - dwhswenson\n",
  "rendered_recipe": {

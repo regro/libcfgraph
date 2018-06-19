@@ -746,6 +746,7 @@
   "subdir": "osx-64",
   "version": "2.1.11"
  },
+ "metadata_version": 1,
  "name": "aipy",
  "raw_recipe": "{% set name = \"aipy\" %}\n{% set version = \"2.1.11\" %}\n{% set sha256 = \"f2ff8e0ea6210160fbb962794076db070c99cb7dd0bb985dbaad4b1e633d5c08\" %}\n\npackage:\n  name: {{ name }}\n  version: \"{{ version }}\"\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=files.txt\n  skip: true  # [win or py3k]\n\nrequirements:\n  build:\n    - toolchain\n    - astropy >=2.0\n    - ephem\n    - numpy 1.11.*\n    - python <3\n    - setuptools\n\n  run:\n    - astropy >=2.0\n    - ephem\n    - numpy >=1.11\n    - python <3\n\ntest:\n  imports:\n    - aipy\n    - aipy._alm\n    - aipy._cephes\n    - aipy._deconv\n    - aipy._dsp\n    - aipy._healpix\n    - aipy._miriad\n    - aipy.utils\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PRFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://github.com/HERA-Team/aipy\n  license: GPL v2+\n  license_family: GPL\n  license_file: LICENSE\n  summary: 'Astronomical interferometry in Python'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
  "rendered_recipe": {

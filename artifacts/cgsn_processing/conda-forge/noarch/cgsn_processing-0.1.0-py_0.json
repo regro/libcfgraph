@@ -797,6 +797,7 @@
   "subdir": "noarch",
   "version": "0.1.0"
  },
+ "metadata_version": 1,
  "name": "cgsn_processing",
  "raw_recipe": "{% set version = \"0.1.0\" %}\n\npackage:\n  name: cgsn_processing\n  version: {{ version }}\n\nsource:\n  fn: cgsn_processing-{{ version }}.tar.gz\n  url: https://bitbucket.org/ooicgsn/cgsn-processing/get/master.tar.gz\n  sha256: 78fef208482d6c00d3702c557740c179e25cf2f7c95486d219addd1360f8b610\n  patches:\n    - pkg.patch\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - gsw >=3.0.3\n    - jinja2\n    - munch >=2.1.0\n    - netcdf4\n    - numpy >=1.9.2\n    - pandas\n    - pyaxiom\n    - pytz\n    - requests\n    - scipy >=0.15.1\n\ntest:\n  imports:\n    - cgsn_processing\n\nabout:\n  home: https://bitbucket.org/ooicgsn/cgsn-processing\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'processing modules for converting JSON data from the OOI moorings'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

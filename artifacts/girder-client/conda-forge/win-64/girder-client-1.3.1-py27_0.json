@@ -30,6 +30,7 @@
   "subdir": "win-64",
   "version": "1.3.1"
  },
+ "metadata_version": 1,
  "name": "girder-client",
  "raw_recipe": "{%set name = \"girder-client\" %}\n{%set version = \"1.3.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"0369c5d3f1555b8e44fb178b54549e07f680bc4d98dd2340ae9dc04c5ae917cd\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  entry_points:\n    - girder-cli = girder_client.cli:main\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - diskcache\n    - requests >=2.4.2\n    - six\n\ntest:\n  imports:\n    - girder_client\n\n  commands:\n    - girder-cli --help\n\nabout:\n  home: http://girder.readthedocs.org/en/latest/python-client.html\n  license: Apache 2.0\n  summary: 'Python client for interacting with Girder servers'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

@@ -520,6 +520,7 @@
   "subdir": "osx-64",
   "version": "0.2"
  },
+ "metadata_version": 1,
  "name": "mpl-scatter-density",
  "raw_recipe": "{% set name = \"mpl-scatter-density\" %}\n{% set version = \"0.2\" %}\n{% set sha256 = \"c1356e2e610141569951ffa2ecde271504f4af321447e53b7bc59f2a8681b7ee\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy >=1.11\n    - matplotlib\n    - fast-histogram\n  run:\n    - python\n    - numpy >=1.11\n    - matplotlib\n    - fast-histogram\n\ntest:\n  imports:\n    - mpl_scatter_density\n\nabout:\n  home: http://github.com/astrofrog/mpl-scatter-density\n  license: BSD\n  license_family: BSD\n  license_file: LICENSE\n  summary: Matplotlib helpers to make density scatter plots\n  description: Matplotlib helpers to make density scatter plots\n  doc_url: http://github.com/astrofrog/mpl-scatter-density\n  dev_url: http://github.com/astrofrog/mpl-scatter-density\n\nextra:\n  recipe-maintainers:\n    - astrofrog\n",
  "rendered_recipe": {

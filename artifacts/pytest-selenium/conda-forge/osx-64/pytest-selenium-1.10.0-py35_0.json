@@ -107,6 +107,7 @@
   "subdir": "osx-64",
   "version": "1.10.0"
  },
+ "metadata_version": 1,
  "name": "pytest-selenium",
  "raw_recipe": "{% set name = \"pytest-selenium\" %}\n{% set version = \"1.10.0\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"0c50f7815f65845840dfe86b69c601f81ae723ea63aed57d32e8ec4994b62e88\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm\n    - pytest >=2.7.3\n    - pytest-base-url\n    - pytest-html >=1.14.0\n    - pytest-variables >=1.5.0\n    - selenium >=3.0.0\n    - requests\n\n  run:\n    - python\n    - pytest >=2.7.3\n    - pytest-base-url\n    - pytest-html >=1.14.0\n    - pytest-variables >=1.5.0\n    - selenium >=3.0.0\n    - requests\n\ntest:\n  imports:\n    - pytest_selenium\n    - pytest_selenium.drivers\n\nabout:\n  home: https://pypi.python.org/pypi/pytest-selenium\n  license: MPL 2.0\n  license_file: LICENSE\n  summary: pytest-selenium is a plugin for py.test that provides support for running Selenium based tests.\n\nextra:\n  recipe-maintainers:\n    - birdsarah\n    - davehunt\n    - nicoddemus\n",
  "rendered_recipe": {

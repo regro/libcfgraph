@@ -718,6 +718,7 @@
   "subdir": "noarch",
   "version": "0.16.0"
  },
+ "metadata_version": 1,
  "name": "dask",
  "raw_recipe": "{% set version = \"0.16.0\" %}\n\npackage:\n  name: dask\n  version: \"{{ version }}\"\n\nbuild: \n  number: 0\n  noarch: python\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n    - bokeh\n    - cloudpickle >=0.2.1\n    - dask-core {{ version }}\n    - distributed >=1.20.0\n    - numpy\n    - pandas >=0.19.0\n    - partd >=0.3.8\n    - toolz >=0.7.3\n\ntest:\n  imports:\n    - dask\n    - dask.array\n    - dask.bag\n    - dask.bytes\n    - dask.dataframe\n    - dask.dataframe.tseries\n    - dask.delayed\n    - dask.diagnostics\n    - dask.distributed\n    - distributed\n\nabout:\n  home: http://github.com/dask/dask/\n  license: BSD 3-Clause\n  summary: 'Parallel Python with task scheduling'\n  doc_url: https://dask.pydata.org/\n  dev_url: https://github.com/dask/dask\n\nextra:\n  recipe-maintainers:\n    - alimanfoo\n    - jakirkham\n    - jcrist\n    - koverholt\n    - martindurant\n    - mrocklin\n    - pitrou\n    - tomaugspurger\n",
  "rendered_recipe": {

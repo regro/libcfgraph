@@ -53,6 +53,7 @@
   "subdir": "linux-64",
   "version": "0.1.9"
  },
+ "metadata_version": 1,
  "name": "pyasn1",
  "raw_recipe": "{%set name = \"pyasn1\" %}\n{%set version = \"0.1.9\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"853cacd96d1f701ddd67aa03ecc05f51890135b7262e922710112f12a2ed2a7f\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pyasn1\n    - pyasn1.codec\n    - pyasn1.codec.ber\n    - pyasn1.codec.cer\n    - pyasn1.codec.der\n    - pyasn1.compat\n    - pyasn1.type\n\nabout:\n  home: http://sourceforge.net/projects/pyasn1/\n  license: BSD 2-Clause\n  license_file: LICENSE.txt\n  summary: 'ASN.1 types and codecs'\n  license_family: BSD\n  doc_url: http://pyasn1.sourceforge.net/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

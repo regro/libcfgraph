@@ -675,6 +675,7 @@
   "subdir": "osx-64",
   "version": "5.3.0"
  },
+ "metadata_version": 1,
  "name": "ftfy",
  "raw_recipe": "{% set name = \"ftfy\" %}\n{% set version = \"5.3.0\" %}\n{% set sha256sum = \"0ba702d5138f9b35df32b55920c9466208608108f1f3d5de1a68c17e3d68cb7f\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256sum }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  skip: True  # [py2k]\n  entry_points:\n    - ftfy = ftfy.cli:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    # Required for loading package data via `pkg_resources` module.\n    - setuptools\n    - wcwidth\n\ntest:\n  requires:\n    - nose\n  source_files:\n    - tests\n  commands:\n    - nosetests -v tests  # [unix]\n    # CLI tests fail on windows.\n    - nosetests -v -e test_cli tests  # [win]\n\nabout:\n  home: https://github.com/LuminosoInsight/python-ftfy/\n  license: MIT\n  license_file: LICENSE.txt\n  summary: Fixes some problems with Unicode text after the fact\n  dev_url: https://github.com/LuminosoInsight/python-ftfy\n  doc_url: http://ftfy.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - rmax\n",
  "rendered_recipe": {

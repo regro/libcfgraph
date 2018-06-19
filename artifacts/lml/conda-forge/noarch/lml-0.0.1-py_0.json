@@ -719,6 +719,7 @@
   "subdir": "noarch",
   "version": "0.0.1"
  },
+ "metadata_version": 1,
  "name": "lml",
  "raw_recipe": "{% set name = \"lml\" %}\n{% set version = \"0.0.1\" %}\n{% set sha256 = \"12783c8851bb1b1aacf6d139aa41fb529e1723bff863e71034af07a55bf1e5a3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - lml\n\nabout:\n  home: https://github.com/chfw/lml.git\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'Load me later. A lazy loading plugin management system.'\n  doc_url: http://lml.readthedocs.io/en/latest/\n  dev_url: https://github.com/chfw/lml.git\n\nextra:\n  recipe-maintainers:\n    - williamjamir\n",
  "rendered_recipe": {

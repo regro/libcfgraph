@@ -104,6 +104,7 @@
   "subdir": "osx-64",
   "version": "0.3.3"
  },
+ "metadata_version": 1,
  "name": "griddataformats",
  "raw_recipe": "{% set name = \"GridDataFormats\" %}\n{% set version = \"0.3.3\" %}\n{% set sha256 = \"938f0efcb3bc2f58ec85048b933942da8a52c134170acc97cb095f09d3698fbd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - six\n    - numpy\n    - scipy\n\ntest:\n  imports:\n    - gridData\n\nabout:\n  home: http://github.com/MDAnalysis/GridDataFormats\n  license: LGPLv3\n  license_file: COPYING.LESSER\n  summary: 'Reading and writing of data on regular grids in Python'\n  description: |\n    The gridDataFormats package provides classes to unify reading and\n    writing n-dimensional datasets. One can read grid data from files,\n    make them available as a `Grid`_ object, and write out the data again.\n  doc_url: http://www.mdanalysis.org/GridDataFormats/\n  dev_url: https://github.com/MDAnalysis/GridDataFormats\n\nextra:\n  recipe-maintainers:\n    - kain88-de\n    - orbeckst\n    - richardjgowers\n",
  "rendered_recipe": {

@@ -149,6 +149,7 @@
   "timestamp": 1525128644170,
   "version": "1.7.1"
  },
+ "metadata_version": 1,
  "name": "asciimatics",
  "raw_recipe": "{% set name = \"asciimatics\" %}\n{% set version = \"1.7.1\" %}\n{% set sha256 = \"25dc49119b95d1574f8fe47c6becae88243a7548432b38f363658d0c97e25ad7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n   fn: {{ name }}-{{ version }}.tar.gz\n   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n   sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [py36]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools_scm\n  run:\n    - python\n    - wcwidth\n    - mock\n    - pyfiglet >=0.7.2\n    - pillow >=2.7.0\n    - future\n    - setuptools_scm\n\ntest:\n  imports:\n    - asciimatics \n\nabout:\n  home: http://github.com/peterbrittain/asciimatics\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: 'Package to help people create full-screen text UIs'\n\n  description: |\n    Asciimatics is a package to help people create full-screen text UIs \n    (from interactive forms to ASCII animations) on any platform. \n  doc_url: https://asciimatics.readthedocs.io/ \n  dev_url: http://github.com/peterbrittain/asciimatics\n\nextra:\n  recipe-maintainers:\n    - CurtLH\n",
  "rendered_recipe": {

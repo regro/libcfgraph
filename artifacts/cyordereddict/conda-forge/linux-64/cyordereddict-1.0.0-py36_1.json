@@ -96,6 +96,7 @@
   "subdir": "linux-64",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "cyordereddict",
  "raw_recipe": "{% set version = \"1.0.0\" %}\n\npackage:\n  name: cyordereddict\n  version: {{ version }}\n\nsource:\n  fn: cyordereddict-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/cyordereddict/cyordereddict-{{ version }}.tar.gz\n  sha256: d9b2c31796999770801a9a49403b8cb49510ecb64e5d1e9d4763ed44f2d5a76e\n\nbuild:\n  number: 1\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - cython\n  run:\n    - python\n\ntest:\n  imports:\n    - cyordereddict\n    - cyordereddict.benchmark\n  #commands:\n    #- conda inspect linkages -p $PREFIX cyordereddict  # [not win]\n\nabout:\n  home: https://github.com/shoyer/cyordereddict\n  license: MIT\n  summary: \"Cython implementation of Python's collections.OrderedDict.\"\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - jhamman\n",
  "rendered_recipe": {

@@ -730,6 +730,7 @@
   "subdir": "win-64",
   "version": "0.3.1"
  },
+ "metadata_version": 1,
  "name": "george",
  "raw_recipe": "{% set name = \"george\" %}\n{% set version = \"0.3.1\" %}\n{% set sha256 = \"175f1a8022430adab8bf8e5e0ffc3941e5f48ca831bd9460e69716cc2820e628\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script:\n    - python setup.py install --single-version-externally-managed --record record.txt  # [not win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n    - pybind11\n    - numpy 1.11.*\n    - scipy  # [win]\n\n  run:\n    - python\n    - numpy >=1.11\n    - scipy\n    - setuptools  # [win]\n    - vs2015_runtime  # [win]\n\ntest:\n  imports:\n    - george\n\nabout:\n  home: https://github.com/dfm/george\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Fast and flexible Gaussian Process regression in Python'\n  doc_url: http://george.readthedocs.io/\n  dev_url: https://github.com/dfm/george\n\nextra:\n  recipe-maintainers:\n    - hellovenkat\n    - scopatz\n    - dfm\n",
  "rendered_recipe": {

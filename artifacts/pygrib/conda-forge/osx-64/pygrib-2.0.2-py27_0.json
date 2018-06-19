@@ -38,6 +38,7 @@
   "subdir": "osx-64",
   "version": "2.0.2"
  },
+ "metadata_version": 1,
  "name": "pygrib",
  "raw_recipe": "{%set name = \"pygrib\" %}\n{%set version = \"2.0.2\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"82eb5e6037217f7ef200521ffc90c59c1db6008ca10d84a5e8ae80008b94ae00\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - python\n    - ecmwf_grib\n    - jasper\n    - libpng >=1.6.23,<1.7\n    - pyproj\n\n  run:\n    - python\n    - ecmwf_grib\n    - jasper\n    - libpng >=1.6.23,<1.7\n    - pyproj\n    - numpy\n\ntest:\n  imports:\n    - pygrib\n  commands:\n    - grib_repack -h\n    #- conda inspect linkages -p $PREFIX pygrib  # [not win]\n    #- conda inspect objects -p $PREFIX pygrib  # [osx]\n\nabout:\n  home: https://github.com/jswhit/pygrib\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'Python GRIB (editions 1 and 2) reader.'\n  doc_url: https://jswhit.github.io/pygrib/\n  dev_url: https://github.com/jswhit/pygrib\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n    - jjhelmus\n    - ocefpaf\n",
  "rendered_recipe": {},

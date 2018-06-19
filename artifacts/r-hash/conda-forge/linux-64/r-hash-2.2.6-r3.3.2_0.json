@@ -642,6 +642,7 @@
   "subdir": "linux-64",
   "version": "2.2.6"
  },
+ "metadata_version": 1,
  "name": "r-hash",
  "raw_recipe": "{% set version = \"2.2.6\" %}\n\npackage:\n  name: r-hash\n  version: {{ version }}\n\nsource:\n  fn: hash_{{ version }}.tar.gz\n  url: http://cran.r-project.org/src/contrib/hash_{{ version }}.tar.gz\n  sha256: df93f119d62d4e0d33afcfb5bfd5770565b5a66d766dfb07126b445b572a7d56\n\nbuild:\n  skip: true  # [win]\n  number: 0\n\n  # This is required to make R link correctly on Linux.\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build: \n    - r-base\n\n  run: \n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('hash')\"\n\nabout:\n  home: https://cran.r-project.org/package=hash\n  license: GPL (>= 2)\n  summary: This package implements a data structure similar to hashes in Perl and dictionaries\n    in Python but with a purposefully R flavor.  For objects of appreciable size, access\n    using hashes outperforms native named lists and vectors.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers: \n    - wjurkowski\n",
  "rendered_recipe": {

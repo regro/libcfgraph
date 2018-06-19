@@ -174,6 +174,7 @@
   "subdir": "linux-64",
   "version": "0.3.1"
  },
+ "metadata_version": 1,
  "name": "flexx",
  "raw_recipe": "{% set version = \"0.3.1\" %}\n\npackage:\n  name: flexx\n  version: {{ version }}\n\nsource:\n  fn: flexx-{{ version }}.tar.gz\n  url: https://github.com/zoofIO/flexx/archive/v{{ version }}.tar.gz\n  sha256: eeff10a64f076a65b0762d1d7082e825e3ffb6bf0aca15150533b1bb9ccb70a5\n\nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - tornado\n  run:\n    - python\n    - tornado\n\ntest:\n  imports:\n    - flexx.ui\n    - flexx.app\n    - flexx.pyscript\n    - flexx.webruntime\n    - flexx.util\n\nabout:\n  home: http://github.com/zoofIO/flexx\n  doc_url: http://flexx.readthedocs.io\n  dev_url: http://github.com/zoofIO/flexx\n  summary: Python UI tookit based on web technology\n  license: BSD 2-Clause\n\nextra:\n  recipe-maintainers:\n    - almarklein\n    - ivoflipse\n    - korijn \n",
  "rendered_recipe": {},

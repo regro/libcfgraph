@@ -473,6 +473,7 @@
   "subdir": "win-64",
   "version": "0.1"
  },
+ "metadata_version": 1,
  "name": "larray_eurostat",
  "raw_recipe": "{% set name = \"larray_eurostat\" %}\n{% set version = \"0.1\" %}\n{% set sha256 = \"3a692dad7529e45140b3faff2214f053cfd41751626e3c4f8f58d61384a9e31b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/larray-project/larray_eurostat/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - larray\n\ntest:\n  imports:\n    - larray_eurostat\n\nabout:\n  home: http://github.com/larray-project/larray_eurostat\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: \"Additional package to import Eurostat files using LArray\"\n\nextra:\n  recipe-maintainers:\n    - alixdamman\n    - gdementen\n",
  "rendered_recipe": {

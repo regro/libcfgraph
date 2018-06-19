@@ -147,6 +147,7 @@
   "subdir": "linux-64",
   "version": "0.7.4"
  },
+ "metadata_version": 1,
  "name": "pynac",
  "raw_recipe": "{% set version = \"0.7.4\" %}\n{% set name = \"pynac\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: https://github.com/pynac/pynac/releases/download/pynac-{{ version }}/pynac-{{ version }}.tar.bz2\n  sha256: 78b4d93ddb93cd364b377e2d8a3b202d46d50fbb3bd903e170279e0b5517db40\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - pkg-config\n    - python\n    - gmp >=5.0.1,<7\n    - mpfr 3.*\n    - libflint\n    - singular\n\n  run:\n    - python\n    - gmp >=5.0.1,<7\n    - mpfr 3.*\n    - libflint\n    - singular\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/pynac/ginac.h\n    - test -f ${PREFIX}/lib/lib{{ name }}.a\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib     # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so        # [linux]\n\nabout:\n  home: http://pynac.org/\n  license: GPLv2+\n  license_file: COPYING\n  summary: Pynac -- symbolic computation with Python objects\n  dev_url: https://github.com/pynac/pynac\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

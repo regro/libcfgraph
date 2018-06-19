@@ -768,6 +768,7 @@
   "subdir": "linux-64",
   "version": "0.2.7"
  },
+ "metadata_version": 1,
  "name": "eqcorrscan",
  "raw_recipe": "{% set name = \"EQcorrscan\" %}\n{% set version = \"0.2.7\" %}\n{% set sha256 = \"e64c3e81c03a14be11a233c8df925367a55e52108ef01de315b28809b0eed08a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: false\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n    - future\n    - numpy x.x\n    - fftw\n    - openmp\n  run:\n    - python\n    - setuptools\n    - future\n    - numpy x.x\n    - fftw\n    - openmp\n    - scipy\n    - matplotlib\n    - obspy\n    - bottleneck\n    - pyproj\n    - fftw\n\nabout:\n  home: https://eqcorrscan.github.io\n  license: LGPLv3\n  license_file: LICENCE.txt\n  summary: 'Detection and analysis of repeating and near-repeating earthquakes'\n  description: |\n    EQcorrscan is a Python package for detection and analysis of repeating\n    and near-repeating earthquakes.\n  doc_url: http://eqcorrscan.readthedocs.io/\n  dev_url: https://github.com/eqcorrscan/eqcorrscan\n\nextra:\n  recipe-maintainers:\n    - calum-chamberlain\n",
  "rendered_recipe": {

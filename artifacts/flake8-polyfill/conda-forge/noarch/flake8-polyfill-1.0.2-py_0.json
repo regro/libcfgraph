@@ -755,6 +755,7 @@
   "subdir": "noarch",
   "version": "1.0.2"
  },
+ "metadata_version": 1,
  "name": "flake8-polyfill",
  "raw_recipe": "{% set name = \"flake8-polyfill\" %}\n{% set version = \"1.0.2\" %}\n{% set sha256 = \"e44b087597f6da52ec6393a709e7108b2905317d0c0b744cdca6208e670d8eda\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - flake8\n\ntest:\n  imports:\n    - flake8_polyfill\n\nabout:\n  home: https://gitlab.com/pycqa/flake8-polyfill\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Provides some compatibility helpers for Flake8 plugins that intend to support Flake8 2.x and 3.x simultaneously.'\n  dev_url: https://gitlab.com/pycqa/flake8-polyfill\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
  "rendered_recipe": {

@@ -81,6 +81,7 @@
   "subdir": "linux-64",
   "version": "1.0.10"
  },
+ "metadata_version": 1,
  "name": "libsodium",
  "raw_recipe": "{% set version = \"1.0.10\" %}\n\npackage:\n  name: libsodium\n  version: {{ version }}\n\nsource:\n  fn: libsodium-{{ version }}.tar.gz\n  url: https://github.com/jedisct1/libsodium/releases/download/{{ version }}/libsodium-{{ version }}.tar.gz\n  sha1: f34f78330cf1a4f69acce5f3fc2ada2d4098c7f4\n\nbuild:\n  skip: true    # [win]\n  number: 0\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libsodium.a          # [unix]\n    - test -f ${PREFIX}/lib/libsodium.dylib      # [osx]\n    - test -f ${PREFIX}/lib/libsodium.so         # [linux]\n\nabout:\n  home: https://github.com/jedisct1/libsodium\n  license: ISC\n  summary: A modern and easy-to-use crypto library.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n",
  "rendered_recipe": {},

@@ -732,6 +732,7 @@
   "subdir": "linux-64",
   "version": "2.2.0"
  },
+ "metadata_version": 1,
  "name": "fann2",
  "raw_recipe": "package:\n  name: fann2\n  version: \"2.2.0\"\n\nsource:\n  fn: fann2-2.2.0.tar.gz\n  url: https://github.com/libfann/fann/archive/2.2.0.tar.gz\n  sha256: f31c92c1589996f97d855939b37293478ac03d24b4e1c08ff21e0bd093449c3c\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - cmake\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libdoublefann.dylib  # [osx]\n    - test -f $PREFIX/lib/libfann.dylib  # [osx]\n    - test -f $PREFIX/lib/libfixedfann.dylib  # [osx]\n    - test -f $PREFIX/lib/libfloatfann.dylib  # [osx]\n    - test -f $PREFIX/lib/libdoublefann.so  # [linux]\n    - test -f $PREFIX/lib/libfann.so  # [linux]\n    - test -f $PREFIX/lib/libfixedfann.so  # [linux]\n    - test -f $PREFIX/lib/libfloatfann.so  # [linux]\n\nabout:\n  home: https://github.com/libfann/fann\n  license_file: COPYING.txt\n\n  license: LGPL-2+\n  summary: 'Fast Artificial Neural Network (FANN) Library'\n\nextra:\n  recipe-maintainers:\n    - smithsp\n",
  "rendered_recipe": {

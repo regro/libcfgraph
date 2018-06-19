@@ -628,6 +628,7 @@
   "subdir": "linux-64",
   "version": "0.2.0"
  },
+ "metadata_version": 1,
  "name": "hdfs3",
  "raw_recipe": "{% set version = \"0.2.0\" %}\n\npackage:\n  name: hdfs3\n  version: \"{{ version }}\"\n\nsource:\n  fn: hdfs3-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/h/hdfs3/hdfs3-{{ version }}.tar.gz\n  sha256: 4e74d3dccfab68596c11d1b2e62420bcc36fbd2692aa2771abc27e08d43bc631\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  # This packages uses libhdfs3, which is primarily used with HDFS on Linux.\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - libhdfs3 2.3\n\n  run:\n    - python\n    - libhdfs3 2.3\n\ntest:\n  imports:\n    - hdfs3\n\nabout:\n  home: https://github.com/dask/hdfs3\n  license: BSD 3-Clause\n  summary: Python wrapper for libhdfs3\n\nextra:\n  recipe-maintainers:\n    - mrocklin\n    - martindurant\n    - koverholt\n",
  "rendered_recipe": {

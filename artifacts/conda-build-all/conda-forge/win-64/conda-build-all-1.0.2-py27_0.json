@@ -110,6 +110,7 @@
   "subdir": "win-64",
   "version": "1.0.2"
  },
+ "metadata_version": 1,
  "name": "conda-build-all",
  "raw_recipe": "{% set version = \"1.0.2\" %}\n\npackage:\n  name: conda-build-all\n  version: {{ version }}\n\nsource:\n    fn: conda-build-all_v{{ version }}.tar.gz\n    url: https://github.com/SciTools/conda-build-all/archive/v{{version}}.tar.gz\n    sha256: 5b22fb3e427852d22db35902f8d833beaecb1a5ec99aaf7fa6c9acfb324ced06\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - conda-build-all = conda_build_all.cli:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - gitpython\n    - conda >4\n    - conda-build >=1.21.7\n    - anaconda-client\n    - mock\n\ntest:\n  imports:\n    - conda_build_all\n  commands:\n    - conda build-all --version\n\nabout:\n  license: BSD 3-clause\n  home: https://github.com/scitools/conda-build-all\n  summary: conda build-all is a conda subcommand which allows multiple distributions to be built (and uploaded) in a single command\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n    - ocefpaf\n    - marqh\n",
  "rendered_recipe": {

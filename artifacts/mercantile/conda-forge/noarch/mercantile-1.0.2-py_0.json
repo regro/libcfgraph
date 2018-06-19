@@ -132,6 +132,7 @@
   "timestamp": 1525826812247,
   "version": "1.0.2"
  },
+ "metadata_version": 1,
  "name": "mercantile",
  "raw_recipe": "{% set version = \"1.0.2\" %}\n\npackage:\n  name: mercantile\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/m/mercantile/mercantile-{{ version }}.tar.gz\n  sha256: 9d265e1d5a5c3a8614fda5de9d588feec6a33c5daef6841e1470153f0bf11e9e\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - mercantile=mercantile.scripts:cli\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - setuptools\n    - click >=3.0\n\ntest:\n  imports:\n    - mercantile\n    - mercantile.scripts\n  commands:\n    - mercantile --help\n\nabout:\n  home: https://github.com/sgillies/mercantile\n  license: BSD 3-Clause\n  summary: 'Spherical mercator and XYZ tile utilities.'\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

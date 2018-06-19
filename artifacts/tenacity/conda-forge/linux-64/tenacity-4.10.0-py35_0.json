@@ -777,6 +777,7 @@
   "subdir": "linux-64",
   "version": "4.10.0"
  },
+ "metadata_version": 1,
  "name": "tenacity",
  "raw_recipe": "{% set name = \"tenacity\" %}\n{% set version = \"4.10.0\" %}\n{% set sha256 = \"aef2dd632db5e265b8015f912193045ad4b718e785d4680851715eae146fa701\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - pbr\n    - setuptools\n  run:\n    - python\n    - futures >=3  # [py27]\n    - monotonic >=0.6  # [py27]\n    - six >=1.9.0\n\ntest:\n  imports:\n    - tenacity\n\nabout:\n  home: http://github.com/jd/tenacity\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: 'Retry a flaky function whenever an exception occurs until it works'\n\n  description: |\n    Tenacity is general-purpose retrying library, written in Python, to simplify the task of \n    adding retry behavior to just about anything. It originates from a fork of Retrying\n  doc_url: http://tenacity.readthedocs.io\n  dev_url: http://github.com/jd/tenacity\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

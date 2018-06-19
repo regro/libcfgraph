@@ -89,6 +89,7 @@
   "subdir": "win-64",
   "version": "1.4.1"
  },
+ "metadata_version": 1,
  "name": "pyxdameraulevenshtein",
  "raw_recipe": "{% set name = \"pyxDamerauLevenshtein\" %}\n{% set version = \"1.4.1\" %}\n{% set sha256 = \"24f031120b3e62a171c3b3a6f17afdddec8aacb83504257589af20dea4293323\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cython\n    - numpy x.x\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  imports:\n    - pyxdameraulevenshtein\nabout:\n  home: https://github.com/gfairchild/pyxDamerauLevenshtein\n  license: BSD 3-Clause\n  summary: 'High performance Damerau-Levenshtein (DL) edit distance\n    algorithm for Python.'\n\n  # The remaining entries in this section are optional, but recommended\n  description: |\n    pyxDamerauLevenshtein implements the Damerau-Levenshtein (DL) edit distance\n    algorithm for Python in Cython for high performance.\n  doc_url: https://github.com/gfairchild/pyxDamerauLevenshtein\n  dev_url: https://github.com/gfairchild/pyxDamerauLevenshtein\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
  "rendered_recipe": {

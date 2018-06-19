@@ -690,6 +690,7 @@
   "subdir": "osx-64",
   "version": "2.25.2"
  },
+ "metadata_version": 1,
  "name": "atk",
  "raw_recipe": "{% set major_minor = \"2.25\" %}\n{% set version = major_minor + \".2\" %}\n\npackage:\n  name: atk\n  version: {{ version }}\n\nsource:\n  url: http://ftp.gnome.org/pub/gnome/sources/atk/{{ major_minor }}/atk-{{ version }}.tar.xz\n  sha256: 75ac1f63e845f895dec8d72d4645ef5f362e32c921cc78987f2f19c2ce212a24\n\nbuild:\n  number: 0\n  skip: True  # [win or py3k]\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - python\n    - glib 2.51.*\n    - gobject-introspection 1.51.*\n    - perl 5.22.2.1\n    - pkg-config\n  run:\n    - glib 2.51.*\n    - gobject-introspection 1.51.*\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://www.gtk.org/\n  license: LGPL-2.0\n  license_file: COPYING\n  summary: 'Accessibility Toolkit.'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n    - ocefpaf\n",
  "rendered_recipe": {

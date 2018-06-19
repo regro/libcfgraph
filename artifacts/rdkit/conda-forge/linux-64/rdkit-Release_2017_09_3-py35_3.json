@@ -1840,6 +1840,7 @@
   "subdir": "linux-64",
   "version": "Release_2017_09_3"
  },
+ "metadata_version": 1,
  "name": "rdkit",
  "raw_recipe": "{% set name = \"rdkit\" %}\n{% set version = \"Release_2017_09_3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/rdkit/rdkit/archive/{{ version }}.tar.gz\n  sha256: 6a4d9e9eb0ca06cbcdc20505f0c6ea0b1167b4dcdf7d1185871ba16ce701a5f4\n\nbuild:\n  skip: true  # [win]\n  number: 3\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - requests\n    - boost 1.66.0\n    - python\n    - numpy 1.11.*\n    - pillow\n    - freetype 2.8.1\n    - eigen\n    - pandas\n    - cairo 1.14.*\n    - jom  # [win]\n    - pkg-config  # [not win]\n  run:\n    - cairo 1.14.*\n    - boost 1.66.0\n    - python\n    - six\n    - numpy >=1.11\n\ntest:\n  imports:\n    - rdkit\n    - rdkit.Avalon\n    - rdkit.Chem\n    - rdkit.Chem.AllChem\n    - rdkit.DataManip\n    - rdkit.Dbase\n    - rdkit.DistanceGeometry\n    - rdkit.ForceField\n    - rdkit.Geometry\n    - rdkit.ML\n    - rdkit.Numerics\n    - rdkit.SimDivFilters\n    - rdkit.VLib\n    - rdkit.VLib.NodeLib\n\nabout:\n  home: http://rdkit.org\n  license: BSD 3-Clause\n  license_file: license.txt\n  summary: 'RDKit is a collection of cheminformatics and machine-learning software written in C++ and Python.'\n\nextra:\n  recipe-maintainers:\n    - pstjohn\n",
  "rendered_recipe": {

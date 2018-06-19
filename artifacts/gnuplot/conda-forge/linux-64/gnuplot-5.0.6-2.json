@@ -663,6 +663,7 @@
   "subdir": "linux-64",
   "version": "5.0.6"
  },
+ "metadata_version": 1,
  "name": "gnuplot",
  "raw_recipe": "{% set pkgname = \"gnuplot\" %}\n{% set version = \"5.0.6\" %}\n{% set sha256 = \"5bbe4713e555c2e103b7d4ffd45fca69551fff09cf5c3f9cb17428aaacc9b460\" %}\n\npackage:\n  name: {{ pkgname }}\n  version: {{ version }}\n\nsource:\n  fn: {{ pkgname }}-{{ version }}.tar.gz\n  url: https://sourceforge.net/projects/{{ pkgname }}/files/{{ pkgname }}/{{ version }}/{{ pkgname }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - patches/term_include.patch\n\nbuild:\n  number: 2\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain3\n    - pkgconfig\n    - ncurses 5.9*\n    - readline 6.2*\n    - libgd\n    - cairo 1.14.*\n    - qt 5.6.*\n    - pango 1.40.*\n  run:\n    - ncurses 5.9*\n    - readline 6.2*\n    - libgd\n    - cairo 1.14.*\n    - qt 5.6.*\n    - pango 1.40.*\n\ntest:\n  files:\n    - test-data.txt\n  commands:\n    - gnuplot -e \"set terminal dumb; set style histogram; p 'test-data.txt'\"\n    - gnuplot -e \"set terminal png\"\n    - conda inspect linkages -p $PREFIX gnuplot  # [not win]\n    - conda inspect objects -p $PREFIX gnuplot   # [osx]\n\nabout:\n  home: https://github.com/gnuplot/gnuplot\n  license: Gnuplot\n  license_file: Copyright\n  summary: Gnuplot, plotting from command line\n\nextra:\n  recipe-maintainers:\n    - croth1\n",
  "rendered_recipe": {

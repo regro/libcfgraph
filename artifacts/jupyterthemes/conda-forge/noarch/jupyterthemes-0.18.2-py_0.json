@@ -809,6 +809,7 @@
   "subdir": "noarch",
   "version": "0.18.2"
  },
+ "metadata_version": 1,
  "name": "jupyterthemes",
  "raw_recipe": "{% set name = \"jupyterthemes\" %}\n{% set version = \"0.18.2\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"afbb0817cc8f1c27752d5dda1b2ace09e6680209484022a4db895775c20ff578\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\nbuild:\n  noarch: python\n  entry_points:\n    - jupyter-theme = jupyterthemes:main\n    - jt = jupyterthemes:main\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - jupyter_core\n    - ipython >=5.4.1\n    - matplotlib >=1.4.3\n    - lesscpy >=0.12.0\n\ntest:\n  imports:\n    - jupyterthemes\n\n  commands:\n    - jupyter-theme --help\n    - jt --help\n\nabout:\n  home: https://github.com/dunovank/jupyter-themes\n  license_file: LICENSE.txt\n  license: MIT\n  license_family: MIT\n  summary: 'Select and install a Jupyter notebook theme'\n  dev_url: https://github.com/dunovank/jupyter-themes\n  doc_url: https://github.com/dunovank/jupyter-themes\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

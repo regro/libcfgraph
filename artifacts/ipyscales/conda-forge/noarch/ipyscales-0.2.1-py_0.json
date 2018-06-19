@@ -141,6 +141,7 @@
   "timestamp": 1528362855069,
   "version": "0.2.1"
  },
+ "metadata_version": 1,
  "name": "ipyscales",
  "raw_recipe": "{% set name = \"ipyscales\" %}\n{% set version = \"0.2.1\" %}\n{% set sha256 = \"3c4d9e04666369aa23a849af07ee7a71144a7b97c2521a3f5300b239ceedd3fd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - ipywidgets >=7,<8\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: http://github.com/vidartf/{{ name }}\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'A widget library for scales'\n\nextra:\n  recipe-maintainers:\n    - vidartf\n",
  "rendered_recipe": {

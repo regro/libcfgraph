@@ -155,6 +155,7 @@
   "timestamp": 1526928681349,
   "version": "6.0.0"
  },
+ "metadata_version": 1,
  "name": "coolprop",
  "raw_recipe": "{% set name = \"CoolProp\" %}\n{% set version = \"6.0.0\" %}\n{% set sha256 = \"f3c8b57a2f5cd6dc4816623a460defe3bdc0639bd1f709c2cfeb5776486d4ba3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n    - matplotlib\n\ntest:\n  imports:\n    - CoolProp\n    - CoolProp.tests\n    - CoolProp.Plots\n    - CoolProp.GUI\n\nabout:\n  home: https://github.com/CoolProp/CoolProp\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Open-source thermodynamic and transport properties database'\n\n  description: |\n    Open-source thermodynamic and transport properties database\n  doc_url: http://www.coolprop.org/\n  dev_url: https://github.com/CoolProp/CoolProp\n\nextra:\n  recipe-maintainers:\n    - danilomendesdias\n",
  "rendered_recipe": {

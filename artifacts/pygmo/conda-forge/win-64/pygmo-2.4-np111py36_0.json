@@ -115,6 +115,7 @@
   "subdir": "win-64",
   "version": "2.4"
  },
+ "metadata_version": 1,
  "name": "pygmo",
  "raw_recipe": "{% set version = \"2.4\" %}\n\npackage:\n  name: pygmo\n  version: {{ version }}\n\nsource:\n  url: https://github.com/esa/pagmo2/archive/v{{ version }}.tar.gz\n  sha256: ebea1ba004b85f6199a9d53a5969e18449f2923c2976c465e5755d0a42efab7f\n\nbuild:\n  number: 0\n  skip: true  # [(win and py27) or win32]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - pagmo     {{ version }}\n    - eigen\n    - nlopt\n    - boost     1.63.*\n    - numpy     x.x\n    - cloudpickle\n    - ipyparallel\n    - python\n    - ipopt             # [unix]\n  run:\n    - pagmo     {{ version }}\n    - nlopt\n    - boost     1.63.*\n    - numpy     x.x\n    - cloudpickle\n    - ipyparallel\n    - python\n    - ipopt             # [unix]\n\nabout:\n  home: https://esa.github.io/pagmo2/\n  license: GPL v3 and LGPL v3\n  license_file: COPYING.lgpl3\n  summary: 'A C++ / Python platform to perform parallel computations of optimisation tasks (global and local) via the asynchronous generalized island model'\n\nextra:\n  recipe-maintainers:\n    - xantares\n    - ccordoba12\n    - bluescarni\n    - darioizzo\n",
  "rendered_recipe": {

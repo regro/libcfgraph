@@ -769,6 +769,7 @@
   "subdir": "noarch",
   "version": "4.0"
  },
+ "metadata_version": 1,
  "name": "imagehash",
  "raw_recipe": "{% set version = \"4.0\" %}\n\npackage:\n  name: imagehash\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/I/ImageHash/ImageHash-{{ version }}.tar.gz\n  sha256: d7d95534e32e7b9c949029cf9f8383f50fbc3f2246d030da9cd277a8a99d23a3\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - setuptools\n    - numpy\n    - scipy\n    - pillow\n    - pywavelets\n\ntest:\n  imports:\n    - imagehash\n\nabout:\n  home: https://github.com/JohannesBuchner/imagehash\n  license: BSD 2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'A Python Perceptual Image Hahsing Module'\n\nextra:\n  recipe-maintainers:\n    - JohannesBuchner\n    - bjlittle\n    - ocefpaf\n",
  "rendered_recipe": {

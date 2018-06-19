@@ -108,6 +108,7 @@
   "subdir": "win-64",
   "version": "1.2.2"
  },
+ "metadata_version": 1,
  "name": "mapkit",
  "raw_recipe": "{% set name = \"mapkit\" %}\n{% set version = \"1.2.2\" %}\n{% set sha256 = \"753558889722b1d6f190525a01641782381963dc382ceccbdeb18fa1a9f71856\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - requests\n    - sqlalchemy\n\ntest:\n  imports:\n    - mapkit\n    - mapkit.RasterConverter\n    - mapkit.GeometryConverter\n    - mapkit.RasterLoader\n    - mapkit.sqlatypes\n\nabout:\n  home: https://github.com/CI-WATER/mapkit\n  license: BSD-2-Clause\n  license_family: BSD\n  summary: 'A Python module with mapping functions for PostGIS enabled PostgreSQL databases.'\n  description: |\n    MapKit is a Python module with mapping functions for PostGIS enabled\n    PostgreSQL databases.\n  dev_url: https://github.com/CI-WATER/mapkit\n\nextra:\n  recipe-maintainers:\n    - swainn\n    - snowman2\n",
  "rendered_recipe": {

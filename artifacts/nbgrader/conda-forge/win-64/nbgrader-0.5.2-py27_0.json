@@ -925,6 +925,7 @@
   "subdir": "win-64",
   "version": "0.5.2"
  },
+ "metadata_version": 1,
  "name": "nbgrader",
  "raw_recipe": "{% set version = \"0.5.2\" %}\n\npackage:\n  name: nbgrader\n  version: {{ version }}\n\nsource:\n  url: https://github.com/jupyter/nbgrader/archive/v{{ version }}.tar.gz\n  sha256: e5b0ece300268d682cdfb12da0a66bf128a6baca2cf6a4a999ed28f977283fd9\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps .\n  entry_points:\n    - nbgrader = nbgrader.apps.nbgraderapp:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n    - jupyter\n  run:\n    - python\n    - setuptools\n    - jupyter\n    - jupyter_client\n    - jupyter_core\n    - nbformat\n    - python-dateutil\n    - requests\n    - six\n    - sqlalchemy\n    - tornado\n    - traitlets\n    - jsonschema\n    - alembic\n\ntest:\n  requires:\n    - nodejs\n    - pytest\n    - selenium\n    - phantomjs\n  source_files:\n    - '*'\n  imports:\n    - nbgrader\n  commands:\n    - nbgrader -h\n    - export USER=$(whoami)  # [not win]\n    - py.test -v -x -m \"not nbextensions\"  # [not (win and py2k)]\n\nabout:\n  home: https://github.com/jupyter/nbgrader\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: COPYING.md\n  summary: 'A system for assigning and grading Jupyter notebooks.'\n\nextra:\n  recipe-maintainers:\n    - jhamrick\n    - lgpage\n",
  "rendered_recipe": {

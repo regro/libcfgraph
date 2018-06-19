@@ -1366,6 +1366,7 @@
   "subdir": "linux-64",
   "version": "0.5.2"
  },
+ "metadata_version": 1,
  "name": "julia",
  "raw_recipe": "{% set name = \"julia\" %}\n{% set version = \"0.5.2\" %}\n{% set sha256 = \"efa3303d63e39bf3ea06e23ef68807cca0095c7e0507bdf26eae1d5dee7868c7\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/JuliaLang/julia/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: True  # [osx or win]\n  number: 2\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - gcc  # [linux]\n    - toolchain\n    - patchelf\n    - cmake\n    - zlib 1.2.8\n    - python 2.7.*\n    - perl 5.20.*\n    - openblas 0.2.19|0.2.19.*\n    - blas 1.1 {{ variant }}\n    - fftw\n    - gmp 6.1.*\n    - mpfr 3.1.*\n    - curl\n    - libgit2\n    - arpack\n    - suitesparse\n    - pcre2 10.21\n    \n  run:\n    - zlib 1.2.8\n    - libgcc  # [linux]\n    - libgit2\n    - fftw\n    - gmp 6.1.*\n    - mpfr 3.1.*\n    - openblas 0.2.19|0.2.19.*\n    - blas 1.1 {{ variant }}\n    - arpack\n    - suitesparse\n    - curl\n    - pcre2 10.21\n\ntest:\n  commands:\n    - julia -e 'Base.runtests(\"all\"); Base.runtests(\"pkg libgit2-online\")'\n  requires:\n    - perl\n\nabout:\n  home: http://julialang.org/\n  license: MIT\n  license_file: LICENSE.md\n  summary: A high-performance dynamic programming language for data science\n\nextra:\n  recipe-maintainers:\n    - bgruening\n    - dfornika\n    - acaprez\n",
  "rendered_recipe": {

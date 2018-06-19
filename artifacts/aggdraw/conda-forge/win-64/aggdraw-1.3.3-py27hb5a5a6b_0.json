@@ -127,6 +127,7 @@
   "timestamp": 1526659778323,
   "version": "1.3.3"
  },
+ "metadata_version": 1,
  "name": "aggdraw",
  "raw_recipe": "{% set name = \"aggdraw\" %}\n{% set version = \"1.3.3\" %}\n{% set sha256 = \"ed531c790ef2fdac45d9526ec0737b96ed506dc0abb95abdbc07aeacb8e9061c\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - setuptools\n    - freetype\n  run:\n    - python\n    - pillow\n\ntest:\n  imports:\n    - aggdraw\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME   # [osx]\n\nabout:\n  home: https://github.com/pytroll/aggdraw\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: High quality drawing interface for PIL.\n  description: 'The aggdraw module implements the basic WCK 2D Drawing Interface on\n    top of the AGG library. This library provides high-quality drawing,\n    with anti-aliasing and alpha compositing, while being fully compatible\n    with the WCK renderer.'\n  doc_url: ''\n  dev_url: https://github.com/pytroll/aggdraw\n\nextra:\n  recipe-maintainers:\n    - djhoese\n    - mraspaud\n    - adybbroe\n    - pnuu\n",
  "rendered_recipe": {

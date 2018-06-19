@@ -772,6 +772,7 @@
   "subdir": "noarch",
   "version": "0.97.2"
  },
+ "metadata_version": 1,
  "name": "dbf",
  "raw_recipe": "{% set name = \"dbf\" %}\n{% set version = \"0.97.2\" %}\n{% set sha256 = \"b4c5165d29f6ca893797974aa9f228d2ad39aa864c166ce5bcb89c636489c8e6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - aenum\n\ntest:\n  imports:\n    - dbf\n\nabout:\n  home: https://pypi.python.org/pypi/dbf\n  license: BSD 3-clause\n  license_family: BSD\n  summary: 'Pure python package for reading/writing dBase, FoxPro, and Visual FoxPro .dbf files (including memos)'\n\n  description: |\n    Dbf is a pure Python package for reading/writing dBase, FoxPro, and\n    Visual FoxPro .dbf files. Currently supports dBase III, Clipper, FoxPro,\n    and Visual FoxPro tables. Text is returned as unicode, and codepage settings\n    in tables are honored.\n  doc_url: http://pythonhosted.org/dbf/\n  dev_url: https://bitbucket.org/stoneleaf/dbf\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
  "rendered_recipe": {

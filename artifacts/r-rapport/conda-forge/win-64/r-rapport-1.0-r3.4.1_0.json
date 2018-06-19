@@ -847,6 +847,7 @@
   "subdir": "win-64",
   "version": "1.0"
  },
+ "metadata_version": 1,
  "name": "r-rapport",
  "raw_recipe": "{% set version = '1.0' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-rapport\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: rapport_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/rapport_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/rapport/rapport_{{ version }}.tar.gz\n  sha256: 5042c0af899825c00c01756d89a701192666bbdab99253e710bcfb9215573fc4\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-pander\n    - r-rapportools\n    - r-stringr\n    - r-yaml\n    - pandoc\n\n  run:\n    - r-base\n    - r-pander\n    - r-rapportools\n    - r-stringr\n    - r-yaml\n    - pandoc\n\ntest:\n  commands:\n    - $R -e \"library('rapport')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('rapport')\\\"\"  # [win]\n\nabout:\n  home: http://rapport-package.info/\n  license: AGPL-3\n  summary: Facilitating the creation of reproducible statistical report templates. Once created,\n    rapport templates can be exported to various external formats (HTML, LaTeX, PDF,\n    ODT etc.) with pandoc as the converter backend.\n  license_family: AGPL\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n",
  "rendered_recipe": {

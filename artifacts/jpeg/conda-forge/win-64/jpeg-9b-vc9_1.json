@@ -598,6 +598,7 @@
   "subdir": "win-64",
   "version": "9b"
  },
+ "metadata_version": 1,
  "name": "jpeg",
  "raw_recipe": "{% set version = \"9b\" %}\n\npackage:\n    name: jpeg\n    version: {{ version }}\n\nsource:\n    fn: jpegsrc.v9b.tar.gz\n    url: http://www.ijg.org/files/jpegsrc.v{{ version }}.tar.gz\n    md5: 6a9996ce116ec5c52b4870dbcd6d3ddb\n    patches:\n        - CMakeLists.txt.patch  # [win]\n\nbuild:\n    skip: true  # [win and py35]\n    number: 1\n    features:\n        - vc9   # [win and py27]\n        - vc10  # [win and py34]\n        - vc14  # [win and py35]\n        - vc14  # [win and py36]\n        \nrequirements:\n    build:\n        - python  # [win]\n        - cmake   # [win]\n\ntest:\n    requires:\n        - python {{ environ['PY_VER'] + '*' }}  # [win]\n    files:\n        - testorig.jpg\n    commands:\n        - djpeg -dct int -ppm -outfile testout.ppm testorig.jpg\n\nabout:\n    home: http://www.ijg.org/\n    license: IJG\n    license_file: {{ RECIPE_DIR }}/LICENSE.txt\n    summary: read/write jpeg COM, EXIF, IPTC medata\n    \nextra:    \n    recipe-maintainers:\n        - gillins\n        - jakirkham\n",
  "rendered_recipe": {

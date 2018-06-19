@@ -766,6 +766,7 @@
   "subdir": "linux-64",
   "version": "1.0.5"
  },
+ "metadata_version": 1,
  "name": "latexcodec",
  "raw_recipe": "{% set name = \"latexcodec\" %}\n{% set version = \"1.0.5\" %}\n{% set sha256 = \"8e1cba346e73dad29dc795150cd8090175491d40c43c81b868cf67746fc874d2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/mcmtroffaes/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - latexcodec\n\nabout:\n  home: https://github.com/mcmtroffaes/{{ name }}\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.rst\n  summary: 'Lexer and codec to work with LaTeX code in Python.'\n  doc_url: http://latexcodec.readthedocs.io/\n  dev_url:  https://github.com/mcmtroffaes/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "rendered_recipe": {

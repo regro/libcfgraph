@@ -139,6 +139,7 @@
   "timestamp": 1526428567434,
   "version": "2.3.2"
  },
+ "metadata_version": 1,
  "name": "pytest-qt",
  "raw_recipe": "{% set name = \"pytest-qt\" %}\n{% set version = \"2.3.2\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"ac0e8f483f1592fdbba5658313d1ac352fd46b5b1e9648dda861428a2f65dab0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pytest-qt/pytest-qt-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python -m pip install . --no-deps --ignore-installed\n  noarch: python\n\nrequirements:\n  build:\n    - pip\n    - python    \n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - pytest\n\ntest:\n  requires:\n    - pyqt 5.*\n    - pytest\n  imports:\n    - pytestqt\n  commands:\n    - py.test --help\n\nabout:\n  home: https://github.com/pytest-dev/pytest-qt\n  license: MIT\n  license_file: LICENSE\n  summary: pytest support for PyQt and PySide applications\n  doc_url: http://pytest-qt.readthedocs.io/en/latest/\n  dev_url: https://github.com/pytest-dev/pytest-qt\n\nextra:\n  recipe-maintainers:\n    - nicoddemus\n",
  "rendered_recipe": {

@@ -593,6 +593,7 @@
   "subdir": "osx-64",
   "version": "1.7.0"
  },
+ "metadata_version": 1,
  "name": "pyresample",
  "raw_recipe": "{% set version = \"1.7.0\" %}\n\npackage:\n  name: pyresample\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pyresample/pyresample-{{ version }}.tar.gz\n  sha256: 1fd36e0a8edf3044de277d2573baee27b222169baa76c42a361da70b37f7b456\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy 1.8.*  # [not (win and (py35 or py36))]\n    - numpy 1.9.*  # [win and py35]\n    - numpy 1.11.*  # [win and py36]\n  run:\n    - python\n    - numpy >=1.8  # [not (win and (py35 or py36))]\n    - numpy >=1.9  # [win and py35]\n    - numpy >=1.11  # [win and py36]\n    - scipy\n    - pyproj\n    - configobj\n    - pykdtree\n    - numexpr\n    - pyyaml\n\ntest:\n  imports:\n    - pyresample\n  commands:\n    - conda inspect linkages -p $PREFIX pyresample  # [not win]\n    - conda inspect objects -p $PREFIX pyresample   # [osx]\n\nabout:\n  home: https://github.com/pytroll/pyresample/\n  license: LGPL-3.0\n  license_file: LICENSE.txt\n  summary: 'Resampling of remote sensing data in Python.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - davidh-ssec\n",
  "rendered_recipe": {

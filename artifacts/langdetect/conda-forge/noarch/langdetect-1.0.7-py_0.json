@@ -782,6 +782,7 @@
   "subdir": "noarch",
   "version": "1.0.7"
  },
+ "metadata_version": 1,
  "name": "langdetect",
  "raw_recipe": "{% set name = \"langdetect\" %}\n{% set version = \"1.0.7\" %}\n{% set bundle = \"zip\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"91a170d5f0ade380db809b3ba67f08e95fe6c6c8641f96d67a51ff7e98a9bf30\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  noarch: python\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - langdetect\n    - langdetect.tests\n    - langdetect.utils\n\nabout:\n  home: https://github.com/Mimino666/langdetect\n  license_file: LICENSE\n  license: Apache 2.0\n  license_family: Apache\n  summary: \"Language detection library ported from Google's language-detection.\"\n  doc_url: https://github.com/Mimino666/langdetect\n  dev_url: https://github.com/Mimino666/langdetect\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

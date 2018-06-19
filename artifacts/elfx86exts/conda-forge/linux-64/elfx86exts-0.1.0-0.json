@@ -711,6 +711,7 @@
   "subdir": "linux-64",
   "version": "0.1.0"
  },
+ "metadata_version": 1,
  "name": "elfx86exts",
  "raw_recipe": "{% set name = \"elfx86exts\" %}\n{% set version = \"0.1.0\" %}\n{% set sha256 = \"a536105c5ad7d392e6d75b5d0c4ffb443cf92dad9ae4a07da6aa8e164b529b18\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://crates.io/api/v1/crates/{{ name }}/{{ version }}/download\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  skip: true  # [osx]\n\nrequirements:\n  build:\n    - rust\n\ntest:\n  commands:\n    - elfx86exts $PREFIX/bin/elfx86exts\n\nabout:\n  home: https://crates.io/crates/elfx86exts\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Disassemble an ELF binary containing x86 instructions and print out which extensions it uses.'\n  doc_url: https://docs.rs/elfx86exts/\n  dev_url: https://github.com/pkgw/elfx86exts\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
  "rendered_recipe": {

@@ -612,6 +612,7 @@
   "subdir": "linux-64",
   "version": "1.11.0.0"
  },
+ "metadata_version": 1,
  "name": "django-pyodbc-azure",
  "raw_recipe": "{% set name = \"django-pyodbc-azure\" %}\n{% set version = \"1.11.0.0\" %}\n{% set sha256 = \"1f41d46e914a3cfd301db9551970d50c0ecbf84b91085b6bb77706dfcff7ed2e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://github.com/michiya/django-pyodbc-azure/archive/{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - pyodbc >=3.0\n    - django >=1.11,<1.12\n\ntest:\n  imports:\n    - sql_server\n    - sql_server.pyodbc\n\nabout:\n  home: https://github.com/michiya/django-pyodbc-azure\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Django backend for Microsoft SQL Server and Azure SQL Database using pyodbc'\n  description: |\n    django-pyodbc-azure is a refined fork of django-pyodbc, a Django\n    Microsoft SQL Server external DB backend that uses ODBC by employing the\n    pyodbc library. It supports Microsoft SQL Server and Azure SQL Database.\n  dev_url: https://github.com/michiya/django-pyodbc-azure\n\nextra:\n  recipe-maintainers:\n    - wil\n",
  "rendered_recipe": {

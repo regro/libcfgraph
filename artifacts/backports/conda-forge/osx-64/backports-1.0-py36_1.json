@@ -555,6 +555,7 @@
   "subdir": "osx-64",
   "version": "1.0"
  },
+ "metadata_version": 1,
  "name": "backports",
  "raw_recipe": "package:\n  name: backports\n  version: 1.0\n\nbuild:\n  number: 1\n  script:\n    - cd {{ SP_DIR if SP_DIR is defined else '' }}\n    - mkdir backports && cd backports\n    - python -c \"open('__init__.py', 'w').close()\"\n    - cd {{ SRC_DIR if SRC_DIR is defined else '' }}\n    - python -c \"import backports\"\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - backports\n\nabout:\n  home: http://github.com/conda-forge/backports-feedstock\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: {{ RECIPE_DIR if RECIPE_DIR is defined else '' }}/LICENSE.txt\n  summary: A package to ensure the `backports` namespace is available.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

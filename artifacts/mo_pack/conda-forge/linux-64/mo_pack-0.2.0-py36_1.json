@@ -629,6 +629,7 @@
   "subdir": "linux-64",
   "version": "0.2.0"
  },
+ "metadata_version": 1,
  "name": "mo_pack",
  "raw_recipe": "{% set version = \"0.2.0\" %}\n\npackage:\n  name: mo_pack\n  version: {{ version }}\n\nsource:\n  url: https://github.com/SciTools/mo_pack/archive/v{{ version }}.tar.gz\n  sha256: 4aa70e1f846b666670843bc2514435dedf7393203e88abaf74d48f8f2717a726\n\nbuild:\n  number: 1\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cython\n    - numpy 1.8.*\n    - libmo_unpack\n  run:\n    - python\n    - libmo_unpack\n    - numpy >=1.8\n\ntest:\n  imports:\n    - mo_pack\n  commands:\n    - conda inspect linkages -p $PREFIX mo_pack  # [not win]\n    - conda inspect objects -p $PREFIX mo_pack  # [osx]\n\nabout:\n    home: https://github.com/SciTools/mo_pack\n    license: LGPL-3.0\n    license_file: COPYING.LESSER\n    summary: 'Python wrapper to libmo_unpack'\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - ocefpaf\n",
  "rendered_recipe": {

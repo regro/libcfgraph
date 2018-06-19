@@ -94,6 +94,7 @@
   "subdir": "win-64",
   "version": "0.1.2"
  },
+ "metadata_version": 1,
  "name": "docrep",
  "raw_recipe": "{% set name = \"docrep\" %}\n{% set version = \"0.1.2\" %}\n{% set sha256 = \"bd88bd864c04c5db84e65648f53816a5bc695632d5d87a389be8bafcfa1cf407\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - docrep\n\nabout:\n  home: https://github.com/Chilipp/docrep\n  license: GPLv2\n  license_family: GPL2\n  license_file: LICENSE\n  summary: 'Python package for docstring repetition'\n\n  description: |\n    The documentation repetition module (docrep) targets developpers that\n    develop complex and nested Python APIs and helps them to create a\n    well-documented software.\n  doc_url: http://docrep.readthedocs.io/\n  dev_url: https://github.com/Chilipp/docrep\n\nextra:\n  recipe-maintainers:\n    - Chilipp\n",
  "rendered_recipe": {

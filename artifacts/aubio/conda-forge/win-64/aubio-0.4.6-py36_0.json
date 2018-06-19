@@ -551,6 +551,7 @@
   "subdir": "win-64",
   "version": "0.4.6"
  },
+ "metadata_version": 1,
  "name": "aubio",
  "raw_recipe": "{% set name = \"aubio\" %}\n{% set version = \"0.4.6\" %}\n{% set sha256 = \"bdc73be1f007218d3ea6d2a503b38a217815a0e2ccc4ed441f6e850ed5d47cfb\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: https://aubio.org/pub/{{ name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  patches:\n    - py27_noffmpeg.patch  # [win and py27]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n    - numpy 1.11.*\n    - pkg-config  # [not win]\n    - ffmpeg 2.8.*  # [not (win and py27)]\n  run:\n    - python\n    - numpy >=1.11\n    - ffmpeg 2.8.*  # [not (win and py27)]\n\ntest:\n  imports:\n    - aubio\n\nabout:\n  home: https://aubio.org\n  license: GPL-3.0\n  license_family: GPL\n  license_file: COPYING\n  summary: 'tools for audio and music analysis and transformation'\n  description: |\n    aubio provides a set of tools for analysis and transformation of sounds.\n    Numpy arrays are used to store vectors and matrices, while computations\n    are done in C, for speed and memory efficiency.\n  doc_url: https://aubio.org/manual/latest\n  dev_url: https://github.com/aubio/aubio/\n\nextra:\n  recipe-maintainers:\n    - piem\n    - MartinHN\n",
  "rendered_recipe": {

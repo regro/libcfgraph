@@ -1345,6 +1345,7 @@
   "subdir": "noarch",
   "version": "2.7.1"
  },
+ "metadata_version": 1,
  "name": "chart.js",
  "raw_recipe": "{% set name = \"Chart.js\" %}\n{% set version = \"2.7.1\" %}\n{% set sha256 = \"e9e39d3124221cc7666f6ef2cb0d00e07f682929cc90abba36c1b76f27014f7c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/chartjs/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs\n  \ntest:\n  commands:\n    - npm list -g chart.js\n  requires:\n    - nodejs\n   \n\nabout:\n  home: https://github.com/chartjs/Chart.js\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.md\n  summary: 'Simple HTML5 Charts using the <canvas> tag'\n  description: |\n    Simple HTML5 Charts using the <canvas> tag  \n  doc_url: http://www.chartjs.org/\n  dev_url: https://github.com/chartjs/Chart.js\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

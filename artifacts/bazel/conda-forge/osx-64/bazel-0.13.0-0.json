@@ -122,6 +122,7 @@
   "timestamp": 1528043400517,
   "version": "0.13.0"
  },
+ "metadata_version": 1,
  "name": "bazel",
  "raw_recipe": "{% set version = \"0.13.0\" %}\n\npackage:\n  name: bazel\n  version: {{ version }}\n\nsource:\n  url: https://github.com/bazelbuild/bazel/releases/download/{{ version }}/bazel-{{ version }}-dist.zip\n  sha256: 82e9035084660b9c683187618a29aa896f8b05b5f16ae4be42a80b5e5b6a7690\n  patches:\n    - xcode_locator.patch  # [osx]\n\nbuild:\n  number: 0\n  ignore_prefix_files: True\n  binary_relocation: False\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - openjdk >=8\n    - unzip  # [linux]\n    - zip    # [linux]\n  run:\n    - openjdk >=8\n\ntest:\n  commands:\n    - bazel -h\n\nabout:\n  home: https://www.bazel.io/\n  summary: build system originally authored by Google\n  description: |\n    Bazel is Google's own build tool, now publicly available in Beta. Bazel has\n    built-in support for building both client and server software, including\n    client applications for both Android and iOS platforms. It also provides an\n    extensible framework that you can use to develop your own build rules.\n  dev_url: https://github.com/bazelbuild/bazel\n  doc_url: https://www.bazel.io/versions/master/docs/install.html\n  license: Apache 2.0\n  license_family: Apache\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n    - nehaljwani\n    - abhi18av\n",
  "rendered_recipe": {

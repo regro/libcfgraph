@@ -617,6 +617,7 @@
   "subdir": "linux-64",
   "version": "0.1.14"
  },
+ "metadata_version": 1,
  "name": "hdf5storage",
  "raw_recipe": "{% set name = \"hdf5storage\" %}\n{% set version = \"0.1.14\" %}\n{% set sha256 = \"180593f91325c952346010dde32b359563f69d2760b6e7d25a8d2d851b93b1ab\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - h5py >=2.3\n    - numpy\n    - scipy\n\ntest:\n  imports:\n    - hdf5storage\n\nabout:\n  home: https://github.com/frejanordsiek/hdf5storage\n  license: BSD 2-Clause\n  license_file: COPYING.txt\n  summary: Utilities to read/write Python types to/from HDF5 files, including MATLAB v7.3 MAT files.\n  doc_url: http://pythonhosted.org/hdf5storage\n  dev_url: https://github.com/frejanordsiek/hdf5storage\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

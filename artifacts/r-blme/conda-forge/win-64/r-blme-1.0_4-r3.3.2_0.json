@@ -713,6 +713,7 @@
   "subdir": "win-64",
   "version": "1.0_4"
  },
+ "metadata_version": 1,
  "name": "r-blme",
  "raw_recipe": "{% set version = '1.0-4' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-blme\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: blme_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/blme_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/blme/blme_{{ version }}.tar.gz\n  sha256: c2bfc6b7804cdc1f1b95cd6ce215a13a7c7aa5833ad9cfe8900e4c44045842b1\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-lme4 >=1.0_6\n\n  run:\n    - r-base\n    - r-lme4 >=1.0_6\n\ntest:\n  commands:\n    - $R -e \"library('blme')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('blme')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/vdorie/blme\n  license: GPL (>= 2)\n  summary: Maximum a posteriori estimation for linear and generalized linear mixed-effects models\n    in a Bayesian setting. Extends 'lme4' by Douglas Bates, Martin Maechler, Ben Bolker,\n    and Steve Walker.\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'  # [unix]\n  license_file: '{{ environ[\"PREFIX\"] }}\\R\\share\\licenses\\GPL-3'  # [win]\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n    - ccwang002\n",
  "rendered_recipe": {

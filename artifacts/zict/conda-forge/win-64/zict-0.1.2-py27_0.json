@@ -99,6 +99,7 @@
   "subdir": "win-64",
   "version": "0.1.2"
  },
+ "metadata_version": 1,
  "name": "zict",
  "raw_recipe": "{% set version = \"0.1.2\" %}\n{% set name = \"zict\" %}\n\npackage:\n  name: {{ name }}\n  version: \"{{ version }}\"\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 9e4c951c2149c1ed3a201e56c07269b058081370bd1f20558d7fadc004631e9b\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - heapdict\n\ntest:\n  imports:\n    - zict\n\nabout:\n  home: http://github.com/mrocklin/zict\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Composable Dictionary Classes'\n\n\nextra:\n  recipe-maintainers:\n    - mrocklin\n    - pitrou\n",
  "rendered_recipe": {

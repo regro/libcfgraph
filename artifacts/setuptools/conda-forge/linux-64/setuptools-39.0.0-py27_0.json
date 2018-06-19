@@ -857,6 +857,7 @@
   "subdir": "linux-64",
   "version": "39.0.0"
  },
+ "metadata_version": 1,
  "name": "setuptools",
  "raw_recipe": "{% set name = \"setuptools\" %}\n{% set version = \"39.0.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n  sha256: 94dc566247f35009ed42c0f4422f2b4f0a032fab1372c8308b864c8f26d93388\n  patches:\n    # Modify setuptools to fail if used in conda build (encourage people to add all deps in meta.yaml).\n    - nodownload.patch\n\nbuild:\n  number: 0\n  entry_points:\n    - easy_install = setuptools.command.easy_install:main\n\nrequirements:\n  build:\n    - python\n    - certifi\n    - wincertstore  # [win]\n  run:\n    - python\n    - certifi\n    - wincertstore  # [win]\n\ntest:\n  commands:\n    - easy_install --help\n  imports:\n    - setuptools\n    - easy_install\n    - pkg_resources\n\nabout:\n  home: https://github.com/pypa/setuptools\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: Download, build, install, upgrade, and uninstall Python packages\n  description: |\n    Setuptools is a fully-featured, actively-maintained, and stable library\n    designed to facilitate packaging Python projects.\n  doc_url: http://pythonhosted.org/setuptools/\n  dev_url: https://github.com/pypa/setuptools\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jjhelmus\n    - msarahan\n    - ocefpaf\n    - nicoddemus\n",
  "rendered_recipe": {

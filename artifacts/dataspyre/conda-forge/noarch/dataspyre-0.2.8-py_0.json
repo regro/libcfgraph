@@ -149,6 +149,7 @@
   "timestamp": 1524954996496,
   "version": "0.2.8"
  },
+ "metadata_version": 1,
  "name": "dataspyre",
  "raw_recipe": "{% set version = \"0.2.8\" %}\n\npackage:\n  name: dataspyre\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/D/DataSpyre/DataSpyre-{{ version }}.tar.gz\n  sha256: 09d84b25c77d5fd7662df50c51822d93ad0d2e98590bfa80b6747f6a31e82f34\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - cherrypy\n    - jinja2\n    - matplotlib\n    - numpy\n    - pandas\n    - six >=1.11.0\n\ntest:\n  imports:\n    - spyre\n\nabout:\n  home: https://github.com/adamhajari/spyre\n  license: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt'\n  summary: 'Web Application Framework for simple user interface.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

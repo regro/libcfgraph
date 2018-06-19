@@ -38,6 +38,7 @@
   "subdir": "win-64",
   "version": "0.1.1"
  },
+ "metadata_version": 1,
  "name": "circleci-helpers",
  "raw_recipe": "{% set name = \"circleci-helpers\" %}\n{% set version = \"0.1.1\" %}\n{% set checksum = \"21e3d210de493bebce598e0209aebc588ebe16cab4be17de2684590649aace6e\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ checksum }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - circle-matrix = circleci_helpers.matrix.main:main\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools\n\n  run:\n    - python\n    - pyaml\n    - pykwalify\n    - docopt\n    - termcolor\n\ntest:\n  imports:\n    - circleci_helpers\n    - circleci_helpers.matrix\n\n  commands:\n    - circle-matrix --help\n\nabout:\n  home: https://github.com/dennybaa/circleci-helpers\n  license: MIT\n  summary: Provides useful helpers for Circle CI\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {},

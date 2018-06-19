@@ -476,6 +476,7 @@
   "subdir": "win-64",
   "version": "0.89"
  },
+ "metadata_version": 1,
  "name": "empath",
  "raw_recipe": "{% set name = \"empath\" %}\n{% set version = \"0.89\" %}\n{% set sha256 = \"91283d9b0233e0cb32c765b9f6274228d20dba9758fae1875e0fb83e4871c40b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - requests\n\ntest:\n  imports:\n    - empath\n\nabout:\n  home: https://github.com/Ejhfast/empath-client\n  license: MIT\n  license_family: MIT\n  summary: 'analyze text with empath'\n\n  description: |\n    Empath is a tool for analyzing text across lexical categories (similar to LIWC), \n    and also generating new lexical categories to use for an analysis.\n  dev_url: https://github.com/Ejhfast/empath-client\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
  "rendered_recipe": {

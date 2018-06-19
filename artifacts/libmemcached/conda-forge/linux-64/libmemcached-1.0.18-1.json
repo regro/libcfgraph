@@ -311,6 +311,7 @@
   "subdir": "linux-64",
   "version": "1.0.18"
  },
+ "metadata_version": 1,
  "name": "libmemcached",
  "raw_recipe": "{% set series = \"1.0\" %}\n{% set version = \"1.0.18\" %}\n{% set pkg = \"libmemcached\" %}\n\npackage:\n  name: {{ pkg }}\n  version: {{ version }}\n\nsource:\n  fn: {{ pkg }}-{{ version }}.tar.gz\n  url: https://launchpad.net/{{ pkg }}/{{ series }}/{{ version }}/+download/{{ pkg }}-{{ version }}.tar.gz\n  sha256: e22c0bb032fde08f53de9ffbc5a128233041d9f33b5de022c0978a2149885f82\n  patches:\n    # thanks to http://stackoverflow.com/questions/27004144/how-can-i-install-libmemcached-for-mac-os-x-yosemite-10-10-in-order-to-install-t\n    - osx.configure.patch  # [osx]\n    - osx.memflush.patch  # [osx]\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - glib 2.51.*\n    - libtool\n    - pkg-config\n    - toolchain\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libmemcached.a  # [linux]\n    - test -f $PREFIX/lib/libmemcached.dylib  # [osx]\n    - test -f $PREFIX/lib/libmemcached.la\n\nabout:\n  home: http://libmemcached.org\n  license: BSD-3-Clause\n  summary: libMemcached is an open source C/C++ client library and tools for the memcached server (http://danga.com/memcached). It has been designed to be light on memory usage, thread safe, and provide full access to server side methods.\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "rendered_recipe": {

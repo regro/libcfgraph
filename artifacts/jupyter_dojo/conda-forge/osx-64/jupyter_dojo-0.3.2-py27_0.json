@@ -665,6 +665,7 @@
   "subdir": "osx-64",
   "version": "0.3.2"
  },
+ "metadata_version": 1,
  "name": "jupyter_dojo",
  "raw_recipe": "{% set name = \"jupyter_dojo\" %}\n{% set version = \"0.3.2\" %}\n{% set sha256 = \"a473ba827fcbf8f99c86373c7863b95e308ecc9c9efafe1ddd4180310efcaa8e\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script:\n    - python setup.py install --single-version-externally-managed --record record.txt\n    - jupyter nbextension install jupyter_dojo --py --sys-prefix --overwrite\n\nrequirements:\n  build:\n    - python\n    - ipython_unittest >=0.3\n    - notebook >=4.3\n    - jupyter\n\n  run:\n    - python\n    - notebook >=4.3\n    - jupyter\n    - ipython_unittest\n\ntest:\n  imports:\n    - jupyter_dojo\n\nabout:\n  home: https://github.com/JoaoFelipe/ipython-unittest\n  license: MIT\n  license_family: MIT\n  summary: 'Install the coding dojo extension for ipython_unittest'\n  dev_url: https://github.com/JoaoFelipe/ipython-unittest\n\nextra:\n  recipe-maintainers:\n    - JoaoFelipe\n",
  "rendered_recipe": {

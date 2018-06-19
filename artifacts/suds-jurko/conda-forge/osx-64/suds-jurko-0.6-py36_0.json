@@ -156,6 +156,7 @@
   "subdir": "osx-64",
   "version": "0.6"
  },
+ "metadata_version": 1,
  "name": "suds-jurko",
  "raw_recipe": "{% set version = \"0.6\" %}\n\npackage:\n  name: suds-jurko\n  version: {{ version }}\n\nsource:\n  fn: suds-jurko-{{ version }}.tar.bz2\n  url: https://pypi.io/packages/source/s/suds-jurko/suds-jurko-{{ version }}.tar.bz2\n  sha256: 29edb72fd21e3044093d86f33c66cf847c5aaab26d64cb90e69e528ef014e57f\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - suds\n    - suds.bindings\n    - suds.mx\n    - suds.sax\n    - suds.transport\n    - suds.umx\n    - suds.xsd\n    - tests\n    - tests.external\n\nabout:\n  home: http://bitbucket.org/jurko/suds\n  license: LGPL-3.0\n  license_file: LICENSE.txt\n  summary: \"Lightweight SOAP client (Jurko's fork).\"\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - msarahan\n",
  "rendered_recipe": {

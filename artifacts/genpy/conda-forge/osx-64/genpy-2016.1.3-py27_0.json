@@ -26,6 +26,7 @@
   "subdir": "osx-64",
   "version": "2016.1.3"
  },
+ "metadata_version": 1,
  "name": "genpy",
  "raw_recipe": "{% set name = \"genpy\" %}\n{% set version = \"2016.1.3\" %}\n{% set sha256 = \"1c11726f1e8ace8bbdfc87816403c9a59f53a8c3d45c99187ae17c9725d87a91\" %}\n\npackage:\n    name: {{ name|lower }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - six\n        - numpy\n        - pytools\n    run:\n        - python\n        - numpy\n        - pytools\n        - six\n\ntest:\n    imports:\n        - {{ name }}\n\nabout:\n    home: http://pypi.python.org/pypi/{{ name }}\n    license: MIT\n    license_file: LICENSE\n    summary: AST-based Python source generation\n    dev_url: http://github.com/inducer/{{ name }}\n\nextra:\n    recipe-maintainers:\n        - inducer\n",
  "rendered_recipe": {},

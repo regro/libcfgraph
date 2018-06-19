@@ -119,6 +119,7 @@
   "subdir": "osx-64",
   "version": "0.1.1"
  },
+ "metadata_version": 1,
  "name": "tyssue",
  "raw_recipe": "{% set name = \"tyssue\" %}\n{% set version = \"0.1.1\" %}\n{% set sha256 = \"3787cd9bb9292f9ecb8d5a91db8706bfe95845f011b37f2890ece425270aae8d\" %}\n\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/DamCB/tyssue/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [py2k or (win and py35)]\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - scipy\n    - matplotlib\n    - pandas\n    - pytables\n    - jupyter\n    - notebook\n    - vispy\ntest:\n  imports:\n    - tyssue\n    - tyssue.behaviors\n    - tyssue.config\n    - tyssue.core\n    - tyssue.draw\n    - tyssue.dynamics\n    - tyssue.geometry\n    - tyssue.io\n    - tyssue.particles\n    - tyssue.solvers\n    - tyssue.stores\n    - tyssue.topology\n    - tyssue.utils\n\nabout:\n  home: https://github.com/DamCB/tyssue\n  license: MPLv2.0\n  license_file: LICENSE\n  summary: 'A tissue simulation library'\n  description: |\n    tyssue provides data structures and algorithms to model epithelium\n    in 2D and 3D for python 3.4+\n  doc_url: http://tyssue.readthedocs.io\n  dev_url: https://github.com/DamCB/tyssue\nextra:\n  recipe-maintainers:\n    - glyg\n",
  "rendered_recipe": {},

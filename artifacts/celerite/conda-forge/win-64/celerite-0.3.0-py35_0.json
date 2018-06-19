@@ -584,6 +584,7 @@
   "subdir": "win-64",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "celerite",
  "raw_recipe": "{% set name = \"celerite\" %}\n{% set version = \"0.3.0\" %}\n{% set sha256 = \"be7cababe94f5d85a55cc3e019971c1e0117c957b66103e74a26bffa5432ad4d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script:\n    - python setup.py install --single-version-externally-managed --record record.txt  # [not win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n    - pybind11\n    - numpy 1.11.*\n  run:\n    - python\n    - numpy >=1.11\n    - setuptools  # [win]\n    - vs2015_runtime  # [win]\n\ntest:\n  imports:\n    - celerite\n\nabout:\n  home: http://github.com/dfm/celerite\n  license: MIT\n  summary: 'Scalable 1D Gaussian Processes in C++ and Python'\n  doc_url: http://celerite.readthedocs.io/\n  dev_url: https://github.com/dfm/celerite\n\nextra:\n  recipe-maintainers:\n    - dfm\n",
  "rendered_recipe": {

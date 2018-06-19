@@ -1610,6 +1610,7 @@
   "subdir": "linux-64",
   "version": "2.7.0"
  },
+ "metadata_version": 1,
  "name": "fish",
  "raw_recipe": "{% set name = \"fish\" %}\n{% set version = \"2.7.0\" %}\n{% set sha256 = \"3a76b7cae92f9f88863c35c832d2427fb66082f98e92a02203dc900b8fa87bcb\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/fish-shell/fish-shell/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - ncurses 5.9*\n  run:\n    - ncurses 5.9*\n\ntest:\n  commands:\n    - fish -v\n    - fish_indent -v\n    # - fish_key_reader -v  # returns 1 for any flag, so we can't really test it.\n\nabout:\n  home: https://fishshell.com/\n  license: GPL2\n  license_file: COPYING\n  summary: 'The user-friendly command line shell.'\n  doc_url: https://fishshell.com/docs/current/index.html\n  dev_url: https://github.com/fish-shell/fish-shell\n\nextra:\n  recipe-maintainers:\n    - mdraw\n",
  "rendered_recipe": {

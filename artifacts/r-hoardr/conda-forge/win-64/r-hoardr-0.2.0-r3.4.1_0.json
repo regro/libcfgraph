@@ -543,6 +543,7 @@
   "subdir": "win-64",
   "version": "0.2.0"
  },
+ "metadata_version": 1,
  "name": "r-hoardr",
  "raw_recipe": "{% set version = '0.2.0' %}\n\npackage:\n  name: r-hoardr\n  version: {{ version }}\n\nsource:\n  fn: hoardr_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/hoardr_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/hoardr/hoardr_{{ version }}.tar.gz\n  sha256: d929a69672ae4bbfea82202cdcf8d3a12f64e768edc5ce0b23a2ec902df3728d\n\nbuild:\n  number: 0\n  skip: True  # [win32]\n  script: R CMD INSTALL --build .\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-r6 >=2.2.0\n    - r-digest\n    - r-rappdirs >=0.3.1\n  run:\n    - r-base\n    - r-r6 >=2.2.0\n    - r-digest\n    - r-rappdirs >=0.3.1\n\ntest:\n  commands:\n    - R -e \"library('hoardr')\"  # [not win]\n    - R -e \\\"library('hoardr')\\\"  # [win]\n    - conda inspect linkages -p $PREFIX r-hoardr  # [not win]\n    - conda inspect objects -p $PREFIX r-hoardr  # [osx]\n\nabout:\n  home: https://github.com/ropensci/hoardr\n  license: MIT\n  license_file: LICENSE\n  summary: Suite of tools for managing cached files, targeting use in other R packages. Uses\n    'rappdirs' for cross-platform paths. Provides utilities to manage cache directories,\n    including targeting files by path or by key; cached directories can be compressed\n    and uncompressed easily to save disk space.\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

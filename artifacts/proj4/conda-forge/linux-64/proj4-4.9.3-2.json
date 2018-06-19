@@ -70,6 +70,7 @@
   "subdir": "linux-64",
   "version": "4.9.3"
  },
+ "metadata_version": 1,
  "name": "proj4",
  "raw_recipe": "{% set version = \"4.9.3\" %}\n\npackage:\n  name: proj4\n  version: {{ version }}\n\nsource:\n  fn:  proj-{{ version }}.tar.gz\n  url: http://download.osgeo.org/proj/proj-{{ version }}.tar.gz\n  sha256: 6984542fea333488de5c82eea58d699e4aff4b359200a9971537cd7e047185f7\n\nbuild:\n  number: 2\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - cmake  # [win]\n    - unzip  # [not win]\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n  run:\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n\ntest:\n  commands:\n    # Check if NAD27/NAD83 datum shifting is present if `conus` is present.\n    - test -f $PREFIX/share/proj/conus  # [not win]\n    - if not exist %PREFIX%\\\\Library\\\\SHARE\\\\conus exit 1  # [win]\n    - echo -105 40 | proj +proj=utm +zone=13 +ellps=WGS84\n    - echo -117 30 | cs2cs +proj=latlong +datum=NAD27 +to +proj=latlong +datum=NAD83\n    - echo -105 40 | cs2cs +init=epsg:4326 +to +init=epsg:2975\n    #- conda inspect linkages -p $PREFIX proj4  # [not win]\n    #- conda inspect objects -p $PREFIX proj4  # [osx]\n\nabout:\n  home: http://trac.osgeo.org/proj\n  license: MIT\n  summary: 'Cartographic projection software.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - pelson\n",
  "rendered_recipe": {},

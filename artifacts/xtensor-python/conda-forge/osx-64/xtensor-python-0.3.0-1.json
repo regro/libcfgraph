@@ -83,6 +83,7 @@
   "subdir": "osx-64",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "xtensor-python",
  "raw_recipe": "{% set name = \"xtensor-python\" %}\n{% set version = \"0.3.0\" %}\n{% set sha256 = \"a820ffd228f19810fa3be67211b282559e772b7c006d283e60b35cf8d529a519\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/QuantStack/xtensor-python/archive/{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n\nrequirements:\n  run:\n    - xtensor ==0.3.0\n    - pybind11 ==2.0.1\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/xtensor-python  # [unix]\n    - test -f ${PREFIX}/include/xtensor-python/pyarray.hpp  # [unix]\n    - if exist %PREFIX%\\include\\xtensor-python\\pyarray.hpp (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://quantstack.net/xtensor\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Python bindings for xtensor, the C++ tensor algebra library'\n  description: 'Multi dimensional arrays with broadcasting and lazy computing'\n  doc_url: http://xtensor.readthedocs.io\n  dev_url: https://github.com/QuantStack/xtensor-python\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n",
  "rendered_recipe": {

@@ -824,6 +824,7 @@
   "subdir": "osx-64",
   "version": "7.0.0"
  },
+ "metadata_version": 1,
  "name": "esmf",
  "raw_recipe": "{% set version = \"7.0.0\" %}\n{% set ver = version.replace(\".\", \"_\") %}\n\npackage:\n  name: esmf\n  version: {{ version }}\n\nsource:\n  url: http://downloads.sourceforge.net/project/esmf/ESMF_{{ ver }}/esmf_{{ ver }}_src.tar.gz\n  sha256: b2ac25f78c4bded006360230bd229953909f2a9f9e71b732833c240edc7707b1\n\nbuild:\n  number: 8\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - netcdf-fortran 4.4.*\n    - hdf5 1.8.18|1.8.18.*\n    - perl 5.22.2.1\n    - gcc  # [not win]\n    - mpich\n  run:\n    - netcdf-fortran 4.4.*\n    - hdf5 1.8.18|1.8.18.*\n    - libgcc  # [not win]\n    - mpich\n\ntest:\n  commands:\n    - ESMF_Info\n    - ESMF_RegridWeightGen --help\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://www.earthsystemmodeling.org/\n  license: The University of Illinois/NCSA Open Source License (NCSA)\n  summary: 'The Earth System Modeling Framework (ESMF) is software for building and coupling weather, climate, and related models.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - bekozi\n    - rokuingh\n",
  "rendered_recipe": {

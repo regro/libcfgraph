@@ -738,6 +738,7 @@
   "subdir": "win-64",
   "version": "0.6.2"
  },
+ "metadata_version": 1,
  "name": "bhmm",
  "raw_recipe": "{% set name = \"bhmm\" %}\n{% set version = \"0.6.2\" %}\n{% set sha256 = \"c2709c101c0e3921aac992b7b24d279f24c1455313b4eae90da83b6332cfa464\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cython\n    - numpy 1.8.*  # [not (win and (py35 or py36))]\n    - numpy 1.9.*  # [win and py35]\n    - numpy 1.11.*  # [win and py36]\n  run:\n    - python\n    - numpy >=1.8,<1.14  # [not (win and (py35 or py36))]\n    - numpy >=1.9,<1.14  # [win and py35]\n    - numpy >=1.11,<1.14  # [win and py36]\n    - scipy\n    - msmtools\n    - six\n\ntest:\n  imports:\n    - bhmm\n\nabout:\n  home: http://github.com/bhmm/bhmm\n  license: LGPLv3+ \n  #license_file: LICENSE # TODO: add this to MANIFEST.in on next release.\n  summary: 'Sampling from the Bayesian posterior of hidden Markov models.'\n  description: |\n    provides machinery for sampling from the Bayesian posterior\n    of hidden Markov models with various choices of prior and output models.\n  dev_url: https://github.com/bhmm/bhmm\n\nextra:\n  recipe-maintainers:\n    - jchodera \n    - franknoe\n    - marscher\n",
  "rendered_recipe": {

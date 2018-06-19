@@ -508,6 +508,7 @@
   "subdir": "osx-64",
   "version": "0.2.0"
  },
+ "metadata_version": 1,
  "name": "slycot",
  "raw_recipe": "{% set name = \"slycot\" %}\n{% set version = \"0.2.0\" %}\n{% set sha256 = \"22dc7f108639aeb8ced11e953b0543c6acb07698a5d1f6c866a46b8041d3fca0\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 200\n  # NOTE: Conda forge lacks openblas on Windows, so skip the Windows build.\n  skip: true  # [win]\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - toolchain\n    - gcc          # [osx]\n    - python\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n    - numpy x.x\n  run:\n    - python\n    - blas 1.1 {{ variant }}\n    - libgfortran\n    - openblas 0.2.19|0.2.19.*\n    - numpy x.x\n\ntest:\n  imports:\n    - slycot\n\nabout:\n  home: https://github.com/python-control/Slycot\n  dev_url: https://github.com/python-control/Slycot\n  license: GPL-2.0\n  license_family: GPL\n  license_file: COPYING\n  summary: 'Slycot: a wrapper for the SLICOT control and systems library'\n  description: |\n    Slycot wraps the SLICOT library which is used for control and systems\n    analysis.\n\nextra:\n  recipe-maintainers:\n    - moorepants\n",
  "rendered_recipe": {

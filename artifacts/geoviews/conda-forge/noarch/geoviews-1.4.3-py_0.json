@@ -784,6 +784,7 @@
   "subdir": "noarch",
   "version": "1.4.3"
  },
+ "metadata_version": 1,
  "name": "geoviews",
  "raw_recipe": "{% set version = \"1.4.3\" %}\n\npackage:\n  name: geoviews\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ioam/geoviews/archive/{{ version }}.tar.gz\n  sha256: eb4b9dbe5b8e2acd1b2a09141e72fc6cc5fef1116bf4e85cb014accb55a69eb2\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - param >=1.5.1\n    - numpy >=1.0\n    - holoviews >=1.9.0\n    - cartopy >=0.14.2\n    # extras\n    - jupyter\n    - notebook\n    - bokeh >=0.12.10\n\ntest:\n  imports:\n    - geoviews\n\nabout:\n  home: https://github.com/ioam/geoviews\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'GeoViews is a Python library that makes it easy to explore and visualize geographical'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

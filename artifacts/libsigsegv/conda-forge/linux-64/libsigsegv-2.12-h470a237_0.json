@@ -129,6 +129,7 @@
   "timestamp": 1527080214888,
   "version": "2.12"
  },
+ "metadata_version": 1,
  "name": "libsigsegv",
  "raw_recipe": "{% set name = \"libsigsegv\" %}\n{% set version = \"2.12\" %}\n{% set sha256 = \"3ae1af359eebaa4ffc5896a1aee3568c052c99879316a1ab57f8fe1789c390b6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [not linux]\n  run_exports: \n    - {{ pin_subpackage('libsigsegv', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n  run:\n\ntest:\n  commands:\n    - conda inspect linkages {{ name }}  # [not win]\n    - conda inspect objects {{ name }}  # [osx]\n\nabout:\n  home: https://www.gnu.org/software/libsigsegv/\n  license: GPL-2.0\n  license_family: GPL\n  license_file: COPYING\n  summary: 'GNU libsigsegv is a library for handling page faults in user mode.'\n\n  description: |\n    GNU libsigsegv is a library for handling page faults in user mode.\n    A page fault occurs when a program tries to access to a region of\n    memory that is currently not available.\n  doc_url: https://www.gnu.org/software/libsigsegv/\n  dev_url: http://savannah.gnu.org/projects/libsigsegv/\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
  "rendered_recipe": {

@@ -118,6 +118,7 @@
   "subdir": "win-64",
   "version": "2.6.2"
  },
+ "metadata_version": 1,
  "name": "sundials",
  "raw_recipe": "{% set name = \"sundials\" %}\n{% set version = \"2.6.2\" %}\n{% set sha256 = \"d8ed0151509dd2b0f317b318a4175f8b95a174340fc3080b8c20617da8aa4d2f\" %}\n{% set md5 = \"3deeb0ede9f514184c6bd83ecab77d95\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://pkgs.fedoraproject.org/repo/pkgs/sundials/sundials-2.6.2.tar.gz/{{ md5 }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 2\n  features:\n    - blas_{{ variant }}  # [not win]\n    - vc9     # [win and py27]\n    - vc10    # [win and py34]\n    - vc14    # [win and py35]\n\nrequirements:\n  build:\n    - cmake\n    - blas 1.1 {{ variant }}  # [not win]\n    - openblas 0.2.18|0.2.18.*  # [not win]\n    - python  # [win]\n  run:\n    - blas 1.1 {{ variant }}  # [not win]\n    - openblas 0.2.18|0.2.18.*  # [not win]\n\ntest:\n  requires:\n    - cmake\n    - python  # [win]\n  files:\n    - cvRoberts_dns.c\n\nabout:\n  home: http://computation.llnl.gov/casc/sundials/main.html\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'SUit of Nonlinear and DIfferential/ALgebraic equation Solvers'\n\nextra:\n  recipe-maintainers:\n    - bjodah\n",
  "rendered_recipe": {},

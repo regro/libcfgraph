@@ -180,6 +180,7 @@
   "timestamp": 1527986555056,
   "version": "1.7.31"
  },
+ "metadata_version": 1,
  "name": "boto3",
  "raw_recipe": "{% set name = \"boto3\" %}\n{% set version = \"1.7.31\" %}\n{% set sha256 = \"28ea099b76d6b18210109cb8f7d5452a4ba48992e85696fa0ede33793af5ba69\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - botocore >=1.10.31,<1.11.0\n    - jmespath >=0.7.1,<1.0.0\n    - s3transfer >=0.1.10,<0.2.0\n\ntest:\n  imports:\n    - boto3\n    - boto3.docs\n    - boto3.dynamodb\n    - boto3.ec2\n    - boto3.resources\n    - boto3.s3\n\nabout:\n  home: http://aws.amazon.com/sdk-for-python/\n  dev_url: https://github.com/boto/boto3\n  doc_url: https://boto3.readthedocs.org\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: Amazon Web Services SDK for Python\n  description: Boto3 makes it easy to integrate you Python application, library or script\n    with AWS services. It allows Python developers to write softare that makes\n    use of services like Amazon S3 and Amazon EC2.\n\nextra:\n  recipe-maintainers:\n    - proinsias\n    - tkelman\n",
  "rendered_recipe": {

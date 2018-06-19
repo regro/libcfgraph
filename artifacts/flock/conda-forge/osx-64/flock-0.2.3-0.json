@@ -659,6 +659,7 @@
   "subdir": "osx-64",
   "version": "0.2.3"
  },
+ "metadata_version": 1,
  "name": "flock",
  "raw_recipe": "{% set name = \"flock\" %}\n{% set version = \"0.2.3\" %}\n{% set sha256 = \"dd03557fc52fdf245d2c43ed214dc9e253e4ac0e97ad83dd4cc18d74c9e811a8\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: flock-{{ version }}.tar.gz\n  url: https://github.com/discoteq/flock/releases/download/v{{ version }}/flock-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX {{ name }}  # [not win]\n    - conda inspect objects -p $PREFIX {{ name }}   # [osx]\n\n    - which flock\n    - flock my.lock echo \"hello, world!\"\n\nabout:\n  home: https://github.com/discoteq/flock\n  license: ISC\n  license_file: LICENSE.md\n  summary: \"flock(1) locks files\"\n\n  dev_url: https://github.com/discoteq/flock\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

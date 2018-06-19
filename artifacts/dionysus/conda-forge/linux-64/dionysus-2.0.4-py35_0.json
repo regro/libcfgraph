@@ -719,6 +719,7 @@
   "subdir": "linux-64",
   "version": "2.0.4"
  },
+ "metadata_version": 1,
  "name": "dionysus",
  "raw_recipe": "{% set name = \"dionysus\" %}\n{% set version = \"2.0.4\" %}\n{% set sha256 = \"e411396c63aa6838e414c18979d4d90a28fcc60ae1660389e6b777a43479bf40\" %}\n{% set build_number = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build_number }}\n  script: >\n    CC=clang CXX=clang++ CXXFLAGS=\"${CXXFLAGS} -stdlib=libc++\" LDFLAGS=\"${LDFLAGS} -lc++abi\"  # [linux]\n    python setup.py install --single-version-externally-managed --record record.txt\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n    - clangdev  # [linux]\n    - libcxx    # [linux]\n    - cmake\n    - boost-cpp\n  run:\n    - python\n    - libcxx    # [linux]\n\ntest:\n  imports:\n    - dionysus\n\nabout:\n  home: http://mrzv.org/software/dionysus2\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Library for computing persistent homology\n  doc_url: http://mrzv.org/software/dionysus2\n  dev_url: https://github.com/mrzv/dionysus\n\nextra:\n  recipe-maintainers:\n    - mrzv\n",
  "rendered_recipe": {

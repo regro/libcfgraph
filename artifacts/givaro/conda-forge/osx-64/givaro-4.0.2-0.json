@@ -322,6 +322,7 @@
   "subdir": "osx-64",
   "version": "4.0.2"
  },
+ "metadata_version": 1,
  "name": "givaro",
  "raw_recipe": "{% set version = \"4.0.2\" %}\n{% set name = \"givaro\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/linbox-team/givaro/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: dc70cb80dc231184f0ce04ad82d0a9127906e84b5a157d5e527867815c6604bd\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - gmp\n  run:\n    - gmp\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/givaro/givaromm.h\n    - test -f ${PREFIX}/lib/lib{{ name }}.a\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]\n\nabout:\n  home: http://givaro.forge.imag.fr\n  license: GPLv2+\n  license_file: {{ SRC_DIR }}/COPYING\n  summary: Givaro - C++ library for arithmetic and algebraic computations\n  dev_url: https://github.com/linbox-team/givaro\n  doc_url: http://givaro.forge.imag.fr/givaro-html\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

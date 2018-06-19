@@ -164,6 +164,7 @@
   "subdir": "osx-64",
   "version": "2.8"
  },
+ "metadata_version": 1,
  "name": "cdms2",
  "raw_recipe": "{% set name = \"cdms2\" %}\n{% set version = \"2.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/UV-CDAT/cdms/archive/v{{ version }}.tar.gz\n  sha256: 90665e6bca64af818b1ee6c6a042f53270d2cf24ba3aa6f23513bbe6b35e7d4b\n\nbuild:\n  number: 0\n  skip: True  # [win or py3k] \n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - libcdms\n    - cdat_info\n    - numpy x.x\n    - libdrs_f\n    - gcc\n\n  run:\n    - python\n    - cdtime\n    - libcf\n    - distarray\n    - libcdms\n    - cdat_info\n    - numpy x.x\n    - esmp <7\n    - libdrs_f\n    - pyopenssl\n\ntest:\n  commands:\n    - export UVCDAT_ANONYMOUS_LOG=false && python -c \"import cdms2\"  \n\nabout:\n  home:  http://uvcdat.llnl.gov/documentation/cdms/cdms.html\n  license: 'CCLRC'\n  summary: 'Community Data Management System'\n  description: |            \n    The Community Data Management System is an object-oriented \n    data management system, specialized for organizing \n    multidimensional, gridded data used in climate \n    analysis and simulation.\n  dev_url: http://github.com/UV-CDAT/cdms2\n\nextra:\n  recipe-maintainers:\n    - dnadeau4\n    - doutriaux1\n",
  "rendered_recipe": {

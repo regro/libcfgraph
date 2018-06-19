@@ -108,6 +108,7 @@
   "subdir": "win-64",
   "version": "2.3.1"
  },
+ "metadata_version": 1,
  "name": "compliance-checker",
  "raw_recipe": "{% set version = \"2.3.1\" %}\n\npackage:\n  name: compliance-checker\n  version: {{ version }}\n\nsource:\n  fn: compliance-checker-{{ version }}.tar.gz\n  url: https://github.com/ioos/compliance-checker/archive/{{ version }}.tar.gz\n  sha256: dd862932af2c444f689c443265d8a12c394049b29565b514991171864517466a\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - compliance-checker = cchecker:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - owslib\n    - lxml\n    - cf_units\n    - requests\n    - python-dateutil\n    - isodate\n    - jinja2\n    - pygeoif\n\ntest:\n  requires:\n    - pytest\n    - httpretty\n  imports:\n    - compliance_checker\n    - compliance_checker.cf\n    - compliance_checker.tests\n  commands:\n    - py.test -s -rxs -v {{ environ['SRC_DIR'] }}  # [not win]\n    - compliance-checker --help\n\nabout:\n  home: https://github.com/ioos/compliance-checker\n  license: Apache 2.0\n  summary: 'Checks Datasets and SOS endpoints for standards compliance.'\n\nextra:\n  recipe-maintainers:\n    - benjwadams\n    - daf\n    - kwilcox\n    - lukecampbell\n    - ocefpaf\n",
  "rendered_recipe": {},

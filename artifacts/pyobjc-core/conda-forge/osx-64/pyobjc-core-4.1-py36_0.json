@@ -698,6 +698,7 @@
   "subdir": "osx-64",
   "version": "4.1"
  },
+ "metadata_version": 1,
  "name": "pyobjc-core",
  "raw_recipe": "{% set name = \"pyobjc-core\" %}\n{% set version = \"4.1\" %}\n{% set sha256 = \"e42d3558b65485f896e272e48e108d4df8ccd7f130f552dddb4a47732dd0ee65\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [not osx]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - PyObjCTools\n    - objc\n\nabout:\n  home: http://pyobjc.sourceforge.net/\n  license: MIT\n  summary: 'Python<->ObjC Interoperability Module'\n  license_family: MIT\n  license_file: License.txt\n\nextra:\n  recipe-maintainers:\n    - kastman\n",
  "rendered_recipe": {

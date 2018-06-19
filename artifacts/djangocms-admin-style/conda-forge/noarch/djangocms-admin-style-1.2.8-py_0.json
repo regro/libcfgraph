@@ -963,6 +963,7 @@
   "subdir": "noarch",
   "version": "1.2.8"
  },
+ "metadata_version": 1,
  "name": "djangocms-admin-style",
  "raw_recipe": "{% set version = \"1.2.8\" %}\n\npackage:\n  name: djangocms-admin-style\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/djangocms-admin-style/djangocms-admin-style-{{ version }}.tar.gz\n  sha256: 7f7452f0d6b9d45f99949e8dd2f7a0fcc242d2134d6cec088ed2b3457e2c7954\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - djangocms_admin_style\n\nabout:\n  home: http://www.django-cms.org/\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'Adds pretty CSS styles for the django CMS admin interface.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -3127,6 +3127,7 @@
   "subdir": "linux-64",
   "version": "1.4.2"
  },
+ "metadata_version": 1,
  "name": "seqan-library",
  "raw_recipe": "{% set name = \"seqan-library\" %}\n{% set version = \"1.4.2\" %}\n{% set sha256 = \"004e6e07ec2e137cc5f637372ea9f67156066ee8a88a583f37490741bd31045e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://github.com/seqan/seqan/releases/download/seqan-v{{ version }}/{{ name }}-{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: cp -r include share $PREFIX  # [unix]\n\ntest:\n  commands:\n    - test -f $PREFIX/include/seqan/seq_io.h  # [unix]\n    - if not exist \"%PREFIX%\"\\\\include\\\\seqan\\\\seq_io.h exit 1  # [win]\n\nabout:\n  home: https://www.seqan.de\n  license: BSD-3-Clause\n  license_file: share/doc/seqan/LICENSE\n  summary: 'SeqAn is a C++ library for the analysis of biological sequence data.'\n  description: |\n    SeqAn contains a header only library and some associated tools.\n    This package does *not* contain those tools, but only the library\n    (the files in `include` and `share`).\n  dev_url: https://github.com/seqan/seqan\n\nextra:\n  recipe-maintainers:\n    - aseyboldt\n",
  "rendered_recipe": {},

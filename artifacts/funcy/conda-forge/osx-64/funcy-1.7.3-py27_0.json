@@ -108,6 +108,7 @@
   "subdir": "osx-64",
   "version": "1.7.3"
  },
+ "metadata_version": 1,
  "name": "funcy",
  "raw_recipe": "{% set name = \"funcy\" %}\n{% set version = \"1.7.3\" %}\n{% set sha256 = \"30326d7094f91f621d7f3af2718090faef7b9bc537cc79485b7521673567e14e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - funcy\n\nabout:\n  home: https://github.com/Suor/funcy\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'A collection of fancy functional tools focused on practicality.'\n\n  doc_url: http://funcy.readthedocs.io/\n  dev_url: https://github.com/Suor/funcy\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
  "rendered_recipe": {

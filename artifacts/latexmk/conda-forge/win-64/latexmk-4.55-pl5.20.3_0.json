@@ -687,6 +687,7 @@
   "subdir": "win-64",
   "version": "4.55"
  },
+ "metadata_version": 1,
  "name": "latexmk",
  "raw_recipe": "{% set name = \"latexmk\" %}\n{% set major = \"4\" %}\n{% set minor = \"55\" %}\n{% set version = major + \".\" + minor %}\n{% set sha256 = \"aa400d3c5860fffc925efe5d832c575f3bee1d3770e4c6db96e2add518c38d2b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: http://personal.psu.edu/jcc8//software/latexmk-jcc/latexmk-{{major}}{{minor}}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:\n  run:\n    - perl\n\ntest:\n  commands:\n    - latexmk -h\n\nabout:\n  home: http://personal.psu.edu/jcc8//software/latexmk-jcc/\n  license: GPL v2\n  license_family: GPL\n  license_file: COPYING\n  summary: 'A perl script for running LaTeX the correct number of times'\n  description: |\n    Latexmk is a perl script for running LaTeX the correct number of times to\n    resolve cross references, etc; it also runs auxiliary programs (bibtex,\n    makeindex if necessary, and dvips and/or a previewer as requested).\n    It has a number of other useful capabilities, for example to start\n    a previewer and then run latex whenever the source files are updated,\n    so that the previewer gives an up-to-date view of the document.\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "rendered_recipe": {

@@ -877,6 +877,7 @@
   "timestamp": 1529073730246,
   "version": "0.9.0"
  },
+ "metadata_version": 1,
  "name": "jupyterhub",
  "raw_recipe": "{% set version = \"0.9.0\" %}\n\npackage:\n  name: jupyterhub\n  version: {{ version }}\n\nsource:\n  fn: jupyterhub-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/j/jupyterhub/jupyterhub-{{ version }}.tar.gz\n  sha256: aa1d237d463b4f8fe75eee139a46957d6008750df13456045d4deda4ffb9022c\n\nbuild:\n  number: 0\n  skip: true  # [py<35]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - alembic\n    - async_generator >=1.8\n    - configurable-http-proxy\n    - jinja2\n    - pamela  # [not win]\n    - prometheus_client >=0.0.21\n    - psutil  # [win]\n    - pycurl\n    - python-dateutil\n    - python-oauth2 >=1.0\n    - requests\n    - sqlalchemy >=1.1\n    - traitlets >=4.3.2\n    - tornado >=5.0\n    \ntest:\n  imports:\n    - jupyterhub\n    - jupyterhub.apihandlers\n    - jupyterhub.handlers\n    - jupyterhub.tests\n    - jupyterhub.app\n  commands:\n    - python -m jupyterhub --help-all\n\nabout:\n  home: https://github.com/jupyterhub/jupyterhub\n  license: BSD 3-Clause\n  license_file: COPYING.md\n  summary: Multi-user server for Jupyter notebooks\n\nextra:\n  recipe-maintainers:\n    - minrk\n",
  "rendered_recipe": {

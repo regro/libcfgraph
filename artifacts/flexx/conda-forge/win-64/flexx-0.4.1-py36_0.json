@@ -296,6 +296,7 @@
   "subdir": "win-64",
   "version": "0.4.1"
  },
+ "metadata_version": 1,
  "name": "flexx",
  "raw_recipe": "{% set version = \"0.4.1\" %}\n\npackage:\n  name: flexx\n  version: {{ version }}\n\nsource:\n  fn: flexx-{{ version }}.zip\n  url: https://pypi.python.org/packages/0d/82/11900c3972ca2871772ca5d16d9f631a1c2dac53bd75e38bd8253f8fcd2b/flexx-0.4.1.zip\n  md5: 7138a378aa68d781212c4b2cfb6ddfcb\n\nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - tornado\n  run:\n    - python\n    - tornado\n\ntest:\n  imports:\n    - flexx.ui\n    - flexx.app\n    - flexx.event\n    - flexx.pyscript\n    - flexx.webruntime\n    - flexx.util\n\nabout:\n  home: http://github.com/zoofIO/flexx\n  doc_url: http://flexx.readthedocs.io\n  dev_url: http://github.com/zoofIO/flexx\n  summary: Python UI tookit based on web technology\n  license: BSD 2-Clause\n\nextra:\n  recipe-maintainers:\n    - almarklein\n    - ivoflipse\n    - korijn \n",
  "rendered_recipe": {

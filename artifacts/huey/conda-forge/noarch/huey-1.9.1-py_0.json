@@ -171,6 +171,7 @@
   "timestamp": 1524261530185,
   "version": "1.9.1"
  },
+ "metadata_version": 1,
  "name": "huey",
  "raw_recipe": "{% set name = \"huey\" %}\n{% set version = \"1.9.1\" %}\n{% set sha256 = \"d136bd879dc05343ba851f658b5a342fec0e76f48b40ca6a881999ed31ee1055\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/coleifer/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - huey_consumer = huey.bin.huey_consumer:consumer_main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - peewee\n    - redis-py\n\ntest:\n  imports:\n    - huey\n\n  commands:\n    - huey_consumer --help\n\nabout:\n  home: https://github.com/coleifer/huey\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A little task queue for python\n  doc_url: http://huey.readthedocs.org/\n  dev_url: https://github.com/coleifer/huey\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n",
  "rendered_recipe": {

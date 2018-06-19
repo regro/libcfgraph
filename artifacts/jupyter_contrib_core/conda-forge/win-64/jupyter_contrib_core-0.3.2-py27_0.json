@@ -528,6 +528,7 @@
   "subdir": "win-64",
   "version": "0.3.2"
  },
+ "metadata_version": 1,
  "name": "jupyter_contrib_core",
  "raw_recipe": "{% set name = 'jupyter_contrib_core' %}\n{% set version = '0.3.2' %}\n{% set sha256 = '85ff982f0fe4d9fc64e35081256c436a77ab327d79ca8e44c3943f1b6290aca1' %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - jupyter_core\n    - notebook >=4.0\n    - tornado\n    - traitlets\n\ntest:\n  imports:\n    - jupyter_contrib_core\n    - jupyter_contrib_core.application\n    - jupyter_contrib_core.notebook_compat\n    - jupyter_contrib_core.notebook_compat.nbextensions\n    - jupyter_contrib_core.notebook_compat.serverextensions\n    - jupyter_contrib_core.notebook_compat._compat\n    - jupyter_contrib_core.notebook_compat._compat.nbextensions\n    - jupyter_contrib_core.notebook_compat._compat.serverextensions\n\n  commands:\n    - jupyter contrib --help\n\nabout:\n  summary: Common utilities for jupyter-contrib projects.\n  home: https://github.com/jupyter-contrib/jupyter_contrib_core\n  license_file: LICENSE.txt\n  license: BSD 3-clause\n\nextra:\n  recipe-maintainers:\n    - jcb91\n",
  "rendered_recipe": {

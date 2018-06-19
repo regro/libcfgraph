@@ -97,6 +97,7 @@
   "subdir": "linux-64",
   "version": "1.0.6"
  },
+ "metadata_version": 1,
  "name": "liknorm-py",
  "raw_recipe": "{% set name = \"liknorm-py\" %}\n{% set version = \"1.0.6\" %}\n{% set sha256 = \"abaefb871fc97a034d992deaa427a7ce1a6bcb72c26ae0cb56eb2e383e8fff8b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: true  # [win32 or linux32 or (win64 and py27)]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cffi >=1.7\n    - toolchain\n    - liknorm >=1.2.6\n  run:\n    - python\n    - cffi >=1.7\n    - liknorm >=1.2.6\n    - numpy >=1.10\n\ntest:\n  requires:\n    - pytest >=3\n  imports:\n    - liknorm\n  commands:\n    - python -c \"import sys; import liknorm; sys.exit(liknorm.test())\"\n\nabout:\n  home: https://github.com/limix/liknorm-py\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Liknorm Python wrapper'\n  doc: https://github.com/limix/liknorm-py\n  dev_url: https://github.com/limix/liknorm-py\n\nextra:\n  recipe-maintainers:\n    - Horta\n",
  "rendered_recipe": {

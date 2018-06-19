@@ -1114,6 +1114,7 @@
   "subdir": "noarch",
   "version": "3.0.1"
  },
+ "metadata_version": 1,
  "name": "wrighttools",
  "raw_recipe": "{% set name = \"WrightTools\" %}\n{% set version = \"3.0.1\" %}\n{% set sha256 = \"67559cdc21a99add90258f913d8cea66a63fed412373f9c119ad7b1b253a4f42\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n  run:\n    - python\n    - h5py >=2.7.0\n    - imageio\n    - matplotlib 2.*\n    - numexpr\n    - numpy\n    - python-dateutil\n    - pytz\n    - scipy\n    - pytest-runner\n    - tidy_headers\n\ntest:\n  imports:\n    - WrightTools\n\nabout:\n  home: http://wright.tools/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Tools for loading, processing, and plotting multidimensional spectroscopy data.\n\nextra:\n  recipe-maintainers:\n    - untzag\n    - ksunden\n",
  "rendered_recipe": {

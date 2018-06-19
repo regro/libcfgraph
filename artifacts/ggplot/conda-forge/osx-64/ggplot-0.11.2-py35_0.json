@@ -118,6 +118,7 @@
   "subdir": "osx-64",
   "version": "0.11.2"
  },
+ "metadata_version": 1,
  "name": "ggplot",
  "raw_recipe": "{% set version = \"0.11.2\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"b01df3498865281730d137455df53fbd7b8c313dbdcc2a7275598f1f9df8dd08\" %}\n\npackage:\n  name: ggplot\n  version: {{ version }}\n\nsource:\n  fn: ggplot-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/g/ggplot/ggplot-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - brewer2mpl\n    - cycler\n    - matplotlib\n    - numpy\n    - pandas\n    - patsy >=0.4\n    - scipy\n    - six\n    - statsmodels\n\n  run:\n    - python\n    - brewer2mpl\n    - cycler\n    - matplotlib\n    - numpy\n    - pandas\n    - patsy >=0.4\n    - scipy\n    - six\n    - statsmodels\n\ntest:\n  imports:\n    - ggplot\n\nabout:\n  home: https://github.com/yhat/ggplot\n  license: BSD 2-Clause\n  summary: 'ggplot for python'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - ocefpaf\n",
  "rendered_recipe": {},

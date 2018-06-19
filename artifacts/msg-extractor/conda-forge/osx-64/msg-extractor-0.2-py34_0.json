@@ -28,6 +28,7 @@
   "subdir": "osx-64",
   "version": "0.2"
  },
+ "metadata_version": 1,
  "name": "msg-extractor",
  "raw_recipe": "{%set name = \"msg-extractor\" %}\n{%set version = \"0.2\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/mattgwwalker/{{ name }}.git\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - imapclient\n    - olefile\n\ntest:\n  imports:\n    - ExtractMsg\n\nabout:\n  home: https://github.com/mattgwwalker/msg-extractor\n  license: GPL 3.0\n  license_file: COPYING\n  license_family: GPL3\n  summary: \"Extracts emails and attachments saved in Microsoft Outlook's .msg files\"\n  dev_url: https://github.com/mattgwwalker/msg-extractor\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

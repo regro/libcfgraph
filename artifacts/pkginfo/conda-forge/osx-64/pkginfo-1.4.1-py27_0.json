@@ -515,6 +515,7 @@
   "subdir": "osx-64",
   "version": "1.4.1"
  },
+ "metadata_version": 1,
  "name": "pkginfo",
  "raw_recipe": "{% set name = \"pkginfo\" %}\n{% set version = \"1.4.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"bb1a6aeabfc898f5df124e7e00303a5b3ec9a489535f346bfbddb081af93f89e\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.tar.gz'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  number: 0\n  entry_points:\n    - pkginfo = pkginfo.commandline:main\n  script: python setup.py install  --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - pkginfo\n    - pkginfo.tests\n  commands:\n    - pkginfo --help\n\nabout:\n  home: https://code.launchpad.net/~tseaver/pkginfo/trunk\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Query metadatdata from sdists / bdists / installed packages.\n  description: |\n    This package provides an API for querying the distutils metadata written in\n    the ``PKG-INFO`` file inside a source distriubtion (an ``sdist``) or\n    a binary distribution (e.g., created by running ``bdist_egg``)\n  doc_url: http://pythonhosted.org/pkginfo/\n  dev_url: https://code.launchpad.net/~tseaver/pkginfo/trunk\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - janschulz\n    - mingwandroid\n",
  "rendered_recipe": {

@@ -122,6 +122,7 @@
   "subdir": "win-64",
   "version": "0.14.2"
  },
+ "metadata_version": 1,
  "name": "python-nvd3",
  "raw_recipe": "{% set name = \"python-nvd3\" %}\n{% set version = \"0.14.2\" %}\n{% set sha256 = \"86ca51a9526ced2ebe8faff999b0660755f51f2d00af7871efba9b777470ae95\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\n  entry_points:\n    - nvd3 = nvd3.NVD3Chart:_main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - python-slugify >=1.1.4,<2\n    - jinja2 >=2.8\n\ntest:\n  imports:\n    - nvd3\n  commands:\n    - nvd3 --help\n\nabout:\n  home: http://github.com/areski/python-nvd3\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Python NVD3 - Chart Library for d3.js'\n\n  # The remaining entries in this section are optional, but recommended\n  description: |\n      NVD3 is an attempt to build re-usable charts and chart components\n      for d3.js without taking away the power that d3.js offers you.\n      Python-NVD3 makes your life easy! You write Python and the library\n      renders JavaScript for you!\n  doc_url: http://python-nvd3.readthedocs.io/en/latest\n  dev_url: https://github.com/simplejson/simplejson\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

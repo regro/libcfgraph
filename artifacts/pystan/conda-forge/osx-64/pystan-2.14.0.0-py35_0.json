@@ -14513,6 +14513,7 @@
   "subdir": "osx-64",
   "version": "2.14.0.0"
  },
+ "metadata_version": 1,
  "name": "pystan",
  "raw_recipe": "{% set name = \"pystan\" %}\n{% set version = \"2.14.0.0\" %}\n{% set sha256sum = \"3bed255ca7d35bbd4ed0d5f30470744d9a71b06c1fa8b88281053dd430b0b1b2\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256sum }}\n  patches:\n    - patches/0001-Disable-boost-quadmath.patch\n\nbuild:\n  number: 0\n  features:\n    - vc9   # [win and py27]\n    - vc14  # [win and py35]\n    - vc14  # [win and py36]\n  detect_binary_files_with_prefix: False\n\nrequirements:\n  build:\n    - msinttypes  # [win and py27]\n    - python\n    - setuptools\n    - numpy >=1.7\n    - cython >=0.22,!=0.25.1\n\n  run:\n    - python\n    - numpy >=1.7\n    - cython >=0.22,!=0.25.1\n    - matplotlib\n\ntest:\n  imports:\n    - pystan\n\nabout:\n  home: http://mc-stan.org/interfaces/pystan.html\n  license: GPLv3\n  license_file: LICENSE\n  summary: Python interface to Stan, a package for Bayesian inference\n  description: |\n    PyStan provides a Python interface to Stan, a package for Bayesian\n    inference using the No-U-Turn sampler, a variant of Hamiltonian Monte\n    Carlo.\n  doc_url: https://pystan.readthedocs.org/\n  dev_url: https://github.com/stan-dev/pystan\n\nextra:\n  recipe-maintainers:\n    - rolando\n",
  "rendered_recipe": {

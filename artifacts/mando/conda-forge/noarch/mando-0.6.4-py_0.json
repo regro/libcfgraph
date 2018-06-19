@@ -730,6 +730,7 @@
   "subdir": "noarch",
   "version": "0.6.4"
  },
+ "metadata_version": 1,
  "name": "mando",
  "raw_recipe": "{% set name = \"mando\" %}\n{% set version = \"0.6.4\" %}\n{% set sha256 = \"79feb19dc0f097daa64a1243db578e7674909b75f88ac2220f1c065c10a0d960\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - six\n    - python\n\ntest:\n  imports:\n    - mando\n\nabout:\n  home: https://github.com/rubik/mando\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Create Python CLI apps with little to no effort at all!'\n\n  description: |\n    mando is a wrapper around argparse, and allows you to write complete CLI applications \n    in seconds while maintaining all the flexibility.\n\nextra:\n  recipe-maintainers:\n    - igortg\n",
  "rendered_recipe": {

@@ -133,6 +133,7 @@
   "timestamp": 1525743697606,
   "version": "2.0.0"
  },
+ "metadata_version": 1,
  "name": "python-pdal",
  "raw_recipe": "{% set name = \"python-pdal\" %}\n{% set version = \"2.0.0\" %}\n{% set sha256 = \"60d41da79441d0aa9c44ec6ebb7497ffc0090d761259d42d4eeb05c7146bb432\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/PDAL/python/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win and py<35]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - numpy\n    - cython\n    - packaging\n    - pdal 1.7.*\n    - pip\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - {{ pin_compatible('pdal', max_pin='x.x') }}\n    - packaging\n\ntest:\n  source_files:\n    - test\n  imports:\n    - pdal\n  commands:\n    - cd test && python -m unittest test_pipeline\n\nabout:\n  home: https://www.pdal.io\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Point Data Abstraction Library (PDAL) Python Package'\n  description: |\n    Python package for the PDAL library.\n  doc_url: https://www.pdal.io\n  dev_url: https://github.com/pdal/python\n\nextra:\n  recipe-maintainers:\n    - chambbj\n",
  "rendered_recipe": {

@@ -558,6 +558,7 @@
   "subdir": "osx-64",
   "version": "0.0.3"
  },
+ "metadata_version": 1,
  "name": "libosxunwind",
  "raw_recipe": "{% set name = \"libosxunwind\" %}\n{% set version = \"0.0.3\" %}\n{% set sha256 = \"862d060d4361e5a5c5b0d02508a114a51aa66b5bb25462b2bf3a9f48d420a54d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/JuliaLang/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [not osx]\n\nrequirements:\n  build:\n    - toolchain\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/include/libunwind.h\"\n    - test -f \"${PREFIX}/include/unwind.h\"\n    - test -d \"${PREFIX}/include/mach-o\"\n    - test -f \"${PREFIX}/lib/libosxunwind.a\"\n    - test -f \"${PREFIX}/lib/libosxunwind.dylib\"\n\n    - conda inspect linkages -p \"${PREFIX}\" \"{{ name }}\"\n    - conda inspect objects -p \"${PREFIX}\" \"{{ name }}\"\n\nabout:\n  home: https://github.com/JuliaLang/libosxunwind\n  license: APSL-2.0\n  # No license file included. Raise an issue upstream.\n  #\n  # xref: https://github.com/JuliaLang/libosxunwind/issues/10\n  license_file: \"{{ RECIPE_DIR }}/LICENSE.txt\"\n  license_url: https://opensource.apple.com/apsl\n  summary: Clone of Apple's libunwind, enhanced for the Julia Profiler\n  dev_url: https://github.com/JuliaLang/libosxunwind\n\nextra:\n  recipe-maintainers:\n    - dfornika\n    - jakirkham\n",
  "rendered_recipe": {

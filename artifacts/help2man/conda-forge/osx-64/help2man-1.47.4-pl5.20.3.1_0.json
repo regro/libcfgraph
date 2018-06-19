@@ -26,6 +26,7 @@
   "subdir": "osx-64",
   "version": "1.47.4"
  },
+ "metadata_version": 1,
  "name": "help2man",
  "raw_recipe": "{% set name = \"help2man\" %}\n{% set version = \"1.47.4\" %}\n{% set sha256 = \"d4ecf697d13f14dd1a78c5995f06459bff706fd1ce593d1c02d81667c0207753\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.xz\n  url: https://ftp.gnu.org/gnu/{{ name }}/{{name}}-{{ version }}.tar.xz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - automake\n    - perl\n  run:\n    - perl\n\ntest:\n  commands:\n    - help2man --help\n    - test -f ${PREFIX}/bin/help2man\n\nabout:\n  home: https://www.gnu.org/software/help2man/\n  license: GPL-3.0\n  license_family: GPL3\n  license_file: COPYING\n  summary: 'help2man produces simple manual pages from the --help and --version output of other commands.'\n  doc_url: https://www.gnu.org/software/help2man/\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n",
  "rendered_recipe": {},

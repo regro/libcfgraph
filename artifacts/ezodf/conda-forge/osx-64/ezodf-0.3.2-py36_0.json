@@ -126,6 +126,7 @@
   "subdir": "osx-64",
   "version": "0.3.2"
  },
+ "metadata_version": 1,
  "name": "ezodf",
  "raw_recipe": "{% set name = \"ezodf\" %}\n{% set version = \"0.3.2\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"000da534f689c6d55297a08f9e2ed7eada9810d194d31d164388162fb391122d\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n    - lxml\n\ntest:\n  imports:\n    - ezodf\n\nabout:\n  home: https://github.com/T0ha/ezodf\n  license_file: {{ RECIPE_DIR }}/LICENSE.txt\n  license: MIT\n  license_family: MIT\n  summary: 'A Python package to create/manipulate OpenDocumentFormat files.'\n  dev_url: https://github.com/T0ha/ezodf\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

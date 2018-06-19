@@ -499,6 +499,7 @@
   "track_features": "mesalib",
   "version": "17.0.3"
  },
+ "metadata_version": 1,
  "name": "mesalib",
  "raw_recipe": "{% set name = \"mesaLib\" %}\n{% set version = \"17.0.3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: ftp://ftp.freedesktop.org/pub/mesa/mesa-{{ version }}.tar.gz\n  sha256: 8253edf1bdd7b14ab63d5982349143a5c9ac3767f39a63257cc9d7e7d92f60f1\n\nbuild:\n  skip: True  # [win or py3k]\n  number: 4\n  track_features:\n      - mesalib\n\nrequirements:\n  build:\n      - pthread-stubs\n      - pkgconfig\n      - gcc  # [linux]\n  run:\n      - pthread-stubs\n      - libgcc  # [linux]\n\ntest:\n  commands:\n      - test -f $PREFIX/lib/libOSMesa32.so      # [linux]\n      - test -f $PREFIX/lib/libOSMesa32.dylib   # [osx]\n\nabout:\n  home: http://www.mesa3d.org\n  license: MIT\n  license_file: docs/license.html\n  summary: Mesa is an open-source implementation of the OpenGL specification - a system for rendering interactive 3D graphics.\n\nextra:\n    recipe-maintainers:\n      - dnadeau4\n      - doutriaux1\n      - sankhesh\n",
  "rendered_recipe": {

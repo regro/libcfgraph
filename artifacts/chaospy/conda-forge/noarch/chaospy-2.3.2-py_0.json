@@ -870,6 +870,7 @@
   "subdir": "noarch",
   "version": "2.3.2"
  },
+ "metadata_version": 1,
  "name": "chaospy",
  "raw_recipe": "{% set version = \"2.3.2\" %}\n\npackage:\n  name: chaospy\n  version: {{ version }}\n\nsource:\n  fn: chaospy-{{ version }}.tar.gz\n  url: https://github.com/jonathf/chaospy/archive/v{{ version }}.tar.gz\n  sha256: 6700cd74d635a13dc69bbe2068548cbc82d01e34c4b68599ff8212a4b0cd2df8\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - networkx\n    - numpy\n    - scipy\n    - scikit-learn\n\ntest:\n  imports:\n    - chaospy\n  source_files:\n    - tests\n  requires:\n    - pytest-runner\n  commands:\n    - py.test\n\nabout:\n  home: https://github.com/jonathf/chaospy\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Toolbox for performing uncertainty quantification\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "rendered_recipe": {

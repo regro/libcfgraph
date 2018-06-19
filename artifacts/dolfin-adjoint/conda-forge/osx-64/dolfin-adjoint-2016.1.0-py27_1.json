@@ -87,6 +87,7 @@
   "subdir": "osx-64",
   "version": "2016.1.0"
  },
+ "metadata_version": 1,
  "name": "dolfin-adjoint",
  "raw_recipe": "{% set name = \"dolfin-adjoint\" %}\n{% set version = \"2016.1.0\" %}\n{% set sha256 = \"ce5c45c2f660502251d59348b0c0adc6e6c35c56947afa03340dca0bc00e3751\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://bitbucket.org/{{ name }}/{{ name }}/downloads/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install\n  skip: True  # [win or py3k]\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - mpich\n    - petsc 3.7.*\n    - petsc4py 3.7.*\n    - slepc 3.7.*\n    - slepc4py 3.7.*\n    - fenics 2016.1.*\n    - libadjoint 2016.1.*\n\ntest:\n  imports:\n    - dolfin_adjoint\n    - fenics_adjoint\n\nabout:\n  home: http://www.dolfin-adjoint.org/\n  license: LGPL-3.0\n  license_family: LGPL\n  license_file: LICENSE\n  summary: 'derives the discrete adjoint and tangent linear models'\n\n  description: |\n    The dolfin-adjoint project automatically derives the discrete adjoint\n    and tangent linear models from a forward model written in the Python\n    interface to DOLFIN.\n  doc_url: http://www.dolfin-adjoint.org/en/latest/documentation/index.html\n  dev_url: https://bitbucket.org/dolfin-adjoint/dolfin-adjoint\n\nextra:\n  recipe-maintainers:\n    - johannesring\n    - funsim\n",
  "rendered_recipe": {},

@@ -280,6 +280,7 @@
   "subdir": "win-64",
   "version": "0.04.20"
  },
+ "metadata_version": 1,
  "name": "unidecode",
  "raw_recipe": "{% set name = \"Unidecode\" %}\n{% set version = \"0.04.20\" %}\n{% set sha256 = \"ed4418b4b1b190487753f1cca6299e8076079258647284414e6d607d1f8a00e0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - unidecode = unidecode.util:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - unidecode\n  commands:\n    - unidecode --help\n\nabout:\n  home: https://pypi.python.org/pypi/Unidecode\n  license: GPL-2.0\n  license_file: LICENSE\n  summary: 'ASCII transliterations of Unicode text'\n  dev_url: https://www.tablix.org/~avian/git/unidecode.git\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
  "rendered_recipe": {

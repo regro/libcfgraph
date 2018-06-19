@@ -723,6 +723,7 @@
   "subdir": "win-64",
   "version": "0.9.1"
  },
+ "metadata_version": 1,
  "name": "bowtie-py",
  "raw_recipe": "{% set name = \"bowtie\" %}\n{% set version = \"0.9.1\" %}\n{% set sha256 = \"c3635ae7ec88870754049b8ec4ea403810d69692352df731185a18ef7314b75e\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}-py\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  skip: True  # [py<35]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - click\n    - eventlet\n    - flask\n    - flask-socketio\n    - jinja2\n    - markdown\n    - msgpack-python\n    - yarn\n\ntest:\n  imports:\n    - bowtie\n\nabout:\n  home: https://github.com/jwkvam/bowtie\n  license: MIT\n  license_file: LICENSE\n  summary: 'Interactive Dashboard Toolkit'\n  description: |\n    Bowtie is a library for writing dashboards in Python. No need to know\n    web frameworks or JavaScript, focus on building functionality in Python.\n    Interactively explore your data in new ways! Deploy and share with others!\n  doc_url: https://bowtie-py.readthedocs.io/\n  dev_url: https://github.com/jwkvam/bowtie\n\nextra:\n  recipe-maintainers:\n    - jwkvam\n",
  "rendered_recipe": {

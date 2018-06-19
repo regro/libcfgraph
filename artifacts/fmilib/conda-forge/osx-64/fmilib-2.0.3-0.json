@@ -687,6 +687,7 @@
   "subdir": "osx-64",
   "version": "2.0.3"
  },
+ "metadata_version": 1,
  "name": "fmilib",
  "raw_recipe": "{% set version = \"2.0.3\" %}\n\npackage:\n  name: fmilib\n  version: {{ version }}\n\nsource:\n  fn: FMILibrary-{{ version }}-src.zip\n  url: http://www.jmodelica.org/downloads/FMIL/FMILibrary-{{ version }}-src.zip\n  sha256: 4cc21f9e2c4114a6f4e303f82ca897ec9aa1eb6f7f09fef85979ea5fca309d9a\n\nbuild:\n  number: 0\n  skip: True  # [win and py35]\n  features:\n    - vc9  # [win and py27]\n    - vc14  # [win and py36]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - python  # [win]\n\ntest:\n  requires:\n    - python {{ environ['PY_VER'] + '*' }}  # [win]\n  commands:\n    - test -f $PREFIX/include/fmilib.h                                # [unix]\n    - test -f $PREFIX/lib/libfmilib.a                                 # [unix]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\fmilib.lib exit 1          # [win]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\fmilib.h exit 1        # [win]\n    - conda inspect linkages -p ${PREFIX} fmilib  # [not win]\n    - conda inspect objects -p ${PREFIX} fmilib  # [osx]\n\nabout:\n  home: http://www.jmodelica.org/FMILibrary\n  license: BSD\n  summary: Package written in C that enables integration of Functional Mock-up Units\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "rendered_recipe": {

@@ -150,6 +150,7 @@
   "timestamp": 1528379533053,
   "version": "0.8"
  },
+ "metadata_version": 1,
  "name": "importlib_resources",
  "raw_recipe": "{% set version = \"0.8\" %}\n\npackage:\n  name: importlib_resources\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/i/importlib_resources/importlib_resources-{{ version }}.tar.gz\n  sha256: 6a01fd2d5b90bd422783719e49528365db6739a1ee762ed8442868fbff80b2b3\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n    - pathlib2  # [py27]\n    - typing  # [py<35]\n  run:\n    - python\n    - pathlib2  # [py27]\n    - typing  # [py<35]\n\ntest:\n  imports:\n    - importlib_resources\n\nabout:\n  home: http://importlib-resources.readthedocs.io\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: \"Backport of Python 3.7's standard library `importlib.resources`.\"\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -35,6 +35,7 @@
   "subdir": "win-64",
   "version": "0.9.0"
  },
+ "metadata_version": 1,
  "name": "pyhdf",
  "raw_recipe": "{% set version = \"0.9.0\" %}\n\npackage:\n    name: pyhdf\n    version: {{ version }}\n\nsource:\n    fn: pyhdf-{{ version }}.tar.gz\n    url: http://hdfeos.org/software/pyhdf/pyhdf-{{ version }}.tar.gz\n    sha256: c20c58e53f8fbdc47a1fcdec954262528f486cfcb4efa7e1c2e8847ad3e8092f\n\nbuild:\n    number: 1\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - numpy x.x\n        - jpeg 9*\n        - zlib 1.2*\n        - hdf4\n    run:\n        - python\n        - numpy x.x\n        - jpeg 9*\n        - zlib 1.2*\n        - hdf4\n\ntest:\n    imports:\n        - pyhdf\n\nabout:\n    home:  http://hdfeos.org/software/pyhdf\n    license: Public Domain\n    summary: Python interface to the NCSA HDF4 library\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
  "rendered_recipe": {},

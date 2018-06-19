@@ -625,6 +625,7 @@
   "subdir": "linux-64",
   "version": "2.12"
  },
+ "metadata_version": 1,
  "name": "libdrs",
  "raw_recipe": "{% set name = \"libdrs\" %}\n{% set version = \"2.12\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/UV-CDAT/libdrs/archive/v2.12.tar.gz\n  sha256: d44a71f7903ce75c3c1d3839564fba2e7275a88e2353a5d2197280ec938752f5\n\nbuild:\n  number: 0\n  skip: True  # [win] \n\nrequirements:\n  build:\n    - libnetcdf 4.4.*\n    - g2clib\n    - gcc\n  run:\n    - libnetcdf 4.4.*\n    - g2clib\n    - libgcc\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libdrs.a \n\nabout:\n  home:  http://uvcdat.llnl.gov\n  license: CCLRC\n  summary: 'Data Retrieval and Storage DRS software C library'\n  description: |            \n    libdrs is suitable for the data generated and used in climate model research. \n    It is oriented toward use with models generating very large datasets on \n    supercomputers, as well as with graphics workstations used for analysis and \n    display of smaller subsets of data. \n  dev_url: http://github.com/UV-CDAT/libdrs\n\nextra:\n  recipe-maintainers:\n    - dnadeau4\n    - doutriaux1\n",
  "rendered_recipe": {

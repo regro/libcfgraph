@@ -958,6 +958,7 @@
   "subdir": "noarch",
   "version": "2.11.1"
  },
+ "metadata_version": 1,
  "name": "glances",
  "raw_recipe": "{% set version = \"2.11.1\" %}\n\npackage:\n  name: glances\n  version: {{ version }}\n\nsource:\n  fn: Glances-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/G/Glances/Glances-{{ version }}.tar.gz\n  sha256: b369d70835520ff7c4fad63958fcf5a09212d15a6c026131db6d0d3c20cdef5f\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - glances = glances:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - psutil >=2.0.0\n\ntest:\n  imports:\n    - glances\n\n  commands:\n    - glances --help\n\nabout:\n  home: https://github.com/nicolargo/glances\n  license: LGPL 3\n  license_family: LGPL\n  license_file: COPYING\n  summary: 'A cross-platform curses-based monitoring tool'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

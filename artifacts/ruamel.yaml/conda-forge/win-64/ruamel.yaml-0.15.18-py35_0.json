@@ -515,6 +515,7 @@
   "subdir": "win-64",
   "version": "0.15.18"
  },
+ "metadata_version": 1,
  "name": "ruamel.yaml",
  "raw_recipe": "{% set version = \"0.15.18\" %}\n\npackage:\n  name: ruamel.yaml\n  version: {{ version }}\n\nsource:\n  fn: ruamel.yaml.{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/r/ruamel.yaml/ruamel.yaml-{{ version }}.tar.gz\n  sha256: 345c9ce7c38b5495da7f619f25b11ca0e0ced0720d0aefe081ae1027d8fbe8d5\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - typing  # [py<35]\n    - ruamel.ordereddict  # [py27]\n\ntest:\n  imports:\n    - ruamel.yaml\n\nabout:\n  home: https://bitbucket.org/ruamel/yaml\n  license: MIT\n  license_file: LICENSE\n  summary: \"A YAML package for Python. It is a derivative of Kirill Simonov's PyYAML 3.11 which supports YAML1.1\"\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n    - mwcraig\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -110,6 +110,7 @@
   "subdir": "osx-64",
   "version": "2.9.0"
  },
+ "metadata_version": 1,
  "name": "arb",
  "raw_recipe": "{% set version = \"2.9.0\" %}\n\npackage:\n  name: arb\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.gz\n  url: https://github.com/fredrik-johansson/arb/archive/{{ version }}.tar.gz\n  sha256: 98f6f543e41e5dcb62cc6204d607fefa88317388c54c2a8edb9e601f7d243142\n\nbuild:\n  number: 1\n  skip: true        # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - gmp >=5.0.1,<7\n    - mpfr 3.*\n    - libflint\n  run:\n    - gmp >=5.0.1,<7\n    - mpfr 3.*\n    - libflint\n\ntest:\n  commands:\n    - test -f $PREFIX/include/arb.h\n    - test -f $PREFIX/lib/libarb.a\n    - test -f $PREFIX/lib/libarb.so         # [linux]\n    - test -f $PREFIX/lib/libarb.dylib      # [osx]\n\nabout:\n  home: http://arblib.org\n  license: GPL v2+\n  license_file: LICENSE\n  summary: 'A C library for arbitrary-precision interval arithmetic'\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

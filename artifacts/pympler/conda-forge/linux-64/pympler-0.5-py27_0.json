@@ -128,6 +128,7 @@
   "subdir": "linux-64",
   "version": "0.5"
  },
+ "metadata_version": 1,
  "name": "pympler",
  "raw_recipe": "{% set name = \"pympler\" %}\n{% set version = \"0.5\" %}\n{% set sha256 = \"74d26dfb6f02777a5087be181ef7f8ae57625e7ec3ae41e2fdd24f31289e772e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/{{ name }}/{{ name }}/archive/{{ version }}.tar.gz\n#  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  source_files:\n    - test/*\n  commands:\n    - python test/runtest.py\n\nabout:\n  home: https://github.com/pympler/pympler\n  license: Apache-2\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Development tool to measure, monitor and analyze the memory\n  behavior of Python objects in a running Python application. '\n  description: |\n    A development tool to measure, monitor and analyze the memory\n    behavior of Python objects.\n  doc_url: http://pythonhosted.org/Pympler/\n  dev_url: https://github.com/pympler/pympler\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
  "rendered_recipe": {

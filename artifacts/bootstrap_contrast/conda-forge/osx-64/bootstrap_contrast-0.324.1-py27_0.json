@@ -500,6 +500,7 @@
   "subdir": "osx-64",
   "version": "0.324.1"
  },
+ "metadata_version": 1,
  "name": "bootstrap_contrast",
  "raw_recipe": "{% set name = \"bootstrap_contrast\" %}\n{% set version = \"0.324.1\" %}\n{% set sha256 = \"4188edbb09b4acc82bac01bafe71a59becf0e63b699c09afdcb5594d52e3570f\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - matplotlib\n    - seaborn\n    - pandas\n    - numpy\n    - scipy\n\ntest:\n  imports:\n    - bootstrap_contrast\n\nabout:\n  home: http://github.com/josesho/bootstrap_contrast\n  license: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'Python module to produce bootstrapped confidence intervals and effect sizes.'\n  description: 'Python module to produced bootstrapped confidence intervals and effect sizes. Requires matplotlib, seaborn, numpy, scipy, and pandas (version at least 0.20.3).'\n  doc_url: https://github.com/josesho/bootstrap_contrast/blob/master/README.md\n  dev_url: http://github.com/josesho/bootstrap_contrast\n\nextra:\n  recipe-maintainers:\n    - josesho\n",
  "rendered_recipe": {

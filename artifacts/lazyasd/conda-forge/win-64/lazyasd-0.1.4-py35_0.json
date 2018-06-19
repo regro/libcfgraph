@@ -604,6 +604,7 @@
   "subdir": "win-64",
   "version": "0.1.4"
  },
+ "metadata_version": 1,
  "name": "lazyasd",
  "raw_recipe": "{% set version = \"0.1.4\" %}\n{% set sha256 = \"2f191432d32b05d52f546d873c43278d2d87a06af54dda388ce9deeb879150bf\" %}\n\npackage:\n  name: lazyasd\n  version: {{ version }}\n\nsource:\n  fn: lazyasd-{{ version }}.tar.gz\n  url: https://github.com/xonsh/lazyasd/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  source_files:\n    - tests\n  imports:\n    - lazyasd\n  requires:\n    - pytest\n  commands:\n    - py.test\n\nabout:\n  home: https://github.com/xonsh/lazyasd/blob/master/README.rst#lazyasd\n  license: BSD 3-clause\n  summary: 'Lazy & self-destructive tools for speeding up module imports'\n  description: |\n    A package that provides lazy and self-destructive tools for speeding up module imports.\n    This is useful whenever startup times are critical, such as for command line interfaces\n    or other user-facing applications. The tools in this module implement two distinct\n    strategies for speeding up module import. The first is delayed construction of global\n    state and the second is to import expensive modules in a background thread.\n  doc_url: http://xon.sh/api/lazyasd.html\n  dev_url: https://github.com/xonsh/lazyasd\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "rendered_recipe": {

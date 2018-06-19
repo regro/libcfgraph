@@ -779,6 +779,7 @@
   "subdir": "linux-64",
   "version": "2.2.1"
  },
+ "metadata_version": 1,
  "name": "python-casacore",
  "raw_recipe": "{% set name = \"python-casacore\" %}\n{% set version = \"2.2.1\" %}\n{% set sha256 = \"76075aa4add4f18b29d474ea3e155bce2d0688ed247ca1ce91a8106f08377bc5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/casacore/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - boost-python.patch\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - gcc  # [osx]\n    - boost 1.66.0\n    - casacore 2.4.*\n    - numpy 1.8.*  # [py27]\n    - numpy 1.9.*  # [py35]\n    - numpy 1.11.*  # [py36]\n    - python\n    - setuptools\n  run:\n    - boost 1.66.0\n    - casacore 2.4.*\n    - numpy >=1.8  # [py27]\n    - numpy >=1.9  # [py35]\n    - numpy >=1.11  # [py36]\n    - python\n\ntest:\n  imports:\n    - casacore\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://casacore.github.io/python-casacore/\n  license: GPLv2\n  license_file: LICENSE\n  summary: 'Python bindings for casacore, a library used in radio astronomy'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
  "rendered_recipe": {

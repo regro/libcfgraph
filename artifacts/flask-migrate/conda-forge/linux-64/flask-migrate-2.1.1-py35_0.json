@@ -659,6 +659,7 @@
   "subdir": "linux-64",
   "version": "2.1.1"
  },
+ "metadata_version": 1,
  "name": "flask-migrate",
  "raw_recipe": "{% set name = \"Flask-Migrate\" %}\n{% set version = \"2.1.1\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"b709ca8642559c3c5a81a33ab10839fa052177accd5ba821047a99db635255ed\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  preserve_egg_dir: True\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - flask >=0.9\n    - flask-sqlalchemy >=1.0\n    - alembic >=0.6\n\ntest:\n  imports:\n    - flask_migrate\n\nabout:\n  home: https://github.com/miguelgrinberg/flask-migrate/\n  license_file: LICENSE\n  license: MIT\n  license_family: MIT\n  summary: 'SQLAlchemy database migrations for Flask applications using Alembic'\n  dev_url: https://github.com/miguelgrinberg/flask-migrate/\n  doc_url: https://flask-migrate.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

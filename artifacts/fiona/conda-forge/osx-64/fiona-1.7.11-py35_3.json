@@ -700,6 +700,7 @@
   "subdir": "osx-64",
   "version": "1.7.11"
  },
+ "metadata_version": 1,
  "name": "fiona",
  "raw_recipe": "{% set version = \"1.7.11\" %}\n\npackage:\n  name: fiona\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Toblerity/Fiona/archive/{{ version }}.tar.gz\n  sha256: 3f5dce57f1af489489537a2a679240eaab51008ce2afc45ea5e92ac797c7bb53\n  patches:\n    - fix_null_gdal_22.patch\n\nbuild:\n  number: 3\n  entry_points:\n    - fio=fiona.fio.main:main_group\n\nrequirements:\n  build:\n    - python\n    - pip\n    - cython\n    - numpy 1.11.*\n    - gdal 2.2.*\n  run:\n    - python\n    - setuptools\n    - numpy >=1.11\n    - gdal 2.2.*\n    - cligj\n    - munch\n    - click-plugins\n    - six\n    - enum34  # [py27]\n    - shapely\n\ntest:\n  source_files:\n    - tests\n  imports:\n    - fiona\n    - fiona.fio\n  requires:\n    - pytest\n  files:\n    - test_data\n  commands:\n    - fio --help\n    - fio ls test_data/test.shp\n    - fio info test_data/test.shp\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://github.com/Toblerity/Fiona\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Fiona reads and writes spatial data files.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

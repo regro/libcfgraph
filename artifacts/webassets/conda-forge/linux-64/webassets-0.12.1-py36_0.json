@@ -150,6 +150,7 @@
   "subdir": "linux-64",
   "version": "0.12.1"
  },
+ "metadata_version": 1,
  "name": "webassets",
  "raw_recipe": "{%set name = \"webassets\" %}\n{%set version = \"0.12.1\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"e7d9c8887343123fd5b32309b33167428cb1318cdda97ece12d0907fd69d38db\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  entry_points:\n    - nwebassets = webassets.script:run\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - webassets\n    - webassets.bundle\n    - webassets.cache\n    - webassets.env\n    - webassets.exceptions\n    - webassets.importlib\n    - webassets.loaders\n    - webassets.merge\n    - webassets.script\n\n  commands:\n    - nwebassets --help\n\nabout:\n  home: https://github.com/miracle2k/webassets/\n  license: BSD 2-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: 'Media asset management for Python, with glue code for various web frameworks'\n  doc_url: https://webassets.readthedocs.io/\n  dev_url: https://github.com/miracle2k/webassets/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

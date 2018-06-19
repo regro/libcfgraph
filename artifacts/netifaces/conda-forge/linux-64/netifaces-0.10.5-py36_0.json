@@ -91,6 +91,7 @@
   "subdir": "linux-64",
   "version": "0.10.5"
  },
+ "metadata_version": 1,
  "name": "netifaces",
  "raw_recipe": "{%set name = \"netifaces\" %}\n{%set version = \"0.10.5\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"59d8ad52dd3116fcb6635e175751b250dc783fb011adba539558bd764e5d628b\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - netifaces\n\nabout:\n  home: https://bitbucket.org/al45tair/netifaces\n  license: MIT\n  license_family: MIT\n  summary: 'Portable network interface information.'\n  dev_url: https://bitbucket.org/al45tair/netifaces\n\nextra:\n  recipe-maintainers:\n    - anguslees\n    - pmlandwehr\n",
  "rendered_recipe": {

@@ -677,6 +677,7 @@
   "subdir": "osx-64",
   "version": "v1.22"
  },
+ "metadata_version": 1,
  "name": "hpc05",
  "raw_recipe": "{% set name = \"hpc05\" %}\n{% set version = \"v1.22\" %}\n{% set sha256 = \"9b515ae4b2cec847cba318b2f73c89d2b24302d603f0bb595ef174b93c8b5d64\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.zip\n  url: https://github.com/basnijholt/hpc05/archive/{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [not py36 or win]\n  script: \n   - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - paramiko\n    - sshtunnel\n    - ipyparallel\n    - pyzmq\n    - tornado\n    - pexpect\n    - ipython\n    - psutil\n    - dill\n\ntest:\n  imports:\n    - hpc05\n    - hpc05_culler\n\nabout:\n  home: http://github.com/basnijholt/hpc05\n  license: MIT\n  license_file: LICENSE\n  summary: \"ipyparallel Client package for PBS cluster with headnode (as on the TU Delft).\"\n  dev_url: https://github.com/basnijholt/hpc05\n\nextra:\n  recipe-maintainers:\n    - basnijholt\n",
  "rendered_recipe": {

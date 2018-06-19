@@ -105,6 +105,7 @@
   "subdir": "osx-64",
   "version": "4.1.3"
  },
+ "metadata_version": 1,
  "name": "gherkin-official",
  "raw_recipe": "{% set name = \"gherkin-official\" %}\n{% set version = \"4.1.3\" %}\n{% set sha256sum = \"7f6fa7a3ceffda8bba0f56b42140cc6bae001d010fef336b5b2602252242395d\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256sum }}\n\nbuild:\n  number: 0\n  script:\n    - rm gherkin/count_symbols_py2.py  # [py3k and not win]\n    - del gherkin\\count_symbols_py2.py  # [py3k and win]\n    - python setup.py install\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - nose\n\ntest:\n  imports:\n    - gherkin\n\nabout:\n  home: https://github.com/cucumber/gherkin-python\n  license: MIT\n  # xref: https://github.com/cucumber/gherkin-python/pull/7\n  license_file: '{{ environ['RECIPE_DIR'] }}/LICENSE.txt'\n  summary: Gherkin parser/compiler for Python\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "rendered_recipe": {

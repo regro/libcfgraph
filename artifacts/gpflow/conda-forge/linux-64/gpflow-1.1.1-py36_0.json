@@ -218,6 +218,7 @@
   "timestamp": 1526353529209,
   "version": "1.1.1"
  },
+ "metadata_version": 1,
  "name": "gpflow",
  "raw_recipe": "{% set version = \"1.1.1\" %}\n\npackage:\n  name: gpflow\n  version: {{ version }}\n\nsource:\n  fn: GPflow-{{ version }}.tar.gz\n  url: https://github.com/GPflow/GPflow/archive/{{ version }}.tar.gz\n  sha256: e92737e9488360aca754c24da434118c625aa9737bc22d2a58e41caf7c3f9122\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python >=3.5\n    - pip\n\n  run:\n    - python >=3.5\n    - numpy >=1.10.0\n    - scipy >=0.18.0\n    - pandas >=0.18.1\n    - tensorflow\n    - multipledispatch >=0.4.9\n    - pytest >=3.5.0\n\ntest:\n  imports:\n    # Skip the import test on Linux, see tensorflow recipe\n    - gpflow  # [not linux]\n\nabout:\n  home: https://github.com/GPflow/GPflow/\n  license: Apache 2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Gaussian process methods in tensorflow\n\nextra:\n  recipe-maintainers:\n    - cxhernandez\n    - jschueller\n",
  "rendered_recipe": {

@@ -513,6 +513,7 @@
   "subdir": "osx-64",
   "version": "0.2.1"
  },
+ "metadata_version": 1,
  "name": "pymapd",
  "raw_recipe": "{% set name = \"pymapd\" %}\n{% set version = \"0.2.1\" %}\n{% set sha256 = \"efa0112877d190c5d3db0f1174e3574719e81a67882a34962204781ee232792c\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  # No pyarrow pacakges for these builds:\n  skip: true  # [win32]\n  skip: true  # [win and py<35]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm\n    - cython\n    - numpy 1.11.*\n    - arrow-cpp >=0.5.0\n    - pyarrow >=0.5.0\n  run:\n    - python\n    - setuptools\n    - numpy >=1.11.*\n    - arrow-cpp >=0.5.0\n    - pyarrow >=0.5.0\n    - pandas\n    - six\n    - sqlalchemy\n    - thrift\n\ntest:\n  imports:\n    - pymapd\n    - mapd\n    - pymapd.shm  # [not win]\n\nabout:\n  home: http://github.com/mapd/pymapd\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE.md\n  summary: 'A python DB API 2 compatible client for mapd.'\n  description: |\n    A python DB API 2 compatible client for mapd.\n  doc_url: https://pymapd.readthedocs.io\n  dev_url: https://github.com/mapd/pymapd\n\nextra:\n  recipe-maintainers:\n    - TomAugspurger\n",
  "rendered_recipe": {

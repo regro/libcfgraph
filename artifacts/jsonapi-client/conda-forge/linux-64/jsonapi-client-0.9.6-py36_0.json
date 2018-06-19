@@ -773,6 +773,7 @@
   "subdir": "linux-64",
   "version": "0.9.6"
  },
+ "metadata_version": 1,
  "name": "jsonapi-client",
  "raw_recipe": "{% set name = \"jsonapi-client\" %}\n{% set version = \"0.9.6\" %}\n{% set sha256 = \"4325240a8357147e410f3600ae224edbefeaaebed1e70bdf8776d4b5d7a3377d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/qvantel/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: true  # [py < 36]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - requests\n    - jsonschema\n    - aiohttp\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - pytest\n    - pytest-mock\n  commands:\n    - py.test tests\n\nabout:\n  home: https://github.com/qvantel/jsonapi-client\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Comprehensive, yet easy-to-use, pythonic, ORM-like access to JSON API services'\n\n  dev_url: https://github.com/qvantel/jsonapi-client\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

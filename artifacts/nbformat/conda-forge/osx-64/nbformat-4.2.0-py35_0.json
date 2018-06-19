@@ -102,6 +102,7 @@
   "subdir": "osx-64",
   "version": "4.2.0"
  },
+ "metadata_version": 1,
  "name": "nbformat",
  "raw_recipe": "{% set version = \"4.2.0\" %}\n\npackage:\n  name: nbformat\n  version: {{ version }}\n\nsource:\n  fn: nbformat-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/n/nbformat/nbformat-{{ version }}.tar.gz\n  sha256: 389a5b630a30539074f238a48fb9864592f63d611baccfa2ffaf14ffe239de06\n\nbuild:\n  number: 0\n  script: pip install --no-deps .\n  # fixme: remove redundant conda entrypoints when we can\n  entry_points:\n    - jupyter-trust = nbformat.sign:TrustNotebookApp.launch_instance\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - ipython_genutils\n    - traitlets >=4.1\n    - jsonschema >=2.4,!=2.5.0\n    - jupyter_core\n\ntest:\n  commands:\n    - jupyter-trust -h\n  imports:\n    - nbformat\n\nabout:\n  home: http://jupyter.org\n  license: BSD 3-clause\n  summary: the base implementation of the Jupyter Notebook format\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n    - pelson\n    - takluyver\n    - ocefpaf\n",
  "rendered_recipe": {},

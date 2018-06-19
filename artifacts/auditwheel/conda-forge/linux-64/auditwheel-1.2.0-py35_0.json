@@ -48,6 +48,7 @@
   "subdir": "linux-64",
   "version": "1.2.0"
  },
+ "metadata_version": 1,
  "name": "auditwheel",
  "raw_recipe": "{% set version = \"1.2.0\" %}\n\npackage:\n  name: auditwheel\n  version: {{ version }}\n\nsource:\n  fn: auditwheel-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/a/auditwheel/auditwheel-{{ version }}.tar.gz\n  md5: 9f07b79c00b865353c82574962a074ef\n\nbuild:\n  number: 0\n  skip: True  # [py2k or not linux]\n\nrequirements:\n  build:\n    - pbr\n    - python\n    - setuptools\n    - pyelftools\n    - typing      # [py<35]\n\n  run:\n    - python\n    - setuptools\n    - pip\n    - pyelftools\n    - typing      # [py<35]\n\ntest:\n  commands:\n    - auditwheel -h\n\nabout:\n  home: https://github.com/pypa/auditwheel\n  license: MIT License\n  summary: Linux wheel verification tool to ensure compatibility\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - msarahan\n",
  "rendered_recipe": {},

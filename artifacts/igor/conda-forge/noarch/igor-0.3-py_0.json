@@ -785,6 +785,7 @@
   "subdir": "noarch",
   "version": "0.3"
  },
+ "metadata_version": 1,
  "name": "igor",
  "raw_recipe": "{% set name = \"igor\" %}\n{% set version = \"0.3\" %}\n{% set sha256 = \"b04ac38c68fb81cf3167a9981dc5a20379112d40268bb72c5a8514dc8051abba\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n    - matplotlib\n\ntest:\n  source_files:\n    - bin/igorbinarywave.py\n    - bin/igorpackedexperiment.py\n  imports:\n    - igor.binarywave\n    - igor.packed\n    - igor.igorpy\n  commands:\n    - python bin/igorbinarywave.py  --help\n    - python bin/igorpackedexperiment.py --help\n\nabout:\n  home: http://blog.tremily.us/posts/igor/\n  license: LGPL-3.0\n  license_family: LGPL\n  license_file: COPYING.LESSER\n  summary: 'Python parsers for WaveMetrics Igor Binary Waves and Packed Experiment files'\n  description: |\n    Python parsers for Igor Binary Waves (.ibw) and Packed Experiment\n    (.pxp) files written by WaveMetrics' IGOR Pro software.\n  doc_url: http://git.tremily.us/?p=igor.git;a=blob_plain;f=README;hb=HEAD\n  dev_url: http://blog.tremily.us/posts/igor/\n\nextra:\n  recipe-maintainers:\n    - carlodri\n",
  "rendered_recipe": {

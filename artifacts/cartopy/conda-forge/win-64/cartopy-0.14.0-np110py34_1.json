@@ -146,6 +146,7 @@
   "subdir": "win-64",
   "version": "0.14.0"
  },
+ "metadata_version": 1,
  "name": "cartopy",
  "raw_recipe": "{% set version = \"0.14.0\" %}\n\npackage:\n    name: cartopy\n    version: {{ version }}\n\nsource:\n    git_url: https://github.com/SciTools/cartopy.git\n    git_tag: v{{ version }}\n    patches:\n        - cartopy.win.patch  # [win]\n\nbuild:\n    number: 1\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - six\n        - numpy x.x\n        - cython\n        - proj.4\n        - geos\n        # On OSX We need to effectively pin the geos version to the\n        # one used by the specific shapely being targetted (we're letting\n        # conda's package solver will deal with that).\n        - shapely >=1.5.6\n        - owslib\n        - pyshp\n        - pyepsg\n        - msinttypes  # [win]\n    run:\n        - python\n        - six\n        - mock\n        - nose\n        - pillow\n        - owslib\n        - numpy x.x\n        - proj.4\n        - shapely >=1.5.6\n        - scipy\n        - pyshp\n        - matplotlib\n        - pyepsg\n\ntest:\n    imports:\n        - cartopy\n        - cartopy.mpl.geoaxes\n        - cartopy.crs\n\nabout:\n    home: http://scitools.org.uk/cartopy\n    license: GNU LGPL\n    summary: A library providing cartographic tools for python\n\nextra:\n    recipe-maintainers:\n        - pelson\n        - ocefpaf\n",
  "rendered_recipe": {},

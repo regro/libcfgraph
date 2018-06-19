@@ -756,6 +756,7 @@
   "subdir": "win-64",
   "version": "0.0.9"
  },
+ "metadata_version": 1,
  "name": "aiomysql",
  "raw_recipe": "{% set name = \"aiomysql\" %}\n{% set version = \"0.0.9\" %}\n{% set sha256 = \"3457baca19a1c307ffbab8e927259fcbf3144a5852ab4cf4205dc26e7c05623f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [py<33]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - asyncio  # [py<34]\n    - pymysql >=0.7.5\n\ntest:\n  imports:\n    - aiomysql\n\nabout:\n  home: https://github.com/aio-libs/aiomysql\n  summary: \"aiomysql is a library for accessing a MySQL database from the asyncio\"\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - kszucs\n",
  "rendered_recipe": {

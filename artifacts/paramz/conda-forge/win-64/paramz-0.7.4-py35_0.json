@@ -130,6 +130,7 @@
   "subdir": "win-64",
   "version": "0.7.4"
  },
+ "metadata_version": 1,
  "name": "paramz",
  "raw_recipe": "{% set name = \"paramz\" %}\n{% set version = \"0.7.4\" %}\n{% set sha256 = \"d60a6449ce238dae6183e87a0f203077c8a463315c17f267e065b173bf5795e4\" %}\n\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy >=1.7\n    - scipy\n    - six\n    - decorator >=4.0.10\ntest:\n  imports:\n    - paramz\n\nabout:\n  home: https://github.com/sods/paramz\n  license: BSD 3-clause\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'Parameterization Framework for parameterized model creation and handling.'\n  doc_url: https://paramz.readthedocs.io/\n  dev_url: https://github.com/sods/paramz\n\nextra:\n  recipe-maintainers:\n    - dirmeier    \n",
  "rendered_recipe": {

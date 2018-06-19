@@ -141,6 +141,7 @@
   "timestamp": 1528707021152,
   "version": "5.6.2"
  },
+ "metadata_version": 1,
  "name": "cryptominisat",
  "raw_recipe": "{% set name = \"cryptominisat\" %}\n{% set version = \"5.6.2\" %}\n{% set sha256 = \"df7390fa57fda0ab58d717e2eee1c9a714722b0b641e8d7955c74b7373615a68\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: {{ version }}.tar.gz\n  url: https://github.com/msoos/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n  run_exports:\n   - {{ pin_compatible('cryptominisat', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n  host:\n    - python\n    - setuptools\n    - boost-cpp 1.67.0\n    - zlib\n    - m4ri 20140914\n  run:\n    - python\n    - boost-cpp 1.67.0\n    - zlib\n    - m4ri 20140914\n\ntest:\n  imports:\n    - pycryptosat\n  commands:\n    - conda inspect linkages -p $PREFIX cryptominisat  # [not win]\n    - conda inspect objects -p $PREFIX cryptominisat  # [osx]\n    - echo -e '1 0\\n-1 0' | cryptominisat5 | grep UNSATISFIABLE\n    - echo -e '1 0\\n1 -1 0' | cryptominisat5 | grep SATISFIABLE\n\nabout:\n  home: https://github.com/msoos/cryptominisat\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: An advanced SAT Solver https://www.msoos.org\n  description: An advanced SAT Solver https://www.msoos.org\n  dev_url: https://github.com/msoos/cryptominisat\n\nextra:\n  recipe-maintainers:\n    - gshiba\n    - msoos\n    - saraedum\n",
  "rendered_recipe": {

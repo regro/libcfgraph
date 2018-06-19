@@ -561,6 +561,7 @@
   "subdir": "win-64",
   "version": "0.0.9"
  },
+ "metadata_version": 1,
  "name": "httptools",
  "raw_recipe": "{% set name = \"httptools\" %}\n{% set version = \"0.0.9\" %}\n{% set sha256 = \"f47f9870f19e3488e8def0898c46f87d36e5d59e90eb77d01453a6747cdab9f8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - httptools\n\nabout:\n  home: https://github.com/MagicStack/httptools\n  summary: \"Fast HTTP parser\"\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - kszucs\n",
  "rendered_recipe": {

@@ -89,6 +89,7 @@
   "subdir": "osx-64",
   "version": "0.13.1"
  },
+ "metadata_version": 1,
  "name": "flask-cache",
  "raw_recipe": "{%set name = \"flask-cache\" %}\n{%set camelName = \"Flask-Cache\" %}\n{%set version = \"0.13.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"90126ca9bc063854ef8ee276e95d38b2b4ec8e45fd77d5751d37971ee27c7ef4\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - flask\n\n  run:\n    - python\n    - flask\n\ntest:\n  imports:\n    - flask_cache\n\nabout:\n  home: http://github.com/thadeusb/flask-cache\n  license: BSD 3-Clause\n  summary: 'Adds cache support to your Flask application'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

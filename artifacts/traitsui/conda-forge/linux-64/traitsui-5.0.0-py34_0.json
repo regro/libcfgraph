@@ -340,6 +340,7 @@
   "subdir": "linux-64",
   "version": "5.0.0"
  },
+ "metadata_version": 1,
  "name": "traitsui",
  "raw_recipe": "{% set version = \"5.0.0\" %}\n\npackage:\n  name: traitsui\n  version: {{ version }}\n\nsource:\n  fn: traitsui-{{ version }}.tar.bz2\n  url: https://pypi.python.org/packages/source/t/traitsui/traitsui-{{ version }}.tar.bz2\n  md5: 4a388a881aa48b0ec2710fd5764ddada\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pyface\n    - traits\n  run:\n    - python\n    - pyface\n    - traits\n\ntest:\n  imports:\n    - traitsui\n\nabout:\n  home: http://docs.enthought.com/traitsui/\n  license: BSD 3-clause\n  summary: TraitsUI - Traits-capable windowing framework\n\nextra:\n  recipe-maintainers:\n    - grlee77\n",
  "rendered_recipe": {},

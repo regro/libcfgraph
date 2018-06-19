@@ -680,6 +680,7 @@
   "subdir": "win-64",
   "version": "1.0.4"
  },
+ "metadata_version": 1,
  "name": "amptools",
  "raw_recipe": "{% set version = \"1.0.4\" %}\n\npackage:\n  name: amptools\n  version: {{ version }}\n\nsource:\n  url: https://github.com/usgs/shakemap-amp-tools/archive/{{ version }}.tar.gz\n  sha256: ca3f5ca15ea23a6e9c03e452e60d2f7ed8d60f315d6d51923c0daa66291e0af6\n\nbuild:\n  number: 0\n  skip: True  # [py27]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - lxml\n    - numpy\n    - obspy\n    - openpyxl\n    - pandas\n    - xlrd\n    - xlwt\n    - xlsxwriter\n\ntest:\n\n  imports:\n    - amptools\n\nabout:\n  home: https://github.com/usgs/shakemap-amp-tools\n  license: Public Domain\n  summary: 'Fetch and process strong motion waveform/peak amplitude data.'\n  license_family: Public Domain\n  license_file: LICENSE.md\n\nextra:\n  recipe-maintainers:\n    - mhearne-usgs\n    - hschovanec-usgs\n",
  "rendered_recipe": {

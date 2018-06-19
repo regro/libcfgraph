@@ -85,6 +85,7 @@
   "subdir": "linux-64",
   "version": "3.1.17"
  },
+ "metadata_version": 1,
  "name": "django-celery",
  "raw_recipe": "{% set version = \"3.1.17\" %}\n\npackage:\n    name: django-celery\n    version: {{ version }}\n\nsource:\n    fn: django-celery-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/d/django-celery/django-celery-{{ version }}.tar.gz\n    md5: a3abc9674b0680469b0694a254dd7019\n\nbuild:\n    number: 1\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - celery >=3.1.15,<3.2\n    run:\n        - python\n        - celery >=3.1.15,<3.2\n\ntest:\n    imports:\n        - djcelery\n        - djcelery.backends\n        - djcelery.contrib\n        - djcelery.management\n        - djcelery.management.commands\n        - djcelery.migrations\n        - djcelery.monproj\n        - djcelery.south_migrations\n        - djcelery.tests\n        - djcelery.tests.test_backends\n    requires:\n        - django >=1.8.4,<1.10\n\nabout:\n    home: http://celeryproject.org\n    license: BSD 2-Clause\n    license_file: LICENSE\n    license_family: BSD\n    summary: Old django celery integration project.\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n",
  "rendered_recipe": {},

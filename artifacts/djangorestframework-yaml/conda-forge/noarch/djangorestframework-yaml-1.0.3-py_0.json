@@ -747,6 +747,7 @@
   "subdir": "noarch",
   "version": "1.0.3"
  },
+ "metadata_version": 1,
  "name": "djangorestframework-yaml",
  "raw_recipe": "{% set version = \"1.0.3\" %}\n\npackage:\n  name: djangorestframework-yaml\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/djangorestframework-yaml/djangorestframework-yaml-{{ version }}.tar.gz\n  sha256: b2277cb0459cf14b473e8cb6e0055725582afe862049c32b840b261ca8fbce3e\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - pyyaml >=3.10\n\n  run:\n    - python\n    - pyyaml >=3.10\n\ntest:\n  imports:\n    - rest_framework_yaml\n\nabout:\n  home: https://github.com/jpadilla/django-rest-framework-yaml\n  license: ISC\n  # license_file: LICENSE not in the tarball\n  summary: 'YAML support for Django REST Framework'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

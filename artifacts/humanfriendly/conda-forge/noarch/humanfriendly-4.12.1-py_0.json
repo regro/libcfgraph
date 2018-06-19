@@ -774,6 +774,7 @@
   "subdir": "noarch",
   "version": "4.12.1"
  },
+ "metadata_version": 1,
  "name": "humanfriendly",
  "raw_recipe": "{% set version = \"4.12.1\" %}\n\npackage:\n  name: humanfriendly\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/h/humanfriendly/humanfriendly-{{ version }}.tar.gz\n  sha256: 937b4d2c99d29007023ebcab23579429541bfb3357a97e5df38fc5d851a112a3\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - humanfriendly = humanfriendly.cli:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - humanfriendly\n\nabout:\n  home: https://humanfriendly.readthedocs.org\n  license: MIT\n  summary: 'Human friendly output for text interfaces using Python.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

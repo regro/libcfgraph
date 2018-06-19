@@ -756,6 +756,7 @@
   "subdir": "linux-64",
   "version": "2.0.3"
  },
+ "metadata_version": 1,
  "name": "loompy",
  "raw_recipe": "{% set name = \"loompy\" %}\n{% set version = \"2.0.3\" %}\n{% set sha256 = \"2878e83f80d7676a23a7ec50d4ea45444a7d965a0826b0c8ef2f76ac52328c94\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [not py36]\n  skip: True  # [win]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - scipy\n    - h5py\n    - typing\n\ntest:\n  imports:\n    - loompy\n\n\nabout:\n  home: https://github.com/linnarsson-lab/loompy\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'  # https://github.com/conda-forge/staged-recipes/issues/4277\n  summary: 'Work with .loom files for single-cell RNA-seq data'\n  doc_url: http://loompy.org\n  dev_url: https://github.com/linnarsson-lab/loompy\n\nextra:\n  recipe-maintainers:\n    - gioelelm\n",
  "rendered_recipe": {

@@ -251,6 +251,7 @@
   "subdir": "win-64",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "altair",
  "raw_recipe": "# Jinja variables help maintain the recipe as you'll update the version only here.\n{% set version = \"1.0.0\" %}\n\npackage:\n    name: altair\n    version: {{ version }}\n\nsource:\n    fn: altair-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/a/altair/altair-{{ version }}.tar.gz\n    md5: 2cefe292d7c3b05a8fb1517fe76675f6\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - pandas\n        - vega >=0.4.1\n\ntest:\n    requires:\n        - pytest\n    imports:\n        - altair\n        - altair.datasets\n        - altair.examples\n\nabout:\n    home: http://github.com/ellisonbg/altair\n    license: BSD 3-clause\n    summary: 'High-level declarative visualization library for Python.'\n\nextra:\n    recipe-maintainers:\n        - ellisonbg\n        - jakevdp\n",
  "rendered_recipe": {},

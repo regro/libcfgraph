@@ -774,6 +774,7 @@
   "subdir": "noarch",
   "version": "0.4.2"
  },
+ "metadata_version": 1,
  "name": "cgsn_parsers",
  "raw_recipe": "{% set version = \"0.4.2\" %}\n\npackage:\n  name: cgsn_parsers\n  version: {{ version }}\n\nsource:\n  url: https://bitbucket.org/ooicgsn/cgsn-parsers/get/{{ version }}.tar.gz\n  sha256: 80175404cb62b9b1536890d4423fc89ed76bc7fd9424b32829263e6ff68fd71f\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n    - munch >=2.1.0\n    - pytz\n\ntest:\n  imports:\n    - cgsn_parsers\n\nabout:\n  home: https://bitbucket.org/ooicgsn/cgsn-parsers\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'parsers for converting raw data from the OOI moorings'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

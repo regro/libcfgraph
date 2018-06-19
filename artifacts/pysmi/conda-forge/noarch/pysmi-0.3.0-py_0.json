@@ -183,6 +183,7 @@
   "timestamp": 1525047819274,
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "pysmi",
  "raw_recipe": "{% set name = \"pysmi\" %}\n{% set version = \"0.3.0\" %}\n{% set sha256 = \"87b464df6e68dedc28959f3d16b57d5138c8959c0af5cdea9747df26e20858fc\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - ply\n\ntest:\n  imports:\n    - pysmi\n    - pysmi.borrower\n    - pysmi.codegen\n    - pysmi.lexer\n    - pysmi.parser\n    - pysmi.reader\n    - pysmi.searcher\n    - pysmi.writer\n\nabout:\n  home: http:/pysmi.sf.net\n  license: BSD 2-Clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: SNMP SMI/MIB Parser\n  description: 'A pure-Python implementation of SNMP/SMI MIB parsing and conversion library.'\n  doc_url: http://snmplabs.com/pysmi/#documentation\n  dev_url: https://github.com/etingof/pysmi\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
  "rendered_recipe": {

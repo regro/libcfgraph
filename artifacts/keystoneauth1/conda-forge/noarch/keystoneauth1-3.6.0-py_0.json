@@ -297,6 +297,7 @@
   "timestamp": 1525844999872,
   "version": "3.6.0"
  },
+ "metadata_version": 1,
  "name": "keystoneauth1",
  "raw_recipe": "{% set name = \"keystoneauth1\" %}\n{% set version = \"3.6.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"ed1bcdaec0738076fe730d37654488556146b2bff7f32e78baa25c9779cf3814\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - pbr !=2.1.0,>=2.0.0\n\n  run:\n    - python\n    - pbr !=2.1.0,>=2.0.0\n    - iso8601 >=0.1.11\n    - requests >=2.14.2\n    - six >=1.10.0\n    - stevedore >=1.20.0\n    - os-service-types >=1.2.0\n    \ntest:\n  imports:\n    - keystoneauth1\n    - keystoneauth1.identity\n    - keystoneauth1.identity.v2\n    - keystoneauth1.identity.v3\n    - keystoneauth1.identity.generic\n    - keystoneauth1.extras\n\nabout:\n  home: https://docs.openstack.org/developer/keystoneauth/\n  license_file: LICENSE\n  license: Apache 2.0\n  license_family: Apache\n  summary: Authentication Library for OpenStack Identity\n  dev_url: https://git.openstack.org/cgit/openstack/keystoneauth\n  doc_url: https://docs.openstack.org/developer/keystoneauth/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

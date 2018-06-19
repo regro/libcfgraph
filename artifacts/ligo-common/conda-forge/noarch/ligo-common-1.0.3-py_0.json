@@ -123,6 +123,7 @@
   "timestamp": 1527406705075,
   "version": "1.0.3"
  },
+ "metadata_version": 1,
  "name": "ligo-common",
  "raw_recipe": "{% set version = \"1.0.3\" %}\n\npackage:\n  name: ligo-common\n  version: {{ version }}\n\nsource:\n  fn: ligo-common-{{ version }}.tar.gz\n  url: http://software.ligo.org/lscsoft/source/ligo-common-{{ version }}.tar.gz\n  md5: 142c2e287cc09bd0192c916a0be6e492\n  sha256: a3e00d79bf3b0474b429f50fb60079da015453afa09658f90efcab8ae158a835\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - ligo\n\nabout:\n  home: https://git.ligo.org/lscsoft/ligo-common\n  license: GPLv3\n  license_file: LICENSE\n  summary: Base package for `ligo` python namespace\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n",
  "rendered_recipe": {

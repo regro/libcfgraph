@@ -775,6 +775,7 @@
   "subdir": "noarch",
   "version": "1.2.1"
  },
+ "metadata_version": 1,
  "name": "genesis-pyapi",
  "raw_recipe": "{% set name = \"Genesis-PyAPI\" %}\n{% set version = \"1.2.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2989f582eb619cd18c0fda10c69d38404781ddc4161a77f18c29d02fbdee577c\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - requests  >=2.6.0\n    - slumber   >=0.7.1\n\ntest:\n  imports:\n    - genesis\n\nabout:\n  home: https://github.com/genialis/genesis-pyapi\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: \"Python API for the Genesis platform.\"\n\n  description: |\n    Python API for the Genesis platform.\n  doc_url: \"\"\n  dev_url: https://github.com/genialis/genesis-pyapi\n\nextra:\n  recipe-maintainers:\n    - jakakokosar\n",
  "rendered_recipe": {

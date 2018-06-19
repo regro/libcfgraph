@@ -759,6 +759,7 @@
   "subdir": "noarch",
   "version": "1.3"
  },
+ "metadata_version": 1,
  "name": "django_polymorphic",
  "raw_recipe": "{% set name = \"django_polymorphic\" %}\n{% set version = \"1.3\" %}\n{% set sha256 = \"15f8233acd63476ea8817a7cde88a535627d18f346a0ce058ec0799ed01f9a61\" %}\n{% set build = 0 %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/django-polymorphic/django-polymorphic/archive/v{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    noarch: python\n    number: {{ build }}\n    script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n    build:\n        - python\n        - pip\n    run:\n        - python\n        - django >1.8,<2.0\n\ntest:\n    imports:\n        - polymorphic\n\nabout:\n    home: https://github.com/chrisglass/django_polymorphic\n    license: BSD-3-Clause\n    license_file: LICENSE\n    license_family: BSD\n    summary: Seamless Polymorphic Inheritance for Django Models\n    dev_url: https://github.com/django-polymorphic/django-polymorphic\n    doc_url: https://django-polymorphic.readthedocs.io/en/stable/\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n        - ocefpaf\n",
  "rendered_recipe": {

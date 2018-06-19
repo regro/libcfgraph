@@ -145,6 +145,7 @@
   "timestamp": 1527704102125,
   "version": "1.1.0"
  },
+ "metadata_version": 1,
  "name": "metsim",
  "raw_recipe": "{% set version = \"1.1.0\" %}\n\npackage:\n  name: metsim\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/m/metsim/metsim-{{ version }}.tar.gz\n  sha256: 96598273aee7fd0d502699395f0ffaa3e4a780dfbdf28c35c1c541d2985f9154\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - ms = metsim.cli.ms:main\n\nrequirements:\n  build:\n    - python >=3\n    - pip\n  run:\n    - python >=3\n    - dask\n    - netcdf4\n    - numba\n    - numpy\n    - pandas\n    - scipy\n    - toolz\n    - xarray\n\ntest:\n  imports:\n    - metsim\n    - metsim.methods\n    - metsim.cli\n  commands:\n    - ms --help\n\nabout:\n  home: https://github.com/UW-Hydro/MetSim\n  license: GPL-3.0\n  license_family: GPL3\n  # TODO: remove license_file after https://github.com/UW-Hydro/MetSim/pull/138\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'Meteorology Simulator for Python'\n\n  description: |\n    MetSim is a meteorological simulator and forcing disaggregator for\n    hydrologic modeling and climate applications. Metsim is based on MtClim and\n    the preprocessor from version 4 of the VIC hydrologic model.\n  doc_url: http://metsim.readthedocs.io/\n  dev_url: https://github.com/UW-Hydro/MetSim\n\nextra:\n  recipe-maintainers:\n    - jhamman\n    - arbennett\n    - bartnijssen\n",
  "rendered_recipe": {

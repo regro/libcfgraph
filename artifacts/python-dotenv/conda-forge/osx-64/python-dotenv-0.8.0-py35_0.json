@@ -669,6 +669,7 @@
   "subdir": "osx-64",
   "version": "0.8.0"
  },
+ "metadata_version": 1,
  "name": "python-dotenv",
  "raw_recipe": "{% set name = \"python-dotenv\" %}\n{% set version = \"0.8.0\" %}\n{% set sha256 = \"2bfeb2ce1b5d1ce46ecdce5c9d55e4976ca403fdcc251b4870e5c0647d0dce67\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - dotenv = dotenv:cli.cli\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - click >=5.0\n\ntest:\n  imports:\n    - dotenv\n\nabout:\n  home: https://github.com/theskumar/python-dotenv/\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Get and set values in your .env file in local and production servers like Heroku does.'\n  dev_url: https://github.com/theskumar/python-dotenv/\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
  "rendered_recipe": {

@@ -787,6 +787,7 @@
   "subdir": "linux-64",
   "version": "2.0.1"
  },
+ "metadata_version": 1,
  "name": "asciinema",
  "raw_recipe": "{% set name = \"asciinema\" %}\n{% set version = \"2.0.1\" %}\n{% set sha256 = \"8d48baa3a263cfb9536540ee545e5c95e43758520d68c6ebc81a092e20c2a4ea\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: True  # [py27 or win]\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - asciinema\n  commands:\n    - asciinema --version\n    - asciinema rec --help\n    - asciinema play --help\n\nabout:\n  home: https://asciinema.org\n  license: GPL-3.0\n  license_family: GPL\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'Terminal session recorder and the best companion of asciinema.org.'\n\n  description: |\n    asciinema lets you easily record terminal sessions and replay\n    them in a terminal as well as in a web browser.\n  doc_url: https://asciinema.org/docs\n  dev_url: https://github.com/asciinema/asciinema\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

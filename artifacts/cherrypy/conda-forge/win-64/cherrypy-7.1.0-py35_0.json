@@ -151,6 +151,7 @@
   "subdir": "win-64",
   "version": "7.1.0"
  },
+ "metadata_version": 1,
  "name": "cherrypy",
  "raw_recipe": "{% set name = \"cherrypy\" %}\n{% set camelName = \"CherryPy\" %}\n{% set version = \"7.1.0\" %}\n\npackage:\n  name: cherrypy\n  version: {{ version }}\n\nsource:\n  fn: {{ camelName }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ camelName[0] }}/{{ camelName }}/{{ camelName }}-{{ version }}.tar.gz\n  sha256: 64dca80ccadae4ed8e4ea94119bf76ed9746743c2bd57ec40af534680cbef021\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six\n\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - cherrypy\n    - cherrypy.lib\n    - cherrypy.process\n    - cherrypy.scaffold\n    - cherrypy.test\n    - cherrypy.tutorial\n    - cherrypy.wsgiserver\n\nabout:\n  home: http://www.cherrypy.org\n  license: BSD 3-Clause\n  license_file: cherrypy/LICENSE.txt\n  license_family: BSD\n  summary: 'Object-Oriented HTTP framework'\n  dev_url: https://github.com/cherrypy/cherrypy\n  doc_url: http://docs.cherrypy.org/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

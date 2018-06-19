@@ -95,6 +95,7 @@
   "subdir": "osx-64",
   "version": "0.4.3"
  },
+ "metadata_version": 1,
  "name": "discretizer",
  "raw_recipe": "{% set name = \"discretizer\" %}\n{% set version = \"0.4.3\" %}\n{% set sha256 = \"de557f087061ea9a0e807e63423d3b325985b262524fdaacdb583749b1eded7a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://gitlab.kwant-project.org/r-j-skolasinski/discretizer/repository/archive.tar.bz2?ref=v{{ version }}\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - sympy\n    - kwant\n    - numpy\n\ntest:\n  imports:\n    - discretizer\n\nabout:\n  home: https://gitlab.kwant-project.org/r-j-skolasinski/discretizer\n  license: BSD 2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: |\n    A tool that will discretize a Hamiltonian and prepare functions\n    that may be used to create a kwant system.\n  dev_url: https://gitlab.kwant-project.org/r-j-skolasinski/discretizer\n\nextra:\n  recipe-maintainers:\n    - basnijholt\n    - RafalSkolasinski\n",
  "rendered_recipe": {

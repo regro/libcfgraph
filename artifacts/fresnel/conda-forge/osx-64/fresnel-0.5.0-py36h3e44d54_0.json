@@ -135,6 +135,7 @@
   "timestamp": 1528475641194,
   "version": "0.5.0"
  },
+ "metadata_version": 1,
  "name": "fresnel",
  "raw_recipe": "{% set name = \"fresnel\" %}\n{% set version = \"0.5.0\" %}\n{% set sha256 = \"f5fdf02198b32088443627d732e98f0b6793bc98ad0697a37e6d75dfa5b1f663\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://glotzerlab.engin.umich.edu/Downloads/{{ name }}/{{ name }}-v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n\n  host:\n    - python\n    - numpy\n    - embree >=2.10.0\n    - tbb\n\n  run:\n    - python\n    - numpy\n    - embree >=2.10.0\n    - tbb\n    - pillow\n\ntest:\n  imports:\n  - fresnel\n\nabout:\n  home: https://bitbucket.org/glotzer/{{ name }}\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Path tracing for soft matter simulations.'\n\n  description: |\n    Fresnel is a python library that path traces publication quality images of soft matter simulations in real time.\n  doc_url: https://bitbucket.org/glotzer/{{ name }}\n  dev_url: https://bitbucket.org/glotzer/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - joaander\n",
  "rendered_recipe": {

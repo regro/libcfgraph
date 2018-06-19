@@ -22,6 +22,7 @@
   "subdir": "linux-64",
   "version": "0.2.2"
  },
+ "metadata_version": 1,
  "name": "entrypoints",
  "raw_recipe": "{% set version = \"0.2.2\" %}\n\npackage:\n    name: entrypoints\n    version: {{ version }}\n\nsource:\n    fn: {{ version }}.tar.gz\n    url: https://github.com/takluyver/entrypoints/archive/{{ version }}.tar.gz\n    md5: 7dae980f7c6affd777dc60a51c8d0b0b\n\nbuild:\n    number: 0\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n        - configparser  # [not py35]\n\ntest:\n    imports:\n        - entrypoints\n\nabout:\n    home: http://entrypoints.readthedocs.org/en/latest/\n    license: MIT\n    summary: Discover and load entry points from installed packages\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - minrk\n    - takluyver\n",
  "rendered_recipe": {},

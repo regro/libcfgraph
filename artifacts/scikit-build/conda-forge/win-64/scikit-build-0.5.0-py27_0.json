@@ -61,6 +61,7 @@
   "subdir": "win-64",
   "version": "0.5.0"
  },
+ "metadata_version": 1,
  "name": "scikit-build",
  "raw_recipe": "{% set name = \"scikit-build\" %}\n{% set version = \"0.5.0\" %}\n{% set sha256 = \"d9a627058428189df544d5043c564435b74539ce8c631f2e2e919e54c7868953\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/scikit-build/scikit-build/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script:\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - wheel\n  run:\n    - python\n    - setuptools\n    - wheel\n    - cmake\n    - ninja\n\ntest:\n  imports:\n    - skbuild\n  commands:\n    - cd ${SRC_DIR} && py.test -k \"not test_fortran_compiler\"    # [unix]\n    - cd %SRC_DIR% && py.test -k \"not test_fortran_compiler\"     # [win]\n  requires:\n    - path.py\n    - pytest\n    - pytest-mock\n    - pytest-cov\n    - six\n    - git\n    - cmake\n    - ninja\n    - cython\n\nabout:\n  home: http://github.com/scikit-build/scikit-build\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Improved build system generator for CPython C extensions.'\n  doc_url: http://scikit-build.readthedocs.org\n  dev_url: http://github.com/scikit-build/scikit-build\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - scopatz\n    - jcfr\n    - msarahan\n",
  "rendered_recipe": {},

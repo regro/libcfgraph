@@ -734,6 +734,7 @@
   "subdir": "noarch",
   "version": "1.8"
  },
+ "metadata_version": 1,
  "name": "macholib",
  "raw_recipe": "{% set name = \"macholib\" %}\n{% set version = \"1.8\" %}\n{% set sha256 = \"323c9c8b85768244554b3c040808ed6393c783aa6eb1122e04dc8905f442e559\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - altgraph >=0.13\n\ntest:\n  imports:\n    - macholib\n  commands:\n    - python -m macholib find /tmp/\n\nabout:\n  home: http://bitbucket.org/ronaldoussoren/macholib\n  license: MIT\n  license_family: MIT\n  # the licence file is missing in this package\n  # https://bitbucket.org/ronaldoussoren/macholib/issues/22/license-file\n  summary: 'Mach-O header analysis and editing'\n  description: |\n      macholib can be used to analyze and edit Mach-O headers,\n      the executable format used by Mac OS X.\n  doc_url: https://macholib.readthedocs.io/en/latest/\n  dev_url: http://bitbucket.org/ronaldoussoren/macholib\n\nextra:\n  recipe-maintainers:\n    - rth\n",
  "rendered_recipe": {

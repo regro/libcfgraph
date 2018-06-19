@@ -88,6 +88,7 @@
   "subdir": "osx-64",
   "version": "0.4.0"
  },
+ "metadata_version": 1,
  "name": "feather-format",
  "raw_recipe": "{% set version = \"0.4.0\" %}\npackage:\n  name: feather-format\n  version: {{ version }}\n\nsource:\n  fn: feather-format-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/f/feather-format/feather-format-{{ version }}.tar.gz\n  md5: e5bc36af8a2bdbe34a0af2a602b7c1b8\n\nbuild:\n  number: 1\n  skip: true  # [win32]\n  skip: true  # [win and py<35]\n  features:\n    - vc14  # [win and py>=35]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - pandas >=0.19.2\n    - pyarrow\n\ntest:\n  imports:\n    - feather\n\nabout:\n  home: https://github.com/wesm/feather\n  license: Apache 2.0\n  summary: \"Feather: fast, interoperable binary data frame storage for Python, R, and more powered by Apache Arrow\"\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n    - msarahan\n    - wesm\n    - cpcloud\n    - jreback\n",
  "rendered_recipe": {

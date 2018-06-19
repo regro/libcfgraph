@@ -859,6 +859,7 @@
   "subdir": "noarch",
   "version": "4.17.4"
  },
+ "metadata_version": 1,
  "name": "lodash",
  "raw_recipe": "{% set name = \"lodash\" %}\n{% set version = \"4.17.4\" %}\n{% set sha256 = \"9be1c1efd43fbd2c9a53cc7f756df05c338a255d94dd6b49fc87eddb47026479\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/lodash/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs\n  \ntest:\n  commands:\n    - npm list -g lodash\n  requires:\n    - nodejs\n   \n\nabout:\n  home: https://github.com/lodash/lodash\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A modern JavaScript utility library delivering modularity, performance, & extras.'\n  description: |\n    A modern JavaScript utility library delivering modularity, performance, & extras.  \n  doc_url: https://lodash.com/docs\n  dev_url: https://github.com/lodash/lodash\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

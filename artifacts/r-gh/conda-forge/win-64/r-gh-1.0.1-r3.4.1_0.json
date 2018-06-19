@@ -808,6 +808,7 @@
   "subdir": "win-64",
   "version": "1.0.1"
  },
+ "metadata_version": 1,
  "name": "r-gh",
  "raw_recipe": "{% set version = '1.0.1' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-gh\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: gh_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/gh_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/gh/gh_{{ version }}.tar.gz\n  sha256: f3c02b16637ae390c3599265852d94b3de3ef585818b260d00e7812595b391d2\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-httr\n    - r-ini\n    - r-jsonlite\n\n  run:\n    - r-base\n    - r-httr\n    - r-ini\n    - r-jsonlite\n\ntest:\n  commands:\n    - $R -e \"library('gh')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('gh')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/r-lib/gh#readme\n  license: MIT\n  summary: Minimal client to access the 'GitHub' 'API'.\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n",
  "rendered_recipe": {

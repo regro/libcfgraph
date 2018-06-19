@@ -87,6 +87,7 @@
   "type": "app",
   "version": "0.10.3"
  },
+ "metadata_version": 1,
  "name": "glueviz",
  "raw_recipe": "# NOTE: this is a meta-package that includes the core glue code as well as stable\n# plugins. This is the main conda package we want in the Navigator, so we add the\n# app: entry here and not in the glue-core package. Even though glueviz is a\n# Python package on PyPI, and has a setup.py file, we don't include a build command\n# below since the only purpose of that command is to trigger the installation of the\n# dependencies.\n\n{% set version = \"0.10.3\" %}\n\npackage:\n  name: glueviz\n  version: {{version}}\n\nsource:\n  fn: glueviz-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/g/glueviz/glueviz-{{version}}.tar.gz\n  md5: 8a068968b0e81de70a255381dcb097f8\n\nbuild:\n  number: 0\n\nrequirements:\n\n  run:\n    - glue-core >=0.10.3\n    - glue-vispy-viewers >=0.7.2\n\ntest:\n  commands:\n    - glue --version\n    - glue-deps list\n\napp:\n  entry: glue\n  icon: logo.png\n  summary: Multi-dimensional linked data exploration\n  type: desk\n\nabout:\n  home: http://glueviz.org\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: Multi-dimensional linked data exploration\n\nextra:\n  recipe-maintainers:\n    - astrofrog\n",
  "rendered_recipe": {

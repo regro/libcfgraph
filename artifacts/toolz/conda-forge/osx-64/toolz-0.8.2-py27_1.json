@@ -582,6 +582,7 @@
   "subdir": "osx-64",
   "version": "0.8.2"
  },
+ "metadata_version": 1,
  "name": "toolz",
  "raw_recipe": "{% set version = \"0.8.2\" %}\n\npackage:\n  name: toolz\n  version: {{ version }}\n\nsource:\n  fn: toolz-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/t/toolz/toolz-{{ version }}.tar.gz\n  sha256: 4a13c90c426001d6299c5568cf5b98e095df9c985df194008a67f84ef4fc6c50\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - setuptools\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - toolz\n    - toolz.curried\n    - toolz.sandbox\n\nabout:\n  home: http://toolz.readthedocs.org/\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: A functional standard library for Python.\n\nextra:\n  recipe-maintainers:\n    - mrocklin\n    - eriknw\n    - jcrist\n    - jakirkham\n",
  "rendered_recipe": {

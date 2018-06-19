@@ -660,6 +660,7 @@
   "subdir": "linux-64",
   "version": "2.6.0"
  },
+ "metadata_version": 1,
  "name": "jsonschema",
  "raw_recipe": "{% set version = \"2.6.0\" %}\n\npackage:\n  name: jsonschema\n  version: {{ version }}\n\nsource:\n  fn: jsonschema-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/j/jsonschema/jsonschema-{{ version }}.tar.gz\n  sha256: 6ff5f3180870836cae40f06fa10419f557208175f13ad7bc26caa77beb1f6e02\n\nbuild:\n  number: 0\n  script: pip install .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - vcversioner\n  run:\n    - python\n    - functools32  # [py27]\n\ntest:\n  imports:\n    - jsonschema\n  commands:\n    - jsonschema --help\n\nabout:\n  home: https://github.com/Julian/jsonschema\n  license: MIT\n  license_file: COPYING\n  summary: An implementation of JSON Schema validation for Python\n  description: |\n    jsonschema is an implementation of JSON Schema for Python\n    (supporting 2.7+ including Python 3)\n  doc_url: https://python-jsonschema.readthedocs.org\n  doc_source_url: https://github.com/Julian/jsonschema/blob/master/docs/index.rst\n  dev_url: https://github.com/Julian/jsonschema/\n\nextra:\n  recipe-maintainers:\n    - minrk\n    - ocefpaf\n    - nehaljwani\n",
  "rendered_recipe": {

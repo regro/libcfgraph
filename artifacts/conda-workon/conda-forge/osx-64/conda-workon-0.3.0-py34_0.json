@@ -24,6 +24,7 @@
   "subdir": "osx-64",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "conda-workon",
  "raw_recipe": "{%set name = \"conda-workon\" %}\n{%set version = \"0.3.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"af1ee8f744c5379afa0c2b8c4156a2c0bb282fe6461cc2b087c2b789c8bb90d3\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  entry_points:\n    - conda-workon = conda_workon:main\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - conda\n\n  run:\n    - python\n    - conda\n\ntest:\n  imports:\n    - conda_workon\n\n  commands:\n    - conda workon --help\n    - conda-workon --help\n\nabout:\n  home: https://bitbucket.org/flub/conda-workon\n  license: BSD 3-Clause\n  summary: 'Activate conda environments in subshells'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - flub\n",
  "rendered_recipe": {},

@@ -713,6 +713,7 @@
   "subdir": "linux-64",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "assetid",
  "raw_recipe": "{% set name = \"assetid\" %}\n{% set version = \"1.0.0\" %}\n{% set build = 0 %}\n{% set hash = \"dd81d75e589bd6702da0ec48d3b83414cddf109e7eee0c4eb03d7978c4106de0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: assetid-{{ version}}.tar.gz\n  url: https://github.com/axiom-data-science/assetid/archive/{{ version }}.tar.gz\n  sha256: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - assetid\n    - assetid.tests\n\nabout:\n  home: \"https://github.com/axiom-data-science/{{ name }}\"\n  license: MIT\n  summary: 'An ocean data asset ID parser developed and used by Axiom Data Science'\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n",
  "rendered_recipe": {

@@ -645,6 +645,7 @@
   "subdir": "linux-64",
   "version": "5.8.1"
  },
+ "metadata_version": 1,
  "name": "cheroot",
  "raw_recipe": "{% set name = \"Cheroot\" %}\n{% set version = \"5.8.1\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"9e98a0e31940dca1929740853d4828cc691bdc25fa56b7e8ca1d9397932f6a6a\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name|lower }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm >=1.15.0\n\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - cheroot\n    - cheroot.test\n\n\nabout:\n  home: http://www.cherrypy.org\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.md\n  summary: 'Highly-optimized, pure-python HTTP server'\n  dev_url: https://github.com/cherrypy/cheroot\n  doc_url: http://www.cherrypy.org\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

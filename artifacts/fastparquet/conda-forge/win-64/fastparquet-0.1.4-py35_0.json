@@ -715,6 +715,7 @@
   "subdir": "win-64",
   "version": "0.1.4"
  },
+ "metadata_version": 1,
  "name": "fastparquet",
  "raw_recipe": "{% set name = \"fastparquet\" %}\n{% set version = \"0.1.4\" %}\n{% set fn_suffix = \"0.1.4.tar.gz\" %}\n{% set sha256 = \"4eba698969a7691acae973ad872dcbe3014bef5c446458897627541ac44a21e0\" %}\n\npackage:\n  name: {{ name }}\n  version: \"{{ version }}\"\n\nsource:\n  fn: {{ name }}-{{ fn_suffix }}\n  url: https://pypi.io/packages/source/f/{{ name }}/{{ name }}-{{ fn_suffix }}\n  sha256: \"{{ sha256 }}\"\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cython\n    - numpy\n    - pytest-runner\n  run:\n    - python\n    - pandas >=0.19\n    - numpy >=1.11\n    - numba >=0.28\n    - thrift 0.11.*\n    - pytest\n\ntest:\n  imports:\n    - fastparquet\n\nabout:\n  home: http://github.com/dask/fastparquet\n  license: BSD-3\n  license_family: 'BSD'\n  license_file: LICENSE\n  summary: 'Python interface to the parquet format'\n  dev_url: https://github.com/dask/fastparquet\n\nextra:\n  recipe-maintainers:\n    - martindurant\n    - mrocklin \n",
  "rendered_recipe": {

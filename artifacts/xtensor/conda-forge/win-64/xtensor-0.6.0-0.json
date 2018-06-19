@@ -121,6 +121,7 @@
   "subdir": "win-64",
   "version": "0.6.0"
  },
+ "metadata_version": 1,
  "name": "xtensor",
  "raw_recipe": "{% set name = \"xtensor\" %}\n{% set version = \"0.6.0\" %}\n{% set sha256 = \"669bab89fc5b9c1cc8bbe70e3854390f19882477a315363b85d343a79511c03b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/QuantStack/xtensor/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/xtensor  # [unix]\n    - test -f ${PREFIX}/include/xtensor/xarray.hpp  # [unix]\n    - test -f ${PREFIX}/share/cmake/xtensor/xtensorConfig.cmake  # [unix]\n    - test -f ${PREFIX}/share/cmake/xtensor/xtensorConfigVersion.cmake  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\xtensor\\xarray.hpp (exit 0) else (exit 1)  # [win]\n    - if exist %PREFIX%\\share\\cmake\\xtensorConfig.cmake (exit 0) else (exit 1)  # [win]\n    - if exist %PREFIX%\\share\\cmake\\xtensorConfigVersion.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://quantstack.net/xtensor\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'The C++ tensor algebra library'\n  description: 'Multi dimensional arrays with broadcasting and lazy computing'\n  doc_url: http://xtensor.readthedocs.io\n  dev_url: https://github.com/QuantStack/xtensor\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n",
  "rendered_recipe": {

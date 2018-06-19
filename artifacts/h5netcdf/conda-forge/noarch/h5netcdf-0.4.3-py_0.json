@@ -719,6 +719,7 @@
   "subdir": "noarch",
   "version": "0.4.3"
  },
+ "metadata_version": 1,
  "name": "h5netcdf",
  "raw_recipe": "{% set version = \"0.4.3\" %}\n\npackage:\n  name: h5netcdf\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/h/h5netcdf/h5netcdf-{{ version }}.tar.gz\n  sha256: c205774de4c9930de5fcc3d5f7854c87ad218aa9b28ef77b5c3094d2463b1da4\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - h5py\n  run:\n    - python\n    - h5py\n\ntest:\n  imports:\n    - h5netcdf\n\nabout:\n  home: https://github.com/shoyer/h5netcdf\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'netCDF4 via h5py.'\n\nextra:\n  recipe-maintainers:\n    - jhamman\n    - jjhelmus\n    - ocefpaf\n    - shoyer\n",
  "rendered_recipe": {

@@ -628,6 +628,7 @@
   "subdir": "linux-64",
   "version": "7.1"
  },
+ "metadata_version": 1,
  "name": "coloredlogs",
  "raw_recipe": "{% set version = \"7.1\" %}\n\npackage:\n    name: coloredlogs\n    version: {{ version }}\n\nsource:\n    fn: coloredlogs-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/c/coloredlogs/coloredlogs-{{ version }}.tar.gz\n    sha256: 4f0f2fdb6245bd8507e4d9eafe2ef3a66536de021cf002cc426e394287bac8b9\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    entry_points:\n        - coloredlogs = coloredlogs.cli:main\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - humanfriendly >=3.2\n    run:\n        - python\n        - humanfriendly >=3.2\n        - colorama  # [win]\n\ntest:\n    imports:\n        - coloredlogs\n    commands:\n        - coloredlogs --help  # [not osx]\n\nabout:\n    home: https://coloredlogs.readthedocs.org\n    license: MIT\n    summary: \"Colored terminal output for Python's logging module.\"\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - andfoy\n        - ccordoba12\n",
  "rendered_recipe": {

@@ -765,6 +765,7 @@
   "subdir": "linux-64",
   "version": "3.5"
  },
+ "metadata_version": 1,
  "name": "iperf",
  "raw_recipe": "{% set name = \"iperf\" %}\n{% set version = \"3.5\" %}\n{% set sha256 = \"4c318707a29d46d7b64e517a4fe5e5e75e698aef030c6906e9b26dc51d9b1fce\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.gz\n  url: https://github.com/esnet/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - toolchain\n\ntest:\n  commands:\n    - iperf3 --help\n\nabout:\n  home: http://software.es.net/iperf/\n  license: PUBLIC-DOMAIN\n  license_file: LICENSE\n  summary: 'A TCP, UDP, and SCTP network bandwidth measurement tool'\n\n  doc_url: http://software.es.net/iperf/\n  dev_url: https://github.com/esnet/iperf/\n\nextra:\n  recipe-maintainers:\n    - brainstorm \n",
  "rendered_recipe": {

@@ -716,6 +716,7 @@
   "subdir": "noarch",
   "version": "0.1.5"
  },
+ "metadata_version": 1,
  "name": "colour",
  "raw_recipe": "{% set name = \"colour\" %}\n{% set version = \"0.1.5\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"af20120fefd2afede8b001fbef2ea9da70ad7d49fafdb6489025dae8745c3aee\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  noarch: python\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - d2to1\n\n  run:\n    - python\n\ntest:\n  imports:\n    - colour\n\nabout:\n  home: https://github.com/vaab/colour\n  summary: 'Python color representations manipulation library (RGB, HSL, web, ...)'\n  license_file: LICENSE\n  license: BSD 2-Clause\n  license_family: BSD\n  dev_url: https://github.com/vaab/colour\n  doc_url: https://github.com/vaab/colour\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

@@ -522,6 +522,7 @@
   "subdir": "win-64",
   "version": "3.1.2"
  },
+ "metadata_version": 1,
  "name": "py2neo",
  "raw_recipe": "{% set name='py2neo' %} \n{% set version='3.1.2' %}\n{% set sha256='8177a9b2c4d23a3ce26f02d3d6be92ac49cb7520e88ec1b41d8c6e86774938b8' %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - py2neo = py2neo.cli.tool:main\n    - neokit = neokit:main\n    - geoff = py2neo.ext.geoff.__main__:main\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - py2neo\n    - py2neo.database\n    - py2neo.ext\n    - py2neo.ext.batman\n    - py2neo.ext.calendar\n    - py2neo.packages\n\nabout:\n  home: http://py2neo.org/\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: 'Python client library and toolkit for Neo4j'\n\nextra:\n  recipe-maintainers:\n    - pvanheus\n",
  "rendered_recipe": {

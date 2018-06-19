@@ -48,6 +48,7 @@
   "subdir": "win-64",
   "version": "0.2.1"
  },
+ "metadata_version": 1,
  "name": "sqlparse",
  "raw_recipe": "{% set version = \"0.2.1\" %}\n\npackage:\n  name: sqlparse\n  version: {{ version }}\n\nsource:\n  fn: sqlparse-{{ version }}.tar.gz\n  url: https://github.com/andialbrecht/sqlparse/archive/{{ version }}.tar.gz\n  sha256: a1919e7895a66d285395a67e09f865610e06330e8a2d309ad76c09390d4c7b47\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - sqlformat = sqlparse.__main__:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - sqlparse\n\nabout:\n  home: https://github.com/andialbrecht/sqlparse\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'A non-validating SQL parser module for Python.'\n  description: |\n    sqlparse is a non-validating SQL parser for Python. It provides support\n    for parsing, splitting and formatting SQL statements.\n  doc_url: https://sqlparse.readthedocs.org\n  dev_url: https://github.com/andialbrecht/sqlparse\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {},

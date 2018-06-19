@@ -653,6 +653,7 @@
   "subdir": "osx-64",
   "version": "1.4.7"
  },
+ "metadata_version": 1,
  "name": "kealib",
  "raw_recipe": "{% set version = \"1.4.7\" %}\n\npackage:\n    name: kealib\n    version: {{ version }}\n\nsource:\n    url: https://bitbucket.org/chchrsc/kealib/downloads/kealib-{{ version }}.tar.gz\n    sha256: ec38751b3b555d3a26f0c7445f2d2cd9d7c3a3502237519a206a50cb58df56ec\n    patches:\n        # create links libkea.so, libkea.so.1.4 etc. Fixed in next version\n        - soversion.patch\n\nbuild:\n    number: 4\n    skip: True  # [win and py36]\n    features:\n        - vc9  # [win and py27]\n        - vc14  # [win and py35]\n\nrequirements:\n    build:\n        - toolchain\n        - python  # [win]\n        - cmake\n        - hdf5 1.10.1\n        - vc 9  # [win and py27]\n        - vc 14  # [win and py35]\n\n    run:\n        - hdf5 1.10.1\n        - vc 9  # [win and py27]\n        - vc 14  # [win and py35]\n\ntest:\n    commands:\n        - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n        - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n    home: http://kealib.org/\n    license: MIT\n    summary: The KEA format provides an implementation of the GDAL specification within the the HDF5 file format.\n\nextra:\n    recipe-maintainers:\n        - gillins\n        - danclewley\n",
  "rendered_recipe": {

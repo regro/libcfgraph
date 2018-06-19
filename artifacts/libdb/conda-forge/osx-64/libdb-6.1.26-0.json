@@ -6113,6 +6113,7 @@
   "subdir": "osx-64",
   "version": "6.1.26"
  },
+ "metadata_version": 1,
  "name": "libdb",
  "raw_recipe": "{% set version = \"6.1.26\" %}\n\npackage:\n  name: libdb\n  version: {{ version }}\n\nsource:\n  url: http://download.oracle.com/berkeley-db/db-{{ version }}.tar.gz\n  sha256: dd1417af5443f326ee3998e40986c3c60e2a7cfb5bfa25177ef7cadb2afb13a6\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://www.oracle.com/technology/software/products/berkeley-db/index.html\n  license: AGPL-3.0\n  license_file: LICENSE\n  summary: 'The Berkeley DB embedded database system.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - scopatz\n",
  "rendered_recipe": {

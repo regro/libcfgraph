@@ -34,6 +34,7 @@
   "subdir": "win-64",
   "version": "1.1.1"
  },
+ "metadata_version": 1,
  "name": "doctr",
  "raw_recipe": "{% set version = \"1.1.1\" %}\npackage:\n  name: doctr\n  version: {{ version }}\n\nsource:\n  fn: doctr-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/doctr/doctr-{{ version }}.tar.gz\n  sha256: 4d57cf7aa22e4257a62ec5cdf3d79fbbc40e516ef8fda85406cf1a809c63afa8\n\nbuild:\n  number: 0\n  entry_points:\n    - doctr = doctr.__main__:main\n  skip: true  # [py<35]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - requests\n    - cryptography\n\n  run:\n    - python\n    - requests\n    - cryptography\n\ntest:\n  imports:\n    - doctr\n\n  commands:\n    - doctr --help\n    - doctr configure --help\n    - doctr deploy --help\n\nabout:\n  home: https://gforsyth.github.io/doctr/docs/\n  license: MIT\n  summary: 'Deploy docs from Travis to GitHub pages.'\n\n  description: |\n    A tool for automatically building Sphinx docs on Travis CI, and deploying\n    them to GitHub pages.\n  doc_url: https://gforsyth.github.io/doctr/docs/\n  dev_url: https://github.com/gforsyth/doctr\n\nextra:\n  recipe-maintainers:\n    - asmeurer\n    - gforsyth\n",
  "rendered_recipe": {},

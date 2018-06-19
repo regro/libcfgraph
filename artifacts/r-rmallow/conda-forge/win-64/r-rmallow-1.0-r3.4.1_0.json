@@ -813,6 +813,7 @@
   "subdir": "win-64",
   "version": "1.0"
  },
+ "metadata_version": 1,
  "name": "r-rmallow",
  "raw_recipe": "{% set version = '1.0' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-rmallow\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: RMallow_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/RMallow_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/RMallow/RMallow_{{ version }}.tar.gz\n\n  sha256: 8e777accc78a3756e9cd68decbd6e8a44681ffd32dae692ce174bb8083aa0345\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-combinat\n\n  run:\n    - r-base\n    - r-combinat\n\ntest:\n  commands:\n    - $R -e \"library('RMallow')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('RMallow')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=RMallow\n  license: GPL (>= 2)\n  summary: An EM algorithm to fit Mallows' Models to full or partial rankings, with or without\n    ties.\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}\\/lib\\/R\\/share\\/licenses\\/GPL-3'  # [unix]\n  license_file: '{{ environ[\"PREFIX\"] }}\\R\\share\\licenses\\GPL-3'  # [win]\nextra:\n   recipe-maintainers:\n    - MathiasHaudgaard\n    - FrodePedersen\n    - ArneKr\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n",
  "rendered_recipe": {

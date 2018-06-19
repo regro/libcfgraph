@@ -112,6 +112,7 @@
   "subdir": "linux-64",
   "version": "0.8.9"
  },
+ "metadata_version": 1,
  "name": "datapackage-py",
  "raw_recipe": "{% set conda_name = \"datapackage-py\" %}\n{% set name = \"datapackage\" %}\n{% set version = \"0.8.9\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"bb6e5a2e3f991f27de06db57c940f85f3e2a762747a8b4165800e8ecc267f2c6\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ conda_name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - six >=1.10,<2.0a\n    - requests >=2.8,<3.0a\n    - jsonschema >=2.5,<3.0a\n    - unicodecsv >=0.14,<1.0a\n    - jsontableschema >=0.8,<1.0a\n    - tabulator-py >=1.0.0a5,<2.0a\n\ntest:\n  imports:\n    - datapackage\n\nabout:\n  home: https://github.com/frictionlessdata/datapackage-py\n  license_file: LICENSE\n  license: MIT\n  license_family: MIT\n  summary: 'Utilities to work with Data Packages as defined on dataprotocols.org'\n  dev_url: https://github.com/frictionlessdata/datapackage-py\n  doc_url: https://github.com/frictionlessdata/datapackage-py\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

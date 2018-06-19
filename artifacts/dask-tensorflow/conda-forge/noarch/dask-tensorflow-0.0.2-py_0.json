@@ -129,6 +129,7 @@
   "timestamp": 1528815537296,
   "version": "0.0.2"
  },
+ "metadata_version": 1,
  "name": "dask-tensorflow",
  "raw_recipe": "{% set version = \"0.0.2\" %}\n\npackage:\n  name: dask-tensorflow\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/dask-tensorflow/dask-tensorflow-{{ version }}.tar.gz\n  sha256: 9687ca632ca9769ccc2c8f99300ebfc675b19ef6369a57e33c00e7178f412d2e\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - dask\n    - distributed\n    - tensorflow\n\ntest:\n  imports:\n    # Skip the import test on Linux as wheel file require a more recent\n    # version of GLIBC++ than the VM used to build and test package.\n    - dask_tensorflow  # [not linux]\n\nabout:\n  home: The package home page\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Interactions between Dask and Tensorflow\n\nextra:\n  recipe-maintainers:\n    - mrocklin\n    - TomAugspurger\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -752,6 +752,7 @@
   "subdir": "linux-64",
   "version": "2.1.5"
  },
+ "metadata_version": 1,
  "name": "gitpython",
  "raw_recipe": "{% set version=\"2.1.5\" %}\n{% set sha256 = \"5c00cbd256e2b1d039381d4f7d71fcb7ee5cc196ca10c101ff7191bd82ab5d9c\" %}\n\npackage:\n  name: gitpython\n  version: {{ version }}\n\nsource:\n  fn: GitPython-{{ version }}.tar.gz\n  url: https://files.pythonhosted.org/packages/source/G/GitPython/GitPython-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - gitdb2\n\ntest:\n  imports:\n    - git\n    - git.index\n    - git.objects\n    - git.objects.submodule\n    - git.refs\n    - git.repo\n\nabout:\n  home: https://github.com/gitpython-developers/GitPython\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Python Git Library'\n  doc_url:  http://gitpython.readthedocs.org\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n    - ocefpaf\n",
  "rendered_recipe": {

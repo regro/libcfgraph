@@ -635,6 +635,7 @@
   "subdir": "win-64",
   "version": "0.12.13"
  },
+ "metadata_version": 1,
  "name": "bottle",
  "raw_recipe": "{% set name = \"bottle\" %}\n{% set version = \"0.12.13\" %}\n{% set sha256 = \"c89ce532b1c180905d03a4815fea2d7b9b444f5e13407f43a9c7eae5777aa613\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/bottlepy/bottle/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - bottle\n\nabout:\n  home: http://bottlepy.org\n  license: MIT\n  license_file: LICENSE\n  summary: 'Bottle is a fast, simple and lightweight WSGI micro web-framework for Python.'\n\n  description: |\n    Bottle is a fast, simple and lightweight WSGI micro web-framework for Python. \n    It is distributed as a single file module and has no dependencies other than the Python Standard Library.\n  doc_url: http://bottlepy.org/docs/0.12/\n  dev_url: https://github.com/bottlepy/bottle\n\nextra:\n  recipe-maintainers:\n    - hajapy\n    - jmeppley\n",
  "rendered_recipe": {

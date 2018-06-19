@@ -98,6 +98,7 @@
   "subdir": "win-64",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "ctd",
  "raw_recipe": "{% set version = \"0.3.0\" %}\n\npackage:\n  name: ctd\n  version: {{ version }}\n\nsource:\n  fn: ctd-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/ctd/ctd-{{ version }}.tar.gz\n  sha256: c5144bf2200cd366fabacdd3c4dbe6cfd234a57beaf1aa221b159f5462bc4677\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - scipy\n    - matplotlib\n    - pandas\n    - gsw\n\ntest:\n  imports:\n    - ctd\n\nabout:\n  home: https://github.com/pyoceans/python-ctd\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Tools to load hydrographic data formats as pandas DataFrames.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

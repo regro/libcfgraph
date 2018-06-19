@@ -33,6 +33,7 @@
   "subdir": "win-64",
   "version": "1.5.1"
  },
+ "metadata_version": 1,
  "name": "pykwalify",
  "raw_recipe": "{% set name = \"pykwalify\" %}\n{% set version = \"1.5.1\" %}\n{% set checksum = \"4a384b1034166107a22bd371233a20ab3dd729b5bd34f6b0d053af18cd234103\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ checksum }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - pykwalify = pykwalify.cli:cli_entrypoint\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - docopt ==0.6.2\n    - pyyaml ==3.11\n    - python-dateutil ==2.4.2\n\n  run:\n    - python\n    - docopt ==0.6.2\n    - pyyaml ==3.11\n    - python-dateutil ==2.4.2\n\ntest:\n  imports:\n    - pykwalify\n\n  commands:\n    - pykwalify --help\n\nabout:\n  home: http://github.com/grokzen/pykwalify\n  license: MIT\n  summary: Python lib/cli for JSON/YAML schema validation\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {},

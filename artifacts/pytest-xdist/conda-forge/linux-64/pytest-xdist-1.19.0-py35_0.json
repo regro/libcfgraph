@@ -638,6 +638,7 @@
   "subdir": "linux-64",
   "version": "1.19.0"
  },
+ "metadata_version": 1,
  "name": "pytest-xdist",
  "raw_recipe": "{% set name = \"pytest-xdist\" %}\n{% set version = \"1.19.0\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"c066d27f884cc6c8d1d384176ace6494376d4a6cc1602b79489e6761879acd2a\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - execnet >=1.1\n    - py >=1.4.22\n    - pytest >=3.0.0\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - execnet >=1.1\n    - py >=1.4.22\n    - pytest >=3.0.0\n    - setuptools\n\ntest:\n  imports:\n    - xdist\n\nabout:\n  home: https://github.com/pytest-dev/pytest-xdist\n  license: MIT\n  license_file: LICENSE\n  summary: py.test xdist plugin for distributed testing and loop-on-failing modes\n  dev_url: https://github.com/pytest-dev/pytest-xdist\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n    - nicoddemus\n",
  "rendered_recipe": {

@@ -30,6 +30,7 @@
   "subdir": "osx-64",
   "version": "0.2.1"
  },
+ "metadata_version": 1,
  "name": "docker-pycreds",
  "raw_recipe": "{% set version = \"0.2.1\" %}\n\npackage:\n  name: docker-pycreds\n  version: {{ version }}\n\nsource:\n  fn: docker-pycreds-{{ version }}.tar.gz\n  url: https://github.com/shin-/dockerpy-creds/archive/{{ version }}.tar.gz\n  sha256: 7882efd95f44b5df166b4e34c054b486dc7287932a49cd491edf406763695351\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six >=1.4.0\n  run:\n    - python\n    - six >=1.4.0\n\ntest:\n  imports:\n    - dockerpycreds\n\nabout:\n  home: https://github.com/shin-/docker-pycreds/\n  license: Apache-2.0\n  summary: 'Python bindings for the docker credentials store API'\n  license_file: LICENSE\n  license_family: Apache\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {},

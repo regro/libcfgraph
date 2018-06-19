@@ -775,6 +775,7 @@
   "subdir": "linux-64",
   "version": "0.3.5"
  },
+ "metadata_version": 1,
  "name": "scikit-plot",
  "raw_recipe": "{% set name = \"scikit-plot\" %}\n{% set version = \"0.3.5\" %}\n{% set sha256 = \"92faa58ce2fdbbf7ff93c1bed564c4b615cb3df479c2e4f74dcda034dbb762a2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - matplotlib\n    - scikit-learn\n    - scipy\n    - joblib\n\ntest:\n  imports:\n    - scikitplot\n    - scikitplot.plotters\n    - scikitplot.helpers\n    - scikitplot.classifiers\n    - scikitplot.clustering\n    - scikitplot.estimators\n    - scikitplot.cluster\n    - scikitplot.decomposition\n    - scikitplot.metrics\n\nabout:\n  home: https://github.com/reiinakano/scikit-plot/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'An intuitive library to add plotting functionality to scikit-learn objects.'\n  doc_url: scikit-plot.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - ericmjl\n    - reiinakano\n",
  "rendered_recipe": {

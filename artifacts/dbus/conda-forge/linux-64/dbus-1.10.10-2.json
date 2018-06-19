@@ -130,6 +130,7 @@
   "subdir": "linux-64",
   "version": "1.10.10"
  },
+ "metadata_version": 1,
  "name": "dbus",
  "raw_recipe": "{% set version = \"1.10.10\" %}\n{% set md5 = \"495676d240eb982921b3ad1343526849\" %}\n\npackage:\n  name: dbus\n  version: {{ version }}\n\nsource:\n  url: http://dbus.freedesktop.org/releases/dbus/dbus-{{ version }}.tar.gz\n  md5:  {{ md5 }}\n  patches:\n    - 0001-Add-var-lib-dbus-machine-id-as-a-fallback.patch  # [linux]\n    - 0002-Make-it-possible-to-read-files-on-proc-which-reports.patch  # [linux]\n    - 0003-Use-proc-sys-kernel-random-boot_id-as-last-resort-fa.patch  # [linux]\n\nbuild:\n  skip: true  # [win]\n  number: 2\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - expat\n    - python\n  run:\n    - expat\n\ntest:\n  commands:\n    - dbus-daemon --version\n    - dbus-uuidgen\n\nabout:\n  summary: \"D-Bus is a message bus system, a simple way for applications to talk to one another. \"\n  license: GPL2\n  home: http://www.freedesktop.org/wiki/Software/dbus/\n\nextra:\n  recipe-maintainers:\n    - mingwandroid\n    - ccordoba12\n",
  "rendered_recipe": {

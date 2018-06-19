@@ -515,6 +515,7 @@
   "subdir": "osx-64",
   "version": "0.24.0"
  },
+ "metadata_version": 1,
  "name": "google-cloud-bigquery",
  "raw_recipe": "{% set name = \"google-cloud-bigquery\" %}\n{% set version = \"0.24.0\" %}\n{% set sha256 = \"3455d9ba66c876a37ff73108a95771edce4e082537d6119c19dcc1371f1b086a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - google-cloud-core >=0.24.0,<0.25dev\n\ntest:\n  imports:\n    - google.cloud.bigquery\n\nabout:\n  home: https://github.com/GoogleCloudPlatform/google-cloud-python/tree/master/bigquery\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Python Client for Google BigQuery'\n  description: Python idiomatic client for Google BigQuery\n  doc_url: https://googlecloudplatform.github.io/google-cloud-python/stable/bigquery-usage.html\n  dev_url: https://github.com/GoogleCloudPlatform/google-cloud-python/tree/master/bigquery\n\nextra:\n  recipe-maintainers:\n    - parthea\n",
  "rendered_recipe": {

@@ -129,6 +129,7 @@
   "timestamp": 1526937845692,
   "version": "1.4.2"
  },
+ "metadata_version": 1,
  "name": "django-widget-tweaks",
  "raw_recipe": "{% set name = \"django-widget-tweaks\" %}\n{% set version = \"1.4.2\" %}\n{% set sha256 = \"a31c8a2b88af98dba6471db4722a416d1c643c87efecf9a7f17f983a2a553632\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - django\n\ntest:\n  imports:\n    - widget_tweaks\n\nabout:\n  home: https://github.com/jazzband/django-widget-tweaks\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Tweak the form field rendering in templates, not in python-level form definitions.'\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "rendered_recipe": {

@@ -559,6 +559,7 @@
   "subdir": "win-64",
   "version": "0.7.1"
  },
+ "metadata_version": 1,
  "name": "courtana",
  "raw_recipe": "{% set version = \"0.7.1\" %}\n{% set name = \"courtana\" %}\n{% set sha256 = \"1f5b850b8893683bc527ecacce7c1efa5616e23aadeecbbcd16d35c50f91ee69\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: True  # [py<34]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - matplotlib\n    - scipy\n    - pandas\n    - numexpr\n    - pytables\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: https://bitbucket.org/fchampalimaud/courtana\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Tools for courtship analysis\n  description: |\n    courtana provides a set of tools for courtship analysis in Drosophila.\n  doc_url: http://courtana.readthedocs.io/en/dev/index.html\n  dev_url: https://bitbucket.org/fchampalimaud/courtana\n\nextra:\n  recipe-maintainers:\n    - cachitas\n",
  "rendered_recipe": {

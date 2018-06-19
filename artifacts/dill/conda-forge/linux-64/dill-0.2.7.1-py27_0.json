@@ -723,6 +723,7 @@
   "subdir": "linux-64",
   "version": "0.2.7.1"
  },
+ "metadata_version": 1,
  "name": "dill",
  "raw_recipe": "{% set version = \"0.2.7.1\" %}\n\npackage:\n    name: dill\n    version: {{ version }}\n\nsource:\n    fn: dill-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/d/dill/dill-{{ version }}.tar.gz\n    sha256: 97fd758f5fe742d42b11ec8318ecfcff8776bccacbfcec05dfd6276f5d450f73\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - pyreadline  # [win]\n\ntest:\n    imports:\n        - dill\n\nabout:\n    home: http://www.cacr.caltech.edu/~mmckerns\n    license: BSD 3-Clause\n    license_file: LICENSE\n    summary: 'A utility for serialization of python objects.'\n\nextra:\n    recipe-maintainers:\n        - DanCodigaMWRA\n        - ocefpaf\n",
  "rendered_recipe": {

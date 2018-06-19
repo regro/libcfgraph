@@ -665,6 +665,7 @@
   "subdir": "osx-64",
   "version": "0.11"
  },
+ "metadata_version": 1,
  "name": "ipdb",
  "raw_recipe": "{% set name = \"ipdb\" %}\n{% set version = \"0.11\" %}\n{% set sha256 = \"7f3016284fb0f4859e9692ecfda18e4d703c5ffc7e493d899831a7db2c187a16\" %}\n\n{% set gh_org = \"gotcha\"  %}\n{% set gh_repo = name %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  entry_points:\n    - ipdb = ipdb.__main__:main\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - ipython\n\ntest:\n  imports:\n    - ipdb\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: BSD-3\n  summary: \"Integration of IPython pdb\"\n\nextra:\n  recipe-maintainers:\n    - vamega\n",
  "rendered_recipe": {

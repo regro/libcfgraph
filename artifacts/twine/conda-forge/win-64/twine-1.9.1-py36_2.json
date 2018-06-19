@@ -554,6 +554,7 @@
   "subdir": "win-64",
   "version": "1.9.1"
  },
+ "metadata_version": 1,
  "name": "twine",
  "raw_recipe": "{% set version = \"1.9.1\" %}\n\npackage:\n  name: twine\n  version: {{ version }}\n\nsource:\n  fn: twine-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/t/twine/twine-{{ version }}.tar.gz\n  sha256: caa45b7987fc96321258cd7668e3be2ff34064f5c66d2d975b641adca659c1ab\n\n\nbuild:\n  number: 2\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - twine = twine.__main__:main\n\nrequirements:\n  build:\n    - python\n    - pkginfo >=1.0\n    - requests >=2.5.0\n    - requests-toolbelt >=0.5.1\n    - setuptools >=0.7.0\n    - tqdm\n    \n  run:\n    - python\n    - pkginfo >=1.0\n    - requests >=2.5.0\n    - requests-toolbelt >=0.5.1\n    - setuptools >=0.7.0\n    - tqdm\n\ntest:\n  imports:\n    - twine\n    - twine.commands\n  commands:\n    - twine --help\n\nabout:\n  home: https://github.com/pypa/twine\n  license: Apache  2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Collection of utilities for interacting with PyPI'\n\nextra:\n  recipe-maintainers:\n    - janschulz\n    - SylvainCorlay\n",
  "rendered_recipe": {

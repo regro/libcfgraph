@@ -922,6 +922,7 @@
   "subdir": "linux-64",
   "version": "3.3.3"
  },
+ "metadata_version": 1,
  "name": "yt",
  "raw_recipe": "{% set version = \"3.3.3\" %}\n{% set sha256 = \"edf6453927eee311d4b51afacb52cd5504b2b57cc6d3d92dab9c6bfaf6d883df\" %}\n\npackage:\n  name: yt\n  version: {{ version }}\n\nsource:\n  fn: yt-{{ version }}.tar.gz\n  url: http://yt-project.org/sdist/yt-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 2\n  script: env EMBREE_DIR=$PREFIX python setup.py install --single-version-externally-managed --record=record.txt  # [not win]\n  script: python setup.py install --single-version-externally-managed --record=record.txt  # [win]\n  entry_points:\n    - yt = yt.utilities.command_line:run_main\n\nrequirements:\n  build:\n    - python\n    - numpy x.x\n    - cython >=0.24.0\n    - setuptools >=19.6\n    - pyembree  # [linux]\n    - gcc  # [linux]\n  run:\n    - setuptools\n    - python\n    - numpy x.x\n    - h5py\n    - sympy\n    - matplotlib\n    - ipython\n    - pyembree  # [linux]\n    # for openmp\n    - libgcc  # [linux]\n\ntest:\n  requires:\n    - nose\n  commands:\n    - yt -h\n  imports:\n    - yt\n\nabout:\n  home: http://yt-project.org/\n  license: BSD 3-clause\n  summary: Analysis and visualization toolkit for volumetric data\n\nextra:\n    recipe-maintainers:\n      - ngoldbaum\n      - xarthisius\n",
  "rendered_recipe": {},

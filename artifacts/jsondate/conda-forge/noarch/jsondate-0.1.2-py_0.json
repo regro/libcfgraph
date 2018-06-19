@@ -719,6 +719,7 @@
   "subdir": "noarch",
   "version": "0.1.2"
  },
+ "metadata_version": 1,
  "name": "jsondate",
  "raw_recipe": "{% set name = \"jsondate\" %}\n{% set version = \"0.1.2\" %}\n{% set file_ext = \"tar.gz\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7ecc7144ae207c72fcf73b1563e1762e38404ea9f069ec7f50f0f5dc59f23f7e\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - jsondate\n\nabout:\n  home: https://github.com/rconradharris/jsondate\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: JSON with datetime support\n  description: |\n     jsondate is a drop-in replacement for Python's standard json library that\n     adds sensible handling of datetime and date objects. It uses ISO8601 for\n     encoding datetime objects and the date-specific part of ISO6801 for\n     encoding date objects.\n  doc_url: https://pypi.python.org/pypi/jsondate\n  dev_url: https://github.com/rconradharris/jsondate\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
  "rendered_recipe": {

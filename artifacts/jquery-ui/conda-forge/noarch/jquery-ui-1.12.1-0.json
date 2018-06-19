@@ -1379,6 +1379,7 @@
   "subdir": "noarch",
   "version": "1.12.1"
  },
+ "metadata_version": 1,
  "name": "jquery-ui",
  "raw_recipe": "{% set name = \"jquery-ui\" %}\n{% set version = \"1.12.1\" %}\n{% set sha256 = \"749252a7a23a58722f76d099d2bdd152d0da6aaa4764150bd8f5c27e544fd7b4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/jquery/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs\n  \ntest:\n  commands:\n    - npm list -g jquery-ui\n  requires:\n    - nodejs\n   \n\nabout:\n  home: https://github.com/jquery/jquery-ui\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'The official jQuery user interface library.'\n  description: |\n    jQuery UI is a curated set of user interface interactions, effects, widgets, \n    and themes built on top of jQuery. Whether you're building highly interactive \n    web applications, or you just need to add a date picker to a form control, \n    jQuery UI is the perfect choice. \n  doc_url: https://api.jqueryui.com/\n  dev_url: https://github.com/jquery/jquery-ui\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

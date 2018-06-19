@@ -626,6 +626,7 @@
   "subdir": "win-64",
   "version": "0.1.10.8"
  },
+ "metadata_version": 1,
  "name": "tslearn",
  "raw_recipe": "{% set name = \"tslearn\" %}\n{% set version = \"0.1.10.8\" %}\n{% set sha256 = \"7b1e22f93c107884fb104d5d25d37eb8772a341aeab91b3a22ce6d860ef4cde8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - toolchain\n    - cython\n    - numpy 1.11.*\n  run:\n    - python\n    - numpy >=1.11\n    - scipy\n    - scikit-learn\n\ntest:\n  imports:\n    - tslearn\n    - tslearn.metrics\n\nabout:\n  home: http://tslearn.readthedocs.io/\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'A machine learning toolkit dedicated to time-series data'\n  description: |\n      tslearn is a Python package that provides machine learning tools\n      for the analysis of time series. This package builds on\n      scikit-learn, numpy and scipy libraries.\n  doc_url: http://tslearn.readthedocs.io/\n  dev_url: https://github.com/rtavenar/tslearn\n\nextra:\n  recipe-maintainers:\n    - rth\n",
  "rendered_recipe": {

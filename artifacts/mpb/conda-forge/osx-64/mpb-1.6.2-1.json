@@ -142,6 +142,7 @@
   "timestamp": 1524692142328,
   "version": "1.6.2"
  },
+ "metadata_version": 1,
  "name": "mpb",
  "raw_recipe": "{% set name = \"mpb\" %}\n{% set version = \"1.6.2\" %}\n{% set sha256 = \"aae270f9f51e7ff852fe578b8ef775b22489d4198f6a35ee0a91a60548fd1e3a\" %}\n\npackage:\n  name: {{ name }}\n  version: {{version}}\n\nsource:\n  fn: {{ name }}-{{version}}.tar.gz\n  url: https://github.com/stevengj/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - openblas 0.2.20|0.2.20.*\n    - gcc\n    - fftw\n    - hdf5 1.10.1\n    - libctl >=4.0.0\n  run:\n    - openblas 0.2.20|0.2.20.*\n    - fftw\n    - hdf5 1.10.1\n    - libgfortran\n    - libgcc\n    - libctl >=4.0.0\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libmpb${SHLIB_EXT}\n\nabout:\n  home: http:/github.com/stevengj/mpb\n  license: GPL-2.0\n  license_file: COPYING\n  summary: MIT Photonic-Bands - computation of photonic band structures in periodic media\n  doc_url: http://mpb.readthedocs.io\n  dev_url: https://github.com/stevengj/mpb\n\nextra:\n  recipe-maintainers:\n    - ChristopherHogan\n",
  "rendered_recipe": {

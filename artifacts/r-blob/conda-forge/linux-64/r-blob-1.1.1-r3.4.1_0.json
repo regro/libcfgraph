@@ -779,6 +779,7 @@
   "subdir": "linux-64",
   "version": "1.1.1"
  },
+ "metadata_version": 1,
  "name": "r-blob",
  "raw_recipe": "{% set version = \"1.1.1\" %}\n\npackage:\n  name: r-blob\n  version: {{ version }}\n\nsource:\n  fn: blob_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/blob_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/blob/blob_{{ version }}.tar.gz\n  sha256: accbf9c9746c983e4108c8709995e54e61611ea7e2c51d4b6a0d813261484f53\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-prettyunits\n\n  run:\n    - r-base\n    - r-prettyunits\n\ntest:\n  commands:\n    - $R -e \"library('blob')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('blob')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/hadley/blob\n  license: GPL-3\n  summary: R's raw vector is useful for storing a single binary object. What if you want to put\n    a vector of them in a data frame? The blob package provides the blob object, a list\n    of raw vectors, suitable for use as a column in data frame.\n  license_family: GPL\n\nextra:\n  recipe-maintainers:\n    - bgruening\n    - daler\n    - johanneskoester\n    - rvalieris\n",
  "rendered_recipe": {

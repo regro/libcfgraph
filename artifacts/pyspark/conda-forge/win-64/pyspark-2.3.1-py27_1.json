@@ -631,6 +631,7 @@
   "timestamp": 1528740331182,
   "version": "2.3.1"
  },
+ "metadata_version": 1,
  "name": "pyspark",
  "raw_recipe": "{% set name = \"pyspark\" %}\n{% set version = \"2.3.1\" %}\n{% set hadoop_version = \"2.7\" %}\n{% set sha256 = \"e87499e5417a64341cbda25e087632dd9f6ce7ad249dfeba47d9d02a51305fc2\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: http://apache.mirrors.hoobly.com/spark/spark-{{ version }}/spark-{{ version }}-bin-hadoop{{ hadoop_version }}.tgz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: >\n    cd python &&\n    python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - pip\n    - pypandoc\n    - setuptools\n\n  run:\n    - python\n    - numpy >=1.7\n    - pandas >=0.13.0\n    - py4j 0.10.7\n\ntest:\n  imports:\n    - pyspark\n    - pyspark.ml\n    - pyspark.ml.linalg\n    - pyspark.ml.param\n    - pyspark.mllib\n    - pyspark.mllib.linalg\n    - pyspark.mllib.stat\n    - pyspark.sql\n    - pyspark.streaming\n\nabout:\n  home: http://spark.apache.org/\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: 'Apache Spark'\n  description: Apache Spark is a fast and general engine for large-scale data processing.\n\nextra:\n  recipe-maintainers:\n    - parente\n    - ericdill\n    - quasiben\n",
  "rendered_recipe": {

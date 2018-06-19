@@ -240,6 +240,7 @@
   "subdir": "win-64",
   "version": "1.5.2"
  },
+ "metadata_version": 1,
  "name": "cis",
  "raw_recipe": "{% set version = \"1.5.2\" %}\n\npackage:\n  name: cis\n  version: {{ version }}\n\nsource:\n  fn: cis-{{ version }}.tar.gz\n  url: https://github.com/cedadev/cis/archive/{{ version }}.tar.gz\n  sha256: 89e497bd3247dc66e547393b338137c8a1d43990eb46369c674fddda1c2df407\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - matplotlib >=1.2.0\n    - setuptools\n    - netcdf4 >=1.0\n    - numpy\n    - scipy\n    - iris >=1.8.0\n    - pyhdf\n    - psutil\n    - pandas\n    - pyhamcrest\n  run:\n    - python\n    - matplotlib >=1.2.0\n    - netcdf4 >=1.0\n    - numpy\n    - scipy\n    - iris >=1.8.0\n    - pyhdf\n    - psutil\n    - pandas\n\ntest:\n  imports:\n    - cis\n  commands:\n    - cis version\n  requires:\n    - mock\n    - nose\n    - pyhamcrest\n\nabout:\n  home: http://www.cistools.net\n  license: LGPL3\n  summary: 'Community Inter-comparison Suite'\n\nextra:\n  recipe-maintainers:\n    - duncanwp\n",
  "rendered_recipe": {

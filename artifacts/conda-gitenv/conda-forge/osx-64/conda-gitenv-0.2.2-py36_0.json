@@ -111,6 +111,7 @@
   "subdir": "osx-64",
   "version": "0.2.2"
  },
+ "metadata_version": 1,
  "name": "conda-gitenv",
  "raw_recipe": "{% set name = \"conda-gitenv\" %}\n{% set version = \"0.2.2\" %}\n{% set sha = \"8348608173a001ab798650a94a3bd7f5b91beed4bcc60081024f7dea3525e028\" %}\n\npackage:\n  name: {{ name }} \n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/SciTools/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha }} \n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - gitpython\n    - pyyaml\n    - conda >=4.1.0\n    - conda-build-all\n    - conda-build !=2.0.9\n\ntest:\n  imports:\n    - conda_gitenv\n  commands:\n    - conda gitenv --help\n    - conda gitenv resolve --help\n    - conda gitenv autotag --help\n    - conda gitenv autolabel --help\n    - conda gitenv deploy --help\n\nabout:\n  home: https://github.com/SciTools/{{ name }}\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Track environment specifications using a git repo.'\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - bjlittle\n    - lbdreyer\n",
  "rendered_recipe": {

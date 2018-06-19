@@ -650,6 +650,7 @@
   "subdir": "win-64",
   "version": "2.3"
  },
+ "metadata_version": 1,
  "name": "steemdata",
  "raw_recipe": "{% set name = \"steemdata\" %}\n{% set version = \"2.3\" %}\n{% set sha256 = \"593a390609da04d0c59428b07502f98044e5c2d5aafbe89f568aac1078cb8a84\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256|lower }}\n\nbuild:\n  number: 0\n  skip: True  # [py<34]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n    - pymongo\n    - python-dateutil\n    - requests\n    - funcy\n    - werkzeug\n\ntest:\n  imports:\n    - steemdata\n\n  commands:\n    - conda inspect linkages -p $PREFIX steemdata  # [not win]\n    - conda inspect objects -p $PREFIX steemdata   # [osx]\n\nabout:\n  home: https://github.com/SteemData/steemdata/\n  license: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt'\n  dev_url: https://github.com/SteemData/steemdata\n  doc_url: https://github.com/SteemData/steemdata\n  summary: 'Python Utilities for parsing STEEM blockchain'\n  description: |\n    The goal of the SteemData project is to make data from the \n    STEEM blockchain more accessible to developers, researchers\n    and 3rd party services.\n\nextra:\n  recipe-maintainers:\n    - holgern\n",
  "rendered_recipe": {

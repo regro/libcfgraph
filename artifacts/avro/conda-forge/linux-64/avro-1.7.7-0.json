@@ -45,6 +45,7 @@
   "subdir": "linux-64",
   "version": "1.7.7"
  },
+ "metadata_version": 1,
  "name": "avro",
  "raw_recipe": "{% set version = \"1.7.7\" %}\n\npackage:\n    name: avro\n    version: {{ version }}\n\nsource:\n    fn: avro-c-{{ version }}.tar.gz\n    url: https://www-us.apache.org/dist/avro/avro-{{ version }}/c/avro-c-{{ version }}.tar.gz\n    sha1: cbb698682d662c5e0abec023dcd37ce1f3db80d4\n    patches:\n        # Patch to enable compression using snappy.  Addressed in avro 1.8.0 by AVRO-1560\n        - make.patch\n\nbuild:\n    number: 0\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - cmake\n        - snappy\n        - zlib 1.2.*\n    run:\n        - snappy\n        - zlib 1.2.*\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libavro.a  # [unix]\n\nabout:\n  home: http://hadoop.apache.org/avro\n  license: Apache 2.0\n  summary: 'Avro is a serialization and RPC framework.'\n\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "rendered_recipe": {},

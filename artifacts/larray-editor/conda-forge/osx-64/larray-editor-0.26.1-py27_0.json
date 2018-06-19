@@ -669,6 +669,7 @@
   "subdir": "osx-64",
   "version": "0.26.1"
  },
+ "metadata_version": 1,
  "name": "larray-editor",
  "raw_recipe": "{% set name = \"larray-editor\" %}\n{% set version = \"0.26.1\" %}\n{% set sha256 = \"57aafcb53fdeafe32b61d2a52185926706c048df028fbf76ecb7a86f76f7fb49\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/larray-project/larray-editor/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - larray\n    - pytest-runner\n\n  run:\n    - python\n    - larray\n    - matplotlib\n    - pyqt\n    - qtpy\n    - pytest-runner\n\ntest:\n  imports:\n    - larray_editor\n\nabout:\n  home: https://github.com/larray-project/larray-editor\n  license: GPL-3.0\n  license_family: GPL\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: \"Graphical User Interface for LArray.\"\n\nextra:\n  recipe-maintainers:\n    - alixdamman\n    - gdementen\n",
  "rendered_recipe": {

@@ -770,6 +770,7 @@
   "subdir": "noarch",
   "version": "0.7.8"
  },
+ "metadata_version": 1,
  "name": "drmaa",
  "raw_recipe": "{% set version = \"0.7.8\" %}\n\npackage:\n  name: drmaa\n  version: {{ version }}\n\nsource:\n  fn: drmaa-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/drmaa/drmaa-{{ version }}.tar.gz\n  sha256: 9dc05f1e2c7a56dc0be4065642c46d26c334f6c30d63d0fc534defeac502802b\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n\ntest:\n  files:\n    - run_test.py\n  commands:\n    - python run_test.py\n\nabout:\n  home: https://github.com/pygridtools/drmaa-python\n  license: BSD 3-Clause\n  license_file: license.txt\n  summary: Python wrapper around the C DRMAA library.\n\nextra:\n  recipe-maintainers:\n    - dan-blanchard\n    - jakirkham\n",
  "rendered_recipe": {

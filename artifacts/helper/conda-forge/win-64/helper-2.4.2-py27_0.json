@@ -692,6 +692,7 @@
   "subdir": "win-64",
   "version": "2.4.2"
  },
+ "metadata_version": 1,
  "name": "helper",
  "raw_recipe": "{% set version = \"2.4.2\" %}\n\npackage:\n  name: helper\n  version: {{ version }}\n\nsource:\n  fn: helper-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/h/helper/helper-{{ version }}.tar.gz\n  sha256: a63d4a9255ad5071043e7e4ab8000a512627f1db958b1941b63c7d75e56ea65c\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pyyaml\n\n  run:\n    - python\n    - pyyaml\n\ntest:\n  imports:\n    - helper\n\nabout:\n  home: http://helper.readthedocs.org\n  license: BSD 3-clause\n  summary: development library for quickly writing configurable applications and daemons\n\nextra:\n  recipe-maintainers:\n    - frol\n",
  "rendered_recipe": {

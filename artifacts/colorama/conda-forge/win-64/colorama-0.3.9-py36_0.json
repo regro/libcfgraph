@@ -91,6 +91,7 @@
   "subdir": "win-64",
   "version": "0.3.9"
  },
+ "metadata_version": 1,
  "name": "colorama",
  "raw_recipe": "{% set name = \"colorama\" %}\n{% set version = \"0.3.9\" %}\n{% set build = 0 %}\n{% set sha256 = \"48eb22f4f8461b1df5734a074b57042430fb06e1d61bd1e11b078c0fe6d7a1f1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - colorama\n\nabout:\n  home: https://github.com/tartley/colorama\n  license: BSD 3-Clause\n  summary: 'Cross-platform colored terminal text.'\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -644,6 +644,7 @@
   "subdir": "win-64",
   "version": "1.0.6"
  },
+ "metadata_version": 1,
  "name": "hyperspy-gui-traitsui",
  "raw_recipe": "{% set name = \"hyperspy-gui-traitsui\" %}\n{% set filename = \"hyperspy_gui_traitsui\" %}\n{% set version = \"1.0.6\" %}\n{% set sha256 = \"e4f148d0f2f6f29cfd83a773343e2cea31294a189b4a048448a31289cbd8cad4\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ filename }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ filename }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\n\nbuild:\n  number: 0\n  skip: True  # [py2k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pyqt\n    - traitsui >=6.0\n    - hyperspy >=1.3\n\ntest:\n  commands:\n    - export MPLBACKEND=\"agg\"  # [unix]\n    - py.test --pyargs hyperspy_gui_traitsui\n\n  requires:\n    - pytest\n\nabout:\n  home: https://github.com/hyperspy/hyperspy_gui_traitsui\n  license: GPL v3\n  summary: \"traitsui GUI elements for HyperSpy.\"\n  license_file: LICENSE \n\nextra:\n  recipe-maintainers:\n    - to266\n    - francisco-dlp\n",
  "rendered_recipe": {

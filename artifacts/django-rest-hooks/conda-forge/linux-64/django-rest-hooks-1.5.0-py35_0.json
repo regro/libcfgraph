@@ -760,6 +760,7 @@
   "subdir": "linux-64",
   "version": "1.5.0"
  },
+ "metadata_version": 1,
  "name": "django-rest-hooks",
  "raw_recipe": "{% set version = \"1.5.0\" %}\n\npackage:\n  name: django-rest-hooks\n  version: {{ version }}\n\nsource:\n  fn: django-rest-hooks-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/django-rest-hooks/django-rest-hooks-{{ version }}.tar.gz\n  sha256: 26ec5537d70aee00b5562f32e2a092fbd19ed320c1adba5f180912d76aacaeab\n\nbuild:\n  script: python setup.py install\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - django >=1.4\n    - requests\n\n  run:\n    - python\n    - django >=1.4\n    - requests\n\ntest:\n  imports:\n    - rest_hooks\n\nabout:\n  home: http://github.com/zapier/django-rest-hooks\n  license: BSD 3-Clause\n  summary: A powerful mechanism for sending real time API notifications via a new subscription model.\n\nextra:\n  recipe-maintainers:\n    - Korijn\n    - IvoFlipse\n    - Maxyme\n",
  "rendered_recipe": {

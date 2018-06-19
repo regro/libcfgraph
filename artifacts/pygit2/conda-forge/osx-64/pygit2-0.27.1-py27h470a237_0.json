@@ -145,6 +145,7 @@
   "timestamp": 1528676551842,
   "version": "0.27.1"
  },
+ "metadata_version": 1,
  "name": "pygit2",
  "raw_recipe": "{% set name = \"pygit2\" %}\n{% set version = \"0.27.1\" %}\n{% set sha256 = \"1aa5ba1d59370bda158950ba4849bb6e59f13ac7e6fca5e392bfd873bd2c1cf9\" %}\n\n{% set version_major = version.split(\".\")[0] %}\n{% set version_minor = version.split(\".\")[1] %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n    - cffi\n    - libgit2 {{version_major}}.{{version_minor}}.*\n\n  run:\n    - python\n    - cffi\n    - six\n    - libgit2 {{version_major}}.{{version_minor}}.*\n\ntest:\n  imports:\n    - pygit2\n\nabout:\n  home: http://github.com/libgit2/pygit2\n  summary: 'Python bindings for libgit2.'\n  license: GPLv2 with linking exception\n  license_family: GPL2\n  license_file: COPYING\n  doc_url: http://www.pygit2.org/\n  dev_url: https://github.com/libgit2/pygit2\n\nextra:\n  recipe-maintainers:\n    - kszucs\n    - shadowwalkersb\n",
  "rendered_recipe": {

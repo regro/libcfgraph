@@ -135,6 +135,7 @@
   "subdir": "linux-64",
   "version": "0.7.4"
  },
+ "metadata_version": 1,
  "name": "chemfiles-lib",
  "raw_recipe": "{% set version = \"0.7.4\" %}\n{% set sha256 = \"4c76aa98d60f955285c0cf4f4104e40a50349b10675a090bfaa4b1e908394f0a\" %}\n\npackage:\n  name: chemfiles-lib\n  version: {{ version }}\n\nsource:\n  fn: chemfiles-{{ version }}.tar.gz\n  url: https://github.com/chemfiles/chemfiles/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: true  # [win and py2k]\n  number: 0\n  features:\n    - vc14  # [win]\n\nrequirements:\n  build:\n    - cmake\n    - toolchain\n  run:\n    - vc 14  # [win]\n\ntest:\n  commands:\n    - true  # this was already done during the build\n\nabout:\n  home: https://chemfiles.org\n  license: MPL-v2.0\n  license_file: LICENCE.txt\n  summary: Modern library for chemistry file reading and writing\n  doc_url: https://chemfiles.org/chemfiles/0.7.4/\n  dev_url: https://github.com/chemfiles/chemfiles\n\nextra:\n  recipe-maintainers:\n    - luthaf\n",
  "rendered_recipe": {

@@ -714,6 +714,7 @@
   "subdir": "noarch",
   "version": "1.0.5"
  },
+ "metadata_version": 1,
  "name": "doct",
  "raw_recipe": "{% set version = \"1.0.5\" %}\n\npackage:\n  name: doct\n  version: {{ version }}\n\nsource:\n  url: http://github.com/NSLS-II/doct/archive/v{{ version }}.tar.gz\n  fn: doct-{{ version }}.tar.gz\n  sha256: f83b30e32feaf332f4c009582c63f772e9660040cdb7d6e5c3f9318811a8a5e0\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - humanize\n    - prettytable\n    - python\n    - six\n    - setuptools\n  run:\n    - humanize\n    - prettytable\n    - python\n    - six \n\ntest:\n  imports:\n    - doct\n\nabout:\n  home: https://github.com/NSLS-II/document\n  license: BSD 3-Clause\n  summary: A read-only dottable dictionary\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - CJ-Wright\n    - tacaswell\n    - licode\n    - danielballan\n",
  "rendered_recipe": {

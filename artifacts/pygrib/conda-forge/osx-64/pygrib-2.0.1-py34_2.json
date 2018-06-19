@@ -30,6 +30,7 @@
   "subdir": "osx-64",
   "version": "2.0.1"
  },
+ "metadata_version": 1,
  "name": "pygrib",
  "raw_recipe": "{% set version = \"2.0.1\" %}\n\npackage:\n  name: pygrib\n  version: {{ version }}\n\nsource:\n  fn: pygrib-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/p/pygrib/pygrib-{{ version }}.tar.gz\n  md5: e9ae04cb987992691b388b16be53214a\n  patches:\n      # Fixed tab/space inconsistency.\n      - tab_space.patch\n\nbuild:\n  number: 2\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - python\n    - ecmwf_grib\n    - jasper\n    - libpng >=1.6.21,<1.7\n    - pyproj\n\n  run:\n    - python\n    - ecmwf_grib\n    - jasper\n    - libpng >=1.6.21,<1.7\n    - pyproj\n    - numpy\n\ntest:\n  commands:\n    - grib_repack -h\n  imports:\n    - pygrib\n\nabout:\n  home: http://github.com/jswhit/pygrib\n  license: MIT\n  summary: 'python GRIB (editions 1 and 2) reader'\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n    - jjhelmus\n",
  "rendered_recipe": {},

@@ -518,6 +518,7 @@
   "subdir": "win-64",
   "version": "1.1.0"
  },
+ "metadata_version": 1,
  "name": "flask-celery-helper",
  "raw_recipe": "{% set name = \"Flask-Celery-Helper\" %}\n{% set version = \"1.1.0\" %}\n{% set sha256 = \"454d4a989c82894be30e5d764341e9f16bb2cedfb2a7f9d5edc67c09e195f8c5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - flask\n    - celery >=3,<4\n\ntest:\n  imports:\n    - flask_celery\n\nabout:\n  home: http://github.com/Robpol86/flask-celery-helper\n  license: MIT\n  license_family: MIT\n  #license_file: LICENSE.txt\n  summary: Flask-Celery-Helper doesn't break PyCharm autocomplete/inspections\n\n  description: |\n      Even though the Flask documentation says Celery extensions are\n      unnecessary now, I found that I still need an extension to properly\n      use Celery in large Flask applications. Specifically I need an\n      init_app() method to initialize Celery after I instantiate it.\n\n      This extension also comes with a single_instance method\n  dev_url: http://github.com/Robpol86/flask-celery-helper\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

@@ -808,6 +808,7 @@
   "subdir": "noarch",
   "version": "0.8.3"
  },
+ "metadata_version": 1,
  "name": "flot",
  "raw_recipe": "{% set name = \"flot\" %}\n{% set version = \"0.8.3\" %}\n{% set sha256 = \"3a3666d0aab777b8fbfddd45146966297e6ef18777d9fd535353be1cc62b21f1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/flot/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs\n    \ntest:\n  commands:\n    - npm list -g Flot\n  requires:\n    - nodejs\n   \nabout:\n  home: https://github.com/flot/flot\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'Attractive JavaScript charts for jQuery'\n  description: |\n    Flot is a Javascript plotting library for jQuery.  \n  doc_url: http://www.flotcharts.org/\n  dev_url: https://github.com/flot/flot\n  \nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

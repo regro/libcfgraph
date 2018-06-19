@@ -589,6 +589,7 @@
   "subdir": "win-64",
   "version": "2.1.2"
  },
+ "metadata_version": 1,
  "name": "line_profiler",
  "raw_recipe": "{% set name = \"line_profiler\" %}\n{% set version = \"2.1.2\" %}\n{% set checksum = \"efa66e9e3045aa7cb1dd4bf0106e07dec9f80bc781a993fbaf8162a36c20af5c\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ checksum }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - kernprof=kernprof:main\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n\n  run:\n    - python\n    - ipython >=0.13\n\ntest:\n  imports:\n    - kernprof\n    - line_profiler\n    - line_profiler_py35  # [py>34]\n\n  commands:\n    - kernprof --help\n    - python -m kernprof --help\n    - python -m line_profiler --help\n\nabout:\n  home: https://github.com/rkern/line_profiler\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: A module for monitoring memory usage of a python program\n  dev_url: https://github.com/rkern/line_profiler\n  doc_url: https://github.com/rkern/line_profiler\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - koverholt\n",
  "rendered_recipe": {

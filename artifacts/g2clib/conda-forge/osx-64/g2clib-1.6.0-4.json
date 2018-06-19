@@ -649,6 +649,7 @@
   "subdir": "osx-64",
   "version": "1.6.0"
  },
+ "metadata_version": 1,
  "name": "g2clib",
  "raw_recipe": "{% set version = \"1.6.0\" %}\n\npackage:\n  name: g2clib\n  version: {{ version }}\n\nsource:\n  url: http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/g2clib-{{ version }}.tar\n  sha256: afec1ea29979b84369d0f46f305ed12f73f1450ec2db737664ec7f75c1163add\n\nbuild:\n  number: 4\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - libpng >=1.6.22,<1.6.31\n    - zlib 1.2.11\n    - jasper\n  run:\n    - libpng >=1.6.22,<1.6.31\n    - zlib 1.2.11\n    - jasper\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libgrib2c.a  # [unix]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/\n  license: Public Domain\n  summary: 'C decoder/encoder routines for GRIB edition 2.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - jhamman\n",
  "rendered_recipe": {

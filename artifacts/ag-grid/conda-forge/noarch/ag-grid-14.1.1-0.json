@@ -1400,6 +1400,7 @@
   "subdir": "noarch",
   "version": "14.1.1"
  },
+ "metadata_version": 1,
  "name": "ag-grid",
  "raw_recipe": "{% set name = \"ag-grid\" %}\n{% set version = \"14.1.1\" %}\n{% set sha256 = \"97aa4874a6848a8a899be8aa85ce4aa770611c5beaf18dcd93515cdb41b7bcb8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ag-grid/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs\n  \ntest:\n  commands:\n    - npm list -g ag-grid\n  requires:\n    - nodejs\n   \n\nabout:\n  home: https://github.com/ag-grid/ag-grid\n  license: MIT\n  license_family: MIT\n  license_file: 'LICENSE.txt'\n  summary: 'Advanced Data Grid / Data Table supporting Javascript / React / AngularJS / Web Components'\n  description: |\n    Advanced Data Grid / Data Table supporting Javascript / React / AngularJS / Web Components \n  doc_url: https://www.ag-grid.com/\n  dev_url: https://github.com/ag-grid/ag-grid\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

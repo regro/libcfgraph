@@ -148,6 +148,7 @@
   "subdir": "osx-64",
   "version": "0.7.1"
  },
+ "metadata_version": 1,
  "name": "vertica-python",
  "raw_recipe": "{% set name = \"vertica-python\" %}\n{% set version = \"0.7.1\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"8954baac4f9d3c7a7dd0972377836fb2ba63adc274d42d483f42d4538831004e\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - python-dateutil >=1.5\n    - pytz\n    - future\n    - six >=1.10.0\n    - psycopg2 >=2.5.1\n\ntest:\n  imports:\n    - vertica_python\n    - vertica_python.tests\n    - vertica_python.vertica\n    - vertica_python.vertica.messages\n    - vertica_python.vertica.messages.backend_messages\n    - vertica_python.vertica.messages.frontend_messages\n\nabout:\n  home: https://github.com/uber/vertica-python/\n  license_file: LICENSE\n  license: MIT\n  license_family: MIT\n  summary: A native Python client for the Vertica database.\n  dev_url: https://github.com/uber/vertica-python/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

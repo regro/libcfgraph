@@ -1072,6 +1072,7 @@
   "subdir": "win-64",
   "version": "0.33.0"
  },
+ "metadata_version": 1,
  "name": "django-allauth",
  "raw_recipe": "\n{% set name = \"django-allauth\" %}\n{% set version = \"0.33.0\" %}\n{% set sha256 = \"ae64a80b49707c3d4d6aff52424f8e75fd636cebfdce0e88ffdcbf306f9f0a3d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django >=1.8\n\nabout:\n  home: https://github.com/pennersr/django-allauth\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication'\n  description: Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication  \n  doc_url: https://django-allauth.readthedocs.io/en/latest/\n  dev_url: https://github.com/pennersr/django-allauth\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

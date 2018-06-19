@@ -87,6 +87,7 @@
   "subdir": "osx-64",
   "version": "3.2.2"
  },
+ "metadata_version": 1,
  "name": "flask-httpauth",
  "raw_recipe": "{% set name = \"Flask-HTTPAuth\" %}\n{% set version = \"3.2.2\" %}\n{% set sha256 = \"df39b02a5ef71d4dc6c7ea43bd0ed84342eb8d66d50a7cd34d2ce13f5812440d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - flask\n\n  run:\n    - python\n    - flask\n\ntest:\n  imports:\n    - flask_httpauth\n\nabout:\n  home: http://github.com/miguelgrinberg/flask-httpauth/\n  license: MIT\n  license_file: LICENSE\n  summary: 'Basic and Digest HTTP authentication for Flask routes'\n  dev_url: http://github.com/miguelgrinberg/flask-httpauth/\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
  "rendered_recipe": {

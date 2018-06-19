@@ -747,6 +747,7 @@
   "subdir": "linux-64",
   "version": "1.2.1"
  },
+ "metadata_version": 1,
  "name": "libunwind",
  "raw_recipe": "{% set name = \"libunwind\" %}\n{% set version = \"1.2.1\" %}\n{% set sha256 = \"3f3ecb90e28cbe53fba7a4a27ccce7aad188d3210bb1964a923a731a27a75acb\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://download.savannah.nongnu.org/releases/libunwind/libunwind-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    # no-op failing test. No clear explanation for failure. Only discussion went unresolved on upstream mailing\n    # list: https://lists.nongnu.org/archive/html/libunwind-devel/2015-01/msg00010.html\n    - run-coredump-unwind.patch\n\nbuild:\n  number: 0\n  skip: True  # [win or osx]\n\nrequirements:\n  build:\n    - toolchain\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/lib/libunwind.so\"\n    - test -f \"${PREFIX}/include/libunwind.h\"\n    - test -f \"${PREFIX}/include/unwind.h\"\n    - conda inspect linkages -p \"${PREFIX}\" \"{{ name }}\"\n\nabout:\n  home: http://www.nongnu.org/libunwind\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'Defines a portable and efficient C programming interface (API) to determine the call-chain of a program'\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
  "rendered_recipe": {

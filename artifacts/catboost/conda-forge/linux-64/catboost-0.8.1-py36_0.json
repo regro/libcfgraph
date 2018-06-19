@@ -175,6 +175,7 @@
   "timestamp": 1525603537788,
   "version": "0.8.1"
  },
+ "metadata_version": 1,
  "name": "catboost",
  "raw_recipe": "package:\n  name: catboost\n  version: \"0.8.1\"\n\nbuild:\n  number: 0\n  #  Yandex supplies whl files on PyPI for:\n  # - Linux: Python 2.7, 3.4, 3.5 and 3.6\n  # - OS X: Python 2.7, 3.4, 3.5 and 3.6\n  # - Win-64: Python 2.7, 3.4, 3.5 and 3.6\n  skip: True  # [win32]\n  skip: True  # [py26]\n  skip: True  # [py33]\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n    - six\n\ntest:\n  imports:\n    - catboost\n\nabout:\n  home: http://catboost.yandex\n  license: Apache 2.0\n  license_family: MIT\n  license_url: https://github.com/catboost/catboost/blob/master/LICENSE\n  summary: 'Gradient boosting on decision trees library'\n\n  description: |\n    General purpose gradient boosting on decision trees library with categorical features support out of the box.\n    It is easy to install, contains fast inference implementation and supports CPU and GPU (even multi-GPU) computation.\n  doc_url: https://tech.yandex.com/catboost/doc/dg/concepts/about-docpage/\n  dev_url: https://github.com/catboost/catboost\n\nextra:\n  recipe-maintainers:\n    - sab\n",
  "rendered_recipe": {

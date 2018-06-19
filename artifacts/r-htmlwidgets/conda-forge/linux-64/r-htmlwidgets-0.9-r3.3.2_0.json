@@ -676,6 +676,7 @@
   "subdir": "linux-64",
   "version": "0.9"
  },
+ "metadata_version": 1,
  "name": "r-htmlwidgets",
  "raw_recipe": "{% set version = '0.9' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-htmlwidgets\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: htmlwidgets_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/htmlwidgets_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/htmlwidgets/htmlwidgets_{{ version }}.tar.gz\n  sha256: 1154b541ccd868e41d3cf0d7f188f7275ec99f61fe2c7de21c8a05edb19b985e\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-htmltools >=0.3\n    - r-jsonlite >=0.9.16\n    - r-yaml\n\n  run:\n    - r-base\n    - r-htmltools >=0.3\n    - r-jsonlite >=0.9.16\n    - r-yaml\n\ntest:\n  commands:\n    - $R -e \"library('htmlwidgets')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('htmlwidgets')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/ramnathv/htmlwidgets\n  license: MIT\n  summary: A framework for creating HTML widgets that render in various contexts including the\n    R console, 'R Markdown' documents, and 'Shiny' web applications.\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

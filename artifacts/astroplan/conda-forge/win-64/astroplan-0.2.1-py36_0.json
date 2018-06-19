@@ -504,6 +504,7 @@
   "subdir": "win-64",
   "version": "0.2.1"
  },
+ "metadata_version": 1,
  "name": "astroplan",
  "raw_recipe": "{% set name = \"astroplan\" %}\n{% set version = \"0.2.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"eec6c517f46a881e9b24e53afca34b5313e11728739b8f2d32053775bb62befb\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.tar.gz'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  number: 0\n  script: python setup.py install --offline --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - astropy >=1.3\n  run:\n    - python\n    - numpy >=1.6\n    - astropy >=1.3\n    - pytz\n    - matplotlib\n\ntest:\n  imports:\n    - astroplan\n    - astroplan.plots\n\nabout:\n  home: https://github.com/astropy/astroplan\n  license: BSD 3-clause\n  license_family: BSD\n  summary: Observation planning package for astronomers\n  description: |\n    astroplan is an observation planning package for astronomers that can help\n    you plan for everything but the clouds. It is an in-development Astropy\n    affiliated package that seeks to make your life as an observational\n    astronomer a little less infuriating.\n  doc_url: https://astroplan.readthedocs.io/\n  dev_url: https://github.com/astropy/astroplan\n\nextra:\n  recipe-maintainers:\n    - mwcraig\n    - bsipocz\n    - bmorris3\n",
  "rendered_recipe": {

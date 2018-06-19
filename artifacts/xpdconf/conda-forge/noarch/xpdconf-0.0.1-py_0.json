@@ -139,6 +139,7 @@
   "timestamp": 1524307209775,
   "version": "0.0.1"
  },
+ "metadata_version": 1,
  "name": "xpdconf",
  "raw_recipe": "{% set name = \"xpdConf\" %}\n{% set version = \"0.0.1\" %}\n{% set sha256 = \"7f83a8221c711a2896f61e457b11add176b9288330cb44da5bb540fb14254696\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/xpdAcq/{{ name }}/releases/download/{{ version }}/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - databroker\n    - pyyaml\n\ntest:\n  imports:\n    - xpdconf\n\nabout:\n  home: http://github.com/xpdAcq/xpdConf\n  license: BSD-3-Clause \n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Configuration for XPD beamlines'\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n    - chiahaoliu\n    - sbillinge\n",
  "rendered_recipe": {

@@ -781,6 +781,7 @@
   "subdir": "win-64",
   "version": "2.0.2"
  },
+ "metadata_version": 1,
  "name": "fastnumbers",
  "raw_recipe": "{% set name = \"fastnumbers\" %}\n{% set version = \"2.0.2\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"9bb643edbad37dba9fb14c51fafff573e5ff81fcb903628c2d6c98ed4b88f34f\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n\n  run:\n    - python\n\ntest:\n  imports:\n    - fastnumbers\n\nabout:\n  home: https://github.com/SethMMorton/fastnumbers\n  license_file: LICENSE\n  license: MIT\n  license_family: MIT\n  summary: 'Super-fast and clean conversions to numbers.'\n  dev_url: https://github.com/SethMMorton/fastnumbers\n  doc_url: https://fastnumbers.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

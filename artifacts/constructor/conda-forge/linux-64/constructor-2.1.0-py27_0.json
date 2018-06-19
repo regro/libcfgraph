@@ -146,6 +146,7 @@
   "timestamp": 1528346037078,
   "version": "2.1.0"
  },
+ "metadata_version": 1,
  "name": "constructor",
  "raw_recipe": "{% set version = \"2.1.0\" %}\n{% set sha256 = \"46e7ecbd5aa3b529c2f6720785655fcbc1b9925bee972e2f0dbc39e40980b10a\" %}\n\npackage:\n  name: constructor\n  version: {{ version }}\n\nsource:\n  fn: constructor-{{ version }}.tar.gz\n  url: https://github.com/conda/constructor/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - constructor = constructor.main:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - conda\n    - ruamel_yaml\n    - pillow >=3.1     # [win]\n    - nsis >=3.01      # [win]\n\ntest:\n  imports:\n    - constructor\n  commands:\n    - constructor --test\n\nabout:\n  home: http://github.com/conda/constructor\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: create installer from conda packages\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

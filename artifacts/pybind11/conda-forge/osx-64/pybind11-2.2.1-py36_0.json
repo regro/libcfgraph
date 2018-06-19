@@ -585,6 +585,7 @@
   "subdir": "osx-64",
   "version": "2.2.1"
  },
+ "metadata_version": 1,
  "name": "pybind11",
  "raw_recipe": "{% set version = \"2.2.1\" %}\n{% set sha256 = \"f8bd1509578b2a1e7407d52e6ee8afe64268909a1bbda620ca407318598927e7\" %}\n\npackage:\n    name: pybind11\n    version: {{ version }}\n\nsource:\n    fn: pybind11-{{ version }}.tar.gz\n    url: https://github.com/pybind/pybind11/archive/v{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n\nrequirements:\n    build:\n        - python\n        - cmake\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - pybind11\n    commands:\n        - test -f ${PREFIX}/share/cmake/pybind11/pybind11Config.cmake                         # [unix]\n        - if exist %PREFIX%\\share\\cmake\\pybind11\\pybind11Config.cmake (exit 0) else (exit 1)  # [win]\n\n\nabout:\n    home: https://github.com/pybind/pybind11/\n    license: BSD 3-Clause\n    summary: Seamless operability between C++11 and Python\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - wjakob\n",
  "rendered_recipe": {

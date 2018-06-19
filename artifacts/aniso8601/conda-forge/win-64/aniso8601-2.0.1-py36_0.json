@@ -637,6 +637,7 @@
   "subdir": "win-64",
   "version": "2.0.1"
  },
+ "metadata_version": 1,
  "name": "aniso8601",
  "raw_recipe": "{% set name = \"aniso8601\" %}\n{% set version = \"2.0.1\" %}\n{% set sha256 = \"b7215a41e5194a829dc87d1ea5039315be85a6158ba15c8157a284c29fa6808b\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - python-dateutil\n\ntest:\n  imports:\n    - aniso8601\n\nabout:\n  home: https://bitbucket.org/nielsenb/aniso8601\n  license: BSD 3-Clause\n  summary: A library for parsing ISO 8601 strings.\n\nextra:\n  recipe-maintainers:\n    - vamega\n",
  "rendered_recipe": {

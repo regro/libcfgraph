@@ -87,6 +87,7 @@
   "subdir": "win-64",
   "version": "0.7.2"
  },
+ "metadata_version": 1,
  "name": "prettytable",
  "raw_recipe": "{% set name = \"prettytable\" %}\n{% set version = \"0.7.2\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"2d5460dc9db74a32bcc8f9f67de68b2c4f4d2f01fa3bd518764c69156d9cacd9\" %}\n{% set build = 1 %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type}}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - prettytable\n\nabout:\n  home: http://code.google.com/p/prettytable\n  license_file: COPYING\n  license: BSD 3-Clause\n  license_family: BSD\n  summary: 'A simple Python library for easily displaying tabular data in a visually appealing ASCII table format'\n\nextra:\n  recipe-maintainers:\n    - anguslees\n    - pmlandwehr\n    - licode\n",
  "rendered_recipe": {

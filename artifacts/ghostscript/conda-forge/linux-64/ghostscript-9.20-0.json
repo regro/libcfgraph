@@ -405,6 +405,7 @@
   "subdir": "linux-64",
   "version": "9.20"
  },
+ "metadata_version": 1,
  "name": "ghostscript",
  "raw_recipe": "{% set version = \"9.20\" %}\n\npackage:\n  name: ghostscript\n  version: {{ version }}\n\nsource:\n  fn: ghostscript-{{ version }}.tar.gz\n  url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs920/ghostscript-{{ version }}.tar.gz\n  sha256: 949b64b46ecf8906db54a94ecf83ab97534ebf946f770d3c3f283cb469cb6e14\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - gcc\n\ntest:\n  commands:\n    - gs --version\n\nabout:\n  home: http://ghostscript.com/\n  license: Affero GPL\n  license_file: LICENSE\n  summary: 'An interpreter for the PostScript language and for PDF.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

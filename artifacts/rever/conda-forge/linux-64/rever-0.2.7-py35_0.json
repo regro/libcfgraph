@@ -792,6 +792,7 @@
   "subdir": "linux-64",
   "version": "0.2.7"
  },
+ "metadata_version": 1,
  "name": "rever",
  "raw_recipe": "{% set name = \"rever\" %}\n{% set version = \"0.2.7\" %}\n{% set sha256 = \"1578c4a651ed2e51b04875fdc135e8820a0aff391feb6395956f8c35a4941be6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/ergs/rever/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - xonsh\n    - lazyasd\n    - github3.py\n\ntest:\n  imports:\n    - rever\n    - rever.activities\n  commands:\n    - rever -h\n\nabout:\n  home: https://regro.github.io/rever-docs/\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Releaser of Versions'\n  description: |\n    Rever is a xonsh-powered, cross-platform software release tool. The goal of rever is\n    to provide sofware projects a standard mechanism for dealing with code released.\n    Rever aims to make the process of releasing a new version of a code base as easy as\n    running a single command.\n  doc_url: https://regro.github.io/rever-docs/\n  dev_url: https://github.com/ergs/rever\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - asmeurer\n    - CJ-Wright\n",
  "rendered_recipe": {

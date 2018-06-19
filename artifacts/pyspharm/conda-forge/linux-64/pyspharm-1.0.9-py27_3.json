@@ -764,6 +764,7 @@
   "subdir": "linux-64",
   "version": "1.0.9"
  },
+ "metadata_version": 1,
  "name": "pyspharm",
  "raw_recipe": "{% set version = \"1.0.9\" %}\n{% set commit = \"b913aac7a25495caaa253ab4570f50a398e5639c\" %}\n\npackage:\n  name: pyspharm\n  version: {{ version }}\n\nsource:\n  url: https://github.com/jswhit/pyspharm/archive/{{ commit }}.tar.gz\n  sha256: 726e8884aa598c4e3ee959cd3ca64d4748818ff277b41d48523cd6d70882ceb9\n\nbuild:\n  number: 3\n  skip: True  # [win and py3k or win64]\n\nrequirements:\n  build:\n    - python\n    - numpy 1.11.*\n    - mingwpy  # [win]\n    - gcc  # [not win]\n  run:\n    - python\n    - numpy >=1.11\n    - libgcc  # [linux]\n    - libgfortran  # [osx]\n\ntest:\n  imports:\n    - spharm\n  commands:\n    - conda inspect linkages -p $PREFIX pyspharm  # [not win]\n    - conda inspect objects -p $PREFIX pyspharm  # [osx]\n\nabout:\n  home: https://github.com/jswhit/pyspharm\n  license: spherepack\n  license_file: LICENSE.spherepack\n  summary: 'Provides an object-oriented python interface to the NCAR SPHEREPACK library.'\n\nextra:\n  recipe-maintainers:\n    - ajdawson\n    - ocefpaf\n",
  "rendered_recipe": {

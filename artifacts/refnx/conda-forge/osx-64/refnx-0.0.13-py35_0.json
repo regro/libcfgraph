@@ -813,6 +813,7 @@
   "subdir": "osx-64",
   "version": "0.0.13"
  },
+ "metadata_version": 1,
  "name": "refnx",
  "raw_recipe": "{%set name = \"refnx\" %}\n{%set version = \"0.0.13\" %}\n{%set sha256 = \"1bda80bbed8864f6f0dcb3267940d88dfe0575b110f6ec0f3317b30b303ea007\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/refnx/refnx/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - numpy 1.11.*\n    - cython\n    - setuptools\n\n  run:\n    - python\n    - numpy >=1.11\n    - scipy\n    - xlrd\n    - pandas\n    - uncertainties\n    - h5py\n\ntest:\n  requires:\n    - pytest\n  commands:\n    - py.test --pyargs refnx -v --duration=0\n\n  imports:\n    - refnx\n\nabout:\n  home: https://github.com/refnx/refnx\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'Neutron and X-ray Reflectometry Analysis'\n  doc_url: https://refnx.github.io\n\nextra:\n  recipe-maintainers:\n    - andyfaff\n",
  "rendered_recipe": {

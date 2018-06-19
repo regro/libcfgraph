@@ -979,6 +979,7 @@
   "subdir": "linux-64",
   "version": "1.9.0"
  },
+ "metadata_version": 1,
  "name": "arm_pyart",
  "raw_recipe": "{% set name = \"arm_pyart\" %}\n{% set version = \"1.9.0\" %}\n{% set sha256 = \"5dcd511a0dd7a76511d4e67f13d98e71a63f4927b988c03ca277a7d379387bcc\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n\nrequirements:\n    build:\n        - python\n        - numpy 1.11.*\n        - trmm_rsl  # [not win]\n\n    run:\n        - python\n        - numpy >=1.11\n        - scipy\n        - matplotlib\n        - netcdf4\n        - trmm_rsl  # [not win]\n\ntest:\n    imports:\n        - pyart\n\nabout:\n    home: http://arm-doe.github.io/pyart/\n    license: BSD-3-Clause\n    summary: \"Python ARM Radar Toolkit\"\n\nextra:\n    recipe-maintainers:\n        - jjhelmus\n        - zssherman\n",
  "rendered_recipe": {

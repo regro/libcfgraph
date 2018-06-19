@@ -494,6 +494,7 @@
   "subdir": "win-64",
   "version": "2.2.1"
  },
+ "metadata_version": 1,
  "name": "expat",
  "raw_recipe": "{% set version = \"2.2.1\" %}\n\npackage:\n  name: expat\n  version: {{ version }}\n\nsource:\n  fn: expat-{{ version }}.tar.bz2\n  url: http://downloads.sourceforge.net/project/expat/expat/{{ version }}/expat-{{ version }}.tar.bz2\n  sha256: 1868cadae4c82a018e361e2b2091de103cd820aaacb0d6cfa49bd2cd83978885\n  patches:\n    # Fixes https://github.com/conda-forge/expat-feedstock/pull/11#issuecomment-312501043\n    utf8.patch\n\nbuild:\n  number: 0\n  skip: True  # [win and py36]\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and (py35 or py36)]\n\nrequirements:\n  build:\n    - python  # [win]\n    - cmake  # [win]\n    - msinttypes  # [win]\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and (py35 or py36)]\n  run:\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and (py35 or py36)]\n\ntest:\n  commands:\n    - xmlwf -h\n    - conda inspect linkages -p $PREFIX expat  # [not win]\n    - conda inspect objects -p $PREFIX expat  # [osx]\n\nabout:\n  home: http://expat.sourceforge.net/\n  license: MIT\n  license_file: COPYING\n  summary: 'Expat XML parser library in C.'\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - ocefpaf\n    - pelson\n",
  "rendered_recipe": {

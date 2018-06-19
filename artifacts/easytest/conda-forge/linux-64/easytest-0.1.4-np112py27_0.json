@@ -95,6 +95,7 @@
   "subdir": "linux-64",
   "version": "0.1.4"
  },
+ "metadata_version": 1,
  "name": "easytest",
  "raw_recipe": "{% set name = \"easytest\" %}\n{% set version = \"0.1.4\" %}\n{% set sha256 = \"4553c57e7da91a2e6f86c9872f8d95955242e79746f86d402dc2c6bdd09fd75f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [py>27]\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - netcdf4\n  run:\n    - python\n    - numpy x.x\n    - netcdf4\n\ntest:\n  imports:\n    - easytest\n    \n\nabout:\n  home: https://github.com/pygeo/easytest\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Framework for easy performance of complex tests'\n\n  description: Framework for easy performance of complex tests\n    \n  doc_url: http://easytest.readthedocs.io/\n  dev_url: https://github.com/pygeo/easytest\n\nextra:\n  recipe-maintainers:\n    - bulli92\n",
  "rendered_recipe": {

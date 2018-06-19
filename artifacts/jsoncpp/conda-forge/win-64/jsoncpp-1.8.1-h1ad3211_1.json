@@ -136,6 +136,7 @@
   "timestamp": 1526193798333,
   "version": "1.8.1"
  },
+ "metadata_version": 1,
  "name": "jsoncpp",
  "raw_recipe": "{% set version = \"1.8.1\" %}\n\npackage:\n  name: jsoncpp\n  version: {{ version }}\n\nsource:\n  fn: jsoncpp-{{ version }}.tar.gz\n  url: https://github.com/open-source-parsers/jsoncpp/archive/{{ version }}.tar.gz\n  sha256: 858db2faf348f89fdf1062bd3e79256772e897e7f17df73e0624edf004f2f9ac\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - {{ compiler(\"cxx\") }}\n    - cmake\n    - pkg-config  # [unix]\n    - python\n  host:\n    - msinttypes  # [win and vc==9]\n\ntest:\n  commands:\n    # Verify headers are present.\n    - test -f \"${PREFIX}/include/json/json.h\"      # [unix]\n    - if not exist %LIBRARY_INC%\\\\json\\\\json.h exit 1  # [win]\n\n    # Verify pkg-config file is present.\n    - test -f \"${PREFIX}/lib/pkgconfig/jsoncpp.pc\"  # [unix]\n\n    # Verify libraries are present.\n    - test -f \"${PREFIX}/lib/libjsoncpp.a\"          # [unix]\n    - python -c \"import ctypes; ctypes.cdll[r'${PREFIX}/lib/libjsoncpp${SHLIB_EXT}']\"  # [unix]\n    - if not exist %LIBRARY_LIB%\\\\jsoncpp.lib exit 1  # [win]\n\nabout:\n  home: https://github.com/open-source-parsers/jsoncpp\n  license: Public Domain/MIT\n  license_file: LICENSE\n  summary: A C++ library for interacting with JSON.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - stuarteberg\n",
  "rendered_recipe": {

@@ -158,6 +158,7 @@
   "timestamp": 1528922444111,
   "version": "0.1.0.dev1"
  },
+ "metadata_version": 1,
  "name": "axopy",
  "raw_recipe": "{% set name = \"axopy\" %}\n{% set version = \"0.1.0.dev1\" %}\n{% set sha256 = \"78e77ebb59bf16e145e7419fda03c088f566c10a83897d4ba9c6d653885c2c76\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - numpy\n    - scipy\n    - pandas\n    - h5py\n    - pyqt>=5\n    - pyqtgraph>=0.10\n\ntest:\n  imports:\n    - axopy.features\n    - axopy.gui\n    - axopy.messaging\n    - axopy.pipeline\n    - axopy.task\n    - axopy.design\n    - axopy.experiment\n    - axopy.storage\n    - axopy.stream\n    - axopy.timing\n    - axopy.util\n\nabout:\n  home: http://github.com/ucdrascal/axopy\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Human-computer interface experimentation library'\n\n  doc_url: http://axopy.readthedocs.io/\n  dev_url: https://github.com/ucdrascal/axopy\n\nextra:\n  recipe-maintainers:\n    - ixjlyons\n",
  "rendered_recipe": {

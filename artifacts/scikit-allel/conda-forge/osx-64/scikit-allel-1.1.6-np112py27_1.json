@@ -580,6 +580,7 @@
   "subdir": "osx-64",
   "version": "1.1.6"
  },
+ "metadata_version": 1,
  "name": "scikit-allel",
  "raw_recipe": "{% set name = \"scikit-allel\" %}\n{% set version = \"1.1.6\" %}\n{% set sha256 = \"855eeb9a26b4f7e71487542d03efd0fda372aea112eb2d2d3a51a1e3cfa89d86\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cython\n    - numpy x.x\n  run:\n    - python\n    - numpy x.x\n    - scipy\n    - scikit-learn\n    - numexpr\n    - dask\n    - h5py\n    - bcolz\n    - zarr\n    - numcodecs\n    - matplotlib\n    - seaborn\n    - pandas\n\ntest:\n  requires:\n    - nose\n  source_files:\n    - allel/test/data\n  imports:\n    - allel\n    - allel.opt.model\n    - allel.opt.stats\n    - allel.opt.io_vcf_read\n  commands:\n    - python -m nose allel -v --exclude=from_gff3_region\n\nabout:\n  home: http://github.com/cggh/scikit-allel\n  license: MIT\n  license_file: LICENSE\n  summary: 'A Python package for exploring and analysing genetic variation data.'\n  doc_url: http://scikit-allel.readthedocs.io/\n  dev_url: https://github.com/cggh/scikit-allel\n\nextra:\n  recipe-maintainers:\n    - alimanfoo\n    - hardingnj\n",
  "rendered_recipe": {

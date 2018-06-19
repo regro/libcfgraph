@@ -225,6 +225,7 @@
   "timestamp": 1524668090429,
   "version": "0.46.0"
  },
+ "metadata_version": 1,
  "name": "meson",
  "raw_recipe": "{% set name = \"meson\" %}\n{% set version = \"0.46.0\" %}\n{% set sha256 = \"e6fa7dedd6c1f9a72c456dd53cac02cd84516cf4f181a9696c7a96be71d48e4d\" %}\n\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed meson\n\nrequirements:\n  build:\n    - python >=3.5\n    - setuptools\n    - pip\n  run:\n    - python >=3.5\n    - ninja >=1.8.2\n\ntest:\n  commands:\n    - meson -h\n\nabout:\n  home: http://mesonbuild.com\n  license: Apache 2\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'The Meson Build System'\n  doc_url: http://mesonbuild.com\n  dev_url: https://github.com/mesonbuild/meson\n\nextra:\n  recipe-maintainers:\n    - dirmeier\n    - SoapZA\n",
  "rendered_recipe": {

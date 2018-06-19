@@ -130,6 +130,7 @@
   "timestamp": 1528205230923,
   "version": "1.5.3"
  },
+ "metadata_version": 1,
  "name": "gsd",
  "raw_recipe": "{% set name = \"gsd\" %}\n{% set version = \"1.5.3\" %}\n{% set sha256 = \"84fad6e1c60e80ad8a4c911efe1af11e4e74f66b315e5b8336a1861f432c76ee\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://glotzerlab.engin.umich.edu/Downloads/{{ name }}/{{ name }}-v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy 1.11.*\n    - cython\n    - toolchain\n\n  run:\n    - python\n    - numpy >=1.11\n\ntest:\n  imports:\n    - gsd\n    - gsd.fl\n    - gsd.pygsd\n    - gsd.hoomd\n\nabout:\n  home: https://bitbucket.org/glotzer/gsd\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'General simulation data'\n\n  description: |\n   GSD (General Simulation Data) is a file format specification\n   and a library to read and write it. The package also contains a python module\n   that reads and writes hoomd schema gsd files with an easy to use syntax.\n\n  doc_url: https://gsd.readthedocs.io\n  dev_url: https://bitbucket.org/glotzer/gsd\n\nextra:\n  recipe-maintainers:\n    - joaander\n",
  "rendered_recipe": {

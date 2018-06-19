@@ -738,6 +738,7 @@
   "subdir": "linux-64",
   "version": "0.1.1"
  },
+ "metadata_version": 1,
  "name": "astropy-healpix",
  "raw_recipe": "{% set name = \"astropy-healpix\" %}\n{% set version = \"0.1.1\" %}\n{% set sha256 = \"99831e3f8fd8af4452e5ba9af27b6ecdbc65a899ed7213ecb9f59671eb616659\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt --offline --no-git\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n    - numpy 1.10.*  # [not (win and (py35 or py36))]\n    - numpy 1.11.*  # [win and (py35 or py36)]\n  run:\n    - python\n    - numpy >=1.10  # [not (win and (py35 or py36))]\n    - numpy >=1.11  # [win and (py35 or py36)]\n    - astropy >=1.2\n\ntest:\n  imports:\n    - astropy_healpix\n    - astropy_healpix.core_cython\n\nabout:\n  home: http://github.com/astropy/astropy-healpix\n  license: BSD\n  license_family: BSD\n  license_file: LICENSE.md\n  summary: BSD-licensed HEALPix for Astropy\n  description: BSD-licensed HEALPix for Astropy\n  doc_url: http://astropy-healpix.readthedocs.io\n  dev_url: http://github.com/astropy/astropy-healpix\n\nextra:\n  recipe-maintainers:\n    - astrofrog\n    - cdeil\n",
  "rendered_recipe": {

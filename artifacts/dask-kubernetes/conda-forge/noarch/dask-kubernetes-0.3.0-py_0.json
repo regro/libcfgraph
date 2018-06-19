@@ -130,6 +130,7 @@
   "timestamp": 1528485013524,
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "dask-kubernetes",
  "raw_recipe": "{% set version = \"0.3.0\" %}\n\npackage:\n  name: dask-kubernetes\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/dask-kubernetes/dask-kubernetes-{{ version }}.tar.gz\n  sha256: 411dab6b129b4e7d7ee0bfa1c97dfb5ac974da81e7d4037846dae6fd70a0705f\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - dask-core\n    - distributed >=1.21.3\n    - python-kubernetes ==4\n\ntest:\n  imports:\n    - dask_kubernetes\n\nabout:\n  home: https://github.com/dask/dask-kubernetes\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Native Kubernetes integration for Dask\n\nextra:\n  recipe-maintainers:\n    - mrocklin\n    - ocefpaf\n",
  "rendered_recipe": {

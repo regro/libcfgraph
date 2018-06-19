@@ -598,6 +598,7 @@
   "subdir": "win-64",
   "version": "0.4"
  },
+ "metadata_version": 1,
  "name": "flask-allows",
  "raw_recipe": "{% set name = \"flask-allows\" %}\n{% set version = \"0.4\" %}\n{% set sha256 = \"386d6535fd26fc610c4b000135ba66057fa743479ba6ef9d995de65c613c51a9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - flask\n\ntest:\n  imports:\n    - flask_allows\n\nabout:\n  home: https://github.com/justanr/flask-allows\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: authorization tool for Flask\n\n  description: |\n    Flask-Allows is an authorization tool for Flask inspired by\n    django-rest-framework's permissioning system and rest_condition's\n    ability to compose simple requirements into more complex ones.\n  dev_url: https://github.com/justanr/flask-allows\n\nextra:\n  recipe-maintainers:\n    - lvoliveira\n",
  "rendered_recipe": {

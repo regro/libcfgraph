@@ -20,6 +20,7 @@
   "subdir": "osx-64",
   "version": "0.6.0"
  },
+ "metadata_version": 1,
  "name": "chemfiles",
  "raw_recipe": "{% set version = \"0.6.0\" %}\n\npackage:\n  name: chemfiles\n  version: {{ version }}\n\nbuild:\n  skip: true  # [win]\n  number: 0\n\nrequirements:\n  run:\n    - chemfiles-lib ==0.6.2\n    - chemfiles-python ==0.6.0\n\ntest:\n  commands:\n    # If we can load the python extension and create new object, both the python\n    # binding and the shared library are installled in the right place\n    - python -c \"import chemfiles; chemfiles.Atom('H')\"\n\nabout:\n  home: http://chemfiles.github.io\n  license: MPL-v2.0\n  summary: Modern library for chemistry file reading and writing\n\nextra:\n  recipe-maintainers:\n    - luthaf\n",
  "rendered_recipe": {},

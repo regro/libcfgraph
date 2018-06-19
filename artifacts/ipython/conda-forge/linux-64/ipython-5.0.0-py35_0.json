@@ -346,6 +346,7 @@
   "subdir": "linux-64",
   "version": "5.0.0"
  },
+ "metadata_version": 1,
  "name": "ipython",
  "raw_recipe": "{% set version = \"5.0.0\" %}\n\npackage:\n  name: ipython\n  version: {{ version }}\n\nsource:\n  fn: ipython-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/i/ipython/ipython-{{ version }}.tar.gz\n  sha256: 7ec0737169c74056c7fc8298246db5478a2d6c90cfd19c3253222112357545df\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps .\n  entry_points:\n    - ipython = IPython:start_ipython\n    - ipython2 = IPython:start_ipython  # [py2k]\n    - ipython3 = IPython:start_ipython  # [py3k]\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - pickleshare\n    - simplegeneric >0.8\n    - prompt_toolkit >=1.0.3,<2.0.0\n    - pygments\n    - decorator\n    - traitlets\n    - pexpect  # [unix]\n    - pyreadline  # [win]\n    - backports.shutil_get_terminal_size\n    - python.app  # [osx]\n    - pathlib2  # [py2k]\n    - appnope  # [osx]\n    - colorama  # [win]\n    - win_unicode_console >=0.5  # [win]\n\ntest:\n  commands:\n    - ipython -h\n    - ipython2 -h          # [py2k]\n    - ipython3 -h          # [py3k]\n  imports:\n    - IPython\n\nabout:\n  home: http://ipython.org/\n  license: BSD 3-clause\n  summary: \"IPython: Productive Interactive Computing\"\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n    - minrk\n    - ocefpaf\n",
  "rendered_recipe": {},

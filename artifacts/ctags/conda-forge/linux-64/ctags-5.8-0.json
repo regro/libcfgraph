@@ -599,6 +599,7 @@
   "subdir": "linux-64",
   "version": "5.8"
  },
+ "metadata_version": 1,
  "name": "ctags",
  "raw_recipe": "{% set name = \"ctags\" %}\n{% set version = \"5.8\" %}\n{% set sha256 = \"0e44b45dcabe969e0bbbb11e30c246f81abe5d32012db37395eb57d66e9e99c7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://prdownloads.sourceforge.net/ctags/ctags-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py>=35]\n\nrequirements:\n  build:\n    - toolchain\n    - python  # [win]\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py>=35]\n  run:\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py>=35]\n\ntest:\n  commands:\n    - ctags --help\n\nabout:\n  home: http://ctags.sourceforge.net\n  license: GPL-2.0\n  license_family: GPL\n  license_file: COPYING\n  summary: 'A multilanguage implementation of Ctags'\n  description: |\n    Ctags generates an index (or tag) file of language objects found in\n    source files that allows these items to be quickly and easily located by\n    a text editor or other utility. A tag signifies a language object for which\n    an index entry is available (or, alternatively, the index entry created\n    for that object).\n\nextra:\n  recipe-maintainers:\n    - dougalsutherland\n",
  "rendered_recipe": {

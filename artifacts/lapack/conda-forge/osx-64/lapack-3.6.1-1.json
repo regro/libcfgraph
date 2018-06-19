@@ -53,6 +53,7 @@
   "subdir": "osx-64",
   "version": "3.6.1"
  },
+ "metadata_version": 1,
  "name": "lapack",
  "raw_recipe": "{% set version = \"3.6.1\" %}\n\npackage:\n  name: lapack\n  version: {{ version }}\n\nsource:\n  fn: lapack-{{ version }}.tgz\n  url: http://www.netlib.org/lapack/lapack-{{ version }}.tgz\n  sha1: 7220a9bc9c766cb513007f313b804d88f110c228\n\n  # The next lapack version will have a fix for this.\n  patches:\n    - python-test.patch\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - gcc  # [unix]\n    - cloog 0.18.0 10  # [unix]\n    - m2w64-toolchain  # [win]\n  run:\n    - libgfortran  # [not win]\n    - m2w64-gcc-libs  # [win]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/liblapack.so  # [linux]\n    - test -f ${PREFIX}/lib/liblapack.dylib  # [osx]\n    - if not exist %LIBRARY_PREFIX%\\\\lib\\\\liblapack.a exit 1  # [win]\n\nabout:\n  home: http://www.netlib.org/lapack\n  license: BSD 3-Clause\n  summary: Linear Algebra PACKage\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jschueller\n    - hadim\n",
  "rendered_recipe": {},

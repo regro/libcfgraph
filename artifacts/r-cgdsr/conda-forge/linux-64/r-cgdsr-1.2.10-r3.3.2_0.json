@@ -784,6 +784,7 @@
   "subdir": "linux-64",
   "version": "1.2.10"
  },
+ "metadata_version": 1,
  "name": "r-cgdsr",
  "raw_recipe": "{% set version = '1.2.10' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-cgdsr\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: cgdsr_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/cgdsr_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/cgdsr/cgdsr_{{ version }}.tar.gz\n  sha256: 43bc02fb33c371464f9407d5e5e6419527e9360e3e394343862cca0aebe1d0f7\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-r.methodss3\n    - r-r.oo\n\n  run:\n    - r-base\n    - r-r.methodss3\n    - r-r.oo\n\ntest:\n  commands:\n    - $R -e \"library('cgdsr')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('cgdsr')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/cBioPortal/cgdsr\n  license: LGPL-3\n  summary: Provides a basic set of R functions for querying the Cancer Genomics Data Server (CGDS),\n    hosted by the Computational Biology Center at Memorial-Sloan-Kettering Cancer Center\n    (MSKCC) at <www.cbioportal.org>.\n  license_family: LGPL\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n",
  "rendered_recipe": {

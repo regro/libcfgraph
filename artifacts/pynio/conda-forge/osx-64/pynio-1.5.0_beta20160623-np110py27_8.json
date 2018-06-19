@@ -545,6 +545,7 @@
   "subdir": "osx-64",
   "version": "1.5.0_beta20160623"
  },
+ "metadata_version": 1,
  "name": "pynio",
  "raw_recipe": "{% set ver = \"1.5.0\" %}\n{% set beta = \"beta20160623\" %}\n{% set version = ver + \"_\" + beta %}\n\npackage:\n    name: pynio\n    version: {{ version }}\n\nsource:\n    fn: pynio-{{ version }}.tar.gz\n    url: https://github.com/NCAR/pynio/archive/{{ version }}.tar.gz\n    sha256: 43411c577e21335d4684f384cbf117b41202f55b49198d1c688fc65703dbff68\n\nbuild:\n    number: 8\n    skip: True  # [win or py3k]\n    detect_binary_files_with_prefix: true\n\nrequirements:\n    build:\n        - python\n        - gcc\n        - numpy x.x\n        - libnetcdf 4.4.*\n        - proj.4\n        - gdal 1.11.*\n        - g2clib\n        - hdfeos2\n        - hdfeos5\n        - jasper\n    run:\n        - python\n        - numpy x.x\n        - libnetcdf 4.4.*\n        - hdf4\n        - proj.4\n        - gdal 1.11.*\n        - g2clib\n        - hdfeos2\n        - hdfeos5\n        - jasper\n        - libgfortran\n\ntest:\n    requires:\n        - nose\n    imports:\n        - Nio\n    commands:\n        - cd $SRC_DIR/test && nosetests\n        - conda inspect linkages -n _test pynio\n\nabout:\n    home: http://www.pyngl.ucar.edu/Nio.shtml\n    license: BSD 3-clause\n    summary: 'PyNIO is a multi-format data I/O package with a NetCDF-style interface.'\n\nextra:\n    recipe-maintainers:\n        - marylhaley\n        - ocefpaf\n        - jhamman\n",
  "rendered_recipe": {},

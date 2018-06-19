@@ -769,6 +769,7 @@
   "subdir": "linux-64",
   "version": "1.5.3"
  },
+ "metadata_version": 1,
  "name": "mpfi",
  "raw_recipe": "{% set version = \"1.5.3\" %}\n{% set name = \"mpfi\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://gforge.inria.fr/frs/download.php/latestfile/181/{{ name }}-{{ version }}.tar.gz\n  sha256: beed2003fdbedf590e8dd6edb4f2321e609e329df99ed4139cd66d7ebbc41240\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - gmp >=5.0.1,<7\n    - mpfr 3.*\n  run:\n    - gmp >=5.0.1,<7\n    - mpfr 3.*\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/{{ name }}.h\n    - test -f ${PREFIX}/lib/lib{{ name }}.a\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]\n\nabout:\n  home: http://mpfi.gforge.inria.fr/\n  license: LGPL 3\n  license_file: {{ SRC_DIR }}/COPYING\n  summary: A multiple precision interval arithmetic library based on MPFR\n  dev_url: https://gforge.inria.fr/scm/?group_id=157\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

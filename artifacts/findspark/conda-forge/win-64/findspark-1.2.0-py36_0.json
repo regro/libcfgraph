@@ -634,6 +634,7 @@
   "subdir": "win-64",
   "version": "1.2.0"
  },
+ "metadata_version": 1,
  "name": "findspark",
  "raw_recipe": "{% set name = \"findspark\" %}\n{% set version = \"1.2.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set sha256 = \"c0c0193a9f0d009d421f6b6a3f5c9e3123dc1fc436fd4315d1a7e52645334afb\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - findspark\n\nabout:\n  home: https://github.com/minrk/findspark\n  license_file: LICENSE.md\n  license: BSD 3-clause\n  license_family: BSD\n  summary: 'Find pyspark to make it importable.'\n  dev_url: https://github.com/minrk/findspark\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n    - minrk\n",
  "rendered_recipe": {

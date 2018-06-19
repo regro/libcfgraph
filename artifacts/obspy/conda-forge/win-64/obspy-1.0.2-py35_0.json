@@ -1116,6 +1116,7 @@
   "subdir": "win-64",
   "version": "1.0.2"
  },
+ "metadata_version": 1,
  "name": "obspy",
  "raw_recipe": "{% set version = \"1.0.2\" %}\n{% set sha256 = \"37d563e36a44a5309b2f53b394d7391d49c8a62b0e8d0f0d13f54ea4e2943230\" %}\n# {% set md5 = \"b1432aa11b6d244c4fac61737c0c9d95\" %}\n\npackage:\n  name: obspy\n  version: {{ version }}\n\nsource:\n  fn: obspy-{{ version }}.zip\n  url: https://pypi.io/packages/source/o/obspy/obspy-1.0.2.zip\n  sha256: {{ sha256 }}\n#  url: https://www.geophysik.uni-muenchen.de/%7Emegies/obspy-{{ version }}.zip\n#  md5: {{ md5 }}\n\n\nbuild:\n  number: 0\n  preserve_egg_dir: yes\n  detect_binary_files_with_prefix: true\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - future\n    - numpy\n    - scipy\n    - matplotlib\n    - lxml\n    - sqlalchemy\n    - requests\n    - decorator\n  run:\n    - python\n    - setuptools\n    - future\n    - numpy\n    - scipy\n    - matplotlib\n    - lxml\n    - sqlalchemy\n    - requests\n    - decorator\n\ntest:\n  requires:\n    - mock  # [py2k]\n    - flake8\n  imports:\n    - obspy\n    - obspy.io.mseed\n  commands:\n    - python -c \"from obspy import read;\"\n\nabout:\n  home: https://obspy.org\n  license: LGPLv3\n  license_file: LICENSE.txt\n  summary: \"ObsPy: A Python Toolbox for seismology/seismological observatories.\"\n\nextra:\n  recipe-maintainers:\n    - megies\n    - krischer\n    - barsch\n    - QuLogic\n    - ThomasLecocq\n",
  "rendered_recipe": {},

@@ -143,6 +143,7 @@
   "track_features": "flang",
   "version": "5.0.0"
  },
+ "metadata_version": 1,
  "name": "flang",
  "raw_recipe": "# This file created by conda-build 3.10.6\r\n# ------------------------------------------------\r\n\r\npackage:\r\n    name: flang\r\n    version: 5.0.0\r\nsource:\r\n    sha256: 7078a7b24bb2b52789fc5551bd6eeee19082e2923e4d49c2834579e51b43ea74\r\n    url: https://github.com/isuruf/flang/archive/4ddc948697091af68df0a1c63d18e700af047eba.tar.gz\r\nbuild:\r\n    number: '20180525'\r\n    string: he025d50_20180525\r\n    track_features:\r\n        - flang\r\nrequirements:\r\n    build:\r\n        - clangdev ==5.0.0\r\n        - cmake\r\n        - flang-meta\r\n        - llvmdev ==5.0.0\r\n        - openmp ==5.0.0\r\n        - vs2015_win-64\r\n        - vs2015_win-64\r\n    run:\r\n        - clangdev ==5.0.0\r\n        - libflang 5.0.0 h6538335_20180525\r\n        - openmp ==5.0.0\r\ntest:\r\n    commands:\r\n        - call \"C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat\"\r\n            amd64\r\n        - flang hello_world.f90\r\n        - a.exe\r\n    files:\r\n        - hello_world.f90\r\nabout:\r\n    home: http://github.com/flang-compiler/flang\r\n    license: Apache 2.0\r\n    license_file: LICENSE.txt\r\n    summary: Flang is a Fortran compiler targeting LLVM.\r\nextra:\r\n    copy_test_source_files: true\r\n    final: true\r\n    recipe-maintainers:\r\n        - isuruf\r\n",
  "rendered_recipe": {

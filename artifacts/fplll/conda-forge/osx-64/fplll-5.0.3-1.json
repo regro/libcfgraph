@@ -122,6 +122,7 @@
   "subdir": "osx-64",
   "version": "5.0.3"
  },
+ "metadata_version": 1,
  "name": "fplll",
  "raw_recipe": "{% set version = \"5.0.3\" %}\n{% set name = \"fplll\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/fplll/fplll/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: d2b11b7dcb26c30ac1aab9ff75aca9b3dd6e0b0b40c382af16017a717dfe05c2\n  patches:\n    # Fix for https://github.com/fplll/fplll/issues/205\n    # Backported from https://github.com/fplll/fplll/commit/f372182bbe0f0597e7d6e39f8d23f18a21d1d500\n    - enumeration-link-error.patch\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - m4\n    - gmp\n    - mpfr\n  run:\n    - gmp\n    - mpfr\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/{{ name }}.h\n    - test -f ${PREFIX}/lib/lib{{ name }}.a\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]\n\nabout:\n  home: https://github.com/fplll/fplll\n  license: LGPL v2+\n  license_file: {{ SRC_DIR }}/COPYING\n  summary: Lattice algorithms using floating-point arithmetic\n  doc_url: https://fplll.github.io/fplll\n  dev_url: https://github.com/fplll/fplll\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

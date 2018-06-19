@@ -687,6 +687,7 @@
   "subdir": "osx-64",
   "version": "6.2.1"
  },
+ "metadata_version": 1,
  "name": "cheroot",
  "raw_recipe": "{% set name = \"Cheroot\" %}\n{% set version = \"6.2.1\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"f75a02bd60f44de2f502226f97a3e8d3b2a799213fce4d5e06142cdf6d69199f\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name|lower }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools_scm >=1.15.0\n    - setuptools_scm_git_archive >=1.0\n\n  run:\n    - python\n    - six >=1.11.0\n    - more-itertools >=2.6\n    - backports.functools_lru_cache  # [py2k]\n\ntest:\n  imports:\n    - cheroot\n    - cheroot.test\n\n\nabout:\n  home: http://www.cherrypy.org\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.md\n  summary: 'Highly-optimized, pure-python HTTP server'\n  dev_url: https://github.com/cherrypy/cheroot\n  doc_url: https://cheroot.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

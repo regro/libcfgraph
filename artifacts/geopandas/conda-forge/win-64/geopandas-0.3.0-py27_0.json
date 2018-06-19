@@ -566,6 +566,7 @@
   "subdir": "win-64",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "geopandas",
  "raw_recipe": "{% set version = \"0.3.0\" %}\n\npackage:\n  name: geopandas\n  version: {{ version }}\n\nsource:\n  url: https://github.com/geopandas/geopandas/releases/download/v{{ version }}/geopandas-{{ version }}.tar.gz\n  sha256: e63bb32a3e516d8c9bcd149c22335575defdc5896c8bdf15c836608f152a920b\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - pandas\n    - pyproj\n    - shapely\n    - fiona\n    - six\n    - rtree\n    - descartes\n    - matplotlib\n    - psycopg2\n    - sqlalchemy\n    - pysal\n\ntest:\n  imports:\n    - geopandas\n    - geopandas.io\n  files:\n    - test_data/test.cpg\n    - test_data/test.dbf\n    - test_data/test.shp\n    - test_data/test.shx\n\nabout:\n  home: http://geopandas.org\n  license: BSD 3-clause\n  summary: 'Geographic pandas extensions.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - jorisvandenbossche\n    - jdmcbr\n",
  "rendered_recipe": {

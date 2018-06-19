@@ -542,6 +542,7 @@
   "subdir": "win-64",
   "version": "0.4"
  },
+ "metadata_version": 1,
  "name": "r-argparser",
  "raw_recipe": "{% set version = '0.4' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-argparser\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: argparser_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/argparser_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/argparser/argparser_{{ version }}.tar.gz\n  sha256: a9d73a81cc1dc580219dd257ef32ae0c7983c7499d79d81d4f664ad2a1ee3c68\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\nrequirements:\n  build:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('argparser')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('argparser')\\\"\"  # [win]\n\nabout:\n  home: https://bitbucket.org/djhshih/argparser\n  license: GPL (>= 3)\n  summary: Cross-platform command-line argument parser written purely in R with no external dependencies.\n    It is useful with the Rscript front-end and facilitates turning an R script into\n    an executable script.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n",
  "rendered_recipe": {

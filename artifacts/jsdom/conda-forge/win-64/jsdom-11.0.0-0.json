@@ -20837,6 +20837,7 @@
   "subdir": "win-64",
   "version": "11.0.0"
  },
+ "metadata_version": 1,
  "name": "jsdom",
  "raw_recipe": "{% set version = \"11.0.0\" %}\n{% set node_version = os.environ.get('NODEJS_VERSION') or '6.*' %}\n\npackage:\n  name: jsdom\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.gz\n  url: https://github.com/tmpvar/jsdom/archive/{{ version }}.tar.gz\n  sha256: 9fb69879902bde82c9d7be1be3c0d1c16ac00190326ac2fdb4e64f01b590c2e8\n\nbuild:\n  number: 0\n  script: npm install . && npm install -g .\n\nrequirements:\n  build:\n    - nodejs {{node_version}}\n  run:\n    - nodejs {{node_version}}\n\ntest:\n  commands:\n    - npm list -g jsdom\n\nabout:\n  home: https://github.com/tmpvar/jsdom\n  license: MIT\n  license_file: LICENSE.txt\n  summary: jsdom is a pure-JavaScript implementation of many web standards, notably the WHATWG DOM and HTML Standards, for use with Node.js\n\nextra:\n  recipe-maintainers:\n    - blankclemens\n",
  "rendered_recipe": {

@@ -676,6 +676,7 @@
   "subdir": "win-64",
   "version": "0.5.4"
  },
+ "metadata_version": 1,
  "name": "numcodecs",
  "raw_recipe": "{% set name = \"numcodecs\" %}\n{% set version = \"0.5.4\" %}\n{% set sha256 = \"8579e9ea11fba76844e83fa873c1935546caf640ecad4e72b42395f93e7fdee4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script:\n    - export DISABLE_NUMCODECS_AVX2=\"\"  # [unix]\n    - set DISABLE_NUMCODECS_AVX2=\"\"  # [win]\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - cython\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - numpy\n    - msgpack-python\n    - backports.lzma  # [py27]\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - numcodecs\n    - numcodecs.blosc\n    - numcodecs.lz4\n    - numcodecs.zstd\n  commands:\n    - pytest -v --pyargs numcodecs\n\nabout:\n  home: https://github.com/zarr-developers/numcodecs\n  license: MIT\n  license_file: LICENSE\n  summary: A Python package providing buffer compression and transformation codecs for use in data storage and communication applications.\n\nextra:\n  recipe-maintainers:\n    - alimanfoo\n    - jakirkham\n",
  "rendered_recipe": {

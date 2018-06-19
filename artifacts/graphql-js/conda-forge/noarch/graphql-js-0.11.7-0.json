@@ -723,6 +723,7 @@
   "subdir": "noarch",
   "version": "0.11.7"
  },
+ "metadata_version": 1,
  "name": "graphql-js",
  "raw_recipe": "{% set name = \"graphql-js\" %}\n{% set version = \"0.11.7\" %}\n{% set sha256 = \"bf3e699d74e80c189cb48136c8923847c587a956b8d238a0f3ecdfb30bf9b73f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/graphql/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs\n  \ntest:\n  commands:\n    - npm list -g graphql\n  requires:\n    - nodejs\n   \nabout:\n  home: https://github.com/graphql/graphql-js\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A reference implementation of GraphQL for JavaScript'\n  description: |\n    The JavaScript reference implementation for GraphQL, a query language for APIs created by Facebook. \n  doc_url: http://graphql.org/graphql-js/\n  dev_url: https://github.com/graphql/graphql-js\n  \nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

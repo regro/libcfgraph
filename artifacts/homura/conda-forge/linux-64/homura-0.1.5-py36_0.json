@@ -92,6 +92,7 @@
   "subdir": "linux-64",
   "version": "0.1.5"
  },
+ "metadata_version": 1,
  "name": "homura",
  "raw_recipe": "{% set version = \"0.1.5\" %}\n\npackage:\n  name: homura\n  version: {{ version }}\n\nsource:\n  fn: homura-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/h/homura/homura-{{ version }}.tar.gz\n  md5: c54957da25a5a0c61a16cfa87a016c38\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - certifi\n    - humanize\n    - six\n    - pycurl\n\nabout:\n  home: https://github.com/shichao-an/homura\n  license: BSD 2-Clause\n  license_file: LICENSE\n  summary: 'Python downloader with progress'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

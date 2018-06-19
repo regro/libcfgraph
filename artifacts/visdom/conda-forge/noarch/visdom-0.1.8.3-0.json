@@ -139,6 +139,7 @@
   "timestamp": 1527794188587,
   "version": "0.1.8.3"
  },
+ "metadata_version": 1,
  "name": "visdom",
  "raw_recipe": "{% set name = \"visdom\" %}\n{% set version = \"0.1.8.3\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"0df89f6ba0c56fc12b40925bfa62dd59549642cd3bf290c394fd27ba5301c133\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  noarch: python\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools\n  run:\n    - numpy\n    - pillow\n    - requests\n    - tornado\n    - pyzmq\n    - six\n    - torchfile\n    - websocket-client\n\ntest:\n  imports:\n    - visdom\n\nabout:\n  home: https://github.com/facebookresearch/visdom\n  license: CC BY 4.0\n  license_family: OTHER\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: A tool for visualizing live, rich data for Torch and Numpy.\n  description: |\n    A flexible tool for creating, organizing, and sharing visualizations\n    of live, rich data. Supports Torch and Numpy.\n  dev_url: https://github.com/facebookresearch/visdom\n\nextra:\n  recipe-maintainers:\n    - andfoy\n",
  "rendered_recipe": {

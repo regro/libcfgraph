@@ -504,6 +504,7 @@
   "subdir": "osx-64",
   "version": "1.1.0rc1"
  },
+ "metadata_version": 1,
  "name": "neo4j-python-driver",
  "raw_recipe": "{% set name='neo4j-python-driver' %}\n{% set version='1.1.0rc1' %}\n{% set sha256='04878ee13a3c8448fa5cfe6ed61913a2b258a96319fe419e4eb67f93ca86ddc6' %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/neo4j/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  number: 0\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - cython\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - neo4j\n    - neo4j.bolt\n    - neo4j.compat\n    - neo4j.v1\n\nabout:\n  home: https://github.com/neo4j/neo4j-python-driver\n  license: Apache-2.0\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt'\n  summary: 'Database connector for Neo4j graph database'\n\nextra:\n  recipe-maintainers:\n    - pvanheus\n",
  "rendered_recipe": {

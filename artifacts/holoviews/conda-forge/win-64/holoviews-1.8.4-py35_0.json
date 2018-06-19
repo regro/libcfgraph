@@ -880,6 +880,7 @@
   "subdir": "win-64",
   "version": "1.8.4"
  },
+ "metadata_version": 1,
  "name": "holoviews",
  "raw_recipe": "{% set version = \"1.8.4\" %}\n\npackage:\n  name: holoviews\n  version: {{ version }}\n\nsource:\n  fn: holoviews-{{ version }}.tar.gz\n  url: https://github.com/ioam/holoviews/archive/v{{version}}.tar.gz\n  sha256: 7b3031a64235fdbdc20b8e612d760e58b2e162a1e41dd70585528b7b190855b9\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\n\nrequirements:\n  build:\n    - python\n    - numpy\n    - param\n    - setuptools\n  run:\n    - python\n    - param\n    - numpy\n    - matplotlib\n    - bokeh\n    - jupyter\n    - notebook\n    - ipython\n    - lancet\n\ntest:\n  imports:\n    - holoviews\n\nabout:\n  home: www.holoviews.org\n  summary: Stop plotting your data - annotate your data and let it visualize itself.\n  license: BSD 3-Clause\n\nextra:\n  recipe-maintainers:\n    - jlstevens\n    - philippjfr\n    - basnijholt\n",
  "rendered_recipe": {

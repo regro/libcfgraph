@@ -560,6 +560,7 @@
   "subdir": "osx-64",
   "version": "1.0.2"
  },
+ "metadata_version": 1,
  "name": "clickhouse-cityhash",
  "raw_recipe": "{% set name = \"clickhouse-cityhash\" %}\n{% set version = \"1.0.2\" %}\n{% set sha256 = \"d68f37727f165592f175d87ae38ec5cd5ef93e5c8b0ab70073cae45d185cd2fc\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n\n  run:\n    - python\n\ntest:\n  imports:\n    - clickhouse_driver.util.cityhash\n\nabout:\n  home: https://github.com/xzkostyan/python-cityhash\n  summary: 'Python-bindings for CityHash, a fast non-cryptographic hash algorithm'\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - kszucs\n    - xzkostyan\n",
  "rendered_recipe": {

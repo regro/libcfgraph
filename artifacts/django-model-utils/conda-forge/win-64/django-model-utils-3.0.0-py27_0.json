@@ -525,6 +525,7 @@
   "subdir": "win-64",
   "version": "3.0.0"
  },
+ "metadata_version": 1,
  "name": "django-model-utils",
  "raw_recipe": "{% set name = \"django-model-utils\" %}\n{% set version = \"3.0.0\" %}\n{% set sha256 = \"60ead1ba50e1353f38bde12ab8b4a80b6a0f825a8e53c348fe259548cbd1a312\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django >=1.8\n\nabout:\n  home: https://github.com/jazzband/django-model-utils\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Django model mixins and utilities.'\n  description: \n    Django model mixins and utilities. django-model-utils supports Django 1.8 through \n    1.10 (latest bugfix release in each series only) on Python 2.7, 3.3 (Django 1.8 only), 3.4 and 3.5.\n  doc_url: https://django-model-utils.readthedocs.io/en/latest/\n  dev_url: https://github.com/jazzband/django-model-utils\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

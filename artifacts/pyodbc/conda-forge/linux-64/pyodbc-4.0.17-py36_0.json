@@ -627,6 +627,7 @@
   "subdir": "linux-64",
   "version": "4.0.17"
  },
+ "metadata_version": 1,
  "name": "pyodbc",
  "raw_recipe": "{% set name = \"pyodbc\" %}\n{% set version = \"4.0.17\" %}\n{% set sha256 = \"a82892ba8d74318524efaaccaf8351d3a3b4079a07e1a758902a2b9e84529c9d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - setup.patch  # [unix]\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n    - unixodbc 2.3.4  # [unix]\n\n  run:\n    - python\n    - unixodbc 2.3.4  # [unix]\n\ntest:\n  imports:\n    - pyodbc\n\nabout:\n  home: https://github.com/mkleehammer/pyodbc\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'DB API Module for ODBC'\n  description: |\n    pyodbc is a Python DB API 2 module for ODBC. This project provides an\n    up-to-date, convenient interface to ODBC using native data types like\n    datetime and decimal.\n  doc_url: http://mkleehammer.github.io/pyodbc/\n  doc_source_url: https://github.com/mkleehammer/pyodbc/blob/master/docs/index.md\n  dev_url: https://github.com/mkleehammer/pyodbc\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
  "rendered_recipe": {

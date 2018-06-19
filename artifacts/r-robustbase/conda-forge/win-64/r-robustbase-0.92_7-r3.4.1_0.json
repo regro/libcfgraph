@@ -674,6 +674,7 @@
   "subdir": "win-64",
   "version": "0.92_7"
  },
+ "metadata_version": 1,
  "name": "r-robustbase",
  "raw_recipe": "{% set version = '0.92-7' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-robustbase\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: robustbase_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/robustbase_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/robustbase/robustbase_{{ version }}.tar.gz\n  sha256: fcbd6ccbb0291b599fe6a674a91344511e0a691b9cadba0a9d40037faa22bf8f\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-deoptimr\n    - posix                # [win]\n    - {{native}}toolchain  # [win]\n    - gcc                  # [not win]\n\n  run:\n    - r-base\n    - r-deoptimr\n\ntest:\n  commands:\n    - $R -e \"library('robustbase')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('robustbase')\\\"\"  # [win]\n\nabout:\n  home: http://robustbase.r-forge.r-project.org/\n  license: GPL (>= 2)\n  summary: |\n    Essential Robust Statistics. Tools allowing to analyze data with robust methods.  This\n    includes regression methodology including model selections and multivariate statistics.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

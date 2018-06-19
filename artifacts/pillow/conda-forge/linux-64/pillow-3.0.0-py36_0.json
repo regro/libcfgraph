@@ -197,6 +197,7 @@
   "subdir": "linux-64",
   "version": "3.0.0"
  },
+ "metadata_version": 1,
  "name": "pillow",
  "raw_recipe": "{% set version = \"3.0.0\" %}\n\npackage:\n  name: pillow\n  version: {{ version }}\n\nsource:\n  fn: Pillow-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/P/Pillow/Pillow-{{ version }}.tar.gz\n  sha256: ad50bef540fe5518a4653c3820452a881b6a042cb0f8bb7657c491c6bd3654bb\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - zlib 1.2.*\n    - libtiff 4.0.*\n    - jpeg 9*\n    - freetype 2.7|2.7.*\n    - tk 8.5.*\n  run:\n    - python\n    - jpeg 9*\n    - zlib 1.2.*\n    - freetype 2.7|2.7.*\n    - libtiff 4.0.*\n    - olefile\n\ntest:\n  imports:\n    - PIL\n    - PIL.Image\n  commands:\n    - conda inspect linkages -p $PREFIX pillow  # [not win]\n    - conda inspect objects -p $PREFIX pillow  # [osx]\n\nabout:\n  home: http://python-imaging.github.io/\n  license: Standard PIL license\n  license_file: LICENSE\n  summary: 'Pillow is the friendly PIL fork by Alex Clark and Contributors.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - patricksnape\n    - pelson\n    - ocefpaf\n",
  "rendered_recipe": {

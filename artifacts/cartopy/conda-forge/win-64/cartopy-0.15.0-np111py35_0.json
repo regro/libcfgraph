@@ -218,6 +218,7 @@
   "subdir": "win-64",
   "version": "0.15.0"
  },
+ "metadata_version": 1,
  "name": "cartopy",
  "raw_recipe": "{% set version = \"0.15.0\" %}\n\npackage:\n  name: cartopy\n  version: {{ version }}\n\nsource:\n  fn: cartopy-{{ version }}.tar.gz\n  url: https://github.com/SciTools/cartopy/archive/v{{ version }}.tar.gz\n  sha256: fdee52cc2f259785a7744951ba43f339d33d517a5ec9cee301a33a267c60fd65\n  patches:\n    - cartopy.win.patch  # [win]\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - msinttypes  # [win]\n    - numpy x.x\n    - cython\n    - geos 3.5.*\n    - proj4 4.9.3\n  run:\n    - python\n    - numpy x.x\n    - six\n    - pillow\n    - owslib\n    - proj4 4.9.3\n    - geos 3.5.*\n    - shapely\n    - scipy\n    - pyshp\n    - matplotlib <2\n    - pyepsg\n\ntest:\n  requires:\n    - nose\n    - pep8\n  imports:\n    - cartopy\n    - cartopy.mpl.geoaxes\n    - cartopy.crs\n  commands:\n    - conda inspect linkages -p $PREFIX cartopy  # [not win]\n    - conda inspect objects -p $PREFIX cartopy  # [osx]\n\nabout:\n  home: http://scitools.org.uk/cartopy\n  license: GNU LGPL\n  license_file: COPYING\n  summary: 'A library providing cartographic tools for python.'\n\nextra:\n  recipe-maintainers:\n    - marqh\n    - ocefpaf\n    - pelson\n    - dopplershift\n",
  "rendered_recipe": {

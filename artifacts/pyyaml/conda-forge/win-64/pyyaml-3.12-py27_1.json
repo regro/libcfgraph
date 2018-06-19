@@ -112,6 +112,7 @@
   "subdir": "win-64",
   "version": "3.12"
  },
+ "metadata_version": 1,
  "name": "pyyaml",
  "raw_recipe": "{% set name = \"PyYAML\" %}\n{% set version = \"3.12\" %}\n{% set sha256 = \"592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab\" %}\n{% set build = 1 %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  script:\n    - python setup.py --with-libyaml build_ext --include-dirs=\"${PREFIX}/include\" --library-dirs=\"${PREFIX}/lib\"  # [unix]\n    - python setup.py --with-libyaml build_ext --include-dirs=\"%LIBRARY_INC%\" --library-dirs=\"%LIBRARY_LIB%\"      # [win]\n    - python setup.py install\n    - python setup.py test\n\nrequirements:\n  build:\n    - python\n    - yaml\n\n  run:\n    - python\n    - yaml\n\ntest:\n  imports:\n    - yaml\n    - _yaml\n\nabout:\n  home: http://pyyaml.org/wiki/PyYAML\n  license_file: LICENSE\n  license: MIT\n  license_family: MIT\n  summary: YAML parser and emitter for Python\n  dev_url: https://github.com/yaml/pyyaml\n  doc_url: http://pyyaml.org/wiki/PyYAML\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - msarahan\n    - pelson\n",
  "rendered_recipe": {

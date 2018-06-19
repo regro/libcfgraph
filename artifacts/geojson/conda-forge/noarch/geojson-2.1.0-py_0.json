@@ -653,6 +653,7 @@
   "subdir": "noarch",
   "version": "2.1.0"
  },
+ "metadata_version": 1,
  "name": "geojson",
  "raw_recipe": "{% set version = \"2.1.0\" %}\n\npackage:\n  name: geojson\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/g/geojson/geojson-{{ version }}.tar.gz\n  sha256: a4b6d1ac8bb9f0e58f7985b2d382c8c83db393a496263ff0d0226bf50ef8f760\n\nbuild:\n  number: 0\n  noarch: python\n  preserve_egg_dir: True\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - geojson\n\nabout:\n  home: https://github.com/frewsxcv/python-geojson\n  license: BSD 3-Clause\n  license_file: LICENSE.rst\n  summary: 'Python bindings and utilities for GeoJSON'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

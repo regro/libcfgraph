@@ -668,6 +668,7 @@
   "subdir": "osx-64",
   "version": "2018.02.21"
  },
+ "metadata_version": 1,
  "name": "regex",
  "raw_recipe": "{% set version = \"2018.02.21\" %}\n\npackage:\n  name: regex\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/r/regex/regex-{{ version }}.tar.gz\n  sha256: b44624a38d07d3c954c84ad302c29f7930f4bf01443beef5589e9157b14e2a29\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - regex\n\nabout:\n  home: https://bitbucket.org/mrabarnett/mrab-regex\n  license: Python-2.0\n  summary: 'Alternative regular expression module, to replace re.'\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -659,6 +659,7 @@
   "subdir": "linux-64",
   "version": "2.0.0"
  },
+ "metadata_version": 1,
  "name": "bleach",
  "raw_recipe": "{% set name = \"bleach\" %}\n{% set version = \"2.0.0\" %}\n{% set sha256 = \"b9522130003e4caedf4f00a39c120a906dcd4242329c1c8f621f5370203cbc30\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - html5lib >=0.99999999\n    - six\n\ntest:\n  imports:\n    - bleach\n\nabout:\n  home: https://github.com/mozilla/bleach\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: Bleach is a whitelist-based HTML sanitizing library that escapes or strips markup and attributes.\n\n  dev_url: https://github.com/mozilla/bleach\n  doc_url: https://bleach.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - minrk\n",
  "rendered_recipe": {

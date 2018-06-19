@@ -65,6 +65,7 @@
   "subdir": "win-64",
   "version": "4.3.0"
  },
+ "metadata_version": 1,
  "name": "jupyter_client",
  "raw_recipe": "{% set version = \"4.3.0\" %}\n\npackage:\n  name: jupyter_client\n  version: {{ version }}\n\nsource:\n  fn: jupyter_client-{{ version }}.tar.gz\n  url: https://github.com/jupyter/jupyter_client/archive/{{ version }}.tar.gz\n  md5: 257d9f5429dac4d9511db84d201d3a9e\n\nbuild:\n  number: 0\n  script: python setup.py install\n  entry_points:\n    - jupyter-kernelspec = jupyter_client.kernelspecapp:KernelSpecApp.launch_instance\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - traitlets\n    - jupyter_core\n    - pyzmq >=13\n\ntest:\n  commands:\n    - jupyter kernelspec -h\n  imports:\n    - jupyter_client\n\nabout:\n  home: http://jupyter.org\n  license: BSD 3-clause\n  summary: jupyter_client contains the reference implementation of the Jupyter protocol.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n    - pelson\n",
  "rendered_recipe": {},

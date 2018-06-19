@@ -93,6 +93,7 @@
   "subdir": "osx-64",
   "version": "0.9.1"
  },
+ "metadata_version": 1,
  "name": "conda-devenv",
  "raw_recipe": "{% set name = \"conda-devenv\" %}\n{% set version = \"0.9.1\" %}\n{% set hash = \"fe8e9be7d4f2df03b9a269a4b4b36ca67477c9b1d5c2af1af440f63b787f2f05\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: '{{ name }}-{{ version }}.tar.gz'\n  url: https://github.com/ESSS/conda-devenv/archive/{{ version }}.tar.gz\n  sha256: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - conda-devenv = conda_devenv.devenv:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - jinja2\n    - pyyaml\n\ntest:\n  imports:\n    - conda_devenv\n  commands:\n    - conda-devenv --help\n\nabout:\n  home: https://github.com/ESSS/conda-devenv\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A tool to work with multiple projects in develop-mode using conda-env.'\n  doc_url: http://conda-devenv.readthedocs.io/\n  dev_url: https://github.com/ESSS/conda-devenv\n\nextra:\n  recipe-maintainers:\n    - edisongustavo\n    - nicoddemus\n    - gqmelo\n    - tadeu\n",
  "rendered_recipe": {

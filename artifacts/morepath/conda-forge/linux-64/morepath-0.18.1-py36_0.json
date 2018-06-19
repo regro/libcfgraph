@@ -864,6 +864,7 @@
   "subdir": "linux-64",
   "version": "0.18.1"
  },
+ "metadata_version": 1,
  "name": "morepath",
  "raw_recipe": "{% set name = \"morepath\" %}\n{% set version = \"0.18.1\" %}\n{% set sha256 = \"4b634b52ad79e30cc31d10a5433dffd6105b4f37b45ee25c222b3a4ee67b21d7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script:\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - webob >=1.7.0\n    - reg >=0.11\n    - dectate >=0.13\n    - importscan\n\ntest:\n  imports:\n    - morepath\n\nabout:\n  home: http://morepath.readthedocs.io\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'A micro web-framework with superpowers'\n  description: |\n    Morepath is a Python web framework. An application consists of models. Each\n    type of model is published on a URL path. Content is exposed to the web\n    using views.\n  doc_url: http://morepath.readthedocs.io/\n  dev_url: https://github.com/morepath/morepath\n  \nextra:\n  recipe-maintainers:\n    - stuertz\n",
  "rendered_recipe": {

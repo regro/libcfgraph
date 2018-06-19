@@ -121,6 +121,7 @@
   "timestamp": 1527864259998,
   "version": "2.0.0"
  },
+ "metadata_version": 1,
  "name": "ciso8601",
  "raw_recipe": "{% set name = \"ciso8601\" %}\n{% set version = \"2.0.0\" %}\n{% set sha256 = \"0e5266ef6cbbca0348a548189f8514947e4f94182f726d9b658aa97bae2a7d17\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - ciso8601\n\nabout:\n  home: https://github.com/closeio/ciso8601\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Fast ISO8601 date time parser for Python written in C'\n\n  description: |\n    ciso8601 converts ISO8601 date time strings into Python datetime objects.\n  dev_url: https://github.com/closeio/ciso8601\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
  "rendered_recipe": {

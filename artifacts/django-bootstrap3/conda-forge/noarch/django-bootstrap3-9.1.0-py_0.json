@@ -776,6 +776,7 @@
   "subdir": "noarch",
   "version": "9.1.0"
  },
+ "metadata_version": 1,
  "name": "django-bootstrap3",
  "raw_recipe": "{% set version = \"9.1.0\" %}\n\npackage:\n  name: django-bootstrap3\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/django-bootstrap3/django-bootstrap3-{{ version }}.tar.gz\n  sha256: 9f56fa30a2c32142a2785148816cc4e14e7efc8699c5f87a8cb5be162a81658d\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - django >=1.8\n\ntest:\n  commands:\n    - python -c \"import django; from django.conf import settings; settings.configure(INSTALLED_APPS=['bootstrap3']); django.setup(); import bootstrap3;\"\n\nabout:\n  home: https://github.com/dyve/django-bootstrap3\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Bootstrap 3 integration with Django.'\n  description: |\n    Write Django as usual, and let django-bootstrap3 make template output \n    into Bootstrap 3 code.\n  doc_url: http://django-bootstrap3.readthedocs.org/\n  dev_url: https://github.com/dyve/django-bootstrap3\n\nextra:\n  recipe-maintainers:\n    - xmnlab\n",
  "rendered_recipe": {

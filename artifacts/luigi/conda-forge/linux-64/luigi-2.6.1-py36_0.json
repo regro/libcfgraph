@@ -239,6 +239,7 @@
   "subdir": "linux-64",
   "version": "2.6.1"
  },
+ "metadata_version": 1,
  "name": "luigi",
  "raw_recipe": "{% set name = \"luigi\" %}\n{% set version = \"2.6.1\" %}\n{% set sha256 = \"4b60d7d6556086680ffcfdb8b7ffec97a8a46bbc4ccd2d47523082a25ccc1b1b\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - luigi = luigi.cmdline:luigi_run\n    - luigid = luigi.cmdline:luigid\n    - luigi-grep = luigi.tools.luigi_grep:main\n    - luigi-deps = luigi.tools.deps:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - pyparsing\n    - tornado >=4.0,<5\n    - python-daemon <3.0  # [not win]\n\ntest:\n  imports:\n    - luigi\n    - luigi.contrib\n    - luigi.contrib.hdfs\n    - luigi.tools\n    - luigi.scheduler\n  commands:\n    - luigid --help\n    - luigi-grep --help\n\nabout:\n  home: https://github.com/spotify/luigi\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: 'Workflow mgmgt + task scheduling + dependency resolution.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - kwilcox\n",
  "rendered_recipe": {

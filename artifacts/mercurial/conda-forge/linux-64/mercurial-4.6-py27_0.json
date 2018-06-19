@@ -613,6 +613,7 @@
   "timestamp": 1525582609063,
   "version": "4.6"
  },
+ "metadata_version": 1,
  "name": "mercurial",
  "raw_recipe": "{% set version = \"4.6\" %}\n{% set sha256 = \"56ae3b10201adae37ad97fbd759cf3cea4ebe64c57641c059978c7a706ee6b49\" %}\n\npackage:\n  name: mercurial\n  version: {{ version }}\n\nsource:\n  fn: mercurial-{{ version }}.tar.gz\n  url: https://mercurial-scm.org/release/mercurial-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [py3k]\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - setuptools  # [win]\n  run:\n    - python\n    - setuptools  # [win]\n\ntest:\n  commands:\n    - hg --version\n\nabout:\n  home: http://mercurial-scm.org\n  license: GPL2\n  license_file: COPYING\n  summary: Source control management tool\n\nextra:\n  recipe-maintainers:\n    - ngoldbaum\n",
  "rendered_recipe": {

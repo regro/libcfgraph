@@ -97,6 +97,7 @@
   "subdir": "win-64",
   "version": "0.2.3"
  },
+ "metadata_version": 1,
  "name": "pyugrid",
  "raw_recipe": "{% set version = \"0.2.3\" %}\n\npackage:\n  name: pyugrid\n  version: {{ version }}\n\nsource:\n  fn: pyugrid-{{ version }}.tar.gz\n  url: https://github.com/pyugrid/pyugrid/archive/v{{ version }}.tar.gz\n  sha256: 5958728eaaf12c9a3bc51b32b87f22cca6c82b5fcb7fb2038ae2ebce7f2f46f7\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - netcdf4\n\ntest:\n  imports:\n    - pyugrid\n  commands:\n    - conda inspect linkages -p $PREFIX pyugrid  # [not win]\n    - conda inspect objects -p $PREFIX pyugrid  # [osx]\n\nabout:\n  home: https://github.com/pyugrid/pyugrid\n  license: BSD 3-Clause\n  summary: 'A Python API to utilize data written using the unstructured grid UGRID conventions.'\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - rhattersley\n    - ocefpaf\n    - ChrisBarker-NOAA\n",
  "rendered_recipe": {

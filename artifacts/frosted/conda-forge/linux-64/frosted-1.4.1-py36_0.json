@@ -106,6 +106,7 @@
   "subdir": "linux-64",
   "version": "1.4.1"
  },
+ "metadata_version": 1,
  "name": "frosted",
  "raw_recipe": "{% set name = \"frosted\" %}\n{% set version = \"1.4.1\" %}\n{% set sha256 = \"d1e5d2b43a064b33c289b9a986a7425fd9a36bed8f519ca430ac7a0915e32b51\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - frosted = frosted.main:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pies >=2.6.0\n\ntest:\n  imports:\n    - frosted\n    - frosted.test\n\n  commands:\n    - frosted --help\n\n  requires:\n    - mock\n    - pytest\n\nabout:\n  home: https://github.com/timothycrosley/frosted\n  license: MIT\n  summary: 'A passive Python syntax checker'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

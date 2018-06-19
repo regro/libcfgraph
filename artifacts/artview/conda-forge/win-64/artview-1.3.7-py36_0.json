@@ -754,6 +754,7 @@
   "subdir": "win-64",
   "version": "1.3.7"
  },
+ "metadata_version": 1,
  "name": "artview",
  "raw_recipe": "{% set version = \"1.3.7\" %}\n\npackage:\n  name: artview\n  version: {{ version }}\n\nsource:\n  fn: artview-{{ version }}.tar.gz\n  url: https://github.com/nguy/artview/archive/v{{ version }}.tar.gz\n  sha256: 96b8572e3c5395bca43697723949383ff9b911021818b361c232968dcaa355da\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - arm_pyart >=1.5\n    - matplotlib >=1.1\n    - pyqt >=4.6\n  run:\n    - python\n    - arm_pyart >=1.5\n    - matplotlib >=1.1\n    - pyqt >=4.6\n\ntest:\n  imports:\n    - artview\n\nabout:\n  home: https://github.com/nguy/artview\n  license: BSD 3-Clause\n  summary: ARM Radar Toolkit Viewer\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n",
  "rendered_recipe": {

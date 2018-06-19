@@ -756,6 +756,7 @@
   "subdir": "noarch",
   "version": "1.1.10"
  },
+ "metadata_version": 1,
  "name": "asttokens",
  "raw_recipe": "{% set name = \"asttokens\" %}\n{% set version = \"1.1.10\" %}\n{% set sha256 = \"7432a1b928b4db27939a7798c532327ccfb0b22b2d546e20f16e44806cbd1e4d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - asttokens\n\nabout:\n  home: https://github.com/gristlabs/asttokens\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'The asttokens module annotates Python abstract syntax trees (ASTs) with the positions of tokens and text in the source code that generated them.'\n  dev_url: https://github.com/gristlabs/asttokens\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
  "rendered_recipe": {

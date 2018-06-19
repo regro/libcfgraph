@@ -715,6 +715,7 @@
   "subdir": "osx-64",
   "version": "1.12"
  },
+ "metadata_version": 1,
  "name": "patool",
  "raw_recipe": "{% set name = \"patool\" %}\n{% set version = \"1.12\" %}\n{% set sha256 = \"e3180cf8bfe13bedbcf6f5628452fca0c2c84a3b5ae8c2d3f55720ea04cb1097\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n  \nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - patoolib\n    - patoolib.programs\n  commands:\n    - patool --help\n\nabout:\n  home: http://wummel.github.io/patool/\n  license: GPL-3.0\n  license_family: GPL\n  license_file: COPYING\n  summary: 'portable archive file manager'\n  dev_url: https://github.com/wummel/patool\n\nextra:\n  recipe-maintainers:\n    - notestaff\n",
  "rendered_recipe": {

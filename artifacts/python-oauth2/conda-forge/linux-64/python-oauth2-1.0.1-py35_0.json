@@ -662,6 +662,7 @@
   "subdir": "linux-64",
   "version": "1.0.1"
  },
+ "metadata_version": 1,
  "name": "python-oauth2",
  "raw_recipe": "{% set name = \"python-oauth2\" %}\n{% set version = \"1.0.1\" %}\n{% set sha256 = \"5583b5cea3e6cc154800f7a04a061fc7673cb12c75ad9413e607d4472d062d28\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - oauth2\n\nabout:\n  home: https://github.com/wndhydrnt/python-oauth2\n  license: MIT\n  license_family: MIT\n  # license_file is missing from sdists, though it is on GitHub\n  # license_file: LICENSE\n  summary: 'OAuth 2.0 provider written in python'\n\n  description: |\n    python-oauth2 is a framework that aims at making it easy to provide\n    authentication via OAuth 2.0 within an application stack.\n  doc_url: https://python-oauth2.readthedocs.io\n  dev_url: https://github.com/wndhydrnt/python-oauth2\n\nextra:\n  recipe-maintainers:\n    - minrk\n",
  "rendered_recipe": {

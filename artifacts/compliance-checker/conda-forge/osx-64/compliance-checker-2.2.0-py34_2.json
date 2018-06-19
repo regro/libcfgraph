@@ -82,6 +82,7 @@
   "subdir": "osx-64",
   "version": "2.2.0"
  },
+ "metadata_version": 1,
  "name": "compliance-checker",
  "raw_recipe": "{% set version = \"2.2.0\" %}\n\npackage:\n    name: compliance-checker\n    version: {{ version }}\n\nsource:\n    fn: compliance-checker-{{ version }}.tar.gz\n    url: https://github.com/ioos/compliance-checker/archive/{{ version }}.tar.gz\n    sha256: 77fd2e44350a012938e676b104cdf9983a4572e681859ed3d5a15151de497a23\n    patches:\n        - backport_279.patch\n\n\nbuild:\n    number: 2\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    entry_points:\n        - compliance-checker = cchecker:main\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - setuptools\n        - owslib\n        - lxml\n        - cf_units\n        - requests\n        - python-dateutil\n        - isodate\n        - jinja2\n        - pygeoif\n\ntest:\n    imports:\n        - compliance_checker\n        - compliance_checker.cf\n        - compliance_checker.tests\n    commands:\n        - compliance-checker --help\n\nabout:\n    home: https://github.com/ioos/compliance-checker\n    license: Apache 2.0\n    summary: 'Checks Datasets and SOS endpoints for standards compliance.'\n\nextra:\n    recipe-maintainers:\n        - benjwadams\n        - daf\n        - kwilcox\n        - lukecampbell\n        - ocefpaf\n",
  "rendered_recipe": {},

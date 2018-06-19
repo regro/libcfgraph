@@ -132,6 +132,7 @@
   "timestamp": 1529007017284,
   "version": "0.7.0"
  },
+ "metadata_version": 1,
  "name": "automat",
  "raw_recipe": "{% set name = \"automat\" %}\n{% set version = \"0.7.0\" %}\n{% set sha256 = \"4fcac581fbc8cc1174972353d68950f097821c8ecdada0e6f813803d487fa9b5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/glyph/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - setup.py.patch\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - attrs\n    - six\n\ntest:\n  imports:\n    - automat\n\nabout:\n  home: https://github.com/glyph/Automat\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'self-service finite-state machines for the programmer on the go'\n  description: |\n    Automat is a library for concise, idiomatic Python expression of\n    finite-state automata (particularly deterministic finite-state\n    transducers).\n  doc_url: https://github.com/glyph/automat/\n  dev_url: https://github.com/glyph/automat/\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
  "rendered_recipe": {

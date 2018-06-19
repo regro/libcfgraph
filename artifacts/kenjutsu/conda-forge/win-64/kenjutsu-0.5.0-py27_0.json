@@ -102,6 +102,7 @@
   "subdir": "win-64",
   "version": "0.5.0"
  },
+ "metadata_version": 1,
  "name": "kenjutsu",
  "raw_recipe": "{% set name = \"kenjutsu\" %}\n{% set version = \"0.5.0\" %}\n{% set sha256 = \"aa41865ef95709cd8d60193f1823a6aa647bb794237453b4aaf84d402ab513ea\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - kenjutsu\n\nabout:\n  home: https://github.com/jakirkham/kenjutsu\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Python utility functions for slices.\n  doc_url: https://kenjutsu.readthedocs.io/\n  dev_url: https://github.com/jakirkham/kenjutsu\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

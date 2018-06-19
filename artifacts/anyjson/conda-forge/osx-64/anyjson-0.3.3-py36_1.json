@@ -87,6 +87,7 @@
   "subdir": "osx-64",
   "version": "0.3.3"
  },
+ "metadata_version": 1,
  "name": "anyjson",
  "raw_recipe": "{% set name  = \"anyjson\" %}\n{% set version = \"0.3.3\" %}\n{% set sha256 = \"37812d863c9ad3e35c0734c42e0bf0320ce8c3bed82cd20ad54cb34d158157ba\" %}\n{% set build = 1 %}\n\npackage:\n    name: {{ name|lower }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: {{ build }}\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - anyjson\n\nabout:\n    home: https://bitbucket.org/runeh/anyjson/\n    license_file: LICENSE\n    license: BSD 2-Clause\n    summary: Loads whichever is the fastest JSON module installed and provides a uniform API\n    dev_url: https://bitbucket.org/runeh/anyjson/\n    doc_url: https://bitbucket.org/runeh/anyjson/\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n        - pmlandwehr\n",
  "rendered_recipe": {

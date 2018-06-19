@@ -104,6 +104,7 @@
   "subdir": "linux-64",
   "version": "0.2.3"
  },
+ "metadata_version": 1,
  "name": "df2gspread",
  "raw_recipe": "{% set name = \"df2gspread\" %}\n{% set version = \"0.2.3\" %}\n{% set sha256 = \"98501399986871495d115b2331110fef576658b81002c95393c7ea478cb87c84\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - google-api-python-client\n    - gspread\n    - oauth2client\n    - pandas\n    - pycrypto\n\ntest:\n  imports:\n    - df2gspread\n\nabout:\n  home: https://github.com/maybelinot/df2gspread\n  license: GPLv3\n  summary: 'Manage Google Spreadsheets in Pandas DataFrame with Python'\n  license_family: GPL\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  doc_url: http://df2gspread.readthedocs.io\n  dev_url: https://github.com/maybelinot/df2gspread\n\nextra:\n  recipe-maintainers:\n    - hadim\n",
  "rendered_recipe": {

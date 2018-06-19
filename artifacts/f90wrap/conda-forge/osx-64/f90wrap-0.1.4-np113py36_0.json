@@ -505,6 +505,7 @@
   "subdir": "osx-64",
   "version": "0.1.4"
  },
+ "metadata_version": 1,
  "name": "f90wrap",
  "raw_recipe": "{% set version = \"0.1.4\" %}\n\npackage:\n  name: f90wrap\n  version: {{ version }}\n\nsource:\n  fn: f90wrap-{{ version }}.tar.gz\n  url: https://github.com/jameskermode/f90wrap/archive/v{{ version }}.tar.gz\n  sha256: af86d60c06e74b688a5142afa9ebe69581ac7c7e912a0e535f6ebdd98b13d6c9\n\nbuild:\n  number: 0\n  skip: True  # [win]\n  script:\n    - export LDFLAGS=\"-undefined dynamic_lookup -bundle\"  # [osx]\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - gcc\n  run:\n    - python\n    - numpy x.x\n    - libgcc  # [linux]\n    - libgfortran  # [osx]\n\ntest:\n  imports:\n    - f90wrap\n  commands:\n    - f90wrap -h\n    - f2py-f90wrap -h\n    #- conda inspect linkages -p $PREFIX f90wrap  # [not win]\n    #- conda inspect objects -p $PREFIX f90wrap  # [osx]\n\nabout:\n  home: https://github.com/jameskermode/f90wrap\n  license: GPL-2.0\n  summary: 'Fortran to Python interface generator with derived type support.'\n\nextra:\n  recipe-maintainers:\n    - jameskermode\n    - ocefpaf\n",
  "rendered_recipe": {

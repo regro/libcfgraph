@@ -91,6 +91,7 @@
   "subdir": "win-64",
   "version": "0.4.1"
  },
+ "metadata_version": 1,
  "name": "pep8-naming",
  "raw_recipe": "{% set name = \"pep8-naming\" %}\n{% set version = \"0.4.1\" %}\n{% set sha256 = \"4eedfd4c4b05e48796f74f5d8628c068ff788b9c2b08471ad408007fc6450e5a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{name}}-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/{{name[0]}}/{{name}}/{{name}}-{{version}}.tar.gz\n  sha256: {{sha256}}\n\nbuild:\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - flake8\n\ntest:\n  commands:\n    - \"flake8 --version | grep naming:\"\n\nabout:\n  home: https://github.com/PyCQA/pep8-naming\n  license: MIT\n  license_family: MIT\n# Can't add license file until there's a new release\n#  license_file: LICENSE\n  summary: 'Plug-in for flake 8 to check the PEP-8 naming conventions'\n  dev_url: https://github.com/PyCQA/pep8-naming\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n    - jakirkham\n    - sigmavirus24\n",
  "rendered_recipe": {

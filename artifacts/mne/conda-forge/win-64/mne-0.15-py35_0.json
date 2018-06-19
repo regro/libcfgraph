@@ -1057,6 +1057,7 @@
   "subdir": "win-64",
   "version": "0.15"
  },
+ "metadata_version": 1,
  "name": "mne",
  "raw_recipe": "{% set name = \"mne\" %}\n{% set version = \"0.15\" %}\n{% set sha256 = \"8cbef21327ffc42007634ac9f9edaf3bcd4f50f98e9b4d5a5bd81338b482d6d8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [osx and py3k or py36]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - matplotlib\n    - nibabel\n    - numpy\n    - scikit-learn\n    - scipy\n    - mayavi\n    - pysurfer\n\ntest:\n  imports:\n    - mne\n  commands:\n    - mne\n\nabout:\n  home: http://martinos.org/mne\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'MNE python project for MEG and EEG data analysis.'\n  description: |\n    MNE python project for MEG and EEG data analysis.\n  doc_url: http://martinos.org/mne\n  dev_url: https://github.com/mne-tools/mne-python\n\nextra:\n  recipe-maintainers:\n    - larsoner\n    - christianbrodbeck\n",
  "rendered_recipe": {

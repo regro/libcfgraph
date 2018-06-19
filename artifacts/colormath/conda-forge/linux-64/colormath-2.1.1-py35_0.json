@@ -104,6 +104,7 @@
   "subdir": "linux-64",
   "version": "2.1.1"
  },
+ "metadata_version": 1,
  "name": "colormath",
  "raw_recipe": "{% set name = \"colormath\" %}\n{% set version = \"2.1.1\" %}\n{% set sha256 = \"003a2b2d9c1f43aa7d90addf1863fb2d822463c839b1166ae3092950792f9707\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy\n    - networkx\n\ntest:\n  imports:\n    - colormath\n\nabout:\n  home: https://github.com/gtaylor/python-colormath\n  summary: 'Color math and conversion library.'\n  description: |\n    This module implements a large number of different\n    color operations such as color space conversions,\n    Delta E, and density to spectral.\n  license: BSD\n  license_family: BSD\n  license_file: LICENSE.txt\n  dev_url: https://github.com/gtaylor/python-colormath\n  doc_url: http://python-colormath.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - ewels\n",
  "rendered_recipe": {

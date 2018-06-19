@@ -2149,6 +2149,7 @@
   "subdir": "linux-64",
   "version": "3.1.0"
  },
+ "metadata_version": 1,
  "name": "pyopengl",
  "raw_recipe": "{% set version = \"3.1.0\" %}\n\npackage:\n  name: pyopengl\n  version: {{ version }}\n\nsource:\n  fn: PyOpenGL-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/P/PyOpenGL/PyOpenGL-{{ version }}.tar.gz\n  md5: 0de021941018d46d91e5a8c11c071693\n\nbuild:\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  number: 0\n\nrequirements:\n  build:\n    - setuptools\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - OpenGL.GL\n\nabout:\n  home: http://pyopengl.sourceforge.net\n  license: BSD-like\n  summary: Standard OpenGL bindings for Python\n\nextra:\n  recipe-maintainers:\n    - almarklein\n    - mcfletch\n",
  "rendered_recipe": {},

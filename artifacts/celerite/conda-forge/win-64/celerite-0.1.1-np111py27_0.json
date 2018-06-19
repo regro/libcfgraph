@@ -95,6 +95,7 @@
   "subdir": "win-64",
   "version": "0.1.1"
  },
+ "metadata_version": 1,
  "name": "celerite",
  "raw_recipe": "{% set name = \"celerite\" %}\n{% set version = \"0.1.1\" %}\n{% set sha256 = \"3f5c4920aa09f81b3552a1c12945ea336126087eedf0114ae894643d2a55ee5d\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script:\n    - python setup.py install --single-version-externally-managed --record record.txt --lapack  # [not win]\n  features:\n    - blas_{{ variant }}  # [not win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n    - eigen\n    - pybind11\n    - blas 1.1 {{ variant }}  # [not win]\n    - openblas 0.2.19|0.2.19.*  # [not win]\n    - numpy x.x\n  run:\n    - python\n    - blas 1.1 {{ variant }}  # [not win]\n    - openblas 0.2.19|0.2.19.*  # [not win]\n    - numpy x.x\n    - setuptools  # [win]\n    - vs2015_runtime  # [win]\n\ntest:\n  imports:\n    - celerite\n\nabout:\n  home: http://github.com/dfm/celerite\n  license: MIT\n  summary: 'Scalable 1D Gaussian Processes in C++ and Python'\n  doc_url: http://celerite.readthedocs.io/\n  dev_url: https://github.com/dfm/celerite\n\nextra:\n  recipe-maintainers:\n    - dfm\n",
  "rendered_recipe": {

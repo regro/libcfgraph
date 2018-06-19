@@ -218,6 +218,7 @@
   "timestamp": 1526262971837,
   "version": "1.2.1"
  },
+ "metadata_version": 1,
  "name": "r-rlas",
  "raw_recipe": "{% set version = '1.2.1' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-rlas\n  version: {{ version }}\n\nsource:\n  fn: rlas_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/rlas_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/rlas/rlas_{{ version }}.tar.gz\n  sha256: 5759c39d3e2ca7d1094aa9747ac657300a0df711c4dc5dbd6cb01444da3e1a57\n\nbuild:\n  number: 0\n  script: R CMD INSTALL --build .\n  skip: True  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-rcpp\n    - r-data.table\n    - r-uuid\n    - posix  # [win]\n    - {{native}}toolchain  # [win]\n    - gcc  # [not win]\n\n  run:\n    - r-base\n    - r-rcpp\n    - r-data.table\n    - r-uuid\n    - libgcc  # [not win]\n\ntest:\n  commands:\n    - $R -e \"library('rlas')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('rlas')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=rlas\n  license: GPL-3\n  summary: Read and write 'las' and 'laz' binary file formats. The LAS file format is a public\n    file format for the interchange of 3-dimensional point cloud data between data users.\n    The LAS specifications are approved by the American Society for Photogrammetry and\n    Remote Sensing <https\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

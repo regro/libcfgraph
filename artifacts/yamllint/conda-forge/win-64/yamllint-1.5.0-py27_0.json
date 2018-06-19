@@ -52,6 +52,7 @@
   "subdir": "win-64",
   "version": "1.5.0"
  },
+ "metadata_version": 1,
  "name": "yamllint",
  "raw_recipe": "{% set name = \"yamllint\" %}\n{% set version = \"1.5.0\" %}\n{% set sha256 = \"aa7c864a269cac655c2899abef92fb195abcd1141bf7b38ea436a71994c9c9e6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - pyyaml\n\ntest:\n  imports:\n    - yamllint\n  requires:\n    - nose\n\nabout:\n  home: https://github.com/adrienverge/yamllint\n  license: GPLv3\n  license_file: LICENSE\n  summary: 'A linter for YAML files.'\n  doc_url: https://yamllint.readthedocs.io/\n  dev_url: https://github.com/adrienverge/yamllint\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
  "rendered_recipe": {},

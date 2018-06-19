@@ -493,6 +493,7 @@
   "subdir": "win-64",
   "version": "1.0.2"
  },
+ "metadata_version": 1,
  "name": "freexl",
  "raw_recipe": "{% set version = \"1.0.2\" %}\n\npackage:\n  name: freexl\n  version: {{ version }}\n\nsource:\n  url: http://www.gaia-gis.it/gaia-sins/freexl-{{ version }}.tar.gz\n  sha256: b39a4814a0f53f5e09a9192c41e3e51bd658843f770399023a963eb064f6409d\n  patches:\n    - makefile.vc.patch  # [win]\n    - nmake.opt.patch  # [win]\n    - freexl.c.patch  # [win]\n\nbuild:\n  number: 2\n  skip: True  # [win and py36]\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and (py35 or py36)]\n\nrequirements:\n  build:\n    - python  # [win]\n    - libiconv\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and (py35 or py36)]\n  run:\n    - libiconv\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and (py35 or py36)]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libfreexl.a  # [unix]\n    - conda inspect linkages -p ${PREFIX} freexl  # [linux]\n    - conda inspect objects -p $PREFIX freexl  # [osx]\n\nabout:\n  home: https://www.gaia-gis.it/fossil/freexl/index\n  license: LGPL-2.1\n  license_file: COPYING\n  summary: 'Extract valid data from within an Excel'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

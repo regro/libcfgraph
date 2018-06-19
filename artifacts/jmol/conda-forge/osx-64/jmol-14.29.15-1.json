@@ -1848,6 +1848,7 @@
   "timestamp": 1529264201073,
   "version": "14.29.15"
  },
+ "metadata_version": 1,
  "name": "jmol",
  "raw_recipe": "{% set name = \"Jmol\" %}\n{% set version = \"14.29.15\" %}\n{% set majmin = '.'.join(version.split('.')[:2]) %}\n{% set sha256 = \"e71df634776ade7c57f58986affd2b68e0d0d61bcda7b031e0b51da9d4aa81e1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://sourceforge.net/projects/jmol/files/Jmol/Version {{ majmin }}/Jmol {{ version }}/Jmol-{{ version }}-binary.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - unzip      # [not win]\n    - m2-unzip   # [win]\n  run:\n    # https://github.com/conda-forge/jmol-feedstock/issues/1\n    - openjdk >8.0.121\n\ntest:\n  commands:\n    # In windows following command opens the GUI and conda build gets stuck.\n    - jmol -n    # [not win]\n\nabout:\n  home: http://www.jmol.org\n  license: LGPL\n  license_file: LICENSE.txt\n  summary: 'Jmol is an open-source molecule viewer and editor'\n  description: |\n    Jmol is a free, open source molecule viewer for students, educators, and\n    researchers in chemistry, biochemistry, physics, and materials science.\n  doc_url: http://jmol.sourceforge.net/#Learn%20to%20use%20Jmol\n  dev_url: https://github.com/BobHanson/Jmol-SwingJS\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - saraedum\n",
  "rendered_recipe": {

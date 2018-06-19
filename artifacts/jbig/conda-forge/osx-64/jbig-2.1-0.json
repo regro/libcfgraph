@@ -494,6 +494,7 @@
   "subdir": "osx-64",
   "version": "2.1"
  },
+ "metadata_version": 1,
  "name": "jbig",
  "raw_recipe": "{% set name = \"jbig\" %}\n{% set version = \"2.1\" %}\n{% set sha256 = \"de7106b6bfaf495d6865c7dd7ac6ca1381bd12e0d81405ea81e7f2167263d932\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://www.cl.cam.ac.uk/~mgk25/jbigkit/download/jbigkit-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    # Remove -Wno-unused-result (for compatibility with old gcc),\n    # and add -fPIC (to allow shared libraries to use this build).\n    - Makefile.patch\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libjbig.a\n\nabout:\n  home: https://www.cl.cam.ac.uk/~mgk25/jbigkit\n  license: GPL-2.0\n  license_family: GPL\n  license_file: COPYING\n  summary: 'Implementation of the JBIG1 data compression standard'\n\n  description: |\n    JBIG-KIT provides a portable library of compression and decompression\n    functions with a documented interface that you can include very easily\n    into your image or document processing software.\n  doc_url: https://www.cl.cam.ac.uk/~mgk25/jbigkit/\n  dev_url: https://www.cl.cam.ac.uk/~mgk25/git/jbigkit/\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
  "rendered_recipe": {

@@ -627,6 +627,7 @@
   "subdir": "linux-64",
   "version": "0.0.10"
  },
+ "metadata_version": 1,
  "name": "splauncher",
  "raw_recipe": "{% set version = \"0.0.10\" %}\n\npackage:\n  name: splauncher\n  version: {{ version }}\n\nsource:\n  fn: splauncher-{{ version }}.tar.gz\n  url: https://pypi.org/packages/source/s/splauncher/splauncher-{{ version }}.tar.gz\n  sha256: 8019ab1dda0470d4f74422ce713fe3cc44d76618f5706aaa1bd9b553d72b3dea\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - splauncher\n\nabout:\n  home: https://github.com/jakirkham/splauncher\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: A simple subprocess launcher with optional DRMAA support.\n  doc_url: https://splauncher.readthedocs.io/\n  dev_url: https://github.com/jakirkham/splauncher\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

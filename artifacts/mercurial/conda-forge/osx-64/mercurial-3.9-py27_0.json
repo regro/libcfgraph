@@ -385,6 +385,7 @@
   "subdir": "osx-64",
   "version": "3.9"
  },
+ "metadata_version": 1,
  "name": "mercurial",
  "raw_recipe": "{% set version = \"3.9\" %}\n\npackage:\n  name: mercurial\n  version: {{ version }}\n\nsource:\n  fn: mercurial-{{ version }}.tar.gz\n  url: https://mercurial-scm.org/release/mercurial-{{ version }}.tar.gz\n  sha256: 834f25dcff44994198fb8a7ba161a6e24204dbd63c8e6270577e06e6cedbdabc\n\nbuild:\n  number: 0\n  skip: True  # [py3k]\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  commands:\n    - hg --version\n\nabout:\n  home: http://mercurial-scm.org\n  license: GPL2\n  license_file: COPYING\n  summary: Source control management tool\n\nextra:\n  recipe-maintainers:\n    - ngoldbaum\n",
  "rendered_recipe": {},

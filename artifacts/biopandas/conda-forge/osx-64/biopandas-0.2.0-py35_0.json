@@ -98,6 +98,7 @@
   "subdir": "osx-64",
   "version": "0.2.0"
  },
+ "metadata_version": 1,
  "name": "biopandas",
  "raw_recipe": "{% set name = \"biopandas\" %}\n{% set version = \"0.2.0\" %}\n{% set sha256 = \"cbda1bebd089c45bf155441a71068d0af830be7618ff0ee77eef63f6357c2283\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    \n  run:\n    - python\n    - numpy\n    - pandas\n\ntest:\n  imports:\n    - biopandas\n    - biopandas.pdb\n    - biopandas.testutils\n\nabout:\n  home: http://github.com/rasbt/biopandas\n  license: BSD 3-clause\n  license_file: LICENSE\n  summary: 'Molecular Structures in Pandas DataFrames'\n\n  description: |\n    BioPandas is a library for working with Protein Databank Files(PDB)\n    written in Python 2.7 and Python 3.5. \n  doc_url: http://rasbt.github.io/biopandas/\n  dev_url: https://github.com/rasbt/biopandas\n\nextra:\n  recipe-maintainers:\n    - rasbt\n    - souravsingh\n",
  "rendered_recipe": {

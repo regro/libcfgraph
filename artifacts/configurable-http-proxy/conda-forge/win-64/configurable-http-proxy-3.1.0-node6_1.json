@@ -866,6 +866,7 @@
   "subdir": "win-64",
   "version": "3.1.0"
  },
+ "metadata_version": 1,
  "name": "configurable-http-proxy",
  "raw_recipe": "{% set name = \"configurable-http-proxy\" %}\n{% set version = \"3.1.0\" %}\n{% set node_version = os.environ.get('NODEJS_VERSION') or '6.*' %}\n{% set node_major = node_version.split('.')[0] %}\n{% set build = 1 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://registry.npmjs.org/{{ name }}/-/{{ name }}-{{ version }}.tgz\n  sha256: eb41627ed15505261dbbb48eb4b9f1c6cd31a884b0f1afa9001a671b67262ad0\n\nbuild:\n  number: {{ build }}\n  string: \"node{{node_major}}_{{ build}}\"\n  script: npm pack; npm install -g {{name}}-{{version}}.tgz  # [not win]\n\nrequirements:\n  build:\n    - nodejs {{node_version}}\n  run:\n    - nodejs {{node_version}}\n\ntest:\n  commands:\n    - configurable-http-proxy -h\n\nabout:\n  home: https://github.com/jupyterhub/configurable-http-proxy\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: node-http-proxy plus a REST API\n\nextra:\n  recipe-maintainers:\n    - minrk\n    - willingc\n",
  "rendered_recipe": {

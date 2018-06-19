@@ -359,6 +359,7 @@
   "timestamp": 1527539026299,
   "version": "5.3.0"
  },
+ "metadata_version": 1,
  "name": "rise",
  "raw_recipe": "{% set version = \"5.3.0\" %}\n\npackage:\n  name: rise\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/r/rise/rise-{{ version }}.tar.gz\n  sha256: b34cc01ff85e47f386456ac4cb0659dcb2fb482c6db05feb5218d43580fea519\n  patches:\n    - setup_py.patch\n\nbuild:\n  number: 0\n  script:\n    - python -m pip install --no-deps --ignore-installed .\n    - jupyter nbextension install --sys-prefix --py rise\n\nrequirements:\n  build:\n    - python\n    - pip\n    - pip >=10.0.1\n    - notebook >=5.5.0\n  run:\n    - python\n    - jupyter\n    - notebook >=5.5.0\n\ntest:\n  imports:\n    - rise\n\nabout:\n  home: https://github.com/damianavila/RISE\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.md\n  summary: 'RISE: Live Reveal.js Jupyter/IPython Slideshow Extension'\n  description:  Reveal.js - Jupyter/IPython Slideshow Extension, also known as live_reveal. Quickly turn your Jupyter Notebooks into a live presentation.  \n  doc_url: http://rise.readthedocs.io/en/latest\n  dev_url: https://github.com/damianavila/RISE\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n    - damianavila\n    - parmentelat\n    - Juanlu001\n",
  "rendered_recipe": {

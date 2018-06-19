@@ -645,6 +645,7 @@
   "subdir": "osx-64",
   "version": "0.1.0"
  },
+ "metadata_version": 1,
  "name": "fasttext",
  "raw_recipe": "{% set name = \"fasttext\" %}\n{% set version = \"0.1.0\" %}\n{% set release_name = \"431c9e2\" %}\n{% set sha256 = \"8c4ba14372d160fe7de902299caac664b7c1af1778601e17ca18ca2081b0e253\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/facebookresearch/fastText/archive/{{ release_name }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n\ntest:\n  commands:\n    - fasttext supervised -h || [[ $? == 1 ]]  # -h returns 1\n\nabout:\n  home: https://fasttext.cc/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'fastText - Library for efficient text classification and representation learning'\n  dev_url: https://github.com/facebookresearch/fastText\n  doc_url: https://fasttext.cc/docs/en/support.html\n  license: BSD-3-Clause\n\nextra:\n  recipe-maintainers:\n    - JungeAlexander\n",
  "rendered_recipe": {

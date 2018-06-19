@@ -649,6 +649,7 @@
   "subdir": "osx-64",
   "version": "4.7.1"
  },
+ "metadata_version": 1,
  "name": "antlr",
  "raw_recipe": "{% set name = \"antlr\" %}\n{% set version = \"4.7.1\" %}\n{% set sha256 = \"4d0714f441333a63e50031c9e8e4890c78f3d21e053d46416949803e122a6574\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/{{ name }}/{{ name }}{{ version[0] }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\nrequirements:\n  build:\n    - maven\n  run:\n    - openjdk\n\ntest:\n  commands:\n    - antlr4\n\nabout:\n  home: http://www.antlr.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: ANother Tool for Language Recognition (ANTLR).\n  description: >\n    ANTLR (ANother Tool for Language Recognition) is a powerful parser\n    generator for reading, processing, executing, or translating\n    structured text or binary files.\n  dev_url: https://github.com/antlr/antlr4\n  doc_url: https://github.com/antlr/antlr4/blob/master/doc/index.md\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - kwilcox\n    - bollwyvl\n",
  "rendered_recipe": {

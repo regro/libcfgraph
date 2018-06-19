@@ -108,6 +108,7 @@
   "subdir": "linux-64",
   "version": "0.0"
  },
+ "metadata_version": 1,
  "name": "otfmi",
  "raw_recipe": "{% set version = \"0.0\" %}\n\npackage:\n  name: otfmi\n  version: {{ version }}\n\nsource:\n  #fn: otfmi-{{ version }}.tar.gz\n  #url: https://github.com/openturns/otfmi/archive/v{{ version }}.tar.gz\n  #sha256: 7ea2d3e321a2aae80d7361074627029490202ad33a03b557014b38393bb13c9a\n\n  # for testing (a release is on the way)\n  git_url: https://github.com/openturns/otfmi.git\n  git_rev: a12ed79\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  # not yet available\n  skip: true  # [win and py36]\n\nrequirements:\n  build:\n    - toolchain\n    - setuptools\n    - python\n  run:\n    - python\n    - openturns\n    - pyfmi\n\ntest:\n  imports:\n    - otfmi\n\nabout:\n  home: http://openturns.org/\n  license: LGPL3\n  license_file: COPYING.LESSER\n  summary: FMI models manipulation module\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "rendered_recipe": {

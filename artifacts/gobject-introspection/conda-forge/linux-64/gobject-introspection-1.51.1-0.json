@@ -253,6 +253,7 @@
   "subdir": "linux-64",
   "version": "1.51.1"
  },
+ "metadata_version": 1,
  "name": "gobject-introspection",
  "raw_recipe": "{% set name = \"gobject-introspection\" %}\n{% set major = \"1.51\" %}\n{% set patch = \"1\" %}\n{% set version = major ~ \".\" ~ patch %}\n{% set sha256 = \"2c47e7632df936055b4e96f48315e2d392be10a0642ce11610fba5240e19772d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.xz\n  url: http://ftp.gnome.org/pub/GNOME/sources/{{ name }}/{{ major }}/{{ name }}-{{ version }}.tar.xz\n  sha256: {{ sha256 }}\n  patches:\n    - hugepaths.patch\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true\n  skip: true  # [win or not py27]\n\nrequirements:\n  build:\n    - bison\n    - cairo 1.14.*\n    - flex\n    - gettext  # [osx]\n    - glib 2.51.*\n    - libffi 3.2.*\n    - pkg-config  # [not win]\n    - python >=2.7,<3\n    - toolchain\n  run:\n    - glib 2.51.*\n    - libffi 3.2.*\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://wiki.gnome.org/action/show/Projects/GObjectIntrospection\n  license: LGPLv2+\n  license_family: LGPL\n  license_file: COPYING\n  summary: 'Middleware for binding GObject-based code to other languages.'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
  "rendered_recipe": {

@@ -28,6 +28,7 @@
   "subdir": "win-64",
   "version": "0.5.0"
  },
+ "metadata_version": 1,
  "name": "chartkick",
  "raw_recipe": "{%set name = \"chartkick\" %}\n{%set version = \"0.5.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"1cc0306b4a6de1e33ed8a849e077e4ed517c0bd4fca05e2a286c46585e89a52b\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - chartkick\n    - chartkick.templatetags\n\nabout:\n  home: https://github.com/mher/chartkick.py\n  license: MIT\n  summary: 'Create beautiful Javascript charts with minimal code'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

@@ -938,6 +938,7 @@
   "subdir": "noarch",
   "version": "1.3.0"
  },
+ "metadata_version": 1,
  "name": "material-design-lite",
  "raw_recipe": "{% set name = \"material-design-lite\" %}\n{% set version = \"1.3.0\" %}\n{% set sha256 = \"4b4ab9845dba0e6a6fda172d69aff6da72c3e429dc1f3d30fa0935d315f40cb6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/google/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs\n    \ntest:\n  commands:\n    - npm list -g material-design-lite\n  requires:\n    - nodejs\n\nabout:\n  home: https://github.com/google/material-design-lite\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Material Design Components in HTML/CSS/JS'\n  description: |\n    An implementation of Material Design components in vanilla CSS, JS, and HTML.\n  doc_url: https://getmdl.io/\n  dev_url: https://github.com/google/material-design-lite\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

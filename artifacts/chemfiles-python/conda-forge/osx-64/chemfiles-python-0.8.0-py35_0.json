@@ -677,6 +677,7 @@
   "subdir": "osx-64",
   "version": "0.8.0"
  },
+ "metadata_version": 1,
  "name": "chemfiles-python",
  "raw_recipe": "{% set version = \"0.8.0\" %}\n{% set sha256 = \"eccd3fc454ed40a1060d2365e179f89cc348ce131fbd2ee8e280246490c2f7eb\" %}\n\npackage:\n  name: chemfiles-python\n  version: {{ version }}\n\nsource:\n  fn: chemfiles.py-{{ version }}.tar.gz\n  url: https://github.com/chemfiles/chemfiles.py/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: true  # [win and py2k]\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    # Build time dependencies\n    - cmake\n    - scikit-build\n    - wheel 0.29.0\n    # Run time dependencies\n    - python\n    - enum34  # [py2k]\n    - numpy\n    - chemfiles-lib 0.8.*\n  run:\n    - python\n    - enum34  # [py2k]\n    - numpy\n    - chemfiles-lib 0.8.*\n\ntest:\n  source_files:\n    - tests/\n  commands:\n    - python -m unittest discover -p \"*.py\" tests\n\nabout:\n  home: http://chemfiles.org\n  license: BSD-3-Clause\n  summary: Python binding to chemfiles, a modern library for chemistry file reading and writing\n  doc_url: http://chemfiles.org/chemfiles.py/latest/\n  dev_url: https://github.com/chemfiles/chemfiles.py\n\nextra:\n  recipe-maintainers:\n    - luthaf\n",
  "rendered_recipe": {

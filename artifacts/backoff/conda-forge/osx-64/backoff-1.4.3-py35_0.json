@@ -94,6 +94,7 @@
   "subdir": "osx-64",
   "version": "1.4.3"
  },
+ "metadata_version": 1,
  "name": "backoff",
  "raw_recipe": "{% set name = \"backoff\" %}\n{% set version = \"1.4.3\" %}\n{% set sha256 = \"bc8ef5a3b0cc7e90d56dd4d9d385557ada1a6dbdfcdd2b44038beeabae119038\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --record record.txt\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - backoff\n\nabout:\n  home: https://github.com/litl/backoff\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Function decoration for backoff and retry'\n  description: |\n    This module provides function decorators which can be used to wrap a function such that it will be retried until\n    some condition is met. It is meant to be of use when accessing unreliable resources with the potential for\n    intermittent failures i.e. network resources and external APIs. Somewhat more generally, it may also be of use for\n    dynamically polling resources for externally generated content.\n  dev_url: https://github.com/litl/backoff\n\nextra:\n  recipe-maintainers:\n    - gatesn\n    - bgreen-litl\n",
  "rendered_recipe": {

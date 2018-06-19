@@ -508,6 +508,7 @@
   "subdir": "osx-64",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "ioos_tools",
  "raw_recipe": "{% set version = \"1.0.0\" %}\n\npackage:\n  name: ioos_tools\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/i/ioos_tools/ioos_tools-{{ version }}.tar.gz\n  sha256: c5d4a09f985de6e6d868db6808b3f15462d2ff675acdbc62242aba5b07842287\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - beautifulsoup4\n    - folium\n    - iris\n    - matplotlib\n    - netcdf4\n    - numpy\n    - oceans\n    - owslib\n    - pandas\n    - pytz\n    - requests\n    - scikit-learn\n    - scipy\n\n\ntest:\n  imports:\n    - ioos_tools\n\nabout:\n  home: https://github.com/pyoceans/ioos_tools\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Misc functions for IOOS notebooks'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

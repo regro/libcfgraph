@@ -351,6 +351,7 @@
   "subdir": "linux-64",
   "version": "1.11.0"
  },
+ "metadata_version": 1,
  "name": "vigra",
  "raw_recipe": "{% set version = \"1.11.0\" %}\n\npackage:\n  name: vigra\n  version: {{ version }}\n\nsource:\n  {% set version_tag = \"Version-%s\" % version.replace(\".\", \"-\") %}\n  fn: vigra-{{ version_tag }}-src.tar.gz\n  url: https://github.com/ukoethe/vigra/archive/{{ version_tag }}.tar.gz\n  sha1: 67788d181e759e625769bf0678887718d3dc02e2\n\nbuild:\n  skip: true  # [win]\n  number: 11\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - python\n    - nose\n    - numpy x.x\n    - jpeg 9*\n    - libtiff 4.0.*\n    - libpng 1.6*\n    - fftw\n    - hdf5 1.8.17|1.8.17.*\n    - boost 1.63.*\n    - zlib 1.2.*\n    \n  run:\n    - python\n    - numpy x.x\n    - jpeg 9*\n    - libtiff 4.0.*\n    - libpng 1.6*\n    - fftw\n    - hdf5 1.8.17|1.8.17.*\n    - boost 1.63.*\n    - zlib 1.2.*\n\ntest:\n  imports:\n    - vigra\n\nabout:\n  home: http://ukoethe.github.io/vigra\n  license: MIT\n  summary: Generic Programming for Computer Vision\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - stuarteberg\n",
  "rendered_recipe": {

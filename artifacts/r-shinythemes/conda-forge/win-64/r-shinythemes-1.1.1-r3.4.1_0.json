@@ -580,6 +580,7 @@
   "subdir": "win-64",
   "version": "1.1.1"
  },
+ "metadata_version": 1,
  "name": "r-shinythemes",
  "raw_recipe": "{% set version = '1.1.1' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-shinythemes\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: shinythemes_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/shinythemes_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/shinythemes/shinythemes_{{ version }}.tar.gz\n  sha256: e6dfa2bd6f4a259feb54a9c910b21cfbb2b22efc4506d8e23007b75080074244\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-shiny >=0.11\n\n  run:\n    - r-base\n    - r-shiny >=0.11\n\ntest:\n  commands:\n    - $R -e \"library('shinythemes')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('shinythemes')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=shinythemes\n  license: GPL-3\n  summary: |\n    Themes for use with Shiny. Includes several Bootstrap themes from <http://bootswatch.com/>,\n    which are packaged for use with Shiny applications.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

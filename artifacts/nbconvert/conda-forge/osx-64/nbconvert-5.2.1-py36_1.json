@@ -266,6 +266,7 @@
   "subdir": "osx-64",
   "version": "5.2.1"
  },
+ "metadata_version": 1,
  "name": "nbconvert",
  "raw_recipe": "{% set version = \"5.2.1\" %}\n\npackage:\n  name: nbconvert\n  version: {{ version }}\n\nsource:\n  fn: nbconvert-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/n/nbconvert/nbconvert-{{ version }}.tar.gz\n  sha256: 9ed68ec7fe90a8672b43795b29ea91cc75ea355c83debc83ebd12171521ec274\n\nbuild:\n  number: 1\n  script: pip install --no-deps .\n  entry_points:\n    - jupyter-nbconvert = nbconvert.nbconvertapp:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - bleach\n    - entrypoints >=0.2.2\n    - jinja2\n    - jupyter_core\n    - jupyter_client >=4.2\n    - mistune >0.6\n    - nbformat\n    - pandoc\n    - pandocfilters >=1.4.1\n    - python\n    - pygments\n    - testpath\n    - traitlets\n\ntest:\n  imports:\n    - nbconvert\n    - nbconvert.exporters\n    - nbconvert.filters\n    - nbconvert.postprocessors\n    - nbconvert.preprocessors\n    - nbconvert.resources\n    - nbconvert.tests\n    - nbconvert.utils\n    - nbconvert.writers\n  source_files:\n    - nbconvert/tests/files/notebook1.ipynb\n\n  commands:\n    - jupyter nbconvert --help\n    - jupyter nbconvert nbconvert/tests/files/notebook1.ipynb\n\nabout:\n  home: http://jupyter.org\n  license: BSD 3-Clause\n  summary: 'Converting Jupyter Notebooks'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - mpacer\n    - minrk\n    - pelson\n    - takluyver\n",
  "rendered_recipe": {

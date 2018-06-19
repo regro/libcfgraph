@@ -116,6 +116,7 @@
   "subdir": "linux-64",
   "version": "1.5"
  },
+ "metadata_version": 1,
  "name": "r-magrittr",
  "raw_recipe": "{% set version = \"1.5\" %}\n\npackage:\n  name: r-magrittr\n  version: {{ version }}\n\nsource:\n  fn: magrittr_{{ version }}.tar.gz\n  url:\n    - http://cran.r-project.org/src/contrib/magrittr_{{ version }}.tar.gz\n    - http://cran.r-project.org/src/contrib/Archive/magrittr/magrittr_{{ version }}.tar.gz\n  sha256: 05c45943ada9443134caa0ab24db4a962b629f00b755ccf039a2a2a7b2c92ae8\n\nbuild:\n  number: 0\n  skip: True  # [win32]\n  script: R CMD INSTALL --build .\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:  # [not win32]\n  build:  # [not win32]\n    - r-base  # [not win32]\n  run:  # [not win32]\n    - r-base  # [not win32]\n\ntest:\n  commands:\n    - R -e \"library('magrittr')\"  # [not win]\n    - R -e \\\"library('magrittr')\\\"  # [win]\n\nabout:\n  home: https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html\n  license: MIT\n  license_file: LICENSE\n  summary: \"Provides a mechanism for chaining commands with a new forward-pipe operator, %>%.\n    This operator will forward a value, or the result of an expression, into the next\n    function call/expression. There is flexible support for the type of right-hand side\n    expressions. For more information, see package vignette. To quote Rene Magritte,\n    Ceci n'est pas un pipe.\"\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

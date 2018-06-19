@@ -52,6 +52,7 @@
   "subdir": "osx-64",
   "version": "0.7.2"
  },
+ "metadata_version": 1,
  "name": "betamax",
  "raw_recipe": "{% set version = \"0.7.2\" %}\n\npackage:\n    name: betamax\n    version: {{ version }}\n\nsource:\n    fn: betamax-{{ version }}.tar.gz\n    url: https://github.com/sigmavirus24/betamax/archive/{{ version }}.tar.gz\n    sha256: 3f00bd14fcdad085c16c8c483a367267ef8b94dacc1f905a206c5ad1741800ca\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - requests >=2.0\n\ntest:\n    imports:\n        - betamax\n        - betamax.cassette\n        - betamax.matchers\n        - betamax.serializers\n\nabout:\n    home: https://github.com/sigmavirus24/betamax\n    license: Apache-2.0\n    summary: 'A VCR imitation for python-requests.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - sigmavirus24\n",
  "rendered_recipe": {},

@@ -631,6 +631,7 @@
   "subdir": "linux-64",
   "version": "0.40.6"
  },
+ "metadata_version": 1,
  "name": "intltool",
  "raw_recipe": "{% set major_minor = \"0.40\" %}\n{% set version = major_minor + \".6\" %}\n\npackage:\n  name: intltool\n  version: {{ version }}\n\nsource:\n  url: http://ftp.gnome.org/pub/gnome/sources/intltool/{{ major_minor }}/intltool-{{ version }}.tar.gz\n  sha256: 36cd8fe249d0cc20918b6d4583267208bf74c8d541c67a5fe63316846344f9f7\n\nbuild:\n  number: 0\n  skip: True  # [win]\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - perl 5.22.2.1\n    - perl-xml-parser\n  run:\n    - perl-xml-parser\n    - gettext\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://www.gtk.org/\n  license: LGPL-2.0\n  license_file: COPYING\n  summary: 'Internationalization Tool Collection.'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -1094,6 +1094,7 @@
   "subdir": "linux-64",
   "version": "2.4.0.2"
  },
+ "metadata_version": 1,
  "name": "clhep",
  "raw_recipe": "{% set name = \"clhep\" %}\n{% set version = \"2.4.0.2\" %}\n{% set sha256 = \"61664bd1974303dd89d5e6bf506780acc21fce9394e279a36a26fcbbda361e7b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/{{ name }}-{{ version }}.tgz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  \nrequirements:\n  build:\n    - toolchain\n    - cmake\n    \ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libCLHEP.so  # [linux]\n    - test -f ${PREFIX}/lib/libCLHEP.dylib  # [osx]\n    - test -d ${PREFIX}/include/CLHEP\n    - conda inspect linkages -p $PREFIX clhep  # [not win]\n    - conda inspect objects -p $PREFIX clhep  # [osx]\n\nabout:\n  home: http://proj-clhep.web.cern.ch/proj-clhep/\n  license: LGPL-3.0\n  license_family: GPL\n  license_file: CLHEP/COPYING.LESSER\n  summary: A Class Library for High Energy Physics\n  description: |\n    It is intended to be a set of HEP specific foundation and utility classes such as \n    random generators, physics vectors, geometry and linear algebra.\n  doc_url: http://proj-clhep.web.cern.ch/proj-clhep/index.html#docu\n  dev_url: https://gitlab.cern.ch/CLHEP/CLHEP\n\nextra:\n  recipe-maintainers:    \n      - giacomov\n",
  "rendered_recipe": {

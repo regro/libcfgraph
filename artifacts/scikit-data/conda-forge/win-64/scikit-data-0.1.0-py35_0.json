@@ -507,6 +507,7 @@
   "subdir": "win-64",
   "version": "0.1.0"
  },
+ "metadata_version": 1,
  "name": "scikit-data",
  "raw_recipe": "{% set name = \"scikit-data\" %}\n{% set version = \"0.1.0\" %}\n{% set sha256 = \"bf1a05bb590a202b48bfaf154d875e4e1ab6261ab42e20a2c389b8e1c626c575\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [py2k and py<34]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pandas\n    - numpy >=1.12\n    - scikit-learn\n    - matplotlib\n    - jupyter\n    - ipywidgets\n    - ipython\n  run:\n    - python\n    - numpy >=1.12\n    - scikit-learn\n    - matplotlib\n    - jupyter\n    - ipywidgets\n    - ipython\n\ntest:\n  imports:\n    - skdata\n\nabout:\n  home: http://github.com/OpenDataScienceLab/skdata\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'The propose of this library is to allow the data analysis process more easy and automatic.'\n  description: |\n    This library offers functions to manipulate, clean and visualize data in a easy way.\n  doc_url: http://skdata.readthedocs.io/\n  dev_url: https://github.com/OpenDataScienceLab/skdata\n\nextra:\n  recipe-maintainers:\n    - xmnlab\n    - ocefpaf\n",
  "rendered_recipe": {

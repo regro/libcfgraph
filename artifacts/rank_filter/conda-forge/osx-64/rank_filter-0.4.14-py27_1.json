@@ -648,6 +648,7 @@
   "subdir": "osx-64",
   "version": "0.4.14"
  },
+ "metadata_version": 1,
  "name": "rank_filter",
  "raw_recipe": "{% set name = \"rank_filter\" %}\n{% set version = \"0.4.14\" %}\n{% set checksum = \"617dddeb32d1a084fa125dc371a5c0337be8d164f5fc16b6dbe48284dd5282dc\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ checksum }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - boost-cpp 1.64.*\n    - python\n    - setuptools >=18.0\n    - numpy 1.8.*  # [not (win and (py35 or py36))]\n    - numpy 1.9.*  # [win and py35]\n    - numpy 1.11.*  # [win and py36]\n    - cython >=0.23\n\n  run:\n    - boost-cpp 1.64.*\n    - python\n    - numpy >=1.8  # [not (win and (py35 or py36))]\n    - numpy >=1.9  # [win and py35]\n    - numpy >=1.11  # [win and py36]\n\ntest:\n  source_files:\n    - tests\n\n  imports:\n    - rank_filter\n\n  commands:\n    - python -m unittest discover -s .\n\nabout:\n  home: https://github.com/nanshe-org/rank_filter\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'A simple python module containing an in-place linear rank filter optimized in C++.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

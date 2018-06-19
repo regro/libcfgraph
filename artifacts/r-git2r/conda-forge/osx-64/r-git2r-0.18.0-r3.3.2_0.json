@@ -109,6 +109,7 @@
   "subdir": "osx-64",
   "version": "0.18.0"
  },
+ "metadata_version": 1,
  "name": "r-git2r",
  "raw_recipe": "{% set version = '0.18.0' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-git2r\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: git2r_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/git2r_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/git2r/git2r_{{ version }}.tar.gz\n  sha256: 91b32e49afb859c0c4f6f77988343645e9499e5046ef08d945d4d8149b6eff2d\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - {{native}}openssl\n    - posix                # [win]\n    - {{native}}toolchain  # [win]\n    - gcc                  # [not win]\n\n  run:\n    - r-base\n    - {{native}}openssl\n\ntest:\n  commands:\n    - $R -e \"library('git2r')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('git2r')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/ropensci/git2r\n  license: GPL-2\n  summary: Interface to the 'libgit2' library, which is a pure C implementation of the 'Git'\n    core methods. Provides access to 'Git' repositories to extract data and running\n    some basic 'Git' commands.\n  license_family: GPL2\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

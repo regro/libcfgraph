@@ -719,6 +719,7 @@
   "subdir": "linux-64",
   "version": "1.25"
  },
+ "metadata_version": 1,
  "name": "georaster",
  "raw_recipe": "{% set name = \"georaster\" %}\n{% set version = \"1.25\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c89d85fceff4ab5c23d91407001ecddfce236893708494966f2dbf689d991a0b\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n    - numpy\n    - scipy\n    - gdal\n    - pyproj\n\ntest:\n  imports:\n    - georaster\n\nabout:\n  home: https://github.com/GeoUtils/georaster\n  license: GNU GPL v.3\n  summary: 'easy processing and analysis of geographic and projected rasters'\n  license_family: GPL3\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt'\n  doc_url: http://georaster.readthedocs.io\n  dev_url: https://github.com/GeoUtils/georaster\n\nextra:\n  recipe-maintainers:\n    - atedstone\n",
  "rendered_recipe": {

@@ -672,6 +672,7 @@
   "subdir": "osx-64",
   "version": "0.3.6"
  },
+ "metadata_version": 1,
  "name": "nxviz",
  "raw_recipe": "{% set name = \"nxviz\" %}\n{% set version = \"0.3.6\" %}\n{% set sha256 = \"570e365ff6dd76cb47ccc4edccad4ddeaf0a31206c42ba5dffc85c6663fbd7ae\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [py<36]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - matplotlib\n    - networkx\n    - numpy\n    - palettable\n    - seaborn\n\ntest:\n  imports:\n    - nxviz\n    - nxviz.plots\n    - nxviz.geometry\n    - nxviz.utils\n\nabout:\n  home: http://github.com/ericmjl/nxviz\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Rational network visualizations in Python'\n\n  dev_url: https://github.com/ericmjl/nxviz\n\nextra:\n  recipe-maintainers:\n    - ericmjl\n",
  "rendered_recipe": {

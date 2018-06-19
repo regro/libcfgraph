@@ -24,6 +24,7 @@
   "subdir": "linux-64",
   "version": "0.1"
  },
+ "metadata_version": 1,
  "name": "doublemetaphone",
  "raw_recipe": "{% set name = \"DoubleMetaphone\" %}\n{% set version = \"0.1\" %}\n{% set md5 = \"86e5ae4a4839321f60b9801837eb01c1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [win and py3k]\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n    - cython\n\n  run:\n    - python\n\ntest:\n  imports:\n    - doublemetaphone\n\nabout:\n  license: MIT\n  # license_file: LICENSE # When added to MANIFEST.in \u2013 https://github.com/datamade/doublemetaphone/issues/1\n  summary: 'Python wrapper for C++ Double Metaphone'\n  home: https://github.com/datamade/doublemetaphone\n  dev_url: https://github.com/datamade/doublemetaphone\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
  "rendered_recipe": {},

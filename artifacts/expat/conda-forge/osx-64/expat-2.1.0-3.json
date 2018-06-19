@@ -493,6 +493,7 @@
   "subdir": "osx-64",
   "version": "2.1.0"
  },
+ "metadata_version": 1,
  "name": "expat",
  "raw_recipe": "{% set version = \"2.1.0\" %}\n\npackage:\n  name: expat\n  version: {{ version }}\n\nsource:\n  fn: expat-{{ version }}.tar.bz2\n  url: http://downloads.sourceforge.net/project/expat/expat/{{ version }}/expat-{{ version }}.tar.gz\n  sha256: 823705472f816df21c8f6aa026dd162b280806838bb55b3432b0fb1fcca7eb86\n\nbuild:\n  number: 3\n  skip: True  # [win and py36]\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and (py35 or py36)]\n\nrequirements:\n  build:\n    - cmake  # [win]\n    - python  # [win]\n    - msinttypes  # [win]\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and (py35 or py36)]\n  run:\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and (py35 or py36)]\n\ntest:\n  commands:\n    - xmlwf -h\n\nabout:\n  home: http://expat.sourceforge.net/\n  license: MIT\n  license_file: COPYING\n  summary: Expat XML parser library in C\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - ocefpaf\n    - pelson\n",
  "rendered_recipe": {

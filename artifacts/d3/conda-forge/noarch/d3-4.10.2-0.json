@@ -1655,6 +1655,7 @@
   "subdir": "noarch",
   "version": "4.10.2"
  },
+ "metadata_version": 1,
  "name": "d3",
  "raw_recipe": "{% set name = \"d3\" %}\n{% set version = \"4.10.2\" %}\n{% set sha256 = \"eaa296738d4ec6bc49ebfe6635284972b38db5f146ba9f5778af45b6306044ae\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/d3/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs\n    \ntest:\n  commands:\n    - npm list -g d3\n  requires:\n    - nodejs\n   \n\nabout:\n  home: https://github.com/d3/d3\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Bring data to life with SVG, Canvas and HTML.'\n  description: |\n    D3 (or D3.js) is a JavaScript library for visualizing data using \n    web standards. D3 helps you bring data to life using SVG, Canvas \n    and HTML. D3 combines powerful visualization and interaction \n    techniques with a data-driven approach to DOM manipulation, \n    giving you the full capabilities of modern browsers and the \n    freedom to design the right visual interface for your data.  \n  doc_url: https://github.com/d3/d3/wiki\n  dev_url: https://github.com/d3/d3\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

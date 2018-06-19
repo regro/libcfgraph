@@ -644,6 +644,7 @@
   "subdir": "linux-64",
   "version": "1.6.1"
  },
+ "metadata_version": 1,
  "name": "fdupes",
  "raw_recipe": "\n{% set name = \"fdupes\" %}\n{% set version = \"1.6.1\" %}\n{% set sha256 = \"9d6b6fdb0b8419815b4df3bdfd0aebc135b8276c90bbbe78ebe6af0b88ba49ea\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/adrianlopezroche/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n\ntest:\n  commands:\n    - fdupes --version\n\nabout:\n  home: https://github.com/adrianlopezroche/fdupes\n  license: MIT\n  license_family: MIT\n  license_file: README\n  summary: Identify or delete duplicate files\n  description : |\n    FDUPES is a program for identifying or deleting duplicate files residing\n    within specified directories.\n  dev_url: https://github.com/adrianlopezroche/fdupes\n\nextra:\n  recipe-maintainers:\n    - keuv-grvl\n",
  "rendered_recipe": {

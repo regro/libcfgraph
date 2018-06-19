@@ -122,6 +122,7 @@
   "subdir": "osx-64",
   "version": "0.2.0"
  },
+ "metadata_version": 1,
  "name": "pyasdf",
  "raw_recipe": "{% set name = \"pyasdf\" %}\n{% set version = \"0.2.0\" %}\n{% set sha256 = \"83f6421e30c2918b4fc01d2a08743d8677741dd854538f0ffac4489c9d087949\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - obspy\n    - colorama\n    - h5py\n    - dill\n    - prov\n\ntest:\n  imports:\n    - pyasdf\n  requires:\n    - pytest\n  commands:\n    - python -m pyasdf.tests\n\nabout:\n  home: https://seismicdata.github.io/pyasdf/index.html\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Python module for working with ASDF files.'\n  description: |\n    Python module for the Adaptable Seismic Data Format (ASDF).\n\n    For further information and contact information please see these two web sites:\n\n    * Landing page of the ASDF data format: http://seismic-data.org\n    * Github repository of pyasdf: http://www.github.com/SeismicData/pyasdf\n  doc_url: https://seismicdata.github.io/pyasdf/index.html\n  dev_url: https://github.com/SeismicData/pyasdf\n\nextra:\n  recipe-maintainers:\n    - krischer\n",
  "rendered_recipe": {

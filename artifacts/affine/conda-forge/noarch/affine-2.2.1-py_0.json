@@ -126,6 +126,7 @@
   "timestamp": 1528196918845,
   "version": "2.2.1"
  },
+ "metadata_version": 1,
  "name": "affine",
  "raw_recipe": "{% set version = \"2.2.1\" %}\n\npackage:\n  name: affine\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/a/affine/affine-{{ version }}.tar.gz\n  sha256: 306e56e8e2cbe80e90400fe0469cfc09c583a9efc7796c3fa87bcb572ddb7548\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - affine\n\nabout:\n  home: https://github.com/sgillies/affine\n  license: BSD 3-Clause\n  summary: 'Matrices describing affine transformation of the plane.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

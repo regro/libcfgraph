@@ -80,6 +80,7 @@
   "subdir": "osx-64",
   "version": "6.3.3"
  },
+ "metadata_version": 1,
  "name": "gnureadline",
  "raw_recipe": "{% set version = \"6.3.3\" %}\n\npackage:\n    name: gnureadline\n    version: {{ version }}\n\nsource:\n    fn: gnureadline-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/g/gnureadline/gnureadline-{{ version }}.tar.gz\n    md5: c4af83c9a3fbeac8f2da9b5a7c60e51c\n\nbuild:\n    number: 0\n    skip: True  # [not osx]\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n  imports:\n      - gnureadline\n\nabout:\n    home: http://github.com/ludwigschwardt/python-gnureadline\n    license: GPL-3.0\n    summary: The standard Python readline extension statically linked against the GNU readline library\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - scopatz\n",
  "rendered_recipe": {

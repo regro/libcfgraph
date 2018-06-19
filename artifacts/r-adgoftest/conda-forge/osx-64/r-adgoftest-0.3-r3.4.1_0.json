@@ -507,6 +507,7 @@
   "subdir": "osx-64",
   "version": "0.3"
  },
+ "metadata_version": 1,
  "name": "r-adgoftest",
  "raw_recipe": "{% set version = '0.3' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-adgoftest\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: ADGofTest_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/ADGofTest_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/ADGofTest/ADGofTest_{{ version }}.tar.gz\n\n  sha256: 9cd9313954f6ecd82480d373f6c5371ca84ab33e3f5c39d972d35cfcf1096846\n\nbuild:\n  skip: true  # [win32]\n  number: 0\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('ADGofTest')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('ADGofTest')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=ADGofTest\n  license: GPL\n  summary: |\n    Anderson-Darling GoF test with p-value calculation based on Marsaglia's 2004 paper\n    \"Evaluating the Anderson-Darling Distribution\"\n  license_family: GPL\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

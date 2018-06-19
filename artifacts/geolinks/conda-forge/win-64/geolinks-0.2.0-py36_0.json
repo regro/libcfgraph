@@ -82,6 +82,7 @@
   "subdir": "win-64",
   "version": "0.2.0"
  },
+ "metadata_version": 1,
  "name": "geolinks",
  "raw_recipe": "{% set version = \"0.2.0\" %}\n\npackage:\n  name: geolinks\n  version: {{ version }}\n\nsource:\n  fn: geolinks-{{ version }}.tar.gz\n  url: https://github.com/geopython/geolinks/archive/{{ version }}.tar.gz\n  sha256: 02202ac2bca1d4932be7528a2ab546d3ee9d26b1339ec055b71cdc3b99303877\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - geolinks\n\nabout:\n  home: https://github.com/geopython/geolinks\n  license: MIT\n  license_file: LICENSE\n  summary: 'Utilities to deal with geospatial links.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

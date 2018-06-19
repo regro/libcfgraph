@@ -63,6 +63,7 @@
   "subdir": "win-64",
   "version": "1.5.16"
  },
+ "metadata_version": 1,
  "name": "shapely",
  "raw_recipe": "{% set version = \"1.5.16\" %}\n\npackage:\n    name: shapely\n    version: {{ version }}\n\nsource:\n    fn: Shapely-{{ version }}.tar.gz\n    url: https://github.com/Toblerity/Shapely/archive/{{ version }}.tar.gz\n    sha256: 3a0940dab0bc0de0d572b7993f61a4d9a38ce17608573e676c1413b5de0cf776\n    patches:\n        - geos_c.patch\n\nbuild:\n    number: 1\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - geos 3.4.*\n        - cython\n        - numpy x.x\n        - msinttypes  # [win and py<35]\n    run:\n        - python\n        - geos 3.4.*\n        - numpy x.x\n\ntest:\n    imports:\n        - shapely\n        - shapely.speedups._speedups\n        - shapely.vectorized._vectorized\n    commands:\n        - conda inspect linkages -n _test shapely  # [not win]\n\nabout:\n    home: https://github.com/Toblerity/Shapely\n    license: BSD 3-Clause\n    summary: 'Python package for manipulation and analysis of geometric objects in the Cartesian plane.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - pelson\n",
  "rendered_recipe": {},

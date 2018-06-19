@@ -812,6 +812,7 @@
   "subdir": "noarch",
   "version": "0.2.3rc"
  },
+ "metadata_version": 1,
  "name": "xpdan",
  "raw_recipe": "{% set name = \"xpdan\" %}\n{% set version = \"0.2.3rc\" %}\n{% set sha256 = \"71f3c0d60bb4ff0913d8a30d8f8a61effd66752ba365d474ada45c7e4c79a80a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/xpdAcq/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - scipy\n    - matplotlib\n    - pyyaml\n    - scikit-beam\n    - pyfai\n    - pyxdameraulevenshtein\n    - xray-vision\n    - databroker\n    - bluesky\n    - streamz_ext\n    - xpdsim\n    - shed\n    - xpdview\n    - ophyd\n    - xpdconf\n\ntest:\n  imports:\n    - xpdan\n    - xpdan.tools\n    - xpdan.pipelines\n\nabout:\n  home: http://github.com/xpdAcq/xpdAn\n  license: BSD-3-Clause \n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Analysis Tools for XPD'\n  doc_url: http://xpdacq.github.io/xpdAn/\n  dev_url: http://github.com/xpdAcq/xpdAn\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
  "rendered_recipe": {

@@ -164,6 +164,7 @@
   "subdir": "linux-64",
   "version": "1.27.1"
  },
+ "metadata_version": 1,
  "name": "pygithub",
  "raw_recipe": "{% set version = \"1.27.1\" %}\n\npackage:\n  name: pygithub\n  version: {{ version }}\n\nsource:\n  fn: PyGithub-{{ version }}.tar.gz\n  url: https://github.com/PyGithub/PyGithub/archive/v{{ version }}.tar.gz\n  sha256: 464a172d547a0429d038a5a75cbdfbcdf99ab756c7742aad875a3db70ccabf3b\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - github\n    - github.tests\n\nabout:\n  home: http://pygithub.github.io/PyGithub/v1/\n  license: LGPL-3.0\n  summary: Python library implementing the GitHub API v3\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n",
  "rendered_recipe": {},

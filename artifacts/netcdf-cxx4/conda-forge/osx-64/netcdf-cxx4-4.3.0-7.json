@@ -697,6 +697,7 @@
   "subdir": "osx-64",
   "version": "4.3.0"
  },
+ "metadata_version": 1,
  "name": "netcdf-cxx4",
  "raw_recipe": "{% set version = \"4.3.0\" %}\n\npackage:\n  name: netcdf-cxx4\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Unidata/netcdf-cxx4/archive/v{{ version }}.tar.gz\n  sha256: 25da1c97d7a01bc4cee34121c32909872edd38404589c0427fefa1301743f18f\n\nbuild:\n  number: 7\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - cmake\n    - libnetcdf 4.5.*\n    - hdf5 1.10.1\n    - toolchain\n  run:\n    - libnetcdf >=4.5\n    - hdf5 1.10.1\n\ntest:\n  commands:\n    #- ncxx4-config --all  # FIXME: no ncxx4-config for cmake yet.\n    - test -f ${PREFIX}/lib/libnetcdf-cxx4.a  # [unix]\n    - test -f ${PREFIX}/lib/libnetcdf_c++4.a  # [unix]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://github.com/Unidata/netcdf-cxx4\n  license: http://www.unidata.ucar.edu/software/netcdf/copyright.html\n  license_file: COPYRIGHT\n  summary: Unidata NetCDF C++ Library\n\nextra:\n  recipe-maintainers:\n    - kmuehlbauer\n    - ocefpaf\n",
  "rendered_recipe": {

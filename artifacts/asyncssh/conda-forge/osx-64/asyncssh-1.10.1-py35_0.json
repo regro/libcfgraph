@@ -542,6 +542,7 @@
   "subdir": "osx-64",
   "version": "1.10.1"
  },
+ "metadata_version": 1,
  "name": "asyncssh",
  "raw_recipe": "{% set name = \"asyncssh\" %}\n{% set version = \"1.10.1\" %}\n{% set sha256 = \"c56e7bce64b79d146b66b184022efae0a4d0e1d7a1e25b629250f5d6fe431e2b\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/ronf/asyncssh/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: True  # [py < 34]\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - cryptography\n\ntest:\n  imports:\n    - asyncssh\n\nabout:\n  home: https://github.com/ronf/asyncssh\n  license: EPL-1.0\n  summary: \"AsyncSSH: Asynchronous SSHv2 client and server library\"\n\nextra:\n  recipe-maintainers:\n    - vamega\n",
  "rendered_recipe": {

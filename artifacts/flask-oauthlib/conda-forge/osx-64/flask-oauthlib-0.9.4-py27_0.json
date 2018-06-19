@@ -105,6 +105,7 @@
   "subdir": "osx-64",
   "version": "0.9.4"
  },
+ "metadata_version": 1,
  "name": "flask-oauthlib",
  "raw_recipe": "{%set name = \"flask-oauthlib\" %}\n{%set camelName = \"Flask-OAuthlib\" %}\n{%set version = \"0.9.4\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"bcd6f2f4f58c764824a1de31b9beae22585c5191992d298c0be0b3118dfcbdc6\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - flask\n    - oauthlib >=1.1.2\n    - requests-oauthlib >=0.6.2\n\ntest:\n  imports:\n    - flask_oauthlib\n    - flask_oauthlib.contrib\n    - flask_oauthlib.contrib.client\n    - flask_oauthlib.provider\n\nabout:\n  home: https://github.com/lepture/flask-oauthlib\n  license: BSD 3-Clause\n  summary: 'OAuthlib for Flask'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

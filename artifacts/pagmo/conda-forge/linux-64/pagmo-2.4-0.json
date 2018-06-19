@@ -240,6 +240,7 @@
   "subdir": "linux-64",
   "version": "2.4"
  },
+ "metadata_version": 1,
  "name": "pagmo",
  "raw_recipe": "{% set version = \"2.4\" %}\n\npackage:\n  name: pagmo\n  version: {{ version }}\n\nsource:\n  url: https://github.com/esa/pagmo2/archive/v{{ version }}.tar.gz\n  sha256: ebea1ba004b85f6199a9d53a5969e18449f2923c2976c465e5755d0a42efab7f\n\nbuild:\n  number: 0\n  skip: true  # [(win and py<35) or win32]\n  features:\n    - vc14  # [win and py>=35]\n\nrequirements:\n  build:\n    - python              # [win]\n    - vc 14               # [win and py>=35]\n    - toolchain\n    - cmake\n    - eigen\n    - nlopt\n    - boost-cpp 1.63.*\n    - ipopt               # [unix]\n  run:\n    - vc 14               # [win and py>=35]\n    - eigen\n    - nlopt\n    - boost-cpp 1.63.*\n    - ipopt               # [unix]\n\ntest:\n  commands:\n    - test -f $PREFIX/include/pagmo/pagmo.hpp               # [unix]\n    - if not exist %LIBRARY_INC%\\\\pagmo\\\\pagmo.hpp exit 1   # [win]\n\nabout:\n  home: https://esa.github.io/pagmo2/\n  license: GPL v3 and LGPL v3\n  license_file: COPYING.lgpl3\n  summary: 'A C++ / Python platform to perform parallel computations of optimisation tasks (global and local) via the asynchronous generalized island model'\n\nextra:\n  recipe-maintainers:\n    - bluescarni\n    - darioizzo\n",
  "rendered_recipe": {

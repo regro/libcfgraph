@@ -162,6 +162,7 @@
   "timestamp": 1527870202616,
   "version": "1.5.0"
  },
+ "metadata_version": 1,
  "name": "google-auth",
  "raw_recipe": "{% set name = \"google-auth\" %}\n{% set version = \"1.5.0\" %}\n{% set sha256 = \"1745c9066f698eac3da99cef082914495fb71bc09597ba7626efbbb64c4acc57\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n\n  run:\n    - python\n    - pyasn1-modules >=0.2.1\n    - rsa >=3.1.4,<4dev\n    - six >=1.9.0,<2dev\n    - cachetools >=2.0.0,<3dev\n\ntest:\n  imports:\n    - google.auth\n\nabout:\n  home: https://github.com/GoogleCloudPlatform/google-auth-library-python\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Google authentication library for Python'\n  description: This library provides the ability to authenticate to Google APIs using various\n    methods. It also provides integration with several HTTP libraries.\n  doc_url: https://google-auth.readthedocs.io/en/latest/\n  dev_url: https://github.com/GoogleCloudPlatform/google-auth-library-python\n\nextra:\n  recipe-maintainers:\n    - parthea\n    - jreback\n    - tswast\n    - theacodes\n",
  "rendered_recipe": {

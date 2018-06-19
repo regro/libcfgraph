@@ -748,6 +748,7 @@
   "subdir": "linux-64",
   "version": "2.0.0"
  },
+ "metadata_version": 1,
  "name": "glmnet",
  "raw_recipe": "{% set name = \"glmnet\" %}\n{% set version = \"2.0.0\" %}\n{% set md5 = \"e0465e76af8c22440d086f34d9ad8d5c\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 2\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - numpy 1.11.*\n    - scikit-learn >=0.18.0\n    - scipy >=0.14.1\n    - gcc\n\n  run:\n    - python\n    - numpy >=1.11\n    - scikit-learn >=0.18.0\n    - scipy >=0.14.1\n    - libgcc  # [linux]\n    - libgfortran  # [osx]\n\ntest:\n  imports:\n    - glmnet\n\nabout:\n  home: https://github.com/civisanalytics/python-glmnet\n  license: GPL-2.0\n  summary: 'Python wrapper for glmnet'\n  dev_url: https://github.com/civisanalytics/python-glmnet\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - jseabold\n    - beckermr\n",
  "rendered_recipe": {

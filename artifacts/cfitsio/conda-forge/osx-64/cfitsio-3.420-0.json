@@ -671,6 +671,7 @@
   "subdir": "osx-64",
   "version": "3.420"
  },
+ "metadata_version": 1,
  "name": "cfitsio",
  "raw_recipe": "{% set name = \"cfitsio\" %}\n{% set version = \"3.420\" %}\n{% set nodotversion = version | replace('.', '') %}\n{% set sha256 = \"ee59f1178e1c0f697f39226b05356eac9bc61020dd2676e64600fd8e60f73909\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}{{ nodotversion }}.tar.gz\n  url: http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/{{ name }}{{ nodotversion }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - ldflags.patch\n    - mac_64only.patch\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - curl 7.55.*\n    - toolchain\n  run:\n    - curl >=7.55.0,<8\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libcfitsio.so  # [linux]\n    - test -f ${PREFIX}/lib/libcfitsio.dylib  # [osx]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://heasarc.gsfc.nasa.gov/fitsio/fitsio.html\n  license: fitsio\n  license_file: License.txt\n  summary: \"A library for reading and writing FITS files\"\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
  "rendered_recipe": {

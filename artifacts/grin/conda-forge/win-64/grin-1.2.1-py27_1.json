@@ -524,6 +524,7 @@
   "subdir": "win-64",
   "version": "1.2.1"
  },
+ "metadata_version": 1,
  "name": "grin",
  "raw_recipe": "{% set name = \"grin\" %}\n{% set version = \"1.2.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"bf39303bc563c4f365365b5ff32e219dc2530a4469b7af25aa6a457ec2e29feb\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_value }}\n\nbuild:\n  number: 1\n  skip: True  # [py3k]\n  entry_points:\n    - grin = grin:grin_main\n    - grind = grin:grind_main\n  script:\n    - pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n    - pip \n  run:\n    - python\n\ntest:\n  commands:\n    - grin -h\n    - grind -h\n  imports:\n    - grin\n\nabout:\n  home: http://pypi.python.org/pypi/grin\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: Enhanced grep-like tool\n  description: |\n    Grin is Robert Kern's enhanced grep-like tool analagous to ack(-grep)\n    (perl), rak (ruby), and ag (C).\n  doc_url: https://pypi.python.org/pypi/grin\n  doc_source_url: https://github.com/rkern/grin/blob/master/README.rst\n  dev_url: https://github.com/rkern/grin\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
  "rendered_recipe": {

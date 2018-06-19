@@ -688,6 +688,7 @@
   "subdir": "osx-64",
   "version": "0.6.3"
  },
+ "metadata_version": 1,
  "name": "pycapnp",
  "raw_recipe": "{% set version = \"0.6.3\" %}\n\npackage:\n  name: pycapnp\n  version: {{ version }}\n\nsource:\n  fn: pycapnp-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pycapnp/pycapnp-{{ version }}.tar.gz\n  sha256: b3c5a1fcc93fd02fdc070aeccb89654b87f20bdc740f643cc6378925ed6d4c17\n\nbuild:\n  number: 0\n  # pycapnp does not support Windows due to the lack of dynamic API support in\n  # C++ Cap'n Proto on Windows:\n  # https://github.com/jparyani/pycapnp/issues/53\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - capnproto\n\n  run:\n    - python\n\ntest:\n  imports:\n    - capnp\n\nabout:\n  home: http://jparyani.github.io/pycapnp/\n  license: BSD 2-clause\n  summary: \"A python wrapping of the C++ implementation of the Cap'n Proto library\"\n\nextra:\n  recipe-maintainers:\n    - frol\n",
  "rendered_recipe": {

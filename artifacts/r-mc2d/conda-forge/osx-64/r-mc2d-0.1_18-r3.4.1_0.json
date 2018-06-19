@@ -693,6 +693,7 @@
   "subdir": "osx-64",
   "version": "0.1_18"
  },
+ "metadata_version": 1,
  "name": "r-mc2d",
  "raw_recipe": "{% set version = '0.1-18' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-mc2d\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: mc2d_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/mc2d_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/mc2d/mc2d_{{ version }}.tar.gz\n  sha256: e30d8e826ce3ea0e7b2612fbfea98982019b5ccc7bcbeb166e7a056374455cd2\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-mvtnorm\n\n  run:\n    - r-base\n    - r-mvtnorm\n\ntest:\n  commands:\n    - $R -e \"library('mc2d')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('mc2d')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=mc2d\n  license: GPL (>= 2)\n  summary: A complete framework to build and study Two-Dimensional Monte-Carlo simulations, aka\n    Second-Order Monte-Carlo simulations. Also includes various distributions (pert,\n    triangular, Bernoulli, empirical discrete and continuous).\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'  # [unix]\n  license_file: '{{ environ[\"PREFIX\"] }}\\R\\share\\licenses\\GPL-3'  # [win]\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n",
  "rendered_recipe": {

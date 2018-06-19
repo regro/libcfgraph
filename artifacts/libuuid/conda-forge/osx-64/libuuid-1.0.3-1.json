@@ -24,6 +24,7 @@
   "subdir": "osx-64",
   "version": "1.0.3"
  },
+ "metadata_version": 1,
  "name": "libuuid",
  "raw_recipe": "{% set version = \"1.0.3\" %}\n\npackage:\n    name: libuuid\n    version: {{ version }}\n\nsource:\n    fn: libuuid-{{ version }}.tar.gz\n    url: ftp://ftp.nersc.no/pub/Aleks/libuuid-{{ version }}.tar.gz\n    sha256: 46af3275291091009ad7f1b899de3d0cea0252737550e7919d17237997db5644\n\nbuild:\n    number: 1\n    skip: True  # [win]\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libuuid.a  # [unix]\n        - conda inspect linkages -n _test libuuid  # [unix]\n\nabout:\n    home: http://sourceforge.net/projects/libuuid/\n    license: BSD 3-Clause\n    summary: 'Portable uuid C library.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
  "rendered_recipe": {},

@@ -770,6 +770,7 @@
   "subdir": "noarch",
   "version": "1.2.0"
  },
+ "metadata_version": 1,
  "name": "gpxpy",
  "raw_recipe": "{% set version = \"1.2.0\" %}\n\npackage:\n  name: gpxpy\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/g/gpxpy/gpxpy-{{ version }}.tar.gz\n  sha256: 87cf1cd20210f2fe49ea25c0b95f40d76730cb40669242cae2831fe2ba94b6eb\n\nbuild:\n    noarch: python\n    number: 0\n    script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - gpxpy\n\nabout:\n  home: http://www.trackprofiler.com/gpxpy/index.html\n  license: Apache-2.0\n  summary: 'GPX file parser and GPS track manipulation library.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

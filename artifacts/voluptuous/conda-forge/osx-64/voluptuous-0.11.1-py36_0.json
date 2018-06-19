@@ -665,6 +665,7 @@
   "subdir": "osx-64",
   "version": "0.11.1"
  },
+ "metadata_version": 1,
  "name": "voluptuous",
  "raw_recipe": "{% set name = \"voluptuous\" %}\n{% set version = \"0.11.1\" %}\n{% set sha256 = \"af7315c9fa99e0bfd195a21106c82c81619b42f0bd9b6e287b797c6b6b6a9918\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - flake8\n\n  run:\n    - python\n\ntest:\n  imports:\n    - voluptuous\n\nabout:\n  home: https://github.com/alecthomas/voluptuous\n  license: BSD3\n  summary: Voluptuous is a Python data validation library\n\nextra:\n  recipe-maintainers:\n    - tusharmakkar08\n    - vamega\n",
  "rendered_recipe": {

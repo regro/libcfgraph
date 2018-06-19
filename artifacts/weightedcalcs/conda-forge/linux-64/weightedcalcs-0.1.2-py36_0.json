@@ -594,6 +594,7 @@
   "subdir": "linux-64",
   "version": "0.1.2"
  },
+ "metadata_version": 1,
  "name": "weightedcalcs",
  "raw_recipe": "{% set name = \"weightedcalcs\" %}\n{% set version = \"0.1.2\" %}\n{% set compress_type = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"d2c6024b2df4ba21adf43a4e5ddf93035456eb4119c7ed599b570fbd8f859183\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pandas >=0.19\n\n  run:\n    - python\n    - pandas >=0.19\n\ntest:\n  imports:\n    - weightedcalcs\n\nabout:\n  home: https://github.com/jsvine/weightedcalcs\n  license_file: LICENSE.txt\n  license: MIT\n  license_family: MIT\n  summary: 'Pandas-based utility to calculate weighted means, medians, distributions, standard deviations, and more.'\n  dev_url: https://github.com/jsvine/weightedcalcs\n  doc_url: https://github.com/jsvine/weightedcalcs\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

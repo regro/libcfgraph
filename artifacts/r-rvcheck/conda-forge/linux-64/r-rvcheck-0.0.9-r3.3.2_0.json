@@ -727,6 +727,7 @@
   "subdir": "linux-64",
   "version": "0.0.9"
  },
+ "metadata_version": 1,
  "name": "r-rvcheck",
  "raw_recipe": "{% set version = '0.0.9' %}\n\npackage:\n  name: r-rvcheck\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: rvcheck_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/rvcheck_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/rvcheck/rvcheck_{{ version }}.tar.gz\n  sha256: 6e7be7b029d28181a1b57ebd4d25978f3459722ffdb45a3698157a7f943bea92\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('rvcheck')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('rvcheck')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=rvcheck\n  license: Artistic-2.0\n  summary: Check latest release version of R and R package (both in 'CRAN', 'Bioconductor' or\n    'Github').\n\nextra:\n  recipe-maintainers:\n    - bgruening\n    - daler\n    - johanneskoester\n    - rvalieris\n",
  "rendered_recipe": {

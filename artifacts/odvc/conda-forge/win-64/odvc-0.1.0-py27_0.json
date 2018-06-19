@@ -95,6 +95,7 @@
   "subdir": "win-64",
   "version": "0.1.0"
  },
+ "metadata_version": 1,
  "name": "odvc",
  "raw_recipe": "{% set version = \"0.1.0\" %}\n\npackage:\n  name: odvc\n  version: {{ version }}\n\nsource:\n  fn: odvc-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/o/odvc/odvc-{{ version }}.tar.gz\n  sha256: 70bfc10e89658bb0f1a9426184c2245d28f5d01da45cf3d49fd0c24f0a9bf7c7\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - dask\n    - netcdf4\n    - numpy\n\ntest:\n  imports:\n    - odvc\n\nabout:\n  home: https://github.com/pyoceans/odvc\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Ocean Dimensionless Vertical Coordinates'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -175,6 +175,7 @@
   "timestamp": 1526759484825,
   "version": "4.0.3"
  },
+ "metadata_version": 1,
  "name": "pbr",
  "raw_recipe": "{% set name = \"pbr\" %}\n{% set version = \"4.0.3\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"6874feb22334a1e9a515193cba797664e940b763440c88115009ec323a7f2df5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  noarch: python\n  number: 0\n  preserve_egg_dir: True\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - pbr = pbr.cmd.main:main\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n    - pip\n\ntest:\n  imports:\n    - pbr\n    - pbr.cmd\n    - pbr.hooks\n\n  commands:\n    - pbr --help\n\nabout:\n  home: https://launchpad.net/pbr\n  license_file: LICENSE\n  license: Apache 2.0\n  license_family: Apache\n  summary: Python Build Reasonableness\n  doc_url: https://docs.openstack.org/developer/pbr/\n  dev_url: https://git.openstack.org/cgit/openstack-dev/pbr\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pmlandwehr\n",
  "rendered_recipe": {

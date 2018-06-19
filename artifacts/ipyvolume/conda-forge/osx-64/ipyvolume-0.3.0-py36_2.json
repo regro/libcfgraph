@@ -117,6 +117,7 @@
   "subdir": "osx-64",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "ipyvolume",
  "raw_recipe": "{% set name = \"ipyvolume\" %}\n{% set version = \"0.3.0\" %}\n{% set sha256 = \"3ad5f6b2e7548be28106a7c64a9507532bb40a4b64778f8b3f2c89ca3adbac76\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 2\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - traittypes\n    - traitlets\n    - ipywidgets >=6.0\n    - pillow\n    - scipy\n    - numpy\n\ntest:\n  imports:\n    - ipyvolume\n\nabout:\n  home: https://github.com/maartenbreddels/ipyvolume\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'IPython widget for rendering 3d volumes in the Jupter notebook'\n  doc_url: https://ipyvolume.readthedocs.io/\n  dev_url: https://github.com/maartenbreddels/ipyvolume\n\nextra:\n  recipe-maintainers:\n    - maartenbreddels\n",
  "rendered_recipe": {

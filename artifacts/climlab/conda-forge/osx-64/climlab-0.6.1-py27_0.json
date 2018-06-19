@@ -741,6 +741,7 @@
   "subdir": "osx-64",
   "version": "0.6.1"
  },
+ "metadata_version": 1,
  "name": "climlab",
  "raw_recipe": "{% set name = \"climlab\" %}\n{% set version = \"0.6.1\" %}\n{% set sha256 = \"5c392f165fe49ffc8b76c4dce0193f254483475a69453c9ffc413a14a79e447e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win and py3k]\n\nrequirements:\n  build:\n    - toolchain\n    - mingwpy  # [win]\n    - gcc  # [osx]\n    - python\n    - setuptools\n    - libgfortran  # [linux]\n    - numpy 1.11.*\n\n  run:\n    - python\n    - numpy >=1.11\n    - scipy\n    - netcdf4\n    - xarray\n    - pytest\n    - libgfortran  # [linux or osx]\n    - future\n    - numba  # [py2k]\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - climlab\n  commands:\n    - pytest -v --pyargs climlab.tests.test_rrtm\n\nabout:\n  home: https://github.com/brian-rose/climlab\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Python package for process-oriented climate modeling\n  doc_url: http://climlab.readthedocs.io/\n  dev_url: https://github.com/brian-rose/climlab\n\nextra:\n  recipe-maintainers:\n    - brian-rose\n",
  "rendered_recipe": {

@@ -788,6 +788,7 @@
   "subdir": "noarch",
   "version": "0.2.2"
  },
+ "metadata_version": 1,
  "name": "absl-py",
  "raw_recipe": "{% set name = \"absl-py\" %}\n{% set version = \"0.2.2\" %}\n{% set file_ext = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"e0eb8358b549552b1cc5972350bc3e41dd0a926c15b3ff95ce60f3c78c80824c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ file_ext }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}\n  {{ hash_type }}: {{ hash_value }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - absl\n    - absl.flags\n    - absl.logging\n    - absl.testing\n\nabout:\n  home: https://abseil.io/\n  license: Apache 2.0\n  license_family: APACHE\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: Abseil Python Common Libraries, see https://github.com/abseil/abseil-py.\n  doc_url: https://abseil.io/docs/\n  dev_url: https://github.com/abseil/abseil-py\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n",
  "rendered_recipe": {

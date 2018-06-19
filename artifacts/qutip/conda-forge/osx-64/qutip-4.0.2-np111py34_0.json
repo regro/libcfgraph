@@ -210,6 +210,7 @@
   "subdir": "osx-64",
   "version": "4.0.2"
  },
+ "metadata_version": 1,
  "name": "qutip",
  "raw_recipe": "{% set version = \"4.0.2\" %}\n\npackage:\n    name: qutip\n    version: {{ version }}\n\nsource:\n    fn: qutip-{{ version }}.tar.gz\n    url: http://qutip.org/downloads/{{ version }}/qutip-{{ version }}.tar.gz\n    sha256: 1bda0b0c2730d76d87d2a9bf15cacf0393afa78d4156a5b6086c338515edc756\n\nbuild:\n    number: 0\n    script: $PYTHON setup.py install  # [unix]\n    skip: True                        # [win and py35]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cython >=0.21\n    - numpy x.x\n    - scipy >=0.15\n    - mingwpy                         # [win]\n    \n  run:\n    - python\n    - setuptools\n    - numpy x.x\n    - scipy >=0.15\n    - cython >=0.21\n    - mingwpy                         # [win]\n    \ntest:\n  imports:\n    - qutip\n\nabout:\n    home: http://qutip.org\n    license: BSD 3-clause\n    summary: 'QuTiP is open-source software for simulating the dynamics of open quantum systems and optimal quantum control'\n\nextra:\n  recipe-maintainers:\n    - ajgpitch\n    - sahmed95\n",
  "rendered_recipe": {},

@@ -36,6 +36,7 @@
   "subdir": "osx-64",
   "version": "0.1.0"
  },
+ "metadata_version": 1,
  "name": "conda-testenv",
  "raw_recipe": "package:\n  name: conda-testenv\n  version: 0.1.0\n\nsource:\n  git_url: https://github.com/SciTools/conda-testenv.git\n  git_tag: v0.1.0\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - conda\n    - conda-build\n\ntest:\n  imports:\n    - conda_testenv\n  commands:\n    - conda testenv --help\n    - conda-testenv --help\n    - conda-testenv --version\n\nabout:\n  home: https://github.com/SciTools/conda-testenv\n  license: BSD\n  summary: 'Run tests of all packages in an environment.'\n",
  "rendered_recipe": {

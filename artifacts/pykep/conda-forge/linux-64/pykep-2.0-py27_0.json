@@ -748,6 +748,7 @@
   "subdir": "linux-64",
   "version": "2.0"
  },
+ "metadata_version": 1,
  "name": "pykep",
  "raw_recipe": "{% set name = \"pykep\" %}\n{% set version = \"2.0\" %}\n{% set sha256 = \"274a2053e5d85a6d5c9f60aaeeb2f70505de3b94fb5c9b06e68f92f3defaf86d\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/esa/pykep/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  \nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - boost 1.65.1\n    - python\n\n  run:\n    - boost 1.65.1\n    - python\n\n\ntest:\n  commands:\n    - test -f\n  imports:\n    - pykep\n\nabout:\n  home: https://esa.github.io/pykep/\n  license: GPL v3 and LGPL v3\n  license_file: LICENSE.txt\n  summary: 'pykep is a scientific library providing basic tools for interplanetary trajectory design.'\n\nextra:\n  recipe-maintainers:\n    - darioizzo\n",
  "rendered_recipe": {

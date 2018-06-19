@@ -875,6 +875,7 @@
   "subdir": "win-64",
   "version": "3.7"
  },
+ "metadata_version": 1,
  "name": "r-plotrix",
  "raw_recipe": "{% set version = \"3.7\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-plotrix\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: plotrix_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/plotrix_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/plotrix/plotrix_{{ version }}.tar.gz\n  sha256: 3e5f232546b05cbb92242ad595842389f94c57918ebd4bd60051b471930d8867\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\nrequirements:\n  build:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('plotrix')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('plotrix')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=plotrix\n  license: GPL (>= 2)\n  summary: Lots of plots, various labeling, axis and color scaling functions.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n",
  "rendered_recipe": {

@@ -526,6 +526,7 @@
   "type": "app",
   "version": "0.9.0"
  },
+ "metadata_version": 1,
  "name": "glueviz",
  "raw_recipe": "{% set version = \"0.9.0\" %}\n\npackage:\n  name: glueviz\n  version: {{version}}\n\nsource:\n  fn: glueviz-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/g/glueviz/glueviz-{{version}}.tar.gz\n  md5: 34b4923e4e2441a95b1830ede26ddca2\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  osx_is_app: True\n\nrequirements:\n\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy\n    - scipy\n    - matplotlib\n    - astropy\n    - ipython\n    - ipykernel\n    - h5py\n    - pandas\n\n    # The conda-forge version of PyQt 4.11.4 is currently broken because\n    # it doesn't include session-related functionality, so we disallow\n    # this version for now.\n    - pyqt !=4.11.4\n\n    - qtconsole\n    - xlrd\n    - scikit-image\n    - python.app  # [osx]\n    - setuptools\n    - dill\n    - plotly\n    - qtpy\n\ntest:\n  requires:\n    - mock\n    - pytest\n  imports:\n    - glue\n    - glue.core\n    - glue.app.qt\n  commands:\n    - glue --version\n    - glue-deps list\n\napp:\n  entry: glue\n  icon: logo.png\n  summary: Multi-dimensional linked data exploration\n  type: desk\n\nabout:\n  home: http://glueviz.org\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: Multi-dimensional linked data exploration\n\nextra:\n  recipe-maintainers:\n    - astrofrog\n",
  "rendered_recipe": {},

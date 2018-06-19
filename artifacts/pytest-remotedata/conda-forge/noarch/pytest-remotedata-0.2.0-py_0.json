@@ -754,6 +754,7 @@
   "subdir": "noarch",
   "version": "0.2.0"
  },
+ "metadata_version": 1,
  "name": "pytest-remotedata",
  "raw_recipe": "{% set name = \"pytest-remotedata\" %}\n{% set version = \"0.2.0\" %}\n{% set git_url = \"https://github.com/astropy/pytest-remotedata\" %}\n{% set sha256 = \"8ee2212818d89653132a7ffea0fb219eb2b00ecabc43f4d84f12e1fdf4853234\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - pytest >=3.1\n    - six\n  run:\n    - python\n    - pytest >=3.1\n    - six\n\ntest:\n  imports:\n    - pytest_remotedata\n\nabout:\n  home: {{ git_url }}\n  license: BSD\n  summary: 'Pytest plugin for controlling remote data access'\n  description: |\n    This package provides a plugin for the pytest framework that allows\n    developers to control unit tests that require access to data from the\n    internet.\n  doc_url: {{ git_url }}\n  dev_url: {{ git_url }}\n\nextra:\n  recipe-maintainers:\n    - astrofrog-conda-forge\n    - drdavella\n    - mwcraig\n",
  "rendered_recipe": {

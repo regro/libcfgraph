@@ -680,6 +680,7 @@
   "subdir": "osx-64",
   "version": "3.9.0"
  },
+ "metadata_version": 1,
  "name": "petsc4py",
  "raw_recipe": "{% set version = '3.9.0' %}\n{% set sha256 = 'cfe4ffa315706a371ca54e2027b4a8df8d696df253ab5ae7c0dbe5eccfa221e4' %}\n{% set mpi = os.environ.get('MPI') or 'mpich' %}\n\npackage:\n  name: petsc4py\n  version: {{version}}\n\nsource:\n  fn: petsc4py-{{version}}.tar.gz\n  url: https://bitbucket.org/petsc/petsc4py/downloads/petsc4py-{{version}}.tar.gz\n  sha256: {{sha256}}\n\nbuild:\n  number: 0\n  script: PETSC_DIR=$PREFIX pip -v install --no-deps .\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - pip\n    - numpy 1.8.*\n    - {{mpi}}\n    - petsc {{version[:3]}}*\n  run:\n    - python\n    - numpy >=1.8\n    - {{mpi}}\n    - petsc {{version[:3]}}*\n\ntest:\n  imports:\n    - petsc4py\n    - petsc4py.PETSc\n\nabout:\n  home: https://bitbucket.org/petsc/petsc4py\n  summary: Python bindings for PETSc\n  license: BSD 2-Clause\n  license_file: LICENSE.rst\n\nextra:\n  recipe-maintainers:\n    - dalcinl\n    - minrk\n",
  "rendered_recipe": {

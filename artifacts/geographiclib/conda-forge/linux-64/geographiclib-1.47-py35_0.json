@@ -101,6 +101,7 @@
   "subdir": "linux-64",
   "version": "1.47"
  },
+ "metadata_version": 1,
  "name": "geographiclib",
  "raw_recipe": "{% set name = \"geographiclib\" %}\n{% set version = \"1.47\" %}\n{% set sha256 = \"5350d64ea9309626e6e80b272b8891bef2fe165c8febf2a1757e976f4b3620f4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    # https://github.com/conda-forge/staged-recipes/pull/2586#issuecomment-285996477\n    - fix-win32-py27-test.patch\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - geographiclib\n  commands:\n    - python -m unittest -v geographiclib.test.test_geodesic\n\nabout:\n  home: https://geographiclib.sourceforge.io/html/python/\n  license: MIT\n  license_family: MIT\n  summary: 'The geodesic routines from GeographicLib'\n\n  description: |\n    This implements algorithms for geodesics (Karney, 2013) for solving the\n    direct and inverse problems for an ellipsoid of revolution.\n  doc_url: https://geographiclib.sourceforge.io/html/python/\n  dev_url: https://sourceforge.net/projects/geographiclib/\n\nextra:\n  recipe-maintainers:\n    - QuLogic\n    - cffk\n",
  "rendered_recipe": {

@@ -87,6 +87,7 @@
   "subdir": "win-64",
   "version": "1.8.1"
  },
+ "metadata_version": 1,
  "name": "jdatetime",
  "raw_recipe": "{% set version = \"1.8.1\" %}\n\npackage:\n  name: jdatetime\n  version: {{ version }}\n\nsource:\n  fn: jdatetime-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/j/jdatetime/jdatetime-{{ version }}.tar.gz\n  sha256: b6bb0bbd822eb0d3f9a55c4e8bfda0ccace3dcfa6d16bdcb29c124ad2ce66335\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - jdatetime\n\nabout:\n  home: https://github.com/slashmili/python-jalali\n  license: PSF\n  summary: 'Jalali datetime binding for python'\n\nextra:\n  recipe-maintainers:\n    - tacaswell\n    - ocefpaf\n",
  "rendered_recipe": {

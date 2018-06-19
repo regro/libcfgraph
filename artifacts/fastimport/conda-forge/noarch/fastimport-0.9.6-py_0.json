@@ -731,6 +731,7 @@
   "subdir": "noarch",
   "version": "0.9.6"
  },
+ "metadata_version": 1,
  "name": "fastimport",
  "raw_recipe": "{% set name = \"fastimport\" %}\n{% set version = \"0.9.6\" %}\n{% set sha256 = \"83d0ae7b14f58c90cf56d0bf190d339abbd8bf1be702492c3d15d74c6cd412ab\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install \n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - fastimport\n    - fastimport.tests\n    - fastimport.processors\n\nabout:\n  home: https://github.com/jelmer/python-fastimport\n  license: GPL-2.0\n  license_family: GPL\n  license_file: COPYING\n  summary: 'VCS fastimport/fastexport parser'\n\n  description: |\n    This package provides a parser for and generator of the Git fastimport format.\n  doc_url: https://www.kernel.org/pub/software/scm/git/docs/git-fast-import.html\n  dev_url: https://github.com/jelmer/python-fastimport\n\nextra:\n  recipe-maintainers:\n    - mikofski\n",
  "rendered_recipe": {

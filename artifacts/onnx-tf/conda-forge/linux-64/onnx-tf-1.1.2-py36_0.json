@@ -153,6 +153,7 @@
   "timestamp": 1527011715686,
   "version": "1.1.2"
  },
+ "metadata_version": 1,
  "name": "onnx-tf",
  "raw_recipe": "{% set name = \"onnx-tf\" %}\n{% set version = \"1.1.2\" %}\n{% set sha256 = \"a6cb0bb70a7d34e0dab8882efd94d2e033ac2e2cab7c5fd2007bc38097c13554\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  # Could be noarch: python except for the tests....\n  number: 0\n  script: python -m pip install --ignore-installed --no-deps .\n  skip: true  # [win32 or (win64 and py27)]\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n    - onnx >=1.1.0  # in ONNX_VERSION_NUMBER\n    - tensorflow\n\ntest:\n  imports:\n    # Requires importing tensorflow, which currently the Linux CI can't do.\n    - onnx_tf  # [not linux]\n\nabout:\n  home: http://github.com/onnx/onnx-tensorflow\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Experimental Tensorflow Backend for ONNX'\n  doc_url: https://github.com/onnx/onnx-tensorflow\n  dev_url: https://github.com/onnx/onnx-tensorflow\n\nextra:\n  recipe-maintainers:\n    - dougalsutherland\n",
  "rendered_recipe": {

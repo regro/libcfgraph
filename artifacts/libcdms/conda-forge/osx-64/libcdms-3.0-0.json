@@ -679,6 +679,7 @@
   "subdir": "osx-64",
   "version": "3.0"
  },
+ "metadata_version": 1,
  "name": "libcdms",
  "raw_recipe": "{% set name = \"libcdms\" %}\n{% set version = \"3.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/UV-CDAT/libcdms/archive/master.tar.gz\n  sha256: 46613f202babe43d8beb07e8ff65c114afeeb36093876e36c7fcaaf306984990\n\nbuild:\n  number: 0\n  skip: True  # [win] \n\nrequirements:\n  build:\n    - hdf5 1.10.*\n    - libnetcdf 4.4.*\n    - jasper\n    - g2clib\n    - libpng >=1.6.28,<1.7\n    - libtiff 4.0.*\n    - jpeg 9*\n    - libdrs\n    - gcc\n  run:\n    - hdf5 1.10.*\n    - libnetcdf 4.4.*\n    - jasper\n    - g2clib\n    - libpng >=1.6.28,<1.7\n    - libtiff 4.0.*\n    - jpeg 9*\n    - libdrs\n    - libgfortran\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libcdms.a\n\nabout:\n  home: https://github.com/UV-CDAT/libcdms\n  license: '2-Clause BSD'\n  license_file: 'LICENSE'\n  summary: 'Climate Data Management System library'\n  description: |\n      The Climate Data Management System is an object-oriented data \n      management system, specialized for organizing multidimensional, \n      gridded data used in climate analysis and simulation.\n  dev_url: https://github.com/UV-CDAT/libcdms\n\nextra:\n  recipe-maintainers:\n    - dnadeau4\n    - doutriaux1\n",
  "rendered_recipe": {

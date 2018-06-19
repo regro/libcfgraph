@@ -96,6 +96,7 @@
   "subdir": "osx-64",
   "version": "0.2.1"
  },
+ "metadata_version": 1,
  "name": "pygeogrids",
  "raw_recipe": "{% set version = \"0.2.1\" %}\n\npackage:\n  name: pygeogrids\n  version: {{ version }}\n\nsource:\n  fn: pygeogrids-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pygeogrids/pygeogrids-{{ version }}.tar.gz\n  sha256: b0cf2a89c4a033b597a930732ce338354484c9ad06e37164bd32f73e598a8162\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pyscaffold\n  run:\n    - python\n    - numpy\n    - netcdf4\n    - pyproj\n    - scipy\n    - pykdtree  # [not linux]\n\ntest:\n  imports:\n    - pygeogrids\n    - pygeogrids.grids\n\nabout:\n  home: https://github.com/TUW-GEO/pygeogrids\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Creation and handling of Discrete Global Grids or Point collections.'\n\nextra:\n  recipe-maintainers:\n    - cpaulik\n    - ocefpaf\n",
  "rendered_recipe": {

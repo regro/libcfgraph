@@ -62,6 +62,7 @@
   "subdir": "linux-64",
   "version": "0.0.1"
  },
+ "metadata_version": 1,
  "name": "hive-thrift-py",
  "raw_recipe": "{%set name = \"hive-thrift-py\" %}\n{%set version = \"0.0.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"c0b2554527beb040c8009b7af9f363f0498df2f985746c8dfd6cc41fdce3d6e1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n  patches:\n    - setup.patch  # [win]\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - fb303\n    - fb303_scripts\n    - hive_metastore\n    - hive_serde\n    - hive_service\n    - queryplan\n    - thrift\n    - thrift.protocol\n    - thrift.reflection\n    - thrift.reflection.limited\n    - thrift.server\n    - thrift.transport\n\nabout:\n  home: http://hive.apache.org\n  license: Apache 2.0\n  summary: 'Hive Python Thrift Libs'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

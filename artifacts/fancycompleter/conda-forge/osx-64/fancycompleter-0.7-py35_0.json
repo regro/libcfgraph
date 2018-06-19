@@ -89,6 +89,7 @@
   "subdir": "osx-64",
   "version": "0.7"
  },
+ "metadata_version": 1,
  "name": "fancycompleter",
  "raw_recipe": "{% set name = \"fancycompleter\" %}\n{% set version = \"0.7\" %}\n{% set sha256 = \"5044bf91766dde3addfea81aaf36bacce89e1a872a10567f57e51f981c531eb7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - pyreadline  # [win]\n    - pyrepl      # [not win and py2k]\n\ntest:\n  imports:\n    - fancycompleter\n\nabout:\n  home: https://bitbucket.org/antocuni/fancycompleter\n  license: BSD\n  license_family: BSD\n  summary: 'colorful Python TAB completion'\n  # license file missing: https://bitbucket.org/antocuni/fancycompleter/issues/5\n  # license_file: LICENSE.txt\n  description: |\n    fancycompleter is a module to improve your experience in Python by adding\n    TAB completion to the interactive prompt. It is an extension of the\n    stdlib's rlcompleter module.\n  doc_url: https://bitbucket.org/antocuni/fancycompleter\n  dev_url: https://bitbucket.org/antocuni/fancycompleter\n\nextra:\n  recipe-maintainers:\n    - kynan\n",
  "rendered_recipe": {

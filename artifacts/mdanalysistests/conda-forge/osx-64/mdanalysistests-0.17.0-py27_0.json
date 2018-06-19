@@ -985,6 +985,7 @@
   "subdir": "osx-64",
   "version": "0.17.0"
  },
+ "metadata_version": 1,
  "name": "mdanalysistests",
  "raw_recipe": "{% set name = \"MDAnalysisTests\" %}\n{% set version = \"0.17.0\" %}\n{% set sha256 = \"afa44093487dbec57ec4f8a158c23cf35b580d5f0362c1b2913864831e553a0a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - mdanalysis =={{ version }}\n    - psutil\n    - mock\n    - pytest\n\ntest:\n  imports:\n    - MDAnalysisTests\n    - MDAnalysisTests.datafiles\n\nabout:\n  home: https://github.com/MDAnalysis/mdanalysis\n  license: GPL-2.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: 'Tests and test files for MDAnalysis package'\n\nextra:\n  recipe-maintainers:\n    - kain88-de\n    - orbeckst\n    - richardjgowers\n",
  "rendered_recipe": {

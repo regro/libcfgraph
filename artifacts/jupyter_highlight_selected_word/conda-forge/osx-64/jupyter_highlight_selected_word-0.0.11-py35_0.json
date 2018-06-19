@@ -93,6 +93,7 @@
   "subdir": "osx-64",
   "version": "0.0.11"
  },
+ "metadata_version": 1,
  "name": "jupyter_highlight_selected_word",
  "raw_recipe": "{% set name = 'jupyter_highlight_selected_word' %}\n{% set version = '0.0.11' %}\n{% set sha256 = '3e0ae5f27f9f9e7b2de64b65ab5bc8d77481c4b95ee95b852adc48772932465d' %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - jupyter_contrib_core >=0.3\n    - notebook >=4.0\n\ntest:\n  imports:\n    - jupyter_highlight_selected_word\n\nabout:\n  summary: |\n    Jupyter notebook extension that enables highlighting of all instances of\n    the currently-selected or cursor-adjecent word in either the current cell's\n    editor, or in the whole notebook.\n    Based on the  CodeMirror addon\n    https://codemirror.net/demo/matchhighlighter.html\n    extended to work across multiple editors.\n  home: https://github.com/jcb91/jupyter_highlight_selected_word\n  license_file: LICENSE.txt\n  license: BSD 3-clause\n\nextra:\n  recipe-maintainers:\n    - jcb91\n",
  "rendered_recipe": {

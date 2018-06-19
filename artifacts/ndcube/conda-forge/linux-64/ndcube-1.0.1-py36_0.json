@@ -789,6 +789,7 @@
   "subdir": "linux-64",
   "version": "1.0.1"
  },
+ "metadata_version": 1,
  "name": "ndcube",
  "raw_recipe": "{% set name = \"ndcube\" %}\n{% set version = \"1.0.1\" %}\n{% set sha256 = \"e055a564e48f603700798e86cfa14a94c0e21aacba9950f36ac6d4a3464df355\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --offline --no-git --single-version-externally-managed --record record.txt\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - astropy\n\n  run:\n    - python\n    - astropy\n    - matplotlib\n    - sunpy >=0.8\n\ntest:\n  imports:\n    - ndcube\n    - ndcube.tests\n    - ndcube.utils\n    - ndcube.utils.tests\n    - ndcube.visualization\n\nabout:\n  home: http://sunpy.org\n  license: BSD-2-Clause\n  license_file: 'LICENSE.rst'\n  summary: 'A base package for multi-dimensional contiguious and non-contiguious spatially aware arrays.'\n  license_family: BSD\n  dev_url: https://github.com/sunpy/ndcube\n\nextra:\n  recipe-maintainers:\n    - SolarDrew\n    - Cadair\n    - DanRyanIrish\n",
  "rendered_recipe": {

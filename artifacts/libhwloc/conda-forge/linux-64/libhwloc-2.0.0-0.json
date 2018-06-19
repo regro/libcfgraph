@@ -1210,6 +1210,7 @@
   "subdir": "linux-64",
   "version": "2.0.0"
  },
+ "metadata_version": 1,
  "name": "libhwloc",
  "raw_recipe": "{% set name = \"libhwloc\" %}\n{% set pname = \"hwloc\" %}\n{% set version = \"2.0.0\" %}\n{% set sha256 = \"a0d425a0fc7c7e3f2c92a272ffaffbd913005556b4443e1887d2e1718d902887\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ pname }}-{{ version }}.tar.gz\n  url: https://www.open-mpi.org/software/hwloc/v{{ '.'.join(version.split('.')[:2]) }}/downloads/{{ pname }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - libxml2 2.9.*\n  run:\n    - libxml2 2.9.*\n\ntest:\n  commands:\n    - hwloc-ls\n\nabout:\n  home: https://www.open-mpi.org/projects/hwloc/\n  license: BSD 3-Clause\n  license_file: COPYING\n  summary: 'Portable Hardware Locality (hwloc)'\n\nextra:\n  recipe-maintainers:\n    - inducer\n",
  "rendered_recipe": {

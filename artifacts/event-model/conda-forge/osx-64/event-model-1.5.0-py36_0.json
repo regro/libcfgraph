@@ -132,6 +132,7 @@
   "timestamp": 1526440153333,
   "version": "1.5.0"
  },
+ "metadata_version": 1,
  "name": "event-model",
  "raw_recipe": "{% set version = \"1.5.0\" %}\n\npackage:\n    name: event-model\n    version: {{ version }}\n\nsource:\n    url: https://github.com/NSLS-II/event-model/archive/v{{ version }}.tar.gz\n    fn: event-model-v{{version}}.tar.gz\n    sha256: d8fefcb79b227963ef4415205416099665f8d6642e1a3c7e8c9eb4e8b0042bb2\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n\n    run:\n        - python\n        - enum34  # [py2k]\n        - setuptools\n\ntest:\n    imports:\n        - event_model\n\nabout:\n    home: https://github.com/NSLS-II/event-model\n    license: BSD 3-Clause\n    summary: data model for event-based data collection and analysis\n\nextra:\n    recipe-maintainers:\n        - ericdill\n        - licode\n        - tacaswell\n        - CJ-Wright\n",
  "rendered_recipe": {

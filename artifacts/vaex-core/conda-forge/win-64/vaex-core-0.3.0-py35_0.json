@@ -680,6 +680,7 @@
   "subdir": "win-64",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "vaex-core",
  "raw_recipe": "{% set name = \"vaex-core\" %}\n{% set version = \"0.3.0\" %}\n{% set sha256 = \"55c23fe9894cf763a7b9dd2d18783474d326a245c114d7b1062d0c32ad49a1a3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n     - vaex = vaex.__main__:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy 1.11.*\n    - toolchain\n  run:\n    - python\n    - numpy >=1.11\n    - astropy >=1\n    - aplus\n    - futures >=2.2.0  # [py27]\n    - future >=0.15.2\n    - pyyaml\n    - progressbar2\n    - psutil >=1.2.1\n    - requests\n    - six\n    - cloudpickle\n\ntest:\n  imports:\n    - vaex\n    - vaex.vaexfast\n    - vaex.core\n\nabout:\n  home: https://www.github.com/maartenbreddels/vaex\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'Core of vaex'\n  doc_url: http://vaex.astro.rug.nl/latest\n  dev_url: https://www.github.com/maartenbreddels/vaex\n\nextra:\n  recipe-maintainers:\n    - maartenbreddels\n",
  "rendered_recipe": {

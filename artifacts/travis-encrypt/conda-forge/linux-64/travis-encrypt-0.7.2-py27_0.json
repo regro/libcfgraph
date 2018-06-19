@@ -632,6 +632,7 @@
   "subdir": "linux-64",
   "version": "0.7.2"
  },
+ "metadata_version": 1,
  "name": "travis-encrypt",
  "raw_recipe": "package:\n  name: travis-encrypt\n  version: \"0.7.2\"\n\nsource:\n  url: https://files.pythonhosted.org/packages/63/ed/71a981d4aa842fb0ed827bcc0560c09392635210497d425b70452c7f3d14/travis-encrypt-0.7.2.tar.gz\n  sha256: 185a3a8a01be2fa4b88b7b2a0b7bbf8fbbe684f1e154cfbafcd4bd3d1bd01f94\nbuild:\n  number: 0\n  entry_points:\n    - travis-encrypt=travis.cli:cli\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - click >=6.6\n    - cryptography >=1.7.1\n    - pyyaml >=3.12\n    - requests >=2.12.5\n\ntest:\n  imports:\n    - travis\n\n  commands:\n    - travis-encrypt --help\n\nabout:\n  home: https://www.github.com/mandeep/Travis-Encrypt\n  license: GPL-3.0\n  summary: 'A command line application that encrypts passwords for use with Travis CI.'\n  license_family: GPL3\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n   - mandeep\n",
  "rendered_recipe": {

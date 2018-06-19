@@ -104,6 +104,7 @@
   "subdir": "linux-64",
   "version": "1.4.9"
  },
+ "metadata_version": 1,
  "name": "amqp",
  "raw_recipe": "{% set version = \"1.4.9\" %}\n\npackage:\n    name: amqp\n    version: {{ version }}\n\nsource:\n    fn: amqp-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/a/amqp/amqp-{{ version }}.tar.gz\n    md5: df57dde763ba2dea25b3fa92dfe43c19\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - amqp\n\nabout:\n    home: http://github.com/celery/py-amqp\n    license: BSD 3-clause\n    license_family: BSD\n    license_file: LICENSE\n    summary: Low-level AMQP client for Python (fork of amqplib)\n\nextra:\n    recipe-maintainers:\n        - anguslees\n        - kwilcox\n",
  "rendered_recipe": {

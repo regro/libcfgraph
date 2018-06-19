@@ -922,6 +922,7 @@
   "subdir": "linux-64",
   "version": "7.7.31"
  },
+ "metadata_version": 1,
  "name": "lmod",
  "raw_recipe": "{% set name = \"lmod\" %}\n{% set version = \"7.7.31\" %}\n{% set sha256 = \"97ce9e81545a7f13c18da82e2d0af8b4f6aa83f3ce7f86e81e3d9e837ec6a23c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/TACC/Lmod/archive/{{version}}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: True  # [win]\n  number: 0\n\nrequirements:\n  build:\n    - gcc  # [linux]\n    - llvm  # [osx]\n    - zlib 1.2.*\n    - lua\n    - luarocks\n    - lua-luafilesystem\n    - lua-luaposix \n  run:\n    - libgcc  # [linux]\n    - zlib 1.2.*\n    - lua\n    - luarocks\n    - lua-luafilesystem\n    - lua-luaposix \n\ntest:\n  commands:\n    - type module\n    - env | grep MODULEPATH_ROOT\n    - env | grep MODULEPATH\n    - env | grep MODULESHOME\n\nabout:\n  home: https://github.com/TACC/Lmod\n  license: MIT\n  license_family: MIT\n  #license_file: LICENSE.txt\n  summary: 'Lmod: An Environment Module System based on Lua, Reads TCL Modules, Supports a Software Hierarchy'\n  dev_url: https://github.com/TACC/Lmod\n  doc_url: http://lmod.readthedocs.org/\n\nextra:\n  recipe-maintainers:\n    - jerowe \n",
  "rendered_recipe": {

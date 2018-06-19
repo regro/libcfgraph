@@ -87,6 +87,7 @@
   "subdir": "osx-64",
   "version": "5.2"
  },
+ "metadata_version": 1,
  "name": "rfc3339",
  "raw_recipe": "{% set name = \"rfc3339\" %}\n{% set version = \"5.2\" %}\n{% set sha256 = \"e1d7728374e4f0863c491816281fe89dae701fa3b3eaf5fe0ff89aa4be775d72\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  source_files:\n    - rfc3339.py\n  commands:\n    - python rfc3339.py\n  imports:\n    - rfc3339\n\nabout:\n  home: https://bitbucket.org/henry/rfc3339\n  license: ISCL\n  license_family: BSD\n  # There is currently no license file in the repo\n  # see https://bitbucket.org/henry/rfc3339/issues/5/missing-license\n  # license_file: LICENSE.txt\n  summary: 'Format dates according to the RFC 3339'\n  dev_url: https://bitbucket.org/henry/rfc3339\n\nextra:\n  recipe-maintainers:\n    - kynan\n",
  "rendered_recipe": {

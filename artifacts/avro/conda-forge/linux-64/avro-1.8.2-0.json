@@ -733,6 +733,7 @@
   "subdir": "linux-64",
   "version": "1.8.2"
  },
+ "metadata_version": 1,
  "name": "avro",
  "raw_recipe": "{% set version = \"1.8.2\" %}\n{% set hash = \"5d7cc534873d7fce31fb97b9abb7ccd15d6de728\" %}\n\npackage:\n    name: avro\n    version: {{ version }}\n\nsource:\n    fn: avro-c-{{ version }}.tar.gz\n    url: https://archive.apache.org/dist/avro/avro-{{ version }}/c/avro-c-{{ version }}.tar.gz\n    sha1: {{ hash }}\n\nbuild:\n    number: 0\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - toolchain\n        - cmake\n        - snappy\n        - jansson\n        - xz 5.2.*\n        - pkg-config  # [osx]\n        - zlib 1.2.*\n    run:\n        - xz 5.2.*\n        - snappy\n        - jansson\n        - zlib 1.2.*\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libavro.a  # [unix]\n\nabout:\n  home: http://hadoop.apache.org/avro\n  license: Apache 2.0\n  summary: 'Avro is a serialization and RPC framework.'\n\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "rendered_recipe": {

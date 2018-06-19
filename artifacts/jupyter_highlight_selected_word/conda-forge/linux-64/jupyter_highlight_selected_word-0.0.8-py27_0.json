@@ -96,6 +96,7 @@
   "subdir": "linux-64",
   "version": "0.0.8"
  },
+ "metadata_version": 1,
  "name": "jupyter_highlight_selected_word",
  "raw_recipe": "{% set name = 'jupyter_highlight_selected_word' %}\n{% set version = '0.0.8' %}\n{% set sha256 = '0c7291ceb4a844bb6ca1f154723351a7cd4197e3b254994230758bb2a8e0ee56' %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - jupyter_contrib_core >=0.3\n    - notebook >=4.0\n\ntest:\n  imports:\n    - jupyter_highlight_selected_word\n\nabout:\n  summary: |\n      Jupyter nbextension which enables the CodeMirror addon \"Match Highlighter\",\n      which highlights all instances of the selected word in the current editor.\n  home: https://github.com/jcb91/jupyter_highlight_selected_word\n  license_file: LICENSE.txt\n  license: BSD 3-clause\n\nextra:\n  recipe-maintainers:\n    - jcb91\n",
  "rendered_recipe": {

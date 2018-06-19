@@ -493,6 +493,7 @@
   "subdir": "osx-64",
   "version": "1.3.0"
  },
+ "metadata_version": 1,
  "name": "requestsexceptions",
  "raw_recipe": "{% set name = \"requestsexceptions\" %}\n{% set version = \"1.3.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"8f141ba636d6748cd29208c1955bde38bf00fcdda1a685bc09d8ed133700353e\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pbr >=2.0.0\n\n  run:\n    - python\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: https://github.com/openstack-infra/requestsexceptions\n  license_file: {{ RECIPE_DIR }}/LICENSE\n  license: Apache 2.0\n  license_family: Apache\n  summary: 'Import exceptions from potentially bundled packages in requests.'\n  dev_url: https://github.com/openstack-infra/requestsexceptions\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

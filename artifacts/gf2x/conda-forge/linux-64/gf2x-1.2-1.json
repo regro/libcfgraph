@@ -778,6 +778,7 @@
   "track_features": "gf2x",
   "version": "1.2"
  },
+ "metadata_version": 1,
  "name": "gf2x",
  "raw_recipe": "{% set version = \"1.2\" %}\n{% set name = \"gf2x\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://gforge.inria.fr/frs/download.php/file/36934/{{ name }}-{{ version }}.tar.gz\n  sha256: 61427ffa03b5006aa154def6dce8bcff0fdefb3bd72f43fb1a7b4fdd6b80db34\n  patches:\n    # patches from https://github.com/sagemath/sage\n    - patches/0001-generic_really_is_generic.patch\n\n\nbuild:\n  number: 1\n  skip: true        # [win]\n  track_features:\n    - gf2x\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - automake\n\ntest:\n  commands:\n    - test -f $PREFIX/include/gf2x.h\n    - test -f $PREFIX/lib/lib{{ name }}.a\n    - test -f $PREFIX/lib/lib{{ name }}.so         # [linux]\n    - test -f $PREFIX/lib/lib{{ name }}.dylib      # [osx]\n\nabout:\n  home: http://gf2x.gforge.inria.fr\n  dev_url: http://gforge.inria.fr/projects/gf2x/\n  license: GPL v2+\n  license_file: COPYING\n  summary: gf2x is a library for multiplying polynomials over the binary field.\n  description: |\n    gf2x is a C/C++ software package containing routines for fast arithmetic\n    in GF(2)[x] (multiplication, squaring, GCD) and searching for\n    irreducible/primitive trinomials.\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - saraedum\n",
  "rendered_recipe": {

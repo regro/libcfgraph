@@ -93,6 +93,7 @@
   "subdir": "osx-64",
   "version": "0.6.0"
  },
+ "metadata_version": 1,
  "name": "numpydoc",
  "raw_recipe": "{% set version = \"0.6.0\" %}\n\npackage:\n  name: numpydoc\n  version: {{ version }}\n\nsource:\n  fn: numpydoc-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/n/numpydoc/numpydoc-{{ version }}.tar.gz\n  sha256: 1ec573e91f6d868a9940d90a6599f3e834a2d6c064030fbe078d922ee21dcfa1\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - sphinx\n\ntest:\n  imports:\n    - numpydoc\n\nabout:\n  home: https://github.com/numpy/numpydoc\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: Numpy's Sphinx extensions\n\nextra:\n  recipe-maintainers:\n    - jschueller\n    - scopatz\n",
  "rendered_recipe": {

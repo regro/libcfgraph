@@ -130,6 +130,7 @@
   "subdir": "linux-64",
   "version": "1.0.27"
  },
+ "metadata_version": 1,
  "name": "libsndfile",
  "raw_recipe": "{% set name = \"libsndfile\" %}\n{% set version = \"1.0.27\" %}\n{% set sha256 = \"a391952f27f4a92ceb2b4c06493ac107896ed6c76be9a613a4731f076d30fac0\" %}\n\npackage:\n    name: {{ name|lower }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: http://www.mega-nerd.com/{{ name }}/files/{{ name }}-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n    skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libflac\n    - libvorbis\n    - libogg\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libsndfile.dylib  # [osx]\n    - test -f $PREFIX/lib/libsndfile.so  # [linux]\n\nabout:\n    home: http://www.mega-nerd.com/libsndfile\n    dev_url: https://github.com/erikd/libsndfile\n    license: LGPL-2.1\n    license_family: LGPL\n    license_file: COPYING\n    summary: \"libsndfile - a C library for reading and writing files containing sampled sound (such as MS Windows WAV and the Apple/SGI AIFF format) through one standard library interface\"\n\nextra:\n    recipe-maintainers:\n        - hbredin\n",
  "rendered_recipe": {

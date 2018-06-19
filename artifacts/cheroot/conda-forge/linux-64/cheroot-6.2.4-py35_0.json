@@ -155,6 +155,7 @@
   "timestamp": 1524116150777,
   "version": "6.2.4"
  },
+ "metadata_version": 1,
  "name": "cheroot",
  "raw_recipe": "{% set name = \"Cheroot\" %}\n{% set version = \"6.2.4\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"9997623a88400fd41706978adcfbeceee1fe0202a886228e471a58263b643fef\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name|lower }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools_scm >=1.15.0\n    - setuptools_scm_git_archive >=1.0\n\n  run:\n    - python\n    - six >=1.11.0\n    - more-itertools >=2.6\n    - backports.functools_lru_cache  # [py2k]\n\ntest:\n  imports:\n    - cheroot\n    - cheroot.test\n\n\nabout:\n  home: http://www.cherrypy.org\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.md\n  summary: 'Highly-optimized, pure-python HTTP server'\n  dev_url: https://github.com/cherrypy/cheroot\n  doc_url: https://cheroot.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

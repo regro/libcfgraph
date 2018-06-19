@@ -500,6 +500,7 @@
   "subdir": "osx-64",
   "version": "2017.09.01"
  },
+ "metadata_version": 1,
  "name": "hunspell-en",
  "raw_recipe": "{% set name = \"hunspell-en\" %}\n{% set version = \"2017.09.01\" %}\n{% set sha256 = \"7517ef848c6e6e829a7d737369b92fdc35551f3ff2a49fe870bb94038776b0ea\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: dict-en.oxt\n  url: https://extensions.openoffice.org/en/download/18746\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - unzip\n  run:\n    - hunspell\n\ntest:\n  commands:\n    - echo 'test' | hunspell\n    - echo 'mispellled' | hunspell\n\nabout:\n  home: https://extensions.openoffice.org/en/project/english-dictionaries-apache-openoffice\n  license: GPL v1\n  license_family: GPL\n  license_file: license.txt\n  summary: 'English dictionaries for Apache OpenOffice'\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "rendered_recipe": {

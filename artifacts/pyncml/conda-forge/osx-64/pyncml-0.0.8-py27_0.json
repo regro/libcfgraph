@@ -23,6 +23,7 @@
   "subdir": "osx-64",
   "version": "0.0.8"
  },
+ "metadata_version": 1,
  "name": "pyncml",
  "raw_recipe": "package:\n    name: pyncml\n    version: 0.0.8\n\nsource:\n    fn: pyncml-0.0.8.tar.gz\n    url: https://pypi.python.org/packages/source/p/pyncml/pyncml-0.0.8.tar.gz\n    md5: 4a77f97a687561fde285f7fad1c297e2\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - netcdf4\n        - pytz\n    run:\n        - python\n        - numpy\n        - netcdf4\n        - pytz\n\ntest:\n    imports:\n        - pyncml\n\nabout:\n    home: https://github.com/axiom-data-science/pyncml\n    license: MIT License\n    summary: A simple python library to apply NcML logic to NetCDF files\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n        - ocefpaf\n",
  "rendered_recipe": {

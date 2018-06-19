@@ -727,6 +727,7 @@
   "subdir": "noarch",
   "version": "3.6.0"
  },
+ "metadata_version": 1,
  "name": "flask-swagger-ui",
  "raw_recipe": "{% set name = \"flask-swagger-ui\" %}\n{% set version = \"3.6.0\" %}\n{% set sha256 = \"afe84e4721b9b4bdd3efc2f9949a9f990f8e63507aedcf450d00856cf669f005\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - flask\n  run:\n    - python\n    - flask\n\ntest:\n  imports:\n    - flask_swagger_ui\n\n# See https://github.com/sveint/flask-swagger-ui/issues/17\nabout:\n  home: https://github.com/sveint/flask-swagger-ui\n  license: MIT\n  summary: 'Swagger UI blueprint for Flask'\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - ukaratay\n",
  "rendered_recipe": {

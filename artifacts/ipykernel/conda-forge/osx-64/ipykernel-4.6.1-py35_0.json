@@ -152,6 +152,7 @@
   "subdir": "osx-64",
   "version": "4.6.1"
  },
+ "metadata_version": 1,
  "name": "ipykernel",
  "raw_recipe": "{% set version = \"4.6.1\" %}\n\npackage:\n  name: ipykernel\n  version: {{ version }}\n\nsource:\n  fn: ipykernel-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/i/ipykernel/ipykernel-{{ version }}.tar.gz\n  sha256: 2e1825aca4e2585b5adb7953ea16e53f53a62159ed49952a564b1e23507205db\n\nbuild:\n  number: 0\n  script:\n    - pip install --no-deps .\n    - python -m ipykernel install --prefix $PREFIX  # [not win]\n    - python -m ipykernel install --prefix %PREFIX%  # [win]\n\nrequirements:\n  build:\n    - pip\n    - python\n    - jupyter_client\n    - ipython >=4.0\n    - tornado >=4.0\n  run:\n    - python\n    - ipython >=4.0\n    - traitlets >=4.1\n    - jupyter_client\n    - tornado >=4.0\n\ntest:\n  imports:\n    - ipykernel\n\nabout:\n  home: http://ipython.org\n  license: BSD 3-clause\n  license_file: COPYING.md\n  summary: IPython Kernel for Jupyter\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n    - minrk\n    - ocefpaf\n",
  "rendered_recipe": {

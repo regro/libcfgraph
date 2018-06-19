@@ -26,6 +26,7 @@
   "subdir": "linux-64",
   "version": "9.0.0"
  },
+ "metadata_version": 1,
  "name": "libglu",
  "raw_recipe": "package:\n    name: libglu\n    version: 9.0.0\n\nsource:\n    fn: glu-9.0.0.tar.gz\n    url: ftp://ftp.freedesktop.org/pub/mesa/glu/glu-9.0.0.tar.gz\n    md5: bbc57d4fe3bd3fb095bdbef6fcb977c4\n\nbuild:\n  number: 0\n  skip: True  # [win or osx]\n\nrequirements:\n    build:\n        - toolchain\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libGLU.a  # [not win]\n    - test -f ${PREFIX}/lib/libGLU.so  # [linux]\n    - test -f ${PREFIX}/lib/libGLU.dylib  # [osx]\n\nabout:\n  home: http://www.mesa3d.org/glu.html\n  license: SGI-2\n  summary: Mesa OpenGL utility library (GLU)\n\nextra:\n  recipe-maintainers:\n    - bgruening\n",
  "rendered_recipe": {

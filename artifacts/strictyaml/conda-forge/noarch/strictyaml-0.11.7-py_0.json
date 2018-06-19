@@ -148,6 +148,7 @@
   "timestamp": 1524078065476,
   "version": "0.11.7"
  },
+ "metadata_version": 1,
  "name": "strictyaml",
  "raw_recipe": "{% set name = \"strictyaml\" %}\n{% set version = \"0.11.7\" %}\n{% set sha256 = \"3d4edff03407a3fc70876434acaea5684d565f5eac70b5aad7e16aaa95f39626\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - ruamel.yaml >=0.14.2\n    - python-dateutil >=2.6.0\n\ntest:\n  imports:\n    - strictyaml\n\nabout:\n  home: http://hitchdev.com/strictyaml/\n  license: MIT\n  license_family: MIT\n  summary: 'Type-safe YAML parser and validator.'\n  dev_url: https://github.com/crdoconnor/strictyaml\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt'\n\nextra:\n  recipe-maintainers:\n    - mcs07\n",
  "rendered_recipe": {

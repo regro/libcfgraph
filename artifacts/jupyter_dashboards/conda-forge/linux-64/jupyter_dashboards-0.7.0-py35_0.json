@@ -1055,6 +1055,7 @@
   "subdir": "linux-64",
   "version": "0.7.0"
  },
+ "metadata_version": 1,
  "name": "jupyter_dashboards",
  "raw_recipe": "{% set version = \"0.7.0\" %}\n{% set sha256 = \"69a8dcb85acda20862bd2c52b97f9c5b5f0fbc23c73c2824460269d0622b0b20\" %}\n{% set name = \"jupyter_dashboards\" %}\n\npackage:\n  name: {{ name }} \n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - {{ name.replace('_', '-') }} = jupyter_dashboards.extensionapp:main \n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - notebook\n    - python\n    - traitlets\n\ntest:\n  imports:\n    - {{ name }} \n  commands:\n    - {{ name.replace('_', '-') }} --help\n    - jupyter dashboards --help\n\nabout:\n  home: http://github.com/jupyter-incubator/dashboards\n  license: BSD 3-Clause \n  license_file: LICENSE.md\n  summary: Jupyter Dashboards Layout Extension \n  doc_url: https://{{ name }}-layout.readthedocs.io\n  dev_url: https://github.com/jupyter-incubator/dashboards\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - parente\n",
  "rendered_recipe": {

@@ -319,6 +319,7 @@
   "timestamp": 1525760323002,
   "version": "0.23.0"
  },
+ "metadata_version": 1,
  "name": "eventlet",
  "raw_recipe": "{% set name = \"eventlet\" %}\n{% set version = \"0.23.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"554a50dad7abee0a9775b0780ce9d9c0bd9123dda4743c46d4314170267c6c47\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n    - greenlet >=0.3\n    - enum34  # [py<34]\n    - pyopenssl\n\ntest:\n  imports:\n    - eventlet\n    - eventlet.green\n    - eventlet.green.OpenSSL\n    - eventlet.green.http  # [py3k]\n    - eventlet.green.urllib\n    - eventlet.greenio\n    - eventlet.hubs\n    - eventlet.support\n\nabout:\n  home: http://eventlet.net\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Highly concurrent networking library'\n  dev_url: https://github.com/eventlet/eventlet\n  doc_url: http://eventlet.net\n\nextra:\n  recipe-maintainers:\n    - anguslees\n    - pmlandwehr\n",
  "rendered_recipe": {

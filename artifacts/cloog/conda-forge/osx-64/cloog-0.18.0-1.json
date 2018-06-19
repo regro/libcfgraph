@@ -688,6 +688,7 @@
   "subdir": "osx-64",
   "version": "0.18.0"
  },
+ "metadata_version": 1,
  "name": "cloog",
  "raw_recipe": "{% set version = \"0.18.0\" %}\n\npackage:\n  name: cloog\n  version: {{ version }}\n\nsource:\n  fn: cloog-{{ version }}.tar.gz\n  url: http://www.bastoul.net/cloog/pages/download/count.php3?url=./cloog-{{ version }}.tar.gz\n  sha256: 1c4aa8dde7886be9cbe0f9069c334843b21028f61d344a2d685f88cb1dcf2228\n\nbuild:\n  number: 1\n  skip: true    # [win]\n\nrequirements:\n  build:\n    - gmp 5.1.2\n    - isl 0.12.2\n\n  run:\n    - gmp 5.1.2\n    - isl 0.12.2\n\ntest:\n  commands:\n    - test -f \"$PREFIX/lib/libcloog-isl.a\"        # [unix]\n    - test -f \"$PREFIX/lib/libcloog-isl.so\"       # [linux]\n    - test -f \"$PREFIX/lib/libcloog-isl.dylib\"    # [osx]\n\nabout:\n  home: http://www.cloog.org/\n  license: LGPL 2.1\n  license_file: LICENSE\n  summary: A free software and library to generate code for scanning Z-polyhedra.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

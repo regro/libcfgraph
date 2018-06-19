@@ -754,6 +754,7 @@
   "subdir": "linux-64",
   "version": "2.4"
  },
+ "metadata_version": 1,
  "name": "capturer",
  "raw_recipe": "{% set version = \"2.4\" %}\n\npackage:\n    name: capturer\n    version: {{ version }}\n\nsource:\n    fn: capturer-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/c/capturer/capturer-{{ version }}.tar.gz\n    sha256: 090142a58f3f85def3a7dd55d9024d0d1a86d1a88aaf9317c0f146244994a615\n\nbuild:\n    number: 0\n    skip: True  # [win]\n    script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n    build:\n        - python\n        - pip\n    run:\n        - python\n        - humanfriendly\n\ntest:\n    imports:\n        - capturer\n\nabout:\n    home: https://capturer.readthedocs.org\n    license: MIT\n    summary: 'Easily capture stdout/stderr of the current process and subprocesses.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
  "rendered_recipe": {

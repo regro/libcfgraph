@@ -680,6 +680,7 @@
   "subdir": "osx-64",
   "version": "1.2"
  },
+ "metadata_version": 1,
  "name": "audi",
  "raw_recipe": "{% set version = \"1.2\" %}\n\npackage:\n  name: audi\n  version: {{ version }}\n\nsource:\n  url: https://github.com/darioizzo/audi/archive/v{{ version }}.tar.gz \n  sha256: efd4bf289836309e8ce6a71dcc0d46f3df0444e276a812cbf2761b0a39fd019d\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  \nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - boost-cpp 1.66.*\n    - eigen\n    - piranha 0.10\n\n  run:\n    - boost-cpp 1.66.*\n    - eigen\n\n\ntest:\n  commands:\n    - test -f\n\nabout:\n  home: http://darioizzo.github.io/audi/\n  license: GPL v3 and LGPL v3\n  license_file: COPYING.lgpl3\n  summary: 'C++ header only library: Algebra of Taylor truncated polynomials and a few algorithms useful for its applications (e.g. Automated differentiation, Differential Intelligence, Taylor Models, etc.)'\n\nextra:\n  recipe-maintainers:\n    - bluescarni\n    - darioizzo\n",
  "rendered_recipe": {

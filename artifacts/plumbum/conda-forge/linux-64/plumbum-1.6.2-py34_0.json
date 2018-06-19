@@ -64,6 +64,7 @@
   "subdir": "linux-64",
   "version": "1.6.2"
  },
+ "metadata_version": 1,
  "name": "plumbum",
  "raw_recipe": "{% set name = \"plumbum\" %}\n{% set version = \"1.6.2\" %}\n{% set sha256 = \"75eff3a55e056d8fc06f7b7ceb603ce4c26650cd6a2196bcdb0b80fee59471a8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - paramiko\n\ntest:\n  imports:\n    - plumbum\n    - plumbum.cli\n    - plumbum.colorlib\n    - plumbum.commands\n    - plumbum.fs\n    - plumbum.machines\n    - plumbum.path\n\nabout:\n  home: https://plumbum.readthedocs.io\n  license: MIT\n  license_file: LICENSE\n  summary: 'Plumbum: shell combinators library'\n\n  description: |\n    Apart from shell-like syntax and handy shortcuts, the library provides local and\n    remote command execution (over SSH), local and remote file-system paths, easy\n    working-directory and environment manipulation, a programmatic Command-Line\n    Interface (CLI) application toolkit, and a color library.\n  doc_url: https://plumbum.readthedocs.io/\n  dev_url: https://github.com/tomerfiliba/plumbum\n\nextra:\n  recipe-maintainers:\n    - henryiii\n",
  "rendered_recipe": {},

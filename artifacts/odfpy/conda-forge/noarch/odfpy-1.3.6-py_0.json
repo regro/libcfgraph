@@ -797,6 +797,7 @@
   "subdir": "noarch",
   "version": "1.3.6"
  },
+ "metadata_version": 1,
  "name": "odfpy",
  "raw_recipe": "{% set version = \"1.3.6\" %}\n\npackage:\n  name: odfpy\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/o/odfpy/odfpy-{{ version }}.tar.gz\n  sha256: 6bcaf3b23aa9e49ed8c8c177266539b211add4e02402748a994451482a10cb1b\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - odf\n\nabout:\n  home: https://github.com/eea/odfpy\n  license: Apache-2.0\n  license_file: APACHE-LICENSE-2.0.txt\n  summary: 'Python API and tools to manipulate OpenDocument files.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

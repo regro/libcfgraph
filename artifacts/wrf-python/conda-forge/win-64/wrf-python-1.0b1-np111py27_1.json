@@ -143,6 +143,7 @@
   "subdir": "win-64",
   "version": "1.0b1"
  },
+ "metadata_version": 1,
  "name": "wrf-python",
  "raw_recipe": "{% set version = \"1.0b1\" %}\n\npackage:\n  name: wrf-python\n  version: {{ version }}\n\nsource:\n  fn: wrf-python-{{ version }}.tar.gz\n  url: https://github.com/NCAR/wrf-python/archive/{{ version }}.tar.gz\n  sha256: 94f05a9719701959702094eafb84555a996bc4f7d75042fb07bca3c35bda9f31\n\nbuild:\n  number: 1\n  detect_binary_files_with_prefix: true\n  skip: True  # [win32 or np>=112 or (win and py>=35)]\n\nrequirements:\n  build:\n    - pip\n    - numpy x.x\n    - wrapt\n    - m2w64-toolchain  # [win]\n    - gcc  # [unix]\n    - libgcc  # [unix]\n    - python\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py>=35]\n  run:\n    - numpy x.x\n    - python\n    - wrapt \n    - m2w64-toolchain  # [win]\n    - gcc  # [unix]\n    - libgcc  # [unix]\n    - xarray\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py>=35]\n\ntest:\n  requires:\n    - nose\n  imports:\n    - wrf \n\nabout:\n  home: https://github.com/NCAR/wrf-python\n  license: \"NCL Source Code\"\n  summary: \"Diagnostic and interpolation routines for WRF-ARW data.\"\n\nextra:\n  recipe-maintainers:\n    - bladwig1\n    - marylhaley\n    - david-ian-brown\n    - khallock\n",
  "rendered_recipe": {

@@ -648,6 +648,7 @@
   "subdir": "linux-64",
   "version": "2017.1"
  },
+ "metadata_version": 1,
  "name": "pyfmmlib",
  "raw_recipe": "{% set name = \"pyfmmlib\" %}\n{% set version = \"2017.1\" %}\n{% set sha256 = \"f1646478ab078ec6402e7f9e842ea0cdbec24044d2ef44ca1d3f8430379b9c37\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: ./setup.sh opt install --single-version-externally-managed --record record.txt\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain3\n    - gcc\n    - numpy\n    - mako\n  run:\n    - python\n    - numpy\n    - libgfortran\n    - libgcc\n\ntest:\n    requires:\n        - pytest\n    imports:\n        - {{ name }}\n    source_files:\n        - test\n    commands:\n        - cd test && python -m pytest\n\nabout:\n    home: https://github.com/inducer/pyfmmlib\n    license: GPL-2.0\n    license_file: README.rst\n    summary: 'Python wrappers for FMMLIB2D and FMMLIB3D'\n\n    dev_url: https://github.com/inducer/pyfmmlib\n\nextra:\n    recipe-maintainers:\n    - inducer\n",
  "rendered_recipe": {

@@ -711,6 +711,7 @@
   "subdir": "noarch",
   "version": "2.2.0"
  },
+ "metadata_version": 1,
  "name": "ipaddr",
  "raw_recipe": "{% set name = \"ipaddr\" %}\n{% set version = \"2.2.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"4092dfe667588d16aa12b59acb7c8a4024e5dcb23a681cd0b0b602373eca88d6\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  noarch: python\n  number: {{ build }}\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - ipaddr\n\nabout:\n  home: https://github.com/google/ipaddr-py\n  license_file: COPYING\n  license: Apache 2.0\n  license_family: Apache\n  summary: \"Google's Python IP address manipulation library\"\n  dev_url: https://github.com/google/ipaddr-py\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

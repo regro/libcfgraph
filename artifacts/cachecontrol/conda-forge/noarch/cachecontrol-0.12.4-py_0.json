@@ -783,6 +783,7 @@
   "subdir": "noarch",
   "version": "0.12.4"
  },
+ "metadata_version": 1,
  "name": "cachecontrol",
  "raw_recipe": "{% set name = \"CacheControl\" %}\n{% set version = \"0.12.4\" %}\n{% set sha256 = \"a7d21ba4e3633d95ac9fed5be205ee6d1da36bdc4b8914eb7a57ff50b7e5628c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - doesitcache = cachecontrol._cmd:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - requests\n    - msgpack-python\n\ntest:\n  imports:\n    - cachecontrol\n  commands:\n    - doesitcache --help\n\nabout:\n  home: https://github.com/ionrock/cachecontrol\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE.txt\n  summary: 'The httplib2 caching algorithms packaged up for use with requests'\n  description: |\n    CacheControl is a port of the caching algorithms in httplib2 for use with\n    requests session object.\n    It was written because httplib2's better support for caching is often\n    mitigated by its lack of threadsafety. The same is true of requests\n    in terms of caching.\n  doc_url: http://cachecontrol.readthedocs.io/\n  dev_url: https://github.com/ionrock/cachecontrol\n\nextra:\n  recipe-maintainers:\n    - dougalsutherland\n",
  "rendered_recipe": {

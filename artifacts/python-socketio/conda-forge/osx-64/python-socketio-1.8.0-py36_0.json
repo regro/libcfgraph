@@ -509,6 +509,7 @@
   "subdir": "osx-64",
   "version": "1.8.0"
  },
+ "metadata_version": 1,
  "name": "python-socketio",
  "raw_recipe": "{% set name = \"python-socketio\" %}\n{% set version = \"1.8.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"4d662601c2fec639b5bb8fdfdb1c53cac73c44efb0b39ee428184bddf2f49479\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - six >=1.9.0\n    - python-engineio >=1.2.1\n\ntest:\n  imports:\n    - socketio\n    - socketio.base_manager\n    - socketio.kombu_manager\n    - socketio.middleware\n    - socketio.namespace\n    - socketio.packet\n    - socketio.pubsub_manager\n    - socketio.redis_manager\n    - socketio.server\n\nabout:\n  home: https://github.com/miguelgrinberg/python-socketio/\n  license_file: LICENSE\n  license: MIT\n  license_family: MIT\n  summary: 'Socket.IO server'\n  doc_url: https://python-socketio.readthedocs.io/\n  dev_url: https://github.com/miguelgrinberg/python-socketio/\n\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

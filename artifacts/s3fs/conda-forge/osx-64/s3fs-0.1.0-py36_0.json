@@ -89,6 +89,7 @@
   "subdir": "osx-64",
   "version": "0.1.0"
  },
+ "metadata_version": 1,
  "name": "s3fs",
  "raw_recipe": "{% set version = \"0.1.0\" %}\n \npackage:\n  name: s3fs\n  version: \"{{ version }}\"\n\nsource:\n  fn: s3fs-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/s/s3fs/s3fs-{{ version }}.tar.gz\n  sha256: 330aea60998e952ee818906a9d94c79efb751a02756e37518c14c09498c858d1\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - boto3\n\n  run:\n    - python\n    - boto3\n\n\ntest:\n  imports:\n    - s3fs\n\nabout:\n  home: http://s3fs.readthedocs.io/en/latest/\n  license: BSD 3-Clause\n  summary: 'Convenient Filesystem interface over S3'\n\nextra:\n  recipe-maintainers:\n    - martindurant\n    - mrocklin\n    - koverholt\n",
  "rendered_recipe": {

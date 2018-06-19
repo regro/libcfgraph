@@ -144,6 +144,7 @@
   "timestamp": 1528299575437,
   "version": "2.3.0"
  },
+ "metadata_version": 1,
  "name": "swagger-spec-validator",
  "raw_recipe": "{% set version = \"2.3.0\" %}\n\npackage:\n  name: swagger-spec-validator\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/Yelp/swagger_spec_validator/archive/v{{ version }}.tar.gz\n  sha256: 54cc38766c75381d92fd7927f05842556a9ff06a5612f448937d44aa23c95c20\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pyyaml\n\n  run:\n    - python\n    - jsonschema\n    - six\n    - setuptools\n    - pyyaml\n\ntest:\n  imports:\n    - swagger_spec_validator\n\nabout:\n  home: http://github.com/Yelp/swagger_spec_validator\n  license: Apache-2.0\n  summary: 'Validation of Swagger specifications'\n  license_family: APACHE\n  license_file: LICENSE.txt\n  dev_url: http://github.com/Yelp/swagger_spec_validator\n  doc_url: http://swagger-spec-validator.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - rvalieris\n",
  "rendered_recipe": {

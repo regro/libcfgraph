@@ -100,6 +100,7 @@
   "subdir": "win-64",
   "version": "1.0.2"
  },
+ "metadata_version": 1,
  "name": "sensorml2iso",
  "raw_recipe": "{% set version = \"1.0.2\" %}\n\npackage:\n  name: sensorml2iso\n  version: {{ version }}\n\nsource:\n  fn : sensorml2iso-{{ version }}.tar.gz\n  url: https://github.com/ioos/sensorml2iso/archive/v{{ version }}.tar.gz\n  sha256: 7ca52c28264ef462747c32432f6023a1857ae882d687424994394700b40b7482\n  patches:\n    - template.patch\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - sensorml2iso = sensorml2iso.command_line:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - owslib\n    - geopandas\n    - jinja2\n    - lxml\n    - numpy\n    - pandas\n    - pyoos\n    - shapely\n\ntest:\n  imports:\n    - sensorml2iso\n  commands:\n    - sensorml2iso -h\n    - sensorml2iso -s http://data.nanoos.org/52nsos/sos/kvp\n\nabout:\n  home: https://github.com/ioos/sensorml2iso\n  license: MIT\n  license_file: LICENSE\n  summary: 'Query an IOOS SOS service for active sensors and output ISO 19115-2-compliant xml.'\n\nextra:\n  recipe-maintainers:\n    - mwengren\n    - ocefpaf\n",
  "rendered_recipe": {

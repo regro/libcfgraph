@@ -564,6 +564,7 @@
   "subdir": "osx-64",
   "version": "4.5.0"
  },
+ "metadata_version": 1,
  "name": "jemalloc",
  "raw_recipe": "{% set version = \"4.5.0\" %}\n\npackage:\n  name: jemalloc\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.bz2\n  url: https://github.com/jemalloc/jemalloc/releases/download/{{ version }}/jemalloc-{{ version }}.tar.bz2\n  sha256: 9409d85664b4f135b77518b0b118c549009dc10f6cba14557d170476611f6780\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libjemalloc.so.2  # [linux]\n    - test -f $PREFIX/lib/libjemalloc.a\n    - test -f $PREFIX/lib/libjemalloc_pic.a\n    - test -f $PREFIX/lib/libjemalloc.2.dylib  # [osx]\n    - test -f $PREFIX/include/jemalloc/jemalloc.h\n\nabout:\n  home: http://jemalloc.net\n  dev_url: https://github.com/jemalloc/jemalloc\n  license: BSD 2-Clause\n  license_file: COPYING\n  summary: 'general purpose malloc(3) implementation'\n\nextra:\n  recipe-maintainers:\n    - wesm\n    - xhochy\n",
  "rendered_recipe": {

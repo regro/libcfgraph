@@ -779,6 +779,7 @@
   "subdir": "noarch",
   "version": "2.0.3"
  },
+ "metadata_version": 1,
  "name": "gitdb2",
  "raw_recipe": "{% set version = \"2.0.3\" %}\n\npackage:\n  name: gitdb2\n  version: {{ version }}\n\nsource:\n  fn: gitdb2-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/g/gitdb2/gitdb2-{{ version }}.tar.gz\n  sha256: b60e29d4533e5e25bb50b7678bbc187c8f6bcff1344b4f293b2ba55c85795f09\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - smmap2\n\ntest:\n  imports:\n    - gitdb\n    - gitdb.db\n\nabout:\n  home: https://github.com/gitpython-developers/gitdb\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'A pure-Python git object database'\n\nextra:\n  recipe-maintainers:\n    - ngoldbaum\n    - ocefpaf\n",
  "rendered_recipe": {

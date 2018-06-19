@@ -686,6 +686,7 @@
   "subdir": "win-64",
   "version": "1.3.2"
  },
+ "metadata_version": 1,
  "name": "orange3-network",
  "raw_recipe": "{% set name = \"Orange3-Network\" %}\n{% set version = \"1.3.2\" %}\n{% set sha256 = \"1067b326514e1d1d3526e5622e6d915cba746780c198800ce3273411011a2702\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy 1.11.*\n\n  run:\n    - python\n    - numpy >=1.11\n    - orange3\n    - networkx >=1.10\n    - pyqtgraph >=0.9.10\n\ntest:\n  imports:\n    - orangecontrib.network\n\nabout:\n  home: https://github.com/biolab/orange3-network\n  license: GPL-3.0\n  summary: 'Networks add-on for Orange 3 data mining software package.'\n  license_family: GPL\n  doc_url: http://orange3-network.rtfd.io/\n  dev_url: https://github.com/biolab/orange3-network\n\nextra:\n  recipe-maintainers:\n    - astaric\n    - kernc\n",
  "rendered_recipe": {

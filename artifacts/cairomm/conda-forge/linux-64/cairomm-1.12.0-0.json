@@ -58,6 +58,7 @@
   "subdir": "linux-64",
   "version": "1.12.0"
  },
+ "metadata_version": 1,
  "name": "cairomm",
  "raw_recipe": "{% set version = \"1.12.0\" %}\n{% set checksum = \"5a09a3f604cec2ddb4dfcace28dbe74a53585585\" %}\n{% set checktype = \"sha1\" %}\n\npackage:\n    name: cairomm\n    version: {{ version }}\n\nsource:\n    fn: cairomm-{{ version }}.tar.gz\n    url: https://www.cairographics.org/releases/cairomm-{{ version }}.tar.gz\n    {{ checktype }}: {{ checksum }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - cairo\n    - libsigcpp\n    - libpng\n    - pkg-config\n    - toolchain\n  run:\n    - cairo\n    - libsigcpp\n    - libpng\n\ntest:\n    commands:\n        - test -f $PREFIX/lib/libcairomm-1.0.a\n        - test -f $PREFIX/lib/libcairomm-1.0.so          # [linux]\n        - test -f $PREFIX/lib/libcairomm-1.0.dylib       # [osx]\n        - test -f $PREFIX/lib/libcairomm-1.0.la\n\nabout:\n    home: http://cairographics.org/\n    license: LGPL 2.1 and MPL 1.1\n    summary: \"cairomm is a C++ wrapper for the cairo graphics library\"\n\nextra:\n    recipe-maintainers:\n        - vgauthier\n",
  "rendered_recipe": {},

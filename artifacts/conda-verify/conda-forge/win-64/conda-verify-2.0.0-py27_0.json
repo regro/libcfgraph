@@ -99,6 +99,7 @@
   "subdir": "win-64",
   "version": "2.0.0"
  },
+ "metadata_version": 1,
  "name": "conda-verify",
  "raw_recipe": "{% set name = \"conda-verify\" %}\n{% set version = \"2.0.0\" %}\n{% set checksum = \"4a43471982a88f30cca2242b27a1dda957df6cd30d5de863d6734ed144ea5c2b\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/conda/conda-verify/archive/{{ version }}.tar.gz\n  sha256: {{ checksum }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n  entry_points:\n    - conda-verify = conda_verify.main:main\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n    - pyyaml\n\ntest:\n  imports:\n    - conda_verify\n\n  commands:\n    - conda-verify --help\n\nabout:\n  home: https://github.com/conda/conda-verify\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: tool for validating conda recipes and conda packages\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

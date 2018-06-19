@@ -625,6 +625,7 @@
   "subdir": "win-64",
   "version": "0.5_2"
  },
+ "metadata_version": 1,
  "name": "r-km.ci",
  "raw_recipe": "{% set version = '0.5-2' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-km.ci\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: km.ci_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/km.ci_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/km.ci/km.ci_{{ version }}.tar.gz\n  sha256: 1bb9c60e27ba42ea773407dcc438b4a630f53877eb16e6054041a97b25e2d3d0\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\nrequirements:\n  build:\n    - r-base\n    - r-survival\n\n  run:\n    - r-base\n    - r-survival\n\ntest:\n  commands:\n    - $R -e \"library('km.ci')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('km.ci')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=km.ci\n  license: GPL (>= 2)\n  summary: |\n    Computes various confidence intervals for the Kaplan-Meier estimator, namely: Petos\n    CI, Rothman CI, CI''s based on Greenwoods variance, Thomas and Grunkemeier CI and\n    the simultaneous confidence bands by Nair and Hall and Wellner.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n",
  "rendered_recipe": {

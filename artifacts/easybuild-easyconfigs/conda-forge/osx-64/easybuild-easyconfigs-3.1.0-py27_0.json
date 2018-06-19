@@ -8347,6 +8347,7 @@
   "subdir": "osx-64",
   "version": "3.1.0"
  },
+ "metadata_version": 1,
  "name": "easybuild-easyconfigs",
  "raw_recipe": "{% set version = \"3.1.0\" %}\n\npackage:\n  name: easybuild-easyconfigs\n  version: {{ version }}\n\nsource:\n  fn: easybuild-easyconfigs-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/e/easybuild-easyconfigs/easybuild-easyconfigs-{{ version }}.tar.gz\n  sha256: 0b83eef7b391b4c03d1d3650e5b71e23bedcb68f64fbdff95c6f58063b443fb9\n\nbuild:\n  number: 0\n  skip: True  # [win or py3k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - easybuild-framework >=3\n    - easybuild-easyblocks >=3.1\n\ntest:\n  imports:\n    - easybuild\n\nabout:\n  home: http://hpcugent.github.com/easybuild\n  license: GPL-2.0\n  license_file: LICENSE\n  summary: 'Easyconfig files are simple build specification files for EasyBuild,\\nthat specify the build parameters for software packages (version, compiler toolchain, dependency versions, etc.).'\n  license_family: GPL2\n\nextra:\n  recipe-maintainers:\n    - jerowe\n    - boegel\n",
  "rendered_recipe": {

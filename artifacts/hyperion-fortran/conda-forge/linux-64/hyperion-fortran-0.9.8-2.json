@@ -98,6 +98,7 @@
   "subdir": "linux-64",
   "version": "0.9.8"
  },
+ "metadata_version": 1,
  "name": "hyperion-fortran",
  "raw_recipe": "{% set version = \"0.9.8\" %}\n\npackage:\n  name: hyperion-fortran\n  version: {{version}}\n\nsource:\n  fn: Hyperion-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/h/hyperion/Hyperion-{{version}}.tar.gz\n  md5: 970ebfa8b65c4a181fcdd788ee71dd38\n\nbuild:\n  number: 2\n  skip: True  # [win]\n\nrequirements:\n\n  build:\n    - hdf5 1.8.18|1.8.18.*\n    - mpich\n    - gcc  # [not win]\n\n  run:\n    - hdf5 1.8.18|1.8.18.*\n    - mpich\n    - libgfortran  # [not win]\n\ntest:\n  files:\n    - amr.rtin\n    - car.rtin\n    - cyl.rtin\n    - oct.rtin\n    - sph.rtin\n    - vor.rtin\n\nabout:\n  home: https://github.com/hyperion-rt/hyperion\n  license: BSD 2-Clause\n  summary: Hyperion Radiation Transfer Code\n\nextra:\n  recipe-maintainers:\n    - astrofrog\n",
  "rendered_recipe": {

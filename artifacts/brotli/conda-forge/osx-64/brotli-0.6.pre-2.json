@@ -33,6 +33,7 @@
   "subdir": "osx-64",
   "version": "0.6.pre"
  },
+ "metadata_version": 1,
  "name": "brotli",
  "raw_recipe": "# The 0.5.x released libraries do not install the header files and libraries in\n# their CMake setup. We need to use brotli as a library\n{% set version = \"0.6.pre\" %}\n{% set commit = \"5db62dcc9d386579609540cdf8869e95ad334bbd\" %}\n\npackage:\n  name: brotli\n  version: {{ version }}\n\nsource:\n  fn: {{ commit }}.tar.gz\n  url: https://github.com/google/brotli/archive/{{ commit }}.tar.gz\n  sha256: fcc70cacaf3833e22fad242c0e4f44ab0ae4e570ebdb954f985182f4ce1bff74\n\nbuild:\n  number: 2\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n\ntest:\n  commands:\n    - test -f $PREFIX/include/brotli/encode.h  # [unix]\n\nabout:\n  home: http://github.com/google/brotli\n  license: MIT\n  license_file: LICENSE\n  summary: 'Brotli compression format'\n\nextra:\n  recipe-maintainers:\n    - wesm\n    - xhochy\n",
  "rendered_recipe": {},

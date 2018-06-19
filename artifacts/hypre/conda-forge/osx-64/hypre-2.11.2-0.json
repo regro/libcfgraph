@@ -132,6 +132,7 @@
   "subdir": "osx-64",
   "version": "2.11.2"
  },
+ "metadata_version": 1,
  "name": "hypre",
  "raw_recipe": "{% set name = \"hypre\" %}\n{% set version = \"2.11.2\" %}\n{% set sha256 = \"25b6c1226411593f71bb5cf3891431afaa8c3fd487bdfe4faeeb55c6fdfb269e\" %}\n{% set mpi = 'mpich' %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/LLNL/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ mpi }}\n    - openblas 0.2.19\n    - cmake\n    - toolchain\n  run:\n    - {{ mpi }}\n    - openblas 0.2.19\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libHYPRE.dylib  # [osx]\n    - test -f $PREFIX/lib/libHYPRE.so  # [linux]\n    - test -f $PREFIX/include/HYPRE.h\n\nabout:\n  home: http://www.llnl.gov/casc/hypre/\n  license: LGPL-2.1\n  license_family: LGPL\n  license_file: COPYRIGHT\n  summary: 'high performance preconditioners for sparse linear systems'\n  description: |\n    HYPRE is a library of high performance preconditioners and solvers featuring\n    multigrid methods for the solution of large, sparse linear systems of equations\n    on massively parallel computers.\n  dev_url: https://github.com/LLNL/hypre\n\nextra:\n  recipe-maintainers:\n    - minrk\n",
  "rendered_recipe": {

@@ -2287,6 +2287,7 @@
   "subdir": "noarch",
   "version": "4.0.0"
  },
+ "metadata_version": 1,
  "name": "gulp",
  "raw_recipe": "{% set name = \"gulp\" %}\n{% set version = \"4.0.0\" %}\n{% set sha256 = \"162ca655c3fe251d773da3ab4c4b4501a4fc7323576c0064cda7b5c06f0636d8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/gulpjs/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: \n    - npm install -g gulp\n \nrequirements:\n  build:\n    - nodejs\n  run:\n    - nodejs\n       \ntest:\n  files:\n    - gulpfile.js\n  commands:\n    - npm list -g gulp\n    - npm link gulp && gulp\n\nabout:\n  home: https://github.com/gulpjs/gulp\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'The streaming build system'\n  description: |\n    The streaming build system\n  doc_url: https://www.npmjs.com/package/gulp-documentation\n  dev_url: hhttps://github.com/gulpjs/gulp\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

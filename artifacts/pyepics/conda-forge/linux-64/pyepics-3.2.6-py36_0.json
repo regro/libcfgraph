@@ -757,6 +757,7 @@
   "subdir": "linux-64",
   "version": "3.2.6"
  },
+ "metadata_version": 1,
  "name": "pyepics",
  "raw_recipe": "{% set name = \"pyepics\" %}\n{% set version = \"3.2.6\" %}\n{% set sha256 = \"630ac60bf9362a758211cfd3af4e62c9a0a394af6e5674aababdf6c857ad34a5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/pyepics/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  skip: True  # [win]\n\nrequirements:\n  build:\n      - python\n      - setuptools\n  run:\n      - python\n      - numpy\n      - pyparsing\n\ntest:\n  imports:\n    - epics\n    - epics.autosave\n    - epics.compat\n    - epics.devices\n\nabout:\n  home: http://pyepics.github.io/pyepics/\n  license: Epics Open\n  summary: Python interface to Epics Channel Access\n  # https://github.com/pyepics/pyepics/pull/108\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  dev_url: https://github.com/pyepics/pyepics\n  doc_url: http://pyepics.github.io/pyepics\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
  "rendered_recipe": {

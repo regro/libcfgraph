@@ -724,6 +724,7 @@
   "subdir": "noarch",
   "version": "0.14"
  },
+ "metadata_version": 1,
  "name": "altgraph",
  "raw_recipe": "{% set name = \"altgraph\" %}\n{% set version = \"0.14\" %}\n{% set sha256 = \"481bac8feb1716bb8e485e652ed94002cc11304abccb2911f8f4574fc9dc207b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - altgraph\n\nabout:\n  home: https://bitbucket.org/ronaldoussoren/altgraph\n  license: MIT\n  license_family: MIT\n  license_file: doc/license.rst\n  summary: 'altgraph is a fork of graphlib'\n  description: |\n      altgraph is a fork of graphlib: a graph (network)\n      package for constructing graphs, BFS and DFS traversals,\n      topological sort, shortest paths, etc. with graphviz output.\n  doc_url: https://altgraph.readthedocs.io/en/latest/\n  dev_url: https://bitbucket.org/ronaldoussoren/altgraph\n\nextra:\n  recipe-maintainers:\n    - rth\n",
  "rendered_recipe": {

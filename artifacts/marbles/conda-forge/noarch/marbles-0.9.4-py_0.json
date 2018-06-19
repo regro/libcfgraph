@@ -128,6 +128,7 @@
   "timestamp": 1528082054280,
   "version": "0.9.4"
  },
+ "metadata_version": 1,
  "name": "marbles",
  "raw_recipe": "{% set name = \"marbles\" %}\n{% set version = \"0.9.4\" %}\n{% set sha256 = \"42a13a22e17340d4fad9651de0d723d06978c7e7d6ad36c1a541c8cf6fe4f76c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python >=3.5,<3.7\n    - pip\n  run:\n    - python >=3.5,<3.7\n    - marbles-core\n    - marbles-mixins\n\ntest:\n  imports:\n    - marbles.core\n    - marbles.mixins\n\nabout:\n  home: http://github.com/twosigma/marbles\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Read better test failures.'\n  description: |\n    marbles is a Python unittest extension that allows test authors to write\n    richer tests that expose more information on test failure to help you\n    debug failing tests faster.\n  doc_url: https://marbles.readthedocs.io/\n  dev_url: https://github.com/twosigma/marbles\n\nextra:\n  recipe-maintainers:\n    - thejunglejane\n    - leifwalsh\n",
  "rendered_recipe": {

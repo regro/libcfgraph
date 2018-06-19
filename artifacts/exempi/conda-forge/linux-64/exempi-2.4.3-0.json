@@ -723,6 +723,7 @@
   "subdir": "linux-64",
   "version": "2.4.3"
  },
+ "metadata_version": 1,
  "name": "exempi",
  "raw_recipe": "{% set name = \"exempi\" %}\n{% set version = \"2.4.3\" %}\n{% set sha256 = \"bfd1d8ebffe07918a5bfc7a5130ff82486d35575827cae8d131b9fa1c0c29c6e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://libopenraw.freedesktop.org/download/{{ name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - boost >=1.64\n    - expat \n    - zlib >=1.2.11\n  run:\n    - expat\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libexempi.dylib  # [osx]\n    - test -f $PREFIX/lib/libexempi.so  # [linux]\n    - test -f $PREFIX/bin/exempi\n    - conda inspect linkages -p $PREFIX exempi  # [not win]\n    - conda inspect objects -p $PREFIX exempi  # [osx]\n\nabout:\n  home: http://libopenraw.freedesktop.org/wiki/Exempi\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt'\n  summary: 'exempi is a port of Adobe XMP SDK to work on UNIX'\n  dev_url: https://github.com/hfiguiere/exempi\n\nextra:\n  recipe-maintainers:\n    - quintusdias\n",
  "rendered_recipe": {

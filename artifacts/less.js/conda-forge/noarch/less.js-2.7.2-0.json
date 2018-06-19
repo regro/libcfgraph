@@ -1916,6 +1916,7 @@
   "subdir": "noarch",
   "version": "2.7.2"
  },
+ "metadata_version": 1,
  "name": "less.js",
  "raw_recipe": "{% set name = \"less.js\" %}\n{% set version = \"2.7.2\" %}\n{% set sha256 = \"42164ee9f2e2f22bd98d9c286effb7a3cbdbfe1d94cf3d52d1a5ea870e179283\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/less/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs\n  \ntest:\n  commands:\n    - npm list -g less\n  requires:\n    - nodejs\n   \n\nabout:\n  home: https://github.com/less/less.js\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'The dynamic stylesheet language'\n  description: |\n    The dynamic stylesheet language\n  doc_url: http://lesscss.org/\n  dev_url: https://github.com/less/less.js\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

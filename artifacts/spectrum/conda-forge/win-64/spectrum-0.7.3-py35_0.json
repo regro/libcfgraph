@@ -637,6 +637,7 @@
   "subdir": "win-64",
   "version": "0.7.3"
  },
+ "metadata_version": 1,
  "name": "spectrum",
  "raw_recipe": "{% set version = \"0.7.3\" %}\n{% set name = \"spectrum\" %}\n{% set sha256 = \"212bc7d01d94bde1cbced5dfc458e1a630e60ed8bde0626641ec48b1c2e154e9\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url:  https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n\n  run:\n    - python\n    - numpy\n    - scipy\n    - matplotlib # not required anymore strictly speaking but let us install it for conda\n\ntest:\n  imports:\n    - spectrum\n    - spectrum.mtm # test the C extension import\n\nabout:\n  home: http://github.com/cokelaer/spectrum\n  license: \"BSD 3-clause\"\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Spectrum Analysis Tools'\n  doc_url: http://pyspectrum.readtedocs.io/en/master\n  dev_url: http://github.com/cokelaer/spectrum\n\nextra:\n  recipe-maintainers:\n   - cokelaer\n",
  "rendered_recipe": {

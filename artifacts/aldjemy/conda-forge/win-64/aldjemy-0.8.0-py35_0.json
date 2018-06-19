@@ -634,6 +634,7 @@
   "subdir": "win-64",
   "version": "0.8.0"
  },
+ "metadata_version": 1,
  "name": "aldjemy",
  "raw_recipe": "{% set name = \"aldjemy\" %}\n{% set version = \"0.8.0\" %}\n{% set sha256 = \"0293596fe0926a9f598fa0e0de5e4e4150ed62dd29a1bc07539787cacc4f7ee5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - sqlalchemy >0.7.1\n\ntest:\n  imports:\n    - aldjemy\n\n  commands:\n    - 'cd test_project; python manage.py test'  # [not win]\n    - 'cd test_project & python manage.py test'  # [win]\n\n  requires:\n    - django\n    - django-extensions\n    - sqlalchemy >0.7.1\n\n  source_files:\n    - test_project\n\nabout:\n  home: https://github.com/Deepwalker/aldjemy/\n  license: BSD\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'SQLAlchemy to Django integration library'\n  dev_url: https://github.com/Deepwalker/aldjemy\n\nextra:\n  recipe-maintainers:\n    - ltalirz\n",
  "rendered_recipe": {

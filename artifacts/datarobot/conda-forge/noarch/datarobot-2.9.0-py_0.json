@@ -176,6 +176,7 @@
   "timestamp": 1524520089355,
   "version": "2.9.0"
  },
+ "metadata_version": 1,
  "name": "datarobot",
  "raw_recipe": "{% set name = \"datarobot\" %}\n{% set version = \"2.9.0\" %}\n{% set sha256 = \"c071fccd972bd0e0302f30dc7ca7e7d4cec9fbe6c925d4a51cc5ae852c473fd3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - pytest-runner\n  run:\n    - python\n    - pandas >=0.15\n    - pyyaml >=3.11\n    - requests-toolbelt >=0.6\n    - trafaret <1.1,>=0.7\n\ntest:\n  imports:\n    - datarobot\n\nabout:\n  home: https://www.datarobot.com/\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE.txt\n  summary: 'This client library is designed to support the DataRobot API.'\n\n  description: |\n    datarobot is a client library for working with the <https://www.datarobot.com/> platform API.\n  doc_url: https://datarobot-public-api-client.readthedocs-hosted.com\n\nextra:\n  recipe-maintainers:\n    - elatt\n    - dsakagi\n    - peterhurford\n    - madmott\n    - nott\n",
  "rendered_recipe": {

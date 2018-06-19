@@ -810,6 +810,7 @@
   "subdir": "osx-64",
   "version": "0.20.2"
  },
+ "metadata_version": 1,
  "name": "pandas",
  "raw_recipe": "{% set version=\"0.20.2\" %}\n\npackage:\n  name: pandas\n  version: {{ version }}\n\nsource:\n  fn: pandas-{{ version }}.tar.gz\n  url: https://github.com/pydata/pandas/archive/v{{ version }}.tar.gz\n  sha256: 093edaaa8c3a4d390e75ee81fd9bfdb462cbbccd3b24d8d4b7099947d3fe5d7a\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cython\n    - numpy  x.x\n  run:\n    - python\n    - numpy  x.x\n    - python-dateutil\n    - pytz\n\ntest:\n  imports:\n    - pandas\n  commands:\n    - conda inspect linkages -p $PREFIX pandas  # [not win]\n    - conda inspect objects -p $PREFIX pandas  # [osx]\n\nabout:\n  home: http://pandas.pydata.org\n  license: BSD 3-clause\n  summary: 'High-performance, easy-to-use data structures and data analysis tools.'\n\nextra:\n  recipe-maintainers:\n    - jreback\n    - jorisvandenbossche\n    - msarahan\n    - ocefpaf\n    - TomAugspurger\n",
  "rendered_recipe": {

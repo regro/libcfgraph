@@ -81,6 +81,7 @@
   "subdir": "osx-64",
   "version": "2.69"
  },
+ "metadata_version": 1,
  "name": "autoconf",
  "raw_recipe": "{% set version = \"2.69\" %}\n\npackage:\n    name: autoconf\n    version: {{ version }}\n\nsource:\n    fn: autoconf-{{ version }}.tar.gz\n    url: http://ftp.gnu.org/gnu/autoconf/autoconf-{{ version }}.tar.gz\n    sha256: 954bd69b391edc12d6a4a51a2dd1476543da5c6bbf05a95b59dc0dd6fd4c2969\n\nbuild:\n    number: 2\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - m4\n        - perl >=5.20\n    run:\n        - m4\n        - perl >=5.20\n\ntest:\n    commands:\n        - autoconf --help\n\nabout:\n    home: http://www.gnu.org/software/autoconf/\n    license: GPL 3\n    summary: Extensible M4 macros that produce shell scripts to configure software source code packages.\n\nextra:\n    recipe-maintainers:\n        - jakirkham\n        - ocefpaf\n",
  "rendered_recipe": {},

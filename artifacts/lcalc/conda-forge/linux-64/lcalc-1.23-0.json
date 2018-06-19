@@ -121,6 +121,7 @@
   "subdir": "linux-64",
   "version": "1.23"
  },
+ "metadata_version": 1,
  "name": "lcalc",
  "raw_recipe": "{% set version = \"1.23\" %}\n{% set name = \"lcalc\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://oto.math.uwaterloo.ca/~mrubinst/L_function_public/CODE/L-{{ version }}.tar.gz\n  sha256: 3d1f47bdb3156c085faab3c4ccaaf68063175d3fba9b4c85adea52d032bcd46a\n  patches:\n    - patches/clang.patch\n    - patches/lcalc-1.23_default_parameters_1.patch\n    - patches/lcalc-1.23_default_parameters_2.patch\n    - patches/Lcommon.h.patch\n    - patches/Makefile.patch\n    - patches/pari-2.7.patch\n    - patches/time.h.patch\n    - patches/include_pari.patch\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - pari\n    - gmp >=5.0.1,<7\n    - mpfr 3.*\n  run:\n    - pari\n    - gmp >=5.0.1,<7\n    - mpfr 3.*\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/libLfunction/L.h\n    - test -f ${PREFIX}/lib/libLfunction.dylib     # [osx]\n    - test -f ${PREFIX}/lib/libLfunction.so        # [linux]\n\nabout:\n  home: http://oto.math.uwaterloo.ca/~mrubinst/L_function_public/L.html\n  license: GPLv2+\n  license_file: COPYING\n  summary: C++ L-function class library and command line interface\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

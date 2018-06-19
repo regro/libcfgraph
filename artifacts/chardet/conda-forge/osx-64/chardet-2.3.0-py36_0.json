@@ -120,6 +120,7 @@
   "subdir": "osx-64",
   "version": "2.3.0"
  },
+ "metadata_version": 1,
  "name": "chardet",
  "raw_recipe": "{% set name = \"chardet\" %}\n{% set version = \"2.3.0\" %}\n{% set sha256 = \"e53e38b3a4afe6d1132de62b7400a4ac363452dc5dfcf8d88e8e0cce663c68aa\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - chardetect = chardet.chardetect:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - chardet\n  commands:\n    - chardetect --help\n\nabout:\n  home: https://github.com/chardet/chardet\n  doc_url: http://chardet.readthedocs.org\n  dev_url: https://github.com/chardet/chardet\n  license: LGPL2\n  license_family: GPL\n  license_file: LICENSE\n  summary: Universal character encoding detector\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "rendered_recipe": {

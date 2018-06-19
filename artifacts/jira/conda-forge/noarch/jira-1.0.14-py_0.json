@@ -780,6 +780,7 @@
   "subdir": "noarch",
   "version": "1.0.14"
  },
+ "metadata_version": 1,
  "name": "jira",
  "raw_recipe": "{%set name = \"jira\" %}\n{%set version = \"1.0.14\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"a35e270c37c7f43f12bb67e4cad226e81f6bf926acfc35d4b60fc88715cbccf6\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  noarch: python\n  entry_points:\n    - jirashell = jira.jirashell:main\n\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pbr >=1.9\n    - setuptools >=17.1\n    - pytest-runner\n    - pip\n\n  run:\n    - python\n    - pbr >=1.9\n    - requests-oauthlib >=0.6.1\n    - requests >=2.10.0\n    - requests-toolbelt\n    - six >=1.10.0\n    - setuptools >=20.10.1\n    - defusedxml\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: https://github.com/pycontribs/jira\n  license: BSD 2-Clause\n  license_file: LICENSE\n  summary: 'The easiest way to automate JIRA'\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - parente\n    - pmlandwehr\n",
  "rendered_recipe": {

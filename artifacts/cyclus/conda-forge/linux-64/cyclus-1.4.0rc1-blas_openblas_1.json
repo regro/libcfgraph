@@ -211,6 +211,7 @@
   "subdir": "linux-64",
   "version": "1.4.0rc1"
  },
+ "metadata_version": 1,
  "name": "cyclus",
  "raw_recipe": "{% set version = \"1.4.0rc1\" %}\n{% set org = \"cyclus\" %}\n{% set branch = \"develop\" %}\n{% set sha256 = \"7a6bd1334f3fd13ddac73fbb7a5218b958b793b81bda26552e9c3abbf255a905\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: cyclus\n  version: {{ version }}\n\nsource:\n  fn: cyclus-{{ version }}-{{ sha256 }}.tar.gz\n  url: https://github.com/{{ org }}/cyclus/archive/{{ branch }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: True  # [win or not py35]\n  detect_binary_files_with_prefix: true\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - cmake\n    - pkg-config\n    - libxmlpp\n    - coincbc\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.18*\n    - boost 1.61.*\n    - hdf5 1.8.17|1.8.17.*\n    - sqlite 3.13.*\n    - pcre\n    - gettext\n    - bzip2 1.0.*\n    - xz 5.2.*\n  run:\n    - libxmlpp\n    - coincbc\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.18*\n    - boost 1.61.*\n    - hdf5 1.8.17|1.8.17.*\n    - sqlite 3.13.*\n    - pcre\n    - gettext\n    - bzip2 1.0.*\n    - xz 5.2.*\n\ntest:\n  requires:\n    - setuptools\n    - nose\n    - pytables\n\nabout:\n  home: http://fuelcycle.org/\n  license: BSD 3-clause\n  license_file: LICENSE.rst\n  summary: \"The agent-based fuel cycle simulator.\"\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "rendered_recipe": {},

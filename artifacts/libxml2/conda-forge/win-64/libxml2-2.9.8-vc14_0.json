@@ -652,6 +652,7 @@
   "subdir": "win-64",
   "version": "2.9.8"
  },
+ "metadata_version": 1,
  "name": "libxml2",
  "raw_recipe": "{% set version = \"2.9.8\" %}\n\npackage:\n  name: libxml2\n  version: {{ version }}\n\nsource:\n  url: https://git.gnome.org/browse/libxml2/snapshot/libxml2-{{ version }}.tar.gz\n  sha256: ff879b0d9142564bfe63df9753df936f05150afdd7bae07261f12d4dad33ba4a\n\nbuild:\n  number: 0\n  # vc 9 probably need some patches, skipping it for now.\n  skip: True  # [(win and py27) or (win and py36)]\n  features:\n    - vc14  # [win and (py35 or py36)]\n\nrequirements:\n  build:\n    - python  # [win]\n    - autoconf  # [not win]\n    - automake  # [not win]\n    - libtool  # [not win]\n    - pkg-config  # [not win]\n    - icu 58.*  # [not win]\n    - libiconv 1.15\n    - zlib 1.2.11\n    - xz 5.2.*  # [not win]\n    - vc 9  # [win and py27]\n    - vc 14  # [win and (py35 or py36)]\n  run:\n    - icu 58.*  # [not win]\n    - libiconv 1.15\n    - zlib 1.2.11\n    - xz 5.2.*  # [not win]\n    - vc 9  # [win and py27]\n    - vc 14  # [win and (py35 or py36)]\n\ntest:\n  files:\n    - test.xml\n  commands:\n    - xmllint test.xml\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://xmlsoft.org/\n  license: MIT\n  license_file: Copyright\n  summary: 'The XML C parser and toolkit of Gnome.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - jakirkham\n    - gillins\n    - jschueller\n",
  "rendered_recipe": {

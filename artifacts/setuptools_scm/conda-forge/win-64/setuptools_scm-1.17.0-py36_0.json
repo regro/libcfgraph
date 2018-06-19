@@ -647,6 +647,7 @@
   "subdir": "win-64",
   "version": "1.17.0"
  },
+ "metadata_version": 1,
  "name": "setuptools_scm",
  "raw_recipe": "{% set version = \"1.17.0\" %}\n\npackage:\n  name: setuptools_scm\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/setuptools_scm/setuptools_scm-{{ version }}.tar.gz\n  sha256: 70a4cf5584e966ae92f54a764e6437af992ba42ac4bca7eb37cc5d02b98ec40a\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - setuptools_scm\n\nabout:\n  home: https://github.com/pypa/setuptools_scm/\n  license: MIT\n  # license_file: LICENSE\n  summary: 'The blessed package to manage your versions by scm tags.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - kwilcox\n    - astaric\n",
  "rendered_recipe": {

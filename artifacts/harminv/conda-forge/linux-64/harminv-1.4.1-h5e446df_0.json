@@ -141,6 +141,7 @@
   "timestamp": 1524578822157,
   "version": "1.4.1"
  },
+ "metadata_version": 1,
  "name": "harminv",
  "raw_recipe": "{% set name = \"harminv\" %}\n{% set version = \"1.4.1\" %}\n{% set sha256 = \"e1b923c508a565f230aac04e3feea23b888b47d8e19b08816a97ee4444233670\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/stevengj/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - gcc\n    - libgfortran  # [linux]\n    - openblas\n  run:\n    - openblas\n    - libgfortran\n    - libgcc\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libharminv${SHLIB_EXT}  # [unix]\n\nabout:\n  home: http:/github.com/stevengj/harminv\n  license: GPL-2.0\n  license_file: COPYING\n  summary: Harmonic inversion algorithm of Mandelshtam - decompose signal into sum of decaying sinusoids\n  doc_url: http://harminv.readthedocs.io\n  dev_url: https://github.com/stevengj/harminv\n\nextra:\n  recipe-maintainers:\n    - ChristopherHogan\n",
  "rendered_recipe": {

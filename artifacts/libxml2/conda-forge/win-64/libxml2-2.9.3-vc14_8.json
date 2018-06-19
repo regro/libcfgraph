@@ -93,6 +93,7 @@
   "subdir": "win-64",
   "version": "2.9.3"
  },
+ "metadata_version": 1,
  "name": "libxml2",
  "raw_recipe": "{% set version = \"2.9.3\" %}\n\npackage:\n    name: libxml2\n    version: {{ version }}\n\nsource:\n    fn: libxml2-{{ version }}.tar.gz\n    url: https://git.gnome.org/browse/libxml2/snapshot/libxml2-{{ version }}.tar.gz\n    md5: 0fea8d715ce177534b1abb6ba8880140\n\nbuild:\n    number: 8\n    features:\n        - vc9  # [win and py27]\n        - vc10  # [win and py34]\n        - vc14  # [win and py35]\n        \nrequirements:\n    build:\n        - python  # [win]\n        - autoconf  # [not win]\n        - automake  # [not win]\n        - libtool  # [not win]\n        - pkg-config  # [not win]\n        - icu 56.*  # [not win]\n        - libiconv\n        - zlib 1.2.*\n        - xz 5.0.*  # [not win]\n    run:\n        - icu 56.*  # [not win]\n        - libiconv\n        - zlib 1.2.*\n        - xz 5.0.*  # [not win]\n\ntest:\n    requires:\n        - python {{ environ['PY_VER'] + '*' }}  # [win]\n    files:\n        - test.xml\n    commands:\n        - xmllint test.xml\n        - conda inspect linkages -n _test libxml2  # [linux]\n\nabout:\n    home: http://xmlsoft.org/\n    license: MIT\n    summary: The XML C parser and toolkit of Gnome\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - jakirkham\n        - gillins\n",
  "rendered_recipe": {},

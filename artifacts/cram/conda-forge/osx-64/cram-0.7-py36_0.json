@@ -501,6 +501,7 @@
   "subdir": "osx-64",
   "version": "0.7"
  },
+ "metadata_version": 1,
  "name": "cram",
  "raw_recipe": "{% set name = \"cram\" %}\n{% set version = \"0.7\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"7da7445af2ce15b90aad5ec4792f857cef5786d71f14377e9eb994d8b8337f2f\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - cram\n\n  commands:\n    - cram -h\n\nabout:\n  home: https://bitheap.org/cram/\n  license: GPL-2.0\n  license_file: COPYING.txt\n  summary: 'A simple testing framework for command line applications'\n  license_family: GPL2\n  dev_url: https://github.com/brodie/cram\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
  "rendered_recipe": {

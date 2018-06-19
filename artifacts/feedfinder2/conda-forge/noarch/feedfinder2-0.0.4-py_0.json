@@ -718,6 +718,7 @@
   "subdir": "noarch",
   "version": "0.0.4"
  },
+ "metadata_version": 1,
  "name": "feedfinder2",
  "raw_recipe": "{% set name = \"feedfinder2\" %}\n{% set version = \"0.0.4\" %}\n{% set file_ext = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"3701ee01a6c85f8b865a049c30ba0b4608858c803fe8e30d1d289fdbe89d0efe\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.{{ file_ext }}'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - six\n    - requests\n    - beautifulsoup4\n\ntest:\n  imports:\n    - feedfinder2\n\n\nabout:\n  home: https://github.com/dfm/feedfinder2\n  license: MIT\n  license_family: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: Find the feed URLs for a website.\n  description: \"This is a Python library for finding links feeds on a website.\"\n  dev_url: 'https://github.com/dfm/feedfinder2'\n\nextra:\n  recipe-maintainers:\n    - ganeshhubale\n    - synapticarbors\n",
  "rendered_recipe": {

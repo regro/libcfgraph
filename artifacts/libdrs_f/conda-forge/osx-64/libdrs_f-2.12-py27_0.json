@@ -493,6 +493,7 @@
   "subdir": "osx-64",
   "version": "2.12"
  },
+ "metadata_version": 1,
  "name": "libdrs_f",
  "raw_recipe": "{% set name = \"libdrs_f\" %}\n{% set version = \"2.12\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/UV-CDAT/libdrs/archive/v2.12.tar.gz\n  sha256: d44a71f7903ce75c3c1d3839564fba2e7275a88e2353a5d2197280ec938752f5\n\nbuild:\n  number: 0\n  skip: True  # [win] \n\nrequirements:\n  build:\n    - python\n    - g2clib\n    - libcdms\n    - libpng >=1.6.28,<1.7\n    - gcc \n  run:\n    - python\n    - g2clib\n    - libcdms\n    - libpng >=1.6.28,<1.7\n    - libgfortran\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libdrsfortran.a \n\nabout:\n  home:  http://uvcdat.llnl.gov\n  license: CCLRC\n  summary: 'Data Retrieval and Storage DRS software Fortran library'\n  description: |            \n    libdrs is suitable for the data generated and used in climate model research. \n    It is oriented toward use with models generating very large datasets on \n    supercomputers, as well as with graphics workstations used for analysis and \n    display of smaller subsets of data. \n  dev_url: http://github.com/UV-CDAT/libdrs\n\nextra:\n  recipe-maintainers:\n    - dnadeau4\n    - doutriaux1\n",
  "rendered_recipe": {

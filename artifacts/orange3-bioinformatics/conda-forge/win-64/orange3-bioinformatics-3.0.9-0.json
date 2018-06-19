@@ -697,6 +697,7 @@
   "subdir": "win-64",
   "version": "3.0.9"
  },
+ "metadata_version": 1,
  "name": "orange3-bioinformatics",
  "raw_recipe": "{% set name = \"Orange3-Bioinformatics\" %}\n{% set version = \"3.0.9\" %}\n{% set sha256 = \"443baa2f4d2dd882c06622183c5163bf42b788f04df06571a6a5a5e3d0afba7c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [py2k]\n  script: python -m pip install --no-deps --ignore-installed .\n  preserve_egg_dir: True\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - orange3\n    - serverfiles\n    - requests\n    - requests-cache\n    - genesis-pyapi\n\ntest:\n  imports:\n    - orangecontrib.bioinformatics\n\nabout:\n  home: https://github.com/biolab/orange3-bioinformatics\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: 'Orange3 add-on with common functionality for bioinformatics'\n\n  description: |\n    Orange Bioinformatics provides access to publicly available data, \n    like GEO data sets, GO and KEGG. All features can be combined with \n    powerful visualization, network exploration and data mining techniques \n    from the Orange data mining framework.\n  dev_url: https://github.com/biolab/orange3-bioinformatics\n\nextra:\n  recipe-maintainers:\n    - jakakokosar\n    - astaric\n",
  "rendered_recipe": {

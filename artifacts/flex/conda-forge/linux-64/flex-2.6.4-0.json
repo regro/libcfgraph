@@ -786,6 +786,7 @@
   "subdir": "linux-64",
   "version": "2.6.4"
  },
+ "metadata_version": 1,
  "name": "flex",
  "raw_recipe": "{% set version = \"2.6.4\" %}\n\npackage:\n  name: flex\n  version: {{ version }}\n\nsource:\n  url: https://github.com/westes/flex/releases/download/v{{ version }}/flex-{{ version }}.tar.gz\n  sha256: e87aae032bf07c26f85ac0ed3250998c37621d95f8bd748b31f15b33c45ee995\n\nbuild:\n  skip: true  # [win]\n  number: 0\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - automake\n    - libiconv 1.15\n    - m4\n  run:\n    - libiconv 1.15\n    - m4\n\ntest:\n  commands:\n    # CLI tests\n    - flex --help\n\n    # Include test\n    - test -f ${PREFIX}/include/FlexLexer.h\n\n    # Lib tests\n    - test -f ${PREFIX}/lib/libfl.a\n    - test -f ${PREFIX}/lib/libfl.dylib      # [osx]\n    - test -f ${PREFIX}/lib/libfl.so         # [linux]\n    - conda inspect linkages -p ${PREFIX} $PKG_NAME  # [linux]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://flex.sourceforge.net/\n  license: BSD 2-Clause\n  summary: The Fast Lexical Analyzer\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - ocefpaf\n",
  "rendered_recipe": {

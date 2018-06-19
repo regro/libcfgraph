@@ -777,6 +777,7 @@
   "subdir": "win-64",
   "version": "4.2.1"
  },
+ "metadata_version": 1,
  "name": "make",
  "raw_recipe": "# Jinja variables help maintain the recipe as you'll update the version only here.\n{% set version = \"4.2.1\" %}\n{% set sha256 = \"d6e262bf3601b42d2b1e4ef8310029e1dcf20083c5446b4b7aa67081fdffc589\" %}\n\npackage:\n  name: make\n  version: {{ version }}\n\nsource:\n  fn: make-{{ version }}.tar.bz2\n  url: https://ftp.gnu.org/gnu/make/make-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:  \n  build:\n  - m2w64-toolchain   # [win]\n  run:\n    - m2w64-gcc-libs  # [win]\n\ntest:\n  commands:\n    - $PREFIX/bin/make --help  # [unix]\n    - '\"%LIBRARY_BIN%\\gnumake.exe\" --help'  # [win]\n\nabout:\n  home: https://www.gnu.org/software/make/\n  license: GPLv3\n  summary: \"GNU Make is a tool which controls the generation of executables and other non-source files of a program from the program's source files.\"\n  doc_url: https://www.gnu.org/software/make/manual/\n\nextra:\n  recipe-maintainers:\n    - asmeurer\n    - scopatz\n",
  "rendered_recipe": {

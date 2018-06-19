@@ -30,6 +30,7 @@
   "subdir": "osx-64",
   "version": "0.1.6"
  },
+ "metadata_version": 1,
  "name": "slda",
  "raw_recipe": "{% set name = \"slda\" %}\n{% set version = \"0.1.6\" %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/Savvysherpa/slda/archive/{{ version }}.tar.gz\n    sha256: aeabfe4edefc566ee97c107f8f9b2c6a478595e24fb35d44d9eeaaa876fb90ce\n\nbuild:\n    number: 0\n    skip: True  # [win or not py3k]\n\nrequirements:\n    build:\n        - cython\n        - cythongsl\n        - numpy x.x\n        - python\n        - setuptools\n    run:\n        - cython\n        - cythongsl\n        - numpy x.x\n        - pypolyagamma\n        - python\n        - scikit-learn\n        - scipy\n\ntest:\n    imports:\n        - slda\n\nabout:\n    home: https://github.com/Savvysherpa/slda\n    license: MIT\n    summary: >\n      Cython implementations of Gibbs sampling for latent\n      Dirichlet allocation and its supervised variants\n\nextra:\n    recipe-maintainers:\n        - mmb90\n",
  "rendered_recipe": {},

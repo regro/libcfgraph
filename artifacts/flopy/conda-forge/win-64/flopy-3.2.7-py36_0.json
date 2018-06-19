@@ -902,6 +902,7 @@
   "subdir": "win-64",
   "version": "3.2.7"
  },
+ "metadata_version": 1,
  "name": "flopy",
  "raw_recipe": "{% set version = \"3.2.7\" %}\n\npackage:\n  name: flopy\n  version: {{ version }}\n\nsource:\n  url: https://github.com/modflowpy/flopy/archive/{{ version }}.tar.gz\n  sha256: 02737892c9598514ce7684a9ef9d47d2c66ad04a24d306dac7af5be537b51836\n\nbuild:\n  number: 0\n  script: \n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy\n    - matplotlib\n    - enum34  # [py27]\n  run:\n    - python\n    - numpy\n    - matplotlib\n    - enum34  # [py27]\n\ntest:\n  imports:\n    - flopy\n\nabout:\n  home: https://github.com/modflowpy/flopy\n  license: BSD 3-Clause\n  summary: 'FloPy is a Python package for developing, running, and post-processing MODFLOW-based models.'\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - ocefpaf\n    - jdhughes-usgs\n",
  "rendered_recipe": {

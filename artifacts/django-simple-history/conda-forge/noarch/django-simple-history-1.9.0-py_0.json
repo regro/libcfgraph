@@ -776,6 +776,7 @@
   "subdir": "noarch",
   "version": "1.9.0"
  },
+ "metadata_version": 1,
  "name": "django-simple-history",
  "raw_recipe": "{% set name = \"django-simple-history\" %}\n{% set version = \"1.9.0\" %}\n{% set sha256 = \"2faca872d730068025fb19678048d6f3c2de52e0a141189df798a697e67c9886\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django >=1.8\n\ntest:\n  imports:\n    - simple_history\nabout:\n  home: https://github.com/treyhunner/django-simple-history\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Store model history and view/revert changes from admin site.'\n  description: \n    django-simple-history stores Django model state on every create/update/delete.\n  doc_url: https://django-simple-history.readthedocs.io/\n  dev_url: https://github.com/treyhunner/django-simple-history\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

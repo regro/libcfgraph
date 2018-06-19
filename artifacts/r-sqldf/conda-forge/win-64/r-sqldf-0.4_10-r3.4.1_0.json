@@ -625,6 +625,7 @@
   "subdir": "win-64",
   "version": "0.4_10"
  },
+ "metadata_version": 1,
  "name": "r-sqldf",
  "raw_recipe": "{% set version = '0.4-10' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-sqldf\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: sqldf_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/sqldf_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/sqldf/sqldf_{{ version }}.tar.gz\n  sha256: 0786f09cb14174423c2e624be0f844a23ec8dd717403fcf760ebc9375ede1e59\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-dbi >=0.2_5\n    - r-rsqlite >=1.0.0\n    - r-chron\n    - r-gsubfn >=0.6\n    - r-proto\n\n  run:\n    - r-base\n    - r-dbi >=0.2_5\n    - r-rsqlite >=1.0.0\n    - r-chron\n    - r-gsubfn >=0.6\n    - r-proto\n\ntest:\n  commands:\n    - $R -e \"library('sqldf')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('sqldf')\\\"\"  # [win]\n\nabout:\n  home: http://sqldf.googlecode.com\n  license: GPL-2\n  summary: |\n    Description: Manipulate R data frames using SQL.\n  license_family: GPL2\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

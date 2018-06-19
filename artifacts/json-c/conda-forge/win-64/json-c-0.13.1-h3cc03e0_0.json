@@ -137,6 +137,7 @@
   "timestamp": 1526486794624,
   "version": "0.13.1"
  },
+ "metadata_version": 1,
  "name": "json-c",
  "raw_recipe": "{% set version = \"0.13.1-20180305\" %}\n\npackage:\n  name: json-c\n  version: {{ version.split('-')[0] }}\n\nsource:\n  fn: json-c-{{ version }}.tar.gz\n  url: https://github.com/json-c/json-c/archive/json-c-{{ version }}.tar.gz\n  sha256: 5d867baeb7f540abe8f3265ac18ed7a24f91fe3c5f4fd99ac3caba0708511b90\n  patches:\n    - 00-add-library-inc.patch\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - autoconf  # [unix]\n    - automake  # [unix]\n    - libtool  # [unix]\n    - cmake  # [win]\n  host:\n    - msinttypes  # [win and vc<=9]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libjson-c.a  # [unix]\n    - test -f ${PREFIX}/lib/libjson-c.so  # [linux]\n    - test -f ${PREFIX}/lib/libjson-c.dylib  # [osx]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\n    - if not exist %LIBRARY_BIN%/json-c.dll exit 1  # [win]\n    - if not exist %LIBRARY_LIB%/json-c.lib exit 1  # [win]\n\nabout:\n  home: https://github.com/json-c/json-c/wiki\n  license: MIT\n  license_file: COPYING\n  summary: 'A JSON implementation in C.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - sodre\n",
  "rendered_recipe": {

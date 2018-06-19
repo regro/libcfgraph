@@ -160,6 +160,7 @@
   "timestamp": 1527386592080,
   "version": "0.3.0dev"
  },
+ "metadata_version": 1,
  "name": "fpylll",
  "raw_recipe": "{% set version = \"0.3.0dev\" %}\n{% set name = \"fpylll\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/fplll/fpylll/releases/download/{{ version }}/fpylll-{{ version }}.tar.gz\n  sha256: 75303197286c0a5f5b123dcf01304585902c4e7031b30a5c70edbfc28327278b\n\nbuild:\n  number: 2\n  skip: true  # [win]\n  script:\n    - python setup.py install\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - pkg-config\n  host:\n    - cython\n    - gmp\n    - mpfr\n    - qd 2.3.*\n    - fplll 5.2.*\n    - cysignals\n    - numpy 1.11.*\n    - python\n  run:\n    - gmp\n    - mpfr\n    - qd 2.3.*\n    - fplll\n    - cysignals\n    - {{ pin_compatible('numpy') }}\n    - python\n\ntest:\n  requires:\n    - pytest\n  commands:\n    - py.test\n  imports:\n    - fpylll\n  source_files:\n    - tests/*\n\nabout:\n  home: https://github.com/fplll/fpylll\n  license: GPLv2+\n  license_file: LICENSE\n  summary: A Python (2 and 3) wrapper for fplll.\n  dev_url: https://github.com/fplll/fpylll\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - saraedum\n",
  "rendered_recipe": {

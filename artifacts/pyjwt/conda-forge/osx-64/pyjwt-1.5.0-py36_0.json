@@ -105,6 +105,7 @@
   "subdir": "osx-64",
   "version": "1.5.0"
  },
+ "metadata_version": 1,
  "name": "pyjwt",
  "raw_recipe": "{%set name = \"PyJWT\" %}\n{%set version = \"1.5.0\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"fd182b728d13f04c289d9b2623d09256d356c9b4a6778018001454a954d7c54b\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  entry_points:\n    - jwt = jwt.__main__:main\n\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - cryptography >=1.0\n    - flake8\n    - flake8-import-order\n    - pep8-naming\n\ntest:\n  imports:\n    - jwt\n    - jwt.contrib\n    - jwt.contrib.algorithms\n\n  commands:\n    - jwt --help\n\nabout:\n  home: https://github.com/jpadilla/pyjwt\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'JSON Web Token implementation in Python'\n  dev_url: https://github.com/jpadilla/pyjwt\n  doc_url: https://pyjwt.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

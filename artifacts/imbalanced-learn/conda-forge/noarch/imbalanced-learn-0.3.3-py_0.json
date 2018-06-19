@@ -834,6 +834,7 @@
   "subdir": "noarch",
   "version": "0.3.3"
  },
+ "metadata_version": 1,
  "name": "imbalanced-learn",
  "raw_recipe": "{% set name = \"imbalanced-learn\" %}\n{% set version = \"0.3.3\" %}\n{% set sha256 = \"e49550da4c98771afd0aa49db7710ab0d85e766754bad9fb767567c367d2b2e4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy >=1.9\n    - scipy\n    - scikit-learn 0.19.*\n\n  run:\n    - python\n    - numpy >=1.9\n    - scipy\n    - scikit-learn 0.19.*\n\ntest:\n  imports:\n    - imblearn\n\nabout:\n  home: https://github.com/scikit-learn-contrib/imbalanced-learn\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Python module to balance data set using under- and over-sampling'\n  description: |\n    imbalanced-learn is a python package offering a number of re-sampling\n    techniques commonly used in datasets showing strong between-class imbalance.\n    It is compatible with scikit-learn and is part of scikit-learn-contrib\n    projects.\n  doc_url: http://contrib.scikit-learn.org/imbalanced-learn\n  dev_url: https://github.com/scikit-learn-contrib/imbalanced-learn\n\nextra:\n  recipe-maintainers:\n    - glemaitre\n",
  "rendered_recipe": {

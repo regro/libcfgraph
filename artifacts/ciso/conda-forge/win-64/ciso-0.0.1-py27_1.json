@@ -514,6 +514,7 @@
   "subdir": "win-64",
   "version": "0.0.1"
  },
+ "metadata_version": 1,
  "name": "ciso",
  "raw_recipe": "{% set version = \"0.0.1\" %}\n\npackage:\n  name: ciso\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ioos/ciso/archive/v{{ version }}.tar.gz\n  sha256: 8d28c4df6eca3b683d8a2efed8da9b0699c98efe3c53e23203a1c1169f9d54b3\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cython\n    - numpy 1.7.*  # [py27]\n    - numpy 1.9.*  # [py35]\n    - numpy 1.11.*  # [py36]\n  run:\n    - python\n    - numpy >=1.7  # [py27]\n    - numpy >=1.9  # [py35]\n    - numpy >=1.11  # [py36]\n\ntest:\n  imports:\n    - ciso\n  commands:\n    - conda inspect linkages -p $PREFIX ciso  # [not win]\n    - conda inspect objects -p $PREFIX ciso  # [osx]\n\nabout:\n  home: https://github.com/ioos/ciso\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'Cythonized Iso Surfaces (CISO).'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -767,6 +767,7 @@
   "subdir": "noarch",
   "version": "1.1.0"
  },
+ "metadata_version": 1,
  "name": "descartes",
  "raw_recipe": "{% set version = \"1.1.0\" %}\n\npackage:\n  name: descartes\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/descartes/descartes-{{ version }}.tar.gz\n  sha256: 135a502146af5ed6ff359975e2ebc5fa4b71b5432c355c2cafdc6dea1337035b\n\nbuild:\n  number: 1\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - matplotlib\n\ntest:\n  imports:\n    - descartes\n\nabout:\n  home: http://bitbucket.org/sgillies/descartes/\n  license: BSD\n  summary: 'Use geometric objects as matplotlib paths and patches'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

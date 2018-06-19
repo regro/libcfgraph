@@ -622,6 +622,7 @@
   "subdir": "win-64",
   "version": "2.7.3.2"
  },
+ "metadata_version": 1,
  "name": "psycopg2",
  "raw_recipe": "{% set version = \"2.7.3.2\" %}\n{% set sha256 = \"5c3213be557d0468f9df8fe2487eaf2990d9799202c5ff5cb8d394d09fad9b2a\" %}\n\npackage:\n  name: psycopg2\n  version: {{ version }}\n\nsource:\n  fn: psycopg2-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/psycopg2/psycopg2-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - have_openssl.patch\n\nbuild:\n  number: 0\n  script: python setup.py install  # [win]\n\nrequirements:\n  build:\n    - python\n    - openssl 1.0.*\n    - postgresql\n  run:\n    - python\n    # libpq is a repackaging of only the library to connect to postgres\n    - libpq\n    - openssl 1.0.*\n\ntest:\n  imports:\n    - psycopg2\n    - psycopg2._psycopg\n\nabout:\n  home: http://initd.org/psycopg/\n  license: LGPL, BSD-like, ZPL\n  summary: 'Python-PostgreSQL Database Adapter'\n\nextra:\n  recipe-maintainers:\n    - msarahan\n    - ocefpaf\n",
  "rendered_recipe": {

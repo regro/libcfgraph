@@ -525,6 +525,7 @@
   "subdir": "win-64",
   "version": "2.2.5"
  },
+ "metadata_version": 1,
  "name": "m2w64-muparser",
  "raw_recipe": "{% set version = \"2.2.5\" %}\n\npackage:\n  name: m2w64-muparser\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/beltoforion/muparser/archive/v{{ version }}.tar.gz \n  md5: 02dae671aa5ad955fdcbcd3fee313fb7\n  patches:\n    - no-console.patch\n    - 0001-Export-CXX-symbols.patch\n\nbuild:\n  number: 0\n  skip: true  # [not win or py3k]\n\nrequirements:\n  build:\n    - m2w64-toolchain\n    - cmake\n  run:\n    - m2w64-gcc-libs\n\ntest:\n  commands:\n    - if not exist %LIBRARY_PREFIX%\\\\mingw-w64\\\\include\\\\muParser.h exit 1\n    - if not exist %LIBRARY_PREFIX%\\\\mingw-w64\\\\lib\\\\libmuparser.dll.a exit 1\n    - if not exist %LIBRARY_PREFIX%\\\\mingw-w64\\\\bin\\\\libmuparser.dll exit 1\n\nabout:\n  home: http://muparser.beltoforion.de/\n  license: MIT\n  license_file: License.txt\n  summary: A fast math parser library\n\nextra:\n  recipe-maintainers:\n    - jschueller\n    - mingwandroid\n",
  "rendered_recipe": {

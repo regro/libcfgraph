@@ -713,6 +713,7 @@
   "subdir": "win-64",
   "version": "1.1.0"
  },
+ "metadata_version": 1,
  "name": "pyblake2",
  "raw_recipe": "{% set version = '1.1.0' %}\n{% set sha256 = '3a850036bf42053c74bfc52c063323ca78e40ba1f326b01777da5750a143631a' %}\n{% set name = 'pyblake2' %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n\nbuild:\n  number: 0\n  script:\n    - python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - toolchain\n    - msinttypes  # [win and py<35]\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - pyblake2\n  commands:\n    - conda inspect linkages {{ name|lower }}  # [unix]\n    - conda inspect objects {{ name|lower }}   # [osx]\n\n\nabout:\n  home: https://github.com/dchest/pyblake2\n  license_family: MIT\n  license: MIT\n  license_file: COPYING\n  summary: |\n    pyblake2 is an extension module for Python implementing BLAKE2 hash function.\n    BLAKE2 is a cryptographic hash function, which offers highest security while being as fast as MD5 or SHA-1,\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "rendered_recipe": {

@@ -764,6 +764,7 @@
   "subdir": "linux-64",
   "version": "1.5.0"
  },
+ "metadata_version": 1,
  "name": "pytest-faulthandler",
  "raw_recipe": "{% set name = \"pytest-faulthandler\" %}\n{% set version = \"1.5.0\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"bf8634c3fd6309ef786ec03b913a5366163fdb094ebcfdebc35626400d790e0d\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - setuptools_scm\n    - pip\n  run:\n    - python\n    - pytest\n    - faulthandler  # [py27]\n\ntest:\n  imports:\n    - pytest_faulthandler\n\nabout:\n  home: https://github.com/pytest-dev/pytest-faulthandler\n  license: MIT\n  summary: py.test plugin that activates the fault handler module for tests\n\nextra:\n  recipe-maintainers:\n    - nicoddemus\n",
  "rendered_recipe": {

@@ -1055,6 +1055,7 @@
   "subdir": "osx-64",
   "version": "0.13.0"
  },
+ "metadata_version": 1,
  "name": "dipy",
  "raw_recipe": "{% set version = \"0.13.0\" %}\n\npackage:\n  name: dipy\n  version: {{ version }}\n\nsource:\n  fn: dipy-{{ version }}.tar.gz\n  url:\n    https://pypi.python.org/packages/26/52/a64d196965ec1455371347684a910d3f62aee1d3dac07d00cc68ea5230d0/dipy-{{ version }}.tar.gz\n  md5: 3c3589974e4cc5b71d7e4e6d563dcbfa\n\nbuild:\n    number: 1\n    script: python setup.py install\n    features:\n        - vc9  # [win and py27]\n        - vc10  # [win and py34]\n        - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - python\n    - numpy\n    - nibabel\n    - cython\n    - gcc  # [not win]\n  run:\n    - python\n    - numpy\n    - scipy\n    - nibabel\n    - scikit-learn\n    - matplotlib\n    - cvxopt  # [not win]\n    - pytables\n    - libgcc  # [not win]\n    - vtk  # [py27]\ntest:\n  imports:\n    - dipy\n\nabout:\n  home: https://nipy.org/dipy\n  license:  3-clause BSD\n  license_file: LICENSE\n  summary: Diffusion MR Imaging in Python\n\nextra:\n  recipe-maintainers:\n    - arokem\n    - garyfallidis\n    - skoudoro\n",
  "rendered_recipe": {

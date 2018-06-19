@@ -39,6 +39,7 @@
   "subdir": "osx-64",
   "version": "0.8"
  },
+ "metadata_version": 1,
  "name": "pyranha",
  "raw_recipe": "{% set version = \"0.8\" %}\n\npackage:\n  name: pyranha\n  version: {{ version }}\n\nsource:\n  fn: piranha-{{ version }}.tar.gz\n  url: https://github.com/bluescarni/piranha/archive/v{{ version }}.tar.gz\n  sha256: 649f91ceee56446f903551f0665b8807b833d91fd9622c412eadc95d353ac8e6\n\nbuild:\n  number: 1\n  skip: true        # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - gmp\n    - mpfr\n    - boost     1.62.*\n    - bzip2     1.0.*\n    - zlib      1.2.*\n    - piranha   {{ version }}\n    - python\n  run:\n    - gmp\n    - mpfr\n    - boost     1.62.*\n    - bzip2     1.0.*\n    - zlib      1.2.*\n    - python\n    - mpmath\n    - numpy\n\ntest:\n  imports:\n    - pyranha\n  commands:\n    - python -c \"import pyranha.test; pyranha.test.run_test_suite()\";\n\nabout:\n  home: https://github.com/bluescarni/piranha\n  license: GPL v3 and LGPL v3\n  license_file: COPYING.lgpl3\n  summary: 'Python bindings to Piranha computer algebra system.'\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - bluescarni\n",
  "rendered_recipe": {},

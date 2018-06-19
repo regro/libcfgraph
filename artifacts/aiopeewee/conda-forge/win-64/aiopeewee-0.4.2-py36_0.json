@@ -735,6 +735,7 @@
   "subdir": "win-64",
   "version": "0.4.2"
  },
+ "metadata_version": 1,
  "name": "aiopeewee",
  "raw_recipe": "{% set name = \"aiopeewee\" %}\n{% set version = \"0.4.2\" %}\n{% set sha256 = \"be9c5f574dd353b1869fa61982840c753c50ffc0538b6a9f3625bb4990e46fa8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [py<36]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n  run:\n    - python\n    - peewee >=2.9.2\n    - aiomysql >=0.0.9\n\ntest:\n  imports:\n    - aiopeewee\n\nabout:\n  home: https://github.com/kszucs/aiopeewee\n  summary: \"Asyncio interface for Peewee ORM\"\n  license: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - kszucs\n",
  "rendered_recipe": {

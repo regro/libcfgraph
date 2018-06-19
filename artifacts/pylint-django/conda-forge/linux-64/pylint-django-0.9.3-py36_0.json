@@ -815,6 +815,7 @@
   "subdir": "linux-64",
   "version": "0.9.3"
  },
+ "metadata_version": 1,
  "name": "pylint-django",
  "raw_recipe": "{% set name = \"pylint-django\" %}\n{% set version = \"0.9.3\" %}\n{% set sha256 = \"994715c3f0ff37d86def2224bf15b46b482f3b75096f9d9cc9f4cb1e8d58b0ac\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py2k]\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - django\n    - pylint-plugin-utils >=0.2.1\n    - pylint >=1.8.2\n\ntest:\n  imports:\n    - pylint_django\n    - pylint_django.augmentations\n    - pylint_django.checkers\n    - pylint_django.transforms\n\nabout:\n  home: https://github.com/landscapeio/pylint-django\n  license: GPL 2\n  license_file: LICENSE\n  summary: A Pylint plugin to help Pylint understand the Django web framework\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

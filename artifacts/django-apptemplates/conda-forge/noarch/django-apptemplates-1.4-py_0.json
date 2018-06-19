@@ -720,6 +720,7 @@
   "subdir": "noarch",
   "version": "1.4"
  },
+ "metadata_version": 1,
  "name": "django-apptemplates",
  "raw_recipe": "{% set version = \"1.4\" %}\n\npackage:\n  name: django-apptemplates\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/django-apptemplates/django-apptemplates-{{ version }}.tar.gz\n  sha256: 9e8b33b156c57ac2a7f6d747faaddfeb27682d7441375e1ee88c220557b36786\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - django\n\ntest:\n  imports:\n    - apptemplates\n    - apptemplates.test\n\nabout:\n  home: https://github.com/bittner/django-apptemplates\n  license: MIT\n  # license_file: LICENSE.txt\n  summary: 'Django template loader that allows you to load and override a template from a specific Django application.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

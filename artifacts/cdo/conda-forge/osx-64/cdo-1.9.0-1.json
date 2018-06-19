@@ -649,6 +649,7 @@
   "subdir": "osx-64",
   "version": "1.9.0"
  },
+ "metadata_version": 1,
  "name": "cdo",
  "raw_recipe": "{% set version = \"1.9.0\" %}\n\npackage:\n  name: cdo\n  version: {{ version }}\n\nsource:\n  url: https://code.zmaw.de/attachments/download/15187/cdo-{{ version }}.tar.gz\n  sha256: df367f8c3abf4ab085bcfc61e0205b28a5ecc69b7b83ba398b4d3c874dd69008\n\nbuild:\n  number: 1\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - jasper\n    - libnetcdf 4.4.*\n    - proj4 4.9.3\n    - util-linux  # [linux]\n    - ecmwf_grib\n    - udunits2\n    - libxml2 2.9.*\n    - fftw\n  run:\n    - jasper\n    - libnetcdf 4.4.*\n    - proj4 4.9.3\n    - libgcc  # [linux]\n    - util-linux  # [linux]\n    - ecmwf_grib\n    - udunits2\n    - libxml2 2.9.*\n    - fftw\n\ntest:\n  files:\n    - dummy.nc\n  commands:\n    - cdo -h\n    - cdo sinfo dummy.nc  # [linux]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://code.zmaw.de/projects/cdo\n  license: GPL-2.0\n  summary: 'CLI tools to manipulate and analyse Climate and NWP model Data.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

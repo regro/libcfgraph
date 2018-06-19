@@ -822,6 +822,7 @@
   "subdir": "noarch",
   "version": "0.20.0"
  },
+ "metadata_version": 1,
  "name": "datadog",
  "raw_recipe": "{% set name = \"datadog\" %}\n{% set version = \"0.20.0\" %}\n{% set sha256 = \"7bb4af836d7422a6138f983b81c16acd56c2d608913982602856cc273ae74768\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - dog = datadog.dogshell:main\n    - dogwrap = datadog.dogshell.wrap:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - decorator >=3.3.2\n    - requests >=2.6.0\n    - simplejson >=2.0.9\n\ntest:\n  imports:\n    - datadog\n    - datadog.dogshell\n  commands:\n    - dog --help\n    - dogwrap --help\n\nabout:\n  home: https://github.com/DataDog/datadogpy\n  license: BSD-3-Clause\n  license_family: BSD\n  summary: 'The Datadog Python library'\n\n  description: |\n    The Python integration enables you to monitor any custom metric by instrumenting a few lines of code.\n  doc_url: https://docs.datadoghq.com/integrations/python/\n\nextra:\n  recipe-maintainers:\n    - TheOriginalAlex\n",
  "rendered_recipe": {

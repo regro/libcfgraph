@@ -138,6 +138,7 @@
   "subdir": "win-64",
   "version": "1.1.1"
  },
+ "metadata_version": 1,
  "name": "petl",
  "raw_recipe": "{% set name = \"petl\" %}\n{% set version = \"1.1.1\" %}\n{% set sha256 = \"50039a8fc476c442e52087dbea306858b1a875dee655536c5ffe5f90f2ed6da1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  requires:\n    - nose\n  imports:\n    - petl\n  commands:\n    - nosetests -v petl\n\nabout:\n  home: http://github.com/alimanfoo/petl\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'A Python package for extracting, transforming and loading tables of data.'\n  doc_url: http://petl.readthedocs.io/\n  dev_url: https://github.com/alimanfoo/petl\n\nextra:\n  recipe-maintainers:\n    - alimanfoo\n",
  "rendered_recipe": {},

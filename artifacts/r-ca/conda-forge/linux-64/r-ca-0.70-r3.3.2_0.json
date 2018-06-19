@@ -782,6 +782,7 @@
   "subdir": "linux-64",
   "version": "0.70"
  },
+ "metadata_version": 1,
  "name": "r-ca",
  "raw_recipe": "{% set version = '0.70' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-ca\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: ca_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/ca_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/ca/ca_{{ version }}.tar.gz\n  sha256: 34fc1b165c13d78d6605656d1c32a4192e3ea4c0d0da12c3041f2632ed61601c\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('ca')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('ca')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=vcdExtra\n  license: GPL-2 and GPL-3\n  summary: Computation and visualization of simple, multiple and joint correspondence analysis.\n  license_family: GPL\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2'  # [unix]\n  license_file: '{{ environ[\"PREFIX\"] }}\\R\\share\\licenses\\GPL-2'  # [win]\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n",
  "rendered_recipe": {

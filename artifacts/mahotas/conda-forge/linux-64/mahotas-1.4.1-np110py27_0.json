@@ -140,6 +140,7 @@
   "subdir": "linux-64",
   "version": "1.4.1"
  },
+ "metadata_version": 1,
  "name": "mahotas",
  "raw_recipe": "{% set version = \"1.4.1\" %}\n\npackage:\n  name: mahotas\n  version: {{ version }}\n\nsource:\n  fn: mahotas-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/m/mahotas/mahotas-{{ version }}.tar.gz\n  md5: 1bc9a6a12db5edfacf4e25ec79c9826b\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  imports:\n    - mahotas\n\nabout:\n  home: http://luispedro.org/software/mahotas/\n  license: MIT\n  summary: \"Mahotas: Computer Vision Library\"\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {},

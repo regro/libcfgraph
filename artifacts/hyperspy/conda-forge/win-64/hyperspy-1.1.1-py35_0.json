@@ -603,6 +603,7 @@
   "subdir": "win-64",
   "version": "1.1.1"
  },
+ "metadata_version": 1,
  "name": "hyperspy",
  "raw_recipe": "{% set version = \"1.1.1\" %}\n\npackage:\n  name: hyperspy\n  version: {{ version }}\n\nsource:\n  fn: hyperspy-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/h/hyperspy/hyperspy-{{ version }}.tar.gz\n  sha256: 83cdc4998f62fbc30fd92bd1eb9096947a974e7b5e22d36cbf139f6a8f773435\n\nbuild:\n  number: 0\n  skip: True  # [py2k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - dill\n    - h5py\n    - ipython\n    - jupyter\n    - matplotlib >=1.2\n    - numpy\n    - qt\n    - scikit-image\n    - scikit-learn\n    - scipy\n    - statsmodels\n    - ipyparallel\n    - sympy\n    - natsort\n    - lxml\n    - dask\n    - traits >=4.5\n    - traitsui >=5.0\n    - requests\n    - ipywidgets >=5.0\n    - tqdm\n    - python-dateutil\n    - backports_abc  # [py34]\ntest:\n    requires:\n        - nose\n\nabout:\n  home: https://hyperspy.org\n  license: GPL v3\n  summary: Multi-dimensional data analysis\n\nextra:\n  recipe-maintainers:\n    - to266\n    - francisco-dlp\n",
  "rendered_recipe": {},

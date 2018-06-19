@@ -628,6 +628,7 @@
   "subdir": "linux-64",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "hyperspy-gui-ipywidgets",
  "raw_recipe": "{% set name = \"hyperspy-gui-ipywidgets\" %}\n{% set filename = \"hyperspy_gui_ipywidgets\" %}\n{% set version = \"1.0.0\" %}\n{% set sha256 = \"31803a08d74493b697714ca759a217568fda08a33dad3d39dfd9bf3bf0923fbc\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ filename }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ filename }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\n\nbuild:\n  number: 0\n  skip: True  # [py2k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - link-traits\n    - hyperspy >=1.3\n    - ipywidgets >=6.0\n\ntest:\n  imports:\n    - hyperspy_gui_ipywidgets\n\n  commands:\n    - export MPLBACKEND=\"agg\"  # [unix]\n    - py.test --pyargs hyperspy_gui_ipywidgets  # [unix]\n\n  requires:\n    - pytest\n\nabout:\n  home: https://github.com/hyperspy/hyperspy_gui_ipywidgets\n  license: GPL v3\n  summary: \"ipywidgets GUI elements for HyperSpy.\"\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - to266\n    - francisco-dlp\n",
  "rendered_recipe": {

@@ -677,6 +677,7 @@
   "subdir": "osx-64",
   "version": "1.20"
  },
+ "metadata_version": 1,
  "name": "leveldb",
  "raw_recipe": "{% set version = \"1.20\" %}\n{% set hash = \"f5abe8b5b209c2f36560b75f32ce61412f39a2922f7045ae764a2c23335b6664\" %}\n\npackage:\n  name: leveldb\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/google/leveldb/archive/v{{ version }}.tar.gz\n  sha256: {{ hash }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - snappy\n\n  run:\n    - snappy\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libmemenv.a\n    - test -f ${PREFIX}/lib/libleveldb.a\n    - test -f ${PREFIX}/lib/libleveldb.dylib            # [osx]\n    - test -f ${PREFIX}/lib/libleveldb.so               # [linux]\n\nabout:\n  home: https://github.com/google/leveldb\n  license: BSD\n  summary: A fast key-value storage library providing ordered mappings.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

@@ -37,6 +37,7 @@
   "subdir": "osx-64",
   "version": "1.1.2"
  },
+ "metadata_version": 1,
  "name": "cf_units",
  "raw_recipe": "{% set version = \"1.1.2\" %}\n\npackage:\n    name: cf_units\n    version: {{ version }}\n\nsource:\n    fn: cf_units-{{ version }}.tar.gz\n    url: https://github.com/SciTools/cf_units/archive/v{{ version }}.tar.gz\n    sha256: 6b277069f29c7dd1b752425ac6dd19ebf52314872779f7f8c9370ba1d6e4f406\n\nbuild:\n    number: 0\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - six\n        - udunits2\n        - netcdf4\n        - numpy\n\ntest:\n    imports:\n        - cf_units\n\nabout:\n    home: http://www.scitools.org.uk/iris\n    license: GNU Lesser General Public License\n    summary: 'Units of measure as required by the Climate and Forecast (CF) metadata conventions.'\n\nextra:\n    recipe-maintainers:\n        - bjlittle\n        - dkillick\n        - ocefpaf\n        - pelson\n",
  "rendered_recipe": {},

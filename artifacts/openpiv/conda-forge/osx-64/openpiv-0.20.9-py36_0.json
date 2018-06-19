@@ -630,6 +630,7 @@
   "subdir": "osx-64",
   "version": "0.20.9"
  },
+ "metadata_version": 1,
  "name": "openpiv",
  "raw_recipe": "{% set version = \"0.20.9\" %}\n\npackage:\n  name: openpiv\n  version: {{ version }}\n\nsource:\n  fn: openpiv-{{ version }}.tar.gz\n  url: https://github.com/OpenPIV/openpiv-python/archive/{{ version }}.tar.gz\n  sha256: cbee966f9d5479db24d32c7844e8be6fd1e8033cb51e83485c84ce1874bfd488\n  \nbuild:\n  number: 0\n  script: \n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n    - numpy >=1.7\n    - scipy >=0.12\n    - cython\n\n  run:\n    - python\n    - setuptools\n    - numpy >=1.7\n    - scipy >=0.12\n    - cython \n    - progressbar2\n    - scikit-image\n\ntest:\n  imports:\n    - openpiv\n\nabout:\n  home: https://github.com/openpiv/openpiv-python\n  license: GPL 3\n  license_file: LICENSE.txt\n  summary: \"Open Source Particle Image Velocimetry\"\n  doc_url: http://openpiv.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - alexlib\n",
  "rendered_recipe": {

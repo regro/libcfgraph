@@ -51,6 +51,7 @@
   "subdir": "linux-64",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "flo",
  "raw_recipe": "{%set name = \"flo\" %}\n{%set version = \"1.0.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"3951ea1101852c98d5d2709fd4d26167827174212838e4764d8e1ff461334a4c\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  skip: True  # [py3k]\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pyyaml\n    - jinja2\n    - argcomplete\n    - networkx\n\ntest:\n  imports:\n    - flo\n    - flo.commands\n    - flo.resources\n    - flo.tasks\n    - flo.templates\n\n  commands:\n    - flo -h\n\nabout:\n  home: https://github.com/deanmalmgren/flo\n  license: MIT\n  license_file: LICENSE\n  summary: 'Enable rapid iteration and development of data workflows'\n  doc_url: https://flo.readthedocs.io/en/latest/\n  dev_url: https://github.com/deanmalmgren/flo\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

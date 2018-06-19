@@ -1429,6 +1429,7 @@
   "subdir": "noarch",
   "version": "2.11.1"
  },
+ "metadata_version": 1,
  "name": "django-grappelli",
  "raw_recipe": "{% set version = \"2.11.1\" %}\n{% set sha256 = \"a0ac5a5f1eef64a0147c3dade02f55667a01aa7e84b93c2e8f6195117b980516\" %}\n\npackage:\n  name: django-grappelli\n  version: {{ version }}\n\nsource:\n  fn: django-grappelli-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/django-grappelli/django-grappelli-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django\n\ntest:\n  imports:\n    - grappelli\n    - grappelli.templatetags\n    - grappelli.tests\n    - grappelli.views\n\nabout:\n  home: http://django-grappelli.readthedocs.org\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'A jazzy skin for the Django Admin-Interface.'\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - ocefpaf\n",
  "rendered_recipe": {

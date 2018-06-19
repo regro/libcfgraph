@@ -779,6 +779,7 @@
   "subdir": "noarch",
   "version": "0.9.9"
  },
+ "metadata_version": 1,
  "name": "lmfit",
  "raw_recipe": "{% set name = \"lmfit\" %}\n{% set version = \"0.9.9\" %}\n{% set sha256 = \"eee9fa534dc3c494a4d7dd3e0cd243792bbc6cb409805440282a4b5fdab50ea1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy\n    - scipy\n    - six\n    - asteval >=0.9.12\n\n  run:\n    - python\n    - numpy\n    - scipy\n    - six\n    - asteval >=0.9.12\n\ntest:\n  imports:\n    - lmfit\n\nabout:\n  home: http://lmfit.github.io/lmfit-py/\n  license: lmfit\n  license_family: BSD\n  summary: >\n      Non-Linear Least Squares Minimization, with flexible Parameter\n      settings, based on scipy.optimize.leastsq, and with many additional\n      classes and methods for curve fitting http:/lmfit.github.io/lmfit-py/\n\nextra:\n  recipe-maintainers:\n    - tacaswell\n    - licode\n    - newville\n    - danielballan\n    - tritemio\n",
  "rendered_recipe": {

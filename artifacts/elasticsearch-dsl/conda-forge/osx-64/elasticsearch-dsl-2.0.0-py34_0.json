@@ -37,6 +37,7 @@
   "subdir": "osx-64",
   "version": "2.0.0"
  },
+ "metadata_version": 1,
  "name": "elasticsearch-dsl",
  "raw_recipe": "{% set version = \"2.0.0\" %}\n\npackage:\n  name: elasticsearch-dsl\n  version: {{ version }}\n\nsource:\n  fn: elasticsearch-dsl-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/e/elasticsearch-dsl/elasticsearch-dsl-{{ version }}.tar.gz\n  sha256: 9060e4ff9abfc632b78f730b442ad2997f2fb985be9f6e49e3612ce292b5c36a\n\nbuild:\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - six\n    - python-dateutil\n    - elasticsearch >=2.0.0,<3.0.0\n\ntest:\n  imports:\n    - elasticsearch_dsl\n\nabout:\n  home: https://github.com/elasticsearch/elasticsearch-dsl-py\n  license: Apache 2.0\n  summary: 'Higher-level Python client for Elasticsearch'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

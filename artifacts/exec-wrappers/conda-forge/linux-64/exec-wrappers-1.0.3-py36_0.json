@@ -97,6 +97,7 @@
   "subdir": "linux-64",
   "version": "1.0.3"
  },
+ "metadata_version": 1,
  "name": "exec-wrappers",
  "raw_recipe": "{% set version = \"1.0.3\" %}\n{% set sha256 = \"b4d246895f2a7284482aa11146ac32596c434ae04798c6aa199746c48f1e6ba6\" %}\n\npackage:\n  name: exec-wrappers\n  version: {{ version }}\n\nsource:\n  fn: exec-wrappers-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/e/exec-wrappers/exec-wrappers-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - create-wrappers = exec_wrappers.create_wrappers:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - exec_wrappers\n  commands:\n    - create-wrappers --help\n\nabout:\n  home: https://github.com/gqmelo/exec-wrappers\n  license: MIT\n  summary: 'command line tool to create wrappers around executables'\n\n  description: |\n    exec-wrappers is a command line tool to create wrappers around executable\n    files that need to be executed on a particular environment (e.g. conda, virtualenv, schroot)\n  doc_url: https://github.com/gqmelo/exec-wrappers\n  dev_url: https://github.com/gqmelo/exec-wrappers\n\nextra:\n  recipe-maintainers:\n    - gqmelo\n",
  "rendered_recipe": {

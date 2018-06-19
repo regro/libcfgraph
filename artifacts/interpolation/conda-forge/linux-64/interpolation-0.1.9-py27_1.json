@@ -740,6 +740,7 @@
   "subdir": "linux-64",
   "version": "0.1.9"
  },
+ "metadata_version": 1,
  "name": "interpolation",
  "raw_recipe": "{% set version = \"0.1.9\" %}\n{% set sha256 = \"875fcfeba5064c254520f537b03247a0debec26c5a3e3f69e1c5f108fd52dbe0\" %}\n\npackage:\n  name: interpolation\n  version: {{ version }}\n\nsource:\n  fn: interpolation.py-{{ version }}.tar.gz\n  url: https://github.com/EconForge/interpolation.py/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  number: 1\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numba\n    - numpy\n    - pandas\n    - tempita\n    - scipy\n\ntest:\n  imports:\n    - interpolation\n    - interpolation.smolyak\n    - interpolation.splines\n\nabout:\n  home: https://github.com/econforge/interpolation.py\n  license: BSD 2-Clause\n  summary: 'Interpolation in Python'\n\nextra:\n  recipe-maintainers:\n    - albop\n",
  "rendered_recipe": {

@@ -52,6 +52,7 @@
   "subdir": "linux-64",
   "version": "0.4.0"
  },
+ "metadata_version": 1,
  "name": "pywavelets",
  "raw_recipe": "{% set version = \"0.4.0\" %}\n\npackage:\n    name: pywavelets\n    version: {{ version }}\n\nsource:\n    fn: PyWavelets-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/P/PyWavelets/PyWavelets-{{ version }}.tar.gz\n    md5: 5b41cd6bf4bd7645aee8eaae72816853\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n        - cython\n        - numpy x.x\n    run:\n        - python\n        - numpy x.x\n\ntest:\n    requires:\n        - nose\n\nabout:\n    home: https://github.com/PyWavelets/pywt\n    license: MIT\n    summary: Discrete Wavelet Transforms in Python\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
  "rendered_recipe": {},

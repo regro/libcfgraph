@@ -37,6 +37,7 @@
   "subdir": "linux-64",
   "version": "2.19.1"
  },
+ "metadata_version": 1,
  "name": "hdfeos2",
  "raw_recipe": "package:\n    name: hdfeos2\n    version: 2.19.1\n\nsource:\n    fn: HDF-EOS2.19v1.00.tar.Z\n    url: ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/HDF-EOS2.19v1.00.tar.Z\n    md5: b8648484fc78a2db7073dd603f3fb251\n\nbuild:\n    number: 5\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - hdf4\n        - zlib 1.2.*\n        - jpeg 9*\n    run:\n        - hdf4\n        - zlib 1.2.*\n        - jpeg 9*\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libGctp.a  # [unix]\n        - test -f ${PREFIX}/lib/libhdfeos.a  # [unix]\n        - conda inspect linkages -n _test hdfeos2  # [linux]\n\nabout:\n    home: http://hdfeos.org/index.php\n    license: BSD\n    summary: Earth Observing System HDF\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - jhamman\n",
  "rendered_recipe": {

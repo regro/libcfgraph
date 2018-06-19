@@ -511,6 +511,7 @@
   "subdir": "osx-64",
   "version": "0.6.0"
  },
+ "metadata_version": 1,
  "name": "r-listenv",
  "raw_recipe": "{% set version = '0.6.0' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-listenv\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: listenv_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/listenv_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/listenv/listenv_{{ version }}.tar.gz\n  sha256: a737f08123b8bd67b63bb9843d0b6316408516d831203df8c369f3e32a48d84f\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('listenv')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('listenv')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/HenrikBengtsson/listenv\n  license: LGPL (>= 2.1)\n  summary: List environments are environments that have list-like properties.  For instance,\n    the elements of a list environment are ordered and can be accessed and iterated\n    over using index subsetting, e.g. 'x <- listenv(a=1, b=2); for (i in seq_along(x))\n    x[[i]] <- x[[i]]^2; y <- as.list(x)'.\n  license_family: LGPL\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n",
  "rendered_recipe": {

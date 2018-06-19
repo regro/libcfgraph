@@ -138,6 +138,7 @@
   "timestamp": 1524066720861,
   "version": "1.0.2"
  },
+ "metadata_version": 1,
  "name": "aiosmtplib",
  "raw_recipe": "{% set name = \"aiosmtplib\" %}\n{% set version = \"1.0.2\" %}\n{% set sha256 = \"c9d77f9f7a7d6fdb8db29b412fa3971a13c01be1042f47a0e0a28522c9a494ff\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py<35]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - aiosmtplib\n\nabout:\n  home: https://github.com/cole/aiosmtplib\n  license: MIT\n  license_family: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt'\n  summary: 'Asynchronous SMTP client for use with asyncio.'\n\nextra:\n  recipe-maintainers:\n    - mcs07\n",
  "rendered_recipe": {

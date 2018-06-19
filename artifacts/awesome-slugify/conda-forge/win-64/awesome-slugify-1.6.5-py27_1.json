@@ -99,6 +99,7 @@
   "subdir": "win-64",
   "version": "1.6.5"
  },
+ "metadata_version": 1,
  "name": "awesome-slugify",
  "raw_recipe": "package:\n    name: awesome-slugify\n    version: 1.6.5\n\nsource:\n    fn: awesome-slugify-1.6.5.tar.gz\n    url: https://pypi.io/packages/source/a/awesome-slugify/awesome-slugify-1.6.5.tar.gz\n    sha256: bbdec3fa2187917473a2efad092b57f7125a55f841a7cf6a1773178d32ccfd71\n    patches:\n        - utf8.patch  # [win]\n\nbuild:\n    number: 1\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - regex\n        - unidecode >=0.04.14,<0.05\n\ntest:\n    imports:\n        - slugify\n\nabout:\n    home: https://github.com/dimka665/awesome-slugify\n    license: GPL-3.0\n    license_family: GPL\n    # license_file: No license file!\n    summary: Python flexible slugify function\n    dev_url: https://github.com/dimka665/awesome-slugify\n    doc_url: https://github.com/dimka665/awesome-slugify\n\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - kwilcox\n",
  "rendered_recipe": {

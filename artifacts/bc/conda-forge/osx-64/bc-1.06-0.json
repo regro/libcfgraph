@@ -20,6 +20,7 @@
   "subdir": "osx-64",
   "version": "1.06"
  },
+ "metadata_version": 1,
  "name": "bc",
  "raw_recipe": "{% set pkgname = \"bc\" %}\n{% set version = \"1.06\" %}\n{% set sha1 = \"c8f258a7355b40a485007c40865480349c157292\" %}\n{% set md5 = \"d44b5dddebd8a7a7309aea6c36fda117\" %}\n\npackage:\n  name: {{ pkgname }}\n  version: {{ version }}\n\nsource:\n  fn: {{ pkgname }}-{{ version }}.tar.gz\n  url: http://ftpmirror.gnu.org/{{ pkgname }}/{{ pkgname }}-{{ version }}.tar.gz\n  sha1: {{ sha1 }}\n  md5: {{ md5 }}\n  patches:\n    - verify_checklib_results.sh.patch\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - flex\n\ntest:\n  commands:\n    - bc --version\n\nabout:\n  home: https://www.gnu.org/software/bc/\n  license: GPL-3.0\n  summary: bc is an arbitrary precision numeric processing language.\n\nextra:\n  recipe-maintainers:\n    - shahin\n",
  "rendered_recipe": {},

@@ -100,6 +100,7 @@
   "subdir": "linux-64",
   "version": "0.9.4"
  },
+ "metadata_version": 1,
  "name": "librdkafka",
  "raw_recipe": "{% set name = \"librdkafka\" %}\n{% set version = \"0.9.4\" %}\n{% set sha256 = \"5007ad20a6753f709803e72c5f2c09483dcbce0f16b94b17cf677fb3e6045907\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/edenhill/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain  # [unix]\n    - zlib 1.2.*\n    - openssl 1.0.*\n    - libgsasl  # [not osx]\n    - lz4-c\n  run:\n    - zlib 1.2.*\n    - openssl 1.0.*\n    - libgsasl  # [not osx]\n    - lz4-c\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/librdkafka.so  # [linux]\n    - test -f ${PREFIX}/lib/librdkafka++.so  # [linux]\n    - test -f ${PREFIX}/lib/librdkafka.dylib  # [osx]\n    - test -f ${PREFIX}/lib/librdkafka++.dylib  # [osx]\n\n    - conda inspect linkages {{ name }}  # [unix]\n    - conda inspect objects {{ name }}   # [osx]\n\nabout:\n  home: https://github.com/edenhill/librdkafka\n  license: BSD 2-clause\n  license_family: BSD\n  summary: 'The Apache Kafka C/C++ client library'\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n",
  "rendered_recipe": {

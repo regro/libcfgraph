@@ -565,6 +565,7 @@
   "subdir": "win-64",
   "version": "0.14.0"
  },
+ "metadata_version": 1,
  "name": "owslib",
  "raw_recipe": "{% set version = \"0.14.0\" %}\n\npackage:\n  name: owslib\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/O/OWSLib/OWSLib-{{ version }}.tar.gz\n  sha256: 3b77ae9bb752d96c9eda9509099f92ca0c28dd03ba624ad71e6cdad471380368\n  patches:\n    # Already merge upstream https://github.com/geopython/OWSLib/pull/380\n    - py3k_compat.patch  # [py3k]\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - python-dateutil\n    - pytz\n    - requests\n    - pyproj\n    - lxml\n\ntest:\n  imports:\n    - owslib.coverage\n    - owslib.waterml\n    - owslib.swe.observation\n    - owslib.swe.sensor\n    - owslib\n    - owslib.feature\n    - owslib.swe\n\nabout:\n  home: https://geopython.github.io/OWSLib\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'OGC Web Service utility library.'\n\nextra:\n  recipe-maintainers:\n    - kalxas\n    - tomkralidis\n    - pelson\n    - ocefpaf\n",
  "rendered_recipe": {

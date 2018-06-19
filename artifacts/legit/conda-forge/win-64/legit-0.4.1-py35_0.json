@@ -500,6 +500,7 @@
   "subdir": "win-64",
   "version": "0.4.1"
  },
+ "metadata_version": 1,
  "name": "legit",
  "raw_recipe": "{% set packagename = 'legit' %}\n{% set version = \"0.4.1\" %}\n{% set md5 = \"3917e991e72004406bd51ed1881b71d1\" %}\n\npackage:\n  name: {{ packagename }}\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/kennethreitz/legit\n  git_tag: v{{ version }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - legit = legit.cli:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - clint\n    - gitpython\n    - six\n\ntest:\n  imports:\n    - {{ packagename }}\n\n  commands:\n    - mkdir test-git-repo\n    - cd test-git-repo\n    - git init\n    # legit needs a remote or it exits with a non-zero status\n    # so we just need to add a fake one\n    - git remote add origin http://\n    - legit help\n  requires:\n    - git\n\nabout:\n  home: https://github.com/kennethreitz/legit\n  license: BSD-3\n  summary: 'Git for Humans.'\n\nextra:\n  recipe-maintainers:\n    - ericmjl\n",
  "rendered_recipe": {

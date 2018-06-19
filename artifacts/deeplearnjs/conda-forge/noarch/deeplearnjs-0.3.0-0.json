@@ -763,6 +763,7 @@
   "subdir": "noarch",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "deeplearnjs",
  "raw_recipe": "{% set name = \"deeplearnjs\" %}\n{% set version = \"0.3.0\" %}\n{% set sha256 = \"0869f7dc971bff33d380e0eb41c0ba4ce3e053ca953bb940ead059bb5739477d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/PAIR-code/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs\n  \ntest:\n  commands:\n    - npm list -g deeplearn\n  requires:\n    - nodejs\n   \nabout:\n  home: https://github.com/PAIR-code/deeplearnjs\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Hardware-accelerated deep learning and linear algebra (NumPy) library for the web.'\n  description: |\n    deeplearn.js is an open source hardware-accelerated JavaScript library for machine \n    intelligence. deeplearn.js brings performant machine learning building blocks to the \n    web, allowing you to train neural networks in a browser or run pre-trained models in \n    inference mode. \n  doc_url: https://deeplearnjs.org/docs/tutorials/\n  dev_url: https://github.com/PAIR-code/deeplearnjs\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

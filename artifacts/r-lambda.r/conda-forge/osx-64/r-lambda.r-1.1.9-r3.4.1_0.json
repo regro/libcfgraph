@@ -535,6 +535,7 @@
   "subdir": "osx-64",
   "version": "1.1.9"
  },
+ "metadata_version": 1,
  "name": "r-lambda.r",
  "raw_recipe": "{% set version = '1.1.9' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-lambda.r\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: lambda.r_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/lambda.r_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/lambda.r/lambda.r_{{ version }}.tar.gz\n  sha256: 24c8c46802395463045a11086701051727808ad3d3bc920da571e88de341c2c8\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('lambda.r')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('lambda.r')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=lambda.r\n  license: LGPL-3\n  summary: A language extension to efficiently write functional programs in R. Syntax extensions\n    include multi-part function definitions, pattern matching, guard statements, built-in\n    (optional) type safety.\n  license_family: LGPL\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n",
  "rendered_recipe": {

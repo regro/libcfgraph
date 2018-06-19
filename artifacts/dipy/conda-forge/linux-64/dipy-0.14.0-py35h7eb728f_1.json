@@ -570,6 +570,7 @@
   "timestamp": 1525390562788,
   "version": "0.14.0"
  },
+ "metadata_version": 1,
  "name": "dipy",
  "raw_recipe": "{% set version = \"0.14.0\" %}\n{% set name = \"dipy\" %}\n\npackage:\n  name: dipy\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 1800c6efb73d6989a2655c83b2ac226f38417f0002ef92ca9613aef99a697de3\n\nbuild:\n  number: 1\n  script:\n    - call \"C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat\" x86_amd64   # [win64 and vc==14]\n    - python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - numpy\n    - nibabel\n    - cython\n    - pip\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy\n    - nibabel\n    - scikit-learn\n    - matplotlib\n    - cvxopt  # [not win]\n    - pytables\n    - vtk  # [py27]\n\ntest:\n  imports:\n    - dipy\n\nabout:\n  home: https://nipy.org/dipy\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: Diffusion MR Imaging in Python\n\nextra:\n  recipe-maintainers:\n    - arokem\n    - garyfallidis\n    - skoudoro\n",
  "rendered_recipe": {

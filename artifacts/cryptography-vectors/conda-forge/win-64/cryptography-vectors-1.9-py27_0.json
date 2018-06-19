@@ -2476,6 +2476,7 @@
   "subdir": "win-64",
   "version": "1.9"
  },
+ "metadata_version": 1,
  "name": "cryptography-vectors",
  "raw_recipe": "{% set name = \"cryptography_vectors\" %}\n{% set version = \"1.9\" %}\n{% set sha256 = \"bbf767727ad1b9d4cb684fb2b36db4cc78bd420fa6999e7e6ca1aab8c30d78f3\" %}\n\npackage:\n  name: cryptography-vectors\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/cryptography_vectors/cryptography_vectors-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - cryptography_vectors\n\nabout:\n  home: https://github.com/pyca/cryptography\n  license: Apache 2.0 or BSD 3-Clause\n  #license_file: ??? TWO LICENSE FILES ???\n  summary: Test vectors for the cryptography package.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

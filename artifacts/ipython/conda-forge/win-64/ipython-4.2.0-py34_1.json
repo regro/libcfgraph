@@ -326,6 +326,7 @@
   "subdir": "win-64",
   "version": "4.2.0"
  },
+ "metadata_version": 1,
  "name": "ipython",
  "raw_recipe": "{% set version = \"4.2.0\" %}\n\npackage:\n  name: ipython\n  version: {{ version }}\n\nsource:\n  fn: ipython-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/4e/c7/519b95112dba6f3ae91530bcb8564454c575fcb1fdb323b2b0ee9eff1227/ipython-{{ version }}.tar.gz\n  md5: 9c7c28eddbc39eb874d2c22025772d63\n\nbuild:\n  script: python -m pip install --no-deps .\n  number: 1\n  entry_points:\n    - ipython = IPython:start_ipython\n    - ipython2 = IPython:start_ipython  # [py2k]\n    - ipython3 = IPython:start_ipython  # [py3k]\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - pickleshare\n    - python-simplegeneric >0.8\n# These are listed in the setup.py, but do not cause the build tests to fail.\n# In order to enable these dependencies, additional tests will need to be defined.\n#    - prompt_toolkit >=0.60\n#    - pygments\n    - decorator\n    - traitlets\n    - pexpect              # [unix]\n    - appnope              # [osx]\n    - pyreadline           # [win]\n    - backports.shutil_get_terminal_size\n\ntest:\n  commands:\n    - ipython -h\n    - ipython2 -h          # [py2k]\n    - ipython3 -h          # [py3k]\n  imports:\n    - IPython\n\nabout:\n  home: http://ipython.org/\n  license: BSD 3-clause\n  summary: \"IPython: Productive Interactive Computing\"\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n    - minrk\n",
  "rendered_recipe": {},

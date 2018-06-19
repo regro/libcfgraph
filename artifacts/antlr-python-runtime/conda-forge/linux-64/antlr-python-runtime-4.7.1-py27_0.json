@@ -770,6 +770,7 @@
   "subdir": "linux-64",
   "version": "4.7.1"
  },
+ "metadata_version": 1,
  "name": "antlr-python-runtime",
  "raw_recipe": "{% set name = \" \" %}\n{% set sha256 = \"\" %}\n\n{% set name = \"antlr4-python2-runtime\" %}  # [py2k]\n{% set sha256 = \"3bc09f7fe058fe8ede92e5d292f7a6932022cde28bb0ba5f44f96842c3c894d8\" %}  # [py2k]\n\n{% set name = \"antlr4-python3-runtime\" %}  # [py3k]\n{% set sha256 = \"1b26b72c4492cef310542da10bf6b2ab4aa1775618fc6003f75b55ae9eaa3fd3\" %}  # [py3k]\n\n{% set version = \"4.7.1\" %}\n\n\npackage:\n  name: antlr-python-runtime\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - antlr4\n    - antlr4.atn\n    - antlr4.dfa\n    - antlr4.error\n    - antlr4.tree\n    - antlr4.xpath\n\nabout:\n  home: http://www.antlr.org\n  license: BSD-3-Clause\n  license_family: BSD\n  summary: This is the Python runtime for ANTLR.\n  dev_url: https://github.com/antlr/antlr4\n  doc_url: https://github.com/antlr/antlr4/blob/master/doc/python-target.md\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "rendered_recipe": {

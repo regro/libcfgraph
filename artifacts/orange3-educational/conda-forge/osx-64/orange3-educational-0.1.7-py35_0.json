@@ -783,6 +783,7 @@
   "subdir": "osx-64",
   "version": "0.1.7"
  },
+ "metadata_version": 1,
  "name": "orange3-educational",
  "raw_recipe": "{% set name = \"Orange3-Educational\" %}\n{% set version = \"0.1.7\" %}\n{% set sha256 = \"6cf774105b4f517399247fb624e4c8a0626159d9929eafa6d5a169e6864354f5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [py2k]\n  script: python -m pip install --no-deps --ignore-installed .\n  preserve_egg_dir: True\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - orange3\n\ntest:\n  imports:\n    - orangecontrib.educational\n\nabout:\n  home: https://github.com/biolab/orange3-educational\n  license: CC-BY-NC-3.0\n  license_family: PUBLIC-DOMAIN\n  license_file: LICENSE\n  summary: 'Educational widgets for machine learning and data mining in Orange 3.'\n\n  description: |\n    Widgets in Educational Add-on demonstrate several key data mining and machine\n    learning procedures. The widgets are useful for beginners to understand the\n    inner working of key algorithms in the data mining and for teachers to be\n    able to visually explain various methods in a classroom.\n  doc_url: http://orange3-educational.readthedocs.io/\n  dev_url: https://github.com/biolab/orange3-educational\n\nextra:\n  recipe-maintainers:\n    - primozgodec\n",
  "rendered_recipe": {

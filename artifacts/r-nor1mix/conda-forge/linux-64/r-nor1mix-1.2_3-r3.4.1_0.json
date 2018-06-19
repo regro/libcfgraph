@@ -661,6 +661,7 @@
   "subdir": "linux-64",
   "version": "1.2_3"
  },
+ "metadata_version": 1,
  "name": "r-nor1mix",
  "raw_recipe": "{% set version = '1.2-3' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-nor1mix\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: nor1mix_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/nor1mix_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/nor1mix/nor1mix_{{ version }}.tar.gz\n  sha256: 435e6519e832ef5229c51ccb2619640e6b50dfc7470f70f0c938d18a114273af\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('nor1mix')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('nor1mix')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=nor1mix\n  license: GPL (>= 2)\n  summary: Onedimensional Normal Mixture Models Classes, for, e.g., density estimation or clustering\n    algorithms research and teaching; providing the widely used Marron-Wand densities.  Efficient\n    random number generation and graphics; now fitting to data by ML (Maximum Likelihood)\n    or EM estimation.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n",
  "rendered_recipe": {

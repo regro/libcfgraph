@@ -119,6 +119,7 @@
   "subdir": "linux-64",
   "version": "0.3.3"
  },
+ "metadata_version": 1,
  "name": "leather",
  "raw_recipe": "{%set name = \"leather\" %}\n{%set version = \"0.3.3\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"076d1603b5281488285718ce1a5ce78cf1027fe1e76adf9c548caf83c519b988\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six >=1.6.1\n\n  run:\n    - python\n    - six >=1.6.1\n\ntest:\n  imports:\n    - leather\n    - leather.scales\n    - leather.series\n    - leather.shapes\n    - leather.ticks\n\nabout:\n  home: https://leather.rtfd.io\n  license: MIT\n  license_family: MIT\n  # license_file: COPYING - no MANIFEST - see https://docs.python.org/2/distutils/sourcedist.html#manifest-related-options\n  summary: 'Python charting for 80% of humans.'\n  doc_url: https://leather.rtfd.io\n  dev_url: https://github.com/wireservice/leather\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

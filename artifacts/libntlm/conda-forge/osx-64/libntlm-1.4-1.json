@@ -558,6 +558,7 @@
   "subdir": "osx-64",
   "version": "1.4"
  },
+ "metadata_version": 1,
  "name": "libntlm",
  "raw_recipe": "{% set version = \"1.4\" %}\n{% set name = \"libntlm\" %}\n\npackage:\n  name: {{ name }}\n  version: \"{{ version }}\"\n\nsource:\n  fn: libntlm-{{ version }}.tar.gz\n  url: http://www.nongnu.org/libntlm/releases/libntlm-{{ version }}.tar.gz\n  md5: 54793488450e9085c57e0d859ff3bc8c\n\nbuild:\n  number: 1\n  # This package is a dependency of libhdfs3, which is primarily used with HDFS on Linux.\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n\ntest:\n  commands:\n    - conda inspect linkages {{ name }}\n    - conda inspect objects {{ name }}       # [osx]\n    - test -f $PREFIX/include/ntlm.h\n    - test -f $PREFIX/lib/libntlm.a\n    - test -f $PREFIX/lib/libntlm.la\n    - test -f $PREFIX/lib/libntlm.so          # [linux]\n    - test -f $PREFIX/lib/libntlm.so.0        # [linux]\n    - test -f $PREFIX/lib/libntlm.so.0.0.19   # [linux]\n    - test -f $PREFIX/lib/libntlm.dylib          # [osx]\n    - test -f $PREFIX/lib/libntlm.0.dylib        # [osx]\n    - test -f $PREFIX/lib/pkgconfig/libntlm.pc\n\nabout:\n  home: http://www.nongnu.org/libntlm/\n  license: LGPL-2.1\n  license_file: COPYING\n  summary: Improved implementation of Microsoft's NTLM authentication\n\nextra:\n  recipe-maintainers:\n    - koverholt\n    - mariusvniekerk\n    - martindurant\n",
  "rendered_recipe": {

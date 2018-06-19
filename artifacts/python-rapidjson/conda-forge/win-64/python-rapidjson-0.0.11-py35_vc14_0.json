@@ -92,6 +92,7 @@
   "subdir": "win-64",
   "version": "0.0.11"
  },
+ "metadata_version": 1,
  "name": "python-rapidjson",
  "raw_recipe": "{% set name = \"python-rapidjson\" %}\n{% set version = \"0.0.11\" %}\n{% set sha256 = \"d8f7969d503f94ba3a68525e78f468afb427129aaee4d21d8c0dc7743469fb37\" %}\n{% set rapidjson_version = \"1.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  features:\n    - vc10  # [win and py34]\n    - vc14  # [win and py>34]\n  skip: True  # [py27]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n    - rapidjson =={{ rapidjson_version }}\n\n  run:\n    - python\n\ntest:\n  imports:\n    - rapidjson\n\nabout:\n  home: https://github.com/python-rapidjson/python-rapidjson\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Python wrapper around rapidjson'\n  description: |\n    Python wrapper around RapidJSON. RapidJSON is an extremely fast C++ json serialization library.\n    We do not support legacy python versions, you will need to upgrade to Python 3 to use this library.\n  doc_url: https://python-rapidjson.readthedocs.io\n  dev_url: https://github.com/python-rapidjson/python-rapidjson\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - hajapy\n",
  "rendered_recipe": {

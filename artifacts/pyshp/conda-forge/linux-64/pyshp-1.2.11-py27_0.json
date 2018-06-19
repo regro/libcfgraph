@@ -87,6 +87,7 @@
   "subdir": "linux-64",
   "version": "1.2.11"
  },
+ "metadata_version": 1,
  "name": "pyshp",
  "raw_recipe": "{% set version = \"1.2.11\" %}\n\npackage:\n  name: pyshp\n  version: {{ version }}\n\nsource:\n  fn: pyshp-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pyshp/pyshp-{{ version }}.tar.gz\n  sha256: 8b4be2ec3d816067972e9ecc38526e9c45e9ee9b49b7fd94acfab9c0fc84fa63\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - shapefile\n\nabout:\n  home: https://pypi.python.org/pypi/pyshp\n  license: MIT\n  license_file: LICENSE.TXT\n  summary: 'Pure Python read/write support for ESRI Shapefile format.'\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - ocefpaf\n",
  "rendered_recipe": {

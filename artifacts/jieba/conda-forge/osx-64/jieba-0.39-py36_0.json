@@ -515,6 +515,7 @@
   "subdir": "osx-64",
   "version": "0.39"
  },
+ "metadata_version": 1,
  "name": "jieba",
  "raw_recipe": "{% set name = \"jieba\" %}\n{% set version = \"0.39\" %}\n{% set bundle = \"zip\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"de385e48582a4862e55a9167334d0fbe91d479026e5dac40e59e22c08b8e883e\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - jieba\n\nabout:\n  home: https://github.com/fxsjy/jieba\n  # No license in MANIFEST - See https://github.com/fxsjy/jieba/pull/457\n  license_file: {{ RECIPE_DIR }}/LICENSE\n  license: MIT\n  license_family: MIT\n  summary: 'Chinese Words Segementation Utilities'\n  dev_url: https://github.com/fxsjy/jieba\n  doc_url: https://github.com/fxsjy/jieba\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

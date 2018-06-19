@@ -5006,6 +5006,7 @@
   "timestamp": 1520353702109,
   "version": "20.2"
  },
+ "metadata_version": 1,
  "name": "erlang",
  "raw_recipe": "{% set version = \"20.2\" %}\n{% set sha256 = \"32c05e0fccc0a83f03266c05ced0294eb2da70ad8657718a1a917686c7b76aae\" %}\n\npackage:\n  name: erlang\n  version: {{ version }}\n\nsource:\n  fn: otp_src_{{ version }}.tar.gz\n  url: https://github.com/erlang/otp/archive/OTP-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - autoconf 2.*\n    - m4 1.4.*\n    - perl 5.20.3.1\n    - readline 7.0\n    - openssl 1.0.*\n    - ncurses 5.9\n    - zlib 1.2.11\n    - toolchain\n  run:\n    - readline 7.0\n    - openssl 1.0.*\n    - ncurses 5.9\n    - zlib 1.2.11\n\ntest:\n  commands:\n    - erl -version\n    - erlc\n\nabout:\n  home: http://www.erlang.org/\n  license: Apache 2.0\n  summary: \"A programming language used to build massively scalable soft real-time systems with requirements on high availability.\"\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - jakirkham\n    - sodre\n",
  "rendered_recipe": {

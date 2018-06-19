@@ -474,6 +474,7 @@
   "subdir": "win-64",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "flask-redis-helper",
  "raw_recipe": "{% set name = \"Flask-Redis-Helper\" %}\n{% set version = \"1.0.0\" %}\n{% set sha256 = \"4d8299deb4e9625ee5f8a7122f2519cd446415474f9c04cbb09917f1b4775f3f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - flask\n    - redis-py\n\ntest:\n  imports:\n    - flask_redis\n\nabout:\n  home: http://github.com/Robpol86/flask-redis-helper\n  license: MIT\n  license_family: MIT\n  #license_file: LICENSE not in manifest\n  summary: Flask-Redis-Helper doesn't break PyCharm autocomplete/inspections \n\n  description: |\n    Yet another Redis extension for Flask. Flask-Redis-Helper doesn't \n    break PyCharm autocomplete/inspections and handles the Flask \n    application context the same way SQLAlchemy does.\n  dev_url: http://github.com/Robpol86/flask-redis-helper\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

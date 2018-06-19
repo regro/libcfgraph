@@ -622,6 +622,7 @@
   "subdir": "linux-64",
   "version": "1.11"
  },
+ "metadata_version": 1,
  "name": "python-lzo",
  "raw_recipe": "{% set name = \"python-lzo\" %}\n{% set version = \"1.11\" %}\n{% set sha256 = \"38a0ea4ceb27cdd8e3526509fe1b7a936e5dfa57c64608fd32085c129e8be386\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: True  # [win]\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - lzo 2.10.*\n  run:\n    - python\n    - lzo 2.10.*\n\ntest:\n  imports:\n    - lzo\n\nabout:\n  home: https://github.com/jd-boyd/python-lzo\n  license: GPL-2.0\n  license_file: COPYING\n  summary: 'Python bindings for the LZO data compression library'\n  description: |\n    Python-LZO provides Python bindings for LZO, i.e. you can access\n    the LZO library from your Python scripts thereby compressing\n    ordinary Python strings.\n\nextra:\n  recipe-maintainers:\n    - sebastian-luna-valero\n",
  "rendered_recipe": {

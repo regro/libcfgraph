@@ -814,6 +814,7 @@
   "subdir": "osx-64",
   "version": "0.9.5"
  },
+ "metadata_version": 1,
  "name": "pysdl2",
  "raw_recipe": "{% set name = \"PySDL2\" %}\n{% set version = \"0.9.5\" %}\n{% set md5 = \"dc135eb78930a9ebf6e66e2a893db7f0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn:  {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n  patches:\n    - locate_sdl.patch\n\nbuild:\n  number: 2\n  script: python setup.py install --record record.txt\n\nrequirements:\n  build:\n    - patch  # [win]\n    - sdl2\n    - python\n    - setuptools\n\n  run:\n    - sdl2\n    - python\n\ntest:\n  imports:\n    - sdl2\n## Tests disabled till some problems are solved. Tests require graphical system\n## (X, cocoa, directx) which are not available in the CI's\n#  commands:\n#    - python -c \"import sdl2.test; sdl2.test.run()\"\n\nabout:\n  home: http://bitbucket.org/marcusva/py-sdl2\n  license: Public Domain/ZLIB\n  license_file: COPYING.txt\n  summary: \"A wrapper around the SDL2 library\"\n  description: |\n    PySDL2 is a wrapper around the SDL2 library and as such similar to the \n    discontinued PySDL project. In contrast to PySDL, it has no licensing \n    restrictions, nor does it rely on C code, but uses ctypes instead.\n  doc_url: https://pysdl2.readthedocs.io\n  dev_url: https://bitbucket.org/marcusva/py-sdl2\n\nextra:\n  recipe-maintainers:\n    - dschreij\n",
  "rendered_recipe": {

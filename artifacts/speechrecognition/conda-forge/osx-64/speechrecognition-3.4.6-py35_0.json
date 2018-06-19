@@ -38,6 +38,7 @@
   "subdir": "osx-64",
   "version": "3.4.6"
  },
+ "metadata_version": 1,
  "name": "speechrecognition",
  "raw_recipe": "{%set name = \"speechrecognition\" %}\n{%set camelName = \"SpeechRecognition\" %}\n{%set version = \"3.4.6\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"393eab35f102e6406dcacd54ff06473c2c86371cd566f8b314cf79df2d89ac31\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - speech_recognition\n\nabout:\n  home: https://github.com/Uberi/speech_recognition\n  license: BSD 3-Clause\n  summary: 'Library for performing speech recognition, with support for several engines and APIs, online and offline.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

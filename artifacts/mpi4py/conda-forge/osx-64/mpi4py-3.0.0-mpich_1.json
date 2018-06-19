@@ -696,6 +696,7 @@
   "subdir": "osx-64",
   "version": "3.0.0"
  },
+ "metadata_version": 1,
  "name": "mpi4py",
  "raw_recipe": "{% set build = 1 %}\n{% set version = '3.0.0' %}\n{% set sha256 = 'b457b02d85bdd9a4775a097fac5234a20397b43e073f14d9e29b6cd78c68efd7' %}\n{% set mpi = os.environ.get('MPI_VARIANT', 'mpich') %}\n{% set mpi_version = {'mpich': '3.2.*', 'openmpi': '3.0.*'}[mpi] %}\n\npackage:\n  name: mpi4py\n  version: {{ version }}\n\nsource:\n  fn: mpi4py-{{ version }}.tar.gz\n  url: https://bitbucket.org/mpi4py/mpi4py/downloads/mpi4py-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  string: {{ mpi }}_{{ build }}\n  script: pip install --no-deps .\n  # TODO: build with msmpi when it works\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - pip\n    - {{ mpi }} {{ mpi_version }}  # [unix]\n  run:\n    - python\n    - {{ mpi }} {{ mpi_version }}  # [unix]\n\ntest: {}\n\nabout:\n  home: http://mpi4py.scipy.org/\n  license: BSD 2-clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: Python bindings for MPI\n  description: |\n     MPI for Python provides bindings of the Message Passing Interface (MPI)\n     standard for the Python programming language, allowing any Python program\n     to exploit multiple processors.\n  doc_url: https://mpi4py.readthedocs.org/\n  dev_url: https://bitbucket.org/mpi4py/mpi4py\n\nextra:\n  recipe-maintainers:\n    - dalcinl\n    - minrk\n    - msarahan\n    - ocefpaf\n",
  "rendered_recipe": {

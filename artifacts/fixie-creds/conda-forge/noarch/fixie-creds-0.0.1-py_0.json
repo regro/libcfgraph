@@ -718,6 +718,7 @@
   "subdir": "noarch",
   "version": "0.0.1"
  },
+ "metadata_version": 1,
  "name": "fixie-creds",
  "raw_recipe": "{% set name = \"fixie-creds\" %}\n{% set version = \"0.0.1\" %}\n{% set sha256 = \"8efe1a98f94e0fd12a90375a7709b7ff7372ea0d969af2a0ff6fbd2dbfb9853c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - fixie\n\ntest:\n  imports:\n    - fixie_creds\n    - fixie_creds.environ\n\nabout:\n  home: http://github.com/ergs/fixie-creds\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'A Cyclus credentialing service'\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "rendered_recipe": {

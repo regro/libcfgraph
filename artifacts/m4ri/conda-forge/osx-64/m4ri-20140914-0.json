@@ -107,6 +107,7 @@
   "subdir": "osx-64",
   "version": "20140914"
  },
+ "metadata_version": 1,
  "name": "m4ri",
  "raw_recipe": "{% set version = \"20140914\" %}\n{% set name = \"m4ri\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://bitbucket.org/malb/m4ri/downloads/{{ name }}-{{ version }}.tar.gz\n  sha256: 4bc3f53a5116e1ff0720c08f34ce415c88e2fb503437abfd15e196792ec6d5aa\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - libpng >=1.6.28,<1.7\n    - zlib 1.2.*\n  run:\n    - libpng >=1.6.28,<1.7\n    - zlib 1.2.*\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/m4ri/m4ri.h\n    - test -f ${PREFIX}/lib/lib{{ name }}.a\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]\n\nabout:\n  home: https://bitbucket.org/malb/m4ri\n  license: GPLv2+\n  license_file: {{ SRC_DIR }}/COPYING\n  summary: M4RI is a library for fast arithmetic with dense matrices over F2\n  dev_url: https://bitbucket.org/malb/m4ri\n  doc_url: https://malb.bitbucket.io/m4ri\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

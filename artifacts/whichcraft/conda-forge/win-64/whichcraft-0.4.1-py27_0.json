@@ -90,6 +90,7 @@
   "subdir": "win-64",
   "version": "0.4.1"
  },
+ "metadata_version": 1,
  "name": "whichcraft",
  "raw_recipe": "{% set version = \"0.4.1\" %}\n{% set gh_org = \"pydanny\" %}\n{% set name = \"whichcraft\" %}\n{% set sha256 = \"9e0d51c9387cb7e9f28b7edb549e6a03da758f7784f991eb4397d7f7808c57fd\" %}\n\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  source_files:\n    - test_whichcraft.py\n  requires:\n    - flake8\n    - pytest\n    - wheel\n    - pytest-cov\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ name }}\n  license: BSD-3-Clause\n  summary: >\n            This package provides cross-platform cross-python shutil.which\n            functionality.\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n    - pydanny\n",
  "rendered_recipe": {

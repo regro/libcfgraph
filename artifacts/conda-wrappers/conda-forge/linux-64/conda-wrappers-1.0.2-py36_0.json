@@ -711,6 +711,7 @@
   "subdir": "linux-64",
   "version": "1.0.2"
  },
+ "metadata_version": 1,
  "name": "conda-wrappers",
  "raw_recipe": "{% set version = \"1.0.2\" %}\n\npackage:\n  name: conda-wrappers\n  version: {{ version }}\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - exec-wrappers 1.*\n\ntest:\n  commands:\n    - create-wrappers --help\n\nabout:\n  home: https://github.com/gqmelo/exec-wrappers\n  license: MIT\n  summary: 'Simple package to execute exec-wrappers as a post-link action'\n\nextra:\n  recipe-maintainers:\n    - gqmelo\n",
  "rendered_recipe": {

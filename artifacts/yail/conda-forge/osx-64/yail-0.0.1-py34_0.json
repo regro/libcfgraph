@@ -31,6 +31,7 @@
   "subdir": "osx-64",
   "version": "0.0.1"
  },
+ "metadata_version": 1,
  "name": "yail",
  "raw_recipe": "{% set name = \"yail\" %}\n{% set version = \"0.0.1\" %}\n{% set sha256 = \"3557bb65a94146cb8cb75a3b5392dc27b915d789d3d32283a0a4dd487fdc1c99\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - future >=0.15.2\n    - toolz >=0.8.0\n\ntest:\n  imports:\n    - yail\n\nabout:\n  home: https://github.com/jakirkham/yail\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Yet Another Iterator Library for Python.\n  doc_url: https://yail.readthedocs.io/\n  dev_url: https://github.com/jakirkham/yail\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {},

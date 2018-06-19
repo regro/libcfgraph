@@ -665,6 +665,7 @@
   "subdir": "osx-64",
   "version": "1.11"
  },
+ "metadata_version": 1,
  "name": "liquidprompt",
  "raw_recipe": "{% set name = \"liquidprompt\" %}\n{% set version = \"1.11\" %}\n{% set sha256 = \"669dde6b8274a57b3e39dc41539d157a86252e40e39bcc4c3102b5a81bd8f2f5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/nojhan/{{ name }}/archive/v_{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - sed  # [osx]\n    - posix  # [win]\n  run:\n    - posix  # [win]\n\ntest:\n  commands:\n    - test -f $PREFIX/etc/conda/activate.d/liquidprompt.sh\n\nabout:\n  home: https://github.com/nojhan/liquidprompt\n  license: AGPL-3.0\n  license_family: AGPL\n  license_file: LICENSE\n  summary: 'A full-featured & carefully designed adaptive prompt for Bash & Zsh'\n\n  description: |\n    Liquid Prompt gives you a nicely displayed prompt with useful \n    information when you need it. It shows you what you need when you need\n    it. You will notice what changes when it changes, saving time and \n    frustration. You can even use it with your favorite shell \u2013 Bash or zsh.\n  doc_url: https://github.com/nojhan/liquidprompt/blob/master/README.md\n  dev_url: https://github.com/nojhan/liquidprompt\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

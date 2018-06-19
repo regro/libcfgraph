@@ -772,6 +772,7 @@
   "subdir": "noarch",
   "version": "2.0.2"
  },
+ "metadata_version": 1,
  "name": "jsonfield",
  "raw_recipe": "{% set version = \"2.0.2\" %}\n\npackage:\n  name: jsonfield\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/j/jsonfield/jsonfield-{{ version }}.tar.gz\n  sha256: beb1cd4850d6d6351c32daefcb826c01757744e9c863228a642f87a1a4acb834\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - django >=1.8.0\n\ntest:\n  imports:\n    - jsonfield\n\nabout:\n  home: https://github.com/dmkoch/django-jsonfield/\n  license: MIT\n  license_file: LICENSE\n  summary: 'A reusable Django field that allows you to store validated JSON in your model.'\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -721,6 +721,7 @@
   "subdir": "noarch",
   "version": "0.1.5"
  },
+ "metadata_version": 1,
  "name": "dask-xgboost",
  "raw_recipe": "{% set name = \"dask-xgboost\" %}\n{% set version = \"0.1.5\" %}\n{% set sha256 = \"1860d06965fe68def1c83b9195130a92050fd4bc28bf2be689898a3a74ee1316\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  noarch: python\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - dask >=0.14.0\n    - distributed >=1.16.0\n    - xgboost\n\ntest:\n  imports:\n    - dask_xgboost\n\nabout:\n  home: http://github.com/dask/dask-xgboost\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Launch, train, and test with XGBoost from Dask'\n\n  description: |\n      dask-xgboost is a small project to facilitate launching the XGBoost\n      library for machine learning on a Dask cluster.  It also contains\n      utilities to transfer data between dask collections like dataframes and\n      arrays into a distributed XGBoost system.\n  dev_url: https://github.com/dask/dask-xgboost\n\nextra:\n  recipe-maintainers:\n    - mrocklin\n    - TomAugspurger\n",
  "rendered_recipe": {

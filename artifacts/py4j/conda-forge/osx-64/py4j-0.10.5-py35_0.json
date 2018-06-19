@@ -526,6 +526,7 @@
   "subdir": "osx-64",
   "version": "0.10.5"
  },
+ "metadata_version": 1,
  "name": "py4j",
  "raw_recipe": "{% set name = \"py4j\" %}\n{% set version = \"0.10.5\" %}\n{% set bundle = \"zip\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_val = \"86f78acff01b73fd8d2adaa713b608ddad6c9a0a00aaa71d6087827a713eed00\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - py4j\n    - py4j.tests\n\nabout:\n  home: http://py4j.sourceforge.net/\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Enables Python programs to dynamically access arbitrary Java objects'\n  dev_url: https://github.com/bartdag/py4j\n  doc_url: http://py4j.sourceforge.net/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

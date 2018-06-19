@@ -819,6 +819,7 @@
   "subdir": "linux-64",
   "version": "1.9"
  },
+ "metadata_version": 1,
  "name": "django-debug-toolbar",
  "raw_recipe": "{% set version = \"1.9\" %}\n\npackage:\n  name: django-debug-toolbar\n  version: {{ version }}\n\nsource:\n  fn: django-debug-toolbar-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/django-debug-toolbar/django-debug-toolbar-{{ version }}.tar.gz\n  sha256: 39a846374c95e70baf9c92f97db20f15e78ff75a007b67650b79cf8f5e14e27c\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django >=1.8\n    - sqlparse >=0.2.0\n\ntest:\n  imports:\n    - debug_toolbar\n    - debug_toolbar.management\n    - debug_toolbar.management.commands\n\nabout:\n  home: https://github.com/django-debug-toolbar/django-debug-toolbar\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'A configurable set of panels that display various debug information about the current request/response.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - kwilcox\n",
  "rendered_recipe": {

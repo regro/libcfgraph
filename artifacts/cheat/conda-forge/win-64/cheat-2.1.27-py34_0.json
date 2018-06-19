@@ -194,6 +194,7 @@
   "subdir": "win-64",
   "version": "2.1.27"
  },
+ "metadata_version": 1,
  "name": "cheat",
  "raw_recipe": "{% set name = \"cheat\" %}\n{% set version = \"2.1.27\" %}\n{% set sha256 = \"0db3cf8ee3f1a3e5e817d630349f258a08f77bf759c2e9a8025aed481a7739d7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n    - docopt >=0.6.1\n    - pygments >=1.6.0\n\ntest:\n  imports:\n    - cheat\n    - cheat.cheatsheets\n    - cheat.test\n\nabout:\n  home: https://github.com/chrisallenlane/cheat\n  license: MIT/GPL3\n  license_file: LICENSE\n  summary: 'cheat allows you to create and view interactive cheatsheets on the command-line. It was designed to help remind *nix system administrators of options for commands that they use frequently, but not frequently enough to remember.'\n  dev_url: https://github.com/chrisallenlane/cheat\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
  "rendered_recipe": {},

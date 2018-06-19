@@ -507,6 +507,7 @@
   "subdir": "win-64",
   "version": "1.2.0"
  },
+ "metadata_version": 1,
  "name": "tuiview",
  "raw_recipe": "{% set version = \"1.2.0\" %}\n\n\npackage:\n    name: tuiview\n    version: {{ version }}\n\nsource:\n    fn: TuiView-{{ version }}.tar.gz\n    url: https://bitbucket.org/chchrsc/tuiview/downloads/TuiView-{{ version }}.tar.gz\n    sha256: 1340136787f29b1f9146cf4819f7d44fffc8887707c42e78c79b7c7c9f6ba4e2\n\nbuild:\n    number: 0\n    entry_points:\n        - tuiview = tuiview.viewerapplication:run\n        - tuiviewwritetable = tuiview.writetableapplication:run\n\nrequirements:\n    build:\n        - python\n        - numpy x.x\n        - gdal 2.2.*\n        - pyqt 5.6.*\n    run:\n        - python\n        - numpy x.x\n        - gdal 2.2.*\n        - pyqt 5.6.*\n\ntest:\n    imports:\n        - tuiview\n\nabout:\n    home: http://tuiview.org/\n    license: GPLv2\n    summary: Simple raster viewer. Supports Geolinked Windows, Raster Attribute Querying and Editing and Geographic Selection, Vector Overlay, Flicker, Profile Tool. \n\nextra:\n    recipe-maintainers:\n        - gillins\n        - danclewley\n",
  "rendered_recipe": {

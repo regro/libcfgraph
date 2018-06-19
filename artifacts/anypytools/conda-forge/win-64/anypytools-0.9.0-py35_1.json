@@ -84,6 +84,7 @@
   "type": "app",
   "version": "0.9.0"
  },
+ "metadata_version": 1,
  "name": "anypytools",
  "raw_recipe": "{% set version = \"0.9.0\" %}\n\npackage:\n  name: anypytools\n  version: {{ version }}\n\nsource:\n   fn: {{ version }}.tar.gz\n   url: https://github.com/AnyBody-Research-Group/AnyPyTools/archive/{{ version }}.tar.gz\n   sha1: e7d02a0c0edbc2729356343526677e2b3e283381\n\nbuild:          \n  number: 1\n  # Added to allow the pytest entry points in setup.py to work\n  # This is also the reason for setuptools being a runtime dependency. \n  preserve_egg_dir: True\n  skip: True  # [not win]\n\nrequirements:\n  build:\n    - setuptools\n    - python\n    - future\n\n  run:\n    - python\n    - pywin32  # [py27 or py34]\n    - future >=0.15\n    - h5py >=2.5\n    - setuptools\n    - scipy >=0.15\n    - notebook >=4.2\n    - jupyter >=1.0\n\ntest:\n    imports:\n       - anypytools\n       - anypytools.abcutils\n       - anypytools.macro_commands\n\n\napp:\n    entry: AnyPyToolsTutorial.bat\n    summary: AnyPyTools Tutorial\n    icon: apt_icon.png\n\nabout:\n  home: https://github.com/AnyBody-Research-Group/AnyPyTools\n  license: MIT\n  summary: Python tools and utilities for working with the AnyBody Modelling System\n\nextra:\n  recipe-maintainers:\n    - melund\n",
  "rendered_recipe": {},

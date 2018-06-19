@@ -120,6 +120,7 @@
   "subdir": "osx-64",
   "version": "1.4.3"
  },
+ "metadata_version": 1,
  "name": "rios",
  "raw_recipe": "{% set version = \"1.4.3\" %}\n\npackage:\n  name: rios\n  version: {{ version }}\n\nsource:\n  fn: rios-{{ version }}.tar.gz\n  url: https://bitbucket.org/chchrsc/rios/downloads/rios-{{ version }}.tar.gz\n  md5: c6d370262a2630ef81deb53b88e5d184\n\nbuild:\n  number: 1\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - numpy\n    - gdal 2.1.*\n\ntest:\n  imports:\n    - rios\n\nabout:\n  home: http://rioshome.org/\n  license: GPL-3.0\n  summary: 'Raster I/O simplification, a set of Python modules built on top of GDAL to simplify processing raster data, including data with Raster Attribute Tables.'\n\nextra:\n  recipe-maintainers:\n    - gillins\n",
  "rendered_recipe": {

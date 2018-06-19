@@ -848,6 +848,7 @@
   "subdir": "noarch",
   "version": "1.6.7"
  },
+ "metadata_version": 1,
  "name": "jug",
  "raw_recipe": "{% set name = \"Jug\" %}\n{% set version = \"1.6.7\" %}\n{% set sha256 = \"a7faba838f3437163ae8459bff96e2c6ca1298312bdb9104c702685178d17269\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - jug = jug.jug:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - six\n    - bottle\n    - pyyaml\n\ntest:\n  imports:\n    - jug\n  commands:\n    - jug -h\n\nabout:\n  home: http://github.com/luispedro/jug\n  license: MIT\n  license_family: MIT\n  license_file: COPYING.MIT\n  summary: 'Task based Python workflow system'\n\n  # The remaining entries in this section are optional, but recommended\n  description: |\n    Jug allows you to write code that is broken up into\n    tasks and run different tasks on different processors.\n  doc_url: https://jugreadthedocs.io/\n  dev_url: https://github.com/luispedro/jug\n\nextra:\n  recipe-maintainers:\n    - luispedro\n",
  "rendered_recipe": {

@@ -138,6 +138,7 @@
   "subdir": "win-64",
   "version": "4.3.0"
  },
+ "metadata_version": 1,
  "name": "qtconsole",
  "raw_recipe": "{% set version = \"4.3.0\" %}\n\npackage:\n  name: qtconsole\n  version: {{ version }}\n\nsource:\n  fn: qtconsole-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/q/qtconsole/qtconsole-{{ version }}.tar.gz\n  sha256: 2821ccf85853b83e4958521f82e36325208787eaf79b19b83905a99cc41aa209\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - ipykernel >=4.1\n    - jupyter_client >=4.1\n    - jupyter_core\n    - pygments\n    - pyqt\n    - traitlets\n\n  run:\n    - python\n    - ipykernel >=4.1\n    - jupyter_client >=4.1\n    - jupyter_core\n    - pygments\n    - pyqt\n    - traitlets\n\ntest:\n  commands:\n    - jupyter qtconsole --help                                              # [not linux]\n    - DISPLAY=localhost:1.0 xvfb-run -a bash -c 'jupyter qtconsole --help'  # [linux]\n\n  imports:\n    - qtconsole\n    - qtconsole.tests\n\nabout:\n  home: http://jupyter.org\n  license: BSD 3-Clause\n  license_file: COPYING.md\n  summary: Jupyter Qt console\n\nextra:\n  recipe-maintainers:\n    - Carreau\n    - ccordoba12\n    - jakirkham\n    - minrk\n    - takluyver\n    - ocefpaf\n",
  "rendered_recipe": {

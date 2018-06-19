@@ -182,6 +182,7 @@
   "timestamp": 1524275034614,
   "version": "1.5.0"
  },
+ "metadata_version": 1,
  "name": "r-textshape",
  "raw_recipe": "{% set version = '1.5.0' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-textshape\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: textshape_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/textshape_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/textshape/textshape_{{ version }}.tar.gz\n  sha256: 756d3a4365c50db8c73f604ac4130b2c7a38a34892a527d1e0130b797e1d7743\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-data.table\n    - r-slam\n    - r-stringi\n\n  run:\n    - r-base\n    - r-data.table\n    - r-slam\n    - r-stringi\n\ntest:\n  commands:\n    - $R -e \"library('textshape')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('textshape')\\\"\"  # [win]\n\nabout:\n  home: https://cran.r-project.org/package=textshape\n  license: GPL-2\n  summary: Tools that can be used to reshape and restructure text data.\n  license_family: GPL2\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2'  # [unix]\n  license_file: '{{ environ[\"PREFIX\"] }}\\R\\share\\licenses\\GPL-2'  # [win]\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n    - CurtLH\n",
  "rendered_recipe": {

@@ -526,6 +526,7 @@
   "subdir": "osx-64",
   "version": "0.11.5"
  },
+ "metadata_version": 1,
  "name": "tablib",
  "raw_recipe": "{% set version = \"0.11.5\" %}\n\npackage:\n  name: tablib\n  version: {{ version }}\n\nsource:\n  fn: tablib-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/t/tablib/tablib-{{ version }}.tar.gz\n  sha256: 27aafe2bf6573472f4ab330b2e46e9ebf01942a204bfaee784191848411afe05\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - xlrd\n    - odfpy\n    - openpyxl\n    - unicodecsv\n    - xlrd\n    - xlwt\n    - pyyaml\n\ntest:\n  imports:\n    - tablib\n    - tablib.formats\n    - tablib.packages\n  source_files:\n    - test_tablib.py\n  commands:\n    - python test_tablib.py  # [not win]\n\nabout:\n  home: http://python-tablib.org\n  license: MIT\n  license_file: LICENSE\n  summary: 'Format agnostic tabular data library (XLS, JSON, YAML, CSV)'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

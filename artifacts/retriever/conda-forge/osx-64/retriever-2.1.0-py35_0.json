@@ -689,6 +689,7 @@
   "subdir": "osx-64",
   "version": "2.1.0"
  },
+ "metadata_version": 1,
  "name": "retriever",
  "raw_recipe": "{% set name = \"retriever\" %}\n{% set version = \"2.1.0\" %}\n{% set sha256 = \"a1f3c9a50369246fab6faa9915981e5b85e57745c52c6277ff5a2eab24cd2483\" %}\n\npackage:\n  name: {{ name }}\n  version: {{version}}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  entry_points:\n    - retriever = retriever.__main__:main\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpydoc\n  run:\n    - python\n    - setuptools\n    - xlrd\n    - future\n    - argcomplete\n    - psycopg2\n    - pytest\n    - pymysql\n\ntest:\n  imports:\n    - retriever\n    - retriever.engines\n    - retriever.lib\n\nabout:\n  home: https://github.com/weecology/retriever\n  license: MIT\n  summary: 'Data Retriever'\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - Henrykironde\n    - ethanwhite\n    - zhangcandrew\n",
  "rendered_recipe": {

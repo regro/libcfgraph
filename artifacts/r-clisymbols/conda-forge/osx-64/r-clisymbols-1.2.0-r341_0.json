@@ -148,6 +148,7 @@
   "timestamp": 1525227746896,
   "version": "1.2.0"
  },
+ "metadata_version": 1,
  "name": "r-clisymbols",
  "raw_recipe": "{% set version = '1.2.0' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n{% set cran_mirror = 'https://cran.r-project.org' %}\n\npackage:\n  name: r-clisymbols\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: clisymbols_1.2.0.tar.gz\n  url:\n    - {{ cran_mirror }}/src/contrib/clisymbols_1.2.0.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/clisymbols/clisymbols_1.2.0.tar.gz\n  sha256: 0649f2ce39541820daee3ed408d765eddf83db5db639b493561f4e5fbf88efe0\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n  host:\n    - r-base\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('clisymbols')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('clisymbols')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/gaborcsardi/clisymbols\n  license: MIT\n  summary: A small subset of Unicode symbols, that are useful when building command line applications.\n    They fall back to alternatives on terminals that do not support Unicode. Many symbols\n    were taken from the 'figures' 'npm' package (see <https://github.com/sindresorhus/figures>).\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n    - roryk\n",
  "rendered_recipe": {

@@ -795,6 +795,7 @@
   "subdir": "noarch",
   "version": "6.2.0"
  },
+ "metadata_version": 1,
  "name": "elasticsearch",
  "raw_recipe": "{% set name = \"elasticsearch\" %}\n{% set version = \"6.2.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_val = \"b106fa3e01750376a42f8a9882bd84d630fda58c7aba38b4fec797d11c0bd0a2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  noarch: python\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - urllib3 >=1.21.1,<1.23\n\ntest:\n  imports:\n    - elasticsearch\n    - elasticsearch.client\n    - elasticsearch.connection\n    - elasticsearch.helpers\n\nabout:\n  home: https://github.com/elastic/elasticsearch-py\n  license: Apache 2.0\n  license_file: LICENSE\n  license_family: Apache\n  summary: 'Python client for Elasticsearch'\n  doc_url: https://elasticsearch-py.readthedocs.io\n  dev_url: https://github.com/elastic/elasticsearch-py\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

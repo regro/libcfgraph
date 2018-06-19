@@ -103,6 +103,7 @@
   "subdir": "osx-64",
   "version": "3.2.0"
  },
+ "metadata_version": 1,
  "name": "tinydb",
  "raw_recipe": "{% set version = \"3.2.0\" %}\n{% set name = \"tinydb\" %}\n{% set sha = \"3d9378de3adcf0df4d76b334d6a6d834993d8d48c0a96d2ce6d2e57ca5e0a585\" %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n    fn: tinydb-{{ version }}.zip\n    sha256: {{ sha }}\n\nbuild:\n    number: 1\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - setuptools\n        - python\n    run:\n        - python\n\ntest:\n    imports:\n        - tinydb\n\nabout:\n    home: https://github.com/msiemens/tinydb\n    license: MIT\n    license_family: MIT\n    # license file is not included. Should raise this on upstream.\n    #license_file: LICENCE\n    summary: TinyDB is a tiny, document oriented database optimized for your happiness :)\n    description: |\n        TinyDB is a lightweight document oriented database optimized for your\n        happiness :) It's written in pure Python and has no external\n        dependencies. The target are small apps that would be blown away by a\n        SQL-DB or an external database server.\n\nextra:\n    recipe-maintainers:\n        - ericdill\n        - licode\n        - msiemens\n        - tacaswell\n",
  "rendered_recipe": {

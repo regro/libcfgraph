@@ -641,6 +641,7 @@
   "subdir": "win-64",
   "version": "1.5.0"
  },
+ "metadata_version": 1,
  "name": "logzero",
  "raw_recipe": "{% set name = \"logzero\" %}\n{% set version = \"1.5.0\" %}\n{% set sha256 = \"34fa1e2e436dfa9f37e5ff8750e932bafe0c5abbb42e1f669e4cf5ce1f179142\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - colorama  # [win]\n\ntest:\n  imports:\n    - logzero\n\nabout:\n  home: https://github.com/metachris/logzero\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Python logging made easy'\n  description: |\n    Robust and effective logging for Python 2 and 3.\n  doc_url: https://logzero.readthedocs.io/\n  dev_url: https://github.com/metachris/logzero\n\nextra:\n  recipe-maintainers:\n    - carlodri\n    - metachris\n",
  "rendered_recipe": {

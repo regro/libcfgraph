@@ -684,6 +684,7 @@
   "subdir": "osx-64",
   "version": "1.5.0"
  },
+ "metadata_version": 1,
  "name": "r-wikipedir",
  "raw_recipe": "{% set version = '1.5.0' %}\n\npackage:\n  name: r-wikipedir\n  version: {{ version }}\n\nsource:\n  fn: WikipediR_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/WikipediR_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/WikipediR/WikipediR_{{ version }}.tar.gz\n  sha256: f8d0e6f04fb65f7ad9c1c068852a6a8b699ffe8d39edf1f3fa07d32d087e8ff0\n\nbuild:\n  number: 0\n  script: R CMD INSTALL --build .\n  skip: True  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-httr\n    - r-jsonlite\n  run:\n    - r-base\n    - r-httr\n    - r-jsonlite\n\ntest:\n  commands:\n    - $R -e \"library('WikipediR')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('WikipediR')\\\"\"  # [win]\n\nabout:\n  home: https://cran.r-project.org/web/packages/WikipediR\n  license: MIT\n  license_file: LICENSE\n  summary: A wrapper for the MediaWiki API, aimed particularly at the Wikimedia 'production'\n    wikis, such as Wikipedia. It can be used to retrieve page text, information about\n    users or the history of pages, and elements of the category tree.\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

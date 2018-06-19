@@ -498,6 +498,7 @@
   "subdir": "win-64",
   "version": "0.1.4"
  },
+ "metadata_version": 1,
  "name": "jenkspy",
  "raw_recipe": "{% set name = \"jenkspy\" %}\n{% set version = \"0.1.4\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"f8fa439f0ff3dc8c40bf1e24ed0b64eff44624118a88225058b000eb4d95b90c\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.tar.gz'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n\nrequirements:\n  build:\n    - python\n    - toolchain\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - jenkspy\n\nabout:\n  home: http://github.com/mthh/jenkspy\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Compute Natural Breaks (Jenks algorythm)\n  description: \"Compute natural break values (Jenks algorythm) on list/tuple/numpy.ndarray of integers/floats.\"\n  dev_url: https://github.com/mthh/jenkspy\n  \nextra:\n  recipe-maintainers: \n    - nickp60\n",
  "rendered_recipe": {

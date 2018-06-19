@@ -802,6 +802,7 @@
   "subdir": "win-64",
   "version": "0.2.1"
  },
+ "metadata_version": 1,
  "name": "agg-regrid",
  "raw_recipe": "{% set name = \"agg-regrid\" %}\n{% set version = \"0.2.1\" %}\n{% set sha256 = \"1ab034cd9c5363afcd2cf74073bf11ab16d9e3c81729433eb008fcb6e81be976\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/SciTools-incubator/iris-{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: true  # [osx]\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n    - cython\n    - numpy 1.11.*\n  run:\n    - python\n    - numpy >=1.11\n    - iris\n\ntest:\n  imports:\n    - agg_regrid\n\nabout:\n  home: https://github.com/SciTools-incubator/iris-{{ name }}\n  license: LGPL-3.0\n  license_family: LGPL\n  license_file: COPYING.LESSER\n  summary: \"A conservative area-weighted regridder that uses AGG to rasterise a source iris cube to a target grid\"\n\nextra:\n  recipe-maintainers:\n    - bjlittle\n    - pelson\n    - cpelley\n",
  "rendered_recipe": {

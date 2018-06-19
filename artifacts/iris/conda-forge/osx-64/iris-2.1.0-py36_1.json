@@ -533,6 +533,7 @@
   "timestamp": 1528822563839,
   "version": "2.1.0"
  },
+ "metadata_version": 1,
  "name": "iris",
  "raw_recipe": "{% set version = \"2.1.0\" %}\n\npackage:\n  name: iris\n  version: {{ version }}\n\nsource:\n  url: https://github.com/SciTools/iris/archive/v{{ version }}.tar.gz\n  sha256: 9e4cc7ebb41efcd67ece39c39d09fcacadc7ae9d2024fe954bb8149e1b9f7570\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - python\n    - pip\n    - cartopy >=0.14\n    - cf_units >=2\n    - cftime\n    - dask >=0.17.1\n    - numpy >=1.14\n    - pyke\n    - scipy\n    - six\n  run:\n    - python\n    - cartopy >=0.14\n    - cf_units >=2\n    - cftime\n    - dask >=0.17.1\n    - matplotlib >=2\n    - netcdf4 >=1.4\n    - numpy >=1.14\n    - pyke\n    - scipy\n    - six\n    - iris-grib  # [not (win or py3k)]\n\ntest:\n  imports:\n    - iris\n    - iris.fileformats._pyke_rules.compiled_krb\n\nabout:\n  home: http://www.scitools.org.uk/iris\n  license: GPL3\n  license_family: GPL3\n  license_file: README.md\n  summary: 'Analyse and visualise meteorological and oceanographic data sets.'\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - rhattersley\n    - ocefpaf\n    - bjlittle\n    - dkillick\n",
  "rendered_recipe": {

@@ -129,6 +129,7 @@
   "timestamp": 1526734266065,
   "version": "2.7.4"
  },
+ "metadata_version": 1,
  "name": "cppheaderparser",
  "raw_recipe": "{% set name = \"CppHeaderParser\" %}\n{% set version = \"2.7.4\" %}\n{% set sha256 = \"382b30416d95b0a5e8502b214810dcac2a56432917e2651447d3abe253e3cc42\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n\n  run:\n    - python\n    - ply\n\ntest:\n  imports:\n    - CppHeaderParser\n\nabout:\n  home: http://senexcanis.com/open-source/cppheaderparser/\n  license: BSD\n  license_file: LICENSE.txt\n  summary: 'Parse C++ header files and generate a data structure representing the class'\n  doc_url: http://pydoc.net/CppHeaderParser/latest/\n  dev_url: https://bitbucket.org/senex/cppheaderparser\n\nextra:\n  recipe-maintainers:\n    - tigarmo\n",
  "rendered_recipe": {

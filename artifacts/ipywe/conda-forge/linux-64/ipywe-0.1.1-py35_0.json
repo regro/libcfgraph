@@ -788,6 +788,7 @@
   "subdir": "linux-64",
   "version": "0.1.1"
  },
+ "metadata_version": 1,
  "name": "ipywe",
  "raw_recipe": "{% set version = \"0.1.1\" %}\n\npackage:\n  name: ipywe\n  version: {{ version }}\n\nsource:\n  url: https://github.com/scikit-beam/ipywe/archive/{{ version }}.tar.gz\n  sha256: d1ea2ff36e2aa975c9330b8b41f43a894af62277ff21a4637b8ecd0cb09bf337\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - pip\n    - nodejs\n  run:\n    - python\n    - ipywidgets >=6.0.0\n    - traitlets >=4.3.0\n    - pillow\n    - numpy\n    - scipy\n\ntest:\n  imports:\n    - ipywe\n\nabout:\n  home: https://github.com/scikit-beam/ipywe\n  license: MIT\n  license_family: MIT\n  # license_file: LICENSE\n  summary: 'jupyter widgets extension for scattering sciences'\n  doc_url: https://github.com/scikit-beam/ipywe\n  dev_url: https://github.com/scikit-beam/ipywe\n\nextra:\n  recipe-maintainers:\n    - yxqd\n",
  "rendered_recipe": {

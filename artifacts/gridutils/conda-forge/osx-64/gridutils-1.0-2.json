@@ -500,6 +500,7 @@
   "subdir": "osx-64",
   "version": "1.0"
  },
+ "metadata_version": 1,
  "name": "gridutils",
  "raw_recipe": "{% set version = \"1.0\" %}\n\npackage:\n  name: gridutils\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/sakov/gridutils-c/archive/v{{ version }}.tar.gz\n  sha256: 358e93d2e3431d9e2d4c0574d25d97dd26585204e1e8407e817429f40ebf406e\n\nbuild:\n  number: 2\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - nn\n    - csa\n  run:\n    - nn\n    - csa\n\ntest:\n  commands:\n    - gridbathy -h\n    - conda inspect linkages -p $PREFIX gridutils  # [not win]\n    - conda inspect objects -p $PREFIX gridutils  # [osx]\n\nabout:\n  home: https://github.com/sakov/gridutils-c\n  license: BSD 2-Clause\n  summary: 'C library functions and command line utilities for working with curvilinear grids.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

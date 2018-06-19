@@ -583,6 +583,7 @@
   "subdir": "osx-64",
   "version": "1.1.9"
  },
+ "metadata_version": 1,
  "name": "cvxopt",
  "raw_recipe": "{% set version = \"1.1.9\" %}\n\n{% set variant = \"openblas\" %}\n\n\npackage:\n  name: cvxopt\n  version: {{ version }}\n\nsource:\n  fn: cvxopt-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/cvxopt/cvxopt-{{ version }}.tar.gz\n  sha256: 8f157e7397158812cabd340b68546f1baa55a486ed0aad8bc26877593dc2983d\n\nbuild:\n  skip: true  # [win]\n  number: 201\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n    - gsl\n    - fftw\n    - glpk\n    - suitesparse 4.5.4\n\n  run:\n    - python\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n    - gsl\n    - fftw\n    - glpk\n    - suitesparse 4.5.4\n\ntest:\n  imports:\n    - cvxopt\n  source_files:\n    - tests/*.py\n    - examples/*\n\nabout:\n  home: http://cvxopt.org\n  license: GPL 3\n  license_file: LICENSE\n  summary: Convex optimization package\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jjhelmus\n    - martinandersen\n",
  "rendered_recipe": {

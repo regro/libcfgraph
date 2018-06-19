@@ -308,6 +308,7 @@
   "timestamp": 1528309948157,
   "version": "2.1.0"
  },
+ "metadata_version": 1,
  "name": "altair",
  "raw_recipe": "{% set version = \"2.1.0\" %}\n\npackage:\n  name: altair\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/a/altair/altair-{{ version }}.tar.gz\n  sha256: e8b222588dde98ec614e6808357fde7fa321118db44cc909df2bf30158d931c0\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - entrypoints\n    - ipython\n    - jsonschema\n    - numpy\n    - pandas\n    - six\n    - toolz\n    - typing\n\ntest:\n  source_files:\n    - altair\n  requires:\n    - docutils\n    - jinja2\n    - pytest\n    - sphinx\n    - vega_datasets\n  commands:\n    - python -m pytest --pyargs --doctest-modules altair\n  imports:\n    - altair\n    - altair.expr\n    - altair.sphinxext\n    - altair.utils\n    - altair.vega\n    - altair.vega.v2\n    - altair.vega.v2.schema\n    - altair.vega.v3\n    - altair.vega.v3.schema\n    - altair.vegalite\n    - altair.vegalite.v1\n    - altair.vegalite.v1.schema\n    - altair.vegalite.v2\n    - altair.vegalite.v2.examples\n    - altair.vegalite.v2.schema\n\nabout:\n  home: http://github.com/altair-viz/altair\n  license: BSD 3-clause\n  license_file: LICENSE\n  summary: 'High-level declarative visualization library for Python.'\n\nextra:\n  recipe-maintainers:\n    - ellisonbg\n    - jakevdp\n",
  "rendered_recipe": {

@@ -74,6 +74,7 @@
   "subdir": "linux-64",
   "version": "0.2"
  },
+ "metadata_version": 1,
  "name": "megaman",
  "raw_recipe": "{% set version = \"0.2\" %}\n\npackage:\n    name: megaman\n    version: {{ version }}\n\nsource:\n    fn: megaman-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/m/megaman/megaman-{{ version }}.tar.gz\n    md5: 4039b7e7845cf0345c87b75a9fc08fb1\n\nbuild:\n    number: 1\n    skip: true    # [win]\n\nrequirements:\n    build:\n        - python\n        - numpy x.x\n        - cython\n        - flann\n        - gcc          # [unix]\n    run:\n        - python\n        - numpy x.x\n        - scipy >=0.16\n        - scikit-learn >=0.17\n        - pyamg\n        - pyflann\n        - libgcc       # [unix]\n\ntest:\n    requires:\n        - nose\n    imports:\n        - megaman\n        - megaman.geometry\n        - megaman.embedding\n        - megaman.utils\n\nabout:\n    home: http://mmp2.github.io/megaman\n    license: BSD 2-clause\n    license_file: LICENSE\n    summary: \"Manifold Learning for Millions of Points\"\n\nextra:\n    recipe-maintainers:\n        - jakevdp\n",
  "rendered_recipe": {},

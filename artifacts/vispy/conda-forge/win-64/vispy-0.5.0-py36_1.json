@@ -1263,6 +1263,7 @@
   "subdir": "win-64",
   "version": "0.5.0"
  },
+ "metadata_version": 1,
  "name": "vispy",
  "raw_recipe": "{% set version = \"0.5.0\" %}\n\npackage:\n  name: vispy\n  version: {{ version }}\n\nsource:\n  fn: vispy-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/v/vispy/vispy-{{ version }}.tar.gz\n  sha256: fa24f925ec5998d3d68cc96bae0fe438082b78a4e198ba928dfa5b35b283c19e\n  patches:\n    - ctypes_fontconfig.diff\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: true  # [osx]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy 1.8.*  # [not (win and (py35 or py36))]\n    - numpy 1.9.*  # [win and py35]\n    - numpy 1.11.*  # [win and py36]\n    - fontconfig  # [unix]\n\n  run:\n    - python\n    - numpy >=1.8  # [not (win and (py35 or py36))]\n    - numpy >=1.9  # [win and py35]\n    - numpy >=1.11  # [win and py36]\n    - fontconfig  # [unix]\n\ntest:\n  imports:\n    - vispy\n  # todo: check headless testing\n  #requires:\n  #  - pyqt 4.*\n  #commands:\n  #  - python -c \"import vispy; print(vispy.sys_info()); vispy.test()\"\n\nabout:\n  home: http://vispy.org/\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'VisPy is a high-performance interactive 2D/3D data visualization library.'\n\nextra:\n  recipe-maintainers:\n    - davidh-ssec\n    - kmuehlbauer\n",
  "rendered_recipe": {

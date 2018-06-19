@@ -762,6 +762,7 @@
   "subdir": "linux-64",
   "version": "1.9.0"
  },
+ "metadata_version": 1,
  "name": "kubernetes-federation",
  "raw_recipe": "{% set name = \"kubernetes-federation\" %}\n{% set version = \"1.9.0\" %}\n{% set version_suffix = \"alpha.3\" %}\n\n{% set sha256 = \"9cbc8fb14318a5ebd9bf4c4a7f8a1a5e7508445c9488e59c58482c3c2607f6bb\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/kubernetes/federation/archive/v{{ version }}-{{version_suffix}}.tar.gz\n  fn: {{ name }}-{{ version }}.tar.gz  # [not win]\n  sha256: {{ sha256 }}  # [not win]\n\nbuild:\n  skip: True  # [not linux]\n  number: \"{{ version_suffix }}-0\"\n\nrequirements:\n  build:\n    - go 1.9.*  # [not win]\n    - rsync  # [not win]\n    - make  # [not win]\n    - toolchain  # [not win]\n\ntest:\n  commands:\n    - fcp --help  # [linux]\n    - federation-apiserver --help  # [linux]\n    - federation-controller-manager --help  # [linux]\n    - kubefed help\n\nabout:\n  home: https://www.kubernetes.io\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE  # [not win]\n  summary: Production-Grade Container Orchestration / Federation\n  doc_url: https://docs.kubernetes.io/docs/home/\n  dev_url: https://github.com/kubernetes/federation\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

@@ -127,6 +127,7 @@
   "subdir": "osx-64",
   "version": "0.6.1"
  },
+ "metadata_version": 1,
  "name": "python-pptx",
  "raw_recipe": "{%set name = \"python-pptx\" %}\n{%set version = \"0.6.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"aca879ebd38a7f9d18fc4e8b25f965096a72842c8810df535e0ecbf3e7c019f0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - lxml >=3.1.0\n    - pillow >=2.6.1\n    - xlsxwriter >=0.5.7\n\ntest:\n  imports:\n    - pptx\n    - pptx.chart\n    - pptx.compat\n    - pptx.dml\n    - pptx.enum\n    - pptx.opc\n    - pptx.oxml\n    - pptx.oxml.chart\n    - pptx.oxml.dml\n    - pptx.oxml.shapes\n    - pptx.parts\n    - pptx.shapes\n    - pptx.text\n\nabout:\n  home: http://github.com/scanny/python-pptx\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: 'Generate and manipulate Open XML PowerPoint (.pptx) files'\n  dev_url: http://github.com/scanny/python-pptx\n  doc_url: https://python-pptx.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - synapticarbors\n",
  "rendered_recipe": {},

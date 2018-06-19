@@ -915,6 +915,7 @@
   "subdir": "linux-64",
   "version": "1.1.5"
  },
+ "metadata_version": 1,
  "name": "alsa-lib",
  "raw_recipe": "{% set name = \"alsa-lib\" %}\n{% set version = \"1.1.5\" %}\n{% set sha256 = \"f4f68ad3c6da36b0b5241ac3c798a7a71e0e97d51f972e9f723b3f20a9650ae6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: ftp://ftp.alsa-project.org/pub/lib/{{ name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - toolchain\n    - make\n    - autoconf\n    - automake\n    - gcc\n    - libtool\n  run:\n    - libgcc\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libasound$SHLIB_EXT\n\nabout:\n  home: http://www.alsa-project.org/main/index.php/Main_Page\n  license: LGPL v2.1\n  license_family: GPL\n  license_file: COPYING\n  summary: 'Advanced Linux Sound Architecture'\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "rendered_recipe": {

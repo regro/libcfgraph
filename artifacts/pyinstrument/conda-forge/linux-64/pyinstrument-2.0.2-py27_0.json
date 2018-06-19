@@ -775,6 +775,7 @@
   "subdir": "linux-64",
   "version": "2.0.2"
  },
+ "metadata_version": 1,
  "name": "pyinstrument",
  "raw_recipe": "{% set name = \"pyinstrument\" %}\n{% set version = \"2.0.2\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_val = \"c04f3a0771185c66db7acb92db518be3db79253aad790f7c81da57d5ed9253bd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  entry_points:\n    - pyinstrument = pyinstrument.__main__:main\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pyinstrument_cext\n\ntest:\n  imports:\n    - pyinstrument\n\n  commands:\n    - pyinstrument --help\n\nabout:\n  home: https://github.com/joerick/pyinstrument\n  license: BSD 3-Clause\n  license_file: {{ RECIPE_DIR }}/LICENSE\n  license_family: BSD\n  summary: \"A call stack profiler for Python. Inspired by Apple's Instruments.app\"\n  dev_url: https://github.com/joerick/pyinstrument\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - moorepants\n",
  "rendered_recipe": {

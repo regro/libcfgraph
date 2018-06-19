@@ -89,6 +89,7 @@
   "subdir": "linux-64",
   "version": "0.3.1"
  },
+ "metadata_version": 1,
  "name": "metpy",
  "raw_recipe": "{% set version = \"0.3.1\" %}\n\npackage:\n  name: metpy\n  version: {{ version }}\n\nsource:\n  fn: metpy-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/M/MetPy/MetPy-{{version}}.tar.gz\n  md5: 9284a5f33f28f7dc7c599d92f0d20373\n\nbuild:\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    number: 1\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy >=1.8.0\n    - scipy >=0.13.3\n    - matplotlib >=1.4.0\n    - pint >=0.6\n    - enum34  # [py27]\n\ntest:\n  imports:\n    - metpy.calc\n    - metpy.plots\n    - metpy.io\n\nabout:\n  home: https://github.com/metpy/MetPy\n  license: BSD 3-Clause\n  summary: 'MetPy is a collection of tools in Python for reading, visualizing and performing calculations with weather data.'\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
  "rendered_recipe": {},

@@ -1053,6 +1053,7 @@
   "subdir": "noarch",
   "version": "0.7.0"
  },
+ "metadata_version": 1,
  "name": "dateparser",
  "raw_recipe": "{% set version = \"0.7.0\" %}\n\npackage:\n  name: dateparser\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/dateparser/dateparser-{{ version }}.tar.gz\n  sha256: 940828183c937bcec530753211b70f673c0a9aab831e43273489b310538dff86\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - python-dateutil\n    - pytz\n    - regex\n    - tzlocal\n\ntest:\n  imports:\n    - dateparser\n    - dateparser.calendars\n    - dateparser.languages\n    - dateparser.utils\n\nabout:\n  home: https://github.com/scrapinghub/dateparser\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'Date parsing library designed to parse dates from HTML pages.'\n\nextra:\n  recipe-maintainers:\n    - tacaswell\n    - ocefpaf\n",
  "rendered_recipe": {

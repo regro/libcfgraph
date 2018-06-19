@@ -1052,6 +1052,7 @@
   "timestamp": 1528848800377,
   "version": "0.23.1"
  },
+ "metadata_version": 1,
  "name": "pandas",
  "raw_recipe": "{% set version = \"0.23.1\" %}\n\npackage:\n  name: pandas\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pandas/pandas-{{ version }}.tar.gz\n  url: https://github.com/pandas-dev/pandas/releases/download/v{{ version }}/pandas-{{ version }}.tar.gz\n  sha256: 50b52af2af2e15f4aeb2fe196da073a8c131fa02e433e105d95ce40016df5690\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - cython\n    - numpy 1.9.*  # [py27 or py35]\n    - numpy 1.11.*  # [py36]\n  run:\n    - python\n    - numpy >=1.9.*  # [py27 or py35]\n    - numpy >=1.11.*  # [py36]\n    - python-dateutil >=2.5.*\n    - pytz\n\ntest:\n  imports:\n    - pandas\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://pandas.pydata.org\n  license: BSD 3-clause\n  license_file: LICENSE\n  summary: 'High-performance, easy-to-use data structures and data analysis tools.'\n\nextra:\n  recipe-maintainers:\n    - jreback\n    - jorisvandenbossche\n    - msarahan\n    - ocefpaf\n    - TomAugspurger\n",
  "rendered_recipe": {

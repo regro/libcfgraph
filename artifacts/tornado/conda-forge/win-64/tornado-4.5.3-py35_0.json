@@ -677,6 +677,7 @@
   "subdir": "win-64",
   "version": "4.5.3"
  },
+ "metadata_version": 1,
  "name": "tornado",
  "raw_recipe": "{% set version = \"4.5.3\" %}\n\npackage:\n  name: tornado\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/t/tornado/tornado-{{ version }}.tar.gz\n  sha256: 6d14e47eab0e15799cf3cdcc86b0b98279da68522caace2bd7ce644287685f0a\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - ordereddict          # [py<27]\n    - ssl_match_hostname   # [py2k]\n    - singledispatch       # [py<34]\n    - certifi              # [py<34]\n    - backports_abc >=0.4  # [py<35]\n\ntest:\n  imports:\n    - tornado\n    - tornado.platform\n    - tornado.test\n    - tornado.gen\n    - tornado.netutil\n\nabout:\n  home: http://www.tornadoweb.org/\n  license: Apache 2.0\n  summary: 'Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n    - ocefpaf\n",
  "rendered_recipe": {

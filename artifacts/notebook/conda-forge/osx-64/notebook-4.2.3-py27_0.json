@@ -1085,6 +1085,7 @@
   "subdir": "osx-64",
   "version": "4.2.3"
  },
+ "metadata_version": 1,
  "name": "notebook",
  "raw_recipe": "{% set version = \"4.2.3\" %}\n\npackage:\n  name: notebook\n  version: {{ version }}\n\nsource:\n  fn: notebook-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/n/notebook/notebook-{{ version }}.tar.gz\n  sha256: 39a9603d3fe88b60de2903680c965cf643acf2c16fb2c6bac1d905e1042b5851\n\n\nbuild:\n  script: pip install --no-deps .\n  number: 0\n  entry_points:\n    - jupyter-notebook = notebook.notebookapp:main\n    - jupyter-nbextension = notebook.nbextensions:main\n    - jupyter-serverextension = notebook.serverextensions:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - ipykernel\n    - ipython_genutils\n    - jinja2\n    - jupyter_core\n    - jupyter_client\n    - nbconvert\n    - nbformat\n    - python\n    - terminado  # [not win]\n    - tornado >=4\n    - traitlets\n\ntest:\n  commands:\n    - jupyter notebook -h\n    - jupyter nbextension -h\n    - jupyter serverextension -h\n  imports:\n    - notebook\n\nabout:\n  home: http://jupyter.org\n  license: BSD 3-clause\n  summary: A web-based notebook environment for interactive computing\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n    - pelson\n",
  "rendered_recipe": {},

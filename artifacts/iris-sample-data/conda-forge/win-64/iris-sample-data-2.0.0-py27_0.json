@@ -52,6 +52,7 @@
   "subdir": "win-64",
   "version": "2.0.0"
  },
+ "metadata_version": 1,
  "name": "iris-sample-data",
  "raw_recipe": "{% set version = \"2.0.0\" %}\n\npackage:\n    name: iris-sample-data\n    version: {{ version }}\n\nsource:\n    fn: iris-sample-data-{{ version }}.tar.gz\n    url: https://github.com/SciTools/iris-sample-data/archive/v{{ version }}.tar.gz\n    sha256: 8907f2ac0e38a32e39f79db7e6426d25c27cb18b9ad510a33f3f2538ebac12ac\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - iris_sample_data\n\nabout:\n    home: https://github.com/SciTools/iris-sample-data\n    license: Open Government\n    summary: 'Iris sample data.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
  "rendered_recipe": {},

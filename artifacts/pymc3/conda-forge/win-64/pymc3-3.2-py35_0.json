@@ -740,6 +740,7 @@
   "subdir": "win-64",
   "version": "3.2"
  },
+ "metadata_version": 1,
  "name": "pymc3",
  "raw_recipe": "{% set name = \"pymc3\" %}\n{% set version = \"3.2\" %}\n{% set md5 = \"5db9b2e662c3ff399e5304c40142e3e4\" %}\n\npackage:\n  name: {{ name | lower }}\n  version: {{ version }}\n\nsource:\n  fn:  {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy >=1.11.0\n    - scipy >=0.12.0\n    - matplotlib >=1.5.0\n    - theano >=0.9\n    - pandas >=0.18.0\n    - patsy >=0.4.0\n    - joblib >=0.9\n    - six >=1.10.0\n    - tqdm >=4.8.4\n    - h5py >=2.7.0\n    - enum34 >=1.1.6  # [py<34]\n\ntest:\n  imports:\n    - pymc3\n    - pymc3.backends\n    - pymc3.distributions\n    - pymc3.examples\n    - pymc3.glm\n    - pymc3.gp\n    - pymc3.step_methods\n    - pymc3.tests\n    - pymc3.tuning\n    - pymc3.variational\n\n  requires:\n    - pytest\n\nabout:\n  home: http://github.com/pymc-devs/pymc3\n  license: Apache-2.0\n  summary: 'Probabilistic Programming in Python.'\n  license_family: Apache\n\nextra:\n  recipe-maintainers:\n    - ericmjl\n    - springcoil\n",
  "rendered_recipe": {

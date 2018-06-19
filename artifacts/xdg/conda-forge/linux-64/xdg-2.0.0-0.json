@@ -711,6 +711,7 @@
   "subdir": "linux-64",
   "version": "2.0.0"
  },
+ "metadata_version": 1,
  "name": "xdg",
  "raw_recipe": "{% set name = \"xdg\" %}\n{% set version = \"2.0.0\" %}\n{% set sha256 = \"04fc739dc673c60abb81d222a84e6d575573fb51a74d962deaa06e2524dce667\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python >=3.6\n    - setuptools\n  run:\n    - python >=3.6\n\ntest:\n  imports:\n    - xdg\n\nabout:\n  home: https://github.com/srstevenson/xdg\n  license: ISC\n  license_file: LICENCE\n  summary: 'Variables defined by the XDG Base Directory Specification'\n\n  description: |\n      xdg is a tiny Python module which provides the variables defined by the XDG Base Directory Specification, to save you from \n      duplicating the same snippet of logic in every Python utility you write that deals with user cache, configuration, or data files. \n      It has no external dependencies and supports Python 2 and 3.\n\nextra:\n  recipe-maintainers:\n    - kain88-de\n",
  "rendered_recipe": {

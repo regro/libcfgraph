@@ -98,6 +98,7 @@
   "subdir": "win-64",
   "version": "0.1.9"
  },
+ "metadata_version": 1,
  "name": "usgs",
  "raw_recipe": "{% set version = \"0.1.9\" %}\n\npackage:\n  name: usgs\n  version: {{ version }}\n\nsource:\n  fn: usgs-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/7b/d4/c7d81862bc4ed225930de8286563350975c220fdb26fdc6246f1e1586fbb/usgs-{{ version }}.tar.gz\n  md5: ab6ba28b3870f804d7f887891d7b7279\n\nbuild:\n  number: 0\n  skip: True  # [py2k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  preserve_egg_dir: True\n  entry_points:\n    - usgs=usgs.scripts.cli:usgs\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - click >=4.0\n    - requests >=2.7.0\n    - requests-futures >=0.9.5\n\ntest:\n  imports:\n    - usgs\n    - usgs.scripts\n  commands:\n    - usgs --help\n\nabout:\n  home: https://github.com/mapbox/usgs\n  license: MIT\n  summary: 'Access the USGS inventory service'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

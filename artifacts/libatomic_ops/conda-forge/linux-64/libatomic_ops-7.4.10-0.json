@@ -814,6 +814,7 @@
   "subdir": "linux-64",
   "version": "7.4.10"
  },
+ "metadata_version": 1,
  "name": "libatomic_ops",
  "raw_recipe": "{% set name = \"libatomic_ops\" %}\n{% set version = \"7.4.10\" %}\n{% set sha256 = \"5f1bcbef3888d34c21cbbcd635336c5619927ff835868c8dbe7442d79320e707\"%}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/ivmai/{{ name }}/releases/download/v{{ version }}/libatomic_ops-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n\ntest:\n  commands:\n    - test -e $PREFIX/include/atomic_ops.h\n    - test -e $PREFIX/lib/libatomic_ops.a\n\nabout:\n  home: https://github.com/ivmai/libatomic_ops\n  license: Custom\n  summary: Implementations for atomic memory update operations.\n\nextra:\n  recipe-maintainers:\n    - stefan-balke\n",
  "rendered_recipe": {

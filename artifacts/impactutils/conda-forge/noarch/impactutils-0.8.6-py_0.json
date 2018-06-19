@@ -170,6 +170,7 @@
   "timestamp": 1529354679988,
   "version": "0.8.6"
  },
+ "metadata_version": 1,
  "name": "impactutils",
  "raw_recipe": "{% set version = \"0.8.6\" %}\n\npackage:\n  name: impactutils\n  version: {{ version }}\n\nsource:\n  url: https://github.com/usgs/earthquake-impact-utils/archive/{{ version }}.tar.gz\n  sha256: f2a46760572a3a3a83b075f0dff367a65eca04ec61887cdf334010eb6c3129b3\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python >=3\n    - pip\n  run:\n    - python >=3\n    - beautifulsoup4\n    - cartopy\n    - fiona\n    - h5py\n    - matplotlib\n    - numpy\n    - pandas\n    - paramiko\n    - pycrypto\n    - shapely\n\ntest:\n\n  imports:\n    - impactutils\n\nabout:\n  home: https://github.com/usgs/earthquake-impact-utils\n  license: Public Domain\n  summary: 'Utility library for USGS earthquake applications.'\n  license_family: Public Domain\n  license_file: LICENSE.md\n\nextra:\n  recipe-maintainers:\n    - mhearne-usgs\n    - cbworden\n    - emthompson-usgs\n",
  "rendered_recipe": {

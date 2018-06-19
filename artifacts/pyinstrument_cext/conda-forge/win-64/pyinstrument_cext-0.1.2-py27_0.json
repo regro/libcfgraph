@@ -691,6 +691,7 @@
   "subdir": "win-64",
   "version": "0.1.2"
  },
+ "metadata_version": 1,
  "name": "pyinstrument_cext",
  "raw_recipe": "{% set name = \"pyinstrument_cext\" %}\n{% set version = \"0.1.2\" %}\n{% set sha256 = \"e5dce5836086ebcd5a5e5848f3329896ae36ffc583d7ad30d821b157b2fa56be\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - pyinstrument_cext\n\nabout:\n  home: https://github.com/joerick/pyinstrument_cext\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'A CPython extension supporting pyinstrument'\n  description: 'A CPython extension supporting pyinstrument'\n  dev_url: https://github.com/joerick/pyinstrument_cext\n\nextra:\n  recipe-maintainers:\n    - moorepants\n",
  "rendered_recipe": {

@@ -66,6 +66,7 @@
   "subdir": "win-64",
   "version": "1.12.5"
  },
+ "metadata_version": 1,
  "name": "plotly",
  "raw_recipe": "{% set version = \"1.12.5\" %}\n{% set sha256 = \"b5a6260626b9b7caafb73e7a54447790337383373b699c3c323a45f32f27f7cd\" %}\n{% set md5 = \"6ee8480c40064a3650940001bd7bbc09\" %}\n\npackage:\n  name: plotly\n  version: {{ version }}\n\nsource:\n  fn: plotly-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/plotly/plotly-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  md5: {{ md5 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - requests\n    - pytz\n    - six\n\ntest:\n  imports:\n    - plotly\n\nabout:\n  home: https://plot.ly/python/\n  license: MIT\n  summary: 'An interactive, browser-based graphing library for Python'\n  description: |\n    Plotly's Python graphing library makes interactive,\n    publication-quality graphs online. Examples of how to make line\n    plots, scatter plots, area charts, bar charts, error bars, box plots,\n    histograms, heatmaps, subplots, multiple-axes, polar charts and\n    bubble charts.\n  doc_url: https://plot.ly/python/\n  dev_url: https://github.com/plotly/plotly.py\n\nextra:\n  recipe-maintainers:\n    - chohner\n",
  "rendered_recipe": {},

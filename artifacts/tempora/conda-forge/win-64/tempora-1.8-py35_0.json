@@ -499,6 +499,7 @@
   "subdir": "win-64",
   "version": "1.8"
  },
+ "metadata_version": 1,
  "name": "tempora",
  "raw_recipe": "{%set name = \"tempora\" %}\n{%set version = \"1.8\" %}\n{%set bundle = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash = \"848291f4c447e99c89031381fbf198fbe360e14c91fbff67f2b54094536849ac\" %}\n{%set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\n\nbuild:\n  entry_points:\n    - calc-prorate = tempora:calculate_prorated_values\n\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm >=1.15.0\n\n  run:\n    - python\n    - six\n    - pytz\n\ntest:\n  imports:\n    - tempora\n\nabout:\n  home: https://github.com/jaraco/tempora\n  # license_file: No license or manifest - see https://github.com/jaraco/tempora/issues/1\n  license: MIT\n  license_family: MIT\n  summary: Objects and routines pertaining to date and time (tempora)\n  dev_url: https://github.com/jaraco/tempora\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

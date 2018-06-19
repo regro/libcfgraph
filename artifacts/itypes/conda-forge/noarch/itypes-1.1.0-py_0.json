@@ -123,6 +123,7 @@
   "timestamp": 1527263584932,
   "version": "1.1.0"
  },
+ "metadata_version": 1,
  "name": "itypes",
  "raw_recipe": "{% set name = \"itypes\" %}\n{% set version = \"1.1.0\" %}\n{% set sha256 = \"c6e77bb9fd68a4bfeb9d958fea421802282451a25bac4913ec94db82a899c073\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - itypes\n\nabout:\n  home: https://github.com/tomchristie/itypes\n  license: BSD\n  license_family: BSD\n  # No license provided, though setup.py lists as BSD. Issue opened on repo\n  #license_file: LICENSE.txt\n  summary: 'Basic immutable container types for Python.'\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "rendered_recipe": {

@@ -753,6 +753,7 @@
   "subdir": "osx-64",
   "version": "0.2.3"
  },
+ "metadata_version": 1,
  "name": "spyder-terminal",
  "raw_recipe": "{% set name = \"spyder-terminal\" %}\n{% set version = \"0.2.3\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"fa3659ec9636ca3bcc4d3a8dc1b9101de3042a00c8979488dfe8ad201f349647\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  skip: True  # [win and py27]\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - coloredlogs\n    - pexpect\n    - python\n    - pywinpty  # [win]\n    - requests\n    - spyder >=3.2\n    - tornado\n\ntest:\n  imports:\n    - spyder_terminal\n\nabout:\n  home: https://github.com/spyder-ide/spyder-terminal\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Spyder plugin for displaying system terminals.\n  description: |\n    This plugin allows you to execute flawlessly any bash command\n    inside Spyder, even ncurses applications like nano or vi, or\n    Windows console applications such as powershell.\n  dev_url: https://github.com/spyder-ide/spyder-terminal\n\nextra:\n  recipe-maintainers:\n    - andfoy\n    - ccordoba12\n    - goanpeca\n",
  "rendered_recipe": {

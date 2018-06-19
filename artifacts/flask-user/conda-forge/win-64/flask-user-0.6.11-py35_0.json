@@ -166,6 +166,7 @@
   "subdir": "win-64",
   "version": "0.6.11"
  },
+ "metadata_version": 1,
  "name": "flask-user",
  "raw_recipe": "{%set name = \"Flask-User\" %}\n{%set version = \"0.6.11\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"fc12968b8fa437942116c0f03b2346b25b9b25ee6ff63acb89f626f80aef35bc\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - passlib\n    - bcrypt\n    - pycrypto\n    - flask\n    - flask-login\n    - flask-mail\n    - flask-sqlalchemy\n    - flask-wtf\n\ntest:\n  imports:\n    - flask_user\n\nabout:\n  home: http://github.com/lingthio/Flask-User\n  license: BSD 2-Clause\n  license_file: LICENSE.txt\n  license_family: BSD\n  summary: 'Customizable User Account Management for Flask: Register, Confirm email, Login, Change username, Change password, Forgot password and more.'\n  dev_url: http://github.com/lingthio/Flask-User\n  doc_url: https://pythonhosted.org/Flask-User/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

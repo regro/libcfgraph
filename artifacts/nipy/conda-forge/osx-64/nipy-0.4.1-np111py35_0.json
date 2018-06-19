@@ -925,6 +925,7 @@
   "subdir": "osx-64",
   "version": "0.4.1"
  },
+ "metadata_version": 1,
  "name": "nipy",
  "raw_recipe": "{% set version = \"0.4.1\" %}\n\npackage:\n  name: nipy\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/n/nipy/nipy-{{ version }}.zip\n  sha256: c5bec3cf78a4cbc2cde8945710383295100939298a616bd289939ade3ed84afc\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - cython\n    - numpy x.x\n    - scipy >=0.9.0\n    - sympy >=0.7.0\n    - nibabel >=1.2.0\n  run:\n    - python\n    - numpy x.x\n    - scipy >=0.9.0\n    - sympy >=0.7.0\n    - nibabel >=1.2.0\n    - ipython\n    - matplotlib\n    # - mayavi\n\ntest:\n  imports:\n    - nipy\n    - nipy.algorithms\n    - nipy.core\n    - nipy.interfaces\n    - nipy.io\n    - nipy.labs\n    - nipy.modalities\n\nabout:\n  home: http://nipy.org/nipy\n  license: BSD 3-Clause\n  summary: 'Neuroimaging in Python FMRI analysis package'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

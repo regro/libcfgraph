@@ -627,6 +627,7 @@
   "subdir": "win-64",
   "version": "0.7.3"
  },
+ "metadata_version": 1,
  "name": "pygpu",
  "raw_recipe": "{% set version = \"0.7.3\" %}\n\npackage:\n  name: pygpu\n  version: {{ version }}\n\nsource:\n  fn: libgpuarray-{{ version }}.tar.gz\n  url: https://github.com/Theano/libgpuarray/releases/download/v{{ version }}/libgpuarray-{{ version }}.tar.gz\n  sha256: f2b6732e6ed44ecf30d31cd3ad50a1604abc7fd5cc2c004cbf11497b654a2a0c\n\nbuild:\n  number: 0\n  script:\n    - export CFLAGS=\"${CFLAGS} -I${PREFIX}/include -L${PREFIX}/lib\"  # [unix]\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - cython >=0.25\n    - numpy x.x\n    - mako\n    - setuptools\n    - libgpuarray =={{ version }}\n\n  run:\n    - python\n    - numpy x.x\n    - mako\n    - six\n    - libgpuarray =={{ version }}\n\ntest:\n  imports:\n    - pygpu\n    - pygpu.gpuarray\n\nabout:\n  home: http://github.com/Theano/libgpuarray\n  license: ISC\n  license_file: LICENSE\n  summary: 'Library to manipulate arrays on GPU'\n  doc_url: http://deeplearning.net/software/libgpuarray/\n  dev_url: http://github.com/Theano/libgpuarray\n\nextra:\n  recipe-maintainers:\n    - abergeron\n",
  "rendered_recipe": {

@@ -1108,6 +1108,7 @@
   "subdir": "linux-64",
   "version": "1.7.2"
  },
+ "metadata_version": 1,
  "name": "numpy",
  "raw_recipe": "{% set version = \"1.7.2\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: numpy\n  version: {{ version }}\n\nsource:\n  fn: numpy-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/n/numpy/numpy-{{ version }}.tar.gz\n  sha256: f963f6a5e21438dede6b4412cf9aaa230c145038a6d234aefdd70d20152f8d53\n\nbuild:\n  number: 201\n  # We lack openblas on Windows, and therefore can't build numpy there either currently.\n  skip: True  # [win or py3k]\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - toolchain\n    - cython\n    - python\n    - setuptools\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.20  # [linux]\n  run:\n    - python\n    - blas 1.1 {{ variant }}\n    - openblas >=0.2.15  # [linux]\n\ntest:\n  requires:\n    - nose\n  imports:\n    - numpy\n    - numpy.linalg.lapack_lite\n  commands:\n    - f2py -h\n    - conda inspect linkages -p $PREFIX numpy  # [not win]\n    - conda inspect objects -p $PREFIX numpy  # [osx]\n\nabout:\n  home: http://numpy.scipy.org/\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Array processing for numbers, strings, records, and objects.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - msarahan\n    - pelson\n    - rgommers\n    - ocefpaf\n",
  "rendered_recipe": {

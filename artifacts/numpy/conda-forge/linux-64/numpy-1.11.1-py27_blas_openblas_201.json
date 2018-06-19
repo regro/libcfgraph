@@ -389,6 +389,7 @@
   "subdir": "linux-64",
   "version": "1.11.1"
  },
+ "metadata_version": 1,
  "name": "numpy",
  "raw_recipe": "{% set version = \"1.11.1\" %}\n\n{% set variant = \"openblas\" %}\n\npackage:\n  name: numpy\n  version: {{ version }}\n\nsource:\n  fn: numpy-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/n/numpy/numpy-{{ version }}.tar.gz\n  md5: 2f44a895a8104ffac140c3a70edbd450\n\nbuild:\n  number: 201\n  # We lack openblas on Windows, and therefore can't build numpy there either currently.\n  skip: true  # [win]\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - cython\n    - python\n    - setuptools\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.18*\n  run:\n    - python\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.18*\n\ntest:\n  requires:\n    - nose\n  commands:\n    - f2py -h\n  imports:\n    - numpy\n    - numpy.linalg.lapack_lite\n\nabout:\n  home: http://numpy.scipy.org/\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: array processing for numbers, strings, records, and objects.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - msarahan\n    - pelson\n    - rgommers\n    - ocefpaf\n",
  "rendered_recipe": {},

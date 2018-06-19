@@ -724,6 +724,7 @@
   "subdir": "linux-64",
   "version": "0.1.6"
  },
+ "metadata_version": 1,
  "name": "lagranto",
  "raw_recipe": "{% set name = \"Lagranto\" %}\n{% set version = \"0.1.6\" %}\n{% set sha256 = \"0515e65a19cd35f6455f67a9870ff14c75bfed9f3ad928c6d9ac5f7e616e7a88\"%}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://git.iac.ethz.ch/atmosdyn/Lagranto/repository/v{{version}}/archive.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: true  # [win]\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy\n    - cartopy\n    - netcdf4\n    - path.py\n    - matplotlib\n\ntest:\n  imports:\n    - lagranto\n  requires:\n    - pytest\n  source_files:\n    - tests\n  commands:\n    - py.test\n \nabout:\n  home: http://www.lagranto.ethz.ch\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: 'Library to work with trajectories.'\n\n  doc_url: https://lagranto.readthedocs.io/en/latest/\n  dev_url: https://git.iac.ethz.ch/atmosdyn/Lagranto\n\nextra:\n  recipe-maintainers:\n    - npiaget\n",
  "rendered_recipe": {

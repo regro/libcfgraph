@@ -86,6 +86,7 @@
   "subdir": "osx-64",
   "version": "0.1a1"
  },
+ "metadata_version": 1,
  "name": "python-stratify",
  "raw_recipe": "{% set name = \"python-stratify\" %}\n{% set version = \"0.1a1\" %}\n{% set sha256 = \"dc98cf7d104f6fb33c2672558504c66331a16f437d81aaee1259f838af35d9d1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: python-stratify-{{ version }}.tar.gz\n  url: https://github.com/SciTools-incubator/python-stratify/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - cython\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  imports:\n    - stratify\n\nabout:\n  home: https://github.com/SciTools-incubator/python-stratify\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Vectorized interpolators that are especially useful for Nd vertical interpolation/stratification of atmospheric and oceanographic datasets.'\n\nextra:\n  recipe-maintainers:\n    - bjlittle\n    - lbdreyer\n    - ocefpaf\n    - pelson\n",
  "rendered_recipe": {

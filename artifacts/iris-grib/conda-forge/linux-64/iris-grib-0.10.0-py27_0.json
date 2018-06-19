@@ -181,6 +181,7 @@
   "subdir": "linux-64",
   "version": "0.10.0"
  },
+ "metadata_version": 1,
  "name": "iris-grib",
  "raw_recipe": "{% set version = \"0.10.0\" %}\n\npackage:\n  name: iris-grib\n  version: {{ version }}\n\nsource:\n  fn: iris_grib{{ version }}.tar.gz\n  url: https://github.com/SciTools/iris-grib/archive/v{{ version }}.tar.gz\n  sha256: 5dadbfe320c316902c9b8a43d16fa8a0815842036492aa525f0381e2f84b0007\n\nbuild:\n  number: 0\n  skip: True  # [win or py3k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - python-ecmwf_grib\n  run:\n    - python\n    - python-ecmwf_grib\n\ntest:\n  requires:\n    - iris\n    - iris-sample-data\n    - pep8\n  commands:\n    - conda inspect linkages -p $PREFIX iris-grib  # [not win]\n    - conda inspect objects -p $PREFIX iris-grib  # [osx]\n\nabout:\n  home: http://scitools.org.uk/iris-grib\n  license: LGPL-3.0\n  license_file: COPYING.LESSER\n  summary: 'Iris GRIB interface.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - bjlittle\n    - djkirkham\n",
  "rendered_recipe": {

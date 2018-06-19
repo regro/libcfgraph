@@ -20,6 +20,7 @@
   "subdir": "linux-64",
   "version": "2.0.0"
  },
+ "metadata_version": 1,
  "name": "toolchain",
  "raw_recipe": "package:\n  name: toolchain\n  version: 2.0.0\n\nbuild:\n  number: 0\n\ntest:\n  commands:\n    # Verify the scripts are in-place.\n    {% for state in [\"activate\", \"deactivate\"] %}\n    - test -f \"${PREFIX}/etc/conda/{{ state }}.d/toolchain_{{ state }}.sh\"                        # [unix]\n    - if not exist %LIBRARY_PREFIX%\\\\etc\\\\conda\\\\{{ state }}.d\\\\toolchain_{{ state }}.bat exit 1  # [win]\n    {% endfor %}\n\nabout:\n  home: https://github.com/conda-forge/toolchain-feedstock\n  license: BSD 3-Clause\n  summary: A meta-package to enable the right toolchain.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - msarahan\n    - patricksnape\n    - pelson\n",
  "rendered_recipe": {},

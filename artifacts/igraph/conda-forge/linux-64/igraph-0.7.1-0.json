@@ -166,6 +166,7 @@
   "subdir": "linux-64",
   "version": "0.7.1"
  },
+ "metadata_version": 1,
  "name": "igraph",
  "raw_recipe": "{%set name = \"igraph\" %}\n{%set version = \"0.7.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"d978030e27369bf698f3816ab70aa9141e9baf81c56cc4f55efbe5489b46b0df\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://igraph.org/nightly/get/c/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }} \n  patches:\n    - b215195214abb8355121a8430c86df04e1f00eae.patch  # fixes igraph/igraph#906\n\nbuild:\n  skip: True  # [win or osx]\n  number: 0\n\nrequirements:\n  build:\n    - toolchain\n    - gmp\n    - libxml2\n    - pkg-config\n  run:\n    - gmp \n    - libxml2\n\ntest:\n  files:\n    - igraph_test.c\n  requires:\n    - pkg-config\n\nabout:\n  home: http://igraph.org\n  license: GPL2\n  license_family: GPL\n  license_file: COPYING\n  summary: 'An open source and free collection of network analysis tool.'\n  description: |\n    igraph is a collection of network analysis tools with the emphasis on efficiency, \n    portabiliy and ease of use. igraph is open source and free. igraph can be \n    programmed in R, Python and C/C++.\"\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

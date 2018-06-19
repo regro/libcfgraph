@@ -727,6 +727,7 @@
   "subdir": "noarch",
   "version": "4.2.1"
  },
+ "metadata_version": 1,
  "name": "pydash",
  "raw_recipe": "{% set name = \"pydash\" %}\n{% set version = \"4.2.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"58573ec724d696a2268fec6bcb4e19549cb15876ec03837c4455115f95712e6a\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.tar.gz'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install  --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - pydash\n\nabout:\n  home: https://github.com/dgilland/pydash\n  license: MIT\n  license_file: LICENSE.rst\n  summary: The kitchen sink of Python utility libraries for doing \"stuff\" in a functional way. \n  description: \"The kitchen sink of Python utility libraries for doing stuff in a functional way. Based on Lo-Dash JS library\"\n  doc_url: https://pydash.readthedocs.io/en/latest/\n  dev_url: https://github.com/dgilland/pydash\n\nextra:\n  recipe-maintainers:\n    - souravsingh\n",
  "rendered_recipe": {

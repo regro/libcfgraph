@@ -641,6 +641,7 @@
   "subdir": "linux-64",
   "version": "1.1_1"
  },
+ "metadata_version": 1,
  "name": "r-goftest",
  "raw_recipe": "{% set version = '1.1-1' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-goftest\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: goftest_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/goftest_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/goftest/goftest_{{ version }}.tar.gz\n  sha256: db6cb1ff6e18520b172e93fca5d7d953bd2d06f4af73bf90aa0a09df8cad71a0\n\nbuild:\n  number: 0\n  script: R CMD INSTALL --build .\n  skip: True  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\n\nrequirements:\n  build:\n    - r-base\n    - posix                # [win]\n    - {{native}}toolchain  # [win]\n    - gcc                  # [not win]\n\n  run:\n    - r-base\n    - libgcc  # [linux]\n    - libgfortran  # [osx]\n\ntest:\n  commands:\n    - $R -e \"library('goftest')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('goftest')\\\"\"  # [win]\n    - conda inspect linkages -p $PREFIX r-goftest  # [not win]\n    - conda inspect objects -p $PREFIX r-goftest  # [osx]\n\nabout:\n  home: https://CRAN.R-project.org/package=goftest\n  license: GPL (>= 2)\n  summary: Cramer-Von Mises and Anderson-Darling tests of goodness-of-fit for continuous univariate\n    distributions, using efficient algorithms.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - jsignell\n",
  "rendered_recipe": {

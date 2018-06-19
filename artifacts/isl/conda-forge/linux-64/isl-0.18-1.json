@@ -683,6 +683,7 @@
   "subdir": "linux-64",
   "version": "0.18"
  },
+ "metadata_version": 1,
  "name": "isl",
  "raw_recipe": "{% set version = \"0.18\" %}\n\npackage:\n  name: isl\n  version: {{ version }}\n\nsource:\n  fn: isl-{{ version }}.tar.bz2\n  url: http://isl.gforge.inria.fr/isl-{{ version }}.tar.bz2\n  md5: 11436d6b205e516635b666090b94ab32\n\nbuild:\n  number: 1\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - gmp >=5.0.1,<7\n  run:\n    - gmp >=5.0.1,<7\n\ntest:\n  commands:\n    - test -f \"$PREFIX/lib/libisl.a\"\n    - test -f \"$PREFIX/lib/libisl.la\"\n    - test -f \"$PREFIX/lib/libisl.so\"  # [linux]\n    - test -f \"$PREFIX/lib/libisl.dylib\"  # [osx]\n    - test -d \"$PREFIX/include/isl\"\n\nabout:\n  home: http://isl.gforge.inria.fr/\n  license: MIT\n  summary: a thread-safe C library for manipulating sets and relations of integer points bounded by affine constraints.\n\nextra:\n  recipe-maintainers:\n    - frol\n",
  "rendered_recipe": {

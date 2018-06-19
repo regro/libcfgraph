@@ -790,6 +790,7 @@
   "subdir": "win-64",
   "version": "0.1.5"
  },
+ "metadata_version": 1,
  "name": "fs-s3fs",
  "raw_recipe": "{% set name = \"fs-s3fs\" %}\n{% set version = \"0.1.5\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"4e8f8ff274c4eaeba9a36a3becde1847efc322f74d7575f06759a2c0231d3114\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.tar.gz'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  number: 0\n  script: python setup.py install  --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - boto3 >=1.4.0,<2\n    - fs >=2.0.7,<3\n    - six >=1.10.0,<2\n    - enum34  # [py2k]\n\ntest:\n  imports:\n    - fs_s3fs\n\nabout:\n  home: http://fs-s3fs.readthedocs.io/en/stable\n  license: MIT\n  license_family: MIT\n  summary: Amazon S3 filesystem for PyFilesystem2\n  description: \"Amazon S3 filesystem implementation for PyFilesystem2\"\n  doc_url: 'http://fs-s3fs.readthedocs.io/en/stable/'\n  dev_url: 'https://github.com/PyFilesystem/s3fs'\n\nextra:\n  recipe-maintainers: \n    - 'notestaff'\n    - 'willmcgugan'\n",
  "rendered_recipe": {

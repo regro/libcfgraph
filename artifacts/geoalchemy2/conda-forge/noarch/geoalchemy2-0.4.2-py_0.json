@@ -725,6 +725,7 @@
   "subdir": "noarch",
   "version": "0.4.2"
  },
+ "metadata_version": 1,
  "name": "geoalchemy2",
  "raw_recipe": "{% set name = \"GeoAlchemy2\" %}\n{% set version = \"0.4.2\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_val = \"17fa10b0c01bd2ab036ea56975dfa850098aa394a5d6ee04d88b2aefc16751cb\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  preserve_egg_dir: True\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  noarch: python\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - sqlalchemy >=0.8\n\ntest:\n  imports:\n    - geoalchemy2\n\nabout:\n  home: http://geoalchemy.org/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING.rst\n  summary: 'Using SQLAlchemy with Spatial Databases'\n  doc_url: https://geoalchemy-2.readthedocs.io/en/latest/\n  dev_url: https://github.com/geoalchemy/geoalchemy2\n  \nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - ocefpaf\n",
  "rendered_recipe": {

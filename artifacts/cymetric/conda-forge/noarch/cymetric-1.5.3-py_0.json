@@ -732,6 +732,7 @@
   "subdir": "noarch",
   "version": "1.5.3"
  },
+ "metadata_version": 1,
  "name": "cymetric",
  "raw_recipe": "{% set version = \"1.5.3\" %}\n{% set sha256 = \"b07d17fea577f5719d4346dde3182fd86778786d062ee135d122d8f75ac7b3ff\" %}\n\npackage:\n  name: cymetric\n  version: {{ version }}\n\nsource:\n  fn: cymetric-{{ version }}-{{ sha256 }}.tar.gz\n  url: https://github.com/cyclus/cymetric/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --prefix ${PREFIX}\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - cyclus >=1.5.*\n    #- pyne  # this is working locally, but not on conda-forge for some weird reason\n    - numpy\n    - pandas\n    - pytables\n    - python-graphviz\n\ntest:\n  imports:\n    - cymetric\n\nabout:\n  home: http://fuelcycle.org\n  license: BSD 3-clause\n  license_family: BSD\n  summary: 'Cyclus Metrics'\n  doc_url: http://fuelcycle.org/user/cymetric/index.html\n  dev_url: https://github.com/cyclus/cymetric\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - gonuke\n    - bam241\n",
  "rendered_recipe": {

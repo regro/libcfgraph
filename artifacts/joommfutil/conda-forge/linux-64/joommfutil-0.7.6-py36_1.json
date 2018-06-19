@@ -724,6 +724,7 @@
   "subdir": "linux-64",
   "version": "0.7.6"
  },
+ "metadata_version": 1,
  "name": "joommfutil",
  "raw_recipe": "{% set version = \"0.7.6\" %}\n{% set name = \"joommfutil\" %}\n{% set sha256 = \"c54ab8d5e3ad57f046ff4e781cf4ee9189f47be0b5a53b36eac752c8f5da7713\" %}\n\npackage:\n  name: joommfutil\n  version: {{ version }}\n\nsource:\n  fn: joommfutil-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: True  # [py27]\n  number: 1\n  script: pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n    - pytest\n\ntest:\n  imports:\n    - joommfutil\n    - joommfutil.typesystem\n    \n  commands:\n    - python -c \"import sys; import joommfutil as m; sys.exit(m.test())\"\n\nabout:\n  home: http://joommf.github.io/\n  license: BSD 3-clause\n  license_file: LICENSE\n  summary: Utilities for JOOMMF\n  dev_url: https://github.com/joommf/joommfutil\n\nextra:\n  recipe-maintainers:\n    - davidcortesortuno\n    - marijanbeg\n    - takluyver\n    - fangohr\n",
  "rendered_recipe": {

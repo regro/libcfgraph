@@ -202,6 +202,7 @@
   "subdir": "linux-64",
   "version": "3.10.0"
  },
+ "metadata_version": 1,
  "name": "asap",
  "raw_recipe": "{% set name = \"asap\" %}\n{% set version = \"3.10.0\" %}\n{% set sha256 = \"d58105290029385835569e1e7057d7b03bad1dd0c5efc2151370e77f7721f478\" %}\n{% set asap_version = \"3_10_0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-ASAP_VERSION_{{ asap_version}}-a78278070c997b302c8117d8174c8914d5f3d273.tar.gz\n  url: https://gitlab.com/{{ name }}/{{ name }}/repository/archive.tar.gz?ref=ASAP_VERSION_{{ asap_version }}\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - numpy x.x\n    - toolchain\n  run:\n    - python\n    - numpy x.x\n    - ase\n\ntest:\n  imports:\n    - asap3\n\nabout:\n  home: https://gitlab.com/asap/asap\n  license: GPL-3.0\n  license_file: LICENSE\n  summary: 'ASAP is a calculator for doing large-scale molecular dynamics (MD)\n  within the Atomic Simulation Environment.'\n\n  description: |\n    ASAP is a calculator for doing large-scale molecular dynamics (MD) within\n    the Atomic Simulation Environment. The focus of ASAP is on solid-state\n    physics (as opposed to molecular chemistry), and in particular metallic\n    systems.\n\n  doc_url: https://wiki.fysik.dtu.dk/asap/asap\n  dev_url: https://gitlab.com/asap/asap\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
  "rendered_recipe": {

@@ -61,6 +61,7 @@
   "subdir": "linux-64",
   "version": "2.2.3"
  },
+ "metadata_version": 1,
  "name": "libgd",
  "raw_recipe": "{% set version = \"2.2.3\" %}\n{% set sha256 = \"458f80ffcac0ddfba7d3fb2986b6ec271123d4193478a4e807764134e5a6261d\" %}\n\npackage:\n  name: libgd\n  version: {{ version }}\n\nsource:\n  fn: libgd-{{ version }}.tar.gz\n  url: https://github.com/libgd/libgd/releases/download/gd-{{version}}/libgd-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: true  # [win]\n  number: 1\n\nrequirements:\n  build:\n    - pkg-config\n    - automake\n    - gettext\n    - zlib 1.2.*\n    - freetype 2.6.*\n    - jpeg 9*\n    - libpng >=1.6.23,<1.7\n    - libtiff 4.0.*\n    - fontconfig 2.11.*\n    - libiconv\n    - expat\n  run:\n    - zlib 1.2.*\n    - freetype 2.6.*\n    - jpeg 9*\n    - libpng >=1.6.23,<1.7\n    - libtiff 4.0.*\n    - fontconfig 2.11.*\n    - libiconv\n    - expat\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libgd.a      # [linux]\n    - test -f $PREFIX/lib/libgd.dylib  # [osx]\n    - test -f $PREFIX/lib/libgd.la\nabout:\n    home: http://libgd.github.io/\n    summary: library for the dynamic creation of images\n    license: GD license\n    license_family: Other\n    license_file: COPYING\n\nextra:\n    recipe-maintainers:\n      - croth1\n      - ChrisBarker-NOAA\n",
  "rendered_recipe": {},

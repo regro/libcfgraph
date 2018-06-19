@@ -146,6 +146,7 @@
   "timestamp": 1526725613378,
   "version": "2.0.5"
  },
+ "metadata_version": 1,
  "name": "luajit",
  "raw_recipe": "{% set version = \"2.0.5\" %}\npackage:\n   name: luajit\n   version: {{ version }}\n\nsource:\n   url: http://luajit.org/download/LuaJIT-{{ version }}.tar.gz\n   sha256: 874b1f8297c697821f561f9b73b57ffd419ed8f4278c82e05b48806d30c1e979\n\nbuild:\n   number: 0\n   detect_binary_files_with_prefix: true\n   skip: True  # [win]\n\nrequirements:\n   build:\n      - {{ compiler('c') }}\n\ntest:\n   commands:\n      - luajit -v\n      - luajit -e \"print(package.path)\"\n\nabout:\n   home: http://luajit.org/\n   license: MIT\n   license_family: MIT\n   license_file: COPYRIGHT\n   summary: Just-In-Time Compiler (JIT) for the Lua programming language.\n\nextra:\n   recipe-maintainers:\n      - brisk022\n      - johanneskoester\n      - bgruening\n      - daler\n      - jdblischak\n      - cbrueffer\n",
  "rendered_recipe": {

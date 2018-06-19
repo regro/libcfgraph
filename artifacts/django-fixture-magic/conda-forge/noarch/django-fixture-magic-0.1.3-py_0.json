@@ -751,6 +751,7 @@
   "subdir": "noarch",
   "version": "0.1.3"
  },
+ "metadata_version": 1,
  "name": "django-fixture-magic",
  "raw_recipe": "{% set version = \"0.1.3\" %}\n\npackage:\n  name: django-fixture-magic\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/django-fixture-magic/django-fixture-magic-{{ version }}.tar.gz\n  sha256: f6249d85c5691bb8beaa57a41babf023e461adf9ae239cbd6c45888670477c9a\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - fixture_magic\n    - fixture_magic.management\n    - fixture_magic.management.commands\n\nabout:\n  home: http://github.com/davedash/django-fixture-magic\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'A few extra management tools to handle fixtures.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -1434,6 +1434,7 @@
   "subdir": "linux-64",
   "version": "5.3.1"
  },
+ "metadata_version": 1,
  "name": "gmt",
  "raw_recipe": "{% set version = \"5.3.1\" %}\n\npackage:\n  name: gmt\n  version: {{ version }}\n\nsource:\n  fn: gmt-{{ version }}-src.tar.gz\n  url: ftp://ftp.soest.hawaii.edu/gmt/gmt-{{ version }}-src.tar.gz\n  sha256: e3b9164f4b6d8c4f0ff12b62516a58b6037d3333ced1562a58f3163a3bc90af8\n\nbuild:\n  number: 0\n  skip: True  # [win or osx]\n\nrequirements:\n  build:\n    - cmake\n    - fftw\n    - gdal 2.1.*\n    - ghostscript\n    - libnetcdf 4.4.*\n    - hdf5 1.8.17|1.8.17.*\n    - zlib 1.2.*\n  run:\n    - fftw\n    - gdal 2.1.*\n    - ghostscript\n    - libnetcdf 4.4.*\n    - hdf5 1.8.17|1.8.17.*\n    - zlib 1.2.*\n\ntest:\n  commands:\n    - gmt psbasemap -R10/70/-3/8 -JX4i/3i -Ba -B+glightred+t\"TEST\" -P > test0.ps  # [not win]\n    - gmt pscoast -Vd -R0/5/0/5 -JM5i -P -W0.25p > test1.ps  # [not win]\n    - gmt pscoast -R-130/-70/24/52 -JB-100/35/33/45/6i -Ba -B+t\"Conic Projection\" -N1/thickest -N2/thinnest -A500 -Ggray -Wthinnest -P > test2.ps\n    - conda inspect linkages -p $PREFIX gmt  # [not win]\n    - conda inspect objects -p $PREFIX gmt  # [osx]\n\nabout:\n  home: http://gmt.soest.hawaii.edu/\n  license: LGPL-3.0\n  license_file: LICENSE.TXT\n  summary: 'Generic Mapping Tools.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -685,6 +685,7 @@
   "subdir": "osx-64",
   "version": "0.7.4"
  },
+ "metadata_version": 1,
  "name": "geoalchemy-odm2",
  "raw_recipe": "{% set version = \"0.7.4\" %}\n\npackage:\n  name: geoalchemy-odm2\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ODM2/geoalchemy/archive/v{{ version }}.tar.gz\n  sha256: fbbfb448f601037c9bc15c5314047cd049a1c2dd5659d6078c6ef3ba1cc8508e\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - sqlalchemy >=0.6.1\n    - six\n  run:\n    - python\n    - sqlalchemy >=0.6.1\n    - six\n\ntest:\n  imports:\n    - geoalchemy\n    - geoalchemy.tests\n\nabout:\n  home: http://geoalchemy.org/\n  license: MIT\n  summary: 'Using SQLAlchemy with Spatial Databases. (This is a ODM2 fork and not the original geoalchemy!)'\n\nextra:\n  recipe-maintainers:\n    - emiliom\n    - lsetiawan\n    - ocefpaf\n",
  "rendered_recipe": {

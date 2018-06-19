@@ -760,6 +760,7 @@
   "subdir": "linux-64",
   "version": "1.1_0"
  },
+ "metadata_version": 1,
  "name": "r-diffusionmap",
  "raw_recipe": "{% set version = '1.1-0' %}\n\npackage:\n  name: r-diffusionmap\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: diffusionMap_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/diffusionMap_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/diffusionMap/diffusionMap_{{ version }}.tar.gz\n  sha256: 637b810140145fa0cbafb1c13da347c2f456c425334ae554d11a3107052e28d1\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-matrix\n    - r-igraph\n    - r-scatterplot3d\n\n  run:\n    - r-base\n    - r-matrix\n    - r-igraph\n    - r-scatterplot3d\n\ntest:\n  commands:\n    - $R -e \"library('diffusionMap')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('diffusionMap')\\\"\"  # [win]\n\nabout:\n  home: http://www.r-project.org, http://www.stat.berkeley.edu/~jwrichar/software.html\n  license: GPL-2\n  summary: Implements diffusion map method of data parametrization, including creation and visualization\n    of diffusion map, clustering with diffusion K-means and regression using adaptive\n    regression model.\n  license_family: GPL\n\nextra:\n  recipe-maintainers:\n    - bgruening\n    - daler\n    - johanneskoester\n    - rvalieris\n",
  "rendered_recipe": {

@@ -137,6 +137,7 @@
   "timestamp": 1525271987039,
   "version": "2.5.2"
  },
+ "metadata_version": 1,
  "name": "livereload",
  "raw_recipe": "{% set version = \"2.5.2\" %}\n\npackage:\n  name: livereload\n  version: {{ version }}\n\nsource:\n  url: https://github.com/lepture/python-livereload/archive/v{{ version }}.tar.gz\n  sha256: f4a7bb0ad818b9d9c61fbc96692fe2a23a401b36a062b77bd8e23d0c4274e3a6\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - livereload = livereload.cli:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - setuptools\n    - tornado\n    - six\n\ntest:\n  imports:\n    - livereload\n  commands:\n    - livereload --help\n\nabout:\n  home: https://github.com/lepture/python-livereload\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'Python LiveReload is an awesome tool for web developers.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

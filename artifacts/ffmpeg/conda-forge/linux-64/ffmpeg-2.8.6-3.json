@@ -248,6 +248,7 @@
   "subdir": "linux-64",
   "version": "2.8.6"
  },
+ "metadata_version": 1,
  "name": "ffmpeg",
  "raw_recipe": "{% set version = \"2.8.6\" %}\n\npackage:\n    name: ffmpeg\n    version: {{ version }}\n\nsource:\n    fn: ffmpeg-{{ version }}.tar.gz\n    url: https://ffmpeg.org/releases/ffmpeg-{{ version }}.tar.gz\n    md5: 7b9449795790c46331dae2c6e8e28f15\n\nbuild:\n    skip: true         # [win]\n    number: 3\n\nrequirements:\n    build:\n        - pkg-config\n        - libtool\n        - yasm\n        - gcc          # [osx]\n        - x264\n        - zlib 1.2.*\n    run:\n        - libgcc       # [osx]\n        - x264\n        - zlib 1.2.*\n\ntest:\n    commands:\n        - ffmpeg --help\n        - ffmpeg -codecs | grep \"DEVI.S zlib\"  # [unix]\n\nabout:\n    home: http://www.ffmpeg.org/\n    license: GPL 2\n    summary: Cross-platform solution to record, convert and stream audio and video.\n\nextra:\n    recipe-maintainers:\n        - danielballan\n        - jakirkham\n        - 183amir\n",
  "rendered_recipe": {

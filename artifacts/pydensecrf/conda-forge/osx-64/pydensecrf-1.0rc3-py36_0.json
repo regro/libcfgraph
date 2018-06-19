@@ -670,6 +670,7 @@
   "subdir": "osx-64",
   "version": "1.0rc3"
  },
+ "metadata_version": 1,
  "name": "pydensecrf",
  "raw_recipe": "{% set version = \"1.0rc3\" %}\n\npackage:\n  name: pydensecrf\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pydensecrf/pydensecrf-{{ version }}.tar.gz\n  sha256: 08be1603af2bede05c7697b6018e8e3059de7cc181e4e784b334889dcc749aa5\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - cython >=0.22\n    - msinttypes  # [win and py<35]\n    - toolchain\n  run:\n    - python\n\ntest:\n  requires:\n    - numpy\n  imports:\n    - pydensecrf\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://github.com/lucasb-eyer/pydensecrf\n  license: MIT\n  summary: \"A python interface to Philipp Kr\u00e4henb\u00fchl's fully-connected (dense) CRF code.\"\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

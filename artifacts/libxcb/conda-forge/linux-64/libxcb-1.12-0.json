@@ -2430,6 +2430,7 @@
   "subdir": "linux-64",
   "version": "1.12"
  },
+ "metadata_version": 1,
  "name": "libxcb",
  "raw_recipe": "{% set version = \"1.12\" %}\n{% set md5 = \"28e552bd78bc1050b6b26ca1db0e5bb6\" %}\n\npackage:\n  name: libxcb\n  version: {{ version }}\n\nsource:\n  fn:  libxcb-{{ version }}.tar.bz2\n  url: http://xcb.freedesktop.org/dist/libxcb-{{ version }}.tar.bz2\n  md5: {{ md5 }}\n\nbuild:\n  skip: true  # [win or osx or py3k]\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - pthread-stubs\n    - xcb-proto\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libxcb.so.1.1.0\n\nabout:\n    home: http://xcb.freedesktop.org/\n    license: MIT\n    license_file: COPYING\n    summary: \"This is the C-language Binding (XCB) package to the X Window System protocol\"\n\nextra:\n  recipe-maintainers:\n    - ccordoba12\n    - mingwandroid\n",
  "rendered_recipe": {},

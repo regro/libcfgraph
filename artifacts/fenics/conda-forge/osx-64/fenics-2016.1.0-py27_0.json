@@ -1088,6 +1088,7 @@
   "subdir": "osx-64",
   "version": "2016.1.0"
  },
+ "metadata_version": 1,
  "name": "fenics",
  "raw_recipe": "{% set version = \"2016.1.0\" %}\npackage:\n  name: fenics\n  version: {{version}}\n\nbuild:\n  number: 0\n  skip: true  # [win or py34]\n\nrequirements:\n  build:\n    - python\n    - pip\n\n    - gcc  # [linux]\n    - boost\n    - cmake\n    - eigen\n    - pkg-config\n    - toolchain\n    - zlib\n\n    - swig >=3\n    - numpy\n    - ply\n    - six\n    - sympy\n\n  run:\n    - python\n    - boost\n    - cmake\n    - eigen\n    - gcc  # [linux]\n    - pkg-config\n    - zlib\n\n    - ply\n    - swig >=3\n    - numpy\n    - six\n    - sympy\n\ntest:\n\n  requires:\n    - nose\n    - pytest\n    - git\n\n  imports:\n    - dijitso\n\n    - instant\n\n    - ufl\n    - ufl.utils\n    - ufl.finiteelement\n    - ufl.core\n    - ufl.corealg\n    - ufl.algorithms\n\n    - FIAT\n\n    - ffc\n    - ffc.backends\n    - ffc.backends.dolfin\n    - ffc.backends.ufc\n    - ffc.errorcontrol\n    - ffc.quadrature\n    - ffc.tensor\n    - ufc\n\n    - dolfin\n  \n  commands:\n    - instant-clean\n    - instant-showcache\n\n    - ufl-version\n    - ufl2py --help\n\n    - ffc --help\n\nabout:\n  home: http://www.fenicsproject.org\n  license: LGPL 3.0\n  summary: FEniCS is a collection of free software for automated, efficient solution of differential equations\n\nextra:\n  recipe-maintainers:\n    - garth-wells\n    - mikaem\n    - minrk\n",
  "rendered_recipe": {},

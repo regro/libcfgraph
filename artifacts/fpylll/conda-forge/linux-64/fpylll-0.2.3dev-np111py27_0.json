@@ -117,6 +117,7 @@
   "subdir": "linux-64",
   "version": "0.2.3dev"
  },
+ "metadata_version": 1,
  "name": "fpylll",
  "raw_recipe": "{% set version = \"0.2.3dev\" %}\n{% set name = \"fpylll\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/fplll/fpylll/archive/{{ version }}.tar.gz\n  sha256: 968bd40857cf7952bfa0172184094cd640fad3f587437f685155c71c4031bfb0\n  patches:\n    # set of upstream patches. Links are in the patch file.\n    - patches/test-failure.patch\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script:\n    # https://github.com/conda-forge/toolchain-feedstock/pull/11\n    - export CPPFLAGS=\"-I${PREFIX}/include ${CPPFLAGS}\"\n    - python setup.py install\n\nrequirements:\n  build:\n    - toolchain\n    - cython\n    - pkg-config\n    - gmp >=5.0.1,<7.0\n    - mpfr 3.*\n    - fplll 5.0.*\n    - cysignals\n    - numpy x.x\n    - python\n  run:\n    - gmp >=5.0.1,<7.0\n    - mpfr 3.*\n    - fplll 5.0.*\n    - cysignals\n    - numpy x.x\n    - python\n\ntest:\n  requires:\n    - pytest\n  commands:\n    - py.test\n  imports:\n    - fpylll\n  source_files:\n    - tests/*\n\nabout:\n  home: https://github.com/fplll/fpylll\n  license: GPLv2+\n  license_file: LICENSE\n  summary: A Python (2 and 3) wrapper for fplll.\n  dev_url: https://github.com/fplll/fpylll\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

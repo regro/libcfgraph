@@ -965,6 +965,7 @@
   "subdir": "linux-64",
   "version": "0.4"
  },
+ "metadata_version": 1,
  "name": "r-dt",
  "raw_recipe": "{% set version = \"0.4\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-dt\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: DT_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/DT_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/DT/DT_{{ version }}.tar.gz\n  sha256: 3daa96b819ca54e5fbc2c7d78cb3637982a2d44be58cea0683663b71cfc7fa19\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-htmltools >=0.3.5\n    - r-htmlwidgets >=0.6\n    - r-magrittr\n    - r-crosstalk\n\n  run:\n    - r-base\n    - r-htmltools >=0.3.5\n    - r-htmlwidgets >=0.6\n    - r-magrittr\n    - r-crosstalk\n\ntest:\n  commands:\n    - $R -e \"library('DT')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('DT')\\\"\"  # [win]\n\nabout:\n  home: http://rstudio.github.io/DT\n  license: GPL-3\n  summary: Data objects in R can be rendered as HTML tables using the JavaScript library 'DataTables'\n    (typically via R Markdown or Shiny). The 'DataTables' library has been included\n    in this R package. The package name 'DT' is an abbreviation of 'DataTables'.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

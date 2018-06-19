@@ -497,6 +497,7 @@
   "type": "app",
   "version": "0.8.2"
  },
+ "metadata_version": 1,
  "name": "glueviz",
  "raw_recipe": "{% set version = \"0.8.2\" %}\n\npackage:\n  name: glueviz\n  version: {{version}}\n\nsource:\n  fn: glueviz-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/g/glueviz/glueviz-{{version}}.tar.gz\n  md5: 92dd7de2621a6ab6861cc9b689e86c3e\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  osx_is_app: True\n\nrequirements:\n\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy\n    - scipy\n    - matplotlib\n    - astropy\n    - ipython\n    - ipykernel\n    - h5py\n    - pandas\n    - pyqt 4.*\n    - qtconsole\n    - xlrd\n    - scikit-image\n    - python.app  # [osx]\n    - setuptools\n\ntest:\n  requires:\n    - mock\n    - pytest\n  imports:\n    - glue\n  commands:\n    - glue --version\n    - glue-deps list\n\napp:\n  entry: glue\n  icon: logo.png\n  summary: Multi-dimensional linked data exploration\n  type: desk\n\nabout:\n  home: http://glueviz.org\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: Multi-dimensional linked data exploration\n\nextra:\n  recipe-maintainers:\n    - astrofrog\n",
  "rendered_recipe": {},

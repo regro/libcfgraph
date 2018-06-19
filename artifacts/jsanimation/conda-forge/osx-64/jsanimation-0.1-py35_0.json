@@ -33,6 +33,7 @@
   "subdir": "osx-64",
   "version": "0.1"
  },
+ "metadata_version": 1,
  "name": "jsanimation",
  "raw_recipe": "{% set version = \"0.1\" %}\n{% set commit = \"b14771b6b6aa4429ca19c93aba8c315bf63ce227\" %}\n\npackage:\n    name: jsanimation\n    version: {{ version }}\n\nsource:\n    fn: {{ commit }}.tar.gz\n    url: https://github.com/jakevdp/JSAnimation/archive/{{ commit }}.tar.gz\n    sha256: 60be390282a76ef2681a11f29a4c4af57003c6bf81118dda9e512cce415761db\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n        - matplotlib\n\ntest:\n    imports:\n        - JSAnimation\n\nabout:\n    home: http://github.com/jakevdp/JSAnimation\n    license: BSD 2-Clause\n    summary: 'Javascript Animation exporter for matplotlib and IPython.'\n\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - rsignell-usgs\n",
  "rendered_recipe": {},

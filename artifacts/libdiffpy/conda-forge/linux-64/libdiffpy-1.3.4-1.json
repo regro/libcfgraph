@@ -829,6 +829,7 @@
   "subdir": "linux-64",
   "version": "1.3.4"
  },
+ "metadata_version": 1,
  "name": "libdiffpy",
  "raw_recipe": "{% set name = \"libdiffpy\" %}\n{% set version = \"1.3.4\" %}\n{% set sha256 = \"22ccda634834a77424dbaee6d619fd31e11adde3410d268916aceaeedfe0fcc9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/diffpy/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: True  # [win or not py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - boost 1.66.0\n    - gsl 2.1\n    - libobjcryst >=2017.1.1,2017.1.*\n    - scons\n    - toolchain\n  run:\n    - boost 1.66.0\n    - gsl >=2.1\n    - libobjcryst >=2017.1.1,2017.1.*\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libdiffpy${SHLIB_EXT}\n\nabout:\n  home: https://github.com/diffpy/libdiffpy\n  summary: C++ calculators of PDF, bond valence sum and other pair quantities.\n  license: Modified BSD\n  license_file: BSD\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n    - pavoljuhas\n",
  "rendered_recipe": {

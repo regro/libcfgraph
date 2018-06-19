@@ -153,6 +153,7 @@
   "timestamp": 1529381524935,
   "version": "0.15.40"
  },
+ "metadata_version": 1,
  "name": "ruamel_yaml",
  "raw_recipe": "{% set version = \"0.15.40\" %}\n# The version_info tuple in __init__.py must also be updated\n\npackage:\n  name: ruamel_yaml\n  version: {{ version }}\n\nsource:\n  url: https://bitbucket.org/ruamel/yaml/get/{{ version }}.tar.gz\n  sha256: 7349193b7f6b3f88f84fc91a98989542e75c1d6d015eebd9f9ae8343c331bb04\n  patches:\n    - ordereddict_test.patch\n      \nbuild:\n  number: 0\n  no_link: .*\\.(pyd|dll)   # [win]\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n    - posix                # [win]\n\n  host:\n    - python\n    - pip\n    - cython\n    - yaml\n\n  run:\n    - python\n    - yaml\n\ntest:\n  requires:\n    - pytest\n\n  imports:\n    - ruamel_yaml\n    - ruamel_yaml.ext._ruamel_yaml\n\nabout:\n  home: https://bitbucket.org/ruamel/yaml\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A patched copy of ruamel.yaml.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

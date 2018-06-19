@@ -662,6 +662,7 @@
   "subdir": "osx-64",
   "version": "2.0.0"
  },
+ "metadata_version": 1,
  "name": "azure-mgmt-nspkg",
  "raw_recipe": "{% set version = \"2.0.0\" %}\n\npackage:\n  name: azure-mgmt-nspkg\n  version: {{ version }}\n\nsource:\n  fn: azure-mgmt-nspkg-{{ version }}.zip\n  url: https://pypi.io/packages/source/a/azure-mgmt-nspkg/azure-mgmt-nspkg-{{ version }}.zip\n  md5: dc751917eebb5e8a9059f0de9e52d121\n  \nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - azure-nspkg\n  \n  run:\n    - python\n    - azure-nspkg\n\ntest:\n  imports:\n    - azure\n    - azure.mgmt\n  commands:\n    - python -m unittest discover -p \"test_*.py\"\n\nabout:\n  home: https://github.com/Azure/azure-sdk-for-python\n  license: Apache-2.0\n  summary: 'Microsoft Azure Resource Management Namespace Package'\n\nextra:\n  recipe-maintainers:\n    - ivoflipse\n    - Korijn\n    - Maxyme\n",
  "rendered_recipe": {

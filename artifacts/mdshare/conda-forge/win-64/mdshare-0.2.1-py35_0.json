@@ -607,6 +607,7 @@
   "subdir": "win-64",
   "version": "0.2.1"
  },
+ "metadata_version": 1,
  "name": "mdshare",
  "raw_recipe": "{% set name = \"mdshare\" %}\n{% set version = \"0.2.1\" %}\n{% set sha256 = \"0e163c603f231f5f0d636696532d77a45c2485e7d0c5bf9df27f64b8d63ad9fa\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  #noarch: python\n  number: 0\n  skip: True  # [py2k]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools\n    - setuptools_scm\n    - setuptools_scm_git_archive\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - mdshare\n    - mdshare.test\n\nabout:\n  home: http://github.com/markovmodel/mdshare\n  license: LGPL-3.0\n  license_family: LGPL\n  license_file: LICENSE\n  summary: 'Easy access to shared MD data.'\n\nextra:\n  recipe-maintainers:\n    - cwehmeyer\n",
  "rendered_recipe": {

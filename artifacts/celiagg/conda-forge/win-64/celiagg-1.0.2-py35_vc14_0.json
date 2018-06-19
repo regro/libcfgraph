@@ -574,6 +574,7 @@
   "subdir": "win-64",
   "version": "1.0.2"
  },
+ "metadata_version": 1,
  "name": "celiagg",
  "raw_recipe": "{% set version = \"1.0.2\" %}\n{% set sha256 = \"5e65c68c3574ece9e1b10b1aa12b75beb713ddb2b3c4116f41b474ce589813b0\" %}\n\npackage:\n  name: celiagg\n  version: {{ version }}\n\nsource:\n  fn: celiagg-{{ version }}.tar.gz\n  url: https://github.com/celiagg/celiagg/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py34]\n  script: python setup.py install\n  features:\n    - vc9   # [win and py27]\n    - vc14  # [win and py>=35]\n\nrequirements:\n  build:\n    - python\n    - toolchain\n    - vc 9  # [win and py27]\n    - vc 14  # [win and py>=35]\n    - pkg-config  # [not win]\n    - numpy 1.11.*\n    - cython\n    - freetype 2.6.*\n  run:\n    - python\n    - vc 9  # [win and py27]\n    - vc 14  # [win and py>=35]\n    - numpy >=1.11\n    - freetype 2.6.*\n\ntest:\n  imports:\n    - celiagg\n\nabout:\n  home: https://github.com/celiagg/celiagg\n  license: MIT\n  license_file: LICENSE\n  summary: 'Anti-Grain Geometry 2.4 for Python with Cython'\n\n  description: |\n    celiagg is a Cython wrapper for the popular Anti-Grain Geometry 2D vector\n    graphics library.\n  dev_url: https://github.com/celiagg/celiagg\n\nextra:\n  recipe-maintainers:\n    - jwiggins\n",
  "rendered_recipe": {

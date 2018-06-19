@@ -647,6 +647,7 @@
   "subdir": "linux-64",
   "version": "1.9_10.3"
  },
+ "metadata_version": 1,
  "name": "r-gsl",
  "raw_recipe": "{% set version = '1.9-10.3' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-gsl\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: gsl_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/gsl_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/gsl/gsl_{{ version }}.tar.gz\n  sha256: 4f9fc4dc8170ba93c9b45940448da089ce9ad4c45ba39c8f264e1505a3e03a02\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - {{native}}gsl\n    - posix                # [win]\n    - {{native}}toolchain  # [win]\n    - gcc                  # [not win]\n\n  run:\n    - r-base\n    - {{native}}gsl\n\ntest:\n  commands:\n    - $R -e \"library('gsl')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('gsl')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=gsl\n  license: GPL (>= 2)\n  summary: ' An R wrapper for the special functions and quasi random number generators of the\n    Gnu Scientific Library (http://www.gnu.org/software/gsl/).  See gsl-package.Rd for\n    details of  overall package organization, and Misc.Rd for some functions that are\n    widely used in the package, and some tips on installation.'\n\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

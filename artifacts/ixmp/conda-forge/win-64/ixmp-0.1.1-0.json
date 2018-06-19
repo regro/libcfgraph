@@ -159,6 +159,7 @@
   "timestamp": 1526978726595,
   "version": "0.1.1"
  },
+ "metadata_version": 1,
  "name": "ixmp",
  "raw_recipe": "{% set version = \"0.1.1\" %}\n{% set sha256 = \"ceba4a2323bfaa4acfa2cd9fe63c9aa6b76e60f53a6576d2f695f45b281b101c\" %}\n\npackage:\n  name: ixmp\n  version: {{ version }}\n\nsource:\n  url: https://github.com/iiasa/ixmp/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - import-timeseries = ixmp.cli:import_timeseries\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - openjdk\n    - jpype1 >=0.6.2\n    - cython\n    - numpy\n    - pandas\n    - nbformat\n    - jupyter\n    - matplotlib\n\ntest:\n  imports:\n    - ixmp\n  commands:\n    - import-timeseries -h\n    - python -c \"import ixmp; ixmp.Platform(dbtype='HSQLDB')\"\n\nabout:\n  home: https://github.com/iiasa/ixmp\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: 'The ix modeling platform for integrated and cross-cutting scenario analysis'\n\nextra:\n  recipe-maintainers:\n    - gidden\n",
  "rendered_recipe": {

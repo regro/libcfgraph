@@ -134,6 +134,7 @@
   "subdir": "linux-64",
   "version": "19.3.0"
  },
+ "metadata_version": 1,
  "name": "gunicorn",
  "raw_recipe": "{% set name = \"gunicorn\" %}\n{% set version = \"19.3.0\" %}\n{% set sha256 = \"8bc835082882ad9a012cd790c460011e4d96bf3512d98a04d3dabbe45393a089\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version}}.tar.gz\n  url: https://pypi.io/packages/source/g/gunicorn/gunicorn-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: True  # [win]\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  preserve_egg_dir: True\n  entry_points:\n    - gunicorn=gunicorn.app.wsgiapp:run\n    - gunicorn_paster=gunicorn.app.pasterapp:run\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - gunicorn\n    - gunicorn.app\n    - gunicorn.http\n    - gunicorn.instrument\n    - gunicorn.workers\n  commands:\n    - gunicorn --help\n    - gunicorn_paster --help\n  requires:\n    - paste\n    - pastedeploy\n\nabout:\n  home: http://gunicorn.org\n  license: MIT\n  license_file: LICENSE\n  summary: 'WSGI HTTP Server for UNIX'\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - daf\n    - jakirkham\n    - sodre\n",
  "rendered_recipe": {

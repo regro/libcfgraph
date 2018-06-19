@@ -136,6 +136,7 @@
   "timestamp": 1527539424106,
   "version": "0.9.4"
  },
+ "metadata_version": 1,
  "name": "pyodeint",
  "raw_recipe": "{% set name = \"pyodeint\" %}\n{% set version = \"0.9.4\" %}\n{% set sha256 = \"1bc21a0652bc184a742ac9e89eb390764d55a067b332eada177cddf6cbc9e3c0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - setuptools\n    - numpy\n    - boost\n    - pip\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - pyodeint\n  requires:\n    - pytest\n  commands:\n    - python -m pytest --pyargs pyodeint\n\nabout:\n  home: https://github.com/bjodah/pyodeint\n  license: BSD 2-Clause\n  license_file: LICENSE\n  summary: 'Python wrapper around odeint (from the boost C++ library)'\n  doc_url: https://bjodah.github.io/{{ name }}/latest\n\nextra:\n  recipe-maintainers:\n    - bjodah\n",
  "rendered_recipe": {

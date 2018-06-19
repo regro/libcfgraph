@@ -40,6 +40,7 @@
   "subdir": "linux-64",
   "version": "7.0.0"
  },
+ "metadata_version": 1,
  "name": "ferret_datasets",
  "raw_recipe": "{% set version = \"7.0.0\" %}\n\npackage:\n    name: ferret_datasets\n    version: {{ version }}\n\nsource:\n    fn: ferret_datasets-{{ version }}.tar.gz\n    url: https://github.com/NOAA-PMEL/PyFerret/releases/download/v{{ version }}-final/FerretDatasets.tar.gz\n    sha256: 3d735fd3e952e01646894beea91b39c2adbfde087bcfec2a78ebef189048213f\n\nbuild:\n    number: 0\n    skip: True  # [win or py3k or osx]\n\nrequirements:\n    build:\n        - python\n        - pyferret\n    run:\n        - python\n        - pyferret\n\ntest:\n    imports:\n        - pyferret\n\nabout:\n    home: http://ferret.pmel.noaa.gov/Ferret\n    license: MIT\n    summary: 'Data for pyferret examples.'\n\nextra:\n    recipe-maintainers:\n        - eugeneburger\n        - karlmsmith\n        - ocefpaf\n",
  "rendered_recipe": {},

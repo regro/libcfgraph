@@ -722,6 +722,7 @@
   "subdir": "osx-64",
   "version": "2.7.7"
  },
+ "metadata_version": 1,
  "name": "antlr",
  "raw_recipe": "{% set version = \"2.7.7\" %}\n\npackage:\n  name: antlr\n  version: {{ version }}\n\nsource:\n  url: http://www.antlr2.org/download/antlr-{{ version }}.tar.gz\n  sha256: 853aeb021aef7586bda29e74a6b03006bcb565a755c86b66032d8ec31b67dbb9\n  patches:\n    - CharScanner.patch\n\nbuild:\n  number: 5\n  skip: True  # [win32 or (win and py<36)]\n  features:\n    - vc14  # [win and (py35 or py36)]\n\nrequirements:\n  build:\n    - python  # [win]\n    - vc 14  # [win and (py35 or py36)]\n\ntest:\n  commands:\n    - antlr-config --version  # [not win]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://www.antlr2.org/\n  license: BSD-3-clause and GPL-3.0 and Public Domain\n  summary: 'ANother Tool for Language Recognition (ANTLR).'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - kwilcox\n",
  "rendered_recipe": {

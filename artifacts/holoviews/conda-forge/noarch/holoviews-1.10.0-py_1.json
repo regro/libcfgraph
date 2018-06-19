@@ -1141,6 +1141,7 @@
   "subdir": "noarch",
   "version": "1.10.0"
  },
+ "metadata_version": 1,
  "name": "holoviews",
  "raw_recipe": "{% set version = \"1.10.0\" %}\n\npackage:\n  name: holoviews\n  version: {{ version }}\n\nsource:\n  fn: holoviews-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/h/holoviews/holoviews-{{ version }}.tar.gz\n  sha256: 685ade8873d32d456baf13d655b7f027f3117808f384a982320867a16a10027b\n\nbuild:\n  noarch: python\n  number: 1\n  script: python -m pip install --no-deps --ignore-installed .\n\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - param\n    - numpy\n    - matplotlib\n    - bokeh\n    - jupyter\n    - notebook\n    - ipython\n\ntest:\n  imports:\n    - holoviews\n\nabout:\n  home: www.holoviews.org\n  summary: Stop plotting your data - annotate your data and let it visualize itself.\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n\nextra:\n  recipe-maintainers:\n    - jlstevens\n    - philippjfr\n    - basnijholt\n",
  "rendered_recipe": {

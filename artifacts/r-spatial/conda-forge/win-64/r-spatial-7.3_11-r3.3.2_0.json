@@ -163,6 +163,7 @@
   "subdir": "win-64",
   "version": "7.3_11"
  },
+ "metadata_version": 1,
  "name": "r-spatial",
  "raw_recipe": "{% set version = '7.3-11' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-spatial\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: spatial_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/spatial_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/spatial/spatial_{{ version }}.tar.gz\n\n  sha256: 624448d2ac22e1798097d09fc5dc4605908a33f490b8ec971fc6ea318a445c11\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - posix                # [win]\n    - {{native}}toolchain  # [win]\n    - gcc                  # [not win]\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('spatial')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('spatial')\\\"\"  # [win]\n\nabout:\n  home: http://www.stats.ox.ac.uk/pub/MASS4/\n  license: GPL-2 | GPL-3\n  summary: Functions for kriging and point pattern analysis.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

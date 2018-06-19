@@ -90,6 +90,7 @@
   "subdir": "osx-64",
   "version": "0.2.11"
  },
+ "metadata_version": 1,
  "name": "flask-login",
  "raw_recipe": "{% set name = \"Flask-Login\" %}\n{% set version = \"0.2.11\" %}\n{% set compress_type = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"83d5f10e5c4f214feed6cc41c212db63a58a15ac32e56df81591bfa0a5cee3e5\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - flask\n\n  run:\n    - python\n    - flask\n\ntest:\n  imports:\n    - flask_login\n\nabout:\n  home: https://github.com/maxcountryman/flask-login\n  license_file: LICENSE\n  license: MIT\n  license_family: MIT\n  summary: 'User session management for Flask'\n  dev_url: https://github.com/maxcountryman/flask-login\n  doc_url: https://flask-login.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

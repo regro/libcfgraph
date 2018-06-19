@@ -57,6 +57,7 @@
   "subdir": "linux-64",
   "version": "0.9.1"
  },
+ "metadata_version": 1,
  "name": "jupyterlab",
  "raw_recipe": "{% set version = \"0.9.1\" %}\n\npackage:\n  name: jupyterlab\n  version: {{ version }}\n\nsource:\n    fn: jupyterlab-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz\n    sha256: f3662110a48f493d6316d0c6e1609427eca21c154d2bc1ee6191e7e182a4644c\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - notebook >=4.2\n\ntest:\n  imports:\n    - jupyterlab\n\nabout:\n  home: https://github.com/jupyter/jupyterlab\n  license: BSD 3-Clause\n  summary: A pre-alpha version of a computational environment for Jupyter.\n\nextra:\n  recipe-maintainers:\n    - jasongrout\n    - blink1073\n",
  "rendered_recipe": {},

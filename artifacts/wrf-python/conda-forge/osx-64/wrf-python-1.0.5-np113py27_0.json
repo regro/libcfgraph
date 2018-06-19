@@ -537,6 +537,7 @@
   "subdir": "osx-64",
   "version": "1.0.5"
  },
+ "metadata_version": 1,
  "name": "wrf-python",
  "raw_recipe": "{% set version = \"1.0.5\" %}\n\npackage:\n  name: wrf-python\n  version: {{ version }}\n\nsource:\n  fn: wrf-python-{{ version }}.tar.gz\n  url: https://github.com/NCAR/wrf-python/archive/{{ version }}.tar.gz\n  sha256: ea2202e1d8237c65b9d77a91f00da0f2e7a37ed6214ddd976872b619b9647b33 \n\nbuild:\n  number: 0 \n  detect_binary_files_with_prefix: true\n  skip: True  # [(win and py>=35)]\n\nrequirements:\n  build:\n    - setuptools\n    - numpy x.x\n    - wrapt\n    - mingwpy  # [win]\n    - gcc  # [unix]\n    - python\n  run:\n    - numpy x.x\n    - python\n    - wrapt \n    - mingwpy  # [win]\n    - libgfortran  # [unix]\n    - libgcc  # [unix]\n    - xarray\n\ntest:\n  requires:\n    - netcdf4\n    - xarray\n  source_files:\n    - test/ci_tests\n  imports:\n    - wrf\n  commands:\n    - cd test/ci_tests && python utests.py \n\nabout:\n  home: https://github.com/NCAR/wrf-python\n  license: \"UCAR\"\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE' \n  summary: \"Diagnostic and interpolation routines for WRF-ARW data.\"\n\nextra:\n  recipe-maintainers:\n    - bladwig1\n    - marylhaley\n    - david-ian-brown\n    - khallock\n",
  "rendered_recipe": {

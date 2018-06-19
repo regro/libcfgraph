@@ -592,6 +592,7 @@
   "subdir": "win-64",
   "version": "0.1.1"
  },
+ "metadata_version": 1,
  "name": "dis3",
  "raw_recipe": "{% set name = \"dis3\" %}\n{% set version = \"0.1.1\" %}\n{% set sha256 = \"ee9f71e1a0c01a3ba742a36be91147948db99da3ee29094dccb48857c54608ef\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [py3k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - dis3\n\nabout:\n  home: https://pypi.python.org/pypi/dis3\n  # The home page specified at PyPi (https://github.com/tomxtobin/python-dis3) no longer exists,\n  # however it appears that a new repository with the full git history is accessible at,\n  # https://github.com/xoviat/python-dis3\n  license: MIT\n  license_family: MIT\n  # the LICENCE file is mentioned in the README but not included in the .tar.gz\n  # distributed on PyPi.\n  summary: 'Python 2.7 backport of the \"dis\" module from Python 3.5+'\n\nextra:\n  recipe-maintainers:\n    - rth\n",
  "rendered_recipe": {

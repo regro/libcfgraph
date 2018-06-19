@@ -94,6 +94,7 @@
   "subdir": "win-64",
   "version": "0.6"
  },
+ "metadata_version": 1,
  "name": "metaphone",
  "raw_recipe": "{% set name = \"Metaphone\" %}\n{% set version = \"0.6\" %}\n{% set hashtype = \"sha256\" %}\n{% set hash = \"ad0beadca66cb7ec6ede71ef72bb02da097c493ddf159930d6340bc83f53da27\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hashtype }}: {{ hash }}\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - metaphone\n\nabout:\n    home: https://github.com/oubiwann/metaphone\n    license: BSD 3-clause\n    license_file: LICENSE\n    license_family: BSD\n    summary: A Python implementation of the double metaphone algorithms\n\nextra:\n    recipe-maintainers:\n        - wyseguy7\n        - ericdill\n        - marshall245\n",
  "rendered_recipe": {

@@ -713,6 +713,7 @@
   "subdir": "linux-64",
   "version": "0.7"
  },
+ "metadata_version": 1,
  "name": "usagestats",
  "raw_recipe": "{% set name = \"usagestats\" %}\n{% set version = \"0.7\" %}\n{% set sha256 = \"39cf0736dfec40c85416270fc43382bdef7af18da85e1e243075f145fe2b8aef\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - requests\n\ntest:\n  imports:\n    - usagestats\n\nabout:\n  home: http://github.com/remram44/usagestats\n  license: Apache-2.0\n  license_file: LICENSE.txt\n  summary: 'Anonymous usage statistics collecter'\n  description: |\n    This package is meant to easily get usage statistics from the users of your\n    program.\n\n    Statistics will be collected but won't be uploaded until the user opts in.\n    A message will be printed on stderr asking the user to explicitely opt in or\n    opt out.\n  dev_url: http://github.com/remram44/usagestats\n\nextra:\n  recipe-maintainers:\n    - remram44\n",
  "rendered_recipe": {

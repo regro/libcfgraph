@@ -135,6 +135,7 @@
   "timestamp": 1529147305357,
   "version": "0.8.5"
  },
+ "metadata_version": 1,
  "name": "bamnostic",
  "raw_recipe": "{% set name = \"bamnostic\" %}\n{% set version = \"0.8.5\" %}\n{% set sha256 = \"319f68ffb37a3e9d200d31dae03dad2e04d2cd402c1985ab65afdb68f11176c4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - pytest\n    - markdown\n\ntest:\n  imports:\n    - bamnostic\n\nabout:\n  home: https://github.com/betteridiot/bamnostic\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: a pure Python, OS-agnositic Binary Alignment Map (BAM) file parser and random access tool.\n\nextra:\n  recipe-maintainers:\n    - betteridiot\n    - ericmjl\n",
  "rendered_recipe": {

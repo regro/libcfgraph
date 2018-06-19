@@ -704,6 +704,7 @@
   "subdir": "osx-64",
   "version": "0.9.0"
  },
+ "metadata_version": 1,
  "name": "cytoolz",
  "raw_recipe": "{% set version = \"0.9.0\" %}\n\npackage:\n  name: cytoolz\n  version: {{ version }}\n\nsource:\n  fn: cytoolz-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/cytoolz/cytoolz-{{ version }}.tar.gz\n  sha256: 5ebb55855a8bb7800afa58e52408763935527e0305f35600c71b43c86013dec2\n  patches:\n    ########################################################\n    # Remove problematic Cython doctests.                  #\n    #                                                      #\n    # xref: https://github.com/pytoolz/cytoolz/issues/116  #\n    ########################################################\n    - Drop-test_curried_doctests.patch\n\nbuild:\n  number: 0\n  script: python setup.py install --no-cython --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n  run:\n    - python\n    - toolz >=0.8.0\n\ntest:\n  requires:\n    - nose\n    - toolz 0.8.2\n  imports:\n    - cytoolz\n    - cytoolz.curried\n  commands:\n    - nosetests --with-doctest cytoolz\n\nabout:\n  home: https://github.com/pytoolz/cytoolz\n  license: BSD 3-Clause\n  summary: Cython implementation of Toolz. High performance functional utilities.\n\nextra:\n  recipe-maintainers:\n    - eriknw\n    - mrocklin\n    - jcrist\n    - jakirkham\n",
  "rendered_recipe": {

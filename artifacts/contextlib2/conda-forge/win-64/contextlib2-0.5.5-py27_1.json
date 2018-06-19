@@ -695,6 +695,7 @@
   "subdir": "win-64",
   "version": "0.5.5"
  },
+ "metadata_version": 1,
  "name": "contextlib2",
  "raw_recipe": "{%set name = \"contextlib2\" %}\n{% set version = \"0.5.5\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"509f9419ee91cdd00ba34443217d5ca51f5a364a404e1dce9e8979cea969ca48\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 1\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n\ntest:\n  imports:\n    - contextlib2\n\nabout:\n  home: http://contextlib2.readthedocs.org\n  license: PSF 2\n  license_family: PSF\n  license_file: LICENSE.txt\n  summary: 'Backports and enhancements for the contextlib module'\n  dev_url: https://github.com/jazzband/contextlib2\n  doc_url: http://contextlib2.readthedocs.org\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n    - jakirkham\n",
  "rendered_recipe": {

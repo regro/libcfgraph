@@ -471,6 +471,7 @@
   "subdir": "win-64",
   "version": "1.2.2"
  },
+ "metadata_version": 1,
  "name": "pykdtree",
  "raw_recipe": "{% set version = \"1.2.2\" %}\n\npackage:\n  name: pykdtree\n  version: {{ version }}\n\nsource:\n  fn: pykdtree-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pykdtree/pykdtree-{{ version }}.tar.gz\n  sha256: 958cb731b19f10e14471947e67602876c3ab9e01246e6b9c6c5cbfd34d17141f\n\nbuild:\n  number: 0\n  script:\n    - export USE_OMP=1  # [linux]\n    - export USE_OMP=0  # [osx]\n    - set USE_OMP=0  # [win]\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - msinttypes  # [win and py<35]\n    - gcc  # [linux]\n  run:\n    - python\n    - numpy x.x\n    # Needs libgomp.\n    - libgcc  # [linux]\n\ntest:\n  imports:\n    - pykdtree\n  commands:\n    - conda inspect linkages -p $PREFIX pykdtree  # [not win]\n    - conda inspect objects -p $PREFIX pykdtree  # [osx]\n\nabout:\n  home: https://pypi.python.org/pypi/pykdtree\n  license: LGPL-3.0\n  summary: 'Fast kd-tree implementation with OpenMP-enabled queries.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

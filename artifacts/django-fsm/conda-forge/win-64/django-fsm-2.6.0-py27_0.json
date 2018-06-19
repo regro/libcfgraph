@@ -523,6 +523,7 @@
   "subdir": "win-64",
   "version": "2.6.0"
  },
+ "metadata_version": 1,
  "name": "django-fsm",
  "raw_recipe": "{% set name = \"django-fsm\" %}\n{% set version = \"2.6.0\" %}\n{% set sha256 = \"13da2fbec4284dcf2235157c299306f67b788bd39126bed3cdbcc6a8f17575e9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django >=1.8\n\nabout:\n  home: http://github.com/kmmbvnr/django-fsm\n  license: MIT\n  license_family: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE' \n  summary: 'Django friendly finite state machine support'\n  description: django-fsm adds simple declarative states management for django models.   \n  doc_url: http://github.com/kmmbvnr/django-fsm\n  dev_url: http://github.com/kmmbvnr/django-fsm\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

@@ -153,6 +153,7 @@
   "subdir": "osx-64",
   "version": "2.6"
  },
+ "metadata_version": 1,
  "name": "glances",
  "raw_recipe": "{% set version = \"2.6\" %}\n\npackage:\n  name: glances\n  version: {{ version }}\n\nsource:\n  fn: Glances-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/G/Glances/Glances-{{ version }}.tar.gz\n  md5: 217cdfdec8b9f1db005e5f9cc9c9d5af\n\nbuild:\n  number: 0\n  entry_points:\n    - glances=glances:main\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - psutil >=2.0.0\n\n  run:\n    - python\n    - psutil >=2.0.0\n\ntest:\n  imports:\n    - glances\n\n  commands:\n    - glances --help\n\nabout:\n  home: https://github.com/nicolargo/glances\n  license: LGPL 3\n  summary: 'A cross-platform curses-based monitoring tool'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {},

@@ -797,6 +797,7 @@
   "subdir": "linux-64",
   "version": "5.18"
  },
+ "metadata_version": 1,
  "name": "wcslib",
  "raw_recipe": "{% set name = \"wcslib\" %}\n{% set version = \"5.18\" %}\n{% set sha256 = \"b693fbf14f2553507bc0c72bca531f23c59885be8f7d3c3cb889a5349129509a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: ftp://ftp.atnf.csiro.au/pub/software/wcslib/{{ name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n  patches:\n    - no-x-tests.patch # avoid deluges of pgplot warnings\n\nbuild:\n  number: 1\n  detect_binary_files_with_prefix: true\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - cfitsio\n    - flex\n    - gcc  # [osx]\n    - giza 0.9.*  # [not win]\n    - libgfortran  # [linux]\n    - toolchain\n  run:\n    - cfitsio\n    - giza 0.9.*  # [not win]\n    - libgfortran  # [not win]\n\ntest:\n  commands:\n    # Main validation performed in 'make check' stage\n    - test -f $PREFIX/lib/libwcs.so  # [linux]\n    - test -f $PREFIX/lib/libwcs.dylib  # [osx]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/\n  license: LGPL\n  license_file: COPYING.LESSER\n  summary: 'Library for World Coordinate System computations'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
  "rendered_recipe": {

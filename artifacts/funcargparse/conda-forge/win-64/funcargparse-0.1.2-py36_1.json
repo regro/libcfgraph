@@ -475,6 +475,7 @@
   "subdir": "win-64",
   "version": "0.1.2"
  },
+ "metadata_version": 1,
  "name": "funcargparse",
  "raw_recipe": "{% set name = \"funcargparse\" %}\n{% set version = \"0.1.2\" %}\n{% set sha256 = \"80fe7d5c83ef602a25f085ec4d597ea9334eba9420ec0f14865b6fafb040581a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - docrep\n    - six\n\ntest:\n  imports:\n    - funcargparse\n\nabout:\n  home: https://github.com/Chilipp/funcargparse\n  license: GPL-2.0\n  license_family: GPL2\n  license_file: LICENSE\n  summary: 'Create an argparse.ArgumentParser from function docstrings'\n\n  description: |\n    The funcargparse module allows you to create an argparse.ArgumentParser\n    including the help directly from a function\n  doc_url: http://funcargparse.readthedocs.io/\n  dev_url: https://github.com/Chilipp/funcargparse\n\nextra:\n  recipe-maintainers:\n    - Chilipp\n",
  "rendered_recipe": {

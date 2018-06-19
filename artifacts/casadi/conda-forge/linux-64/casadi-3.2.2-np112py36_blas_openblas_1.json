@@ -795,6 +795,7 @@
   "subdir": "linux-64",
   "version": "3.2.2"
  },
+ "metadata_version": 1,
  "name": "casadi",
  "raw_recipe": "{% set name = \"casadi\" %}\n{% set version = \"3.2.2\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.gz\n  url: https://github.com/casadi/casadi/archive/{{ version }}.tar.gz\n  sha256: b091349fc6ded04117b9d6ee1e8fe61f987b7200af937ee1b7b26aa852b81858\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  skip: true  # [np==111 and np==112]\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - toolchain\n    - pkg-config  # [osx]\n    - cmake\n    - python\n    - swig\n    - numpy x.x\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n    - ipopt\n\n  run:\n    - python\n    - numpy x.x\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n    - ipopt\n\ntest:\n  requires:\n    - toolchain\n  imports:\n    - casadi\n  files:\n    - ipopt_nl.py\n  commands:\n    python ipopt_nl.py\n\nabout:\n  home: http://casadi.org\n  license: LGPL-3.0\n  summary: 'CasADi is a symbolic framework for numeric optimization'\n\nextra:\n  recipe-maintainers:\n    - pstjohn\n",
  "rendered_recipe": {

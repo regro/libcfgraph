@@ -544,6 +544,7 @@
   "subdir": "win-64",
   "version": "3.11.6"
  },
+ "metadata_version": 1,
  "name": "icalendar",
  "raw_recipe": "{% set name = \"icalendar\" %}\n{% set version = \"3.11.6\" %}\n{% set sha256 = \"c4c4f11fa655f677c070a71944e89be32f51ae228ca32582a1f0bd9feaaac9db\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - python-dateutil\n    - pytz\n\ntest:\n  imports:\n    - icalendar\n\nabout:\n  home: https://github.com/collective/icalendar\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: 'iCalendar parser/generator'\n  description: |\n    The icalendar package is a parser/generator of iCalendar files for use with\n    Python.\n  doc_url: http://icalendar.readthedocs.io/en/latest/\n  dev_url: https://github.com/collective/icalendar\n\nextra:\n  recipe-maintainers:\n    - stuertz\n",
  "rendered_recipe": {

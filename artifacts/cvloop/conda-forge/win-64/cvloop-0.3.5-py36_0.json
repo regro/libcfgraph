@@ -733,6 +733,7 @@
   "subdir": "win-64",
   "version": "0.3.5"
  },
+ "metadata_version": 1,
  "name": "cvloop",
  "raw_recipe": "{% set name = \"cvloop\" %}\n{% set version = \"0.3.5\" %}\n{% set sha256 = \"67b853b514f02d02f63ac90455595f0a8a5817b7c25d629a05bc82beb369dca6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n  skip: True  # [py<36]\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - opencv\n    - numpy\n    - matplotlib\n    - jupyter\n\ntest:\n  imports:\n    - cvloop\n\nabout:\n  home: http://github.com/shoeffner/cvloop\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Online video processing in jupyter notebooks'\n  description: |\n      cvloop allows online video transformation and evaluation with OpenCV.\n      It is designed for jupyter notebooks, but works without as well.\n  doc_url: https://github.com/shoeffner/cvloop/blob/master/examples/cvloop_examples.ipynb\n  dev_url: https://github.com/shoeffner/cvloop\n\nextra:\n  recipe-maintainers:\n    - shoeffner\n",
  "rendered_recipe": {

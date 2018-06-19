@@ -525,6 +525,7 @@
   "subdir": "win-64",
   "version": "0.5.3"
  },
+ "metadata_version": 1,
  "name": "dynamicisttoolkit",
  "raw_recipe": "{% set name = \"DynamicistToolKit\" %}\n{% set version = \"0.5.3\" %}\n{% set sha256 = \"fc5e3601d8f780566d09c2c4e3febd3fda2624c2a0a42921b6e0167fde16bdbd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - scipy\n    - matplotlib\n\ntest:\n  imports:\n    - dtk\n    - dtk.bicycle\n    - dtk.inertia\n    - dtk.process\n    - dtk.test\n\nabout:\n  home: http://github.com/moorepants/dynamicisttoolkit\n  license: UNLICENSE\n  license_file: UNLICENSE.txt\n  summary: 'Various tools for theoretical and experimental dynamics.'\n  doc_url: http://dynamicisttoolkit.readthedocs.io/\n  dev_url: https://github.com/moorepants/dynamicisttoolkit\n\nextra:\n  recipe-maintainers:\n    - moorepants\n",
  "rendered_recipe": {

@@ -121,6 +121,7 @@
   "timestamp": 1526734190830,
   "version": "0.6"
  },
+ "metadata_version": 1,
  "name": "dataclasses",
  "raw_recipe": "{% set version = \"0.6\" %}\n\npackage:\n  name: dataclasses\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/dataclasses/dataclasses-{{ version }}.tar.gz\n  sha256: 6988bd2b895eef432d562370bb707d540f32f7360ab13da45340101bc2307d84\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python >=3.6,<3.7\n    - pip\n  run:\n    - python >=3.6,<3.7\n\ntest:\n  imports:\n    - dataclasses\n\nabout:\n  home: https://github.com/ericvsmith/dataclasses\n  license: MIT\n  summary: 'An implementation of PEP 557: Data Classes'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

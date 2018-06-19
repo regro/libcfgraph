@@ -152,6 +152,7 @@
   "timestamp": 1525095210945,
   "version": "0.5.1"
  },
+ "metadata_version": 1,
  "name": "heliopy",
  "raw_recipe": "{% set name = \"HelioPy\" %}\n{% set version = \"0.5.1\" %}\n{% set sha256 = \"4b902854079f1572c47681e9662646355aeb29ab6304b10dc49fcca59bed31b2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: true  # [not py36]\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - numpy\n    - pandas\n    - astropy\ntest:\n  imports:\n    - heliopy\n    - heliopy.data\n    - heliopy.util\n\nabout:\n  home: http://heliopy.org/\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: 'Python for space physics'\n\n  description: |\n    HelioPy is a package for automatically downloading and reading in common\n    data files used in space physics.\n  doc_url: http://docs.heliopy.org/en/stable/\n  dev_url: https://github.com/heliopython/heliopy\n\nextra:\n  recipe-maintainers:\n    - dstansby\n",
  "rendered_recipe": {

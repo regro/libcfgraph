@@ -519,6 +519,7 @@
   "subdir": "win-64",
   "version": "0.2.2"
  },
+ "metadata_version": 1,
  "name": "genson",
  "raw_recipe": "{% set name = \"genson\" %}\n{% set version = \"0.2.2\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"f5909b781ea429dfd6282427978a4a4dc27571479643ed9b18e8224711962d25\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\nbuild:\n  entry_points:\n    - genson = genson.genson:main\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - genson\n\n  commands:\n    - genson --help\n\nabout:\n  home: https://github.com/wolverdude/genson/\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: 'GenSON is a powerful, user-friendly JSON Schema generator.'\n  dev_url: https://github.com/wolverdude/genson/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

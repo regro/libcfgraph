@@ -107,6 +107,7 @@
   "subdir": "win-64",
   "version": "0.8.1"
  },
+ "metadata_version": 1,
  "name": "jupyter_qtconsole_colorschemes",
  "raw_recipe": "{% set name = \"jupyter_qtconsole_colorschemes\" %}\n{% set version = \"0.8.1\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"26e12e926be13c2f4e8290b924ee8223d4989fb65c83c6af7197ce3be231d451\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  preserve_egg_dir: True\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - jupyter_qtconsole_colorschemes\n\nabout:\n  home: https://bitbucket.org/joon/color-schemes-for-jupyter-qt-console\n  license_file: {{ RECIPE_DIR }}/LICENSE\n  license: MIT\n  license_family: MIT\n  summary: 'Color Schemes for Jupyter Qt Console'\n  dev_url: https://bitbucket.org/joon/color-schemes-for-jupyter-qt-console\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

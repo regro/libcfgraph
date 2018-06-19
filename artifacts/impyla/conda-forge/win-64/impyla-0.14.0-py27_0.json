@@ -90,6 +90,7 @@
   "subdir": "win-64",
   "version": "0.14.0"
  },
+ "metadata_version": 1,
  "name": "impyla",
  "raw_recipe": "{% set version = \"0.14.0\" %}\n\npackage:\n  name: impyla\n  version: {{ version }}\n\nsource:\n  fn: impyla-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/i/impyla/impyla-{{ version }}.tar.gz\n  md5: 51301f014a386235e9d6532075e3fb2e\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six\n    - bitarray\n    - thrift  # [py2k]\n    - thriftpy >=0.3.5\n\n  run:\n    - python\n    - setuptools\n    - six\n    - bitarray\n    - thriftpy >=0.3.5\n    - thrift  # [py2k]\n\ntest:\n  imports:\n    - impala\n    - impala.tests\n    - impala.thrift\n\nabout:\n  home: https://github.com/cloudera/impyla\n  license: Apache 2.0\n  summary: 'Python client for the Impala distributed query engine'\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n    - wesm\n",
  "rendered_recipe": {},

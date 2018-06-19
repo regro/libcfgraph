@@ -524,6 +524,7 @@
   "subdir": "osx-64",
   "version": "0.4_4"
  },
+ "metadata_version": 1,
  "name": "r-units",
  "raw_recipe": "{% set version = '0.4-4' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-units\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: units_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/units_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/units/units_{{ version }}.tar.gz\n  sha256: a5bafe44acf0d0ebeb39122a98bb43756b4697fa245e8328038349772288ca8e\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-udunits2 >=0.13\n\n  run:\n    - r-base\n    - r-udunits2 >=0.13\n\ntest:\n  commands:\n    - $R -e \"library('units')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('units')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/edzer/units/\n  license: GPL-2\n  summary: Support for measurement units in R vectors; automatic propagation, conversion, derivation\n    and simplification of units; raising errors in case of unit incompatibility. Compatible\n    with the difftime class. Uses the UNIDATA udunits library and unit database for\n    unit conversion and compatibility checking.\n  license_family: GPL2\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

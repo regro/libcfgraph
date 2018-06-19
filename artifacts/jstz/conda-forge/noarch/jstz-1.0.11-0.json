@@ -730,6 +730,7 @@
   "subdir": "noarch",
   "version": "1.0.11"
  },
+ "metadata_version": 1,
  "name": "jstz",
  "raw_recipe": "{% set name = \"jstz\" %}\n{% set version = \"1.0.11\" %}\n{% set sha256 = \"985d5fd8705930aab9cc59046e99c1f512d05109c9098039f880df5f5df2bf24\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/iansinnott/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs\n  \ntest:\n  commands:\n    - npm list -g jstz\n  requires:\n    - nodejs\n   \n\nabout:\n  home: https://github.com/iansinnott/jstz\n  license: MIT\n  license_family: MIT\n  license_file: LICENCE\n  summary: 'Timezone detection for JavaScript'\n  description: |\n    This library allows you to detect a user's timezone from within their browser. \n    It is often useful to use JSTZ in combination with a timezone parsing library \n    such as Moment Timezone. \n  doc_url: http://pellepim.bitbucket.org/jstz/\n  dev_url: https://github.com/iansinnott/jstz\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

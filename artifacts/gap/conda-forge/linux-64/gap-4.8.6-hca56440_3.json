@@ -1555,6 +1555,7 @@
   "timestamp": 1527451364523,
   "version": "4.8.6"
  },
+ "metadata_version": 1,
  "name": "gap",
  "raw_recipe": "{% set version = \"4.8.6\" %}\n{% set name = \"gap\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://www.gap-system.org/pub/gap/gap48/tar.gz/gap4r8p6_2016_11_12-14_25.tar.gz\n  sha256: a9df4c49b2feb5dd7b8c4f093f6558bdd7a6c1b3f5f64971c4d9e74828eb0cd4\n  patches:\n    # Patches from https://github.com/sagemath/sage\n    # Set GAP_MEM\n    - patches/gap_shi.patch\n    # fix infinite loop in writeandcheck() when writing an error message fails.\n    - patches/writeandcheck.patch\n    # https://github.com/gap-system/gap/pull/448\n    - patches/448.patch\n    # https://github.com/gap-system/gap/pull/1188\n    - patches/path.patch\n    # we don't install some of the default packages\n    - patches/nodefaultpackages.patch\n\nbuild:\n  number: 3\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - libtool\n  host:\n    - gmp\n    - readline\n    - ncurses\n  run:\n    - gmp\n    - readline\n    - ncurses\n\ntest:\n  commands:\n    - gap -h\n\nabout:\n  home: https://www.gap-system.org/\n  license: GPLv2\n  license_file: LICENSE\n  summary: GAP - Groups, Algorithms, Programming, a System for Computational Discrete Algebra\n  dev_url: https://github.com/gap-system/gap\n  doc_url: https://www.gap-system.org/Manuals/doc/ref/chap0.html\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

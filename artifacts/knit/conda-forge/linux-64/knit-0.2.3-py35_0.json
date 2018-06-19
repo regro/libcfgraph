@@ -723,6 +723,7 @@
   "subdir": "linux-64",
   "version": "0.2.3"
  },
+ "metadata_version": 1,
  "name": "knit",
  "raw_recipe": "{% set version = \"0.2.3\" %}\n{% set name = \"knit\" %}\n\npackage:\n    name: {{name}}\n    version: {{version}}\n\nsource:\n  fn: {{name}}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/k/{{name}}/{{name}}-{{ version }}.tar.gz\n  sha256: 0086828db168e984f8fc0d8e44de8f656dcbfc859b804b07042b8e78fb66d408\n  \nbuild:\n  number: 0\n  skip: True  # [not linux]\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - maven\n        - openjdk\n    run:\n        - python\n        - requests\n        - py4j\n\ntest:\n  imports:\n    - knit\n\nabout:\n  home: https://github.com/dask/knit\n  license: BSD 3-Clause\n  license-family: BSD\n  license_file: LICENSE\n  summary: Python interface YARN\n\nextra:\n  recipe-maintainers:\n    - quasiben \n    - martindurant\n",
  "rendered_recipe": {

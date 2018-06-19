@@ -27,6 +27,7 @@
   "subdir": "osx-64",
   "version": "6.1.0"
  },
+ "metadata_version": 1,
  "name": "gmp",
  "raw_recipe": "{% set version = \"6.1.0\" %}\n\npackage:\n  name: gmp\n  version: {{ version }}\n\nsource:\n  fn: gmp-{{ version }}.tar.bz2\n  url: ftp://ftp.gnu.org/gnu/gmp/gmp-{{ version }}.tar.bz2\n  md5: 86ee6e54ebfc4a90b643a65e402c4048\n\nbuild:\n  number: 3\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - m4\n\ntest:\n  files:\n    - test.c\n\n  commands:\n    - test -f ${PREFIX}/lib/libgmp.a        # [unix]\n    - test -f ${PREFIX}/lib/libgmp.dylib    # [osx]\n    - test -f ${PREFIX}/lib/libgmp.so       # [linux]\n    - test -f ${PREFIX}/lib/libgmpxx.a      # [unix]\n    - test -f ${PREFIX}/lib/libgmpxx.dylib  # [osx]\n    - test -f ${PREFIX}/lib/libgmpxx.so     # [linux]\n\nabout:\n  home: http://gmplib.org/\n  license: GPL 2 and LGPL 3\n  summary: The GNU multiprecision library.\n\nextra:\n  recipe-maintainers:\n    - asmeurer\n    - isuruf\n    - jakirkham\n",
  "rendered_recipe": {},

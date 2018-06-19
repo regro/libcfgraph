@@ -736,6 +736,7 @@
   "subdir": "osx-64",
   "version": "0.2.2"
  },
+ "metadata_version": 1,
  "name": "cythongsl",
  "raw_recipe": "{% set version = \"0.2.2\" %}\n\npackage:\n  name: cythongsl\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/C/CythonGSL/CythonGSL-{{ version }}.tar.gz\n  sha256: 9310ec565f4691fd20f49193744e76dae5b36b5f6460318009f8890cab0f58c6\n\nbuild:\n  number: 0\n  skip: True  # [win]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - cython\n    - gsl\n  run:\n    - python\n    - gsl\n\ntest:\n  imports:\n    - cython_gsl\n\nabout:\n  home: https://github.com/twiecki/CythonGSL\n  license: GPL-3.0\n  summary: CythonGSL provides a Cython interface for the GNU Scientific Library (GSL).\n\nextra:\n  recipe-maintainers:\n    - twiecki\n    - ocefpaf\n",
  "rendered_recipe": {

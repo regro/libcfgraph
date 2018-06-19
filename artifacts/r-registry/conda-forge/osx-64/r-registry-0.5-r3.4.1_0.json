@@ -686,6 +686,7 @@
   "subdir": "osx-64",
   "version": "0.5"
  },
+ "metadata_version": 1,
  "name": "r-registry",
  "raw_recipe": "{% set version = \"0.5\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-registry\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: registry_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/registry_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/registry/registry_{{ version }}.tar.gz\n\n  sha256: 5d8be59ba791987b2400e9e8eaaac614cd544c1aece785ec4782ea6d5ea00efb\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('registry')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('registry')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=registry\n  license: GPL 2.0\n  license_family: GPL\n  summary: Provides a generic infrastructure for creating and using registries.\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

@@ -1506,6 +1506,7 @@
   "subdir": "linux-64",
   "version": "0.18.0"
  },
+ "metadata_version": 1,
  "name": "apache-libcloud",
  "raw_recipe": "{% set version = \"0.18.0\" %}\n\npackage:\n  name: apache-libcloud\n  version: {{ version }}\n\nsource:\n  fn: apache-libcloud-{{ version }}.tar.bz2\n  url: http://apache.osuosl.org/libcloud/apache-libcloud-{{ version }}.tar.bz2\n  sha1: fbf558d7e52336042dd9a456dec3a73f4b35e38e\n\n  patches:\n    # Temporal patch to apply PR https://github.com/apache/libcloud/pull/812\n    - certifi.patch\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - certifi\n\ntest:\n  imports:\n    - libcloud\n\n  files:\n    - certifi_test.py\n\n  commands:\n    - python certifi_test.py\n\nabout:\n  home: http://libcloud.apache.org\n  license: Apache License 2.0\n  summary: Python library for interacting with many of the popular cloud service providers using a unified API\n\nextra:\n  recipe-maintainers:\n    - danielfrg\n    - nmadhok\n",
  "rendered_recipe": {},

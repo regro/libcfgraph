@@ -793,6 +793,7 @@
   "subdir": "linux-64",
   "version": "2.4.0"
  },
+ "metadata_version": 1,
  "name": "pyfmi",
  "raw_recipe": "{% set name = \"PyFMI\" %}\n{% set version = \"2.4.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n  md5: bcbc480b56e7dd86b8d17918ead207d2\n  patches:\n    # https://github.com/cython/cython/issues/1518\n    - fix-omp-include.patch\n    # fix key error in get_temp_location when USER not in env\n    # http://trac.jmodelica.org/changeset/9706\n    - get_temp_location-keyerror.patch\n\nbuild:\n  features:\n    - vc9  # [win and py27]\n    - vc14  # [win and py>=35]\n  number: 2\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n    - fmilib\n    - numpy 1.9.*  # [not (win and py36)]\n    - numpy 1.11.*  # [win and py36]\n    - cython\n  run:\n    - python\n    - fmilib\n    - numpy >=1.9  # [not (win and py36)]\n    - numpy >=1.11  # [win and py36]\n    - scipy\n    - lxml\n    - assimulo\n\ntest:\n  imports:\n    - pyfmi\n    - pyfmi.common\n    - pyfmi.common.plotting\n    - pyfmi.examples\n    - pyfmi.simulation\n\nabout:\n  home: http://www.jmodelica.org/\n  license: LGPL3\n  license_file: LICENSE\n  summary: PyFMI is a package for loading and interacting with Functional Mock-Up Units\n\nextra:\n  recipe-maintainers:\n    - jschueller\n    - chria\n",
  "rendered_recipe": {

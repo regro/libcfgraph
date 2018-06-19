@@ -158,6 +158,7 @@
   "subdir": "win-64",
   "version": "2.7.0"
  },
+ "metadata_version": 1,
  "name": "h5py",
  "raw_recipe": "{% set version = \"2.7.0\" %}\n\npackage:\n  name: h5py\n  version: {{ version }}\n\nsource:\n  fn: h5py-{{ version }}.tar.gz\n  url: https://github.com/h5py/h5py/archive/{{ version }}.tar.gz\n  sha256: fff3a878c6adfa1b4f5c30b558a295d52dd4fee9174128c626ef416dec1b536b\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - hdf5 1.8.18|1.8.18.*\n    - cython\n    - six\n    - pkgconfig\n\n  run:\n    - python\n    - numpy x.x\n    # when this is changed also update bld.bat\n    - hdf5 1.8.18|1.8.18.*\n    - six\n    - unittest2    # [py26]\n\ntest:\n  imports:\n    - h5py\n\nabout:\n  home: http://www.h5py.org/\n  license: BSD 3-Clause\n  license_file: licenses/license.txt\n  summary: Read and write HDF5 files from Python.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pitrou\n    - tacaswell\n",
  "rendered_recipe": {

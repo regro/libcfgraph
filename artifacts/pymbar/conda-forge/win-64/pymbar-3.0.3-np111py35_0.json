@@ -518,6 +518,7 @@
   "subdir": "win-64",
   "version": "3.0.3"
  },
+ "metadata_version": 1,
  "name": "pymbar",
  "raw_recipe": "{% set name = \"pymbar\" %}\n{% set version = \"3.0.3\" %}\n{% set sha256 = \"5e59bb9f3789ae723e85d4483d7d204e39425551f30df8cefc13c6e607af6398\" %}\n\npackage:\n  name: {{ name  }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name}}-{{ version }}.tar.gz\n  url: https://github.com/choderalab/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n    - numpy x.x\n    - six\n  run:\n    - python\n    - numpy x.x\n    - scipy\n    - six\n    - numexpr\n\ntest:\n  requires:\n    - nose\n    - statsmodels\n  imports:\n    - pymbar\n  commands:\n    - nosetests pymbar --with-doctest --doctest-tests -v -I covariance\n\nabout:\n  home: http://github.com/choderalab/pymbar\n  dev_url: http://github.com/choderalab/pymbar\n  doc_url: http://pymbar.readthedocs.io/\n  license: MIT\n  license_file: LICENSE\n  summary: 'Python implementation of the multistate Bennett acceptance ratio (MBAR) method.'\n\nextra:\n  recipe-maintainers:\n    - Lnaden\n    - jchodera\n    - mrshirts\n",
  "rendered_recipe": {

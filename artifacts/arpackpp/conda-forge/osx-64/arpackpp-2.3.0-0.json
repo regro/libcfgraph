@@ -106,6 +106,7 @@
   "subdir": "osx-64",
   "version": "2.3.0"
  },
+ "metadata_version": 1,
  "name": "arpackpp",
  "raw_recipe": "{% set version = \"2.3.0\" %}\n\npackage:\n  name: arpackpp\n  version: {{ version }}\n\nsource:\n  fn: arpackpp-{{ version }}.tar.gz\n  url: https://github.com/m-reuter/arpackpp/archive/{{ version }}.tar.gz\n  sha256: 288fb4cd2dd08e02ed29db579bc1278023a06415dd2f63b1fdc323c7993fcb1a\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script:\n    - install -d ${PREFIX}/include/arpack++\n    - install include/*.h ${PREFIX}/include/arpack++\n\nrequirements:\n  run:\n    - arpack\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/arpack++/arpackf.h\n\nabout:\n  home: http://reuter.mit.edu/software/arpackpatch/\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: an object-oriented version of the ARPACK package\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "rendered_recipe": {},

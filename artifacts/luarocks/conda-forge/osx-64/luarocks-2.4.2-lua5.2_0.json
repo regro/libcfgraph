@@ -165,6 +165,7 @@
   "subdir": "osx-64",
   "version": "2.4.2"
  },
+ "metadata_version": 1,
  "name": "luarocks",
  "raw_recipe": "{% set name = \"luarocks\" %}\n{% set version = \"2.4.2\" %}\n{% set sha256 = \"0e1ec34583e1b265e0fbafb64c8bd348705ad403fe85967fd05d3a659f74d2e5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://luarocks.github.io/luarocks/releases/luarocks-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - lua\n    - unzip\n  run:\n    - lua\n    - unzip\n\ntest:\n  commands:\n    - luarocks --lr-path\n\nabout:\n  home: https://luarocks.org/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'LuaRocks is the package manager for Lua modulesLuaRocks is the package manager for Lua module'\n\n  description: |\n      LuaRocks is the package manager for Lua modules.\n      It allows you to create and install Lua modules as self-contained\n      packages called rocks. You can download and install LuaRocks on Unix and\n      Windows.\n  doc_url: https://github.com/luarocks/luarocks/wiki/Documentation\n  dev_url: https://github.com/luarocks/luarocks/\n\nextra:\n  recipe-maintainers:\n    - jerowe\n",
  "rendered_recipe": {

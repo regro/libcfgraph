@@ -613,6 +613,7 @@
   "subdir": "win-64",
   "version": "0.6.0"
  },
+ "metadata_version": 1,
  "name": "jsonapi-requests",
  "raw_recipe": "{% set name = \"jsonapi-requests\" %}\n{% set version = \"0.6.0\" %}\n{% set sha256 = \"b15a4c9a4d5d04d8c5913fd2f5f808b36d52686372aba36726113e7444118c74\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [py27]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - pip\n    - pytest-runner\n    - setuptools\n  run:\n    - python\n    - requests\n    - tenacity\n\ntest:\n  imports:\n    - jsonapi_requests\n    - jsonapi_requests.orm\n\nabout:\n  home: https://github.com/socialwifi/jsonapi-requests\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Python client implementation for JSON API 1.0'\n\n  doc_url: https://github.com/socialwifi/jsonapi-requests/wiki\n  dev_url: https://github.com/socialwifi/jsonapi-requests\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

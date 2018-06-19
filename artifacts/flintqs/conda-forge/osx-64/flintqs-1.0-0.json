@@ -78,6 +78,7 @@
   "subdir": "osx-64",
   "version": "1.0"
  },
+ "metadata_version": 1,
  "name": "flintqs",
  "raw_recipe": "{% set version = \"1.0\" %}\n{% set name = \"flintqs\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://files.sagemath.org/spkg/upstream/flintqs/{{ name }}-{{ version }}.tar.gz\n  sha256: 7353dd18eae0f9c58ef405894a8987b1385012e60fea3d4aef2ebfccbacd97e7\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - gmp >=5.0.1,<7\n  run:\n    - gmp >=5.0.1,<7\n\ntest:\n  commands:\n    - test -f $PREFIX/bin/QuadraticSieve\n\nabout:\n  home: https://github.com/sagemath/FlintQS\n  license: GPLv2+\n  license_file: COPYING\n  summary: William Hart's GPL'd Highly optimized multi-polynomial quadratic sieve for integer factorization\n  dev_url: https://github.com/sagemath/FlintQS\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

@@ -80,6 +80,7 @@
   "subdir": "win-64",
   "version": "0.2.0"
  },
+ "metadata_version": 1,
  "name": "sklearn-contrib-lightning",
  "raw_recipe": "{%set name = \"sklearn-contrib-lightning\" %}\n{%set version = \"0.2.0\" %}\n{%set hash_type = \"md5\" %}\n{%set hash_val = \"cf373cf22e9c1b0c11133589d3b14926\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - cython\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  requires:\n    - numpy\n    - scikit-learn\n    - nose\n  imports:\n    - lightning\n\nabout:\n  home: http://contrib.scikit-learn.org/lightning/\n  license: BSD 3-Clause\n  summary: lightning is a library for large-scale linear classification, regression and ranking in Python.\n\nextra:\n  recipe-maintainers:\n    - fabianp\n    - mblondel",
  "rendered_recipe": {},

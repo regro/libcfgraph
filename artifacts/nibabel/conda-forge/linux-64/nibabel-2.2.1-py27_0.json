@@ -1011,6 +1011,7 @@
   "subdir": "linux-64",
   "version": "2.2.1"
  },
+ "metadata_version": 1,
  "name": "nibabel",
  "raw_recipe": "# Jinja variables help maintain the recipe as you'll update the version only here.\n{% set name = \"nibabel\" %}\n{% set version = \"2.2.1\" %}\n{% set sha256 = \"7644a7c95a3bf609db354df9822eb053ce4ea828df8ff28868ad0d1e85f7c742\" %}\n\n# sha256 is the prefered checksum -- you can get it for a file with:\n#  `openssl sha256 <file name>`.\n# You may need the openssl package, available on conda-forge\n#  `conda install openssl -c conda-forge``\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/nipy/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - numpy\n    - h5py\n    - pydicom\n  run:\n    - python\n    - numpy\n    - scipy\n    - h5py\n    - pydicom\n\ntest:\n  imports:\n    - nibabel\n\nabout:\n  home: https://nipy.org/nibabel\n  license: MIT\n  license_file: COPYING\n  summary: Python package to access a cacophony of neuro-imaging file formats\n\nextra:\n  recipe-maintainers:\n    - arokem\n    - grlee77\n    - effigies\n",
  "rendered_recipe": {

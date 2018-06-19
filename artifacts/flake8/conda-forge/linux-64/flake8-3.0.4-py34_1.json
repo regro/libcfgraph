@@ -57,6 +57,7 @@
   "subdir": "linux-64",
   "version": "3.0.4"
  },
+ "metadata_version": 1,
  "name": "flake8",
  "raw_recipe": "{%set name = \"flake8\" %}\n{%set version = \"3.0.4\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"b4c210c998f07d6ff24325dd91fbc011f2c37bcd6bf576b188de01d8656e970d\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n\n  run:\n    - python\n    - setuptools\n    - mccabe >=0.5,<0.6\n    - pycodestyle >=2.0,<2.1\n    - pyflakes >=1.2.3,<1.3\n    - enum34  # [py2k or py33]\n    - configparser  # [py2k]\n\ntest:\n  imports:\n    - {{ name }}\n  commands:\n    - flake8 ${SRC_DIR}/setup.py ${SRC_DIR}/src/flake8/ ${SRC_DIR}/tests\n\nabout:\n  home: http://flake8.pycqa.org/\n  license: MIT\n  summary: 'Your Tool For Style Guide Enforcement'\n\nextra:\n  recipe-maintainers:\n    - sigmavirus24\n    - croth1\n",
  "rendered_recipe": {},

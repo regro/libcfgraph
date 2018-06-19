@@ -137,6 +137,7 @@
   "timestamp": 1524069392469,
   "version": "0.5.1"
  },
+ "metadata_version": 1,
  "name": "dialite",
  "raw_recipe": "{% set name = \"dialite\" %}\n{% set version = \"0.5.1\" %}\n{% set sha256 = \"93d19dd39b8607ae1342644dff242f26caac098af7a9601a9ab3e24c4c4eb61e\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - dialite\n\nabout:\n  home: http://dialite.readthedocs.io\n  doc_url: http://dialite.readthedocs.io\n  dev_url: https://github.com/flexxui/dialite\n  summary: small library to show simple dialogs to the user, without the need for a heavy GUI toolkit.\n  license: BSD 2-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - almarklein\n",
  "rendered_recipe": {

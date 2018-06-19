@@ -688,6 +688,7 @@
   "subdir": "osx-64",
   "version": "0.2.3"
  },
+ "metadata_version": 1,
  "name": "neovim",
  "raw_recipe": "{% set name = \"neovim\" %}\n{% set version = \"0.2.3\" %}\n{% set sha256 = \"989d720dc7636aa4260aa7774fa79aa524f51515b262eb8d7e9ba4336f758a99\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - msgpack-python >=0.5.0\n    - greenlet\n    - trollius  # [py27]\n    - pyuv >=1.0.0  # [win]\n\ntest:\n  imports:\n    - neovim\n    - neovim.api\n    - neovim.msgpack_rpc\n    - neovim.msgpack_rpc.event_loop\n    - neovim.plugin\n\nabout:\n  home: http://github.com/neovim/python-client\n  license: Apache-2.0\n  license_family: Apache\n  license_file: 'LICENSE'\n  summary: 'Python client to neovim'\n\n  description: |\n    Python client to neovim\n  dev_url: https://github.com/neovim/python-client\n\nextra:\n  recipe-maintainers:\n    - curtisalexander\n",
  "rendered_recipe": {

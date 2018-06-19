@@ -25,6 +25,7 @@
   "subdir": "osx-64",
   "version": "3.0"
  },
+ "metadata_version": 1,
  "name": "libmo_unpack",
  "raw_recipe": "{% set version = \"3.0\" %}\n\npackage:\n    name: libmo_unpack\n    version: {{ version }}\n\nsource:\n    fn: v{{ version }}.tar.gz\n    url: https://github.com/SciTools/libmo_unpack/archive/v{{ version }}.tar.gz\n    sha256: dc64f38ce588c8780d53e91c399cf836588e2afd7d1b7191dc286bf5eca9c75f\n\nbuild:\n    number: 1\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - check\n        - automake\n        - libtool\n        - pkg-config\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libmo_unpack.a  # [not win]\n        - conda inspect linkages -n _test libmo_unpack  # [not win]\n\nabout:\n    home: https://github.com/SciTools/libmo_unpack\n    license: BSD 3-Clause\n    summary: 'Met Office PP/FieldsFile compression schemes.'\n\nextra:\n    recipe-maintainers:\n        - pelson\n        - rhattersley\n        - ocefpaf\n",
  "rendered_recipe": {},

@@ -92,6 +92,7 @@
   "subdir": "win-64",
   "version": "0.2.1"
  },
+ "metadata_version": 1,
  "name": "thrift_sasl",
  "raw_recipe": "{% set name = \"thrift_sasl\" %}\n{% set version = \"0.2.1\" %}\n{% set hashtype = \"sha256\" %}\n{% set hash = \"dabbca1868731b95713704c97f15b26c4e069af698e40fd99f09d3c6659dfda7\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hashtype }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - thrift  # [py2k]\n    - thriftpy  # [py3k]\n    - pure-sasl\n\ntest:\n  imports:\n    - thrift_sasl\n\nabout:\n  home: https://github.com/cloudera/thrift_sasl\n  license: Apache 2.0\n  summary: Thrift SASL module that implements TSaslClientTransport\n  license_family: Apache\n  dev_url: https://github.com/cloudera/thrift_sasl\n  doc_url: https://github.com/cloudera/thrift_sasl\n  # https://github.com/cloudera/thrift_sasl/pull/7\n  # license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n    - ericdill\n",
  "rendered_recipe": {

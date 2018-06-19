@@ -727,6 +727,7 @@
   "subdir": "win-64",
   "version": "0.1.1"
  },
+ "metadata_version": 1,
  "name": "backports.os",
  "raw_recipe": "{% set name = \"backports.os\" %}\n{% set version = \"0.1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: \"b472c4933094306ca08ec90b2a8cbb50c34f1fb2767775169a1c1650b7b74630\"\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - future  # [py2k]\n\ntest:\n  source_files:\n    - tests\n  imports:\n    - backports\n    - backports.os\n  requires:\n    - hypothesis\n  # Unicode + py27 on Windows -> :'(\n  commands:                              # [unix]\n    - export \"PYTHONIOENCODING=utf8\"     # [unix]\n    - python -m unittest discover tests  # [unix]\n\nabout:\n  home: https://github.com/pjdelport/backports.os\n  license: Python Software Foundation\n  license_family: PSF\n  license_file: LICENSE\n  summary: Backport of new features in Python's os module\n  doc_url: https://docs.python.org/3.5/library/os.html\n  dev_url: https://github.com/pjdelport/backports.os\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
  "rendered_recipe": {

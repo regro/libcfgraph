@@ -219,6 +219,7 @@
   "subdir": "linux-64",
   "version": "0.9.7"
  },
+ "metadata_version": 1,
  "name": "hyperion",
  "raw_recipe": "{% set version = \"0.9.7\" %}\n\npackage:\n  name: hyperion\n  version: {{version}}\n\nsource:\n  fn: Hyperion-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/h/hyperion/Hyperion-{{version}}.tar.gz\n  md5: 9ab9f0341d83a2c7a1d996e7438ba8d0\n\nbuild:\n  number: 0\n  script: python setup.py install\n  skip: True  # [win]\n\nrequirements:\n\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n\n  run:\n    - hyperion-fortran\n    - python\n    - numpy x.x\n    - matplotlib\n    - h5py\n    - astropy\n    - yt\n\ntest:\n  imports:\n    - hyperion\n    - hyperion.util.interpolate\n  commands:\n    - hyperion --help\n\nabout:\n  home: https://github.com/hyperion-rt/hyperion\n  license: BSD 2-Clause\n  summary: Hyperion Radiation Transfer Code\n\nextra:\n  recipe-maintainers:\n    - astrofrog\n",
  "rendered_recipe": {},

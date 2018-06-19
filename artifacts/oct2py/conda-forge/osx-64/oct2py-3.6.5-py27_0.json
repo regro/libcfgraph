@@ -48,6 +48,7 @@
   "subdir": "osx-64",
   "version": "3.6.5"
  },
+ "metadata_version": 1,
  "name": "oct2py",
  "raw_recipe": "{% set version = \"3.6.5\" %}\n\npackage:\n    name: oct2py\n    version: {{ version }}\n\nsource:\n    fn: oct2py-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/o/oct2py/oct2py-{{ version }}.tar.gz\n    sha256: 490011651d66a77323ebdb9c6dced993eeefc92913b5c87b1e0283001d33afe7\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - scipy\n        - ipython\n\nabout:\n    home: http://github.com/blink1073/oct2py\n    license: MIT\n    summary: Python to GNU Octave bridge --> run m-files from python\n\nextra:\n    recipe-maintainers:\n        - blink1073\n        - ocefpaf\n",
  "rendered_recipe": {},

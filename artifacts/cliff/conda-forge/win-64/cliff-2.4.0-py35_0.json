@@ -136,6 +136,7 @@
   "subdir": "win-64",
   "version": "2.4.0"
  },
+ "metadata_version": 1,
  "name": "cliff",
  "raw_recipe": "{%set name = \"cliff\" %}\n{%set version = \"2.4.0\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"cc9175e3c2a42bc06343290a1218bc6b70f36883520b2948f743c5f9ae917675\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pbr >=1.8\n\n  run:\n    - python\n    - cmd2 >=0.6.7\n    - prettytable <0.8,>=0.7.1\n    - pyparsing >=2.1.0\n    - six >=1.9.0\n    - stevedore >=1.17.1\n    - unicodecsv >=0.8.0  # [not py3k]\n    - pyyaml >=3.10.0\n\ntest:\n  imports:\n    - cliff\n    - cliff.app\n    - cliff.commandmanager\n    - cliff.command\n    - cliff.interactive\n\nabout:\n  home: https://github.com/openstack/cliff\n  license: Apache 2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Command Line Interface Formulation Framework'\n  dev_url: http://git.openstack.org/cgit/openstack/cliff\n  doc_url: http://docs.openstack.org/developer/cliff\n\nextra:\n  recipe-maintainers:\n    - anguslees\n    - pmlandwehr\n",
  "rendered_recipe": {

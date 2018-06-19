@@ -727,6 +727,7 @@
   "subdir": "linux-64",
   "version": "2.0.16"
  },
+ "metadata_version": 1,
  "name": "python-hdfs",
  "raw_recipe": "{% set version = \"2.0.16\" %}\n\npackage:\n  name: python-hdfs\n  version: {{ version }}\n\nsource:\n  fn: hdfs-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/h/hdfs/hdfs-{{ version }}.tar.gz\n  sha256: 68ec3734d4ce02dc407be8bc5a2da8411a7f143270a1da9fdfc9dce0fb1a7d6b\n\nbuild:\n  number: 0\n  entry_points:\n    - hdfscli = hdfs.__main__:main\n    - hdfscli-avro = hdfs.ext.avro.__main__:main\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - docopt\n    - fastavro >=0.9.6\n    - pandas >=0.14.1\n    - requests >=2.7.0\n    - requests-kerberos >=0.7.0\n    - six >=1.9.0\n\ntest:\n  imports:\n    - hdfs\n    - hdfs.ext\n    - hdfs.ext.avro\n    - hdfs.ext.dataframe\n    - hdfs.ext.kerberos\n\n  commands:\n    - hdfscli --help\n    - hdfscli-avro --help\n\nabout:\n  home: http://hdfscli.readthedocs.org\n  license: MIT\n  summary: 'HdfsCLI: API and command line interface for HDFS.'\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n    - ericdill\n    - parente\n",
  "rendered_recipe": {

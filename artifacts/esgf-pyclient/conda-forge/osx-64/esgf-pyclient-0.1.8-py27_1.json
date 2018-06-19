@@ -93,6 +93,7 @@
   "subdir": "osx-64",
   "version": "0.1.8"
  },
+ "metadata_version": 1,
  "name": "esgf-pyclient",
  "raw_recipe": "{% set name = \"esgf-pyclient\" %}\n{% set version = \"0.1.8\" %}\n{% set hash_type = \"md5\" %}\n{% set hash_val = \"754d7e1e3128ef4d5ac481e4bb751ef7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  skip: True  # [py3k]\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - jinja2\n\ntest:\n  imports:\n    - pyesgf\n    - pyesgf.search\n    - pyesgf.security\n\nabout:\n  home: http://esgf-pyclient.readthedocs.org\n  license: BSD 3-clause\n  license_file: LICENSE\n  summary: 'A library interacting with ESGF services within Python'\n\nextra:\n  recipe-maintainers:\n    - agoodm\n    - jarifibrahim\n",
  "rendered_recipe": {

@@ -110,6 +110,7 @@
   "subdir": "win-64",
   "version": "1.0.1"
  },
+ "metadata_version": 1,
  "name": "sphinxcontrib-websupport",
  "raw_recipe": "{% set name = \"sphinxcontrib-websupport\" %}\n{% set version = \"1.0.1\" %}\n{% set sha256 = \"7a85961326aa3a400cd4ad3c816d70ed6f7c740acd7ce5d78cd0a67825072eb9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - sphinxcontrib\n\nabout:\n  home: https://pypi.python.org/pypi/sphinxcontrib-websupport\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Sphinx API for Web Apps'\n  description: |\n    sphinxcontrib-websupport provides a Python API to easily integrate\n    Sphinx documentation into your Web application\n  doc_url: http://www.sphinx-doc.org/en/stable/\n  dev_url: https://github.com/sphinx-doc/sphinxcontrib-websupport\n\nextra:\n  recipe-maintainers:\n    - chohner\n",
  "rendered_recipe": {

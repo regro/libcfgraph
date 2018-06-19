@@ -1061,6 +1061,7 @@
   "subdir": "noarch",
   "version": "2018.04.19"
  },
+ "metadata_version": 1,
  "name": "conda-forge-pinning",
  "raw_recipe": "{% set version = \"2018.04.19\" %}\n\npackage:\n  name: conda-forge-pinning\n  version: {{ version }}\n\nsource:\n  path: .\n\nbuild:\n  number: 0\n  noarch: generic\n  script:\n    - cp conda_build_config.yaml $PREFIX      # [unix]\n    - copy conda_build_config.yaml %PREFIX%   # [win]\n\ntest:\n  commands:\n    - test -f $PREFIX/conda_build_config.yaml\n\nabout:\n  summary: The baseline versions of software for the conda-forge ecosystem\n  license: BSD 3-Clause\n  license_family: BSD\n  home: https://github.com/conda-forge/staged-recipes/wiki/Pinned-dependencies\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - jakirkham\n    - msarahan\n    - ocefpaf\n    - pelson\n",
  "rendered_recipe": {

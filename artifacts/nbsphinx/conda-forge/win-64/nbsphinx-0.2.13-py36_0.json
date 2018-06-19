@@ -94,6 +94,7 @@
   "subdir": "win-64",
   "version": "0.2.13"
  },
+ "metadata_version": 1,
  "name": "nbsphinx",
  "raw_recipe": "{% set name = \"nbsphinx\" %}\n{% set version = \"0.2.13\" %}\n{% set md5 = \"4816354e6820c009e4c9d2bba6cf830c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - docutils\n    - jinja2\n    - nbconvert\n    - nbformat\n    - sphinx\n\ntest:\n  imports:\n    - nbsphinx\n\nabout:\n  home: http://nbsphinx.rtfd.org/\n  license: MIT\n  summary: 'Jupyter Notebook Tools for Sphinx'\n  license_family: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ericmjl\n",
  "rendered_recipe": {

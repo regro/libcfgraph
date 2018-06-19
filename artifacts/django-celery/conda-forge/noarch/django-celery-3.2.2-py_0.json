@@ -813,6 +813,7 @@
   "subdir": "noarch",
   "version": "3.2.2"
  },
+ "metadata_version": 1,
  "name": "django-celery",
  "raw_recipe": "{% set name = \"django-celery\" %}\n{% set version = \"3.2.2\" %}\n{% set build = 0 %}\n{% set sha256 = \"39db64afc65b33db70c7905c69ec77ddb1ade5bf539c5b0a061dd00316963977\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/celery/django-celery/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - celery >=3.1.15,<4.0\n  run:\n    - python\n    - celery >=3.1.15,<4.0\n\ntest:\n  imports:\n    - djcelery\n    - djcelery.backends\n    - djcelery.contrib\n    - djcelery.management\n    - djcelery.management.commands\n    - djcelery.migrations\n    - djcelery.monproj\n    - djcelery.tests\n    - djcelery.tests.test_backends\n  requires:\n    - django >=1.8,<2.0\n\nabout:\n  home: http://celeryproject.org\n  license: BSD 2-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: Old django celery integration project.\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n",
  "rendered_recipe": {

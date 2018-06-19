@@ -44,6 +44,7 @@
   "subdir": "win-64",
   "version": "0.0.8"
  },
+ "metadata_version": 1,
  "name": "pyasn1-modules",
  "raw_recipe": "{% set name = \"pyasn1-modules\" %}\n{% set version = \"0.0.8\" %}\n{% set sha256 = \"10561934f1829bcc455c7ecdcdacdb4be5ffd3696f26f468eb6eb41e107f3837\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pyasn1 >=0.1.8\n\ntest:\n  imports:\n    - pyasn1_modules\n\nabout:\n  home: http://sourceforge.net/projects/pyasn1/\n  license: BSD 2-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: A collection of ASN.1-based protocols modules.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pmlandwehr\n",
  "rendered_recipe": {},

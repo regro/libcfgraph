@@ -31,6 +31,7 @@
   "subdir": "linux-64",
   "version": "0.9.0"
  },
+ "metadata_version": 1,
  "name": "jmespath",
  "raw_recipe": "{%set name = \"jmespath\" %}\n{%set version = \"0.9.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"08dfaa06d4397f283a01e57089f3360e3b52b5b9da91a70e1fd91e9f0cdd3d3d\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - {{ name }}\n\n\nabout:\n  home: https://github.com/jmespath/jmespath.py\n  license: MIT\n  summary: 'JSON Matching Expressions'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

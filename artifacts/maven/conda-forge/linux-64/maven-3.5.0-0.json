@@ -191,6 +191,7 @@
   "subdir": "linux-64",
   "version": "3.5.0"
  },
+ "metadata_version": 1,
  "name": "maven",
  "raw_recipe": "{% set version = \"3.5.0\" %}\n\npackage:\n  name: maven\n  version: {{ version }}\n\nsource:\n  fn: apache-maven-{{ version }}-bin.tar.gz\n  url: http://apache.hippo.nl/maven/maven-3/{{ version }}/binaries/apache-maven-{{ version }}-bin.tar.gz\n  sha256: beb91419245395bd69a4a6edad5ca3ec1a8b64e41457672dc687c173a495f034\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\nrequirements:\n  run:\n    - openjdk\n\ntest:\n  commands:\n    - mvn -v\n\nabout:\n  home: https://maven.apache.org\n  license: Apachev2\n  license_family: Apache\n  license_file: LICENSE\n  summary: A software project management and comprehension tool.\n  description: |\n    Apache Maven is a software project management and comprehension tool.\n    Based on the concept of a project object model (POM), Maven can manage\n    a project's build, reporting and documentation from a central piece of information.\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - hadim\n",
  "rendered_recipe": {

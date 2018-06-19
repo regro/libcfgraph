@@ -2835,6 +2835,7 @@
   "subdir": "osx-64",
   "version": "0.11.0rc2"
  },
+ "metadata_version": 1,
  "name": "tensorflow",
  "raw_recipe": "package:\n  name: tensorflow\n  version: \"0.11.0rc2\"\n\nbuild:\n  number: 0\n  #  Google supplies whl files for:\n  # - Linux: Python 2.7, 3.4 and 3.5\n  # - OS X: Python 2.7, 3.4 and 3.5\n  skip: True  # [win]\n  skip: True  # [py26]\n  skip: True  # [py33]\n  entry_points:\n    - tensorboard = tensorflow.tensorboard.tensorboard:main\n\nrequirements:\n  build:\n    - python\n    - pip\n    - mock >=2.0.0\n    - numpy >=1.11.0\n    - protobuf ==3.0.0\n    - six >=1.10.0\n    - wheel >=0.26\n  run:\n    - python\n    - mock >=2.0.0\n    - numpy >=1.11.0\n    - protobuf ==3.0.0\n    - six >=1.10.0\n\ntest:\n  imports:\n    # Skip the import test on Linux as wheel file require a more recent\n    # version of GLIBC++ than the VM used to build and test package.\n    - tensorflow  # [not linux]\n\nabout:\n  home: http://tensorflow.org/\n  license: Apache 2.0\n  summary: TensorFlow helps the tensors flow\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n    - danielfrg\n    - waitingkuo\n",
  "rendered_recipe": {

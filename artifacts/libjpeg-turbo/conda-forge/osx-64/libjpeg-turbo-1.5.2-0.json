@@ -582,6 +582,7 @@
   "subdir": "osx-64",
   "version": "1.5.2"
  },
+ "metadata_version": 1,
  "name": "libjpeg-turbo",
  "raw_recipe": "{% set version = \"1.5.2\" %}\n\npackage:\n    name: libjpeg-turbo\n    version: {{ version }}\n\nsource:\n    fn: libjpeg-turbo-{{ version }}.tar.gz\n    url: https://github.com/libjpeg-turbo/libjpeg-turbo/archive/{{ version }}.tar.gz\n    sha256: d08b57310725155b6b81d7a97f57df198ab72098e851e19b633a57a35f7feb0d\n\nbuild:\n    number: 0\n    features:\n        - vc9  # [win and py27]\n        - vc10  # [win and py34]\n        - vc14  # [win and py35]\n        - vc14  # [win and py36]\n\nrequirements:\n    build:\n        - python  # [win]\n        - cmake  # [win]\n        - msinttypes  # [win]\n        - autoconf  # [unix]\n        - automake  # [unix]\n        - libtool  # [unix]\n        - yasm\n        - vc   9  # [win and py27]\n        - vc  10  # [win and py34]\n        - vc  14  # [win and py35]\n        - vc  14  # [win and py36]\n\n    run:\n        - vc   9  # [win and py27]\n        - vc  10  # [win and py34]\n        - vc  14  # [win and py35]\n        - vc  14  # [win and py36]\n\ntest:\n    files:\n        - testorig.jpg\n    commands:\n        - djpeg -dct int -ppm -outfile testout.ppm testorig.jpg\n\nabout:\n    home: http://www.libjpeg-turbo.org/\n    license: IJG, modified 3-clause BSD and zlib\n    summary: IJG JPEG compliant runtime library with SIMD and other optimizations\n    \nextra:    \n    recipe-maintainers:\n        - valgur\n        - sdvillal\n",
  "rendered_recipe": {

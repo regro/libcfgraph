@@ -693,6 +693,7 @@
   "subdir": "osx-64",
   "version": "3.1"
  },
+ "metadata_version": 1,
  "name": "libedit",
  "raw_recipe": "{% set name = \"libedit\" %}\n{% set version = \"3.1\" %}\n{% set date = \"20170329\" %}\n{% set sha256 = \"91f2d90fbd2a048ff6dad7131d9a39e690fd8a8fd982a353f1333dd4017dd4be\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ date }}-{{ version }}.tar.gz\n  url: http://thrysoee.dk/editline/{{ name }}-{{ date }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - 0001-Also-look-in-libtinfo-for-tgetent.patch\n\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - automake\n    - autoconf\n    - m4\n    - perl 5.22.0.1\n    - ncurses 5.9\n  run:\n    - ncurses 5.9\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libedit.dylib  # [osx]\n    - test -f $PREFIX/lib/libedit.so     # [linux]\n\nabout:\n  home: http://thrysoee.dk/editline/\n  license: NetBSD\n  license_family: BSD\n  license_file: COPYING\n  summary: |\n    Command line editor library provides generic line editing, history, and tokenization\n    functions, similar to those found in GNU Readline.\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "rendered_recipe": {

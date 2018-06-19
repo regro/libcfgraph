@@ -499,6 +499,7 @@
   "subdir": "osx-64",
   "version": "2.0.3"
  },
+ "metadata_version": 1,
  "name": "smmap2",
  "raw_recipe": "{% set version = \"2.0.3\" %}\n\npackage:\n  name: smmap2\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/smmap2/smmap2-{{ version }}.tar.gz\n  sha256: c7530db63f15f09f8251094b22091298e82bf6c699a6b8344aaaef3f2e1276c3\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - smmap\n\nabout:\n  home: https://github.com/gitpython-developers/smmap\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'A pure python implementation of a sliding window memory map manager'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

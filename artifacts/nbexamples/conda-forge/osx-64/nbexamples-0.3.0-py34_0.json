@@ -34,6 +34,7 @@
   "subdir": "osx-64",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "nbexamples",
  "raw_recipe": "{% set version = \"0.3.0\" %}\n{% set gh_org = \"danielballan\" %}\n{% set gh_repo = \"nbexamples\" %}\n\npackage:\n  name: {{ gh_repo }}\n  version: {{ version }}\n\nsource:\n  fn: {{ gh_repo }}-v{{ version }}.tar.gz\n  url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/v{{ version }}.tar.gz\n  sha256: 80e7217d27583c24dffdd8011d60792bc5a797cec9fe9e9a8b4e9f0709f0ffd1\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - notebook >=4.2.0\n    - python\n    - setuptools\n  run:\n    - nbconvert\n    - nbformat\n    - notebook >=4.2.0\n    - python\n\ntest:\n  imports:\n    - nbexamples\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: BSD-3-Clause\n  summary: Jupyter Notebook extension that shows a list of example notebooks for users to preview and clone\n\nextra:\n  recipe-maintainers:\n    - danielballan\n    - ericdill\n    - mariusvniekerk\n    - parente\n",
  "rendered_recipe": {},

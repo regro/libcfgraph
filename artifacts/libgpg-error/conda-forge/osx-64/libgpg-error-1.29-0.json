@@ -676,6 +676,7 @@
   "subdir": "osx-64",
   "version": "1.29"
  },
+ "metadata_version": 1,
  "name": "libgpg-error",
  "raw_recipe": "{% set name = \"libgpg-error\" %}\n{% set version = \"1.29\" %}\n{% set sha256 = \"ece926fa5719d17a7ad8da618712cfa2f8a796ab2f2af9d544c5bb093383b1ea\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://gnupg.org/ftp/gcrypt/libgpg-error/{{ name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libgpg-error.so  # [linux]\n    - conda inspect linkages {{ name }}\n    - conda inspect objects {{ name }}  # [osx]\n\nabout:\n  home: https://gnupg.org/software/index.html\n  license: GPL-2.0\n  license_family: GPL\n  summary: 'a small library that originally defined common error values for all GnuPG components'\n\nextra:\n  recipe-maintainers:\n    - martindurant\n    - mariusvniekerk\n",
  "rendered_recipe": {

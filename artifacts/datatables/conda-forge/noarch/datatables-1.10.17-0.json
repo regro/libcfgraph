@@ -256,6 +256,7 @@
   "timestamp": 1528980418347,
   "version": "1.10.17"
  },
+ "metadata_version": 1,
  "name": "datatables",
  "raw_recipe": "{% set name = \"datatables\" %}\n{% set version = \"1.10.17\" %}\n{% set sha256 = \"b154056632e75a494c1947ed92902d6638f073b68ac67ab4bd930635ab58e3d7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/DataTables/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: |\n    tgz=$(npm pack)\n    npm install -g $tgz\n\nrequirements:\n  build:\n    - nodejs\n  \ntest:\n  commands:\n    - npm list -g datatables\n  requires:\n    - nodejs\n   \n\nabout:\n  home: https://github.com/DataTables/DataTables\n  license: MIT\n  license_family: MIT\n  license_file: license.txt\n  summary: 'Tables plug-in for jQuery'\n  description: |\n    DataTables is a table enhancing plug-in for the jQuery Javascript library, \n    adding sorting, paging and filtering abilities to plain HTML tables with minimal effort.  \n  doc_url: https://datatables.net/\n  dev_url: https://github.com/DataTables/DataTables\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

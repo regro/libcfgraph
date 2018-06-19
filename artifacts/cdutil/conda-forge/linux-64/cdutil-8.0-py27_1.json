@@ -774,6 +774,7 @@
   "subdir": "linux-64",
   "version": "8.0"
  },
+ "metadata_version": 1,
  "name": "cdutil",
  "raw_recipe": "{% set name = \"cdutil\" %}\n{% set version = \"8.0\" %}\n\npackage:\n    name: {{ name|lower }}\n    version: {{ version }}\n\nsource:\n    url: https://github.com/UV-CDAT/cdutil/archive/v{{ version }}.tar.gz\n    sha256: 2430f02d4e840d16e49af7ab6053f85bf4c55c82ea5fa36790948083be2f2465\n\nbuild:\n  number: 1\n  skip: True  # [win]\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cdat_info\n  run:\n    - python\n    - cdms2\n    - numpy\n    - udunits2\n    - genutil\n\ntest:\n  commands:\n    - export UVCDAT_ANONYMOUS_LOG=false && python -c \"import cdutil\"\n\nabout:\n    home:  http://github.com/CDAT/cdutil\n    license: 'CCLRC'\n    license_file: LICENSE\n    summary: 'Climate Data Related Utitilites for the Community Data Analysis Tools'\n\nextra:\n  recipe-maintainers:\n    - dnadeau4\n    - doutriaux1\n",
  "rendered_recipe": {

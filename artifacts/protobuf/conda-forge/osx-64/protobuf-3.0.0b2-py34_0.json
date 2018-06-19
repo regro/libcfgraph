@@ -64,6 +64,7 @@
   "subdir": "osx-64",
   "version": "3.0.0b2"
  },
+ "metadata_version": 1,
  "name": "protobuf",
  "raw_recipe": "{% set version = \"3.0.0b2\" %}\n\npackage:\n    name: protobuf\n    version: {{ version }}\n\nsource:\n    fn: protobuf-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/p/protobuf/protobuf-{{ version }}.tar.gz\n    md5: f0d3bd2394345a9af4a277cd0302ae83\n\nbuild:\n    preserve_egg_dir: True\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - setuptools\n        - six\n\ntest:\n    imports:\n        - google\n        - google.protobuf\n        - google.protobuf.compiler\n        - google.protobuf.internal\n        - google.protobuf.pyext\n\nabout:\n    home: https://developers.google.com/protocol-buffers/\n    license: New BSD License\n    summary: 'Protocol Buffers'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - dopplershift\n",
  "rendered_recipe": {},

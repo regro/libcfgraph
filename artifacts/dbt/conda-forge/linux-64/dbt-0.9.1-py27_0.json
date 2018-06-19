@@ -816,6 +816,7 @@
   "subdir": "linux-64",
   "version": "0.9.1"
  },
+ "metadata_version": 1,
  "name": "dbt",
  "raw_recipe": "{% set org = \"fishtown-analytics\" %}\n{% set name = \"dbt\" %}\n{% set version = \"0.9.1\" %}\n{% set sha256 = \"977c7ea8710f067af2aa47661e230d930e41c565b61f74e2fca0efba59ae06e0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - dbt\n    - test\n\nabout:\n  home: https://github.com/fishtown-analytics/dbt\n  license: Apache-2.0\n  license_file: License.md\n  summary: 'dbt helps analysts write reliable, modular code using a workflow that closely mirrors software development.'\n\n  description: |\n    dbt (data build tool) helps analysts write reliable, modular code\n    using a workflow that closely mirrors software development. Used\n    by individuals and teams alike, dbt is an analytics tool for\n    perfectionists with deadlines.\n  doc_url: http://dbt.readthedocs.io/en/master/\n  dev_url: https://github.com/fishtown-analytics/dbt\n\nextra:\n  recipe-maintainers:\n    - drewbanin\n    - jthandy\n",
  "rendered_recipe": {

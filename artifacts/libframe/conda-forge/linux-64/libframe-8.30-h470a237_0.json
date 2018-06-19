@@ -147,6 +147,7 @@
   "timestamp": 1527302808848,
   "version": "8.30"
  },
+ "metadata_version": 1,
  "name": "libframe",
  "raw_recipe": "{% set name = \"libframe\" %}\n{% set version = \"8.30\" %}\n\npackage:\n  name: {{ name }}\n  version: {{version}}\n\nsource:\n  fn: {{ name }}-{{version}}.tar.gz\n  url: http://lappweb.in2p3.fr/virgo/FrameL/{{ name }}-{{version}}.tar.gz\n  md5: efd7959d70e488b95395fbcde9bcd057\n  sha256: 374743ccce835427a0900590a515c112661760e12ec596159d3f86073dd099da\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n\ntest:\n  commands:\n    - FrChannels\n    - FrCheck\n    - FrCopy\n    - FrDiff\n    - FrDump\n    - FrTrend\n\nabout:\n  home: http://lappweb.in2p3.fr/virgo/FrameL/\n  license: other\n  license_file: LICENSE\n  summary: LIGO/Virgo Frame Library\n\nextra:\n  recipe-maintainers:\n    - duncanmmacleod\n",
  "rendered_recipe": {

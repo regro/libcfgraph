@@ -92,6 +92,7 @@
   "subdir": "linux-64",
   "version": "1.10"
  },
+ "metadata_version": 1,
  "name": "jsonpointer",
  "raw_recipe": "{%set name = \"jsonpointer\" %}\n{%set version = \"1.10\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"9fa5dcac35eefd53e25d6cd4c310d963c9f0b897641772cd6e5e7b89df7ee0b1\" %}\n{%set build_num = \"2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - jsonpointer\n\nabout:\n  home: https://github.com/stefankoegl/python-json-pointer\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: COPYING\n  summary: 'Identify specific nodes in a JSON document (RFC 6901)'\n  dev_url: https://github.com/stefankoegl/python-json-pointer\n  doc_url: https://python-json-pointer.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - anguslees\n    - pmlandwehr\n",
  "rendered_recipe": {

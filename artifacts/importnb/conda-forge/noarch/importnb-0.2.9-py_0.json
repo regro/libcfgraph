@@ -149,6 +149,7 @@
   "timestamp": 1527010494121,
   "version": "0.2.9"
  },
+ "metadata_version": 1,
  "name": "importnb",
  "raw_recipe": "{% set version = \"0.2.9\" %}\n\npackage:\n  name: importnb\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/i/importnb/importnb-{{ version }}.tar.gz\n  sha256: 755682692932fa5e925626f8cfd9370742fcc52a47c59e98af40b91f8428b6a3\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python >=3.6,<3.7\n    - pip\n    - pytest-runner\n    - wheel >=0.31.0\n    - twine >=1.11.0\n  run:\n    - python >=3.6,<3.7\n    - setuptools\n    - dataclasses\n    - nbconvert\n\ntest:\n  imports:\n    - importnb\n\nabout:\n  home: https://github.com/deathbeds/importnb\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: Import .ipynb files as modules in the system path\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

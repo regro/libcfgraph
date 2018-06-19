@@ -824,6 +824,7 @@
   "subdir": "linux-64",
   "version": "0.10.0"
  },
+ "metadata_version": 1,
  "name": "ssh2-python",
  "raw_recipe": "{% set name = \"ssh2-python\" %}\n{% set version = \"0.10.0\" %}\n{% set sha256 = \"3c195f7b9396c4a7abee4e6f19929117806b32bfa9b2f5d25ef7462bd1372a1e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: true  # [win]\n  number: 0\n  script:\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - libssh2 1.8.*\n    - toolchain3\n  run:\n    - libssh2 1.8.*\n\ntest:\n  imports:\n    - ssh2.session\n\nabout:\n  home: http://github.com/ParallelSSH/ssh2-python\n  license: LGPL-2.1\n  license_family: LGPL\n  license_file: LICENSE\n  summary: 'Super fact SSH library. Based on libssh2.'\n\n  description: |\n    Super fast SSH2 protocol library.\n\n    ssh2-python provides Python bindings for libssh2.\n    \n    Its only dependency is the libssh2 library.\n  dev_url: https://github.com/ParallelSSH/ssh2-python\n\nextra:\n  recipe-maintainers:\n    - pkittenis\n",
  "rendered_recipe": {

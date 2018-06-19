@@ -1252,6 +1252,7 @@
   "subdir": "osx-64",
   "version": "5.0.0"
  },
+ "metadata_version": 1,
  "name": "lldb",
  "raw_recipe": "{% set version = \"5.0.0\" %}\n{% set sha256 = \"c0a0ca32105e9881d86b7ca886220147e686edc97fdb9f3657c6659dc6568b7d\" %}\n\npackage:\n  name: lldb\n  version: {{ version }}\n\nsource:\n  fn: lldb-{{ version }}.src.tar.xz\n  url: http://releases.llvm.org/{{ version }}/lldb-{{ version }}.src.tar.xz\n  sha256: {{ sha256 }}\n  patches:\n    - build_external.patch\n\nbuild:\n  number: 0\n  skip: true  # [win and py<35]\n  features:\n    - vc14    # [win and py>=35]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake >=3.4.3\n    - ninja    # [win]\n    - python\n    - llvmdev =={{ version }}\n    - clangdev =={{ version }}\n    - libxml2 2.9.*\n    - swig\n    - libedit  # [linux]\n    - vc 14    # [win]\n    - libcxx   # [osx]\n  run:\n    - libedit  # [linux]\n    - vc 14    # [win]\n    - libcxx   # [osx]\n    - llvmdev =={{ version }}\n    - clangdev =={{ version }}\n    - python\n\ntest:\n  requires:\n    - python {{ environ['PY_VER'] + '*' }}  # [win]\n    - cmake >=3.4.3\n\n  commands:\n    - lldb --version\n\nabout:\n  home: http://llvm.org/\n  license: NCSA\n  license_file: LICENSE.TXT\n  summary: The LLVM Debugger\n\nextra:\n  recipe-maintainers:\n    - inducer\n    - isuruf\n    - xoviat\n",
  "rendered_recipe": {

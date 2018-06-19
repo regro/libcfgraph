@@ -86,6 +86,7 @@
   "subdir": "osx-64",
   "version": "0.21"
  },
+ "metadata_version": 1,
  "name": "f90nml",
  "raw_recipe": "{% set version = \"0.21\" %}\n{% set sha256 = \"df0538bfd977f6e72d3bbf6beb8bd7dc7c01882d5a89e99fbfdfbf1aa5b24b8b\" %}\n\npackage:\n  name: f90nml\n  version: {{ version }}\n\nsource:\n  fn: f90nml-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/f/f90nml/f90nml-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  # Python imports\n  imports:\n    - f90nml\n\nabout:\n  home: http://github.com/marshallward/f90nml\n  license: Apache-2.0\n  summary: 'Fortran 90 namelist parser'\n  license_family: APACHE\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - cpelley\n",
  "rendered_recipe": {

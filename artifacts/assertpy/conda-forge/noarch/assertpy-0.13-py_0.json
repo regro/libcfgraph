@@ -738,6 +738,7 @@
   "subdir": "noarch",
   "version": "0.13"
  },
+ "metadata_version": 1,
  "name": "assertpy",
  "raw_recipe": "{% set name = \"assertpy\" %}\n{% set version = \"0.13\" %}\n{% set sha256 = \"3c288e81e1c5118b9722a1f396db21724916cfb480f3c0c079c4af91ee6f79ce\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --record record.txt\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - assertpy\n\nabout:\n  home: https://github.com/ActivisionGameScience/assertpy\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'Assertion library for python unit testing with a fluent API'\n  dev_url: https://github.com/ActivisionGameScience/assertpy\n\nextra:\n  recipe-maintainers:\n    - dwyatte\n    - saturnboy\n",
  "rendered_recipe": {

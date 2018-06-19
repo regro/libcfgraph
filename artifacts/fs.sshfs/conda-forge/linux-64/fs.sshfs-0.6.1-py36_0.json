@@ -720,6 +720,7 @@
   "subdir": "linux-64",
   "version": "0.6.1"
  },
+ "metadata_version": 1,
  "name": "fs.sshfs",
  "raw_recipe": "{% set name = \"fs.sshfs\" %}\n{% set version = \"0.6.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 5e9f218a382c8a82c9f639d1c0e3a622ed005fed03923966621bafbfe0da12f4\n\nbuild:\n  skip: true  # [win]\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - fs\n    - six\n    - paramiko\n    - configparser  # [py<35]\n\ntest:\n  imports:\n    - fs.sshfs\n\nabout:\n  home: https://github.com/althonos/fs.sshfs\n  license: LGPL v2.1\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/COPYING'\n  summary: 'Pyfilesystem2 over SSH using paramiko'\n  description: >\n    Once created, the SSHFS filesystem behaves like any other filesystem\n    see the Pyfilesystem2 documentation https://pyfilesystem2.readthedocs.io.\n\nextra:\n  recipe-maintainers:\n    - ReimarBauer\n",
  "rendered_recipe": {

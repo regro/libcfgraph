@@ -115,6 +115,7 @@
   "subdir": "win-64",
   "version": "1.1.0"
  },
+ "metadata_version": 1,
  "name": "basemap-data-hires",
  "raw_recipe": "{% set version = \"1.1.0\" %}\n\npackage:\n  name: basemap-data-hires\n  version: {{ version }}\n\nsource:\n  url: https://github.com/matplotlib/basemap/archive/v{{ version }}.tar.gz\n  sha256: 6acdc3a08bfcebf0a1b52a05d73d51b7aa5e7240fedfa95537c92d16f2ef8778\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - basemap >1.0.7\n  run:\n    - basemap >1.0.7\n\ntest:\n  imports:\n    - mpl_toolkits.basemap\n\nabout:\n  home: http://matplotlib.org/basemap\n  license: GPL-2.0\n  license_file: LICENSE_data\n  summary: 'Plot on map projections (with coastlines and political boundaries) using matplotlib.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

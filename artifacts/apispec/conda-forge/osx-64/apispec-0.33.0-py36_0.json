@@ -678,6 +678,7 @@
   "subdir": "osx-64",
   "version": "0.33.0"
  },
+ "metadata_version": 1,
  "name": "apispec",
  "raw_recipe": "{% set name = \"apispec\" %}\n{% set version = \"0.33.0\" %}\n{% set sha256 = \"e2f958d0fb3d9adc0596fcd2ec1f731b28708e84ab7fef7b39054c8336564e80\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - pyyaml >=3.10\n\ntest:\n  imports:\n    - apispec\n\nabout:\n  home: https://github.com/marshmallow-code/apispec\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A pluggable API specification generator'\n\n  description: |\n    A pluggable API specification generator. Currently supports the OpenAPI\n    specification (f.k.a. Swagger 2.0).\n  doc_url: http://apispec.readthedocs.io/\n  dev_url: https://github.com/marshmallow-code/apispec\n\nextra:\n  recipe-maintainers:\n    - frol\n",
  "rendered_recipe": {

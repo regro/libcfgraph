@@ -93,6 +93,7 @@
   "subdir": "linux-64",
   "version": "0.2.13"
  },
+ "metadata_version": 1,
  "name": "flask-swagger",
  "raw_recipe": "{% set name = \"flask-swagger\" %}\n{% set version = \"0.2.13\" %}\n{% set sha256 = \"42420efbed1aad86f7ca6bb869df550e09591e1d540ebd3040c197906c0f0be6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\n  entry_points:\n    - flaskswagger=build_swagger_spec:run\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - flask >=0.10\n    - pyyaml >=3.0\n\ntest:\n  commands:\n    - flaskswagger --help\n\n  imports:\n    - flask_swagger\n\nabout:\n  home: http://github.com/gangverk/flask-swagger\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Extract swagger specs from your flask project'\n\n  dev_url: https://github.com/gangverk/flask-swagger\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

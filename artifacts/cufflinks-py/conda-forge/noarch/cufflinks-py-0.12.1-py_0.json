@@ -774,6 +774,7 @@
   "subdir": "noarch",
   "version": "0.12.1"
  },
+ "metadata_version": 1,
  "name": "cufflinks-py",
  "raw_recipe": "{% set name = \"cufflinks-py\" %}\n{% set version = \"0.12.1\" %}\n{% set sha256 = \"8f11e4b6326cc5b2a18011c09fb64f178ba21002f337fd305f64818012a6c679\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/cufflinks/cufflinks-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - plotly >=2.0.0\n  run:\n    - python\n    - six \n    - pandas \n    - plotly >=2.0.0\n    - colorlover >=0.2\n    - ipython\n\ntest:\n  imports:\n    - cufflinks\n\nabout:\n  home: https://github.com/santosjorge/cufflinks\n  license: MIT\n  license_family: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'Productivity Tools for Plotly + Pandas'\n  description: \n    This library binds the power of plotly with the flexibility of pandas for easy plotting.\n  doc_url: https://plot.ly/ipython-notebooks/cufflinks/\n  dev_url: https://github.com/santosjorge/cufflinks\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

@@ -151,6 +151,7 @@
   "subdir": "osx-64",
   "version": "1.2.2"
  },
+ "metadata_version": 1,
  "name": "keras",
  "raw_recipe": "{% set version = \"1.2.2\" %}\n{% set sha256 = \"786f7a98a09c1217e7c76c2fb485440c3675c7188bf7d9afcd4e5c75fc97406e\" %}\n\npackage:\n    name: keras\n    version: {{ version }}\n\nsource:\n    url: https://github.com/fchollet/keras/archive/{{ version }}.tar.gz\n    fn: keras-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n  skip: true  # [win]\n  number: 0\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - h5py\n        - numpy\n        - setuptools\n        - scipy\n        - tensorflow <=1.0  # [osx]\n        - python\n        - pyyaml\n        - six\n        - theano  # [win or linux]\n\ntest:\n    imports:\n        - keras\n        - keras.backend\n        - keras.datasets\n        - keras.engine\n        - keras.layers\n        - keras.preprocessing\n        - keras.utils\n        - keras.wrappers\n\nabout:\n    home: https://github.com/fchollet/keras\n    license: MIT\n    summary: Deep Learning for Python\n\nextra:\n    recipe-maintainers:\n        - ericdill\n        - mariusvniekerk\n        - croth1\n",
  "rendered_recipe": {

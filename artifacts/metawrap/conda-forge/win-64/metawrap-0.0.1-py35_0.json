@@ -29,6 +29,7 @@
   "subdir": "win-64",
   "version": "0.0.1"
  },
+ "metadata_version": 1,
  "name": "metawrap",
  "raw_recipe": "{% set name = \"metawrap\" %}\n{% set version = \"0.0.1\" %}\n{% set sha256 = \"f56b749b596c3acd5b906231d778136ebe6da526d2d65151e22956bab7dc7605\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - metawrap\n\nabout:\n  home: http://github.com/jakirkham/metawrap\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: A collection of wrappers for functions and classes.\n  doc_url: https://metawrap.readthedocs.io/\n  dev_url: http://github.com/jakirkham/metawrap\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {},

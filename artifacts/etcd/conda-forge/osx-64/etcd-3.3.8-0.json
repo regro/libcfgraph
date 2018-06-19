@@ -119,6 +119,7 @@
   "timestamp": 1529101933384,
   "version": "3.3.8"
  },
+ "metadata_version": 1,
  "name": "etcd",
  "raw_recipe": "{% set name = \"etcd\" %}\n{% set version = \"3.3.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/coreos/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]\n  fn: {{ name }}-{{ version }}.tar.gz  # [not win]\n  sha256: f5bc74dd2de1c567a1a36d797399f20cb764069cb3cf3651a593dd7f8a88c616  # [not win]\n\n  url: https://github.com/coreos/{{ name }}/releases/download/v{{ version }}/{{ name }}-v{{ version }}-windows-amd64.zip  # [win]\n  fn: {{ name }}-{{ version }}.zip  # [win]\n  sha256: 574323d4cf5d17db0445a5eb007d7ed27ad4bd0ebf9ef00af2064bfe81242182  # [win]\n\nbuild:\n  skip: True  # [win32]\n  number: 0\n\nrequirements:\n  build:\n    - go 1.9.*  # [not win]\n    - git  # [not win]\n    - make  # [not win]\n    - toolchain  # [not win]\n\ntest:\n  commands:\n    - etcd --version\n    - etcdctl --version\n\n    # Ugly hack because etcd&etcdclt are not a dynamic executable\n    - conda inspect linkages -p $PREFIX {{ name|lower }}  # [osx]\n    - conda inspect objects -p $PREFIX {{ name|lower }}  # [osx]\n\nabout:\n  home: https://coreos.com/etcd/\n  license: Apache-2.0\n  license_family: Apache\n  summary: A distributed, reliable key-value store for the most critical data of a distributed system.\n  doc_url: https://coreos.com/etcd/docs/{{ version }}/index.html\n  dev_url: https://github.com/coreos/etcd\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

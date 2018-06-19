@@ -89,6 +89,7 @@
   "subdir": "osx-64",
   "version": "0.7"
  },
+ "metadata_version": 1,
  "name": "cson",
  "raw_recipe": "{% set name = \"cson\" %}\n{% set version = \"0.7\" %}\n{% set sha256 = \"c923819ea207e10fd7e58de2920fa621af04be67c307fc2efa36402b253e33a0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - speg\n\ntest:\n  imports:\n    - cson\n\nabout:\n  home: https://github.com/avakar/pycson\n  license: MIT\n  license_family: MIT\n  summary: 'A Coffescript Object Notation (CSON) parser for Python 2 and Python 3.'\n\nextra:\n  recipe-maintainers:\n    - dfroger\n",
  "rendered_recipe": {

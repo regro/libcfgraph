@@ -806,6 +806,7 @@
   "subdir": "win-64",
   "version": "1.03"
  },
+ "metadata_version": 1,
  "name": "r-gsa",
  "raw_recipe": "{% set version = '1.03' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-gsa\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: GSA_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/GSA_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/GSA/GSA_{{ version }}.tar.gz\n  sha256: dfb84f92508765c74b170bb5bb2b206a11d10fdb4a74473821b0e51cec5d3ac0\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('GSA')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('GSA')\\\"\"  # [win]\n\nabout:\n  home: http://www-stat.stanford.edu/~tibs/GSA\n  license: LGPL\n  summary: Gene set analysis\n  license_family: LGPL\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n",
  "rendered_recipe": {

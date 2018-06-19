@@ -804,6 +804,7 @@
   "subdir": "linux-64",
   "version": "7.1.0r"
  },
+ "metadata_version": 1,
  "name": "esmpy",
  "raw_recipe": "{% set version = \"7.1.0r\" %}\n{% set ver = version.replace(\".\", \"_\") %}\n\npackage:\n    name: esmpy\n    version: {{ version }}\n\nsource:\n#    git_url: git://git.code.sf.net/p/esmf/esmf\n#    git_tag: ESMF_7_1_0r\n    url: http://www.earthsystemmodeling.org/esmf_releases/public/ESMF_7_1_0r/esmf_7_1_0r_src.tar.gz\n    sha256: ae9a5edb8d40ae97a35cbd4bd00b77061f995c77c43d36334dbb95c18b00a889\n\n\nbuild:\n    number: 0\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - python\n        - numpy\n        - esmf {{ version }}\n\n        - nose  # Needed for testing\n    run:\n        - python\n        - numpy\n        - esmf {{ version }}\n\ntest:\n    imports:\n        - ESMF\n\nabout:\n    home: https://www.earthsystemcog.org/projects/esmpy/\n    license: The University of Illinois/NCSA\n    summary: ESMPy is a Python interface to the Earth System Modeling Framework (ESMF) regridding utility.\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - bekozi\n        - rokuingh\n",
  "rendered_recipe": {

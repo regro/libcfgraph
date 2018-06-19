@@ -730,6 +730,7 @@
   "subdir": "noarch",
   "version": "0.6.0"
  },
+ "metadata_version": 1,
  "name": "isodate",
  "raw_recipe": "{% set version = \"0.6.0\" %}\n\npackage:\n  name: isodate\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/i/isodate/isodate-{{ version }}.tar.gz\n  sha256: 2e364a3d5759479cdb2d37cce6b9376ea504db2ff90252a2e5b7cc89cc9ff2d8\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - isodate\n    - isodate.tests\n\nabout:\n  home: http://cheeseshop.python.org/pypi/isodate\n  license: BSD 3-Clause\n  summary: 'An ISO 8601 date/time/duration parser and formatter.'\n  description: |\n    This module implements ISO 8601 date, time and duration parsing. The\n    implementation follows ISO8601:2004 standard, and implements only date/time\n    representations mentioned in the standard.\n  dev_url: https://github.com/gweis/isodate\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -94,6 +94,7 @@
   "subdir": "osx-64",
   "version": "0.9.0"
  },
+ "metadata_version": 1,
  "name": "lancet",
  "raw_recipe": "{% set name = \"lancet\" %}\n{% set version = \"0.9.0\" %}\n{% set sha256 = \"1fff606e0b4b00b3c5e411bd6b42d495a151842aeca29f158a5e452770a0f4f6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/ioam/lancet/archive/v{{version}}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - param\n\ntest:\n  imports:\n    - lancet\n\nabout:\n  home: https://ioam.github.io/lancet/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Launch jobs, organize the output, and dissect the results.'\n  description: |\n    Lancet is designed to help you organize the output of your research\n    tools, store it, and dissect the data you have collected. The output\n    of a single simulation or analysis rarely contains all the data you\n    need; Lancet helps you generate data from many runs and analyse it\n    using your own Python code.\n  doc_url: https://ioam.github.io/param/\n  dev_url: https://github.com/ioam/lancet\n\nextra:\n  recipe-maintainers:\n    - jlstevens\n    - philippjfr\n    - basnijholt\n",
  "rendered_recipe": {

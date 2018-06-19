@@ -575,6 +575,7 @@
   "subdir": "linux-64",
   "version": "r7271.1a4dbf6"
  },
+ "metadata_version": 1,
  "name": "kaldi",
  "raw_recipe": "{% set version = \"r7271.1a4dbf6\" %}\n{% set commit = \"1a4dbf6be118e4967cf4efd510811ef72cdfee3d\" %}\n\npackage:\n  name: kaldi\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}-{{ commit }}.tar.gz\n  url: https://github.com/kaldi-asr/kaldi/archive/{{ commit }}.tar.gz\n  sha256: 33d7ebbfb66f2271521bc51b49dc93dd5ec1704d9469aafe46e07b6e51de5d92\n  patches:\n    # Kaldi builds in place, so the patch makes just compilation of\n    # the libraries in ${PREFIX}/lib; in addition, it contains sources\n    # of two additional binaries for UBM MAP adaptation and scoring.\n    - conda-kaldi.patch\n\nbuild:\n  number: 1\n  skip: true  # [not linux]\n    \nrequirements:\n  build:\n    - gcc >=4.8.5\n    - openfst\n    - openblas 0.2.19|0.2.19.*\n    - speex\n  run:\n    - libgcc >=4.8.5\n    - openfst\n    - openblas 0.2.19|0.2.19.*\n    - speex\n    \nabout:\n  home: http://kaldi-asr.org/\n  license: Apache-2.0\n  license_file: COPYING\n  summary: 'Kaldi is a toolkit for speech recognition written in C++.'\n  description: |\n    Kaldi is intended for use by speech recognition researchers. It is a framework rather than a library.\n  doc_url: http://kaldi-asr.org/doc\n  dev_url: http://kaldi-asr.org/forums.html\n\nextra:\n  recipe-maintainers:\n    - mcernak\n",
  "rendered_recipe": {

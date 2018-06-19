@@ -12940,6 +12940,7 @@
   "subdir": "osx-64",
   "version": "2.2.0"
  },
+ "metadata_version": 1,
  "name": "eccodes",
  "raw_recipe": "{% set version = \"2.2.0\" %}\n\npackage:\n  name: eccodes\n  version: {{ version }}\n\nsource:\n  url: https://software.ecmwf.int/wiki/download/attachments/45757960/eccodes-{{ version }}-Source.tar.gz\n  fn: eccodes-{{ version }}-Source.tar.gz\n  sha256: 1a4112196497b8421480e2a0a1164071221e467853486577c4f07627a702f4c3\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - cmake\n    - boost 1.63.*\n    - jasper\n    - libpng >=1.6.28,<1.7\n    - libnetcdf 4.4.*\n    - perl 5.22.2.1\n  run:\n    - jasper\n    - libpng >=1.6.28,<1.7\n    - libnetcdf 4.4.*\n\ntest:\n  commands:\n    - codes_info\n    - ls $(codes_info -s)\n    - ls $(codes_info -d)\n    - conda inspect linkages -p $PREFIX eccodes  # [not win]\n    - conda inspect objects -p $PREFIX eccodes  # [osx]\n\nabout:\n  home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home\n  license: Apache 2.0\n  license_family: Apache\n  summary: ECMWF ecCodes Copyright 2005-2017 ECMWF.\n\nextra:\n  recipe-maintainers:\n    - kmuehlbauer\n    - pelson\n    - ocefpaf\n    - kynan\n",
  "rendered_recipe": {

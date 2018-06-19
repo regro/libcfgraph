@@ -93,6 +93,7 @@
   "subdir": "linux-64",
   "version": "2.1"
  },
+ "metadata_version": 1,
  "name": "depfinder",
  "raw_recipe": "{% set version = \"2.1\" %}\n{% set sha256 = \"86a5cad96ac87d5f162d17ebf1cac3951904d3c0d231927d675dab3928aff830\" %}\n{% set name = \"depfinder\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - stdlib-list\n    - pyyaml\n\ntest:\n  commands:\n    - depfinder -h\n  imports:\n    - depfinder\n\nabout:\n  home: http://github.com/ericdill/depfinder\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: Find all the unique imports in your library \n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - mariusvniekerk\n",
  "rendered_recipe": {

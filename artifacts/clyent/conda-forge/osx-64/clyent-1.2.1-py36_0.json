@@ -97,6 +97,7 @@
   "subdir": "osx-64",
   "version": "1.2.1"
  },
+ "metadata_version": 1,
  "name": "clyent",
  "raw_recipe": "{% set version = \"1.2.1\" %}\n\npackage:\n  name: clyent\n  version: {{ version }}\n\nsource:\n  fn: clyent-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/clyent/clyent-{{ version }}.tar.gz\n  md5: a8a953a636cbd75021c3983f7ca60b5f\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - clyent\n\nabout:\n  home: https://github.com/Anaconda-Server/clyent\n  license: BSD\n  summary: Command line client library for windows and posix\n  description: |\n    Clyent is a python command line utility library for binstar,\n    binstar-build, and chalmers.\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n",
  "rendered_recipe": {

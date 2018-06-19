@@ -509,6 +509,7 @@
   "subdir": "osx-64",
   "version": "0.3.4"
  },
+ "metadata_version": 1,
  "name": "properties",
  "raw_recipe": "{% set name = \"properties\" %}\n{% set version = \"0.3.4\" %}\n{% set sha256 = \"8cb5873cde769f529f6bf9fb9997feb90bbec008788bec5d668f25a5908522fc\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - six\n    - numpy >=1.7\n    - vectormath >=0.1.4\n\ntest:\n  imports:\n    - properties\n\nabout:\n  home: http://github.com/aranzgeo/properties\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: documentation, validation, tab completion, serialization of properties\n\n  description: |\n    Properties provides structure to aid development in an interactive\n    programming environment while allowing for an easy transition to\n    production code. It emphasizes usability and reproducibility for\n    developers and users at every stage of the code life cycle.\n  doc_url: http://propertiespy.readthedocs.io/\n  dev_url: https://github.com/aranzgeo/properties\n\nextra:\n  recipe-maintainers:\n    - fwkoch\n",
  "rendered_recipe": {

@@ -754,6 +754,7 @@
   "subdir": "linux-64",
   "version": "1.7.0"
  },
+ "metadata_version": 1,
  "name": "r-mustat",
  "raw_recipe": "{% set version = '1.7.0' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-mustat\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: muStat_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/muStat_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/muStat/muStat_{{ version }}.tar.gz\n  sha256: 9f9f425b562ceb2754bbd82f725ea0fc5c661a4f2b50ebdab50ca698643fe2a0\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('muStat')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('muStat')\\\"\"  # [win]\n\nabout:\n  home: https://cran.r-project.org/web/packages/muStat/index.html\n  license: GPL (>= 2)\n  summary: |\n    Performs Wilcox rank sum test, Kruskal rank sum test, Friedman rank sum test and McNemar test.\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}\\/lib\\/R\\/share\\/licenses\\/GPL-3'  # [unix]\n  license_file: '{{ environ[\"PREFIX\"] }}\\R\\share\\licenses\\GPL-3'  # [win]\nextra:\n   recipe-maintainers:\n    - MathiasHaudgaard\n    - FrodePedersen\n    - ArneKr\n    - Johanneskoester\n    - Bgruening\n    - Daler\n    - Jdblischak\n",
  "rendered_recipe": {

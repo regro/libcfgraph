@@ -689,6 +689,7 @@
   "subdir": "osx-64",
   "version": "0.7.1"
  },
+ "metadata_version": 1,
  "name": "odm2api",
  "raw_recipe": "{% set version = \"0.7.1\" %}\n\npackage:\n  name: odm2api\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ODM2/ODM2PythonAPI/archive/v{{ version }}.tar.gz\n  sha256: ea0106fa200ef3fd0ce307a92fb42ad3b79e79b70c1e41156f90c6c2c59eb5ea\n\nbuild:\n  number: 0\n  skip: True  # [py3k]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - pyodbc\n    - pymysql\n    - sqlalchemy\n    - geoalchemy-odm2\n    - shapely\n    - pandas\n    - psycopg2\n    - six\n\ntest:\n  imports:\n    - odm2api\n\nabout:\n  home: https://github.com/ODM2/ODM2PythonAPI\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: \"A Python-based application programmer's interface for the Observations Data Model 2 (ODM2).\"\n\nextra:\n  recipe-maintainers:\n    - emiliom\n    - lsetiawan\n    - ocefpaf\n",
  "rendered_recipe": {

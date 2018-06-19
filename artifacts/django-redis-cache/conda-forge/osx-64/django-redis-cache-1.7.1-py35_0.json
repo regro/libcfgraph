@@ -567,6 +567,7 @@
   "subdir": "osx-64",
   "version": "1.7.1"
  },
+ "metadata_version": 1,
  "name": "django-redis-cache",
  "raw_recipe": "{% set version = \"1.7.1\" %}\n\npackage:\n    name: django-redis-cache\n    version: {{ version }}\n\nsource:\n    fn: django-redis-cache-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/d/django-redis-cache/django-redis-cache-{{ version }}.tar.gz\n    md5: 741907c4e36923601827ad06d9ba7bf1\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - django\n        - setuptools\n        - redis-py >=2.10.3\n    run:\n        - python\n        - django\n        - redis-py >=2.10.3\n\ntest:\n    imports:\n        - redis_cache\n\nabout:\n    home: http://github.com/sebleier/django-redis-cache/\n    license: BSD-3 clause\n    summary: Redis Cache Backend for Django\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n",
  "rendered_recipe": {

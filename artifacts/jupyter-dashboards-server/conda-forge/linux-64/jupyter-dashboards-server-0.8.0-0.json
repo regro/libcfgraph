@@ -5511,6 +5511,7 @@
   "subdir": "linux-64",
   "version": "0.8.0"
  },
+ "metadata_version": 1,
  "name": "jupyter-dashboards-server",
  "raw_recipe": "{% set name = \"jupyter-dashboards-server\" %}\n{% set version = \"0.8.0\" %}\n{% set sha256 = \"4b7a780ca290ee9833167493f339393221abb60ff8339f78fb61272059383dee\" %}\n\npackage:\n  name: {{ name | lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/jupyter-incubator/dashboards_server/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - nodejs >=4.4.1\n  run:\n    - nodejs >=4.4.1\n\ntest:\n  commands:\n    - jupyter-dashboards-server --help\n\nabout:\n  home: https://github.com/jupyter-incubator/dashboards_server\n  license: Modified BSD\n  summary: Server that runs and renders Jupyter notebooks as interactive dashboards\n\nextra:\n  recipe-maintainers:\n    - danielfrg\n",
  "rendered_recipe": {

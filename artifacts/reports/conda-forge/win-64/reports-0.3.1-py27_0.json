@@ -122,6 +122,7 @@
   "subdir": "win-64",
   "version": "0.3.1"
  },
+ "metadata_version": 1,
  "name": "reports",
  "raw_recipe": "{% set name = \"reports\" %}\n{% set version = \"0.3.1\" %}\n{% set sha256 = \"72b5d5d1f8a452f4c8b1f69862c2d6bc4ac953490273b23b232dc35692c01755\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: reports-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - easydev\n    - pandas\n    - colormap\n    - jinja2\n\n\ntest:\n  imports:\n    - reports\n    - reports.resources\n\nabout:\n  home: 'http://github.com/cokelaer/reports/'\n  license: BSD 3-clause\n  license_family: BSD\n  license_file: LICENSE\n  doc_url: http://reports.readthedocs.io/en/latest\n  dev_url: https://github.com/cokelaer/reports\n\n  summary: 'Quickly create HTML reports using a set of JINJA templates'\n\nextra:\n  recipe-maintainers:\n    - cokelaer\n",
  "rendered_recipe": {

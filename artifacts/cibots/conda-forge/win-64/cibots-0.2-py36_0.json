@@ -89,6 +89,7 @@
   "subdir": "win-64",
   "version": "0.2"
  },
+ "metadata_version": 1,
  "name": "cibots",
  "raw_recipe": "{% set version = 0.2 %}\n{% set name = \"cibots\" %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    url: https://github.com/UV-CDAT/ci-bots/archive/{{ version }}.tar.gz\n    sha256: 93385842e6e5f127d70e1d60b4400d454fe0c81ace97bca4aa457ca7c9c648cc\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - requests\n\ntest:\n  command:\n    - python run_tests.py -v2\n\nabout:\n    home:  http://github.com/UV-CDAT/ci-bots\n    license: BSD 3-clause\n    license_file: LICENCE.txt\n    summary: 'Continuous Integration Tools'\n\nextra:\n  recipe-maintainers:\n    - doutriaux1\n",
  "rendered_recipe": {

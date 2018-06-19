@@ -208,6 +208,7 @@
   "subdir": "linux-64",
   "version": "1.0.6"
  },
+ "metadata_version": 1,
  "name": "limix",
  "raw_recipe": "{% set name = \"limix\" %}\n{% set version = \"1.0.6\" %}\n{% set sha256 = \"8af0ca44b3545bb807b7e39af95ef1275c68c4cdf2403bd4ce399572698473e1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win or linux32]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cython\n    - toolchain\n    - numpy x.x\n  run:\n    - python\n    - scikit-learn\n    - pandas\n    - scipy\n    - h5py\n    - matplotlib\n    - numpy x.x\n    - glimix-core\n    - limix-core\n    - limix-legacy\n    - scikit-learn\n    - dask\n    - pandas-plink\n    - joblib\n    - tqdm\n    - asciitree\n    - ncephes\n    - numpy-sugar\n\ntest:\n  requires:\n    - pytest >=3\n  imports:\n    - limix\n  commands:\n    - python -c \"import sys; import limix; sys.exit(limix.test())\"\n\nabout:\n  home: https://github.com/limix/limix\n  license: Apache 2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'A flexible and fast mixed model toolbox'\n  doc_url: https://limix.readthedocs.io\n  dev_url: https://github.com/limix/limix\n\nextra:\n  recipe-maintainers:\n    - Horta\n",
  "rendered_recipe": {

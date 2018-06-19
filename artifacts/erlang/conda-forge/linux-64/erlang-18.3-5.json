@@ -5076,6 +5076,7 @@
   "subdir": "linux-64",
   "version": "18.3"
  },
+ "metadata_version": 1,
  "name": "erlang",
  "raw_recipe": "{% set version = \"18.3\" %}\n\npackage:\n  name: erlang\n  version: {{ version }}\n\nsource:\n  fn: otp_src_{{ version }}.tar.gz\n  url: http://erlang.org/download/otp_src_{{ version }}.tar.gz\n  sha256: \"fdab8129a1cb935db09f1832e3a7d511a4aeb2b9bb3602ca6a7ccb9730d5c9c3\"\n  patches:\n    # Adds a patch to pickup `perl` from the path instead of\n    # forcing it to come from `/usr/bin`. See PR for details.\n    #\n    # https://github.com/erlang/otp/pull/1097\n    #\n    - PR_1097.diff\n\nbuild:\n  number: 5\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - m4\n    - perl\n    - readline 6.2*\n    - openssl 1.0.*\n    - ncurses 5.9*\n    - zlib 1.2.*\n    - libatomic_ops\n  run:\n    - readline 6.2*\n    - openssl 1.0.*\n    - ncurses 5.9*\n    - zlib 1.2.*\n    - libatomic_ops\n\ntest:\n  commands:\n    - erl -version\n\nabout:\n  home: http://www.erlang.org/\n  license: Apache 2.0\n  summary: \"A programming language used to build massively scalable soft real-time systems with requirements on high availability.\"\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - jakirkham\n",
  "rendered_recipe": {},

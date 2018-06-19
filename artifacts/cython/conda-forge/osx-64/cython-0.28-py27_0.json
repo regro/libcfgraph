@@ -957,6 +957,7 @@
   "subdir": "osx-64",
   "version": "0.28"
  },
+ "metadata_version": 1,
  "name": "cython",
  "raw_recipe": "{% set version = \"0.28\" %}\n\npackage:\n  name: cython\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/C/Cython/Cython-{{ version }}.tar.gz\n  sha256: 518f7e22da54109661e483a91a63045203caf9fd78da4a69185a7622f759965f\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - cython = Cython.Compiler.Main:setuptools_main\n    - cythonize = Cython.Build.Cythonize:main\n    - cygdb = Cython.Debugger.Cygdb:main\n\nrequirements:\n  build:\n    - python\n    - pip\n    - toolchain\n  run:\n    - python\n\ntest:\n  commands:\n    - cython --version\n  files:\n    - fib.pyx\n\nabout:\n  home: http://www.cython.org/\n  license: Apache-2.0\n  license_file: LICENSE.txt\n  summary: The Cython compiler for writing C extensions for the Python language\n  description: |\n    Cython is an optimising static compiler for both the Python programming\n    language and the extended Cython programming language. It makes writing C\n    extensions for Python as easy as Python itself.\n  doc_url: http://cython.org/#documentation\n  dev_url: https://github.com/cython/cython\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - msarahan\n    - ocefpaf\n    - synapticarbors\n    - isuruf\n    - scopatz\n",
  "rendered_recipe": {

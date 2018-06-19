@@ -784,6 +784,7 @@
   "subdir": "noarch",
   "version": "1.7.0"
  },
+ "metadata_version": 1,
  "name": "google-cloud-storage",
  "raw_recipe": "{% set version = \"1.7.0\" %}\n\npackage:\n  name: google-cloud-storage\n  version: {{ version }}\n\nsource:\n  fn: google-cloud-storage-{{ version }}.tar.gz\n  url: https://pypi.org/packages/source/g/google-cloud-storage/google-cloud-storage-{{ version }}.tar.gz\n  sha256: 16288a2117479acf95f66b59363e9e1b6a53cb2659b1c3bdf21fe15c256c8c05\n\nbuild:\n  number: 1\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n\n  run:\n    - python\n    - google-cloud-core >=0.28.0,<0.29dev\n    - google-api-core >=0.1.1,<0.2.0dev\n    - google-auth >=1.2.0\n    - google-resumable-media >=0.3.1\n    - requests >=2.18.0\n\ntest:\n  imports:\n    - google\n    - google.cloud\n    - google.cloud.storage\n\nabout:\n  home: https://github.com/GoogleCloudPlatform/google-cloud-python\n  summary: Python Client for Google Cloud Storage\n  doc_url: https://googlecloudplatform.github.io/google-cloud-python/stable/google-cloud-api.html\n  dev_url: https://github.com/GoogleCloudPlatform/google-cloud-python/tree/master/storage\n  license: Apache-2.0\n  license_family: APACHE\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - tswast\n",
  "rendered_recipe": {

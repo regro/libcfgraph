@@ -618,6 +618,7 @@
   "subdir": "win-64",
   "version": "0.20.6"
  },
+ "metadata_version": 1,
  "name": "azure-servicemanagement-legacy",
  "raw_recipe": "{% set version = \"0.20.6\" %}\n\npackage:\n  name: azure-servicemanagement-legacy\n  version: {{ version }}\n\nsource:\n  fn: azure-servicemanagement-legacy-{{ version }}.zip\n  url: https://pypi.io/packages/source/a/azure-servicemanagement-legacy/azure-servicemanagement-legacy-{{ version }}.zip\n  md5: 4c97f1c9013d9caba6628488c7e24dd2\n  \n\nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - azure-common\n    - requests\n    - pyopenssl\n  run:\n    - python\n    - azure-common\n    - requests\n    - pyopenssl\n\ntest:\n  imports:\n    - azure\n    - azure.servicemanagement\n    - azure.servicemanagement._http\n  commands:\n    - python -m unittest discover -p \"test_*.py\"    \n\nabout:\n  home: https://github.com/Azure/azure-sdk-for-python\n  license: Apache-2.0\n  summary: 'Microsoft Azure Legacy Service Management Client Library for Python'\n\nextra:\n  recipe-maintainers:\n    - ivoflipse\n    - Korijn\n    - Maxyme\n",
  "rendered_recipe": {

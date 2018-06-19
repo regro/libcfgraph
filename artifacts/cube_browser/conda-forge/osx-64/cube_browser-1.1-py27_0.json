@@ -36,6 +36,7 @@
   "subdir": "osx-64",
   "version": "1.1"
  },
+ "metadata_version": 1,
  "name": "cube_browser",
  "raw_recipe": "{% set version = \"1.1\" %}\n\npackage:\n    name: cube_browser\n    version: {{ version }}\n\nsource:\n    fn: cube_browser-{{ version }}.tar.gz\n    url: https://github.com/SciTools/cube_browser/archive/v{{ version }}.tar.gz\n    sha256: b3c10cdc92fb732e2ff3f7b85c0a5e246692a9349a334f2e011f430d98c64fa0\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - ipywidgets >=5.1\n        - iris >=1.10\n        - matplotlib\n        - iris-sample-data\n\ntest:\n    imports:\n        - cube_browser\n\nabout:\n    home: http://scitools.org.uk/cube_browser\n    license: BSD 3-clause\n    summary: 'Working with Jupyter Notebooks to interactively visualise Iris cubes.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
  "rendered_recipe": {},

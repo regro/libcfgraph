@@ -98,6 +98,7 @@
   "subdir": "osx-64",
   "version": "0.46.4"
  },
+ "metadata_version": 1,
  "name": "preshed",
  "raw_recipe": "{% set name = \"preshed\" %}\n{% set version = \"0.46.4\" %}\n{% set sha256sum = \"96f0ca6a0aa1347312fbe76bf55949a378b225f6a2b543eb2671208c87aabbfd\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256sum }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  skip: True  # [win32 or linux32]\n  features:\n    - vc9   # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py>34]\n\nrequirements:\n  build:\n    - toolchain\n    - msinttypes  # [win and py<35]\n    - python\n    - setuptools\n    - cymem >=1.30,<1.32\n\n  run:\n    - python\n    - cymem >=1.30,<1.32\n\ntest:\n  requires:\n    - pytest\n\nabout:\n  home: https://github.com/explosion/preshed\n  license: MIT\n  license_file: LICENSE\n  summary: Cython Hash Table for Pre-Hashed Keys\n  description: |\n    Simple but high performance Cython hash table mapping pre-randomized keys\n    to void* values.\n\nextra:\n  recipe-maintainers:\n    - rolando\n",
  "rendered_recipe": {

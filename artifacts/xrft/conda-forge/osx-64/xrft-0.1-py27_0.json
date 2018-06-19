@@ -93,6 +93,7 @@
   "subdir": "osx-64",
   "version": "0.1"
  },
+ "metadata_version": 1,
  "name": "xrft",
  "raw_recipe": "{% set name = \"xrft\" %}\n{% set version = \"0.1\" %}\n{% set sha256 = \"3172ef612134dc28f228852c4b95ddbc2437bdafcae64b2ab53311c29c9b1606\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/rabernat/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - xarray\n\ntest:\n  imports:\n    - xrft\n    - xrft.tests\n\nabout:\n  home: https://github.com/rabernat/xrft\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Fourier transforms for xarray data'\n  dev_url: https://github.com/rabernat/xrft\n\nextra:\n  recipe-maintainers:\n    - kynan\n    - rabernat\n",
  "rendered_recipe": {

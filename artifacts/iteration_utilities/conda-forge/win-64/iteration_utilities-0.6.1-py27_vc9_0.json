@@ -102,6 +102,7 @@
   "subdir": "win-64",
   "version": "0.6.1"
  },
+ "metadata_version": 1,
  "name": "iteration_utilities",
  "raw_recipe": "{% set name = \"iteration_utilities\" %}\n{% set version = \"0.6.1\" %}\n{% set sha256 = \"53b8acfb3c19cfaa1464c4744f5448a99bddb5416bb53df911a08b36f9eb20b0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  features:\n  - vc9  # [win and py27]\n  - vc10  # [win and py34]\n  - vc14  # [win and py35]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n  run:\n    - python\n\ntest:\n  requires:\n    - pytest-runner\n    - pytest\n  imports:\n    - iteration_utilities\n\nabout:\n  home: https://github.com/MSeifert04/iteration_utilities\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE.txt\n  summary: 'Utilities based on Pythons iterators and generators.'\n  doc_url: https://iteration-utilities.readthedocs.io/en/stable/\n  dev_url: https://github.com/MSeifert04/iteration_utilities\n\nextra:\n  recipe-maintainers:\n    - MSeifert04\n",
  "rendered_recipe": {

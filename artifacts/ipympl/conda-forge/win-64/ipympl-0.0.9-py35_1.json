@@ -594,6 +594,7 @@
   "subdir": "win-64",
   "version": "0.0.9"
  },
+ "metadata_version": 1,
  "name": "ipympl",
  "raw_recipe": "{% set version = \"0.0.9\" %}\n{% set sha256 = \"792f505f1d24d96cdfd253428cb0ce74ca40c1c209de52a9c837c1b9b39b0e13\" %}\n\npackage:\n    name: ipympl\n    version: {{ version }}\n\nsource:\n    fn: ipympl-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/i/ipympl/ipympl-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 1\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - ipywidgets >=7.0.0\n        - matplotlib >=2.0.0\n\ntest:\n    imports:\n        - ipympl\n\nabout:\n    home: https://github.com/matplotlib/jupyter-matplotlib\n    license: BSD 3-Clause\n    license_family: BSD\n    license_file: LICENSE\n    summary: Matplotlib Jupyter Extension\n\nextra:\n  recipe-maintainers:\n    - JasonGrout\n    - SylvainCorlay\n    - tacaswell\n    - blink1073\n",
  "rendered_recipe": {

@@ -141,6 +141,7 @@
   "timestamp": 1527690462871,
   "version": "0.2.1"
  },
+ "metadata_version": 1,
  "name": "cssselect2",
  "raw_recipe": "{% set name = \"cssselect2\" %}\n{% set version = \"0.2.1\" %}\n{% set file_ext = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"505d2ce3d3a1d390ddb52f7d0864b7efeb115a5b852a91861b498b92424503ab\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.{{ file_ext }}'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  noarch: python\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n    - tinycss2\n  run:\n    - python\n    - tinycss2\n\ntest:\n  imports:\n    - cssselect2\n\nabout:\n  home: https://github.com/Kozea/cssselect2\n  license: BSD\n  license_family: BSD\n  license_file: LICENSE\n  summary: CSS selectors for Python ElementTree\n  description: |\n    cssselect2 is a straightforward implementation of CSS3 Selectors for markup documents.\n  doc_url: http://cssselect2.readthedocs.io\n  dev_url: https://github.com/Kozea/cssselect2\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n",
  "rendered_recipe": {

@@ -644,6 +644,7 @@
   "subdir": "linux-64",
   "version": "0.5.0"
  },
+ "metadata_version": 1,
  "name": "habanero",
  "raw_recipe": "{% set name = \"habanero\" %}\n{% set version = \"0.5.0\" %}\n{% set sha256 = \"5c308a5ac6e25db31555354607825737f2b4b056831240bda4065a4950b22f63\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/sckott/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - requests >=2.7.0\n\ntest:\n  imports:\n    - habanero\n\nabout:\n  home: https://github.com/sckott/habanero\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'CrossRef Search Low-level client for Python'\n\n  description: |\n    This is a low level client for working with Crossref's search API.\n    It's been named to be more generic, as other organizations are/will\n    adopt Crossref's search API, making it possible to interact with all\n    from one client.\n  doc_url: http://habanero.readthedocs.io/\n  dev_url: https://github.com/sckott/habanero\n\nextra:\n  recipe-maintainers:\n    - bryanwweber\n",
  "rendered_recipe": {

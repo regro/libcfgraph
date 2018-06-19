@@ -821,6 +821,7 @@
   "subdir": "noarch",
   "version": "0.8.7"
  },
+ "metadata_version": 1,
  "name": "django-mptt",
  "raw_recipe": "{% set name = \"django-mptt\" %}\n{% set version = \"0.8.7\" %}\n{% set sha256 = \"b6c80983bad659cfe7ebd04c95410969cf66ca89dcf8774f33b3fb0e0016270d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - django-js-asset\n    - django >=1.8\n\ntest:\n  imports:\n    - mptt\n    - mptt.templatetags\n\nabout:\n  home: https://github.com/django-mptt/django-mptt\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Utilities for implementing a modified pre-order traversal tree in django.'\n  description: \n    Utilities for implementing Modified Preorder Tree Traversal with your Django Models \n    and working with trees of Model instances.\n  doc_url: https://django-mptt.readthedocs.io/\n  dev_url: https://github.com/django-mptt/django-mptt\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

@@ -762,6 +762,7 @@
   "subdir": "win-64",
   "version": "1.2.3"
  },
+ "metadata_version": 1,
  "name": "tuiview",
  "raw_recipe": "{% set version = \"1.2.3\" %}\n\npackage:\n  name: tuiview\n  version: {{ version }}\n\nsource:\n  fn: TuiView-{{ version }}.tar.gz\n  url: https://bitbucket.org/chchrsc/tuiview/downloads/TuiView-{{ version }}.tar.gz\n  sha256: 6c63ae83a7e845b5f96316cdb7d7007e1c74158e47e2a75d8dcc5a22e24e1c31\n\nbuild:\n  number: 1\n  entry_points:\n    - tuiview = tuiview.viewerapplication:run\n    - tuiviewwritetable = tuiview.writetableapplication:run\n\nrequirements:\n  build:\n    - python\n    - numpy 1.8.*  # [not (win and (py35 or py36))]\n    - numpy 1.9.*  # [win and py35]\n    - numpy 1.11.*  # [win and py36]    \n    - gdal 2.2.*\n    - pyqt 5.6.*\n  run:\n    - python\n    - numpy >=1.8  # [not (win and (py35 or py36))]\n    - numpy >=1.9  # [win and py35]\n    - numpy >=1.11  # [win and py36]    \n    - gdal 2.2.*\n    - pyqt 5.6.*\n\ntest:\n  imports:\n    - tuiview\n    # make sure we can import the C extension\n    - tuiview.vectorrasterizer\n  commands:\n    - tuiviewwritetable -h\n    - conda inspect linkages -p $PREFIX tuiview  # [not win]\n    - conda inspect objects -p $PREFIX tuiview  # [osx]\n\nabout:\n  home: http://tuiview.org/\n  license: GPL-2.0\n  license_file: LICENSE.txt\n  summary: Simple raster viewer. Supports Geolinked Windows, Raster Attribute Querying and Editing and Geographic Selection, Vector Overlay, Flicker, Profile Tool.\n\nextra:\n  recipe-maintainers:\n    - gillins\n    - danclewley\n",
  "rendered_recipe": {

@@ -702,6 +702,7 @@
   "subdir": "win-64",
   "version": "1.4.5"
  },
+ "metadata_version": 1,
  "name": "django-nose",
  "raw_recipe": "{% set name = \"django-nose\" %}\n{% set version = \"1.4.5\" %}\n{% set sha256 = \"87663f18cb25f01d56c84ac1ff8a0e6e6a6246264b2549b751cb239d0642e76a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - django >=1.8\n    - nose >=1.2.1\n\ntest:\n  imports:\n    - django_nose\n    - django_nose.management\n    - django_nose.management.commands\n\nabout:\n  home: http://github.com/django-nose/django-nose\n  license: BSD 3-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: 'Makes your Django tests simple and snappy'\n\n  dev_url: http://github.com/django-nose/django-nose\n  doc_url: https://django-nose.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

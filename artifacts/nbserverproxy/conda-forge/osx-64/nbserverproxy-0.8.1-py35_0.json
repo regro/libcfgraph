@@ -130,6 +130,7 @@
   "timestamp": 1524826194873,
   "version": "0.8.1"
  },
+ "metadata_version": 1,
  "name": "nbserverproxy",
  "raw_recipe": "{% set version = \"0.8.1\" %}\n\npackage:\n  name: nbserverproxy\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/n/nbserverproxy/nbserverproxy-{{ version }}.tar.gz\n  sha256: c8afb9502e425bc007e56207fac3f0caed0bf300fc0fcfdc8a174106d513d997\n\nbuild:\n  number: 0\n  skip: True  # [py2k]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - notebook\n\ntest:\n  imports:\n    - nbserverproxy\n\nabout:\n  home: https://github.com/jupyterhub/nbserverproxy\n  license: BSD 3-Clause\n  license_family: BSD\n#  license_file: LICENSE\n  summary: Jupyter server extension to proxy web services\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - lsetiawan\n",
  "rendered_recipe": {

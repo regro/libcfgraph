@@ -705,6 +705,7 @@
   "subdir": "osx-64",
   "version": "0.7"
  },
+ "metadata_version": 1,
  "name": "speclite",
  "raw_recipe": "{% set name = \"speclite\" %}\n{% set version = \"0.7\" %}\n{% set sha256 = \"2753137e2f3dc0b94d6c3f98c24d674c1a7145410d731cbeb13e0e7f1f7f5ba2\" %}\n\npackage:\n  version: '{{ version }}'\n  name: '{{ name|lower }}'\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  fn: '{{ name }}-{{ version }}.tar.gz'\n  sha256: {{sha256}}\n  \nbuild:\n  number: 0\n  script: python setup.py install --offline --single-version-externally-managed --record record.txt\n\nrequirements:\n\n  build:\n    - python\n    - setuptools\n    - astropy\n\n  run:\n    - python\n    - numpy\n    - scipy\n    - astropy\n    - pyyaml\n\ntest:\n\n  imports:\n    - speclite\n    \n  commands:\n    # Execute the full test suite\n    \n    - cd ${PREFIX}/lib/python*/site-packages/speclite/tests ; py.test -vv  # [not win]\n  \n  requires:\n    - pytest\n    - pyyaml\n    - matplotlib\n\nabout:\n  home: http://speclite.readthedocs.io/en/latest/overview.html\n  license: BSD-3-Clause\n  license_family: BSD\n  summary: 'This package provides a set of lightweight utilities for working with spectroscopic data in astronomy. Based on the astropy affiliated package template.'\n  license_file: licenses/LICENSE.rst\n  dev_url: https://github.com/dkirkby/speclite\n  doc_url: http://speclite.readthedocs.io/en/latest/overview.html\n  \nextra:\n  recipe-maintainers:\n    - giacomov\n    - dkirkby\n",
  "rendered_recipe": {

@@ -47,6 +47,7 @@
   "subdir": "osx-64",
   "version": "4.2.2"
  },
+ "metadata_version": 1,
  "name": "traitlets",
  "raw_recipe": "{% set version = \"4.2.2\" %}\n\npackage:\n  name: traitlets\n  version: {{ version }}\n\nsource:\n  fn: traitlets-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/t/traitlets/traitlets-{{ version }}.tar.gz\n  md5: d0725f9818bd9e112a6531da26d433b8\n\nbuild:\n  number: 0\n  script: pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - ipython_genutils\n    - decorator\n    # enum34 and six will be added in a later release\n\ntest:\n  imports:\n    - traitlets\n    - traitlets.config\n\nabout:\n  home: http://ipython.org/\n  license: BSD 3-clause\n  summary: configuration system for Python applications\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n    - minrk\n",
  "rendered_recipe": {},

@@ -114,6 +114,7 @@
   "subdir": "win-64",
   "version": "0.6.2"
  },
+ "metadata_version": 1,
  "name": "jpype1",
  "raw_recipe": "{% set version = \"0.6.2\" %}\n\npackage:\n  name: jpype1\n  version: {{ version }}\n\nsource:\n  fn: jpype-{{ version }}.tar.gz\n  url: https://github.com/originell/jpype/archive/v{{ version }}.tar.gz\n  sha256: e5a560f97d5248db5871aed7b2cd2bc854e3ebeb524c3eb7204600c048d83e1e \n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  imports:\n    - jpype\n\nabout:\n  home: https://github.com/originell/jpype/\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: 'A Python to Java bridge.'\n  description: 'A Python to Java bridge.'\n  doc_url: http://jpype.readthedocs.io/en/stable/\n\nextra:\n  recipe-maintainers:\n    - caspervdw\n    - marscher\n",
  "rendered_recipe": {

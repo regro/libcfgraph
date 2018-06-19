@@ -165,6 +165,7 @@
   "timestamp": 1524562277585,
   "version": "0.5.9"
  },
+ "metadata_version": 1,
  "name": "apistar",
  "raw_recipe": "{% set name = \"apistar\" %}\n{% set version = \"0.5.9\" %}\n{% set sha256 = \"ca0951d9bc927e77c70365935b57d6fc26b614a152cc1e9a35c377ae9d4b4c2a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [py<35]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - aiofiles\n    - jinja2\n    - python\n    - requests\n    - werkzeug\n    - whitenoise\n\ntest:\n  imports:\n    - apistar\n\nabout:\n  home: https://github.com/encode/apistar\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.md'\n  summary: 'A smart Web API framework, designed for Python 3'\n\n  doc_url: https://docs.apistar.com/\n  dev_url: https://github.com/encode/apistar\n\nextra:\n  recipe-maintainers:\n    - k-dominik\n",
  "rendered_recipe": {

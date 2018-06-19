@@ -5199,6 +5199,7 @@
   "subdir": "win-64",
   "version": "9.11.0"
  },
+ "metadata_version": 1,
  "name": "nodejs",
  "raw_recipe": "{% set version = \"9.11.0\" %}\n\npackage:\n  name: nodejs\n  version: {{ version }}\n\nsource:\n  fn: node-v{{ version }}.tar.gz\n  url: https://nodejs.org/dist/v{{ version }}/node-v{{ version }}.tar.gz\n  sha256: e4607ed007f0c4d2c1c9a0dea9e676db155c60328864c991e8e08ccac7256425\n\nbuild:\n  number: 0\n  ignore_prefix_files:\n    - bin/node\n\nrequirements:\n  build:\n    # node's build scripts find and use MSVC 2015, regardless of conda's setting.\n    - toolchain\n    - vs2015_runtime  # [win]\n    - python          2.7.*\n    - gcc             # [linux]\n  run:\n    - vs2015_runtime   # [win]\n    - libgcc           # [linux]\n\ntest:\n  commands:\n    - node -h\n    - node -v\n    - npm version\n    - npm install -h\n    - npm config get prefix -g\n    - test $(echo \"console.log(1 + 3)\" | node) == 4  # [not win]\n\nabout:\n  home: https://nodejs.org/\n  license: MIT\n  license_file: LICENSE\n  summary: a platform for easily building fast, scalable network applications\n\nextra:\n  recipe-maintainers:\n    - minrk\n    - msarahan\n    - pelson\n",
  "rendered_recipe": {

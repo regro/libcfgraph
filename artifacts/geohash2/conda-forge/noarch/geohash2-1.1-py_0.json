@@ -717,6 +717,7 @@
   "subdir": "noarch",
   "version": "1.1"
  },
+ "metadata_version": 1,
  "name": "geohash2",
  "raw_recipe": "{% set name = \"geohash2\" %}\n{% set version = \"1.1\" %}\n{% set sha256 = \"0ed0583b1f4fc329f96d807c9a4cd895c7eed2c35479ac7b4a50725249997bda\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - geohash2\n\n\nabout:\n  home: https://github.com/dbarthe/geohash/\n  license: GPL-3.0\n  license_family: GPL\n  summary: 'Decoding and encoding Geohashes to and from latitude and longitude coordinates supporting python 3'\n\n  description: |\n   Geohash2 is a Python module that provides functions for decoding and encoding Geohashes to and from latitude and longitude coordinates. This module is a fork of https://github.com/vinsci/geohash which does not support python3\n  doc_url: https://github.com/dbarthe/geohash/\n  dev_url: https://github.com/dbarthe/geohash/\n\nextra:\n  recipe-maintainers:\n    - david-gang\n",
  "rendered_recipe": {

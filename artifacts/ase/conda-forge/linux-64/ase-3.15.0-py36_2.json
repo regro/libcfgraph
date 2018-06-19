@@ -1419,6 +1419,7 @@
   "subdir": "linux-64",
   "version": "3.15.0"
  },
+ "metadata_version": 1,
  "name": "ase",
  "raw_recipe": "{% set name = \"ase\" %}\n{% set version = \"3.15.0\" %}\n{% set sha256 = \"5e22d961b1311ef4ba2d83527f7cc7448abac8cf9bddd1593bee548459263fe8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches: \n    - ngl_fix.patch\n\nbuild:\n  number: 2\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - flask 0.10.*  # [py<36]\n    - flask  # [py>=36]\n    - matplotlib\n    - scipy\n  run:\n    - python\n    - flask 0.10.*  # [py<36]\n    - flask  # [py>=36]\n    - matplotlib\n    - numpy \n    - scipy\n\ntest:\n  imports:\n    - ase\n  commands:\n    - export DISPLAY=\"\"   # [not win]\n    - ase test\n\n\nabout:\n  home: https://gitlab.com/ase/ase\n  license: LGPL-2.1+\n  license_file: LICENSE\n  summary: 'ASE is a python package providing an open source Atomic Simulation Environment in the Python language.'\n\n  description: |\n    ASE is a set of tools and Python modules for setting up, \n    manipulating, running, visualizing and analyzing atomistic simulations.\n    Python 2.6-3.6 \n  doc_url: http://wiki.fysik.dtu.dk/ase\n  dev_url: https://gitlab.com/ase/ase\n\nextra:\n  recipe-maintainers:\n    - jochym\n    - CJ-Wright\n",
  "rendered_recipe": {

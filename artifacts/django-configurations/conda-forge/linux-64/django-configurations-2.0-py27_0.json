@@ -659,6 +659,7 @@
   "subdir": "linux-64",
   "version": "2.0"
  },
+ "metadata_version": 1,
  "name": "django-configurations",
  "raw_recipe": "{% set name = \"django-configurations\" %}\n{% set version = \"2.0\" %}\n{% set sha256 = \"b4a4eb3ed631c2abbeb7008b5cc5d8d04b190df838e7b613731d728f674f3a2f\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django >=1.8\n\ntest:\n  imports:\n    - configurations\n\nabout:\n  home: https://github.com/jazzband/django-configurations\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'A helper for organizing Django project settings by relying on well established programming patterns.  '\n  description: |\n    django-configurations eases Django project configuration by relying on the composability of Python classes. It extends the notion of Django's module based settings loading with well established object oriented programming patterns.\n  doc_url: https://django-configurations.readthedocs.io/en/latest/\n  dev_url: https://github.com/jazzband/django-configurations\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

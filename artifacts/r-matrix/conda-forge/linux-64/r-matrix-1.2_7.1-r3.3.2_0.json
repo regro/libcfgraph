@@ -163,6 +163,7 @@
   "subdir": "linux-64",
   "version": "1.2_7.1"
  },
+ "metadata_version": 1,
  "name": "r-matrix",
  "raw_recipe": "{% set version = \"1.2-7.1\" %}\n\npackage:\n  name: r-matrix\n  version: {{ version.replace(\"-\", \"_\") }}\n\nsource:\n  fn: Matrix_{{ version }}.tar.gz\n  url:\n    - http://cran.r-project.org/src/contrib/Matrix_{{ version }}.tar.gz\n    - http://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_{{ version }}.tar.gz\n  sha256: 4aeb66dabae3ddfa9e96a40eb48448ecf0413874937a1a2a05ffeaa46c282d27\n\nbuild:\n  number: 0\n  skip: True  # [win32]\n  script: R CMD INSTALL --build .\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:  # [not win32]\n  build:  # [not win32]\n    - r-base  # [not win32]\n    - posix  # [win64]\n    - m2w64-toolchain  # [win64]\n    - gcc  # [not win]\n    - r-lattice  # [not win32]\n  run:  # [not win32]\n    - r-base  # [not win32]\n    - r-lattice  # [not win32]\n\ntest:\n  commands:\n    - R -e \"library('Matrix')\"  # [not win]\n    - R -e \\\"library('Matrix')\\\"  # [win]\n\nabout:\n  home: http://Matrix.R-forge.R-project.org/\n  license: GPL-2.0\n  license_file: LICENCE\n  summary: \"Classes and methods for dense and sparse matrices and operations on them using 'LAPACK'\n    and 'SuiteSparse'.\"\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -723,6 +723,7 @@
   "subdir": "noarch",
   "version": "1.0.22"
  },
+ "metadata_version": 1,
  "name": "django-test-plus",
  "raw_recipe": "{% set name = \"django-test-plus\" %}\n{% set version = \"1.0.22\" %}\n{% set sha256 = \"cdfa439642c660a1c65af5add140a2dcf360e71daa65740d87e9e53cb8509d6b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  noarch: python  \n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django >=1.8\n    - factory_boy >=2.5.2\n\nabout:\n  home: https://github.com/revsys/django-test-plus\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE' \n  summary: 'Useful additions to Django default TestCase'\n  description: |\n    Let's face it, writing tests isn't always fun. Part of the reason for that is all of the \n    boilerplate you end up writing. django-test-plus is an attempt to cut down on some of \n    that when writing Django tests. We guarantee it will increase the time before you get \n    carpal tunnel by at least 3 weeks!\n  doc_url: http://django-test-plus.readthedocs.org/\n  dev_url: https://github.com/revsys/django-test-plus\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

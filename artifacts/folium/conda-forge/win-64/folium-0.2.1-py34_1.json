@@ -122,6 +122,7 @@
   "subdir": "win-64",
   "version": "0.2.1"
  },
+ "metadata_version": 1,
  "name": "folium",
  "raw_recipe": "{% set version = \"0.2.1\" %}\n\npackage:\n  name: folium\n  version: {{ version }}\n\nsource:\n  fn: folium-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/f/folium/folium-{{ version }}.tar.gz\n  sha256: 6b267b43e573b4f1d6317501f612e5aef92d6965c454ebe8ab73f259d9859107\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - jinja2\n    - numpy\n    - pandas\n    - vincent\n\ntest:\n  imports:\n    - folium\n\nabout:\n  home: https://github.com/python-visualization/folium\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'Make beautiful maps with Leaflet.js and Python.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - BibMartin\n",
  "rendered_recipe": {

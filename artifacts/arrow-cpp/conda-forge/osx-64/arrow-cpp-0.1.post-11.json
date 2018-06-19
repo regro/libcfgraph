@@ -118,6 +118,7 @@
   "subdir": "osx-64",
   "version": "0.1.post"
  },
+ "metadata_version": 1,
  "name": "arrow-cpp",
  "raw_recipe": "{% set version = \"0.1.post\" %}\n{% set commit = \"7ac320bde52ae47007dadac7398e22a203c6a48d\" %}\n\npackage:\n  name: arrow-cpp\n  version: {{ version }}\n\n\nsource:\n  fn: {{ commit }}.tar.gz\n  url: https://github.com/apache/arrow/archive/{{ commit }}.tar.gz\n  sha256: 5c56af26b31c4054cdfe424e11e02055e42badb549d46eae0773aed35a1d9d84\n\nbuild:\n  number: 11\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - boost 1.63.*\n    - flatbuffers\n    - cmake\n    - jemalloc  # [unix]\n\n  run:\n    - jemalloc  # [unix]\n\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libarrow.a  # [unix]\n    - test -f $PREFIX/lib/libarrow.so  # [linux]\n    - test -f $PREFIX/lib/libarrow_io.a  # [unix]\n    - test -f $PREFIX/lib/libarrow_io.so  # [linux]\n    - test -f $PREFIX/lib/libarrow_ipc.a  # [unix]\n    - test -f $PREFIX/lib/libarrow_ipc.so  # [linux]\n    - test -f $PREFIX/lib/libarrow_jemalloc.so  # [linux]\n    - test -f $PREFIX/lib/libarrow.dylib  # [osx]\n    - test -f $PREFIX/lib/libarrow_io.dylib  # [osx]\n    - test -f $PREFIX/lib/libarrow_ipc.dylib  # [osx]\n    - test -f $PREFIX/lib/libarrow_jemalloc.dylib  # [osx]\n\nabout:\n  home: http://github.com/apache/arrow\n  license: Apache 2.0\n  summary: 'C++ libraries for Apache Arrow'\n\nextra:\n  recipe-maintainers:\n    - wesm\n    - xhochy\n",
  "rendered_recipe": {

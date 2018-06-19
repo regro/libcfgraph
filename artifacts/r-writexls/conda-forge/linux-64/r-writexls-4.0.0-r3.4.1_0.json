@@ -710,6 +710,7 @@
   "subdir": "linux-64",
   "version": "4.0.0"
  },
+ "metadata_version": 1,
  "name": "r-writexls",
  "raw_recipe": "{% set version = '4.0.0' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-writexls\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: WriteXLS_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/WriteXLS_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/WriteXLS/WriteXLS_{{ version }}.tar.gz\n  sha256: a0541da45e16bc4bf994cdf3f07a0e202c38d52386460c64e27fe6c1cd889d5b\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\nrequirements:\n  build:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('WriteXLS')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('WriteXLS')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/marcschwartz/WriteXLS\n  license: GPL (>= 2)\n  summary: Cross-platform Perl based R function to create Excel 2003 (XLS) and Excel 2007 (XLSX)\n    files from one or more data frames. Each data frame will be written to a separate\n    named worksheet in the Excel spreadsheet. The worksheet name will be the name of\n    the data frame it contains or can be specified by the user.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n",
  "rendered_recipe": {

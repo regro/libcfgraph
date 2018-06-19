@@ -57,6 +57,7 @@
   "subdir": "osx-64",
   "version": "4.1.1"
  },
+ "metadata_version": 1,
  "name": "jupyter_core",
  "raw_recipe": "{% set version = \"4.1.1\" %}\n\npackage:\n  name: jupyter_core\n  version: {{ version }}\n\nsource:\n  fn: jupyter_core-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/j/jupyter_core/jupyter_core-{{ version }}.tar.gz\n  sha256: ae0e69435258126466c86cd989e465a9c334c50107ef4f257decc8693650bf4c\n\nbuild:\n  number: 0\n  script: python setup.py install\n  entry_points:\n    - jupyter = jupyter_core.command:main\n    - jupyter-migrate = jupyter_core.migrate:main\n    - jupyter-troubleshoot = jupyter_core.troubleshoot:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - traitlets\n\ntest:\n  commands:\n    - jupyter -h\n    - jupyter-migrate -h\n    - jupyter-troubleshoot --help\n  imports:\n    - jupyter_core\n    - jupyter_core.utils\n\nabout:\n  home: http://jupyter.org\n  license: BSD 3-clause\n  summary: Core common functionality of Jupyter projects.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n    - minrk\n    - ocefpaf\n",
  "rendered_recipe": {},

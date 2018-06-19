@@ -104,6 +104,7 @@
   "subdir": "linux-64",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "spylon",
  "raw_recipe": "{% set name = \"spylon\" %}\n{% set version = \"0.3.0\" %}\n{% set hashtype = \"sha256\" %}\n{% set hash = '104b9bf7a28c15c27b3c3dcba199f847b93f09b78e97f15e0a0bcac3cbb0bbe4' %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hashtype }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - pyspark_yarn_client_conda=spylon.spark.yarn_launcher:pyspark_conda_yarn_client\n    - pyspark_yarn_cluster_conda=spylon.spark.yarn_launcher:pyspark_conda_yarn_cluster\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - findspark\n    - pyyaml\n    - six\n\ntest:\n  imports:\n    - spylon\n    - spylon.spark\n    - spylon.spark.yarn_launcher\n\nabout:\n  home: https://github.com/MaxPoint/spylon\n  license: BSD 3-clause\n  summary: Utilities to work with Scala/Java code with py4j\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n    - ericdill\n    - parente\n",
  "rendered_recipe": {

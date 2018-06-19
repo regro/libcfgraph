@@ -673,6 +673,7 @@
   "subdir": "osx-64",
   "version": "1.3.0"
  },
+ "metadata_version": 1,
  "name": "opentracing",
  "raw_recipe": "{% set name = \"opentracing\" %}\n{% set version = \"1.3.0\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"9b3f7c7a20c34170b9253c97121256264daf6b5f090035c732c6e2548cc5c0a7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_value }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - futures  # [py2k]\n\ntest:\n  imports:\n    - opentracing\n\nabout:\n  home: http://opentracing.io\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: OpenTracing API for Python.\n  description: |\n    opentracing-python provides only the API and a basic no-op implementation\n    that can be used by instrumentation libraries to collect and propagate\n    distributed tracing context\n  doc_url: http://opentracing.io/documentation\n  dev_url: https://github.com/opentracing/opentracing-python\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
  "rendered_recipe": {

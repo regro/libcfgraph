@@ -47,6 +47,7 @@
   "subdir": "win-64",
   "version": "2.6.2"
  },
+ "metadata_version": 1,
  "name": "flake8",
  "raw_recipe": "{%set name = \"flake8\" %}\n{%set version = \"2.6.2\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"231cd86194aaec4bdfaa553ae1a1cd9b7b4558332fbc10136c044940d587a778\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n\n  run:\n    - python\n    - setuptools\n    - mccabe\n    - pycodestyle\n    - pyflakes\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: http://flake8.pycqa.org/\n  license: MIT\n  summary: 'Your Tool For Style Guide Enforcement'\n\nextra:\n  recipe-maintainers:\n    - sigmavirus24\n",
  "rendered_recipe": {},

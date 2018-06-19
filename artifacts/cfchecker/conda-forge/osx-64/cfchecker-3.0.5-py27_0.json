@@ -495,6 +495,7 @@
   "subdir": "osx-64",
   "version": "3.0.5"
  },
+ "metadata_version": 1,
  "name": "cfchecker",
  "raw_recipe": "{% set version = \"3.0.5\" %}\n{% set sha256 = \"aa224a25df3940c2e98435511578e5c4fdc13eb9d514e4360330c77f2080849a\" %}\n\npackage:\n    name: cfchecker\n    version: {{ version }}\n\nsource:\n    fn: cfchecker-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/c/cfchecker/cfchecker-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    skip: True  # [win or py3k]\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    entry_points:\n        - cfchecks = cfchecker.cfchecks:main\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - numpy\n        - netcdf4\n        - cfunits\n    run:\n        - python\n        - setuptools\n        - numpy\n        - netcdf4\n        - cfunits\n\ntest:\n    commands:\n        - cfchecks -h\n    imports:\n        - cfchecker\n\nabout:\n  home: https://pypi.python.org/pypi/cfchecker\n  license: BSD 3-Clause\n  summary: The NetCDF Climate Forcast Conventions compliance checker\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - agstephens\n",
  "rendered_recipe": {

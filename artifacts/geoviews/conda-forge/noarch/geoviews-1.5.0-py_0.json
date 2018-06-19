@@ -194,6 +194,7 @@
   "timestamp": 1527079841725,
   "version": "1.5.0"
  },
+ "metadata_version": 1,
  "name": "geoviews",
  "raw_recipe": "{% set version = \"1.5.0\" %}\n\npackage:\n  name: geoviews\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/g/geoviews/geoviews-{{ version }}.zip\n  sha256: e904010fc8517f23fd9faaa6a8957c1626e78f1447494d193d80547c837d3cba\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - param >=1.6.1,<2.0\n  run:\n    - python\n    - param >=1.6.1,<2.0\n    - numpy >=1.0\n    - holoviews >=1.10.0\n    - cartopy >=0.14.2\n    # extras\n    - jupyter\n    - notebook\n    - bokeh >=0.12.15\n\ntest:\n  imports:\n    - geoviews\n\nabout:\n  home: http://geoviews.org\n  license: BSD 3-Clause\n  # license_file: LICENSE  # license is not packages in the source tarball :-(\n  summary: 'GeoViews is a Python library that makes it easy to explore and visualize geographical'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - philippjfr\n",
  "rendered_recipe": {

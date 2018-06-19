@@ -2702,6 +2702,7 @@
   "subdir": "linux-64",
   "version": "1.00.44"
  },
+ "metadata_version": 1,
  "name": "freetds",
  "raw_recipe": "{% set name = 'freetds' %}\n{% set version = \"1.00.44\" %}\n{% set sha256 = \"b4376e685e6e133e5c4dc9b1099ddfc6cd264f5313ad5e4c26879f7ae9276194\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: freetds-{{ version }}.tar.gz\n  url: ftp://ftp.freetds.org/pub/freetds/stable/freetds-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  features:\n    - vc9   # [win and py27]\n    - vc10  # [win and py == 34]\n    - vc14  # [win and py >= 35]\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - openssl\n    - readline  # [not win]\n    - toolchain  # [osx]\n    - cmake  # [win]\n    - python  # [win]\n    - vc   9  # [win and py27]\n    - vc  10  # [win and py == 34]\n    - vc  14  # [win and py >= 35]\n  run:\n    - openssl\n    - readline  # [not win]\n\ntest:\n  commands:\n    - tsql -C\n    - conda inspect linkages freetds  # [linux or osx]\n    - conda inspect objects freetds  # [osx]\n\nabout:\n  home: http://www.freetds.org/\n  license: GPL-2\n  license_file: COPYING\n  summary: FreeTDS is a free implementation of Sybase's DB-Library, CT-Library, and ODBC libraries\n  license_family: GPL2\n  doc_url: http://www.freetds.org/docs.html\n  dev_url: https://github.com/FreeTDS/freetds\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "rendered_recipe": {

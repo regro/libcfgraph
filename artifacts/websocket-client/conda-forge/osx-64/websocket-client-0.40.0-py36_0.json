@@ -103,6 +103,7 @@
   "subdir": "osx-64",
   "version": "0.40.0"
  },
+ "metadata_version": 1,
  "name": "websocket-client",
  "raw_recipe": "{%set name = \"websocket-client\" %}\n{%set snakename = \"websocket_client\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set version = \"0.40.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"40ac14a0c54e14d22809a5c8d553de5a2ae45de3c60105fae53bcb281b3fe6fb\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ snakename }}/{{ snakename }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  \nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - websocket\n    - websocket.tests\n\nabout:\n  home: https://github.com/liris/websocket-client\n  license: LGPL 2.1\n  license_file: LICENSE\n  license_family: LGPL\n  summary: 'WebSocket client for python. hybi13 is supported.'\n  dev_url: https://github.com/liris/websocket-client\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - scopatz\n",
  "rendered_recipe": {

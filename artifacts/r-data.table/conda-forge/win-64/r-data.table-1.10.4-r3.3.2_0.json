@@ -195,6 +195,7 @@
   "subdir": "win-64",
   "version": "1.10.4"
  },
+ "metadata_version": 1,
  "name": "r-data.table",
  "raw_recipe": "{% set version = '1.10.4' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-data.table\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: data.table_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/data.table_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/data.table/data.table_{{ version }}.tar.gz\n  sha256: 865fdf6aad389071ad063ec1c75a78ffc86eeb88bba011f3ea5281d243966b7a\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - posix                # [win]\n    - {{native}}toolchain  # [win]\n    - gcc                  # [not win]\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('data.table')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('data.table')\\\"\"  # [win]\n\nabout:\n  home: http://r-datatable.com\n  license: GPL-3\n  license_file: LICENSE\n  summary: Fast aggregation of large data (e.g. 100GB in RAM), fast ordered joins, fast add/modify/delete\n    of columns by group using no copies at all, list columns, a fast friendly file reader\n    and parallel file writer. Offers a natural and flexible syntax, for faster development.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

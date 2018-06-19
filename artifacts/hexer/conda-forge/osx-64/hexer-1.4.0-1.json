@@ -677,6 +677,7 @@
   "subdir": "osx-64",
   "version": "1.4.0"
  },
+ "metadata_version": 1,
  "name": "hexer",
  "raw_recipe": "{% set name = \"hexer\" %}\n{% set version = \"1.4.0\" %}\n{% set sha256 = \"886134fcdd75da2c50aa48624de19f5ae09231d5290812ec05f09f50319242cb\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.gz\n  url: https://github.com/hobu/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - 10-missing-includes.patch\n\nbuild:\n  number: 1\n  features:\n    - vc14  # [win]\n  skip: True  # [win and py!=36]\n\nrequirements:\n  build:\n    - cmake\n    - toolchain\n    - python  # [win]\n    - libgdal 2.2.3\n    - cairo 1.14.10\n    - vc 14  # [win]\n  run:\n    - libgdal\n    - cairo\n    - vc 14  # [win]\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libhexer.dylib  # [osx]\n    - test -f $PREFIX/lib/libhexer.so     # [linux]\n    - if not exist %LIBRARY_LIB%\\\\hexer.lib exit 1  # [win]\n\nabout:\n  home: https://github.com/hobu/hexer\n  summary: \"LAS and OGR hexagonal density and boundary surface generation\"\n  license: LGPL 2.1\n  license_file: COPYING\n\nextra:\n  recipe-maintainers:\n    - chambbj\n",
  "rendered_recipe": {

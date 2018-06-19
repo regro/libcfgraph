@@ -159,6 +159,7 @@
   "timestamp": 1524811872860,
   "version": "0.3.3"
  },
+ "metadata_version": 1,
  "name": "jaws",
  "raw_recipe": "{% set version = \"0.3.3\" %}\n\npackage:\n  name: jaws\n  version: {{ version }}\n\nsource:\n  url: https://github.com/jaws/jaws/archive/{{ version }}.tar.gz\n  sha256: 14e6cef7d1d8df78a96550b8437cdded5c93eb48ac8187f1e6f4becfa01d315a\n\nbuild:\n  #noarch: python\n  number: 2\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - pandas\n    - numpy >=1.11\n    - xarray\n    - pytz\n    - netcdf4\n    - matplotlib\n    - netcdf4\n\ntest:\n  imports:\n    - jaws\n    - jaws.aaws2nc\n    - jaws.gcnet2nc\n    - jaws.imau2nc\n    - jaws.promice2nc\n\nabout:\n  home: https://github.com/jaws/jaws\n  license: Apache, Version 2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Justify idiosyncratic ASCII AWS formats into analyzable netCDF formats.'\n\nextra:\n  recipe-maintainers:\n    - ajcse1\n    - czender\n",
  "rendered_recipe": {

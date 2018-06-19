@@ -260,6 +260,7 @@
   "subdir": "win-64",
   "version": "6.3"
  },
+ "metadata_version": 1,
  "name": "openmesh",
  "raw_recipe": "{% set version = \"6.3\" %}\n\npackage:\n  name: openmesh\n  version: {{ version }}\n\nsource:\n  fn: OpenMesh-{{ version }}.tar.gz\n  url: https://graphics.rwth-aachen.de:9000/OpenMesh/OpenMesh/repository/archive.tar.gz?ref=OpenMesh-{{ version }}\n  sha256: 60a0f6bc3a6c7f6a4bb2089538c8e65f11767cacdd0d961116b1fd577cc26462\n  patches:\n    #- sitedir.patch  # https://graphics.rwth-aachen.de:9000/OpenMesh/OpenMesh/merge_requests/79\n\n    # https://graphics.rwth-aachen.de:9000/OpenMesh/OpenMesh/merge_requests/81\n    # https://graphics.rwth-aachen.de:9000/OpenMesh/OpenMesh/commit/c8ebba7492358059aad10d0eb3ec64feec470055\n    - updated-output-directories.patch \n\nbuild:\n  number: 2\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n\n  # https://graphics.rwth-aachen.de:9000/OpenMesh/OpenMesh/issues/29\n  skip: true  # [win and py35]\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - cmake\n    - boost 1.63.*\n  run:\n    - python\n    - boost 1.63.*\n\ntest:\n  imports:\n    - openmesh\n\nabout:\n  home: http://www.openmesh.org/\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: OpenMesh is a generic and efficient data structure for representing and manipulating polygonal meshes.\n\nextra:\n  recipe-maintainers:\n    - ivoflipse\n    - Korijn\n    - EelcoHoogendoorn\n    - xantares\n",
  "rendered_recipe": {

@@ -508,6 +508,7 @@
   "subdir": "win-64",
   "version": "1.21"
  },
+ "metadata_version": 1,
  "name": "dirent",
  "raw_recipe": "{% set name = \"dirent\" %}\n{% set version = \"1.21\" %}\n{% set sha256 = \"b5214abdd138056f893bad41e6f15081cb454304df9432c1d233e5a68eddf839\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://softagalleria.net/download/dirent/dirent-{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [not win]\n  script:\n    - if not exist \"%LIBRARY_INC%\" mkdir \"%LIBRARY_INC%\"  # [win]\n    - copy \"include\\\\dirent.h\" \"%LIBRARY_INC%\\\\\"          # [win]\n\ntest:\n  commands:\n    - if not exist \"%LIBRARY_INC%\\\\dirent.h\" exit 1       # [win]\n\nabout:\n  home: https://softagalleria.net/dirent.php\n  license: MIT\n  # No license file, unfortunately.\n  summary: Dirent interface for Microsoft Visual Studio\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

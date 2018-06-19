@@ -182,6 +182,7 @@
   "subdir": "linux-64",
   "version": "1.7.5"
  },
+ "metadata_version": 1,
  "name": "django-extensions",
  "raw_recipe": "{% set name = \"django-extensions\" %}\n{% set version = \"1.7.5\" %}\n{% set sha256 = \"2687304476e550513b04d9b8e6b643ca061c72f60e5372b04f483701dfb88f1e\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/django-extensions/django-extensions/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - six >=1.2\n    - django >=1.7\n\ntest:\n  imports:\n    - django_extensions\n\nabout:\n  home: http://github.com/django-extensions/django-extensions\n  license: MIT\n  license_file: LICENSE\n  summary: 'Extensions for Django.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - kwilcox\n",
  "rendered_recipe": {},

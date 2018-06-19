@@ -768,6 +768,7 @@
   "subdir": "win-64",
   "version": "1.8.2"
  },
+ "metadata_version": 1,
  "name": "avrocpp",
  "raw_recipe": "{% set version = \"1.8.2\" %}\n{% set hash = \"c17d84613187dda3611c9c95d6f3388036a330ba\" %}\n{% set name = \"avrocpp\" %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: avro-cpp-{{ version }}.tar.gz\n    url: https://archive.apache.org/dist/avro/avro-{{ version }}/cpp/avro-cpp-{{ version }}.tar.gz\n    sha1: {{ hash }}\n\nbuild:\n    number: 0\n    skip: true  # [win and not py36]\n\nrequirements:\n    build:\n        - python  # [win]\n        - vc 9  # [win and py27]\n        - vc 10  # [win and py34]\n        - vc 14  # [win and py>=35]\n        - toolchain\n        - cmake\n        - snappy\n        - xz 5.2.*\n        - pkg-config  # [osx]\n        - zlib 1.2.*\n        - boost 1.66.*\n        - msinttypes  # [win]\n    run:\n        - vc 9  # [win and py27]\n        - vc 10  # [win and py34]\n        - vc 14  # [win and py>=35]\n        - xz 5.2.*\n        - snappy\n        - zlib 1.2.*\n        - boost 1.66.*\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libavrocpp_s.a  # [unix]\n        - conda inspect objects {{ name }}      # [osx]\n        - conda inspect linkages {{ name }}     # [linux]\n\nabout:\n  home: http://hadoop.apache.org/avro\n  license: Apache 2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Avro is a serialization and RPC framework.'\n\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "rendered_recipe": {

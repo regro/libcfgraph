@@ -628,6 +628,7 @@
   "subdir": "linux-64",
   "version": "4.1.1"
  },
+ "metadata_version": 1,
  "name": "oauth2client",
  "raw_recipe": "{% set name = \"oauth2client\" %}\n{% set version = \"4.1.1\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"fd02b705092b76f443028328eaed366135f26c0d3e52bdbf66e649a944938ca1\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - httplib2 >=0.9.1\n    - pyasn1 >=0.1.7\n    - pyasn1-modules >=0.0.5\n    - rsa >=3.1.4\n    - six >=1.6.1\n\ntest:\n  imports:\n    - oauth2client\n    - oauth2client.contrib\n\nabout:\n  home: https://github.com/google/oauth2client/\n  license_file: LICENSE\n  license: Apache 2.0\n  license_family: Apache\n  summary: 'OAuth 2.0 client library'\n  dev_url: https://github.com/google/oauth2client/\n  doc_url: https://oauth2client.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

@@ -676,6 +676,7 @@
   "subdir": "win-64",
   "version": "0.15.2"
  },
+ "metadata_version": 1,
  "name": "dask-core",
  "raw_recipe": "{% set version = \"0.15.2\" %}\n\npackage:\n  name: dask-core\n  version: \"{{ version }}\"\n\nsource:\n  fn: dask-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/dask/dask-{{ version }}.tar.gz\n  sha256: abe6758540fdbc260f14ee71cebc3ab88682e24ff147afa89375b7006f57d3ed\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - dask\n\nabout:\n  home: http://github.com/dask/dask/\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Parallel Python with task scheduling'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jcrist\n    - martindurant\n    - mrocklin\n    - pitrou\n    - shoyer\n    - sinhrks\n    - tomaugspurger\n",
  "rendered_recipe": {

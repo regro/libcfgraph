@@ -69,6 +69,7 @@
   "subdir": "linux-64",
   "version": "0.1.post"
  },
+ "metadata_version": 1,
  "name": "pyarrow",
  "raw_recipe": "{% set version = \"0.1.post\" %}\n{% set commit = \"268ffbeffb1cd0617e52d381d500a2d10f61124c\" %}\n\npackage:\n  name: pyarrow\n  version: {{ version }}\n\nsource:\n  fn: {{ commit }}.tar.gz\n  url: https://github.com/apache/arrow/archive/{{ commit }}.tar.gz\n  sha256: 8f8ede8b910253c5aed1f25db9ea2c92e5cff0d18e88f0eb8737294189e4bddd\n\nbuild:\n  number: 3\n  rpaths:\n    - lib  # [unix]\n    - lib/python{{ environ['PY_VER'] }}/site-packages/pyarrow  # [unix]\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - python\n    - toolchain\n    - setuptools\n    - setuptools_scm\n    - arrow-cpp\n    - cython\n    - cmake\n    - numpy x.x\n    - six\n    - parquet-cpp\n\n  run:\n    - python\n    - setuptools\n    - arrow-cpp\n    - numpy x.x\n    - pandas\n    - parquet-cpp\n    - six\n\ntest:\n  imports:\n    - pyarrow\n    - pyarrow.io\n    - pyarrow.ipc\n    - pyarrow.parquet\n\nabout:\n  home: http://github.com/apache/arrow\n  license: Apache 2.0\n  summary: 'Python libraries for Apache Arrow'\n\nextra:\n  recipe-maintainers:\n    - wesm\n    - xhochy\n",
  "rendered_recipe": {},

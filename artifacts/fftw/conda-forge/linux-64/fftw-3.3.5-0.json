@@ -68,6 +68,7 @@
   "subdir": "linux-64",
   "version": "3.3.5"
  },
+ "metadata_version": 1,
  "name": "fftw",
  "raw_recipe": "{% set version = \"3.3.5\" %}\n\npackage:\n    name: fftw\n    version: {{ version }}\n\nsource:\n    fn: fftw-{{ version }}.tar.gz\n    url: http://www.fftw.org/fftw-{{ version }}.tar.gz\n    sha256: 8ecfe1b04732ec3f5b7d279fdb8efcad536d555f9d1e8fabd027037d45ea8bcf\n\nbuild:\n    skip: True  # [win]\n    number: 0\n\nrequirements:\n    build:\n        - perl\n\ntest:\n    commands:\n        - exit $(test -f ${PREFIX}/lib/libfftw3f.a)          # [not win]\n        - exit $(test -f ${PREFIX}/lib/libfftw3.a)           # [not win]\n        - exit $(test -f ${PREFIX}/lib/libfftw3l.a)          # [not win]\n        - exit $(test -f ${PREFIX}/lib/libfftw3f_threads.a)  # [not win]\n        - exit $(test -f ${PREFIX}/lib/libfftw3_threads.a)   # [not win]\n        - exit $(test -f ${PREFIX}/lib/libfftw3l_threads.a)  # [not win]\n\nabout:\n    home: http://fftw.org\n    license: GPL 2\n    summary: \"The fastest Fourier transform in the west.\"\n\n\nextra:\n    recipe-maintainers:\n        - alexbw\n        - jakirkham\n        - jjhelmus\n        - grlee77\n",
  "rendered_recipe": {},

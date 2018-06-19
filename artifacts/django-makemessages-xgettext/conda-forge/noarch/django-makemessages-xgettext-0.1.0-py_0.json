@@ -725,6 +725,7 @@
   "subdir": "noarch",
   "version": "0.1.0"
  },
+ "metadata_version": 1,
  "name": "django-makemessages-xgettext",
  "raw_recipe": "{% set name = \"django-makemessages-xgettext\" %}\n{% set version = \"0.1.0\" %}\n{% set sha256 = \"d45daec6cd807bf7721d84b6bbf2ddc609ade2e904a8874b49e893bf0172b802\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  noarch: python\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django >=1.7\n\ntest:\n  commands:\n    - python -c \"import django; from django.conf import settings; settings.configure(INSTALLED_APPS=['django_makemessages_xgettext']); django.setup(); import django_makemessages_xgettext;\"\n\nabout:\n  home: https://github.com/resulto/django-makemessages-xgettext\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'makemessages command that allows for arguments to be passed to xgettext.'\n\n  description: |\n    Allow makemessages to receive additional parameters to pass to xgettext.\n  doc_url: https://github.com/resulto/django-makemessages-xgettext\n  dev_url: https://github.com/resulto/django-makemessages-xgettext\n\nextra:\n  recipe-maintainers:\n    - xmnlab\n",
  "rendered_recipe": {

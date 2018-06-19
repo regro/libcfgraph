@@ -1211,6 +1211,7 @@
   "subdir": "linux-64",
   "version": "0.3.7"
  },
+ "metadata_version": 1,
  "name": "astroquery",
  "raw_recipe": "{% set name = \"astroquery\" %}\n{% set version = \"0.3.7\" %}\n{% set md5 = \"308845b6d9315fb4d582b90f04fcfa05\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 2\n  script: python setup.py install --offline --no-git --single-version-externally-managed --record=files.txt\n\nrequirements:\n  build:\n    - astropy\n    - beautifulsoup4\n    - html5lib\n    - keyring\n    - python\n    - requests\n    - setuptools\n\n  run:\n    - astropy\n    - beautifulsoup4\n    - html5lib\n    - keyring\n    - python\n    - requests\n\ntest:\n  imports:\n    - astroquery\n\nabout:\n  home: http://www.astropy.org/astroquery/\n  license: BSD 3-clause\n  license_file: LICENSE.rst\n  summary: 'Functions and classes to access online astronomical data resources.'\n  dev_url: https://github.com/astropy/astroquery\n\nextra:\n  recipe-maintainers:\n    - astrofrog-conda-forge\n    - bsipocz\n    - Cadair\n    - guillochon\n    - mwcraig\n    - pllim\n    - pkgw\n",
  "rendered_recipe": {

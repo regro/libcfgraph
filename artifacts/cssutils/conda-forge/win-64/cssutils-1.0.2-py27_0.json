@@ -844,6 +844,7 @@
   "subdir": "win-64",
   "version": "1.0.2"
  },
+ "metadata_version": 1,
  "name": "cssutils",
  "raw_recipe": "{% set name = \"cssutils\" %}\n{% set version = \"1.0.2\" %}\n{% set sha256 = \"a2fcf06467553038e98fea9cfe36af2bf14063eb147a70958cfcaa8f5786acaf\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - cssutils\n\nabout:\n  home: http://cthedot.de/cssutils/\n  license: LGPL3\n  summary: A CSS Cascading Style Sheets library for Python\n\nextra:\n  recipe-maintainers:\n    - vamega\n",
  "rendered_recipe": {

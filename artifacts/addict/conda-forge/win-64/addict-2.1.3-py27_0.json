@@ -117,6 +117,7 @@
   "timestamp": 1526206515917,
   "version": "2.1.3"
  },
+ "metadata_version": 1,
  "name": "addict",
  "raw_recipe": "{% set version = \"2.1.3\" %}\n{% set sha256 = \"3cdda66a9d9e795ff7721f2b3b5d1ac90f3a9029d03c10b572615020f13e62c2\" %}\n\npackage:\n  name: addict\n  version: {{ version }}\n\nsource:\n    fn: v{{ version }}.tar.gz\n    url: https://github.com/mewwts/addict/archive/v{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - addict\n\nabout:\n  home: https://github.com/mewwts/addict\n  license: MIT\n  summary: 'Addict is a dictionary whose items can be set using both attribute and item syntax.'\n\nextra:\n  recipe-maintainers:\n    - Ohjeah\n",
  "rendered_recipe": {

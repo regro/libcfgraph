@@ -692,6 +692,7 @@
   "subdir": "osx-64",
   "version": "0.5.2"
  },
+ "metadata_version": 1,
  "name": "r-crul",
  "raw_recipe": "{% set version = \"0.5.2\" %}\n\npackage:\n  name: r-crul\n  version: {{ version }}\n\nsource:\n  fn: crul_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/crul_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/crul/crul_{{ version }}.tar.gz\n  sha256: e01b25606dd113941537a9399d90370fa8de133ae7b2d8c82aa8979525dad269\n\nbuild:\n  number: 0\n  script: R CMD INSTALL --build .\n  skip: True  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-r6 >=2.2.0\n    - r-curl >=3.1\n    - r-httpcode >=0.2.0\n    - r-mime\n    - r-urltools >=1.6.0\n  run:\n    - r-base\n    - r-r6 >=2.2.0\n    - r-curl >=3.1\n    - r-httpcode >=0.2.0\n    - r-mime\n    - r-urltools >=1.6.0\n\ntest:\n  commands:\n    - $R -e \"library('crul')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('crul')\\\"\"  # [win]\n\nabout:\n  home: https://cran.r-project.org/package=crul\n  license: MIT\n  license_file: LICENSE\n  summary: A simple HTTP client, with tools for making HTTP requests, and mocking HTTP requests.\n    The package is built on R6, and takes inspiration from Ruby's 'faraday' gem (<https\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

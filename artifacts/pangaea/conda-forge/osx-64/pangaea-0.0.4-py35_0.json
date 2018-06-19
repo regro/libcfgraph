@@ -500,6 +500,7 @@
   "subdir": "osx-64",
   "version": "0.0.4"
  },
+ "metadata_version": 1,
  "name": "pangaea",
  "raw_recipe": "{% set name = \"pangaea\" %}\n{% set version = \"0.0.4\" %}\n{% set sha256 = \"a114424e34e42befa691ddfe5f07272867f095fdc4f28dca633d5c6cadf26c16\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [win and py3k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - gazar\n    - netcdf4\n    - pynio     # [not py3k and not win]\n    - wrf-python\n\ntest:\n  imports:\n    - pangaea\n\nabout:\n  home: https://github.com/snowman2/pangaea\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'An xarray extension for land surface models.'\n  description: |\n    An xarray extension for land surface models.\n  doc_url: http://pangaea.readthedocs.io\n  dev_url: https://github.com/snowman2/pangaea\n\nextra:\n  recipe-maintainers:\n    - snowman2\n",
  "rendered_recipe": {

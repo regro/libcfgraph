@@ -829,6 +829,7 @@
   "subdir": "osx-64",
   "version": "2.9.5"
  },
+ "metadata_version": 1,
  "name": "libxml2",
  "raw_recipe": "{% set version = \"2.9.5\" %}\n\npackage:\n  name: libxml2\n  version: {{ version }}\n\nsource:\n  fn: libxml2-{{ version }}.tar.gz\n  url: https://git.gnome.org/browse/libxml2/snapshot/libxml2-{{ version }}.tar.gz\n  sha256: 7aaf3e1f03317231864f833eea25a30721cc7b434884e089cc3a021b6d58f60c\n\nbuild:\n  number: 0\n  skip: true  # [win and py>35]\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py>=35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - autoconf  # [not win]\n    - automake  # [not win]\n    - libtool  # [not win]\n    - pkg-config  # [not win]\n    - icu 58.*  # [not win]\n    - libiconv\n    - zlib 1.2.*\n    - xz 5.2.*  # [not win]\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py>=35]\n  run:\n    - icu 58.*  # [not win]\n    - libiconv\n    - zlib 1.2.*\n    - xz 5.2.*  # [not win]\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n\ntest:\n  files:\n    - test.xml\n  commands:\n    - xmllint test.xml\n    - conda inspect linkages -p $PREFIX libxml2  # [not win]\n    - conda inspect objects -p $PREFIX libxml2  # [osx]\n\nabout:\n  home: http://xmlsoft.org/\n  license: MIT\n  license_file: Copyright\n  summary: 'The XML C parser and toolkit of Gnome.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - jakirkham\n    - gillins\n    - jschueller\n",
  "rendered_recipe": {

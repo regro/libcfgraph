@@ -711,6 +711,7 @@
   "subdir": "noarch",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "colorcet",
  "raw_recipe": "{% set name = \"colorcet\" %}\n{% set version = \"1.0.0\" %}\n{% set sha256 = \"c01166740a5d97564bb904eece38b8ef67b6e8e6952e352d1049e687f7c1bf5f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/bokeh/colorcet/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - colorcet\n\nabout:\n  home: http://github.com/bokeh/colorcet\n  license: CC-BY-4.0\n  license_file: LICENSE.txt\n  summary: Collection of perceptually uniform colormaps\n\nextra:\n  recipe-maintainers:\n    - jbednar\n",
  "rendered_recipe": {

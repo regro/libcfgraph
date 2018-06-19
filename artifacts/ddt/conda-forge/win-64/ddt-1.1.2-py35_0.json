@@ -601,6 +601,7 @@
   "subdir": "win-64",
   "version": "1.1.2"
  },
+ "metadata_version": 1,
  "name": "ddt",
  "raw_recipe": "{% set name = \"ddt\" %}\n{% set version = \"1.1.2\" %}\n{% set sha256 = \"caedf4ee487968f064af9b030fc4c861100f00fe8b3e6f11d66468f22cb30b51\" %}\n{% set repo = \"txels\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/{{ repo }}/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  requires:\n    - flake8\n    - nose\n    - six >=1.4.0\n    - pyyaml\n    - mock\n    - pytest\n  source_files:\n    - test/*\n  commands:\n    - py.test\n\nabout:\n  home: https://github.com/txels/ddt\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.md\n  summary: 'DDT (Data-Driven Tests) allows you to multiply one test case by\n   running it with different test data, and make it appear as multiple test\n   cases.'\n  description: 'DDT (Data-Driven Tests) allows you to multiply one test case by\n   running it with different test data, and make it appear as multiple test\n   cases.'\n  doc_url: http://ddt.readthedocs.io/en/latest/\n  dev_url: https://github.com/txels/ddt\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
  "rendered_recipe": {

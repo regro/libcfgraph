@@ -720,6 +720,7 @@
   "subdir": "noarch",
   "version": "0.0.1"
  },
+ "metadata_version": 1,
  "name": "fixie-batch",
  "raw_recipe": "{% set name = \"fixie-batch\" %}\n{% set version = \"0.0.1\" %}\n{% set sha256 = \"8d88b69c6b6cb4f083be0b018e8cd9bc4e90836cb69694c77e24cf333a169d7e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - fixie\n    - jinja2\n    - pprintpp\n    - cyclus\n\ntest:\n  imports:\n    - fixie_batch\n    - fixie_batch.environ\n\nabout:\n  home: http://github.com/ergs/fixie-batch\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'A Cyclus batch execution service'\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "rendered_recipe": {

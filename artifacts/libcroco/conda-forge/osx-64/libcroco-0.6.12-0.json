@@ -676,6 +676,7 @@
   "subdir": "osx-64",
   "version": "0.6.12"
  },
+ "metadata_version": 1,
  "name": "libcroco",
  "raw_recipe": "{% set version = '0.6.12' %}\n{% set version_major = version.rsplit('.', 1)[0] %}\n{% set sha256 = \"ddc4b5546c9fb4280a5017e2707fbd4839034ed1aba5b7d4372212f34f84f860\" %}\n\npackage:\n  name: libcroco\n  version: {{ version }}\n\nsource:\n  url: http://ftp.gnome.org/pub/gnome/sources/libcroco/{{ version_major }}/libcroco-{{ version }}.tar.xz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - glib >=2.51\n    - libxml2 >=2.9\n    - pkg-config\n  run:\n    - glib >=2.51\n    - libxml2 >=2.9\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libcroco-{{ version_major }}$SHLIB_EXT\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://www.linuxfromscratch.org/blfs/view/svn/general/libcroco.html\n  license: LGPL\n  license_file: COPYING\n  summary: a standalone CSS2 parsing and manipulation library\n\nextra:\n  recipe-maintainers:\n    - jenzopr\n    - pkgw\n",
  "rendered_recipe": {

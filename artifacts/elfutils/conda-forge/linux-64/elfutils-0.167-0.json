@@ -98,6 +98,7 @@
   "subdir": "linux-64",
   "version": "0.167"
  },
+ "metadata_version": 1,
  "name": "elfutils",
  "raw_recipe": "{% set name = \"elfutils\" %}\n{% set version = \"0.167\" %}\n{% set sha256 = \"3f300087c42b6f35591163b48246b4098ce39c4c6f5d55a83023c903c5776553\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: https://fedorahosted.org/releases/e/l/elfutils/{{ version }}/{{ name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - toolchain\n    - zlib 1.2.*\n    - m4\n\n  run:\n    - zlib 1.2.*\n\nabout:\n  home: https://fedorahosted.org/elfutils/\n  license: LGPL-3.0\n  summary: 'a set of utilities and libraries for handling ELF (Executable and Linkable Format) files.'\n\nextra:\n  recipe-maintainers:\n    - edisongustavo\n",
  "rendered_recipe": {},

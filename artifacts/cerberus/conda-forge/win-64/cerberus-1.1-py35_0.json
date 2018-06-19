@@ -102,6 +102,7 @@
   "subdir": "win-64",
   "version": "1.1"
  },
+ "metadata_version": 1,
  "name": "cerberus",
  "raw_recipe": "{% set name = \"Cerberus\" %}\n{% set version = \"1.1\" %}\n{% set sha256 = \"a5b39090fde3ec3294c9d7030b8eda935b42222160a66a922e0c8aea34cabfdf\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - cerberus\n    - cerberus.tests\n  commands:\n    - pytest --pyargs cerberus\n\nabout:\n  home: https://github.com/nicolaiarocci/cerberus\n  license: ISC\n  license_file: LICENSE\n  summary: 'Lightweight, extensible schema and data validation tool for Python dictionaries.'\n\nextra:\n    recipe-maintainers:\n        - kyleniemeyer\n",
  "rendered_recipe": {

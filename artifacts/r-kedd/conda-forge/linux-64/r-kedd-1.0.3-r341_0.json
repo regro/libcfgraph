@@ -164,6 +164,7 @@
   "timestamp": 1524752801324,
   "version": "1.0.3"
  },
+ "metadata_version": 1,
  "name": "r-kedd",
  "raw_recipe": "{% set version = '1.0.3' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-kedd\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: kedd_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/kedd_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/kedd/kedd_{{ version }}.tar.gz\n  sha256: 38760abd8c8e8f69ad85ca7992803060acc44ce68358de1763bd2415fdf83c9f\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('kedd')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('kedd')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=kedd\n  license: GPL (>= 2)\n  summary: Smoothing techniques and computing bandwidth selectors of the nth derivative of a\n    probability density for one-dimensional data.\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-3'  # [unix]\n  license_file: '{{ environ[\"PREFIX\"] }}\\R\\share\\licenses\\GPL-3'  # [win]\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n",
  "rendered_recipe": {

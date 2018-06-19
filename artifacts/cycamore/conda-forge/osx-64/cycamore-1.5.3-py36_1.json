@@ -662,6 +662,7 @@
   "subdir": "osx-64",
   "version": "1.5.3"
  },
+ "metadata_version": 1,
  "name": "cycamore",
  "raw_recipe": "{% set version = \"1.5.3\" %}\n{% set sha256 = \"98087a8c6198b9fedabbee10abaec52c3e1521cc52055148b7294b386550e5b8\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: cycamore\n  version: {{ version }}\n\nsource:\n  fn: cycamore-{{ version }}-{{ sha256 }}.tar.gz\n  url: https://github.com/cyclus/cycamore/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: True  # [win or py27 or py34 or (osx and py35)]\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - cmake\n    - pkg-config\n    - cyclus\n  run:\n    - python\n    - cyclus\n\ntest:\n  source_files:\n    - tests\n\nabout:\n  home: http://fuelcycle.org/\n  license: BSD 3-clause\n  license_file: LICENSE.rst\n  summary: \"The Cyclus additional modules repository.\"\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - gonuke\n    - bam241\n",
  "rendered_recipe": {

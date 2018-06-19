@@ -719,6 +719,7 @@
   "subdir": "linux-64",
   "version": "0.8"
  },
+ "metadata_version": 1,
  "name": "terminado",
  "raw_recipe": "{% set version = \"0.8\" %}\n\npackage:\n  name: terminado\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/t/terminado/terminado-{{ version }}.tar.gz\n  sha256: 984c914303fcd1642c1783cdc6727db24b0bc1494fa6363e6ae46696335e2944\n\nbuild:\n  number: 0\n  script: python setup.py install\n  skip: True  # [win and py27]\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - ptyprocess  # [not win]\n    - pywinpty  # [win]\n    - tornado >=4\n\ntest:\n  imports:\n    - terminado\n\n  requires:\n    - nose\n\n  commands:\n    # Failing test on osx: https://github.com/conda-forge/staged-recipes/pull/313#issuecomment-208426267\n    - nosetests terminado  # [not osx]\n\nabout:\n  home: http://github.com/mitsuhiko/markupsafe\n  license: BSD 3-clause\n  summary: Terminals served by tornado websockets\n\nextra:\n  recipe-maintainers:\n    - blink1073\n    - pelson\n    - takluyver \n",
  "rendered_recipe": {

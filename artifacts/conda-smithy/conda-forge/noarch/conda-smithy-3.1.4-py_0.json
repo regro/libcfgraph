@@ -163,6 +163,7 @@
   "timestamp": 1526360432516,
   "version": "3.1.4"
  },
+ "metadata_version": 1,
  "name": "conda-smithy",
  "raw_recipe": "{% set version = \"3.1.4\" %}\n\npackage:\n  name: conda-smithy\n  version: {{ version }}\n\nsource:\n  url: https://github.com/conda-forge/conda-smithy/releases/download/v{{ version }}/conda-smithy-{{ version }}.tar.gz\n  sha256: e8683625be67504dcc00f02c04934cf9106cccfbc13aaad302e8e1192d2f8a25\n\nbuild:\n  number: 0\n  noarch: python\n  script:\n    - python -m pip install --no-deps --ignore-installed .\n    - rm -f \"${PREFIX}/bin/conda\"           # [not win]\n    - del /f /q \"%PREFIX%\\\\Scripts\\\\conda\"  # [win]\n  entry_points:\n    - feedstocks = conda_smithy.feedstocks:main\n    - conda-smithy = conda_smithy.cli:main\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - conda >=4.2\n    - conda-build >=3.8.1\n    - jinja2\n    - requests\n    - pycrypto\n    - gitpython\n    - pygithub <2\n    - ruamel.yaml\n    - conda-forge-pinning\n\ntest:\n  imports:\n    - conda_smithy\n    - conda_smithy.ci_register\n    - conda_smithy.configure_feedstock\n  commands:\n    - conda smithy --help\n\nabout:\n  home: https://github.com/conda-forge/conda-smithy\n  license: BSD 3-clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: The tool for managing conda-forge feedstocks\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n    - ocefpaf\n    - isuruf\n    - scopatz\n",
  "rendered_recipe": {

@@ -244,6 +244,7 @@
   "subdir": "linux-64",
   "version": "3.5.3"
  },
+ "metadata_version": 1,
  "name": "djangorestframework",
  "raw_recipe": "{% set version = \"3.5.3\" %}\n\npackage:\n  name: djangorestframework\n  version: {{ version }}\n\nsource:\n  fn: djangorestframework-{{ version }}.tar.gz\n  url: https://github.com/tomchristie/django-rest-framework/archive/{{ version }}.tar.gz\n  sha256: c94bd9f56fabe79e31431a873f832530f1b8b90be97c6b47232f197fb3a97958\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - rest_framework\n    - rest_framework.authtoken\n    - rest_framework.authtoken.migrations\n    - rest_framework.templatetags\n    - rest_framework.utils\n\nabout:\n  home: http://www.django-rest-framework.org\n  license: BSD 2-Clause\n  summary: 'Web APIs for Django, made easy.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - kwilcox\n",
  "rendered_recipe": {},

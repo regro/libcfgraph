@@ -859,6 +859,7 @@
   "subdir": "noarch",
   "version": "1.0.1.3"
  },
+ "metadata_version": 1,
  "name": "flask-user",
  "raw_recipe": "{% set name = \"Flask-User\" %}\n{% set version = \"1.0.1.3\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_val = \"3b17b1d2714d8fda9754a717ab6500dc88981f68fda4a19294381dee429b2c0f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - flask-login\n\n  run:\n    - python\n    - passlib >=1.6\n    - bcrypt >=2.0\n    - cryptography >=1.6\n    - flask >=0.9\n    - flask-login >=0.2\n    - flask-mail >=0.9\n    - flask-sqlalchemy >=1.0\n    - flask-wtf >=0.9\n\ntest:\n  imports:\n    - flask_user\n\nabout:\n  home: http://github.com/lingthio/Flask-User\n  license: BSD 2-Clause\n  license_file: LICENSE.txt\n  license_family: BSD\n  summary: 'Customizable User Account Management for Flask: Register, Confirm email, Login, Change username, Change password, Forgot password and more.'\n  dev_url: http://github.com/lingthio/Flask-User\n  doc_url: https://pythonhosted.org/Flask-User/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

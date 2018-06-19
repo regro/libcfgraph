@@ -498,6 +498,7 @@
   "subdir": "osx-64",
   "version": "1.8.2"
  },
+ "metadata_version": 1,
  "name": "python-avro",
  "raw_recipe": "{% set version = \"1.8.2\" %}\n{% set mirror = \"http://archive.apache.org/dist\" %}\n\npackage:\n  name: python-avro\n  version: {{ version }}\n\nsource:  # [py27 or py3k]\n  # Avro exist as two versions in apache avro for py2 and py3.\n  fn: avro-{{ version }}.tar.gz  # [py27]\n  url: {{ mirror }}/avro/avro-{{ version }}/py/avro-{{ version }}.tar.gz  # [py27]\n  sha256: 'e4181a9dc686c82cbc9bb496787d659d55582c44ad74b69924c45f80f3d513a1'  # [py27]\n\n  fn: avro-python3-{{ version }}.tar.gz  # [py3k]\n  url: {{ mirror }}/avro/avro-{{ version }}/py3/avro-python3-{{ version }}.tar.gz  # [py3k]\n  sha256: 'a3e698f09e702571bc2283471ed97f7055ae4c055a037624d04a95a320242ccf'  # [py3k]\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n  imports:\n    - avro\n\nabout:\n  home: http://avro.apache.org\n  license: Apache 2.0\n  summary: 'Avro is a serialization and RPC framework.'\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n    - kwilcox\n",
  "rendered_recipe": {

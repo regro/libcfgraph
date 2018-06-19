@@ -718,6 +718,7 @@
   "subdir": "noarch",
   "version": "0.0.7"
  },
+ "metadata_version": 1,
  "name": "flask-excel",
  "raw_recipe": "{% set name = \"Flask-Excel\" %}\n{% set version = \"0.0.7\" %}\n{% set sha256 = \"b82ddfe6319ecf2f796ada9966737ac8eaf9a99d6bce773f8acdc08acd7e9fae\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pyexcel-webio >=0.1.2\n    - flask >=0.10.1\n\ntest:\n  imports:\n    - flask_excel\n\nabout:\n  home: http://flask-excel.readthedocs.io/en/latest/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'A flask extension using pyexcel to read, manipulate and write data in different excel formats: csv, ods, xls, xlsx and xlsm.'\n  description: |\n    'A flask extension that provides one application programming interface ' +\n    'to read and write data in different excel file formats' +\n    ''\n  dev_url: https://github.com/pyexcel-webwares/Flask-Excel\n\nextra:\n  recipe-maintainers:\n    - williamjamir\n",
  "rendered_recipe": {

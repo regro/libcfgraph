@@ -99,6 +99,7 @@
   "subdir": "osx-64",
   "version": "0.2"
  },
+ "metadata_version": 1,
  "name": "loghub",
  "raw_recipe": "{% set name = \"loghub\" %}\n{% set version = \"0.2\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"7c33f2b797e39808c18453acc9fb8ed3a0670acdf7540f09950ccd9a6777a036\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - loghub = loghub.cli.main:main\n    - loghub-labels = loghub.cli.label_creator:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - jinja2\n    - python\n\ntest:\n  commands:\n    - loghub --help\n    - loghub-labels --help\n\nabout:\n  home: https://github.com/spyder-ide/loghub\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Generate changelogs based on Github milestones or tags.\n  description: |\n    Generate changelogs based on Github milestones or tags.\n  dev_url: https://github.com/spyder-ide/loghub\n\nextra:\n  recipe-maintainers:\n    - ccordoba12\n    - goanpeca\n",
  "rendered_recipe": {

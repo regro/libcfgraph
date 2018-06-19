@@ -20,6 +20,7 @@
   "subdir": "win-64",
   "version": "0.4"
  },
+ "metadata_version": 1,
  "name": "dxfile",
  "raw_recipe": "{% set version = \"0.4\" %}\n\npackage:\n    name: dxfile\n    version: {{ version }}\n\nsource:\n    url: https://github.com/data-exchange/dxfile/archive/v{{ version }}.tar.gz\n    fn: dxfile-{{ version }}.tar.gz\n    sha256: b7729eebdc7c99a66a8b339fc10019aa8565e02bd12708540fb3f47935f004c7\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n\n    run:\n        - python\n        - h5py\n\ntest:\n    imports:\n        - dxfile\n        - dxfile.dxtomo\n\nabout:\n    home: http://dxfile.readthedocs.org\n    license: BSD 3-Clause\n    summary: 'Reader/Writer for Data Exchange files.'\n\nextra:\n    recipe-maintainers:\n        - dgursoy\n        - decarlof\n        - ericdill\n        - licode\n        - ravescovi\n        - tacaswell\n",
  "rendered_recipe": {},

@@ -720,6 +720,7 @@
   "subdir": "noarch",
   "version": "0.1.0"
  },
+ "metadata_version": 1,
  "name": "appmode",
  "raw_recipe": "{% set name = \"appmode\" %}\n{% set version = \"0.1.0\" %}\n{% set sha256 = \"067d2069a074d59c3a93cf1b5e8c72a359d4316c55715a26cba4f5a0044be9d5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - notebook >=5\n  run:\n    - python\n    - notebook >=5\n\ntest:\n  imports:\n    - appmode\n\nabout:\n  home: https://github.com/oschuett/appmode\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'A Jupyter extensions that turns notebooks into web applications.'\n\nextra:\n  recipe-maintainers:\n    - oschuett\n",
  "rendered_recipe": {

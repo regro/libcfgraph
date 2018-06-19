@@ -503,6 +503,7 @@
   "subdir": "osx-64",
   "version": "2.8.0"
  },
+ "metadata_version": 1,
  "name": "txaio",
  "raw_recipe": "{% set name = \"txaio\" %}\n{% set version = \"2.8.0\" %}\n{% set sha256 = \"8029d956591107ff9a2221d2a288fdd3718713a6991f59b97359d3d4f4b7b564\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - txaio\n\nabout:\n  home: https://github.com/crossbario/txaio\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Compatibility API between asyncio/Twisted/Trollius'\n  dev_url: https://github.com/crossbario/txaio\n  doc_url: http://txaio.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
  "rendered_recipe": {

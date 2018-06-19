@@ -750,6 +750,7 @@
   "subdir": "linux-64",
   "version": "0.8.12"
  },
+ "metadata_version": 1,
  "name": "hdbscan",
  "raw_recipe": "{% set version = \"0.8.12\" %}\n\npackage:\n  name: hdbscan\n  version: {{ version }}\n\nsource:\n  fn: hdbscan-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/h/hdbscan/hdbscan-{{ version }}.tar.gz\n  sha256: 39620799b408aa1e1a1297b84b70437ddd821ff1589044e5f65c8a971d19b17b\n\nbuild:\n  number: 1\n  script: \n    - source activate \"${CONDA_DEFAULT_ENV}\"  # [unix]\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n    - scikit-learn >=0.16\n    - cython >=0.17\n    # 1.9 is the earliest for scikit-learn 0.16\n    - numpy 1.9.*  # [not (win and (py35 or py36))]\n    - numpy 1.9.*  # [win and py35]\n    - numpy 1.11.*  # [win and py36]\n\n  run:\n    - python\n    - scikit-learn >=0.16\n    - numpy >=1.9  # [not (win and (py35 or py36))]\n    - numpy >=1.9  # [win and py35]\n    - numpy >=1.11  # [win and py36]\n\ntest:\n  imports:\n    - hdbscan\n\nabout:\n  home: http://github.com/lmcinnes/hdbscan\n  license: BSD 3-Clause\n  summary: 'Clustering based on density with variable density clusters'\n\nextra:\n  recipe-maintainers:\n    - lmcinnes\n",
  "rendered_recipe": {

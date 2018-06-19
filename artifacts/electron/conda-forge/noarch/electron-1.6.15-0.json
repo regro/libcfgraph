@@ -2280,6 +2280,7 @@
   "subdir": "noarch",
   "version": "1.6.15"
  },
+ "metadata_version": 1,
  "name": "electron",
  "raw_recipe": "{% set name = \"electron\" %}\n{% set version = \"1.6.15\" %}\n{% set sha256 = \"19e462172af5c0db1bef8d8fe482bf2e8edb1a2cdbd1c06c5b0712651996fb8d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/electron/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs\n  \ntest:\n  commands:\n    - npm list -g electron\n  requires:\n    - nodejs\n   \nabout:\n  home: https://github.com/electron/electron\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Build cross platform desktop apps with JavaScript, HTML, and CSS'\n  description: |\n    Build cross platform desktop apps with JavaScript, HTML, and CSS \n  doc_url: https://electron.atom.io/\n  dev_url: https://github.com/electron/electron\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

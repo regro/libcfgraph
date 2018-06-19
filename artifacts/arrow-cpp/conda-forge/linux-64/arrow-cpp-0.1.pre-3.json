@@ -55,6 +55,7 @@
   "subdir": "linux-64",
   "version": "0.1.pre"
  },
+ "metadata_version": 1,
  "name": "arrow-cpp",
  "raw_recipe": "{% set version = \"0.1.pre\" %}\n{% set commit = \"772800ace3706b8f169803b3ef8932e04ec54619\" %}\n\npackage:\n  name: arrow-cpp\n  version: {{ version }}\n\n\nsource:\n  fn: {{ commit }}.tar.gz\n  url: https://github.com/apache/arrow/archive/{{ commit }}.tar.gz\n  sha256: 01ff68b9ab2785cc2a465fedc62536faab4ff461b6d42b9b00df15bb2e41dfa5\n\nbuild:\n  number: 3\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - boost 1.61.*\n    - flatbuffers\n    - cmake\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libarrow.so  # [linux]\n    - test -f $PREFIX/lib/libarrow.dylib  # [osx]\n\nabout:\n  home: http://github.com/apache/arrow\n  license: Apache 2.0\n  summary: 'C++ libraries for Apache Arrow'\n\nextra:\n  recipe-maintainers:\n    - wesm\n    - xhochy\n",
  "rendered_recipe": {},

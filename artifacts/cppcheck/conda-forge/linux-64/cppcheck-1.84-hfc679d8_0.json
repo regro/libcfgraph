@@ -140,6 +140,7 @@
   "timestamp": 1529397661287,
   "version": "1.84"
  },
+ "metadata_version": 1,
  "name": "cppcheck",
  "raw_recipe": "{% set name = \"cppcheck\" %}\n{% set version = \"1.84\" %}\n{% set sha256 = \"aaa6293d91505fc6caa6982ca3cd2d949fa1aac603cabad072b705fdda017fc5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.gz\n  url: https://github.com/danmar/cppcheck/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True   # [win]\n\nrequirements:\n  build:\n  - cmake\n  - {{ compiler('c') }}\n  - {{ compiler('cxx') }}\n  host:\n\ntest:\n  commands:\n    - cppcheck --version\n\nabout:\n  description:\n    Cppcheck is a static analysis tool for C/C++ code. Unlike C/C++ compilers\n    and many other analysis tools it does not detect syntax errors in the code.\n    Cppcheck primarily detects the types of bugs that the compilers normally do\n    not detect. The goal is to detect only real errors in the code (i.e. have\n    zero false positives).\n  home: 'http://cppcheck.sourceforge.net/'\n  dev_url: 'https://github.com/danmar/cppcheck'\n  license: 'GPLv3'\n  license_family: 'GPL'\n  license_file: COPYING\n  summary: 'A static analysis tool for C/C++ code.'\n\nextra:\n  recipe-maintainers:\n    - tovrstra\n",
  "rendered_recipe": {

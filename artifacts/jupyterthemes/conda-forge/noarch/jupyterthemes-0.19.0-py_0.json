@@ -882,6 +882,7 @@
   "subdir": "noarch",
   "version": "0.19.0"
  },
+ "metadata_version": 1,
  "name": "jupyterthemes",
  "raw_recipe": "{% set version = \"0.19.0\" %}\n\npackage:\n  name: jupyterthemes\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/j/jupyterthemes/jupyterthemes-{{ version }}.tar.gz\n  sha256: 22b4a97a0b64cfea9c84cd75444275c71d64f65956f636e276960d5a83357341\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - jupyter-theme = jupyterthemes:main\n    - jt = jupyterthemes:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - jupyter_core\n    - ipython >=5.4.1\n    - matplotlib >=1.4.3\n    - lesscpy >=0.11.2\n\ntest:\n  imports:\n    - jupyterthemes\n\n  commands:\n    - jupyter-theme --help\n    - jt --help\n\nabout:\n  home: https://github.com/dunovank/jupyter-themes\n  license_file: LICENSE.txt\n  license: MIT\n  license_family: MIT\n  summary: 'Select and install a Jupyter notebook theme'\n  dev_url: https://github.com/dunovank/jupyter-themes\n  doc_url: https://github.com/dunovank/jupyter-themes\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - ocefpaf\n",
  "rendered_recipe": {

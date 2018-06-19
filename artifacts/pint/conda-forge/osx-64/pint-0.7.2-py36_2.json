@@ -115,6 +115,7 @@
   "subdir": "osx-64",
   "version": "0.7.2"
  },
+ "metadata_version": 1,
  "name": "pint",
  "raw_recipe": "{% set version = \"0.7.2\" %}\n\npackage:\n  name: pint\n  version: {{ version }}\n\nsource:\n  fn: Pint-{{version}}.tar.gz\n  url: https://pypi.python.org/packages/source/P/Pint/Pint-{{version}}.tar.gz\n  md5: 1e57f7631bb456cdca53e0bdecbc4456\n\nbuild:\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    number: 2\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - pint\n\nabout:\n  home: https://github.com/hgrecco/pint\n  license: BSD 3-Clause\n  summary: 'Physical quantities module'\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
  "rendered_recipe": {

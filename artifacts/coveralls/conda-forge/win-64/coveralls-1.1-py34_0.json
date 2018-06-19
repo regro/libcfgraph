@@ -93,6 +93,7 @@
   "subdir": "win-64",
   "version": "1.1"
  },
+ "metadata_version": 1,
  "name": "coveralls",
  "raw_recipe": "{% set name = \"coveralls\" %}\n{% set version = \"1.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"34160385c13b0c43691ab11c080d4b10dabe3280fc0b2173c731efc5db836808\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - coveralls = coveralls.cli:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - coverage >=3.6\n    - docopt >=0.6.1\n    - python\n    - pyyaml >=3.10\n    - requests >=1.0.0\n\ntest:\n  commands:\n    - coveralls --help\n\nabout:\n  home: https://github.com/coagulant/coveralls-python\n  license: MIT\n  license_family: MIT\n  license_file: LICENCE  # Yes it is a typo, will be fixed in the next release\n  summary: Show coverage stats online via coveralls.io\n  description: |\n    Coveralls.io is service to publish your coverage stats online with a lot\n    of nice features. This package provides seamless integration with\n    coverage.py in your python projects.\n  dev_url: https://github.com/coagulant/coveralls-python\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n",
  "rendered_recipe": {

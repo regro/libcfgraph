@@ -191,6 +191,7 @@
   "subdir": "win-64",
   "version": "0.11.5"
  },
+ "metadata_version": 1,
  "name": "ggplot",
  "raw_recipe": "{% set name = \"ggplot\" %}\n{% set version = \"0.11.5\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"48bbc9ea5987f815ad25856d76573506dbfe153ff696f026ce324582af56469f\" %}\n{% set build = 2 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/g/ggplot/ggplot-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - brewer2mpl\n    - cycler\n    - matplotlib\n    - numpy\n    - pandas\n    - patsy >=0.4\n    - pyqt 4.11.*\n    - qt 4.8.*\n    - scipy\n    - six\n    - statsmodels\n\ntest:\n  imports:\n    - ggplot\n\nabout:\n  home: https://github.com/yhat/ggplot\n  license_file: {{ RECIPE_DIR }}/LICENSE\n  license: BSD 2-Clause\n  license_family: BSD\n  summary: 'ggplot for python'\n  dev_url: https://github.com/yhat/ggplot\n  doc_url: https://github.com/yhat/ggplot/tree/master/docs\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - ocefpaf\n",
  "rendered_recipe": {

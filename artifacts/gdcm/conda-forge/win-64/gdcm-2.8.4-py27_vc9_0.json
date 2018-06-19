@@ -799,6 +799,7 @@
   "subdir": "win-64",
   "version": "2.8.4"
  },
+ "metadata_version": 1,
  "name": "gdcm",
  "raw_recipe": "{% set version = \"2.8.4\" %}\n\npackage:\n  name: gdcm\n  version: {{ version }}\n\nsource:\n  url: https://github.com/malaterre/GDCM/archive/v{{ version }}.tar.gz\n  fn: GDCM-{{ version }}.tar.gz\n  sha256: c0859b306865c689cb570f5e2450417642cd95988960682cff0c675e0ff0732d\n\nbuild:\n  number: 0\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py>=35]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - ninja\n    - python\n    - swig\n  run:\n    - python\n\ntest:\n  imports:\n    - gdcm\n\nabout:\n  home: https://sourceforge.net/p/gdcm/gdcm/\n  license: BSD-2-Clause\n  summary: Grassroots DICOM, cross-platform DICOM implementation.\n\nextra:\n  recipe-maintainers:\n    - ivoflipse\n    - Korijn\n",
  "rendered_recipe": {

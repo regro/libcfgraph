@@ -104,6 +104,7 @@
   "subdir": "win-64",
   "version": "0.9.2"
  },
+ "metadata_version": 1,
  "name": "django_polymorphic",
  "raw_recipe": "{% set name = \"django_polymorphic\" %}\n{% set version = \"0.9.2\" %}\n{% set md5 = \"12eeec306ba79aa39115c0aa61353933\" %}\n{% set build = 0 %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    md5: {{ md5 }}\n\nbuild:\n    number: {{ build }}\n    preserve_egg_dir: True\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - django\n\ntest:\n    imports:\n        - polymorphic\n\nabout:\n    home: https://github.com/chrisglass/django_polymorphic\n    license: BSD-3-Clause\n    summary: Seamless Polymorphic Inheritance for Django Models\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n        - ocefpaf\n",
  "rendered_recipe": {

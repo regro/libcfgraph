@@ -1075,6 +1075,7 @@
   "subdir": "osx-64",
   "version": "1.4.2"
  },
+ "metadata_version": 1,
  "name": "linbox",
  "raw_recipe": "{% set version = \"1.4.2\" %}\n{% set name = \"linbox\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/linbox-team/linbox/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 47f025fe7aab204fb276307f32a562de357c887c6ef589b9e4f7a57a3b58ecaf\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - automake\n    - pkg-config\n    - gmp >=5.0.1,<7\n    - mpfr 3.*\n    - ntl\n    - libflint\n    - givaro\n    - iml\n    - fflas-ffpack\n    - m4ri\n    - m4rie\n    - openblas 0.2.20|0.2.20.*\n  run:\n    - gmp >=5.0.1,<7\n    - mpfr 3.*\n    - ntl\n    - libflint\n    - givaro\n    - iml\n    - fflas-ffpack\n    - m4ri\n    - m4rie\n    - openblas 0.2.20|0.2.20.*\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/linbox/integer.h\n    - test -f ${PREFIX}/lib/lib{{ name }}.a\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib     # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so        # [linux]\n\nabout:\n  home: http://linalg.org/\n  license: LGPLv2.1\n  license_file: COPYING.LESSER\n  summary: C++ library for exact, high-performance linear algebra\n  dev_url: https://github.com/linbox-team/linbox\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - saraedum\n",
  "rendered_recipe": {

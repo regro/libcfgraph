@@ -731,6 +731,7 @@
   "subdir": "linux-64",
   "version": "1.6.28"
  },
+ "metadata_version": 1,
  "name": "libpng",
  "raw_recipe": "{% set version = \"1.6.28\" %}\n\npackage:\n  name: libpng\n  version: {{ version }}\n\nsource:\n  url: http://download.sourceforge.net/libpng/libpng-{{ version }}.tar.gz\n  sha256: b6cec903e74e9fdd7b5bbcde0ab2415dd12f2f9e84d9e4d9ddd2ba26a41623b2\n\nbuild:\n  number: 2\n  skip: True  # [win and py36]\n  features:\n    - vc9  # [win and py27]\n    - vc14  # [win and (py35 or py36)]\n\nrequirements:\n  build:\n    - python  # [win]\n    - cmake  # [win]\n    - libtool  # [not win]\n    - automake  # [not win]\n    - zlib 1.2.11\n    - vc 9  # [win and py27]\n    - vc 14  # [win and (py35 or py36)]\n  run:\n    - zlib 1.2.11\n    - vc 9  # [win and py27]\n    - vc 14  # [win and (py35 or py36)]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libpng.a  # [not win]\n    - test -f ${PREFIX}/lib/libpng.so  # [linux]\n    - test -f ${PREFIX}/lib/libpng.dylib  # [osx]\n    - libpng-config --version  # [not win]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://www.libpng.org/pub/png/libpng.html\n  license: zlib/libpng\n  summary: 'PNG reference library.'\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

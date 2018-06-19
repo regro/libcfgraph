@@ -107,6 +107,7 @@
   "subdir": "linux-64",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "xtensor",
  "raw_recipe": "{% set name = \"xtensor\" %}\n{% set version = \"0.3.0\" %}\n{% set sha256 = \"2fa0487469d35bb7ed095634771a726261452cf0e538d43825d9668441d7af01\"%}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/QuantStack/xtensor/archive/{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\ntest:\n  requires:\n    - gtest\n    - cmake\n\n  commands:\n    - test -d ${PREFIX}/include/xtensor  # [unix]\n    - test -f ${PREFIX}/include/xtensor/xarray.hpp  # [unix]\n    - if exist %PREFIX%\\include\\xtensor\\xarray.hpp (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://quantstack.net/xtensor\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'The C++ tensor algebra library'\n  description: 'Multi dimensional arrays with broadcasting and lazy computing'\n  doc_url: http://xtensor.readthedocs.io\n  dev_url: https://github.com/QuantStack/xtensor\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n",
  "rendered_recipe": {

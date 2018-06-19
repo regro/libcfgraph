@@ -519,6 +519,7 @@
   "subdir": "osx-64",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "python-symengine",
  "raw_recipe": "{% set version = \"0.3.0\" %}\n\npackage:\n  name: python-symengine\n  version: {{ version }}\n\nsource:\n  url: https://github.com/symengine/symengine.py/archive/v{{ version }}.tar.gz\n  sha256: 0ecccfe5a09b25b6640afca12de62062bdb60ed2712d6c16cc47fc1ba1e851ac\n\nbuild:\n  number: 0\n  skip: true        # [win and not py>=35]\n  features:\n    - vc14          # [win and py>=35]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - symengine     0.3.0\n    - python\n    - cython\n    - setuptools\n  run:\n    - symengine     0.3.0\n    - python\n\ntest:\n  requires:\n    - pytest\n    - sympy\n  imports:\n    - symengine\n  commands:\n    - python -c $'import symengine;\\nif not symengine.test():\\n raise Exception(\"Tests failed\")'    # [unix]\n\nabout:\n  home: https://github.com/symengine/symengine.py\n  license: MIT\n  license_file: LICENSE\n  summary: 'Python wrappers for SymEngine, a fast symbolic manipulation library, written in C++'\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - certik\n",
  "rendered_recipe": {

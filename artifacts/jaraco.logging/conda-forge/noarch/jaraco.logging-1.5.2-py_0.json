@@ -136,6 +136,7 @@
   "timestamp": 1524116724457,
   "version": "1.5.2"
  },
+ "metadata_version": 1,
  "name": "jaraco.logging",
  "raw_recipe": "{% set name = \"jaraco.logging\" %}\n{% set version = \"1.5.2\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"23b10eb0d65afe042fad16eabdf5956bdc863e110c5cf3fa1b4bc59f3a7f37a5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools_scm >=1.15.0\n\n  run:\n    - python\n    - tempora\n    - six\n    - setuptools\n\ntest:\n  imports:\n    - jaraco\n\nabout:\n  home: https://github.com/jaraco/jaraco.logging\n  # license_file: jaraco doesn't include license files - see https://github.com/jaraco/skeleton/issues/1\n  license: MIT\n  license_family: MIT\n  summary: 'jaraco.logging'\n  dev_url: https://github.com/jaraco/jaraco.logging\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

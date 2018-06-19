@@ -527,6 +527,7 @@
   "subdir": "win-64",
   "version": "0.7.1"
  },
+ "metadata_version": 1,
  "name": "sphinx-autobuild",
  "raw_recipe": "{% set name = \"sphinx-autobuild\" %}\n{% set version = \"0.7.1\" %}\n{% set sha256 = \"66388f81884666e3821edbe05dd53a0cfb68093873d17320d0610de8db28c74e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - sphinx-autobuild=sphinx_autobuild:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - watchdog >=0.7.1\n    - argh >=0.24.1\n    - pathtools >=0.1.2\n    - pyyaml >=3.10\n    - tornado >=3.2\n    - port-for ==0.3.1\n    - livereload >=2.3.0\n\ntest:\n  imports:\n    - sphinx_autobuild\n\n  commands:\n    - sphinx-autobuild --help\n\nabout:\n  home: https://github.com/GaretJax/sphinx-autobuild\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Watch a Sphinx directory and rebuild the documentation when a change is detected. Also includes a livereload enabled web server.'\n\nextra:\n  recipe-maintainers:\n    - jrderuiter\n",
  "rendered_recipe": {

@@ -1183,6 +1183,7 @@
   "subdir": "osx-64",
   "version": "4.0.0"
  },
+ "metadata_version": 1,
  "name": "python-kubernetes",
  "raw_recipe": "{% set version = \"4.0.0\" %}\n\npackage:\n  name: python-kubernetes\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/k/kubernetes/kubernetes-{{ version }}.tar.gz \n  sha256: 0719574646914242d653292da316ebde99131cbc388cd7c0d097268d7b0880f5\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - certifi >=14.05.14\n    - six >=1.9.0\n    - python-dateutil >=2.5.3\n    - setuptools >=21.0.0\n    - urllib3 >=1.19.1,!=1.21\n    - pyyaml >=3.12\n    - google-auth >=1.0.1\n    - ipaddress >=1.0.17  # [py<33]\n    - websocket-client >=0.32.0,<=0.40.0\n    - requests\n    - requests-oauthlib\n\ntest:\n  imports:\n    - kubernetes\n    - kubernetes.client\n    - kubernetes.client.apis\n    - kubernetes.client.models\n    - kubernetes.config\n    - kubernetes.watch\n  \nabout:\n  home: https://github.com/kubernetes-incubator/client-python\n  license: Apache-2.0\n  summary: 'The official Kubernetes python client.'\n  license_family: APACHE\n  license_file: LICENSE\n  dev_url: https://github.com/kubernetes-incubator/client-python\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - ocefpaf\n",
  "rendered_recipe": {

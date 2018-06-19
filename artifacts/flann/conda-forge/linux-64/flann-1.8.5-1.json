@@ -142,6 +142,7 @@
   "subdir": "linux-64",
   "version": "1.8.5"
  },
+ "metadata_version": 1,
  "name": "flann",
  "raw_recipe": "{% set version = \"1.8.5\" %}\n\npackage:\n    name: flann\n    version: {{ version }}\n\nsource:\n    fn: flann-{{ version }}.tar.gz\n    url: https://github.com/mariusmuja/flann/archive/{{ version }}.tar.gz\n    sha256: 59a9925dac0705b281496ae52b5dfd79d6b69316d37015e3d3b38c859bac4f2f\n\nbuild:\n    number: 1\n    skip: true    # [win]\n\nrequirements:\n    build:\n        - gcc     # [unix]\n        - hdf5 1.8.18|1.8.18.*\n        - cmake\n    run:\n        - libgcc  # [unix]\n        - hdf5 1.8.18|1.8.18.*\n\ntest:\n    commands:\n        # Verify libraries.\n        - test -f $PREFIX/lib/libflann_s.a                                        # [unix]\n        - test -f $PREFIX/lib/libflann.dylib                                      # [osx]\n        - test -f $PREFIX/lib/libflann.so                                         # [linux]\n        - test -f $PREFIX/lib/libflann_cpp_s.a                                    # [unix]\n        - test -f $PREFIX/lib/libflann_cpp.dylib                                  # [osx]\n        - test -f $PREFIX/lib/libflann_cpp.so                                     # [linux]\n\nabout:\n    home: http://www.cs.ubc.ca/research/flann/\n    license: BSD 3-Clause\n    license_file: COPYING\n    summary: \"The Fast Library for Approximate Nearest Neighbors\"\n\nextra:\n  recipe-maintainers:\n    - jakevdp\n    - jakirkham\n",
  "rendered_recipe": {

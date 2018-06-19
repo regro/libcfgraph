@@ -90,6 +90,7 @@
   "subdir": "osx-64",
   "version": "4.24"
  },
+ "metadata_version": 1,
  "name": "libev",
  "raw_recipe": "{% set name = \"libev\" %}\n{% set version = \"4.24\" %}\n{% set sha256 = \"973593d3479abdf657674a55afe5f78624b0e440614e2b8cb3a07f16d4d7f821\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://dist.schmorp.de/libev/Attic/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - gcc\n    - toolchain\n    - libtool\n\ntest:\n  commands:\n    # Check for headers.\n    - test -f \"${PREFIX}/include/ev.h\"\n    - test -f \"${PREFIX}/include/ev++.h\"\n    - test -f \"${PREFIX}/include/event.h\"\n\n    # Check for libraries.\n    {% set libs = [\n        \"libev\",\n    ] %}\n\n    {% for each_lib in libs %}\n    - test -f \"${PREFIX}/lib/{{ each_lib }}.a\"\n    - test -f \"${PREFIX}/lib/{{ each_lib }}.dylib\"         # [osx]\n    - test -f \"${PREFIX}/lib/{{ each_lib }}.so\"            # [linux]\n    - test -f \"${PREFIX}/lib/{{ each_lib }}.la\"\n    {% endfor %}\n\n\nabout:\n  home: http://software.schmorp.de/pkg/libev.html\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: A full-featured and high-performance event loop that is loosely modeled after libevent, but without its limitations and bugs.\n\nextra:\n  recipe-maintainers:\n    - petercable\n",
  "rendered_recipe": {

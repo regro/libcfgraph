@@ -767,6 +767,7 @@
   "subdir": "noarch",
   "version": "0.5.0"
  },
+ "metadata_version": 1,
  "name": "folium",
  "raw_recipe": "{% set version = \"0.5.0\" %}\n\npackage:\n  name: folium\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/f/folium/folium-{{ version }}.tar.gz\n  sha256: 748944521146d85c6cd6230acf234e885864cd0f42fea3758d655488517e5e6e\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  noarch: python\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - branca\n    - jinja2\n    - numpy\n    - pandas\n    - vincent\n    - altair\n    - requests\n\ntest:\n  imports:\n    - folium\n\nabout:\n  home: https://github.com/python-visualization/folium\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'Make beautiful maps with Leaflet.js and Python'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - BibMartin\n",
  "rendered_recipe": {

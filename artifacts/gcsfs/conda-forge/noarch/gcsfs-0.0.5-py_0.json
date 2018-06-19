@@ -763,6 +763,7 @@
   "subdir": "noarch",
   "version": "0.0.5"
  },
+ "metadata_version": 1,
  "name": "gcsfs",
  "raw_recipe": "{% set name = \"gcsfs\" %}\n{% set version = \"0.0.5\" %}\n{% set sha256 = \"ed89bb75664716b0cea5e04be7b3db0d7a68fc9e0eda7e17d4aaaf5c6ff02427\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  noarch: python\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - google-auth\n    - google-auth-oauthlib\n    - requests\n    - decorator\n\ntest:\n  imports:\n    - gcsfs\n\nabout:\n  home: https://github.com/dask/gcsfs\n  license: BSD\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Pythonic file-system interface for Google Cloud Storage'\n  doc_url: http://gcsfs.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - martindurant\n",
  "rendered_recipe": {

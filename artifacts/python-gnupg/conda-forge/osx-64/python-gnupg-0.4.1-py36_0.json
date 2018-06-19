@@ -660,6 +660,7 @@
   "subdir": "osx-64",
   "version": "0.4.1"
  },
+ "metadata_version": 1,
  "name": "python-gnupg",
  "raw_recipe": "{% set name = \"python-gnupg\" %}\n{% set version = \"0.4.1\" %}\n{% set sha256 = \"ef47b02eaf41dee3cf4b02ddf83130827318de9fe3eae89d01a3f05859e20e1a\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - gnupg\n\nabout:\n  home: http://pythonhosted.org/python-gnupg\n  license: BSD3\n  summary: A wrapper for the Gnu Privacy Guard (GPG or GnuPG)\n\nextra:\n  recipe-maintainers:\n    - vamega\n",
  "rendered_recipe": {

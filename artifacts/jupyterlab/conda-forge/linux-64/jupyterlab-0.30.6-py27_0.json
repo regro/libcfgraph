@@ -1128,6 +1128,7 @@
   "subdir": "linux-64",
   "version": "0.30.6"
  },
+ "metadata_version": 1,
  "name": "jupyterlab",
  "raw_recipe": "{% set version = \"0.30.6\" %}\n{% set sha256 = \"256bd291da5d284ba9bf92b350991de605d9105274c9e4548aebb9ad79aa0f43\" %}\n\n\npackage:\n  name: jupyterlab\n  version: {{ version }}\n\nsource:\n    fn: jupyterlab-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/j/jupyterlab/jupyterlab-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - jupyter-lab = jupyterlab.labapp:main\n    - jupyter-labextension = jupyterlab.labextensions:main\n    - jupyter-labhub = jupyterlab.labhubapp:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - jupyterlab_launcher >=0.6.0,<0.7.0\n    - notebook >=4.3\n    - futures  # [py27]\n    - subprocess32   # [py2k and unix]\ntest:\n  imports:\n    - jupyterlab\n\nabout:\n  home: https://github.com/jupyterlab/jupyterlab\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: A pre-alpha version of a computational environment for Jupyter.\n\nextra:\n  recipe-maintainers:\n    - jasongrout\n    - blink1073\n",
  "rendered_recipe": {

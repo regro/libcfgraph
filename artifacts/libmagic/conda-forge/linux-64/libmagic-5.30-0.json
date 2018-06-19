@@ -95,6 +95,7 @@
   "subdir": "linux-64",
   "version": "5.30"
  },
+ "metadata_version": 1,
  "name": "libmagic",
  "raw_recipe": "{%set name = \"libmagic\" %}\n{%set version = \"5.30\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"694c2432e5240187524c9e7cf1ec6acc77b47a0e19554d34c14773e43dbbf214\" %}\n\npackage:\n  name: libmagic\n  version: {{ version }}\n\nsource:\n  fn: file-{{ version }}.tar.gz\n  url: ftp://ftp.astron.com/pub/file/file-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - automake\n    - autoconf\n    - m4\n    - libtool\n    - toolchain\n\ntest:\n  commands:\n    - \"file --help &> /dev/null\"\n    - \"test $CONDA_PREFIX/lib/libmagic.so\"  # [linux]\n    - \"test $CONDA_PREFIX/lib/libmagic.dylib\"  # [osx]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [linux]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://www.darwinsys.com/file/\n  summary: \"Implementation of the file(1) command\"\n  license: BSD-2\n  license_family: BSD\n  license_file: COPYING\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "rendered_recipe": {

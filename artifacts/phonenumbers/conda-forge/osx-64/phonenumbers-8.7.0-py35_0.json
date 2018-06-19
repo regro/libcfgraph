@@ -1077,6 +1077,7 @@
   "subdir": "osx-64",
   "version": "8.7.0"
  },
+ "metadata_version": 1,
  "name": "phonenumbers",
  "raw_recipe": "{% set name = \"phonenumbers\" %}\n{% set version = \"8.7.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"af6cddb5150ced7944e137075892a6f80f637a0b283863c368e73ad302cb3cfa\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - phonenumbers\n    - phonenumbers.carrierdata\n    - phonenumbers.data\n    - phonenumbers.geodata\n    - phonenumbers.shortdata\n    - phonenumbers.tzdata\n\nabout:\n  home: https://github.com/daviddrysdale/python-phonenumbers\n  # license_file: No LICENSE in MANIFEST, local copy below\n  license_file: '{{ RECIPE_DIR }}/LICENSE'\n  license: Apache 2.0\n  license_family: Apache\n  summary: \"Python version of Google's common library for parsing, formatting, storing and validating international phone numbers.\"\n  dev_url: https://github.com/daviddrysdale/python-phonenumbers\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

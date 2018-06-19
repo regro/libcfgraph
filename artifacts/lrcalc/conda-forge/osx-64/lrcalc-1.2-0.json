@@ -94,6 +94,7 @@
   "subdir": "osx-64",
   "version": "1.2"
  },
+ "metadata_version": 1,
  "name": "lrcalc",
  "raw_recipe": "{% set version = \"1.2\" %}\n{% set name = \"lrcalc\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://www.math.rutgers.edu/~asbuch/lrcalc/{{ name }}-{{ version }}.tar.gz\n  sha256: 792dd538a0d19698be2c5b8c138730bbb4820e8a44e03b001ae14bd5f1d7040b\n  patches:\n    # https://bitbucket.org/asbuch/lrcalc/commits/226981a060a209efb5e0c3925b71b341b9ff63a4\n    # Patch by Jeroen Demeyer to change include <vector.h> to \"vector.h\", plus similar cases.\n    - includes.patch\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/{{ name }}/symfcn.h\n    - test -f ${PREFIX}/lib/lib{{ name }}.a\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]\n\nabout:\n  home: http://www.math.rutgers.edu/~asbuch/lrcalc/\n  license: GPLv2+\n  license_file: COPYING\n  summary: The Littlewood-Richardson Calculator is a program designed to compute Littlewood-Richardson coefficients\n  dev_url: https://bitbucket.org/asbuch/lrcalc\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

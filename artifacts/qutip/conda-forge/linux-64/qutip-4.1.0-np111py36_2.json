@@ -835,6 +835,7 @@
   "subdir": "linux-64",
   "version": "4.1.0"
  },
+ "metadata_version": 1,
  "name": "qutip",
  "raw_recipe": "{% set version = \"4.1.0\" %}\n\npackage:\n    name: qutip\n    version: {{ version }}\n\nsource:\n    fn: qutip-{{ version }}.tar.gz\n    url: http://qutip.org/downloads/{{ version }}/qutip-{{ version }}.tar.gz\n    sha256: b41963d33662121d3f996c5c4f8f28a63c5253d5ffb3f4e1a4e88d84e213b006\n    #v4.1.0 build 2: sha256: b41963d33662121d3f996c5c4f8f28a63c5253d5ffb3f4e1a4e88d84e213b006\n    #v4.2.0 build 2: sha256: 87d677c6450a17a4dd8cfa1c7ae5f1f7646c47b63dab5abd88980093a47611e5\n\nbuild:\n    number: 2\n    script: $PYTHON setup.py install  # [unix]\n    # ajgpitch 2017-03-16: win py27 build currently failing due to error on import scipy.misc\n    # ajgpitch 2017-07-28: decided to give up on win py2k build until further notice\n    skip: True                        # [win and py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - cython >=0.21,<0.26\n    - scipy >=0.15\n    - toolchain\n    \n  run:\n    - python\n    - setuptools\n    - numpy x.x\n    - scipy >=0.15\n    - cython >=0.21\n    \ntest:\n  imports:\n    - qutip\n\nabout:\n    home: http://qutip.org\n    license: BSD 3-clause\n    summary: 'QuTiP is open-source software for simulating the dynamics of open quantum systems and optimal quantum control'\n\nextra:\n  recipe-maintainers:\n    - ajgpitch\n    - sahmed95\n    - nonhermitian\n",
  "rendered_recipe": {

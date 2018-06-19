@@ -651,6 +651,7 @@
   "subdir": "linux-64",
   "version": "2.2.1"
  },
+ "metadata_version": 1,
  "name": "nb_conda",
  "raw_recipe": "{% set version = \"2.2.1\" %}\n{% set gh_org = \"Anaconda-Platform\" %}\n{% set gh_repo = \"nb_conda\" %}\n\npackage:\n  name: {{ gh_repo }}\n  version: {{ version }}\n\nsource:\n  fn: {{ gh_repo }}-{{ version }}.tar.gz\n  url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/{{ version }}.tar.gz\n  sha256: ea202c17c85b0a1059698ba0b1005c5382ad1340bb6b6ffa464ed0e3781a923b\n\nbuild:\n  number: 0\n  script:\n    - python setup.py install --single-version-externally-managed --record=record.txt\n    - jupyter nbextension install nb_conda --py --sys-prefix --overwrite\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - notebook >=4.3.1\n\n  run:\n    - python\n    - notebook >=4.3.1\n    - nb_conda_kernels >=2.0.0\n\ntest:\n  imports:\n    - nb_conda\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: BSD-3-Clause\n  summary: Conda environment and package access extension from within Jupyter\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n    - damianavila\n    - fjcapdevila\n",
  "rendered_recipe": {

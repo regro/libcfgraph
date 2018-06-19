@@ -571,6 +571,7 @@
   "subdir": "win-64",
   "version": "1.1.1"
  },
+ "metadata_version": 1,
  "name": "r-xml2",
  "raw_recipe": "{% set version = '1.1.1' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-xml2\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: xml2_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/xml2_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/xml2/xml2_{{ version }}.tar.gz\n  sha256: 00f3e3b66b76760c19da5f6dddc98e6f30de36a96b211e59e1a3f4ff58763116\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-bh\n    - r-rcpp >=0.11.4.6\n    - posix                # [win]\n    - {{native}}toolchain  # [win]\n    - gcc                  # [not win]\n\n  run:\n    - r-base\n    - r-bh\n    - r-rcpp >=0.11.4.6\n\ntest:\n  commands:\n    - $R -e \"library('xml2')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('xml2')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/hadley/xml2/\n  license: GPL (>= 2)\n  summary: Work with XML files using a simple, consistent interface. Built on top of the 'libxml2'\n    C library.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

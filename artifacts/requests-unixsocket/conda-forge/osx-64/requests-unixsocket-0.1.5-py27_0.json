@@ -93,6 +93,7 @@
   "subdir": "osx-64",
   "version": "0.1.5"
  },
+ "metadata_version": 1,
  "name": "requests-unixsocket",
  "raw_recipe": "{% set name = \"requests-unixsocket\" %}\n{% set version = \"0.1.5\" %}\n{% set sha256 = \"a91bc0138f61fb3396de6358fa81e2cd069a150ade5111f869df01d8bc9d294c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pbr >=1.3,<2\n\n  run:\n    - python\n    - requests >=2.12,<3\n    - urllib3 >=1.16,<2\n\ntest:\n  imports:\n    - requests_unixsocket\n\nabout:\n  home: https://github.com/msabramo/requests-unixsocket\n  license: Apache 2.0\n  license_family: APACHE\n  license_file: LICENSE\n  summary: 'Use requests to talk HTTP via a UNIX domain socket'\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

@@ -91,6 +91,7 @@
   "subdir": "linux-64",
   "version": "0.2.2"
  },
+ "metadata_version": 1,
  "name": "entrypoints",
  "raw_recipe": "{% set name = \"entrypoints\" %}\n{% set version = \"0.2.2\" %}\n{% set wheel_tag = \"py2.py3-none-any\" %}\n{% set fn = \"{}-{}-{}.whl\".format(name, version, wheel_tag) %}\n{% set sha256 = \"0a0685962ee5ac303f470acbb659f0f97aef5b9deb6b85d059691c706ef6e45e\" %}\n\npackage:\n    name: entrypoints\n    version: {{ version }}\n\nsource:\n    fn: {{ fn }}\n    url: https://pypi.io/packages/py2.py3/{{ name[0] }}/{{ name }}/{{ fn }}\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 1\n    script: pip install --no-deps {{ fn }}\n\nrequirements:\n    build:\n        - python\n        - pip\n    run:\n        - python\n        - configparser  # [py2k or py34]\n\ntest:\n    imports:\n        - entrypoints\n\nabout:\n    home: https://entrypoints.readthedocs.io/\n    license: MIT\n    summary: Discover and load entry points from installed packages\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - minrk\n    - takluyver\n",
  "rendered_recipe": {

@@ -109,6 +109,7 @@
   "subdir": "win-64",
   "version": "2.1.4"
  },
+ "metadata_version": 1,
  "name": "amqp",
  "raw_recipe": "{% set name = \"amqp\" %}\n{% set version = \"2.1.4\" %}\n\npackage:\n    name: {{ name|lower }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: 1378cc14afeb6c2850404f322d03dec0082d11d04bdcb0360e1b10d4e6e77ef9\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - vine >=1.1.3\n\ntest:\n    imports:\n        - amqp\n\nabout:\n    home: http://github.com/celery/py-amqp\n    license: BSD 3-clause\n    license_family: BSD\n    license_file: LICENSE\n    summary: Low-level AMQP client for Python (fork of amqplib)\n    doc_url: https://amqp.readthedocs.io/\n    dev_url: http://github.com/celery/py-amqp/\n\nextra:\n    recipe-maintainers:\n        - anguslees\n        - kwilcox\n        - wseaton\n",
  "rendered_recipe": {

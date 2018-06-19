@@ -562,6 +562,7 @@
   "subdir": "win-64",
   "version": "0.7.0"
  },
+ "metadata_version": 1,
  "name": "control",
  "raw_recipe": "{% set name = \"control\" %}\n{% set version = \"0.7.0\" %}\n{% set sha256 = \"18ce26206e40f4ba62b2a0bf86943598a6ec3f957e15bd46d17b9e1e314f19d6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - scipy\n    - matplotlib\n    # NOTE : Once Slycot is available as a Windows conda package, update this.\n    - slycot  # [unix]\n\ntest:\n  imports:\n    - control\n\nabout:\n  home: http://python-control.sourceforge.net\n  license: BSD-3-Clause\n  dev_url: https://github.com/python-control/python-control\n  doc_url: http://python-control.readthedocs.org/\n  summary: 'Python Control Systems Library'\n\nextra:\n  recipe-maintainers:\n    - moorepants\n",
  "rendered_recipe": {

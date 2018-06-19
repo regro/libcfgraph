@@ -65,6 +65,7 @@
   "subdir": "linux-64",
   "version": "2.6.2"
  },
+ "metadata_version": 1,
  "name": "flex",
  "raw_recipe": "{% set version = \"2.6.2\" %}\n\npackage:\n  name: flex\n  version: {{ version }}\n\nsource:\n  fn: flex-{{ version }}.tar.gz\n  url: https://github.com/westes/flex/releases/download/v{{ version }}/flex-{{ version }}.tar.gz\n  sha256: 9a01437a1155c799b7dc2508620564ef806ba66250c36bf5f9034b1c207cb2c9\n\nbuild:\n  skip: true  # [win]\n  number: 0\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - automake\n    - libiconv\n    - help2man\n\n  run:\n    - libiconv\n\ntest:\n  commands:\n    # CLI tests\n    - flex --help\n\n    # Include test\n    - test -f ${PREFIX}/include/FlexLexer.h\n\n    # Lib tests\n    - test -f ${PREFIX}/lib/libfl.a\n    - test -f ${PREFIX}/lib/libfl_pic.a\n    - test -f ${PREFIX}/lib/libfl.dylib      # [osx]\n    - test -f ${PREFIX}/lib/libfl_pic.dylib  # [osx]\n    - test -f ${PREFIX}/lib/libfl.so         # [linux]\n    - test -f ${PREFIX}/lib/libfl_pic.so     # [linux]\n\nabout:\n  home: http://flex.sourceforge.net/\n  license: BSD 2-Clause\n  summary: The Fast Lexical Analyzer\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - ocefpaf\n",
  "rendered_recipe": {},

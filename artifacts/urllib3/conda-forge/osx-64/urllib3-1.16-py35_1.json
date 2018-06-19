@@ -48,6 +48,7 @@
   "subdir": "osx-64",
   "version": "1.16"
  },
+ "metadata_version": 1,
  "name": "urllib3",
  "raw_recipe": "{% set version = \"1.16\" %}\n\npackage:\n  name: urllib3\n  version: {{ version }}\nsource:\n  fn: urllib3-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/u/urllib3/urllib3-{{ version }}.tar.gz\n  sha256: 63d479478ddfc83bbc11577dc16d47835c5179ac13e550118ca143b62c4bf9ab\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - urllib3\n    - urllib3.contrib\n    - urllib3.packages\n    - urllib3.packages.backports\n    - urllib3.packages.ssl_match_hostname\n    - urllib3.util\n\nabout:\n  home: https://urllib3.readthedocs.io/\n  license: MIT License\n  summary: 'HTTP library with thread-safe connection pooling, file post, and more.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - sigmavirus24\n",
  "rendered_recipe": {},

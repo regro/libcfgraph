@@ -175,6 +175,7 @@
   "timestamp": 1528215576905,
   "version": "5.0.0"
  },
+ "metadata_version": 1,
  "name": "xsimd",
  "raw_recipe": "{% set name = \"xsimd\" %}\n{% set version = \"5.0.0\" %}\n{% set sha256 = \"cb1b82ce71ad249966ea0c741979b9131d41d29561164c427f01277f5d89544f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/QuantStack/xsimd/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win and vc<14]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - cmake\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/xsimd/xsimd.hpp  # [unix]\n    - test -f ${PREFIX}/lib/cmake/xsimd/xsimdConfig.cmake  # [unix]\n    - test -f ${PREFIX}/lib/cmake/xsimd/xsimdConfigVersion.cmake  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\xsimd\\xsimd.hpp (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\xsimdConfig.cmake (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\xsimdConfigVersion.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://quantstack.net/xsimd\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'C++ Wrappers for SIMD Intrinsices'\n  description: 'High-level APIs for SIMD operations'\n  doc_url: http://xsimd.readthedocs.io\n  dev_url: https://github.com/QuantStack/xsimd\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n",
  "rendered_recipe": {

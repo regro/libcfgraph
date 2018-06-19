@@ -660,6 +660,7 @@
   "subdir": "osx-64",
   "version": "1.2.0"
  },
+ "metadata_version": 1,
  "name": "cf_units",
  "raw_recipe": "{% set version = \"1.2.0\" %}\n\npackage:\n  name: cf_units\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/cf_units/cf_units-{{ version }}.tar.gz\n  sha256: abdd2a0937b958322f7ff7ec6866e80f08603c60aa06cef5766b6512c750028a\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - six\n    - udunits2 >=2.2.23\n    - netcdf4\n    - numpy\n\ntest:\n  imports:\n    - cf_units\n\nabout:\n  home: http://www.scitools.org.uk/iris\n  license: LGPL-3.0\n  license_file: COPYING.LESSER\n  summary: 'Units of measure as required by the Climate and Forecast (CF) metadata conventions.'\n\nextra:\n  recipe-maintainers:\n    - bjlittle\n    - dkillick\n    - ocefpaf\n    - pelson\n",
  "rendered_recipe": {

@@ -47,6 +47,7 @@
   "subdir": "osx-64",
   "version": "1.1.8"
  },
+ "metadata_version": 1,
  "name": "cvxopt",
  "raw_recipe": "{% set version = \"1.1.8\" %}\n\n{% set variant = \"openblas\" %}\n\n\npackage:\n  name: cvxopt\n  version: {{ version }}\n\nsource:\n  fn: cvxopt-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/cvxopt/cvxopt-{{ version }}.tar.gz\n  md5: d4ff0a0e51aba93f838a70302a088eea\n  patches:\n    # Add a patch that fixes the linking order and adds a missing library.\n    # Also, fixes the environment variable used for SuiteSparse includes.\n    # See this commit\n    # ( https://github.com/cvxopt/cvxopt/commit/4e89755cb6aaf6493a49a3ad99dd5d5e007e1a5a ).\n    # ( https://github.com/cvxopt/cvxopt/commit/007c1a0ea9df9a54e9f99cacbde56a6047518375 ).\n    # Also, see this PR to show how these were backported.\n    # ( https://github.com/cvxopt/cvxopt/pull/61 )\n    - cvxopt_PR_61.diff\n\nbuild:\n  skip: true  # [win]\n  number: 204\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n    - gsl\n    - fftw\n    - glpk\n    - suitesparse 4.4.*\n\n  run:\n    - python\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n    - gsl\n    - fftw\n    - glpk\n\ntest:\n  imports:\n    - cvxopt\n\nabout:\n  home: http://cvxopt.org\n  license: GPL 3\n  summary: Convex optimization package\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jjhelmus\n    - martinandersen\n",
  "rendered_recipe": {},

@@ -679,6 +679,7 @@
   "subdir": "osx-64",
   "version": "0.13"
  },
+ "metadata_version": 1,
  "name": "r-repr",
  "raw_recipe": "{% set version = \"0.13\" %}\n\npackage:\n  name: r-repr\n  version: {{ version }}\n\nsource:\n  fn: r-repr-{{ version }}.tar.gz\n  url: https://github.com/IRkernel/repr/archive/{{ version }}.tar.gz\n  sha256: 0cba9aa18906df46d567331f1cafd142fbda75cfb98e515a220b98d2e9a0f6f3\n\nbuild:\n  number: 0\n  skip: True  # [win32]\n  script: R CMD INSTALL --build .\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - posix  # [win64]\n    - m2-git  # [win64]\n    - r-htmltools\n    - r-base64enc\n  run:\n    - r-base\n    - r-htmltools\n    - r-base64enc\n\ntest:\n  commands:\n    - R -e \"library('repr')\"  # [not win]\n    - R -e \\\"library('repr')\\\"  # [win]\n\nabout:\n  home: https://github.com/IRkernel/repr\n  license: GPL-3\n  summary: 'String and binary representations of objects for several formats / mime types.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

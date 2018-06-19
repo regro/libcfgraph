@@ -120,6 +120,7 @@
   "timestamp": 1526642385215,
   "version": "1.0"
  },
+ "metadata_version": 1,
  "name": "pyomo.solvers",
  "raw_recipe": "{% set version = \"1.0\" %}\n\npackage:\n  name: pyomo.solvers\n  version: {{ version }}\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - ipopt\n    - glpk\n    - coincbc  # [unix]\n\ntest:\n  commands:\n    - test -f $PREFIX/bin/ipopt  # [unix]\n    - test -f $PREFIX/bin/glpsol  # [unix]\n    - test -f $PREFIX/bin/cbc  # [unix]\n    - if not exist %LIBRARY_BIN%\\\\ipopt.exe exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\glpsol.exe exit 1  # [win]\n\nabout:\n  home: http://pyomo.org\n  license: BSD 3-clause\n  summary: 'Optimizers that enhance the functionality of Pyomo'\n\nextra:\n  recipe-maintainers:\n    - whart222\n    - jsiirola\n",
  "rendered_recipe": {

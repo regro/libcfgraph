@@ -489,6 +489,7 @@
   "subdir": "linux-64",
   "version": "0.18"
  },
+ "metadata_version": 1,
  "name": "scikit-learn",
  "raw_recipe": "{% set version = \"0.18\" %}\n\n{% set variant = \"openblas\" %}\n\npackage:\n  name: scikit-learn\n  version: {{ version }}\n\nsource:\n  fn: scikit-learn-{{ version }}.tar.gz\n  url: https://github.com/scikit-learn/scikit-learn/archive/{{ version }}.tar.gz\n  sha256: 6f871ab07657becb3cca158dc4af96a1a14c0a360add04664fba325da43537fa\n\nbuild:\n  number: 202\n  # We lack openblas on Windows, and therefore can't build numpy there either currently.\n  skip: true  # [win or np!=110]\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - cython\n    - python\n    - setuptools\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.18|0.2.18.*\n    - numpy x.x\n    - scipy\n    - nose\n\n  run:\n    - python\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.18|0.2.18.*\n    - numpy x.x\n    - scipy\n\ntest:\n  requires:\n    - nose\n\n  imports:\n    - sklearn\n\n  commands:\n    - nosetests sklearn --exe\n\nabout:\n  home: http://scikit-learn.org/\n  license: BSD 3-Clause\n  summary: A set of python modules for machine learning and data mining\n\nextra:\n  recipe-maintainers:\n    - amueller\n    - jakirkham\n    - ogrisel\n",
  "rendered_recipe": {},

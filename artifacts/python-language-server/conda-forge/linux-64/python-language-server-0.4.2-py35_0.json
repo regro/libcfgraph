@@ -683,6 +683,7 @@
   "subdir": "linux-64",
   "version": "0.4.2"
  },
+ "metadata_version": 1,
  "name": "python-language-server",
  "raw_recipe": "{% set name = \"python-language-server\" %}\n{% set version = \"0.4.2\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"9ea8217ec0c1b5384450cd12327119c56443a8e6b589ae53d2e1e61fbd4aa8a4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/palantir/{{ name }}/archive/{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - pyls = pyls.__main__:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - configparser  # [py27 or py34]\n    - future\n    - jedi >=0.10\n    - json-rpc\n    - pycodestyle\n    - pyflakes\n    - python\n    - yapf\n    - pluggy\n\ntest:\n  commands:\n    - pyls --help\n\nabout:\n  home: https://github.com/palantir/python-language-server\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: An implementation of the Language Server Protocol for Python\n  description: |\n    A Python 2.7 and 3.4+ implementation of the Language Server Protocol \n    making use of Jedi, pycodestyle, Pyflakes and YAPF.\n  dev_url: https://github.com/palantir/python-language-server\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n    - ccordoba12\n    - rlaverde\n    - andfoy\n",
  "rendered_recipe": {

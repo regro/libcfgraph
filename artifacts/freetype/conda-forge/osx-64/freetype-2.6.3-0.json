@@ -76,6 +76,7 @@
   "subdir": "osx-64",
   "version": "2.6.3"
  },
+ "metadata_version": 1,
  "name": "freetype",
  "raw_recipe": "{% set version = \"2.6.3\" %}\n\npackage:\n    name: freetype\n    version: {{ version }}\n\nsource:\n    fn: freetype-{{ version }}.tar.bz2\n    url: http://download.savannah.gnu.org/releases/freetype/freetype-{{ version }}.tar.bz2\n    sha256: 371e707aa522acf5b15ce93f11183c725b8ed1ee8546d7b3af549863045863a2\n\nbuild:\n    number: 0\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - zlib 1.2*\n        - libpng 1.6*\n    run:\n        - zlib 1.2*\n        - libpng 1.6*\n\ntest:\n    commands:\n        - freetype-config --version  # [not win]\n        - conda inspect linkages -n _test freetype  # [linux]\n\nabout:\n    home: http://freetype.sourceforge.net/index2.html\n    license: GPL-2.0 and FreeType (http://freetype.sourceforge.net/FTL.TXT)\n    summary: A TrueType Font Library\n\nextra:\n    recipe-maintainers:\n        - ccordoba12\n        - msarahan\n        - ocefpaf\n",
  "rendered_recipe": {},

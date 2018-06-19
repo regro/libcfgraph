@@ -158,6 +158,7 @@
   "timestamp": 1526411819740,
   "version": "12.2.1"
  },
+ "metadata_version": 1,
  "name": "keyring",
  "raw_recipe": "{% set version = \"12.2.1\" %}\n\npackage:\n    name: keyring\n    version: {{ version }}\n\nsource:\n    fn: keyring-{{ version }}.tar.gz\n    url: https://files.pythonhosted.org/packages/source/k/keyring/keyring-{{ version }}.tar.gz\n    sha256: 4498eaa2e32fc69a8b36749116b670c379d36a1a9ad4ab107df1e19c8a120ffe\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n    entry_points:\n        - keyring=keyring.cli:main\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - setuptools_scm >=1.15.0\n        - pywin32-ctypes  # [win]\n        - entrypoints\n    run:\n        - python\n        - pywin32-ctypes  # [win]\n        - entrypoints\n\ntest:\n    imports:\n        - keyring\n        - keyring.backends\n        - keyring.tests\n        - keyring.tests.backends\n        - keyring.util\n    commands:\n        - keyring --help\n\nabout:\n    home: https://github.com/jaraco/keyring\n    license: Python Software Foundation or MIT\n    summary: 'Store and access your passwords safely.'\n\nextra:\n    recipe-maintainers:\n        - ericdill\n        - licode\n        - tacaswell\n        - ccordoba12\n",
  "rendered_recipe": {

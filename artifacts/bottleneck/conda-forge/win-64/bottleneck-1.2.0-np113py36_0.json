@@ -117,6 +117,7 @@
   "subdir": "win-64",
   "version": "1.2.0"
  },
+ "metadata_version": 1,
  "name": "bottleneck",
  "raw_recipe": "{% set version = \"1.2.0\" %}\n\npackage:\n  name: bottleneck\n  version: {{ version }}\n\nsource:\n  fn: Bottleneck-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/B/Bottleneck/Bottleneck-{{ version }}.tar.gz\n  sha256: 3bec84564a4adbe97c24e875749b949a19cfba4e4588be495cc441db7c6b05e8\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n    - numpy x.x\n\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  requires:\n    - nose\n\n  imports:\n    - bottleneck\n    - bottleneck.slow\n    - bottleneck.tests\n    - bottleneck.reduce\n    - bottleneck.nonreduce\n    - bottleneck.nonreduce_axis\n    - bottleneck.move\n\n  commands:\n    - python -c \"import bottleneck; bottleneck.test()\"\n\nabout:\n  home: http://berkeleyanalytics.com/bottleneck\n  license: BSD 2-Clause\n  license_family: BSD\n  license_file: bottleneck/LICENSE\n  summary: Fast NumPy array functions written in Cython.\n  description: |\n    Bottleneck is a collection of fast NumPy array functions written in\n    Cython.\n  doc_url: http://berkeleyanalytics.com/bottleneck\n  dev_url: https://github.com/kwgoodman/bottleneck\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - msarahan\n    - wesm\n",
  "rendered_recipe": {

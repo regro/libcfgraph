@@ -99,6 +99,7 @@
   "subdir": "win-64",
   "version": "0.8.3"
  },
+ "metadata_version": 1,
  "name": "flower",
  "raw_recipe": "{% set version = \"0.8.3\" %}\n\npackage:\n    name: flower\n    version: {{ version }}\n\nsource:\n    fn: flower-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/f/flower/flower-{{ version }}.tar.gz\n    md5: 09d4dec422ed6c4a10584b5fce6008d6\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n    entry_points:\n    - flower = flower.__main__:main\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - celery >=2.5.0\n        - tornado >=4.0.0\n        - babel\n        - pytz\n        - futures\n    run:\n        - python\n        - setuptools\n        - celery >=2.5.0\n        - tornado >=4.0.0\n        - babel\n        - pytz\n        - futures\n\ntest:\n    imports:\n        - flower\n        - flower.api\n        - flower.utils\n        - flower.utils.backports\n        - flower.views\n    commands:\n        - flower --help\n\nabout:\n    home: https://github.com/mher/flower\n    license: BSD License\n    summary: Celery Flower\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n",
  "rendered_recipe": {},

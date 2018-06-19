@@ -95,6 +95,7 @@
   "subdir": "linux-64",
   "version": "0.5"
  },
+ "metadata_version": 1,
  "name": "webencodings",
  "raw_recipe": "{% set version = \"0.5\" %}\n\npackage:\n  name: webencodings\n  version: {{ version }}\n\nsource:\n  fn: webencodings-{{ version }}.tar.gz\n  url: https://github.com/gsnedders/python-webencodings/archive/v{{ version }}.tar.gz\n  sha256: 60d6c6566f830383a5ebebf18466648d57f179251fe6647e87dde16b981b0248\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - webencodings\n\nabout:\n  home: https://github.com/gsnedders/python-webencodings\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  doc_url: https://pythonhosted.org/webencodings\n  dev_url: https://github.com/gsnedders/python-webencodings\n  summary: Character encoding aliases for legacy web content\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "rendered_recipe": {

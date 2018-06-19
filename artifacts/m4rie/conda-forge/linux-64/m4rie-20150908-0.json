@@ -109,6 +109,7 @@
   "subdir": "linux-64",
   "version": "20150908"
  },
+ "metadata_version": 1,
  "name": "m4rie",
  "raw_recipe": "{% set version = \"20150908\" %}\n{% set name = \"m4rie\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://bitbucket.org/malb/m4rie/downloads/{{ name }}-{{ version }}.tar.gz\n  sha256: a0c3f46c399ed2e4af5aaad9de9db0962d15d5ccb9bd0e313df6b2c16bf8e0b1\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - libpng >=1.6.28,<1.7\n    - zlib 1.2.*\n    - m4ri\n  run:\n    - libpng >=1.6.28,<1.7\n    - zlib 1.2.*\n    - m4ri\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/m4rie/m4rie.h\n    - test -f ${PREFIX}/lib/lib{{ name }}.a\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]\n\nabout:\n  home: https://bitbucket.org/malb/m4rie\n  license: GPLv2+\n  license_file: {{ SRC_DIR }}/COPYING\n  summary: M4RIE is a library for fast arithmetic with dense matrices over GF(2^e) for 2 \u2264 e \u2264 16.\n  dev_url: https://bitbucket.org/malb/m4rie\n  doc_url: https://malb.bitbucket.io/m4rie\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

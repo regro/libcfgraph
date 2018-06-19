@@ -21,6 +21,7 @@
   "subdir": "osx-64",
   "version": "1.51.2"
  },
+ "metadata_version": 1,
  "name": "gridgen",
  "raw_recipe": "package:\n    name: gridgen\n    version: 1.51.2\n\nsource:\n    git_url: https://github.com/sakov/gridgen-c.git\n    git_tag: master  # upstream does not create releases :-(\n\nbuild:\n    number: 0\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - gridutils\n    run:\n        - gridutils\n        - libgcc\n\ntest:\n    commands:\n        - gridgen -h\n\nabout:\n    home: https://github.com/sakov/gridgen-c\n    license: Simplified BSD License and triangle.[c,h] license, which is non-free for commercial use\n    summary: Non-interactive generation of multi-corner quasi-orthogonal grids inside simply connected polygonal regions\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
  "rendered_recipe": {

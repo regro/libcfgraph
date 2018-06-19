@@ -610,6 +610,7 @@
   "subdir": "win-64",
   "version": "1.0.1"
  },
+ "metadata_version": 1,
  "name": "gridfill",
  "raw_recipe": "{% set version = \"1.0.1\" %}\n\npackage:\n  name: gridfill\n  version: {{ version }}\n\nsource:\n  url: https://github.com/ajdawson/gridfill/archive/v{{ version }}.tar.gz\n  sha256: 39d415da855e62d95f9e6221efbe9ee66605f83db217eeac559ded8678158e47\n\nbuild:\n  number: 0\n  script:\n    - python -m pip install . --no-deps --ignore-installed\n\nrequirements:\n  build:\n    - python\n    - pip\n    - cython\n    - numpy 1.11.*\n  run:\n    - python\n    - numpy >=1.11\n\ntest:\n  requires:\n    - nose\n  imports:\n    - gridfill\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME   # [osx]\n\nabout:\n    home: https://github.com/ajdawson/gridfill\n    license: MIT\n    license_file: COPYING\n    summary: \"Fill missing values in a grid by solving Poisson's equation via an iterative relaxation scheme\"\n\nextra:\n  recipe-maintainers:\n    - ajdawson\n    - ocefpaf\n",
  "rendered_recipe": {

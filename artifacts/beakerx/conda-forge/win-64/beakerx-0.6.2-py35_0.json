@@ -754,6 +754,7 @@
   "subdir": "win-64",
   "version": "0.6.2"
  },
+ "metadata_version": 1,
  "name": "beakerx",
  "raw_recipe": "{% set name = \"beakerx\" %}\n{% set version = \"0.6.2\" %}\n{% set sha256 = \"0f2f5512057f1f3c472f8fd44370bb00a2a0be4563466bc9c324d70104e8d24d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n  \nsource:\n  git_rev: {{ version }}\n  git_url: https://github.com/twosigma/beakerx.git\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://files.pythonhosted.org/packages/source/b/beakerx/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  \nbuild:\n  number: 0\n  skip: true  # [py2k]\n  skip: true  # [win32]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - jupyter\n    - pandas\n  run:\n    - python\n    - jupyter\n    - openjdk\n    - pandas\n    - ipywidgets\n    - widgetsnbextension\n\ntest:\n  imports:\n    - beakerx\n\nabout:\n  home: http://github.com/twosigma/beakerx\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Beaker Extensions for Jupyter'\n\n  description: |\n    Beaker Extensions for Jupyter\n  doc_url: https://github.com/twosigma/beakerx\n  dev_url: https://github.com/twosigma/beakerx\n\nextra:\n  recipe-maintainers:\n    - scottdraves\n",
  "rendered_recipe": {

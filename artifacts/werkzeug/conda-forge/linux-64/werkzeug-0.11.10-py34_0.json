@@ -71,6 +71,7 @@
   "subdir": "linux-64",
   "version": "0.11.10"
  },
+ "metadata_version": 1,
  "name": "werkzeug",
  "raw_recipe": "{% set name = \"Werkzeug\" %}\n{% set version = \"0.11.10\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"cc64dafbacc716cdd42503cf6c44cb5a35576443d82f29f6829e5c49264aeeee\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - werkzeug\n    - werkzeug.debug\n    - werkzeug.contrib\n\nabout:\n  home: http://werkzeug.pocoo.org/\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: The Python WSGI Utility Library.\n  description: |\n    Werkzeug is a WSGI utility library for Python. It's widely used and BSD licensed.\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n",
  "rendered_recipe": {},

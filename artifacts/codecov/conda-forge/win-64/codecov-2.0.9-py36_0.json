@@ -478,6 +478,7 @@
   "subdir": "win-64",
   "version": "2.0.9"
  },
+ "metadata_version": 1,
  "name": "codecov",
  "raw_recipe": "{% set name = \"codecov\" %}\n{% set version = \"2.0.9\" %}\n{% set sha256 = \"3ea0fb29746bfe8856c43ce9be893896ad0b8097f139954c6fd17814d14fd282\" %}\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  # Not on pypi (at time of packaging)\n  url: https://github.com/codecov/codecov-python/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - coverage\n    - requests >=2.7.9\n\ntest:\n  imports:\n    - codecov\n  commands:\n    - codecov -h\n\nabout:\n  home: https://github.com/codecov/codecov-python\n  license: Apache-2.0\n  license_family: Apache\n  summary: 'Hosted coverage reports for Github, Bitbucket and Gitlab'\n  doc_url: https://github.com/codecov/codecov-python\n  dev_url: https://github.com/codecov/codecov-python\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
  "rendered_recipe": {

@@ -150,6 +150,7 @@
   "subdir": "osx-64",
   "version": "2016.10.25"
  },
+ "metadata_version": 1,
  "name": "halide",
  "raw_recipe": "{% set name = \"halide\" %}\n{% set version = \"2016.10.25\" %}\n{% set sha256 = \"2d4beac52b8c710e3001b61679eabe6d49bc5bf17abf9b284dbce81d8f5b762b\" %}\n{% set build = 1 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/halide/Halide/archive/release_{{ version.replace('.', '_') }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - ldflags.patch\n\nbuild:\n  number: {{ build }}\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - clangdev\n    - llvmdev\n    - zlib 1.2.*\n  run:\n    - zlib 1.2.*\n\ntest:\n  requires:\n    - toolchain\n\nabout:\n  home: http://halide-lang.org\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'a language for image processing and computational photography'\n\n  description: |\n    Halide is a new programming language designed to make it easier to write\n    high-performance image processing code on modern machines. Its current front end is embedded in\n    C++. Compiler targets include x86/SSE, ARM v7/NEON, CUDA, Native Client, and OpenCL.\n  doc_url: http://halide-lang.org/docs/\n  dev_url: https://github.com/halide/Halide\n\nextra:\n  recipe-maintainers:\n    - jrk\n    - minrk\n",
  "rendered_recipe": {

@@ -605,6 +605,7 @@
   "subdir": "win-64",
   "version": "1.4"
  },
+ "metadata_version": 1,
  "name": "graphene",
  "raw_recipe": "{% set name = \"graphene\" %}\n{% set version = \"1.4\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"80de19b703990376ffbfc0f8c3636f90bd125e34f53547bdee5642509e11969b\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - six >=1.10.0\n    - graphql-core >=1.1\n    - graphql-relay >=0.4.5\n    - promise >=2.0\n\ntest:\n  imports:\n    - graphene\n    - graphene.pyutils\n    - graphene.relay\n    - graphene.test\n    - graphene.types\n    - graphene.utils\n\nabout:\n  home: http://graphene-python.org/\n  license_file: {{ RECIPE_DIR }}/LICENSE\n  license: MIT\n  license_family: MIT\n  summary: 'GraphQL Framework for Python'\n  dev_url: https://github.com/graphql-python/graphene\n  doc_url: http://docs.graphene-python.org/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

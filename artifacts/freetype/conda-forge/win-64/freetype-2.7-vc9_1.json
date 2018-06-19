@@ -138,6 +138,7 @@
   "subdir": "win-64",
   "version": "2.7"
  },
+ "metadata_version": 1,
  "name": "freetype",
  "raw_recipe": "{% set version = \"2.7\" %}\n\npackage:\n  name: freetype\n  version: {{ version }}\n\nsource:\n  fn: freetype-{{ version }}.tar.bz2\n  url: http://download.savannah.gnu.org/releases/freetype/freetype-{{ version }}.tar.bz2\n  sha256: d6a451f5b754857d2aa3964fd4473f8bc5c64e879b24516d780fb26bec7f7d48\n  patches:\n    # Build shared libs with msvc.\n    - winshared.patch  # [win]\n\nbuild:\n  number: 1\n  skip: True  # [win and py>35]\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py>=35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - cmake  # [win]\n    - zlib 1.2.*\n    - libpng >=1.6.28,<1.7\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py>=35]\n  run:\n    - zlib 1.2.*\n    - libpng >=1.6.28,<1.7\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py>=35]\n\ntest:\n  commands:\n    - freetype-config --version  # [not win]\n    - conda inspect linkages -p $PREFIX freetype  # [not win]\n    - conda inspect objects -p $PREFIX freetype  # [osx]\n\nabout:\n  home: https://www.freetype.org/\n  license: GPL-2.0 and FreeType (http://freetype.sourceforge.net/FTL.TXT)\n  summary: 'A TrueType Font Library.'\n\nextra:\n  recipe-maintainers:\n    - ccordoba12\n    - msarahan\n    - ocefpaf\n",
  "rendered_recipe": {

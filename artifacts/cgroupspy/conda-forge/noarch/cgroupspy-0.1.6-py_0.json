@@ -132,6 +132,7 @@
   "timestamp": 1526927542289,
   "version": "0.1.6"
  },
+ "metadata_version": 1,
  "name": "cgroupspy",
  "raw_recipe": "{% set name = \"cgroupspy\" %}\n{% set version = \"0.1.6\" %}\n{% set sha256 = \"fb4aac7938499cff53c260112fb0759a54fb5f8bad89d9be0326c70a7619821a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - cgroupspy\n    - cgroupspy.contenttypes\n    - cgroupspy.controllers\n    - cgroupspy.interfaces\n    - cgroupspy.nodes\n    - cgroupspy.trees\n    - cgroupspy.utils\n\nabout:\n  home: https://github.com/cloudsigma/cgroupspy\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Python library for managing cgroups'\n\n  description: |\n    Python library for managing cgroups\n\n    The library provides a pythonic way to manage and represent cgroups.\n    It provides interfaces that convert python objects to cgroups\n    compatible strings and vise versa.\n  dev_url: https://github.com/cloudsigma/cgroupspy\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

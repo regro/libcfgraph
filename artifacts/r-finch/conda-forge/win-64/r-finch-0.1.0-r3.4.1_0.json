@@ -819,6 +819,7 @@
   "subdir": "win-64",
   "version": "0.1.0"
  },
+ "metadata_version": 1,
  "name": "r-finch",
  "raw_recipe": "{% set version = '0.1.0' %}\n\npackage:\n  name: r-finch\n  version: {{ version }}\n\nsource:\n  fn: finch_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/finch_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/finch/finch_{{ version }}.tar.gz\n  sha256: 290296ec6c1b9e1e749d4a9832b20b0e44c46f800cde0766bb492702a889145f\n\nbuild:\n  number: 0\n  skip: True  # [win32]\n  script: R CMD INSTALL --build .\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-eml >=1.0.1\n    - r-data.table >=1.10.0\n    - r-digest\n    - r-plyr\n    - r-rappdirs\n    - r-xml2 >=1.0.0\n  run:\n    - r-base\n    - r-eml >=1.0.1\n    - r-data.table >=1.10.0\n    - r-digest\n    - r-plyr\n    - r-rappdirs\n    - r-xml2 >=1.0.0\n\ntest:\n  commands:\n    - R -e \"library('finch')\"  # [not win]\n    - R -e \\\"library('finch')\\\"  # [win]\n\nabout:\n  home: https://github.com/ropensci/finch\n  license: MIT\n  license_file: LICENSE\n  summary: 'Read Darwin Core Archive files'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

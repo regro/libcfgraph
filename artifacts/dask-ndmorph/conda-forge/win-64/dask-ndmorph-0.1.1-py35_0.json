@@ -96,6 +96,7 @@
   "subdir": "win-64",
   "version": "0.1.1"
  },
+ "metadata_version": 1,
  "name": "dask-ndmorph",
  "raw_recipe": "{% set name = \"dask-ndmorph\" %}\n{% set version = \"0.1.1\" %}\n{% set sha256 = \"de9d5abdcc77f3d4b4918ba1c61964f994170c9e1c8aacd9c3b2a5433f73838c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - dask\n    - numpy\n    - scipy\n\ntest:\n  source_files:\n    - tests\n\n  imports:\n    - dask_ndmorph\n\n  requires:\n    - pytest\n\n  commands:\n    - pytest\n\nabout:\n  home: https://github.com/dask-image/dask-ndmorph\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: A library of N-D morphological operations for Dask Arrays\n  doc_url: https://dask-ndmorph.readthedocs.io/\n  dev_url: https://github.com/dask-image/dask-ndmorph\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

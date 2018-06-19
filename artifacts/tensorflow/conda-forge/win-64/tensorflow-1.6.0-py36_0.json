@@ -3902,6 +3902,7 @@
   "timestamp": 1525866827190,
   "version": "1.6.0"
  },
+ "metadata_version": 1,
  "name": "tensorflow",
  "raw_recipe": "package:\n  name: tensorflow\n  version: \"1.6.0\"\n\nbuild:\n  number: 0\n  #  Google supplies whl files on PyPI for:\n  # - Linux: Python 2.7, 3.3, 3.4, 3.5 and 3.6\n  # - OS X: Python 2.7, 3.5 and 3.6\n  # - Win-64: Python 3.5 and 3.6\n  skip: True  # [win32]\n  skip: True  # [win64 and py<35]\n  skip: True  # [osx and py34]\n  skip: True  # [py26]\n  skip: True  # [py33]\n  entry_points:\n    - tensorboard = tensorflow.tensorboard.tensorboard:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - absl-py >=0.1.6\n    - astor >=0.6.0\n    - enum34 >=1.1.6  # [py<34]\n    - gast >=0.2.0\n    - grpcio >=1.8.6\n    - mock >=2.0.0    # [py2k]\n    - numpy >=1.13.3\n    - protobuf >=3.4.0\n    - six >=1.10.0\n    - tensorboard >=1.6.0,<1.7.0\n    - termcolor >=1.1.0\n    - backports.weakref >=1.0rc1  # [py2k]\n\ntest:\n  imports:\n    # Skip the import test on Linux as wheel file require a more recent\n    # version of GLIBC++ than the VM used to build and test package.\n    - tensorflow  # [not linux]\n\nabout:\n  home: http://tensorflow.org/\n  license: Apache 2.0\n  summary: TensorFlow helps the tensors flow\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n    - danielfrg\n    - waitingkuo\n    - ghego\n    - hajapy\n    - dhirschfeld\n",
  "rendered_recipe": {

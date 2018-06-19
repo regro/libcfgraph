@@ -162,6 +162,7 @@
   "timestamp": 1528380032358,
   "version": "0.3.1"
  },
+ "metadata_version": 1,
  "name": "importnb",
  "raw_recipe": "{% set version = \"0.3.1\" %}\n\npackage:\n  name: importnb\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/i/importnb/importnb-{{ version }}.tar.gz\n  sha256: a038aa456b7b3df7f23ded5696bec65340be19fc7fe3a0d17e861289bd17129d\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n    - pytest-runner\n    - wheel >=0.31.0\n    - twine >=1.11.0\n  run:\n    - python >=3\n    - setuptools\n    - dataclasses\n    - nbconvert\n    # importlib_resources will be [not py>36] and this will be arch again :-(\n    - importlib_resources\n\ntest:\n  imports:\n    - importnb\n\nabout:\n  home: https://github.com/deathbeds/importnb\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: Import .ipynb files as modules in the system path\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

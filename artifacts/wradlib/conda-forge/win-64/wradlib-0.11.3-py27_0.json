@@ -723,6 +723,7 @@
   "subdir": "win-64",
   "version": "0.11.3"
  },
+ "metadata_version": 1,
  "name": "wradlib",
  "raw_recipe": "{% set version = \"0.11.3\" %}\n\npackage:\n    name: wradlib\n    version: {{ version }}\n\nsource:\n    fn: wradlib-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/w/wradlib/wradlib-{{ version }}.tar.gz\n    sha256: 3115088020fda5a9cde73d4976d30e89919a953ffc46b9fd18bf7e5baf3ed62e\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n        - deprecation\n        - numpy\n        - scipy\n        - matplotlib\n        - h5py\n        - netcdf4\n        - gdal 2.2.*\n    run:\n        - python\n        - deprecation\n        - numpy\n        - scipy\n        - matplotlib\n        - h5py\n        - netcdf4\n        - gdal 2.2.*\n\ntest:\n    imports:\n        - wradlib  # [not osx]\n    commands:\n        # hack to get macosx matplotlib running\n        # see https://github.com/conda-forge/wradlib-feedstock/pull/20\n        - python -c \"import matplotlib as mpl; mpl.use('Agg'); import wradlib\"  # [osx]\n\nabout:\n    home: http://wradlib.org/\n    license: MIT\n    summary: \"Open Source Library for Weather Radar Data Processing\"\n\nextra:\n    recipe-maintainers:\n        - jjhelmus\n        - kmuehlbauer\n",
  "rendered_recipe": {

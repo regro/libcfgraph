@@ -80,6 +80,7 @@
   "subdir": "win-64",
   "version": "1.2"
  },
+ "metadata_version": 1,
  "name": "fmipp",
  "raw_recipe": "{% set version = \"1.2\" %}\n\npackage:\n  name: fmipp\n  version: {{ version }}\n\nsource:\n  # no tarball available, no git tag\n  git_url: git://git.code.sf.net/p/fmipp/code\n  git_rev: 565836e255a73d013b3b74331d56f24ebf8b5408\n\nbuild:\n  number: 1\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n  # module fails to import on x86\n  skip: true  # [win32]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - swig\n    - boost 1.62.*\n    - sundials\n    - python\n  run:\n    - boost 1.62.*\n    - sundials\n    - python\n\ntest:\n  imports:\n    - fmippim\n\nabout:\n  home: http://fmipp.sourceforge.net\n  license: BSD 2-Clause\n  license_file: FMIPP_LICENSE\n  summary: A High-level Utility Package for FMI-based Software Development\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "rendered_recipe": {

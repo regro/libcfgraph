@@ -151,6 +151,7 @@
   "subdir": "win-64",
   "version": "1.2.0"
  },
+ "metadata_version": 1,
  "name": "ocw",
  "raw_recipe": "{% set name = \"ocw\" %}\n{% set version = \"1.2.0\" %}\n{% set sha256 = \"00d2509077825161a884835c32e06ffaced7faeee16fcc0329510d1518065c63\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - scipy\n    - matplotlib\n    - basemap\n    - netcdf4\n    - h5py\n    - bottle\n    - pydap\n    - python-dateutil\n    - myproxyclient  # [not py3k]\n    - esgf-pyclient  # [not py3k]\n    - podaacpy >=1.9.0\n\ntest:\n  imports:\n    - ocw\n    - ocw.data_source\n    - ocw.esgf\n\nabout:\n  home: http://climate.apache.org/\n  license: Apache 2.0\n  license_file: LICENSE.txt\n  license_family: Apache\n  summary: 'A library for simplifying the process of climate model evaluation.'\n  doc_url: http://cwiki.apache.org/confluence/display/CLIMATE\n  dev_url: https://github.com/apache/climate\n\nextra:\n  recipe-maintainers:\n    - agoodm\n    - jarifibrahim\n    - lewismc\n",
  "rendered_recipe": {

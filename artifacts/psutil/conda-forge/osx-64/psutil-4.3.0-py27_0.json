@@ -41,6 +41,7 @@
   "subdir": "osx-64",
   "version": "4.3.0"
  },
+ "metadata_version": 1,
  "name": "psutil",
  "raw_recipe": "{% set version = \"4.3.0\" %}\n\npackage:\n  name: psutil\n  version: {{ version }}\n\nsource:\n  fn: psutil-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/psutil/psutil-{{ version }}.tar.gz\n  md5: ca97cf5f09c07b075a12a68b9d44a67d\n\nbuild:\n  number: 0\n  skip: true  # [win and py2k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  requires:\n    - ipaddress    # [py<33]\n    - mock         # [py<33]\n    - unittest2    # [py<27]\n\n  imports:\n    - psutil\n    - psutil.tests\n\nabout:\n  home: https://github.com/giampaolo/psutil\n  license: BSD 3-Clause\n  summary: A cross-platform process and system utilities module for Python\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n",
  "rendered_recipe": {},

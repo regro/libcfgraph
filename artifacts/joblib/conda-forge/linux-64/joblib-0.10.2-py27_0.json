@@ -122,6 +122,7 @@
   "subdir": "linux-64",
   "version": "0.10.2"
  },
+ "metadata_version": 1,
  "name": "joblib",
  "raw_recipe": "{% set version = \"0.10.2\" %}\n\npackage:\n    name: joblib\n    version: {{ version }}\n\nsource:\n    fn: joblib-{{ version }}.tar.gz\n    url: https://github.com/joblib/joblib/archive/{{ version }}.tar.gz\n    sha256: 3c39f6c34b63e7aa7ddbcf72ba1c266ba9ec52f40beca5324753a7934f3aec18\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n\ntest:\n    imports:\n        - joblib\n\nabout:\n    home: http://packages.python.org/joblib/\n    license: BSD 3-Clause\n    summary: 'Python function as pipeline jobs.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - jakirkham\n",
  "rendered_recipe": {},

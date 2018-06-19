@@ -692,6 +692,7 @@
   "subdir": "osx-64",
   "version": "0.6.4b1"
  },
+ "metadata_version": 1,
  "name": "pivy",
  "raw_recipe": "{% set name = \"pivy\" %}\n{% set version = \"0.6.4b1\" %}\n{% set sha256 = \"98743d0daa3b7aaaf33bb055035cf5141679a5ec6f237c4a8ee3c40d594f3510\" %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}.tar.gz\n    url: https://github.com/FreeCAD/pivy/archive/{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\n\nbuild:\n    number: 1\n    skip: true  # [(win and not py36)]\n\n    features:\n        - vc14  # [(win and py36)]\n\nrequirements:\n    build:\n        - toolchain\n        - nomkl  # [unix]\n        - vc 14  # [win]\n        - msinttypes  # [win]\n        - cmake\n        - python\n        - swig  3.0.8\n        - coin3d\n        - colorama\n        - ninja\n        - qt 5.6*\n        # - soqt\n    run:\n        - vc 14  # [win]\n        - python\n        - coin3d\n        - qt 5.6.*\n        - pyside2\n        - libglu  # [linux]\n        # - soqt\n\ntest:\n    imports:\n        - pivy.coin\n        # - pivy.gui.soqt\n\nabout:\n    home: https://github.com/FreeCAD/pivy\n    license: ISC\n    license_file: LICENSE\n    summary: python bindings to coin3d.\n    doc_url: https://github.com/FreeCAD/pivy\n    dev_url: https://github.com/FreeCAD/pivy\n\nextra:\n    recipe-maintainers:\n        - looooo\n",
  "rendered_recipe": {

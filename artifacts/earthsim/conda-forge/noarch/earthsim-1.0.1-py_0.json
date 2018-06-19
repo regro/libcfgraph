@@ -775,6 +775,7 @@
   "subdir": "noarch",
   "version": "1.0.1"
  },
+ "metadata_version": 1,
  "name": "earthsim",
  "raw_recipe": "{% set version = \"1.0.1\" %}\n\npackage:\n  name: earthsim\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pyviz/EarthSim/archive/{{ version }}.tar.gz\n  sha256: 93594afbdd8569e2edd7873d603d341bc126c2cf05ca371f6250d49ba0e20df3\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - earthsim\n\nabout:\n  home: https://github.com/pyviz/EarthSim\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Tools for working with and visualizing environmental simulations.'\n  description: |\n      Python-based tools for specifying, launching, visualizing, and analyzing environmental simulations, such as those for hydrology modeling.\n      EarthSim is designed as a lightweight \"overview\" site and project, relying on core code maintained in other general-purpose PyViz projects.\n  doc_url: https://pyviz.github.io/EarthSim/\n  dev_url: https://github.com/pyviz/EarthSim\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

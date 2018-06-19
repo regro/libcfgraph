@@ -773,6 +773,7 @@
   "subdir": "noarch",
   "version": "0.4.1"
  },
+ "metadata_version": 1,
  "name": "maya",
  "raw_recipe": "{% set version = \"0.4.1\" %}\n\npackage:\n  name: maya\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/m/maya/maya-{{ version }}.tar.gz\n  sha256: 452e5812c3d5f936a6c8cbea7fc717dcf3ea86d8e58aecb7a057f5f6535dd92e\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - humanize\n    - pytz\n    - dateparser >=0.7.0\n    - tzlocal\n    - pendulum >=1.0,<=1.5.1\n    - snaptime\n\ntest:\n  imports:\n    - maya\n\nabout:\n  home: https://github.com/kennethreitz/maya\n  license: MIT\n  license_file: {{ RECIPE_DIR }}/LICENSE\n  summary: 'Datetimes for Humans'\n\nextra:\n  recipe-maintainers:\n    - tacaswell\n    - ocefpaf\n",
  "rendered_recipe": {

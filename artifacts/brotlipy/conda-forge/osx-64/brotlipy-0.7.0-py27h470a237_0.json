@@ -127,6 +127,7 @@
   "timestamp": 1529405868401,
   "version": "0.7.0"
  },
+ "metadata_version": 1,
  "name": "brotlipy",
  "raw_recipe": "{% set name = \"brotlipy\" %}\n{% set version = \"0.7.0\" %}\n{% set sha256 = \"36def0b859beaf21910157b4c33eb3b06d8ce459c942102f16988cca6ea164df\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - python\n    - setuptools\n    - cffi        >=1.0.0\n  run:\n    - python\n    - cffi        >=1.0.0\n    - enum34      # [py2k]\n\ntest:\n  imports:\n    - brotli\n\nabout:\n  home: https://github.com/python-hyper/brotlipy\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Python bindings to the Brotli compression library'\n  dev_url: https://github.com/python-hyper/brotlipy\n\nextra:\n  recipe-maintainers:\n    - primozgodec\n    - astaric\n",
  "rendered_recipe": {

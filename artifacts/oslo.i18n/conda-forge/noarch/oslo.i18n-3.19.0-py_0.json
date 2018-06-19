@@ -753,6 +753,7 @@
   "subdir": "noarch",
   "version": "3.19.0"
  },
+ "metadata_version": 1,
  "name": "oslo.i18n",
  "raw_recipe": "{% set name = \"oslo.i18n\" %}\n{% set version = \"3.19.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"9711548b5a7c18a2b41f5d91f2f907f93b396b8a6c9b5b2aaf2b63560a768ba2\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  noarch: python\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pbr !=2.1.0,>=2.0.0\n\n  run:\n    - python\n    - pbr !=2.1.0,>=2.0.0\n    - babel !=2.4.0,>=2.3.4\n    - six >=1.10.0\n    - fixtures\n\ntest:\n  imports:\n    - oslo_i18n\n    - oslo_i18n.log\n    - oslo_i18n.fixture\n\nabout:\n  home: http://docs.openstack.org/developer/oslo.i18n/\n  license_file: LICENSE\n  license: Apache 2.0\n  license_family: Apache\n  summary: 'Utilities for working with internationalization (i18n) features, especially translation for text strings in an application or library.'\n  doc_url: http://docs.openstack.org/developer/oslo.i18n/\n  dev_url: http://git.openstack.org/cgit/openstack/oslo.i18n\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - anguslees\n",
  "rendered_recipe": {

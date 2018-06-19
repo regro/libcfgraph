@@ -508,6 +508,7 @@
   "subdir": "osx-64",
   "version": "1.12.2"
  },
+ "metadata_version": 1,
  "name": "ncpol2sdpa",
  "raw_recipe": "{% set name = \"ncpol2sdpa\" %}\n{% set version = \"1.12.2\" %}\n{% set sha256 = \"11233a8950e3e4918d19c90c41bcf259b17f2daa645b05432d5e1c51a3bdb0f7\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - sympy\n\ntest:\n  imports:\n    - ncpol2sdpa\n\nabout:\n  home: http://github.com/peterwittek/ncpol2sdpa\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: 'Solve global polynomial optimization problems of either commutative variables or noncommutative operators through a semidefinite programming (SDP) relaxation'\n  doc_url: https://ncpol2sdpa.readthedocs.org/\n  dev_url: https://github.com/peterwittek/ncpol2sdpa\n\nextra:\n  recipe-maintainers:\n    - peterwittek\n",
  "rendered_recipe": {

@@ -133,6 +133,7 @@
   "timestamp": 1526933321656,
   "version": "1.1.5"
  },
+ "metadata_version": 1,
  "name": "python-geotiepoints",
  "raw_recipe": "{% set name = \"python-geotiepoints\" %}\n{% set version = \"1.1.5\" %}\n{% set file_ext = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"194f9c65e2df483a8b8654f3e272fd6ba541e9ec0bd1216967e96deffc6c1d9f\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  number: 0\n  script:\n    - USE_CYTHON=true  # [not win]\n    - set USE_CYTHON=true  # [win]\n    - python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n    - numpy\n    - cython\n  run:\n    - python\n    - numpy\n    - scipy\n    - pandas\n\ntest:\n  imports:\n    - geotiepoints\n  requires:\n    - h5py\n    - unittest2\n\nabout:\n  home: https://github.com/pytroll/python-geotiepoints\n  license: GPL-3.0\n  license_family: GPL3\n  license_file: LICENSE.txt\n  summary: Interpolation of geographic tiepoints in Python\n  description: Interpolation and extrapolation of geographic (lon, lat) tie points\n  doc_url: http://python-geotiepoints.readthedocs.io\n  dev_url: https://github.com/pytroll/python-geotiepoints\n\nextra:\n  recipe-maintainers:\n    - djhoese\n    - mraspaud\n    - adybbroe\n    - pnuu\n",
  "rendered_recipe": {

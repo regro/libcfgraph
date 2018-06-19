@@ -684,6 +684,7 @@
   "subdir": "osx-64",
   "version": "1.8.1"
  },
+ "metadata_version": 1,
  "name": "webob",
  "raw_recipe": "{% set name = \"WebOb\" %}\n{% set version = \"1.8.1\" %}\n{% set sha256 = \"54f35073d2fdcddd7a98c2a1dedeede49739150737164a787220f30283139ba6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - webob\n\nabout:\n  home: http://webob.org/\n  license: MIT\n  license_family: MIT\n  summary: 'WSGI request and response object'\n  description: |\n    WebOb provides objects for HTTP requests and responses. Specifically it does this by wrapping the WSGI request environment and response status/headers/app_iter(body).\n\n    The request and response objects provide many conveniences for parsing HTTP request and forming HTTP responses. Both objects are read/write: as a result, WebOb is also a nice way to create HTTP requests and parse HTTP responses.\n  doc_url: http://webob.readthedocs.org/\n  dev_url: https://github.com/Pylons/webob/\n\nextra:\n  recipe-maintainers:\n    - stuertz\n",
  "rendered_recipe": {

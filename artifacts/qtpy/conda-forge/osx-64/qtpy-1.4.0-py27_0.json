@@ -697,6 +697,7 @@
   "subdir": "osx-64",
   "version": "1.4.0"
  },
+ "metadata_version": 1,
  "name": "qtpy",
  "raw_recipe": "{% set version = \"1.4.0\" %}\n\npackage:\n  name: qtpy\n  version: {{version}}\n\nsource:\n  fn: qtpy-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/q/qtpy/QtPy-{{version}}.tar.gz\n  sha256: 8e78e7ce28015c1041be68b90f43048c9815e8c89d3362f8073feecdc70eafba\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  requires:\n    - pyqt\n  imports:\n    - qtpy\n    - qtpy.QtGui\n\nabout:\n  home: https://github.com/spyder-ide/qtpy\n  license: MIT\n  summary: A uniform layer to support PyQt5, PyQt4 and PySide with a single codebase\n\nextra:\n  recipe-maintainers:\n    - ccordoba12\n    - goanpeca\n    - astrofrog-conda-forge\n    - Nodd\n",
  "rendered_recipe": {

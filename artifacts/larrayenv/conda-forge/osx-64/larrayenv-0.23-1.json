@@ -497,6 +497,7 @@
   "subdir": "osx-64",
   "version": "0.23"
  },
+ "metadata_version": 1,
  "name": "larrayenv",
  "raw_recipe": "{% set name = \"larrayenv\" %}\n{% set version = \"0.23\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nbuild:\n  number: 1\n\nrequirements:\n  build: []\n  run:\n      - larray\n      - qtconsole\n      - matplotlib\n      - pyqt 5.6.*\n      - qtpy\n      - pytables\n      - xlsxwriter\n      - xlrd\n      - openpyxl\n      - xlwings\n\ntest:\n  imports: []\n\nabout:\n  home: http://github.com/liam2/larray\n  license: GPL-3.0\n  license_family: GPL\n  license_file: '{{ RECIPE_DIR }}/LICENSE'\n  summary: \"Meta-package to install LArray and all its optional dependencies\"\n  doc_url: http://larray.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - alixdamman\n    - gdementen\n",
  "rendered_recipe": {

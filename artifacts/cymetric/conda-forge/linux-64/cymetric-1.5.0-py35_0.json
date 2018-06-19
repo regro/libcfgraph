@@ -102,6 +102,7 @@
   "subdir": "linux-64",
   "version": "1.5.0"
  },
+ "metadata_version": 1,
  "name": "cymetric",
  "raw_recipe": "{% set version = \"1.5.0\" %}\n{% set org = \"cyclus\" %}\n{% set branch = \"1.5.0\" %}\n{% set sha256 = \"b1c60e68d9ee4421fbdeebf768a1ac48a31fc5a3559583b3f79e3c9b0aa4bb50\" %}\n\npackage:\n  name: cymetric\n  version: {{ version }}\n\nsource:\n  fn: cymetric-{{ version }}-{{ sha256 }}.tar.gz\n  url: https://github.com/{{ org }}/cymetric/archive/{{ branch }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win or py34]\n\nbuild:\n  number: 0\n  script: python setup.py install --prefix ${PREFIX}\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - cyclus >=1.5.*\n    - pandas\n\ntest:\n  requires:\n    - cycamore >=1.5.*\n    - nose\n  # Remove the following when conda-forge migrates to conda-build v2.*\n  imports:\n    - cymetric\n  # Use the following when conda-forge migrates to conda-build v2.*\n  #commands:\n  #  - cd \"${SRC_DIR}/tests\"\n  #  - nosetests test_cyclus.py test_evaluator.py test_fco_metrics.py test_root_metrics.py  # [py27]\n  #  - nosetests  # [py35]\n\nabout:\n  home: http://fuelcycle.org\n  license: BSD 3-clause\n  license_family: BSD\n  summary: 'Cyclus Metrics'\n  doc_url: http://fuelcycle.org/user/cymetric/index.html\n  dev_url: https://github.com/cyclus/cymetric\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - gonuke\n    - Baaaaam\n",
  "rendered_recipe": {

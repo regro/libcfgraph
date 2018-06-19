@@ -791,6 +791,7 @@
   "subdir": "win-64",
   "version": "2.5.3"
  },
+ "metadata_version": 1,
  "name": "ad3-cpp",
  "raw_recipe": "{% set name = \"ad3-cpp\" %}\n{% set version = \"2.5.3\" %}\n{% set sha256 = \"1a63e2e401a33467febc22ca10e91d7385c6813b2c3b44e96460360b76db147c\" %}\n#\"d98eb1b6ab5fd179747f2130592533c70f3d4b70189c3cc4f3c9439d3bb80b5a\" %}\n#\"b2ada6f86faf5c9032e8b1a7b8cc0dff68a229e90ad80b366f5564fec03caa17\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  #path: ../\n  #fn: ad3-{{ version }}.tar.gz\n  url: https://github.com/DerThorsten/AD3/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - eigen\n\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/ad3           # [unix]\n    - test -f ${PREFIX}/include/ad3/Factor.h  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\ad3\\Factor.h (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://github.com/DerThorsten/AD3\n  license: GPL3\n  license_family: GPL3\n  license_file: LICENSE\n  summary: 'AD3 Alternating Directions Dual Decomposition'\n  description: 'AD3 Alternating Directions Dual Decomposition'\n  #documentation_url:  https://github.com/DerThorsten/AD3\n  dev_url: https://github.com/DerThorsten/AD3\n\nextra:\n  recipe-maintainers:\n    - DerThorsten\n",
  "rendered_recipe": {

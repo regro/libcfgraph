@@ -813,6 +813,7 @@
   "subdir": "noarch",
   "version": "3.0.21"
  },
+ "metadata_version": 1,
  "name": "django-nested-admin",
  "raw_recipe": "{% set name = \"django-nested-admin\" %}\n{% set version = \"3.0.21\" %}\n{% set build = 0 %}\n{% set sha256 = \"e0868d3e97b12007f65bd5c216b69e841e796938376b5751309094904907aa65\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/theatlantic/django-nested-admin/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - python-monkey-business >=1.0.0\n\n  run:\n    - python\n    - django\n    - python-monkey-business >=1.0.0\n\ntest:\n  imports:\n    - nested_admin\n    - nested_admin.templatetags\n    - nested_admin.tests\n    - nested_admin.tests.admin_widgets\n    - nested_admin.tests.gfk\n    - nested_admin.tests.one_deep\n    - nested_admin.tests.three_deep\n    - nested_admin.tests.two_deep\n\nabout:\n  home: https://github.com/theatlantic/django-nested-admin\n  license: BSD 2-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: Django admin classes that allow for nested inlines\n  dev_url: https://github.com/theatlantic/django-nested-admin\n  doc_url: https://github.com/theatlantic/django-nested-admin\n\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n",
  "rendered_recipe": {

@@ -830,6 +830,7 @@
   "subdir": "noarch",
   "version": "0.8.0"
  },
+ "metadata_version": 1,
  "name": "flasgger",
  "raw_recipe": "{% set name = \"flasgger\" %}\n{% set version = \"0.8.0\" %}\n{% set md5 = \"185f95e37f3d8cfc90f4eb80be0f8f72\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - flask >=0.10\n    - jsonschema >=2.5.1\n    - mistune\n    - python\n    - pyyaml >=3.0\n    - six >=1.10.0\n\n\ntest:\n  imports:\n    - flasgger\n\nabout:\n  home: https://github.com/rochacbruno/flasgger\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Easy Swagger UI for your Flask API'\n\nextra:\n  recipe-maintainers:\n    - lvoliveira\n    - nicoddemus\n    - igortg\n",
  "rendered_recipe": {

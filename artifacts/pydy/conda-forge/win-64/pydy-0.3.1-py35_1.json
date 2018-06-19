@@ -171,6 +171,7 @@
   "subdir": "win-64",
   "version": "0.3.1"
  },
+ "metadata_version": 1,
  "name": "pydy",
  "raw_recipe": "{% set name = \"pydy\" %}\n{% set version = \"0.3.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: pydy-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/p/pydy/pydy-{{ version }}.tar.gz\n  md5: 2c859ef49b09d075cec88f011bba1cef\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools >=8.0\n    - sympy >=0.7.4.1\n    - numpy >=1.8.1\n    - scipy >=0.13.3\n\ntest:\n  imports:\n    - pydy\n    - pydy.codegen\n    - pydy.codegen.tests\n    - pydy.models\n    - pydy.system\n    - pydy.utils\n    - pydy.viz\n    - pydy.viz.tests\n\nabout:\n  home: http://pydy.org\n  license: BSD-3-Clause\n  summary: 'Python tool kit for multi-body dynamics.'\n\nextra:\n    recipe-maintainers:\n        - moorepants\n",
  "rendered_recipe": {

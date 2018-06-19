@@ -574,6 +574,7 @@
   "subdir": "osx-64",
   "version": "1.16"
  },
+ "metadata_version": 1,
  "name": "r-sparql",
  "raw_recipe": "{% set version = '1.16' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-sparql\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: SPARQL_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/SPARQL_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/SPARQL/SPARQL_{{ version }}.tar.gz\n  sha256: 2cb366b2b93804c12f17254a1c37687887fc12047b58b13aab0d7a6f000e533d\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\nrequirements:\n  build:\n    - r-base\n    - r-rcurl\n    - r-xml\n\n  run:\n    - r-base\n    - r-rcurl\n    - r-xml\n\ntest:\n  commands:\n    - $R -e \"library('SPARQL')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('SPARQL')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=SPARQL\n  license: GPL-3\n  summary: 'Use SPARQL to pose SELECT or UPDATE queries to an end-point. '\n\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n",
  "rendered_recipe": {

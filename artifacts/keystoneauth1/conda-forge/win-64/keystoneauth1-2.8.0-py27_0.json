@@ -166,6 +166,7 @@
   "subdir": "win-64",
   "version": "2.8.0"
  },
+ "metadata_version": 1,
  "name": "keystoneauth1",
  "raw_recipe": "{%set name = \"keystoneauth1\" %}\n{%set version = \"2.8.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"7f92251600b86c368d2201317c60b82e37760e1399c223005710b1ee8a52b03f\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pbr >=1.8\n\n  run:\n    - python\n    - pbr >=1.8\n    - iso8601 >=0.1.11\n    - positional >=1.0.1\n    - requests >=2.10.0\n    - six >=1.9.0\n    - stevedore >=1.10.0\n\ntest:\n  imports:\n    - keystoneauth1\n    - keystoneauth1.identity\n    - keystoneauth1.identity.v2\n    - keystoneauth1.identity.v3\n    - keystoneauth1.identity.generic\n    - keystoneauth1.extras\n\nabout:\n  home: http://docs.openstack.org/developer/keystoneauth/\n  license: Apache Software License Version 2.0\n  summary: 'Authentication Library for OpenStack Identity'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

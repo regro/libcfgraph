@@ -203,6 +203,7 @@
   "timestamp": 1528395090012,
   "version": "18.6.1"
  },
+ "metadata_version": 1,
  "name": "autobahn",
  "raw_recipe": "{% set name = \"autobahn\" %}\n{% set version = \"18.6.1\" %}\n{% set sha256 = \"2f41bfc512ec482044fa8cfa74182118dedd87e03b3494472d9ff1b5a1e27d24\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n    - txaio >=2.10.0\n    - six >=1.10.0\n\ntest:\n  imports:\n    - autobahn\n    - autobahn.rawsocket\n    - autobahn.wamp\n    - autobahn.websocket\n    - autobahn.util\n\nabout:\n  home: https://github.com/crossbario/autobahn-python\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'WebSocket and WAMP in Python for Twisted and asyncio'\n\n  doc_url: https://autobahn-python.readthedocs.io\n  dev_url: https://github.com/crossbario/autobahn-python\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
  "rendered_recipe": {

@@ -569,6 +569,7 @@
   "subdir": "osx-64",
   "version": "0.4.2"
  },
+ "metadata_version": 1,
  "name": "resonance",
  "raw_recipe": "{% set name = \"resonance\" %}\n{% set version = \"0.4.2\" %}\n{% set sha256 = \"a1cdcc5342d207607487be5895f0330d9e14a50c1e6b6e472b76e556a5ded77d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy >=1.13\n    - scipy >=0.19\n    - pandas >=0.20\n    - matplotlib >=2.0\n\ntest:\n  imports:\n    - resonance\n    - resonance.version\n    - resonance.system\n    - resonance.linear_systems\n    - resonance.nonlinear_systems\n    - resonance.functions\n    - resonance.tests\n\nabout:\n  home: http://github.com/moorepants/resonance\n  license: CC-BY-4.0\n  license_file: LICENSE\n  summary: 'Learning mechanical vibrations through computation.'\n\nextra:\n  recipe-maintainers:\n    - moorepants\n    - ixjlyons\n",
  "rendered_recipe": {

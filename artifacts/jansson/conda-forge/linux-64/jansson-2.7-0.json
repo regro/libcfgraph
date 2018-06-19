@@ -26,6 +26,7 @@
   "subdir": "linux-64",
   "version": "2.7"
  },
+ "metadata_version": 1,
  "name": "jansson",
  "raw_recipe": "# Jinja variables help maintain the recipe as you'll update the version only here.\r\n{% set version = \"2.7\" %}\r\n\r\npackage:\r\n    name: jansson\r\n    version: {{ version }}\r\n\r\nsource:\r\n    fn: jansson-{{ version }}.tar.gz\r\n    url: http://www.digip.org/jansson/releases/jansson-{{ version }}.tar.gz\r\n    sha1: 7d8686d84fd46c7c28d70bf2d5e8961bc002845e\r\n\r\nbuild:\r\n    number: 0\r\n\r\nrequirements:\r\n    build:\r\n        - cmake\r\n\r\ntest:\r\n    commands:\r\n        - test -f ${PREFIX}/lib/libjansson.a  # [unix]\r\n\r\nabout:\r\n    home: https://github.com/akheron/jansson\r\n    license: MIT\r\n    summary: 'Jansson is a C library for encoding, decoding and manipulating JSON data.'\r\n\r\nextra:\r\n    recipe-maintainers:\r\n        - mariusvniekerk\r\n",
  "rendered_recipe": {},

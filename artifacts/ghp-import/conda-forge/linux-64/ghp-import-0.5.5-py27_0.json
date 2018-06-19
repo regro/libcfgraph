@@ -90,6 +90,7 @@
   "subdir": "linux-64",
   "version": "0.5.5"
  },
+ "metadata_version": 1,
  "name": "ghp-import",
  "raw_recipe": "{% set version = \"0.5.5\" %}\n\npackage:\n  name: ghp-import\n  version: {{ version }}\n\nsource:\n  fn: ghp-import-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/g/ghp-import/ghp-import-{{ version }}.tar.gz\n  sha256: 3e924ea720e4e1f82d56753db2154bfb86067472c5830732159c3a4c4fbc75d7\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n\ntest:\n  commands:\n    - ghp-import --help\n\nabout:\n  home: http://github.com/davisp/ghp-import\n  license: Tumbolia Public\n  license_file: LICENSE\n  summary: 'Copy your docs directly to the gh-pages branch.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -103,6 +103,7 @@
   "subdir": "osx-64",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "cypari2",
  "raw_recipe": "{% set version = \"1.0.0\" %}\n{% set name = \"cypari2\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/defeo/cypari2/archive/{{ version }}.tar.gz\n  sha256: 462e71c560236fffc667b19bf519133a244ac668a08eeceb8850f3cd28276e86\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script:\n    # https://github.com/conda-forge/toolchain-feedstock/pull/11\n    - export CPPFLAGS=\"-I${PREFIX}/include ${CPPFLAGS}\"\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - setuptools\n    - cython\n    - python\n    - pari >=2.9\n    - cysignals\n  run:\n    - python\n    - pari >=2.9\n    - cysignals\n\ntest:\n  imports:\n    - cypari2\n  commands:\n    - python -c \"import doctest; import cypari2; doctest.testmod(cypari2, optionflags=doctest.ELLIPSIS|doctest.REPORT_NDIFF)\"\n\nabout:\n  home: https://github.com/defeo/cypari2\n  license: GPLv2+\n  license_file: LICENSE\n  summary: 'An interface to the number theory library libpari'\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

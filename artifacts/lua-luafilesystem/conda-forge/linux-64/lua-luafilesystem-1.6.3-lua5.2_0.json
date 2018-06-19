@@ -103,6 +103,7 @@
   "subdir": "linux-64",
   "version": "1.6.3"
  },
+ "metadata_version": 1,
  "name": "lua-luafilesystem",
  "raw_recipe": "{% set name = \"lua-luafilesystem\" %}\n{% set version = \"1.6.3\" %}\n{% set sha256 = \"d58439c548433adcda98e695be53e526ba940a4b9c44fb9a05d92cd495cdd47f\" %}\n\npackage:\n  name: {{ name }} \n  version: {{version }}\n\nsource:\n  git_url: git://github.com/keplerproject/luafilesystem\n\nbuild:\n  detect_binary_files_with_prefix: true\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - gcc  # [linux]\n    - llvm  # [osx]\n    - zlib\n    - luarocks\n    - lua\n\n  run:\n    - libgcc  # [linux]\n    - zlib\n    - luarocks\n    - lua\n\ntest:\n  commands:\n    - lua -e \"require 'lfs'\"\n\nabout:\n  home: 'https://keplerproject.github.io/luafilesystem/'\n  license: MIT/X11\n  license_family: MIT\n  #license_file: COPYING \n  summary: 'File System Library for the Lua Programming Language'\n  description: |\n       LuaFileSystem is a Lua library developed to complement the set of \n       functions related to file systems offered by the standard Lua distribution.\n       LuaFileSystem offers a portable way to access the underlying directory structure and file attributes.\n       LuaFileSystem is free software and uses the same license as Lua 5.x (MIT).\n\n\n\nextra:\n  recipe-maintainers:\n    - jerowe \n",
  "rendered_recipe": {

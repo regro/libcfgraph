@@ -89,6 +89,7 @@
   "subdir": "linux-64",
   "version": "0.3.9"
  },
+ "metadata_version": 1,
  "name": "freezegun",
  "raw_recipe": "{% set version = \"0.3.9\" %}\n\npackage:\n  name: freezegun\n  version: {{ version }}\n\nsource:\n  fn: freezegun-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/f/freezegun/freezegun-{{ version }}.tar.gz\n  sha256: 783ccccd7f60968bfe49ad9e114c18ea2b63831faaaf61c1f1f71ddfde1c0eee\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - six\n    - python-dateutil >=1.0,!=2.0  # [not py3k]\n    - python-dateutil >=2.0  # [py3k]\n\ntest:\n  imports:\n    - freezegun\n\nabout:\n  home: https://github.com/spulec/freezegun\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: 'Let your Python tests travel through time.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

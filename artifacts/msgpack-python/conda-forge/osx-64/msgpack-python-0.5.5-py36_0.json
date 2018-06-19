@@ -668,6 +668,7 @@
   "subdir": "osx-64",
   "version": "0.5.5"
  },
+ "metadata_version": 1,
  "name": "msgpack-python",
  "raw_recipe": "{% set name = \"msgpack-python\" %}\n{% set version = \"0.5.5\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"7f5d6e59228b65c47cfdae76a4aea71f6902525f18256862cda69888a686b5f9\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cython >=0.16\n    - toolchain\n\n  run:\n    - python\n\ntest:\n  imports:\n    - msgpack\n\nabout:\n  home: http://msgpack.org/\n  license: Apache 2.0\n  license_file: COPYING\n  summary: 'MessagePack (de)serializer.'\n  license_family: Apache\n  dev_url: https://github.com/msgpack/msgpack-python\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

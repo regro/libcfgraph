@@ -270,6 +270,7 @@
   "subdir": "win-64",
   "version": "2.0.1"
  },
+ "metadata_version": 1,
  "name": "configurable-http-proxy",
  "raw_recipe": "{% set version = \"2.0.1\" %}\n{% set node_version = os.environ.get('NODEJS_VERSION') or '6.*' %}\n\npackage:\n  name: configurable-http-proxy\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.gz\n  url: https://github.com/jupyterhub/configurable-http-proxy/archive/{{ version }}.tar.gz\n  sha256: 3bc5638ab935fe5dfc89192fc9c2b2ab657da797999b234f92571b7b1dcb6627\n\nbuild:\n  number: 0\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs {{node_version}}\n  run:\n    - nodejs {{node_version}}\n\ntest:\n  commands:\n    - configurable-http-proxy -h\n\nabout:\n  home: https://github.com/jupyterhub/configurable-http-proxy\n  license: BSD 3-Clause\n  license_file: COPYING.md\n  summary: node-http-proxy plus a REST API\n\nextra:\n  recipe-maintainers:\n    - minrk\n",
  "rendered_recipe": {

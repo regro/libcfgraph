@@ -269,6 +269,7 @@
   "subdir": "linux-64",
   "version": "0.15.2"
  },
+ "metadata_version": 1,
  "name": "future",
  "raw_recipe": "{% set version = \"0.15.2\" %}\n\npackage:\n  name: future\n  version: {{ version }}\n\nsource:\n  fn: future-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/f/future/future-{{ version }}.tar.gz\n  sha256: 3d3b193f20ca62ba7d8782589922878820d0a023b885882deec830adbf639b97\n\nbuild:\n  number: 0\n  entry_points:\n    - futurize = libfuturize.main:main\n    - pasteurize = libpasteurize.main:main\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  commands:\n    - futurize -h\n    - pasteurize -h\n  imports:\n    - future\n\nabout:\n  home: http://python-future.org\n  license: MIT\n  license_file: LICENSE.txt\n  summary: Clean single-source support for Python 3 and 2\n  description: |\n    Python-future  is the missing compatibility layer between Python 2 and\n    Python 3. It allows you to use a single, clean Python 3.x-compatible\n    codebase to support both Python 2 and Python 3 with minimal overhead.\n  doc_url: http://python-future.org/\n  dev_url: https://github.com/PythonCharmers/python-future\n\nextra:\n    recipe-maintainers:\n        - mmysinger\n\n",
  "rendered_recipe": {},

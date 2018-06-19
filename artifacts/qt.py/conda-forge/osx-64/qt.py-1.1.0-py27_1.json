@@ -663,6 +663,7 @@
   "subdir": "osx-64",
   "version": "1.1.0"
  },
+ "metadata_version": 1,
  "name": "qt.py",
  "raw_recipe": "{% set name = \"Qt.py\" %}\n{% set version = \"1.1.0\" %}\n{% set sha256 = \"866d0c0307631cfac4f33829806549a3f208fdbfc9c02fabf2277d1ab2d80e93\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  requires:\n    - pyside2\n  imports:\n    - Qt\n\nabout:\n  home: http://github.com/mottosso/Qt.py\n  license: MIT\n  license_family: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'Minimal Python 2 & 3 shim around all Qt bindings - PySide, PySide2, PyQt4 and PyQt5.'\n\nextra:\n  recipe-maintainers:\n    - fredrikaverpil\n    - mottosso\n",
  "rendered_recipe": {

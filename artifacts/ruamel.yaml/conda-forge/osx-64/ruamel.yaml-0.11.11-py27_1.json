@@ -44,6 +44,7 @@
   "subdir": "osx-64",
   "version": "0.11.11"
  },
+ "metadata_version": 1,
  "name": "ruamel.yaml",
  "raw_recipe": "{% set version = \"0.11.11\" %}\n\npackage:\n    name: ruamel.yaml\n    version: {{ version }}\n\nsource:\n    fn: ruamel.yaml.{{ version }}.tar.gz\n    url: https://bitbucket.org/ruamel/yaml/get/{{ version }}.tar.bz2\n    md5: 88e58c8f50c3f471dc3a73e4d603e327\n\nbuild:\n    number: 1\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - setuptools\n        - ruamel.ordereddict   # [py26 or py27]\n\ntest:\n    imports:\n        - ruamel.yaml\n\nabout:\n    home: https://bitbucket.org/ruamel/yaml\n    license: MIT\n    summary: \"A YAML package for Python. It is a derivative of Kirill Simonov's PyYAML 3.11 which supports YAML1.1\"\n\nextra:\n    recipe-maintainers:\n         - jakirkham\n         - pelson\n",
  "rendered_recipe": {},

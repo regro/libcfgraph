@@ -498,6 +498,7 @@
   "subdir": "osx-64",
   "version": "2.8.8"
  },
+ "metadata_version": 1,
  "name": "lynx",
  "raw_recipe": "{% set name = \"lynx\" %}\n{% set version = \"2.8.8\" %}\n{% set sha256 = \"6980e75cf0d677fd52c116e2e0dfd3884e360970c88c8356a114338500d5bee7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: lynx2.8.8rel.2.tar.bz2\n  url: http://invisible-mirror.net/archives/lynx/tarballs/lynx2.8.8rel.2.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  # needs curses.h, not avail on win\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - openssl 1.0.*\n    - ncurses 5.9.*\n    - zlib 1.2.*\n    - bzip2 1.0.*\n# needs libidn11 in conda-forge (also disabled in build.sh)\n#    - libidn\n  run:\n    - openssl 1.0.*\n    - ncurses 5.9.*\n    - zlib 1.2.*\n    - bzip2 1.0.*\n#    - libidn\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n    - lynx -dump http://google.com\n    - lynx -dump https://google.com\n\nabout:\n  home: http://invisible-island.net/lynx/\n  license: GPL-2.0\n  license_family: GPL\n  license_file: COPYING\n  summary: 'Text-based web browser'\n  description: |\n    Lynx is a fully-featured World Wide Web (WWW) client for users running\n    cursor-addressable, character-cell display devices.\n  doc_url: http://lynx.invisible-island.net/lynx_help/\n  dev_url: http://lynx.invisible-island.net/lynx_help/lynx-dev.html\n\nextra:\n  recipe-maintainers:\n    - epruesse\n",
  "rendered_recipe": {

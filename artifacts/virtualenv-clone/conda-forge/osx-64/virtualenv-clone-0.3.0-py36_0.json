@@ -671,6 +671,7 @@
   "subdir": "osx-64",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "virtualenv-clone",
  "raw_recipe": "{% set name = \"virtualenv-clone\" %}\n{% set version = \"0.3.0\" %}\n{% set sha256 = \"b5cfe535d14dc68dfc1d1bb4ac1209ea28235b91156e2bba8e250d291c3fb4f8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - virtualenv-clone=clonevirtualenv:main\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n\ntest:\n  commands:\n    - virtualenv-clone --help\n\nabout:\n  home: https://github.com/edwardgeorge/virtualenv-clone/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'script to clone virtualenvs.'\n  description: |\n    A script for cloning a non-relocatable virtualenv.\n  doc_url: https://github.com/edwardgeorge/virtualenv-clone/\n  dev_url: https://github.com/edwardgeorge/virtualenv-clone/\n\nextra:\n  recipe-maintainers:\n    - holgern\n",
  "rendered_recipe": {

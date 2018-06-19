@@ -78,6 +78,7 @@
   "subdir": "osx-64",
   "version": "3.1.0"
  },
+ "metadata_version": 1,
  "name": "ampl-mp",
  "raw_recipe": "{% set name = \"ampl-mp\" %}\n{% set version = \"3.1.0\" %}\n{% set sha256 = \"587c1a88f4c8f57bef95b58a8586956145417c8039f59b1758365ccc5a309ae9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.gz\n  url: https://github.com/ampl/mp/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n\ntest:\n  files:\n    - miniampl\n\nabout:\n  home: http://ampl.github.io\n  license: HPND\n  license_file: LICENSE.rst\n  summary: 'An open-source library for mathematical programming.'\n  description: |\n    Reusable high-performance .nl file reader which is up to 6x faster than\n    the one provided by ASL\n  doc_url: http://ampl.github.io\n  dev_url: https://github.com/ampl/mp\n\nextra:\n  recipe-maintainers:\n    - pstjohn\n",
  "rendered_recipe": {},

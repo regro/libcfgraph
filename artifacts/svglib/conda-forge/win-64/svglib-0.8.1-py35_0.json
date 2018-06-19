@@ -95,6 +95,7 @@
   "subdir": "win-64",
   "version": "0.8.1"
  },
+ "metadata_version": 1,
  "name": "svglib",
  "raw_recipe": "{% set name = \"svglib\" %}\n{% set version = \"0.8.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"1f8cb633f154b83987e3a906a55cf69c8739c0df5ea4eee024677c3e8fb62f55\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n\n  run:\n    - python\n    - reportlab\n    - lxml\n\ntest:\n  imports:\n    - svglib\n\nabout:\n  home: https://github.com/deeplook/svglib\n  license: LGPL 3\n  license_file: LICENSE.txt\n  summary: 'A pure-Python library for reading and converting SVG'\n  license_family: LGPL\n\nextra:\n  recipe-maintainers:\n    - nicoddemus\n",
  "rendered_recipe": {

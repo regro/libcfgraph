@@ -775,6 +775,7 @@
   "subdir": "linux-64",
   "version": "0.2.3"
  },
+ "metadata_version": 1,
  "name": "umap-learn",
  "raw_recipe": "{% set name = \"umap-learn\" %}\n{% set version = \"0.2.3\" %}\n{% set sha256 = \"87012d966a61d79cad81703dd1a46c4a48d9a602918899f228b67ac6bc98abc5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win and py27 or win32]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - setuptools\n    - numpy >=1.13\n    - numba >=0.35\n    - scikit-learn >=0.19\n    - scipy >=0.18\n\ntest:\n  imports:\n    - umap\n\nabout:\n  home: http://github.com/lmcinnes/umap\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'Simple, fast, extensible JSON encoder/decoder for Python'\n\n  description: |\n    umap-learn provides the UMAP manifold based dimension reduction\n    algorithm. The package provides an sklearn compatible interface\n    to t-SNE like dimension reduction technique that has better \n    runtime performacne than t-SNE and often preserves more global\n    structure than t-SNE.\n  dev_url: https://github.com/lmcinnes/umap\n\nextra:\n  recipe-maintainers:\n    - lmcinnes\n",
  "rendered_recipe": {

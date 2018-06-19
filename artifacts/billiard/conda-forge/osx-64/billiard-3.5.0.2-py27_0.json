@@ -117,6 +117,7 @@
   "subdir": "osx-64",
   "version": "3.5.0.2"
  },
+ "metadata_version": 1,
  "name": "billiard",
  "raw_recipe": "{% set name = \"billiard\" %}\n{% set version = \"3.5.0.2\" %}\n{% set sha256 = \"3eb01a8fe44116aa6d63d2010515ef1526e40caee5f766f75b2d28393332dcaa\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - billiard\n    - billiard.dummy\n\nabout:\n  home: https://github.com/celery/billiard\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Python multiprocessing fork with improvements and bugfixes\n  dev_url: https://github.com/celery/billiard\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - kwilcox\n",
  "rendered_recipe": {

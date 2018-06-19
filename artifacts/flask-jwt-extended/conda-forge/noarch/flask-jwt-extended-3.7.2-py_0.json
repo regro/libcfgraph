@@ -772,6 +772,7 @@
   "subdir": "noarch",
   "version": "3.7.2"
  },
+ "metadata_version": 1,
  "name": "flask-jwt-extended",
  "raw_recipe": "{% set name = \"Flask-JWT-Extended\" %}\n{% set version = \"3.7.2\" %}\n{% set sha256 = \"3edb354aff0e7eb55c59599255a70b989f35f8286820d0ec6738e22480ff0a00\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - flask\n    - pyjwt\n    - python\n\ntest:\n  imports:\n    - flask_jwt_extended\n\nabout:\n  home: https://github.com/vimalloc/flask-jwt-extended\n  license: MIT\n  license_family: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  # Package is currently without license file. Added an issue https://github.com/vimalloc/flask-jwt-extended/issues/88\n  summary: 'A Flask JWT extension'\n\n  description: |\n    A Flask JWT extension that supports refresh tokens, blacklisting/revoking tokens,\n    and token freshness (for accessing critical views)\n\nextra:\n  recipe-maintainers:\n    - lvoliveira\n    - nicoddemus\n    - igortg\n",
  "rendered_recipe": {

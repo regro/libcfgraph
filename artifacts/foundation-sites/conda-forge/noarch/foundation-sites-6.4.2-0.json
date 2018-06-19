@@ -1132,6 +1132,7 @@
   "subdir": "noarch",
   "version": "6.4.2"
  },
+ "metadata_version": 1,
  "name": "foundation-sites",
  "raw_recipe": "{% set name = \"foundation-sites\" %}\n{% set version = \"6.4.2\" %}\n{% set sha256 = \"88068c4f73cbfb565bae327493ae10d789650aa9f7f59bc13bcc94c3b892f0be\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/zurb/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: npm install -g .\n  noarch: generic\n\nrequirements:\n  build:\n    - nodejs\n    \ntest:\n  commands:\n    - npm list -g foundation-sites\n  requires:\n    - nodejs\n   \nabout:\n  home: https://github.com/zurb/foundation-sites\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'The most advanced responsive front-end framework in the world. Quickly create prototypes and production code for sites that work on any kind of device.'\n  description: |\n    Foundation is the most advanced responsive front-end framework in the world.  \n  doc_url: https://foundation.zurb.com/sites/docs/\n  dev_url: https://github.com/zurb/foundation-sites\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

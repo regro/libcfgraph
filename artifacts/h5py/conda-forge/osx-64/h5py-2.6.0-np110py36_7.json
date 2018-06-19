@@ -88,6 +88,7 @@
   "subdir": "osx-64",
   "version": "2.6.0"
  },
+ "metadata_version": 1,
  "name": "h5py",
  "raw_recipe": "{% set version = \"2.6.0\" %}\n\npackage:\n  name: h5py\n  version: {{ version }}\n\nsource:\n  fn: h5py-{{ version }}.tar.gz\n  url: https://github.com/h5py/h5py/archive/{{ version }}.tar.gz\n  md5: 613c5776192eaf02ff96a82dfc6d2e78\n  patches:\n    # Patch a test that appears to be failing in some cases.\n    # This patch has been submitted to upstream.\n    # See the linked PR for more information.\n    #\n    # https://github.com/h5py/h5py/pull/697\n    #\n    - h5py_tests_old_test_file.py.patch\n    - h5py_win_setup_build.py.patch\n    # Fix flakiness on Python 3\n    # https://github.com/h5py/h5py/pull/776\n    - h5py_py3_flakiness.patch\n\nbuild:\n  number: 7\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - hdf5 1.8.17|1.8.17.*\n    - cython\n    - six\n    - pkgconfig\n\n  run:\n    - python\n    - numpy x.x\n    - hdf5 1.8.17|1.8.17.*\n    - six\n    - unittest2    # [py26]\n\ntest:\n  imports:\n    - h5py\n\nabout:\n  home: http://www.h5py.org/\n  license: BSD 3-Clause\n  license_file: licenses/license.txt\n  summary: Read and write HDF5 files from Python.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pitrou\n",
  "rendered_recipe": {},

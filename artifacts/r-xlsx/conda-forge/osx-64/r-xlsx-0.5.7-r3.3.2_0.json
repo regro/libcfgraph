@@ -118,6 +118,7 @@
   "subdir": "osx-64",
   "version": "0.5.7"
  },
+ "metadata_version": 1,
  "name": "r-xlsx",
  "raw_recipe": "{% set version = '0.5.7' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-xlsx\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: xlsx_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/xlsx_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/xlsx/xlsx_{{ version }}.tar.gz\n  sha256: 36727bc330c281dab8a028fab2dde92d032345974b15e3dde920ee16dc6db363\n\nbuild:\n  number: 0\n  # r-rjava and r-xlsxjars not available under win\n  skip: true  # [win]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\nrequirements:\n  build:\n    - r-base\n    - r-rjava\n    - r-xlsxjars\n\n  run:\n    - r-base\n    - r-rjava\n    - r-xlsxjars\n\ntest:\n  commands:\n    - $R -e \"library('xlsx')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('xlsx')\\\"\"  # [win]\n\nabout:\n  home: http://code.google.com/p/rexcel/, http://groups.google.com/group/R-package-xlsx\n  license: GPL-3\n  summary: Provide R functions to read/write/format Excel 2007 and Excel 97/2000/XP/2003 file\n    formats.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

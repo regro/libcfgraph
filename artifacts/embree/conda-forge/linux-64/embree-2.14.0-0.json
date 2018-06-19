@@ -182,6 +182,7 @@
   "subdir": "linux-64",
   "version": "2.14.0"
  },
+ "metadata_version": 1,
  "name": "embree",
  "raw_recipe": "{% set name = \"embree\" %}\n{% set version = \"2.14.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz  # [unix]\n  url: https://github.com/{{ name }}/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.x86_64.linux.tar.gz  # [linux]\n  sha256: 8cca2d7ef6e3f18668246c9eed609e03e720e4033d069164c991c5feb078443c  # [linux]\n  url: https://github.com/{{ name }}/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.x86_64.macosx.tar.gz  # [osx]\n  sha256: f6113506bab9430f98773b0ab7776efe387f4d40c8785d8f8c427a91c36f4cfe  # [osx]\n  fn: {{ name }}-{{ version }}.zip  # [win]\n  url: https://github.com/{{ name }}/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.x64.windows.zip  # [win]\n  sha256: 6432449254f56b037f17d876403f919f6c136cc16ec91f7778001b10eea115ac  # [win]\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true\n\nrequirements:\n build:\n  - python  # [win]\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/lib/libembree.so\"  # [linux]\n    - test -f \"${PREFIX}/lib/libembree.dylib\"  # [osx]\n\nabout:\n  home: https://embree.github.io/\n  license: Apache 2.0\n  license_file: doc/LICENSE.txt\n  summary: High Performance Ray Tracing Kernels\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - Xarthisius\n",
  "rendered_recipe": {

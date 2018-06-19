@@ -69,6 +69,7 @@
   "subdir": "linux-64",
   "version": "1.3.3"
  },
+ "metadata_version": 1,
  "name": "hachoir-core",
  "raw_recipe": "{%set name = \"hachoir-core\" %}\n{%set version = \"1.3.3\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"ecf5d16eccc76b22071d6062e54edb67595f70d827644d3a6dff04289b4058df\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  skip: True  # [py3k]\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - hachoir_core\n    - hachoir_core.field\n    - hachoir_core.stream\n\nabout:\n  home: http://bitbucket.org/haypo/hachoir/wiki/hachoir-core\n  license: GPL 2.0\n  summary: 'Core of Hachoir framework: parse and edit binary files'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

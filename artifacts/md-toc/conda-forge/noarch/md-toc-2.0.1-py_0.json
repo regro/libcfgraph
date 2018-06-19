@@ -131,6 +131,7 @@
   "timestamp": 1527538717408,
   "version": "2.0.1"
  },
+ "metadata_version": 1,
  "name": "md-toc",
  "raw_recipe": "{% set version = \"2.0.1\" %}\n\npackage:\n  name: md-toc\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/m/md_toc/md_toc-{{ version }}.tar.gz\n  sha256: 9147b103dba57295d77e06293af6628f00f774f6d3ddfc2bb10c259b60b53c2f\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - md_toc=md_toc.__main__:main\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python >=3\n    - pip\n    - fpyutils >=0.0.2\n  run:\n    - python >=3\n    - setuptools\n    - fpyutils >=0.0.2\n\ntest:\n  imports:\n    - md_toc\n  commands:\n    - md_toc --help\n\nabout:\n  home: https://github.com/frnmst/md-toc\n  license: GPL-3.0\n  license_family: GPL3\n  license_file: LICENSE.txt\n  summary: 'An utility that is able to generate a table of contents for a markdown file'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

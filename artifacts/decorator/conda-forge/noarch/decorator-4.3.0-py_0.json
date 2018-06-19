@@ -763,6 +763,7 @@
   "subdir": "noarch",
   "version": "4.3.0"
  },
+ "metadata_version": 1,
  "name": "decorator",
  "raw_recipe": "{% set version = \"4.3.0\" %}\n\npackage:\n  name: decorator\n  version: {{ version }}\n\nsource:\n  fn: decorator-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/decorator/decorator-{{ version }}.tar.gz\n  sha256: c39efa13fbdeb4506c476c9b3babf6a718da943dab7811c206005a4a956c080c\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - decorator\n\nabout:\n  home: https://github.com/micheles/decorator\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Better living through Python with decorators.'\n\nextra:\n  recipe-maintainers:\n    - msarahan\n    - pelson\n    - ocefpaf\n    - scopatz\n",
  "rendered_recipe": {

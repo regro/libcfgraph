@@ -145,6 +145,7 @@
   "subdir": "osx-64",
   "version": "1.15"
  },
+ "metadata_version": 1,
  "name": "automake",
  "raw_recipe": "{% set version = \"1.15\" %}\n\npackage:\n    name: automake\n    version: {{ version }}\n\nsource:\n    fn: automake-{{ version }}.tar.gz\n    url: http://ftp.gnu.org/gnu/automake/automake-{{ version }}.tar.gz\n    sha256: 7946e945a96e28152ba5a6beb0625ca715c6e32ac55f2e353ef54def0c8ed924\n\nbuild:\n    number: 0\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - m4\n        - autoconf\n        - perl\n    run:\n        - m4\n        - autoconf\n        - perl\n\ntest:\n    commands:\n        - automake --help\n\nabout:\n    home: http://www.gnu.org/software/automake/\n    license: GPL 3\n    summary: Tool for automatically generating Makefile.in files compliant with the GNU Coding Standards.\n\nextra:\n    recipe-maintainers:\n        - jakirkham\n        - ocefpaf\n",
  "rendered_recipe": {},

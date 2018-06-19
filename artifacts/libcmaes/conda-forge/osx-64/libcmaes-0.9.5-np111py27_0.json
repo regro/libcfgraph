@@ -58,6 +58,7 @@
   "subdir": "osx-64",
   "version": "0.9.5"
  },
+ "metadata_version": 1,
  "name": "libcmaes",
  "raw_recipe": "{% set version = \"0.9.5\" %}\n\npackage:\n  name: libcmaes\n  version: {{ version }}\n\nsource:\n  fn: libcmaes-{{ version }}.tar.gz\n  url: https://github.com/beniz/libcmaes/archive/{{ version }}.tar.gz\n  sha256: 899fcc44b551e4976a77e48e41bdd5dafc3394bd3fcb3c55996c02e4267bfa28\n  patches:\n    # https://github.com/beniz/libcmaes/pull/149\n    - py3k.patch\n\nbuild:\n  number: 0\n  # skip py3k/osx because of time constraint on Travis\n  skip: true  # [win or (osx and py3k)]\n  detect_binary_files_with_prefix: True\n\nrequirements:\n  build:\n    - toolchain\n    - autoconf  # [unix]\n    - automake  # [unix]\n    - libtool  # [unix]\n    - python\n    - boost 1.62.*\n    - eigen\n    - numpy x.x\n  run:\n    - python\n    - numpy x.x\n    - boost 1.62.*\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/libcmaes/cmaes.h  # [unix]\n    - test -f ${PREFIX}/lib/libcmaes.so  # [linux]\n    - test -f ${PREFIX}/lib/libcmaes.dylib  # [osx]\n  imports:\n    - lcmaes\n\nabout:\n  home: https://github.com/beniz/libcmaes\n  license: LGPL3\n  license_file: COPYING\n  summary: High performance blackbox stochastic optimization using the CMA-ES algorithm\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "rendered_recipe": {},

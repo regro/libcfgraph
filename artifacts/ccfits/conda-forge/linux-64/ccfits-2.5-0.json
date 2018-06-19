@@ -789,6 +789,7 @@
   "subdir": "linux-64",
   "version": "2.5"
  },
+ "metadata_version": 1,
  "name": "ccfits",
  "raw_recipe": "{% set name = \"ccfits\" %}\n{% set version = \"2.5\" %}\n{% set sha256 = \"e542f39fa496417c401be7fbca715d566462cf4c56c83e3d43b6df3cb8d92105\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: CCfits-{{version}}.tar.gz\n  url: https://heasarc.gsfc.nasa.gov/fitsio/ccfits/CCfits-{{version}}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n \n build:\n     - toolchain\n     - cfitsio 3.410\n     - cmake\n\n run:\n     - cfitsio 3.410|3.420\n   \ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libCCfits.so  # [linux]\n    - test -f ${PREFIX}/lib/libCCfits.dylib  # [osx]\n    - test -d ${PREFIX}/include/CCfits\n    - conda inspect linkages -p $PREFIX ccfits  # [not win]\n    - conda inspect objects -p $PREFIX ccfits  # [osx]\n\n   \nabout:\n  summary: CCfits is an object oriented interface to the cfitsio library. It is\n   designed to make the capabilities of cfitsio available to programmers \n   working in C++. It is written in ANSI C++ and implemented using the \n   C++ Standard Library with namespaces, exception handling, and member \n   template functions.\n  home: https://heasarc.gsfc.nasa.gov/fitsio/ccfits/\n  license: CUSTOM\n  license_file: License.txt\n  doc_url: https://heasarc.gsfc.nasa.gov/fitsio/ccfits/html/index.html\n\nextra:\n  recipe-maintainers:\n    - giacomov\n",
  "rendered_recipe": {

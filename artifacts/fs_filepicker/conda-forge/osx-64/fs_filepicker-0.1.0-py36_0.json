@@ -666,6 +666,7 @@
   "subdir": "osx-64",
   "version": "0.1.0"
  },
+ "metadata_version": 1,
  "name": "fs_filepicker",
  "raw_recipe": "{% set name = \"fs_filepicker\" %}\n{% set version = \"0.1.0\" %}\n{% set sha256 = \"17124907ba269c402eaafbc5b3f35ec496ef1d1bf17bb1710e84bd1d71a86608\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/ReimarBauer/fs_filepicker/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  entry_points:\n    - fs_filepicker = fslib.fs_filepicker:main\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - future\n\n  run:\n    - python\n    - pyqt 5.*\n    - fs\n    - fs.webdavfs\n    - future\n\ntest:\n  imports:\n    - fslib.fs_filepicker\n  commands:\n    - fs_filepicker -h\n\nabout:\n  home: https://github.com/ReimarBauer/fs_filepicker\n  license: APACHE 2.0\n  license_file: LICENSE\n  summary: 'QT file picker (Open|Save) for accessing a pyfilesystem2'\n  dev_url: https://github.com/ReimarBauer/fs_filepicker\n\nextra:\n  recipe-maintainers:\n    - ReimarBauer\n",
  "rendered_recipe": {

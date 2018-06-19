@@ -630,6 +630,7 @@
   "subdir": "linux-64",
   "version": "1.2"
  },
+ "metadata_version": 1,
  "name": "iapws",
  "raw_recipe": "{% set name = \"iapws\" %}\n{% set version = \"1.2\" %}\n{% set sha256 = \"1e2d5069bf1152c1cd8092b8c373b8088bcf5fd428870708d45c456ef99f108d\" %}\n\npackage:\n  name: {{name}}\n  version: {{version}}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - scipy\n\n  run:\n    - python\n    - scipy\n\ntest:\n  # Python imports\n  imports:\n    - iapws\n\nabout:\n  home: https://github.com/jjgomera/iapws\n  license: GPL-3.0\n  summary: 'Python implementation of standards from The InternationalAssociation for the Properties of Water and Steam'\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - tntmatthews\n",
  "rendered_recipe": {

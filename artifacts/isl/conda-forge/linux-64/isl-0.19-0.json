@@ -818,6 +818,7 @@
   "subdir": "linux-64",
   "version": "0.19"
  },
+ "metadata_version": 1,
  "name": "isl",
  "raw_recipe": "{% set version = \"0.19\" %}\n\npackage:\n  name: isl\n  version: {{ version }}\n\nsource:\n  fn: isl-{{ version }}.tar.bz2\n  url: http://isl.gforge.inria.fr/isl-{{ version }}.tar.bz2\n  md5: 7850d46a96e5ea31e34913190895e154\n\nbuild:\n  number: 0\n  features:\n    - vc9             # [win and py27]\n    - vc14            # [win and py>=35]\n  skip:\n    - True            # [win and not py36]\n\nrequirements:\n  build:\n    - gmp >=5.0.1,<7  # [unix]\n    - cmake           # [win]\n    - python          # [win]\n    - msinttypes      # [win and py27]\n    - vc 9            # [win and py27]\n    - vc 14           # [win and py>=35]\n  run:\n    - gmp >=5.0.1,<7  # [unix]\n    - vc 9            # [win and py27]\n    - vc 14           # [win and py>=35]\n\ntest:\n  commands:\n    - if not exist %LIBRARY_LIB%\\\\isl.lib exit 1            # [win]\n    - if not exist %LIBRARY_INC%\\\\isl\\\\options.h exit 1     # [win]\n    - test -f \"$PREFIX/lib/libisl.a\"            # [unix]\n    - test -f \"$PREFIX/lib/libisl.la\"           # [unix]\n    - test -f \"$PREFIX/lib/libisl${SHLIB_EXT}\"  # [unix]\n    - test -d \"$PREFIX/include/isl\"             # [unix]\n\nabout:\n  home: http://isl.gforge.inria.fr/\n  license: MIT\n  summary: a thread-safe C library for manipulating sets and relations of integer points bounded by affine constraints.\n\nextra:\n  recipe-maintainers:\n    - frol\n    - isuruf\n",
  "rendered_recipe": {

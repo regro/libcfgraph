@@ -653,6 +653,7 @@
   "subdir": "osx-64",
   "version": "0.1.7"
  },
+ "metadata_version": 1,
  "name": "tectonic",
  "raw_recipe": "{% set name = \"tectonic\" %}\n{% set version = \"0.1.7\" %}\n{% set sha256 = \"3b242413ed3b47f563406011bc14256174c4e0952d393984d54762ea8f959412\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://crates.io/api/v1/crates/{{ name }}/{{ version }}/download\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - rust\n    - pkg-config\n    - fontconfig 2.12.*  # [not osx]\n    - freetype 2.8.*\n    - graphite2 1.3.*\n    - harfbuzz 1.7.*\n    - icu 58.*\n    - libpng >=1.6.32,<1.6.35\n    - openssl 1.0.*\n    - zlib 1.2.11\n  run:\n    - fontconfig 2.12.*  # [not osx]\n    - freetype 2.8.*\n    - graphite2 1.3.*\n    - harfbuzz 1.7.*\n    - icu 58.*\n    - libpng >=1.6.32,<1.6.35\n    - openssl 1.0.*\n    - zlib 1.2.11\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n    - tectonic --help\n\nabout:\n  home: https://tectonic-typesetting.github.io/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A modernized, complete, standalone TeX/LaTeX engine.'\n  doc_url: https://tectonic-typesetting.github.io/en-US/learn.html\n  dev_url: https://github.com/tectonic-typesetting/tectonic/\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
  "rendered_recipe": {

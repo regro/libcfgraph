@@ -106,6 +106,7 @@
   "subdir": "linux-64",
   "version": "0.7.2"
  },
+ "metadata_version": 1,
  "name": "cairocffi",
  "raw_recipe": "{% set name = \"cairocffi\" %}\n{% set version = \"0.7.2\" %}\n{% set sha256 = \"e42b4256d27bd960cbf3b91a6c55d602defcdbc2a73f7317849c80279feeb975\" %}\n\npackage:\n  name: cairocffi\n  version: \"{{ version }}\"\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - dlopen-patch.linux.txt  # [linux]\n    - dlopen-patch.osx.txt  # [osx]\n\nbuild:\n  number: 1\n  skip: True  # [win]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cffi >=1.1.0\n    - cairo 1.14.*\n  run:\n    - python\n    - cffi >=1.1.0\n    - cairo 1.14.*\n\ntest:\n  imports:\n    - cairocffi\n\nabout:\n  home: https://github.com/SimonSapin/cairocffi\n  license: BSD 3-Clause\n  summary: 'cffi-based cairo bindings for Python'\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n",
  "rendered_recipe": {

@@ -843,6 +843,7 @@
   "subdir": "linux-64",
   "version": "2.36.9"
  },
+ "metadata_version": 1,
  "name": "gdk-pixbuf",
  "raw_recipe": "{% set name = \"gdk-pixbuf\" %}\n{% set version_maj = \"2.36\" %}\n{% set version = \"2.36.9\" %}\n{% set sha256 = \"8013b271ff1a691514b5bbc9b99f6ed456422d4da4a721a9db0b783abe8e740a\" %}\n\npackage:\n    name: {{ name|lower }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.xz\n    sha256: {{ sha256 }}\n    url: http://ftp.gnome.org/pub/gnome/sources/{{ name }}/{{ version_maj }}/{{ name }}-{{ version }}.tar.xz\n    patches:\n      - 0001-changed-perl-script-to-use-env.patch\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - python <3\n    - m4\n    - autoconf\n    - automake\n    - libtool\n    - pkg-config\n    - glib >=2.51\n    - gobject-introspection\n    - libffi\n    - libtiff\n    - libpng\n    - jpeg\n    - perl\n    - gettext  # [osx]\n  run:\n    - libgcc  # [linux]\n    - glib >=2.51\n    - gobject-introspection\n    - libffi\n    - libtiff\n    - libpng\n    - jpeg\n    - gettext  # [osx]\n\ntest:\n  commands:\n    - gdk-pixbuf-csource --version\n    - gdk-pixbuf-query-loaders --help\n    - gdk-pixbuf-pixdata --help\n\nabout:\n  home: https://developer.gnome.org/gdk-pixbuf/ \n  license: GPL-2.0\n  license_family: GPL\n  license_file: COPYING\n  summary: \"GdkPixbuf is a library for image loading and manipulation.\"\n\nextra:\n  recipe-maintainers:\n    - notestaff\n",
  "rendered_recipe": {

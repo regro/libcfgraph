@@ -153,6 +153,7 @@
   "timestamp": 1524484694044,
   "version": "2.0.5"
  },
+ "metadata_version": 1,
  "name": "cfflib",
  "raw_recipe": "{% set name = \"cfflib\" %}\n{% set version = \"2.0.5\" %}\n{% set file_ext = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"748043f2064079088d57a35074cf6406c436e2537e79a500330e654aadc19ac2\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.{{ file_ext }}'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  noarch: python\n\nrequirements:\n  build: \n    - python <3\n    - setuptools\n    - pip\n\n  run: \n    - python <3\n    - numpy\n    - nibabel\n    \ntest:\n  imports:\n    - cfflib\n    - cfflib.tests\n\nabout:\n  home: http://www.connectomics.org/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt'\n  summary: 'Connectome File Format Library'\n  description: The Connectome File Format library supports handling of multi-modal neuroimaging datasets and metadata\n  doc_url: http://www.connectomics.org/\n  dev_url: https://github.com/LTS5/cfflib\n\nextra:\n  recipe-maintainers:\n    - umarbrowser\n",
  "rendered_recipe": {

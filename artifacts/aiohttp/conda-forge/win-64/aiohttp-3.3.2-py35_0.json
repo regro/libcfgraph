@@ -180,6 +180,7 @@
   "timestamp": 1528843647059,
   "version": "3.3.2"
  },
+ "metadata_version": 1,
  "name": "aiohttp",
  "raw_recipe": "{% set name = \"aiohttp\" %}\n{% set version = \"3.3.2\" %}\n{% set sha256 = \"f20deec7a3fbaec7b5eb7ad99878427ad2ee4cc16a46732b705e8121cbb3cc12\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: true  # [py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - attrs >=17.3.0\n    - chardet >=2.0,<4.0\n    - multidict >=4.0,<5.0\n    - async-timeout >=3.0,<4.0\n    - yarl >=1.0,<2.0\n    - idna_ssl >=1,<2  # [py35 or py36]\n\ntest:\n  imports:\n    - aiohttp\n\nabout:\n  home: https://github.com/aio-libs/aiohttp\n  license: Apache 2.0\n  license_file: LICENSE.txt\n  summary: 'Async http client/server framework (asyncio)'\n\n  doc_url: http://aiohttp.readthedocs.io/\n  dev_url: https://github.com/aio-libs/aiohttp\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

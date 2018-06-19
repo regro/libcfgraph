@@ -777,6 +777,7 @@
   "subdir": "linux-64",
   "version": "3.19.6"
  },
+ "metadata_version": 1,
  "name": "rejected",
  "raw_recipe": "{% set version = \"3.19.6\" %}\n\npackage:\n  name: rejected\n  version: {{ version }}\n\nsource:\n  fn: rejected-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/r/rejected/rejected-{{ version }}.tar.gz\n  md5: 87aac27e259a3e1663d19d2980e0b252\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - rejected = rejected.controller:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - helper\n    - pika >=0.10.0\n    - psutil\n    - pyyaml\n    - tornado >=4.2,<4.3\n\n  run:\n    - python\n    - setuptools\n    - helper\n    - pika >=0.10.0\n    - psutil\n    - pyyaml\n    - tornado >=4.2,<4.3\n\ntest:\n  imports:\n    - rejected\n  commands:\n    - rejected --help\n\nabout:\n  home: https://rejected.readthedocs.io\n  license: BSD 3-clause\n  summary: An AMQP (RabbitMQ) consumer daemon and message processing framework\n\nextra:\n  recipe-maintainers:\n    - frol\n",
  "rendered_recipe": {

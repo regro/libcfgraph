@@ -89,6 +89,7 @@
   "subdir": "osx-64",
   "version": "1.2.0"
  },
+ "metadata_version": 1,
  "name": "django-recaptcha",
  "raw_recipe": "{% set version = \"1.2.0\" %}\n\npackage:\n  name: django-recaptcha\n  version: {{ version }}\n\nsource:\n  fn: django-recaptcha-{{ version }}.tar.gz\n  url: https://github.com/praekelt/django-recaptcha/archive/{{ version }}.tar.gz\n  sha256: 5b9edc47974d640dd0c22c5755c6b6c5a3d06816133d10a57b56157120d9b632\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django\n\ntest:\n  imports:\n    - captcha\n\nabout:\n  home: http://github.com/praekelt/django-recaptcha\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'Django recaptcha form field/widget app.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

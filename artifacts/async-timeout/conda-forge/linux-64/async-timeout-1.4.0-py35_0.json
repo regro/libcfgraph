@@ -748,6 +748,7 @@
   "subdir": "linux-64",
   "version": "1.4.0"
  },
+ "metadata_version": 1,
  "name": "async-timeout",
  "raw_recipe": "{% set name = \"async-timeout\" %}\n{% set version = \"1.4.0\" %}\n{% set sha256 = \"983891535b1eca6ba82b9df671c8abff53c804fce3fa630058da5bbbda500340\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: true  # [py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - async_timeout\n\nabout:\n  home: http://github.com/aio-libs/async_timeout\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: 'Timeout context manager for asyncio programs'\n\n  dev_url: http://github.com/aio-libs/async_timeout\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

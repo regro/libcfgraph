@@ -120,6 +120,7 @@
   "subdir": "osx-64",
   "version": "3.7.1"
  },
+ "metadata_version": 1,
  "name": "coverage",
  "raw_recipe": "{% set version = \"3.7.1\" %}\n{% set md5 = \"c47b36ceb17eaff3ecfab3bcd347d0df\" %}\n{% set pkgname = \"coverage\" %}\n\npackage:\n  name: {{ pkgname }}\n  version: {{ version }}\n\nsource:\n  fn: {{ pkgname }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ pkgname[0] }}/{{ pkgname }}/{{ pkgname }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 1\n\n  entry_points:\n    - coverage = coverage.cmdline:main\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - coverage\n\n  commands:\n    - coverage --help\n\nabout:\n  home: https://coverage.readthedocs.io\n  # Version unknown. Switches to Apache in 4.0.0.\n  license: BSD\n  summary: 'Code coverage measurement for Python'\n\nextra:\n  recipe-maintainers:\n    - ericmjl\n    - jakirkham\n",
  "rendered_recipe": {

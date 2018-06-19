@@ -499,6 +499,7 @@
   "subdir": "win-64",
   "version": "1.11.0"
  },
+ "metadata_version": 1,
  "name": "iris",
  "raw_recipe": "{% set version = \"1.11.0\" %}\n\npackage:\n  name: iris\n  version: {{ version }}\n\nsource:\n  fn: iris-v{{ version }}.tar.gz\n  url: https://github.com/SciTools/iris/archive/v{{ version }}.tar.gz\n  sha256: 95cd7381a994ec79a99b59ababe7c179c0416034cb450be62b83b1908a807316\n  patches:\n    # Issue reported in https://github.com/SciTools/iris/issues/2004.\n    # We work around this in build.sh.\n    - no_compile_setup.patch  # [osx]\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy\n    - scipy\n    - biggus >=0.14\n    - cartopy >=0.14\n    - netcdf4\n    - cf_units\n    - pyke\n    - mo_pack  # [not win]\n    - nc_time_axis\n    - iris-grib  # [not win and not py3k]\n  run:\n    - python\n    - numpy\n    - scipy\n    - biggus >=0.14\n    - cartopy >=0.14\n    - netcdf4\n    - cf_units\n    - pyke\n    - mo_pack  # [not win]\n    - matplotlib\n    - nc_time_axis\n    - iris-grib  # [not win and not py3k]\n\ntest:\n  imports:\n    - iris\n    - iris.fileformats._pyke_rules.compiled_krb\n\nabout:\n  home: http://www.scitools.org.uk/iris\n  license: GPL3\n  license_family: GPL3\n  license_file: README.md\n  summary: Analyse and visualise meteorological and oceanographic data sets.\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - rhattersley\n    - ocefpaf\n    - bjlittle\n",
  "rendered_recipe": {},

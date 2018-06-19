@@ -193,6 +193,7 @@
   "timestamp": 1528385557678,
   "version": "1.5.1"
  },
+ "metadata_version": 1,
  "name": "geoviews-core",
  "raw_recipe": "{% set version = \"1.5.1\" %}\n\npackage:\n  name: geoviews-core\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/g/geoviews/geoviews-{{ version }}.zip\n  sha256: e2fda0fc0e09175a2de72dca018bcaca78fa9ca0de782ed7e243a95ee90b4b43\n\nbuild:\n  number: 1\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - geoviews = geoviews.__main__:main\n\nrequirements:\n  run_constrained:\n    - geoviews {{ version }}\n  build:\n    - python\n    - pip\n    - param >=1.6.1,<2.0\n  run:\n    - python >=2.7\n    - bokeh >=0.12.15\n    - cartopy >=0.14.2\n    - holoviews >=1.10.1\n    - numpy >=1.0\n    - param >=1.6.1,<2.0\n\ntest:\n  imports:\n    - geoviews\n  requires:\n    - nose\n  commands:\n    - nosetests geoviews\n\nabout:\n  home: https://geoviews.org\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: GeoViews is a Python library that makes it easy to explore and visualize\n        geographical, meteorological, and oceanographic datasets, such as those used\n        in weather, climate, and remote sensing research.\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - philippjfr\n",
  "rendered_recipe": {

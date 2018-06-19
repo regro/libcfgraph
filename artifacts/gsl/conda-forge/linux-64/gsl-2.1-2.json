@@ -271,6 +271,7 @@
   "subdir": "linux-64",
   "version": "2.1"
  },
+ "metadata_version": 1,
  "name": "gsl",
  "raw_recipe": "package:\n    name: gsl\n    version: 2.1\n\nsource:\n    fn: gsl-2.1.tar.gz\n    url: ftp://ftp.gnu.org/gnu/gsl/gsl-2.1.tar.gz\n    md5: d8f70abafd3e9f0bae03c52d1f4e8de5\n\nbuild:\n    number: 2\n    skip: True  # [win]\n\ntest:\n    commands:\n        - gsl-config --prefix\n        - conda inspect linkages -n _test gsl  # [linux]\n\nabout:\n    home: http://www.gnu.org/software/gsl/\n    license: GPL-3.0\n    summary: GNU Scientific Library\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - kwilcox\n",
  "rendered_recipe": {

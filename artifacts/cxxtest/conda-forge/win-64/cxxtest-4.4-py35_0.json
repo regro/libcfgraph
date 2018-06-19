@@ -172,6 +172,7 @@
   "timestamp": 1525965843167,
   "version": "4.4"
  },
+ "metadata_version": 1,
  "name": "cxxtest",
  "raw_recipe": "{% set name = \"cxxtest\" %}\n{% set version = \"4.4\" %}\n{% set sha256 = \"1c154fef91c65dbf1cd4519af7ade70a61d85a923b6e0c0b007dc7f4895cf7d8\" %}\n\npackage:\n    name: {{ name|lower }}\n    version: {{ version }}\n     \nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n    url: https://github.com/CxxTest/cxxtest/releases/download/{{ version }}/cxxtest-{{ version }}.tar.gz\n\nbuild:\n    number: 0\n\nrequirements:\n    host:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    source_files:\n        - doc/examples/MyTestSuite1.h\n\nabout:\n    home: http://cxxtest.com/\n    license: LGPLv3\n    license_file: COPYING\n    summary: 'CxxTest Unit Testing Framework.'\n    description: |\n      CxxTest is a unit testing framework for C++ that is similar in spirit to\n      JUnit, CppUnit, and xUnit. CxxTest is easy to use because it does not\n      require precompiling a CxxTest testing library, it employs no advanced \n      features of C++ (e.g. RTTI) and it supports a very flexible form of test\n      discovery.\n    doc_url: http://cxxtest.com/guide.html\n    dev_url: https://github.com/CxxTest/cxxtest\n\nextra:\n    recipe-maintainers:\n      - swainn\n      - Tsubashi\n      - alemon-aquaveo\n      - gagelarsen\n",
  "rendered_recipe": {

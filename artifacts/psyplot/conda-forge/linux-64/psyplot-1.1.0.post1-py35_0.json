@@ -794,6 +794,7 @@
   "subdir": "linux-64",
   "version": "1.1.0.post1"
  },
+ "metadata_version": 1,
  "name": "psyplot",
  "raw_recipe": "{% set name = \"psyplot\" %}\n{% set version = \"1.1.0.post1\" %}\n{% set sha256 = \"88d16406dde02f24f9195c1fafb954c1e9aafa7c38efc6dc3307e18d02f3b7ec\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n  - python\n  - setuptools\n  run:\n  - python\n  - matplotlib\n  - funcargparse\n  - xarray\n  - pyyaml\n\ntest:\n  commands:\n    - psyplot --help\n    - psyplot-plugin --help\n  imports:\n    - psyplot\n    - psyplot.compat\n    - psyplot.config\n    - psyplot.sphinxext\n\nabout:\n  home: https://github.com/Chilipp/psyplot\n  license: GPL-2.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: Python package for interactive data visualization\n\n  description: |\n    psyplot is an cross-platform open source python project that mainly\n    combines the plotting utilities of matplotlib and the data management of\n    the xarray package and integrates them into a software that can be used via\n    command-line and via a GUI.\n  doc_url: http://psyplot.readthedocs.io/en/latest/\n  dev_url: https://github.com/Chilipp/psyplot\n\nextra:\n  recipe-maintainers:\n    - Chilipp\n",
  "rendered_recipe": {

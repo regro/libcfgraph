@@ -722,6 +722,7 @@
   "subdir": "linux-64",
   "version": "5.2.1"
  },
+ "metadata_version": 1,
  "name": "superlu",
  "raw_recipe": "{% set version = \"5.2.1\" %}\n\n{% set variant = \"openblas\" %}\n\npackage:\n    name: superlu\n    version: {{ version }}\n\nsource:\n    fn: superlu-{{ version }}.tar.gz\n    url: http://crd-legacy.lbl.gov/~xiaoye/SuperLU/superlu_{{ version }}.tar.gz\n    sha256: 28fb66d6107ee66248d5cf508c79de03d0621852a0ddeba7301801d3d859f463\n\nbuild:\n  number: 202\n  skip: True  # [win]\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.20|0.2.20.*\n    - cmake\n    - gcc  # [not win]\n  run:\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.20|0.2.20.*\n    - libgcc  # [linux]\n    - libgfortran  # [osx]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libsuperlu.a\n\nabout:\n    home: http://crd-legacy.lbl.gov/~xiaoye/SuperLU/\n    license: BSD 3-clause\n    summary: |\n      Supernodal LU: solvers for large, sparse, nonsymmetric systems of linear\n      equations.\n\nextra:\n    recipe-maintainers:\n      - grlee77\n",
  "rendered_recipe": {

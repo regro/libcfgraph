@@ -824,6 +824,7 @@
   "subdir": "linux-64",
   "version": "0.1.11"
  },
+ "metadata_version": 1,
  "name": "regolith",
  "raw_recipe": "{% set name = \"regolith\" %}\n{% set version = \"0.1.11\" %}\n{% set sha256 = \"4e1c95b88d1a1b7e31ced77cc758c0aeeac0dc4ed6848758455954a6ecc9aaf8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/scopatz/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - flask\n    - jinja2\n    - docutils\n    - bibtexparser\n    - ruamel.yaml\n    - cerberus\n\ntest:\n  imports:\n    - regolith\n\nabout:\n  home: http://scopatz.github.io/regolith-docs/\n  license: CC0\n  license_file: LICENSE\n  summary: 'Research Group Content Managment System'\n  dev_url: https://github.com/scopatz/regolith\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - CJ-Wright\n",
  "rendered_recipe": {

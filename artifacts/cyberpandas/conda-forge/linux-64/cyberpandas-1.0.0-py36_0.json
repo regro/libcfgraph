@@ -152,6 +152,7 @@
   "timestamp": 1526498898714,
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "cyberpandas",
  "raw_recipe": "{% set name = \"cyberpandas\" %}\n{% set version = \"1.0.0\" %}\n{% set sha256 = \"883b11426aaa1a9ac78982d567f23c3995c41ccbfcb5fa472bb3c0db97c1b0dd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools_scm\n    - setuptools\n  run:\n    - python\n    - ipaddress  # [py27]\n    - setuptools\n    - pandas >=0.23.0\n\n\ntest:\n  imports:\n    - cyberpandas\n\nabout:\n  home: http://github.com/ContinuumIO/cyberpandas\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Pandas extension array for IP and MAC addresses.'\n\n  # The remaining entries in this section are optional, but recommended\n  description: |\n    Cyberpandas provides support for storing IP and MAC address data inside a pandas\n    DataFrame using pandas' Extension Array Interface.\n  doc_url: https://cyberpandas.readthedocs.io/en/latest/\n  dev_url: https://github.com/ContinuumIO/cyberpandas\n\nextra:\n  recipe-maintainers:\n    - TomAugspurger\n",
  "rendered_recipe": {

@@ -103,6 +103,7 @@
   "subdir": "linux-64",
   "version": "0.3.4"
  },
+ "metadata_version": 1,
  "name": "glog",
  "raw_recipe": "{% set version = \"0.3.4\" %}\n\npackage:\n  name: glog\n  version: {{ version }}\n\nsource:\n  fn: glog-{{ version }}.tar.gz\n  url: https://github.com/google/glog/archive/v{{ version }}.tar.gz\n  sha256: ce99d58dce74458f7656a68935d7a0c048fa7b4626566a71b7f4e545920ceb10\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - autoconf\n    - automake\n    - libtool\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libglog.dylib            # [osx]\n    - test -f ${PREFIX}/lib/libglog.so               # [linux]\n\nabout:\n  home: https://github.com/google/glog\n  license: BSD 3-Clause\n  license_file: COPYING\n  summary: C++ implementation of the Google logging module.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

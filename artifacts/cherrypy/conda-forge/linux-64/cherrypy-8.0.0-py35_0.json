@@ -214,6 +214,7 @@
   "subdir": "linux-64",
   "version": "8.0.0"
  },
+ "metadata_version": 1,
  "name": "cherrypy",
  "raw_recipe": "{% set name = \"CherryPy\" %}\n{% set version = \"8.0.0\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"befec870af874b63e7cb28658e2635d3ae953d6234cc65ef675aa6b8735f79ce\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - cherrypy\n    - cherrypy.lib\n    - cherrypy.process\n    - cherrypy.scaffold\n    - cherrypy.test\n    - cherrypy.tutorial\n    - cherrypy.wsgiserver\n\n  commands:\n    - cherryd -h\n\nabout:\n  home: http://www.cherrypy.org\n  license: BSD 3-Clause\n  license_file: cherrypy/LICENSE.txt\n  license_family: BSD\n  summary: 'Object-Oriented HTTP framework'\n  dev_url: https://github.com/cherrypy/cherrypy\n  doc_url: http://docs.cherrypy.org/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

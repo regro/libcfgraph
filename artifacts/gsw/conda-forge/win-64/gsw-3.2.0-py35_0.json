@@ -568,6 +568,7 @@
   "subdir": "win-64",
   "version": "3.2.0"
  },
+ "metadata_version": 1,
  "name": "gsw",
  "raw_recipe": "{% set version = \"3.2.0\" %}\n\npackage:\n  name: gsw\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/g/gsw/gsw-{{ version }}.tar.gz\n  sha256: bab7b7ed0ebec73f8647f7c02e6c9e8754fc322264f4d271b1461da923f60033\n\nbuild:\n  number: 0\n  skip: True  # [py2k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy 1.11.*\n  run:\n    - python\n    - numpy >=1.11\n\ntest:\n  imports:\n    - gsw\n\nabout:\n  home: https://github.com/TEOS-10/GSW-Python/\n  license: MIT\n  license_file: LICENSE\n  summary: 'Gibbs SeaWater Oceanographic Package of TEOS-10'\n\nextra:\n  recipe-maintainers:\n    - efiring\n    - ocefpaf\n",
  "rendered_recipe": {

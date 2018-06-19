@@ -151,6 +151,7 @@
   "timestamp": 1527608414713,
   "version": "0.10.2"
  },
+ "metadata_version": 1,
  "name": "plumpy",
  "raw_recipe": "{% set name = \"plumpy\" %}\n{% set version = \"0.10.2\" %}\n{% set sha256 = \"559e15fe11ee0d3beed9fe1910b4f7c13a711fb72e62346580341c3c1369dd8e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [not py27]\n\nrequirements:\n  build:\n    - setuptools\n    - python\n\n  run:\n    - python\n    - frozendict\n    - portalocker\n    - pyyaml\n    - tornado\n    - future\n    - kiwipy[rmq]>=0.2.0\n    - enum34  # [py < 34]\n    - backports.tempfile  # [py < 32]\n\ntest:\n  imports:\n    - plumpy\n\n  source_files:\n    - test\n\nabout:\n  home: https://github.com/aiidateam/plumpy\n  license: GPLv3, MIT\n  license_file: LICENSE\n  summary: \"A python workflow library that supports multithreading, and RabbitMQ as a message broker for starting/stopping/monitoring tasks.\"\n  dev_url: https://github.com/aiidateam/plumpy\n\nextra:\n  recipe-maintainers:\n    - ltalirz\n    - muhrin\n",
  "rendered_recipe": {

@@ -598,6 +598,7 @@
   "subdir": "win-64",
   "version": "0.0.2"
  },
+ "metadata_version": 1,
  "name": "fs_filepicker",
  "raw_recipe": "{% set name = \"fs_filepicker\" %}\n{% set version = \"0.0.2\" %}\n{% set sha256 = \"b556fe3b75ed7e93e5bf2c83f6ea7863e8f73fbd85cf115eabb0f1f1f0dcb743\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/ReimarBauer/fs_filepicker/archive/0.0.2.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - future\n\n  run:\n    - python\n    - pyqt 5.*\n    - fs\n    - future\n\ntest:\n  imports:\n    - fslib.fs_filepicker\n\nabout:\n  home: https://github.com/ReimarBauer/fs_filepicker\n  license: APACHE 2.0\n  license_file: LICENSE\n  summary: 'QT file picker for accessing a pyfilesystem2'\n  dev_url: https://github.com/ReimarBauer/fs_filepicker\n\nextra:\n  recipe-maintainers:\n    - ReimarBauer\n",
  "rendered_recipe": {

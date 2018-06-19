@@ -490,6 +490,7 @@
   "subdir": "osx-64",
   "version": "2.5"
  },
+ "metadata_version": 1,
  "name": "lbzip2",
  "raw_recipe": "{% set name = \"lbzip2\" %}\n{% set version = \"2.5\" %}\n{% set sha256 = \"eec4ff08376090494fa3710649b73e5412c3687b4b9b758c93f73aa7be27555b\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\n# UNCOMMENT AFTER THIS ISSUE IS SOLVED:\n# https://github.com/conda-forge/docker-images/pull/36\n# source:\n#   fn: lbzip2-{{ version }}.tar.bz2\n#   url: http://archive.lbzip2.org/lbzip2-{{ version }}.tar.bz2\n#   sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n  script:\n    - curl http://archive.lbzip2.org/lbzip2-{{ version }}.tar.bz2 -o lbzip2-{{ version }}.tar.bz2\n    - openssl sha256 lbzip2-{{ version }}.tar.bz2 | grep {{ sha256 }}\n    - tar xjvf lbzip2-{{ version }}.tar.bz2 --no-same-owner\n    - cd lbzip2-{{ version }}\n    - ./configure --prefix=$PREFIX\n    - make -j${CPU_COUNT}\n    - make check\n    - make install\n\nrequirements:\n  build:\n    - toolchain\n\ntest:\n  requires:\n    - bzip2\n  commands:\n    - lbzip2 --version\n\nabout:\n  home: http://lbzip2.org\n  license: GPLv3\n  license_file: lbzip2-{{ version }}/COPYING\n  summary: lbzip2 is a free, multi-threaded compression utility with support for bzip2 compressed file format\n\nextra:\n  recipe-maintainers:\n    - gqmelo\n",
  "rendered_recipe": {

@@ -666,6 +666,7 @@
   "subdir": "osx-64",
   "version": "1.14.0"
  },
+ "metadata_version": 1,
  "name": "blosc",
  "raw_recipe": "{% set version = \"1.14.0\" %}\n\npackage:\n  name: blosc\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Blosc/c-blosc/archive/v{{ version }}.tar.gz\n  sha256: 68b8c157beae5409e039ae266ad6c14b55a69a4899dba1f0df6c806a2f36360d\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - snappy 1.1.6\n    - zlib 1.2.11\n  run:\n    - snappy 1.1.6\n    - zlib 1.2.11\n\ntest:\n  commands:\n    - test -e $PREFIX/include/blosc.h                # [unix]\n    - test -e $PREFIX/include/blosc-export.h         # [unix]\n    - test -e $PREFIX/lib/libblosc.a                 # [unix]\n    - test -e $PREFIX/lib/libblosc.dylib             # [osx]\n    - test -e $PREFIX/lib/libblosc.so                # [linux]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://github.com/Blosc/c-blosc\n  license: BSD 3-Clause\n  license_file: LICENSES/BLOSC.txt\n  summary: 'A blocking, shuffling and loss-less compression library that can be faster than `memcpy()`'\n\nextra:\n  recipe-maintainers:\n    - danielfrg\n    - FrancescElies\n",
  "rendered_recipe": {

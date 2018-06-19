@@ -785,6 +785,7 @@
   "subdir": "osx-64",
   "version": "0.6.0"
  },
+ "metadata_version": 1,
  "name": "fabio",
  "raw_recipe": "{% set version = \"0.6.0\" %}\n\npackage:\n    name: fabio\n    version: {{ version }}\n\nsource:\n    url: https://github.com/silx-kit/fabio/archive/v{{ version }}.tar.gz\n    fn: fabio-v{{ version }}.tar.gz\n    sha256: a4379e35519446202fbeb725023746a8bdcb8870a5b806d7a6c7bb7f2868767d\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - numpy 1.11.*\n        - cython\n        # could use opencl, but need the package on conda-forge first\n        # - opencl\n\n    run:\n        - python\n        - numpy >=1.11\n\ntest:\n    imports:\n        - fabio\n        - fabio.test\n        - fabio.third_party\n\nabout:\n    home: https://github.com/silx-kit/fabio\n    license: GPL v3.0, GPL v2.0, MIT, GPL, LGPL v3.0, BSD 3-Clause, Apache 2.0\n    summary: I/O library for images produced by 2D X-ray detector\n    license_family: Other\n    license_file: copyright\n\nextra:\n    recipe-maintainers:\n        - ericdill\n        - licode\n        - tacaswell\n        - dmpelt\n        - CJ-Wright\n",
  "rendered_recipe": {

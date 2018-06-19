@@ -734,6 +734,7 @@
   "subdir": "linux-64",
   "version": "4_6"
  },
+ "metadata_version": 1,
  "name": "r-rjags",
  "raw_recipe": "{% set version = '4-6' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-rjags\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: rjags_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/rjags_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/rjags/rjags_{{ version }}.tar.gz\n  patches:\n    - fix-module-path.diff\n\n  sha256: cf24bb1e7c8445bafb49097089ad33e5bd5d8efbccf16fc7e32ad230f05f89ad\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n    - lib/JAGS/modules-4/\n\nrequirements:\n  build:\n    - r-base\n    - r-coda >=0.13\n    - gcc\n    - jags 4.*\n\n  run:\n    - r-base\n    - r-coda >=0.13\n    - libgcc\n    - jags 4.*\n\ntest:\n  commands:\n    - $R -e \"library('rjags')\"\n\nabout:\n  home: http://mcmc-jags.sourceforge.net\n  license: GPL (== 2)\n  summary: Interface to the JAGS MCMC library.\n  license_family: GPL2\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2'  # [unix]\n  license_file: '{{ environ[\"PREFIX\"] }}\\R\\share\\licenses\\GPL-2'  # [win]\n\nextra:\n  recipe-maintainers:\n    - micknudsen\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n",
  "rendered_recipe": {

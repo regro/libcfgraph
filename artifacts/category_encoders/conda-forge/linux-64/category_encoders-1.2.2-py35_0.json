@@ -49,6 +49,7 @@
   "subdir": "linux-64",
   "version": "1.2.2"
  },
+ "metadata_version": 1,
  "name": "category_encoders",
  "raw_recipe": "{% set version = \"1.2.2\" %}\n{% set gh_org = \"wdm0006\" %}\n{% set gh_repo = \"categorical_encoding\" %}\n{% set pkg_name = \"category_encoders\" %}\n\n\npackage:\n  name: {{ pkg_name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ pkg_name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ pkg_name[0] }}/{{ pkg_name }}/{{ pkg_name }}-{{ version }}.tar.gz\n  sha256: 858de8025caf1a6474cf879900ec9659cc0782ab6a93210823626341f6c4e075\n\nbuild:\n  number: 0\n  script:\n    - python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - numpy >=1.9.0\n    - pandas >=0.16.0\n    - patsy >=0.4.0\n    - python\n    - scikit-learn >=0.15.0\n    - scipy >=0.9\n    - statsmodels >=0.6.0\n\ntest:\n  requires:\n    - nose\n    - python\n  imports:\n    - category_encoders\n  commands:\n    - cd {{ SRC_DIR }}\n    - cd category_encoders\n    - cd tests\n    - nosetests\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: BSD-3-Clause\n  license_family: BSD\n  summary: A library of sklearn compatible categorical variable encoders\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n    - wdm0006\n",
  "rendered_recipe": {},

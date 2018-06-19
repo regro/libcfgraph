@@ -98,6 +98,7 @@
   "subdir": "linux-64",
   "version": "0.0.3"
  },
+ "metadata_version": 1,
  "name": "geoplot",
  "raw_recipe": "{% set name = \"geoplot\" %}\n{% set version = \"0.0.3\" %}\n{% set md5 = \"4c27bfaf5da2bcb75623bba3a9539ad5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/g/geoplot/geoplot-{{ version }}.tar.gz\n  md5: 77231ccf7df3f388af627a1c4a978445\n\nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  skip: True  # [win]\n  # Windows install requires resolving: https://github.com/SciTools/cartopy/issues/805\n  skip: True  # [win or py<35]\n  # Backporting to older Python versions: https://github.com/ResidentMario/geoplot/issues/24\n\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - matplotlib\n    - seaborn\n    - pandas\n    - geopandas\n    - cartopy\n\ntest:\n  imports:\n    - geoplot\n\nabout:\n  home: https://github.com/ResidentMario/geoplot\n  license: MIT\n  summary: 'High-level geospatial plotting for Python.'\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - residentmario\n",
  "rendered_recipe": {

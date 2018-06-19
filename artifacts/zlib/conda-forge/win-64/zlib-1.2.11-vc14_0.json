@@ -94,6 +94,7 @@
   "subdir": "win-64",
   "version": "1.2.11"
  },
+ "metadata_version": 1,
  "name": "zlib",
  "raw_recipe": "{% set version = \"1.2.11\" %}\n\npackage:\n    name: zlib\n    version: {{ version }}\n\nsource:\n    fn: zlib-{{ version }}.tar.gz\n    url: http://zlib.net/zlib-{{ version }}.tar.gz\n    sha256: c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1\n\nbuild:\n    number: 0\n    features:\n        - vc9  # [win and py27]\n        - vc10  # [win and py34]\n        - vc14  # [win and py>=35]\n    skip: true  # [win and py>35]\n\nrequirements:\n    build:\n        - python  # [win]\n        - cmake  # [win]\n        - msinttypes  # [win and py<35]\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libz.a  # [unix]\n        - conda inspect linkages -p ${PREFIX} zlib  # [linux]\n\nabout:\n    home: http://zlib.net/\n    # http://zlib.net/zlib_license.html\n    license: zlib\n    summary: Massively spiffy yet delicately unobtrusive compression library\n    license_family: Other\n    license_file: license.txt\n\nextra:\n    recipe-maintainers:\n        - groutr\n        - msarahan\n        - ocefpaf\n",
  "rendered_recipe": {

@@ -104,6 +104,7 @@
   "subdir": "linux-64",
   "version": "4.4.2"
  },
+ "metadata_version": 1,
  "name": "ftfy",
  "raw_recipe": "{% set name = \"ftfy\" %}\n{% set version = \"4.4.2\" %}\n{% set sha256sum = \"0d82c3c7550d030c0b0e833f9b4d2a3c54873f7a934eec9913694977e3fb165f\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256sum }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - ftfy = ftfy.cli:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    # Required for loading package data via `pkg_resources` module.\n    - setuptools\n    - html5lib\n    - wcwidth\n\ntest:\n  imports:\n    - ftfy\n    - ftfy.build_data\n    - ftfy.chardata\n    - ftfy.cli\n    - ftfy.fixes\n    - ftfy.formatting\n\n  commands:\n    - ftfy -h\n\nabout:\n  home: https://github.com/LuminosoInsight/python-ftfy/\n  license: MIT\n  license_file: LICENSE.txt\n  summary: Fixes some problems with Unicode text after the fact\n  dev_url: https://github.com/LuminosoInsight/python-ftfy\n  doc_url: http://ftfy.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - rolando\n",
  "rendered_recipe": {

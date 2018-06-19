@@ -382,6 +382,7 @@
   "subdir": "linux-64",
   "version": "1.8.3"
  },
+ "metadata_version": 1,
  "name": "coinmp",
  "raw_recipe": "{% set name = \"CoinMP\" %}\n{% set version = \"1.8.3\" %}\n{% set sha256 = \"7ae0c37c15d09f91c7fda33729d930e612ded8120d96c3e0932d82b7127cc5d0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: http://www.coin-or.org/download/source/CoinMP/{{ name }}-{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - pkgconfig\n    - readline 6.2*\n    - zlib 1.2.*\n    - bzip2 1.0.*\n  run:\n    - readline 6.2*\n    - zlib 1.2.*\n    - bzip2 1.0.*\n\ntest:\n  commands:\n    - cbc ?\n    - clp ?\n\nabout:\n  home: http://www.coin-or.org/\n  license: CPL 1.0\n  license_file: LICENSE\n  summary: The Computational Infrastructure for Operations Research\n  description: The Computational Infrastructure for Operations Research\n  doc_url: http://www.coin-or.org/faqs.html#ObtainSrcCode\n  dev_url: http://subversion.tigris.org\n\nextra:\n  recipe-maintainers:\n    - bgruening\n",
  "rendered_recipe": {},

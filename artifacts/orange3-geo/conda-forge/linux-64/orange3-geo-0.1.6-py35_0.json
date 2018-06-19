@@ -388,6 +388,7 @@
   "subdir": "linux-64",
   "version": "0.1.6"
  },
+ "metadata_version": 1,
  "name": "orange3-geo",
  "raw_recipe": "{% set name = \"Orange3-Geo\" %}\n{% set version = \"0.1.6\" %}\n{% set sha256 = \"e36f910157982a8d6cb595ef569f925e6d824240a2e3f11c632084e51c077f4e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - orange3\n    - scikit-learn\n    - pandas\n    - scipy >=0.17\n    - shapely\n    - simplejson\n\ntest:\n  imports:\n    - orangecontrib.geo\n\nabout:\n  home: http://github.com/biolab/orange3-geo\n  license: GPL-3.0\n  license_family: GPL\n  summary: 'Orange add-on for dealing with geography and geo-location'\n  dev_url: http://github.com/biolab/orange3-geo\n\nextra:\n  recipe-maintainers:\n    - kernc\n    - astaric\n",
  "rendered_recipe": {

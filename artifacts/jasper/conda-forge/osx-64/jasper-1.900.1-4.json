@@ -108,6 +108,7 @@
   "subdir": "osx-64",
   "version": "1.900.1"
  },
+ "metadata_version": 1,
  "name": "jasper",
  "raw_recipe": "{% set version = \"1.900.1\" %}\n\npackage:\n  name: jasper\n  version: {{ version }}\n\nsource:\n  fn: jasper-{{ version }}.zip\n  url: http://www.ece.uvic.ca/~frodo/jasper/software/jasper-{{ version }}.zip\n  sha256: 6b905a9c2aca2e275544212666eefc4eb44d95d0a57e4305457b407fe63f9494\n\nbuild:\n  number: 4\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - jpeg 9*\n  run:\n    - jpeg 9*\n\ntest:\n  commands:\n    - jasper --version\n    - conda inspect linkages -p $PREFIX jasper  # [not win]\n    - conda inspect objects -p $PREFIX jasper  # [osx]\n\nabout:\n  home: http://www.ece.uvic.ca/~frodo/jasper/\n  license: JasPer 2.0\n  license_file: LICENSE\n  summary: 'A reference implementation of the codec specified in the JPEG-2000 Part-1 standard.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jhamman\n    - ocefpaf\n",
  "rendered_recipe": {

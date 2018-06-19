@@ -687,6 +687,7 @@
   "subdir": "win-64",
   "version": "1.0.6"
  },
+ "metadata_version": 1,
  "name": "coredns",
  "raw_recipe": "{% set name = \"coredns\"%}\n{% set version = \"1.0.6\"%}\n\n{% set sha256 = \"7df31f0554071411ff35e66f39eeb24dad8652e215fc69269561c20c3460779a\" %}\n{% set sha256_win64 = \"b818b1ff3c478d4bfd55ec046539d60cbc75b9c6311dd15a2d00a9678a74cbe8\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/coredns/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]\n  fn: {{ name }}-{{ version }}.tar.gz  # [not win]\n  sha256: {{ sha256 }}  # [not win]\n\n  url: https://github.com/coredns/{{ name }}/releases/download/v{{ version }}/{{ name }}_{{ version }}_windows_amd64.tgz  # [win]\n  fn: {{ name }}-{{ version }}.tgz  # [win]\n  sha256: {{ sha256_win64 }}  # [win]\n\nbuild:\n  skip: True  # [win32]\n  number: 0\n\nrequirements:\n  build:\n    - go 1.9.*  # [not win]\n    - make  # [not win]\n    - toolchain  # [not win]\n\ntest:\n  commands:\n    - coredns --version\n\n    # Ugly hack because etcd&etcdclt are not a dynamic executable\n    - conda inspect linkages -p $PREFIX {{ name|lower }}  # [osx]\n    - conda inspect objects -p $PREFIX {{ name|lower }}  # [osx]\n\nabout:\n  home: https://coredns.io/\n  license: Apache-2.0\n  license_family: Apache\n  summary: CoreDNS is a DNS server written in Go that chains plugins\n  doc_url: https://coredns.io/manual/toc/\n  dev_url: https://github.com/coredns/coredns\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

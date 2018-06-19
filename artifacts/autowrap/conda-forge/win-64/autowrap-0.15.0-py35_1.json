@@ -467,6 +467,7 @@
   "timestamp": 1526520916923,
   "version": "0.15.0"
  },
+ "metadata_version": 1,
  "name": "autowrap",
  "raw_recipe": "{% set name = \"autowrap\" %}\n{% set version = \"0.15.0\" %}\n{% set sha256 = \"3ec93792773c5d7250ea6a43a861cb070350e723be78273dc98d5fbeb480af95\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - autowrap = autowrap.Main:main\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n    - cython >=0.19\n  run:\n    - python\n    - setuptools\n    - cython >=0.19\n\ntest:\n  imports:\n    - autowrap\n    - autowrap.data_files\n  commands:\n    - autowrap --version\n\nabout:\n  home: https://github.com/uweschmitt/autowrap\n  license: BSD-3-Clause\n  license_family: BSD\n  # autowrap does not include its license file in the latest pypi release,\n  # but will in the next release.  (TODO for next release)\n  summary: 'Generates Python Extension modules from commented Cython CXD files'\n  dev_url: https://github.com/uweschmitt/autowrap\n\nextra:\n  recipe-maintainers:\n    - aseyboldt\n",
  "rendered_recipe": {

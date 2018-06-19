@@ -737,6 +737,7 @@
   "subdir": "noarch",
   "version": "0.7.19"
  },
+ "metadata_version": 1,
  "name": "netaddr",
  "raw_recipe": "{% set name = \"netaddr\" %}\r\n{% set version = \"0.7.19\" %}\r\n\r\npackage:\r\n  name: {{ name }}\r\n  version: {{ version }}\r\n\r\nsource:\r\n  fn: {{ name }}-{{ version }}.tar.gz\r\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\r\n  sha256: 38aeec7cdd035081d3a4c306394b19d677623bf76fa0913f6695127c7753aefd\r\n\r\nbuild:\r\n  noarch: python\r\n  number: 0\r\n  script: python setup.py install --single-version-externally-managed --record=record.txt\r\n\r\nrequirements:\r\n  build:\r\n    - python\r\n    - setuptools\r\n\r\n  run:\r\n    - python\r\n\r\ntest:\r\n  imports:\r\n    - netaddr\r\n    - netaddr.eui\r\n    - netaddr.ip\r\n    - netaddr.strategy\r\n\r\nabout:\r\n  home: http://github.com/drkjam/netaddr\r\n  license_file: LICENSE\r\n  license: BSD 3-clause\r\n  license_family: BSD\r\n  summary: 'Pythonic manipulation of IPv4, IPv6, CIDR, EUI and MAC network addresses'\r\n  dev_url: https://github.com/drkjam/netaddr\r\n  doc_url: https://netaddr.readthedocs.io/en/latest/\r\n\r\nextra:\r\n  recipe-maintainers:\r\n    - anguslees\r\n    - mariusvniekerk\r\n    - drkjam\r\n",
  "rendered_recipe": {

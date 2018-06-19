@@ -112,6 +112,7 @@
   "subdir": "osx-64",
   "version": "4.0.0"
  },
+ "metadata_version": 1,
  "name": "pywps",
  "raw_recipe": "{% set name = \"pywps\" %}\n{% set version = \"4.0.0\" %}\n\npackage:\n    name: {{ name|lower }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/geopython/pywps/archive/{{ version }}.tar.gz\n    sha256: ed3ce96310066b2b553e8cab4a5090905c09ba5e9d845381ff8617936898a40d\n\nbuild:\n    number: 0 \n    skip: True  # [win]\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - owslib\n        - jsonschema\n        - werkzeug\n        - lxml\n        - sqlalchemy\n        - flufl.enum  # [py27]\n        - python-dateutil\ntest:\n    imports:\n        - pywps\n\nabout:\n    home: http://pywps.org/\n    license: MIT\n    summary: 'PyWPS (Python Web Processing Service) is an implementation of the Web processing Service standard from Open Geospatial Consortium.'\n\nextra:\n  recipe-maintainers:\n    - cehbrecht\n",
  "rendered_recipe": {

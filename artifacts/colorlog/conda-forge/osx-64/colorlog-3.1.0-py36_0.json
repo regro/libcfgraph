@@ -655,6 +655,7 @@
   "subdir": "osx-64",
   "version": "3.1.0"
  },
+ "metadata_version": 1,
  "name": "colorlog",
  "raw_recipe": "{% set version = \"3.1.0\" %}\n\npackage:\n  name: colorlog\n  version: {{ version }}\n\nsource:\n  fn: colorlog-{{ version }}.tar.gz\n  url: https://pypi.org/packages/source/c/colorlog/colorlog-{{ version }}.tar.gz\n  sha256: f7c0efd9d960b43929027aa2b5a6c80d8ebec3e8d87cdec8b92696bf57428284\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - colorama  # [win]\n\n  run:\n    - python\n    - colorama  # [win]\n\ntest:\n  imports:\n    - colorlog\n\nabout:\n  home: https://github.com/borntyping/python-colorlog\n  license: MIT\n  summary: Log formatting with colors!\n\nextra:\n  recipe-maintainers:\n    - frol\n    - borntyping\n",
  "rendered_recipe": {

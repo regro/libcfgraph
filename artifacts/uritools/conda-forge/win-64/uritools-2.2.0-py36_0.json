@@ -123,6 +123,7 @@
   "timestamp": 1527279088953,
   "version": "2.2.0"
  },
+ "metadata_version": 1,
  "name": "uritools",
  "raw_recipe": "{% set name = \"uritools\" %}\n{% set version = \"2.2.0\" %}\n{% set sha256 = \"80e8e23cafad54fd85811b5d9ba0fc595d933f5727c61c3937945eec09f99e2b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - ipaddress  # [py27]\n\ntest:\n  imports:\n    - uritools\n\n  commands:\n    - python -m unittest discover\n\n  source_files:\n    - tests\n\nabout:\n  home: https://github.com/tkem/uritools/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'RFC 3986 compliant, Unicode-aware, scheme-agnostic replacement for urlparse'\n  dev_url: https://github.com/tkem/uritools/\n  doc_url: http://pythonhosted.org/uritools/\n\nextra:\n  recipe-maintainers:\n    - ltalirz\n",
  "rendered_recipe": {

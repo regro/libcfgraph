@@ -49,6 +49,7 @@
   "subdir": "osx-64",
   "version": "6.2"
  },
+ "metadata_version": 1,
  "name": "readline",
  "raw_recipe": "{% set version = \"6.2\" %}\n\npackage:\n  name: readline\n  version: {{ version }}\n\nsource:\n  url: ftp://ftp.gnu.org/gnu/readline/readline-{{ version }}.tar.gz\n  fn: readline-{{ version }}.tar.gz\n  md5: 67948acb2ca081f23359d0256e9a271c\n  patches:\n    - patches/readline62-001\n    - patches/readline62-002\n    - patches/readline62-003\n    - patches/readline62-004\n    - patches/readline62-005\n\nbuild:\n  skip: true  # [win]\n  number: 0\n\nrequirements:\n  build:\n    - pkg-config\n    - ncurses 5.9*\n  run:\n    - ncurses 5.9*\n\ntest:\n  commands:\n  {% set readline_libs = [\n    'libreadline',\n    'libhistory'\n  ] %}\n  {% for lib in readline_libs %}\n    - test -f ${PREFIX}/lib/{{ lib }}.a\n    - test -f ${PREFIX}/lib/{{ lib }}.so      # [linux]\n    - test -f ${PREFIX}/lib/{{ lib }}.dylib   # [osx]\n  {% endfor %}\n\nabout:\n  home: https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html\n  license: GPL3\n  summary: library for editing command lines as they are typed in\n\nextra:\n  recipe-maintainers:\n    - croth1\n    - jakirkham\n    - jjhelmus\n    - pelson\n    - msarahan\n",
  "rendered_recipe": {},

@@ -94,6 +94,7 @@
   "subdir": "osx-64",
   "version": "2.2.1"
  },
+ "metadata_version": 1,
  "name": "emcee",
  "raw_recipe": "{% set version = \"2.2.1\" %}\n\npackage:\n  name: emcee\n  version: {{ version }}\n\nsource:\n  fn: emcee-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/e/emcee/emcee-{{ version }}.tar.gz\n  md5: cd3f7a6ff6a8124fed86afeea69b9cac\n\nbuild:\n  number: 3\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy\n\n  run:\n    - python\n    - numpy\n\ntest:\n  imports:\n    - emcee\n\nabout:\n  home: http://dan.iel.fm/emcee/\n  license: MIT\n  summary: 'Kick ass affine-invariant ensemble MCMC sampling'\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - tacaswell\n    - licode\n    - dfm\n    - danielballan\n",
  "rendered_recipe": {

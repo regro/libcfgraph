@@ -25,6 +25,7 @@
   "subdir": "linux-64",
   "version": "0.20.1"
  },
+ "metadata_version": 1,
  "name": "azure-mgmt-compute",
  "raw_recipe": "{% set version = \"0.20.1\" %}\n\npackage:\n  name: azure-mgmt-compute\n  version: {{ version }}\n\nsource:\n  fn: azure-mgmt-compute-{{ version }}.zip\n  url: https://pypi.io/packages/source/a/azure-mgmt-compute/azure-mgmt-compute-{{ version }}.zip\n  md5: cf47605ec16dc465733ad072e05f5d14\n  \nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - azure-mgmt-common\n  run:\n    - python\n    - azure-mgmt-common\n\ntest:\n  imports:\n    - azure\n    - azure.mgmt\n    - azure.mgmt.compute\n  commands:\n    - python -m unittest discover -p \"test_*.py\"\n\nabout:\n  home: https://github.com/Azure/azure-sdk-for-python\n  license: Apache-2.0\n  summary: 'Microsoft Azure Client Libraries for Python'\n\nextra:\n  recipe-maintainers:\n    - ivoflipse\n    - Korijn\n    - Maxyme\n",
  "rendered_recipe": {},

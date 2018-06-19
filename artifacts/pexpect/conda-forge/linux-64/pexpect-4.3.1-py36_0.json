@@ -731,6 +731,7 @@
   "subdir": "linux-64",
   "version": "4.3.1"
  },
+ "metadata_version": 1,
  "name": "pexpect",
  "raw_recipe": "{% set version = \"4.3.1\" %}\n\npackage:\n  name: pexpect\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pexpect/pexpect-{{ version }}.tar.gz\n  sha256: 8e287b171dbaf249d0b06b5f2e88cb7e694651d2d0b8c15bccb83170d3c55575\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - ptyprocess  # [not win]\n\ntest:\n  imports:\n    - pexpect\n\nabout:\n  home: http://pexpect.sourceforge.net/\n  license: ISC\n  summary: 'Pexpect makes Python a better tool for controlling other applications.'\n\nextra:\n  recipe-maintainers:\n    - jquast\n    - pelson\n    - takluyver\n    - ocefpaf\n",
  "rendered_recipe": {

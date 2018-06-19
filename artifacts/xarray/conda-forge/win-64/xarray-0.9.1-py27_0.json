@@ -164,6 +164,7 @@
   "subdir": "win-64",
   "version": "0.9.1"
  },
+ "metadata_version": 1,
  "name": "xarray",
  "raw_recipe": "{% set version = \"0.9.1\" %}\n\npackage:\n  name: xarray\n  version: {{ version }}\n\nsource:\n  fn: xarray-{{ version }}.tar.gz\n  url: https://github.com/pydata/xarray/archive/v{{ version }}.tar.gz\n  sha256: 43a17d234e13f96524c08a0fc19c578a136bf01cf27e759e6c9adbfdeeb68283\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - pandas\n    - netcdf4\n    - scipy\n    - bottleneck\n    - dask >=0.6\n    - h5netcdf\n    - cyordereddict  # [not py>=35]\n\ntest:\n  imports:\n    - xarray\n    - xarray.backends\n    - xarray.core\n    - xarray.tests\n  requires:\n    - pytest\n\nabout:\n  home: https://github.com/pydata/xarray\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: 'N-D labeled arrays and datasets in Python.'\n\nextra:\n  recipe-maintainers:\n    - jhamman\n    - ocefpaf\n    - shoyer\n",
  "rendered_recipe": {

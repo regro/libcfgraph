@@ -141,6 +141,7 @@
   "timestamp": 1525361215212,
   "version": "1.6.6"
  },
+ "metadata_version": 1,
  "name": "imagingreso",
  "raw_recipe": "{% set name = \"ImagingReso\" %}\n{% set version = \"1.6.6\" %}\n{% set file_ext = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"0773556320778d0d5f98fedfdfc6cf9bec05ac5d6211cfe83af6ef868c94cf69\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: '{{ name }}-{{ version }}.{{ file_ext }}'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  \nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - matplotlib\n    - periodictable\n    - numpy\n    - scipy\n    - pandas\n    - six\n    - plotly\n    \ntest:\n  imports:\n    - ImagingReso\n\nabout:\n  home: https://github.com/ornlneutronimaging/ImagingReso\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'a tool to simulate neutron resonance signal for neutron resonance imaging'\n  doc_url: http://imagingreso.readthedocs.io/\n  dev_url: https://github.com/ornlneutronimaging/ImagingReso\n\nextra:\n  recipe-maintainers:\n    - zhangy6x\n    - JeanBilheux\n",
  "rendered_recipe": {

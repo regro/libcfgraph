@@ -713,6 +713,7 @@
   "subdir": "noarch",
   "version": "0.2.0"
  },
+ "metadata_version": 1,
  "name": "cssmin",
  "raw_recipe": "{% set name = \"cssmin\" %}\n{% set version = \"0.2.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  sha256: 0649244b431c8d604d443047c66156cf5b0d0677c6beacbdaf40594ee2fd4ea4\n  url: https://github.com/zacharyvoase/cssmin/archive/v{{ version }}.tar.gz\n\nbuild:\n  noarch: python\n  script: python setup.py install  --single-version-externally-managed --record=record.txt\n  number: 0\n  entry_points:\n    - cssmin = cssmin:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - cssmin\n  commands:\n    - cssmin --help\n\nabout:\n  license_family: MIT\n  license: MIT\n  dev_url: http://github.com/zacharyvoase/cssmin\n  doc_url: http://github.com/zacharyvoase/cssmin\n  home: http://github.com/zacharyvoase/cssmin\n  summary: A Python port of the YUI CSS compression algorithm.\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - csadorf\n    - jenzopr\n",
  "rendered_recipe": {

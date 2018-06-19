@@ -183,6 +183,7 @@
   "timestamp": 1527381052682,
   "version": "5.2.0"
  },
+ "metadata_version": 1,
  "name": "fplll",
  "raw_recipe": "{% set version = \"5.2.0\" %}\n{% set name = \"fplll\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/fplll/fplll/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 75e17fcaa4fc5fdddbe6eb42aca5f38c4c169a4b52756e74fbe2d1769737ac9c\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  run_exports:\n    - {{ pin_subpackage('fplll', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - libtool\n    - m4\n  host:\n    - gmp\n    - mpfr\n    - qd 2.3.*\n  run:\n    - gmp\n    - mpfr\n    - qd 2.3.*\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/{{ name }}.h\n    - test -f ${PREFIX}/lib/lib{{ name }}.a\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]\n\nabout:\n  home: https://github.com/fplll/fplll\n  license: LGPL v2+\n  license_file: {{ SRC_DIR }}/COPYING\n  summary: Lattice algorithms using floating-point arithmetic\n  doc_url: https://fplll.github.io/fplll\n  dev_url: https://github.com/fplll/fplll\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - saraedum\n",
  "rendered_recipe": {

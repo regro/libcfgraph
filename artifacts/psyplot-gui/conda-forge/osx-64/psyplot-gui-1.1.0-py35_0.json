@@ -722,6 +722,7 @@
   "type": "app",
   "version": "1.1.0"
  },
+ "metadata_version": 1,
  "name": "psyplot-gui",
  "raw_recipe": "{% set name = \"psyplot-gui\" %}\n{% set version = \"1.1.0\" %}\n{% set sha256 = \"2484f421f20f31ee24cb9060233a2913cd8851b7f4df63531865a0321f1c03d4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - psyplot\n    - qtconsole\n    - fasteners\n    - sphinx\n    - sphinx_rtd_theme\n\ntest:\n  commands:\n    - psyplot --help\n  imports:\n    - psyplot_gui\n    - psyplot_gui.compat\n    - psyplot_gui.config\n    - psyplot_gui.sphinx_supp\n\napp:\n  entry: psyplot\n  icon: logo.png\n  summary: Psyplot visualization software\n  type: desk\n\nabout:\n  home: https://github.com/Chilipp/psyplot-gui\n  license: GPL-2.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: Graphical user interface for the psyplot package\n\n  description: |\n    This package provides a graphical user interface to interact with the\n    psyplot framework.\n  doc_url: http://psyplot.readthedocs.io/projects/psyplot-gui\n  dev_url: https://github.com/Chilipp/psyplot-gui\n\nextra:\n  recipe-maintainers:\n    - Chilipp\n",
  "rendered_recipe": {

@@ -766,6 +766,7 @@
   "subdir": "noarch",
   "version": "0.6.2"
  },
+ "metadata_version": 1,
  "name": "astor",
  "raw_recipe": "{% set name = \"astor\" %}\n{% set version = \"0.6.2\" %}\n{% set sha256 = \"ff6d2e2962d834acb125cc4dcc80c54a8c17c253f4cc9d9c43b5102a560bb75d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n\ntest:\n  imports:\n    - astor\n\nabout:\n  home: https://github.com/berkerpeksag/astor\n  license: BSD-3-Clause\n  summary: 'Read, rewrite, and write Python ASTs nicely'\n  license_file: LICENSE\n  description: |\n    astor is designed to allow easy manipulation of Python source via the AST.\n  doc_url: http://astor.readthedocs.io/en/latest/\n  dev_url: https://github.com/berkerpeksag/astor\n\nextra:\n  recipe-maintainers:\n    - drewokane\n",
  "rendered_recipe": {

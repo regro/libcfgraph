@@ -763,6 +763,7 @@
   "subdir": "linux-64",
   "version": "2.2.9"
  },
+ "metadata_version": 1,
  "name": "hub",
  "raw_recipe": "{% set name = \"hub\" %}\n{% set version = \"2.2.9\" %}\n{% set sha256 = \"b3f949c4500288a18ed68c38755962c9571c9e10063fb77583a19d0fcca5ecdf\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/github/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  number: 0  # [win]\n\nrequirements:\n  build:\n    - go >=1.8\n    - toolchain\n    - posix  # [win]\n  run:\n    - git >=1.7.3\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX {{ name }}  # [not win]\n    - hub version\n\nabout:\n  home: https://github.com/github/hub\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'git + hub = github'\n\n  description: |\n    hub is a command line tool that wraps git in order to extend it with\n    extra features and commands that make working with GitHub easier.\n  dev_url: https://github.com/github/hub\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

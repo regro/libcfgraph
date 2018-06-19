@@ -716,6 +716,7 @@
   "subdir": "noarch",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "backports.shutil_get_terminal_size",
  "raw_recipe": "{% set version = \"1.0.0\" %}\n\npackage:\n  name: backports.shutil_get_terminal_size\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/b/backports.shutil_get_terminal_size/backports.shutil_get_terminal_size-{{ version }}.tar.gz\n  sha256: 713e7a8228ae80341c70586d1cc0a8caa5207346927e23d09dcbcaf18eadec80\n\nbuild:\n  number: 2\n  noarch: python\n  script: pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - backports\n    - backports.shutil_get_terminal_size\n\nabout:\n  home: https://github.com/chrippa/backports.shutil_get_terminal_size\n  license: MIT\n  license_file: LICENSE\n  summary: \"A backport of the get_terminal_size function from Python 3.3's shutil.\"\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

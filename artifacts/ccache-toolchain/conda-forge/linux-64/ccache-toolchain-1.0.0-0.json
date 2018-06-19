@@ -615,6 +615,7 @@
   "subdir": "linux-64",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "ccache-toolchain",
  "raw_recipe": "{% set name = \"ccache-toolchain\" %}\n{% set version = \"1.0.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - ccache      # [unix]\n  run:\n    - ccache      # [unix]\n    - toolchain 2.*\n\ntest:\n  requires:\n    - gcc         # [unix]\n  commands:\n    # Verify the scripts are in-place.\n    {% for state in [\"activate\", \"deactivate\"] %}\n    - test -f \"${PREFIX}/etc/conda/{{ state }}.d/ccache_toolchain_{{ state }}.sh\"  # [unix]\n    {% endfor %}\n    {% for cc in [\"gcc\", \"g++\", \"clang\", \"clang++\", \"gfortran\"] %}\n    # Verify that cc is in the path\n    - test `which {{ cc }}` == \"${PREFIX}/bin/conda_forge_ccache/{{ cc }}\"         # [unix]\n    # Verify that cc points to ccache\n    - test `readlink -f \\`which {{ cc }}\\`` == \"${PREFIX}/bin/ccache\"              # [linux]\n    {% endfor %}\n    - gcc --version        # [unix]\n    - g++ --version        # [unix]\n    - gfortran --version   # [unix]\n    - clang --version      # [osx]\n    - clang++ --version    # [osx]\n\nabout:\n  home: https://github.com/conda-forge/ccache-toolchain-feedstock\n  license: BSD 3-Clause\n  summary: A meta-package to enable caching in CI using ccache.\n\nextra:\n  recipe-maintainers:\n    - gqmelo\n    - isuruf\n",
  "rendered_recipe": {

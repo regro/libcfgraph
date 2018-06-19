@@ -132,6 +132,7 @@
   "subdir": "win-64",
   "version": "2017_20160722"
  },
+ "metadata_version": 1,
  "name": "tbb",
  "raw_recipe": "{% set version = \"2017_20160722\" %}\n{% set flat_version=version.replace(\".\", \"\") %}\n\npackage:\n  name: tbb\n  version: {{ version }}\n\nsource:\n  fn: tbb{{ flat_version }}oss_src.tgz\n  url: https://www.threadingbuildingblocks.org/sites/default/files/software_releases/source/tbb{{ flat_version }}oss_src.tgz\n  sha256: fd5fb4c4e0bf6025eb45d12bd7a474821c8e1b45dbf39fe50a256aa4c7ae190d\n\nbuild:\n  number: 0\n  features:\n    - vc9    # [win and py27]\n    - vc10   # [win and py34]\n    - vc14   # [win and py35]\n\nrequirements:\n  build:\n    - toolchain\n    - python  # [win]\n    - cmake   # [win]\n\ntest:\n  requires:\n    - python 2.7.*  # [win and py27]\n    - python 3.4.*  # [win and py34]\n    - python 3.5.*  # [win and py35]\n\n  commands:\n    - test -f ${PREFIX}/include/tbb/tbb.h  # [unix]\n    - test -f ${PREFIX}/lib/libtbb.so  # [linux]\n    - test -f ${PREFIX}/lib/libtbb.dylib  # [osx]\n\nabout:\n  home: http://www.threadingbuildingblocks.org\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: High level abstract threading library\n\nextra:\n  recipe-maintainers:\n    - jschueller\n\n",
  "rendered_recipe": {},

@@ -738,6 +738,7 @@
   "subdir": "linux-64",
   "version": "0.6.0"
  },
+ "metadata_version": 1,
  "name": "siphon",
  "raw_recipe": "{% set name = \"siphon\" %}\n{% set version = \"0.6.0\" %}\n{% set sha256 = \"d74a1836d1a0a4994c9330ab048ea0b04ecfd4ab250f3c3d915a9c1a3a26f49d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{name}}-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/{{name[0]}}/{{name}}/{{name}}-{{version}}.tar.gz\n  sha256: {{sha256}}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - protobuf >=3.0.0a3\n    - requests\n    - beautifulsoup4\n    - pandas\n    - netcdf4\n    - enum34  # [py27]\n\ntest:\n  imports:\n    - siphon\n    - siphon.cdmr\n    - siphon.catalog\n    - siphon.ncss\n    - siphon.radarserver\n    - siphon.simplewebservice.wyoming\n\nabout:\n  home: https://github.com/Unidata/siphon\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A collection of Python utilities for interacting with the Unidata technology stack.'\n  doc_url: https://unidata.github.io/siphon\n  dev_url: https://github.com/Unidata/siphon\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - dopplershift\n",
  "rendered_recipe": {

@@ -774,6 +774,7 @@
   "subdir": "noarch",
   "version": "0.5.0"
  },
+ "metadata_version": 1,
  "name": "jsontableschema-pandas",
  "raw_recipe": "{% set name = \"jsontableschema-pandas\" %}\n{% set version = \"0.5.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"cf5833ebe4ddcab29f3c652304aff6a4316fa9b92d52d9ee047b9cffbb18cebf\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n    - six >=1.9,<2.0\n    - pandas >=0.18,<2.0\n    - tabulator-py >=1.0,<2.0\n    - jsontableschema >=0.7,<2.0\n    - tableschema-py >=1.0.4,<2.0\n    - isodate >=0.5.4,<2.0\n\ntest:\n  imports:\n    - jsontableschema_pandas\n\nabout:\n  home: https://github.com/frictionlessdata/jsontableschema-pandas-py\n  license_file: LICENSE.txt\n  license_family: LGPL\n  license: LGPLv3\n  summary: 'Generate Pandas data frames, load and extract data, based on JSON Table Schema descriptors.'\n  dev_url: https://github.com/frictionlessdata/jsontableschema-pandas-py\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

@@ -762,6 +762,7 @@
   "subdir": "noarch",
   "version": "5.1.1"
  },
+ "metadata_version": 1,
  "name": "natsort",
  "raw_recipe": "{% set name = \"natsort\" %}\n{% set version = \"5.1.1\" %}\n{% set sha256 = \"9ffbfb74bf3fc3905be1b9b052ed865675651e38fcd972ed1ed5c64a02f93cbd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - natsort = natsort.__main__:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - natsort\n  commands:\n    - natsort -h\n\nabout:\n  home: https://github.com/SethMMorton/natsort\n  license: MIT\n  license_file: LICENSE\n  summary: 'Sort lists naturally'\n\n  doc_url: http://natsort.readthedocs.io/\n  dev_url: https://github.com/SethMMorton/natsort\n\nextra:\n  recipe-maintainers:\n    - holtgrewe\n    - synapticarbors\n",
  "rendered_recipe": {

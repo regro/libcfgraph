@@ -660,6 +660,7 @@
   "subdir": "osx-64",
   "version": "0.1.3"
  },
+ "metadata_version": 1,
  "name": "sampledb",
  "raw_recipe": "{% set name = \"sampledb\" %}\n{% set version = \"0.1.3\" %}\n{% set sha256 = \"95755272543b8cc2852ca73731b669e67ac9f8075d008e6c7c05fad2dff679fd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/diffpy/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: true  # [not py36]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - xlrd\n    - xlsxwriter\n    - pymongo\n    - pandas\n    - jsonschema\n    - xonsh\n    # Note that the qr writer requires latex and I don't want to get into\n    # cf tex distributions\n\ntest:\n  imports:\n    - sampledb\n    - sampledb.databasesearcher\n    - sampledb.datapublisher\n\nabout:\n  home: https://github.com/diffpy/sampledb\n  license: BSD-3-clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'A DB for sample and synthesis metadata information'\n\n  doc_url: http://www.diffpy.org/sampledb/\n  dev_url: https://github.com/diffpy/sampledb\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n    - justcalamari\n",
  "rendered_recipe": {

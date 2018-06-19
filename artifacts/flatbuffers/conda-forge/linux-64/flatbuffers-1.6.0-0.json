@@ -95,6 +95,7 @@
   "subdir": "linux-64",
   "version": "1.6.0"
  },
+ "metadata_version": 1,
  "name": "flatbuffers",
  "raw_recipe": "{% set version = \"1.6.0\" %}\n\npackage:\n  name: flatbuffers\n  version: {{ version }}\n\nsource:\n  fn: flatbuffers-{{ version }}.tar.gz\n  url: https://github.com/google/flatbuffers/archive/v{{ version }}.tar.gz\n  sha256: 768c50ebf5823f8cde81a9e38ffff115c8f5a5d031a37520d0024e7b9c6cd22e\n\nbuild:\n  skip: true  # [win]\n  number: 0\n\nrequirements:\n  build:\n    - cmake\n\ntest:\n  commands:\n    - test -f $PREFIX/bin/flatc\n    - test -f $PREFIX/include/flatbuffers/flatbuffers.h\n\nabout:\n  home: http://google.github.io/flatbuffers/\n  license: Apache License 2.0\n  summary: Memory Efficient Serialization Library\n\nextra:\n  recipe-maintainers:\n    - wesm\n    - msarahan\n    - jakirkham\n",
  "rendered_recipe": {

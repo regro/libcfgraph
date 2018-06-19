@@ -189,6 +189,7 @@
   "timestamp": 1527949180691,
   "version": "7.6.4"
  },
+ "metadata_version": 1,
  "name": "bdw-gc",
  "raw_recipe": "{% set name = \"bdw-gc\" %}\n{% set version = \"7.6.4\" %}\n{% set sha256 = \"1f85bf6d4aaa3fb12fe0178b13d9685e2d0c3a4d115dea5f831c54deafa3f6db\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: gc-{{ version }}.tar.gz\n  url: https://github.com/ivmai/bdwgc/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 2\n  skip: True  # [win]\n  run_exports:\n    - {{ pin_subpackage('bdw-gc') }}\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - autoconf\n    - automake\n    - libtool\n    - pkg-config\n  host:\n    # Uses the static library\n    - libatomic_ops\n\ntest:\n  commands:\n    - test -e $PREFIX/include/gc.h\n    - test -e $PREFIX/lib/libgc.a\n    - test -e $PREFIX/lib/libgc.dylib  # [osx]\n\nabout:\n  home: http://www.hboehm.info/gc/\n  license: Custom\n  summary: Garbage collector for C and C++.\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - stefan-balke\n",
  "rendered_recipe": {

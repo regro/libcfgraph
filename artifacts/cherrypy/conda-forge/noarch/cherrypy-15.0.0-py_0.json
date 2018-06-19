@@ -252,6 +252,7 @@
   "timestamp": 1526758686399,
   "version": "15.0.0"
  },
+ "metadata_version": 1,
  "name": "cherrypy",
  "raw_recipe": "{% set name = \"CherryPy\" %}\n{% set version = \"15.0.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"7404638da9cf8c6be672505168ccb63e16d33cb3aa16a02ec30a44641f7546af\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  entry_points:\n    - cherryd = cherrypy.__main__:run\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools_scm\n\n  run:\n    - python\n    - setuptools\n    - six >=1.11.0\n    - cheroot >=6.2.4\n    - portend >=2.1.1\n    - jaraco.classes\n\ntest:\n  imports:\n    - cherrypy\n    - cherrypy.lib\n    - cherrypy.process\n    - cherrypy.scaffold\n    - cherrypy.test\n    - cherrypy.tutorial\n\n  commands:\n    - cherryd -h\n\nabout:\n  home: http://www.cherrypy.org\n  license: BSD 3-Clause\n  license_file: LICENSE.md\n  license_family: BSD\n  summary: 'Object-Oriented HTTP framework'\n  dev_url: https://github.com/cherrypy/cherrypy\n  doc_url: http://docs.cherrypy.org/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

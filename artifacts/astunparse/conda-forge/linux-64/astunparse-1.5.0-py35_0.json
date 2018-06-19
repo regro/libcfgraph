@@ -105,6 +105,7 @@
   "subdir": "linux-64",
   "version": "1.5.0"
  },
+ "metadata_version": 1,
  "name": "astunparse",
  "raw_recipe": "{% set name = \"astunparse\" %}\n{% set version = \"1.5.0\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"55df3c2a659d6cb6a9a9041c750a8232a9925523405a8dfeb891b92d45a589cd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - six >=1.6.1,<2.0\n\ntest:\n  imports:\n    - astunparse\n\nabout:\n  home: https://github.com/simonpercivall/astunparse\n  license: BSD 3-Clause, PSF 2\n  license_file: LICENSE\n  summary: An AST unparser for Python.\n  description: |\n    This is a factored out version of unparse found in the Python source\n    distribution; under Demo/parser in Python 2 and under Tools/parser in\n    Python 3.\n  dev_url: https://github.com/simonpercivall/astunparse\n  doc_url: http://astunparse.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n",
  "rendered_recipe": {

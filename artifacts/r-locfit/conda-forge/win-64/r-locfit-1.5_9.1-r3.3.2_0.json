@@ -665,6 +665,7 @@
   "subdir": "win-64",
   "version": "1.5_9.1"
  },
+ "metadata_version": 1,
  "name": "r-locfit",
  "raw_recipe": "{% set version = '1.5-9.1' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-locfit\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: locfit_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/locfit_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/locfit/locfit_{{ version }}.tar.gz\n  sha256: f524148fdb29aac3a178618f88718d3d4ac91283014091aa11a01f1c70cd4e51\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-lattice\n    - posix                # [win]\n    - {{native}}toolchain  # [win]\n    - gcc                  # [not win]\n\n  run:\n    - r-base\n    - r-lattice\n    - libgcc  # [not win]\n\ntest:\n  commands:\n    - $R -e \"library('locfit')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('locfit')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=locfit\n  license: GPL (>= 2)\n  summary: Local regression, likelihood and density estimation.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

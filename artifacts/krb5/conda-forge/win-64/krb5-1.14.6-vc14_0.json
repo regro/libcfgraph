@@ -636,6 +636,7 @@
   "subdir": "win-64",
   "version": "1.14.6"
  },
+ "metadata_version": 1,
  "name": "krb5",
  "raw_recipe": "{% set version = \"1.14.6\" %}\n\npackage:\n  name: krb5\n  version: {{ version }}\n\nsource:\n  fn: krb5-{{ version }}.tar.gz\n  url: https://github.com/krb5/krb5/archive/krb5-{{ version }}-final.tar.gz\n  sha256: 34c7d6dfdd03d3c6827676a4c8e8fc590727ce396487da8d1b761ad39d728d9a\n  patches:\n    - eafnosupport.patch  # [win and py<34]\n    - jsoneoverflow.patch  # [win and py<34]\n    - afxres.patch  # [win and py<35]\n    - lshutil.patch  # [win and py<35]\n    - noleash.patch  # [win]\n    - noinstallleash.patch  # [win]\n\nbuild:\n  number: 0\n  skip: True  # [win and py>35]\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py>=35]\n\nrequirements:\n  build:\n    - python\n    - bison  # [not win]\n    - autoconf  # [not win]\n    - msinttypes  # [win and py<35]\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py>=35]\n  run:\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py>=35]\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX krb5  # [not win]\n    - conda inspect objects -p $PREFIX krb5  # [osx]\n\nabout:\n  home: http://web.mit.edu/kerberos/\n  license: MIT\n  license_file: doc/notice.rst\n  summary: 'A network authentication protocol.'\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - ocefpaf\n",
  "rendered_recipe": {

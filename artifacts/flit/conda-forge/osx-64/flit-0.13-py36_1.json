@@ -698,6 +698,7 @@
   "subdir": "osx-64",
   "version": "0.13"
  },
+ "metadata_version": 1,
  "name": "flit",
  "raw_recipe": "{% set name = \"flit\" %}\n{% set version = \"0.13\" %}\n{% set wheel_tag = \"py3\" %}\n{% set fn = \"{}-{}-{}-none-any.whl\".format(name, version, wheel_tag) %}\n{% set sha256 = \"26bf9a3a9b743fed085420b4eed24f78341c0d2103a5f726980f7e7750400e81\" %}\n{% set build = 1 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ fn }}\n  url: https://pypi.io/packages/{{ wheel_tag }}/{{ name[0] }}/{{ name }}/{{ fn }}\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  script: pip install --no-deps {{ fn }}\n  skip: True  # [py2k]\n  entry_points:\n    - flit = flit:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - docutils\n    - requests\n    - requests_download\n    - zipfile36  # [py<36]\n    - pytoml\n    - pip\n\ntest:\n  imports:\n    - flit\n  commands:\n    - flit --version\n\nabout:\n  home: https://flit.readthedocs.io/\n  license: BSD 3-clause\n  license_family: BSD\n  summary: Simplified packaging of Python modules\n\nextra:\n  recipe-maintainers:\n    - Carreau\n    - minrk\n    - takluyver\n",
  "rendered_recipe": {

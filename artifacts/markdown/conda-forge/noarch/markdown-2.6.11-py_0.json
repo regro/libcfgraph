@@ -798,6 +798,7 @@
   "subdir": "noarch",
   "version": "2.6.11"
  },
+ "metadata_version": 1,
  "name": "markdown",
  "raw_recipe": "{% set name = \"Markdown\" %}\n{% set version = \"2.6.11\" %}\n{% set sha256 = \"a856869c7ff079ad84a3e19cd87a64998350c2b94e9e08e44270faef33400f81\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - markdown_py = markdown.__main__:run\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - markdown\n    - markdown.extensions\n  commands:\n    - markdown_py -h\n\nabout:\n  home: https://python-markdown.github.io/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.md\n  summary: 'Python implementation of Markdown.'\n  description: |\n    This is a Python implementation of John Gruber\u2019s Markdown. It is almost\n    completely compliant with the reference implementation, though there are a\n    few very minor differences.\n  doc_url: https://python-markdown.github.io/\n  dev_url: https://github.com/Python-Markdown/markdown\n\nextra:\n  recipe-maintainers:\n    - dougalsutherland\n",
  "rendered_recipe": {

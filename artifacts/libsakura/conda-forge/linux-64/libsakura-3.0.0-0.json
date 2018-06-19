@@ -90,6 +90,7 @@
   "subdir": "linux-64",
   "version": "3.0.0"
  },
+ "metadata_version": 1,
  "name": "libsakura",
  "raw_recipe": "{% set name = \"libsakura\" %}\n{% set version = \"3.0.0\" %}\n{% set sha256 = \"f387d6b2f633eca163ffb824df24742c69a3473971c671d10f801b143d4127c5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://svn.cv.nrao.edu/casa/devel/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - compile-fixes.patch\n    - osx.patch  # [osx]\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - gcc  # [osx]\n    - cmake\n    - eigen\n    - fftw 3.3.*\n  run:\n    - fftw 3.3.*\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://alma.mtk.nao.ac.jp/j/\n  license: GPLv3\n  license_file: COPYING\n  summary: 'C++ library for fast image manipulations'\n\nextra:\n  recipe-maintainers:\n    pkgw\n",
  "rendered_recipe": {

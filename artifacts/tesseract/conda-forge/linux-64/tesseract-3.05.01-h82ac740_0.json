@@ -216,6 +216,7 @@
   "timestamp": 1527972780935,
   "version": "3.05.01"
  },
+ "metadata_version": 1,
  "name": "tesseract",
  "raw_recipe": "{% set name = \"tesseract\" %}\n{% set version = \"3.05.01\" %}\n{% set sha256 = \"05898f93c5d057fada49b9a116fc86ad9310ff1726a0f499c3e5211b3af47ec1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/tesseract-ocr/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - automake\n    - autoconf\n    - pkg-config\n    - libtool\n  host:\n    - libpng\n    - jpeg\n    - libtiff\n    - libtool\n    - zlib\n    - leptonica\n  run:\n    - libpng\n    - jpeg\n    - libtiff\n    - zlib\n    - leptonica\n\ntest:\n  commands:\n    - tesseract --help\n\nabout:\n  home: https://github.com/tesseract-ocr/tesseract\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'An optical character recognition (OCR) engine'\n\n  description: |\n    Tesseract is an OCR engine with support for unicode and the ability \n    to recognize more than 100 languages out of the box. It can be \n    trained to recognize other languages.\n  doc_url: https://github.com/tesseract-ocr/tesseract\n  dev_url: https://github.com/tesseract-ocr/tesseract\n\nextra:\n  recipe-maintainers:\n    - CurtLH\n",
  "rendered_recipe": {

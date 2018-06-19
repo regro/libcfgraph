@@ -771,6 +771,7 @@
   "subdir": "win-64",
   "version": "1.5.3"
  },
+ "metadata_version": 1,
  "name": "googleapis-common-protos",
  "raw_recipe": "{% set name = \"googleapis-common-protos\" %}\n{% set version = \"1.5.3\" %}\n{% set sha256 = \"c075eddaa2628ab519e01b7d75b76e66c40eaa50fc52758d8225f84708950ef2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - protobuf >=3.0.0\n\ntest:\n  imports:\n    - google.api\n\nabout:\n  home: https://github.com/googleapis/googleapis\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Common protobufs used in Google APIs'\n  description: This library contains the python classes generated from the common protos in the\n    googleapis repository.\n  doc_url: https://github.com/googleapis/googleapis/blob/master/README.md\n  dev_url: https://github.com/googleapis/googleapis\n\nextra:\n  recipe-maintainers:\n    - parthea\n    - tswast\n",
  "rendered_recipe": {

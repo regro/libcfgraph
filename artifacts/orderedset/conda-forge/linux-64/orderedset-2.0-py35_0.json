@@ -626,6 +626,7 @@
   "subdir": "linux-64",
   "version": "2.0"
  },
+ "metadata_version": 1,
  "name": "orderedset",
  "raw_recipe": "{% set version = \"2.0\" %}\n\npackage:\n  name: orderedset\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/o/orderedset/orderedset-{{ version }}.tar.gz\n  sha256: 2a1815512c95ba0bcb73856b74204d4c0998e1fa2fb8a07aec1b666929db933e\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - orderedset\n\nabout:\n  home: https://github.com/simonpercivall/orderedset\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'An Ordered Set implementation in Cython.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -115,6 +115,7 @@
   "timestamp": 1524685236856,
   "version": "0.9.0"
  },
+ "metadata_version": 1,
  "name": "container-diff",
  "raw_recipe": "{% set org = \"GoogleCloudPlatform\" %}\n{% set name = \"container-diff\" %}\n{% set version = \"0.9.0\" %}\n\n{% set src_dir = [\"go/src/github.com\", org, name]|join(\"/\") %}\n\n\npackage:\n  name: container-diff\n  version: \"{{ version }}\"\n\nsource:\n  - url: \"https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz\"\n    sha256: cf5957fd9c583030283982dafab0b70608c739408d036444d9acc0a867e7472f\n    folder: \"{{ src_dir }}\"\n\n  - url: \"https://storage.googleapis.com/container-diff/v{{ version }}/container-diff-windows-amd64.exe\"  # [win]\n    sha256: a7040bd3f3db6e19cfd7730fde6524feb5bcc5c5f0d81cbeb76f156c4dbd804f                              # [win]\n    folder: \"bin\"                                                                                         # [win]\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - go  # [unix]\n\ntest:\n  commands:\n    - container-diff\n\nabout:\n  home: https://github.com/GoogleContainerTools/container-diff\n  license: Apache 2.0\n  license_file: \"{{ src_dir }}/LICENSE\"\n  summary: Diff your Docker containers\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

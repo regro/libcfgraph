@@ -132,6 +132,7 @@
   "timestamp": 1526182731166,
   "version": "1.1.1"
  },
+ "metadata_version": 1,
  "name": "aspy.yaml",
  "raw_recipe": "{% set name = \"aspy.yaml\" %}\n{% set version = \"1.1.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"69da4f3739d82d85b1464fb379e4696eee42925d5fbb757fca3f8d855745cfb0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/asottile/aspy.yaml/archive/v{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python -m pip install . --no-deps --ignore-installed\n  noarch: python\n\nrequirements:\n  build:\n    - pip\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pyyaml\n\ntest:\n  imports:\n    - aspy\n    - aspy.yaml\n  requires:\n    - pytest\n  source_files:\n    - tests\n  commands:\n    - pytest tests\n\nabout:\n  home: http://github.com/asottile/aspy.yaml\n  license: MIT\n  summary: 'A few extensions to pyyaml.'\n  license_family: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - nicoddemus\n",
  "rendered_recipe": {

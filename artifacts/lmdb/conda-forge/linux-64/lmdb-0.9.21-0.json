@@ -717,6 +717,7 @@
   "subdir": "linux-64",
   "version": "0.9.21"
  },
+ "metadata_version": 1,
  "name": "lmdb",
  "raw_recipe": "{% set version = \"0.9.21\" %}\n{% set sha256 = \"1187b635a4cc415bb6972bba346121f81edd996e99b8f0816151d4090f90b559\" %}\n{% set build = 0 %}\n\npackage:\n  name: lmdb\n  version: {{ version }}\n\nsource:\n  fn: LMDB_{{ version }}.tar.gz\n  url: https://github.com/LMDB/lmdb/archive/LMDB_{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - Makefile.patch\n\nbuild:\n  number: {{ build }}\n  skip: true  # [win]\n\ntest:\n  commands:\n    - mdb_copy -V                                    # [unix]\n    - mdb_dump -V                                    # [unix]\n    - mdb_load -V                                    # [unix]\n    - mdb_stat -V                                    # [unix]\n    - test -f ${PREFIX}/lib/liblmdb.a                # [unix]\n    - test -f ${PREFIX}/lib/liblmdb.so               # [unix]\n\nabout:\n  home: http://symas.com/mdb/\n  license: OpenLDAP Public\n  license_file: libraries/liblmdb/LICENSE\n  summary: A high-performance embedded transactional key-value store database.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

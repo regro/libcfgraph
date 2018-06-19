@@ -887,6 +887,7 @@
   "subdir": "linux-64",
   "version": "2.7.0"
  },
+ "metadata_version": 1,
  "name": "sundials",
  "raw_recipe": "{% set name = \"sundials\" %}\n{% set version = \"2.7.0\" %}\n{% set sha256 = \"d39fcac7175d701398e4eb209f7e92a5b30a78358d4a0c0fcc23db23c11ba104\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://computation.llnl.gov/projects/{{ name }}/download/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    # http://sundials.2283335.n4.nabble.com/Re-CVODE-suggestion-td4653782.html\n    - sundials-link-libs.patch\n\nbuild:\n  number: 4\n  features:\n    - blas_{{ variant }}  # [not win]\n    - vc9  # [win and py27]\n    - vc14  # [win and py>=35]\n  skip: true  # [win and py>35]\n\nrequirements:\n  build:\n    - cmake\n    - blas 1.1 {{ variant }}  # [not win]\n    - openblas 0.2.20|0.2.20.*  # [not win]\n    - suitesparse  # [not win]\n    - python  # [win]\n  run:\n    - blas 1.1 {{ variant }}  # [not win]\n    - openblas 0.2.20|0.2.20.*  # [not win]\n    - suitesparse  # [not win]\n\ntest:\n  requires:\n    - cmake\n    - python  # [win]\n  files:\n    - cvRoberts_dns.c\n\nabout:\n  home: http://computation.llnl.gov/casc/sundials/main.html\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'SUite of Nonlinear and DIfferential/ALgebraic equation Solvers'\n\nextra:\n  recipe-maintainers:\n    - bjodah\n    - jschueller\n",
  "rendered_recipe": {

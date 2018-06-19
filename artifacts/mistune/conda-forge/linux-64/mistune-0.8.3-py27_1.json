@@ -135,6 +135,7 @@
   "timestamp": 1524395174460,
   "version": "0.8.3"
  },
+ "metadata_version": 1,
  "name": "mistune",
  "raw_recipe": "{% set version = \"0.8.3\" %}\n\npackage:\n  name: mistune\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/m/mistune/mistune-{{ version }}.tar.gz\n  sha256: bc10c33bfdcaa4e749b779f62f60d6e12f8215c46a292d05e486b869ae306619\n\nbuild:\n  number: 1\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - cython\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - nose\n    - python\n  imports:\n    - mistune\n  commands:\n    - nosetests\n\nabout:\n  home: https://github.com/lepture/mistune\n  license_file: LICENSE\n  license: BSD 3-Clause\n  license_family: BSD\n  summary: 'The fastest markdown parser in pure Python.'\n  dev_url: https://github.com/lepture/mistune\n  doc_url: https://mistune.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - bollwyvl\n    - ocefpaf\n",
  "rendered_recipe": {

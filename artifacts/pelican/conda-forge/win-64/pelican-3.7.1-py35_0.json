@@ -654,6 +654,7 @@
   "subdir": "win-64",
   "version": "3.7.1"
  },
+ "metadata_version": 1,
  "name": "pelican",
  "raw_recipe": "{% set name = \"pelican\" %}\n{% set version = \"3.7.1\" %}\n{% set sha256 = \"2a5347fe47464ee743bff99b6e81d1b5823f2e70e7be5bd6ed66a5bdd5f3578b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - pelican = pelican:main\n    - pelican-import = pelican.tools.pelican_import:main\n    - pelican-quickstart = pelican.tools.pelican_quickstart:main\n    - pelican-themes = pelican.tools.pelican_themes:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - feedgenerator\n    - jinja2\n    - pygments\n    - docutils\n    - pytz\n    - blinker\n    - unidecode\n    - six\n    - python-dateutil\n    - ghp-import\n\ntest:\n  imports:\n    - pelican\n    - pelican.tools\n  commands:\n    - pelican --help\n    - pelican-import --help\n    - pelican-themes --help\n    #- pelican-quickstart --help\n\nabout:\n  home: http://getpelican.com/\n  license_file: LICENSE\n  license: AGPL-3.0\n  summary: 'A tool to generate a static blog from reStructuredText or Markdown input files.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - mwcraig\n",
  "rendered_recipe": {

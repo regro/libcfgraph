@@ -35,6 +35,7 @@
   "subdir": "linux-64",
   "version": "0.5.2"
  },
+ "metadata_version": 1,
  "name": "probablepeople",
  "raw_recipe": "{% set name = \"probablepeople\" %}\n{% set version = \"0.5.2\" %}\n{% set sha256 = \"c3d7e41dd7bd0110553efa972d0e043b712e6bf9f5c20f9b7064f1e5003c6864\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [not py27]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - python-crfsuite >=0.8\n    - probableparsing\n    - future\n    - doublemetaphone\n\ntest:\n  imports:\n    - probablepeople\n\nabout:\n  home: https://parserator.datamade.us/probablepeople\n  license: MIT\n  license_family: MIT\n  #license_file: LICENSE # When added to MANIFEST.in \u2013 datamade/probablepeople#33\n  dev_url: https://github.com/datamade/probablepeople/\n  doc_url: https://probablepeople.readthedocs.io/en/latest/\n  summary: 'Parse romanized names & companies using advanced NLP methods'\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
  "rendered_recipe": {},

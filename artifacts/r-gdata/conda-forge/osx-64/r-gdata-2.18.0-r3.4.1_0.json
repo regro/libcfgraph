@@ -763,6 +763,7 @@
   "subdir": "osx-64",
   "version": "2.18.0"
  },
+ "metadata_version": 1,
  "name": "r-gdata",
  "raw_recipe": "{% set version = \"2.18.0\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-gdata\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: gdata_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/gdata_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/gdata/gdata_{{ version }}.tar.gz\n  sha256: 4b287f59f5bbf5fcbf18db16477852faac4a605b10c5284c46b93fa6e9918d7f\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-gtools\n\n  run:\n    - r-base\n    - r-gtools\n\ntest:\n  commands:\n    - $R -e \"library('gdata')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('gdata')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=gdata\n  license: GPL-2\n  summary: 'Various R programming tools for data manipulation, including'\n  license_family: GPL2\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

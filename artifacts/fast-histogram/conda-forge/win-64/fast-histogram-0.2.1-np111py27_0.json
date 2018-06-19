@@ -521,6 +521,7 @@
   "subdir": "win-64",
   "version": "0.2.1"
  },
+ "metadata_version": 1,
  "name": "fast-histogram",
  "raw_recipe": "{% set name = \"fast-histogram\" %}\n{% set version = \"0.2.1\" %}\n{% set sha256 = \"1cbefcb23a8fad6f904b73a6a8d7cc04127e3691cbb6f0cdd4fdd20a94f0dd0c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n    - numpy x.x\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  imports:\n    - fast_histogram\n\nabout:\n  home: http://github.com/astrofrog/fast-histogram\n  license: BSD\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Fast 1D and 2D histogram functions in Python'\n  description: Fast 1D and 2D histogram functions in Python\n  doc_url: http://github.com/astrofrog/fast-histogram\n  dev_url: http://github.com/astrofrog/fast-histogram\n\nextra:\n  recipe-maintainers:\n    - astrofrog\n",
  "rendered_recipe": {

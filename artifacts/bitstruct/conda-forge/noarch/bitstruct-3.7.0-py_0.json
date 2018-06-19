@@ -769,6 +769,7 @@
   "subdir": "noarch",
   "version": "3.7.0"
  },
+ "metadata_version": 1,
  "name": "bitstruct",
  "raw_recipe": "{% set name = \"bitstruct\" %}\n{% set version = \"3.7.0\" %}\n{% set sha256 = \"708e4c043efea4e8ba8a02e203a3b02f270364b3580da44e89746de08fad08d7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - bitstruct\n\nabout:\n  home: https://github.com/eerimoq/bitstruct\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Python bit pack/unpack package.'\n  description: |\n    This module is intended to have a similar interface as the python struct module, \n    but working on bits instead of primitive data types (char, int, ...).\n  doc_url: http://bitstruct.readthedocs.io/en/latest/\n  dev_url: https://github.com/eerimoq/bitstruct\n\nextra:\n  recipe-maintainers:\n    - eerimoq\n    - danielhrisca\n",
  "rendered_recipe": {

@@ -104,6 +104,7 @@
   "subdir": "win-64",
   "version": "1.14"
  },
+ "metadata_version": 1,
  "name": "tika",
  "raw_recipe": "{%set name = \"tika\" %}\n{%set version = \"1.14\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"726aa26d5a75aa521dd6626fa62f144f64647ae731a8fad37dc6c39d1791951e\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  preserve_egg_dir: True\n  entry_points:\n    - tika-python = tika.tika:main\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - requests\n\ntest:\n  imports:\n    - tika\n    - tika.tests\n\n  commands:\n    - tika-python --help\n\nabout:\n  home: http://github.com/chrismattmann/tika-python\n  license: Apache 2.0\n  summary: 'Apache Tika Python library'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - chrismattmann\n",
  "rendered_recipe": {

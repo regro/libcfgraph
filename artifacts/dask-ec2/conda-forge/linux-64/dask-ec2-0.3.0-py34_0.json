@@ -88,6 +88,7 @@
   "subdir": "linux-64",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "dask-ec2",
  "raw_recipe": "{% set version = \"0.3.0\" %}\n\npackage:\n  name: dask-ec2\n  version: \"{{ version }}\"\n\nsource:\n  fn: dask-ec2-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/dask-ec2/dask-ec2-{{ version }}.tar.gz\n  md5: 1025ffbe377540a125c5abba3b4f4ba0\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - dask-ec2=dask_ec2.cli.main:start\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - six\n    - click\n    - paramiko\n    - boto3\n    - pyyaml\n\ntest:\n  imports:\n    - dask_ec2\n    - dask_ec2.cli\n    - dask_ec2.tests\n    - dask_ec2.tests.salt\n  commands:\n    - dask-ec2 --help\n\nabout:\n  home: https://github.com/dask/dask-ec2\n  license: Apache 2.0\n  summary: 'Start a cluster in EC2 for dask.distributed'\n\nextra:\n  recipe-maintainers:\n    - danielfrg\n    - koverholt\n",
  "rendered_recipe": {},

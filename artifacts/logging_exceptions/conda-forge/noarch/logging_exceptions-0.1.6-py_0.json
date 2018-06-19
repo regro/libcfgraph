@@ -132,6 +132,7 @@
   "timestamp": 1524078508657,
   "version": "0.1.6"
  },
+ "metadata_version": 1,
  "name": "logging_exceptions",
  "raw_recipe": "{% set name = \"logging_exceptions\" %}\n{% set version = \"0.1.6\" %}\n{% set sha256 = \"1d05a68f96c8b8e5a41837b83acd329e46800895ea13b0cc7dfb291ce67b0b84\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - logging_exceptions\n\nabout:\n  home: https://github.com/Bernhard10/logging_exceptions\n  license: MIT\n  license_family: MIT\n  summary: 'Self-logging exceptions: Attach log messages to exceptions and output them conditionally.'\n  dev_url: https://github.com/Bernhard10/logging_exceptions\nextra:\n  recipe-maintainers:\n    - lpantano\n",
  "rendered_recipe": {

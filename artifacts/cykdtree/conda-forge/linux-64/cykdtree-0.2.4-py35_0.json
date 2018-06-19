@@ -146,6 +146,7 @@
   "timestamp": 1526571206875,
   "version": "0.2.4"
  },
+ "metadata_version": 1,
  "name": "cykdtree",
  "raw_recipe": "{% set version = \"0.2.4\" %}\n\npackage:\n  name: cykdtree\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/cykdtree/cykdtree-{{ version }}.tar.gz\n  sha256: e58104def3f030dc9bd73e4b9a1575cedafec78354d3d37fa455f3478a3200f2\n  patches:\n    - no_test_import.patch\n\nbuild:\n  number: 0\n  skip: True  # [osx or win]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - cython\n    - mpi4py\n    - numpy 1.11.*\n  run:\n    - python\n    - mpi4py\n    - numpy >=1.11\n\ntest:\n  imports:\n    - cykdtree\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://langmm@bitbucket.org/langmm/cykdtree\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Cython based KD-Tree'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

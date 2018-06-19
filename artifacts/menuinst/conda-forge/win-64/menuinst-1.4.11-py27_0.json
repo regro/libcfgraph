@@ -703,6 +703,7 @@
   "subdir": "win-64",
   "version": "1.4.11"
  },
+ "metadata_version": 1,
  "name": "menuinst",
  "raw_recipe": "{% set version = \"1.4.11\" %}\n{% set sha256 = \"5ea81c23b760dec97f85e39b38bd21e91a99a8a7a8cfd93209812204f6999fb5\" %}\n\npackage:\n  name: menuinst\n  version: {{ version }}\n\nsource:\n  fn: menuinst-{{ version }}.tar.gz\n  url: https://github.com/ContinuumIO/menuinst/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [not win]\n  script:\n    - python setup.py install\n    - copy \"%SRC_DIR%\\\\cwp.py\" \"%PREFIX%\\\\\"\n  entry_points:\n    - menuinst = menuinst.main:main\n  skip_compile_pyc:\n    - cwp.py\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n    - pywin32\n\ntest:\n  imports:\n    - menuinst\n\n  commands:\n    - menuinst --help\n\nabout:\n  home: https://github.com/ContinuumIO/menuinst\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: \"cross platform install of menu items\"\n\n  dev_url: https://github.com/ContinuumIO/menuinst\n  doc_url: https://github.com/ContinuumIO/menuinst/wiki\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n    - jakirkham\n    - carlodri\n",
  "rendered_recipe": {

@@ -132,6 +132,7 @@
   "timestamp": 1528395239517,
   "version": "1.5.1"
  },
+ "metadata_version": 1,
  "name": "geoviews",
  "raw_recipe": "{% set version = \"1.5.1\" %}\n\npackage:\n  name: geoviews\n  version: {{ version }}\n\nbuild:\n  number: 0\n  noarch: python\n\nrequirements:\n  build:\n    - python\n    - pip\n    - param >=1.6.1,<2.0\n  run:\n    - python >=2.7\n    - datashader\n    - gdal\n    - geopandas\n    - geoviews-core ={{ version }}\n    - jupyter\n    - libgdal\n    - matplotlib\n    - netcdf4 <1.4.0\n    - pandas\n    - pyct\n    - scipy\n    - shapely\n    - xarray\n\ntest:\n  imports:\n    - geoviews\n  requires:\n    - nbsmoke\n    - pytest\n  commands:\n    - geoviews examples --path=. --force\n    # just run one notebook for now; increase in the future if notebooks can be run quickly with test/tiny data\n    - pytest --nbsmoke-run -k \".ipynb\" user_guide/Geometries.ipynb\n\nabout:\n  home: http://geoviews.org\n  license: BSD 3-Clause\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: GeoViews is a Python library that makes it easy to explore and visualize\n        geographical, meteorological, and oceanographic datasets, such as those used\n        in weather, climate, and remote sensing research.\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - philippjfr\n",
  "rendered_recipe": {

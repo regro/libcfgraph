@@ -136,6 +136,7 @@
   "timestamp": 1526660753025,
   "version": "1.5.3"
  },
+ "metadata_version": 1,
  "name": "trollimage",
  "raw_recipe": "{% set name = \"trollimage\" %}\n{% set version = \"1.5.3\" %}\n{% set sha256 = \"8460e41bdf9650decdc7d59697631ef80623669605ecdcc8bb9e70371431c6d4\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - numpy >=1.6\n    - pillow\n    - six\n    - xarray\n    - dask\n    - rasterio\n\ntest:\n  imports:\n    - trollimage\n\nabout:\n  home: https://github.com/pytroll/trollimage\n  license: GPLv3+\n  license_family: GPL3\n  license_file: LICENSE.txt\n  summary: Pytroll imaging library\n  description: Pytroll imaging library\n  doc_url: http://trollimage.readthedocs.io/\n  dev_url: https://github.com/pytroll/trollimage\n\nextra:\n  recipe-maintainers:\n    - djhoese\n    - mraspaud\n    - adybbroe\n    - pnuu\n",
  "rendered_recipe": {

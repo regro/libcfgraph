@@ -717,6 +717,7 @@
   "subdir": "noarch",
   "version": "3.0.0"
  },
+ "metadata_version": 1,
  "name": "binarytree",
  "raw_recipe": "{% set name = \"binarytree\" %}\n{% set version = \"3.0.0\" %}\n{% set sha256 = \"3f46fa31db46146568241f55180e3d93e0b8f9bf5b8db5866f7208ca245f1acd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/joowani/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  noarch: python\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - binarytree\n    - binarytree.exceptions\n\nabout:\n  home: http://github.com/joowani/binarytree\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Python Library for Learning Binary Trees'\n  description: |\n    Are you studying binary trees for your next exam, assignment or technical interview?\n    Binarytree is a Python library which provides a simple API to generate, visualize,\n    inspect and manipulate binary trees. It allows you to skip the tedious work of\n    setting up test data, and dive straight into practising your algorithms!\n    Heaps and BSTs (binary search trees) are also supported.\n  doc_url: http://binarytree.readthedocs.io\n  dev_url: http://github.com/joowani/binarytree\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - joowani\n",
  "rendered_recipe": {

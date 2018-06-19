@@ -1313,6 +1313,7 @@
   "subdir": "osx-64",
   "version": "2.10.0"
  },
+ "metadata_version": 1,
  "name": "libsigcpp",
  "raw_recipe": "{% set major_minor = \"2.10\" %}\n{% set version = major_minor + \".0\" %}\n\npackage:\n  name: libsigcpp\n  version: {{ version }}\n\nsource:\n  fn: libsigc++-{{ version }}.tar.xz\n  url: http://ftp.acc.umu.se/pub/GNOME/sources/libsigc++/{{ major_minor }}/libsigc++-{{ version }}.tar.xz\n  sha256: f843d6346260bfcb4426259e314512b99e296e8ca241d771d21ac64f28298d81\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - autoconf\n    - automake\n    - m4\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libsigc-2.0.so  # [linux]\n    - test -f ${PREFIX}/lib/libsigc-2.0.dylib  # [osx]\n\nabout:\n  home: http://libsigc.sourceforge.net/\n  license: LGPL v3\n  license_file: COPYING\n  summary: \"libsigc++ implements a typesafe callback system for standard C++.\"\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "rendered_recipe": {

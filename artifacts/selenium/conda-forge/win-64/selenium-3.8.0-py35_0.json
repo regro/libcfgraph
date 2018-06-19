@@ -680,6 +680,7 @@
   "subdir": "win-64",
   "version": "3.8.0"
  },
+ "metadata_version": 1,
  "name": "selenium",
  "raw_recipe": "{% set version = \"3.8.0\" %}\n\npackage:\n  name: selenium\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/s/selenium/selenium-{{ version }}.tar.gz\n  sha256: 3af07d7a4b5d523540fa4f32902b9dec15e0379862406aef974729f42411053d\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - selenium\n    - selenium.common\n    - selenium.webdriver\n    - selenium.webdriver.android\n    - selenium.webdriver.chrome\n    - selenium.webdriver.common\n    - selenium.webdriver.common.html5\n    - selenium.webdriver.edge\n    - selenium.webdriver.firefox\n    - selenium.webdriver.ie\n    - selenium.webdriver.opera\n    - selenium.webdriver.phantomjs\n    - selenium.webdriver.remote\n    - selenium.webdriver.support\n\nabout:\n  home: http://www.seleniumhq.org/\n  license_file: {{ RECIPE_DIR }}/LICENSE\n  license: Apache 2.0\n  license_family: Apache\n  summary: 'Python bindings for the Selenium WebDriver for automating web browser interaction.'\n  dev_url: https://github.com/SeleniumHQ/selenium/\n  doc_url: http://www.seleniumhq.org/docs/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - ocefpaf\n",
  "rendered_recipe": {

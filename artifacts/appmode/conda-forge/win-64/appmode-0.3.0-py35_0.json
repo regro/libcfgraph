@@ -609,6 +609,7 @@
   "subdir": "win-64",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "appmode",
  "raw_recipe": "{% set name = \"appmode\" %}\n{% set version = \"0.3.0\" %}\n{% set sha256 = \"9c2cf75767b689fc3786784883d7e7c86c0b0edc188f69c1dbcc23e51efb46a8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: appmode-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/a/appmode/appmode-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  # noarch: python # suffers from https://github.com/conda/conda-build/issues/2357\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - notebook >=5\n  run:\n    - python\n    - notebook >=5\n\ntest:\n  imports:\n    - appmode\n\nabout:\n  home: https://github.com/oschuett/appmode\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'A Jupyter extensions that turns notebooks into web applications.'\n\nextra:\n  recipe-maintainers:\n    - oschuett\n",
  "rendered_recipe": {

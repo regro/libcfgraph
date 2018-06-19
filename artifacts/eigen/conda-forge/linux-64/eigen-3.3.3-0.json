@@ -564,6 +564,7 @@
   "subdir": "linux-64",
   "version": "3.3.3"
  },
+ "metadata_version": 1,
  "name": "eigen",
  "raw_recipe": "{% set version = \"3.3.3\" %}\n\npackage:\n  name: eigen\n  version: {{ version }}\n\nsource:\n  fn: eigen-{{ version }}.tar.gz\n  url: http://bitbucket.org/eigen/eigen/get/{{ version }}.tar.gz\n  sha256: 94878cbfa27b0d0fbc64c00d4aafa137f678d5315ae62ba4aecddbd4269ae75f\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - cmake\n    - python  # [win]\n\ntest:\n  files:\n    - test.cc\n\n  commands:\n    - test -d ${PREFIX}/include/eigen3  # [unix]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\eigen3 exit 1  # [win]\n\nabout:\n  home: http://eigen.tuxfamily.org/\n  license: MPL2\n  summary: C++ template library for linear algebra\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - patricksnape\n    - jschueller\n",
  "rendered_recipe": {

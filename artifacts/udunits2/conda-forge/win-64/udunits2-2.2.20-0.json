@@ -24,6 +24,7 @@
   "subdir": "win-64",
   "version": "2.2.20"
  },
+ "metadata_version": 1,
  "name": "udunits2",
  "raw_recipe": "package:\n    name: udunits2\n    version: 2.2.20\n\nsource:\n    fn: v2.2.20.tar.gz\n    url: https://github.com/Unidata/UDUNITS-2/archive/v2.2.20.tar.gz\n    sha1: a0d30024af16749a4a5ca60133b32735ae52f9e2\n\nbuild:\n    number: 0\n\nrequirements:\n    build:\n        - expat  # [not osx]\n    run:\n        - expat  # [not osx]\n\nbuild:\n    number: 0\n    detect_binary_files_with_prefix: true\n\ntest:\n    commands:\n        - udunits2 -h\n        - udunits2 -H meter -W miles\n\nabout:\n    home: http://www.unidata.ucar.edu/software/udunits/\n    license: https://github.com/Unidata/UDUNITS-2/blob/master/COPYRIGHT\n    summary: The UDUNITS package supports units of physical quantities.\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - pelson\n        - kwilcox\n",
  "rendered_recipe": {

@@ -146,6 +146,7 @@
   "timestamp": 1525760008966,
   "version": "3.3.0"
  },
+ "metadata_version": 1,
  "name": "peewee",
  "raw_recipe": "{% set name = \"peewee\" %}\n{% set version = \"3.3.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_val = \"3f3887e705f8856d73305a8fd400d4bf25839a9560c4c16063ccc026f1f27885\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - cython >=0.22.1\n    - toolchain\n    - msinttypes  # [win]\n    - sqlite\n  run:\n    - python\n\ntest:\n  imports:\n    - playhouse\n    - peewee\n\nabout:\n  home: https://github.com/coleifer/peewee/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A little ORM'\n  dev_url: https://github.com/coleifer/peewee/\n  doc_url: http://docs.peewee-orm.com/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - dharhas\n",
  "rendered_recipe": {

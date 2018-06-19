@@ -33,6 +33,7 @@
   "subdir": "linux-64",
   "version": "0.10.6"
  },
+ "metadata_version": 1,
  "name": "jsoncpp",
  "raw_recipe": "{% set version = \"0.10.6\" %}\n\npackage:\n  name: jsoncpp\n  version: {{ version }}\n\nsource:\n  fn: jsoncpp-{{ version }}.tar.gz\n  url: https://github.com/open-source-parsers/jsoncpp/archive/{{ version }}.tar.gz\n  sha256: 7c285fc40ad0c113e436a1271c4e38b5017b5c7782c306e90be9d6b2ffa90212\n\nbuild:\n  number: 1\n  skip: true  # [win or (unix and not py27)]\n  features:\n    - vc9     # [win and py27]\n    - vc10    # [win and py34]\n    - vc14    # [win and py35]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - pkg-config  # [unix]\n    - python\n\ntest:\n  requires:\n    - python 2.7.*  # [win and py27]\n    - python 3.4.*  # [win and py34]\n    - python 3.5.*  # [win and py35]\n\n  commands:\n    # Verify headers are present.\n    - test -d \"${PREFIX}/include/jsoncpp\"           # [unix]\n\n    # Verify pkg-config file is present.\n    - test -f \"${PREFIX}/lib/pkgconfig/jsoncpp.pc\"  # [unix]\n\n    # Verify libraries are present.\n    - test -f \"${PREFIX}/lib/libjsoncpp.a\"          # [unix]\n    - test -f \"${PREFIX}/lib/libjsoncpp.so\"         # [linux]\n    - test -f \"${PREFIX}/lib/libjsoncpp.dylib\"      # [osx]\n\nabout:\n  home: https://github.com/open-source-parsers/jsoncpp\n  license: Public Domain/MIT\n  summary: A C++ library for interacting with JSON.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - stuarteberg\n",
  "rendered_recipe": {},

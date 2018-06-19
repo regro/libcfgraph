@@ -581,6 +581,7 @@
   "subdir": "osx-64",
   "version": "0.3.1"
  },
+ "metadata_version": 1,
  "name": "r-feather",
  "raw_recipe": "{% set version = '0.3.1' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-feather\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: feather_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/feather_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/feather/feather_{{ version }}.tar.gz\n  sha256: f1069bf920e9bc3da6bf43542a3a7ccc3142544d759945115ecade69dd5ccde0\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-rcpp\n    - r-hms\n    - r-tibble\n    - posix                # [win]\n    - {{native}}toolchain  # [win]\n    - gcc                  # [not win]\n\n  run:\n    - r-base\n    - r-rcpp\n    - r-hms\n    - r-tibble\n    - libgcc  # [not win]\n\ntest:\n  commands:\n    - $R -e \"library('feather')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('feather')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/wesm/feather\n  license: Apache 2.0\n  summary: Read and write feather files, a lightweight binary columnar data store designed for\n    maximum speed.\n  license_family: APACHE\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

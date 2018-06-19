@@ -96,6 +96,7 @@
   "subdir": "win-64",
   "version": "0.1"
  },
+ "metadata_version": 1,
  "name": "flit_install_py2",
  "raw_recipe": "{% set name = \"flit_install_py2\" %}\n{% set version = \"0.1\" %}\n{% set wheel_tag = \"py2.py3-none-any\" %}\n{% set fn = \"{}-{}-{}.whl\".format(name, version, wheel_tag) %}\n{% set sha256 = \"9aa98bfbde91e331c3e9eb7207a21219b7e96f95541a3758d1c9f7d95a25ba5e\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ fn }}\n  url: https://pypi.io/packages/py2.py3/{{ name[0] }}/{{ name }}/{{ fn }}\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  script: pip install --no-deps {{ fn }}\n  skip: True  # [py3k]\n  entry_points:\n    - flit-install-py2 = flit_install_py2:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - configparser\n\ntest:\n  imports:\n    - flit_install_py2\n  commands:\n    - flit-install-py2 -h\n\nabout:\n  home: https://github.com/takluyver/flit_install_py2\n  license: MIT\n  summary: Shim to install packages using flit metadata on Python 2\n\nextra:\n  recipe-maintainers:\n    - Carreau\n    - minrk\n    - takluyver\n",
  "rendered_recipe": {

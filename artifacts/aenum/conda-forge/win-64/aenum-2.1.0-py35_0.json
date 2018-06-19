@@ -605,6 +605,7 @@
   "subdir": "win-64",
   "version": "2.1.0"
  },
+ "metadata_version": 1,
  "name": "aenum",
  "raw_recipe": "{% set name = \"aenum\" %}\n{% set version = \"2.1.0\" %}\n{% set sha256 = \"9eb1c8f48ae13c56d22a7227db0e4b1717131b284c6c0db6e4ccca6f5894df95\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - aenum\n\nabout:\n  home: https://bitbucket.org/stoneleaf/aenum\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: aenum/LICENSE\n  summary: Advanced Enumerations (compatible with Python's stdlib Enum), NamedTuples,\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

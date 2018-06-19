@@ -769,6 +769,7 @@
   "subdir": "noarch",
   "version": "0.2.1"
  },
+ "metadata_version": 1,
  "name": "click-completion",
  "raw_recipe": "{% set name = \"click-completion\" %}\n{% set version = \"0.2.1\" %}\n{% set sha256 = \"079fb138887d4de12a0b7fbebf8d92d396b7c1a9c49f63475d9f3909d2588976\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  noarch: python\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools\n\n  run:\n    - python\n    - six\n    - click\n    - jinja2\n\ntest:\n  imports:\n    - click_completion\n\nabout:\n  home: https://github.com/click-contrib/click-completion\n  license: MIT\n  license_family: MIT\n  summary: Enhanced completion for Click\n\nextra:\n  recipe-maintainers:\n    - epruesse\n",
  "rendered_recipe": {

@@ -1251,6 +1251,7 @@
   "subdir": "win-64",
   "version": "1.14.3"
  },
+ "metadata_version": 1,
  "name": "pysal",
  "raw_recipe": "{% set version = \"1.14.3\" %}\n\npackage:\n  name: pysal\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/P/PySAL/PySAL-{{ version }}.tar.gz\n  sha256: e2145c5c5bdfa7c1989154037dba8385ede5aa21354e2d5278705ac902d06a31\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - scipy\n  run:\n    - python\n    - scipy\n\ntest:\n  imports:\n    - pysal\n\nabout:\n  home: http://pysal.org\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Library of spatial analysis functions.'\n\nextra:\n  recipe-maintainers:\n    - sjsrey\n    - ocefpaf\n",
  "rendered_recipe": {

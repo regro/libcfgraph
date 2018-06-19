@@ -739,6 +739,7 @@
   "subdir": "noarch",
   "version": "6.1.0"
  },
+ "metadata_version": 1,
  "name": "elasticsearch-dsl",
  "raw_recipe": "{% set name = \"elasticsearch-dsl\" %}\n{% set version = \"6.1.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"5114a38a88e93a4663782eae07a1e8084ba333c49887335c83de8b8043bc72b2\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  noarch: python\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - six\n    - python-dateutil\n    - elasticsearch >=6.0.0,<7.0.0\n    - ipaddress  # [py<33]\n\ntest:\n  imports:\n    - elasticsearch_dsl\n\nabout:\n  home: https://github.com/elasticsearch/elasticsearch-dsl-py\n  license_file: LICENSE\n  license: Apache 2.0\n  license_family: Apache\n  summary: Higher-level Python client for Elasticsearch\n  dev_url: https://github.com/elasticsearch/elasticsearch-dsl-py\n  doc_url: https://elasticsearch-dsl.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

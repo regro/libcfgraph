@@ -178,6 +178,7 @@
   "timestamp": 1528512351635,
   "version": "5.0.1"
  },
+ "metadata_version": 1,
  "name": "bourbon",
  "raw_recipe": "{% set name = \"bourbon\" %}\n{% set version = \"5.0.1\" %}\n{% set sha256 = \"4deead88ccd02233f5e513fe673f89a0099ee61f30418f6367861c8d0ec9dcf5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/thoughtbot/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: |\n    tgz=$(npm pack)\n    npm install -g $tgz\n\nrequirements:\n  build:\n    - nodejs\n  \ntest:\n  commands:\n    - npm list -g bourbon\n  requires:\n    - nodejs\n   \n\nabout:\n  home: https://github.com/thoughtbot/bourbon\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.md\n  summary: 'A Lightweight Sass Tool Set'\n  description: |\n    Bourbon is a library of Sass mixins and functions that are designed to make \n    you a more efficient style sheet author.\n  doc_url: http://bourbon.io/docs\n  dev_url: https://github.com/thoughtbot/bourbon\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

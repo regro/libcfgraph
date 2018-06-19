@@ -836,6 +836,7 @@
   "subdir": "win-64",
   "version": "0.1.1"
  },
+ "metadata_version": 1,
  "name": "fmpy",
  "raw_recipe": "{% set name = \"fmpy\" %}\n{% set version = \"0.1.1\" %}\n{% set sha256 = \"230dfc68fa47ab0c8b9a26401ca1a7fb28cca61e97d377cf0a7d0861eb6f684f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - dask\n    - lxml\n    - matplotlib\n    - numpy\n    - pathlib\n    - python\n    - pywin32  # [win]\n    - requests\n\ntest:\n  imports:\n    - fmpy\n    - fmpy.cross_check\n    - fmpy.examples\n    - fmpy.ssp\n    - fmpy.ssp.examples\n    - fmpy.sundials\n\nabout:\n  home: https://github.com/CATIA-Systems/FMPy\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt'\n  summary: 'Simulate Functional Mockup Units (FMUs) in Python'\n\nextra:\n  recipe-maintainers:\n    - t-sommer\n    - wulmer\n",
  "rendered_recipe": {

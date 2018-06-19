@@ -761,6 +761,7 @@
   "subdir": "linux-64",
   "version": "3.1.2"
  },
+ "metadata_version": 1,
  "name": "libmo_unpack",
  "raw_recipe": "{% set version = \"3.1.2\" %}\n\npackage:\n  name: libmo_unpack\n  version: {{ version }}\n\nsource:\n  url: https://github.com/SciTools/libmo_unpack/archive/v{{ version }}.tar.gz\n  sha256: e09ef3e6f1075144acc5d6466b4ef70b2fe32ed4ab1840dd4fb7e15a40f3d370\n  patches:\n    - endian.patch  # [osx]\n    - tests_cmakelist.patch\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - cmake\n    - check\n    - toolchain\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libmo_unpack${SHLIB_EXT}  # [not win]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\n\nabout:\n  home: https://github.com/SciTools/libmo_unpack\n  license: BSD 3-Clause\n  license_file: LICENSE\n\n  summary: 'Met Office PP/FieldsFile compression schemes.'\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - rhattersley\n    - ocefpaf\n",
  "rendered_recipe": {

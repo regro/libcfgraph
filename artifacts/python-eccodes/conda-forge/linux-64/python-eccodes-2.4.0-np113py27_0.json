@@ -640,6 +640,7 @@
   "subdir": "linux-64",
   "version": "2.4.0"
  },
+ "metadata_version": 1,
  "name": "python-eccodes",
  "raw_recipe": "{% set version = \"2.4.0\" %}\n\npackage:\n  name: python-eccodes\n  version: {{ version }}\n\nsource:\n  url: https://software.ecmwf.int/wiki/download/attachments/45757960/eccodes-{{ version }}-Source.tar.gz\n  fn: eccodes-{{ version }}-Source.tar.gz\n  sha256: 2c360c32c26e858917d332b26de1269bcc39a4a39c882f1b73b4a96633843947\n\nbuild:\n  number: 0\n  skip: True  # [win or py3k]\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - cmake\n    - python\n    - numpy x.x\n    - boost 1.63.*\n    - jasper\n    - libpng >=1.6.28,<1.7\n    - libnetcdf 4.4.*\n    - perl\n    - eccodes {{ version }}\n  run:\n    - python\n    - numpy x.x\n    - jasper\n    - libpng >=1.6.28,<1.7\n    - libnetcdf 4.4.*\n    - eccodes {{ version }}\n\ntest:\n  imports:\n    - eccodes\n    - gribapi\n\nabout:\n  home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home\n  license: Apache 2.0\n  license_family: Apache\n  summary: ECMWF ecCodes Copyright 2005-2017 ECMWF.\n\nextra:\n  recipe-maintainers:\n    - kmuehlbauer\n    - pelson\n    - ocefpaf\n    - kynan\n",
  "rendered_recipe": {

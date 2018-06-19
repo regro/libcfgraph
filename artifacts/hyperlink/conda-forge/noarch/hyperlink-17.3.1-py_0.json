@@ -720,6 +720,7 @@
   "subdir": "noarch",
   "version": "17.3.1"
  },
+ "metadata_version": 1,
  "name": "hyperlink",
  "raw_recipe": "{% set name = \"hyperlink\" %}\n{% set version = \"17.3.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: bc4ffdbde9bdad204d507bd8f554f16bba82dd356f6130cb16f41422909c33bc\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - hyperlink\n\nabout:\n  home: https://github.com/python-hyper/hyperlink\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Immutable, Pythonic, correct URLs.\n  dev_url: https://github.com/python-hyper/hyperlink\n  doc_url: http://hyperlink.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

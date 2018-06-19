@@ -115,6 +115,7 @@
   "subdir": "linux-64",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "mizani",
  "raw_recipe": "{% set name = \"mizani\" %}\n{% set version = \"0.3.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"48fe6e47f13919efec6c1695879a71d9f98d3cc2bc94508d69750ca9fd50d10d\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy\n    - pandas >=0.19.0\n    - matplotlib\n    - palettable\n\ntest:\n  imports:\n    - mizani\n    - mizani.external\n    - mizani.tests\n\nabout:\n  home: https://github.com/has2k1/mizani\n  license_file: {{ RECIPE_DIR }}/LICENSE\n  license: BSD 3-Clause\n  license_family: BSD\n  summary: 'Scales for Python'\n  dev_url: https://github.com/has2k1/mizani\n  doc_url: https://mizani.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

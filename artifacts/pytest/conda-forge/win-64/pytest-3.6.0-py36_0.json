@@ -176,6 +176,7 @@
   "timestamp": 1527080019606,
   "version": "3.6.0"
  },
+ "metadata_version": 1,
  "name": "pytest",
  "raw_recipe": "{% set name = \"pytest\" %}\n{% set version = \"3.6.0\" %}\n{% set sha256 = \"39555d023af3200d004d09e51b4dd9fdd828baa863cded3fd6ba2f29f757ae2d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install . --no-deps --ignore-installed\n  entry_points:\n    - py.test = py.test:main\n    - pytest = py.test:main\n\nrequirements:\n  build:\n    - pip\n    - setuptools\n    - setuptools_scm\n  run:\n    - atomicwrites >=1.0\n    - attrs >=17.4.0\n    - colorama  # [win]\n    - funcsigs  # [py27]\n    - more-itertools >=4.0\n    - pluggy >=0.5,<0.7\n    - py >=1.5.0\n    - python\n    - setuptools\n    - six >=1.10.0\n\ntest:\n  commands:\n    - pytest -h\n  imports:\n    - pytest\n\nabout:\n  home: https://docs.pytest.org/en/latest/\n  license: MIT\n  license_file: LICENSE\n  summary: 'Simple and powerful testing with Python.'\n  description: |\n    The pytest framework makes it easy to write small tests, yet scales to\n    support complex functional testing for applications and libraries.\n  doc_url: https://docs.pytest.org/en/latest/\n  dev_url: https://github.com/pytest-dev/pytest/\n\nextra:\n  recipe-maintainers:\n    - flub\n    - goanpeca\n    - nicoddemus\n    - ocefpaf\n",
  "rendered_recipe": {

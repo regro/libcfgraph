@@ -807,6 +807,7 @@
   "subdir": "noarch",
   "version": "1.36.0"
  },
+ "metadata_version": 1,
  "name": "geocoder",
  "raw_recipe": "{% set version = \"1.36.0\" %}\n\npackage:\n  name: geocoder\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/g/geocoder/geocoder-{{ version }}.tar.gz\n  sha256: ad23d015bffbdf9de4e0c5cf404f22421a3449cc9fdabc6e4ebd447c5ab15dc7\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - geocode = geocoder.cli:cli\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - requests\n    - ratelim\n    - click\n    - orderedset\n    - six\n\ntest:\n  imports:\n    - geocoder\n  commands:\n    - geocode --help\n\nabout:\n  home: https://github.com/DenisCarriere/geocoder\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: 'Geocoder is a simple and consistent geocoding library.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

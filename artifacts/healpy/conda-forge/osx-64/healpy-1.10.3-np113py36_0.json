@@ -557,6 +557,7 @@
   "subdir": "osx-64",
   "version": "1.10.3"
  },
+ "metadata_version": 1,
  "name": "healpy",
  "raw_recipe": "{% set version = \"1.10.3\" %}\n\npackage:\n    name: healpy\n    version: {{version}}\n\nsource:\n    fn: healpy-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/h/healpy/healpy-{{ version }}.tar.gz\n    md5: 6491777d1bcbd36d356551bf240d3a2f\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - numpy x.x\n        - pkg-config\n\n    run:\n        - python\n        - matplotlib\n        - numpy x.x\n        - six\n        - astropy\n\ntest:\n    imports:\n        - healpy\n        - healpy.test\n    requires:\n        - pytest\n        - nose\n\nabout:\n    home: http://github.com/healpy\n    license: GPL-2.0\n    summary: Healpix tools package for Python\n\nextra:\n    recipe-maintainers:\n        - mwcraig\n",
  "rendered_recipe": {

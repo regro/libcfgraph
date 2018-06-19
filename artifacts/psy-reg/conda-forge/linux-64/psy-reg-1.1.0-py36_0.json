@@ -771,6 +771,7 @@
   "subdir": "linux-64",
   "version": "1.1.0"
  },
+ "metadata_version": 1,
  "name": "psy-reg",
  "raw_recipe": "{% set name = \"psy-reg\" %}\n{% set version = \"1.1.0\" %}\n{% set sha256 = \"76b28c6c7c36924f36762ddcfa57efec04246476f164797c658efca601bf8d44\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n  - python\n  - setuptools\n  run:\n  - python\n  - psyplot\n  - psy-simple\n  - statsmodels\n  - scipy\n\ntest:\n  imports:\n  - psy_reg\n\nabout:\n  home: https://github.com/Chilipp/psy-reg\n  license: GPL-2.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: Psyplot plugin for visualizing and calculating regression plots\n\n  description: |\n    This psyplot plugin can be used to make fits to your data and visualize\n    them\n  doc_url: http://psyplot.readthedocs.io/projects/psy-reg\n  dev_url: https://github.com/Chilipp/psy-reg\n\nextra:\n  recipe-maintainers:\n    - Chilipp\n",
  "rendered_recipe": {

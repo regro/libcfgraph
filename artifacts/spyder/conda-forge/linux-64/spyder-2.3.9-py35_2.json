@@ -723,6 +723,7 @@
   "type": "app",
   "version": "2.3.9"
  },
+ "metadata_version": 1,
  "name": "spyder",
  "raw_recipe": "{% set version = \"2.3.9\" %}\n\npackage:\n  name: spyder\n  version: {{ version }}\n\nsource:\n  fn:  spyder-{{ version }}.zip\n  url: https://pypi.io/packages/source/s/spyder/spyder-{{ version }}.zip\n  md5: dd01e07a77123c128ff79ba57b97c1d7\n\nbuild:\n  number: 2\n  osx_is_app: True\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - pyqt 4.11.*\n    - rope\n    - pyflakes\n    - jedi  >=0.8\n    - qtconsole\n    - nbconvert\n    - pygments\n    - sphinx\n    - pep8\n    - psutil\n    - python.app  # [osx]\n\ntest:\n  commands:\n    - spyder -h\n  imports:\n    - spyderlib\n\napp:\n  entry: spyder\n  icon: logo.png\n  summary: Scientific Python Development Environment\n  type: desk\n\nabout:\n  home: http://spyder-ide.org\n  license: MIT\n  license_file: LICENSE\n  summary: Scientific PYthon Development EnviRonment\n  description: |\n    Spyder is a powerful interactive development environment for the Python\n    language with advanced editing, interactive testing, debugging and\n    introspection features. Additionally, Spyder is a numerical computing\n    environment thanks to the support of IPython and popular Python libraries\n    such as NumPy, SciPy, or matplotlib.\n  doc_url: http://pythonhosted.org/spyder/\n  dev_url: https://github.com/spyder-ide/spyder\n\nextra:\n  recipe-maintainers:\n    - ccordoba12\n    - goanpeca\n",
  "rendered_recipe": {

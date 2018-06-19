@@ -721,6 +721,7 @@
   "subdir": "noarch",
   "version": "3.3.0"
  },
+ "metadata_version": 1,
  "name": "deepdiff",
  "raw_recipe": "{% set name = \"deepdiff\" %}\n{% set version = \"3.3.0\" %}\n{% set sha256 = \"ecad8e16a96ffd27e8f40c9801a6ab16ec6a7e7e6e6859a7710ba4695f22702c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - jsonpickle\n\ntest:\n  imports:\n    - deepdiff\n\nabout:\n  home: https://github.com/seperman/deepdiff\n  summary: 'Deep Difference and Search of any Python object/data.'\n  license: MIT\n  license_family: MIT\n  description: |\n    Deep Difference of dictionaries, iterables, strings and other\n    objects. It will recursively look for all the changes. Tested on\n    Python 2.7, 3.3, 3.4, 3.5, 3.6, Pypy, Pypy3\n  doc_url: http://deepdiff.readthedocs.io/en/latest/\n  dev_url: https://github.com/seperman/deepdiff\n\nextra:\n  recipe-maintainers:\n    - loriab\n    - seperman\n",
  "rendered_recipe": {

@@ -1739,6 +1739,7 @@
   "subdir": "noarch",
   "version": "1.4.5"
  },
+ "metadata_version": 1,
  "name": "jquery-mobile",
  "raw_recipe": "{% set name = \"jquery-mobile\" %}\n{% set version = \"1.4.5\" %}\n{% set sha256 = \"b160c44ead40944995452742e6544b254596126b8f50e2e79a14d4e3e0c6ce37\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/jquery/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs\n  \ntest:\n  commands:\n    - npm list -g jquery-mobile\n  requires:\n    - nodejs\n   \nabout:\n  home: https://github.com/jquery/jquery-mobile\n  license: MIT\n  license_family: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'jQuery Mobile Framework'\n  description: |\n    jQuery Mobile is a unified, HTML5-based user interface system for all popular \n    mobile device platforms, built on the rock-solid jQuery and jQuery UI foundation. \n    Its lightweight code is built with progressive enhancement, and has a flexible, \n    easily themeable design.\n  doc_url: https://jquerymobile.com/\n  dev_url: https://github.com/jquery/jquery-mobile\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

@@ -130,6 +130,7 @@
   "timestamp": 1528543163817,
   "version": "0.6.1"
  },
+ "metadata_version": 1,
  "name": "h5netcdf",
  "raw_recipe": "{% set version = \"0.6.1\" %}\n\npackage:\n  name: h5netcdf\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/h/h5netcdf/h5netcdf-{{ version }}.tar.gz\n  sha256: e81078d62eb6fa9bd90a8dad21bf238d1567447e0c6de84d004ec122a9a436ef\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - h5py\n  run:\n    - python\n    - h5py\n\ntest:\n  imports:\n    - h5netcdf\n\nabout:\n  home: https://github.com/shoyer/h5netcdf\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'netCDF4 via h5py.'\n\nextra:\n  recipe-maintainers:\n    - jhamman\n    - jjhelmus\n    - ocefpaf\n    - shoyer\n",
  "rendered_recipe": {

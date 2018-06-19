@@ -794,6 +794,7 @@
   "subdir": "noarch",
   "version": "0.8.1"
  },
+ "metadata_version": 1,
  "name": "betamax",
  "raw_recipe": "{% set version = \"0.8.1\" %}\n\npackage:\n  name: betamax\n  version: {{ version }}\n\nsource:\n  url: https://github.com/sigmavirus24/betamax/archive/{{ version }}.tar.gz\n  sha256: 69b4e14e36273211e5a392da5c9ed572dd8b0c446b35204f57dca81765ed2fc1\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - requests >=2.0\n\ntest:\n  imports:\n    - betamax\n    - betamax.cassette\n    - betamax.matchers\n    - betamax.serializers\n\nabout:\n  home: https://github.com/sigmavirus24/betamax\n  license: Apache-2.0\n  summary: 'A VCR imitation for python-requests.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - sigmavirus24\n",
  "rendered_recipe": {

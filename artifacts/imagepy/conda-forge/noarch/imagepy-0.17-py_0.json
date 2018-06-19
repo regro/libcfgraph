@@ -1134,6 +1134,7 @@
   "subdir": "noarch",
   "version": "0.17"
  },
+ "metadata_version": 1,
  "name": "imagepy",
  "raw_recipe": "{% set name = \"imagepy\" %}\n{% set version = \"0.17\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"ba64ea5e546d8df1073b33e33fc46587f6cb19b5b9a2786653f484ca12ef6f04\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.tar.gz'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ hash_value }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - scikit-image >=0.12\n    - shapely >=1.0\n    - wxpython >=4.0\n    - numba >=0.29\n\ntest:\n  imports:\n    - imagepy\n\nabout:\n  home: https://github.com/Image-Py/imagepy\n  license: BSD 3-clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: interactive python image-processing plugin framework\n  description: |\n    Image process framework based on plugin like imagej.\n    It is easy to glue with any libraries based on numpy.\n    Such as scipy.ndimage, scikit-image, opencv, simpleitk, mayavi...\n  doc_url: 'https://github.com/Image-Py/imagepy'\n  dev_url: 'https://github.com/Image-Py/imagepy'\n\nextra:\n  recipe-maintainers: \n    - yxdragon\n",
  "rendered_recipe": {

@@ -696,6 +696,7 @@
   "subdir": "osx-64",
   "version": "2.4.0"
  },
+ "metadata_version": 1,
  "name": "hug",
  "raw_recipe": "{% set name = \"hug\" %}\n{% set version = \"2.4.0\" %}\n{% set sha256 = \"aa60ab69d1939f327ee973f2109f63bc78a5b30b19f433e253e456c233cc2bc0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/h/hug/hug-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py2k]\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - hug = hug:development_runner.hug.interface.cli\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - falcon >=1.4.1\n    - requests >=2.9.1\ntest:\n  imports:\n    - hug\n\n  commands:\n    - hug --help\n\nabout:\n  home: http://www.hug.rest/\n  license: MIT\n  license_file: LICENSE\n  summary: |\n    A Python framework that makes developing APIs as simple as possible,\n    but no simpler.\n  description: |\n    hug aims to make developing Python driven APIs as simple as possible, but no\n    simpler. As a result, it drastically simplifies Python API development.\n    With hug, design and develop your API once, then expose it however your\n    clients need to consume it. Be it locally, over HTTP, or through the command\n    line - hug is the fastest and most modern way to create APIs on Python3.\n  dev_url: https://github.com/timothycrosley/hug\n\nextra:\n  recipe-maintainers:\n    - daf\n    - kwilcox\n",
  "rendered_recipe": {

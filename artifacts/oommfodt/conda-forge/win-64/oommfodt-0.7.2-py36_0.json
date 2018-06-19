@@ -101,6 +101,7 @@
   "subdir": "win-64",
   "version": "0.7.2"
  },
+ "metadata_version": 1,
  "name": "oommfodt",
  "raw_recipe": "{% set version = \"0.7.2\" %}\n{% set name = \"oommfodt\" %}\n{% set sha256 = \"4a578871c4ee2aa9fa6f77fd98c0afae566147d2d47be77ff15b46e379d7a8dd\" %}\n\npackage:\n  name: {{ name | lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - pandas\n\ntest:\n  imports:\n    - oommfodt\n\nabout:\n  home: http://joommf.github.io/\n  license: BSD 3-clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Reading and analysing OOMMF odt files\n  doc_url: http://oommfodt.readthedocs.io\n  dev_url: https://github.com/joommf/oommfodt\n\n  description: |\n    oommfodt provides tools to read Ooommf Data Table files (ODT)\n    files.\n    It is part of the Jupyter-OOMMF project (https://github.com/joommf\n    and http://joommf.github.io).\n\nextra:\n  recipe-maintainers:\n    - fangohr\n    - mb1a15\n    - takluyver\n    - davidcortesortuno\n    - rpep\n",
  "rendered_recipe": {

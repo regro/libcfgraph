@@ -710,6 +710,7 @@
   "subdir": "win-64",
   "version": "0.24.0"
  },
+ "metadata_version": 1,
  "name": "asn1crypto",
  "raw_recipe": "{% set version = \"0.24.0\" %}\n\npackage:\n  name: asn1crypto\n  version: {{ version }}\n\nsource:\n  fn: asn1crypto-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/a/asn1crypto/asn1crypto-{{ version }}.tar.gz\n  sha256: 9d5c20441baf0cb60a4ac34cc447c6c189024b6b4c6cd7877034f4965c464e49\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - asn1crypto\n\nabout:\n  home: https://github.com/wbond/asn1crypto\n  license: MIT\n  # https://github.com/wbond/asn1crypto/issues/58\n  #license_file: LICENSE\n  summary: Python ASN.1 library with a focus on performance and a pythonic API\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "rendered_recipe": {

@@ -929,6 +929,7 @@
   "subdir": "osx-64",
   "version": "1.8.5"
  },
+ "metadata_version": 1,
  "name": "gpy",
  "raw_recipe": "{% set name = \"GPy\" %}\n{% set version = \"1.8.5\" %}\n{% set sha256 = \"1562e34629192f209273f454e41614a127c6ef04144cd0eb5992d484721d55d3\" %}\n\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy >=1.7\n    - scipy >=0.16\n    - six\n    - toolchain\n  run:\n    - python\n    - paramz >=0.8.5\n    - numpy >=1.7\n    - scipy >=0.16\n    - six\n    - matplotlib\n\ntest:\n  imports:\n    - GPy\n\nabout:\n  home: http://github.com/SheffieldML/GPy\n  license: BSD 3-clause\n  license_file: LICENSE.txt\n  summary: 'The Gaussian Process Toolbox'\n  doc_url: https://pythonhosted.org/GPy/\n  dev_url: https://github.com/SheffieldML/GPy\n\nextra:\n  recipe-maintainers:\n    - dirmeier\n",
  "rendered_recipe": {

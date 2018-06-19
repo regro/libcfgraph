@@ -36,6 +36,7 @@
   "subdir": "win-64",
   "version": "0.12"
  },
+ "metadata_version": 1,
  "name": "flask-wtf",
  "raw_recipe": "{%set name = \"flask-wtf\" %}\n{%set camelName = \"Flask-WTF\" %}\n{%set version = \"0.12\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"bd99316c97ed1d1cb90b8f0c242c86420a891a6a2058f20717e424bf5b0bb80e\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - flask\n    - werkzeug\n    - wtforms\n\ntest:\n  imports:\n    - flask_wtf\n    - flask_wtf.recaptcha\n\nabout:\n  home: http://github.com/lepture/flask-wtf\n  license: BSD 3-Clause\n  summary: 'Simple integration of Flask and WTForms'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

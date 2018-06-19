@@ -156,6 +156,7 @@
   "timestamp": 1526254227136,
   "version": "1.14.0"
  },
+ "metadata_version": 1,
  "name": "geopy",
  "raw_recipe": "\n{% set version = \"1.14.0\" %}\n\npackage:\n  name: geopy\n  version: {{ version }}\n\nsource:\n  url: https://github.com/geopy/geopy/archive/{{ version }}.tar.gz\n  sha256: 9273bd0cecc114d7fe66f9da73816e30b6b6336c3bd30a4b95a9097547d0c9eb\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - geographiclib <2,>=1.49\n\ntest:\n  imports:\n    - geopy\n    - geopy.geocoders\n\nabout:\n  home: https://github.com/geopy/geopy\n  license: MIT\n  license_file: LICENSE\n  summary: 'Python Geocoding Toolbox.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - pmlandwehr\n",
  "rendered_recipe": {

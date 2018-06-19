@@ -263,6 +263,7 @@
   "subdir": "linux-64",
   "version": "1.16"
  },
+ "metadata_version": 1,
  "name": "gsl",
  "raw_recipe": "{% set version = \"1.16\" %}\n\npackage:\n  name: gsl\n  version: {{ version }}\n\nsource:\n  fn: gsl-{{ version }}.tar.gz\n  url: http://ftpmirror.gnu.org/gsl/gsl-{{ version }}.tar.gz\n  sha256: 73bc2f51b90d2a780e6d266d43e487b3dbd78945dd0b04b14ca5980fe28d2f53\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\ntest:\n  commands:\n    - gsl-config --prefix\n    #- conda inspect linkages -p $PREFIX gsl  # [not win]\n    #- conda inspect objects -p $PREFIX gsl  # [osx]\n\nabout:\n  home: http://www.gnu.org/software/gsl/\n  license: GPL-3.0\n  license_file: COPYING\n  summary: 'GNU Scientific Library.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - kwilcox\n",
  "rendered_recipe": {},

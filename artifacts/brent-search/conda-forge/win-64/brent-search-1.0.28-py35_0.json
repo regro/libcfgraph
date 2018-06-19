@@ -498,6 +498,7 @@
   "subdir": "win-64",
   "version": "1.0.28"
  },
+ "metadata_version": 1,
  "name": "brent-search",
  "raw_recipe": "{% set name = \"brent-search\" %}\n{% set version = \"1.0.28\" %}\n{% set sha256 = \"cfeeddb9be1450b6d3b3f42d37059a187fcdf7a9464e4a9486a86f397217017d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n  run:\n    - python\n\ntest:\n  requires:\n    - pytest\n    - pytest-pep8\n    - numpy\n  imports:\n    - brent_search\n  commands:\n    - python -c \"import sys; import brent_search; sys.exit(brent_search.test())\"\n\nabout:\n  home: https://github.com/limix/brent-search\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: \"Brent's method for univariate function optimization.\"\n  doc_url: https://brent-search.readthedocs.io\n  dev_url: https://github.com/limix/brent-search\n\nextra:\n  recipe-maintainers:\n    - Horta\n",
  "rendered_recipe": {

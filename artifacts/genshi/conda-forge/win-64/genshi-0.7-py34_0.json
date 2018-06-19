@@ -66,6 +66,7 @@
   "subdir": "win-64",
   "version": "0.7"
  },
+ "metadata_version": 1,
  "name": "genshi",
  "raw_recipe": "{% set version = \"0.7\" %}\n\npackage:\n    name: genshi\n    version: {{ version }}\n\nsource:\n    fn: Genshi-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/G/Genshi/Genshi-{{ version }}.tar.gz\n    md5: 54e64dd69da3ec961f86e686e0848a82\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n    imports:\n        - genshi\n        - genshi.filters\n        - genshi.filters.tests\n        - genshi.template\n        - genshi.template.tests\n        - genshi.template.tests.templates\n        - genshi.tests\n\nabout:\n    home: http://genshi.edgewall.org/\n    license: BSD-3-Clause\n    summary: A toolkit for generation of output for the web\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
  "rendered_recipe": {},

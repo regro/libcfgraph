@@ -495,6 +495,7 @@
   "subdir": "osx-64",
   "version": "2.10"
  },
+ "metadata_version": 1,
  "name": "cdtime",
  "raw_recipe": "{% set name = \"cdtime\" %}\n{% set version = \"2.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/UV-CDAT/cdtime/archive/v2.10.tar.gz\n  sha256: ea93c7f5a02bf90d2df108f9e843b81793cb9fc3cabee86ecacbf3f8e29daca3\n\nbuild:\n  number: 0\n  skip: True  # [win or py3k] \n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - libcdms\n    - numpy x.x\n    - cdat_info\n    - libdrs_f\n    - gcc\n  run:\n    - python\n    - setuptools\n    - libcdms\n    - cdat_info\n    - libdrs_f\n    - numpy x.x\n\ntest:\n  imports:\n    - cdtime\n\nabout:\n  home: http://uvcdat.llnl.gov/documentation/cdms/cdms_3.html\n  license: 'CCLRC'\n  license_file: 'LICENSE'\n  summary: 'Climate calendar manipulation tools'\n  description: |\n      The cdtime module contains functions for converting between \n      these forms, based on the common calendars used in climate \n      simulation. Basic arithmetic and comparison operators are also available.\n  dev_url: https://github.com/UV-CDAT/cdtime\n\nextra:\n  recipe-maintainers:\n    - dnadeau4\n    - doutriaux1\n",
  "rendered_recipe": {

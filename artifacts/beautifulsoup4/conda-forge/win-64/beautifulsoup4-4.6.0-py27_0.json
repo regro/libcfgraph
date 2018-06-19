@@ -533,6 +533,7 @@
   "subdir": "win-64",
   "version": "4.6.0"
  },
+ "metadata_version": 1,
  "name": "beautifulsoup4",
  "raw_recipe": "{% set version = \"4.6.0\" %}\n{% set name = \"beautifulsoup4\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 808b6ac932dccb0a4126558f7dfdcf41710dd44a4ef497a0bb59a77f9f078e89\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - bs4\n\nabout:\n  home: http://www.crummy.com/software/BeautifulSoup/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING.txt\n  summary: Python library designed for screen-scraping\n  description: |\n    Beautiful Soup is a library for pulling data out of HTML and XML files.\n    It provides ways of navigating, searching, and modifying parse trees.\n  doc_url: http://beautiful-soup-4.readthedocs.io/en/latest/\n  doc_source_url: https://github.com/newvem/beautifulsoup4/blob/master/doc/source/index.rst\n  dev_url: https://code.launchpad.net/beautifulsoup\n\nextra:\n  recipe-maintainers:\n    - jschueller\n    - nehaljwani\n",
  "rendered_recipe": {

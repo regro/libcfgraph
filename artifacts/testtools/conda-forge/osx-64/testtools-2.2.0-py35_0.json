@@ -101,6 +101,7 @@
   "subdir": "osx-64",
   "version": "2.2.0"
  },
+ "metadata_version": 1,
  "name": "testtools",
  "raw_recipe": "{%set name = \"testtools\" %}\n{%set version = \"2.2.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"80f606607a6e4ce4d0e24e5b786562aa42c581906f3c070607a4265f3da65810\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pbr >=0.11\n\n  run:\n    - python\n    - pbr >=0.11\n\ntest:\n  imports:\n    - testtools\n\nabout:\n  home: https://github.com/testing-cabal/testtools\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: 'Extensions to the Python standard library unit testing framework'\n  dev_url: https://github.com/testing-cabal/testtools\n  doc_url: https://testtools.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

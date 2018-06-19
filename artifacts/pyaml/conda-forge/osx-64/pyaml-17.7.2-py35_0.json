@@ -494,6 +494,7 @@
   "subdir": "osx-64",
   "version": "17.7.2"
  },
+ "metadata_version": 1,
  "name": "pyaml",
  "raw_recipe": "{% set name = \"pyaml\" %}\n{% set version = \"17.7.2\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"e2de6b5ea87fd72ca266879995ac3f5394b4e66a74c47b55b6044b0578ce4f8c\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pyyaml\n\ntest:\n  imports:\n    - pyaml\n    - pyaml.tests\n\nabout:\n  home: https://github.com/mk-fg/pretty-yaml\n  license: WTFPL\n  license_file: COPYING\n  summary: 'PyYAML-based module to produce pretty and readable YAML-serialized data'\n  dev_url: https://github.com/mk-fg/pretty-yaml\n  doc_url: https://github.com/mk-fg/pretty-yaml\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

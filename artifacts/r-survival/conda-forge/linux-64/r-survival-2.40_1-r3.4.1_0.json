@@ -670,6 +670,7 @@
   "subdir": "linux-64",
   "version": "2.40_1"
  },
+ "metadata_version": 1,
  "name": "r-survival",
  "raw_recipe": "{% set version = \"2.40-1\" %}\n\npackage:\n  name: r-survival\n  version: {{ version.replace(\"-\", \"_\") }}\n\nsource:\n  fn: survival_{{ version }}.tar.gz\n  url:\n    - http://cran.r-project.org/src/contrib/survival_{{ version }}.tar.gz\n    - http://cran.r-project.org/src/contrib/Archive/survival/survival_{{ version }}.tar.gz\n  sha256: 91d5217847e39bebcbce4f0a2e295304e5816b1270e71f5f2ed39807f004ee82\n\nbuild:\n  number: 0\n  skip: True  # [win32]\n  script: R CMD INSTALL --build .\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:  # [not win32]\n  build:  # [not win32]\n    - r-base  # [not win32]\n    - posix  # [win64]\n    - m2w64-toolchain  # [win64]\n    - gcc  # [not win]\n    - r-matrix  # [not win32]\n  run:  # [not win32]\n    - r-base  # [not win32]\n    - r-matrix  # [not win32]\n\ntest:\n  commands:\n    - R -e \"library('survival')\"  # [not win]\n    - R -e \\\"library('survival')\\\"  # [win]\n\nabout:\n  home: https://github.com/therneau/survival\n  license: LGPL-2.0\n  summary: 'Contains the core survival analysis routines, including definition of Surv objects,  Kaplan-Meier\n    and Aalen-Johansen (multi-state) curves, Cox models, and parametric accelerated\n    failure time models.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

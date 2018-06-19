@@ -789,6 +789,7 @@
   "subdir": "noarch",
   "version": "0.5.0"
  },
+ "metadata_version": 1,
  "name": "django-mptt-admin",
  "raw_recipe": "{% set name = \"django-mptt-admin\" %}\n{% set version = \"0.5.0\" %}\n{% set sha256 = \"a9fc3da9d819de6c3841fe3ff5f127c651ed2c97ac99150ab6adc728e08bdd86\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - django\n    - django-mptt\n    - six \n\ntest:\n  imports:\n    - django_mptt_admin\n    \nabout:\n  home: https://github.com/mbraak/django-mptt-admin\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: 'Django-mptt-admin provides a nice Django Admin interface for Mptt models'\n  description: \n    Django-mptt-admin provides a nice Django Admin interface for django-mptt models. \n  doc_url: https://mbraak.github.io/django-mptt-admin/\n  dev_url: https://github.com/mbraak/django-mptt-admin\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

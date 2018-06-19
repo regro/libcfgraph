@@ -209,6 +209,7 @@
   "timestamp": 1526006287344,
   "version": "2.0.1"
  },
+ "metadata_version": 1,
  "name": "pendulum",
  "raw_recipe": "{% set version = \"2.0.1\" %}\n\npackage:\n  name: pendulum\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/pendulum/pendulum-{{ version }}.tar.gz\n  sha256: 319eb6507e129ef14517805f4e1dcfcd01f2a8eeac55a61ec8f5d115f145f53e\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - python-dateutil\n    - pytzdata\n    - tzlocal\n    - typing  # [py<36]\n\ntest:\n  imports:\n    - pendulum\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://pendulum.eustace.io\n  license: MIT\n  license_family: MIT\n  # license_file: LICENSE\n  summary: 'Python datetimes made easy'\n  description: |\n    Drop-in replacement for the standard datetime class.\n    It behaves exactly like it but with many improvements.\n  doc_url: https://pendulum.eustace.io/docs/\n  dev_url: https://github.com/sdispater/pendulum\n\nextra:\n  recipe-maintainers:\n    - mcs07\n    - ocefpaf\n",
  "rendered_recipe": {

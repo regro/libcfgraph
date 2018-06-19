@@ -757,6 +757,7 @@
   "subdir": "linux-64",
   "version": "0.3"
  },
+ "metadata_version": 1,
  "name": "otpod",
  "raw_recipe": "{% set version = \"0.3\" %}\n\npackage:\n  name: otpod\n  version: {{ version }}\n\nsource:\n  fn: otpod-{{ version }}.tar.gz\n  url: https://github.com/openturns/otpod/archive/v{{ version }}.tar.gz\n  sha256: 68c5512d68de2beb70860c5747dfc14f18e54da28f03c57beb81377afdadff50\n\nbuild:\n  number: 2\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - setuptools\n    - python\n  run:\n    - python\n    - openturns >=1.6\n    - matplotlib >=1.5\n    - scikit-learn >=0.17\n    - statsmodels >=0.6\n    - decorator >=4.0\n\ntest:\n  source_files:\n    - test/\n    - doc/\n  requires:\n    - pytest\n    - nbformat\n    - nbconvert\n  commands:\n    - py.test test/  # [not osx]\n  imports:\n    - otpod\n\nabout:\n  home: http://openturns.org/\n  license: LGPL3\n  license_file: COPYING.LESSER\n  summary: A module to build Probability of Detection for Non Destructive Testing\n\nextra:\n  recipe-maintainers:\n    - adumasphi\n    - jschueller\n",
  "rendered_recipe": {

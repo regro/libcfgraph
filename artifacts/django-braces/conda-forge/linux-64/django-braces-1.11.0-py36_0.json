@@ -635,6 +635,7 @@
   "subdir": "linux-64",
   "version": "1.11.0"
  },
+ "metadata_version": 1,
  "name": "django-braces",
  "raw_recipe": "{% set name = \"django-braces\" %}\n{% set version = \"1.11.0\" %}\n{% set sha256 = \"5898ab2ce4ca7c85b21aedf789b96e90c59dc75d26db6d9a4dc0cff3fc7a7aca\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django >=1.8\n\nabout:\n  home: https://github.com/brack3t/django-braces\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Reusable, generic mixins for Django '\n  description: |\n    Mixins for Django's class-based views.\n  doc_url: https://django-braces.readthedocs.io/en/latest/\n  dev_url: https://github.com/brack3t/django-braces\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

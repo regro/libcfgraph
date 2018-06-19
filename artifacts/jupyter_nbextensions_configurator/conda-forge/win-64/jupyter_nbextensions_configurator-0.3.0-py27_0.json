@@ -812,6 +812,7 @@
   "subdir": "win-64",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "jupyter_nbextensions_configurator",
  "raw_recipe": "{% set name = 'jupyter_nbextensions_configurator' %}\n{% set version = '0.3.0' %}\n{% set sha256 = 'cb28e7f2036c90b644f3f51c457e7eb8b466bb8040dd2ec0c848ab27620b1887' %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: pip install --no-deps .\n  entry_points:\n    - jupyter-nbextensions_configurator = jupyter_nbextensions_configurator.application:main\n\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - jupyter_contrib_core >=0.3.2\n    - jupyter_core\n    - nbconvert\n    - notebook >=4.0\n    - pyyaml\n    - tornado\n    - traitlets\n\ntest:\n  imports:\n    - jupyter_nbextensions_configurator\n    - jupyter_nbextensions_configurator.application\n\n  commands:\n    - jupyter nbextensions_configurator --help\n    - jupyter nbextensions_configurator enable --help\n    - jupyter nbextensions_configurator disable --help\n\nabout:\n  summary: A server extension for jupyter notebook providing configuration interfaces for notebook extensions (nbextensions).\n  home: https://github.com/jupyter-contrib/jupyter_nbextensions_configurator\n  license_file: LICENSE.txt\n  license: BSD 3-clause\n\nextra:\n  recipe-maintainers:\n    - jcb91\n",
  "rendered_recipe": {

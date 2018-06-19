@@ -129,6 +129,7 @@
   "timestamp": 1526510795231,
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "cftime",
  "raw_recipe": "{% set version = \"1.0.0\" %}\n\npackage:\n  name: cftime\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/cftime/cftime-{{ version }}.tar.gz\n  sha256: f62fe79ed2ad38f4211477e59f6f045c91278351f4ce7578e33ddf52fb121ea8\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - cython\n    - numpy 1.11*\n  run:\n    - python\n    - numpy >=1.11\n\ntest:\n  source_files:\n    - test\n  requires:\n    - pytest\n  imports:\n    - cftime\n  commands:\n    - py.test -vv test\n\nabout:\n  home: https://github.com/Unidata/cftime\n  license: MIT\n  license_file: COPYING\n  summary: 'Time-handling functionality from netcdf4-python'\n\n  description: |\n    Time-handling functionality from netcdf4-python\n  doc_url: https://github.com/Unidata/cftime\n  dev_url: https://github.com/Unidata/cftime\n\nextra:\n  recipe-maintainers:\n    - jhamman\n    - ocefpaf\n",
  "rendered_recipe": {

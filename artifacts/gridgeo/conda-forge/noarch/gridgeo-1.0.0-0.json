@@ -770,6 +770,7 @@
   "subdir": "noarch",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "gridgeo",
  "raw_recipe": "{% set version = \"1.0.0\" %}\n\npackage:\n  name: gridgeo\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/g/gridgeo/gridgeo-{{ version }}.tar.gz\n  sha256: 5ac5fee3aa3758f84eef4c1b56ffde01970370f2a5ab930efb917de89d93f6f3\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - netcdf4\n    - shapely\n\ntest:\n  imports:\n    - gridgeo\n\nabout:\n  home: https://github.com/pyoceans/gridgeo\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'Quick grid visualization and conversion to GIS formats.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

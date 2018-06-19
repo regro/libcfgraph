@@ -591,6 +591,7 @@
   "subdir": "osx-64",
   "version": "85"
  },
+ "metadata_version": 1,
  "name": "diffoscope",
  "raw_recipe": "{% set name = \"diffoscope\" %}\n{% set version = \"85\" %}\n{% set sha256 = \"370070197ec0c313963ba81b225e3e0dfd0d51a494a796df1267cfb5c9762ad6\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win or py2k]\n\nrequirements:\n  build:\n    - python\n    - python-magic\n    - setuptools\n  run:\n    - python\n    - python-libarchive-c\n    - python-magic\n    - setuptools\n\ntest:\n  imports:\n    - diffoscope\n  commands:\n    - diffoscope --help\n    - diffoscope --list-tools\n    - diffoscope --version\n\nabout:\n  home: https://diffoscope.org\n  license: GPL-3.0\n  summary: in-depth comparison of files, archives, and directories\n  license_family: GPL\n  license_file: COPYING\n  dev_url: https://anonscm.debian.org/cgit/reproducible/diffoscope.git\n  description: >\n    diffoscope will try to get to the bottom of what makes files or\n    directories different. It will recursively unpack archives of many kinds\n    and transform various binary formats into more human readable form to\n    compare them. It can compare two tarballs, ISO images, or PDF just as\n    easily.\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "rendered_recipe": {

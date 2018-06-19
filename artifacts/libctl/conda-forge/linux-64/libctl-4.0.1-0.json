@@ -157,6 +157,7 @@
   "timestamp": 1524666013722,
   "version": "4.0.1"
  },
+ "metadata_version": 1,
  "name": "libctl",
  "raw_recipe": "{% set name = \"libctl\" %}\n{% set version = \"4.0.1\" %}\n{% set sha256 = \"3d29be14dba7e1e790d9ced0404dea52e7be8e4c0d3b859b74e20e67615516a8\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/stevengj/{{ name }}/releases/download/v{{version}}/{{ name }}-{{version}}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - gcc\n  run:\n    - libgcc\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libctlgeom.so     # [linux]\n    - test -f ${PREFIX}/lib/libctlgeom.dylib  # [osx]\n\nabout:\n  home: http:/github.com/stevengj/libctl\n  license: GPL-2.0\n  license_file: COPYING\n  summary:  A Guile-based library for supporting flexible control files in scientific simulations\n  doc_url: http://libctl.readthedocs.io\n  dev_url: https://github.com/stevengj/libctl\n\nextra:\n  recipe-maintainers:\n    - ChristopherHogan\n",
  "rendered_recipe": {

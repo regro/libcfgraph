@@ -203,6 +203,7 @@
   "subdir": "win-64",
   "version": "1.5_2"
  },
+ "metadata_version": 1,
  "name": "r-vars",
  "raw_recipe": "{% set version = '1.5-2' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-vars\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: vars_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/vars_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/vars/vars_{{ version }}.tar.gz\n  sha256: 50fa365a24885f021f7f5a3bd4d898ecfec0c14784ca9d9db284f30356f985e0\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-mass\n    - r-lmtest >=0.9_26\n    - r-sandwich >=2.2_4\n    - r-strucchange\n    - r-urca >=1.1_6\n  run:\n    - r-base\n    - r-mass\n    - r-lmtest >=0.9_26\n    - r-sandwich >=2.2_4\n    - r-strucchange\n    - r-urca >=1.1_6\n\ntest:\n  commands:\n    - $R -e \"library('vars')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('vars')\\\"\"  # [win]\n\nabout:\n  home: http://www.pfaffikus.de\n  license: GPL (>= 2)\n  summary: Estimation, lag selection, diagnostic testing, forecasting, causality analysis, forecast\n    error variance decomposition and impulse response functions of VAR models and estimation\n    of SVAR and SVEC models.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

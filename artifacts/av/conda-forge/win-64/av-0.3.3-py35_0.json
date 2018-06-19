@@ -140,6 +140,7 @@
   "subdir": "win-64",
   "version": "0.3.3"
  },
+ "metadata_version": 1,
  "name": "av",
  "raw_recipe": "{% set name = \"av\" %}\n{% set version = \"0.3.3\" %}\n{% set sha256 = \"bb6a6abcae38087efe6eb4f8b29dcfbbb7b161b3177babb89fa754d9053e901c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cython\n    - pkg-config  # [not win]\n    - msinttypes  # [win and py27]\n    - ffmpeg 2.8.6\n  run:\n    - python\n    - ffmpeg 2.8.6\n    - pillow\n    - numpy\n\ntest:\n  imports:\n    - av\n\nabout:\n  home: https://github.com/mikeboers/PyAV/\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Pythonic bindings for FFmpeg.'\n\n  description: |\n    PyAV is a Pythonic binding for FFmpeg or Libav. We aim to provide all of\n    the power and control of the underlying library, but manage the gritty\n    details as much as possible.\n  doc_url: http://mikeboers.github.io/PyAV/\n  dev_url: https://github.com/mikeboers/PyAV/\n\nextra:\n  recipe-maintainers:\n    - danielballan\n    - caspervdw\n    - mikeboers\n",
  "rendered_recipe": {

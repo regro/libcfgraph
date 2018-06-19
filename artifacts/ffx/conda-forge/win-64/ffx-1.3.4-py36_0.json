@@ -99,6 +99,7 @@
   "subdir": "win-64",
   "version": "1.3.4"
  },
+ "metadata_version": 1,
  "name": "ffx",
  "raw_recipe": "{% set version = \"1.3.4\" %}\n{% set commit = \"d1f027ed5f4a543c41af13f4b9a2be882ec4dd6a\" %}\n\n\npackage:\n  name: ffx\n  version: {{ version }}\n\nsource:\n    fn: {{ commit }}.tar.gz\n    url: https://github.com/Ohjeah/ffx/archive/{{ commit }}.tar.gz\n    sha256: 44977347d9c9a60838283e3a684efe10a7772129c7d604fdc6695e85b9d7fc1f\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - scikit-learn\n    - numpy\n    - scipy\n    - pandas\ntest:\n\n  imports:\n       - ffx\n\nabout:\n  home: https://github.com/natekupp/ffx\n  license: ffx\n  license_family: Other\n  license_file: LICENSE\n  summary: 'Fast Function Extraction: A fast, scalable, and deterministic symbolic regression tool.'\n\nextra:\n  recipe-maintainers:\n    - Ohjeah\n",
  "rendered_recipe": {

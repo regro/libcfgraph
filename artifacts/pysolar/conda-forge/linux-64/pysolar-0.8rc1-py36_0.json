@@ -775,6 +775,7 @@
   "subdir": "linux-64",
   "version": "0.8rc1"
  },
+ "metadata_version": 1,
  "name": "pysolar",
  "raw_recipe": "{% set name = \"pysolar\" %}\n{% set version = \"0.8rc1\" %}\n{% set sha256 = \"244a6f3287a4483b78b705f14057bd48f27bcac2b25bef3a16d0449b9fa05f6e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/pingswept/pysolar/archive/0.6.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - pytz\n\ntest:\n  imports:\n    - Pysolar\n\nabout:\n  home: http://pysolar.org/\n  license: GPL-3.0\n  license_family: GPL\n  summary: 'A collection of Python libraries for simulating the irradiation of any point on earth by the sun'\n  description: |\n    Pysolar is a collection of Python libraries for simulating the irradiation of any point on earth by the sun.\n    It includes code for extremely precise ephemeris calculations, and more.\n  doc_url: http://docs.pysolar.org/en/latest/\n  dev_url: https://github.com/pingswept/pysolar\n\nextra:\n  recipe-maintainers:\n    - robintw\n",
  "rendered_recipe": {

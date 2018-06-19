@@ -26,6 +26,7 @@
   "subdir": "linux-64",
   "version": "0.2.0"
  },
+ "metadata_version": 1,
  "name": "wicken",
  "raw_recipe": "{% set version = \"0.2.0\" %}\n\npackage:\n    name: wicken\n    version: {{ version }}\n\nsource:\n    git_url: https://github.com/ioos/wicken.git\n    git_tag: v{{ version }}\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - lxml\n        - petulant-bear\n\ntest:\n    imports:\n        - wicken\n\nabout:\n    home: https://github.com/ioos/wicken\n    license:  Apache 2.0\n    summary: Maps metadata concepts to concrete specifications and file formats\n\nextra:\n    recipe-maintainers:\n        - benjwadams\n        - daf\n        - kwilcox\n        - lukecampbell\n        - ocefpaf\n",
  "rendered_recipe": {},

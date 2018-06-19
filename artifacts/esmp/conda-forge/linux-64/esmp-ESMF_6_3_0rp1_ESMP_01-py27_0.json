@@ -320,6 +320,7 @@
   "subdir": "linux-64",
   "version": "ESMF_6_3_0rp1_ESMP_01"
  },
+ "metadata_version": 1,
  "name": "esmp",
  "raw_recipe": "package:\n{% set name = \"esmp\" %}\n{% set version = \"ESMF_6_3_0rp1_ESMP_01\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}.{{ version }}.tar.gz\n  url: http://uvcdat.llnl.gov/cdat/resources/esmp.{{ version }}.tar.bz2\n  sha256: 582427637e916f50ced7517bfc8f96847cffeaf458fdab1420af5cdee0d8e604\n  patches: ESMP_LoadESMF.patch\n\nbuild:\n  number: 0\n  skip: True  # [win or py3k]\n\nrequirements:\n  build:\n    - python\n    - numpy\n    - gcc \n    - perl\n  run:\n    - python\n    - numpy\n    - libgcc\n\ntest:\n  imports:\n    - ESMP\n\nabout:\n  home: https://www.earthsystemcog.org/projects/esmp/\n  license: NCSA\n  license_file: ESMP/LICENSE\n  summary: 'ESMP is a Python interface to ESMF grid remapping functions'\n  description: |\n    SMF is software for building and coupling weather, climate, and related models.  \n    It has a robust, parallel and scalable remapping package, used to generate remapping weights.  \n    It can handle a wide variety of grids and options:  logically rectangular \n    grids and unstructured meshes; regional or global grids; 2D or 3D; and pole and \n    masking options.  \n  dev_url: http://www.netlib.org/clapack://www.earthsystemcog.org/projects/esmp/releases\n\nextra:\n  recipe-maintainers:\n    - dnadeau4\n    - doutriaux1\n",
  "rendered_recipe": {

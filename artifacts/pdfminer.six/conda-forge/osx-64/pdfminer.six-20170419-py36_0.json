@@ -267,6 +267,7 @@
   "subdir": "osx-64",
   "version": "20170419"
  },
+ "metadata_version": 1,
  "name": "pdfminer.six",
  "raw_recipe": "{% set name = \"pdfminer.six\" %}\n{% set version = \"20170419\" %}\n{% set compress_type = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"8dc0c05c8fa84e7d06933896be815a3e69f65dad4a19070dfa56e70afa5e1588\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  \n  run:\n    - python\n    - six\n    - pycrypto\n    - chardet  # [py3k]\n\ntest:\n  imports:\n    - pdfminer\n\n  commands:\n    - pdf2txt.py -h\n    # Can't test dumppdf.py b/c -h apparently raises issues.\n    # Can't test latin2ascii.py unless you feed it input.\n    # Can't test dumppdf.py unless you feed it input.\n\nabout:\n  home: https://github.com/pdfminer/pdfminer.six\n  license_file: LICENSE\n  license: MIT\n  license_family: MIT\n  summary: 'PDF parser and analyzer'\n  dev_url: https://github.com/pdfminer/pdfminer.six\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

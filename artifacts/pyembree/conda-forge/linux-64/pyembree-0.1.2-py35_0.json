@@ -728,6 +728,7 @@
   "subdir": "linux-64",
   "version": "0.1.2"
  },
+ "metadata_version": 1,
  "name": "pyembree",
  "raw_recipe": "{% set name = \"pyembree\" %}\n{% set org = \"scopatz\" %}\n{% set version = \"0.1.2\" %}\n{% set sha256 = \"630c02c5f083cc2dbd7de5d8471d90f1fea408d659dff43e94d2480940d7f44f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}-{{ sha256 }}.tar.gz\n  url: https://github.com/{{ org }}/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cython >=0.25.2\n    - numpy 1.11.*\n    - embree\n  run:\n    - python\n    - numpy >=1.11\n    - embree\n\ntest:\n  imports:\n    - pyembree\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://github.com/scopatz/pyembree\n  license: BSD 2-clause\n  license_file: LICENSE\n  summary: 'Python Wrapper for Embree'\n  dev_url: https://github.com/scopatz/pyembree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - Xarthisius\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -2425,6 +2425,7 @@
   "timestamp": 1529027666596,
   "version": "3.11.4"
  },
+ "metadata_version": 1,
  "name": "cmake",
  "raw_recipe": "{% set version = \"3.11.4\" %}\n{% set major_minor = '.'.join(version.split(\".\")[:2]) %}\n\npackage:\n  name: cmake\n  version: {{ version }}\n\nsource:\n  url: https://cmake.org/files/v{{ major_minor }}/cmake-{{ version }}.tar.gz\n  fn: cmake-{{ version }}.tar.gz\n  sha256: 8f864e9f78917de3e1483e256270daabc4a321741592c5b36af028e72bff87f5\n\nbuild:\n  number: 0\n  msvc_compiler: 14.0\n\nrequirements:\n  build:\n    - toolchain\n    - bzip2 1.0.*  # [unix]\n    - curl >=7.44.0,<8  # [unix]\n    - expat 2.2.*  # [unix]\n    - ncurses 5.9*  # [unix]\n    - xz 5.2.*  # [unix]\n    - zlib 1.2.11  # [unix]\n    - libuv  # [unix]\n    - rhash  # [unix]\n\n  run:\n    - bzip2 1.0.*  # [unix]\n    - curl >=7.44.0,<8  # [unix]\n    - expat 2.2.*  # [unix]\n    - ncurses 5.9*  # [unix]\n    - xz 5.2.*  # [unix]\n    - zlib 1.2.11  # [unix]\n    - libuv  # [unix]\n    - rhash  # [unix]\n    - vs2015_runtime  # [win]\n\ntest:\n  files:\n    - SSLTest.cmake\n  commands:\n    - cmake --version\n    - cmake -V -P SSLTest.cmake\n    - ctest --version\n    - cpack --version\n\nabout:\n  home: http://www.cmake.org/\n  license: BSD 3-clause\n  license_family: BSD\n  summary: CMake is an extensible, open-source system that manages the build process\n\nextra:\n  recipe-maintainers:\n    - blowekamp\n    - groutr\n    - jakirkham\n    - jschueller\n    - ocefpaf\n    - msarahan\n    - scopatz\n    - tadeu\n",
  "rendered_recipe": {

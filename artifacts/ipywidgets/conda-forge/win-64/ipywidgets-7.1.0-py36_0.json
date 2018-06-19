@@ -776,6 +776,7 @@
   "subdir": "win-64",
   "version": "7.1.0"
  },
+ "metadata_version": 1,
  "name": "ipywidgets",
  "raw_recipe": "{% set version = \"7.1.0\" %}\n{% set sha256 = \"3e2be7dea4f97c9a4df71ef065cad9f2e420dd901127bf7cb690fb56d2b34ea3\" %}\n\npackage:\n  name: ipywidgets\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/i/ipywidgets/ipywidgets-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - ipython >=4.0.0\n    - ipykernel >=4.5.1\n    - traitlets >=4.3.1,<5.0.0\n    - nbformat >=4.2.0\n    - widgetsnbextension >=3.1.0,<4.0.0\n\ntest:\n  imports:\n    - ipywidgets\n\nabout:\n  home: https://github.com/ipython/ipywidgets\n  license: BSD 3-clause\n  license_file: COPYING.md\n  summary: Jupyter Interactive Widgets\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n    - pelson\n    - SylvainCorlay\n    - willingc\n    - jasongrout\n    - maartenbreddels\n",
  "rendered_recipe": {

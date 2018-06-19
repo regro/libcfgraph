@@ -32,6 +32,7 @@
   "subdir": "linux-64",
   "version": "5.1.4"
  },
+ "metadata_version": 1,
  "name": "giflib",
  "raw_recipe": "{% set version = \"5.1.4\" %}\n\npackage:\n    name: giflib\n    version: {{ version }}\n\nsource:\n    fn: giflib-{{ version }}.tar.gz\n    url: http://downloads.sourceforge.net/project/giflib/giflib-{{ version }}.tar.gz\n    md5: 8985c9411fdb2178b89d3348da9a06b0\n\nbuild:\n    number: 0\n    skip: True  # [win]\n\ntest:\n    commands:\n        - gif2rgb -h\n        - gifbuild -h\n        - gifclrmp -h\n        - gifecho -h\n        - giffix -h\n        - gifinto -h\n        - giftext -h\n        # - conda inspect linkages giflib --prefix ${CONDA_DEFAULT_ENV}  # [linux]\n\nabout:\n    home: http://giflib.sourceforge.net\n    license: MIT\n    summary: Library for reading and writing gif images\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - 183amir\n",
  "rendered_recipe": {},

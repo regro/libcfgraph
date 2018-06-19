@@ -600,6 +600,7 @@
   "subdir": "win-64",
   "version": "0.4.1"
  },
+ "metadata_version": 1,
  "name": "gj2ascii",
  "raw_recipe": "{% set version = \"0.4.1\" %}\n\npackage:\n  name: gj2ascii\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/g/gj2ascii/gj2ascii-{{ version }}.tar.gz\n  sha256: 65c865410aecd6e4698a120b47531171ee4bc89a511c301c770393f4884ffe8e\n\nbuild:\n  number: 0\n  # FXIME: retry when the entry_points issue is resolved.\n  # noarch: python\n  preserve_egg_dir: True\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - gj2ascii=gj2ascii.cli:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - click >=3.0\n    - fiona >=1.2\n    - numpy >=1.8\n    - rasterio >=0.18\n    - shapely\n\ntest:\n  imports:\n    - gj2ascii\n\n  commands:\n    - gj2ascii --help\n\nabout:\n  home: https://github.com/geowurster/gj2ascii\n  license: BSD 3-Clause\n  summary: 'Render GeoJSON as ASCII on the commandline.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

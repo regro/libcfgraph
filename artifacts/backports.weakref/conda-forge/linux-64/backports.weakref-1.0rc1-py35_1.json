@@ -712,6 +712,7 @@
   "subdir": "linux-64",
   "version": "1.0rc1"
  },
+ "metadata_version": 1,
  "name": "backports.weakref",
  "raw_recipe": "{% set name = \"backports.weakref\" %}\n{% set version = \"1.0rc1\" %}\n{% set sha256 = \"8813bf712a66b3d8b85dc289e1104ed220f1878cf981e2fe756dfaabe9a82892\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm\n    - backports\n  run:\n    - python\n    - backports\n\ntest:\n  imports:\n    - backports.weakref\n\nabout:\n  home: https://github.com/pjdelport/backports.weakref\n  license: Python-2.0\n  summary: 'Backport of new features in Python''s weakref module'\n  dev_url: https://github.com/pjdelport/backports.weakref\n\nextra:\n  recipe-maintainers:\n    - adrianchia\n",
  "rendered_recipe": {

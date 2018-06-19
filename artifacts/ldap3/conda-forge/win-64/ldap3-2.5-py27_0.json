@@ -795,6 +795,7 @@
   "subdir": "win-64",
   "version": "2.5"
  },
+ "metadata_version": 1,
  "name": "ldap3",
  "raw_recipe": "{% set name = \"ldap3\" %}\n{% set version = \"2.5\" %}\n{% set sha256 = \"55078bbc981f715a8867b4c040402627fdfccf5664e0277a621416559748e384\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pyasn1\n  run:\n    - python\n    - pyasn1 >=0.1.8\n\ntest:\n  imports:\n    - ldap3\n\nabout:\n  home: https://github.com/cannatag/ldap3\n  license: LGPL-3.0\n  license_family: LGPL\n  license_file: COPYING.LESSER.txt\n  summary: 'A strictly RFC 4510 conforming LDAP V3 pure Python client library'\n  doc_url: http://ldap3.readthedocs.io\n  dev_url: https://github.com/cannatag/ldap3\n\nextra:\n  recipe-maintainers:\n    - mcs07\n",
  "rendered_recipe": {

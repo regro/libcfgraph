@@ -715,6 +715,7 @@
   "subdir": "noarch",
   "version": "0.9.3"
  },
+ "metadata_version": 1,
  "name": "flask-babelex",
  "raw_recipe": "{% set name = \"flask-babelex\" %}\n{% set camelName = \"Flask-BabelEx\" %}\n{% set version = \"0.9.3\" %}\n{%set hash_type = \"sha256\" %}\n{% set hash_val = \"cf79cdedb5ce860166120136b0e059e9d97b8df07a3bc2411f6243de04b754b4\" %}\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  noarch: python\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - flask\n    - babel >=1.0\n    - speaklater >=1.2\n    - jinja2 >=2.5\n\ntest:\n  imports:\n    - flask_babelex\n\nabout:\n  home: http://github.com/mrjoes/flask-babelex\n  license: BSD 3-Clause\n  summary: 'Adds i18n/l10n support to Flask applications'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

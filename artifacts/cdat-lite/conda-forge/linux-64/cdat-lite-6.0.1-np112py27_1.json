@@ -256,6 +256,7 @@
   "subdir": "linux-64",
   "version": "6.0.1"
  },
+ "metadata_version": 1,
  "name": "cdat-lite",
  "raw_recipe": "{% set version = \"6.0.1\" %}\n\npackage:\n  name: cdat-lite\n  version: {{ version }}\n\nsource:\n  fn: cdat_lite-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/cdat-lite/cdat-lite-{{ version }}.tar.gz\n  sha256: 092ae4ff1fb03dee00096e8dd595b769b422759ce972d96525950adf8e1c9374\n\nbuild:\n  number: 1\n  skip: True  # [win or py3k]\n  script:\n    - export NETCDF_HOME=$PREFIX\n    - export HDF5_HOME=$PREFIX\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - libnetcdf 4.4.*\n  run:\n    - python\n    - setuptools\n    - numpy x.x\n    - libnetcdf 4.4.*\n\ntest:\n  imports:\n    - cdat_lite\n    - cdtime\n    - cdms2\n  commands:\n    - cddump -h\n    - cdscan -h\n    #- conda inspect linkages -p $PREFIX cdat-lite  # [not win]\n    #- conda inspect objects -p $PREFIX cdat-lite  # [osx]\n\nabout:\n  home: https://github.com/cedadev/cdat_lite\n  license: CCLRC\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'A Python package for managing and analysing climate science data.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

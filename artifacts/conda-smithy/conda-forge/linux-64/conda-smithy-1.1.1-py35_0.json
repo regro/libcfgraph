@@ -55,6 +55,7 @@
   "subdir": "linux-64",
   "version": "1.1.1"
  },
+ "metadata_version": 1,
  "name": "conda-smithy",
  "raw_recipe": "{% set version = \"1.1.1\" %}\n\npackage:\n  name: conda-smithy\n  version: {{ version }}\n\nsource:\n  fn: conda-smithy-v{{ version }}.tar.gz\n  url: https://github.com/conda-forge/conda-smithy/archive/v{{ version }}.tar.gz\n  sha256: d12eaa663b67677c24dc621c4d08e8a36db21db9b816e5f9cc79087e0376f904\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - conda-build-all\n    - conda\n    - conda-build\n    - jinja2\n    - requests\n    - pycrypto\n    - gitpython\n    - pygithub <2\n    - ruamel.yaml\n\ntest:\n    imports:\n        - conda_smithy\n        - conda_smithy.ci_register\n        - conda_smithy.configure_feedstock\n    commands:\n        - conda smithy --help\n\nabout:\n    home: https://github.com/conda-forge/conda-smithy\n    license: BSD 3-clause\n    summary: The tool for managing conda-forge feedstocks\n\nextra:\n    recipe-maintainers:\n        - jakirkham\n        - pelson\n",
  "rendered_recipe": {},

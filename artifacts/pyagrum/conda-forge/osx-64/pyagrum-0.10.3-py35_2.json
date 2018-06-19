@@ -899,6 +899,7 @@
   "subdir": "osx-64",
   "version": "0.10.3"
  },
+ "metadata_version": 1,
  "name": "pyagrum",
  "raw_recipe": "{% set version = \"0.10.3\" %}\n\npackage:\n  name: pyagrum\n  version: {{ version }}\n\nsource:\n  git_url: git://forge.lip6.fr/aGrUM\n  git_tag: {{ version }}\n  patches:\n    - comma.patch\n\nbuild:\n  number: 2\n  features:\n    - vc14  # [win and py>=35]\n  skip: true  # [win and py<35]\n\nrequirements:\n  build:\n    # use gcc instead of clang on osx because of the cxx14 requirement\n    - toolchain  # [linux]\n    - gcc  # [osx]\n    - python\n    - numpy\n    - cmake\n  run:\n    - python\n    - numpy\n    - libgcc  # [osx]\n    - pydotplus\n    - matplotlib\n\ntest:\n  requires:\n    - ipython\n  imports:\n    - pyAgrum\n    - pyAgrum.lib.bn2csv\n    - pyAgrum.lib.bn2roc\n    - pyAgrum.lib.dynamicBN\n    - pyAgrum.lib.notebook\n\nabout:\n  home: https://forge.lip6.fr/projects/aGrUM/wiki\n  license: GPLv3\n  license_file: COPYRIGHT.txt\n  summary: C++ Bayesian networks library\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "rendered_recipe": {

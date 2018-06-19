@@ -143,6 +143,7 @@
   "subdir": "win-64",
   "version": "0.5.1"
  },
+ "metadata_version": 1,
  "name": "dateparser",
  "raw_recipe": "{% set version = \"0.5.1\" %}\n\npackage:\n  name: dateparser\n  version: {{ version }}\n\nsource:\n  fn: dateparser-{{ version }}.tar.gz\n  url: https://github.com/scrapinghub/dateparser/archive/v{{ version }}.tar.gz\n  sha256: e95281355109ba87a779b3fcec8af73aade90a417e319b1b01bad6891974df0f\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - python-dateutil\n    - ruamel.yaml\n    - jdatetime\n    - umalqurra\n    - pytz\n    - regex\n    - tzlocal\n    - convertdate\n\ntest:\n  imports:\n    - data\n    - dateparser\n    - dateparser.calendars\n    - dateparser.languages\n    - dateparser.utils\n\nabout:\n  home: https://github.com/scrapinghub/dateparser\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'Date parsing library designed to parse dates from HTML pages.'\n\nextra:\n  recipe-maintainers:\n    - tacaswell\n    - ocefpaf\n",
  "rendered_recipe": {

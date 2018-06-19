@@ -622,6 +622,7 @@
   "subdir": "linux-64",
   "version": "0.6.2"
  },
+ "metadata_version": 1,
  "name": "cyavro",
  "raw_recipe": "{% set name = \"cyavro\" %}\n{% set version = \"0.6.2\" %}\n{% set avro_version = \"1.7.*\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n   fn: {{ name }}-{{ version }}.tar.gz\n   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n   sha256: 780c164be6ed4be56f31f7c06ba46c13e3b0968f92824aa636a17e21a07d9e2d\n\nbuild:\n  number: 1\n  skip: True  # [win or osx]\n  script: python setup.py install\n\nrequirements:\n    build:\n        - python\n        - cython\n        - numpy x.x\n        - avro {{ avro_version }}\n        - six\n        - jinja2\n    run:\n        - python\n        - numpy x.x\n        - avro {{ avro_version }}\n        - pandas >=0.16\n        - filelock\n        - six\n        - python-avro\n\ntest:\n    imports:\n        - cyavro\n#   commands:\n#       - conda inspect linkages cyavro\n\nabout:\n  home: http://github.com/MaxPoint/cyavro\n  license: BSD 3-clause\n  summary: Fast avro reader / writer using libavro\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n    - ericdill\n",
  "rendered_recipe": {

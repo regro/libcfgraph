@@ -836,6 +836,7 @@
   "subdir": "noarch",
   "version": "3.2.1"
  },
+ "metadata_version": 1,
  "name": "jquery",
  "raw_recipe": "{% set name = \"jquery\" %}\n{% set version = \"3.2.1\" %}\n{% set sha256 = \"31d8c2e22dd48a7973fe3617cc656fe6b64d2250d07a258cd8ab30ead031c24a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/jquery/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs\n    \ntest:\n  requires:\n    - nodejs\n  commands:\n    - npm list -g jquery\n   \n\nabout:\n  home: https://github.com/jquery/jquery\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'jQuery JavaScript Library'\n  description: |\n    jQuery JavaScript Library  \n  doc_url: https://api.jquery.com/\n  dev_url: https://github.com/jquery/jquery\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

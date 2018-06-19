@@ -514,6 +514,7 @@
   "subdir": "osx-64",
   "version": "0.0.12"
  },
+ "metadata_version": 1,
  "name": "r-globaloptions",
  "raw_recipe": "{% set version = '0.0.12' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-globaloptions\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: GlobalOptions_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/GlobalOptions_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/GlobalOptions/GlobalOptions_{{ version }}.tar.gz\n  sha256: c09da3f9b1646d0f815056cdbeb5fff7dda29f7dd8742d245f5f6dc7066077a9\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('GlobalOptions')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('GlobalOptions')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/jokergoo/GlobalOptions\n  license: GPL (>= 2)\n  summary: It provides more controls on the option values such as validation and filtering on\n    the values, making options invisible or private.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n",
  "rendered_recipe": {

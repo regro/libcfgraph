@@ -626,6 +626,7 @@
   "subdir": "linux-64",
   "version": "1.0.1"
  },
+ "metadata_version": 1,
  "name": "sep",
  "raw_recipe": "{% set name = \"sep\" %}\n{% set version = \"1.0.1\" %}\n{% set sha256 = \"a66c24dea677b4dfb9d37955403343b5e161ef5c4191045d2c35d4b1f86c22d0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - numpy x.x\n    - toolchain\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  imports:\n    - sep\n\nabout:\n  home: https://github.com/kbarbary/sep\n  license: LGPL-3.0\n  license_family: LGPL\n  license_file: licenses/LGPL_LICENSE.txt\n  summary: 'Astronomical source extraction and photometry library'\n  description: |\n    SEP makes the core algorithms of Source Extractor available as a\n    library of stand-alone functions and classes. These operate directly\n    on in-memory arrays (no FITS files or configuration files). The code\n    is derived from the Source Extractor code base (written in C) and aims\n    to produce results compatible with Source Extractor whenever possible.\n  doc_url: http://sep.readthedocs.io/\n  dev_url: https://github.com/kbarbary/sep\n\nextra:\n  recipe-maintainers:\n    - kbarbary\n    - mwcraig\n",
  "rendered_recipe": {

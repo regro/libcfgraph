@@ -722,6 +722,7 @@
   "subdir": "noarch",
   "version": "3.0.0"
  },
+ "metadata_version": 1,
  "name": "hpack",
  "raw_recipe": "{% set name = \"hpack\" %}\n{% set version = \"3.0.0\" %}\n{% set sha256 = \"8eec9c1f4bfae3408a3f30500261f7e6a65912dc138526ea054f9ad98892e9d2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - hpack\n\nabout:\n  home: http://python-hyper.org/hpack/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'HTTP/2 Header Encoding for Python'\n  dev_url: https://github.com/python-hyper/hpack\n\nextra:\n  recipe-maintainers:\n    - primozgodec\n    - astaric\n",
  "rendered_recipe": {

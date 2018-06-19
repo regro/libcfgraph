@@ -128,6 +128,7 @@
   "subdir": "win-64",
   "version": "1.0.0b1"
  },
+ "metadata_version": 1,
  "name": "flask-restless",
  "raw_recipe": "{%set name = \"Flask-Restless\" %}\n{%set version = \"1.0.0b1\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"aa66c97adae9d27fa74e9de785aac416479aa59687a8ea3b39993e449847406f\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - flask >=0.10\n    - sqlalchemy >=0.8\n    - python-dateutil >2.2\n    - mimerender >=0.5.2\n\ntest:\n  imports:\n    - flask_restless\n    - flask_restless.views\n\nabout:\n  home: https://github.com/jfinkels/flask-restless\n  license: BSD 3-Clause\n  license_file: LICENSE.BSD\n  license_family: BSD\n  summary: 'A Flask extension for easy ReSTful API generation'\n  dev_url: https://github.com/jfinkels/flask-restless\n  doc_url: https://flask-restless.readthedocs.io/en/stable/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

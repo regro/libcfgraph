@@ -97,6 +97,7 @@
   "subdir": "win-64",
   "version": "0.5"
  },
+ "metadata_version": 1,
  "name": "astor",
  "raw_recipe": "{% set name = \"astor\" %}\n{% set version = \"0.5\" %}\n{% set sha256 = \"4abff251d3f03cbe99106cc16e0dc94adc4f88d580c34a717741c7090b76aab9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - astor\n\nabout:\n  home: https://github.com/berkerpeksag/astor\n  license: BSD-3-Clause\n  summary: 'Read, rewrite, and write Python ASTs nicely'\n  license_file: LICENSE\n  description: |\n    astor is designed to allow easy manipulation of Python source via the AST.\n  doc_url: http://astor.readthedocs.io/en/latest/\n  dev_url: https://github.com/berkerpeksag/astor\n\nextra:\n  recipe-maintainers:\n    - drewokane\n",
  "rendered_recipe": {

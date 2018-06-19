@@ -304,6 +304,7 @@
   "subdir": "linux-64",
   "version": "2.40.1"
  },
+ "metadata_version": 1,
  "name": "libxmlpp",
  "raw_recipe": "{% set major_minor = \"2.40\" %}\n{% set version = major_minor + \".1\" %}\n{% set sha256 = \"4ad4abdd3258874f61c2e2a41d08e9930677976d303653cd1670d3e9f35463e9\" %}\n{% if linux %}\n    {% set libext = \".so\" %}\n{% else %}\n    {% set libext = \".dylib\" %}\n{% endif %}\n\npackage:\n  name: libxmlpp\n  version: {{ version }}\n\nsource:\n  fn: libxml++-{{ version }}.tar.xz\n  url: http://ftp.gnome.org/pub/GNOME/sources/libxml++/{{ major_minor }}/libxml++-{{ version }}.tar.xz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - pkg-config\n    - xz 5.2.*\n    - glib\n    - libsigcpp\n    - libxml2\n    - glibmm >=2.4\n    - perl >=5.20.*  # [linux]\n  run:\n    - glib\n    - xz 5.2.*\n    - libsigcpp\n    - libxml2\n    - glibmm >=2.4\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libxml++-2.6{{ libext }}\n\nabout:\n  home: http://libxmlplusplus.sourceforge.net/\n  license: GNU Lesser General Public License v2.1\n  summary: \"C++ bindings for libxml2\"\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "rendered_recipe": {},

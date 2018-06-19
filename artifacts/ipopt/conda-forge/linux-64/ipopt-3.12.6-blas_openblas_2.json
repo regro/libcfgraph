@@ -174,6 +174,7 @@
   "subdir": "linux-64",
   "version": "3.12.6"
  },
+ "metadata_version": 1,
  "name": "ipopt",
  "raw_recipe": "{% set name = \"Ipopt\" %}\n{% set version = \"3.12.6\" %}\n{% set sha256 = \"b1b04fb2aaf424464c00c939fdd0b4075614d8d689b7bbba3cbaedf4a4c997a5\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://www.coin-or.org/download/pkgsource/{{ name }}/{{ name }}-{{ version }}.tgz\n  sha256: {{ sha256 }}\n  patches:\n    - mumps_mpi.patch\n\nbuild:\n  skip: True  # [win]\n  number: 2\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - toolchain\n    - ampl-mp\n    - mumps\n    - metis 5.1.*\n    - scotch\n    - gcc                           # [osx]\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n\n  run:\n    - ampl-mp\n    - mumps\n    - metis 5.1.*\n    - scotch\n    - libgfortran\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n\ntest:\n  files:\n    - test\n    - mytoy.nl\n\n  requires:\n    - toolchain\n\nabout:\n  home: https://projects.coin-or.org/Ipopt/\n  license: EPL 1.0\n  license_file: LICENSE\n  summary: Software package for large-scale nonlinear optimization'\n\nextra:\n  recipe-maintainers:\n    - pstjohn\n",
  "rendered_recipe": {

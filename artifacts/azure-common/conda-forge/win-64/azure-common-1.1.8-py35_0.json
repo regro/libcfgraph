@@ -602,6 +602,7 @@
   "subdir": "win-64",
   "version": "1.1.8"
  },
+ "metadata_version": 1,
  "name": "azure-common",
  "raw_recipe": "{% set version = \"1.1.8\" %}\n\npackage:\n  name: azure-common\n  version: {{ version }}\n\nsource:\n  fn: azure-common-{{ version }}.zip\n  url: https://pypi.io/packages/source/a/azure-common/azure-common-{{ version }}.zip\n  sha256: 25559617b41fe0902f34b215a3440a3ffa4862fe442bf351415be0e1d2eb4289\n  \nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - azure-nspkg\n  run:\n    - python\n    - azure-nspkg\n\ntest:\n  imports:\n    - azure\n    - azure.common\n  commands:\n    - python -m unittest discover -p \"test_*.py\"\n\nabout:\n  home: https://github.com/Azure/azure-sdk-for-python\n  license: Apache-2.0\n  summary: 'Microsoft Azure Client Libraries for Python'\n\nextra:\n  recipe-maintainers:\n    - ivoflipse\n    - Korijn\n    - Maxyme\n",
  "rendered_recipe": {

@@ -726,6 +726,7 @@
   "subdir": "noarch",
   "version": "0.0.12"
  },
+ "metadata_version": 1,
  "name": "django-jsoneditor",
  "raw_recipe": "{% set name = \"django-jsoneditor\" %}\n{% set version = \"0.0.12\" %}\n{% set build = 0 %}\n{% set sha256 = \"5f38e808cf6148fb38309551e8c76a19c6bff2403aff8456e798fd4944a97127\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/ae/b0/0164e082b29777fbc56c2373b68da93d23a29a040787e7f1c65e1562f133/django-jsoneditor-0.0.12.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: {{ build }}\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n    - packaging\n    - django\n\ntest:\n  imports:\n    - jsoneditor\n    - jsoneditor.fields\n\nabout:\n  home: https://github.com/nnseva/django-jsoneditor\n  summary: 'Django JSON Editor'\n  dev_url: https://github.com/nnseva/django-jsoneditor\n  license: LGPL-3.0\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'  # When 0.0.13 is released the LICENSE file will be available\n  license_family: LGPL\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n",
  "rendered_recipe": {

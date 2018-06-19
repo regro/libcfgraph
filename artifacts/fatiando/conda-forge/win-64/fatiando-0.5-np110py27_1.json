@@ -110,6 +110,7 @@
   "subdir": "win-64",
   "version": "0.5"
  },
+ "metadata_version": 1,
  "name": "fatiando",
  "raw_recipe": "{% set name = \"fatiando\" %}\n{% set version = \"0.5\" %}\n{% set sha256 = \"bcdd1d9ae1935a04f2882047eb3643f407c437ba40a4b3bbf1978120aec788b9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [py3k]\n\nrequirements:\n  build:\n    - python\n    - numpy x.x\n    - setuptools\n    - toolchain\n  run:\n    - python\n    - future\n    - numpy x.x\n    - scipy\n    - matplotlib\n    - numba\n    - pillow\n    - jupyter\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - fatiando\n  commands:\n    - python -c \"import fatiando; fatiando.test()\"\n\nabout:\n  home: http://www.fatiando.org\n  license: BSD 3-clause\n  license_file: LICENSE.txt\n  summary: 'Python toolkit for modeling and inversion in geophysics'\n  description: |\n    Fatiando a Terra is an open-source Python library for modeling and\n    inversion in geophysics.  Our goal is provide a comprehensive and\n    extensible framework for geophysical data analysis and the\n    development of new methodologies.\n  doc_url: http://www.fatiando.org\n  dev_url: https://github.com/fatiando/fatiando\n\nextra:\n  recipe-maintainers:\n    - leouieda\n",
  "rendered_recipe": {},

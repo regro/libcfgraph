@@ -11831,6 +11831,7 @@
   "subdir": "linux-64",
   "version": "2.0.0"
  },
+ "metadata_version": 1,
  "name": "eccodes",
  "raw_recipe": "{% set version = \"2.0.0\" %}\n\npackage:\n  name: eccodes\n  version: {{ version }}\n\nsource:\n  url: https://software.ecmwf.int/wiki/download/attachments/45757960/eccodes-{{ version }}-Source.tar.gz\n  fn: eccodes-{{ version }}-Source.tar.gz\n  sha256: 338b311df338950ace79a8d26ffae17f3425bdc56cb8b36b620a69f5841b64f0\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - cmake\n    - boost 1.61.*\n    - jasper\n    - libpng >=1.6.23,<1.7\n    - libnetcdf 4.4.*\n    - perl\n  run:\n    - boost 1.61.*\n    - jasper\n    - libpng >=1.6.23,<1.7\n    - libnetcdf 4.4.*\n\ntest:\n  commands:\n    - codes_info\n    - ls $(codes_info -s)\n    - ls $(codes_info -d)\n\nabout:\n  home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home\n  license: Apache License Version 2.0, January 2004\n  summary: ECMWF ecCodes Copyright 2005-2016 ECMWF.\n\nextra:\n  recipe-maintainers:\n    - kmuehlbauer\n    - pelson\n    - ocefpaf\n",
  "rendered_recipe": {},

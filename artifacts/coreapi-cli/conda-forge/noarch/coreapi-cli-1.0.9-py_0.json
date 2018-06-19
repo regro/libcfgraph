@@ -134,6 +134,7 @@
   "timestamp": 1527278844279,
   "version": "1.0.9"
  },
+ "metadata_version": 1,
  "name": "coreapi-cli",
  "raw_recipe": "{% set name = \"coreapi-cli\" %}\n{% set version = \"1.0.9\" %}\n{% set sha256 = \"d76b5320ea9ad04d922001ac8897b903a7a359c08a53822f819134c50aa22c5f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - click\n    - python-coreapi\n\ntest:\n  commands:\n    - coreapi --help\n\nabout:\n  home: https://github.com/core-api/coreapi-cli\n  license: BSD\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.md'\n  summary: 'An interactive command line client for Core API.'\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "rendered_recipe": {

@@ -121,6 +121,7 @@
   "subdir": "osx-64",
   "version": "3.7.6.0"
  },
+ "metadata_version": 1,
  "name": "ephem",
  "raw_recipe": "{% set version = \"3.7.6.0\" %}\n\npackage:\n  name: ephem\n  version: {{ version }}\n\nsource:\n  fn: ephem-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/e/ephem/ephem-{{ version }}.tar.gz\n  sha256: 7a4c82b1def2893e02aec0394f108d24adb17bd7b0ca6f4bc78eb7120c0212ac\n  patches:\n    - msvc9.patch  # [win and py2k]\n\nbuild:\n  number: 1\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - ephem\n    - ephem._libastro\n\nabout:\n  home: http://rhodesmill.org/pyephem/\n  license: LGPL\n  license_file: COPYING\n  summary: Basic astronomical computations for Python\n  description: |\n    \"PyEphem provides basic astronomical computations for the Python programming\n    language. Given a date and location on the Earth's surface, it can compute\n    the positions of the Sun and Moon, of the planets and their moons, and of\n    any asteroids, comets, or earth satellites whose orbital elements the user\n    can provide.\"\n  doc_url: http://rhodesmill.org/pyephem/\n  dev_url: https://github.com/brandon-rhodes/pyephem\n\nextra:\n  recipe-maintainers:\n    - tacaswell\n    - ocefpaf\n",
  "rendered_recipe": {

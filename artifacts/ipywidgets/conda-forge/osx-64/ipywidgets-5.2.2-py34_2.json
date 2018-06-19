@@ -56,6 +56,7 @@
   "subdir": "osx-64",
   "version": "5.2.2"
  },
+ "metadata_version": 1,
  "name": "ipywidgets",
  "raw_recipe": "{% set version = \"5.2.2\" %}\n\npackage:\n  name: ipywidgets\n  version: {{ version }}\n\nsource:\n  fn: ipywidgets-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/i/ipywidgets/ipywidgets-{{ version }}.tar.gz\n  md5: 317e49cc76353352939c2527920f3ebe\n\nbuild:\n  number: 2\n  script: python -m pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - ipython >=4.0.0\n    - ipykernel >=4.2.2\n    - traitlets >=4.2.1\n    - widgetsnbextension >=1.2.6\n\ntest:\n  imports:\n    - ipywidgets\n\nabout:\n  home: https://github.com/ipython/ipywidgets\n  license: BSD 3-clause\n  license_file: COPYING.md\n  summary: Widgets for the Jupyter Notebook\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n    - pelson\n    - SylvainCorlay\n    - willingc\n",
  "rendered_recipe": {},

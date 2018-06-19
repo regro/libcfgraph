@@ -99,6 +99,7 @@
   "subdir": "linux-64",
   "version": "0.16"
  },
+ "metadata_version": 1,
  "name": "ebooklib",
  "raw_recipe": "{% set name = \"EbookLib\" %}\n{% set version = \"0.16\" %}\n{% set compress_type = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"c6b565009f450b9c610cf009b59d85d43e6c2d6fdf7d0d1c578e03ee37c32f1a\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - lxml\n    - six\n\ntest:\n  imports:\n    - ebooklib\n    - ebooklib.plugins\n\nabout:\n  home: https://github.com/aerkalov/ebooklib\n  license: AGPL 3.0\n  license_file: LICENSE.txt\n  summary: 'Ebook library which can handle EPUB2/EPUB3 and Kindle format'\n  doc_url: https://github.com/aerkalov/ebooklib/wiki\n  dev_url: https://github.com/aerkalov/ebooklib\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

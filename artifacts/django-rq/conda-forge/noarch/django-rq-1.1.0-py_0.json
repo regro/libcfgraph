@@ -805,6 +805,7 @@
   "subdir": "noarch",
   "version": "1.1.0"
  },
+ "metadata_version": 1,
  "name": "django-rq",
  "raw_recipe": "{% set name = \"django-rq\" %}\n{% set version = \"1.1.0\" %}\n{% set sha256 = \"71a604d4bfc18029c2f64da86bfadb803143f5784b3a340e3767202ced93245a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django >=1.8\n    - rq >=0.5.5\n\ntest:\n  commands:\n    - python -c \"import django; from django.conf import settings; settings.configure(INSTALLED_APPS=['django_rq'], RQ_QUEUES={}); django.setup(); import django_rq\"    \n\nabout:\n  home: https://github.com/ui/django-rq\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'A simple app that provides django integration for RQ (Redis Queue)'\n  description: |\n    Django integration with RQ, a Redis based Python queuing library. Django-RQ \n    is a simple app that allows you to configure your queues in django's settings.py \n    and easily use them in your project.\n  doc_url: https://github.com/ui/django-rq\n  dev_url: https://github.com/ui/django-rq\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

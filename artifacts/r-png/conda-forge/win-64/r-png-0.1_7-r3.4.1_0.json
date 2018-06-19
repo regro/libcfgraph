@@ -536,6 +536,7 @@
   "subdir": "win-64",
   "version": "0.1_7"
  },
+ "metadata_version": 1,
  "name": "r-png",
  "raw_recipe": "{% set version = '0.1-7' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-png\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: png_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/png_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/png/png_{{ version }}.tar.gz\n\n  sha256: e269ff968f04384fc9421d17cfc7c10cf7756b11c2d6d126e9776f5aca65553c\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - posix                # [win]\n    - {{native}}toolchain  # [win]\n    - gcc                  # [not win]\n\n  run:\n    - r-base\n\ntest:\n  commands:\n    - $R -e \"library('png')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('png')\\\"\"  # [win]\n\nabout:\n  home: http://www.rforge.net/png/\n  license: GPL2 and GPL3\n  summary: This package provides an easy and simple way to read, write and display bitmap images\n    stored in the PNG format. It can read and write both files and in-memory raw vectors.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

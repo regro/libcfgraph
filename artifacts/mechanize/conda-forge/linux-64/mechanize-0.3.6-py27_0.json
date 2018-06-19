@@ -738,6 +738,7 @@
   "subdir": "linux-64",
   "version": "0.3.6"
  },
+ "metadata_version": 1,
  "name": "mechanize",
  "raw_recipe": "{% set name = \"mechanize\" %}\n{% set version = \"0.3.6\" %}\n{% set sha256 = \"654e705157156c1f316601ea4f7ab27e96713a8a4dabe1604e6cc8d48e0aa1e8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [py3k]\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - html5lib >=0.999999999\n\ntest:\n  imports:\n    - mechanize\n\nabout:\n  home: https://github.com/python-mechanize/mechanize  \n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'Stateful programmatic web browsing.'\n  description: |\n    Stateful programmatic web browsing in Python. Browse pages programmatically with easy HTML form filling and clicking of links.\n  dev_url: https://github.com/python-mechanize/mechanize\n  doc_url: https://mechanize.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
  "rendered_recipe": {

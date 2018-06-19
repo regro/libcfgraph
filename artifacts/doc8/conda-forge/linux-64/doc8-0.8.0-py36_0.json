@@ -104,6 +104,7 @@
   "subdir": "linux-64",
   "version": "0.8.0"
  },
+ "metadata_version": 1,
  "name": "doc8",
  "raw_recipe": "{% set name = \"doc8\" %}\n{% set version = \"0.8.0\" %}\n{% set sha256 = \"2df89f9c1a5abfb98ab55d0175fed633cae0cf45025b8b1e0ee5ea772be28543\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{name}}-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/{{name[0]}}/{{name}}/{{name}}-{{version}}.tar.gz\n  sha256: {{sha256}}\n\nbuild:\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pbr\n\n  run:\n    - python\n    - chardet\n    - docutils\n    - restructuredtext_lint >=0.7\n    - six\n    - stevedore\n\ntest:\n  commands:\n    - \"doc8\"\n\nabout:\n  home: https://launchpad.net/doc8\n  license: Apache 2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Doc8 is an opinionated style checker for rst (with basic support for plain text) styles of documentation.'\n  dev_url: https://github.com/openstack/doc8\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
  "rendered_recipe": {

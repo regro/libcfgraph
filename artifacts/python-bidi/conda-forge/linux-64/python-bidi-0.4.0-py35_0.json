@@ -138,6 +138,7 @@
   "timestamp": 1525024680657,
   "version": "0.4.0"
  },
+ "metadata_version": 1,
  "name": "python-bidi",
  "raw_recipe": "{% set name = \"python-bidi\" %}\n{% set version = \"0.4.0\" %}\n{% set sha256 = \"1a1b3dbee4a0b307c91a465ba4caa8baaaa178151acd20de50ba24f9385f7e13\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  entry_points:\n    - pybidi = bidi:main\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - bidi\n  commands:\n    - pybidi --help\n\nabout:\n  home: https://github.com/MeirKriheli/python-bidi\n  license: LGPLv3\n  license_family: LGPL\n  license_file: 'COPYING.LESSER'\n  summary: Pure python implementation of the BiDi layout algorithm\n  description: Bi-directional (BiDi) layout implementation in pure python\n  doc_url: http://python-bidi.readthedocs.io/en/latest/\n  dev_url: https://github.com/MeirKriheli/python-bidi\n\nextra:\n  recipe-maintainers:\n    - kastman\n",
  "rendered_recipe": {

@@ -97,6 +97,7 @@
   "subdir": "win-64",
   "version": "0.1.0"
  },
+ "metadata_version": 1,
  "name": "jupyter_sphinx",
  "raw_recipe": "{% set name = \"jupyter_sphinx\" %}\n{% set version = \"0.1.0\" %}\n{% set sha256 = \"3103d4e905b63f6f94b991824e47130ab9c0bdc94fe427fa8090a1e646498787\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - sphinx\n    - ipywidgets >=6.0.0\n\ntest:\n  imports:\n    - jupyter_sphinx\n\nabout:\n  home: https://github.com/jupyter-widgets/jupyter-sphinx\n  license: BSD 3-Clause\n  license_family: BSD\n  # license_file: LICENSE\n  summary: 'Jupyter Sphinx extensions enable Jupyter-specific features in Sphinx.'\n  dev_url: https://github.com/jupyter-widgets/jupyter-sphinx\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n",
  "rendered_recipe": {

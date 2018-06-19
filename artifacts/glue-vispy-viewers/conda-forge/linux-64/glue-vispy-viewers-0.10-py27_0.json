@@ -634,6 +634,7 @@
   "timestamp": 1525044392230,
   "version": "0.10"
  },
+ "metadata_version": 1,
  "name": "glue-vispy-viewers",
  "raw_recipe": "{% set version = \"0.10\" %}\n\npackage:\n  name: glue-vispy-viewers\n  version: {{version}}\n\nsource:\n  fn: glue-vispy-viewers-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/g/glue-vispy-viewers/glue-vispy-viewers-{{version}}.tar.gz\n  sha256: e76e8b470f3f7efaac9754e637b367f128f181b368931cc8c77002109c272a4a\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy\n    - pyopengl\n    - glue-core >=0.13\n    - matplotlib\n    - qtpy\n    - astropy >=1.1\n    - pyqt 5.6.*\n\ntest:\n  imports:\n    - glue_vispy_viewers\n    - glue_vispy_viewers.scatter\n    - glue_vispy_viewers.volume\n\nabout:\n  home: https://github.com/glue-viz/glue-vispy-viewers\n  license: BSD 3-Clause\n  summary: 3D viewers for Glue\n\nextra:\n  recipe-maintainers:\n    - astrofrog-conda-forge\n",
  "rendered_recipe": {

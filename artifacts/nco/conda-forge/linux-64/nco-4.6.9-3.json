@@ -768,6 +768,7 @@
   "subdir": "linux-64",
   "version": "4.6.9"
  },
+ "metadata_version": 1,
  "name": "nco",
  "raw_recipe": "{% set version = \"4.6.9\" %}\n\npackage:\n  name: nco\n  version: {{ version }}\n\nsource:\n  url: https://github.com/nco/nco/archive/{{ version }}.tar.gz\n  sha256: efdc0d65d3cc67d0d5dc521709dd0e60b24839e0ae7ded92aaec656890f6f416\n\nbuild:\n  number: 3\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - gsl >=2.2,<2.3\n    - antlr\n    - curl >=7.44.0,<8\n    - zlib 1.2.11\n    - hdf5 1.10.1\n    - libnetcdf 4.4.*\n    - udunits2\n    - expat 2.1.*\n    - krb5 1.14.*\n    - texinfo\n    - bison\n    - flex\n    - m4\n  run:\n    - gsl >=2.2,<2.3\n    - hdf5 1.10.1\n    - libnetcdf 4.4.*\n    - udunits2\n    - expat 2.1.*\n    - libgcc\n    - esmf\n    - openblas 0.2.19|0.2.19.*\n\ntest:\n  source_files:\n    - data/in.nc\n  commands:\n    - ncks --help\n    - ncap2 --help\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://nco.sourceforge.net/\n  license: GPL-3.0\n  summary: 'Suite of programs for manipulating NetCDF/HDF4 files.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - kwilcox\n    - xylar\n",
  "rendered_recipe": {

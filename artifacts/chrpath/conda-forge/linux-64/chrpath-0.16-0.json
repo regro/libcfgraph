@@ -94,6 +94,7 @@
   "subdir": "linux-64",
   "version": "0.16"
  },
+ "metadata_version": 1,
  "name": "chrpath",
  "raw_recipe": "{% set version = \"0.16\" %}\n\npackage:\n  name: chrpath\n  version: {{ version }}\n\nsource:\n  fn: chrpath-{{ version }}.tar.gz\n  url: http://pkgs.fedoraproject.org/repo/pkgs/chrpath/chrpath-{{ version }}.tar.gz/2bf8d1d1ee345fc8a7915576f5649982/chrpath-{{ version }}.tar.gz\n  sha256: bb0d4c54bac2990e1bdf8132f2c9477ae752859d523e141e72b3b11a12c26e7b\n\nbuild:\n  skip: True  # [win or osx]\n  number: 0\n\ntest:\n  commands:\n    - chrpath --help\n    - chrpath --version\n\nabout:\n  home: http://packages.qa.debian.org/c/chrpath.html\n  license: GPL-2.0\n  license_file: COPYING\n  summary: 'Tool to edit the rpath in ELF binaries.'\n  description: |\n    'chrpath is a command line tool to adjust the RPATH or RUNPATH of ELF\n    binaries.'\n  doc_url: https://alioth.debian.org/projects/chrpath/\n  dev_url: https://www.openhub.net/p/chrpath\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

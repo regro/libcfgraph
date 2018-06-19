@@ -95,6 +95,7 @@
   "subdir": "linux-64",
   "version": "1.5.2"
  },
+ "metadata_version": 1,
  "name": "pylibmc",
  "raw_recipe": "{% set version = \"1.5.2\" %}\n{% set name = \"pylibmc\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: fc54e28a9f1b5b2ec0c030da29c7ad8a15c2755bd98aaa4142eaf419d5fabb33\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - libmemcached\n    - python\n    - toolchain\n  run:\n    - libmemcached\n    - python\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - python\n  imports:\n    - _pylibmc\n    - pylibmc\n\nabout:\n  home: https://github.com/lericson/{{ name }}\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Quick and small memcached client for Python\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "rendered_recipe": {

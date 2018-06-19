@@ -52,6 +52,7 @@
   "subdir": "win-64",
   "version": "1.0.1"
  },
+ "metadata_version": 1,
  "name": "salib",
  "raw_recipe": "{% set version = \"1.0.1\" %}\n\npackage:\n  name: salib\n  version: {{ version }}\n\nsource:\n  fn: salib-{{ version }}.tar.gz\n  url: https://github.com/SALib/SALib/archive/v{{ version }}.tar.gz\n  sha256: 10f2582b6227f22a110007d6759ecbf5a377e9bc987e5a81b7cd7fcc4168bbc3\n\nbuild:\n  number: 0\n  script:\n    - git init  # hack to build from tarball\n    - python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - pyscaffold\n  run:\n    - python\n    - numpy\n    - scipy\n    - matplotlib\n\ntest:\n  imports:\n    - SALib\n\nabout:\n  home: http://salib.github.io/SALib/\n  license: MIT\n  license_file: LICENSE.md\n  summary: Sensitivity Analysis Library\n\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "rendered_recipe": {},

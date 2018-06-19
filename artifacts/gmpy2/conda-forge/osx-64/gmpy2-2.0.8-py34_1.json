@@ -87,6 +87,7 @@
   "subdir": "osx-64",
   "version": "2.0.8"
  },
+ "metadata_version": 1,
  "name": "gmpy2",
  "raw_recipe": "{% set version = \"2.0.8\" %}\n\npackage:\n  name: gmpy2\n  version: {{ version }}\n\nsource:\n  fn: gmpy2-{{version}}.zip\n  url: https://pypi.io/packages/source/g/gmpy2/gmpy2-{{ version }}.zip\n  sha256: dd233e3288b90f21b0bb384bcc7a7e73557bb112ccf0032ad52aa614eb373d3f\n\nbuild:\n  number: 1\n  skip: true        # [win and not py35]\n  features:\n    - vc14          # [win and py35]\n  script:\n    - python setup.py install --shared=$PREFIX                                          # [unix]\n    - python setup.py build_ext -f --shared=%LIBRARY_PREFIX% -DMSC_USE_DLL=1 install    # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - gmp           # [unix]\n    - mpir          # [win]\n    - mpfr 3.*\n    - mpc\n    - python\n  run:\n    - gmp           # [unix]\n    - mpir          # [win]\n    - mpfr 3.*\n    - mpc\n    - python\n\ntest:\n  requires:\n    - python 2.7.*  # [py27]\n    - python 3.4.*  # [py34]\n    - python 3.5.*  # [py35]\n  imports:\n    - gmpy2\n\nabout:\n  home: https://pypi.python.org/pypi/gmpy2\n  license: LGPL 3\n  license_file: COPYING.LESSER\n  summary: 'GMP/MPIR, MPFR, and MPC interface to Python 2.6+ and 3.x'\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

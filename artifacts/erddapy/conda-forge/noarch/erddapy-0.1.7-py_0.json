@@ -128,6 +128,7 @@
   "timestamp": 1527195119951,
   "version": "0.1.7"
  },
+ "metadata_version": 1,
  "name": "erddapy",
  "raw_recipe": "{% set version = \"0.1.7\" %}\n\npackage:\n  name: erddapy\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/e/erddapy/erddapy-{{ version }}.tar.gz\n  sha256: c962cbe1adb011df7443cde486aa8e7c8ea7d83c1ad3e54c9afb9b03a9445a16\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - pandas\n    - requests\n\ntest:\n  imports:\n    - erddapy\n\nabout:\n  home: https://github.com/pyoceans/erddapy\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Python interface for ERDDAP'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

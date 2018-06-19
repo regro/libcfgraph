@@ -647,6 +647,7 @@
   "subdir": "linux-64",
   "version": "0.9"
  },
+ "metadata_version": 1,
  "name": "ez_setup",
  "raw_recipe": "{%set name = \"ez_setup\" %}\n{%set version = \"0.9\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"303c5b17d552d1e3fb0505d80549f8579f557e13d8dc90e5ecef3c07d7f58642\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  import:\n    - ez_setup\n\nabout:\n  home: https://code.activestate.com/pypm/ez-setup/\n  license: MIT\n  license_family: MIT\n  summary: 'ez_setup.py and distribute_setup.py'\n  dev_url: https://github.com/ActiveState/ez_setup\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

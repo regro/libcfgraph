@@ -770,6 +770,7 @@
   "subdir": "noarch",
   "version": "0.3.0"
  },
+ "metadata_version": 1,
  "name": "django-pkgconf",
  "raw_recipe": "{% set name = \"django-pkgconf\" %}\n{% set version = \"0.3.0\" %}\n{% set sha256 = \"822bd778238828920d6f3b458a185e8b85d1eac689dddb1e2e38ec44234359ef\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/byashimov/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - django\n\ntest:\n  imports:\n    - pkgconf\n\nabout:\n  home: https://github.com/byashimov/django-pkgconf\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Yet another application settings helper'\n  description: \n    Yet another application settings helper\n  doc_url: https://github.com/byashimov/django-pkgconf\n  dev_url: https://github.com/byashimov/django-pkgconf\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

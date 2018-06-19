@@ -117,6 +117,7 @@
   "subdir": "linux-64",
   "version": "1.3.2"
  },
+ "metadata_version": 1,
  "name": "r-crayon",
  "raw_recipe": "{% set version = \"1.3.2\" %}\n\npackage:\n  name: r-crayon\n  version: {{ version }}\n\nsource:\n  fn: crayon_{{ version }}.tar.gz\n  url:\n    - http://cran.r-project.org/src/contrib/crayon_{{ version }}.tar.gz\n    - http://cran.r-project.org/src/contrib/Archive/crayon/crayon_{{ version }}.tar.gz\n  sha256: 9a6b75d63c05fe64baf222f1921330ceb727924bcc5fc2753ff0528d42555e68\n\nbuild:\n  number: 0\n  skip: True  # [win32]\n  script: R CMD INSTALL --build .\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:  # [not win32]\n  build:  # [not win32]\n    - r-base  # [not win32]\n  run:  # [not win32]\n    - r-base  # [not win32]\n\ntest:\n  commands:\n    - R -e \"library('crayon')\"  # [not win]\n    - R -e \\\"library('crayon')\\\"  # [win]\n\nabout:\n  home: https://github.com/gaborcsardi/crayon\n  license: MIT\n  license_file: LICENSE\n  summary: \"Colored terminal output on terminals that support 'ANSI' color and highlight codes.\n    It also works in 'Emacs' 'ESS'. 'ANSI' color support is automatically detected.\n    Colors and highlighting can be combined and nested. New styles can also be created\n    easily. This package was inspired by the 'chalk' 'JavaScript' project.\"\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

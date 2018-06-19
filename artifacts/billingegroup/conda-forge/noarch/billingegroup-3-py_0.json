@@ -747,6 +747,7 @@
   "subdir": "noarch",
   "version": "3"
  },
+ "metadata_version": 1,
  "name": "billingegroup",
  "raw_recipe": "{% set name = \"billingegroup\" %}\n{% set version = \"3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nbuild:\n  noarch: python\n  number: 0\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - numpy\n    - scipy\n    - matplotlib\n    - seaborn\n    - fabio\n    - pims\n    - pyyaml\n    - pandas\n    - jupyter\n    - pyfai\n    - fire\n    - ipython\n    - scikit-beam\n\ntest:\n  imports:\n    - numpy\n    - scipy\n    - matplotlib\n    - seaborn\n    - fabio\n    - pims\n    - yaml\n    - pandas\n    - jupyter\n    - pyFAI\n    - fire\n    - skbeam\n\nabout:\n  home: https://thebillingegroup.com/\n  summary: 'Metapackage for the Billinge Group'\n  license: NA\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n    - chiahaoliu\n    - sbanerjee23\n    - sbillinge\n",
  "rendered_recipe": {

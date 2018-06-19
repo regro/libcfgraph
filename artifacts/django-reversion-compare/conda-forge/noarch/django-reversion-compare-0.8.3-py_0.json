@@ -808,6 +808,7 @@
   "subdir": "noarch",
   "version": "0.8.3"
  },
+ "metadata_version": 1,
  "name": "django-reversion-compare",
  "raw_recipe": "{% set name = \"django-reversion-compare\" %}\n{% set version = \"0.8.3\" %}\n{% set sha256 = \"c059e84c31e9bbc70927f54c75263ce59077a0873b0114726a754b5877319fba\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django >=1.8\n\ntest:\n  imports:\n    - reversion_compare\n    - reversion_compare_tests\n\nabout:\n  home: https://github.com/jedie/django-reversion-compare\n  license: GPLv3\n  license_family: GPL3\n  license_file: LICENSE\n  summary: 'Add compare view to django-reversion for comparing two versions of a reversion model.'\n  description: \n    django-reversion-compare is an extension to django-reversion that provides a history compare \n    view to compare two versions of a model which is under reversion.\n  doc_url: https://github.com/jedie/django-reversion-compare\n  dev_url: https://github.com/jedie/django-reversion-compare\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

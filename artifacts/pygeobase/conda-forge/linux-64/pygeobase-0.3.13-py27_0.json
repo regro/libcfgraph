@@ -93,6 +93,7 @@
   "subdir": "linux-64",
   "version": "0.3.13"
  },
+ "metadata_version": 1,
  "name": "pygeobase",
  "raw_recipe": "{% set version = \"0.3.13\" %}\n\npackage:\n  name: pygeobase\n  version: {{ version }}\n\nsource:\n  fn: pygeobase-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pygeobase/pygeobase-{{ version }}.tar.gz\n  sha256: 49f2af0b9dd4e147e8abd51bb36f66e174f29db86c5ac0b14a8b379709d1f6b1\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pyscaffold >=2.4rc1,<2.5a0\n    - six\n    - setuptools_scm >=1.7\n  run:\n    - python\n    - numpy\n    - setuptools\n\ntest:\n  imports:\n    - pygeobase\n    - pygeobase.io_base\n    - pygeobase.object_base\n\nabout:\n  home: https://github.com/TUW-GEO/pygeobase\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Base class definition for I/O interfaces of poets\u00b0'\n\nextra:\n  recipe-maintainers:\n    - cpaulik\n",
  "rendered_recipe": {

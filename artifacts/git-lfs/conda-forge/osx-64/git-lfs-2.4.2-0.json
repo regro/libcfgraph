@@ -115,6 +115,7 @@
   "timestamp": 1527846061125,
   "version": "2.4.2"
  },
+ "metadata_version": 1,
  "name": "git-lfs",
  "raw_recipe": "{% set version = \"2.4.2\" %}\n{% set download_url = \"https://github.com/git-lfs/git-lfs/releases/download\" %}\n\npackage:\n  name: git-lfs\n  version: {{ version }}\n\nsource:\n  url: {{ download_url }}/v{{ version }}/git-lfs-linux-amd64-{{ version }}.tar.gz  # [linux]\n  fn: git-lfs-linux-amd64-{{ version }}.tar.gz  # [linux]\n  sha256: 29529b6c7afb5f656860d5fad7c054baaeded95ecbda040592a58dbcdbb38fe0  # [linux]\n\n  url: {{ download_url }}/v{{ version }}/git-lfs-darwin-amd64-{{ version }}.tar.gz  # [osx]\n  fn: git-lfs-darwin-amd64-{{ version }}.tar.gz  # [osx]\n  sha256: 5efdad9722712c6fc039c1ee824c46b3f3c3f8794b2ef8a9776ff8083a3d5e97  # [osx]\n\n  url: {{ download_url }}/v{{ version }}/git-lfs-windows-amd64-{{ version }}.zip  # [win]\n  fn: git-lfs-windows-amd64-{{ version }}.zip  # [win]\n  sha256: 4c95d8e842ef55013c8ac99c4ffcad2a20a41bc41bd8e0943a228a03e07cd976  # [win]\n\nbuild:\n  number: 0\n\ntest:\n  commands:\n    - git-lfs --help\n\nabout:\n  home: https://git-lfs.github.com/\n  license: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.md'\n  summary: An open source Git extension for versioning large files\n\nextra:\n  recipe-maintainers:\n    - dfroger\n    - willirath\n",
  "rendered_recipe": {

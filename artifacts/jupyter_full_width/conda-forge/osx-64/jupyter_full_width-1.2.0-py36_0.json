@@ -502,6 +502,7 @@
   "subdir": "osx-64",
   "version": "1.2.0"
  },
+ "metadata_version": 1,
  "name": "jupyter_full_width",
  "raw_recipe": "{% set name = \"jupyter_full_width\" %}\n{% set version = \"1.2.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 9227f315962ce49713f6a9a5f58ca1985ccc666f2f77dc9429fe600b4ad0afd2\n\nbuild:\n  number: 0\n  script:\n    - python setup.py install --single-version-externally-managed --record record.txt\n    - jupyter nbextension install full_width --py --sys-prefix --overwrite\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - notebook >=4.0\n    - jupyter\n\n  run:\n    - python\n    - notebook >=4.0\n    - jupyter\n\ntest:\n  imports:\n    - full_width\n\nabout:\n  home: https://github.com/JoaoFelipe/JupyterFullWidth\n  license: MIT\n  summary: 'Add a button to allow jupyter to use the full browser width'\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - JoaoFelipe\n",
  "rendered_recipe": {

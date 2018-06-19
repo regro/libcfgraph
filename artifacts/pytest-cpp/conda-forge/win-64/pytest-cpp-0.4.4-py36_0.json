@@ -91,6 +91,7 @@
   "subdir": "win-64",
   "version": "0.4.4"
  },
+ "metadata_version": 1,
  "name": "pytest-cpp",
  "raw_recipe": "{% set name = \"pytest-cpp\" %}\n{% set version = \"0.4.4\" %}\n{% set sha256 = \"1017bbd67543792a6c0fb03dc8b0f13ce935e45d1750b4cab20e864ee6db5230\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - pytest\n\ntest:\n  imports:\n    - pytest_cpp\n\nabout:\n  home: http://github.com/pytest-dev/pytest-cpp\n  license: MIT\n  license_file: LICENSE\n  summary: \"Use pytest's runner to discover and execute C++ tests\"\n\nextra:\n  recipe-maintainers:\n    - gqmelo\n    - nicoddemus\n",
  "rendered_recipe": {

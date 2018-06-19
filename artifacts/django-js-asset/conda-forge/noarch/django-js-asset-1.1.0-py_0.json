@@ -137,6 +137,7 @@
   "timestamp": 1526008052955,
   "version": "1.1.0"
  },
+ "metadata_version": 1,
  "name": "django-js-asset",
  "raw_recipe": "{% set name = \"django-js-asset\" %}\n{% set version = \"1.1.0\" %}\n{% set sha256 = \"30149158206f693a5d027fe590096fc84495486bd11cd77d395b4f2ec27fc1d0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - django\n\ntest:\n  imports:\n    - js_asset\n    - js_asset.js\n\nabout:\n  home: https://github.com/matthiask/django-js-asset\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'script tag with additional attributes for django.forms.Media'\n  description: |\n    script tag with additional attributes for django.forms.Media\n  doc_url: https://github.com/matthiask/django-js-asset\n  dev_url: https://github.com/matthiask/django-js-asset\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

@@ -83,6 +83,7 @@
   "subdir": "osx-64",
   "version": "2.11.1"
  },
+ "metadata_version": 1,
  "name": "pytest-runner",
  "raw_recipe": "{% set name = \"pytest-runner\" %}\n{% set version = \"2.11.1\" %}\n{% set sha256 = \"983a31eab45e375240e250161a556163bc8d250edaba97960909338c273a89b3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm >=1.15.0\n\n  run:\n    - python\n    - setuptools\n    - pytest\n\ntest:\n  imports:\n    - ptr\n\nabout:\n  home: https://github.com/pytest-dev/pytest-runner\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Invoke py.test as distutils command with dependency resolution.'\n  dev_url: https://github.com/pytest-dev/pytest-runner\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n    - ocefpaf\n",
  "rendered_recipe": {

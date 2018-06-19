@@ -317,6 +317,7 @@
   "subdir": "osx-64",
   "version": "2.72.1.53"
  },
+ "metadata_version": 1,
  "name": "newrelic",
  "raw_recipe": "{% set version = \"2.72.1.53\" %}\n\npackage:\n  name: newrelic\n  version: {{ version }}\n\nsource:\n  fn: newrelic-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/n/newrelic/newrelic-{{ version }}.tar.gz\n  sha256: 3f601b32d850d8d56c24756706033ca5e3e3c83520151f5cab37d8a07acaaba2\n\nbuild:\n  number: 1\n  script:\n    - python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - libtool  # [unix]\n    - python\n    - setuptools\n    - toolchain\n  run:\n    - python\n    - setuptools\n\ntest:\n  requires:\n    - python\n  imports:\n    - newrelic\n  commands:\n    - newrelic-admin help  # [unix]\n\nabout:\n  home: http://newrelic.com/docs/python/new-relic-for-python\n  license: New Relic License\n  license_file: newrelic/LICENSE  # [unix]\n  license_file: newrelic\\LICENSE  # [win]\n  summary: New Relic Python Agent\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
  "rendered_recipe": {},

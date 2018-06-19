@@ -758,6 +758,7 @@
   "subdir": "linux-64",
   "version": "2.7"
  },
+ "metadata_version": 1,
  "name": "jplephem",
  "raw_recipe": "{% set name = \"jplephem\" %}\n{% set version = \"2.7\" %}\n{% set sha256 = \"328d8561ee4189f259d9a807a01b3f2b5a4ff91484b79f5cf6f99cab3354c825\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - 0001_use-setuptools.patch\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy\n\n  run:\n    - python\n    - numpy\n\ntest:\n  imports:\n    - jplephem\n\nabout:\n  home: https://pypi.python.org/pypi/jplephem\n  license: MIT\n  summary: \"Python version of NASA DE4xx ephemerides, the basis for the Astronomical Alamanac\"\n\nextra:\n  recipe-maintainers:\n    - juanlu001\n    - brandon-rhodes\n    - jochym\n",
  "rendered_recipe": {

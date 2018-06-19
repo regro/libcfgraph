@@ -752,6 +752,7 @@
   "subdir": "noarch",
   "version": "2.0.0"
  },
+ "metadata_version": 1,
  "name": "djangorestframework-csv",
  "raw_recipe": "{% set version = \"2.0.0\" %}\n\npackage:\n  name: djangorestframework-csv\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/djangorestframework-csv/djangorestframework-csv-{{ version }}.tar.gz\n  sha256: 641feb000d622cec2113005988c03c9a9ba7ec31e1f422f16b098e2a42f4cc8d\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - djangorestframework\n    - six\n    - unicodecsv\n\ntest:\n  imports:\n    - rest_framework_csv\n\nabout:\n  home: https://github.com/mjumbewu/django-rest-framework-csv\n  license: BSD\n  summary: 'CSV Tools for Django REST Framework'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

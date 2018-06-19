@@ -725,6 +725,7 @@
   "subdir": "noarch",
   "version": "0.0.3"
  },
+ "metadata_version": 1,
  "name": "fixie",
  "raw_recipe": "{% set name = \"fixie\" %}\n{% set version = \"0.0.3\" %}\n{% set sha256 = \"f08e8ada650ad1a78d0a968de96e17ace14116ec303573397e5ea265fc1a84db\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - xonsh\n    - cerberus\n    - tornado\n    - lazyasd\n\ntest:\n  imports:\n    - fixie\n    - fixie.environ\n\nabout:\n  home: http://github.com/ergs/fixie\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Cyclus-as-a-Service'\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
  "rendered_recipe": {

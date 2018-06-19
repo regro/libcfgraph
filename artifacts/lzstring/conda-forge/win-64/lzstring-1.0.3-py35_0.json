@@ -90,6 +90,7 @@
   "subdir": "win-64",
   "version": "1.0.3"
  },
+ "metadata_version": 1,
  "name": "lzstring",
  "raw_recipe": "{% set name = \"lzstring\" %}\n{% set version = \"1.0.3\" %}\n{% set sha256 = \"d54dd5a5f86837ccfc1343cc9f1cb0674d2d6ebd4b49f6408c35104f0a996cb4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - future\n\ntest:\n  imports:\n    - lzstring\n\nabout:\n  home: https://github.com/gkovacs/lz-string-python\n  summary: 'lz-string for python'\n  license: MIT\n  license_family: MIT\n  # PyPI missing license file. Added PR to add it to future sdists.\n  #\n  # xref: https://github.com/gkovacs/lz-string-python/pull/2\n  #\n  #license_file: LICENSE.md\n\nextra:\n  recipe-maintainers:\n    - ewels\n",
  "rendered_recipe": {

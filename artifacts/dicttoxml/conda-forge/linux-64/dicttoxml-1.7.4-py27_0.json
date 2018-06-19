@@ -602,6 +602,7 @@
   "subdir": "linux-64",
   "version": "1.7.4"
  },
+ "metadata_version": 1,
  "name": "dicttoxml",
  "raw_recipe": "{% set version = \"1.7.4\" %}\n\npackage:\n  name: dicttoxml\n  version: {{ version }}\n\nsource:\n  fn: dicttoxml-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/dicttoxml/dicttoxml-{{ version }}.tar.gz\n  sha256: ea44cc4ec6c0f85098c57a431a1ee891b3549347b07b7414c8a24611ecf37e45\n\nbuild:\n  number: 0\n  script: python setup.py install --record record.txt\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - dicttoxml\n\nabout:\n  home: https://github.com/quandyfactory/dicttoxml\n  license: GPL-2.0\n  summary: 'Converts a Python dictionary or other native data type into a valid XML string. '\n  license_family: GPL\n  license_file: LICENCE.txt\n  dev_url: https://github.com/quandyfactory/dicttoxml\n  doc_url: https://github.com/quandyfactory/dicttoxml\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n",
  "rendered_recipe": {

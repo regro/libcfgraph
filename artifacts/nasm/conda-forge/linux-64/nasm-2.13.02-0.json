@@ -710,6 +710,7 @@
   "subdir": "linux-64",
   "version": "2.13.02"
  },
+ "metadata_version": 1,
  "name": "nasm",
  "raw_recipe": "{% set version = \"2.13.02\" %}\n\n{% set VC_VERSION = os.environ.get(\"VC_VERSION\", \"\")|string %}\n\npackage:\n  name: nasm\n  version: {{ version }}\n\nsource:\n  fn: nasm-{{ version }}.tar.gz\n  url: http://www.nasm.us/pub/nasm/releasebuilds/{{ version }}/nasm-{{ version }}.tar.gz\n  sha256: 4749fd76a8a26dc7d8871bc97cc2c16cfa0c933f984a13128e94f464f417531a\n\nbuild:\n  number: 0\n\n{% if VC_VERSION == \"\" %}\n  skip: true                 # [win]\n{% elif VC_VERSION != \"\" %}\n  skip: true                 # [unix]\n{% endif %}\n\n  features:\n    - vc{{ VC_VERSION }}     # [win]\n\nrequirements:\n  build:\n    - toolchain\n\ntest:\n  requires:\n    - vc {{ VC_VERSION }}    # [win]\n\n  commands:\n    - nasm -h\n    - nasm -version\n    - ndisasm -h\n\nabout:\n  home: http://www.nasm.us\n  license: BSD 2-Clause\n  license_file: LICENSE\n  summary: \"Netwide Assembler: an assembler targetting the Intel x86 series of processors.\"\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

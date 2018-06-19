@@ -94,6 +94,7 @@
   "subdir": "osx-64",
   "version": "0.1.3"
  },
+ "metadata_version": 1,
  "name": "pandas-gbq",
  "raw_recipe": "{% set version = \"0.1.3\" %}\n{% set name = \"pandas-gbq\" %}\n{% set sha256 = \"8974723a4f7847f26eeaf1667f1214037c18a56a4de14180cc8d6fb1bef860d6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 2\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pandas\n    - httplib2\n    - google-api-python-client\n    - oauth2client\n\ntest:\n  imports:\n    - pandas_gbq\n\nabout:\n  home: https://github.com/pydata/pandas-gbq\n  license: BSD 3-clause\n  summary: 'Pandas interface to Google Big Query'\n\n  doc_url: http://pandas-gbq.readthedocs.io\n  dev_url: https://github.com/pydata/pandas-gbq\n\nextra:\n  recipe-maintainers:\n    - jreback\n    - parthea\n",
  "rendered_recipe": {

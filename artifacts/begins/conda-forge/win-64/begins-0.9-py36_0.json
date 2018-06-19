@@ -102,6 +102,7 @@
   "subdir": "win-64",
   "version": "0.9"
  },
+ "metadata_version": 1,
  "name": "begins",
  "raw_recipe": "{%set name = \"begins\" %}\n{%set version = \"0.9\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"98864dc7593ce438074ed30e4c030dcb37e795376726d9150d557ed9d868ef55\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - funcsigs  # [py<33]\n    - argparse  # [py<27]\n\ntest:\n  imports:\n    - begin\n\nabout:\n  home: http://begins.readthedocs.org\n  license: Apache 2.0\n  license_file: LICENSE\n  license_family: Apache\n  summary: 'Command line programs for busy developers'\n  doc_url: http://begins.readthedocs.org\n  dev_url: https://github.com/aliles/begins\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

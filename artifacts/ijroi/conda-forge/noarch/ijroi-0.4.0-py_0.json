@@ -772,6 +772,7 @@
   "subdir": "noarch",
   "version": "0.4.0"
  },
+ "metadata_version": 1,
  "name": "ijroi",
  "raw_recipe": "{% set name = \"ijroi\" %}\n{% set version = \"0.4.0\" %}\n{% set sha256 = \"82c4dd9c6e7a13dae2f2cd8bb17020ef8dbbf60ad080a76d3a100d9989929e86\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n    - numpy\n\ntest:\n  imports:\n    - ijroi\n    - ijroi.tests\n\nabout:\n  home: https://github.com/tdsmith/ijroi\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: Reads ImageJ ROIs.\n  dev_url: https://github.com/tdsmith/ijroi\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

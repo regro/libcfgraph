@@ -44,6 +44,7 @@
   "subdir": "linux-64",
   "version": "1.2.0"
  },
+ "metadata_version": 1,
  "name": "hmat-oss",
  "raw_recipe": "{% set version = \"1.2.0\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: hmat-oss\n  version: {{ version }}\n\nsource:\n  fn: hmat-oss-{{ version }}.tar.gz\n  url: https://github.com/jeromerobert/hmat-oss/archive/{{ version }}.tar.gz\n  sha256: e52eefa6d34d338104c7058f11f724912d6a3626bce4101b5f798c3ab93f383c\n  patches:\n    - fix-libm-detection.patch  # https://github.com/jeromerobert/hmat-oss/commit/195ee190b2f74c9c2387afe50574004b98b864af\n\nbuild:\n  number: 203\n  skip: true  # [win]\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n\n  run:\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/hmat/hmat/hmat.h  # [unix]\n    - test -f ${PREFIX}/lib/libhmat-oss.so  # [linux]\n    - test -f ${PREFIX}/lib/libhmat-oss.dylib  # [osx]\n\nabout:\n  home: https://github.com/jeromerobert/hmat-oss\n  license: GPLv2\n  license_file: LICENSE.md\n  summary: A hierarchical matrix C/C++ library\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "rendered_recipe": {},

@@ -2744,6 +2744,7 @@
   "timestamp": 1528164223888,
   "version": "2.5.3"
  },
+ "metadata_version": 1,
  "name": "ansible",
  "raw_recipe": "{% set name = \"ansible\" %}\n{% set version = \"2.5.3\" %}\n{% set sha256 = \"0b34126dad0a77fce220d264ba5179221bbff82af5fda5de197dffb96171749c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - paramiko\n    - jinja2\n    - pyyaml\n    - httplib2\n    - pycrypto\n    - six\n    - shade\n    - boto\n\ntest:\n  imports:\n    - ansible\n    - ansible.constants\n    - ansible.errors\n    - ansible.utils\n    \nabout:\n  home: http://github.com/ansible/ansible\n  license: GPL-3.0\n  license_file: COPYING\n  summary: 'Ansible is a radically simple IT automation platform'\n\n  description: |\n    Ansible is a radically simple IT automation platform \n    that makes your applications and systems easier to deploy.\n    Includes support for OpenStack (shade) and EC2 (AWS), extra\n    batteries included.\n  doc_url: https://www.ansible.com/\n  dev_url: https://github.com/ansible/ansible\n\nextra:\n  recipe-maintainers:\n    - brainstorm\n",
  "rendered_recipe": {

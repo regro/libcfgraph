@@ -54,6 +54,7 @@
   "subdir": "osx-64",
   "version": "1.2.4"
  },
+ "metadata_version": 1,
  "name": "pyresample",
  "raw_recipe": "{% set version = \"1.2.4\" %}\n\npackage:\n    name: pyresample\n    version: {{ version }}\n\nsource:\n    fn: pyresample-{{ version }}.tar.gz\n    url: https://github.com/pytroll/pyresample/archive/v{{ version }}.tar.gz\n    sha256: 48f0b07314fcfc7a9fc0a70e892b6bd3df9f0c6f463c1e746d4f6cfd9a5136f9\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - numpy x.x\n    run:\n        - python\n        - scipy\n        - pyproj\n        - numpy x.x\n        - configobj\n        - pykdtree  # [not win]\n        - numexpr\n        - matplotlib\n        - basemap\n        - pillow\n\ntest:\n    imports:\n        - pyresample\n\nabout:\n  home: https://github.com/mraspaud/pyresample/\n  license: LGPL-3.0\n  summary: Resampling of remote sensing data in Python\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
  "rendered_recipe": {},

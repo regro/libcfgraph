@@ -107,6 +107,7 @@
   "subdir": "win-64",
   "version": "2.4.0"
  },
+ "metadata_version": 1,
  "name": "cloudant",
  "raw_recipe": "{%set name = \"cloudant\" %}\n{%set version = \"2.4.0\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"9b19d9fd46de4596ed77c7d8e9a09a5eaa8194e243c46380049eb6fcee3ff7e8\" %}\n{%set build_num = \"0\"%}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - requests >=2.7.0,<3.0.0\n\ntest:\n  imports:\n    - cloudant\n\nabout:\n  home: https://github.com/cloudant/python-cloudant\n  license: Apache 2.0\n  # license_file: LICENSE not in MANIFEST.in\n  license_family: Apache\n  summary: 'Asynchronous Cloudant / CouchDB Interface'\n  dev_url: https://github.com/cloudant/python-cloudant\n  doc_url: https://python-cloudant.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

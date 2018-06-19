@@ -129,6 +129,7 @@
   "subdir": "win-64",
   "version": "3.0.33"
  },
+ "metadata_version": 1,
  "name": "kombu",
  "raw_recipe": "{% set version = \"3.0.33\" %}\n\npackage:\n    name: kombu\n    version: {{ version }}\n\nsource:\n    fn: kombu-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/k/kombu/kombu-{{ version }}.tar.gz\n    md5: 75eaaaa57fd5f1cd304e285e20867f5f\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - anyjson >=0.3.3\n        - amqp >=1.4.9,<2.0\n    run:\n        - python\n        - anyjson >=0.3.3\n        - amqp >=1.4.9,<2.0\n\ntest:\n    imports:\n        - kombu\n        - kombu.async\n        - kombu.tests\n        - kombu.tests.async\n        - kombu.tests.transport\n        - kombu.tests.transport.virtual\n        - kombu.tests.utils\n        - kombu.transport\n        - kombu.transport.virtual\n        - kombu.utils\n    requires:\n        - mock >=0.7.0\n        - nose\n        - setuptools >=0.7\n\nabout:\n    home: http://kombu.readthedocs.org\n    license: BSD License\n    summary: Messaging library for Python\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n",
  "rendered_recipe": {},

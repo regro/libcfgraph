@@ -90,6 +90,7 @@
   "subdir": "linux-64",
   "version": "2.10"
  },
+ "metadata_version": 1,
  "name": "cdat_info",
  "raw_recipe": "{% set name = \"cdat_info\" %}\n{% set version = \"2.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n    url: https://github.com/UV-CDAT/uvcdat/archive/v2.10.tar.gz\n    sha256: 0644c00feba2b070bba85a1ed0d057f0418695724c7f3f79503125faf7bfa511\n\nbuild:\n  number: 1\n  skip: True  # [win or py3k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - cdat_info\n\nabout:\n  home:  http://uvcdat.llnl.gov\n  license: CCLRC\n  license_file: LEGAL.txt\n  summary: 'Climate Data Analysis Tools'\n  description: |                                                                                                                                             \n    is a powerful and complete front-end to a rich set of visual-data \n    exploration and analysis capabilities well suited for climate-data \n    analysis problems.\n  dev_url: http://github.com/UV-CDAT/cdms                                                                                                                    \n\n\nextra:\n  recipe-maintainers:\n    - dnadeau4\n    - doutriaux1\n",
  "rendered_recipe": {

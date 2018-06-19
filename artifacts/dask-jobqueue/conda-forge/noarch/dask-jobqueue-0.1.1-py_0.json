@@ -142,6 +142,7 @@
   "timestamp": 1526353109288,
   "version": "0.1.1"
  },
+ "metadata_version": 1,
  "name": "dask-jobqueue",
  "raw_recipe": "{% set name = \"dask-jobqueue\" %}\n{% set version = \"0.1.1\" %}\n{% set sha256 = \"4ad6dc9939ef0d2b8b0632ef70b9084277a4de2943b4ea29d73056a4e8f92b07\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - dask\n    - distributed\n    - docrep\n\ntest:\n  imports:\n    - dask_jobqueue\n\nabout:\n  home: https://github.com/dask/dask-jobqueue\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Easy deployment of Dask Distributed on job queuing systems like PBS, Slurm, and SGE.'\n  description: |\n    Easy deployment of Dask Distributed on job queuing systems such as PBS,\n    Slurm, or SGE.\n  doc_url: https://dask-jobqueue.readthedocs.io\n  dev_url: https://github.com/dask/dask-jobqueue\n\nextra:\n  recipe-maintainers:\n    - jhamman\n    - mrocklin\n    - lesteve\n    - guillaumeeb\n",
  "rendered_recipe": {

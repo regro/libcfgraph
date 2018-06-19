@@ -88,6 +88,7 @@
   "subdir": "osx-64",
   "version": "3.1.0"
  },
+ "metadata_version": 1,
  "name": "easybuild",
  "raw_recipe": "{% set version = \"3.1.0\" %}\n\npackage:\n  name: easybuild\n  version: {{ version }}\n\nsource:\n  fn: easybuild-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/e/easybuild/easybuild-{{ version }}.tar.gz\n  sha256: d23c1218fed2e14bf3c7c713e9f491514e301c3af9ef3e7d34e00e3115a17b80\n  patches:\n    - setup_py.patch\n\nbuild:\n  number: 0\n  skip: True  # [win or py3k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - easybuild-easyconfigs 3.1.0\n    - easybuild-easyblocks 3.1.0\n    - easybuild-framework 3.1.0\n  run:\n    - python\n    - easybuild-easyconfigs 3.1.0\n    - easybuild-easyblocks 3.1.0\n    - easybuild-framework 3.1.0\n\ntest:\n  imports:\n    - easybuild\n  commands:\n    - eb --help\n\nabout:\n  home: http://hpcugent.github.com/easybuild\n  license: GPLv2\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'EasyBuild is a software build\\nand installation framework that allows you to manage (scientific) software\\non High Performance Computing (HPC) systems in an efficient way.'\n  license_family: GPL2\n\nextra:\n  recipe-maintainers:\n    - jerowe\n    - boegel\n",
  "rendered_recipe": {

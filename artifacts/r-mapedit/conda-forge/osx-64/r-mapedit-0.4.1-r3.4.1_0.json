@@ -695,6 +695,7 @@
   "subdir": "osx-64",
   "version": "0.4.1"
  },
+ "metadata_version": 1,
  "name": "r-mapedit",
  "raw_recipe": "{% set version = \"0.4.1\" %}\n\npackage:\n  name: r-mapedit\n  version: {{ version }}\n\nsource:\n  fn: mapedit_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/mapedit_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/mapedit/mapedit_{{ version }}.tar.gz\n  sha256: a12cd07ed4510cb482e16c80cec01fbe2f9746b830a56cc23921a9cceb3cc8b7\n\nbuild:\n  number: 0\n  script: R CMD INSTALL --build .\n  skip: True  # [win]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-dplyr\n    - r-htmltools >=0.3\n    - r-htmlwidgets\n    - r-jsonlite\n    - r-leaflet\n    - r-leaflet.extras\n    - r-mapview\n    - r-miniui\n    - r-sf >=0.5_2\n    - r-shiny\n  run:\n    - r-base\n    - r-dplyr\n    - r-htmltools >=0.3\n    - r-htmlwidgets\n    - r-jsonlite\n    - r-leaflet\n    - r-leaflet.extras\n    - r-mapview\n    - r-miniui\n    - r-sf >=0.5_2\n    - r-shiny\n\ntest:\n  commands:\n    - $R -e \"library('mapedit')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('mapedit')\\\"\"  # [win]\n\nabout:\n  home: https://cran.r-project.org/package=mapedit\n  license: MIT\n  license_file: LICENSE\n  summary: Suite of interactive functions and helpers for selecting and editing geospatial data.\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

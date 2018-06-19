@@ -118,6 +118,7 @@
   "subdir": "linux-64",
   "version": "1.13.1.post1"
  },
+ "metadata_version": 1,
  "name": "fabric3",
  "raw_recipe": "{%set name = \"Fabric3\" %}\n{%set version = \"1.13.1.post1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"8097dbd078c11273fdaf52d54ce8e11754fa8160be7c407ae866b5e78d76b47c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\nbuild:\n  entry_points:\n    - fab = fabric.main:main\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - paramiko >=1.17.2,<2.0\n    - six >=1.10.0\n\ntest:\n  imports:\n    - fabric\n    - fabric.contrib\n\n  commands:\n    - fab --help\n\nabout:\n  home: https://github.com/mathiasertl/fabric/\n  license: BSD 2-Clause\n  license_file: LICENSE\n  summary: 'Fabric is a simple, Pythonic tool for remote execution and deployment (py2.7/py3.4+ compatible fork).'\n  license_family: BSD\n  dev_url: https://github.com/mathiasertl/fabric/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

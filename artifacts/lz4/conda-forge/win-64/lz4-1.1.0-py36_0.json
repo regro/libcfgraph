@@ -131,6 +131,7 @@
   "timestamp": 1524080660354,
   "version": "1.1.0"
  },
+ "metadata_version": 1,
  "name": "lz4",
  "raw_recipe": "{% set name = \"lz4\" %}\n{% set version = \"1.1.0\" %}\n{% set sha256 = \"9ede632d668995d6148942022c025c0f7ea0d97c275c099f9ad156e02cc1711e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - pip\n    - pytest-runner\n    - setuptools_scm\n    - pkgconfig\n    - lz4-c 1.8.1\n  run:\n    - python\n    - lz4-c 1.8.1\n\ntest:\n  imports:\n    - lz4\n\nabout:\n  home: https://github.com/python-lz4/python-lz4\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: \"LZ4 Bindings for Python\"\n\n  doc_url: http://python-lz4.readthedocs.io/en/stable/\n  dev_url: https://github.com/python-lz4/python-lz4\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

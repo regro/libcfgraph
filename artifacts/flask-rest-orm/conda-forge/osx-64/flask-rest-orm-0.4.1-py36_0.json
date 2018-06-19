@@ -680,6 +680,7 @@
   "subdir": "osx-64",
   "version": "0.4.1"
  },
+ "metadata_version": 1,
  "name": "flask-rest-orm",
  "raw_recipe": "{% set name = \"flask-rest-orm\" %}\n{% set version = \"0.4.1\" %}\n{% set sha256 = \"5537b30f1f7b3e8cc28f17f289aa601272256fd97a14fb9beca4ca2fbf5c3f73\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/ESSS/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [py<35]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - sqlalchemy >=1.1\n    - flask-restful >=0.3\n\ntest:\n  imports:\n    - flask_rest_orm\n\nabout:\n  home: https://github.com/ESSS/flask-rest-orm\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Flask extension to build REST APIs based on SQLAlchemy models'\n  description: |\n    A Flask extension to build REST APIs. It dismiss the need of building Schema classes, \n    since usually all the information needed to serialize an SQLAlchemy instance is in the model itself.\n\nextra:\n  recipe-maintainers:\n    - igortg\n    - loliveira\n    - edetec\n",
  "rendered_recipe": {

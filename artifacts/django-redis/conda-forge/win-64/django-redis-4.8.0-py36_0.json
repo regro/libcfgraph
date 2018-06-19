@@ -494,6 +494,7 @@
   "subdir": "win-64",
   "version": "4.8.0"
  },
+ "metadata_version": 1,
  "name": "django-redis",
  "raw_recipe": "{% set name = \"django-redis\" %}\n{% set version = \"4.8.0\" %}\n{% set sha256 = \"5229da5b07ccb8d3e3e9ee098c0b7c03e20eba48634bc456697dd73d62c68b19\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django >=1.8\n    - redis-py\n\nabout:\n  home: https://github.com/niwinz/django-redis\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Full featured redis cache backend for Django'\n  description: |\n    django-redis is a BSD Licensed, full featured Redis cache/session backend for Django.\n  doc_url: https://niwinz.github.io/django-redis/latest/\n  dev_url: https://github.com/niwinz/django-redis\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

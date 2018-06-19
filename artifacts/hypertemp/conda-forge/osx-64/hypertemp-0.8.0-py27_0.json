@@ -695,6 +695,7 @@
   "subdir": "osx-64",
   "version": "0.8.0"
  },
+ "metadata_version": 1,
  "name": "hypertemp",
  "raw_recipe": "{% set name = \"hypertemp\" %}\n{% set version = \"0.8.0\" %}\n{% set sha256 = \"1bb6226a9a71f59958eb41dce546e3cc23ce8c3cfe7b6eb119c04f3e301268bd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - hypertemp = hypertemp.cli:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - h2          >=2.4,<3.0,!=2.5.0\n    - hyperframe  >=3.2,<4.0\n    - rfc3986     >=1.1.0,<2.0\n    - brotlipy    >=0.7.0,<1.0\n    - enum34      >=1.0.4,<2  # [py2k]\n\ntest:\n  commands:\n    - hypertemp --help\n  imports:\n    - hypertemp\n\nabout:\n  home: http://hyper.rtfd.org/en/latest/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'HTTP/2 for Python.'\n  dev_url: https://github.com/primozgodec/hypertemp\n\nextra:\n  recipe-maintainers:\n    - primozgodec\n",
  "rendered_recipe": {

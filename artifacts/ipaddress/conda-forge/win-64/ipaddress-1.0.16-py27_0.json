@@ -22,6 +22,7 @@
   "subdir": "win-64",
   "version": "1.0.16"
  },
+ "metadata_version": 1,
  "name": "ipaddress",
  "raw_recipe": "{% set name = \"ipaddress\" %}\n{% set version = \"1.0.16\" %}\n{% set sha256 = \"5a3182b322a706525c46282ca6f064d27a02cffbd449f9f47416f1dc96aa71b0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py>=33]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - ipaddress\n\nabout:\n  home: https://github.com/phihag/ipaddress\n  license: PSF 2\n  summary: 'IPv4/IPv6 manipulation library'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {},

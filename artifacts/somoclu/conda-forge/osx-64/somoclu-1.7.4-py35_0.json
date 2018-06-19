@@ -499,6 +499,7 @@
   "subdir": "osx-64",
   "version": "1.7.4"
  },
+ "metadata_version": 1,
  "name": "somoclu",
  "raw_recipe": "{% set name = \"somoclu\" %}\n{% set version = \"1.7.4\" %}\n{% set sha256 = \"428d38ee2313fe10703c92b94c36fcab45361eaba2d9881a45bb91ac9b7a26e7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - cuda.patch\n\nbuild:\n  number: 0\n  skip: True  # [win]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - gcc\n    - numpy 1.10.*\n  run:\n    - python\n    - libgcc\n    - numpy >=1.10\n    - scipy\n    - matplotlib\n\ntest:\n  imports:\n    - somoclu\n\nabout:\n  home: http://github.com/peterwittek/somoclu\n  license: GPL-3.0\n  license_family: GPL\n  license_file: LICENSE\n  summary: 'Massively parallel self-organizing maps: accelerate training on multicore CPUs and GPUs'\n  doc_url: https://somoclu.readthedocs.org/\n  dev_url: https://github.com/peterwittek/somoclu\n\nextra:\n  recipe-maintainers:\n    - peterwittek\n",
  "rendered_recipe": {

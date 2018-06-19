@@ -586,6 +586,7 @@
   "subdir": "win-64",
   "version": "0.1.1"
  },
+ "metadata_version": 1,
  "name": "backports.test.support",
  "raw_recipe": "{% set name = \"backports.test.support\" %}\n{% set version = \"0.1.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: \"0b3735a6de8971154c6fceb565d4a6542605f60267e828b5d6c4a32a312c7f49\"\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - backports\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - backports\n    - future        # [py2k]\n    - backports.os  # [py2k]\n\ntest:\n  source_files:\n    - tests\n  imports:\n    - backports\n    - backports.test\n    - backports.test.support\n  commands:\n    - set \"PYTHONIOENCODING=utf8\"     # [win]\n    - export \"PYTHONIOENCODING=utf8\"  # [unix]\n    - python -m unittest discover tests\n  requires:\n    - mock\n\nabout:\n  home: https://github.com/pjdelport/backports.test.support\n  license: Python Software Foundation\n  license_family: PSF\n  license_file: LICENSE\n  summary: Backport of Python 3's test.support package\n  doc_url: https://docs.python.org/3.6/library/test.html#module-test.support\n  dev_url: https://github.com/pjdelport/backports.test.support\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
  "rendered_recipe": {

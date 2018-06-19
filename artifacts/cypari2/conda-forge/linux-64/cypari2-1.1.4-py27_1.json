@@ -784,6 +784,7 @@
   "subdir": "linux-64",
   "version": "1.1.4"
  },
+ "metadata_version": 1,
  "name": "cypari2",
  "raw_recipe": "{% set version = \"1.1.4\" %}\n{% set name = \"cypari2\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/defeo/cypari2/archive/{{ version }}.tar.gz\n  sha256: b61e30a697250adf6369c21f148f7552aae6abfbb673171c2b97ec3c8fb74676\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  script:\n    - python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - toolchain\n    - setuptools\n    - cython\n    - python\n    - pari >=2.9\n    - pip\n    - cysignals\n  run:\n    - python\n    - pari >=2.9\n    - cysignals\n\ntest:\n  imports:\n    - cypari2\n  commands:\n    - python -c \"import doctest; import cypari2; doctest.testmod(cypari2, optionflags=doctest.ELLIPSIS|doctest.REPORT_NDIFF)\"\n    - test -f $SP_DIR/cypari2/auto_paridecl.pxd\n\nabout:\n  home: https://github.com/defeo/cypari2\n  license: GPLv2+\n  license_file: LICENSE\n  summary: 'An interface to the number theory library libpari'\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - saraedum\n",
  "rendered_recipe": {

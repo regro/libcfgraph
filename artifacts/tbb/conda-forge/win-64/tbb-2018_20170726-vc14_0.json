@@ -666,6 +666,7 @@
   "subdir": "win-64",
   "version": "2018_20170726"
  },
+ "metadata_version": 1,
  "name": "tbb",
  "raw_recipe": "{% set version = \"2018_20170726\" %}\n\npackage:\n  name: tbb\n  version: {{ version }}\n\nsource:\n  fn: tbb{{ version }}oss_src.tgz\n  url: https://github.com/01org/tbb/archive/2018.tar.gz\n  sha256: 94f643f1edfaccb57d64b503c7c96f00dec64e8635c054bbaa33855d72c5822d\n\nbuild:\n  number: 0\n  features:\n    - vc9  # [win and py27]\n    - vc14  # [win and py>=35]\n  skip: true  # [win and py36]\n\nrequirements:\n  build:\n    - toolchain\n    - python  # [win]\n    - cmake  # [win]\n\ntest:\n  requires:\n    - python {{ os.environ.get('PY_VER', '') + '*' }}  # [win]\n\n  commands:\n    - test -f ${PREFIX}/include/tbb/tbb.h  # [unix]\n    - python -c \"import ctypes; ctypes.cdll[r'${PREFIX}/lib/libtbb${SHLIB_EXT}']\"  # [unix]\n    - python -c \"import ctypes; ctypes.cdll[r'%PREFIX%\\Library\\bin\\tbb.dll']\"  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\tbb\\\\tbb.h exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\tbb.lib exit 1  # [win]\n\nabout:\n  home: http://www.threadingbuildingblocks.org\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: High level abstract threading library\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "rendered_recipe": {

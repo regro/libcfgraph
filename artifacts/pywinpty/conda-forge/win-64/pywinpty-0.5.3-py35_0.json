@@ -124,6 +124,7 @@
   "timestamp": 1527347422707,
   "version": "0.5.3"
  },
+ "metadata_version": 1,
  "name": "pywinpty",
  "raw_recipe": "{% set name = \"pywinpty\" %}\n{% set version = \"0.5.3\" %}\n{% set hash = \"68506b04a75720131f5755bccde08996e6c28e3417e27e2475297d3db1025a13\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ hash }}\n\nbuild:\n  number: 0\n  skip: True  # [not win]\n\nrequirements:\n  build:\n    - cython\n    - python\n    - setuptools\n    - winpty\n    - backports.shutil_which  # [py2k]\n    # use the m2w64 toolchain for all builds\n    - m2w64-toolchain\n    - libpython\n  run:\n    - backports.shutil_which  # [py2k]\n    - setuptools  # [py2k]\n    - python\n    - winpty\n    - m2w64-gcc-libs\n\ntest:\n  imports:\n    # It hangs in Python 2\n    - winpty  # [not py2k]\n\nabout:\n  home: https://github.com/spyder-ide/pywinpty\n  license: MIT\n  summary: 'Python bindings for the winpty library'\n  description: |\n    Python bindings for the winpty pseudo terminal library.\n    It allows to create and communicate with Windows processes that print outputs\n     and recieve inputs via console input and output pipes.\n  doc_url: https://github.com/spyder-ide/pywinpty\n  dev_url: https://github.com/spyder-ide/pywinpty\n\nextra:\n  recipe-maintainers:\n    - blink1073\n    - ccordoba12\n    - andfoy\n    - goanpeca\n    - jjhelmus\n",
  "rendered_recipe": {

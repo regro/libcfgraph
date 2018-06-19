@@ -25,6 +25,7 @@
   "subdir": "win-64",
   "version": "0.1.8.4"
  },
+ "metadata_version": 1,
  "name": "hiveplot",
  "raw_recipe": "{% set version = \"0.1.8.4\" %}\n{% set pkgname = \"hiveplot\" %}\n\npackage:\n    name: {{ pkgname }}\n    version: {{ version }}\n\nsource:\n    fn: {{ pkgname }}-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/{{ pkgname[0] }}/{{ pkgname }}/{{ pkgname }}-{{ version }}.tar.gz\n    md5: 08171310271823a83aff8269eeed2392\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - pip\n    run:\n        - python\n        - matplotlib\n        - numpy\n\ntest:\n    imports:\n        - hiveplot\n\nabout:\n    home: http://github.com/ericmjl/hiveplot\n    license: MIT\n    summary: 'Hive plots in Python!'\n\nextra:\n    recipe-maintainers:\n        - ericmjl\n",
  "rendered_recipe": {},

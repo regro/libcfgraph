@@ -761,6 +761,7 @@
   "subdir": "linux-64",
   "version": "1.1.0"
  },
+ "metadata_version": 1,
  "name": "basemap",
  "raw_recipe": "{% set version = \"1.1.0\" %}\n\npackage:\n  name: basemap\n  version: {{ version }}\n\nsource:\n  url: https://github.com/matplotlib/basemap/archive/v{{ version }}.tar.gz\n  sha256: 6acdc3a08bfcebf0a1b52a05d73d51b7aa5e7240fedfa95537c92d16f2ef8778\n  patches:\n    - basemap-1.0.8dev-datadir.patch\n\nbuild:\n  number: 3\n\nrequirements:\n  build:\n    - python\n    - numpy 1.7.*  # [py27]\n    - numpy 1.9.*  # [py35]\n    - numpy 1.11.*  # [py36]\n    - geos 3.6.2\n  run:\n    - python\n    - numpy >=1.7  # [py27]\n    - numpy >=1.9  # [py35]\n    - numpy >=1.11  # [py36]\n    - geos 3.6.2\n    - matplotlib\n    - pyproj\n    - pyshp\n\ntest:\n  imports:\n    - mpl_toolkits.basemap\n  commands:\n    - conda inspect linkages -p $PREFIX basemap  # [not win]\n    - conda inspect objects -p $PREFIX basemap  # [osx]\n\nabout:\n  home: http://matplotlib.org/basemap\n  license: MIT\n  license_file: README.md\n  summary: 'Plot on map projections using matplotlib.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

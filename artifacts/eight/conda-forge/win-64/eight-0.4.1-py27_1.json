@@ -95,6 +95,7 @@
   "subdir": "win-64",
   "version": "0.4.1"
  },
+ "metadata_version": 1,
  "name": "eight",
  "raw_recipe": "{% set name = \"eight\" %}\n{% set version = \"0.4.1\" %}\n{% set sha256 = \"8f43362b7f4a1113e4f45bb05625d2655bdf91dbdb411545efb990b47c0c6889\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - future\n  run:\n    - python\n    - future\n\ntest:\n  imports:\n    - eight\n\nabout:\n  home: https://github.com/kislyuk/eight\n  license: Apache-2.0\n  summary: 'Eight is a Python module that provides a minimalist compatibility layer between Python 3 and 2'\n  description: |\n    Eight is inspired by six, nine, and python-future, but provides better\n    internationalization (i18n) support, is more lightweight, easier to use,\n    and unambiguously biased toward Python 3 code: if you remove eight from\n    your code, it will continue to function exactly as it did with eight on\n    Python 3.\n  doc_url: https://eight.readthedocs.io/en/latest/\n  dev_url: https://github.com/kislyuk/eight\n\nextra:\n  recipe-maintainers:\n    - cmutel\n",
  "rendered_recipe": {

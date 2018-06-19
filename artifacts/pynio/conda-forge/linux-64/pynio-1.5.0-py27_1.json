@@ -1233,6 +1233,7 @@
   "subdir": "linux-64",
   "version": "1.5.0"
  },
+ "metadata_version": 1,
  "name": "pynio",
  "raw_recipe": "{% set version = \"1.5.0\" %}\n\npackage:\n  name: pynio\n  version: {{ version }}\n\nsource:\n  url: https://github.com/NCAR/pynio/archive/{{ version }}.tar.gz\n  sha256: e2bae6469541662835a7d13aa0185b73b13df56c2de6ce6f8e74cb17ba9a6143\n  patches:\n    - test_opendap2_url.patch\n\nbuild:\n  number: 1\n  skip: True  # [win or py3k]\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - python\n    - gcc\n    - numpy 1.7.*  # [py27]\n    - libnetcdf 4.4.*\n    - proj4 4.9.3\n    - libgdal 2.2.*\n    - g2clib 1.6.*\n    - hdfeos2\n    # - hdfeos5\n    - jasper\n    - util-linux  # [linux]\n    - libuuid  # [osx]\n  run:\n    - python\n    - numpy >=1.7  # [py27]\n    - libnetcdf 4.4.*\n    - hdf4\n    - proj4 4.9.3\n    - libgdal 2.2.*\n    - g2clib 1.6.*\n    - hdfeos2\n    # - hdfeos5\n    - jasper\n    - libgfortran\n    - util-linux  # [linux]\n    - libuuid  # [osx]\n\ntest:\n  requires:\n    - nose\n  imports:\n    - Nio\n  commands:\n    - cd $SRC_DIR/test && nosetests  # [not win]\n    - conda inspect linkages -p $PREFIX pynio  # [not win]\n    - conda inspect objects -p $PREFIX pynio  # [osx]\n\nabout:\n  home: http://www.pyngl.ucar.edu/Nio.shtml\n  license: BSD 3-clause\n  summary: 'PyNIO is a multi-format data I/O package with a NetCDF-style interface.'\n\nextra:\n  recipe-maintainers:\n    - marylhaley\n    - ocefpaf\n    - jhamman\n    - david-ian-brown\n    - khallock\n",
  "rendered_recipe": {

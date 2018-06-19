@@ -52,6 +52,7 @@
   "subdir": "linux-64",
   "version": "1.8.1"
  },
+ "metadata_version": 1,
  "name": "docker-py",
  "raw_recipe": "{%set name = \"docker-py\" %}\n{%set version = \"1.8.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"4f47a05e677472b5e022be1ab1dfd91b473ab3fc14a6b71337042ac2caaafa0b\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  skip: True  # [win32]\n  # win32 requires pypiwin32, which we don't have a build of.\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - requests >=2.5.2\n    - six >=1.4.0\n    - websocket-client >=0.32.0\n    - ssl_match_hostname >=3.5  # [py<35]\n    - ipaddress >=1.0.16  # [py<33]\n\ntest:\n  imports:\n    - docker\n    - docker.api\n    - docker.auth\n    - docker.ssladapter\n    - docker.unixconn\n    - docker.utils\n    - docker.utils.ports\n\nabout:\n  home: https://github.com/docker/docker-py/\n  license: Apache 2.0\n  summary: 'Python client for Docker.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

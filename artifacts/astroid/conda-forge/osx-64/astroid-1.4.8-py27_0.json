@@ -160,6 +160,7 @@
   "subdir": "osx-64",
   "version": "1.4.8"
  },
+ "metadata_version": 1,
  "name": "astroid",
  "raw_recipe": "{% set name = \"astroid\" %}\n{% set version = \"1.4.8\" %}\n{% set sha256 = \"5f064785a7e45ed519285f2eb30b795e58a4932a0736b32030da6fef3394ddb3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six\n    - lazy-object-proxy\n    - wrapt\n\n  run:\n    - python\n    - setuptools\n    - six\n    - lazy-object-proxy\n    - wrapt\n\ntest:\n  imports:\n    - astroid\n    - astroid.tests\n    # import modutils to expose the setuptools runtime requirement\n    - astroid.modutils\n\nabout:\n  home: https://github.com/PyCQA/astroid\n  license: LGPL 2.1\n  summary: 'A abstract syntax tree for Python with inference support.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {},

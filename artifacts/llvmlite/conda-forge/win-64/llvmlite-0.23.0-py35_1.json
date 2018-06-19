@@ -156,6 +156,7 @@
   "timestamp": 1525157268311,
   "version": "0.23.0"
  },
+ "metadata_version": 1,
  "name": "llvmlite",
  "raw_recipe": "{% set name = \"llvmlite\" %}\n{% set version = \"0.23.0\" %}\n{% set sha256 = \"bc8b1b46274d05b578fe9e980a6d98fa71c8727f6f9ed31d4d8468dce7aa5762\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n    \nbuild:\n  skip: True  # [win and py2k]\n  number: 1\n  script: python setup.py install  --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - cmake          # [win]\n    - python\n    - setuptools\n    - enum34         # [py2k]\n    - llvmdev 6.0.0\n  run:\n    - python\n    - enum34         # [py2k]\n\ntest:\n  imports:\n    - llvmlite\n    - llvmlite.binding\n    - llvmlite.ir\n    - llvmlite.llvmpy\n    - llvmlite.tests\n  commands:\n    - python -m llvmlite.tests\n\nabout:\n  home: http://llvmlite.pydata.org\n  license: BSD-2-clause\n  license_file: LICENSE\n  summary: A lightweight LLVM python binding for writing JIT compilers.\n  doc_url: http://llvmlite.pydata.org/\n  dev_url: https://github.com/numba/llvmlite\n\nextra:\n  recipe-maintainers:\n    - souravsingh\n",
  "rendered_recipe": {

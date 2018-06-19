@@ -686,6 +686,7 @@
   "subdir": "osx-64",
   "version": "0.3.25"
  },
+ "metadata_version": 1,
  "name": "r-randomfieldsutils",
  "raw_recipe": "{% set version = '0.3.25' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-randomfieldsutils\n  version: {{ version }}\n\nsource:\n  fn: RandomFieldsUtils_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/RandomFieldsUtils_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/RandomFieldsUtils/RandomFieldsUtils_{{ version }}.tar.gz\n  sha256: e3cb5c4e354a6a9c4dfe0f3042c28d9cd0a9ae3fce2407cd81890693a13cb35b\n\nbuild:\n  number: 0\n  script: R CMD INSTALL --build .\n  skip: True  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\n\nrequirements:\n  build:\n    - r-base\n    - posix  # [win]\n    - {{native}}toolchain  # [win]\n    - gcc  # [not win]\n  run:\n    - r-base\n    - libgcc  # [not win]\n\ntest:\n  commands:\n    - $R -e \"library('RandomFieldsUtils')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('RandomFieldsUtils')\\\"\"  # [win]\n\nabout:\n  home: https://cran.r-project.org/web/packages/RandomFieldsUtils\n  license: GPL (>= 3)\n  summary: Various utilities are provided that might be used in spatial statistics and elsewhere.\n    It delivers a method for solving linear equations that checks the sparsity of the\n    matrix before any algorithm is used. Furthermore, it includes the Struve functions.\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

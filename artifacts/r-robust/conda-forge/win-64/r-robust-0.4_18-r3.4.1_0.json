@@ -694,6 +694,7 @@
   "subdir": "win-64",
   "version": "0.4_18"
  },
+ "metadata_version": 1,
  "name": "r-robust",
  "raw_recipe": "{% set version = '0.4-18' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-robust\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: robust_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/robust_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/robust/robust_{{ version }}.tar.gz\n  sha256: e4196f01bb3b0d768759d4411d524238b627eb8dc213d84cb30014e75480f8ac\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-mass\n    - r-fit.models\n    - r-lattice\n    - r-robustbase\n    - r-rrcov\n    - posix                # [win]\n    - {{native}}toolchain  # [win]\n    - gcc                  # [not win]\n\n  run:\n    - r-base\n    - r-mass\n    - r-fit.models\n    - r-lattice\n    - r-robustbase\n    - r-rrcov\n    - libgcc  # [not win]\n\ntest:\n  commands:\n    - $R -e \"library('robust')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('robust')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=robust\n  license: GPL-2.0\n  summary: Methods for robust statistics, a state of the art in the early 2000s, notably for\n    robust regression and robust multivariate analysis.\n  license_family: GPL\n\nextra:\n  recipe-maintainers:\n    - bgruening\n    - daler\n    - johanneskoester\n    - rvalieris\n",
  "rendered_recipe": {

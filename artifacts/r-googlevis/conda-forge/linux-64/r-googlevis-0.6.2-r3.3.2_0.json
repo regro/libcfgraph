@@ -679,6 +679,7 @@
   "subdir": "linux-64",
   "version": "0.6.2"
  },
+ "metadata_version": 1,
  "name": "r-googlevis",
  "raw_recipe": "{% set version = '0.6.2' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-googlevis\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: googleVis_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/googleVis_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/googleVis/googleVis_{{ version }}.tar.gz\n  sha256: c1d6e1acb9e1df3c3d4e9ace2efc167c26aee61df8f0db96e74dbcd76cbab6c5\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-jsonlite\n\n  run:\n    - r-base\n    - r-jsonlite\n\ntest:\n  commands:\n    - $R -e \"library('googleVis')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('googleVis')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/mages/googleVis#googlevis\n  license: GPL (>= 2)\n  summary: R interface to Google's chart tools, allowing users to create interactive charts based\n    on data frames. Charts are displayed locally via the R HTTP help server. A modern\n    browser with an Internet connection is required and for some charts a Flash player.\n    The data remains local and is not uploaded to Google.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n",
  "rendered_recipe": {

@@ -762,6 +762,7 @@
   "subdir": "noarch",
   "version": "0.1.4"
  },
+ "metadata_version": 1,
  "name": "cfanalytics",
  "raw_recipe": "{% set name = \"cfanalytics\" %}\n{% set version = \"0.1.4\" %}\n{% set sha256 = \"aa3d98ebc1c39000c1e7ab08d586e079f8d7c87db15a318e03ff4918bc38c739\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python >=3.6\n    - pip\n  run:\n    - python >=3.6\n    - requests\n    - aiohttp\n    - pandas\n\ntest:\n  imports:\n    - cfanalytics\n    - cfanalytics.core\n    - cfanalytics.tests\n\nabout:\n  home: https://github.com/raybellwaves/cfanalytics\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Downloading, analyzing and visualizing CrossFit data'\n\nextra:\n  recipe-maintainers:\n    - raybellwaves\n",
  "rendered_recipe": {

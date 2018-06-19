@@ -220,6 +220,7 @@
   "subdir": "linux-64",
   "version": "1.8.0"
  },
+ "metadata_version": 1,
  "name": "gst-plugins-base",
  "raw_recipe": "{% set version = \"1.8.0\" %}\n{% set sha256 = \"abc0acc1d15b4b9c97c65cd9689bd6400081853b9980ea428d3c8572dd791522\" %}\n\npackage:\n  name: gst-plugins-base\n  version: {{ version }}\n\nsource:\n  fn: gst-plugins-base-{{ version }}.tar.xz\n  url: https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-{{ version }}.tar.xz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: true  # [win or osx]\n  number: 0\n\nrequirements:\n  build:\n    - gstreamer 1.8.*\n    - m4\n    - perl\n    - xz 5.2.*\n  run:\n    - gstreamer 1.8.*\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libgstallocators-1.0.so\n    - test -f $PREFIX/lib/libgstapp-1.0.so\n    - test -f $PREFIX/lib/libgstaudio-1.0.so\n    - test -f $PREFIX/lib/libgstfft-1.0.so\n    - test -f $PREFIX/lib/libgstpbutils-1.0.so\n    - test -f $PREFIX/lib/libgstriff-1.0.so\n    - test -f $PREFIX/lib/libgstrtp-1.0.so\n    - test -f $PREFIX/lib/libgstrtsp-1.0.so\n    - test -f $PREFIX/lib/libgstsdp-1.0.so\n    - test -f $PREFIX/lib/libgsttag-1.0.so\n    - test -f $PREFIX/lib/libgstvideo-1.0.so\n\nabout:\n    home: http://gstreamer.freedesktop.org/\n    license: GPL2\n    license_file: COPYING\n    summary: \"GStreamer Base Plug-ins\"\n\nextra:\n  recipe-maintainers:\n    - ccordoba12\n    - mingwandroid\n",
  "rendered_recipe": {},

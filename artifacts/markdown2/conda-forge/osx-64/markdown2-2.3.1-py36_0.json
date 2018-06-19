@@ -87,6 +87,7 @@
   "subdir": "osx-64",
   "version": "2.3.1"
  },
+ "metadata_version": 1,
  "name": "markdown2",
  "raw_recipe": "{% set name = \"markdown2\" %}\n{% set version = \"2.3.1\" %}\n{% set sha256 = \"4463dd754e79e4afd490c21d81db67b85b488a0d0adf2fee2b99a69c4e67d80e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - markdown2\n\n  commands:\n    - markdown2 --help\n\nabout:\n  home: https://github.com/trentm/python-markdown2\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: A fast and complete Python implementation of Markdown\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n",
  "rendered_recipe": {

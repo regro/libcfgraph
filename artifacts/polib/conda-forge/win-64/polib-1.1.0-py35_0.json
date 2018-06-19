@@ -601,6 +601,7 @@
   "subdir": "win-64",
   "version": "1.1.0"
  },
+ "metadata_version": 1,
  "name": "polib",
  "raw_recipe": "{% set name = \"polib\" %}\n{% set version = \"1.1.0\" %}\n{% set sha256 = \"fad87d13696127ffb27ea0882d6182f1a9cf8a5e2b37a587751166c51e5a332a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - polib\n\nabout:\n  home: http://bitbucket.org/izi/polib/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A library to manipulate gettext files (po and mo files).'\n  description: |\n    * polib allows you to manipulate, create, modify gettext files (pot, po and\n      mo files). You can load existing files, iterate through it's entries,\n      add, modify entries, comments or metadata, etc... or create new po files\n      from scratch.\n\n    * polib supports out of the box any version of python ranging from 2.4 to\n    * latest 3.X version.\n\n    * polib is pretty stable now and is used by many opensource projects.\n  dev_url: https://bitbucket.org/izi/polib/wiki/Home\n  doc_url: https://polib.readthedocs.io/en/latest/\n    \nextra:\n  recipe-maintainers:\n    - stuertz\n",
  "rendered_recipe": {

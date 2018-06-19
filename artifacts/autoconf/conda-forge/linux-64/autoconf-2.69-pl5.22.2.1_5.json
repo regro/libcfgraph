@@ -769,6 +769,7 @@
   "subdir": "linux-64",
   "version": "2.69"
  },
+ "metadata_version": 1,
  "name": "autoconf",
  "raw_recipe": "{% set version = \"2.69\" %}\n{% set build = 5 %}\n{% set sha256 = \"954bd69b391edc12d6a4a51a2dd1476543da5c6bbf05a95b59dc0dd6fd4c2969\" %}\n\npackage:\n  name: autoconf\n  version: {{ version }}\n\nsource:\n  fn: autoconf-{{ version }}.tar.gz\n  url: http://ftp.gnu.org/gnu/autoconf/autoconf-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - shebang.patch\n    # This patch fixes \"503: autoscan\" test failure.\n    # From http://lists.gnu.org/archive/html/bug-autoconf/2013-01/msg00060.html\n    - autoscan-fix.patch\n\nbuild:\n  number: {{ build }}\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - m4\n    - perl\n  run:\n    - m4\n    - perl\n\ntest:\n  commands:\n    - autoconf --help\n    - conda inspect linkages -p $PREFIX autoconf  # [not win]\n    - conda inspect objects -p $PREFIX autoconf  # [osx]\n\nabout:\n  home: http://www.gnu.org/software/autoconf/\n  license: GPL-3.0\n  license_family: GPL\n  license_file: COPYING\n  summary: 'Extensible M4 macros that produce shell scripts to configure software source code packages.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -703,6 +703,7 @@
   "subdir": "osx-64",
   "version": "0.6.1"
  },
+ "metadata_version": 1,
  "name": "r-shinydashboard",
  "raw_recipe": "{% set version = \"0.6.1\" %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-shinydashboard\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: shinydashboard_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/shinydashboard_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/shinydashboard/shinydashboard_{{ version }}.tar.gz\n  sha256: 1ee38f257433d24455426bc9d85c36f588735a54fbf6143935fed9cccb3bf193\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-htmltools >=0.2.6\n    - r-shiny >=0.12.1\n  run:\n    - r-base\n    - r-htmltools >=0.2.6\n    - r-shiny >=0.12.1\n\ntest:\n  commands:\n    - $R -e \"library('shinydashboard')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('shinydashboard')\\\"\"  # [win]\n\nabout:\n  home: http://rstudio.github.io/shinydashboard/\n  license: GPL-2\n  summary: |\n    Create dashboards with 'Shiny'. This package provides a theme on top of 'Shiny', making\n    it easy to create attractive dashboards.\n  license_family: GPL2\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

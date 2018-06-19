@@ -737,6 +737,7 @@
   "subdir": "osx-64",
   "version": "1.40.0"
  },
+ "metadata_version": 1,
  "name": "mutagen",
  "raw_recipe": "{% set name = \"mutagen\" %}\n{% set version = \"1.40.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_val = \"b2a2c2ce87863af12ed7896f341419cd051a3c72c3c6733db9e83060dcadee5e\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  preserve_egg_dir: True\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - mutagen\n    - mutagen.asf\n    - mutagen.id3\n    - mutagen.mp4\n\n  commands:\n    - mid3cp -h\n    - mid3iconv -h\n    - moggsplit -h\n    - mutagen-inspect -h\n    - mutagen-pony -h\n\nabout:\n  home: https://github.com/quodlibet/mutagen\n  license: GPLv2\n  license_family: GPL\n  license_file: COPYING\n  summary: 'Read and write audio tags for many formats'\n  dev_url: https://github.com/quodlibet/mutagen\n  doc_url: https://mutagen.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

@@ -64,6 +64,7 @@
   "subdir": "linux-64",
   "version": "2016.1.0"
  },
+ "metadata_version": 1,
  "name": "libadjoint",
  "raw_recipe": "{% set version = \"2016.1.0\" %}\n{% set sha256 = \"ae61f0d5112b12f1da2f25d11a2b8ebce2007a2554c346172e1c62e3d240b047\" %}\n\n{% set petsc_version = '3.7.*' %}\n{% set slepc_version = '3.7.*' %}\n\npackage:\n  name: libadjoint\n  version: {{ version }}\n\nsource:\n  fn: libadjoint-{{ version }}.tar.gz\n  url: https://bitbucket.org/dolfin-adjoint/libadjoint/downloads/libadjoint-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: true  # [win or py3k]\n\nrequirements:\n  build:\n    - python\n    - cmake\n    - toolchain\n    - mpich\n    - petsc {{ petsc_version }}\n    - slepc {{ slepc_version }}\n  run:\n    - python\n    - mpich\n    - petsc {{ petsc_version }}\n    - slepc {{ slepc_version }}\n\ntest:\n  imports:\n    - libadjoint\n\nabout:\n  home: http://www.dolfin-adjoint.org/\n  license: LGPL-3.0\n  license_family: LGPL\n  license_file: LICENSE\n  summary: 'library for the high-level algorithmic differentiation of scientific models'\n\n  description: |\n    libadjoint is a library for the high-level algorithmic differentiation of\n    scientific models. It's mainly used by dolfin-adjoint.\n  doc_url: http://www.dolfin-adjoint.org/en/latest/documentation/index.html\n  dev_url: https://bitbucket.org/dolfin-adjoint/libadjoint\n\nextra:\n  recipe-maintainers:\n    - johannesring\n    - funsim\n",
  "rendered_recipe": {},

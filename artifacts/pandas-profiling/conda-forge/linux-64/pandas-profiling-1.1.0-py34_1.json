@@ -30,6 +30,7 @@
   "subdir": "linux-64",
   "version": "1.1.0"
  },
+ "metadata_version": 1,
  "name": "pandas-profiling",
  "raw_recipe": "{% set name = \"pandas-profiling\" %}\n{% set version = \"1.1.0\" %}\n{% set md5 = \"22f1c22418b5c07f371735e74440e631\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pandas >=0.16\n    - matplotlib >=1.4\n\ntest:\n  imports:\n    - pandas_profiling\n\nabout:\n  home: http://github.com/jospolfliet/pandas-profiling\n  license: MIT\n  # license_file: LICENSE # When added to MANIFEST.in \u2013 JosPolfliet/pandas-profiling#22\n  summary: 'Generate profile report for pandas DataFrame'\n  dev_url: http://github.com/jospolfliet/pandas-profiling\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
  "rendered_recipe": {},

@@ -787,6 +787,7 @@
   "subdir": "noarch",
   "version": "2.1.0"
  },
+ "metadata_version": 1,
  "name": "draftjs_exporter",
  "raw_recipe": "{% set name = \"draftjs_exporter\" %}\n{% set version = \"2.1.0\" %}\n{% set sha256 = \"81d5ee40f95d88bf03f50ed30fdb8bf5911d3a0537cf3b3bed5edf15ff511b36\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n\ntest:\n  requires:\n    - beautifulsoup4 >=4.4.1,<5\n    - html5lib >=0.999,<=1.0b10\n    - lxml >=3.6.0\n    - tox >=2.3.1\n    - markov_draftjs ==0.1.1\n    - memory_profiler ==0.47\n    - psutil ==5.4.1\n    - coverage >=4.1.0\n    - flake8 >=3.2.0\n    - isort ==4.2.5\n  imports:\n    - draftjs_exporter\n    - draftjs_exporter.engines\n    - draftjs_exporter.utils\n\n\nabout:\n  home: https://github.com/springload/draftjs_exporter\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Library to convert Draft.js ContentState to HTML'\n  description: \n    Library to convert Draft.js ContentState to HTML\n  doc_url: https://github.com/springload/draftjs_exporter\n  dev_url: https://github.com/springload/draftjs_exporter\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

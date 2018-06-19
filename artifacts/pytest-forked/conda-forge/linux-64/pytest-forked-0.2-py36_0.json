@@ -623,6 +623,7 @@
   "subdir": "linux-64",
   "version": "0.2"
  },
+ "metadata_version": 1,
  "name": "pytest-forked",
  "raw_recipe": "{% set name = \"pytest-forked\" %}\n{% set version = \"0.2\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"e4500cd0509ec4a26535f7d4112a8cc0f17d3a41c29ffd4eab479d2a55b30805\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest >=2.6.0\n    - setuptools_scm\n\n  run:\n    - python\n    - pytest >=2.6.0\n\ntest:\n  imports:\n    - pytest_forked\n  files:\n    - dummy_test.py\n  commands:\n    - py.test --forked dummy_test.py  # [not win]\n\nabout:\n  home: https://github.com/pytest-dev/pytest-forked\n  license: MIT\n  license_file: LICENSE\n  summary: 'run tests in isolated forked subprocesses'\n  dev_url: https://github.com/pytest-dev/pytest-forked\n\nextra:\n  recipe-maintainers:\n    - nicoddemus\n",
  "rendered_recipe": {

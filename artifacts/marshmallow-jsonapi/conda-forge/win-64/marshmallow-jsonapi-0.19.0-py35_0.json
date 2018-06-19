@@ -124,6 +124,7 @@
   "timestamp": 1527900272396,
   "version": "0.19.0"
  },
+ "metadata_version": 1,
  "name": "marshmallow-jsonapi",
  "raw_recipe": "{% set name = \"marshmallow-jsonapi\" %}\n{% set version = \"0.19.0\" %}\n{% set sha256 = \"e3314aab3d88faa46661eaa4624b11d0eabc09a89e6f5feb679dd31c36b6a64b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - marshmallow >=2.8.0\n\ntest:\n  imports:\n    - marshmallow_jsonapi\n\nabout:\n  home: http://github.com/marshmallow-code/{{ name }}\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'JSON API 1.0 formatting with marshmallow'\n\n  description: |\n      marshmallow-jsonapi provides a simple way to produce JSON API-compliant data in any Python web framework.\n\n  doc_url: http://{{ name }}.readthedocs.io/\n  dev_url: https://github.com/marshmallow-code/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
  "rendered_recipe": {

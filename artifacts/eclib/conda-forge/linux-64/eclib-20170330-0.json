@@ -193,6 +193,7 @@
   "subdir": "linux-64",
   "version": "20170330"
  },
+ "metadata_version": 1,
  "name": "eclib",
  "raw_recipe": "{% set version = \"20170330\" %}\n{% set name = \"eclib\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/JohnCremona/eclib/archive/v{{ version }}.tar.gz\n  sha256: c507c3c83a21d445c6fba1c339aa4c37d488aeae829e5368a9bff000b148baf3\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - automake\n    - pari\n    - ntl\n    - libflint\n    - mpfr 3.*\n    - gmp >=5.0.1,<7\n  run:\n    - pari\n    - ntl\n    - libflint\n    - mpfr 3.*\n    - gmp >=5.0.1,<7\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/eclib/arith.h\n    - test -f ${PREFIX}/lib/libec.a\n    - test -f ${PREFIX}/lib/libec.dylib     # [osx]\n    - test -f ${PREFIX}/lib/libec.so        # [linux]\n\nabout:\n  home: https://github.com/JohnCremona/eclib\n  license: GPLv2\n  license_file: COPYING\n  summary: |\n    The eclib package includes mwrank (for 2-descent on elliptic curves over Q) and\n    modular symbol code used to create the elliptic curve database.\n  dev_url: https://github.com/JohnCremona/eclib\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

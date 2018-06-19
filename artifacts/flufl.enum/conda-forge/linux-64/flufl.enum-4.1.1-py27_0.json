@@ -98,6 +98,7 @@
   "subdir": "linux-64",
   "version": "4.1.1"
  },
+ "metadata_version": 1,
  "name": "flufl.enum",
  "raw_recipe": "{% set name = \"flufl.enum\" %}\n{% set version = \"4.1.1\" %}\n{% set sha256 = \"67edefaca4347663c95f370398edce1d2267f293f25addca5680bd8bdc51a51c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py3k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - flufl\n    - flufl.enum\n    - flufl.enum.docs\n    - flufl.enum.tests\n\nabout:\n  home: http://launchpad.net/flufl.enum\n  license: LGPLv3+\n  summary: 'A Python enumeration package.'\n\nextra:\n  recipe-maintainers:\n    - cehbrecht\n",
  "rendered_recipe": {

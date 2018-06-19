@@ -495,6 +495,7 @@
   "subdir": "osx-64",
   "version": "2.12"
  },
+ "metadata_version": 1,
  "name": "distarray",
  "raw_recipe": "{% set name = \"distarray\" %}\n{% set version = \"2.12\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/UV-CDAT/distarray/archive/2.12.tar.gz\n  sha256: f3b694ea9e361b4ea98b408dfda103b08e913a70f5a18ac6e40d37d62d1ad613\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - future\n  run:\n    - python\n    - future\ntest:\n    imports:\n     - distarray\n\nabout:\n  home: http://uvcdat.llnl.gov/\n  license: BSD 3-Clause\n  license_file: 'license.txt'\n  summary: 'Big Array partitionned in sub arrays'\n  description: |\n      Divide work among proceses for ensemble runs, linear interpolation,\n      finity differencign.  Leverage the cores on the computer and is MPI ready.\n  dev_url: https://github.com/UV-CDAT/distarray\n\nextra:\n  recipe-maintainers:\n    - dnadeau4\n    - doutriaux1\n",
  "rendered_recipe": {

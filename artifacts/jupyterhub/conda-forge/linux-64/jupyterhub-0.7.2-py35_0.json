@@ -281,6 +281,7 @@
   "subdir": "linux-64",
   "version": "0.7.2"
  },
+ "metadata_version": 1,
  "name": "jupyterhub",
  "raw_recipe": "{% set version = \"0.7.2\" %}\n\npackage:\n  name: jupyterhub\n  version: {{ version }}\n\nsource:\n  fn: jupyterhub-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/j/jupyterhub/jupyterhub-{{ version }}.tar.gz\n  sha256: cbaaeb937a56ac4a1fef3d8b3a119fce77065d11a95db2006a64d9964ccdba5c\n\nbuild:\n  number: 0\n  skip: true  # [win or py2k]\n  script: pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - configurable-http-proxy\n    - python\n    - traitlets >=4.1\n    - tornado >=4.1\n    - jinja2\n    - pamela\n    - sqlalchemy\n    - requests\n\ntest:\n  imports:\n    - jupyterhub\n    - jupyterhub.apihandlers\n    - jupyterhub.handlers\n    - jupyterhub.tests\n    - jupyterhub.app\n  commands:\n    - python -m jupyterhub --help-all\n\nabout:\n  home: https://github.com/jupyterhub/jupyterhub\n  license: BSD 3-Clause\n  summary: Multi-user server for Jupyter notebooks\n\nextra:\n  recipe-maintainers:\n    - minrk\n",
  "rendered_recipe": {

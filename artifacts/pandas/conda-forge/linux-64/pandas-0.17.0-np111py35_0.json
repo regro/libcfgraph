@@ -440,6 +440,7 @@
   "subdir": "linux-64",
   "version": "0.17.0"
  },
+ "metadata_version": 1,
  "name": "pandas",
  "raw_recipe": "{% set version=\"0.17.0\" %}\n\npackage:\n    name: pandas\n    version: {{ version }}\n\nsource:\n    fn: pandas-{{ version }}.tar.gz\n    url: https://github.com/pydata/pandas/archive/v{{ version }}.tar.gz\n    sha256: 450b2de0da3ac987191c4c682fa624318768560c598a1a97c4e854dc6c898182\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - cython\n    - numpy             x.x\n    - setuptools\n    - pytz\n    - python-dateutil\n\n  run:\n    - python\n    - numpy             x.x\n    - python-dateutil\n    - pytz\n\ntest:\n  imports:\n    - pandas\n\nabout:\n  home: http://pandas.pydata.org\n  license: BSD 3-clause\n  summary: high-performance, easy-to-use data structures and data analysis tools\n\nextra:\n  recipe-maintainers:\n    - jreback\n    - msarahan\n",
  "rendered_recipe": {},

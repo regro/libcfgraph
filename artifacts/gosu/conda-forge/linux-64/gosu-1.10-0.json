@@ -712,6 +712,7 @@
   "subdir": "linux-64",
   "version": "1.10"
  },
+ "metadata_version": 1,
  "name": "gosu",
  "raw_recipe": "{% set version = \"1.10\" %}\n{% set sha256 = \"bcbe8ada8c435a253b1fa438f505dd311832a88f52316fd7d30342b106a4242c\" %}\n\npackage:\n  name: gosu\n  version: {{ version }}\n\nsource:\n  fn: gosu-{{ version }}.tar.gz\n  url: https://github.com/tianon/gosu/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - go\n\ntest:\n  commands:\n    - which gosu\n\n    # No real help option, but try anyways.\n    - gosu --help || true\n\nabout:\n  home: https://github.com/tianon/gosu\n  license: GPL-3\n  license_family: GPL\n  license_file: \"{{ SRC_DIR }}/LICENSE\"\n  summary: Simple Go-based setuid+setgid+setgroups+exec\n\n  description: |\n    This is a simple tool grown out of the simple fact that `su` and `sudo`\n    have very strange and often annoying TTY and signal-forwarding behavior.\n    They're also somewhat complex to setup and use (especially in the case of\n    `sudo`), which allows for a great deal of expressivity, but falls flat if\n    all you need is \"run this specific application as this specific user and\n    get out of the pipeline\".\n  dev_url: https://github.com/tianon/gosu\n  doc_url: https://github.com/tianon/gosu\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

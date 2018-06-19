@@ -1579,6 +1579,7 @@
   "subdir": "osx-64",
   "version": "0.0.1"
  },
+ "metadata_version": 1,
  "name": "django-emailhub",
  "raw_recipe": "{% set name = \"django-emailhub\" %}\n{% set version = \"0.0.1\" %}\n{% set sha256 = \"b951a325783465e55c1798e612b26ab22f66878b1d2fab5291a868965a174ac2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://gitlab.com/h3/{{ name }}/repository/master/archive.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: True  # [py36]\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - django >=1.8,<=1.11\n    - six >=1.11.0\n\ntest:\n  requires:\n    - tox >=2.9.1\n  imports:\n    - emailhub\n\nabout:\n  home: https://gitlab.com/h3/django-emailhub\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Django EmailHub is an application that bring advanced email functionnalities to Django such as\n            templates, draft state, batch sending and archiving.'\n  description: \n    Django EmailHub is an application that bring advanced email functionnalities to Django such as\n    templates, draft state, batch sending and archiving.\n  doc_url: http://django-emailhub.readthedocs.io/\n  dev_url: https://gitlab.com/h3/django-emailhub\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

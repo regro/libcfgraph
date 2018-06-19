@@ -159,6 +159,7 @@
   "timestamp": 1528274889092,
   "version": "3.1.0"
  },
+ "metadata_version": 1,
  "name": "ipydatawidgets",
  "raw_recipe": "{% set name = \"ipydatawidgets\" %}\n{% set version = \"3.1.0\" %}\n{% set sha256 = \"973370568799469ed2a6c402f93e2fa8a63c74e044ea1959def3261fb6158464\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 1\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - ipywidgets >=7,<8\n    - numpy\n    - traittypes >=0.2\n    - ipyscales\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: http://github.com/vidartf/{{ name }}\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'A set of widgets to help facilitate reuse of large datasets across widgets'\n\nextra:\n  recipe-maintainers:\n    - vidartf\n",
  "rendered_recipe": {

@@ -722,6 +722,7 @@
   "subdir": "noarch",
   "version": "0.4.0"
  },
+ "metadata_version": 1,
  "name": "engarde",
  "raw_recipe": "{% set name = \"engarde\" %}\n{% set version = \"0.4.0\" %}\n{% set sha256 = \"05cb8e5299d64ac1cd277fe69815b2a611af1607d2686461b46a357210b040f2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - pandas\ntest:\n  imports:\n    - engarde\n\nabout:\n  home: https://github.com/tomaugspurger/engarde\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A python package for defensive data analysis.'\n  description: |\n    A python package for defensive data analysis.\n  doc_url: http://engarde.readthedocs.io\n  dev_url: https://github.com/tomaugspurger/engarde\n\nextra:\n  recipe-maintainers:\n    - TomAugspurger\n    - phobson\n",
  "rendered_recipe": {

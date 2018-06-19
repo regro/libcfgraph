@@ -680,6 +680,7 @@
   "subdir": "osx-64",
   "version": "2.3"
  },
+ "metadata_version": 1,
  "name": "libhdfs3",
  "raw_recipe": "{% set version = \"2.3\" %}\n\npackage:\n  name: libhdfs3\n  version: \"{{ version }}\"\n\nsource:\n#  fn: libhdfs3-{{ version }}.tar.gz\n#  url: https://github.com/Pivotal-Data-Attic/pivotalrd-libhdfs3/archive/v{{ version }}.tar.gz\n#  sha256: b68d112a3c234a50f646071b1de07e5e191018f6762492cd04d57390e1fd5a16\n  git_url: https://github.com/martindurant/libhdfs3-downstream.git\n  patches:\n      - CMakeLists.txt.diff\n\nbuild:\n  number: 1\n  # This package is a dependency of hdfs3, which is primarily used with HDFS on Linux.\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - cmake\n    - boost-cpp 1.66.0\n    - libgsasl 1.8.*\n    - libntlm\n    - libprotobuf 3.5.*\n    - libuuid\n    - libxml2 2.9.*\n    - krb5 1.14.*\n  run:\n    - boost-cpp 1.66.0\n    - libgsasl 1.8.*\n    - libntlm\n    - libprotobuf 3.5.*\n    - libuuid\n    - libxml2 2.9.*\n    - krb5 1.14.*\n    - curl\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libhdfs3.so  # [linux]\n    - test -f $PREFIX/lib/libhdfs3.dylib  # [osx]\n\nabout:\n  home: https://github.com/PivotalRD/libhdfs3\n  license: Apache 2.0\n  summary: A Native C/C++ HDFS Client\n\nextra:\n  recipe-maintainers:\n    - koverholt\n    - martindurant\n    - mrocklin\n",
  "rendered_recipe": {

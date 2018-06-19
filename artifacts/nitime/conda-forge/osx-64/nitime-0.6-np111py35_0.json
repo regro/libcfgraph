@@ -80,6 +80,7 @@
   "subdir": "osx-64",
   "version": "0.6"
  },
+ "metadata_version": 1,
  "name": "nitime",
  "raw_recipe": "{% set version = \"0.6\" %}\n\npackage:\n    name: nitime\n    version: {{ version }}\n\nsource:\n    fn: nitime-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/n/nitime/nitime-{{ version }}.tar.gz\n    md5: 43d92863b8792a50336b40635999f909\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n        - numpy x.x\n        - cython\n    run:\n        - python\n        - numpy x.x\n        - scipy\n\ntest:\n    imports:\n        - nitime\n        - nitime.algorithms\n        - nitime.algorithms.tests\n        - nitime.analysis\n        - nitime.analysis.tests\n        - nitime.fmri\n        - nitime.fmri.tests\n        - nitime.tests\n\nabout:\n    home: http://nipy.org/nitime\n    license: BSD-3-Clause\n    summary: Timeseries analysis for neuroscience data\n\nextra:\n    recipe-maintainers:\n        - arokem\n        - ocefpaf\n",
  "rendered_recipe": {},

@@ -154,6 +154,7 @@
   "timestamp": 1528467092500,
   "version": "1.13.1"
  },
+ "metadata_version": 1,
  "name": "h5utils",
  "raw_recipe": "{% set name = \"h5utils\" %}\n{% set version = \"1.13.1\" %}\n{% set sha256 = \"c5a76f064d6daa3e65583dce2b61202510e67cf6590f076af9a8aa72511d7d65\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/stevengj/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libpng >=1.6.32,<1.6.35\n    - hdf5 1.10.2\n    - zlib 1.2.11\n  run:\n    - libpng >=1.6.32,<1.6.35\n    - hdf5 1.10.2\n    - zlib 1.2.11\n\ntest:\n  commands:\n    - h5topng -h\n    - h5totxt -h\n    - h5fromtxt -h\n    - h5tovtk -h\n\nabout:\n  home: http:/github.com/stevengj/h5utils\n  license: MIT, GPL2\n  license_file: COPYING\n  summary: A set of utilities for visualization and conversion of scientific data in the free portable HDF5 format\n  doc_url: https://github.com/stevengj/h5utils/tree/master/doc\n  dev_url: https://github.com/stevengj/h5utils\n\nextra:\n  recipe-maintainers:\n    - ChristopherHogan\n",
  "rendered_recipe": {

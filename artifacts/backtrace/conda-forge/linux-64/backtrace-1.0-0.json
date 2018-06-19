@@ -752,6 +752,7 @@
   "subdir": "linux-64",
   "version": "1.0"
  },
+ "metadata_version": 1,
  "name": "backtrace",
  "raw_recipe": "{% set version = \"1.0\" %}\n\npackage:\n    name: backtrace\n    version: {{ version }}\n\nsource:\n    url: https://github.com/ianlancetaylor/libbacktrace/archive/177940370e4a6b2509e92a0aaa9749184e64af43.zip\n    sha256: 21ac9a4209f7aeef766c482be53a7fa365063c031c7077e2070b491202983b31\n\nbuild:\n    number: 0\n    skip: true  # [win or osx]\n\nrequirements:\n    build:\n        - zlib 1.2.11\n    run:\n        - zlib 1.2.11\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libbacktrace.a\n        - test -f ${PREFIX}/lib/libbacktrace.so\n        - test -f ${PREFIX}/include/backtrace.h\n        \nabout:\n    home: https://github.com/ianlancetaylor/libbacktrace\n    license: BSD 3-clause\n    summary: A C library that may be linked into a C/C++ program to produce symbolic backtraces\n    license_file: LICENSE\n\nextra:\n    recipe-maintainers:\n        - bluescarni\n",
  "rendered_recipe": {

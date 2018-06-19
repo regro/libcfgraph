@@ -701,6 +701,7 @@
   "subdir": "osx-64",
   "version": "1.11.2"
  },
+ "metadata_version": 1,
  "name": "fswatch",
  "raw_recipe": "{% set name = \"fswatch\" %}\n{% set version = \"1.11.2\" %}\n{% set sha256 = \"b7dadb84848ce666aac0311f9b4c739fbfee6a90c6097807a1f45ad4367294c2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/emcrisostomo/fswatch/releases/download/{{ version }}/fswatch-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool    # [unix]\n\ntest:\n  commands:\n    - fswatch --help\n    - test -d \"${PREFIX}/include/libfswatch\"              # [unix]\n    - test -f \"${PREFIX}/lib/libfswatch${SHLIB_EXT}\"      # [unix]\n    - conda inspect linkages -p \"${PREFIX}\" \"{{ name }}\"  # [unix]\n    - conda inspect objects -p \"${PREFIX}\" \"{{ name }}\"   # [osx]\n\nabout:\n  home: https://github.com/emcrisostomo/fswatch\n  license: GPL-3.0\n  license_family: GPL\n  license_file: COPYING\n  summary: |\n    \"A cross-platform file change monitor with multiple backends: Apple OS X\n     File System Events, *BSD kqueue, Solaris/Illumos File Events Notification,\n     Linux inotify, Microsoft Windows and a stat()-based backend.\"\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {

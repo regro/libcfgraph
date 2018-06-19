@@ -772,6 +772,7 @@
   "subdir": "linux-64",
   "version": "1.2_5"
  },
+ "metadata_version": 1,
  "name": "r-aer",
  "raw_recipe": "{% set version = '1.2-5' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-aer\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: AER_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/AER_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/AER/AER_{{ version }}.tar.gz\n  sha256: ef0cf14ff9d3de2b97e5855243426cc918808eb1011f0e2253b3b00043927a62\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-formula >=0.2_0\n    - r-car >=2.0_19\n    - r-lmtest\n    - r-sandwich\n    - r-survival >=2.37_5\n    - r-zoo\n  run:\n    - r-base\n    - r-formula >=0.2_0\n    - r-car >=2.0_19\n    - r-lmtest\n    - r-sandwich\n    - r-survival >=2.37_5\n    - r-zoo\n\ntest:\n  commands:\n    - $R -e \"library('AER')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('AER')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=AER\n  license: GPL (>= 2)\n  summary: |\n    Functions, data sets, examples, demos, and vignettes for the book Christian Kleiber\n    and Achim Zeileis (2008), Applied Econometrics with R, Springer-Verlag, New York.\n    ISBN 978-0-387-77316-2. (See the vignette \"AER\" for a package overview.)\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

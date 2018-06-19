@@ -97,6 +97,7 @@
   "subdir": "win-64",
   "version": "3.2"
  },
+ "metadata_version": 1,
  "name": "iolabs",
  "raw_recipe": "{% set name = \"iolabs\" %}\n{% set version = \"3.2\" %}\n{% set sha256 = \"74c8dbc4cd4bfd5e01f8a2655455330cac81dd3de99a766630ecd0896b8be84b\" %}\n\npackage:\n  name: iolabs\n  version: {{version}}\n\nsource:\n  fn: ioLabs-3.2.tar.gz\n  url: https://github.com/ioLab/python-ioLabs/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n  skip: true  # [py3k or linux]\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - hid\n\nabout:\n  home: https://github.com/ioLab/python-ioLabs\n  license: BSD-3\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'ioLab response box library'\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - kastman\n",
  "rendered_recipe": {

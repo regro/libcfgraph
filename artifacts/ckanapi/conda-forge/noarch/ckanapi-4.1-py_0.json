@@ -739,6 +739,7 @@
   "subdir": "noarch",
   "version": "4.1"
  },
+ "metadata_version": 1,
  "name": "ckanapi",
  "raw_recipe": "{% set version = \"4.1\" %}\n\npackage:\n  name: ckanapi\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/ckanapi/ckanapi-{{ version }}.tar.gz\n  sha256: b52cc659f436d5d226de9d40dbe6e30e930968f97d2f4138631dc00096101d9d\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - docopt\n    - requests\n    - simplejson\n\ntest:\n  imports:\n    - ckanapi\n    - ckanapi.cli\n    - ckanapi.tests\n\nabout:\n  home: https://github.com/ckan/ckanapi\n  license: MIT\n  # license_file: COPYING\n  summary: 'A command line interface and Python module for accessing the CKAN Action API'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

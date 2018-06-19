@@ -91,6 +91,7 @@
   "subdir": "linux-64",
   "version": "3.2.1"
  },
+ "metadata_version": 1,
  "name": "clapack",
  "raw_recipe": "package:\n{% set name = \"clapack\" %}\n{% set version = \"3.2.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-uvcdat-{{ version }}.tar.gz\n  url: http://uvcdat.llnl.gov/cdat/resources/clapack-3.2.1-CMAKE.tgz\n  sha256: 0b3f782bc24845d85f36bafbff0f2f1384dc72df730fda4e7924ec1a70baca5a\n\nbuild:\n  number: 0\n  skip: True  # [win] \n\nrequirements:\n  build:\n    - cmake\n  run:\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/liblapack.a\n    - test -f $PREFIX/lib/libblas.a\n    - test -f $PREFIX/lib/libf2c.a\n\nabout:\n  home: http://www.netlib.org/clapack/faq.html\n  license: BSD 3-Clause\n  license_file: 'COPYING'\n  summary: 'LAPACK provides routines for solving systems of equations'\n  description: |\n      The CLAPACK library was built using a Fortran to C \n      conversion utility called f2c. The entire Fortran 77 \n      LAPACK library is run through f2c to obtain C code, \n      and then modified to improve readability. CLAPACK's \n      goal is to provide LAPACK for someone who does not have \n      access to a Fortran compiler. \n  dev_url: http://www.netlib.org/clapack/\n\nextra:\n  recipe-maintainers:\n    - dnadeau4\n    - doutriaux1\n",
  "rendered_recipe": {

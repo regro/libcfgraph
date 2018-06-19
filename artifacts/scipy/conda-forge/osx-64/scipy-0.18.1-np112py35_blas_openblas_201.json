@@ -846,6 +846,7 @@
   "subdir": "osx-64",
   "version": "0.18.1"
  },
+ "metadata_version": 1,
  "name": "scipy",
  "raw_recipe": "{% set version = \"0.18.1\" %}\n\n{% set variant = \"openblas\" %}\n\n\npackage:\n  name: scipy\n  version: {{ version }}\n\nsource:\n  fn: scipy-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/s/scipy/scipy-{{ version }}.tar.gz\n  sha256: 8ab6e9c808bf2fb3e8576cd8cf07226d9cdc18b012c06d9708429a821ac6634e\n\nbuild:\n  number: 201\n  # We lack openblas on Windows, and therefore can't build scipy there either currently.\n  skip: true  # [win]\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - toolchain\n    - gcc          # [osx]\n    - python\n    - setuptools\n    - cython\n    - blas 1.1 {{ variant }}\n    - libgfortran  # [linux]\n    - openblas 0.2.19|0.2.19.*\n    - numpy x.x\n  run:\n    - python\n    - blas 1.1 {{ variant }}\n    - libgfortran\n    - openblas 0.2.19|0.2.19.*\n    - numpy x.x\n\ntest:\n  requires:\n    - nose\n    - mpmath\n\nabout:\n  home: http://www.scipy.org/\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: Scientific Library for Python\n  description: |\n    SciPy is a Python-based ecosystem of open-source software for mathematics,\n    science, and engineering.\n  doc_url: http://www.scipy.org/docs.html\n  dev_url: https://github.com/scipy/scipy\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - msarahan\n    - rgommers\n    - ocefpaf\n",
  "rendered_recipe": {

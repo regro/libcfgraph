@@ -114,6 +114,7 @@
   "subdir": "osx-64",
   "version": "0.3.3"
  },
+ "metadata_version": 1,
  "name": "trackpy",
  "raw_recipe": "{% set name = \"trackpy\" %}\n{% set version = \"0.3.3\" %}\n{% set sha256 = \"90b57f73b4641eeeee05c8d3c5ce252642bdc66c50cff96b9e2ed77958867b1b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy >=1.7\n    - scipy >=0.12\n    - six >=1.8\n    - pandas >=0.13\n    - pims >=0.3.3\n    - pyyaml\n    - matplotlib\n  run:\n    - python\n    - setuptools\n    - numpy >=1.7\n    - scipy >=0.12\n    - six >=1.8\n    - pandas >=0.13\n    - pims >=0.3.3\n    - pyyaml\n    - matplotlib\n    - pytables  # optional\n\ntest:\n  imports:\n    - trackpy\n\nabout:\n  home: https://github.com/soft-matter/trackpy\n  license: BSD-3-Clause\n  license_file: LICENSE\n  summary: 'Python particle tracking toolkit'\n  description: |\n    trackpy is a Python package for particle tracking in 2D, 3D,\n    and higher dimensions.\n  doc_url: http://soft-matter.github.io/trackpy\n\nextra:\n  recipe-maintainers:\n    - danielballan\n    - tacaswell\n    - nkeim\n    - caspervdw\n    - ericdill\n",
  "rendered_recipe": {

@@ -690,6 +690,7 @@
   "subdir": "win-64",
   "version": "5.1.4"
  },
+ "metadata_version": 1,
  "name": "giflib",
  "raw_recipe": "{% set version = \"5.1.4\" %}\n\npackage:\n  name: giflib\n  version: {{ version }}\n\nsource:\n  url: http://downloads.sourceforge.net/project/giflib/giflib-{{ version }}.tar.gz\n  sha256: 34a7377ba834397db019e8eb122e551a49c98f49df75ec3fcc92b9a794a4f6d1\n\nbuild:\n  number: 0\n  skip: true  # [win and py27]\n  features:\n    - vc9   # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py>=35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - vc 9   # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py>=35]\n  run:\n    - vc 9   # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py>=35]\n\n\ntest:\n  commands:\n    - gif2rgb -h    # [unix]\n    - gifbuild -h   # [unix]\n    - gifclrmp -h   # [unix]\n    - gifecho -h    # [unix]\n    - giffix -h     # [unix]\n    - gifinto -h    # [unix]\n    - giftext -h    # [unix]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n    - gif2rgb.exe -h    # [win]\n    - gifbuild.exe -h   # [win]\n    - gifclrmp.exe -h   # [win]\n    - gifecho.exe -h    # [win]\n    - giffix.exe -h     # [win]\n    - gifinto.exe -h    # [win]\n    - giftext.exe -h    # [win]\n\nabout:\n  home: http://giflib.sourceforge.net\n  license: MIT\n  summary: Library for reading and writing gif images\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - 183amir\n",
  "rendered_recipe": {

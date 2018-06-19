@@ -87,6 +87,7 @@
   "subdir": "win-64",
   "version": "2.2.0"
  },
+ "metadata_version": 1,
  "name": "diskcache",
  "raw_recipe": "{%set name = \"diskcache\" %}\n{%set version = \"2.2.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"ccae795af37ad343d1bb68f94fd3180d7029e9cc11833f04cd92fd4c4c867bad\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - diskcache\n\nabout:\n  home: http://www.grantjenks.com/docs/diskcache/\n  license: Apache 2.0\n  summary: 'Disk and file backed cache.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

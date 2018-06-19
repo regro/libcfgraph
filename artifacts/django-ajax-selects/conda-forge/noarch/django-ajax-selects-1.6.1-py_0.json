@@ -727,6 +727,7 @@
   "subdir": "noarch",
   "version": "1.6.1"
  },
+ "metadata_version": 1,
  "name": "django-ajax-selects",
  "raw_recipe": "{% set version = \"1.6.1\" %}\n\npackage:\n  name: django-ajax-selects\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/d/django-ajax-selects/django-ajax-selects-{{ version }}.tar.gz\n  sha256: c22d9f005116f67ada9b907ca84cdfa6c53fa53edc386dfe82c348e3627a73bd\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django\n\ntest:\n  imports:\n    - ajax_select\n\nabout:\n  home: https://github.com/crucialfelix/django-ajax-selects/\n  license: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'Edit ForeignKey, ManyToManyField and CharField in Django Admin using jQuery UI AutoComplete.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

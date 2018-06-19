@@ -765,6 +765,7 @@
   "subdir": "noarch",
   "version": "0.5.1"
  },
+ "metadata_version": 1,
  "name": "django-pandas",
  "raw_recipe": "{% set name = \"django-pandas\" %}\n{% set version = \"0.5.1\" %}\n{% set sha256 = \"d63a800ca2396fc6f6d2deeba787d6b8b0e394c476c7a8fe726e65a3cf75deac\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django >=1.4.2\n    - pandas >=0.14.1\n\ntest:\n  imports:\n    - django_pandas\n  requires:\n    - django >=1.4.2\n    - pandas 0.20.1\n    - coverage >=4.0\n    \nabout:\n  home: https://github.com/chrisdev/django-pandas\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: 'Tools for working with pandas in your Django projects'\n  description: \n    Tools for working with pandas in your Django projects\n  doc_url: https://media.readthedocs.org/pdf/django-pandas/latest/django-pandas.pdf\n  dev_url: https://github.com/chrisdev/django-pandas\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

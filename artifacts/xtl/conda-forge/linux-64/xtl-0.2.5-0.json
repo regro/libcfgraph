@@ -721,6 +721,7 @@
   "subdir": "linux-64",
   "version": "0.2.5"
  },
+ "metadata_version": 1,
  "name": "xtl",
  "raw_recipe": "{% set name = \"xtl\" %}\n{% set version = \"0.2.5\" %}\n{% set sha256 = \"457200718e8e738176c77759e329d3216c3edab48fe30832de0a321410514f0e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/QuantStack/xtl/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/xtl/xbasic_fixed_string.hpp  # [unix]\n    - test -f ${PREFIX}/lib/cmake/xtl/xtlConfig.cmake  # [unix]\n    - test -f ${PREFIX}/lib/cmake/xtl/xtlConfigVersion.cmake  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\xtl\\xbasic_fixed_string.hpp (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\xtlConfig.cmake (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_PREFIX%\\lib\\cmake\\xtlConfigVersion.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://quantstack.net\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'The QuantStack tools library'\n  description: 'Basic tools (containers, algorithms) used by other packages from Quantstack'\n  doc_url: http://xtl.readthedocs.io\n  dev_url: https://github.com/QuantStack/xtl\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n",
  "rendered_recipe": {

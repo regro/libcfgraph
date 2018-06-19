@@ -694,6 +694,7 @@
   "subdir": "osx-64",
   "version": "0.9.4"
  },
+ "metadata_version": 1,
  "name": "r-qiimer",
  "raw_recipe": "{% set version = '0.9.4' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-qiimer\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: qiimer_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/qiimer_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/qiimer/qiimer_{{ version }}.tar.gz\n\n  sha256: ae9d576dc3e660fa41209e85a5dcd688af2121127462f0b47cc2c69be2d52f2b\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-pheatmap\n\n  run:\n    - r-base\n    - r-pheatmap\n\ntest:\n  commands:\n    - $R -e \"library('qiimer')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('qiimer')\\\"\"  # [win]\n\nabout:\n  home: https://cran.r-project.org/web/packages/qiimer/index.html\n  license: GPL (>= 2)\n  summary: Open QIIME output files in R, compute statistics, and create plots from the data.\n  license_family: GPL3\n  license_file: '{{ environ[\"PREFIX\"] }}\\/lib\\/R\\/share\\/licenses\\/GPL-3'  # [unix]\n  license_file: '{{ environ[\"PREFIX\"] }}\\R\\share\\licenses\\GPL-3'  # [win]\nextra:\n   recipe-maintainers:\n    - MathiasHaudgaard\n    - FrodePedersen\n    - ArneKr\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n",
  "rendered_recipe": {

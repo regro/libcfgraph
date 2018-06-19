@@ -782,6 +782,7 @@
   "subdir": "linux-64",
   "version": "1.7.1"
  },
+ "metadata_version": 1,
  "name": "cysignals",
  "raw_recipe": "{% set name = \"cysignals\" %}\n{% set version = \"1.7.1\" %}\n{% set sha256 = \"52282b5e9289cf2aaa11d961a199343fa86e2ba864ef2136d287511e35f2d396\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/sagemath/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n  - upstream_issue88_anonymous.patch\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cython\n    - pip\n    - toolchain\n    - pari\n  run:\n    - python\n    - pari\n\ntest:\n  imports:\n    - cysignals\n\nabout:\n  home: https://github.com/sagemath/cysignals\n  license: LGPL-3.0\n  license_file: LICENSE\n  summary: 'interrupt and signal handling for Cython'\n\n  doc_url: http://cysignals.readthedocs.io\n  dev_url: https://github.com/sagemath/cysignals\n\nextra:\n  recipe-maintainers:\n    - dfroger\n    - isuruf\n    - saraedum\n",
  "rendered_recipe": {

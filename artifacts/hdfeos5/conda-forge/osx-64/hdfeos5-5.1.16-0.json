@@ -671,6 +671,7 @@
   "subdir": "osx-64",
   "version": "5.1.16"
  },
+ "metadata_version": 1,
  "name": "hdfeos5",
  "raw_recipe": "{% set version = \"5.1.16\" %}\n\npackage:\n  name: hdfeos5\n  version: {{ version }}\n\nsource:\n  url: ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos5/latest_release/HDF-EOS{{ version }}.tar.Z\n  sha256: 7054de24b90b6d9533329ef8dc89912c5227c83fb447792103279364e13dd452\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - hdf5 1.10.1\n    - zlib 1.2.11\n  run:\n    - hdf5 1.10.1\n    - zlib 1.2.11\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libGctp.a  # [not win]\n    - test -f ${PREFIX}/lib/libhe5_hdfeos.a  # [not win]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://hdfeos.org/index.php\n  license: Public Domain\n  summary: 'Earth Observing System HDF.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - jhamman\n    - khallock\n",
  "rendered_recipe": {

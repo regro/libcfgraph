@@ -522,6 +522,7 @@
   "subdir": "win-64",
   "version": "2.9.1"
  },
+ "metadata_version": 1,
  "name": "flask-socketio",
  "raw_recipe": "{% set name = \"Flask-SocketIO\" %}\n{% set version = \"2.9.1\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"62b86dc61515f9ef346cc36c371665457628a2ef3bae4323dca218f4514ee488\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  preserve_egg_dir: True\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - flask >=0.9\n    - python-socketio >=1.5.0\n    - python-engineio >=1.0.0\n\ntest:\n  imports:\n    - flask_socketio\n    - flask_socketio.cli\n    - flask_socketio.namespace\n    - flask_socketio.test_client\n\nabout:\n  home: https://github.com/miguelgrinberg/Flask-SocketIO/\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: 'Socket.IO integration for Flask applications'\n  doc_url: https://flask-socketio.readthedocs.io/en/latest/\n  dev_url: https://github.com/miguelgrinberg/Flask-SocketIO/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

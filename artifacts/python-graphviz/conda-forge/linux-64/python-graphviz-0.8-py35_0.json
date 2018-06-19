@@ -722,6 +722,7 @@
   "subdir": "linux-64",
   "version": "0.8"
  },
+ "metadata_version": 1,
  "name": "python-graphviz",
  "raw_recipe": "{% set version = \"0.8\" %}\n{% set sha256 = \"889c720d9955b804d56a8e842621558cbb5cbbdd93cbdf55862371311646e344\" %}\n{% set number = \"0\" %}\n\npackage:\n  name: python-graphviz\n  version: {{ version }}\n\nsource:\n  fn: python-graphviz-{{ version }}.zip\n  url: https://pypi.io/packages/source/g/graphviz/graphviz-{{ version }}.zip\n  sha256: {{ sha256 }}\n  patches:\n    # needed due to the Windows batch script wrappers in conda-forge Graphviz\n    # see https://github.com/conda-forge/graphviz-feedstock/blob/bbfe3c7be2a448dd11db165a18c3edfd5ee6a95d/recipe/bld.bat#L27-L32\n    - windows-bat.patch  # [win]\n\nbuild:\n  number: {{ number }}\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - graphviz\n\ntest:\n  imports:\n    - graphviz\n  requires:\n    - dask\n\nabout:\n  home: https://github.com/xflr6/graphviz\n  doc_url: https://graphviz.readthedocs.io\n  dev_url: https://github.com/xflr6/graphviz\n\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n\n  summary: Simple Python interface for Graphviz\n  description: |\n    This package facilitates the creation and rendering of graph\n    descriptions in the DOT language of the Graphviz graph\n    drawing software from Python.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - scopatz\n",
  "rendered_recipe": {

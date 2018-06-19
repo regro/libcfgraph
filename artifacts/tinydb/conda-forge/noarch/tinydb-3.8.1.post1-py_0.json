@@ -775,6 +775,7 @@
   "subdir": "noarch",
   "version": "3.8.1.post1"
  },
+ "metadata_version": 1,
  "name": "tinydb",
  "raw_recipe": "{% set version = \"3.8.1.post1\" %}\n\npackage:\n  name: tinydb\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/t/tinydb/tinydb-{{ version }}.tar.gz\n  sha256: 961d7fbeb09843251b8a016965269c2fb0e898f16e8686bcf40e23d385219d78\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - pip\n    - python\n    - pytest-runner\n  run:\n    - python\n\ntest:\n  imports:\n    - tinydb\n\nabout:\n  home: https://github.com/msiemens/tinydb\n  license: MIT\n  license_family: MIT\n  # license file is not included. Should raise this on upstream.\n  #license_file: LICENCE\n  summary: TinyDB is a tiny, document oriented database optimized for your happiness :)\n  description: |\n    TinyDB is a lightweight document oriented database optimized for your\n    happiness :) It's written in pure Python and has no external\n    dependencies. The target are small apps that would be blown away by a\n    SQL-DB or an external database server.\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - licode\n    - msiemens\n    - tacaswell\n    - ericmjl\n",
  "rendered_recipe": {

@@ -100,6 +100,7 @@
   "subdir": "linux-64",
   "version": "2.7.7"
  },
+ "metadata_version": 1,
  "name": "antlr",
  "raw_recipe": "package:\n    name: antlr\n    version: 2.7.7\n\nsource:\n    fn: antlr-2.7.7.tar.gz\n    url: http://www.antlr2.org/download/antlr-2.7.7.tar.gz\n    sha256: 853aeb021aef7586bda29e74a6b03006bcb565a755c86b66032d8ec31b67dbb9\n    patches:\n        - CharScanner.patch\n\nbuild:\n    number: 2\n    skip: True  # [win]\n\ntest:\n    commands:\n        - antlr-config --version\n        - conda inspect linkages -n _test antlr  # [linux]\n        - conda inspect objects -n _test antlr  # [osx]\nabout:\n    home: http://www.antlr2.org/\n    license: BSD-3-clause and GPL-3.0 and Public Domain\n    summary: 'ANother Tool for Language Recognition (ANTLR).'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - kwilcox\n",
  "rendered_recipe": {

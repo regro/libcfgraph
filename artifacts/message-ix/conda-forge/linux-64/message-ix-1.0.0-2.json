@@ -155,6 +155,7 @@
   "timestamp": 1527107149569,
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "message-ix",
  "raw_recipe": "{% set version = \"1.0.0\" %}\n{% set sha256 = \"b97297174dc7a3da925b8ba45affa8b7b1a24dd2b9e535876cfd180ffc863d92\" %}\n\npackage:\n  name: message-ix\n  version: {{ version }}\n\nsource:\n  url: https://github.com/iiasa/message_ix/archive/v{{ version }}-prerelease.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 2\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - messageix-config = message_ix.cli:config_cli\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - ixmp ==0.1.1\n\ntest:\n  imports:\n    - message_ix\n  commands:\n    - messageix-config -h\n    - python -c \"import ixmp; import message_ix; ixmp.Platform(dbtype='HSQLDB')\"\n\nabout:\n  home: https://github.com/iiasa/message_ix\n  license: Apache-2.0\n  license_file: LICENSE\n  summary: 'The integrated assessment and energy systems model MESSAGEix https://MESSAGEix.iiasa.ac.at/'\n\nextra:\n  recipe-maintainers:\n    - gidden\n",
  "rendered_recipe": {

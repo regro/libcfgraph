@@ -603,6 +603,7 @@
   "subdir": "win-64",
   "version": "2.0.2"
  },
+ "metadata_version": 1,
  "name": "filesdb",
  "raw_recipe": "{% set name = \"filesdb\" %}\n{% set version = \"2.0.2\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"c91f634269596ce3530a6998cb159e24043f5991f1239a2bb16f19ee7c63b161\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.tar.gz'\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  number: 0\n  entry_points:\n    - filesdb = filesdb.__init__:main\n  script: python setup.py install  --single-version-externally-managed --record=record.txt\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n  run:\n    - python\n\ntest:\n  imports:\n    - filesdb\n  commands:\n    - filesdb test\n  requires:\n    - pytest\n\nabout:\n  home: https://github.com/stilley2/filesdb\n  license: MIT\n  license_family: MIT\n  license_file: 'LICENSE.txt'\n  summary: A simple tool for tracking files\n  doc_url: 'https://github.com/stilley2/filesdb'\n  dev_url: 'https://github.com/stilley2/filesdb'\n\nextra:\n  recipe-maintainers:\n    - stilley2\n",
  "rendered_recipe": {

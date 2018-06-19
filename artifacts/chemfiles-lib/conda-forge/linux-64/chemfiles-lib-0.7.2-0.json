@@ -138,6 +138,7 @@
   "subdir": "linux-64",
   "version": "0.7.2"
  },
+ "metadata_version": 1,
  "name": "chemfiles-lib",
  "raw_recipe": "{% set version = \"0.7.2\" %}\n{% set sha256 = \"fb30d5a271e43c0e1e94c3ccbb06dd61b029574e93fa05e113e5c75372b5985e\" %}\n\npackage:\n  name: chemfiles-lib\n  version: {{ version }}\n\nsource:\n  fn: chemfiles-{{ version }}.tar.gz\n  url: https://github.com/chemfiles/chemfiles/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: true  # [win]\n  number: 0\n  script:\n    - cmake -DBUILD_SHARED_LIBS=ON -DCMAKE_INSTALL_PREFIX=$PREFIX -DCHFL_ENABLE_NETCDF=ON .\n    - cmake --build . --config release --target install\n    # run the tests\n    - cp $RECIPE_DIR/27d89caa55e1f42cdbbed5a322b51c702066d871.tar.gz tests/\n    - cmake -DCHFL_BUILD_TESTS=ON .\n    - cmake --build . --config release\n    - ctest --output-on-failure\n\nrequirements:\n  build:\n    - cmake\n    - libnetcdf 4.4.*\n    - toolchain\n  run:\n    - libnetcdf 4.4.*\n\ntest:\n  commands:\n    - true  # this was already done during the build\n\nabout:\n  home: https://chemfiles.github.io\n  license: MPL-v2.0\n  license_file: LICENCE.txt\n  summary: Modern library for chemistry file reading and writing\n  doc_url: https://chemfiles.github.io/chemfiles/latest/\n  dev_url: https://github.com/chemfiles/chemfiles\n\nextra:\n  recipe-maintainers:\n    - luthaf\n",
  "rendered_recipe": {

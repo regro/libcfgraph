@@ -149,6 +149,7 @@
   "timestamp": 1529111409704,
   "version": "0.12.6"
  },
+ "metadata_version": 1,
  "name": "django-bakery",
  "raw_recipe": "{% set name = \"django-bakery\" %}\n{% set version = \"0.12.6\" %}\n{% set sha256 = \"99845672254473e3d1d9d02d58929bb38325feb4ec59291b930468ca79ae193c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django\n    - six >1.5.2\n    - boto3 >=1.4.4\n    \ntest:\n  imports:\n    - bakery\n\nabout:\n  home: https://github.com/datadesk/django-bakery\n  license: MIT\n  license_family: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'A set of helpers for baking your Django site out as flat files'\n  description: |\n    A set of helpers for baking your Django site out as flat files\n  doc_url: https://django-bakery.readthedocs.io/en/latest/\n  dev_url: https://github.com/datadesk/django-bakery\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

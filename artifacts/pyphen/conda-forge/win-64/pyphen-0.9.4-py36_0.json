@@ -155,6 +155,7 @@
   "subdir": "win-64",
   "version": "0.9.4"
  },
+ "metadata_version": 1,
  "name": "pyphen",
  "raw_recipe": "{% set name = \"Pyphen\" %}\n{% set version = \"0.9.4\" %}\n{% set sha256sum = \"abfa9a0ab055341f6e250c1a6bef395c3a06f0e4cba216eeef37f617b32c0bd7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256sum }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\nabout:\n  home: http://pyphen.org/\n  license: GPL 2.0+/LGPL 2.1+/MPL 1.1\n  license_file: COPYING\n  summary: Pure Python module to hyphenate text\n  description: |\n    Pyphen is a pure Python module to hyphenate text using existing Hunspell\n    hyphenation dictionaries.\n  doc_url: http://pyphen.org/\n  dev_url: https://github.com/Kozea/Pyphen\n\nextra:\n  recipe-maintainers:\n    - rolando\n",
  "rendered_recipe": {

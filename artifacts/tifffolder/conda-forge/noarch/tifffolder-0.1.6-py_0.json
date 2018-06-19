@@ -129,6 +129,7 @@
   "timestamp": 1528076509337,
   "version": "0.1.6"
  },
+ "metadata_version": 1,
  "name": "tifffolder",
  "raw_recipe": "{% set name = \"tifffolder\" %}\n{% set version = \"0.1.6\" %}\n{% set sha256 = \"52b66ab4e875ccbd73fccc2326550b1ccd07780b6284691fb5597fa4d8d07e87\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n    - tifffile >=0.14.0\n\ntest:\n  imports:\n    - tifffolder\n\nabout:\n  home: https://github.com/tlambert03/tifffolder\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Easily parse/access a subset of data from a folder of TIFFs'\n  description: |\n    Parse filenames and lazily read subset of data from a folder \n    of images using numpy slicing syntax. Includes simplified file \n    pattern matching syntax and multithreaded file reading.\n  dev_url: https://github.com/tlambert03/tifffolder\n\nextra:\n  recipe-maintainers:\n    - tlambert03\n",
  "rendered_recipe": {

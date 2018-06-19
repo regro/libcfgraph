@@ -242,6 +242,7 @@
   "subdir": "osx-64",
   "version": "0.3.2"
  },
+ "metadata_version": 1,
  "name": "scijava-jupyter-kernel",
  "raw_recipe": "{% set version = \"0.3.2\" %}\n{% set sha256 = \"d657b42695dda79dffaa354c515f5461f6a4a6e16a33ff306c808ae6438c7b89\" %}\n{% set openjdk_version = \"8.0.121\" %}\n\npackage:\n  name: scijava-jupyter-kernel\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.gz\n  url: https://github.com/hadim/scijava-jupyter-kernel/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win32 or linux32]\n\nrequirements:\n  build:\n    - openjdk =={{ openjdk_version }}\n    - maven\n  run:\n    - openjdk =={{ openjdk_version }}\n    - notebook\n    - jupyterlab\n\ntest:\n  requires:\n    - jupyter_client\n  commands:\n    - conda list scijava-jupyter-kernel\n\nabout:\n  home: https://github.com/hadim/scijava-jupyter-kernel\n  license: Apache\n  license_file: LICENSE\n  summary: 'A Java kernel for Jupyter.'\n  description: A Java kernel for Jupyter.\n  dev_url: https://github.com/hadim/scijava-jupyter-kernel\n  doc_url: https://imagej.net/Scijava_Jupyter_Kernel\n\nextra:\n  recipe-maintainers:\n    - hadim\n",
  "rendered_recipe": {

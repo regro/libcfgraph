@@ -552,6 +552,7 @@
   "subdir": "osx-64",
   "version": "4.4"
  },
+ "metadata_version": 1,
  "name": "cfortran-cfitsio",
  "raw_recipe": "{% set name = \"cfortran-cfitsio\" %}\n{% set version = \"4.4\" %}\n{% set cfitsioversion = \"3410\" %}\n{% set sha256 = \"a556ac7ea1965545dcb4d41cfef8e4915eeb8c0faa1b52f7ff70870f8bb5734c\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}{{ cfitsioversion }}.tar.gz\n  url: ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/cfitsio{{ cfitsioversion }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/cfortran.h\n    - test -f ${PREFIX}/include/f77_wrap.h\n\nabout:\n  home: https://heasarc.gsfc.nasa.gov/fitsio/\n  license: GPL2\n  summary: \"The version of cfortran.h and f77_wrap.h developed as part of the CFITSIO development\"\n  \nextra:\n  recipe-maintainers:\n    - giacomov\n",
  "rendered_recipe": {

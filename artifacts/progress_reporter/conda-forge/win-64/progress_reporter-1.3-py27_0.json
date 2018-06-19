@@ -34,6 +34,7 @@
   "subdir": "win-64",
   "version": "1.3"
  },
+ "metadata_version": 1,
  "name": "progress_reporter",
  "raw_recipe": "{% set name = \"progress_reporter\" %}\n{% set pypi_name = name.replace('_', '-') %}\n{% set version = \"1.3\" %}\n{% set sha256 = \"8884e81c47bae120a8543f7ce42296182115e495ab7666c69ad1f389ff78f9b8\" %}\n\npackage:\n  name: {{ name|lower }} \n  version: {{ version }}\n\nsource:\n  fn: {{ pypi_name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ pypi_name}}/{{ pypi_name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - progress_reporter\n    - progress_reporter.bar\n\nabout:\n  home: https://github.com/marscher/progress_reporter\n  license: MIT\n  license_file: LICENSE.rst\n  summary: 'Python interface for progress reporting'\n  description: |\n    progress reporter enables developers to simply report several working steps\n    via an easy to use interface. The progress bar visualisation backends are \n    implemented for console and Jupyter notebooks.\n  doc_url: https://github.com/marscher/progress_reporter\n  dev_url: https://github.com/marscher/progress_reporter \n\nextra:\n  recipe-maintainers: \n    - marscher\n",
  "rendered_recipe": {},

@@ -559,6 +559,7 @@
   "subdir": "win-64",
   "version": "1.1.1"
  },
+ "metadata_version": 1,
  "name": "aplpy",
  "raw_recipe": "{% set name = \"aplpy\" %}\n{% set version = \"1.1.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"1c3bc9972da5f738435449e5e8483824129f2a18e7426f0a8c2c06a1ef3b4b4b\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/APLpy-{{ version }}.tar.gz\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  number: 0\n  script: python setup.py install --offline --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - astropy\n  run:\n    - python\n    - astropy\n    - matplotlib\n\ntest:\n  imports:\n    - aplpy\n\nabout:\n  home: http://aplpy.github.io\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.md\n  summary: The Astronomical Plotting Library in Python\n  description: |\n    APLpy (the Astronomical Plotting Library in Python) is a Python module\n    aimed at producing publication-quality plots of astronomical imaging data\n    in FITS format.\n  doc_url: http://aplpy.readthedocs.io\n  dev_url: https://github.com/aplpy/aplpy\n\nextra:\n  recipe-maintainers:\n    - mwcraig\n    - bsipocz\n    - astrofrog\n",
  "rendered_recipe": {

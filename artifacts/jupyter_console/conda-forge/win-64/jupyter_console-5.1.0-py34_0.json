@@ -106,6 +106,7 @@
   "subdir": "win-64",
   "version": "5.1.0"
  },
+ "metadata_version": 1,
  "name": "jupyter_console",
  "raw_recipe": "{% set version = \"5.1.0\" %}\n\npackage:\n  name: jupyter_console\n  version: {{ version }}\n\nsource:\n  fn: jupyter_console-{{ version }}.tar.gz\n  url: https://github.com/jupyter/jupyter_console/archive/{{ version }}.tar.gz\n  sha256: bee20976846123eda49ca880a84e567edd184c28a0ddcbbc0d990d2d8822e8e1\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps .\n  entry_points:\n    - jupyter-console = jupyter_console.app:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - jupyter_client\n    - ipython\n    - ipykernel\n    - prompt_toolkit\n    - pygments\n    - pexpect  # [not win]\n\ntest:\n  commands:\n    - jupyter-console -h\n  imports:\n    - jupyter_console\n\nabout:\n  home: http://jupyter.org\n  license: BSD 3-Clause\n  summary: Jupyter terminal console\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n    - pelson\n    - takluyver\n    - ocefpaf\n",
  "rendered_recipe": {

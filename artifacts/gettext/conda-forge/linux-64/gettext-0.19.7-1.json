@@ -1939,6 +1939,7 @@
   "subdir": "linux-64",
   "version": "0.19.7"
  },
+ "metadata_version": 1,
  "name": "gettext",
  "raw_recipe": "{% set version = \"0.19.7\" %}\n\npackage:\n  name: gettext\n  version: {{ version }}\n\nsource:\n  fn: gettext-{{ version }}.tar.xz\n  url: ftp://ftp.gnu.org/pub/gnu/gettext/gettext-{{ version }}.tar.xz\n  sha256: 378fa86a091cec3acdece3c961bb8d8c0689906287809a8daa79dc0c6398d934\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - libffi\n    - libiconv\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libgettextlib.so  # [linux]\n    - test -f ${PREFIX}/lib/libintl.dylib  # [osx]\n\nabout:\n  home: https://www.gnu.org/software/gettext/\n  license: GNU General Public License v3\n  summary: \"Internationalization package.\"\n\nextra:\n  recipe-maintainers:\n    - scopatz",
  "rendered_recipe": {},

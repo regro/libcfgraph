@@ -707,6 +707,7 @@
   "subdir": "osx-64",
   "version": "2.3.0"
  },
+ "metadata_version": 1,
  "name": "imageio",
  "raw_recipe": "# Info that changes with each new release\n# (get sha256 from https://pypi.org/project/imageio/#files)\n\n{% set version = \"2.3.0\" %}\n{% set sha256 = \"c4fd5183c342d47fdc2e98552d14e3f24386021bbc3efedd1e3b579d7d249c07\" %}\n\npackage:\n  name: imageio\n  version: {{ version }}\n\nsource:\n  fn: imageio-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/i/imageio/imageio-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  script: python setup.py install\n  number: 0\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - numpy\n    - pillow\n\ntest:\n  imports:\n    - imageio\n\nabout:\n  home: http://imageio.github.io\n  doc_url: http://imageio.readthedocs.io\n  dev_url: https://github.com/imageio/imageio\n  summary: a Python library for reading and writing image data\n  license: BSD 2-Clause\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - almarklein\n    - blink1073\n    - jni\n",
  "rendered_recipe": {

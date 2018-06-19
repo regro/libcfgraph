@@ -583,6 +583,7 @@
   "subdir": "win-64",
   "version": "0.10_40"
  },
+ "metadata_version": 1,
  "name": "r-tseries",
  "raw_recipe": "{% set version = '0.10-40' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-tseries\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: tseries_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/tseries_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/tseries/tseries_{{ version }}.tar.gz\n  sha256: 6428124cd082fed3375a9c3627008b93ecd886c18ef086dba1a0224126216bd5\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-quadprog\n    - r-zoo\n    - posix                # [win]\n    - {{native}}toolchain  # [win]\n    - gcc                  # [not win]\n\n  run:\n    - r-base\n    - r-quadprog\n    - r-zoo\n    - libgcc  # [not win]\n\ntest:\n  commands:\n    - $R -e \"library('tseries')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('tseries')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=tseries\n  license: GPL-2\n  summary: Time series analysis and computational finance.\n  license_family: GPL2\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

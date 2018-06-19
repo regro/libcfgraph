@@ -713,6 +713,7 @@
   "subdir": "osx-64",
   "version": "0.7.17"
  },
+ "metadata_version": 1,
  "name": "pynac",
  "raw_recipe": "{% set version = \"0.7.17\" %}\n{% set name = \"pynac\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: https://github.com/pynac/pynac/releases/download/pynac-{{ version }}/pynac-{{ version }}.tar.bz2\n  sha256: d380312bb6157fe2c0f22bf7af0c5ba1a001ae4ddfaf186e1a240ebfb0ac492e\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - pkg-config\n    - python\n    - gmp >=5.0.1,<7\n    - mpfr 3.*\n    - libflint 2.5.*\n    - singular 4.1.0.p3\n\n  run:\n    - python\n    - gmp >=5.0.1,<7\n    - mpfr 3.*\n    - libflint 2.5.*\n    - singular 4.1.0.p3\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/pynac/ginac.h\n    - test -f ${PREFIX}/lib/lib{{ name }}.a\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib     # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so        # [linux]\n\nabout:\n  home: http://pynac.org/\n  license: GPLv2+\n  license_file: COPYING\n  summary: Pynac -- symbolic computation with Python objects\n  dev_url: https://github.com/pynac/pynac\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - saraedum\n",
  "rendered_recipe": {

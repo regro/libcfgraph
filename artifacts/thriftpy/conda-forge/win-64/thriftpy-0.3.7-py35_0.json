@@ -48,6 +48,7 @@
   "subdir": "win-64",
   "version": "0.3.7"
  },
+ "metadata_version": 1,
  "name": "thriftpy",
  "raw_recipe": "package:\n  name: thriftpy\n  version: \"0.3.7\"\n\nsource:\n  fn: thriftpy-0.3.7.tar.gz\n  url: https://pypi.python.org/packages/source/t/thriftpy/thriftpy-0.3.7.tar.gz\n  md5: f7bda2f5fe4f6eee0e3fa0949ea231ef\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - ply >=3.4,<4.0\n    # Cython extensions not enabled on windows\n    - cython  # [not win]\n\n  run:\n    - python\n    - ply >=3.4,<4.0\n\ntest:\n  imports:\n    - thriftpy\n    - thriftpy.contrib\n    - thriftpy.contrib.tracking\n    - thriftpy.parser\n    - thriftpy.protocol\n    - thriftpy.transport\n    - thriftpy.transport.buffered\n    - thriftpy.transport.framed\n    - thriftpy.transport.memory\n    # Cython extensions not enabled on windows\n    - thriftpy.protocol.cybin  # [not win]\n\n  requires:\n    - tornado >=4.0,<5.0\n\nabout:\n  home: https://thriftpy.readthedocs.org/\n  license: MIT\n  summary: 'Pure python implementation of Apache Thrift.'\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "rendered_recipe": {

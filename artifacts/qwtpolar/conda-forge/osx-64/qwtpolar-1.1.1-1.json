@@ -152,6 +152,7 @@
   "subdir": "osx-64",
   "version": "1.1.1"
  },
+ "metadata_version": 1,
  "name": "qwtpolar",
  "raw_recipe": "{% set version = \"1.1.1\" %}\n\npackage:\n  name: qwtpolar\n  version: {{ version }}\n\nsource:\n  fn: qwtpolar-{{ version }}.tar.bz2\n  url: https://sourceforge.net/projects/qwtpolar/files/qwtpolar/{{ version }}/qwtpolar-{{ version }}.tar.bz2\n  md5: 0f549b51a06fa0f0f43b12f3269fe206\n  patches:\n    # Allow relocatable install\n    - qwtpolarconfig.pri.patch\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - qt 4.*\n    - qwt \n  run:\n    - qt 4.*\n    - qwt\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libqwtpolar.so  # [linux]\n    - test -f ${PREFIX}/lib/libqwtpolar.dylib  # [osx]\n\nabout:\n  home: http://qwtpolar.sourceforge.net/ \n  license: Qwt License, Version 1.0\n  license_file: COPYING\n  summary: Polar coordinate system plots for Qwt\n\nextra:\n  recipe-maintainers:\n    - ceholden\n",
  "rendered_recipe": {},

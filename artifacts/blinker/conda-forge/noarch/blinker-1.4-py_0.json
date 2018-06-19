@@ -712,6 +712,7 @@
   "subdir": "noarch",
   "version": "1.4"
  },
+ "metadata_version": 1,
  "name": "blinker",
  "raw_recipe": "{% set version = \"1.4\" %}\n\npackage:\n  name: blinker\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/b/blinker/blinker-{{ version }}.tar.gz\n  sha256: 471aee25f3992bd325afa3772f1063dbdbbca947a041b8b89466dc00d606f8b6\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - blinker\n\nabout:\n  home: http://pythonhosted.org/blinker/\n  license: MIT\n  license_file: LICENSE\n  summary: Fast, simple object-to-object and broadcast signaling\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - frol\n",
  "rendered_recipe": {

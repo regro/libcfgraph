@@ -124,6 +124,7 @@
   "subdir": "win-64",
   "version": "7.2.1"
  },
+ "metadata_version": 1,
  "name": "dropbox",
  "raw_recipe": "{% set name = \"dropbox\" %}\n{% set version = \"7.2.1\" %}\n{% set sha256 = \"acb85a33b4f977de11facb7516b4e0c9d5325920e71a2a26d39df383d34fefec\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - requests\n    - six\n    - urllib3\n\ntest:\n  imports:\n    - dropbox\n\nabout:\n  home: http://github.com/dropbox/dropbox-sdk-python\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Official Dropbox API Client'\n\n  description: |\n    dropbox is a Python SDK for integrating with the Dropbox API v2.\n    Compatible with Python 2.7 and 3.4+. Documentation is available on\n    Read the Docs.\n  doc_url: http://dropbox-sdk-python.readthedocs.org/\n  dev_url: https://github.com/dropbox/dropbox-sdk-python\n\nextra:\n  recipe-maintainers:\n    - guillochon\n",
  "rendered_recipe": {

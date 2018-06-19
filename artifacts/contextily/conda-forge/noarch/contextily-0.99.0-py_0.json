@@ -722,6 +722,7 @@
   "subdir": "noarch",
   "version": "0.99.0"
  },
+ "metadata_version": 1,
  "name": "contextily",
  "raw_recipe": "{% set version = \"0.99.0\" %}\n\npackage:\n  name: contextily\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/contextily/contextily-{{ version }}.tar.gz\n  sha256: 68caa2747374a7b42aba98f3030720673ba045313ad7382b1ea9ad451d0a7873\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - cartopy\n    - geopy\n    - pandas\n    - pillow\n    - rasterio\n    - six\n    - mercantile\n\ntest:\n  imports:\n    - contextily\n\nabout:\n  home: https://github.com/darribas/contextily\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Context geo-tiles in Python.'\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - darribas\n    - ocefpaf\n",
  "rendered_recipe": {

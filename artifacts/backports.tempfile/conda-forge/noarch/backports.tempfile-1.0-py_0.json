@@ -765,6 +765,7 @@
   "subdir": "noarch",
   "version": "1.0"
  },
+ "metadata_version": 1,
  "name": "backports.tempfile",
  "raw_recipe": "{% set name = \"backports.tempfile\" %}\n{% set version = \"1.0\" %}\n{% set sha256 = \"1c648c452e8770d759bdc5a5e2431209be70d25484e1be24876cf2168722c762\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools_scm\n  run:\n    - python\n    - backports.weakref\n\ntest:\n  imports:\n    - backports.tempfile\n\nabout:\n  home: https://github.com/pjdelport/backports.tempfile\n  license: PSF 2\n  license_file: LICENSE\n  summary: \"Backports of new features in Python's tempfile module\"\n\n  description: |\n    This package provides backports of new features in Python\u2019s tempfile module under the backports namespace.\n\nextra:\n  recipe-maintainers:\n    - mvdbeek\n",
  "rendered_recipe": {

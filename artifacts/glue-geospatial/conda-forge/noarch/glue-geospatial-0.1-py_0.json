@@ -137,6 +137,7 @@
   "timestamp": 1525363400275,
   "version": "0.1"
  },
+ "metadata_version": 1,
  "name": "glue-geospatial",
  "raw_recipe": "{% set version = \"0.1\" %}\n\npackage:\n  name: glue-geospatial\n  version: {{version}}\n\nsource:\n  fn: glue-geospatial-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/g/glue-geospatial/glue-geospatial-{{version}}.tar.gz\n  sha256: 95e33a0b317f3df406acffd808112f852b04687b0b1062467e044e99634a30dc\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  noarch: python\n\nrequirements:\n\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n    - numpy\n    - astropy\n    - pyproj\n    - rasterio\n    - affine\n    - glue-core >=0.13\n\ntest:\n  imports:\n    - rasterio\n    - glue_geospatial\n    - glue_geospatial.data_factory\n    - glue_geospatial.coordinates\n\nabout:\n  home: https://github.com/glue-viz/glue-geospatial\n  license: BSD 3-Clause\n  summary: Geospatial plugin for glue\n\nextra:\n  recipe-maintainers:\n    - astrofrog-conda-forge\n",
  "rendered_recipe": {

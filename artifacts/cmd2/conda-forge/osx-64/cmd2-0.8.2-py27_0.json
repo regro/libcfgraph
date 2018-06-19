@@ -674,6 +674,7 @@
   "subdir": "osx-64",
   "version": "0.8.2"
  },
+ "metadata_version": 1,
  "name": "cmd2",
  "raw_recipe": "{% set name = \"cmd2\" %}\n{% set version = \"0.8.2\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"2102f0816e7be787575239343ed1dc5c458916a822c717d5c2caaac3a2042217\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n    - pyparsing >=2.0.1\n    - pyperclip\n    - six\n    - wcwidth  # [not win]\n    - pyreadline  # [win]\n    - contextlib2  # [py<35]\n    - enum34  # [py<34]\n    - subprocess32  # [py2k] \n    \n\ntest:\n  imports:\n    - cmd2\n\nabout:\n  home: https://github.com/python-cmd2/cmd2\n  license_file: LICENSE\n  license: MIT\n  license_family: MIT\n  summary: \"Extra features for standard library's cmd module\"\n  dev_url: https://github.com/python-cmd2/cmd2\n  doc_url: https://cmd2.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - anguslees\n    - pmlandwehr\n",
  "rendered_recipe": {

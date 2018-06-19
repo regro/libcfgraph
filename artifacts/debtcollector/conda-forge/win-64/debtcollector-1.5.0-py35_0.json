@@ -37,6 +37,7 @@
   "subdir": "win-64",
   "version": "1.5.0"
  },
+ "metadata_version": 1,
  "name": "debtcollector",
  "raw_recipe": "{%set name = \"debtcollector\" %}\n{%set version = \"1.5.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"8eab1fba356cc465c4ab347119e217b045929713e2c543290f7c0571ede417dc\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pbr >=1.8\n\n  run:\n    - python\n    - pbr >=1.6\n    - six >=1.9.0\n    - wrapt >=1.7.0\n    - funcsigs >=0.4  # [py26 or py27]\n\ntest:\n  imports:\n    - debtcollector\n    - debtcollector.moves\n    - debtcollector.renames\n    - debtcollector.removals\n    - debtcollector.fixtures\n\nabout:\n  home: http://docs.openstack.org/developer/debtcollector/\n  license: Apache 2.0\n  summary: 'A collection of Python deprecation patterns and strategies that help you collect your technical debt in a non-destructive manner.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

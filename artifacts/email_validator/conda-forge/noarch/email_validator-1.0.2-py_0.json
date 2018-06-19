@@ -715,6 +715,7 @@
   "subdir": "noarch",
   "version": "1.0.2"
  },
+ "metadata_version": 1,
  "name": "email_validator",
  "raw_recipe": "{% set name = \"email_validator\" %}\n{% set version = \"1.0.2\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"669eaae98d86dbd0ab62ab2f5fbc95d01cb28f8e038aa30ab165b244130949c9\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  noarch: python\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n  entry_points:\n    - email_validator = email_validator:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - idna >=2.0.0\n    - dnspython >=1.15.0\n\ntest:\n  imports:\n    - email_validator\n\n  commands:\n    - email_validator --help\n\nabout:\n  home: https://github.com/JoshData/python-email-validator\n  license_file: LICENSE\n  license: CC0\n  license_family: OTHER\n  summary: 'A robust email syntax and deliverability validation library for Python 2.x/3.x.'\n  dev_url: https://github.com/JoshData/python-email-validator\n  doc_url: https://github.com/JoshData/python-email-validator\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

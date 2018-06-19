@@ -717,6 +717,7 @@
   "subdir": "noarch",
   "version": "15.1.0"
  },
+ "metadata_version": 1,
  "name": "constantly",
  "raw_recipe": "{% set name = \"constantly\" %}\n{% set version = \"15.1.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 586372eb92059873e29eba4f9dec8381541b4d3834660707faf8ba59146dfc35\n\nbuild:\n  number: 0\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - constantly\n\nabout:\n  home: https://github.com/twisted/constantly\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Symbolic constants in Python\n  description: |\n    A library that provides symbolic constant support.\n    It includes collections and constants with text, numeric, and bit flag values.\n    Originally twisted.python.constants from the Twisted project.\n  doc_url: http://constantly.readthedocs.io/en/latest\n  dev_url: https://github.com/twisted/constantly\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

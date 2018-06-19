@@ -740,6 +740,7 @@
   "subdir": "noarch",
   "version": "1.8.1"
  },
+ "metadata_version": 1,
  "name": "httpagentparser",
  "raw_recipe": "{% set name = \"httpagentparser\" %}\n{% set version = \"1.8.1\" %}\n{% set sha256 = \"3de54dc72098bf5aaaa146fc471aeb6f5a549a3242583f03a9cbccefbd5df239\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - httpagentparser\n\nabout:\n  home: http://shon.github.com/httpagentparser\n  license: MIT\n  summary: Extracts OS Browser etc information from http user agent string\n  license_family: MIT\n  # license_file: LICENSE.txt  # https://github.com/shon/httpagentparser/pull/76\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "rendered_recipe": {

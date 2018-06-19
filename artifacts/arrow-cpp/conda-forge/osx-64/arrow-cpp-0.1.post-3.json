@@ -54,6 +54,7 @@
   "subdir": "osx-64",
   "version": "0.1.post"
  },
+ "metadata_version": 1,
  "name": "arrow-cpp",
  "raw_recipe": "{% set version = \"0.1.post\" %}\n{% set commit = \"e70d97dbc8dc86161083e94c45d5828f79211f6b\" %}\n\npackage:\n  name: arrow-cpp\n  version: {{ version }}\n\n\nsource:\n  fn: {{ commit }}.tar.gz\n  url: https://github.com/apache/arrow/archive/{{ commit }}.tar.gz\n  sha256: 4e22ccf441237232fb19b64aeae442474d9a6a6173bec3d7f868e6ba00ae9660\n\nbuild:\n  number: 3\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - boost 1.62.*\n    - flatbuffers\n    - cmake\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libarrow.a  # [unix]\n    - test -f $PREFIX/lib/libarrow.so  # [linux]\n    - test -f $PREFIX/lib/libarrow_io.so  # [linux]\n    - test -f $PREFIX/lib/libarrow_ipc.so  # [linux]\n    - test -f $PREFIX/lib/libarrow.dylib  # [osx]\n    - test -f $PREFIX/lib/libarrow_io.dylib  # [osx]\n    - test -f $PREFIX/lib/libarrow_ipc.dylib  # [osx]\n\nabout:\n  home: http://github.com/apache/arrow\n  license: Apache 2.0\n  summary: 'C++ libraries for Apache Arrow'\n\nextra:\n  recipe-maintainers:\n    - wesm\n    - xhochy\n",
  "rendered_recipe": {},

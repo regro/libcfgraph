@@ -520,6 +520,7 @@
   "subdir": "osx-64",
   "version": "1.0.19"
  },
+ "metadata_version": 1,
  "name": "r-bbmle",
  "raw_recipe": "{% set version = '1.0.19' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-bbmle\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: bbmle_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/bbmle_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/bbmle/bbmle_{{ version }}.tar.gz\n  sha256: e882d7401126ae1a965e5e8d612c12441f45e9f10d9d2b3453643f1378359004\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-mass\n    - r-lattice\n    - r-numderiv\n\n  run:\n    - r-base\n    - r-mass\n    - r-lattice\n    - r-numderiv\n\ntest:\n  commands:\n    - $R -e \"library('bbmle')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('bbmle')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=bbmle\n  license: GPL\n  summary: Methods and functions for fitting maximum likelihood models in R. This package modifies\n    and extends the 'mle' classes in the 'stats4' package.\n  license_family: GPL\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n",
  "rendered_recipe": {

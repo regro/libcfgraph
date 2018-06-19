@@ -85,6 +85,7 @@
   "subdir": "win-64",
   "version": "1.1.0"
  },
+ "metadata_version": 1,
  "name": "pytest-spec",
  "raw_recipe": "{% set version = \"1.1.0\" %}\n\npackage:\n  name: pytest-spec\n  version: {{ version }}\n\nsource:\n  fn: pytest-spec-{{version}}.tar.gz\n  url: https://github.com/pchomik/pytest-spec/archive/{{ version }}.tar.gz\n  sha256: 12368660b1810ef4a46ea05dad367b7e8f402d829538f0d777a18a0b47e2c829\n\nbuild:\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - pytest\n    - mock >=1.0.1\n\ntest:\n  source_files:\n    - test\n  commands:\n    - py.test test\n\nabout:\n  home: https://github.com/pchomik/pytest-spec\n  license: GPL-2.0\n  license_family: GPL2\n  license_file: LICENSE.txt\n  summary: 'pytest plugin to display test execution output like a SPECIFICATION'\n\n  dev_url: https://github.com/pchomik/pytest-spec\n\nextra:\n  recipe-maintainers:\n    - mcg1969\n",
  "rendered_recipe": {

@@ -682,6 +682,7 @@
   "subdir": "linux-64",
   "version": "1.7.9"
  },
+ "metadata_version": 1,
  "name": "fiona",
  "raw_recipe": "{% set version = \"1.7.9\" %}\n\npackage:\n  name: fiona\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/F/Fiona/Fiona-{{ version }}.tar.gz\n  sha256: 91bb71b744a7444c3d96472158b74af1569ec2bc934737397658b968dd7dadba\n\nbuild:\n  number: 1\n  preserve_egg_dir: True\n  entry_points:\n    - fio=fiona.fio.main:main_group\n\nrequirements:\n  build:\n    - python\n    - cython\n    - setuptools\n    - numpy 1.8.*  # [not (win and (py35 or py36))]\n    - numpy 1.9.*  # [win and py35]\n    - numpy 1.11.*  # [win and py36]\n    - gdal 2.1.*\n  run:\n    - python\n    - setuptools\n    - numpy >=1.8  # [not (win and (py35 or py36))]\n    - numpy >=1.9  # [win and py35]\n    - numpy >=1.11  # [win and py36]\n    - gdal 2.1.*\n    - cligj\n    - munch\n    - click-plugins\n    - six\n    - enum34  # [py27]\n    - shapely\n\ntest:\n  source_files:\n    - tests\n  imports:\n    - fiona\n    - fiona.fio\n  requires:\n    - pytest\n  files:\n    - test_data\n  commands:\n    - fio --help\n    - fio ls test_data/test.shp\n    - fio info test_data/test.shp\n    - conda inspect linkages -p $PREFIX fiona  # [not win]\n    - conda inspect objects -p $PREFIX fiona  # [osx]\n\nabout:\n  home: http://github.com/Toblerity/Fiona\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Fiona reads and writes spatial data files.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

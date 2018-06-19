@@ -872,6 +872,7 @@
   "subdir": "win-64",
   "version": "2.9"
  },
+ "metadata_version": 1,
  "name": "assimulo",
  "raw_recipe": "{% set version = \"2.9\" %}\n\npackage:\n  name: assimulo\n  version: {{ version }}\n\nsource:\n  fn: Assimulo-{{ version }}.zip\n  url: https://pypi.python.org/packages/4c/c0/19a54949817204313efff9f83f1e4a247edebed0a1cc5a317a95d3f374ae/Assimulo-{{ version }}.zip\n  md5: 3f28fd98011d2ec7a01703a1ef1dff45\n  patches:\n    # no fortran compiler on windows, unsupported on osx\n    - disable-fortran-extensions.patch  # [win or osx]\n    # avoid Glimda print to stdout\n    - glimda-stderr.patch\n\nbuild:\n  number: 5\n  features:\n    - vc9  # [win and py27]\n    - vc14  # [win and py>=35]\n\nrequirements:\n  build:\n    - python\n    - numpy 1.9.*  # [not (win and py36)]\n    - numpy 1.11.*  # [win and py36]\n    - cython\n    - sundials 2.7.*\n    - gcc  # [unix]\n  run:\n    - python\n    - numpy >=1.9  # [not (win and py36)]\n    - numpy >=1.11  # [win and py36]\n    - scipy\n    - matplotlib\n    - sundials 2.7.*\n    - libgcc  # [unix]\n\ntest:\n  imports:\n    - assimulo\n    - assimulo.solvers\n  requires:\n    - nose\n\nabout:\n  home: http://www.jmodelica.org/assimulo\n  license: LGPL3\n  summary: A package for solving ordinary differential equations and differential algebraic equations.\n\nextra:\n  recipe-maintainers:\n    - chria\n    - jschueller\n",
  "rendered_recipe": {

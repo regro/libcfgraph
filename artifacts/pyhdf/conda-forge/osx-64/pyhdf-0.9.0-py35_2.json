@@ -499,6 +499,7 @@
   "subdir": "osx-64",
   "version": "0.9.0"
  },
+ "metadata_version": 1,
  "name": "pyhdf",
  "raw_recipe": "{% set version = \"0.9.0\" %}\n\npackage:\n  name: pyhdf\n  version: {{ version }}\n\nsource:\n  url: http://hdfeos.org/software/pyhdf/pyhdf-{{ version }}.tar.gz\n  sha256: f1fd2d72838f30fc4e3a7688a4e1a395483b08e54f4955f3b4d384639e13c67a\n\nbuild:\n  number: 2\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy 1.8.*  # [not (win and (py35 or py36))]\n    - numpy 1.9.*  # [win and py35]\n    - numpy 1.11.*  # [win and py36]\n    - hdf4\n  run:\n    - python\n    - numpy >=1.8  # [not (win and (py35 or py36))]\n    - numpy >=1.9  # [win and py35]\n    - numpy >=1.11  # [win and py36]\n    - hdf4\n\ntest:\n  imports:\n    - pyhdf\n  commands:\n    - conda inspect linkages -p $PREFIX pyhdf  # [not win]\n    - conda inspect objects -p $PREFIX pyhdf  # [osx]\n\nabout:\n  home:  http://hdfeos.org/software/pyhdf\n  license: Public Domain\n  summary: 'Python interface to the NCSA HDF4 library.'\n\nextra:\n  recipe-maintainers:\n      - ocefpaf\n",
  "rendered_recipe": {

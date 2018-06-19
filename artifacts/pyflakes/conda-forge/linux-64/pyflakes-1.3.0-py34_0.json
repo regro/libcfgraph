@@ -42,6 +42,7 @@
   "subdir": "linux-64",
   "version": "1.3.0"
  },
+ "metadata_version": 1,
  "name": "pyflakes",
  "raw_recipe": "{%set name = \"pyflakes\" %}\n{%set version = \"1.3.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"a4f93317c97a9d9ed71d6ecfe08b68e3de9fea3f4d94dcd1d9d83ccbf929bc31\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: https://github.com/PyCQA/pyflakes\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Pyflakes analyzes programs and detects various errors.'\n  dev_url: https://github.com/PyCQA/pyflakes\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - sigmavirus24\n    - dopplershift\n",
  "rendered_recipe": {},

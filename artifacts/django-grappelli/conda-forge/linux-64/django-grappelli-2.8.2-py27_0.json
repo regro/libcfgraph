@@ -696,6 +696,7 @@
   "subdir": "linux-64",
   "version": "2.8.2"
  },
+ "metadata_version": 1,
  "name": "django-grappelli",
  "raw_recipe": "{% set version = \"2.8.2\" %}\npackage:\n    name: django-grappelli\n    version: {{ version }}\n\nsource:\n    fn: django-grappelli-{{ version }}.tar.gz\n    url: https://github.com/sehmaschine/django-grappelli/archive/{{ version }}.tar.gz\n    sha256: a81a7b6cc6f960eb8b3992d79809ac19ae7cb81efd681cbacae670da743f0416\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - django\n\ntest:\n    imports:\n        - grappelli\n        - grappelli.templatetags\n        - grappelli.tests\n        - grappelli.views\n\nabout:\n    home: http://django-grappelli.readthedocs.org\n    license: BSD 3-Clause\n    summary: 'A jazzy skin for the Django Admin-Interface.'\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n        - ocefpaf\n",
  "rendered_recipe": {},

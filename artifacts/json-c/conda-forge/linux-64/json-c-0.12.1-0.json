@@ -637,6 +637,7 @@
   "subdir": "linux-64",
   "version": "0.12.1"
  },
+ "metadata_version": 1,
  "name": "json-c",
  "raw_recipe": "{% set version = \"0.12.1\" %}\n{% set sha256 = \"2a136451a7932d80b7d197b10441e26e39428d67b1443ec43bbba824705e1123\" %}\n\npackage:\n    name: json-c\n    version: {{ version }}\n\nsource:\n    fn: json-c-{{ version }}.tar.gz\n    url: https://s3.amazonaws.com/json-c_releases/releases/json-c-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - autoconf\n        - automake\n        - libtool\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libjson-c.a  # [unix]\n        - test -f ${PREFIX}/lib/libjson-c.so  # [linux]\n        - test -f ${PREFIX}/lib/libjson-c.dylib  # [osx]\n        - conda inspect linkages -p ${PREFIX} json-c  # [linux]\n\nabout:\n    home: https://github.com/json-c/json-c/wiki\n    license: MIT\n    summary: A JSON implementation in C\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
  "rendered_recipe": {

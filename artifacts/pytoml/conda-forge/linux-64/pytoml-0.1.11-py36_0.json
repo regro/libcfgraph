@@ -90,6 +90,7 @@
   "subdir": "linux-64",
   "version": "0.1.11"
  },
+ "metadata_version": 1,
  "name": "pytoml",
  "raw_recipe": "{% set name = \"pytoml\" %}\n{% set version = \"0.1.11\" %}\n{% set sha256 = \"a9aa2e60b254b9e33c8e44562465516cb4db3ae78e68502e881ac6e0ea6a0cb6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.org/packages/source/p/{{ name }}/{{ name }}-{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script:\n    - python setup.py install --single-version-externally-managed --record files.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - pytoml\n\nabout:\n  home: http://github.com/avakar/pytoml\n  license: MIT\n  summary: 'A TOML-0.4.0 parser/writer for Python.'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
  "rendered_recipe": {

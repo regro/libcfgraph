@@ -723,6 +723,7 @@
   "subdir": "linux-64",
   "version": "3.1.0"
  },
+ "metadata_version": 1,
  "name": "widgetsnbextension",
  "raw_recipe": "{% set version = \"3.1.0\" %}\n{% set sha256 = \"67fc28c3b9fede955d69bccbd92784e3f0c6d0dee3a71532cd3367c257feb178\" %}\n\npackage:\n  name: widgetsnbextension\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/w/widgetsnbextension/widgetsnbextension-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - notebook >=4.4.1\n  run:\n    - python\n    - notebook >=4.4.1\n\ntest:\n  imports:\n    - widgetsnbextension\n\nabout:\n  home: http://ipython.org\n  license: BSD 3-clause\n  summary: Interactive Widgets for Jupyter\n\nextra:\n  recipe-maintainers:\n    - jasongrout\n    - jakirkham\n    - minrk\n    - pelson\n    - SylvainCorlay\n    - willingc\n",
  "rendered_recipe": {

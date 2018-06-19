@@ -1204,6 +1204,7 @@
   "subdir": "linux-64",
   "version": "6.5"
  },
+ "metadata_version": 1,
  "name": "texinfo",
  "raw_recipe": "{% set version = \"6.5\" %}\n\npackage:\n  name: texinfo\n  version: {{ version }}\n\nsource:\n  fn: texinfo-{{ version }}.tar.gz\n  url: http://ftp.gnu.org/gnu/texinfo/texinfo-{{ version }}.tar.gz\n  sha256: d34272e4042c46186ddcd66bd5d980c0ca14ff734444686ccf8131f6ec8b1427\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - perl\n  run:\n    - perl\n\ntest:\n  commands:\n    - makeinfo -h\n    #- conda inspect linkages -p $PREFIX texinfo  # [not win]\n    #- conda inspect objects -p $PREFIX texinfo  # [osx]\n\nabout:\n  home: http://www.gnu.org/software/texinfo/\n  license: GPL-2.0 and GPL-3.0\n  summary: 'The GNU Documentation System.'\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - rhattersley\n    - ocefpaf\n",
  "rendered_recipe": {

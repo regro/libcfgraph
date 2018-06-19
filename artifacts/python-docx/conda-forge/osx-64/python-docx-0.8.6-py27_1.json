@@ -109,6 +109,7 @@
   "subdir": "osx-64",
   "version": "0.8.6"
  },
+ "metadata_version": 1,
  "name": "python-docx",
  "raw_recipe": "{%set name = \"python-docx\" %}\n{%set version = \"0.8.6\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"55ece6fd4a4fa3389909fa0e51400fce428e1fb6f6ef3599cbba31673441f184\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - lxml >=2.3.2\n\ntest:\n  imports:\n    - docx\n    - docx.dml\n    - docx.enum\n    - docx.image\n    - docx.opc\n    - docx.opc.parts\n    - docx.oxml\n    - docx.oxml.text\n    - docx.parts\n    - docx.styles\n    - docx.text\n\nabout:\n  home: https://github.com/python-openxml/python-docx\n  license: MIT\n  license_file: LICENSE\n  summary: 'Create and update Microsoft Word .docx files.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

@@ -500,6 +500,7 @@
   "subdir": "win-64",
   "version": "0.6.1"
  },
+ "metadata_version": 1,
  "name": "markovify",
  "raw_recipe": "{% set name = \"markovify\" %}\n{% set version = \"0.6.1\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"11c19c297b5bd24f2dd994a28e6ee45dec5c00bc48a01ec2c70f25d06a7698c0\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - unidecode\n\ntest:\n  imports:\n    - markovify\n\nabout:\n  home: https://github.com/jsvine/markovify\n  # Non MANIFEST - see https://github.com/jsvine/markovify/pull/65\n  license_file: {{ RECIPE_DIR }}/LICENSE.txt\n  license: MIT\n  license_family: MIT\n  summary: 'A simple, extensible Markov chain generator. Uses include generating random semi-plausible sentences based on an existing text.'\n  dev_url: https://github.com/jsvine/markovify\n  doc_url: https://github.com/jsvine/markovify\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

@@ -782,6 +782,7 @@
   "subdir": "noarch",
   "version": "0.9.1"
  },
+ "metadata_version": 1,
  "name": "dynesty",
  "raw_recipe": "{% set name = \"dynesty\" %}\n{% set version = \"0.9.1\" %}\n{% set sha256 = \"39fef0ae621aa68eee0cc84901b48427a5312c620aa0c75754ae5f9e867feacd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n    - scipy\n    - matplotlib\n    - six\n\ntest:\n  imports:\n    - dynesty\n\nabout:\n  home: https://github.com/joshspeagle/dynesty\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A dynamic nested sampling package for computing Bayesian posteriors and evidences.'\n\n  description: |\n    dynesty is a dynamic nested sampling package for computing Bayesian posteriors and evidences. Pure Python.\n  doc_url: http://dynesty.readthedocs.io/\n  dev_url: https://github.com/joshspeagle/dynesty\n\nextra:\n  recipe-maintainers:\n    - guillochon\n    - pkgw\n    - joshspeagle\n",
  "rendered_recipe": {

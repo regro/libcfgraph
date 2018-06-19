@@ -723,6 +723,7 @@
   "subdir": "noarch",
   "version": "0.1.2"
  },
+ "metadata_version": 1,
  "name": "geoplot",
  "raw_recipe": "{% set version = \"0.1.2\" %}\n\npackage:\n  name: geoplot\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/g/geoplot/geoplot-{{ version }}.tar.gz\n  sha256: f73401caa80ae489ede5038f6595ebcad0aa6092f9125c85bff986180108a961\n\nbuild:\n  number: 0\n  noarch: python\n  skip: True  # [py2k]\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - cartopy\n    - gdal 2.1.*\n    - geopandas\n    - matplotlib\n    - pandas\n    - seaborn\n\ntest:\n  imports:\n    - geoplot\n    - geoplot.crs\n    - geoplot.quad\n    - geoplot.utils\n\nabout:\n  home: https://github.com/ResidentMario/geoplot\n  license: MIT\n  summary: 'High-level geospatial plotting for Python.'\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - residentmario\n",
  "rendered_recipe": {

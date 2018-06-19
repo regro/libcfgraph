@@ -35,6 +35,7 @@
   "subdir": "osx-64",
   "version": "1.2.0"
  },
+ "metadata_version": 1,
  "name": "libradolan",
  "raw_recipe": "{% set version = \"1.2.0\" %}\n{% set commit = \"131684d7d20f4e93dc9e829a74962d75e7ff78fa\" %}\n\npackage:\n  name: libradolan\n  version: {{ version }}\n\nsource:\n  fn: libradolan-{{ version }}.tar.gz\n  url: https://github.com/meteo-ubonn/radolan/archive/{{ commit }}.tar.gz\n  sha256: d435f21b6f74ba42669e390d43a3b6ab401ec3a9420e7fb13d7971a7a71c3c0e\n\nbuild:\n  number: 3\n  skip: true   # [win]\n\nrequirements:\n  build:\n    - cmake\n    - boost 1.61.*\n    - netcdf-cxx4 4.3.*\n    - toolchain\n  run:\n    - boost 1.61.*\n    - netcdf-cxx4 4.3.*\n\ntest:\n  commands:\n    - test -d $PREFIX/include/radolan  # [unix]\n    - test -e $PREFIX/lib/libradolan.so  # [linux]\n    - test -e $PREFIX/lib/libradolan.dylib  # [osx]\n    - radolan2netcdf --version\n    - radolan2netcdf --endianess\n\nabout:\n  home: http://meteo-ubonn.github.io/radolan/\n  license: MIT\n  summary: C++ library for reading and working with the RADOLAN data format of the German Weather Service (DWD)\n\nextra:\n  recipe-maintainers:\n    - kmuehlbauer\n    - JuergenSimon\n",
  "rendered_recipe": {},

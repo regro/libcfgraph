@@ -495,6 +495,7 @@
   "subdir": "osx-64",
   "version": "1.14.0"
  },
+ "metadata_version": 1,
  "name": "sphinxcontrib-paverutils",
  "raw_recipe": "{% set name = \"sphinxcontrib-paverutils\" %}\n{% set version = \"1.14.0\" %}\n{% set sha256 = \"2124c851f96356012ed5c92ce320ca3a842cce8a94ddd2319bcb0835b48b9f80\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pbr\n\n  run:\n    - python\n    - sphinx >=0.6\n    - paver >=1.02.0\n\ntest:\n  imports:\n    - sphinxcontrib\n    - sphinxcontrib.paverutils\n\nabout:\n  home: https://bitbucket.org/dhellmann/sphinxcontrib-paverutils/\n  license: BSD 2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Sphinx/Paver integration'\n\nextra:\n  recipe-maintainers:\n    - johannesring\n    - kghustad\n",
  "rendered_recipe": {

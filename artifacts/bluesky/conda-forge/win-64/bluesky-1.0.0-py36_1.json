@@ -807,6 +807,7 @@
   "subdir": "win-64",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "bluesky",
  "raw_recipe": "{% set name = \"bluesky\" %}\n{% set version = \"1.0.0\" %}\n{% set sha256 = \"e68dbcb64f98997a193408d1510c70d0ee00dedf79c35dad703f35d773f02e11\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/NSLS-II/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: True  # [py2k or osx]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - cycler\n    - event-model\n    - historydict\n    - ipython\n    - jsonschema\n    - lmfit\n    - matplotlib\n    - numpy\n    - super_state_machine\n    - toolz\n    - tqdm\n    - pyzmq\n    - doct\n\ntest:\n  imports:\n    - bluesky\n    - bluesky.plans\n    - bluesky.callbacks\n\nabout:\n  home: https://github.com/NSLS-II/bluesky\n  license: BSD-3-clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'A Python data collection interface for experimental science'\n\n  description: 'A Python data collection interface for experimental science'\n  doc_url: http://nsls-ii.github.io/bluesky/\n  dev_url: https://github.com/NSLS-II/bluesky\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
  "rendered_recipe": {

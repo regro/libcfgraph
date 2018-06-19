@@ -226,6 +226,7 @@
   "timestamp": 1529069116377,
   "version": "0.13.0"
  },
+ "metadata_version": 1,
  "name": "iris-grib",
  "raw_recipe": "{% set version = \"0.13.0\" %}\n\npackage:\n  name: iris-grib\n  version: {{ version }}\n\nsource:\n  url: https://github.com/SciTools/iris-grib/archive/v{{ version }}.tar.gz\n  sha256: 051fb31336170692c6a4cb47334315ec7fba8be92316e208183ab157739c0855\n\nbuild:\n  number: 0\n  skip: True  # [win or py3k]\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - iris >=2\n    - python-eccodes\n\ntest:\n  imports:\n    - iris_grib\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://iris-grib.readthedocs.io\n  license: LGPL-3.0\n  license_family: LGPL\n  license_file: COPYING.LESSER\n  summary: 'Iris GRIB interface.'\n\nextra:\n  recipe-maintainers:\n    - corinnebosley\n",
  "rendered_recipe": {

@@ -822,6 +822,7 @@
   "subdir": "win-64",
   "version": "3.4.0"
  },
+ "metadata_version": 1,
  "name": "apscheduler",
  "raw_recipe": "{%set name = \"APScheduler\" %}\n{%set version = \"3.4.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"b51118a8ed014104f7e440456dcbd90f2015aea7bcc34c57e307fb34bc746316\" %}\n{%set compress_type = \"tar.gz\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - setuptools\n    - six >=1.4.0\n    - pytz\n    - tzlocal >=1.2\n    - futures  # [py27]\n    - funcsigs  # [py27]\n\ntest:\n  imports:\n    - apscheduler\n    - apscheduler.executors\n    - apscheduler.jobstores\n    - apscheduler.schedulers\n    - apscheduler.schedulers.blocking\n    - apscheduler.triggers\n    - apscheduler.triggers.cron\n\nabout:\n  home: https://github.com/agronholm/apscheduler\n  license: MIT\n  license_file: LICENSE.txt\n  summary: In-process task scheduler with Cron-like capabilities\n  dev_url: https://github.com/agronholm/apscheduler\n  doc_url: https://apscheduler.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - ddunwoody\n    - synapticarbors\n",
  "rendered_recipe": {

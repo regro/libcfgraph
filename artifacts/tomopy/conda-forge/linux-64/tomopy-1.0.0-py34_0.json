@@ -67,6 +67,7 @@
   "subdir": "linux-64",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "tomopy",
  "raw_recipe": "{% set version = \"1.0.0\" %}\n\npackage:\n    name: tomopy\n    version: {{ version }}\n\nsource:\n    url: https://github.com/tomopy/tomopy/archive/{{ version }}.tar.gz\n    fn: tomopy-{{ version }}.tar.gz\n    sha256: b30a4828c9928aacb26f3cd1f44555aeeb031e9ed3585014b04a3b5079e78e24\n\nbuild:\n    number: 0\n    script: C_INCLUDE_PATH=$PREFIX/include python setup.py install --single-version-externally-managed --record=record.txt\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - fftw\n        - pyfftw\n        - python\n        - setuptools\n\n    run:\n        - dxchange\n        - pyfftw\n        - python\n        - pywavelets\n        - numpy\n        - scikit-image\n        - scipy\n        - six\n\ntest:\n    imports:\n        - tomopy\n        - tomopy.io\n        - tomopy.misc\n        - tomopy.prep\n        - tomopy.recon\n        - tomopy.sim\n        - tomopy.util\n\napp:\n    own_environment: True\n\nabout:\n    home: http://tomopy.readthedocs.org\n    license: BSD 3-Clause\n    summary: Tomographic reconstruction in Python.\n\nextra:\n    recipe-maintainers:\n        - dgursoy\n        - decarlof\n        - ericdill\n        - licode\n        - ravescovi\n        - tacaswell\n",
  "rendered_recipe": {},

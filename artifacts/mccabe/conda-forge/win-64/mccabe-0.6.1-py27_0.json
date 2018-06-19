@@ -94,6 +94,7 @@
   "subdir": "win-64",
   "version": "0.6.1"
  },
+ "metadata_version": 1,
  "name": "mccabe",
  "raw_recipe": "{%set name = \"mccabe\" %}\n{%set version = \"0.6.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n\n  run:\n    - python\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: https://github.com/PyCQA/mccabe\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'McCabe complexity checker for Python'\n  dev_url: https://github.com/PyCQA/mccabe\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - sigmavirus24\n    - ocefpaf\n    - dopplershift\n",
  "rendered_recipe": {

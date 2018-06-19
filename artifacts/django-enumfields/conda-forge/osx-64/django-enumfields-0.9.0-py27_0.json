@@ -677,6 +677,7 @@
   "subdir": "osx-64",
   "version": "0.9.0"
  },
+ "metadata_version": 1,
  "name": "django-enumfields",
  "raw_recipe": "{% set name = \"django-enumfields\" %}\n{% set version = \"0.9.0\" %}\n{% set sha256 = \"45c291bf94b31af5261c7d7d97a9993bdca92d1d52066992b71c0ff976f2bb36\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/hzdg/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - django >1.7\n    - enum34  # [py27]\n\ntest:\n  imports:\n    - enumfields\n\nabout:\n  home: https://github.com/hzdg/django-enumfields\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: Real Python Enums for Django\n  doc_url: https://github.com/hzdg/django-enumfields/blob/master/README.rst\n  dev_url: https://github.com/hzdg/django-enumfields\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n",
  "rendered_recipe": {

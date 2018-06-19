@@ -109,6 +109,7 @@
   "subdir": "linux-64",
   "version": "3.0.0.5"
  },
+ "metadata_version": 1,
  "name": "planarity",
  "raw_recipe": "{% set version = \"3.0.0.5\" %}\n{% set name = \"planarity\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/graph-algorithms/edge-addition-planarity-suite/archive/Version_{{ version }}.tar.gz\n  sha256: a019eedf67087bba1996c8b9ad47a6f1cda166c2d8976f13bfcff5c0d23e5578\n  patches:\n    # variables declared in headers should be marked extern\n    # https://github.com/graph-algorithms/edge-addition-planarity-suite/pull/3\n    - extern.patch\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - automake\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/{{ name }}/{{ name }}.h\n    - test -f ${PREFIX}/lib/lib{{ name }}.a\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]\n\nabout:\n  home: https://github.com/graph-algorithms/edge-addition-planarity-suite\n  license: 3-clause BSD\n  license_file: LICENSE.TXT\n  summary: |\n    This code project provides a library for implementing graph algorithms as well\n    as implementations of several planarity-related graph algorithms\n  dev_url: https://github.com/graph-algorithms/edge-addition-planarity-suite\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

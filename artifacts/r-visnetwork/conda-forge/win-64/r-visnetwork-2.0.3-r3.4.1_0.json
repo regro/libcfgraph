@@ -1022,6 +1022,7 @@
   "subdir": "win-64",
   "version": "2.0.3"
  },
+ "metadata_version": 1,
  "name": "r-visnetwork",
  "raw_recipe": "{% set version = '2.0.3' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-visnetwork\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: visNetwork_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/visNetwork_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/visNetwork/visNetwork_{{ version }}.tar.gz\n  sha256: bc2e75cf4cc1410d8eb528a38870666117e674f1b9ba5fa1ff769b8ab2e2462f\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-htmlwidgets\n    - r-htmltools\n    - r-jsonlite\n    - r-magrittr\n  run:\n    - r-base\n    - r-htmlwidgets\n    - r-htmltools\n    - r-jsonlite\n    - r-magrittr\n\ntest:\n  commands:\n    - $R -e \"library('visNetwork')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('visNetwork')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/datastorm-open/visNetwork\n  license: MIT\n  summary: Provides an R interface to the 'vis.js' JavaScript charting library. It allows an\n    interactive visualization of networks.\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

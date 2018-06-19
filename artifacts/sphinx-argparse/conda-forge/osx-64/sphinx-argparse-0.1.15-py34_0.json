@@ -21,6 +21,7 @@
   "subdir": "osx-64",
   "version": "0.1.15"
  },
+ "metadata_version": 1,
  "name": "sphinx-argparse",
  "raw_recipe": "{%set name = \"sphinx-argparse\" %}\n{%set version = \"0.1.15\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"787b4597e4bcd79495a75402e1cb242d83d8b0341fb9370187b6f77406ee8d93\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - sphinx\n\n  run:\n    - python\n    - sphinx\n\ntest:\n  imports:\n    - sphinxarg\n\nabout:\n  home: https://github.com/ribozz/sphinx-argparse\n  license: MIT\n  summary: 'Sphinx extension that automatically document argparse commands and options'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {},

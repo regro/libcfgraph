@@ -194,6 +194,7 @@
   "timestamp": 1528346348485,
   "version": "2.1.6"
  },
+ "metadata_version": 1,
  "name": "keras",
  "raw_recipe": "{% set version = \"2.1.6\" %}\n{% set sha256 = \"88734b83105a7f3aecfe52153db9f47cf7ab5a44c613922d43dc6d8b646f484e\" %}\n\npackage:\n    name: keras\n    version: {{ version }}\n\nsource:\n    url: https://github.com/keras-team/keras/archive/{{ version }}.tar.gz\n    fn: keras-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:\n    build:\n        - python\n        - pip\n    run:\n        - h5py\n        - numpy >=1.9.1\n        - scipy >=0.14\n        - tensorflow     # [not (win and py27)]\n        - python\n        - pyyaml\n        - six >=1.9.0\n        - theano\n\ntest:\n    imports:\n        - keras\n        - keras.backend\n        - keras.datasets\n        - keras.engine\n        - keras.layers\n        - keras.preprocessing\n        - keras.utils\n        - keras.wrappers\n\nabout:\n    home: https://github.com/keras-team/keras\n    license: MIT\n    license_file: LICENSE\n    summary: Deep Learning for Python\n\nextra:\n    recipe-maintainers:\n        - ericdill\n        - mariusvniekerk\n        - croth1\n",
  "rendered_recipe": {

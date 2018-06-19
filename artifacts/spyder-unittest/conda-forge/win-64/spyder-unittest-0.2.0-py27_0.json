@@ -535,6 +535,7 @@
   "subdir": "win-64",
   "version": "0.2.0"
  },
+ "metadata_version": 1,
  "name": "spyder-unittest",
  "raw_recipe": "{% set name = \"spyder-unittest\" %}\n{% set version = \"0.2.0\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"ee60f44660ede09d41cd22e3a2e179637c1f6de974e2bb657a9587a6adb41734\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - lxml\n    - python\n    - spyder >=3\n\ntest:\n  imports:\n    - spyder_unittest\n\nabout:\n  home: https://github.com/spyder-ide/spyder-unittest\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Spyder plugin that integrates popular unit test frameworks.\n  description: |\n    It allows you to run tests and view the results.\n  dev_url: https://github.com/spyder-ide/spyder-unittest\n\nextra:\n  recipe-maintainers:\n    - ccordoba12\n    - jitseniesen\n    - goanpeca\n",
  "rendered_recipe": {

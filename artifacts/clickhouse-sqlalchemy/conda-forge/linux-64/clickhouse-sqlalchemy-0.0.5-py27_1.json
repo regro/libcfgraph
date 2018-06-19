@@ -744,6 +744,7 @@
   "subdir": "linux-64",
   "version": "0.0.5"
  },
+ "metadata_version": 1,
  "name": "clickhouse-sqlalchemy",
  "raw_recipe": "{% set name = \"clickhouse-sqlalchemy\" %}\n{% set version = \"0.0.5\" %}\n{% set sha256 = \"169c7ea825dfe64b0b90d0c00ee8e5815e49cae953f168a265989d9634b9dd71\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - sqlalchemy\n    - clickhouse-driver >=0.0.8\n\n  run:\n    - python\n    - setuptools\n    - six\n    - sqlalchemy\n    - requests\n    - clickhouse-driver >=0.0.8\n\ntest:\n  imports:\n    - clickhouse_sqlalchemy\n    - clickhouse_sqlalchemy.drivers\n    - clickhouse_sqlalchemy.drivers.http\n    - clickhouse_sqlalchemy.drivers.native\n    - clickhouse_sqlalchemy.orm\n    - clickhouse_sqlalchemy.sql\n\nabout:\n  home: https://github.com/xzkostyan/clickhouse-sqlalchemy\n  license: MIT\n  summary: 'Simple ClickHouse SQLAlchemy Dialect'\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - kszucs\n    - xzkostyan\n",
  "rendered_recipe": {

@@ -678,6 +678,7 @@
   "subdir": "osx-64",
   "version": "0.4.1"
  },
+ "metadata_version": 1,
  "name": "jftools",
  "raw_recipe": "{% set name = \"jftools\" %}\n{% set version = \"0.4.1\" %}\n{% set sha256 = \"87539e752288fa8d943a6a8476dbb37922aaa240885565880158aa7daf49ba0b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --record record.txt\n  skip: True  # [py<35]\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - numpy >=1.11\n    - scipy\n    - nbformat\n    - ipython\n    - numba\n    - matplotlib\n    - qutip\ntest:\n  imports:\n    - jftools\n\nabout:\n  home: http://github.com/jfeist/jftools\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Collection of small useful helper tools for Python by Johannes Feist'\n\nextra:\n  recipe-maintainers:\n    - jfeist\n",
  "rendered_recipe": {

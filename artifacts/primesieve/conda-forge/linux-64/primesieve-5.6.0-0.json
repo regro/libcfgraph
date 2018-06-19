@@ -31,6 +31,7 @@
   "subdir": "linux-64",
   "version": "5.6.0"
  },
+ "metadata_version": 1,
  "name": "primesieve",
  "raw_recipe": "{% set version = \"5.6.0\" %}\n\npackage:\n  name: primesieve\n  version: {{ version }}\n\nsource:\n  fn: primesieve-{{ version }}.tar.gz\n  url: https://dl.bintray.com/kimwalisch/primesieve/primesieve-{{ version }}.tar.gz\n  sha1: 86d0fb98c7e1d6bc47e1923138de3d0c0eb4904c\n\nbuild:\n  # Seem to be encountering hangs on Windows with Python 2.7; so, they are skipped.\n  skip: true  # [win and py2k]\n  number: 0\n\nrequirements:\n  build:\n    - gcc     # [osx]\n\n  run:\n    - libgcc  # [osx]\n\ntest:\n  commands:\n    # Check libraries exist\n    - test -f \"${PREFIX}/lib/libprimesieve.a\"      # [unix]\n    - test -f \"${PREFIX}/lib/libprimesieve.so\"     # [linux]\n    - test -f \"${PREFIX}/lib/libprimesieve.dylib\"  # [osx]\n\n    # Test CLIs.\n    - primesieve -n 1\n\nabout:\n  home: http://primesieve.org/\n  license: BSD 2-Clause\n  summary: Fast C/C++ prime number generator\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
  "rendered_recipe": {},

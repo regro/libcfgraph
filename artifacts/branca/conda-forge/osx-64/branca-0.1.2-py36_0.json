@@ -91,6 +91,7 @@
   "subdir": "osx-64",
   "version": "0.1.2"
  },
+ "metadata_version": 1,
  "name": "branca",
  "raw_recipe": "{% set version = \"0.1.2\" %}\n\npackage:\n    name: branca\n    version: {{ version }}\n\nsource:\n    fn: branca-{{ version }}.tar.gz\n    url: https://github.com/python-visualization/branca/archive/v{{ version }}.tar.gz\n    sha256: f4130a1ff9c85e5d7777b5abf8b01d22df692698a11b2eeed35fbd19a32330e2\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - jinja2\n\ntest:\n    imports:\n        - branca\n\nabout:\n    home: https://github.com/python-visualization/branca\n    license: MIT\n    summary: 'This library is a spinoff from Folium with the non-map-specific features.'\n\nextra:\n    recipe-maintainers:\n        - BibMartin\n        - ocefpaf\n",
  "rendered_recipe": {

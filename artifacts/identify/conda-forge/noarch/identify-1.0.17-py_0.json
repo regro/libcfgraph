@@ -128,6 +128,7 @@
   "timestamp": 1527069254034,
   "version": "1.0.17"
  },
+ "metadata_version": 1,
  "name": "identify",
  "raw_recipe": "{% set name = \"identify\" %}\n{% set version = \"1.0.17\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_value = \"9f596c86e3eb78407672c82ebebbfba34df0c6ca9c28302f6ca5515c3b34ee02\" %}\n\npackage:\n  name: '{{ name|lower }}'\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ name }}-{{ version }}.tar.gz'\n  url: https://github.com/chriskuehl/identify/archive/v{{ version }}.tar.gz\n  '{{ hash_type }}': '{{ hash_value }}'\n\nbuild:\n  number: 0\n  script: python -m pip install . --no-deps --ignore-installed\n  noarch: python\n  entry_points:\n    - identify-cli = identify.cli:main\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - identify\n  requires:\n    - pytest\n  source_files:\n    - tests\n    - setup.py\n  commands:\n    - identify-cli --help\n    - pytest tests\n\nabout:\n  home: https://github.com/chriskuehl/identify\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: File identification library for Python\n\nextra:\n  recipe-maintainers:\n    - nicoddemus\n",
  "rendered_recipe": {

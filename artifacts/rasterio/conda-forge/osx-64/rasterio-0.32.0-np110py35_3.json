@@ -66,6 +66,7 @@
   "subdir": "osx-64",
   "version": "0.32.0"
  },
+ "metadata_version": 1,
  "name": "rasterio",
  "raw_recipe": "package:\n    name: rasterio\n    version: 0.32.0\n\nsource:\n    fn: rasterio-0.32.0.post1.tar.gz\n    url: https://pypi.python.org/packages/source/r/rasterio/rasterio-0.32.0.post1.tar.gz\n    md5: 0cc07d16345ad281ab4e7faf24d40f97\n\nbuild:\n    number: 3\n    entry_points:\n        - rio = rasterio.rio.main:main_group\n\nrequirements:\n    build:\n        - python\n        - numpy x.x\n        - cython\n        - gdal 1.11.4\n        - setuptools\n    run:\n        - python\n        - affine\n        - cligj\n        - enum34  # [py27]\n        - numpy x.x\n        - snuggs\n        - gdal 1.11.4\n        - click-plugins\n\ntest:\n    imports:\n        - rasterio\n    commands:\n        - rio --help\n\nabout:\n    home: https://github.com/mapbox/rasterio\n    license: BSD 3-Clause\n    summary: Rasterio reads and writes geospatial raster datasets\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - ceholden\n",
  "rendered_recipe": {

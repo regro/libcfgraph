@@ -701,6 +701,7 @@
   "subdir": "win-64",
   "version": "1.4.1"
  },
+ "metadata_version": 1,
  "name": "wordcloud",
  "raw_recipe": "{% set version = \"1.4.1\" %}\n\npackage:\n    name: wordcloud\n    version: {{ version }}\n\nsource:\n    url: https://github.com/amueller/word_cloud/archive/{{ version }}.tar.gz\n    fn: wordcloud-{{ version }}.tar.gz\n    sha256: bb1da374261919600b29746af6668fd90722ac15a564226bde42a236bba07588\n\nbuild:\n    number: 0\n    script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n    build:\n        - python\n        - pip\n\n\n    run:\n        - python\n        - pillow\n        - numpy\n\ntest:\n    imports:\n        - wordcloud\n    commands:\n        - wordcloud_cli.py -h\n\nabout:\n    home: https://github.com/amueller/word_cloud\n    license: MIT\n    summary: A little word cloud generator in Python\n\nextra:\n    recipe-maintainers:\n        - amueller\n        - ericdill\n",
  "rendered_recipe": {

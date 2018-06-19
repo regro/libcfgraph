@@ -132,6 +132,7 @@
   "timestamp": 1525458929896,
   "version": "1.4.0"
  },
+ "metadata_version": 1,
  "name": "flake8-builtins",
  "raw_recipe": "{% set name = \"flake8-builtins\" %}\n{% set version = \"1.4.0\" %}\n{% set sha256 = \"f20c43801db99513ccdeea17741040e3683858200818bdf6d256f7bc5b40e902\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - flake8\n\ntest:\n  commands:\n    - \"flake8 --version | grep flake8_builtins:\"\n\nabout:\n  home: https://github.com/gforcada/flake8-builtins\n  license: GPL-2.0\n  license_family: GPL2\n  license_file: LICENSE\n  summary: 'Check for python builtins being used as variables or parameters.'\n  dev_url: https://github.com/gforcada/flake8-builtins\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
  "rendered_recipe": {

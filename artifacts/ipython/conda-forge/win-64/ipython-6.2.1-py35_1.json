@@ -899,6 +899,7 @@
   "subdir": "win-64",
   "version": "6.2.1"
  },
+ "metadata_version": 1,
  "name": "ipython",
  "raw_recipe": "{% set version = \"6.2.1\" %}\n\npackage:\n  name: ipython\n  version: {{ version }}\n\nsource:\n  fn: ipython-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/i/ipython/ipython-{{ version }}.tar.gz\n  sha256: 51c158a6c8b899898d1c91c6b51a34110196815cc905f9be0fa5878e19355608\n\nbuild:\n  number: 1\n  script: python -m pip install --no-deps .\n  skip: True  # [py2k]\n  entry_points:\n    - ipython = IPython:start_ipython\n    - ipython3 = IPython:start_ipython  # [py3k]\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - pickleshare\n    - simplegeneric >0.8\n    - prompt_toolkit >=1.0.4,<2.0.0\n    - pygments\n    - decorator\n    - traitlets >=4.2\n    - jedi >=0.10\n    - pexpect  # [unix]\n    - appnope  # [osx]\n    - colorama  # [win]\n    - win_unicode_console >=0.5  # [win and py<36]\n\ntest:\n  commands:\n    - ipython -h\n    - ipython3 -h          # [py3k]\n  imports:\n    - IPython\n\nabout:\n  home: https://ipython.org/\n  license: BSD 3-clause\n  license_file: COPYING.rst\n  summary: \"IPython: Productive Interactive Computing\"\n\nextra:\n  recipe-maintainers:\n    - Carreau\n    - jakirkham\n    - minrk\n    - ocefpaf\n    - pelson\n    - takluyver\n",
  "rendered_recipe": {

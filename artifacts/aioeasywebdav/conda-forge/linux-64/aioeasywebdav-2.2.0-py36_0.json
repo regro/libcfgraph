@@ -625,6 +625,7 @@
   "subdir": "linux-64",
   "version": "2.2.0"
  },
+ "metadata_version": 1,
  "name": "aioeasywebdav",
  "raw_recipe": "{% set version = \"2.2.0\" %}\n\npackage:\n  name: aioeasywebdav\n  version: {{ version }}\n\nsource:\n  fn: aioeasywebdav-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/a/aioeasywebdav/aioeasywebdav-{{ version }}.tar.gz\n  sha256: 2645934033bf2788ac962123d223e853fdbb0425127080e86b43be58d5d2545f\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  # this package does not support older Python versions\n  skip: true  # [py < 35]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm\n    - aiohttp\n    - six\n\n  run:\n    - python\n    - aiohttp\n    - six\n\ntest:\n  imports:\n    - aioeasywebdav\n\nabout:\n  home: https://gitlab.alelec.net/corona/aioeasywebdav\n  license: ISC\n  license_file: LICENSE\n  summary: A straight-forward WebDAV client, ported from easywebdav to use aiohttp.\n  dev_url: https://gitlab.alelec.net/corona/aioeasywebdav\n  description: |\n    This project started as a port of the requests-based EasyWebDAV\n    (http://github.com/amnong/easywebdav) to asyncio on Python 3.5. It has\n    since been extended with additional features.\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n",
  "rendered_recipe": {

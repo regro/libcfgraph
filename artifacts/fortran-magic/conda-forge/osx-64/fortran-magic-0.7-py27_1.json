@@ -20,6 +20,7 @@
   "subdir": "osx-64",
   "version": "0.7"
  },
+ "metadata_version": 1,
  "name": "fortran-magic",
  "raw_recipe": "{% set version = \"0.7\" %}\n\npackage:\n    name: fortran-magic\n    version: {{ version }}\n\nsource:\n    fn: fortran-magic-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/f/fortran-magic/fortran-magic-{{ version }}.tar.gz\n    md5: dc57d9c5daa0e16f6ce315045481b63e\n\nbuild:\n    number: 1\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - notebook\n\ntest:\n    imports:\n        - fortranmagic\n\nabout:\n    home: https://github.com/mgaitan/fortran_magic\n    license: BSD-3-Clause\n    summary: IPython extension that help to use Fortran in the interactive session\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
  "rendered_recipe": {},

@@ -319,6 +319,7 @@
   "subdir": "win-64",
   "version": "1.8.0"
  },
+ "metadata_version": 1,
  "name": "arm_pyart",
  "raw_recipe": "{% set name = \"arm_pyart\" %}\n{% set version = \"1.8.0\" %}\n{% set sha256 = \"b68ac9cb70b357ded1173a84a44883c3348b335fbb674f6c2e5b654171a1c9d7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n\nrequirements:\n    build:\n        - python\n        - numpy x.x\n        - trmm_rsl  # [not win]\n\n    run:\n        - python\n        - numpy x.x\n        - scipy\n        - matplotlib\n        - netcdf4\n        - trmm_rsl  # [not win]\n\ntest:\n    imports:\n        - pyart\n\nabout:\n    home: http://arm-doe.github.io/pyart/\n    license: BSD-3-Clause\n    summary: \"Python ARM Radar Toolkit\"\n\nextra:\n    recipe-maintainers:\n        - jjhelmus\n",
  "rendered_recipe": {

@@ -651,6 +651,7 @@
   "subdir": "linux-64",
   "version": "1.0.8"
  },
+ "metadata_version": 1,
  "name": "mastodon.py",
  "raw_recipe": "{% set name = \"Mastodon.py\" %}\n{% set version = \"1.0.8\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"d4efe41d2c058892fadb38ab255f1f7ba7a00b8b699b44c51616004fe0eada04\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n\n  run:\n    - python\n    - requests\n    - python-dateutil\n    - pytz\n\ntest:\n  imports:\n    - mastodon\n\nabout:\n  home: https://github.com/halcy/Mastodon.py\n  license_file: LICENSE\n  license: MIT\n  license_family: MIT\n  summary: 'Python wrapper for the Mastodon API'\n  dev_url: https://github.com/halcy/Mastodon.py\n  doc_url: https://mastodonpy.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

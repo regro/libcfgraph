@@ -497,6 +497,7 @@
   "subdir": "win-64",
   "version": "0.1.1"
  },
+ "metadata_version": 1,
  "name": "flake8-blind-except",
  "raw_recipe": "{% set name = \"flake8-blind-except\" %}\n{% set version = \"0.1.1\" %}\n{% set sha256 = \"aca3356633825544cec51997260fe31a8f24a1a2795ce8e81696b9916745e599\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - pep8\n\ntest:\n  imports:\n    - flake8_blind_except\n\nabout:\n  home: https://github.com/elijahandrews/flake8-blind-except\n  license: MIT\n  license_family: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'A flake8 extension that checks for blind, catch-all except statements'\n  description: |\n    A flake8 extension that checks for blind, catch-all except statements\n  doc_url: https://github.com/elijahandrews/flake8-blind-except\n  dev_url: https://github.com/elijahandrews/flake8-blind-except\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

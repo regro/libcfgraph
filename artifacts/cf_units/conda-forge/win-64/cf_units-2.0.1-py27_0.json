@@ -707,6 +707,7 @@
   "subdir": "win-64",
   "version": "2.0.1"
  },
+ "metadata_version": 1,
  "name": "cf_units",
  "raw_recipe": "{% set version = \"2.0.1\" %}\n\npackage:\n  name: cf_units\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/cf_units/cf_units-{{ version }}.tar.gz\n  sha256: aeb4978c11518bcb2516c1cf7beb053d1be0cd8e2349a07ad78094f63a2837f4\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - cython\n    - numpy 1.11.*\n    - udunits2 2.2.25  # [win and py2k]\n    - udunits2 >=2.2.26,<2.3  # [not (win and py2k)]\n  run:\n    - python\n    - numpy >=1.11\n    - udunits2 2.2.25  # [win and py2k]\n    - udunits2 >=2.2.26,<2.3  # [not (win and py2k)]\n    - cftime\n    - six\n\ntest:\n  source_files:\n    - cf_units/tests\n  requires:\n    - pytest\n    - pep8\n  imports:\n    - cf_units\n  commands:\n    - cd cf_units && python -m pytest tests\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://www.scitools.org.uk/iris\n  license: LGPL-3.0\n  license_file: COPYING.LESSER\n  summary: 'Units of measure as required by the Climate and Forecast (CF) metadata conventions.'\n\nextra:\n  recipe-maintainers:\n    - bjlittle\n    - dkillick\n    - ocefpaf\n    - pelson\n",
  "rendered_recipe": {

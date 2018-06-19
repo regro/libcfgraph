@@ -52,6 +52,7 @@
   "subdir": "win-64",
   "version": "0.0.10"
  },
+ "metadata_version": 1,
  "name": "jupyterlab",
  "raw_recipe": "{% set version = \"0.0.10\" %}\n\npackage:\n  name: jupyterlab\n  version: {{ version }}\n\nsource:\n    fn: jupyterlab-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/d6/46/dc0752f26c67b91ba71fecc230f107e95b8793ad51e679f02158a5de2d0e/jupyterlab-{{ version }}.tar.gz\n    md5: d93e2774721f1d85a657d548b03071da\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - notebook >=4.2\n\ntest:\n  imports:\n    - jupyterlab\n\nabout:\n  home: https://github.com/jupyter/jupyterlab\n  license: BSD 3-Clause\n  summary: A pre-alpha version of a computational environment for Jupyter.\n\nextra:\n  recipe-maintainers:\n    - jasongrout\n    - blink1073\n\n",
  "rendered_recipe": {},

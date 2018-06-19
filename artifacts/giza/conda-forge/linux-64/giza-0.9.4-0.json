@@ -754,6 +754,7 @@
   "subdir": "linux-64",
   "version": "0.9.4"
  },
+ "metadata_version": 1,
  "name": "giza",
  "raw_recipe": "# TODO: this package should be marked as conflicting with pgplot.\n\n{% set name = 'giza' %}\n{% set version = '0.9.4' %}\n{% set sha256 = \"1615bd177a708be6d1c87b404eeedd13447de17d344f817b5a1a0e4565addf41\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pilotfiber.dl.sourceforge.net/project/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - fix-tests.patch\n    - disable-macos-tests.patch  # [osx]\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - gcc  # [osx]\n    - pkg-config\n    - pthread-stubs\n    - toolchain\n    - cairo 1.14.*\n    - xorg-libx11 1.6.*\n  run:\n    - cairo 1.14.*\n    - libgfortran  # [unix]\n    - xorg-libx11 1.6.*\n\ntest:\n  # note: most tests are run in build.sh\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n    - test -e $PREFIX/lib/libgiza$SHLIB_EXT\n    - test -e $PREFIX/lib/libpgplot$SHLIB_EXT\n    - test -e $PREFIX/lib/libcpgplot$SHLIB_EXT\n\nabout:\n  home: http://giza.sourceforge.net/\n  license: GPLv2\n  license_file: COPYING\n  summary: A drop-in replacement for PGPLOT using C and Cairo.\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
  "rendered_recipe": {

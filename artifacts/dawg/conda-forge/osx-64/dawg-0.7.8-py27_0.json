@@ -87,6 +87,7 @@
   "subdir": "osx-64",
   "version": "0.7.8"
  },
+ "metadata_version": 1,
  "name": "dawg",
  "raw_recipe": "{% set name = \"DAWG\" %}\n{% set version = \"0.7.8\" %}\n{% set sha256 = \"30d5da3e48b8cbe5ec94c5a202d2962780d3895ba0883123e6788565f71b2953\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  features:\n    - vc9   # [win and py27]\n    - vc14  # [win and py>=35]\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - dawg\n\nabout:\n  home: https://github.com/pytries/DAWG\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'DAFSA-based dictionary-like read-only objects for Python'\n  doc_url: http://dawg.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - mcs07\n",
  "rendered_recipe": {

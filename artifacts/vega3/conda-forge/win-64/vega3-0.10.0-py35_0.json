@@ -137,6 +137,7 @@
   "timestamp": 1524754017894,
   "version": "0.10.0"
  },
+ "metadata_version": 1,
  "name": "vega3",
  "raw_recipe": "{% set version = \"0.10.0\" %}\n\npackage:\n  name: vega3\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/v/vega3/vega3-{{ version }}.tar.gz\n  sha256: 9f3f1b8363ae593b9e2c1bcc275cb17811c16d9a2dc3684f0c8a3b07d3b06aea\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n    - jupyter\n  run:\n    - python\n    - jupyter\n    - pandas\n\ntest:\n  imports:\n    - vega3\n\nabout:\n  home: http://github.com/vega/ipyvega/tree/vega3\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'IPyVega3: An IPython/Jupyter widget for Vega 3 and Vega-Lite 2'\n\nextra:\n  recipe-maintainers:\n    - jakevdp\n    - ocefpaf\n",
  "rendered_recipe": {

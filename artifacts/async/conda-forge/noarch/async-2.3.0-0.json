@@ -2540,6 +2540,7 @@
   "subdir": "noarch",
   "version": "2.3.0"
  },
+ "metadata_version": 1,
  "name": "async",
  "raw_recipe": "{% set name = \"async\" %}\n{% set version = \"2.3.0\" %}\n{% set sha256 = \"1c7cfc6622357e5a65bfa62a05f1e02bda8e64c2d68f4fbc37f53bef630243d6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/caolan/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs\n  \ntest:\n  commands:\n    - npm list -g async\n  requires:\n    - nodejs\n   \n\nabout:\n  home: https://github.com/caolan/async\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Async utilities for node and the browser'\n  description: |\n    Async is a utility module which provides straight-forward, powerful functions for working with asynchronous JavaScript. \n  doc_url: https://caolan.github.io/async/\n  dev_url: https://github.com/caolan/async\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

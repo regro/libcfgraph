@@ -2184,6 +2184,7 @@
   "subdir": "noarch",
   "version": "2.5.1"
  },
+ "metadata_version": 1,
  "name": "core-js",
  "raw_recipe": "{% set name = \"core-js\" %}\n{% set version = \"2.5.1\" %}\n{% set sha256 = \"c9d03a5dc71eab55a584e25215deb5f0628decac1aa53840dbb836d05e8d4818\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/zloirock/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs\n  \ntest:\n  commands:\n    - npm list -g core-js\n  requires:\n    - nodejs\n   \n\nabout:\n  home: https://github.com/zloirock/core-js\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Modular standard library for JavaScript'\n  description: |\n    Modular standard library for JavaScript\n  doc_url: https://github.com/zloirock/core-js\n  dev_url: https://github.com/zloirock/core-js\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

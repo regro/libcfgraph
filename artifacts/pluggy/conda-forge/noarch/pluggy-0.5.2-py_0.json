@@ -648,6 +648,7 @@
   "subdir": "noarch",
   "version": "0.5.2"
  },
+ "metadata_version": 1,
  "name": "pluggy",
  "raw_recipe": "{% set name = \"pluggy\" %}\n{% set version = \"0.5.2\" %}\n{% set sha256 = \"bd60171dbb250fdebafad46ed16d97065369da40568ae948ef7117eee8536e94\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name [0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  noarch: python\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pluggy\n\nabout:\n  home: https://github.com/pytest-dev/pluggy\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Plugin registration and hook calling for Python'\n  doc_url: https://pluggy.readthedocs.io/en/latest/\n  dev_url: https://github.com/pytest-dev/pluggy/\n\nextra:\n  recipe-maintainers:\n    - JohnGreeley\n    - nicoddemus\n    - tgoodlet\n",
  "rendered_recipe": {

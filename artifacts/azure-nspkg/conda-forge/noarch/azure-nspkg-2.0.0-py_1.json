@@ -765,6 +765,7 @@
   "subdir": "noarch",
   "version": "2.0.0"
  },
+ "metadata_version": 1,
  "name": "azure-nspkg",
  "raw_recipe": "{% set name = \"azure-nspkg\" %}\n{% set version = \"2.0.0\" %}\n{% set sha256 = \"fe19ee5d8c66ee8ef62557fc7310f59cffb7230f0a94701eef79f6e3191fdc7b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip  \n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - azure\n\nabout:\n  home: https://github.com/Azure/azure-sdk-for-python\n  license: Apache-2.0\n  summary: 'Microsoft Azure Namespace Package [Internal]'\n\nextra:\n  recipe-maintainers:\n    - ivoflipse\n    - Korijn\n    - Maxyme\n",
  "rendered_recipe": {

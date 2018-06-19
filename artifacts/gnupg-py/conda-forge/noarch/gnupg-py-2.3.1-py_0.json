@@ -140,6 +140,7 @@
   "timestamp": 1525814155741,
   "version": "2.3.1"
  },
+ "metadata_version": 1,
  "name": "gnupg-py",
  "raw_recipe": "{% set name = \"gnupg\" %}\n{% set version = \"2.3.1\" %}\n{% set sha256 = \"8db5a05c369dbc231dab4c98515ce828f2dffdc14f1534441a6c59b71c6d2031\" %}\n\npackage:\n  # This name is chosen as there is already a python-gnupg (that is similar but not the same).\n  name: {{ name|lower }}-py\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - psutil >=1.2.1\n\ntest:\n  imports:\n    - gnupg\n\nabout:\n  home: https://github.com/isislovecruft/python-gnupg\n  summary: A Python wrapper for GnuPG\n  license: GPL-3\n  license_family: GPL\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "rendered_recipe": {

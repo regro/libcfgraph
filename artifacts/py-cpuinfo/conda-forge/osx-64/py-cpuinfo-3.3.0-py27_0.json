@@ -494,6 +494,7 @@
   "subdir": "osx-64",
   "version": "3.3.0"
  },
+ "metadata_version": 1,
  "name": "py-cpuinfo",
  "raw_recipe": "{% set name = \"py-cpuinfo\" %}\n{% set version = \"3.3.0\" %}\n{% set sha256 = \"c787b70a15f4bb54d338a46206c83a32ae7988e6e5568ab908752e7bccb1f62f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script_env:\n    - PROCESSOR_ARCHITEW6432\n    - PROCESSOR_ARCHITECTURE\n    - PROCESSOR_IDENTIFIER\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - cpuinfo = cpuinfo:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - cpuinfo\n  commands:\n    - cpuinfo\n\nabout:\n  home: https://github.com/workhorsy/py-cpuinfo\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A module for getting CPU info with Python 2 & 3'\n  dev_url: https://github.com/workhorsy/py-cpuinfo\n\nextra:\n  recipe-maintainers:\n    - mstimberg\n",
  "rendered_recipe": {

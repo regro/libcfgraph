@@ -110,6 +110,7 @@
   "subdir": "linux-64",
   "version": "0.2.1"
  },
+ "metadata_version": 1,
  "name": "george",
  "raw_recipe": "{% set name = \"george\" %}\n{% set version = \"0.2.1\" %}\n{% set sha256 = \"e5b073f054e7520d898056d51a30aa2ebccce69cbb43b8b2e9c984f251df739a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/g/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script: python setup.py build_ext -I{{environ[\"PREFIX\"]}}/include/eigen3 install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - eigen\n    - numpy x.x\n    - cython\n    - setuptools\n\n  run:\n    - python\n    - eigen\n    - numpy x.x\n    - scipy\n\ntest:\n  imports:\n    - george\n\nabout:\n  home: https://github.com/dfm/george\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'George is a fast and flexible Python library for Gaussian Process Regression.'\n  description: |\n    George is a fast and flexible Python library for Gaussian Process Regression.\n  doc_url: http://dan.iel.fm/george/current\n  dev_url: https://github.com/dfm/george\n\nextra:\n  recipe-maintainers:\n    - hellovenkat\n    - scopatz\n",
  "rendered_recipe": {

@@ -745,6 +745,7 @@
   "subdir": "win-64",
   "version": "5.0.0"
  },
+ "metadata_version": 1,
  "name": "lld",
  "raw_recipe": "{% set version = \"5.0.0\" %}\n{% set sha256 = \"399a7920a5278d42c46a7bf7e4191820ec2301457a7d0d4fcc9a4ac05dd53897\" %}\n\npackage:\n  name: lld\n  version: {{ version }}\n\nsource:\n  fn: lld-{{ version }}.src.tar.xz\n  url: http://releases.llvm.org/{{ version }}/lld-{{ version }}.src.tar.xz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win and py<35]\n  features:\n    - vc14    # [win and py>=35]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake >=3.4.3\n    - ninja    # [win]\n    - python\n    - llvmdev =={{ version }}\n    - libxml2 2.9.*\n    - swig\n    - vc 14    # [win]\n    - libcxx   # [osx]\n  run:\n    - vc 14    # [win]\n    - libcxx   # [osx]\n    - llvmdev =={{ version }}\n    - python\n\ntest:\n  requires:\n    - python {{ environ['PY_VER'] + '*' }}  # [win]\n    - cmake >=3.4.3\n\n  commands:\n    - ld.lld --version  # [linux]\n    - lld-link /?  # [win]\n\nabout:\n  home: http://llvm.org/\n  license: NCSA\n  license_file: LICENSE.TXT\n  summary: The LLVM Linker\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - xoviat\n",
  "rendered_recipe": {

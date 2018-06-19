@@ -731,6 +731,7 @@
   "subdir": "osx-64",
   "version": "0.3.2"
  },
+ "metadata_version": 1,
  "name": "mtspec",
  "raw_recipe": "{% set version = \"0.3.2\" %}\n{% set sha256 = \"c20239fe3dcf6bd2ac957395b712f52e630c83a38d5347e7a3e6dce718ad4fe1\" %}\n\npackage:\n  name: mtspec\n  version: {{ version }}\n\n\nsource:\n  fn: mtspec-{{ version }}.zip\n  url: https://pypi.io/packages/source/m/mtspec/mtspec-{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - gcc\n    - numpy\n  run:\n    - python\n    - libgfortran\n    - numpy\n\ntest:\n  imports:\n    - mtspec\n  commands:\n    - python -m mtspec.tests\n\nabout:\n  home: http://github.com/krischer/mtspec\n  license: GPL-3.0\n  summary: 'Python library for multitaper spectral estimations'\n  description: |\n    mtspec is a Python (ctypes) wrapper for the Multitaper Spectrum Estimation\n    Library mwlib.a by German A. Prieto.\n    It enables you to calculate Slepian windows, perform multitaper spectral\n    estimations with various options, calculate Wigner-Ville time-frequency\n    distributions, and construct coherence spectra with multitapers.\n  doc_url: http://krischer.github.io/mtspec/\n  dev_url: https://github.com/krischer/mtspec\n\nextra:\n  recipe-maintainers:\n    - krischer\n    - ocefpaf\n",
  "rendered_recipe": {

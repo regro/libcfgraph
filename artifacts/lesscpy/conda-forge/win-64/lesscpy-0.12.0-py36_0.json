@@ -121,6 +121,7 @@
   "subdir": "win-64",
   "version": "0.12.0"
  },
+ "metadata_version": 1,
  "name": "lesscpy",
  "raw_recipe": "{% set name = \"lesscpy\" %}\n{% set version = \"0.12.0\" %}\n{% set compress_type = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"5c552757efc6e5d14d9a917ebdd036e7b6ff12ae68a5beb64a0a1cf856a098b5\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  entry_points:\n    - lesscpy = lesscpy.scripts.compiler:run\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - ply\n    - six\n\ntest:\n  imports:\n    - lesscpy\n    - lesscpy.lessc\n    - lesscpy.lib\n    - lesscpy.plib\n    - lesscpy.scripts\n\n  commands:\n    - lesscpy --help\n\nabout:\n  home: https://github.com/lesscpy/lesscpy\n  license_file: LICENSE\n  license: MIT\n  license_family: MIT\n  summary: 'Python LESS compiler'\n  dev_url: https://github.com/lesscpy/lesscpy\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

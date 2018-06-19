@@ -684,6 +684,7 @@
   "subdir": "linux-64",
   "version": "3.21.1"
  },
+ "metadata_version": 1,
  "name": "hypothesis",
  "raw_recipe": "{% set pkgname = \"hypothesis\" %}\n{% set version = \"3.21.1\" %}\n{% set sha256 = \"aad9779a18c00536f84776e6d32602bb4ecd3ebc2469730fa974fb0a50028056\" %}\n\npackage:\n  name: {{ pkgname }}\n  version: {{ version }}\n\nsource:\n  fn: {{ pkgname }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ pkgname[0] }}/{{ pkgname }}/{{ pkgname }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - enum34  # [py<34]\n\ntest:\n  imports:\n    - hypothesis\n    - hypothesis.extra\n    - hypothesis.internal\n    - hypothesis.internal.conjecture\n    - hypothesis.searchstrategy\n    - hypothesis.tools\n    - hypothesis.utils\n    - hypothesis.vendor\n\nabout:\n  home: https://github.com/HypothesisWorks/hypothesis-python\n  license: MPL 2.0\n  summary: 'A library for property based testing'\n\nextra:\n  recipe-maintainers:\n    - ericmjl\n    - jochym\n    - tadeu\n",
  "rendered_recipe": {

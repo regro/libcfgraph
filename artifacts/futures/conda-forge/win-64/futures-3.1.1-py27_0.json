@@ -520,6 +520,7 @@
   "subdir": "win-64",
   "version": "3.1.1"
  },
+ "metadata_version": 1,
  "name": "futures",
  "raw_recipe": "{% set name = \"futures\" %}\n{% set version = \"3.1.1\" %}\n{% set sha256 = \"51ecb45f0add83c806c68e4b06106f90db260585b25ef2abfcda0bd95c0132fd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py>=32]\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - concurrent\n    - concurrent.futures\n\nabout:\n  home: https://github.com/agronholm/pythonfutures\n  license: PSF\n  license_file: LICENSE\n  summary: Backport of the concurrent.futures package from Python 3.2\n  description: |\n    concurrent.futures module provides a high-level interface for\n    asynchronously executing callables.\n  doc_url: http://pythonhosted.org/futures/\n  doc_source_url: https://github.com/agronholm/pythonfutures/blob/master/docs/index.rst\n  dev_url: https://github.com/agronholm/pythonfutures\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - nehaljwani\n",
  "rendered_recipe": {

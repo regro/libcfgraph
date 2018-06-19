@@ -609,6 +609,7 @@
   "subdir": "linux-64",
   "version": "0.3.5"
  },
+ "metadata_version": 1,
  "name": "cbsyst",
  "raw_recipe": "{% set version = \"0.3.5\" %}\n\npackage:\n  name: cbsyst\n  version: {{ version }}\n\nsource:\n  fn: cbsyst-{{ version }}.tar.gz\n  url: https://github.com/oscarbranson/cbsyst/archive/v{{ version }}.tar.gz\n  sha256: edd5f9a8c50b9b574698b8111c35f2bc2f6981d67eb352eaf27e39fadb76eefa\n\nbuild:\n  number: 0\n  skip: True  # [py2k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - numpy\n    - scipy\n    - uncertainties\n    - tqdm\n    - pandas\n\ntest:\n  imports:\n    - cbsyst\n\nabout:\n  home: https://github.com/oscarbranson/\n  license: MIT\n  license_file: LICENCE.txt\n  summary: 'Tools for calculating ocean C and B chemistry.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

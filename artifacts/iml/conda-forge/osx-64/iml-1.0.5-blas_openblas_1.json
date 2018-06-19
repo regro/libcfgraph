@@ -652,6 +652,7 @@
   "subdir": "osx-64",
   "version": "1.0.5"
  },
+ "metadata_version": 1,
  "name": "iml",
  "raw_recipe": "{% set version = \"1.0.5\" %}\n{% set name = \"iml\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: http://www.cs.uwaterloo.ca/~astorjoh/{{ name }}-{{ version }}.tar.bz2\n  sha256: 1dad666850895a5709b00b97422e2273f293cfadea7697a9f90b90953e847c2a\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - gmp 6.1.*\n    - openblas 0.2.20|0.2.20.*\n    - blas 1.1 {{ variant }}\n  run:\n    - gmp 6.1.*\n    - openblas 0.2.20|0.2.20.*\n    - blas 1.1 {{ variant }}\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/{{ name }}.h\n    - test -f ${PREFIX}/lib/lib{{ name }}.a\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]\n\nabout:\n  home: https://cs.uwaterloo.ca/~astorjoh/iml.html\n  license: GPLv2\n  license_file: COPYING\n  summary: |\n    IML is a free library of C source code which implements algorithms for computing\n    exact solutions to dense systems of linear equations over the integers.\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

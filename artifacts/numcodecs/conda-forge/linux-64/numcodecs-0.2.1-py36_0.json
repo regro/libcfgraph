@@ -127,6 +127,7 @@
   "subdir": "linux-64",
   "version": "0.2.1"
  },
+ "metadata_version": 1,
  "name": "numcodecs",
  "raw_recipe": "{% set name = \"numcodecs\" %}\n{% set version = \"0.2.1\" %}\n{% set sha256 = \"25dfdb1ed28c9426f86712c9746e891ca8a6d41928fb3737d2fc951daed1cb51\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script:\n    - export DISABLE_NUMCODECS_AVX2=\"\"  # [unix]\n    - set DISABLE_NUMCODECS_AVX2=\"\"  # [win]\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - cython\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - numpy\n    - msgpack-python\n    - backports.lzma  # [py27 and unix]\n\ntest:\n  requires:\n    - nose\n  imports:\n    - numcodecs\n    - numcodecs.blosc\n    - numcodecs.lz4\n    - numcodecs.zstd\n  commands:\n    - nosetests -v numcodecs\n\nabout:\n  home: https://github.com/alimanfoo/numcodecs\n  license: MIT\n  summary: A Python package providing buffer compression and transformation codecs for use in data storage and communication applications.\n\nextra:\n  recipe-maintainers:\n    - alimanfoo\n",
  "rendered_recipe": {

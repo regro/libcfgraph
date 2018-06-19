@@ -15641,6 +15641,7 @@
   "subdir": "linux-64",
   "version": "2.17.0.0"
  },
+ "metadata_version": 1,
  "name": "pystan",
  "raw_recipe": "{% set name = \"pystan\" %}\n{% set version = \"2.17.0.0\" %}\n{% set sha256sum = \"27289d5c0eab1c1427d2fe3fd94b527161433fb8b039bf094ad4d73ebb595e49\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256sum }}\n\nbuild:\n  number: 0\n  skip: True  # [win and py27]\n  features:\n    - vc14  # [win and py35]\n    - vc14  # [win and py36]\n  detect_binary_files_with_prefix: False\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy >=1.7\n    - cython >=0.22,!=0.25.1\n\n  run:\n    - python\n    - numpy >=1.7\n    - cython >=0.22,!=0.25.1\n    - matplotlib\n\ntest:\n  imports:\n    - pystan\n\nabout:\n  home: http://mc-stan.org/interfaces/pystan.html\n  license: GPLv3\n  license_file: LICENSE\n  summary: Python interface to Stan, a package for Bayesian inference\n  description: |\n    PyStan provides a Python interface to Stan, a package for Bayesian\n    inference using the No-U-Turn sampler, a variant of Hamiltonian Monte\n    Carlo.\n  doc_url: https://pystan.readthedocs.org/\n  dev_url: https://github.com/stan-dev/pystan\n\nextra:\n  recipe-maintainers:\n    - rmax\n",
  "rendered_recipe": {

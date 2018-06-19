@@ -643,6 +643,7 @@
   "subdir": "linux-64",
   "version": "0.6.4"
  },
+ "metadata_version": 1,
  "name": "dogpile.cache",
  "raw_recipe": "{% set name = \"dogpile.cache\" %}\n{% set version = \"0.6.4\" %}\n{% set sha256 = \"a73aa3049cd88d7ec57a1c2e8946abdf4f14188d429c1023943fcc55c4568da1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six\n\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - dogpile.cache \n\nabout:\n  home: https://bitbucket.org/zzzeek/dogpile.cache\n  license: BSD\n  summary: A caching front-end based on the Dogpile lock. \n\nextra:\n  recipe-maintainers:\n    - brainstorm\n",
  "rendered_recipe": {

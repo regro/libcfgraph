@@ -65,6 +65,7 @@
   "subdir": "osx-64",
   "version": "5.0.5"
  },
+ "metadata_version": 1,
  "name": "gnuplot",
  "raw_recipe": "{% set pkgname = \"gnuplot\" %}\n{% set version = \"5.0.5\" %}\n{% set sha256 = \"25f3e0bf192e01115c580f278c3725d7a569eb848786e12b455a3fda70312053\" %}\n\npackage:\n  name: {{ pkgname }}\n  version: {{ version }}\n\nsource:\n  fn: {{ pkgname }}-{{ version }}.tar.gz\n  url: https://sourceforge.net/projects/{{ pkgname }}/files/{{ pkgname }}/{{ version }}/{{ pkgname }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - gcc  # [linux]\n    - pkgconfig\n    - ncurses 5.9*\n    - readline 6.2*\n    - libgd\n    - cairo 1.14.*\n    - qt 4.8.*\n    - pango 1.40.*\n  run:\n    - libgcc  # [linux]\n    - ncurses 5.9*\n    - readline 6.2*\n    - libgd\n    - cairo 1.14.*\n    - qt 4.8.*\n    - pango 1.40.*\n\ntest:\n  files:\n    - test-data.txt\n  commands:\n    - gnuplot -e \"set terminal dumb; set style histogram; p 'test-data.txt'\"\n    - gnuplot -e \"set terminal png\"\n\nabout:\n  home: https://github.com/gnuplot/gnuplot\n  license: Gnuplot\n  license_file: Copyright\n  summary: Gnuplot, plotting from command line\n\nextra:\n  recipe-maintainers:\n    - croth1\n",
  "rendered_recipe": {},

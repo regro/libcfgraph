@@ -792,6 +792,7 @@
   "subdir": "linux-64",
   "version": "1.11.1"
  },
+ "metadata_version": 1,
  "name": "vcrpy",
  "raw_recipe": "{% set name = \"vcrpy\" %}\n{% set version = \"1.11.1\" %}\n{% set sha256 = \"f434fe7e05d940d576ac850709ae57a738ba40e7f317076ea8d359ced5b32320\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pyyaml\n    - wrapt\n    - six >=1.5\n    - mock  # [py27]\n    - contextlib2  # [py27]\n\n  run:\n    - python\n    - pyyaml\n    - wrapt\n    - six >=1.5\n    - mock  # [py27]\n    - contextlib2  # [py27]\n\ntest:\n  # Python imports\n  imports:\n    - vcr\n    - vcr.persisters\n    - vcr.serializers\n    - vcr.stubs\n\nabout:\n  home: https://github.com/kevin1024/vcrpy\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'Automatically mock your HTTP interactions to simplify and speed up testing'\n  dev_url: https://github.com/kevin1024/vcrpy\n  doc_url: https://vcrpy.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
  "rendered_recipe": {

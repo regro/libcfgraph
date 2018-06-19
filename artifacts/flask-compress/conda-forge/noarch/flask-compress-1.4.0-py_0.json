@@ -717,6 +717,7 @@
   "subdir": "noarch",
   "version": "1.4.0"
  },
+ "metadata_version": 1,
  "name": "flask-compress",
  "raw_recipe": "{% set name = \"Flask-Compress\" %}\n{% set version = \"1.4.0\" %}\n{% set sha256 = \"468693f4ddd11ac6a41bca4eb5f94b071b763256d54136f77957cfee635badb3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - flask\n\ntest:\n  imports:\n    - flask_compress\n\nabout:\n  home: https://libwilliam.github.io/flask-compress/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'Compress responses in your Flask app with gzip.'\n\n  description: |\n    Flask-Compress allows you to easily compress your Flask application's responses with gzip.\n  dev_url: https://github.com/libwilliam/flask-compress\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
  "rendered_recipe": {

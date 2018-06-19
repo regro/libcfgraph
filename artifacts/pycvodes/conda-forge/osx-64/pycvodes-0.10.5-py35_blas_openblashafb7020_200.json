@@ -147,6 +147,7 @@
   "timestamp": 1527529584506,
   "version": "0.10.5"
  },
+ "metadata_version": 1,
  "name": "pycvodes",
  "raw_recipe": "{% set name = \"pycvodes\" %}\n{% set version = \"0.10.5\" %}\n{% set sha256 = \"5c751e92661f1fd032856adda34667f6e8b3edf181222fed8d2070621c2e590c\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 200\n  skip: True  # [win]\n  features:\n    - blas_{{ variant }}  # [not win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - blas 1.1 {{ variant }}  # [not win]\n    - openblas          # [not win]\n    - sundials\n    - python\n    - setuptools\n    - pip\n    - numpy\n  run:\n    - blas 1.1 {{ variant }}  # [not win]\n    - openblas                  # [not win]\n    - sundials\n    - python\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - pycvodes\n  requires:\n    - pytest\n\nabout:\n  home: https://github.com/bjodah/{{ name }}\n  license: BSD 2-Clause\n  license_file: LICENSE\n  summary: 'Python wrapper around cvodes (from the sundials library)'\n  doc_url: https://bjodah.github.io/{{ name }}/latest\n\n\nextra:\n  recipe-maintainers:\n    - bjodah\n",
  "rendered_recipe": {

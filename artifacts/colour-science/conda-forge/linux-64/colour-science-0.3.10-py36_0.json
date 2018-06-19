@@ -1162,6 +1162,7 @@
   "subdir": "linux-64",
   "version": "0.3.10"
  },
+ "metadata_version": 1,
  "name": "colour-science",
  "raw_recipe": "{% set name = \"colour-science\" %}\n{% set version = \"0.3.10\" %}\n{% set sha256 = \"092c16ed1e640c76ab9f7dc0dbe85a32c3c64709c6d393f88bdba0cfef574e64\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - matplotlib >=1.3.1\n    - python\n    - scipy >=0.16.0\n    - six >=1.10.0\n\ntest:\n  imports:\n    - colour\n\nabout:\n  home: http://colour-science.org/\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Colour Science for Python'\n  doc_url: http://colour.readthedocs.io/\n  dev_url: http://github.com/colour-science/colour\n\nextra:\n  recipe-maintainers:\n    - KelSolaar\n    - MichaelMauderer\n",
  "rendered_recipe": {

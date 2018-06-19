@@ -763,6 +763,7 @@
   "subdir": "noarch",
   "version": "17.1"
  },
+ "metadata_version": 1,
  "name": "packaging",
  "raw_recipe": "{% set version = \"17.1\" %}\n\npackage:\n  name: packaging\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/p/packaging/packaging-{{ version }}.tar.gz\n  sha256: f019b770dd64e585a99714f1fd5e01c7a8f11b45635aa953fd41c689a657375b\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - pyparsing\n    - six\n\n  run:\n    - python\n    - pyparsing\n    - six\n\ntest:\n  imports:\n    - packaging\n\nabout:\n  home: https://github.com/pypa/packaging\n  license: Apache 2.0 or BSD 2-Clause\n  license_file: LICENSE\n  summary: Core utilities for Python packages\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - nicoddemus\n",
  "rendered_recipe": {

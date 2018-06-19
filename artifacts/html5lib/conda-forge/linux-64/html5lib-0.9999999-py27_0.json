@@ -631,6 +631,7 @@
   "subdir": "linux-64",
   "version": "0.9999999"
  },
+ "metadata_version": 1,
  "name": "html5lib",
  "raw_recipe": "{% set name = \"html5lib\" %}\n{% set version = \"0.9999999\" %}\n{% set sha256 = \"2612a191a8d5842bfa057e41ba50bbb9dcb722419d2408c78cff4758d0754868\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n    - six >=1.9\n    - webencodings\n\ntest:\n  imports:\n    - html5lib\n    - html5lib.filters\n    - html5lib.treeadapters\n    - html5lib.treebuilders\n    - html5lib.treewalkers\n\nabout:\n  home: https://github.com/html5lib/html5lib-python\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'HTML parser based on the WHATWG HTML specification'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n",
  "rendered_recipe": {

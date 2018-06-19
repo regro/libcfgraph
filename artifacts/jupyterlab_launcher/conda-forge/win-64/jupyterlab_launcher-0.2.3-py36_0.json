@@ -91,6 +91,7 @@
   "subdir": "win-64",
   "version": "0.2.3"
  },
+ "metadata_version": 1,
  "name": "jupyterlab_launcher",
  "raw_recipe": "{% set version = \"0.2.3\" %}\n\npackage:\n  name: jupyterlab_launcher\n  version: {{ version }}\n\nsource:\n  fn: jupyterlab_launcher-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/j/jupyterlab_launcher/jupyterlab_launcher-{{ version }}.tar.gz\n  sha256: 6583ba80db6493d0a80145e9e09db0733adc9986c4234ecdb3938d8cecf68146\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - notebook\n\ntest:\n  imports:\n    - jupyterlab_launcher\n\nabout:\n  home: http://github.com/jupyterlab/jupyterlab_launcher\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: A Launcher for JupyterLab based applications.\n\nextra:\n  recipe-maintainers:\n    - jasongrout\n    - blink1073\n",
  "rendered_recipe": {

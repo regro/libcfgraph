@@ -712,6 +712,7 @@
   "subdir": "linux-64",
   "version": "2.0.5"
  },
+ "metadata_version": 1,
  "name": "wgrib2",
  "raw_recipe": "{% set version = \"2.0.5\" %}\n\npackage:\n  name: wgrib2\n  version: {{ version }}\n\nsource:\n  fn: wgrib2_nolib.tgz\n  url: ftp://ftp.cpc.ncep.noaa.gov/wd51we/wgrib2/wgrib2_nolib.tgz.v{{ version }}\n  sha256: 453e7e1c2b0d42f5b3d09a44ca1a4fe7c3fd0be4babfd6cf6e4968d0f04184a7\n  patches:\n    - no_proj.patch\n\nbuild:\n  number: 1\n  skip: True  # [win or osx]\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - g2clib\n    - mysql-connector-c 6.1.*\n    - libnetcdf 4.4.*\n    - gcc\n  run:\n    - g2clib\n    - mysql-connector-c 6.1.*\n    - libnetcdf 4.4.*\n    - libgcc  # [linux]\n    - libgfortran  # [osx]\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n    # - wgrib2 -config # works but the return code !=0\n\nabout:\n  home: http://www.cpc.ncep.noaa.gov/products/wesley/wgrib2\n  license: GPL-2.0\n  summary: 'Utility to read and write grib2 files'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

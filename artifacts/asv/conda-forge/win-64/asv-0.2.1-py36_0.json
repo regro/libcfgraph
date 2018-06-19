@@ -610,6 +610,7 @@
   "subdir": "win-64",
   "version": "0.2.1"
  },
+ "metadata_version": 1,
  "name": "asv",
  "raw_recipe": "{% set name = \"asv\" %}\n{% set version = \"0.2.1\" %}\n{% set sha256 = \"f0bd3f75d20a3802139f11b8c7e7e82876d00470aef17a99acc10849414b7470\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - sphinx\n    - sphinx_bootstrap_theme\n    - six\n    - toolchain\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - asv\n#  requires:\n#    - pytest\n#  files:\n#    - {{ SRC_DIR }}/test/\n#  commands:\n#    - cd {{ SRC_DIR }}/test/\n#    - py.test\n\nabout:\n  home: https://github.com/spacetelescope/asv\n  license: BSD-3\n  license_file: LICENSE.rst\n  summary: 'A simple Python benchmarking tool with web-based reporting'\n\n  description: |\n    It is primarily designed to benchmark a single project over its lifetime\n    using a given suite of benchmarks. The results are displayed in an\n    interactive web frontend that requires only a basic static webserver to\n    host.\n  doc_url: http://asv.readthedocs.io/en/latest/index.html\n  dev_url: https://github.com/spacetelescope/asv\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
  "rendered_recipe": {

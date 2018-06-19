@@ -758,6 +758,7 @@
   "subdir": "noarch",
   "version": "2.10.0"
  },
+ "metadata_version": 1,
  "name": "factory_boy",
  "raw_recipe": "{% set name = \"factory_boy\" %}\n{% set version = \"2.10.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"bd5a096d0f102d79b6c78cef1c8c0b650f2e1a3ecba351c735c6d2df8dabd29c\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  noarch: python\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools >=0.8.0\n\n  run:\n    - python\n    - faker >=0.7.0\n\ntest:\n  imports:\n    - factory\n\nabout:\n  home: https://github.com/FactoryBoy/factory_boy\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: \"A versatile test fixtures replacement based on thoughtbot's factory_girl for Ruby.\"\n  dev_url: https://github.com/FactoryBoy/factory_boy\n  doc_url: https://factoryboy.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

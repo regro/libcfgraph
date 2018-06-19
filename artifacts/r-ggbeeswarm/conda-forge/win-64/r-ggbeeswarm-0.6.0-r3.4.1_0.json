@@ -621,6 +621,7 @@
   "subdir": "win-64",
   "version": "0.6.0"
  },
+ "metadata_version": 1,
  "name": "r-ggbeeswarm",
  "raw_recipe": "{% set version = '0.6.0' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-ggbeeswarm\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: ggbeeswarm_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/ggbeeswarm_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/ggbeeswarm/ggbeeswarm_{{ version }}.tar.gz\n  sha256: bbac8552f67ff1945180fbcda83f7f1c47908f27ba4e84921a39c45d6e123333\n\nbuild:\n  number: 0\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-beeswarm\n    - r-ggplot2 >=2.0\n    - r-vipor\n\n  run:\n    - r-base\n    - r-beeswarm\n    - r-ggplot2 >=2.0\n    - r-vipor\n\ntest:\n  commands:\n    - $R -e \"library('ggbeeswarm')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('ggbeeswarm')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/eclarke/ggbeeswarm\n  license: GPL (>= 2)\n  summary: Provides two methods of plotting categorical scatter plots such that the arrangement\n    of points within a category reflects the density of data at that region, and avoids\n    over-plotting.\n  license_family: GPL3\n\nextra:\n  recipe-maintainers:\n    - jdblischak\n    - johanneskoester\n    - bgruening\n",
  "rendered_recipe": {

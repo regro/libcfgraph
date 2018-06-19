@@ -749,6 +749,7 @@
   "subdir": "noarch",
   "version": "0.1.14"
  },
+ "metadata_version": 1,
  "name": "aloe",
  "raw_recipe": "{% set name = \"aloe\" %}\n{% set version = \"0.1.14\" %}\n{% set sha256sum = '1ce12bbbef69063c6222042b42a3cd2ce7b9fbe817b2330609678a98b58c2a38' %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256sum }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm\n\n  run:\n    - python\n    - nose\n    - future\n    - gherkin-official >=4,<5\n    - nose\n    - repoze.lru\n\ntest:\n  imports:\n    - aloe\n\nabout:\n  home: https://github.com/aloetesting/aloe\n  license: GPL-3.0\n  # xref: https://github.com/aloetesting/aloe/pull/129\n  # license_file: '{{ environ[\"RECIPE_DIR\"] }}/COPYING'\n  license_file: COPYING\n  summary: Behavior Driven Development using Cucumber for Python\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
  "rendered_recipe": {

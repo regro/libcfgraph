@@ -121,6 +121,7 @@
   "timestamp": 1528483215626,
   "version": "2.0.4"
  },
+ "metadata_version": 1,
  "name": "fusepy",
  "raw_recipe": "{% set version = \"2.0.4\" %}\n\npackage:\n  name: fusepy\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/f/fusepy/fusepy-{{ version }}.tar.gz\n  sha256: 10f5c7f5414241bffecdc333c4d3a725f1d6605cae6b4eaf86a838ff49cdaf6c\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - fuse\n\nabout:\n  home: http://github.com/terencehonles/fusepy\n  license: ISC\n  # Waiting on https://github.com/fusepy/fusepy/pull/74\n  # license_file: ''\n  summary: Simple ctypes bindings for FUSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

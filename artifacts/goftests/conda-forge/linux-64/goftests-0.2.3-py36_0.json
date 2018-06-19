@@ -95,6 +95,7 @@
   "subdir": "linux-64",
   "version": "0.2.3"
  },
+ "metadata_version": 1,
  "name": "goftests",
  "raw_recipe": "{% set name = \"goftests\" %}\n{% set version = \"0.2.3\" %}\n{% set sha256 = \"786e6877ac327576a07a50da47a28df28340cac8028cfd992660234ab34f5910\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - scipy\n    - scikit-learn\n\ntest:\n  imports:\n    - goftests\n\nabout:\n  home: https://github.com/posterior/goftests\n  license: BSD-3-Clause\n  license_family: BSD\n  summary: 'Goodness of fit tests for general datatypes'\n  description: |\n    Goftests is intended for unit testing random samplers that generate\n    arbitrary plain-old-data, and focuses on robustness rather than\n    statistical efficiency. In contrast to scipy.stats and statsmodels,\n    goftests does not make assumptions on the distribution being\n    tested, and requires only a simple (sample, prob) interface\n    provided by MCMC samplers.\n  dev_url: https://github.com/posterior/goftests\n\nextra:\n  recipe-maintainers:\n    - danring\n",
  "rendered_recipe": {

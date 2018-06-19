@@ -780,6 +780,7 @@
   "subdir": "win-64",
   "version": "1.1.2"
  },
+ "metadata_version": 1,
  "name": "jom",
  "raw_recipe": "{% set name = \"jom\" %}\n{% set version = \"1.1.2\" %}\n{% set sha256 = \"4136b9c5fadc8a15a3db115e037f25f5f5009c9f1290231f8aab28776d190ef2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: http://download.qt.io/official_releases/jom/jom_{{ version.replace('.', '_') }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [not win]\n  script:\n    - cp *.bat %LIBRARY_BIN%\\\n    - cp *.exe %LIBRARY_BIN%\\\n    - cp *.xml %LIBRARY_BIN%\\\n\ntest:\n  commands:\n    - jom /VERSION\n\nabout:\n  home: https://wiki.qt.io/Jom\n  license: GPLv3\n  license_family: GPL\n  license_file: {{ RECIPE_DIR }}/LICENSE\n  summary: 'jom is a clone of nmake to support the execution of multiple independent commands in parallel'\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
  "rendered_recipe": {

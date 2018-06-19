@@ -732,6 +732,7 @@
   "subdir": "linux-64",
   "version": "1.5.0"
  },
+ "metadata_version": 1,
  "name": "hmat-oss",
  "raw_recipe": "{% set version = \"1.5.0\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: hmat-oss\n  version: {{ version }}\n\nsource:\n  fn: hmat-oss-{{ version }}.tar.gz\n  url: https://github.com/jeromerobert/hmat-oss/archive/{{ version }}.tar.gz\n  sha256: 21a64d1df1c9bb7221205020b95af8bff65668d0d2cfde5431d0e9fc7958d0a9\n\nbuild:\n  number: 201\n  skip: true  # [win]\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.20|0.2.20.*\n\n  run:\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.20|0.2.20.*\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/hmat/hmat/hmat.h  # [unix]\n    - test -f ${PREFIX}/lib/libhmat-oss${SHLIB_EXT}  # [osx]\n\nabout:\n  home: https://github.com/jeromerobert/hmat-oss\n  license: GPLv2\n  license_file: LICENSE.md\n  summary: A hierarchical matrix C/C++ library\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
  "rendered_recipe": {

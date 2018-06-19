@@ -519,6 +519,7 @@
   "subdir": "osx-64",
   "version": "1.14.0"
  },
+ "metadata_version": 1,
  "name": "fabric",
  "raw_recipe": "{% set name = \"Fabric\" %}\n{% set version = \"1.14.0\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"81572002a562b26df657ca10d06b5bcfc6fd56b53374037392c83d4a2158208f\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  skip: True  # [py3k]\n  entry_points:\n    - fab = fabric.main:main\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - paramiko >=1.10,<3.0\n\ntest:\n  imports:\n    - fabric\n    - fabric.contrib\n\n  commands:\n    - fab --help\n\nabout:\n  home: http://fabfile.org\n  license_file: LICENSE\n  license: BSD 2-Clause\n  license_family: BSD\n  summary: 'Fabric is a simple, Pythonic tool for remote execution and deployment.'\n  dev_url: https://github.com/fabric/fabric/\n  doc_url: http://docs.fabfile.org/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

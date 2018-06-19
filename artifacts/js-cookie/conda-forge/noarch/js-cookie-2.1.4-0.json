@@ -742,6 +742,7 @@
   "subdir": "noarch",
   "version": "2.1.4"
  },
+ "metadata_version": 1,
  "name": "js-cookie",
  "raw_recipe": "{% set name = \"js-cookie\" %}\n{% set version = \"2.1.4\" %}\n{% set sha256 = \"a4812cdae1f0f91305f847f6c3889088b05a5a6734bfe8316f69d2ab6098b9ef\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/js-cookie/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: generic\n  script: npm install -g .\n\nrequirements:\n  build:\n    - nodejs\n  \ntest:\n  commands:\n    - npm list -g js-cookie\n  requires:\n    - nodejs\n   \n\nabout:\n  home: https://github.com/js-cookie/js-cookie\n  license: MIT\n  license_family: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'A simple, lightweight JavaScript API for handling browser cookies'\n  description: |\n    A simple, lightweight JavaScript API for handling browser cookies  \n  doc_url: https://github.com/js-cookie/js-cookie/tree/latest#readme\n  dev_url: https://github.com/js-cookie/js-cookie\n\nextra:\n  recipe-maintainers:\n    - cshaley\n    - sannykr\n",
  "rendered_recipe": {

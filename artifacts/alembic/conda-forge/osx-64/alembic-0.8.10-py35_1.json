@@ -154,6 +154,7 @@
   "subdir": "osx-64",
   "version": "0.8.10"
  },
+ "metadata_version": 1,
  "name": "alembic",
  "raw_recipe": "{%set name = \"alembic\" %}\n{%set version = \"0.8.10\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"0e3b50e96218283ec7443fb661199f5a81f5879f766967a8a2d25e8f9d4e7919\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  entry_points:\n    - alembic = alembic.config:main\n\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - sqlalchemy >=0.7.6\n    - mako\n    - python-editor >=0.3\n\ntest:\n  imports:\n    - alembic\n    - alembic.autogenerate\n    - alembic.ddl\n    - alembic.operations\n    - alembic.runtime\n    - alembic.script\n    - alembic.util\n\n  commands:\n    - alembic --help\n\nabout:\n  home: http://bitbucket.org/zzzeek/alembic\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: 'A database migration tool for SQLAlchemy.'\n  dev_url: http://bitbucket.org/zzzeek/alembic\n  doc_url: http://alembic.zzzcomputing.com/en/latest/\n\nextra:\n  recipe-maintainers:\n    - anguslees\n    - pmlandwehr\n",
  "rendered_recipe": {

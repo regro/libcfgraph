@@ -186,6 +186,7 @@
   "subdir": "win-64",
   "version": "0.20.1"
  },
+ "metadata_version": 1,
  "name": "metakernel",
  "raw_recipe": "{% set version = \"0.20.1\" %}\n\npackage:\n  name: metakernel\n  version: {{ version }}\n\nsource:\n  fn: metakernel-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/m/metakernel/metakernel-{{ version }}.tar.gz\n  sha256: 965241409545f59f1842b1727f8c353fb6fbb2e7dd3c85825f91362d94c5d7fa\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - ipykernel\n    - pexpect >=4.2\n    - gnureadline  # [osx]\n\ntest:\n  imports:\n    - metakernel\n    - metakernel.magics\n    - metakernel.magics.tests\n    - metakernel.tests\n    - metakernel.utils\n\nabout:\n  home: https://github.com/Calysto/metakernel\n  license: BSD 3-Clause\n  summary: 'Metakernel for Jupyter.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - ericdill\n    - mariusvniekerk\n    - blink1073\n    - dsblank\n",
  "rendered_recipe": {

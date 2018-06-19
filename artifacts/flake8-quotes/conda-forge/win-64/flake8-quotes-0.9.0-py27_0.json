@@ -97,6 +97,7 @@
   "subdir": "win-64",
   "version": "0.9.0"
  },
+ "metadata_version": 1,
  "name": "flake8-quotes",
  "raw_recipe": "{% set name = \"flake8-quotes\" %}\n{% set version = \"0.9.0\" %}\n{% set sha256 = \"e853d7d009d6b66fb3a4091bca606e2f458e4bf0f608804e10a6f4ac2ba8ba06\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  preserve_egg_dir: True\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - flake8 >=3.0.4,<4.0.0\n\ntest:\n  imports:\n    - flake8_quotes\n\nabout:\n  home: https://github.com/zheller/flake8-quotes\n  license: MIT\n  license_file: LICENSE\n  summary: Flake8 lint for quotes.\n\n  description: |\n    Now you don't need to worry about people constantly complaining that you are\n    using double-quotes and not single-quotes.\n  doc_url: https://pypi.python.org/pypi/flake8-quotes\n  dev_url: https://github.com/zheller/flake8-quotes\n\nextra:\n  recipe-maintainers:\n    - flamingbear\n    - michael-brandt-cu\n    - michaeljb\n    - dopplershift\n",
  "rendered_recipe": {

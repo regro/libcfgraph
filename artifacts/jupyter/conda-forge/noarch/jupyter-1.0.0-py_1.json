@@ -770,6 +770,7 @@
   "subdir": "noarch",
   "version": "1.0.0"
  },
+ "metadata_version": 1,
  "name": "jupyter",
  "raw_recipe": "{% set version = \"1.0.0\" %}\n\npackage:\n  name: jupyter\n  version: {{ version }}\n\nsource:\n  url: https://pypi.python.org/packages/source/j/jupyter/jupyter-{{ version }}.tar.gz\n  sha256: d9dc4b3318f310e34c82951ea5d6683f67bed7def4b259fafbfe4f1beb1d8e5f\n\nbuild:\n  number: 1\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - notebook\n    - qtconsole\n    - jupyter_console\n    - nbconvert\n    - ipykernel\n    - ipywidgets\n\ntest:\n  commands:\n    - jupyter --help\n    - jupyter nbextension list\n\nabout:\n  home: http://jupyter.org\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'Jupyter metapackage. Install all the Jupyter components in one go.'\n\nextra:\n  recipe-maintainers:\n    - minrk\n    - ocefpaf\n",
  "rendered_recipe": {

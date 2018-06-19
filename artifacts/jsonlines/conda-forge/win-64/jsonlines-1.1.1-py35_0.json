@@ -495,6 +495,7 @@
   "subdir": "win-64",
   "version": "1.1.1"
  },
+ "metadata_version": 1,
  "name": "jsonlines",
  "raw_recipe": "{% set name = \"jsonlines\" %}\n{% set version = \"1.1.1\" %}\n{% set bundle = \"tar.gz\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"6aa9da4c131c7487b2641d15976a9f945e336d2484ad0ca4884f45d40ccd0f54\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ bundle }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - jsonlines\n\nabout:\n  home: https://github.com/wbolster/jsonlines\n  license_file: LICENSE.rst\n  license: BSD 3-Clause\n  license_family: BSD\n  summary: 'Library with helpers for the jsonlines file format'\n  dev_url: https://github.com/wbolster/jsonlines\n  doc_url: https://jsonlines.readthedocs.org/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

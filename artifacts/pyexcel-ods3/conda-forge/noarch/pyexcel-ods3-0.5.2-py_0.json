@@ -721,6 +721,7 @@
   "subdir": "noarch",
   "version": "0.5.2"
  },
+ "metadata_version": 1,
  "name": "pyexcel-ods3",
  "raw_recipe": "{% set name = \"pyexcel-ods3\" %}\n{% set version = \"0.5.2\" %}\n{% set sha256 = \"3414ca7393b81c53bce4d57a1ee56ab560b9656b5bc3dad6bec694f98bfab4ea\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pyexcel-io >=0.5.0\n    - lxml\n    - pyexcel-ezodf >=0.3.3\n\ntest:\n  imports:\n    - pyexcel_ods3\n\nabout:\n  home: https://github.com/pyexcel/pyexcel-ods3\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'A wrapper library to read, manipulate and write data in xls using xlrd and xlwt'\n  description: |\n    'A wrapper library to read, manipulate and write data in ods format' +\n    ''\n  dev_url: https://github.com/pyexcel/pyexcel-ods3\n\nextra:\n  recipe-maintainers:\n    - williamjamir\n",
  "rendered_recipe": {

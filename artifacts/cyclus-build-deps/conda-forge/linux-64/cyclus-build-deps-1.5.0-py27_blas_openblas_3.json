@@ -106,6 +106,7 @@
   "subdir": "linux-64",
   "version": "1.5.0"
  },
+ "metadata_version": 1,
  "name": "cyclus-build-deps",
  "raw_recipe": "{% set name = \"cyclus-build-deps\" %}\n{% set version = \"1.5.0\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nbuild:\n  number: 3\n  skip: true  # [win]\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - cmake\n    - pkg-config\n    - libxmlpp\n    - coincbc\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n    - lapack\n    - boost-cpp 1.64.*\n    - hdf5 1.8.18|1.8.18.*\n    - sqlite 3.13.*\n    - pcre\n    - gettext\n    - bzip2 1.0.*\n    - xz 5.2.*\n    - setuptools\n    - nose\n    - pytables\n    - pandas\n    - jinja2\n    - cython\n    - gcc\n    - websockets  # [py3k]\n    - pprintpp\n\ntest:\n  commands:\n    - test \"!\" -f \"${PREFIX}/lib/cyclus.so\"  # [linux]\n    - test -f \"${PREFIX}/lib/libblas.so\"  # [linux]\n    - test -f \"${PREFIX}/lib/liblapack.so\"  # [linux]\n    - test -f \"${PREFIX}/lib/libhdf5.so\"  # [linux]\n    - test \"!\" -f \"${PREFIX}/lib/cyclus.dylib\"  # [osx]\n    - test -f \"${PREFIX}/lib/libblas.dylib\"  # [osx]\n    - test -f \"${PREFIX}/lib/liblapack.dylib\"  # [osx]\n    - test -f \"${PREFIX}/lib/libhdf5.dylib\"  # [osx]\n\nabout:\n  home: http://fuelcycle.org\n  license: BSD 3-clause\n  summary: 'Build dependency metapackage for Cyclus.'\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - gonuke\n    - bam241\n    - FlanFlanagan\n",
  "rendered_recipe": {

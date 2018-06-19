@@ -337,6 +337,7 @@
   "subdir": "linux-64",
   "version": "2.28"
  },
+ "metadata_version": 1,
  "name": "binutils",
  "raw_recipe": "{% set name = \"binutils\" %}\n{% set version = \"2.28\" %}\n{% set sha256 = \"6297433ee120b11b4b0a1c8f3512d7d73501753142ab9e2daa13c5a3edd32a72\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: https://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - bison\n    - flex\n\ntest:\n  commands:\n    - addr2line --help\n    - ar --help\n    - as --help\n    - c++filt --help\n    - elfedit --help\n    - gold --help\n    - gprof --help\n    - ld --help\n    - ld.bfd --help\n    - ld.gold --help\n    - nm --help\n    - objcopy --help\n    - objdump --help\n    - ranlib --help\n    - readelf --help\n    - size --help\n    - strings --help\n    - strip --help\n\nabout:\n  home: https://www.gnu.org/software/binutils/\n  license: GPL 3\n  summary: A set of programming tools for creating and managing binary programs, object files, libraries, profile data, and assembly source code.\n\nextra:\n  recipe-maintainers:\n    - frol\n",
  "rendered_recipe": {

@@ -120,6 +120,7 @@
   "subdir": "osx-64",
   "version": "0.0.5"
  },
+ "metadata_version": 1,
  "name": "fastparquet",
  "raw_recipe": "{% set name = \"fastparquet\" %}\n{% set version = \"0.0.5\" %}\n{% set fn_suffix = \"0.0.5.tar.gz\" %}\n{% set sha256 = \"38d003fda383f7d90005011e926a75909c9d804a31c7fc943600d25c1b5762c3\" %}\n\npackage:\n  name: {{ name }}\n  version: \"{{ version }}\"\n\nsource:\n  fn: {{ name }}-{{ fn_suffix }}\n  url: https://pypi.io/packages/source/f/{{ name }}/{{ name }}-{{ fn_suffix }}\n  sha256: \"{{ sha256 }}\"\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cython\n    - numpy\n  run:\n    - python\n    - pandas\n    - numpy\n    - numba\n    - thriftpy\n    - pytest\n    - cython\n\ntest:\n  imports:\n    - fastparquet\n\nabout:\n  home: http://github.com/martindurant/fastparquet\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Python interface to the parquet format'\n  dev_url: https://github.com/martindurant/fastparquet\n\nextra:\n  recipe-maintainers:\n    - martindurant\n    - mrocklin \n",
  "rendered_recipe": {

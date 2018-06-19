@@ -128,6 +128,7 @@
   "timestamp": 1526729302720,
   "version": "1.21_45"
  },
+ "metadata_version": 1,
  "name": "bisonpp",
  "raw_recipe": "{% set name = \"bisonpp\" %}\n{% set version = \"1.21-45\" %}\n{% set sha256 = \"0b72facde5587d9908077ec16868f404f3d879902c15360754349ac17a8f1129\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url: https://github.com/jarro2783/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n\ntest:\n  commands:\n    - bison++ --version\n\nabout:\n  home: https://github.com/jarro2783/bisonpp\n  license: GPL-2.0\n  license_family: GPL\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'The original bison++ project, brought up to date with modern compilers'\n\n  description: |\n    bisonpp was created from bison by A. Coetmeur in the 1990s. \n    This program provided seamless integration with C++, allowing developers \n    to code actions in C++ and embed a parser and scanner within a class \n    by private inheritance. The latter capability allows multiple scanners a\n    nd parsers to be used within a single program, \n    something that is difficult with bison.\n  doc_url: https://code.google.com/archive/p/flexpp-bisonpp/wikis/WikiSourceCode.wiki\n  dev_url: https://github.com/jarro2783/bisonpp\n\nextra:\n  recipe-maintainers:\n    - xmnlab\n",
  "rendered_recipe": {

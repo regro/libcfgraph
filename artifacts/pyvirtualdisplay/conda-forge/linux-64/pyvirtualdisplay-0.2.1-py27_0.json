@@ -100,6 +100,7 @@
   "subdir": "linux-64",
   "version": "0.2.1"
  },
+ "metadata_version": 1,
  "name": "pyvirtualdisplay",
  "raw_recipe": "{% set version = \"0.2.1\" %}\n\npackage:\n  name: pyvirtualdisplay\n  version: {{ version }}\n\nsource:\n  fn: pyvirtualdisplay-{{ version }}.tar.gz\n  url:  https://github.com/ponty/PyVirtualDisplay/archive/{{ version}}.tar.gz\n  sha256: 2c6bf006de7b1e950fae264d337c4344540e9f96d76e46f763fbb53e18798317\n\nbuild:\n  skip: true  # [win]\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - easyprocess\n\ntest:\n  imports:\n    - pyvirtualdisplay\n\nabout:\n  home: https://github.com/ponty/pyvirtualdisplay\n  license: BSD 2-clause\n  license_file: LICENSE.txt\n  summary: 'python wrapper for Xvfb, Xephyr and Xvnc'\n\nextra:\n  recipe-maintainers:\n    - ReimarBauer\n",
  "rendered_recipe": {

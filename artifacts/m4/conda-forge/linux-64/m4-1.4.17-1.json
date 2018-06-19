@@ -86,6 +86,7 @@
   "subdir": "linux-64",
   "version": "1.4.17"
  },
+ "metadata_version": 1,
  "name": "m4",
  "raw_recipe": "{% set version = \"1.4.17\" %}\n\npackage:\n  name: m4\n  version: {{ version }}\n\nsource:\n  fn: m4-{{ version }}.tar.gz\n  url: http://ftp.gnu.org/gnu/m4/m4-{{ version }}.tar.gz\n  sha256: 3ce725133ee552b8b4baca7837fb772940b25e81b2a9dc92537aeaf733538c9e\n\nbuild:\n  number: 1\n  skip: True  # [win]\n\ntest:\n  commands:\n    - m4 --help\n    - m4 --version\n    - conda inspect linkages -p $PREFIX m4  # [not win]\n    - conda inspect objects -p $PREFIX m4  # [osx]\n\nabout:\n  home: http://www.gnu.org/software/m4/\n  license: GPL-3.0\n  license_file: COPYING\n  summary: 'Implementation of the traditional Unix macro processor.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

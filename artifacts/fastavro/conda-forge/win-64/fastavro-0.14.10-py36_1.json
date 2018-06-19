@@ -547,6 +547,7 @@
   "subdir": "win-64",
   "version": "0.14.10"
  },
+ "metadata_version": 1,
  "name": "fastavro",
  "raw_recipe": "{% set name = \"fastavro\" %}\n{% set version = \"0.14.10\" %}\n{% set sha256 = \"8fbf6f6dfcef23a9b1655dfa59b930691382db6ee42099291641f7d8b34c605a\" %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{name}}-{{ version }}.tar.gz\n    url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 1\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\n\nrequirements:\n    build:\n        - python\n        - cython\n        - setuptools\n    run:\n        - python\n\ntest:\n    requires:\n        - nose\n        - flake8\n    imports:\n        - {{ name }}\n\nabout:\n    home: https://github.com/tebeka/{{ name }}\n    license: MIT\n    summary: Fast read/write of AVRO files\n    dev_url: https://github.com/tebeka/{{ name }}\n\nextra:\n    recipe-maintainers:\n        - tebeka\n        - mariusvniekerk\n        - cpcloud\n",
  "rendered_recipe": {

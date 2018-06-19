@@ -747,6 +747,7 @@
   "subdir": "linux-64",
   "version": "3.0.4"
  },
+ "metadata_version": 1,
  "name": "filelock",
  "raw_recipe": "{% set name = \"filelock\" %}\n{% set version = \"3.0.4\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n   fn: {{ name }}-{{ version }}.tar.gz\n   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n   sha256: 011327d4ed939693a5b28c0fdf2fd9bda1f68614c1d6d0643a89382ce9843a71\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - filelock\n\nabout:\n  home: https://github.com/benediktschmitt/py-filelock\n  license: Public Domain\n  summary: 'A platform independent file lock.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - mariusvniekerk\n",
  "rendered_recipe": {

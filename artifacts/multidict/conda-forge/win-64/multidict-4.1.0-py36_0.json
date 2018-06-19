@@ -642,6 +642,7 @@
   "subdir": "win-64",
   "version": "4.1.0"
  },
+ "metadata_version": 1,
  "name": "multidict",
  "raw_recipe": "{% set name = \"multidict\" %}\n{% set version = \"4.1.0\" %}\n{% set sha256 = \"fb4412490324705dcd2172baa8a3ea58ae23c5f982476805cad58ae929fe2a52\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: true  # [py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n  run:\n    - python\n\ntest:\n  source_files:\n    - tests\n  requires:\n    - pytest\n  commands:\n    - py.test tests\n\nabout:\n  home: http://github.com/aio-libs/multidict\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: 'multidict implementation'\n\n  description: |\n    Multidicts are useful for working with HTTP headers, URL query args etc.\n  doc_url: http://multidict.readthedocs.io/\n  dev_url: http://github.com/aio-libs/multidict\n\nextra:\n  recipe-maintainers:\n    - sodre\n    - kszucs\n",
  "rendered_recipe": {

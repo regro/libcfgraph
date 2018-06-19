@@ -748,6 +748,7 @@
   "subdir": "noarch",
   "version": "4.4.0"
  },
+ "metadata_version": 1,
  "name": "jupyter_core",
  "raw_recipe": "{% set version = \"4.4.0\" %}\n\npackage:\n  name: jupyter_core\n  version: {{ version }}\n\nsource:\n  fn: jupyter_core-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/j/jupyter_core/jupyter_core-{{ version }}.tar.gz\n  sha256: ba70754aa680300306c699790128f6fbd8c306ee5927976cbe48adacf240c0b7\n\nbuild:\n  number: 0\n  script: pip install --no-deps .\n  noarch: python\n  entry_points:\n    - jupyter = jupyter_core.command:main\n    - jupyter-migrate = jupyter_core.migrate:main\n    - jupyter-troubleshoot = jupyter_core.troubleshoot:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - traitlets\n\ntest:\n  commands:\n    - jupyter -h\n    - jupyter-migrate -h\n    - jupyter-troubleshoot --help\n  imports:\n    - jupyter_core\n    - jupyter_core.utils\n\nabout:\n  home: http://jupyter.org\n  license: BSD 3-clause\n  license_file: COPYING.md\n  summary: Core common functionality of Jupyter projects.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n    - minrk\n    - ocefpaf\n",
  "rendered_recipe": {

@@ -479,6 +479,7 @@
   "subdir": "linux-64",
   "version": "0.5.20"
  },
+ "metadata_version": 1,
  "name": "nuitka",
  "raw_recipe": "{% set version = \"0.5.20\" %}\n\npackage:\n  name: nuitka\n  version: {{ version }}\n\nsource:\n  fn: Nuitka-{{ version }}.tar.gz\n  url: http://nuitka.net/releases/Nuitka-{{ version }}.tar.gz\n  md5: 95508d2293ddb0cedd7bfd504e1b27e1\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - nuitka\n    - nuitka.build\n    - nuitka.codegen\n    - nuitka.codegen.templates\n    - nuitka.containers\n    - nuitka.finalizations\n    - nuitka.freezer\n    - nuitka.gui\n    - nuitka.nodes\n    - nuitka.optimizations\n    - nuitka.plugins\n    - nuitka.profiler\n    - nuitka.tree\n    - nuitka.utils\n\n  commands:\n    - nuitka --help\n\nabout:\n  home: http://nuitka.net\n  license: Apache License, Version 2.0\n  summary: Python compiler with full language support and CPython compatibility\n\nextra:\n  recipe-maintainers:\n    - frol\n",
  "rendered_recipe": {},

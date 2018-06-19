@@ -442,6 +442,7 @@
   "subdir": "osx-64",
   "version": "1.11.4"
  },
+ "metadata_version": 1,
  "name": "libhwloc",
  "raw_recipe": "{% set name = \"libhwloc\" %}\n{% set pname = \"hwloc\" %}\n{% set version = \"1.11.4\" %}\n{% set sha256 = \"1b6a58049c31ce36aff162cf4332998fd468486bd08fdfe0249a47437311512d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ pname }}-{{ version }}.tar.gz\n  url: https://www.open-mpi.org/software/hwloc/v1.11/downloads/{{ pname }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    # Two tests fail during CI on Linux hosts, for currently unknown reasons.\n    # This patch removes/disables those.\n    - disable-failing-test.patch\n\nbuild:\n  number: 1\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - libxml2 2.9.3\n  run:\n    - libxml2 2.9.3\n\ntest:\n  commands:\n    - hwloc-ls\n\nabout:\n  home: https://www.open-mpi.org/projects/hwloc/\n  license: BSD 3-Clause\n  license_file: COPYING\n  summary: 'Portable Hardware Locality (hwloc)'\n\nextra:\n  recipe-maintainers:\n    - inducer\n",
  "rendered_recipe": {},

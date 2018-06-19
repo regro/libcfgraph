@@ -774,6 +774,7 @@
   "subdir": "noarch",
   "version": "0.1.0"
  },
+ "metadata_version": 1,
  "name": "h5io",
  "raw_recipe": "{% set name = \"h5io\" %}\n{% set version = \"0.1.0\" %}\n{% set sha256 = \"267af4fe374f287aa5e77ec386673ea22b02c6303c1485445a2b8c0a37b23f39\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - numpy\n  run:\n    - python\n    - numpy\n    - h5py\n\ntest:\n  imports:\n    - h5io\n\nabout:\n  home: http://github.com/h5io/h5io\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt'\n  summary: 'Python Objects Onto HDF5'\n  description: |\n    h5io is a package designed to facilitate saving some standard Python objects into the \n    forward-compatible HDF5 format. It is a higher-level package than h5py.\n  doc_url: https://github.com/h5io/h5io\n  dev_url: https://github.com/h5io/h5io\n\nextra:\n  recipe-maintainers:\n    - larsoner\n    - jan-janssen\n",
  "rendered_recipe": {

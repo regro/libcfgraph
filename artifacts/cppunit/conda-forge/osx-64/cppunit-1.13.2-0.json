@@ -168,6 +168,7 @@
   "subdir": "osx-64",
   "version": "1.13.2"
  },
+ "metadata_version": 1,
  "name": "cppunit",
  "raw_recipe": "{% set name = \"cppunit\" %}\n{% set version = \"1.13.2\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://dev-www.libreoffice.org/src/{{ name }}-{{ version }}.tar.gz\n  sha256: 3f47d246e3346f2ba4d7c9e882db3ad9ebd3fcbd2e8b732f946e0e3eeb9f429f\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n  - toolchain\n\ntest:\n  commands:\n    - cppunit-config --version\n    - test -f $PREFIX/include/cppunit/TestFixture.h\n    - test -f $PREFIX/lib/libcppunit.a\n    - test -f $PREFIX/lib/libcppunit.so      # [linux]\n    - test -f $PREFIX/lib/libcppunit.dylib   # [osx]\n\nabout:\n  home: https://freedesktop.org/wiki/Software/cppunit/\n  license: LGPL-2.1\n  license_file: COPYING\n  summary: 'CppUnit is the C++ port of the famous JUnit framework for unit testing'\n\nextra:\n  recipe-maintainers:\n    - nsoranzo\n",
  "rendered_recipe": {

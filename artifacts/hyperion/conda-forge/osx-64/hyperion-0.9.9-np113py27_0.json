@@ -682,6 +682,7 @@
   "subdir": "osx-64",
   "version": "0.9.9"
  },
+ "metadata_version": 1,
  "name": "hyperion",
  "raw_recipe": "{% set version = \"0.9.9\" %}\n\npackage:\n  name: hyperion\n  version: {{version}}\n\nsource:\n  fn: Hyperion-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/h/hyperion/Hyperion-{{version}}.tar.gz\n  md5: e1db1082e46bf69db0cc5f392b454eba\n\nbuild:\n  number: 0\n  script: python setup.py install\n  skip: True  # [win or py36]\n\nrequirements:\n\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n\n  run:\n    - hyperion-fortran 0.9.9\n    - python\n    - numpy x.x\n    - matplotlib\n    - h5py\n    - astropy\n\n    # We need to exclude yt 3.3.0 and 3.3.1 because they include a\n    # bug that causes Hyperion to not work properly when dealing with\n    # octree grids.\n    - yt !=3.3.0,!=3.3.1\n\ntest:\n  imports:\n    - hyperion\n    - hyperion.util.interpolate\n  commands:\n    - hyperion --help\n\nabout:\n  home: https://github.com/hyperion-rt/hyperion\n  license: BSD 2-Clause\n  summary: Hyperion Radiation Transfer Code\n\nextra:\n  recipe-maintainers:\n    - astrofrog\n",
  "rendered_recipe": {

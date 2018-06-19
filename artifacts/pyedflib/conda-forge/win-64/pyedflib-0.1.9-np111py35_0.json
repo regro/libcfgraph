@@ -98,6 +98,7 @@
   "subdir": "win-64",
   "version": "0.1.9"
  },
+ "metadata_version": 1,
  "name": "pyedflib",
  "raw_recipe": "{% set name = \"pyEDFlib\" %}\n{% set version = \"0.1.9\" %}\n{% set sha256 = \"2A4EFD9DD4BABE69DB59BEB8E6C72DFFE8CC954D44947C1043F86836EA04EAA2\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/holgern/pyedflib/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256|lower }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - cython\n    - numpy x.x\n    - setuptools\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  requires:\n    - nose\n  imports:\n    - pyedflib\n  commands:\n    - conda inspect linkages -p $PREFIX pyedflib  # [not win]\n    - conda inspect objects -p $PREFIX pyedflib   # [osx]\n\nabout:\n  home: https://github.com/holgern/pyedflib\n  license: BSD-2-Clause\n  license_file: LICENSE\n  dev_url: https://github.com/holgern/pyedflib\n  doc_url: http://pyedflib.readthedocs.io/\n  summary: 'Library to read/write EDF+/BDF+ files based on EDFlib.'\n\nextra:\n  recipe-maintainers:\n    - holgern\n",
  "rendered_recipe": {

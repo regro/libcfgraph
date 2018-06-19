@@ -141,6 +141,7 @@
   "timestamp": 1528518266091,
   "version": "1.0.4"
  },
+ "metadata_version": 1,
  "name": "unyt",
  "raw_recipe": "{% set name = \"unyt\" %}\n{% set version = \"1.0.4\" %}\n{% set sha256 = \"15c81723bde0dc22c9f79ea629b57885772cd167570a6e8365edd2b999623055\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  # we can enable this when we drop py27 or when conda-forge\n  # lets you do this with optional py27 dependencies\n  # noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - numpy >=1.13.0\n    - sympy\n    - six\n    - backports.functools_lru_cache  # [py27]\n\ntest:\n  imports:\n    - unyt\n\nabout:\n  home: http://github.com/yt-project/unyt\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Handle, manipulate, and convert data with units in Python'\n  doc_url: http://unyt.readthedocs.io/\n  dev_url: https://github.com/yt-project/unyt\n\nextra:\n  recipe-maintainers:\n    - ngoldbaum\n",
  "rendered_recipe": {

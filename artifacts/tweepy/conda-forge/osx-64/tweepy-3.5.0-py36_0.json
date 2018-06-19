@@ -106,6 +106,7 @@
   "subdir": "osx-64",
   "version": "3.5.0"
  },
+ "metadata_version": 1,
  "name": "tweepy",
  "raw_recipe": "{% set name = \"tweepy\" %}\n{% set version = \"3.5.0\" %}\n{% set sha256 = \"f00ccf5f48c30d559ce0b750dfe3b2df6668dc799d8ce276fd90bfaa68845a58\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pip\n  run:\n    - python\n    - requests            >=2.11.1\n    - requests-oauthlib   >=0.7.0\n    - six                 >=1.10.0\n    - pysocks             >=1.5.7\n\ntest:\n  imports:\n    - tweepy\n\nabout:\n  home: http://www.tweepy.org\n  license: MIT\n  license_family: MIT\n  summary: 'An easy-to-use Python library for accessing the Twitter API.'\n\n  doc_url: http://tweepy.readthedocs.io\n  dev_url: https://github.com/tweepy/tweepy\n\nextra:\n  recipe-maintainers:\n    - nikicc\n",
  "rendered_recipe": {

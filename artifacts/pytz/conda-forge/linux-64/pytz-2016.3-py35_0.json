@@ -616,6 +616,7 @@
   "subdir": "linux-64",
   "version": "2016.3"
  },
+ "metadata_version": 1,
  "name": "pytz",
  "raw_recipe": "{% set version=\"2016.3\" %}\n\npackage:\n  name: pytz\n  version: {{ version }}\n\nsource:\n  fn: pytz-{{ version }}.tar.bz2\n  url: https://pypi.io/packages/source/p/pytz/pytz-{{ version }}.tar.bz2\n  md5: 5c1a1e8ac88cd63e1ad7bcd069fe3938\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - pytz\n\nabout:\n  home: http://pythonhosted.org/pytz/\n  license: MIT\n  license_file: LICENSE.txt\n  summary: World timezone definitions, modern and historical\n  description: |\n    pytz brings the Olson tz database into Python. This library allows\n    accurate and cross platform timezone calculations using Python 2.4 or\n    higher. It also solves the issue of ambiguous times at the end of daylight\n    saving time.\n  doc_url: http://pythonhosted.org/pytz/\n  dev_url: https://github.com/newvem/pytz\n\nextra:\n  recipe-maintainers:\n    - msarahan\n",
  "rendered_recipe": {},

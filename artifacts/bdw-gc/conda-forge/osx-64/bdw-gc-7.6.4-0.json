@@ -723,6 +723,7 @@
   "subdir": "osx-64",
   "version": "7.6.4"
  },
+ "metadata_version": 1,
  "name": "bdw-gc",
  "raw_recipe": "{% set version = \"7.6.4\" %}\n\npackage:\n  name: bdw-gc\n  version: {{ version }}\n\nsource:\n  fn: gc7_4_2.tar.gz\n  url: https://github.com/ivmai/bdwgc/archive/gc7_4_2.tar.gz\n  sha1: 441777b9865a730c9c804f5f5de2aa9a55fc9419\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - autoconf\n    - automake\n    - libtool\n    - pkg-config\n    - libatomic_ops\n\ntest:\n  commands:\n    - test -e $PREFIX/include/gc.h\n    - test -e $PREFIX/lib/libgc.a\n    - test -e $PREFIX/lib/libgc.dylib  # [osx]\n\nabout:\n  home: http://www.hboehm.info/gc/\n  license: Custom\n  summary: Garbage collector for C and C++.\n\nextra:\n  recipe-maintainers:\n    - stefan-balke\n",
  "rendered_recipe": {

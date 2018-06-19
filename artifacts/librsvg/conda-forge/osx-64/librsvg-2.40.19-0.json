@@ -660,6 +660,7 @@
   "subdir": "osx-64",
   "version": "2.40.19"
  },
+ "metadata_version": 1,
  "name": "librsvg",
  "raw_recipe": "{% set version = '2.40.19' %}\n{% set version_major = version.split('.', 1)[0] %}\n{% set version_majmin = version.rsplit('.', 1)[0] %}\n{% set sha256 = \"612b4d8b8609036f5d899be3fe70d9866b5f6ac5c971154c1c0ef7242216c1f7\" %}\n\npackage:\n  name: librsvg\n  version: {{ version }}\n\nsource:\n  fn: librsvg-{{ version }}.tar.xz\n  url: http://ftp.gnome.org/pub/gnome/sources/librsvg/{{ version_majmin }}/librsvg-{{ version }}.tar.xz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - pkg-config\n    - glib 2.55.*\n    - libxml2 2.9.*\n    - cairo 1.14.*\n    - gdk-pixbuf 2.36.*\n    - libcroco 0.6.*\n    - pango 1.40.*\n  run:\n    - glib 2.55.*\n    - libxml2 2.9.*\n    - cairo 1.14.*\n    - gdk-pixbuf 2.36.*\n    - libcroco 0.6.*\n    - pango 1.40.*\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/librsvg-{{ version_major }}$SHLIB_EXT\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n    - rsvg-convert --version\n\nabout:\n  home: https://wiki.gnome.org/Projects/LibRsvg\n  license: GPLv2\n  license_file: COPYING\n  summary: librsvg is a library to render SVG files using cairo.\n\nextra:\n  recipe-maintainers:\n    - jenzopr\n    - pkgw\n",
  "rendered_recipe": {

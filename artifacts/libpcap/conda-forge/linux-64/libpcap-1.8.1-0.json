@@ -806,6 +806,7 @@
   "subdir": "linux-64",
   "version": "1.8.1"
  },
+ "metadata_version": 1,
  "name": "libpcap",
  "raw_recipe": "{% set name = \"libpcap\" %}\n{% set version = \"1.8.1\" %}\n{% set sha256 = \"673dbc69fdc3f5a86fb5759ab19899039a8e5e6c631749e48dcd9c6f0c83541e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://www.tcpdump.org/release/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - flex\n    - bison\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libpcap.so      # [linux]\n    - test -f $PREFIX/lib/libpcap.dylib   # [osx]\n    - test -f $PREFIX/include/pcap.h      # [unix]\n\nabout:\n  home: www.tcpdump.org\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'the LIBpcap interface to various kernel packet capture mechanism'\n  doc_url: http://www.tcpdump.org/#documentation\n  dev_url: https://github.com/the-tcpdump-group/libpcap\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
  "rendered_recipe": {

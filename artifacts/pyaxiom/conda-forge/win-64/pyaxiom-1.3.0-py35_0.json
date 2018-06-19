@@ -60,6 +60,7 @@
   "subdir": "win-64",
   "version": "1.3.0"
  },
+ "metadata_version": 1,
  "name": "pyaxiom",
  "raw_recipe": "{% set name = \"pyaxiom\" %}\n{% set version = \"1.3.0\" %}\n{% set build = 0 %}\n{% set sha256 = \"048c7a09a79283e7b0fd352548c107423ddef7928bd8e39efad8c63fae51e60b\" %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/axiom-data-science/pyaxiom/archive/{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: {{ build }}\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    entry_points:\n        - binner=pyaxiom.netcdf.grids.binner:run\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - pytz\n        - python-dateutil\n        - netcdf4\n        - pandas\n        - pyncml\n        - pynco  # [not win]\n        - simplejson\n\ntest:\n    imports:\n        - pyaxiom\n        - pyaxiom.netcdf\n        - pyaxiom.netcdf.grids\n        - pyaxiom.netcdf.sensors\n        - pyaxiom.tests\n    commands:\n        - binner --help\n\nabout:\n    home: https://github.com/axiom-data-science/pyaxiom\n    license: MIT\n    summary: 'An ocean data toolkit developed and used by Axiom Data Science.'\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n        - ocefpaf\n",
  "rendered_recipe": {},

@@ -97,6 +97,7 @@
   "subdir": "win-64",
   "version": "0.2.3"
  },
+ "metadata_version": 1,
  "name": "easyprocess",
  "raw_recipe": "{% set version = \"0.2.3\" %}\n\npackage:\n  name: easyprocess\n  version: {{ version }}\n\nsource:\n  fn: easyprocess-{{ version }}.tar.gz\n  url:  https://github.com/ponty/EasyProcess/archive/{{version}}.tar.gz\n  sha256: 82f0323a3e4ecdb1271392b81bfd03bcd8639b9bc6fb638845aa2c53a0dea7e9\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    \n\ntest:\n  imports:\n    - easyprocess\n\nabout:\n  home: https://github.com/ponty/EasyProcess\n  license: BSD 2-clause \n  license_file: LICENSE.txt\n  summary: 'Easy to use python subprocess interface'\n\nextra:\n  recipe-maintainers:\n    - ReimarBauer\n",
  "rendered_recipe": {

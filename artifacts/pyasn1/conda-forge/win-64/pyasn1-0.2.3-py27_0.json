@@ -125,6 +125,7 @@
   "subdir": "win-64",
   "version": "0.2.3"
  },
+ "metadata_version": 1,
  "name": "pyasn1",
  "raw_recipe": "{%set name = \"pyasn1\" %}\n{%set version = \"0.2.3\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"738c4ebd88a718e700ee35c8d129acce2286542daa80a82823a7073644f706ad\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pyasn1\n    - pyasn1.codec\n    - pyasn1.codec.ber\n    - pyasn1.codec.cer\n    - pyasn1.codec.der\n    - pyasn1.compat\n    - pyasn1.type\n\nabout:\n  home: http://sourceforge.net/projects/pyasn1/\n  license: BSD 2-Clause\n  license_file: LICENSE.rst\n  summary: 'ASN.1 types and codecs'\n  license_family: BSD\n  doc_url: http://pyasn1.sourceforge.net/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
  "rendered_recipe": {

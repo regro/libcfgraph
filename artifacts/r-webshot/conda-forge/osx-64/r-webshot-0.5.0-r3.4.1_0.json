@@ -703,6 +703,7 @@
   "subdir": "osx-64",
   "version": "0.5.0"
  },
+ "metadata_version": 1,
  "name": "r-webshot",
  "raw_recipe": "{% set version = '0.5.0' %}\n\npackage:\n  name: r-webshot\n  version: {{ version }}\n\nsource:\n  fn: webshot_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/webshot_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/webshot/webshot_{{ version }}.tar.gz\n  sha256: f0a1be8b0563d95550569a0620d546a9876d1e279a932e9293e4be57ff0f271f\n\nbuild:\n  number: 0\n  script: R CMD INSTALL --build .\n  skip: True  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - r-base\n    - r-jsonlite\n    - r-magrittr\n    - r-processx\n    - r-withr\n  run:\n    - r-base\n    - r-jsonlite\n    - r-magrittr\n    - r-processx\n    - r-withr\n\ntest:\n  commands:\n    - $R -e \"library('webshot')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('webshot')\\\"\"  # [win]\n\nabout:\n  home: https://cran.r-project.org/web/packages/webshot\n  license: GPL-2\n  summary: Takes screenshots of web pages, including Shiny applications and R Markdown documents.\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {

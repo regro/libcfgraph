@@ -50,6 +50,7 @@
   "subdir": "linux-64",
   "version": "0.7.0"
  },
+ "metadata_version": 1,
  "name": "datreant.core",
  "raw_recipe": "{% set version = \"0.7.0\" %}\n{% set sha256 = \"425fa5b8e64c06eb4c7c07c2ec5209281428c7c63ce6190b6486bb096f1bebfa\"%}\n\npackage:\n  name: datreant.core\n  version: {{ version }}\n\nsource:\n  fn: datreant.core-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/datreant.core/datreant.core-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - asciitree\n    - pathlib2\n    - scandir\n    - six\n    - fuzzywuzzy\n    - python-levenshtein\n    - datreant\n\ntest:\n  imports:\n    - datreant.core\n    - datreant.core.backends\n    - datreant.core.tests\n  requires:\n    - pytest\n\nabout:\n  home: http://datreant.org/\n  license: BSD 3-Clause\n  summary: 'persistent, pythonic trees for heterogeneous data'\n\nextra:\n  recipe-maintainers:\n    - dotsdl\n    - kain88-de\n",
  "rendered_recipe": {},

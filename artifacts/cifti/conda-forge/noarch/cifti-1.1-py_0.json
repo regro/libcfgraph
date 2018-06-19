@@ -135,6 +135,7 @@
   "timestamp": 1528475070381,
   "version": "1.1"
  },
+ "metadata_version": 1,
  "name": "cifti",
  "raw_recipe": "{% set name = \"cifti\" %}\n{% set version = \"1.1\" %}\n{% set sha256 = \"e9fef71c069155ba4ab48b2d13974baf471be64ff18b474cf825abc7d02a54d3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - numpy\n    - nibabel\n    - six\n\ntest:\n  imports:\n    - cifti\n    - cifti.tests\n\nabout:\n  home: https://github.com/MichielCottaar/cifti\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Creation of new CIFTI files and the reading and manipulating of existing ones'\n  description: \n    straight-forward creation of CIFTI files and the reading and manipulating \n    of existing one. Cifti wraps around nibabel <http://nipy.org/nibabel> to \n    provide easier acces to CIFTI <https://www.nitrc.org/projects/cifti/> files\n\nextra:\n  recipe-maintainers:\n    - MichielCottaar\n",
  "rendered_recipe": {

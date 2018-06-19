@@ -134,6 +134,7 @@
   "timestamp": 1526353047559,
   "version": "0.1.0"
  },
+ "metadata_version": 1,
  "name": "cc-plugin-ugrid",
  "raw_recipe": "{% set version = \"0.1.0\" %}\n\npackage:\n  name: cc-plugin-ugrid\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/c/cc-plugin-ugrid/cc-plugin-ugrid-{{ version }}.tar.gz\n  sha256: f99c2bae8c67d6928214fda2884f807781453f7a1856bbb5d2a4b3dad1efccfa\n\nbuild:\n  number: 0\n  noarch: python\n  script: python -m pip install --no-deps --ignore-installed .\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - setuptools\n    - compliance-checker >=2.0.0\n    - netcdf4 >=1.2.0\n\ntest:\n  imports:\n    - cc_plugin_ugrid\n\nabout:\n  home: https://github.com/ioos/cc-plugin-ugrid\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: UGRID plugin for the IOOS Compliance Checker Plugin\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
  "rendered_recipe": {
