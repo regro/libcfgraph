@@ -1,0 +1,60 @@
+{
+ "about": {
+  "dev_url": "https://github.com/mathiasertl/fabric/",
+  "home": "https://github.com/mathiasertl/fabric/",
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "summary": "Fabric is a simple, Pythonic tool for remote execution and deployment (py2.7/py3.4+ compatible fork)."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/fab",
+  "lib/python2.7/site-packages/Fabric3-1.12.post1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/fabric/__init__.py",
+  "lib/python2.7/site-packages/fabric/__main__.py",
+  "lib/python2.7/site-packages/fabric/api.py",
+  "lib/python2.7/site-packages/fabric/auth.py",
+  "lib/python2.7/site-packages/fabric/colors.py",
+  "lib/python2.7/site-packages/fabric/context_managers.py",
+  "lib/python2.7/site-packages/fabric/contrib/__init__.py",
+  "lib/python2.7/site-packages/fabric/contrib/console.py",
+  "lib/python2.7/site-packages/fabric/contrib/django.py",
+  "lib/python2.7/site-packages/fabric/contrib/files.py",
+  "lib/python2.7/site-packages/fabric/contrib/project.py",
+  "lib/python2.7/site-packages/fabric/decorators.py",
+  "lib/python2.7/site-packages/fabric/docs.py",
+  "lib/python2.7/site-packages/fabric/exceptions.py",
+  "lib/python2.7/site-packages/fabric/io.py",
+  "lib/python2.7/site-packages/fabric/job_queue.py",
+  "lib/python2.7/site-packages/fabric/main.py",
+  "lib/python2.7/site-packages/fabric/network.py",
+  "lib/python2.7/site-packages/fabric/operations.py",
+  "lib/python2.7/site-packages/fabric/sftp.py",
+  "lib/python2.7/site-packages/fabric/state.py",
+  "lib/python2.7/site-packages/fabric/task_utils.py",
+  "lib/python2.7/site-packages/fabric/tasks.py",
+  "lib/python2.7/site-packages/fabric/thread_handling.py",
+  "lib/python2.7/site-packages/fabric/utils.py",
+  "lib/python2.7/site-packages/fabric/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "paramiko >=1.17.2,<2.0",
+   "python 2.7*",
+   "six >=1.10.0"
+  ],
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "name": "fabric3",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.12.post1"
+ },
+ "name": "fabric3",
+ "raw_recipe": "{%set name = \"Fabric3\" %}\n{%set version = \"1.12.post1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"9b868ba64bd4bd7d6beac9dea0911de65f278628ab93ef7bee7f7ff32a8892ba\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\nbuild:\n  entry_points:\n    - fab = fabric.main:main\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - paramiko >=1.17.2,<2.0\n    - six >=1.10.0\n\ntest:\n  imports:\n    - fabric\n    - fabric.contrib\n\n  commands:\n    - fab --help\n\nabout:\n  home: https://github.com/mathiasertl/fabric/\n  license: BSD 2-Clause\n  license_file: LICENSE\n  summary: 'Fabric is a simple, Pythonic tool for remote execution and deployment (py2.7/py3.4+ compatible fork).'\n  license_family: BSD\n  dev_url: https://github.com/mathiasertl/fabric/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.12.post1"
+}

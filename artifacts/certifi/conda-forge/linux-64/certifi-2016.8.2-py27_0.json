@@ -1,0 +1,34 @@
+{
+ "about": {
+  "home": "http://certifi.io/",
+  "license": "ISC",
+  "summary": "Python package for providing Mozilla's CA Bundle."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/certifi-2016.08.02-py2.7.egg-info",
+  "lib/python2.7/site-packages/certifi/__init__.py",
+  "lib/python2.7/site-packages/certifi/__main__.py",
+  "lib/python2.7/site-packages/certifi/cacert.pem",
+  "lib/python2.7/site-packages/certifi/core.py",
+  "lib/python2.7/site-packages/certifi/old_root.pem",
+  "lib/python2.7/site-packages/certifi/weak.pem"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "ISC",
+  "name": "certifi",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2016.8.2"
+ },
+ "name": "certifi",
+ "raw_recipe": "{% set version = \"2016.8.2\" %}\n\npackage:\n  name: certifi\n  version: {{ version }}\n\nsource:\n  fn: certifi-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/certifi/certifi-{{ version }}.tar.gz\n  sha256: 65ddc34fd9c8509851031d7075b8325393b87e6dbe5875a723959a20266d7a41\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - certifi\n\nabout:\n  home: http://certifi.io/\n  license: ISC\n  summary: Python package for providing Mozilla's CA Bundle.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n    - sigmavirus24\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "2016.8.2"
+}

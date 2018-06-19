@@ -1,0 +1,34 @@
+{
+ "about": {
+  "dev_url": "https://github.com/gforcada/flake8-builtins",
+  "home": "https://github.com/gforcada/flake8-builtins",
+  "license": "GPL-2.0",
+  "license_family": "GPL2",
+  "summary": "Check for python builtins being used as variables or parameters."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/flake8_builtins-0.2-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/flake8_builtins-0.2-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/flake8_builtins.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "flake8",
+   "python 2.7*"
+  ],
+  "license": "GPL-2.0",
+  "license_family": "GPL2",
+  "name": "flake8-builtins",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2"
+ },
+ "name": "flake8-builtins",
+ "raw_recipe": "{% set name = \"flake8-builtins\" %}\n{% set version = \"0.2\" %}\n{% set sha256 = \"d426403d6c73e19af6e9f720da8329809ccd454d046872e674c3b2bd0ac9666b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - flake8\n\ntest:\n  commands:\n    - \"flake8 --version | grep flake8_builtins:\"\n\nabout:\n  home: https://github.com/gforcada/flake8-builtins\n  license: GPL-2.0\n  license_family: GPL2\n  license_file: LICENSE\n  summary: 'Check for python builtins being used as variables or parameters.'\n  dev_url: https://github.com/gforcada/flake8-builtins\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
+ "rendered_recipe": {},
+ "version": "0.2"
+}

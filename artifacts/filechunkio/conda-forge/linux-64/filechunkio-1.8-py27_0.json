@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "http://bitbucket.org/fabian/filechunkio",
+  "license": "MIT",
+  "summary": "FileChunkIO represents a chunk of an OS-level file containing bytes data"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/filechunkio-1.8-py2.7.egg-info",
+  "lib/python2.7/site-packages/filechunkio/__init__.py",
+  "lib/python2.7/site-packages/filechunkio/filechunkio.py",
+  "lib/python2.7/site-packages/filechunkio/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "filechunkio",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.8"
+ },
+ "name": "filechunkio",
+ "raw_recipe": "{%set name = \"filechunkio\" %}\n{%set version = \"1.8\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"c8540c2d27e851d3a475b2e14ac109d66c777dd43ab67031891c826e82026745\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: http://bitbucket.org/fabian/filechunkio\n  license: MIT\n  summary: 'FileChunkIO represents a chunk of an OS-level file containing bytes data'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.8"
+}

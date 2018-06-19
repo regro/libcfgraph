@@ -1,0 +1,38 @@
+{
+ "about": {
+  "home": "http://geoalchemy.org/",
+  "license": "MIT License",
+  "summary": "Using SQLAlchemy with Spatial Databases"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/GeoAlchemy2-0.3.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/GeoAlchemy2-0.3.0-py3.5.egg-info/not-zip-safe",
+  "Lib/site-packages/geoalchemy2/__init__.py",
+  "Lib/site-packages/geoalchemy2/comparator.py",
+  "Lib/site-packages/geoalchemy2/compat.py",
+  "Lib/site-packages/geoalchemy2/elements.py",
+  "Lib/site-packages/geoalchemy2/functions.py",
+  "Lib/site-packages/geoalchemy2/shape.py",
+  "Lib/site-packages/geoalchemy2/types.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "setuptools",
+   "sqlalchemy >=0.8"
+  ],
+  "license": "MIT License",
+  "name": "geoalchemy2",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.3.0"
+ },
+ "name": "geoalchemy2",
+ "raw_recipe": "{% set name = \"geoalchemy2\" %}\n{% set camelName = \"GeoAlchemy2\" %}\n{% set version = \"0.3.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  md5: 477de879a88b34f707f6d8f0d2dea32c\n\nbuild:\n  preserve_egg_dir: True\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - sqlalchemy >=0.8\n\n  run:\n    - python\n    - setuptools\n    - sqlalchemy >=0.8\n\ntest:\n  imports:\n    - geoalchemy2\n\nabout:\n  home: http://geoalchemy.org/\n  license: MIT License\n  summary: 'Using SQLAlchemy with Spatial Databases'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.3.0"
+}

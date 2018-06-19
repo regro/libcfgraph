@@ -1,0 +1,155 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "dev_url": "https://bitbucket.org/malb/m4ri",
+  "doc_url": "https://malb.bitbucket.io/m4ri",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://bitbucket.org/malb/m4ri",
+  "license": "GPLv2+",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "M4RI is a library for fast arithmetic with dense matrices over F2"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/m4ri/misc.h",
+  "include/m4ri/mzp.h",
+  "include/m4ri/m4ri.h",
+  "include/m4ri/ple_russian_template.h",
+  "include/m4ri/parity.h",
+  "include/m4ri/djb.h",
+  "include/m4ri/solve.h",
+  "include/m4ri/brilliantrussian.h",
+  "include/m4ri/xor_template.h",
+  "lib/libm4ri-0.0.20140914.dylib",
+  "include/m4ri/strassen.h",
+  "include/m4ri/ple.h",
+  "include/m4ri/graycode.h",
+  "lib/pkgconfig/m4ri.pc",
+  "include/m4ri/ple_russian.h",
+  "include/m4ri/mmc.h",
+  "include/m4ri/m4ri_config.h",
+  "include/m4ri/debug_dump.h",
+  "include/m4ri/echelonform.h",
+  "include/m4ri/xor.h",
+  "include/m4ri/triangular_russian.h",
+  "lib/libm4ri.a",
+  "include/m4ri/mp.h",
+  "include/m4ri/triangular.h",
+  "include/m4ri/io.h",
+  "include/m4ri/mzd.h",
+  "lib/libm4ri.la",
+  "lib/libm4ri.dylib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "libpng >=1.6.28,<1.7",
+   "zlib 1.2.*"
+  ],
+  "license": "GPLv2+",
+  "name": "m4ri",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "20140914"
+ },
+ "name": "m4ri",
+ "raw_recipe": "{% set version = \"20140914\" %}\n{% set name = \"m4ri\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://bitbucket.org/malb/m4ri/downloads/{{ name }}-{{ version }}.tar.gz\n  sha256: 4bc3f53a5116e1ff0720c08f34ce415c88e2fb503437abfd15e196792ec6d5aa\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - libpng >=1.6.28,<1.7\n    - zlib 1.2.*\n  run:\n    - libpng >=1.6.28,<1.7\n    - zlib 1.2.*\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/m4ri/m4ri.h\n    - test -f ${PREFIX}/lib/lib{{ name }}.a\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]\n\nabout:\n  home: https://bitbucket.org/malb/m4ri\n  license: GPLv2+\n  license_file: {{ SRC_DIR }}/COPYING\n  summary: M4RI is a library for fast arithmetic with dense matrices over F2\n  dev_url: https://bitbucket.org/malb/m4ri\n  doc_url: https://malb.bitbucket.io/m4ri\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "https://bitbucket.org/malb/m4ri",
+   "doc_url": "https://malb.bitbucket.io/m4ri",
+   "home": "https://bitbucket.org/malb/m4ri",
+   "license": "GPLv2+",
+   "license_file": "/Users/travis/miniconda3/conda-bld/recipe_1486518268059/work/m4ri-20140914/COPYING",
+   "summary": "M4RI is a library for fast arithmetic with dense matrices over F2"
+  },
+  "build": {
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "isuruf"
+   ]
+  },
+  "package": {
+   "name": "m4ri",
+   "version": "20140914"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "libpng >=1.6.28,<1.7",
+    "zlib 1.2.*"
+   ]
+  },
+  "source": {
+   "fn": "m4ri-20140914.tar.gz",
+   "sha256": "4bc3f53a5116e1ff0720c08f34ce415c88e2fb503437abfd15e196792ec6d5aa",
+   "url": "https://bitbucket.org/malb/m4ri/downloads/m4ri-20140914.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/include/m4ri/m4ri.h",
+    "test -f ${PREFIX}/lib/libm4ri.a",
+    "test -f ${PREFIX}/lib/libm4ri.dylib"
+   ]
+  }
+ },
+ "version": "20140914"
+}

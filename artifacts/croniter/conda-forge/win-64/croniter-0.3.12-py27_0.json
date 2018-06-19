@@ -1,0 +1,35 @@
+{
+ "about": {
+  "home": "http://github.com/kiorky/croniter",
+  "license": "MIT",
+  "summary": "croniter provides iteration for datetime object with cron like format"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/croniter-0.3.12-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/croniter/__init__.py",
+  "Lib/site-packages/croniter/croniter.py",
+  "Lib/site-packages/croniter/tests/__init__.py",
+  "Lib/site-packages/croniter/tests/base.py",
+  "Lib/site-packages/croniter/tests/test_croniter.py",
+  "Lib/site-packages/croniter/tests/test_speed.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "python-dateutil"
+  ],
+  "license": "MIT",
+  "name": "croniter",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.3.12"
+ },
+ "name": "croniter",
+ "raw_recipe": "{%set name = \"croniter\" %}\n{%set version = \"0.3.12\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"445cb26bc2f3cff25a7b06575caf98312b552affffeee0437f26d416c6e3c895\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  preserve_egg_dir: True\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - python-dateutil\n\n  run:\n    - python\n    - python-dateutil\n\ntest:\n  imports:\n    - croniter\n    - croniter.tests\n\nabout:\n  home: http://github.com/kiorky/croniter\n  license: MIT\n  summary: 'croniter provides iteration for datetime object with cron like format'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.3.12"
+}

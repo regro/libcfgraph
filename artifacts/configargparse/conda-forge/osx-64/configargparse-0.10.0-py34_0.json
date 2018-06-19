@@ -1,0 +1,34 @@
+{
+ "about": {
+  "dev_url": "https://github.com/zorro3/ConfigArgParse",
+  "doc_url": "https://github.com/zorro3/ConfigArgParse",
+  "home": "https://github.com/zorro3/ConfigArgParse",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "replacement for argparse allowing options to be set via config files and/or env vars"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/ConfigArgParse-0.10.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/ConfigArgParse-0.10.0-py3.4.egg-info/pbr.json",
+  "lib/python3.4/site-packages/configargparse.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "configargparse",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.10.0"
+ },
+ "name": "configargparse",
+ "raw_recipe": "{% set name = \"ConfigArgParse\" %}\n{% set version = \"0.10.0\" %}\n{% set md5 = \"408ad7af06cd449420cecc19bee6f0c9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - configargparse\n\nabout:\n  home: https://github.com/zorro3/ConfigArgParse\n  license: MIT\n  summary: replacement for argparse allowing options to be set via config files and/or env vars\n  license_family: MIT\n  license_file: LICENSE\n  dev_url: https://github.com/zorro3/ConfigArgParse\n  doc_url: https://github.com/zorro3/ConfigArgParse\n\nextra:\n  recipe-maintainers:\n    - msarahan\n",
+ "rendered_recipe": {},
+ "version": "0.10.0"
+}

@@ -1,0 +1,138 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.1",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/kennethreitz/maya",
+  "license": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.1-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.2.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Datetimes for Humans."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/maya-0.1.5-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/maya.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "dateparser",
+   "humanize",
+   "iso8601",
+   "python 3.6*",
+   "python-dateutil",
+   "pytz",
+   "ruamel.yaml",
+   "tzlocal"
+  ],
+  "license": "MIT",
+  "name": "maya",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.5"
+ },
+ "name": "maya",
+ "raw_recipe": "{% set version = \"0.1.5\" %}\n\npackage:\n  name: maya\n  version: {{ version }}\n\nsource:\n  fn: maya-{{ version }}.tar.gz\n  url: https://github.com/kennethreitz/maya/archive/v{{ version }}.tar.gz\n  sha256: 397a4f7490385ed541bc0c9a01f2f5e75bb88857f7ef9008ce7d1bcc51600cf2\n  patches:\n    - win_encoding.patch  # [win and py3k]\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - humanize\n    - pytz\n    - dateparser\n    - iso8601\n    - python-dateutil\n    - ruamel.yaml\n    - tzlocal\n\ntest:\n  imports:\n    - maya\n\nabout:\n  home: https://github.com/kennethreitz/maya\n  license: MIT\n  license_file: LICENSE\n  summary: 'Datetimes for Humans.'\n\nextra:\n  recipe-maintainers:\n    - tacaswell\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/kennethreitz/maya",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Datetimes for Humans."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py36_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "tacaswell",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "maya",
+   "version": "0.1.5"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "humanize",
+    "pytz",
+    "dateparser",
+    "iso8601",
+    "python-dateutil",
+    "ruamel.yaml",
+    "tzlocal"
+   ]
+  },
+  "source": {
+   "fn": "maya-0.1.5.tar.gz",
+   "patches": "",
+   "sha256": "397a4f7490385ed541bc0c9a01f2f5e75bb88857f7ef9008ce7d1bcc51600cf2",
+   "url": "https://github.com/kennethreitz/maya/archive/v0.1.5.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "maya"
+   ]
+  }
+ },
+ "version": "0.1.5"
+}

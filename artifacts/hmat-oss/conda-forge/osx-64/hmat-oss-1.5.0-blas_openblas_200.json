@@ -1,0 +1,51 @@
+{
+ "about": {
+  "home": "https://github.com/jeromerobert/hmat-oss",
+  "license": "GPLv2",
+  "summary": "A hierarchical matrix C/C++ library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/hmat/admissibility.hpp",
+  "include/hmat/assembly.hpp",
+  "include/hmat/cluster_tree.hpp",
+  "include/hmat/clustering.hpp",
+  "include/hmat/compression.hpp",
+  "include/hmat/coordinates.hpp",
+  "include/hmat/data_types.hpp",
+  "include/hmat/default_engine.hpp",
+  "include/hmat/full_matrix.hpp",
+  "include/hmat/h_matrix.hpp",
+  "include/hmat/hmat/config-oss.h",
+  "include/hmat/hmat/config.h",
+  "include/hmat/hmat/hmat.h",
+  "include/hmat/hmat_cpp_interface.hpp",
+  "include/hmat/tree.hpp",
+  "lib/cmake/hmat/HMATConfig.cmake",
+  "lib/cmake/hmat/HMATConfigVersion.cmake",
+  "lib/cmake/hmat/HMATLibraryDepends-release.cmake",
+  "lib/cmake/hmat/HMATLibraryDepends.cmake",
+  "lib/libhmat-oss.1.5.0.dylib",
+  "lib/libhmat-oss.1.dylib",
+  "lib/libhmat-oss.dylib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "blas_openblas_200",
+  "build_number": 200,
+  "depends": [
+   "blas 1.1 openblas",
+   "openblas 0.2.19|0.2.19.*"
+  ],
+  "features": "blas_openblas",
+  "license": "GPLv2",
+  "name": "hmat-oss",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.5.0"
+ },
+ "name": "hmat-oss",
+ "raw_recipe": "{% set version = \"1.5.0\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: hmat-oss\n  version: {{ version }}\n\nsource:\n  fn: hmat-oss-{{ version }}.tar.gz\n  url: https://github.com/jeromerobert/hmat-oss/archive/{{ version }}.tar.gz\n  sha256: 21a64d1df1c9bb7221205020b95af8bff65668d0d2cfde5431d0e9fc7958d0a9\n\nbuild:\n  number: 200\n  skip: true  # [win]\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n\n  run:\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/hmat/hmat/hmat.h  # [unix]\n    - test -f ${PREFIX}/lib/libhmat-oss.so  # [linux]\n    - test -f ${PREFIX}/lib/libhmat-oss.dylib  # [osx]\n\nabout:\n  home: https://github.com/jeromerobert/hmat-oss\n  license: GPLv2\n  license_file: LICENSE.md\n  summary: A hierarchical matrix C/C++ library\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
+ "rendered_recipe": {},
+ "version": "1.5.0"
+}

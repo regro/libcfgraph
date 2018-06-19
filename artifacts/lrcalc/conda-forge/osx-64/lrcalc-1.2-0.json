@@ -1,0 +1,141 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "dev_url": "https://bitbucket.org/asbuch/lrcalc",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://www.math.rutgers.edu/~asbuch/lrcalc/",
+  "license": "GPLv2+",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.4-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "The Littlewood-Richardson Calculator is a program designed to compute Littlewood-Richardson coefficients"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/lrcalc/alloc.h",
+  "include/lrcalc/schublib.h",
+  "include/lrcalc/lincomb.h",
+  "lib/liblrcalc.a",
+  "include/lrcalc/claim.h",
+  "include/lrcalc/symfcn.h",
+  "include/lrcalc/list.h",
+  "bin/schubmult",
+  "include/lrcalc/set.h",
+  "share/lrcalc/lrcalc.maple",
+  "include/lrcalc/vector.h",
+  "share/lrcalc/README",
+  "include/lrcalc/hashtab.h",
+  "include/lrcalc/maple.h",
+  "include/lrcalc/vectarg.h",
+  "bin/lrcalc",
+  "lib/liblrcalc.1.dylib",
+  "lib/liblrcalc.dylib",
+  "lib/liblrcalc.la"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "GPLv2+",
+  "name": "lrcalc",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.2"
+ },
+ "name": "lrcalc",
+ "raw_recipe": "{% set version = \"1.2\" %}\n{% set name = \"lrcalc\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://www.math.rutgers.edu/~asbuch/lrcalc/{{ name }}-{{ version }}.tar.gz\n  sha256: 792dd538a0d19698be2c5b8c138730bbb4820e8a44e03b001ae14bd5f1d7040b\n  patches:\n    # https://bitbucket.org/asbuch/lrcalc/commits/226981a060a209efb5e0c3925b71b341b9ff63a4\n    # Patch by Jeroen Demeyer to change include <vector.h> to \"vector.h\", plus similar cases.\n    - includes.patch\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/{{ name }}/symfcn.h\n    - test -f ${PREFIX}/lib/lib{{ name }}.a\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]\n\nabout:\n  home: http://www.math.rutgers.edu/~asbuch/lrcalc/\n  license: GPLv2+\n  license_file: COPYING\n  summary: The Littlewood-Richardson Calculator is a program designed to compute Littlewood-Richardson coefficients\n  dev_url: https://bitbucket.org/asbuch/lrcalc\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "https://bitbucket.org/asbuch/lrcalc",
+   "home": "http://www.math.rutgers.edu/~asbuch/lrcalc/",
+   "license": "GPLv2+",
+   "license_file": "COPYING",
+   "summary": "The Littlewood-Richardson Calculator is a program designed to compute Littlewood-Richardson coefficients"
+  },
+  "build": {
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "isuruf"
+   ]
+  },
+  "package": {
+   "name": "lrcalc",
+   "version": "1.2"
+  },
+  "requirements": {
+   "build": [],
+   "run": []
+  },
+  "source": {
+   "fn": "lrcalc-1.2.tar.gz",
+   "patches": [
+    "includes.patch"
+   ],
+   "sha256": "792dd538a0d19698be2c5b8c138730bbb4820e8a44e03b001ae14bd5f1d7040b",
+   "url": "http://www.math.rutgers.edu/~asbuch/lrcalc/lrcalc-1.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/include/lrcalc/symfcn.h",
+    "test -f ${PREFIX}/lib/liblrcalc.a",
+    "test -f ${PREFIX}/lib/liblrcalc.dylib"
+   ]
+  }
+ },
+ "version": "1.2"
+}

@@ -1,0 +1,44 @@
+{
+ "about": {
+  "home": "http://hdfeos.org/index.php",
+  "license": "Public Domain",
+  "summary": "Earth Observing System HDF."
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/HDFEOSVersion.h",
+  "include/HE2_config.h",
+  "include/HdfEosDef.h",
+  "include/bcea.h",
+  "include/cfortHdf.h",
+  "include/cproj.h",
+  "include/cproj_prototypes.h",
+  "include/ease.h",
+  "include/gctp_prototypes.h",
+  "include/isin.h",
+  "include/proj.h",
+  "lib/libGctp.a",
+  "lib/libGctp.la",
+  "lib/libhdfeos.a",
+  "lib/libhdfeos.la"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "6",
+  "build_number": 6,
+  "depends": [
+   "hdf4",
+   "jpeg 9*",
+   "zlib 1.2.*"
+  ],
+  "license": "Public Domain",
+  "name": "hdfeos2",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.19.1"
+ },
+ "name": "hdfeos2",
+ "raw_recipe": "{% set version = \"2.19.1\" %}\n\npackage:\n    name: hdfeos2\n    version: {{ version }}\n\nsource:\n    fn: HDF-EOS2.19v1.00.tar.Z\n    url: ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/HDF-EOS2.19v1.00.tar.Z\n    sha256: 3fffa081466e85d2b9436d984bc44fe97bbb33ad9d8b7055a322095dc4672e31\n\nbuild:\n    number: 6\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - hdf4\n        - zlib 1.2.*\n        - jpeg 9*\n    run:\n        - hdf4\n        - zlib 1.2.*\n        - jpeg 9*\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libGctp.a  # [unix]\n        - test -f ${PREFIX}/lib/libhdfeos.a  # [unix]\n        - conda inspect linkages -n _test hdfeos2  # [unix]\n\nabout:\n    home: http://hdfeos.org/index.php\n    license: Public Domain\n    summary: 'Earth Observing System HDF.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - jhamman\n",
+ "rendered_recipe": {},
+ "version": "2.19.1"
+}

@@ -1,0 +1,51 @@
+{
+ "about": {
+  "home": "https://github.com/ioos/cc-plugin-ncei/",
+  "license": "Apache 2.0",
+  "summary": "Compliance Checker NCEI Templates Compliance plugin"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/cc_plugin_ncei-1.0.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/cc_plugin_ncei/__init__.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/data/seanames.csv",
+  "lib/python3.5/site-packages/cc_plugin_ncei/data/unitless.json",
+  "lib/python3.5/site-packages/cc_plugin_ncei/ncei_base.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/ncei_grid.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/ncei_point.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/ncei_profile.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/ncei_timeseries.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/ncei_timeseries_profile.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/ncei_trajectory.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/ncei_trajectory_profile.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/tests/__init__.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/tests/ncei_test_case.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/tests/resources.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/tests/test_feature_detection.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/tests/test_ncei_point.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/tests/test_ncei_profile.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/tests/test_ncei_timeseries.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/tests/test_ncei_timeseries_profile.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/tests/test_ncei_trajectory.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/tests/test_ncei_trajectory_profile.py",
+  "lib/python3.5/site-packages/cc_plugin_ncei/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "compliance-checker >=1.0.0",
+   "python 3.5*"
+  ],
+  "license": "Apache 2.0",
+  "name": "cc-plugin-ncei",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0.1"
+ },
+ "name": "cc-plugin-ncei",
+ "raw_recipe": "{% set version = \"1.0.1\" %}\n\n\npackage:\n    name: cc-plugin-ncei\n    version: {{ version }}\n\nsource:\n  fn: cc-plugin-ncei-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/cc-plugin-ncei/cc-plugin-ncei-{{ version }}.tar.gz\n  url: https://github.com/ioos/cc-plugin-ncei/archive/{{ version }}.tar.gz\n  sha256: 7eea0bc9067b7ab6bff9c5da32f76d752af3b8847882339c6a0c61de1bac4138\n\nbuild:\n    number: 0\n    preserve_egg_dir: True\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - compliance-checker >=1.0.0\n\ntest:\n    imports:\n        - cc_plugin_ncei\n        - cc_plugin_ncei.tests\n\nabout:\n    home: https://github.com/ioos/cc-plugin-ncei/\n    license: Apache 2.0\n    summary: Compliance Checker NCEI Templates Compliance plugin\n\nextra:\n    recipe-maintainers:\n        - benjwadams\n        - daf\n        - kwilcox\n        - lukecampbell\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.0.1"
+}

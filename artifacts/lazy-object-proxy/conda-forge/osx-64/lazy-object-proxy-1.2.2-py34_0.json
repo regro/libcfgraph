@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "https://github.com/ionelmc/python-lazy-object-proxy",
+  "license": "BSD 2-Clause",
+  "summary": "A fast and thorough lazy object proxy."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/lazy_object_proxy-1.2.2-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/lazy_object_proxy-1.2.2-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/lazy_object_proxy/__init__.py",
+  "lib/python3.4/site-packages/lazy_object_proxy/cext.c",
+  "lib/python3.4/site-packages/lazy_object_proxy/cext.so",
+  "lib/python3.4/site-packages/lazy_object_proxy/compat.py",
+  "lib/python3.4/site-packages/lazy_object_proxy/simple.py",
+  "lib/python3.4/site-packages/lazy_object_proxy/slots.py",
+  "lib/python3.4/site-packages/lazy_object_proxy/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD 2-Clause",
+  "name": "lazy-object-proxy",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.2.2"
+ },
+ "name": "lazy-object-proxy",
+ "raw_recipe": "{% set name = \"lazy-object-proxy\" %}\n{% set version = \"1.2.2\" %}\n{% set sha256 = \"ddd4cf1c74279c349cb7b9c54a2efa5105854f57de5f2d35829ee93631564268\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  {% set pypi_name = name.replace(\"_\", \"-\") %}\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/{{ pypi_name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - lazy_object_proxy\n\nabout:\n  home: https://github.com/ionelmc/python-lazy-object-proxy\n  license: BSD 2-Clause\n  summary: 'A fast and thorough lazy object proxy.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.2.2"
+}

@@ -1,0 +1,56 @@
+{
+ "about": {
+  "home": "http://www.netlib.org/lapack",
+  "license": "BSD 3-Clause",
+  "summary": "Linear Algebra PACKage"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/include/cblas.h",
+  "Library/include/cblas_f77.h",
+  "Library/include/cblas_mangling.h",
+  "Library/include/cblas_test.h",
+  "Library/include/lapacke.h",
+  "Library/include/lapacke_config.h",
+  "Library/include/lapacke_mangling.h",
+  "Library/include/lapacke_utils.h",
+  "Library/lib/cmake/cblas-3.6.1/cblas-config-version.cmake",
+  "Library/lib/cmake/cblas-3.6.1/cblas-config.cmake",
+  "Library/lib/cmake/cblas-3.6.1/cblas-targets-release.cmake",
+  "Library/lib/cmake/cblas-3.6.1/cblas-targets.cmake",
+  "Library/lib/cmake/lapack-3.6.1/lapack-config-version.cmake",
+  "Library/lib/cmake/lapack-3.6.1/lapack-config.cmake",
+  "Library/lib/cmake/lapack-3.6.1/lapack-targets-release.cmake",
+  "Library/lib/cmake/lapack-3.6.1/lapack-targets.cmake",
+  "Library/lib/cmake/lapacke-3.6.1/lapacke-config-version.cmake",
+  "Library/lib/cmake/lapacke-3.6.1/lapacke-config.cmake",
+  "Library/lib/cmake/lapacke-3.6.1/lapacke-targets-release.cmake",
+  "Library/lib/cmake/lapacke-3.6.1/lapacke-targets.cmake",
+  "Library/lib/libblas.a",
+  "Library/lib/libcblas.a",
+  "Library/lib/liblapack.a",
+  "Library/lib/liblapacke.a",
+  "Library/lib/libtmglib.a",
+  "Library/lib/pkgconfig/blas.pc",
+  "Library/lib/pkgconfig/cblas.pc",
+  "Library/lib/pkgconfig/lapack.pc",
+  "Library/lib/pkgconfig/lapacke.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [
+   "m2w64-gcc-libs"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "lapack",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "3.6.1"
+ },
+ "name": "lapack",
+ "raw_recipe": "{% set version = \"3.6.1\" %}\n\npackage:\n  name: lapack\n  version: {{ version }}\n\nsource:\n  fn: lapack-{{ version }}.tgz\n  url: http://www.netlib.org/lapack/lapack-{{ version }}.tgz\n  sha1: 7220a9bc9c766cb513007f313b804d88f110c228\n\n  # The next lapack version will have a fix for this.\n  patches:\n    - python-test.patch\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - gcc  # [unix]\n    - cloog 0.18.0 10  # [unix]\n    - m2w64-toolchain  # [win]\n  run:\n    - libgfortran  # [not win]\n    - m2w64-gcc-libs  # [win]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/liblapack.so  # [linux]\n    - test -f ${PREFIX}/lib/liblapack.dylib  # [osx]\n    - if not exist %LIBRARY_PREFIX%\\\\lib\\\\liblapack.a exit 1  # [win]\n\nabout:\n  home: http://www.netlib.org/lapack\n  license: BSD 3-Clause\n  summary: Linear Algebra PACKage\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jschueller\n    - hadim\n",
+ "rendered_recipe": {},
+ "version": "3.6.1"
+}

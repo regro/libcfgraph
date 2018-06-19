@@ -1,0 +1,41 @@
+{
+ "about": {
+  "dev_url": "https://github.com/jab/bidict",
+  "doc_url": "https://bidict.readthedocs.io",
+  "home": "https://bidict.readthedocs.io",
+  "license": "ISC License (ISCL)",
+  "summary": "Efficient, Pythonic bidirectional map implementation and related functionality"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/bidict-0.12.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/bidict-0.12.0-py3.4.egg-info/zip-safe",
+  "lib/python3.4/site-packages/bidict/VERSION",
+  "lib/python3.4/site-packages/bidict/__init__.py",
+  "lib/python3.4/site-packages/bidict/_bidict.py",
+  "lib/python3.4/site-packages/bidict/_common.py",
+  "lib/python3.4/site-packages/bidict/_frozen.py",
+  "lib/python3.4/site-packages/bidict/_loose.py",
+  "lib/python3.4/site-packages/bidict/_named.py",
+  "lib/python3.4/site-packages/bidict/_ordered.py",
+  "lib/python3.4/site-packages/bidict/compat.py",
+  "lib/python3.4/site-packages/bidict/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "ISC License (ISCL)",
+  "name": "bidict",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.12.0"
+ },
+ "name": "bidict",
+ "raw_recipe": "{%set name = \"bidict\" %}\n{%set version = \"0.12.0\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"3ff12aef7abef48a017a246c7d3d3196be9f2614c8b97bc6aa38ffb04bbf315c\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://github.com/jab/{{ name }}/archive/v{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - bidict\n\nabout:\n  home: https://bidict.readthedocs.io\n  license: ISC License (ISCL)\n  license_file: LICENSE\n  summary: 'Efficient, Pythonic bidirectional map implementation and related functionality'\n  dev_url: https://github.com/jab/bidict\n  doc_url: https://bidict.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n    - jab\n",
+ "rendered_recipe": {},
+ "version": "0.12.0"
+}

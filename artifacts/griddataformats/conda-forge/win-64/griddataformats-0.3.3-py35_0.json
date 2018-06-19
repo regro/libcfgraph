@@ -1,0 +1,49 @@
+{
+ "about": {
+  "description": "The gridDataFormats package provides classes to unify reading and\nwriting n-dimensional datasets. One can read grid data from files,\nmake them available as a `Grid`_ object, and write out the data again.\n",
+  "dev_url": "https://github.com/MDAnalysis/GridDataFormats",
+  "doc_url": "http://www.mdanalysis.org/GridDataFormats/",
+  "home": "http://github.com/MDAnalysis/GridDataFormats",
+  "license": "LGPLv3",
+  "summary": "Reading and writing of data on regular grids in Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/GridDataFormats-0.3.3-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/GridDataFormats-0.3.3-py3.5.egg-info/pbr.json",
+  "Lib/site-packages/GridDataFormats-0.3.3-py3.5.egg-info/zip-safe",
+  "Lib/site-packages/gridData/CCP4.py",
+  "Lib/site-packages/gridData/OpenDX.py",
+  "Lib/site-packages/gridData/__init__.py",
+  "Lib/site-packages/gridData/core.py",
+  "Lib/site-packages/gridData/gOpenMol.py",
+  "Lib/site-packages/gridData/testing/__init__.py",
+  "Lib/site-packages/gridData/testing/tempdir.py",
+  "Lib/site-packages/gridData/tests/__init__.py",
+  "Lib/site-packages/gridData/tests/test.ccp4",
+  "Lib/site-packages/gridData/tests/test.dx",
+  "Lib/site-packages/gridData/tests/test_ccp4.py",
+  "Lib/site-packages/gridData/tests/test_dx.py",
+  "Lib/site-packages/gridData/tests/test_grid.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.5*",
+   "scipy",
+   "six"
+  ],
+  "license": "LGPLv3",
+  "name": "griddataformats",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.3.3"
+ },
+ "name": "griddataformats",
+ "raw_recipe": "{% set name = \"GridDataFormats\" %}\n{% set version = \"0.3.3\" %}\n{% set sha256 = \"938f0efcb3bc2f58ec85048b933942da8a52c134170acc97cb095f09d3698fbd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - six\n    - numpy\n    - scipy\n\ntest:\n  imports:\n    - gridData\n\nabout:\n  home: http://github.com/MDAnalysis/GridDataFormats\n  license: LGPLv3\n  license_file: COPYING.LESSER\n  summary: 'Reading and writing of data on regular grids in Python'\n  description: |\n    The gridDataFormats package provides classes to unify reading and\n    writing n-dimensional datasets. One can read grid data from files,\n    make them available as a `Grid`_ object, and write out the data again.\n  doc_url: http://www.mdanalysis.org/GridDataFormats/\n  dev_url: https://github.com/MDAnalysis/GridDataFormats\n\nextra:\n  recipe-maintainers:\n    - kain88-de\n    - orbeckst\n    - richardjgowers\n",
+ "rendered_recipe": {},
+ "version": "0.3.3"
+}

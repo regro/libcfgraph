@@ -1,0 +1,36 @@
+{
+ "about": {
+  "dev_url": "https://github.com/mattupstate/flask-mail",
+  "doc_url": "https://pythonhosted.org/Flask-Mail/",
+  "home": "https://pythonhosted.org/Flask-Mail/",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Flask extension for sending email"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/Flask_Mail-0.9.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/Flask_Mail-0.9.1-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/flask_mail.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "blinker",
+   "flask",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "flask-mail",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.9.1"
+ },
+ "name": "flask-mail",
+ "raw_recipe": "{%set name = \"flask-mail\" %}\n{%set camelName = \"Flask-Mail\" %}\n{%set version = \"0.9.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"22e5eb9a940bf407bcf30410ecc3708f3c56cc44b29c34e1726fe85006935f41\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - flask\n    - blinker\n\ntest:\n  imports:\n    - flask_mail\n\nabout:\n  home: https://pythonhosted.org/Flask-Mail/\n  license: BSD 3-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: 'Flask extension for sending email'\n  doc_url: https://pythonhosted.org/Flask-Mail/\n  dev_url: https://github.com/mattupstate/flask-mail\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.9.1"
+}

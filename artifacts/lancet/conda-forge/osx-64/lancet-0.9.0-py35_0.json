@@ -1,0 +1,158 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Lancet is designed to help you organize the output of your research\ntools, store it, and dissect the data you have collected. The output\nof a single simulation or analysis rarely contains all the data you\nneed; Lancet helps you generate data from many runs and analyse it\nusing your own Python code.\n",
+  "dev_url": "https://github.com/ioam/lancet",
+  "doc_url": "https://ioam.github.io/param/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://ioam.github.io/lancet/",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Launch jobs, organize the output, and dissect the results."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/lancet/dynamic.py",
+  "lib/python3.5/site-packages/lancet/core.py",
+  "lib/python3.5/site-packages/lancet/launch.py",
+  "lib/python3.5/site-packages/lancet_ioam-0.9.0-py3.5.egg-info",
+  "lib/python3.5/site-packages/lancet/filetypes.py",
+  "lib/python3.5/site-packages/lancet/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "param",
+   "python 3.5*"
+  ],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "name": "lancet",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.9.0"
+ },
+ "name": "lancet",
+ "raw_recipe": "{% set name = \"lancet\" %}\n{% set version = \"0.9.0\" %}\n{% set sha256 = \"1fff606e0b4b00b3c5e411bd6b42d495a151842aeca29f158a5e452770a0f4f6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/ioam/lancet/archive/v{{version}}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - param\n\ntest:\n  imports:\n    - lancet\n\nabout:\n  home: https://ioam.github.io/lancet/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Launch jobs, organize the output, and dissect the results.'\n  description: |\n    Lancet is designed to help you organize the output of your research\n    tools, store it, and dissect the data you have collected. The output\n    of a single simulation or analysis rarely contains all the data you\n    need; Lancet helps you generate data from many runs and analyse it\n    using your own Python code.\n  doc_url: https://ioam.github.io/param/\n  dev_url: https://github.com/ioam/lancet\n\nextra:\n  recipe-maintainers:\n    - jlstevens\n    - philippjfr\n    - basnijholt\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Lancet is designed to help you organize the output of your research\ntools, store it, and dissect the data you have collected. The output\nof a single simulation or analysis rarely contains all the data you\nneed; Lancet helps you generate data from many runs and analyse it\nusing your own Python code.\n",
+   "dev_url": "https://github.com/ioam/lancet",
+   "doc_url": "https://ioam.github.io/param/",
+   "home": "https://ioam.github.io/lancet/",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE.txt",
+   "summary": "Launch jobs, organize the output, and dissect the results."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "script": "python setup.py install",
+   "string": "py35_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "jlstevens",
+    "philippjfr",
+    "basnijholt"
+   ]
+  },
+  "package": {
+   "name": "lancet",
+   "version": "0.9.0"
+  },
+  "requirements": {
+   "build": [
+    "ca-certificates 2017.1.23 1",
+    "ncurses 5.9 10",
+    "openssl 1.0.2k 0",
+    "python 3.5.3 1",
+    "readline 6.2 0",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python",
+    "param"
+   ]
+  },
+  "source": {
+   "fn": "lancet-0.9.0.tar.gz",
+   "sha256": "1fff606e0b4b00b3c5e411bd6b42d495a151842aeca29f158a5e452770a0f4f6",
+   "url": "https://github.com/ioam/lancet/archive/v0.9.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "lancet"
+   ]
+  }
+ },
+ "version": "0.9.0"
+}

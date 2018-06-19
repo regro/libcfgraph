@@ -1,0 +1,40 @@
+{
+ "about": {
+  "home": "http://hyperrealm.com/libconfig/libconfig.html",
+  "license": "LGPL-2.1",
+  "summary": "C/C++ Configuration File Library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/libconfig.h",
+  "include/libconfig.h++",
+  "lib/libconfig++.a",
+  "lib/libconfig++.la",
+  "lib/libconfig++.so",
+  "lib/libconfig++.so.9",
+  "lib/libconfig++.so.9.2.0",
+  "lib/libconfig.a",
+  "lib/libconfig.la",
+  "lib/libconfig.so",
+  "lib/libconfig.so.9",
+  "lib/libconfig.so.9.2.0",
+  "lib/pkgconfig/libconfig++.pc",
+  "lib/pkgconfig/libconfig.pc",
+  "share/info/libconfig.info"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "LGPL-2.1",
+  "name": "libconfig",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.5"
+ },
+ "name": "libconfig",
+ "raw_recipe": "{% set name = \"libconfig\" %}\n{% set version = \"1.5\" %}\n{% set sha256 = \"e31daa390d8e4461c8830512fe2e13ba1a3d6a02a2305a02429eec61e68703f6\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: http://hyperrealm.com/libconfig/{{ name }}-{{ version }}.tar.gz\n  fn: {{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - automake\n    - autoconf\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libconfig++.so  # [linux]\n    - test -f $PREFIX/lib/libconfig++.dylib  # [osx]\n\nabout:\n  home: http://hyperrealm.com/libconfig/libconfig.html\n  license: LGPL-2.1\n  license_file: COPYING.LIB\n  summary: 'C/C++ Configuration File Library'\n\nextra:\n  recipe-maintainers:\n    - lomereiter\n",
+ "rendered_recipe": {},
+ "version": "1.5"
+}

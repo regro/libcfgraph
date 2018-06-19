@@ -1,0 +1,40 @@
+{
+ "about": {
+  "home": "http://github.com/jakevdp/JSAnimation",
+  "license": "BSD 2-Clause",
+  "summary": "Javascript Animation exporter for matplotlib and IPython."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/JSAnimation-0.1-py3.5.egg-info",
+  "Lib/site-packages/JSAnimation/IPython_display.py",
+  "Lib/site-packages/JSAnimation/__init__.py",
+  "Lib/site-packages/JSAnimation/examples.py",
+  "Lib/site-packages/JSAnimation/html_writer.py",
+  "Lib/site-packages/JSAnimation/icons/first.png",
+  "Lib/site-packages/JSAnimation/icons/last.png",
+  "Lib/site-packages/JSAnimation/icons/next.png",
+  "Lib/site-packages/JSAnimation/icons/pause.png",
+  "Lib/site-packages/JSAnimation/icons/play.png",
+  "Lib/site-packages/JSAnimation/icons/prev.png",
+  "Lib/site-packages/JSAnimation/icons/reverse.png"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib",
+   "python 3.5*"
+  ],
+  "license": "BSD 2-Clause",
+  "name": "jsanimation",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.1"
+ },
+ "name": "jsanimation",
+ "raw_recipe": "{% set version = \"0.1\" %}\n{% set commit = \"b14771b6b6aa4429ca19c93aba8c315bf63ce227\" %}\n\npackage:\n    name: jsanimation\n    version: {{ version }}\n\nsource:\n    fn: {{ commit }}.tar.gz\n    url: https://github.com/jakevdp/JSAnimation/archive/{{ commit }}.tar.gz\n    sha256: 60be390282a76ef2681a11f29a4c4af57003c6bf81118dda9e512cce415761db\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n        - matplotlib\n\ntest:\n    imports:\n        - JSAnimation\n\nabout:\n    home: http://github.com/jakevdp/JSAnimation\n    license: BSD 2-Clause\n    summary: 'Javascript Animation exporter for matplotlib and IPython.'\n\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - rsignell-usgs\n",
+ "rendered_recipe": {},
+ "version": "0.1"
+}

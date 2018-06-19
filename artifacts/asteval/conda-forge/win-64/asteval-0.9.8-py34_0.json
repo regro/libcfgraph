@@ -1,0 +1,34 @@
+{
+ "about": {
+  "description": "asteval is a simple and robust evaluator of\nPython expressions and statements, using Python's ast module.\n",
+  "dev_url": "https://github.com/newville/asteval",
+  "doc_url": "http://newville.github.io/asteval/",
+  "home": "https://github.com/newville/asteval",
+  "license": "BSD",
+  "summary": "Simple and robust expressions evaluator for Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/asteval-0.9.8-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/asteval/__init__.py",
+  "Lib/site-packages/asteval/asteval.py",
+  "Lib/site-packages/asteval/astutils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD",
+  "name": "asteval",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.9.8"
+ },
+ "name": "asteval",
+ "raw_recipe": "{% set name = \"asteval\" %}\n{% set version = \"0.9.8\" %}\n{% set sha256 = \"046d31ca4470b1ece52277965674c421337de79950dde6a76fa0d1c57a87278b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - asteval\n\nabout:\n  home: https://github.com/newville/asteval\n  license: BSD\n  license_file: LICENSE\n  summary: 'Simple and robust expressions evaluator for Python'\n\n  # The remaining entries in this section are optional, but recommended\n  description: |\n    asteval is a simple and robust evaluator of \n    Python expressions and statements, using Python's ast module.\n  doc_url: http://newville.github.io/asteval/\n  dev_url: https://github.com/newville/asteval\n\nextra:\n  recipe-maintainers:\n    - souravsingh\n",
+ "rendered_recipe": {},
+ "version": "0.9.8"
+}

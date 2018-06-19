@@ -1,0 +1,40 @@
+{
+ "about": {
+  "dev_url": "https://gitlab.kwant-project.org/r-j-skolasinski/discretizer",
+  "home": "https://gitlab.kwant-project.org/r-j-skolasinski/discretizer",
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "summary": "A tool that will discretize a Hamiltonian and prepare functions\nthat may be used to create a kwant system.\n"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/discretizer-0.4.3-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/discretizer-0.4.3-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/discretizer/__init__.py",
+  "lib/python3.5/site-packages/discretizer/algorithms.py",
+  "lib/python3.5/site-packages/discretizer/discretizer.py",
+  "lib/python3.5/site-packages/discretizer/interpolation.py",
+  "lib/python3.5/site-packages/discretizer/postprocessing.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "kwant",
+   "numpy",
+   "python 3.5*",
+   "sympy"
+  ],
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "name": "discretizer",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.4.3"
+ },
+ "name": "discretizer",
+ "raw_recipe": "{% set name = \"discretizer\" %}\n{% set version = \"0.4.3\" %}\n{% set sha256 = \"de557f087061ea9a0e807e63423d3b325985b262524fdaacdb583749b1eded7a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://gitlab.kwant-project.org/r-j-skolasinski/discretizer/repository/archive.tar.bz2?ref=v{{ version }}\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - sympy\n    - kwant\n    - numpy\n\ntest:\n  imports:\n    - discretizer\n\nabout:\n  home: https://gitlab.kwant-project.org/r-j-skolasinski/discretizer\n  license: BSD 2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: |\n    A tool that will discretize a Hamiltonian and prepare functions\n    that may be used to create a kwant system.\n  dev_url: https://gitlab.kwant-project.org/r-j-skolasinski/discretizer\n\nextra:\n  recipe-maintainers:\n    - basnijholt\n    - RafalSkolasinski\n",
+ "rendered_recipe": {},
+ "version": "0.4.3"
+}

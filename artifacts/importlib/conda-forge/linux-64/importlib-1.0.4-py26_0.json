@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "https://github.com/brettcannon/importlib",
+  "license": "PSF2",
+  "license_family": "PSF",
+  "summary": "Backport of importlib.import_module() from Python 2.7"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.6/site-packages/importlib-1.0.4-py2.6.egg-info",
+  "lib/python2.6/site-packages/importlib/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py26_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.6*"
+  ],
+  "license": "PSF2",
+  "license_family": "PSF",
+  "name": "importlib",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0.4"
+ },
+ "name": "importlib",
+ "raw_recipe": "{% set name = \"importlib\" %}\n{% set version = \"1.0.4\" %}\n{% set checksum = \"b6ee7066fea66e35f8d0acee24d98006de1a0a8a94a8ce6efe73a9a23c8d9826\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n  sha256: {{ checksum }}\n\nbuild:\n  number: 0\n  skip: true  # [py27 or py>30]\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - importlib\n\nabout:\n  home: https://github.com/brettcannon/importlib\n  license: PSF2\n  license_family: PSF\n  license_file: LICENSE\n  summary: Backport of importlib.import_module() from Python 2.7\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.0.4"
+}

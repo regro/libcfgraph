@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "http://github.com/mitsuhiko/markupsafe",
+  "license": "BSD 3-clause",
+  "summary": "A Python module that implements the jinja2.Markup string"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/MarkupSafe-0.23-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/MarkupSafe-0.23-py3.6.egg-info/not-zip-safe",
+  "lib/python3.6/site-packages/markupsafe/__init__.py",
+  "lib/python3.6/site-packages/markupsafe/_compat.py",
+  "lib/python3.6/site-packages/markupsafe/_constants.py",
+  "lib/python3.6/site-packages/markupsafe/_native.py",
+  "lib/python3.6/site-packages/markupsafe/_speedups.c",
+  "lib/python3.6/site-packages/markupsafe/_speedups.cpython-36m-darwin.so",
+  "lib/python3.6/site-packages/markupsafe/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_1",
+  "build_number": 1,
+  "depends": [
+   "python 3.6*"
+  ],
+  "license": "BSD 3-clause",
+  "name": "markupsafe",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.23"
+ },
+ "name": "markupsafe",
+ "raw_recipe": "{% set version = \"0.23\" %}\n\npackage:\n  name: markupsafe\n  version: {{ version }}\n\nsource:\n  fn: MarkupSafe-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/M/MarkupSafe/MarkupSafe-{{ version }}.tar.gz\n  md5: f5ab3deee4c37cd6a922fb81e730da6e\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - markupsafe\n\nabout:\n  home: http://github.com/mitsuhiko/markupsafe\n  license: BSD 3-clause\n  summary: A Python module that implements the jinja2.Markup string\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - scopatz",
+ "rendered_recipe": {},
+ "version": "0.23"
+}

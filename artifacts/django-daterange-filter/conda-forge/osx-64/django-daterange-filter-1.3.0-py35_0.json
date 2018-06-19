@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "http://github.com/tzulberti/django-datefilterspec",
+  "license": "BSD",
+  "summary": "Allow to filter by a custom date range on the Django Admin"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/daterange_filter/__init__.py",
+  "lib/python3.5/site-packages/daterange_filter/filter.py",
+  "lib/python3.5/site-packages/daterange_filter/templates/daterange_filter/filter.html",
+  "lib/python3.5/site-packages/django_daterange_filter-1.3.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/django_daterange_filter-1.3.0-py3.5.egg-info/not-zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "django",
+   "python 3.5*"
+  ],
+  "license": "BSD",
+  "name": "django-daterange-filter",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.3.0"
+ },
+ "name": "django-daterange-filter",
+ "raw_recipe": "{% set version = \"1.3.0\" %}\n\npackage:\n  name: django-daterange-filter\n  version: {{ version }}\n\nsource:\n  fn: django-daterange-filter-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/django-daterange-filter/django-daterange-filter-{{ version }}.tar.gz\n  sha256: f31aee8f747f36b3a25fa332ad5c3e170e87ba97e957aacfa196c1cd68ac336e\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - django\n  run:\n    - python\n    - django\n\ntest:\n  imports:\n    - daterange_filter\n\nabout:\n  home: http://github.com/tzulberti/django-datefilterspec\n  license: BSD\n  summary: 'Allow to filter by a custom date range on the Django Admin'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.3.0"
+}

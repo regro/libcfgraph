@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "http://fuelcycle.org/",
+  "license": "BSD 3-clause",
+  "summary": "The Cyclus additional modules repository."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/cycamore_unit_tests",
+  "bin/run_inputs.py",
+  "lib/cyclus/libcycamore.dylib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "cyclus"
+  ],
+  "license": "BSD 3-clause",
+  "name": "cycamore",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.4.0rc1"
+ },
+ "name": "cycamore",
+ "raw_recipe": "{% set version = \"1.4.0rc1\" %}\n{% set org = \"cyclus\" %}\n{% set branch = \"develop\" %}\n{% set sha256 = \"29b553c4869cee7e6c3c86c683362a331c8a0532d6fc1893bfc5f41f28a5fa34\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: cycamore\n  version: {{ version }}\n\nsource:\n  fn: cycamore-{{ version }}-{{ sha256 }}.tar.gz\n  url: https://github.com/{{ org }}/cycamore/archive/{{ branch }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win or not py35]\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - cmake\n    - pkg-config\n    - cyclus\n  run:\n    - cyclus\n\nabout:\n  home: http://fuelcycle.org/\n  license: BSD 3-clause\n  license_file: LICENSE.rst\n  summary: \"The Cyclus additional modules repository.\"\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "rendered_recipe": {},
+ "version": "1.4.0rc1"
+}

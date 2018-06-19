@@ -1,0 +1,38 @@
+{
+ "about": {
+  "home": "https://sourceware.org/libffi/",
+  "license": "Custom",
+  "summary": "A Portable Foreign Function Interface Library."
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/ffi.h",
+  "include/ffitarget.h",
+  "lib/libffi.a",
+  "lib/libffi.la",
+  "lib/libffi.so",
+  "lib/libffi.so.6",
+  "lib/libffi.so.6.0.4",
+  "lib/pkgconfig/libffi.pc",
+  "share/info/libffi.info",
+  "share/man/man3/ffi.3",
+  "share/man/man3/ffi_call.3",
+  "share/man/man3/ffi_prep_cif.3",
+  "share/man/man3/ffi_prep_cif_var.3"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "3",
+  "build_number": 3,
+  "depends": [],
+  "license": "Custom",
+  "name": "libffi",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "3.2.1"
+ },
+ "name": "libffi",
+ "raw_recipe": "{% set name = \"libffi\" %}\n{% set version = \"3.2.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: ftp://sourceware.org/pub/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha1: 280c265b789e041c02e5c97815793dfc283fb1e6\n  patches:\n    - configure_includedir_option.patch\n\nbuild:\n  number: 3\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - autoconf\n    - automake\n    - libtool\n\ntest:\n  commands:\n    - test -e $PREFIX/lib/libffi.so  # [linux]\n    - test -e $PREFIX/lib/libffi.a  # [unix]\n    - test -e $PREFIX/lib/libffi.dylib  # [osx]\n    - test -e $PREFIX/include/ffi.h\n    - test -e $PREFIX/include/ffitarget.h\n\nabout:\n  home: https://sourceware.org/libffi/\n  license: Custom\n  summary: A Portable Foreign Function Interface Library.\n\nextra:\n  recipe-maintainers:\n    - stefan-balke\n    - scopatz\n",
+ "rendered_recipe": {},
+ "version": "3.2.1"
+}

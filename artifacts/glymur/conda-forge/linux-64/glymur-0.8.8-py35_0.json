@@ -1,0 +1,51 @@
+{
+ "about": {
+  "home": "https://github.com/quintusdias/glymur",
+  "license": "MIT",
+  "summary": "Tools for accessing JPEG2000 files"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/jp2dump",
+  "lib/python3.5/site-packages/Glymur-0.8.8-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/glymur/__init__.py",
+  "lib/python3.5/site-packages/glymur/_iccprofile.py",
+  "lib/python3.5/site-packages/glymur/_tiff.py",
+  "lib/python3.5/site-packages/glymur/codestream.py",
+  "lib/python3.5/site-packages/glymur/command_line.py",
+  "lib/python3.5/site-packages/glymur/config.py",
+  "lib/python3.5/site-packages/glymur/core.py",
+  "lib/python3.5/site-packages/glymur/data/__init__.py",
+  "lib/python3.5/site-packages/glymur/data/goodstuff.j2k",
+  "lib/python3.5/site-packages/glymur/data/heliov.jpx",
+  "lib/python3.5/site-packages/glymur/data/nemo.jp2",
+  "lib/python3.5/site-packages/glymur/jp2box.py",
+  "lib/python3.5/site-packages/glymur/jp2k.py",
+  "lib/python3.5/site-packages/glymur/lib/__init__.py",
+  "lib/python3.5/site-packages/glymur/lib/openjp2.py",
+  "lib/python3.5/site-packages/glymur/lib/openjpeg.py",
+  "lib/python3.5/site-packages/glymur/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "contextlib2 >=0.4",
+   "lxml >=2.3.2",
+   "numpy >=1.7.0",
+   "openjpeg 2.1.*",
+   "python 3.5*",
+   "setuptools"
+  ],
+  "license": "MIT",
+  "name": "glymur",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.8.8"
+ },
+ "name": "glymur",
+ "raw_recipe": "{% set version = \"0.8.8\" %}\npackage:\n  name: glymur\n  version: {{ version }}\n\nsource:\n  fn: Glymur-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/2a/04/2e822f71dd25911697d23c145bb2344fad6f21da23da07d277d1797df21a/Glymur-0.8.8.tar.gz\n  sha256: 97851098b6793517810a82fbfbba54968fe2b90fd4843d2e5ca926960e948684\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - jp2dump=glymur.command_line:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy >=1.7.0\n    - lxml >=2.3.2\n    - mock\n    - contextlib2 >=0.4\n\n  run:\n    - python\n    - setuptools\n    - numpy >=1.7.0\n    - lxml >=2.3.2\n    - contextlib2 >=0.4\n    - openjpeg 2.1.*\n\ntest:\n  # Python imports\n  imports:\n    - glymur\n    - glymur.data\n    - glymur.lib\n\n  commands:\n    - python -c \"import glymur; j = glymur.Jp2k(glymur.data.nemo()); print(j)\"\n    - jp2dump --help\n\nabout:\n  home: https://github.com/quintusdias/glymur\n  license: MIT\n  summary: 'Tools for accessing JPEG2000 files'\n\nextra:\n  recipe-maintainers:\n    - cadair\n    - ehsteve\n    - quintusdias\n",
+ "rendered_recipe": {},
+ "version": "0.8.8"
+}

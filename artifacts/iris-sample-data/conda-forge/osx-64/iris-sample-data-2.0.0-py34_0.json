@@ -1,0 +1,59 @@
+{
+ "about": {
+  "home": "https://github.com/SciTools/iris-sample-data",
+  "license": "Open Government",
+  "summary": "Iris sample data."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/iris_sample_data-2.0.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/iris_sample_data/__init__.py",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/A1B.2098.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/A1B_north_america.nc",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/E1.2098.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/E1_north_america.nc",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/GloSea4/ensemble_000.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/GloSea4/ensemble_001.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/GloSea4/ensemble_002.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/GloSea4/ensemble_003.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/GloSea4/ensemble_004.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/GloSea4/ensemble_005.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/GloSea4/ensemble_007.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/GloSea4/ensemble_008.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/GloSea4/ensemble_009.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/GloSea4/ensemble_010.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/GloSea4/ensemble_011.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/GloSea4/ensemble_012.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/GloSea4/ensemble_013.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/SOI_Darwin.nc",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/air_temp.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/atlantic_profiles.nc",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/colpex.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/hybrid_height.nc",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/orca2_votemper.nc",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/ostia_monthly.nc",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/polar_stereo.grib2",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/pre-industrial.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/rotated_pole.nc",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/space_weather.nc",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/uk_hires.pp",
+  "lib/python3.4/site-packages/iris_sample_data/sample_data/wind_speed_lake_victoria.pp"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "Open Government",
+  "name": "iris-sample-data",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.0.0"
+ },
+ "name": "iris-sample-data",
+ "raw_recipe": "{% set version = \"2.0.0\" %}\n\npackage:\n    name: iris-sample-data\n    version: {{ version }}\n\nsource:\n    fn: iris-sample-data-{{ version }}.tar.gz\n    url: https://github.com/SciTools/iris-sample-data/archive/v{{ version }}.tar.gz\n    sha256: 8907f2ac0e38a32e39f79db7e6426d25c27cb18b9ad510a33f3f2538ebac12ac\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - iris_sample_data\n\nabout:\n    home: https://github.com/SciTools/iris-sample-data\n    license: Open Government\n    summary: 'Iris sample data.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "2.0.0"
+}

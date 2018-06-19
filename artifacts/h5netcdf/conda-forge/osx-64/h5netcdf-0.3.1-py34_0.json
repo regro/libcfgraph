@@ -1,0 +1,37 @@
+{
+ "about": {
+  "home": "https://github.com/shoyer/h5netcdf",
+  "license": "BSD 3-Clause",
+  "summary": "netCDF4 via h5py."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/h5netcdf-0.3.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/h5netcdf/__init__.py",
+  "lib/python3.4/site-packages/h5netcdf/_chainmap.py",
+  "lib/python3.4/site-packages/h5netcdf/attrs.py",
+  "lib/python3.4/site-packages/h5netcdf/compat.py",
+  "lib/python3.4/site-packages/h5netcdf/core.py",
+  "lib/python3.4/site-packages/h5netcdf/dimensions.py",
+  "lib/python3.4/site-packages/h5netcdf/legacyapi.py",
+  "lib/python3.4/site-packages/h5netcdf/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "h5py",
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "h5netcdf",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.1"
+ },
+ "name": "h5netcdf",
+ "raw_recipe": "{% set version = \"0.3.1\" %}\n\npackage:\n    name: h5netcdf\n    version: {{ version }}\n\nsource:\n    fn: h5netcdf-{{ version }}.tar.gz\n    url: https://github.com/shoyer/h5netcdf/archive/v{{ version }}.tar.gz\n    sha256: 8fdc52d63ce1e6cc18c5badcd67804146fc23d3ff3f678590e8f6a1920a46754\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - h5py\n    run:\n        - python\n        - h5py\n\ntest:\n    imports:\n        - h5netcdf\n\nabout:\n    home: https://github.com/shoyer/h5netcdf\n    license: BSD 3-Clause\n    summary: 'netCDF4 via h5py.'\n\nextra:\n    recipe-maintainers:\n        - jhamman\n        - ocefpaf\n        - shoyer\n",
+ "rendered_recipe": {},
+ "version": "0.3.1"
+}

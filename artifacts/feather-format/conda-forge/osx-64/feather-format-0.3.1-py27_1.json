@@ -1,0 +1,38 @@
+{
+ "about": {
+  "home": "https://github.com/wesm/feather",
+  "license": "Apache 2.0",
+  "summary": "Feather: fast, interoperable binary data frame storage for Python, R, and more powered by Apache Arrow"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/feather/__init__.py",
+  "lib/python2.7/site-packages/feather/api.py",
+  "lib/python2.7/site-packages/feather/compat.py",
+  "lib/python2.7/site-packages/feather/ext.pyx",
+  "lib/python2.7/site-packages/feather/ext.so",
+  "lib/python2.7/site-packages/feather/libfeather.pxd",
+  "lib/python2.7/site-packages/feather/tests/__init__.py",
+  "lib/python2.7/site-packages/feather/tests/test_reader.py",
+  "lib/python2.7/site-packages/feather/version.py",
+  "lib/python2.7/site-packages/feather_format-0.3.1-py2.7.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "pandas >=0.17.0",
+   "python 2.7*"
+  ],
+  "license": "Apache 2.0",
+  "name": "feather-format",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.1"
+ },
+ "name": "feather-format",
+ "raw_recipe": "{% set version = \"0.3.1\" %}\npackage:\n  name: feather-format\n  version: {{ version }}\n\nsource:\n  fn: feather-format-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/f/feather-format/feather-format-{{ version }}.tar.gz\n  md5: 0b34d70b1ba1226813ed879a9c2ddcbc\n\nbuild:\n  number: 1\n  skip: true  # [win and py<35]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cython\n    - pandas >=0.17.0\n  run:\n    - python\n    - pandas >=0.17.0\n    - vs2015_runtime  # [win]\n\ntest:\n  imports:\n    - feather\n\nabout:\n  home: https://github.com/wesm/feather\n  license: Apache 2.0\n  summary: \"Feather: fast, interoperable binary data frame storage for Python, R, and more powered by Apache Arrow\"\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n    - msarahan\n    - wesm\n",
+ "rendered_recipe": {},
+ "version": "0.3.1"
+}

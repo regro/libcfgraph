@@ -1,0 +1,40 @@
+{
+ "about": {
+  "home": "https://github.com/frewsxcv/python-geojson",
+  "license": "BSD 3-Clause",
+  "summary": "Python bindings and utilities for GeoJSON"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/geojson-1.3.3-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/geojson/__init__.py",
+  "Lib/site-packages/geojson/_version.py",
+  "Lib/site-packages/geojson/base.py",
+  "Lib/site-packages/geojson/codec.py",
+  "Lib/site-packages/geojson/crs.py",
+  "Lib/site-packages/geojson/examples.py",
+  "Lib/site-packages/geojson/factory.py",
+  "Lib/site-packages/geojson/feature.py",
+  "Lib/site-packages/geojson/geometry.py",
+  "Lib/site-packages/geojson/mapping.py",
+  "Lib/site-packages/geojson/utils.py",
+  "Lib/site-packages/geojson/validation.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "geojson",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.3.3"
+ },
+ "name": "geojson",
+ "raw_recipe": "{% set version = \"1.3.3\" %}\n\n\npackage:\n    name: geojson\n    version: {{ version }}\n\nsource:\n    fn: geojson-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/g/geojson/geojson-{{ version }}.tar.gz\n    md5: 2da9a02548ff783bb1f4c3624e31cf78\n\nbuild:\n    number: 0\n    preserve_egg_dir: True\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - geojson\n\nabout:\n    home: https://github.com/frewsxcv/python-geojson\n    license: BSD 3-Clause\n    summary: Python bindings and utilities for GeoJSON\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.3.3"
+}

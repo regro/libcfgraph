@@ -1,0 +1,36 @@
+{
+ "about": {
+  "description": "A library to support the Internationalised Domain Names in Applications\n(IDNA) protocol as specified in RFC 5891. This version of the protocol\nis often referred to as \u201cIDNA2008\u201d.\n",
+  "home": "https://github.com/kjd/idna",
+  "license": "BSD Like",
+  "summary": "Internationalized Domain Names in Applications (IDNA)."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/idna-2.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/idna/__init__.py",
+  "lib/python3.5/site-packages/idna/codec.py",
+  "lib/python3.5/site-packages/idna/compat.py",
+  "lib/python3.5/site-packages/idna/core.py",
+  "lib/python3.5/site-packages/idna/idnadata.py",
+  "lib/python3.5/site-packages/idna/intranges.py",
+  "lib/python3.5/site-packages/idna/uts46data.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD Like",
+  "name": "idna",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.1"
+ },
+ "name": "idna",
+ "raw_recipe": "{% set name = \"idna\" %}\n{% set version = \"2.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"ed36f281aebf3cd0797f163bb165d84c31507cedd15928b095b1675e2d04c676\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - idna\n\nabout:\n  home: https://github.com/kjd/idna\n  license: BSD Like\n  license_file: LICENSE.rst\n  summary: Internationalized Domain Names in Applications (IDNA).\n  description: |\n    A library to support the Internationalised Domain Names in Applications\n    (IDNA) protocol as specified in RFC 5891. This version of the protocol\n    is often referred to as \u201cIDNA2008\u201d.\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n",
+ "rendered_recipe": {},
+ "version": "2.1"
+}

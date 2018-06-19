@@ -1,0 +1,50 @@
+{
+ "about": {
+  "home": "https://github.com/elastic/elasticsearch-py",
+  "license": "Apache 2.0",
+  "summary": "Python client for Elasticsearch"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/elasticsearch-2.3.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/elasticsearch-2.3.0-py3.5.egg-info/pbr.json",
+  "Lib/site-packages/elasticsearch/__init__.py",
+  "Lib/site-packages/elasticsearch/client/__init__.py",
+  "Lib/site-packages/elasticsearch/client/cat.py",
+  "Lib/site-packages/elasticsearch/client/cluster.py",
+  "Lib/site-packages/elasticsearch/client/indices.py",
+  "Lib/site-packages/elasticsearch/client/nodes.py",
+  "Lib/site-packages/elasticsearch/client/snapshot.py",
+  "Lib/site-packages/elasticsearch/client/utils.py",
+  "Lib/site-packages/elasticsearch/compat.py",
+  "Lib/site-packages/elasticsearch/connection/__init__.py",
+  "Lib/site-packages/elasticsearch/connection/base.py",
+  "Lib/site-packages/elasticsearch/connection/http_requests.py",
+  "Lib/site-packages/elasticsearch/connection/http_urllib3.py",
+  "Lib/site-packages/elasticsearch/connection/pooling.py",
+  "Lib/site-packages/elasticsearch/connection_pool.py",
+  "Lib/site-packages/elasticsearch/exceptions.py",
+  "Lib/site-packages/elasticsearch/helpers/__init__.py",
+  "Lib/site-packages/elasticsearch/helpers/test.py",
+  "Lib/site-packages/elasticsearch/serializer.py",
+  "Lib/site-packages/elasticsearch/transport.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "urllib3 >=1.8,<2.0"
+  ],
+  "license": "Apache 2.0",
+  "name": "elasticsearch",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.3.0"
+ },
+ "name": "elasticsearch",
+ "raw_recipe": "{% set version = \"2.3.0\" %}\n\npackage:\n  name: elasticsearch\n  version: {{ version }}\n\nsource:\n  fn: elasticsearch-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/e/elasticsearch/elasticsearch-{{ version }}.tar.gz\n  sha256: be3080a2bf32dff0a9f9fcc1c087515a25a357645673a976d25ef77166134d81\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - urllib3 >=1.8,<2.0\n\ntest:\n  imports:\n    - elasticsearch\n    - elasticsearch.client\n    - elasticsearch.connection\n    - elasticsearch.helpers\n\nabout:\n  home: https://github.com/elastic/elasticsearch-py\n  license: Apache 2.0\n  summary: 'Python client for Elasticsearch'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "2.3.0"
+}

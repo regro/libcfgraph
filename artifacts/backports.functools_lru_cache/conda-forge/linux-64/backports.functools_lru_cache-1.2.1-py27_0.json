@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "https://github.com/jaraco/backports.functools_lru_cache",
+  "license": "MIT",
+  "summary": "Backport of functools.lru_cache from Python 3.3 as published at ActiveState."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/backports.functools_lru_cache-1.2.1-py2.7-nspkg.pth",
+  "lib/python2.7/site-packages/backports.functools_lru_cache-1.2.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/backports/functools_lru_cache.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "setuptools"
+  ],
+  "license": "MIT",
+  "name": "backports.functools_lru_cache",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.2.1"
+ },
+ "name": "backports.functools_lru_cache",
+ "raw_recipe": "{% set name = \"backports.functools_lru_cache\" %}\r\n{% set version = \"1.2.1\" %}\r\n\r\npackage:\r\n  name: {{ name }}\r\n  version: {{ version }}\r\n\r\nsource:\r\n  fn: {{ name }}-{{ version }}.tar.gz\r\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\r\n  sha256: 1c20e07f1a8a36a19d5d258b6b076e588d78d8fc7c2c4487ffe3a280f55a7bd1\r\n\r\nbuild:\r\n  number: 0\r\n  script: python setup.py install --single-version-externally-managed --record record.txt\r\n\r\nrequirements:\r\n  build:\r\n    - python\r\n    - setuptools\r\n    - setuptools_scm\r\n\r\n  run:\r\n    - python\r\n    - setuptools\r\n\r\ntest:\r\n  imports:\r\n    - backports.functools_lru_cache\r\n\r\nabout:\r\n  home: https://github.com/jaraco/backports.functools_lru_cache\r\n  license: MIT\r\n  summary: 'Backport of functools.lru_cache from Python 3.3 as published at ActiveState.'\r\n\r\nextra:\r\n  recipe-maintainers:\r\n    - mariusvniekerk\r\n",
+ "rendered_recipe": {},
+ "version": "1.2.1"
+}

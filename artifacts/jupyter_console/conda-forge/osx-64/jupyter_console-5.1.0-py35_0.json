@@ -1,0 +1,159 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p648/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/Users/travis/.nvm/versions/node/v6.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://jupyter.org",
+  "license": "BSD 3-Clause",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Jupyter terminal console"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/jupyter_console/_version.py",
+  "lib/python3.5/site-packages/jupyter_console-5.1.0.dist-info/DESCRIPTION.rst",
+  "lib/python3.5/site-packages/jupyter_console/__main__.py",
+  "bin/jupyter-console",
+  "lib/python3.5/site-packages/jupyter_console/tests/writetofile.py",
+  "lib/python3.5/site-packages/jupyter_console/tests/test_console.py",
+  "lib/python3.5/site-packages/jupyter_console/tests/__init__.py",
+  "lib/python3.5/site-packages/jupyter_console/ptshell.py",
+  "lib/python3.5/site-packages/jupyter_console/app.py",
+  "lib/python3.5/site-packages/jupyter_console/tests/test_image_handler.py",
+  "lib/python3.5/site-packages/jupyter_console/__init__.py",
+  "lib/python3.5/site-packages/jupyter_console-5.1.0.dist-info/RECORD",
+  "lib/python3.5/site-packages/jupyter_console/zmqhistory.py",
+  "lib/python3.5/site-packages/jupyter_console-5.1.0.dist-info/metadata.json",
+  "lib/python3.5/site-packages/jupyter_console-5.1.0.dist-info/METADATA",
+  "lib/python3.5/site-packages/jupyter_console/completer.py",
+  "lib/python3.5/site-packages/jupyter_console-5.1.0.dist-info/INSTALLER",
+  "lib/python3.5/site-packages/jupyter_console-5.1.0.dist-info/WHEEL"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "ipykernel",
+   "ipython",
+   "jupyter_client",
+   "pexpect",
+   "prompt_toolkit",
+   "pygments",
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "jupyter_console",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "5.1.0"
+ },
+ "name": "jupyter_console",
+ "raw_recipe": "{% set version = \"5.1.0\" %}\n\npackage:\n  name: jupyter_console\n  version: {{ version }}\n\nsource:\n  fn: jupyter_console-{{ version }}.tar.gz\n  url: https://github.com/jupyter/jupyter_console/archive/{{ version }}.tar.gz\n  sha256: bee20976846123eda49ca880a84e567edd184c28a0ddcbbc0d990d2d8822e8e1\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps .\n  entry_points:\n    - jupyter-console = jupyter_console.app:main\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - jupyter_client\n    - ipython\n    - ipykernel\n    - prompt_toolkit\n    - pygments\n    - pexpect  # [not win]\n\ntest:\n  commands:\n    - jupyter-console -h\n  imports:\n    - jupyter_console\n\nabout:\n  home: http://jupyter.org\n  license: BSD 3-Clause\n  summary: Jupyter terminal console\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n    - pelson\n    - takluyver\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://jupyter.org",
+   "license": "BSD 3-Clause",
+   "summary": "Jupyter terminal console"
+  },
+  "build": {
+   "entry_points": [
+    "jupyter-console = jupyter_console.app:main"
+   ],
+   "number": "0",
+   "script": "python -m pip install --no-deps .",
+   "string": "py35_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham",
+    "minrk",
+    "pelson",
+    "takluyver",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "jupyter_console",
+   "version": "5.1.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "jupyter_client",
+    "ipython",
+    "ipykernel",
+    "prompt_toolkit",
+    "pygments",
+    "pexpect"
+   ]
+  },
+  "source": {
+   "fn": "jupyter_console-5.1.0.tar.gz",
+   "sha256": "bee20976846123eda49ca880a84e567edd184c28a0ddcbbc0d990d2d8822e8e1",
+   "url": "https://github.com/jupyter/jupyter_console/archive/5.1.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "jupyter-console -h"
+   ],
+   "imports": [
+    "jupyter_console"
+   ]
+  }
+ },
+ "version": "5.1.0"
+}

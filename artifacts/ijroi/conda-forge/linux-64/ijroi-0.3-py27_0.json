@@ -1,0 +1,48 @@
+{
+ "about": {
+  "dev_url": "https://github.com/tdsmith/ijroi",
+  "home": "https://github.com/tdsmith/ijroi",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Reads ImageJ ROIs."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/ijroi-0.3-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/ijroi-0.3-py2.7.egg-info/pbr.json",
+  "lib/python2.7/site-packages/ijroi/__init__.py",
+  "lib/python2.7/site-packages/ijroi/ijroi.py",
+  "lib/python2.7/site-packages/ijroi/tests/__init__.py",
+  "lib/python2.7/site-packages/ijroi/tests/fixtures/float_point.roi",
+  "lib/python2.7/site-packages/ijroi/tests/fixtures/freehand_circle.roi",
+  "lib/python2.7/site-packages/ijroi/tests/fixtures/freehand_integer.roi",
+  "lib/python2.7/site-packages/ijroi/tests/fixtures/generate_fixtures.js",
+  "lib/python2.7/site-packages/ijroi/tests/fixtures/int_point.roi",
+  "lib/python2.7/site-packages/ijroi/tests/fixtures/integer_rectangle.roi",
+  "lib/python2.7/site-packages/ijroi/tests/fixtures/polygon_circle.roi",
+  "lib/python2.7/site-packages/ijroi/tests/fixtures/polygon_integer.roi",
+  "lib/python2.7/site-packages/ijroi/tests/fixtures/subpixel_rectangle.roi",
+  "lib/python2.7/site-packages/ijroi/tests/fixtures/unit_rectangle.roi",
+  "lib/python2.7/site-packages/ijroi/tests/test_ijroi.py",
+  "lib/python2.7/site-packages/ijroi/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "ijroi",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3"
+ },
+ "name": "ijroi",
+ "raw_recipe": "{% set name = \"ijroi\" %}\n{% set version = \"0.3\" %}\n{% set sha256 = \"0fb7c3af824475f8b8330fd917ab02b969be74f5ead6198bb6928d7aebe3aab5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy\n\ntest:\n  imports:\n    - ijroi\n    - ijroi.tests\n\nabout:\n  home: https://github.com/tdsmith/ijroi\n  license: MIT\n  license_family: MIT\n  # Proposed inclusion in `MANIFEST.in` upstream.\n  #\n  # https://github.com/tdsmith/ijroi/pull/2\n  #\n  # license_file: COPYING\n  summary: Reads ImageJ ROIs.\n  dev_url: https://github.com/tdsmith/ijroi\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.3"
+}

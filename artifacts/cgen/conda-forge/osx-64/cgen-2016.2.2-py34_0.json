@@ -1,0 +1,38 @@
+{
+ "about": {
+  "dev_url": "http://github.com/inducer/cgen",
+  "doc_url": "https://documen.tician.de/cgen",
+  "home": "http://pypi.python.org/pypi/cgen",
+  "license": "MIT",
+  "summary": "C/C++ source generation from an AST"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/cgen-2016.2.2-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/cgen/__init__.py",
+  "lib/python3.4/site-packages/cgen/cuda.py",
+  "lib/python3.4/site-packages/cgen/ispc.py",
+  "lib/python3.4/site-packages/cgen/mapper.py",
+  "lib/python3.4/site-packages/cgen/opencl.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.4*",
+   "pytools",
+   "six"
+  ],
+  "license": "MIT",
+  "name": "cgen",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2016.2.2"
+ },
+ "name": "cgen",
+ "raw_recipe": "{% set name = \"cgen\" %}\n{% set version = \"2016.2.2\" %}\n{% set sha256 = \"6040e90bf3b56db0ab485d3aa3732dfc3e286554e1d8d42c3d0c1a5a67956406\" %}\n\npackage:\n    name: {{ name|lower }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - pytools\n        - six\n    run:\n        - python\n        - pytools\n        - numpy\n        - six\n\ntest:\n    requires:\n        - pytest\n    imports:\n        - {{ name }}\n    commands:\n         - cd $SRC_DIR/test && python -m pytest  # [unix]\n         - cd %SRC_DIR%/test && python -m pytest  # [win]\n\nabout:\n    home: http://pypi.python.org/pypi/cgen\n    license: MIT\n    license_file: LICENSE\n    summary: C/C++ source generation from an AST\n    dev_url: http://github.com/inducer/cgen\n    doc_url: https://documen.tician.de/cgen\n\nextra:\n    recipe-maintainers:\n        - inducer\n",
+ "rendered_recipe": {},
+ "version": "2016.2.2"
+}

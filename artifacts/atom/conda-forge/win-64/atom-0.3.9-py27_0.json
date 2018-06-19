@@ -1,0 +1,53 @@
+{
+ "about": {
+  "home": "https://github.com/nucleic/atom",
+  "license": "BSD 3-Clause",
+  "summary": "Memory efficient Python objects"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/atom-0.3.9-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/atom/__init__.py",
+  "Lib/site-packages/atom/api.py",
+  "Lib/site-packages/atom/atom.py",
+  "Lib/site-packages/atom/catom.pyd",
+  "Lib/site-packages/atom/coerced.py",
+  "Lib/site-packages/atom/containerlist.py",
+  "Lib/site-packages/atom/datastructures/__init__.py",
+  "Lib/site-packages/atom/datastructures/api.py",
+  "Lib/site-packages/atom/datastructures/sortedmap.pyd",
+  "Lib/site-packages/atom/delegator.py",
+  "Lib/site-packages/atom/dict.py",
+  "Lib/site-packages/atom/enum.py",
+  "Lib/site-packages/atom/event.py",
+  "Lib/site-packages/atom/instance.py",
+  "Lib/site-packages/atom/intenum.py",
+  "Lib/site-packages/atom/list.py",
+  "Lib/site-packages/atom/property.py",
+  "Lib/site-packages/atom/scalars.py",
+  "Lib/site-packages/atom/signal.py",
+  "Lib/site-packages/atom/subclass.py",
+  "Lib/site-packages/atom/tuple.py",
+  "Lib/site-packages/atom/typed.py",
+  "Lib/site-packages/atom/version.py",
+  "Lib/site-packages/tests/__init__.py",
+  "Lib/site-packages/tests/test_atomlist.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "atom",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.3.9"
+ },
+ "name": "atom",
+ "raw_recipe": "{% set version = \"0.3.9\" %}\npackage:\n  name: atom\n  version: {{ version }}\n\nsource:\n  url: https://github.com/nucleic/atom/archive/{{ version }}.tar.gz\n  fn: atom-{{ version }}.tar.gz\n  sha256: 10d797874a5bf4467804343a3e42ada4b0ce6c09cc76ae3997aeed66cb781dc5\n\nbuild:\n  number: 0\n  skip: True  # [py3k]\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - atom\n    - atom.datastructures\n    - tests\n\nabout:\n  home: https://github.com/nucleic/atom\n  license: BSD 3-Clause\n  summary: Memory efficient Python objects\n\nextra:\n  recipe-maintainers:\n    - blink1073\n    - ericdill\n    - licode\n    - MatthieuDartiailh\n    - sccolbert\n    - tacaswell\n",
+ "rendered_recipe": {},
+ "version": "0.3.9"
+}

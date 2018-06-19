@@ -1,0 +1,59 @@
+{
+ "about": {
+  "home": "http://dbus-cplusplus.sourceforge.net/",
+  "license": "LGPLv2+",
+  "summary": "C++ bindings for the DBus system"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/dbusxx-introspect",
+  "bin/dbusxx-xml2cpp",
+  "include/dbus-c++-1/dbus-c++/api.h",
+  "include/dbus-c++-1/dbus-c++/connection.h",
+  "include/dbus-c++-1/dbus-c++/dbus.h",
+  "include/dbus-c++-1/dbus-c++/debug.h",
+  "include/dbus-c++-1/dbus-c++/dispatcher.h",
+  "include/dbus-c++-1/dbus-c++/error.h",
+  "include/dbus-c++-1/dbus-c++/eventloop-integration.h",
+  "include/dbus-c++-1/dbus-c++/eventloop.h",
+  "include/dbus-c++-1/dbus-c++/glib-integration.h",
+  "include/dbus-c++-1/dbus-c++/interface.h",
+  "include/dbus-c++-1/dbus-c++/introspection.h",
+  "include/dbus-c++-1/dbus-c++/message.h",
+  "include/dbus-c++-1/dbus-c++/object.h",
+  "include/dbus-c++-1/dbus-c++/pendingcall.h",
+  "include/dbus-c++-1/dbus-c++/pipe.h",
+  "include/dbus-c++-1/dbus-c++/property.h",
+  "include/dbus-c++-1/dbus-c++/refptr_impl.h",
+  "include/dbus-c++-1/dbus-c++/server.h",
+  "include/dbus-c++-1/dbus-c++/types.h",
+  "include/dbus-c++-1/dbus-c++/util.h",
+  "lib/libdbus-c++-1.so",
+  "lib/libdbus-c++-1.so.0",
+  "lib/libdbus-c++-1.so.0.0.0",
+  "lib/libdbus-c++-glib-1.so",
+  "lib/libdbus-c++-glib-1.so.0",
+  "lib/libdbus-c++-glib-1.so.0.0.0",
+  "lib/pkgconfig/dbus-c++-1.pc",
+  "lib/pkgconfig/dbus-c++-glib-1.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "dbus",
+   "expat",
+   "glib"
+  ],
+  "license": "LGPLv2+",
+  "name": "dbus-cxx",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.9.1"
+ },
+ "name": "dbus-cxx",
+ "raw_recipe": "# Note that while Conda accepts a package name of \"dbus-c++\", Anaconda.org\n# rejects it.\n#\n# The original package is essentially unmaintained, buggy, and contains many\n# dubious constructs. I needed to patch it a whole bunch to get it to build on\n# Mac OS X, including needing to re-initialize the Autotools scripts to get\n# everything to link correctly. So in the end I gave up and decided to not\n# just patch up the package, but to actually fork the repository and roll my\n# own little release.\n\n{% set name = \"dbus-cxx\" %}\n{% set version = \"0.9.1\" %}\n{% set sha256 = \"a762af8fbee01434f925ce8c3140cb43088390d5cab492e802fe6873d809cc6c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: libdbus-c---{{ version }}pw.tar.gz\n  url: https://github.com/pkgw/dbus-cplusplus/releases/download/v{{ version }}pw/libdbus-c---{{ version }}pw.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - ssize_t.patch\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - dbus\n    - expat\n    - glib\n    - pkg-config\n    - toolchain\n  run:\n    - dbus\n    - expat\n    - glib\n\ntest:\n  commands:\n    - ls $PREFIX/lib/libdbus-c++-glib-1.so  # [linux]\n    - ls $PREFIX/lib/libdbus-c++-glib-1.dylib  # [osx]\n\nabout:\n  home: http://dbus-cplusplus.sourceforge.net/\n  license: LGPLv2+\n  license_file: COPYING\n  summary: 'C++ bindings for the DBus system'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
+ "rendered_recipe": {},
+ "version": "0.9.1"
+}

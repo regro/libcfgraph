@@ -1,0 +1,41 @@
+{
+ "about": {
+  "dev_url": "https://github.com/djangonauts/django-rest-framework-gis",
+  "doc_url": "https://github.com/djangonauts/django-rest-framework-gis",
+  "home": "https://github.com/djangonauts/django-rest-framework-gis",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Geographic add-ons for Django Rest Framework"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/djangorestframework_gis-0.11-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/rest_framework_gis/__init__.py",
+  "lib/python3.4/site-packages/rest_framework_gis/apps.py",
+  "lib/python3.4/site-packages/rest_framework_gis/fields.py",
+  "lib/python3.4/site-packages/rest_framework_gis/filters.py",
+  "lib/python3.4/site-packages/rest_framework_gis/filterset.py",
+  "lib/python3.4/site-packages/rest_framework_gis/pagination.py",
+  "lib/python3.4/site-packages/rest_framework_gis/serializers.py",
+  "lib/python3.4/site-packages/rest_framework_gis/tilenames.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "djangorestframework >=3.3",
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "djangorestframework-gis",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.11.0"
+ },
+ "name": "djangorestframework-gis",
+ "raw_recipe": "{% set name = \"djangorestframework-gis\" %}\n{% set version = \"0.11.0\" %}\n{% set sha256 = \"c816425bbc3494278be6861031c14a04a8168e860fc67b56bc253829be527838\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/djangonauts/django-rest-framework-gis/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - djangorestframework >=3.3\n\n  run:\n    - python\n    - djangorestframework >=3.3\n\ntest:\n  imports:\n    - rest_framework_gis\n\nabout:\n  home: https://github.com/djangonauts/django-rest-framework-gis\n  summary: 'Geographic add-ons for Django Rest Framework'\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  doc_url: https://github.com/djangonauts/django-rest-framework-gis\n  dev_url: https://github.com/djangonauts/django-rest-framework-gis\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.11.0"
+}

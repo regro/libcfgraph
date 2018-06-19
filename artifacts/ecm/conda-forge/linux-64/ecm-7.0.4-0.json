@@ -1,0 +1,35 @@
+{
+ "about": {
+  "home": "https://gforge.inria.fr/projects/ecm/",
+  "license": "GPL v3 and LGPL v3",
+  "summary": "Elliptic Curve Method for Integer Factorization"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/ecm",
+  "include/ecm.h",
+  "lib/libecm.a",
+  "lib/libecm.la",
+  "lib/libecm.so",
+  "lib/libecm.so.1",
+  "lib/libecm.so.1.0.0",
+  "share/man/man1/ecm.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "gmp"
+  ],
+  "license": "GPL v3 and LGPL v3",
+  "name": "ecm",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "7.0.4"
+ },
+ "name": "ecm",
+ "raw_recipe": "{% set version = \"7.0.4\" %}\n\npackage:\n  name: ecm\n  version: {{ version }}\n\nsource:\n  fn: ecm-{{ version }}.tar.gz\n  url: https://gforge.inria.fr/frs/download.php/latestfile/160/ecm-{{ version }}.tar.gz\n  sha256: 0cf7b3eee8462cc6f98b418b47630e1eb6b3f4f8c3fc1fb005b08e2a1811ba43\n\nbuild:\n  number: 0\n  skip: true        # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - autoconf       # [linux]\n    - m4\n    - gmp\n  run:\n    - gmp\n\ntest:\n  commands:\n    - test -f $PREFIX/include/ecm.h\n    - test -f $PREFIX/lib/libecm.a\n    - test -f $PREFIX/lib/libecm.so         # [linux]\n    - test -f $PREFIX/lib/libecm.dylib      # [osx]\n\nabout:\n  home: https://gforge.inria.fr/projects/ecm/\n  license: GPL v3 and LGPL v3\n  license_file: COPYING\n  summary: 'Elliptic Curve Method for Integer Factorization'\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
+ "rendered_recipe": {},
+ "version": "7.0.4"
+}

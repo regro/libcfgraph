@@ -1,0 +1,40 @@
+{
+ "about": {
+  "home": "https://bitbucket.org/haypo/hachoir/wiki/hachoir-subfile",
+  "license": "GPL 2.0",
+  "license_family": "GPL2",
+  "summary": "Find subfile in any binary stream"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/hachoir-subfile",
+  "lib/python2.7/site-packages/hachoir_subfile-0.5.3-py2.7.egg-info",
+  "lib/python2.7/site-packages/hachoir_subfile/__init__.py",
+  "lib/python2.7/site-packages/hachoir_subfile/data_rate.py",
+  "lib/python2.7/site-packages/hachoir_subfile/output.py",
+  "lib/python2.7/site-packages/hachoir_subfile/pattern.py",
+  "lib/python2.7/site-packages/hachoir_subfile/search.py",
+  "lib/python2.7/site-packages/hachoir_subfile/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "hachoir-core",
+   "hachoir-parser",
+   "hachoir-regex",
+   "python 2.7*"
+  ],
+  "license": "GPL 2.0",
+  "license_family": "GPL2",
+  "name": "hachoir-subfile",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.5.3"
+ },
+ "name": "hachoir-subfile",
+ "raw_recipe": "{%set name = \"hachoir-subfile\" %}\n{%set version = \"0.5.3\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"b8e4933e566524804382c8f8a9a9b58a4e25ad24ebf75beb0da5d8705c61f0d6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  skip: True  # [py3k]\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n    - hachoir-core\n    - hachoir-parser\n    - hachoir-regex\n\ntest:\n  imports:\n    - hachoir_subfile\n    - hachoir_subfile.data_rate\n    - hachoir_subfile.output\n    - hachoir_subfile.pattern\n    - hachoir_subfile.search\n    - hachoir_subfile.version\n\nabout:\n  home: https://bitbucket.org/haypo/hachoir/wiki/hachoir-subfile\n  license: GPL 2.0\n  license_file: COPYING\n  license_family: GPL2\n  summary: 'Find subfile in any binary stream'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.5.3"
+}

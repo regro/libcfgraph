@@ -1,0 +1,33 @@
+{
+ "about": {
+  "dev_url": "http://github.com/glimix/liknorm",
+  "doc_url": "http://liknorm.readthedocs.io/",
+  "home": "http://github.com/glimix/liknorm",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Moments of the product of an exponential-family likelihood with a Normal distribution"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/liknorm/liknorm.h",
+  "lib/libliknorm.1.2.3.dylib",
+  "lib/libliknorm.dylib",
+  "lib/libliknorm_static.a"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "liknorm",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.2.3"
+ },
+ "name": "liknorm",
+ "raw_recipe": "{% set name = \"liknorm\" %}\n{% set version = \"1.2.3\" %}\n{% set sha256 = \"19999e2561e19683cb2875c56f48e982a56ce8336c85da4f8ae45ba6c4dc572f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/glimix/liknorm/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win32 or (win and not py35)]\n\nrequirements:\n  build:\n    - python  # [win]\n    - toolchain\n    - cmake\n\ntest:\n  requires:\n    - python 3.5.*  # [win and py35]\n  commands:\n    - test -e $PREFIX/lib/libliknorm.so  # [linux]\n    - test -e $PREFIX/lib/libliknorm_static.a  # [linux]\n    - test -e $PREFIX/lib/libliknorm.dylib  # [osx]\n    - test -e $PREFIX/lib/libliknorm_static.a  # [osx]\n    - if NOT exist %PREFIX%/lib/liknorm.lib exit 1  # [win]\n    - if NOT exist %PREFIX%/lib/liknorm_static.lib exit 1  # [win]\n\nabout:\n  home: http://github.com/glimix/liknorm\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Moments of the product of an exponential-family likelihood with a Normal distribution'\n  doc_url: http://liknorm.readthedocs.io/\n  dev_url: http://github.com/glimix/liknorm\n\nextra:\n  recipe-maintainers:\n    - Horta\n",
+ "rendered_recipe": {},
+ "version": "1.2.3"
+}

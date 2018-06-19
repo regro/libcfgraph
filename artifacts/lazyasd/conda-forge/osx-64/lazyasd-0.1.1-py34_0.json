@@ -1,0 +1,35 @@
+{
+ "about": {
+  "description": "A package that provides lazy and self-destructive tools for speeding up module imports.\nThis is useful whenever startup times are critical, such as for command line interfaces\nor other user-facing applications. The tools in this module implement two distinct\nstrategies for speeding up module import. The first is delayed construction of global\nstate and the second is to import expensive modules in a background thread.\n",
+  "dev_url": "https://github.com/xonsh/lazyasd",
+  "doc_url": "http://xon.sh/api/lazyasd.html",
+  "home": "https://github.com/xonsh/lazyasd/blob/master/README.rst#lazyasd",
+  "license": "BSD 3-clause",
+  "summary": "Lazy & self-destructive tools for speeding up module imports"
+ },
+ "conda_build_config": {},
+ "files": [
+  "LICENSE",
+  "README.rst",
+  "lib/python3.4/site-packages/lazyasd-0.1.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/lazyasd-0.1.1-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/lazyasd.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD 3-clause",
+  "name": "lazyasd",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.1"
+ },
+ "name": "lazyasd",
+ "raw_recipe": "{% set version = \"0.1.1\" %}\n{% set sha256 = \"3be134452b5933918dbbf32809999b2f6786fc17dd3a0dcca328afcf4370e292\" %}\n\npackage:\n  name: lazyasd\n  version: {{ version }}\n\nsource:\n  fn: lazyasd-{{ version }}.tar.gz\n  url: https://github.com/xonsh/lazyasd/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - lazyasd\n  requires:\n    - pytest\n  commands:\n    - cd $SRC_DIR   # [unix]\n    - cd %SRC_DIR%  # [win]\n    - py.test\n\nabout:\n  home: https://github.com/xonsh/lazyasd/blob/master/README.rst#lazyasd\n  license: BSD 3-clause\n  summary: 'Lazy & self-destructive tools for speeding up module imports'\n  description: |\n    A package that provides lazy and self-destructive tools for speeding up module imports.\n    This is useful whenever startup times are critical, such as for command line interfaces\n    or other user-facing applications. The tools in this module implement two distinct\n    strategies for speeding up module import. The first is delayed construction of global\n    state and the second is to import expensive modules in a background thread.\n  doc_url: http://xon.sh/api/lazyasd.html\n  dev_url: https://github.com/xonsh/lazyasd\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "rendered_recipe": {},
+ "version": "0.1.1"
+}

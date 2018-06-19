@@ -1,0 +1,35 @@
+{
+ "about": {
+  "home": "https://github.com/beetbox/audioread",
+  "license": "MIT",
+  "summary": "multi-library, cross-platform audio decoding"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/audioread-2.1.4-py3.4.egg-info",
+  "lib/python3.4/site-packages/audioread/__init__.py",
+  "lib/python3.4/site-packages/audioread/ffdec.py",
+  "lib/python3.4/site-packages/audioread/gstdec.py",
+  "lib/python3.4/site-packages/audioread/macca.py",
+  "lib/python3.4/site-packages/audioread/maddec.py",
+  "lib/python3.4/site-packages/audioread/rawread.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_2",
+  "build_number": 2,
+  "depends": [
+   "ffmpeg 2.8.*",
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "audioread",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.1.4"
+ },
+ "name": "audioread",
+ "raw_recipe": "{% set version = \"2.1.4\" %}\n{% set hash_type = \"md5\" %}\n{% set hash_val = \"8151d336c48ee2bc03fbcba5840a3fe4\" %}\n\npackage:\n  name: audioread\n  version: {{ version }}\n\nsource:\n  fn: audioread-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/a/audioread/audioread-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 2\n  script: python setup.py install # This package uses distutils, no egg magic necessary\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n    - ffmpeg 2.8.*  # [not win]\n\ntest:\n  imports:\n    - audioread\n\nabout:\n  home: https://github.com/beetbox/audioread\n  license: MIT\n  summary: 'multi-library, cross-platform audio decoding'\n\nextra:\n  recipe-maintainers:\n    - bmcfee\n    - sampsyo\n",
+ "rendered_recipe": {},
+ "version": "2.1.4"
+}

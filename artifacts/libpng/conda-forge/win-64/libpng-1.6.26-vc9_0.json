@@ -1,0 +1,47 @@
+{
+ "about": {
+  "home": "http://www.libpng.org/pub/png/libpng.html",
+  "license": "zlib/libpng",
+  "summary": "PNG reference library."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/libpng16.dll",
+  "Library/bin/png-fix-itxt.exe",
+  "Library/bin/pngfix.exe",
+  "Library/include/libpng16/png.h",
+  "Library/include/libpng16/pngconf.h",
+  "Library/include/libpng16/pnglibconf.h",
+  "Library/include/png.h",
+  "Library/include/pngconf.h",
+  "Library/include/pnglibconf.h",
+  "Library/lib/libpng.lib",
+  "Library/lib/libpng16.lib",
+  "Library/lib/libpng16_static.lib",
+  "Library/lib/libpng/libpng16-release.cmake",
+  "Library/lib/libpng/libpng16.cmake",
+  "Library/lib/libpng_static.lib",
+  "Library/share/man/man3/libpng.3",
+  "Library/share/man/man3/libpngpf.3",
+  "Library/share/man/man5/png.5"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc9_0",
+  "build_number": 0,
+  "depends": [
+   "vc 9",
+   "zlib 1.2.*"
+  ],
+  "features": "vc9",
+  "license": "zlib/libpng",
+  "name": "libpng",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.6.26"
+ },
+ "name": "libpng",
+ "raw_recipe": "{% set version = \"1.6.26\" %}\n\npackage:\n  name: libpng\n  version: {{ version }}\n\nsource:\n  fn: libpng-{{ version }}.tar.gz\n  url: ftp://ftp.simplesystems.org/pub/libpng/png/src/libpng16/libpng-{{ version }}.tar.gz\n  sha256: 81bfc8f16ed125622c0c5ad44eeffda19e7a7c7e32f47e43c8932bf32deae7cc\n\nbuild:\n  number: 0\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - cmake  # [win]\n    - libtool  # [not win]\n    - automake  # [not win]\n    - zlib 1.2.*\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n  run:\n    - zlib 1.2.*\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libpng.a  # [not win]\n    - test -f ${PREFIX}/lib/libpng.so  # [linux]\n    - test -f ${PREFIX}/lib/libpng.dylib  # [osx]\n    - libpng-config --version  # [not win]\n    #- conda inspect linkages -p $PREFIX libpng  # [not win]\n    #- conda inspect objects -p $PREFIX libpng  # [osx]\n\nabout:\n  home: http://www.libpng.org/pub/png/libpng.html\n  license: zlib/libpng\n  summary: 'PNG reference library.'\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.6.26"
+}

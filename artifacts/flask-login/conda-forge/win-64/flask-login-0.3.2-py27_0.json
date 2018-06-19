@@ -1,0 +1,32 @@
+{
+ "about": {
+  "home": "https://github.com/maxcountryman/flask-login",
+  "license": "MIT",
+  "summary": "User session management for Flask"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/Flask_Login-0.3.2-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/Flask_Login-0.3.2-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/Flask_Login-0.3.2-py2.7.egg-info/version_info.json",
+  "Lib/site-packages/flask_login.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "flask",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "flask-login",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.3.2"
+ },
+ "name": "flask-login",
+ "raw_recipe": "{%set name = \"flask-login\" %}\n{%set camelName = \"Flask-Login\" %}\n{%set version = \"0.3.2\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"e72eff5c35e5a31db1aeca1db5d2501be702674ea88e8f223b5d2b11644beee6\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - flask\n\n  run:\n    - python\n    - flask\n\ntest:\n  imports:\n    - flask_login\n\nabout:\n  home: https://github.com/maxcountryman/flask-login\n  license: MIT\n  summary: 'User session management for Flask'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.3.2"
+}

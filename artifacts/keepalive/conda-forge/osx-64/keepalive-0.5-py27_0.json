@@ -1,0 +1,32 @@
+{
+ "about": {
+  "dev_url": "https://github.com/wikier/keepalive",
+  "doc_url": "https://github.com/wikier/keepalive/blob/15260081f7b11fd2e31bc9e0a4f9a18ffbe9fa94/keepalive/keepalive.py",
+  "home": "https://github.com/wikier/keepalive",
+  "license": "LGPL-2.1",
+  "summary": "An HTTP handler for urllib that supports HTTP 1.1 and keepalive in both Python 2.x and 3.x versions."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/keepalive-0.5-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/keepalive/__init__.py",
+  "lib/python2.7/site-packages/keepalive/keepalive.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "LGPL-2.1",
+  "name": "keepalive",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.5"
+ },
+ "name": "keepalive",
+ "raw_recipe": "{% set name = \"keepalive\" %}\n{% set version = \"0.5\" %}\n{% set sha256 = \"3c6b96f9062a5a76022f0c9d41e9ef5552d80b1cadd4fccc1bf8f183ba1d1ec1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - keepalive\n\nabout:\n  home: https://github.com/wikier/keepalive\n  license: LGPL-2.1\n  # 'LICENSE file is missing in source due to the project missing a MANIFEST.in to copy into the release.'\n  summary: 'An HTTP handler for urllib that supports HTTP 1.1 and keepalive in both Python 2.x and 3.x versions.'\n  dev_url: https://github.com/wikier/keepalive\n  doc_url: https://github.com/wikier/keepalive/blob/15260081f7b11fd2e31bc9e0a4f9a18ffbe9fa94/keepalive/keepalive.py\n\nextra:\n  recipe-maintainers:\n    - satra\n",
+ "rendered_recipe": {},
+ "version": "0.5"
+}

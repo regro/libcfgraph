@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "http://bitbucket.org/massimilianoravelli/django-jquery",
+  "license": "MIT",
+  "summary": "jQuery packaged in an handy django app to speed up new applications and deployment."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/django_jquery-3.1.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/django_jquery-3.1.0-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/jquery/__init__.py",
+  "lib/python3.5/site-packages/jquery/models.py",
+  "lib/python3.5/site-packages/jquery/static/js/jquery.js"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "django >=1.3",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "django-jquery",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "3.1.0"
+ },
+ "name": "django-jquery",
+ "raw_recipe": "{% set version = \"3.1.0\" %}\n\npackage:\n  name: django-jquery\n  version: {{ version }}\n\nsource:\n  fn: django-jquery-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/django-jquery/django-jquery-{{ version }}.tar.gz\n  sha256: 414ac1083708ac71cc771612e7287702c939d06cd357fd53bb1271a4f6255115\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - django >=1.3\n  run:\n    - python\n    - django >=1.3\n\ntest:\n  imports:\n    - jquery\n\nabout:\n  home: http://bitbucket.org/massimilianoravelli/django-jquery\n  license: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'jQuery packaged in an handy django app to speed up new applications and deployment.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "3.1.0"
+}

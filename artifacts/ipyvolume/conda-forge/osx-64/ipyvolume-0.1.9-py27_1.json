@@ -1,0 +1,158 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "dev_url": "https://github.com/maartenbreddels/ipyvolume",
+  "doc_url": "https://ipyvolume.readthedocs.io/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/maartenbreddels/ipyvolume",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "IPython widget for rendering 3d volumes in the Jupter notebook"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/ipyvolume/static/extension.js",
+  "lib/python2.7/site-packages/ipyvolume/static/images/cube.png",
+  "share/jupyter/nbextensions/ipyvolume/extension.js",
+  "share/jupyter/nbextensions/ipyvolume/index.js",
+  "lib/python2.7/site-packages/ipyvolume-0.1.9-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/ipyvolume/transferfunction.py",
+  "lib/python2.7/site-packages/ipyvolume/_version.py",
+  "lib/python2.7/site-packages/ipyvolume/datasets.py",
+  "lib/python2.7/site-packages/ipyvolume/examples.py",
+  "lib/python2.7/site-packages/ipyvolume-0.1.9-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/ipyvolume/volume.py",
+  "share/jupyter/nbextensions/ipyvolume/index.js.map",
+  "lib/python2.7/site-packages/ipyvolume/serialize.py",
+  "lib/python2.7/site-packages/ipyvolume/__init__.py",
+  "bin/.ipyvolume-post-link.sh",
+  "bin/.ipyvolume-pre-unlink.sh",
+  "lib/python2.7/site-packages/ipyvolume/static/index.js.map",
+  "lib/python2.7/site-packages/ipyvolume/static/images/colormap.png",
+  "lib/python2.7/site-packages/ipyvolume/static/index.js"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "ipywidgets",
+   "numpy",
+   "pillow",
+   "python 2.7*",
+   "scipy",
+   "traitlets",
+   "traittypes"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "ipyvolume",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.9"
+ },
+ "name": "ipyvolume",
+ "raw_recipe": "{% set name = \"ipyvolume\" %}\n{% set version = \"0.1.9\" %}\n{% set sha256 = \"096cef24cd0862739f78478cc1a51c1e6cdf99546299e886c3475dc13b967a61\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: True  # [py36]\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - traittypes\n    - traitlets\n    - ipywidgets\n    - pillow\n    - scipy\n    - numpy\n\ntest:\n  imports:\n    - ipyvolume\n\nabout:\n  home: https://github.com/maartenbreddels/ipyvolume\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'IPython widget for rendering 3d volumes in the Jupter notebook'\n  doc_url: https://ipyvolume.readthedocs.io/\n  dev_url: https://github.com/maartenbreddels/ipyvolume\n\nextra:\n  recipe-maintainers:\n    - maartenbreddels\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "https://github.com/maartenbreddels/ipyvolume",
+   "doc_url": "https://ipyvolume.readthedocs.io/",
+   "home": "https://github.com/maartenbreddels/ipyvolume",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "IPython widget for rendering 3d volumes in the Jupter notebook"
+  },
+  "build": {
+   "number": "1",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py27_1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "maartenbreddels"
+   ]
+  },
+  "package": {
+   "name": "ipyvolume",
+   "version": "0.1.9"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "traittypes",
+    "traitlets",
+    "ipywidgets",
+    "pillow",
+    "scipy",
+    "numpy"
+   ]
+  },
+  "source": {
+   "fn": "ipyvolume-0.1.9.tar.gz",
+   "sha256": "096cef24cd0862739f78478cc1a51c1e6cdf99546299e886c3475dc13b967a61",
+   "url": "https://pypi.io/packages/source/i/ipyvolume/ipyvolume-0.1.9.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "ipyvolume"
+   ]
+  }
+ },
+ "version": "0.1.9"
+}

@@ -1,0 +1,44 @@
+{
+ "about": {
+  "home": "http://ipython.org",
+  "license": "BSD 3-Clause",
+  "summary": "Vestigial utilities from IPython"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/ipython_genutils-0.1.0-py3.5.egg-info",
+  "lib/python3.5/site-packages/ipython_genutils/__init__.py",
+  "lib/python3.5/site-packages/ipython_genutils/_version.py",
+  "lib/python3.5/site-packages/ipython_genutils/encoding.py",
+  "lib/python3.5/site-packages/ipython_genutils/importstring.py",
+  "lib/python3.5/site-packages/ipython_genutils/ipstruct.py",
+  "lib/python3.5/site-packages/ipython_genutils/path.py",
+  "lib/python3.5/site-packages/ipython_genutils/py3compat.py",
+  "lib/python3.5/site-packages/ipython_genutils/tempdir.py",
+  "lib/python3.5/site-packages/ipython_genutils/testing/__init__.py",
+  "lib/python3.5/site-packages/ipython_genutils/testing/decorators.py",
+  "lib/python3.5/site-packages/ipython_genutils/tests/__init__.py",
+  "lib/python3.5/site-packages/ipython_genutils/tests/test_importstring.py",
+  "lib/python3.5/site-packages/ipython_genutils/tests/test_path.py",
+  "lib/python3.5/site-packages/ipython_genutils/tests/test_tempdir.py",
+  "lib/python3.5/site-packages/ipython_genutils/tests/test_text.py",
+  "lib/python3.5/site-packages/ipython_genutils/text.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "ipython_genutils",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1.0"
+ },
+ "name": "ipython_genutils",
+ "raw_recipe": "{% set version = \"0.1.0\" %}\n\npackage:\n  name: ipython_genutils\n  version: {{ version }}\n\nsource:\n  fn: ipython_genutils-{{ version }}.tar.gz\n  url: https://github.com/ipython/ipython_genutils/archive/{{ version }}.tar.gz\n  md5: 2016819d42d8b186aad1eaed2d11b4d2\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - ipython_genutils\n    - ipython_genutils.testing\n    - ipython_genutils.tests\n\nabout:\n  home: http://ipython.org\n  license: BSD 3-Clause\n  summary: Vestigial utilities from IPython\n\nextra:\n  recipe-maintainers:\n    - minrk\n    - msarahan\n    - pelson\n",
+ "rendered_recipe": {},
+ "version": "0.1.0"
+}

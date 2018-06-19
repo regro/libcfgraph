@@ -1,0 +1,41 @@
+{
+ "about": {
+  "home": "https://github.com/dmdm/feedgenerator-py3k.git",
+  "license": "BSD-3-Clause",
+  "summary": "Standalone version of django.utils.feedgenerator, compatible with Py3k"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/feedgenerator-1.9-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/feedgenerator-1.9-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/feedgenerator/__init__.py",
+  "lib/python3.5/site-packages/feedgenerator/django/__init__.py",
+  "lib/python3.5/site-packages/feedgenerator/django/utils/__init__.py",
+  "lib/python3.5/site-packages/feedgenerator/django/utils/datetime_safe.py",
+  "lib/python3.5/site-packages/feedgenerator/django/utils/encoding.py",
+  "lib/python3.5/site-packages/feedgenerator/django/utils/feedgenerator.py",
+  "lib/python3.5/site-packages/feedgenerator/django/utils/functional.py",
+  "lib/python3.5/site-packages/feedgenerator/django/utils/six.py",
+  "lib/python3.5/site-packages/feedgenerator/django/utils/timezone.py",
+  "lib/python3.5/site-packages/feedgenerator/django/utils/xmlutils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "pytz",
+   "six"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "feedgenerator",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.9"
+ },
+ "name": "feedgenerator",
+ "raw_recipe": "{% set version = \"1.9\" %}\n\npackage:\n    name: feedgenerator\n    version: {{ version }}\n\nsource:\n    fn: feedgenerator-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/f/feedgenerator/feedgenerator-{{ version }}.tar.gz\n    md5: f542f4098dbb5c63a94c88cbfc727778\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - pytz\n        - six\n\ntest:\n    imports:\n        - feedgenerator\n        - feedgenerator.django\n        - feedgenerator.django.utils\n\nabout:\n    home: https://github.com/dmdm/feedgenerator-py3k.git\n    license: BSD-3-Clause\n    summary: Standalone version of django.utils.feedgenerator, compatible with Py3k\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - moorepants\n",
+ "rendered_recipe": {},
+ "version": "1.9"
+}

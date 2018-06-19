@@ -1,0 +1,36 @@
+{
+ "about": {
+  "dev_url": "http://github.com/mitsuhiko/flask-openid/",
+  "doc_url": "https://pythonhosted.org/Flask-OpenID/",
+  "home": "http://github.com/mitsuhiko/flask-openid/",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "OpenID support for Flask"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/Flask_OpenID-1.2.5-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/Flask_OpenID-1.2.5-py3.5.egg-info/not-zip-safe",
+  "Lib/site-packages/flask_openid.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "flask >=0.10.1",
+   "python 3.5*",
+   "python3-openid >=2.0"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "flask-openid",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.2.5"
+ },
+ "name": "flask-openid",
+ "raw_recipe": "{%set name = \"Flask-OpenID\" %}\n{%set version = \"1.2.5\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"5a8ffe1c8c0ad1cc1f5030e1223ea27f8861ee0215a2a58a528cc61379e5ccab\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - flask >=0.3  # [py2k]\n    - flask >=0.10.1  # [py3k]\n    - python-openid >=2.0  # [py2k]\n    - python3-openid >=2.0  # [py3k]\n\ntest:\n  imports:\n    - flask_openid\n\nabout:\n  home: http://github.com/mitsuhiko/flask-openid/\n  license: BSD 3-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: 'OpenID support for Flask'\n  dev_url: http://github.com/mitsuhiko/flask-openid/\n  doc_url: https://pythonhosted.org/Flask-OpenID/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.2.5"
+}

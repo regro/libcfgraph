@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "https://github.com/bcj/AttrDict/",
+  "license": "MIT",
+  "summary": "A dict with attribute-style access"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/attrdict-2.0.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/attrdict-2.0.0-py3.5.egg-info/zip-safe",
+  "lib/python3.5/site-packages/attrdict/__init__.py",
+  "lib/python3.5/site-packages/attrdict/default.py",
+  "lib/python3.5/site-packages/attrdict/dictionary.py",
+  "lib/python3.5/site-packages/attrdict/mapping.py",
+  "lib/python3.5/site-packages/attrdict/merge.py",
+  "lib/python3.5/site-packages/attrdict/mixins.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "six"
+  ],
+  "license": "MIT",
+  "name": "attrdict",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.0.0"
+ },
+ "name": "attrdict",
+ "raw_recipe": "{% set name = \"attrdict\" %}\n{% set version = \"2.0.0\" %}\n{% set sha256 = \"86aeb6d3809e0344409f8148d7cac9eabce5f0b577c160b5e90d10df3f8d2ad3\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - attrdict\n\nabout:\n  home: https://github.com/bcj/AttrDict/\n  license: MIT\n  summary: A dict with attribute-style access\n\nextra:\n  recipe-maintainers:\n    - vamega\n",
+ "rendered_recipe": {},
+ "version": "2.0.0"
+}

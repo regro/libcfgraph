@@ -1,0 +1,38 @@
+{
+ "about": {
+  "home": "https://github.com/oubiwann/metaphone",
+  "license": "BSD 3-clause",
+  "license_family": "BSD",
+  "summary": "A Python implementation of the double metaphone algorithms"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/Metafone-0.5-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/metaphone/__init__.py",
+  "lib/python2.7/site-packages/metaphone/meta.py",
+  "lib/python2.7/site-packages/metaphone/metaphone.py",
+  "lib/python2.7/site-packages/metaphone/tests/__init__.py",
+  "lib/python2.7/site-packages/metaphone/tests/test_metaphone.py",
+  "lib/python2.7/site-packages/metaphone/tests/test_word.py",
+  "lib/python2.7/site-packages/metaphone/word.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "future",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-clause",
+  "license_family": "BSD",
+  "name": "metafone",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.5"
+ },
+ "name": "metafone",
+ "raw_recipe": "{% set name = \"Metafone\" %}\n{% set version = \"0.5\" %}\n{% set hashtype = \"md5\" %}\n{% set hash = \"de53b4c513a985cca9b7a48181152b9b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: Metafone-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hashtype }}: {{ hash }}\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - future\n    run:\n        - python\n        - future\n\ntest:\n    imports:\n        - metaphone\n\nabout:\n    home: https://github.com/oubiwann/metaphone\n    license: BSD 3-clause\n    license_family: BSD\n    summary: A Python implementation of the double metaphone algorithms\n\nextra:\n    recipe-maintainers:\n        - wyseguy7\n        - ericdill\n",
+ "rendered_recipe": {},
+ "version": "0.5"
+}

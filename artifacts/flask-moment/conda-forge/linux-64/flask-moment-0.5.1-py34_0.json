@@ -1,0 +1,34 @@
+{
+ "about": {
+  "dev_url": "http://github.com/miguelgrinberg/flask-moment/",
+  "home": "http://github.com/miguelgrinberg/flask-moment/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Formatting of dates and times in Flask templates using moment.js."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/Flask_Moment-0.5.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/Flask_Moment-0.5.1-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/flask_moment.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "flask",
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "flask-moment",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.5.1"
+ },
+ "name": "flask-moment",
+ "raw_recipe": "{%set name = \"Flask-Moment\" %}\n{%set version = \"0.5.1\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"4e36dbf5f496522f497a8f1572a33ad9101e34ecfb063e481a5fac29716af48c\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - flask\n\n  run:\n    - python\n    - flask\n\ntest:\n  imports:\n    - flask_moment\n\nabout:\n  home: http://github.com/miguelgrinberg/flask-moment/\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: 'Formatting of dates and times in Flask templates using moment.js.'\n  dev_url: http://github.com/miguelgrinberg/flask-moment/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.5.1"
+}

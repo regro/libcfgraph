@@ -1,0 +1,56 @@
+{
+ "about": {
+  "home": "https://github.com/SciTools/conda-gitenv",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Track environment specifications using a git repo."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/conda-gitenv",
+  "lib/python3.4/site-packages/conda_gitenv-0.2.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/conda_gitenv/__init__.py",
+  "lib/python3.4/site-packages/conda_gitenv/_version.py",
+  "lib/python3.4/site-packages/conda_gitenv/cli.py",
+  "lib/python3.4/site-packages/conda_gitenv/deploy.py",
+  "lib/python3.4/site-packages/conda_gitenv/label_tag.py",
+  "lib/python3.4/site-packages/conda_gitenv/lock.py",
+  "lib/python3.4/site-packages/conda_gitenv/resolve.py",
+  "lib/python3.4/site-packages/conda_gitenv/tag_dates.py",
+  "lib/python3.4/site-packages/conda_gitenv/tests/__init__.py",
+  "lib/python3.4/site-packages/conda_gitenv/tests/integration/__init__.py",
+  "lib/python3.4/site-packages/conda_gitenv/tests/integration/setup_samples.py",
+  "lib/python3.4/site-packages/conda_gitenv/tests/integration/test_cli_build_manifest_branches.py",
+  "lib/python3.4/site-packages/conda_gitenv/tests/integration/test_deploy.py",
+  "lib/python3.4/site-packages/conda_gitenv/tests/integration/test_label_tags.py",
+  "lib/python3.4/site-packages/conda_gitenv/tests/integration/test_resolve.py",
+  "lib/python3.4/site-packages/conda_gitenv/tests/integration/test_tag_dates.py",
+  "lib/python3.4/site-packages/conda_gitenv/tests/unit/__init__.py",
+  "lib/python3.4/site-packages/conda_gitenv/tests/unit/test_deploy.py",
+  "lib/python3.4/site-packages/conda_gitenv/tests/unit/test_resolve.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "conda >=4.1.0",
+   "conda-build !=2.0.9",
+   "conda-build-all",
+   "gitpython",
+   "python 3.4*",
+   "pyyaml",
+   "setuptools"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "conda-gitenv",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.0"
+ },
+ "name": "conda-gitenv",
+ "raw_recipe": "{% set version = \"0.2.0\" %}\n\npackage:\n  name: conda-gitenv\n  version: {{ version }}\n\nsource:\n  fn: conda-gitenv-{{ version }}.tar.gz\n  url: https://github.com/SciTools/conda-gitenv/archive/v{{ version }}.tar.gz\n  sha256: afbcfea861c2fedecd640248a97f47b0538f29b7c3966eeaa724a7636d478633\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - gitpython\n    - pyyaml\n    - conda >=4.1.0\n    - conda-build-all\n    - conda-build !=2.0.9\n\ntest:\n  imports:\n    - conda_gitenv\n  commands:\n    - conda gitenv --help\n    - conda gitenv resolve --help\n    - conda gitenv autotag --help\n    - conda gitenv autolabel --help\n    - conda gitenv deploy --help\n\nabout:\n  home: https://github.com/SciTools/conda-gitenv\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Track environment specifications using a git repo.'\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - bjlittle\n",
+ "rendered_recipe": {},
+ "version": "0.2.0"
+}

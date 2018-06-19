@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "https://github.com/gqmelo/exec-wrappers",
+  "license": "MIT",
+  "summary": "Simple package to execute exec-wrappers as a post-link action"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Scripts/.conda-wrappers-post-link.bat",
+  "Scripts/.conda-wrappers-pre-unlink.bat"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "exec-wrappers 1.*",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "conda-wrappers",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.0"
+ },
+ "name": "conda-wrappers",
+ "raw_recipe": "{% set version = \"1.0.0\" %}\n\npackage:\n  name: conda-wrappers\n  version: {{ version }}\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - exec-wrappers 1.*\n\ntest:\n  commands:\n    - create-wrappers --help\n\nabout:\n  home: https://github.com/gqmelo/exec-wrappers\n  license: MIT\n  summary: 'Simple package to execute exec-wrappers as a post-link action'\n\nextra:\n  recipe-maintainers:\n    - gqmelo\n",
+ "rendered_recipe": {},
+ "version": "1.0.0"
+}

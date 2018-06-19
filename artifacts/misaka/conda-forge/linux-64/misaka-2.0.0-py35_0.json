@@ -1,0 +1,40 @@
+{
+ "about": {
+  "dev_url": "https://github.com/FSX/misaka",
+  "doc_url": "http://misaka.61924.nl/",
+  "home": "https://github.com/FSX/misaka",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "A CFFI binding for Hoedown, a markdown parsing library."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/misaka",
+  "lib/python3.5/site-packages/misaka-2.0.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/misaka/__init__.py",
+  "lib/python3.5/site-packages/misaka/_hoedown.abi3.so",
+  "lib/python3.5/site-packages/misaka/api.py",
+  "lib/python3.5/site-packages/misaka/callbacks.py",
+  "lib/python3.5/site-packages/misaka/constants.py",
+  "lib/python3.5/site-packages/misaka/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "cffi >=1.0.0",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "misaka",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.0"
+ },
+ "name": "misaka",
+ "raw_recipe": "{%set name = \"misaka\" %}\n{%set version = \"2.0.0\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"336ef1381ab840046b7da9f95c4c28af17e636aed8dcfcf1efe972db05f73604\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n    - cffi >=1.0.0\n    - msinttypes  # [win]\n\n  run:\n    - python\n    - cffi >=1.0.0\n\ntest:\n  imports:\n    - misaka\n\nabout:\n  home: https://github.com/FSX/misaka\n  license: MIT\n  license_file: LICENSE.txt\n  license_family: MIT\n  summary: 'A CFFI binding for Hoedown, a markdown parsing library.'\n  dev_url: https://github.com/FSX/misaka\n  doc_url: http://misaka.61924.nl/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "2.0.0"
+}

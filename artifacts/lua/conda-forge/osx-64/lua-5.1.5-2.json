@@ -1,0 +1,133 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.0",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p481/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://www.lua.org/",
+  "license": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-build-2.1.0-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-3.4.2-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Lua is a powerful, fast, lightweight, embeddable scripting language"
+ },
+ "conda_build_config": {},
+ "files": [
+  "man/man1/luac.1",
+  "include/luaconf.h",
+  "bin/lua",
+  "man/man1/lua.1",
+  "include/lauxlib.h",
+  "lib/liblua.a",
+  "include/lua.h",
+  "bin/luac",
+  "include/lua.hpp",
+  "include/lualib.h"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "2",
+  "build_number": 2,
+  "depends": [
+   "ncurses 5.9*",
+   "readline 6.2*"
+  ],
+  "license": "MIT",
+  "name": "lua",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "5.1.5"
+ },
+ "name": "lua",
+ "raw_recipe": "{% set version = \"5.1.5\" %}\n\npackage:\n  name: lua\n  version: {{ version }}\n\nsource:\n  fn: lua-{{ version }}.tar.gz\n  url: http://www.lua.org/ftp/lua-{{ version }}.tar.gz\n  md5: 2e115fe26e435e33b0d5c022e4490567\n  patches:\n    # add proper readline support, as well as proper paths for package loading\n    - update.patch  # [not win]\n\nbuild:\n  number: 2\n  detect_binary_files_with_prefix: true\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - readline 6.2*\n    - ncurses 5.9*\n  run:\n    - readline 6.2*\n    - ncurses 5.9*\n\ntest:\n  commands:\n    - lua -v\n    - lua -e \"print(package.path)\"\n\nabout:\n  home: http://www.lua.org/\n  summary: Lua is a powerful, fast, lightweight, embeddable scripting language\n  license: MIT\n\nextra:\n  recipe-maintainers:\n    - alexbw\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.lua.org/",
+   "license": "MIT",
+   "summary": "Lua is a powerful, fast, lightweight, embeddable scripting language"
+  },
+  "build": {
+   "detect_binary_files_with_prefix": "true",
+   "number": "2",
+   "string": "2"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "alexbw"
+   ]
+  },
+  "package": {
+   "name": "lua",
+   "version": "5.1.5"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "readline 6.2*",
+    "ncurses 5.9*"
+   ]
+  },
+  "source": {
+   "fn": "lua-5.1.5.tar.gz",
+   "md5": "2e115fe26e435e33b0d5c022e4490567",
+   "patches": [
+    "update.patch"
+   ],
+   "url": "http://www.lua.org/ftp/lua-5.1.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "lua -v",
+    "lua -e \"print(package.path)\""
+   ]
+  }
+ },
+ "version": "5.1.5"
+}

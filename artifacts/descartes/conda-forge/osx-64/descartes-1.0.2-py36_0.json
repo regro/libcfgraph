@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "http://bitbucket.org/sgillies/descartes/",
+  "license": "BSD",
+  "summary": "Use geometric objects as matplotlib paths and patches."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/descartes-1.0.2-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/descartes-1.0.2-py3.6.egg-info/not-zip-safe",
+  "lib/python3.6/site-packages/descartes/__init__.py",
+  "lib/python3.6/site-packages/descartes/patch.py",
+  "lib/python3.6/site-packages/descartes/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib",
+   "python 3.6*"
+  ],
+  "license": "BSD",
+  "name": "descartes",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0.2"
+ },
+ "name": "descartes",
+ "raw_recipe": "{% set version = \"1.0.2\" %}\n\npackage:\n  name: descartes\n  version: {{ version }}\n\nsource:\n  fn: descartes-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/descartes/descartes-{{ version }}.tar.gz\n  sha256: 078ef4b50baeafd0cbde538750911ca60161829a8696ae2c7e5a6a1071af1257\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - matplotlib\n\ntest:\n  imports:\n    - descartes\n\nabout:\n  home: http://bitbucket.org/sgillies/descartes/\n  license: BSD\n  summary: 'Use geometric objects as matplotlib paths and patches.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.0.2"
+}

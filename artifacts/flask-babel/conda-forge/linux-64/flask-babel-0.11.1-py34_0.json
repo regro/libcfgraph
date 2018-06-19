@@ -1,0 +1,35 @@
+{
+ "about": {
+  "home": "http://github.com/python-babel/flask-babel",
+  "license": "BSD 3-Clause",
+  "summary": "Adds i18n/l10n support to Flask applications"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/Flask_Babel-0.11.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/Flask_Babel-0.11.1-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/flask_babel/__init__.py",
+  "lib/python3.4/site-packages/flask_babel/_compat.py",
+  "lib/python3.4/site-packages/flask_babel/speaklater.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "babel >=2.3",
+   "flask",
+   "jinja2 >=2.5",
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "flask-babel",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.11.1"
+ },
+ "name": "flask-babel",
+ "raw_recipe": "{%set name = \"flask-babel\" %}\n{%set camelName = \"Flask-Babel\" %}\n{%set version = \"0.11.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"d29b36c399e42e98bc9401c8c1c159f2befcb8c12a2a2a87ec49ad7623036899\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - flask\n    - babel >=2.3\n    - jinja2 >=2.5\n\n  run:\n    - python\n    - flask\n    - babel >=2.3\n    - jinja2 >=2.5\n\ntest:\n  imports:\n    - flask_babel\n\nabout:\n  home: http://github.com/python-babel/flask-babel\n  license: BSD 3-Clause\n  summary: 'Adds i18n/l10n support to Flask applications'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.11.1"
+}

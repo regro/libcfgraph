@@ -1,0 +1,35 @@
+{
+ "about": {
+  "home": "https://github.com/agronholm/pythonfutures",
+  "license": "BSD 2-Clause",
+  "summary": "Backport of the concurrent.futures package from Python 3.2"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/concurrent/__init__.py",
+  "Lib/site-packages/concurrent/futures/__init__.py",
+  "Lib/site-packages/concurrent/futures/_base.py",
+  "Lib/site-packages/concurrent/futures/process.py",
+  "Lib/site-packages/concurrent/futures/thread.py",
+  "Lib/site-packages/futures-3.0.5-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/futures-3.0.5-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/futures-3.0.5-py2.7.egg-info/pbr.json"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 2-Clause",
+  "name": "futures",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "3.0.5"
+ },
+ "name": "futures",
+ "raw_recipe": "{% set name = \"futures\" %}\n{% set version = \"3.0.5\" %}\n{% set sha256 = \"0542525145d5afc984c88f914a0c85c77527f65946617edb5274f72406f981df\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py>=32]\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - concurrent\n    - concurrent.futures\n\nabout:\n  home: https://github.com/agronholm/pythonfutures\n  license: BSD 2-Clause\n  license_file: LICENSE\n  summary: Backport of the concurrent.futures package from Python 3.2\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "3.0.5"
+}

@@ -1,0 +1,42 @@
+{
+ "about": {
+  "description": "celiagg is a Cython wrapper for the popular Anti-Grain Geometry 2D vector\ngraphics library.\n",
+  "dev_url": "https://github.com/celiagg/celiagg",
+  "home": "https://github.com/celiagg/celiagg",
+  "license": "MIT",
+  "summary": "Anti-Grain Geometry 2.4 for Python with Cython"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/celiagg-0.1.2-py2.7.egg-info",
+  "lib/python2.7/site-packages/celiagg/__init__.py",
+  "lib/python2.7/site-packages/celiagg/_celiagg.so",
+  "lib/python2.7/site-packages/celiagg/setup.py",
+  "lib/python2.7/site-packages/celiagg/tests/__init__.py",
+  "lib/python2.7/site-packages/celiagg/tests/test_canvas.py",
+  "lib/python2.7/site-packages/celiagg/tests/test_no_text.py",
+  "lib/python2.7/site-packages/celiagg/tests/test_paint.py",
+  "lib/python2.7/site-packages/celiagg/tests/test_path.py",
+  "lib/python2.7/site-packages/celiagg/tests/test_state.py",
+  "lib/python2.7/site-packages/celiagg/tests/test_transform.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_0",
+  "build_number": 0,
+  "depends": [
+   "freetype 2.6.*",
+   "numpy 1.11*",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "celiagg",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1.2"
+ },
+ "name": "celiagg",
+ "raw_recipe": "{% set version = \"0.1.2\" %}\n{% set sha256 = \"554265df9677e74d27415c0d8ed54c1f23d319ad8332db13f04281fb01c27182\" %}\n\npackage:\n  name: celiagg\n  version: {{ version }}\n\nsource:\n  fn: celiagg-{{ version }}.tar.gz\n  url: https://github.com/celiagg/celiagg/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win or py34]\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - toolchain\n    - pkg-config  # [not win]\n    - numpy x.x\n    - cython\n    - freetype 2.6.*\n  run:\n    - python\n    - numpy x.x\n    - freetype 2.6.*\n\ntest:\n  imports:\n    - celiagg\n\nabout:\n  home: https://github.com/celiagg/celiagg\n  license: MIT\n  license_file: LICENSE\n  summary: 'Anti-Grain Geometry 2.4 for Python with Cython'\n\n  description: |\n    celiagg is a Cython wrapper for the popular Anti-Grain Geometry 2D vector\n    graphics library.\n  dev_url: https://github.com/celiagg/celiagg\n\nextra:\n  recipe-maintainers:\n    - jwiggins\n",
+ "rendered_recipe": {},
+ "version": "0.1.2"
+}

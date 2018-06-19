@@ -1,0 +1,49 @@
+{
+ "about": {
+  "home": "https://github.com/timothycrosley/frosted",
+  "license": "MIT",
+  "summary": "A passive Python syntax checker"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/frosted-1.4.1-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/frosted/__init__.py",
+  "Lib/site-packages/frosted/api.py",
+  "Lib/site-packages/frosted/checker.py",
+  "Lib/site-packages/frosted/main.py",
+  "Lib/site-packages/frosted/messages.py",
+  "Lib/site-packages/frosted/reporter.py",
+  "Lib/site-packages/frosted/settings.py",
+  "Lib/site-packages/frosted/test/__init__.py",
+  "Lib/site-packages/frosted/test/test_api.py",
+  "Lib/site-packages/frosted/test/test_doctests.py",
+  "Lib/site-packages/frosted/test/test_function_calls.py",
+  "Lib/site-packages/frosted/test/test_imports.py",
+  "Lib/site-packages/frosted/test/test_noqa.py",
+  "Lib/site-packages/frosted/test/test_other.py",
+  "Lib/site-packages/frosted/test/test_return_with_arguments_inside_generator.py",
+  "Lib/site-packages/frosted/test/test_script.py",
+  "Lib/site-packages/frosted/test/test_undefined_names.py",
+  "Lib/site-packages/frosted/test/utils.py",
+  "Scripts/frosted-script.py",
+  "Scripts/frosted.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "pies >=2.6.0",
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "frosted",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.4.1"
+ },
+ "name": "frosted",
+ "raw_recipe": "{% set name = \"frosted\" %}\n{% set version = \"1.4.1\" %}\n{% set sha256 = \"d1e5d2b43a064b33c289b9a986a7425fd9a36bed8f519ca430ac7a0915e32b51\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - frosted = frosted.main:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pies >=2.6.0\n\ntest:\n  imports:\n    - frosted\n    - frosted.test\n\n  commands:\n    - frosted --help\n\n  requires:\n    - mock\n    - pytest\n\nabout:\n  home: https://github.com/timothycrosley/frosted\n  license: MIT\n  summary: 'A passive Python syntax checker'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.4.1"
+}

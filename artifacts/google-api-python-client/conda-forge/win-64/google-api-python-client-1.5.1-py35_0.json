@@ -1,0 +1,46 @@
+{
+ "about": {
+  "home": "http://github.com/google/google-api-python-client/",
+  "license": "Apache 2.0 and MIT",
+  "summary": "Google API Client Library for Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/apiclient/__init__.py",
+  "Lib/site-packages/google_api_python_client-1.5.1-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/googleapiclient/__init__.py",
+  "Lib/site-packages/googleapiclient/channel.py",
+  "Lib/site-packages/googleapiclient/discovery.py",
+  "Lib/site-packages/googleapiclient/discovery_cache/__init__.py",
+  "Lib/site-packages/googleapiclient/discovery_cache/appengine_memcache.py",
+  "Lib/site-packages/googleapiclient/discovery_cache/base.py",
+  "Lib/site-packages/googleapiclient/discovery_cache/file_cache.py",
+  "Lib/site-packages/googleapiclient/errors.py",
+  "Lib/site-packages/googleapiclient/http.py",
+  "Lib/site-packages/googleapiclient/mimeparse.py",
+  "Lib/site-packages/googleapiclient/model.py",
+  "Lib/site-packages/googleapiclient/sample_tools.py",
+  "Lib/site-packages/googleapiclient/schema.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "httplib2 >=0.8,<1",
+   "oauth2client",
+   "python 3.5*",
+   "six >=1.6.1,<2",
+   "uritemplate >=0.6,<1"
+  ],
+  "license": "Apache 2.0 and MIT",
+  "name": "google-api-python-client",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.5.1"
+ },
+ "name": "google-api-python-client",
+ "raw_recipe": "{%set name = \"google-api-python-client\" %}\n{%set version = \"1.5.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"2fd69ea71497a7de01cee4c85a9a64a593458eba0c1fec8d8a24e34d1298fdbd\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - httplib2 >=0.8,<1\n    - oauth2client\n    - six >=1.6.1,<2\n    - uritemplate >=0.6,<1\n\ntest:\n  imports:\n    - apiclient\n    - googleapiclient\n    - googleapiclient.discovery_cache\n\nabout:\n  home: http://github.com/google/google-api-python-client/\n  license: Apache 2.0 and MIT\n  summary: 'Google API Client Library for Python'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.5.1"
+}

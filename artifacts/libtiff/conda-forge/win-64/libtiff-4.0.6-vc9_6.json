@@ -1,0 +1,48 @@
+{
+ "about": {
+  "home": "http://www.remotesensing.org/libtiff/",
+  "license": "HPND",
+  "summary": "Support for the Tag Image File Format (TIFF)"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/libtiff.dll",
+  "Library/include/t4.h",
+  "Library/include/tif_config.h",
+  "Library/include/tif_config.vc.h",
+  "Library/include/tif_config.wince.h",
+  "Library/include/tif_dir.h",
+  "Library/include/tif_fax3.h",
+  "Library/include/tif_predict.h",
+  "Library/include/tiff.h",
+  "Library/include/tiffconf.h",
+  "Library/include/tiffconf.vc.h",
+  "Library/include/tiffconf.wince.h",
+  "Library/include/tiffio.h",
+  "Library/include/tiffiop.h",
+  "Library/include/tiffvers.h",
+  "Library/include/uvcode.h",
+  "Library/lib/libtiff.lib",
+  "Library/lib/libtiff_i.lib",
+  "Library/lib/tiff.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc9_6",
+  "build_number": 6,
+  "depends": [
+   "jpeg 9*",
+   "zlib 1.2*"
+  ],
+  "features": "vc9",
+  "license": "HPND",
+  "name": "libtiff",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "4.0.6"
+ },
+ "name": "libtiff",
+ "raw_recipe": "{% set version = \"4.0.6\" %}\n\npackage:\n    name: libtiff\n    version: {{ version }}\n\nsource:\n    fn: tiff-{{ version }}.tar.gz\n    url: ftp://ftp.remotesensing.org/pub/libtiff/tiff-{{ version }}.tar.gz\n    md5: d1d2e940dea0b5ad435f21f03d96dd72\n    patches:\n        # http://comments.gmane.org/gmane.comp.video.tiff/6889\n        - def_snprintf.patch  # [win]\n\nbuild:\n    number: 6\n    features:\n        - vc9  # [win and py27]\n        - vc10  # [win and py34]\n        - vc14  # [win and py35]\n\n\nrequirements:\n    build:\n        - python  # [win]\n        - cmake  # [win]\n        - toolchain\n        - zlib 1.2*\n        - jpeg 9*\n        - xz 5.2.*  # [not win]\n    run:\n        - zlib 1.2*\n        - jpeg 9*\n        - xz 5.2.*  # [not win]\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libtiff.a  # [unix]\n        - test -f ${PREFIX}/lib/libtiffxx.a  # [unix]\n        - test -f ${PREFIX}/lib/libtiff.so  # [linux]\n        - test -f ${PREFIX}/lib/libtiff.dylib  # [osx]\n        - test -f ${PREFIX}/lib/libtiffxx.so  # [linux]\n        - test -f ${PREFIX}/lib/libtiffxx.dylib  # [osx]\n        - conda inspect linkages -n _test libtiff  # [linux]\n\nabout:\n    home: http://www.remotesensing.org/libtiff/\n    license: HPND\n    summary: Support for the Tag Image File Format (TIFF)\n\nextra:\n    recipe-maintainers:\n        - jakirkham\n        - ocefpaf\n        - stuarteberg\n",
+ "rendered_recipe": {},
+ "version": "4.0.6"
+}

@@ -1,0 +1,57 @@
+{
+ "about": {
+  "home": "https://github.com/bloomberg/bqplot",
+  "license": "Apache License 2.0",
+  "summary": "Plotting library for Jupyter"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/.bqplot-post-link.sh",
+  "bin/.bqplot-pre-unlink.sh",
+  "lib/python2.7/site-packages/bqplot-0.8.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/bqplot-0.8.2-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/bqplot/__init__.py",
+  "lib/python2.7/site-packages/bqplot/_version.py",
+  "lib/python2.7/site-packages/bqplot/axes.py",
+  "lib/python2.7/site-packages/bqplot/colorschemes.py",
+  "lib/python2.7/site-packages/bqplot/default_tooltip.py",
+  "lib/python2.7/site-packages/bqplot/figure.py",
+  "lib/python2.7/site-packages/bqplot/install.py",
+  "lib/python2.7/site-packages/bqplot/interacts.py",
+  "lib/python2.7/site-packages/bqplot/map_data/EuropeMapData.json",
+  "lib/python2.7/site-packages/bqplot/map_data/USMapData.json",
+  "lib/python2.7/site-packages/bqplot/map_data/WorldMapData.json",
+  "lib/python2.7/site-packages/bqplot/market_map.py",
+  "lib/python2.7/site-packages/bqplot/marks.py",
+  "lib/python2.7/site-packages/bqplot/pyplot.py",
+  "lib/python2.7/site-packages/bqplot/scales.py",
+  "lib/python2.7/site-packages/bqplot/static/extension.js",
+  "lib/python2.7/site-packages/bqplot/static/index.js",
+  "lib/python2.7/site-packages/bqplot/static/index.js.map",
+  "lib/python2.7/site-packages/bqplot/toolbar.py",
+  "lib/python2.7/site-packages/bqplot/traits.py",
+  "share/jupyter/nbextensions/bqplot/extension.js",
+  "share/jupyter/nbextensions/bqplot/index.js",
+  "share/jupyter/nbextensions/bqplot/index.js.map"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "ipywidgets >=5.2.2",
+   "numpy >=1.10.4",
+   "pandas",
+   "python 2.7*"
+  ],
+  "license": "Apache License 2.0",
+  "name": "bqplot",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.8.2"
+ },
+ "name": "bqplot",
+ "raw_recipe": "{% set version = \"0.8.2\" %}\n\npackage:\n    name: bqplot\n    version: {{ version }}\n\nsource:\n    fn: bqplot-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/b/bqplot/bqplot-{{ version }}.tar.gz\n    md5: 17ab8e10bb36b95b192ea1848215efc9\n\nbuild:\n    number: 1\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - jupyter\n    run:\n        - python\n        - ipywidgets >=5.2.2\n        - numpy >=1.10.4\n        - pandas\n\ntest:\n    imports:\n        - bqplot\n\nabout:\n    home: https://github.com/bloomberg/bqplot\n    license: Apache License 2.0\n    summary: Plotting library for Jupyter\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - jasongrout\n",
+ "rendered_recipe": {},
+ "version": "0.8.2"
+}

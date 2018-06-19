@@ -1,0 +1,36 @@
+{
+ "about": {
+  "dev_url": "https://github.com/Horta/build-capi",
+  "home": "https://github.com/Horta/build-capi",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Build and distribute C/C++ static libraries"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/build_capi-1.1.6-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/build_capi-1.1.6-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/build_capi/__init__.py",
+  "lib/python3.5/site-packages/build_capi/_unicode.py",
+  "lib/python3.5/site-packages/build_capi/build.py",
+  "lib/python3.5/site-packages/build_capi/ext.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "build_capi",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.1.6"
+ },
+ "name": "build_capi",
+ "raw_recipe": "{% set name = \"build_capi\" %}\n{% set version = \"1.1.6\" %}\n{% set sha256 = \"b84a689fa45557ece4f5b3167a552c7420b6c3b0226046c7950e80bb861b3fcb\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n  run:\n    - python\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - build_capi\n  commands:\n    - python -c \"import build_capi\"\n\nabout:\n  home: https://github.com/Horta/build-capi\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Build and distribute C/C++ static libraries'\n  dev_url: https://github.com/Horta/build-capi\n\nextra:\n  recipe-maintainers:\n    - Horta\n",
+ "rendered_recipe": {},
+ "version": "1.1.6"
+}

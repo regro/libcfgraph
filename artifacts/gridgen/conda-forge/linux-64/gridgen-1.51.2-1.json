@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "https://github.com/sakov/gridgen-c",
+  "license": "BSD 2-Clause and triangle.[c,h] license, which is non-free for commercial use",
+  "summary": "Non-interactive generation of multi-corner quasi-orthogonal grids inside simply connected polygonal regions."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/gridgen",
+  "include/gridgen.h",
+  "lib/libgridgen.a",
+  "lib/libgridgen.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [
+   "gridutils"
+  ],
+  "license": "BSD 2-Clause and triangle.[c,h] license, which is non-free for commercial use",
+  "name": "gridgen",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.51.2"
+ },
+ "name": "gridgen",
+ "raw_recipe": "{% set version = \"1.51.2\" %}\n{% set commit = \"7a4a5918e5e2147007cb4830d6f0f24e85db6cba\" %}\n\npackage:\n    name: gridgen\n    version: {{ version }}\n\nsource:\n    fn: {{ commit }}.tar.gz\n    url: https://github.com/sakov/gridgen-c/archive/{{ commit }}.tar.gz\n    sha256: 5a47e5299316269b85a4fdfe01b8cc42e5422176b83767826c3a7d7cc982bad4\n\nbuild:\n    number: 1\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - gridutils\n    run:\n        - gridutils\n\ntest:\n    commands:\n        - gridgen -h\n        - conda inspect linkages -n _test gridgen  # [not win]\n\nabout:\n    home: https://github.com/sakov/gridgen-c\n    license: BSD 2-Clause and triangle.[c,h] license, which is non-free for commercial use\n    summary: 'Non-interactive generation of multi-corner quasi-orthogonal grids inside simply connected polygonal regions.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.51.2"
+}

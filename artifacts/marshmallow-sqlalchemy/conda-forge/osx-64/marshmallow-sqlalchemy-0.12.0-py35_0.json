@@ -1,0 +1,41 @@
+{
+ "about": {
+  "description": "SQLAlchemy integration with the marshmallow (de)serialization library.\n",
+  "dev_url": "https://github.com/marshmallow-code/marshmallow-sqlalchemy",
+  "doc_url": "http://marshmallow-sqlalchemy.readthedocs.io/",
+  "home": "https://github.com/marshmallow-code/marshmallow-sqlalchemy",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "SQLAlchemy integration with marshmallow"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/marshmallow_sqlalchemy-0.12.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/marshmallow_sqlalchemy-0.12.0-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/marshmallow_sqlalchemy/__init__.py",
+  "lib/python3.5/site-packages/marshmallow_sqlalchemy/convert.py",
+  "lib/python3.5/site-packages/marshmallow_sqlalchemy/exceptions.py",
+  "lib/python3.5/site-packages/marshmallow_sqlalchemy/fields.py",
+  "lib/python3.5/site-packages/marshmallow_sqlalchemy/schema.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "marshmallow >=2.0.0",
+   "python 3.5*",
+   "sqlalchemy >=0.9.7"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "marshmallow-sqlalchemy",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.12.0"
+ },
+ "name": "marshmallow-sqlalchemy",
+ "raw_recipe": "{% set name = \"marshmallow-sqlalchemy\" %}\n{% set version = \"0.12.0\" %}\n{% set sha256 = \"8a7e56dcf95a27287359812e3285ed72d333f72a50d8ca760fb1c1527ea2c52b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - marshmallow >=2.0.0\n    - sqlalchemy >=0.9.7\n\ntest:\n  imports:\n    - marshmallow_sqlalchemy\n\nabout:\n  home: https://github.com/marshmallow-code/marshmallow-sqlalchemy\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'SQLAlchemy integration with marshmallow'\n\n  description: |\n    SQLAlchemy integration with the marshmallow (de)serialization library.\n  doc_url: http://marshmallow-sqlalchemy.readthedocs.io/\n  dev_url: https://github.com/marshmallow-code/marshmallow-sqlalchemy\n\nextra:\n  recipe-maintainers:\n    - frol\n",
+ "rendered_recipe": {},
+ "version": "0.12.0"
+}

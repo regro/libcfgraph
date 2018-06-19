@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "https://github.com/testing-cabal/linecache2",
+  "license": "PSF 1.0",
+  "summary": "Backport of the linecache module"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/linecache2-1.0.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/linecache2-1.0.0-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/linecache2-1.0.0-py3.4.egg-info/pbr.json",
+  "lib/python3.4/site-packages/linecache2/__init__.py",
+  "lib/python3.4/site-packages/linecache2/tests/__init__.py",
+  "lib/python3.4/site-packages/linecache2/tests/inspect_fodder.py",
+  "lib/python3.4/site-packages/linecache2/tests/inspect_fodder2.py",
+  "lib/python3.4/site-packages/linecache2/tests/mapping_tests.py",
+  "lib/python3.4/site-packages/linecache2/tests/test_linecache.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "PSF 1.0",
+  "name": "linecache2",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0.0"
+ },
+ "name": "linecache2",
+ "raw_recipe": "{%set name = \"linecache2\" %}\n{%set version = \"1.0.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"4b26ff4e7110db76eeb6f5a7b64a82623839d595c2038eeda662f2a2db78e97c\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pbr\n\n  run:\n    - python\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: https://github.com/testing-cabal/linecache2\n  license: PSF 1.0\n  summary: 'Backport of the linecache module'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.0.0"
+}

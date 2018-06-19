@@ -1,0 +1,32 @@
+{
+ "about": {
+  "home": "https://github.com/testing-cabal/extras",
+  "license": "MIT License",
+  "summary": "Useful extra bits for Python - things that shold be in the standard library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/extras-1.0.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/extras-1.0.0-py3.5.egg-info/pbr.json",
+  "Lib/site-packages/extras/__init__.py",
+  "Lib/site-packages/extras/tests/__init__.py",
+  "Lib/site-packages/extras/tests/test_extras.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT License",
+  "name": "extras",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.0"
+ },
+ "name": "extras",
+ "raw_recipe": "{%set name = \"extras\" %}\n{%set version = \"1.0.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"132e36de10b9c91d5d4cc620160a476e0468a88f16c9431817a6729611a81b4e\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - extras\n    - extras.tests\n\nabout:\n  home: https://github.com/testing-cabal/extras\n  license: MIT License\n  summary: 'Useful extra bits for Python - things that shold be in the standard library'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.0.0"
+}

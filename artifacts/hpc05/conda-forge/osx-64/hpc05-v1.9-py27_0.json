@@ -1,0 +1,43 @@
+{
+ "about": {
+  "dev_url": "https://github.com/basnijholt/hpc05",
+  "home": "http://github.com/basnijholt/hpc05",
+  "license": "MIT",
+  "summary": "ipyparallel Client package for PBS cluster with headnode (as on the TU Delft)."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/hpc05-1.9-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/hpc05-1.9-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/hpc05/__init__.py",
+  "lib/python2.7/site-packages/hpc05/_version.py",
+  "lib/python2.7/site-packages/hpc05/client.py",
+  "lib/python2.7/site-packages/hpc05/pbs_profile.py",
+  "lib/python2.7/site-packages/hpc05/ssh_utils.py",
+  "lib/python2.7/site-packages/hpc05_culler.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "ipyparallel",
+   "ipython",
+   "paramiko",
+   "pexpect",
+   "python 2.7*",
+   "pyzmq",
+   "sshtunnel",
+   "tornado"
+  ],
+  "license": "MIT",
+  "name": "hpc05",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "v1.9"
+ },
+ "name": "hpc05",
+ "raw_recipe": "{% set name = \"hpc05\" %}\n{% set version = \"v1.9\" %}\n{% set sha256 = \"84f69f717c814cb76db8ccaab34c4e13046e97791be4000385d1216a22205b45\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.zip\n  url: https://github.com/basnijholt/hpc05/archive/{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: \n   - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - paramiko\n    - sshtunnel\n    - ipyparallel\n    - pyzmq\n    - tornado\n    - pexpect\n    - ipython\n  run:\n    - python\n    - paramiko\n    - sshtunnel\n    - ipyparallel\n    - pyzmq\n    - tornado\n    - pexpect\n    - ipython\n\ntest:\n  imports:\n    - hpc05\n    - hpc05_culler\n\nabout:\n  home: http://github.com/basnijholt/hpc05\n  license: MIT\n  license_file: LICENSE\n  summary: \"ipyparallel Client package for PBS cluster with headnode (as on the TU Delft).\"\n  dev_url: https://github.com/basnijholt/hpc05\n\nextra:\n  recipe-maintainers:\n    - basnijholt\n",
+ "rendered_recipe": {},
+ "version": "v1.9"
+}

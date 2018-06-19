@@ -1,0 +1,55 @@
+{
+ "about": {
+  "home": "http://matplotlib.org/basemap",
+  "license": "GPL-2.0",
+  "summary": "Plot on map projections (with coastlines and political boundaries) using matplotlib."
+ },
+ "conda_build_config": {},
+ "files": [
+  "share/basemap/UScounties.dbf",
+  "share/basemap/UScounties.prj",
+  "share/basemap/UScounties.shp",
+  "share/basemap/UScounties.shx",
+  "share/basemap/countries_f.dat",
+  "share/basemap/countries_h.dat",
+  "share/basemap/countries_i.dat",
+  "share/basemap/countriesmeta_f.dat",
+  "share/basemap/countriesmeta_h.dat",
+  "share/basemap/countriesmeta_i.dat",
+  "share/basemap/gshhs_f.dat",
+  "share/basemap/gshhs_h.dat",
+  "share/basemap/gshhs_i.dat",
+  "share/basemap/gshhsmeta_f.dat",
+  "share/basemap/gshhsmeta_h.dat",
+  "share/basemap/gshhsmeta_i.dat",
+  "share/basemap/rivers_f.dat",
+  "share/basemap/rivers_h.dat",
+  "share/basemap/rivers_i.dat",
+  "share/basemap/riversmeta_f.dat",
+  "share/basemap/riversmeta_h.dat",
+  "share/basemap/riversmeta_i.dat",
+  "share/basemap/states_f.dat",
+  "share/basemap/states_h.dat",
+  "share/basemap/states_i.dat",
+  "share/basemap/statesmeta_f.dat",
+  "share/basemap/statesmeta_h.dat",
+  "share/basemap/statesmeta_i.dat"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [
+   "basemap >1.0.7"
+  ],
+  "license": "GPL-2.0",
+  "name": "basemap-data-hires",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0.8.dev0"
+ },
+ "name": "basemap-data-hires",
+ "raw_recipe": "{% set version = \"1.0.8.dev0\" %}\n{% set commit = \"ddf92f134f26aafd96228f43793586be1e52fd4d\" %}\n\npackage:\n  name: basemap-data-hires\n  version: {{ version }}\n\nsource:\n  fn: {{ commit }}.tar.gz\n  url: https://github.com/matplotlib/basemap/archive/{{ commit }}.tar.gz\n  sha256: eed745099ba889e5e2c462316c8b58352e6edcc3df16a353b28a36e8ba6637e4\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - basemap >1.0.7\n  run:\n    - basemap >1.0.7\n\ntest:\n  imports:\n    - mpl_toolkits.basemap\n\nabout:\n  home: http://matplotlib.org/basemap\n  license: GPL-2.0\n  summary: 'Plot on map projections (with coastlines and political boundaries) using matplotlib.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.0.8.dev0"
+}

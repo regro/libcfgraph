@@ -1,0 +1,34 @@
+{
+ "about": {
+  "home": "http://freeglut.sourceforge.net/",
+  "license": "MIT",
+  "summary": "A GUI based on OpenGL."
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/GL/freeglut.h",
+  "include/GL/freeglut_ext.h",
+  "include/GL/freeglut_std.h",
+  "include/GL/glut.h",
+  "lib/libglut.a",
+  "lib/libglut.so",
+  "lib/libglut.so.3",
+  "lib/libglut.so.3.10.0",
+  "lib/pkgconfig/freeglut.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [],
+  "license": "MIT",
+  "name": "freeglut",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "3.0.0"
+ },
+ "name": "freeglut",
+ "raw_recipe": "{% set version = \"3.0.0\" %}\n\npackage:\n  name: freeglut\n  version: {{ version }}\n\nsource:\n  fn: freeglut-{{ version }}.tar.bz2\n  url: http://sourceforge.net/projects/freeglut/files/freeglut/{{ version }}/freeglut-{{ version }}.tar.gz\n  md5: 90c3ca4dd9d51cf32276bc5344ec9754\n\nbuild:\n  number: 1\n  skip: true                      # [osx]\n  features:\n      - vc9    # [win and py27]\n      - vc10   # [win and py34]\n      - vc14   # [win and py35]\n\nrequirements:\n  build:\n    - cmake\n    - python  # [win]\n\ntest:\n  requires:\n    - python {{ environ['PY_VER'] + '*' }}  # [win]\n  commands:\n    # Test includes.\n    - test -d \"${PREFIX}/include/GL\"  # [linux]\n\n      # Test libraries.\n    - test -f \"${PREFIX}/lib/libglut.a\"   # [linux]\n    - test -f \"${PREFIX}/lib/libglut.so\"  # [linux]\n    - ldd \"${PREFIX}/lib/libglut.so\"      # [linux]\n    \n    # Test Windows includes and libraries.\n    - if not exist %LIBRARY_INC%\\\\GL\\\\freeglut.h     exit 1   # [win]\n    - if not exist %LIBRARY_INC%\\\\GL\\\\freeglut_ext.h exit 1   # [win]\n    - if not exist %LIBRARY_INC%\\\\GL\\\\freeglut_std.h exit 1   # [win]\n    - if not exist %LIBRARY_INC%\\\\GL\\\\glut.h         exit 1   # [win]\n    - if not exist %LIBRARY_LIB%\\\\freeglut.lib       exit 1   # [win]\n    - if not exist %LIBRARY_BIN%\\\\freeglut.dll       exit 1   # [win]\n\nabout:\n  home: http://freeglut.sourceforge.net/\n  license: MIT\n  summary: A GUI based on OpenGL.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - shadowwalkersb\n",
+ "rendered_recipe": {},
+ "version": "3.0.0"
+}

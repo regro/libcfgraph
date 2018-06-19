@@ -1,0 +1,37 @@
+{
+ "about": {
+  "home": "https://github.com/nicolaiarocci/cerberus",
+  "license": "ISC",
+  "summary": "Lightweight, extensible schema and data validation tool for Python dictionaries."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/Cerberus-1.0.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/Cerberus-1.0.1-py3.5.egg-info/pbr.json",
+  "lib/python3.5/site-packages/cerberus/__init__.py",
+  "lib/python3.5/site-packages/cerberus/errors.py",
+  "lib/python3.5/site-packages/cerberus/platform.py",
+  "lib/python3.5/site-packages/cerberus/schema.py",
+  "lib/python3.5/site-packages/cerberus/tests/__init__.py",
+  "lib/python3.5/site-packages/cerberus/tests/tests.py",
+  "lib/python3.5/site-packages/cerberus/utils.py",
+  "lib/python3.5/site-packages/cerberus/validator.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "ISC",
+  "name": "cerberus",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0.1"
+ },
+ "name": "cerberus",
+ "raw_recipe": "{% set name = \"Cerberus\" %}\n{% set version = \"1.0.1\" %}\n{% set sha256 = \"b4d6a6a355fef497875ccca2ad482b3511c3e8739919f2cbf58a0dacf09d9f9f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - cerberus\n    - cerberus.tests\n\n  commands:\n      - python -m unittest -v cerberus.tests.tests\n\nabout:\n  home: https://github.com/nicolaiarocci/cerberus\n  license: ISC\n  license_file: LICENSE\n  summary: 'Lightweight, extensible schema and data validation tool for Python dictionaries.'\n\nextra:\n    recipe-maintainers:\n        - kyleniemeyer\n",
+ "rendered_recipe": {},
+ "version": "1.0.1"
+}

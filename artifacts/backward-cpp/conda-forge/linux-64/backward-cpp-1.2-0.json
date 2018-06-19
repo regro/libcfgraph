@@ -1,0 +1,31 @@
+{
+ "about": {
+  "dev_url": "https://github.com/bombela/backward-cpp",
+  "doc_url": "https://github.com/bombela/backward-cpp/blob/master/README.md",
+  "home": "https://github.com/bombela/backward-cpp",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Backward is a beautiful stack trace pretty printer for C++."
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/backward.hpp",
+  "lib/backward/BackwardConfig.cmake"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "backward-cpp",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.2"
+ },
+ "name": "backward-cpp",
+ "raw_recipe": "{% set name = \"backward-cpp\" %}\n{% set version = \"1.2\" %}\n{% set sha256 = \"0a44fdad126cf2c53f93c33fd6418abaf99672048c98a5a57e2a2e43a38d5f84\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/bombela/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - cmake\n    - toolchain\n    - elfutils  # so that the tests compiled in the build step can link to libdw\n\ntest:\n  requires:\n    - cmake\n    - toolchain\n    - elfutils\n\nabout:\n  home: https://github.com/bombela/backward-cpp\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'Backward is a beautiful stack trace pretty printer for C++.'\n  doc_url: https://github.com/bombela/backward-cpp/blob/master/README.md\n  dev_url: https://github.com/bombela/backward-cpp\n\nextra:\n  recipe-maintainers:\n    - edisongustavo\n    - bombela\n",
+ "rendered_recipe": {},
+ "version": "1.2"
+}

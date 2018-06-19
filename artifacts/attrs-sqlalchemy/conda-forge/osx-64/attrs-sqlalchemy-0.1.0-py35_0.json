@@ -1,0 +1,32 @@
+{
+ "about": {
+  "home": "https://github.com/GoodRx/attrs_sqlalchemy",
+  "license": "MIT",
+  "summary": "Add dunder-methods to SQLAlchemy models with attrs"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/attrs_sqlalchemy-0.1.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/attrs_sqlalchemy-0.1.0-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/attrs_sqlalchemy.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "attrs",
+   "python 3.5*",
+   "sqlalchemy"
+  ],
+  "license": "MIT",
+  "name": "attrs-sqlalchemy",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.0"
+ },
+ "name": "attrs-sqlalchemy",
+ "raw_recipe": "{% set name = \"attrs-sqlalchemy\" %}\n{% set version = \"0.1.0\" %}\n{% set sha256 = \"b6917984323f8067af094c462b9a77e8f837cda12010fdc22cc1044bb31a0ddc\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/GoodRx/attrs_sqlalchemy/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - attrs\n    - sqlalchemy\n\ntest:\n  imports:\n    - attrs_sqlalchemy\n\nabout:\n  home: https://github.com/GoodRx/attrs_sqlalchemy\n  license: MIT\n  license_file: LICENSE\n  summary: Add dunder-methods to SQLAlchemy models with attrs\n\nextra:\n  recipe-maintainers:\n    - vamega\n",
+ "rendered_recipe": {},
+ "version": "0.1.0"
+}

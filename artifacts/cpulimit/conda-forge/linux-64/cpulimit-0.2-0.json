@@ -1,0 +1,26 @@
+{
+ "about": {
+  "home": "https://github.com/opsengine/cpulimit",
+  "license": "GPL-2.0",
+  "summary": "CPU usage limiter for Linux"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/cpulimit"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "GPL-2.0",
+  "name": "cpulimit",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2"
+ },
+ "name": "cpulimit",
+ "raw_recipe": "{% set name = \"cpulimit\" %}\n{% set version = \"0.2\" %}\n{% set sha256 = \"64312f9ac569ddcadb615593cd002c94b76e93a0d4625d3ce1abb49e08e2c2da\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/opsengine/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - libtool\n    - toolchain\n\n  run:\n\nabout:\n  home: https://github.com/opsengine/cpulimit\n  license: GPL-2.0\n  license_file: LICENSE\n  summary: CPU usage limiter for Linux\n\nextra:\n  recipe-maintainers:\n    - keuv-grvl\n",
+ "rendered_recipe": {},
+ "version": "0.2"
+}

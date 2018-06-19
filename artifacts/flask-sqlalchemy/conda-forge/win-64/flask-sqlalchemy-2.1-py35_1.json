@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "http://github.com/mitsuhiko/flask-sqlalchemy",
+  "license": "BSD 3-Clause",
+  "summary": "Adds SQLAlchemy support to your Flask application"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/Flask_SQLAlchemy-2.1-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/Flask_SQLAlchemy-2.1-py3.5.egg-info/not-zip-safe",
+  "Lib/site-packages/flask_sqlalchemy/__init__.py",
+  "Lib/site-packages/flask_sqlalchemy/_compat.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "flask >=0.10",
+   "python 3.5*",
+   "sqlalchemy >=0.7"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "flask-sqlalchemy",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.1"
+ },
+ "name": "flask-sqlalchemy",
+ "raw_recipe": "{% set name = \"flask-sqlalchemy\" %}\n{% set camelName = \"Flask-SQLAlchemy\" %}\n{% set version = \"2.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  sha256: c5244de44cc85d2267115624d83faef3f9e8f088756788694f305a5d5ad137c5\n\nbuild:\n\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - flask >=0.10\n    - sqlalchemy >=0.7\n\ntest:\n  imports:\n    - flask_sqlalchemy\n\nabout:\n  home: http://github.com/mitsuhiko/flask-sqlalchemy\n  license: BSD 3-Clause\n  summary: 'Adds SQLAlchemy support to your Flask application'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "2.1"
+}

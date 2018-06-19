@@ -1,0 +1,43 @@
+{
+ "about": {
+  "home": "http://github.com/lepture/flask-wtf",
+  "license": "BSD 3-Clause",
+  "summary": "Simple integration of Flask and WTForms"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/Flask_WTF-0.12-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/Flask_WTF-0.12-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/flask_wtf/__init__.py",
+  "lib/python2.7/site-packages/flask_wtf/_compat.py",
+  "lib/python2.7/site-packages/flask_wtf/csrf.py",
+  "lib/python2.7/site-packages/flask_wtf/file.py",
+  "lib/python2.7/site-packages/flask_wtf/form.py",
+  "lib/python2.7/site-packages/flask_wtf/html5.py",
+  "lib/python2.7/site-packages/flask_wtf/i18n.py",
+  "lib/python2.7/site-packages/flask_wtf/recaptcha/__init__.py",
+  "lib/python2.7/site-packages/flask_wtf/recaptcha/fields.py",
+  "lib/python2.7/site-packages/flask_wtf/recaptcha/validators.py",
+  "lib/python2.7/site-packages/flask_wtf/recaptcha/widgets.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "flask",
+   "python 2.7*",
+   "werkzeug",
+   "wtforms"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "flask-wtf",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.12"
+ },
+ "name": "flask-wtf",
+ "raw_recipe": "{%set name = \"flask-wtf\" %}\n{%set camelName = \"Flask-WTF\" %}\n{%set version = \"0.12\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"bd99316c97ed1d1cb90b8f0c242c86420a891a6a2058f20717e424bf5b0bb80e\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - flask\n    - werkzeug\n    - wtforms\n\ntest:\n  imports:\n    - flask_wtf\n    - flask_wtf.recaptcha\n\nabout:\n  home: http://github.com/lepture/flask-wtf\n  license: BSD 3-Clause\n  summary: 'Simple integration of Flask and WTForms'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.12"
+}

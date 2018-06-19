@@ -1,0 +1,42 @@
+{
+ "about": {
+  "dev_url": "https://github.com/SimonSapin/Flask-FlatPages",
+  "doc_url": "https://flask-flatpages.readthedocs.io/en/latest/",
+  "home": "https://github.com/SimonSapin/Flask-FlatPages",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Provides flat static pages to a Flask application"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/Flask_FlatPages-0.6-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/Flask_FlatPages-0.6-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/flask_flatpages/__init__.py",
+  "lib/python2.7/site-packages/flask_flatpages/compat.py",
+  "lib/python2.7/site-packages/flask_flatpages/flatpages.py",
+  "lib/python2.7/site-packages/flask_flatpages/imports.py",
+  "lib/python2.7/site-packages/flask_flatpages/page.py",
+  "lib/python2.7/site-packages/flask_flatpages/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "flask >=0.8",
+   "markdown >=2.3.1",
+   "python 2.7*",
+   "pyyaml >=3.10"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "flask-flatpages",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.6"
+ },
+ "name": "flask-flatpages",
+ "raw_recipe": "{%set name = \"Flask-FlatPages\" %}\n{%set version = \"0.6\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"b52d502579a0903c8660816a77c17f61f5cb526b5091fbe910a2ee17d2063bf2\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - flask >=0.8\n    - pyyaml >=3.10\n    - markdown >=2.3.1\n\ntest:\n  imports:\n    - flask_flatpages\n\nabout:\n  home: https://github.com/SimonSapin/Flask-FlatPages\n  license: BSD 3-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: 'Provides flat static pages to a Flask application'\n  dev_url: https://github.com/SimonSapin/Flask-FlatPages\n  doc_url: https://flask-flatpages.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.6"
+}

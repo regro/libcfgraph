@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "http://packages.python.org/ipycache",
+  "license": "BSD-3-Clause",
+  "summary": "Defines a %%cache cell magic in the IPython notebook to cache results of long-lasting computations in a persistentpickle file."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/ipycache-0.1.4-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/ipycache.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "ipython",
+   "python 2.7*"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "ipycache",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1.4"
+ },
+ "name": "ipycache",
+ "raw_recipe": "{% set version = \"0.1.4\" %}\n\npackage:\n  name: ipycache\n  version: {{ version }}\n\nsource:\n  fn: ipycache-{{ version }}.zip\n  url: https://pypi.python.org/packages/source/i/ipycache/ipycache-{{ version }}.zip\n  md5: c78c6094ffab45b0e33c2f556705fa11\n\nbuild:\n  number: 1\n  script: \n    - cp {{ environ['RECIPE_DIR'] }}/LICENSE.md {{ environ['SRC_DIR'] }} \n    - python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - ipython\n\ntest:  \n  commands:\n    - curl -s -L https://github.com/rossant/ipycache/tarball/master -o master.tgz\n    - mkdir source\n    - cd source\n    - tar --strip-components=1 -xvzf ../master.tgz\n    - nosetests \n    - python ipynb_runner.py -v -s examples/example.ipynb  # [not win]\n    - python ipynb_runner.py -v -s examples/example_outputs.ipynb  # [not win]\n  \n  requires:\n    - nose\n    - numpy\n    - matplotlib\n    - ipython\n    - nbformat\n    - ipykernel\n\nabout:\n  home: http://packages.python.org/ipycache\n  license: BSD-3-Clause\n  license_file: LICENSE.md\n  summary: 'Defines a %%cache cell magic in the IPython notebook to cache results of long-lasting computations in a persistentpickle file.'\n  \nextra:\n  recipe-maintainers:\n    - jochym\n",
+ "rendered_recipe": {},
+ "version": "0.1.4"
+}

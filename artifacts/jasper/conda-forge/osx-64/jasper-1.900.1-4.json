@@ -1,0 +1,155 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://www.ece.uvic.ca/~frodo/jasper/",
+  "license": "JasPer 2.0",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "A reference implementation of the codec specified in the JPEG-2000 Part-1 standard."
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/jasper/jas_types.h",
+  "include/jasper/jas_icc.h",
+  "man/man1/jiv.1",
+  "lib/libjasper.a",
+  "include/jasper/jas_malloc.h",
+  "include/jasper/jas_cm.h",
+  "include/jasper/jas_init.h",
+  "lib/libjasper.la",
+  "include/jasper/jas_stream.h",
+  "include/jasper/jas_config.h",
+  "include/jasper/jas_config2.h",
+  "include/jasper/jas_debug.h",
+  "include/jasper/jas_tvp.h",
+  "lib/libjasper.1.dylib",
+  "include/jasper/jas_string.h",
+  "bin/tmrdemo",
+  "include/jasper/jas_seq.h",
+  "man/man1/jasper.1",
+  "include/jasper/jas_version.h",
+  "bin/imgcmp",
+  "bin/imginfo",
+  "include/jasper/jas_math.h",
+  "man/man1/imginfo.1",
+  "include/jasper/jas_image.h",
+  "include/jasper/jas_fix.h",
+  "man/man1/imgcmp.1",
+  "lib/libjasper.1.0.0.dylib",
+  "bin/jasper",
+  "include/jasper/jas_tmr.h",
+  "include/jasper/jasper.h",
+  "include/jasper/jas_getopt.h",
+  "lib/libjasper.dylib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "4",
+  "build_number": 4,
+  "depends": [
+   "jpeg 9*"
+  ],
+  "license": "JasPer 2.0",
+  "name": "jasper",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.900.1"
+ },
+ "name": "jasper",
+ "raw_recipe": "{% set version = \"1.900.1\" %}\n\npackage:\n  name: jasper\n  version: {{ version }}\n\nsource:\n  fn: jasper-{{ version }}.zip\n  url: http://www.ece.uvic.ca/~frodo/jasper/software/jasper-{{ version }}.zip\n  sha256: 6b905a9c2aca2e275544212666eefc4eb44d95d0a57e4305457b407fe63f9494\n\nbuild:\n  number: 4\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - jpeg 9*\n  run:\n    - jpeg 9*\n\ntest:\n  commands:\n    - jasper --version\n    - conda inspect linkages -p $PREFIX jasper  # [not win]\n    - conda inspect objects -p $PREFIX jasper  # [osx]\n\nabout:\n  home: http://www.ece.uvic.ca/~frodo/jasper/\n  license: JasPer 2.0\n  license_file: LICENSE\n  summary: 'A reference implementation of the codec specified in the JPEG-2000 Part-1 standard.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jhamman\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.ece.uvic.ca/~frodo/jasper/",
+   "license": "JasPer 2.0",
+   "license_file": "LICENSE",
+   "summary": "A reference implementation of the codec specified in the JPEG-2000 Part-1 standard."
+  },
+  "build": {
+   "number": "4",
+   "string": "4"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham",
+    "jhamman",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "jasper",
+   "version": "1.900.1"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "jpeg 9*"
+   ]
+  },
+  "source": {
+   "fn": "jasper-1.900.1.zip",
+   "sha256": "6b905a9c2aca2e275544212666eefc4eb44d95d0a57e4305457b407fe63f9494",
+   "url": "http://www.ece.uvic.ca/~frodo/jasper/software/jasper-1.900.1.zip"
+  },
+  "test": {
+   "commands": [
+    "jasper --version",
+    "conda inspect linkages -p $PREFIX jasper",
+    "conda inspect objects -p $PREFIX jasper"
+   ]
+  }
+ },
+ "version": "1.900.1"
+}

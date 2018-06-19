@@ -1,0 +1,35 @@
+{
+ "about": {
+  "description": "Jobtastic makes your user-responsive long-running Celery jobs totally awesomer.\nCelery is the ubiquitous python job queueing tool and jobtastic is a python\nlibrary that adds useful features to your Celery tasks. Specifically, these are\nfeatures you probably want if the results of your jobs are expensive or if your\nusers need to wait while they compute their results.\n",
+  "dev_url": "http://policystat.github.com/jobtastic",
+  "home": "http://policystat.github.com/jobtastic",
+  "license": "MIT",
+  "summary": "Make your user-facing Celery jobs totally awesomer"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/jobtastic-0.3.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/jobtastic/__init__.py",
+  "lib/python2.7/site-packages/jobtastic/states.py",
+  "lib/python2.7/site-packages/jobtastic/task.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "celery >=2.5,<4",
+   "psutil >=3.0,<4",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "jobtastic",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.1"
+ },
+ "name": "jobtastic",
+ "raw_recipe": "{% set name = \"jobtastic\" %}\n{% set version = \"0.3.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_val = \"da49cd83756d6899f2f7b57b1c65b3e3c2a5c3ce7b9fc296aab9ebaa10ec83cc\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/PolicyStat/{{ name }}/archive/v{{ version }}.tar.gz\n  {{hash_type}}: {{ hash_val }}\n\nbuild:\n  skip: true  # [not py27]\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n \n  run:\n    - python\n    - psutil >=3.0,<4\n    - celery >=2.5,<4\n\ntest:\n  imports:\n    - jobtastic\n\n  requires:\n    - django >=1.4,<2\n    - django-celery >=3.0,<4\n    - django-nose\n    - mock\n    - unittest2  # [py26]\n\nabout:\n  home: http://policystat.github.com/jobtastic\n  license: MIT \n  license_file: LICENSE\n  summary: 'Make your user-facing Celery jobs totally awesomer'\n\n  description: |\n    Jobtastic makes your user-responsive long-running Celery jobs totally awesomer. \n    Celery is the ubiquitous python job queueing tool and jobtastic is a python \n    library that adds useful features to your Celery tasks. Specifically, these are\n    features you probably want if the results of your jobs are expensive or if your \n    users need to wait while they compute their results.\n  dev_url: http://policystat.github.com/jobtastic\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
+ "rendered_recipe": {},
+ "version": "0.3.1"
+}

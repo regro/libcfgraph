@@ -1,0 +1,46 @@
+{
+ "about": {
+  "home": "https://github.com/jameskermode/f90wrap",
+  "license": "GPL-2.0",
+  "summary": "Fortran to Python interface generator with derived type support"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/f2py-f90wrap",
+  "bin/f90doc",
+  "bin/f90wrap",
+  "lib/python3.4/site-packages/f90wrap-0.1.4-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/f90wrap/__init__.py",
+  "lib/python3.4/site-packages/f90wrap/arraydata.cpython-34m.so",
+  "lib/python3.4/site-packages/f90wrap/codegen.py",
+  "lib/python3.4/site-packages/f90wrap/f90wrapgen.py",
+  "lib/python3.4/site-packages/f90wrap/fortran.py",
+  "lib/python3.4/site-packages/f90wrap/fortrantype.py",
+  "lib/python3.4/site-packages/f90wrap/latex.py",
+  "lib/python3.4/site-packages/f90wrap/parser.py",
+  "lib/python3.4/site-packages/f90wrap/pywrapgen.py",
+  "lib/python3.4/site-packages/f90wrap/runtime.py",
+  "lib/python3.4/site-packages/f90wrap/six.py",
+  "lib/python3.4/site-packages/f90wrap/sizeof_fortran_t.cpython-34m.so",
+  "lib/python3.4/site-packages/f90wrap/transform.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py34_0",
+  "build_number": 0,
+  "depends": [
+   "libgcc",
+   "numpy 1.11*",
+   "python 3.4*"
+  ],
+  "license": "GPL-2.0",
+  "name": "f90wrap",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1.4"
+ },
+ "name": "f90wrap",
+ "raw_recipe": "{% set version = \"0.1.4\" %}\n\npackage:\n    name: f90wrap\n    version: {{ version }}\n\nsource:\n    fn: f90wrap-{{ version }}.tar.gz\n    url: https://github.com/jameskermode/f90wrap/archive/v{{ version }}.tar.gz\n    sha256: af86d60c06e74b688a5142afa9ebe69581ac7c7e912a0e535f6ebdd98b13d6c9\n\nbuild:\n    number: 0\n    skip: True  # [win or osx]\n    script:\n        - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - numpy x.x\n        - gcc\n    run:\n        - python\n        - numpy x.x\n        - libgcc  # [linux]\n        - libgfortran  # [osx]\n\ntest:\n    imports:\n        - f90wrap\n    commands:\n        - f90wrap -h\n        - f2py-f90wrap -h\n\nabout:\n    home: https://github.com/jameskermode/f90wrap\n    license: GPL-2.0\n    summary: Fortran to Python interface generator with derived type support\n\nextra:\n    recipe-maintainers:\n        - jameskermode\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.1.4"
+}

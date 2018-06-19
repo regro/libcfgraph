@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "https://github.com/dcramer/django-uuidfield",
+  "license": "BSD 3-Clause",
+  "summary": "UUIDField in Django"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/django_uuidfield-0.5.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/django_uuidfield-0.5.0-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/uuidfield/__init__.py",
+  "lib/python2.7/site-packages/uuidfield/fields.py",
+  "lib/python2.7/site-packages/uuidfield/models.py",
+  "lib/python2.7/site-packages/uuidfield/tests/__init__.py",
+  "lib/python2.7/site-packages/uuidfield/tests/models.py",
+  "lib/python2.7/site-packages/uuidfield/tests/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "django >=1.7,<1.8",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "django-uuidfield",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.5.0"
+ },
+ "name": "django-uuidfield",
+ "raw_recipe": "{% set version = \"0.5.0\" %}\n\npackage:\n  name: django-uuidfield\n  version: {{ version }}\n\nsource:\n  fn: django-uuidfield-{{ version }}.tar.gz\n  url: https://github.com/dcramer/django-uuidfield/archive/{{ version }}.tar.gz\n  sha256: 8461004b66871edc04435cba608519c5f587b66a830ee8646df83edae40a9c99\n\nbuild:\n  number: 0\n  skip: True  # [py35]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django >=1.7,<1.8\n\ntest:\n  imports:\n    - uuidfield\n\nabout:\n  home: https://github.com/dcramer/django-uuidfield\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'UUIDField in Django'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.5.0"
+}

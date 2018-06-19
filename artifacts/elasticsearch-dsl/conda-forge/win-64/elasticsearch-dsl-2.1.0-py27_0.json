@@ -1,0 +1,47 @@
+{
+ "about": {
+  "home": "https://github.com/elasticsearch/elasticsearch-dsl-py",
+  "license": "Apache 2.0",
+  "summary": "Higher-level Python client for Elasticsearch"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/elasticsearch_dsl-2.1.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/elasticsearch_dsl/__init__.py",
+  "Lib/site-packages/elasticsearch_dsl/aggs.py",
+  "Lib/site-packages/elasticsearch_dsl/analysis.py",
+  "Lib/site-packages/elasticsearch_dsl/connections.py",
+  "Lib/site-packages/elasticsearch_dsl/document.py",
+  "Lib/site-packages/elasticsearch_dsl/exceptions.py",
+  "Lib/site-packages/elasticsearch_dsl/faceted_search.py",
+  "Lib/site-packages/elasticsearch_dsl/field.py",
+  "Lib/site-packages/elasticsearch_dsl/function.py",
+  "Lib/site-packages/elasticsearch_dsl/index.py",
+  "Lib/site-packages/elasticsearch_dsl/mapping.py",
+  "Lib/site-packages/elasticsearch_dsl/query.py",
+  "Lib/site-packages/elasticsearch_dsl/result.py",
+  "Lib/site-packages/elasticsearch_dsl/search.py",
+  "Lib/site-packages/elasticsearch_dsl/serializer.py",
+  "Lib/site-packages/elasticsearch_dsl/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "elasticsearch >=2.0.0,<3.0.0",
+   "python 2.7*",
+   "python-dateutil",
+   "six"
+  ],
+  "license": "Apache 2.0",
+  "name": "elasticsearch-dsl",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.1.0"
+ },
+ "name": "elasticsearch-dsl",
+ "raw_recipe": "{% set version = \"2.1.0\" %}\n\npackage:\n  name: elasticsearch-dsl\n  version: {{ version }}\n\nsource:\n  fn: elasticsearch-dsl-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/e/elasticsearch-dsl/elasticsearch-dsl-{{ version }}.tar.gz\n  sha256: e11881321a2d0f40c78efcc50905f8f6dc090e1929e541727d7abdf5b8a446d9\n\nbuild:\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - six\n    - python-dateutil\n    - elasticsearch >=2.0.0,<3.0.0\n\ntest:\n  imports:\n    - elasticsearch_dsl\n\nabout:\n  home: https://github.com/elasticsearch/elasticsearch-dsl-py\n  license: Apache 2.0\n  summary: 'Higher-level Python client for Elasticsearch'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "2.1.0"
+}

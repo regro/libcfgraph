@@ -1,0 +1,37 @@
+{
+ "about": {
+  "home": "http://bitbucket.org/haypo/hachoir/wiki/hachoir-regex",
+  "license": "GPL 2.0",
+  "license_family": "GPL2",
+  "summary": "Manipulation of regular expressions (regex)"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/hachoir_regex-1.0.5-py2.7.egg-info",
+  "lib/python2.7/site-packages/hachoir_regex/__init__.py",
+  "lib/python2.7/site-packages/hachoir_regex/compatibility.py",
+  "lib/python2.7/site-packages/hachoir_regex/parser.py",
+  "lib/python2.7/site-packages/hachoir_regex/pattern.py",
+  "lib/python2.7/site-packages/hachoir_regex/regex.py",
+  "lib/python2.7/site-packages/hachoir_regex/tools.py",
+  "lib/python2.7/site-packages/hachoir_regex/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "GPL 2.0",
+  "license_family": "GPL2",
+  "name": "hachoir-regex",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0.5"
+ },
+ "name": "hachoir-regex",
+ "raw_recipe": "{%set name = \"hachoir-regex\" %}\n{%set version = \"1.0.5\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"a35b2bb0ff11418230fffbb97605adba012bf65d2aba3e5e7d8295774d5ba986\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  skip: True  # [py3k]\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - hachoir_regex\n    - hachoir_regex.parser\n    - hachoir_regex.pattern\n    - hachoir_regex.regex\n    - hachoir_regex.tools\n    - hachoir_regex.version\n\nabout:\n  home: http://bitbucket.org/haypo/hachoir/wiki/hachoir-regex\n  license: GPL 2.0\n  license_file: COPYING\n  license_family: GPL2\n  summary: 'Manipulation of regular expressions (regex)'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.0.5"
+}

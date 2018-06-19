@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "http://code.google.com/p/google-diff-match-patch/",
+  "license": "Apache 2.0",
+  "summary": "The Diff Match and Patch libraries offer robust algorithms to perform the operations required for synchronizing plain text."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/diff_match_patch-20121119-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/diff_match_patch/__init__.py",
+  "lib/python3.5/site-packages/diff_match_patch/diff_match_patch.py",
+  "lib/python3.5/site-packages/diff_match_patch/diff_match_patch_test.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "Apache 2.0",
+  "name": "diff-match-patch",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "20121119"
+ },
+ "name": "diff-match-patch",
+ "raw_recipe": "{% set version = \"20121119\" %}\n\npackage:\n  name: diff-match-patch\n  version: {{ version }}\n\nsource:\n  fn: diff-match-patch-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/diff-match-patch/diff-match-patch-{{ version }}.tar.gz\n  sha256: 9dba5611fbf27893347349fd51cc1911cb403682a7163373adacc565d11e2e4c\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - diff_match_patch\n\nabout:\n  home: http://code.google.com/p/google-diff-match-patch/\n  license: Apache 2.0\n  license_file: LICENCE\n  summary: 'The Diff Match and Patch libraries offer robust algorithms to perform the operations required for synchronizing plain text.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "20121119"
+}

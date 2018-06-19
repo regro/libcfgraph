@@ -1,0 +1,47 @@
+{
+ "about": {
+  "home": "http://ferret.pmel.noaa.gov/Ferret",
+  "license": "MIT",
+  "summary": "Data for pyferret examples."
+ },
+ "conda_build_config": {},
+ "files": [
+  "share/fer_dsets/data/coads_climatology.cdf",
+  "share/fer_dsets/data/esku_heat_budget.cdf",
+  "share/fer_dsets/data/etopo05.cdf",
+  "share/fer_dsets/data/etopo120.cdf",
+  "share/fer_dsets/data/etopo20.cdf",
+  "share/fer_dsets/data/etopo40.cdf",
+  "share/fer_dsets/data/etopo5.cdf",
+  "share/fer_dsets/data/etopo60.cdf",
+  "share/fer_dsets/data/geo_borders.cdf",
+  "share/fer_dsets/data/geo_borders_intermed.nc",
+  "share/fer_dsets/data/levitus_climatology.cdf",
+  "share/fer_dsets/data/monthly_navy_winds.cdf",
+  "share/fer_dsets/data/ocean_atlas_subset.nc",
+  "share/fer_dsets/descr/examp_irreg_mod_t_ax.des",
+  "share/fer_dsets/descr/examp_irreg_t_ax.des",
+  "share/fer_dsets/descr/examp_t_independent.des",
+  "share/fer_dsets/grids/examp_irreg_mod_t_ax.grd",
+  "share/fer_dsets/grids/examp_irreg_t_ax.grd",
+  "share/fer_dsets/grids/examp_t_indep.grd"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "pyferret",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "ferret_datasets",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "7.0.0"
+ },
+ "name": "ferret_datasets",
+ "raw_recipe": "{% set version = \"7.0.0\" %}\n\npackage:\n    name: ferret_datasets\n    version: {{ version }}\n\nsource:\n    fn: ferret_datasets-{{ version }}.tar.gz\n    url: https://github.com/NOAA-PMEL/PyFerret/releases/download/v{{ version }}-final/FerretDatasets.tar.gz\n    sha256: 3d735fd3e952e01646894beea91b39c2adbfde087bcfec2a78ebef189048213f\n\nbuild:\n    number: 0\n    skip: True  # [win or py3k or osx]\n\nrequirements:\n    build:\n        - python\n        - pyferret\n    run:\n        - python\n        - pyferret\n\ntest:\n    imports:\n        - pyferret\n\nabout:\n    home: http://ferret.pmel.noaa.gov/Ferret\n    license: MIT\n    summary: 'Data for pyferret examples.'\n\nextra:\n    recipe-maintainers:\n        - eugeneburger\n        - karlmsmith\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "7.0.0"
+}

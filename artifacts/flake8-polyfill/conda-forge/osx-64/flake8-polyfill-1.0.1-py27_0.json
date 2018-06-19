@@ -1,0 +1,36 @@
+{
+ "about": {
+  "dev_url": "https://gitlab.com/pycqa/flake8-polyfill",
+  "home": "https://gitlab.com/pycqa/flake8-polyfill",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Provides some compatibility helpers for Flake8 plugins that intend to support Flake8 2.x and 3.x simultaneously."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/flake8_polyfill-1.0.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/flake8_polyfill/__init__.py",
+  "lib/python2.7/site-packages/flake8_polyfill/options.py",
+  "lib/python2.7/site-packages/flake8_polyfill/stdin.py",
+  "lib/python2.7/site-packages/flake8_polyfill/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "flake8",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "flake8-polyfill",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0.1"
+ },
+ "name": "flake8-polyfill",
+ "raw_recipe": "{% set name = \"flake8-polyfill\" %}\n{% set version = \"1.0.1\" %}\n{% set sha256 = \"c77056b1e2cfce7b39d7634370062baf02438962a7d176ea717627b83b17f609\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - flake8\n\ntest:\n  imports:\n    - flake8_polyfill\n\nabout:\n  home: https://gitlab.com/pycqa/flake8-polyfill\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Provides some compatibility helpers for Flake8 plugins that intend to support Flake8 2.x and 3.x simultaneously.'\n  dev_url: https://gitlab.com/pycqa/flake8-polyfill\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
+ "rendered_recipe": {},
+ "version": "1.0.1"
+}

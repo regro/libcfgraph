@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "https://github.com/kennethreitz/args",
+  "license": "BSD 3-clause",
+  "summary": "Command Arguments for Humans."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/args-0.1.0-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/args-0.1.0-py3.6.egg-info/not-zip-safe",
+  "lib/python3.6/site-packages/args.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.6*"
+  ],
+  "license": "BSD 3-clause",
+  "name": "args",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.0"
+ },
+ "name": "args",
+ "raw_recipe": "{% set version = \"0.1.0\" %}\n\npackage:\n  name: args\n  version: {{ version }}\n\nsource:\n  fn: args-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/a/args/args-{{ version }}.tar.gz\n  md5: 66faf79ba2511def7b8b81d542482046\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - args\n\nabout:\n  home: https://github.com/kennethreitz/args\n  license: BSD 3-clause\n  summary: 'Command Arguments for Humans.'\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - janschulz\n",
+ "rendered_recipe": {},
+ "version": "0.1.0"
+}

@@ -1,0 +1,38 @@
+{
+ "about": {
+  "home": "https://github.com/pelson/centrally-managed-conda",
+  "license": "BSD-3",
+  "license_family": "BSD",
+  "summary": "Tools and documentation for centrally managed conda environment deployment"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/centrally_managed_conda-0.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/centrally_managed_conda/__init__.py",
+  "lib/python2.7/site-packages/centrally_managed_conda/_version.py",
+  "lib/python2.7/site-packages/centrally_managed_conda/fetch_recipes.py",
+  "lib/python2.7/site-packages/centrally_managed_conda/fetch_sources.py",
+  "lib/python2.7/site-packages/centrally_managed_conda/list_pkgs.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "conda-build",
+   "conda-build-all",
+   "gitpython",
+   "python 2.7*"
+  ],
+  "license": "BSD-3",
+  "license_family": "BSD",
+  "name": "centrally-managed-conda",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1"
+ },
+ "name": "centrally-managed-conda",
+ "raw_recipe": "{% set name = \"centrally-managed-conda\" %}\n{% set version = \"0.1\" %}\n{% set sha256 = \"a8fc4e0724e2d34c5f44b2970d37c2333ef32517d7d5d19b97819c37fca1ce4e\" %}\n\npackage:\n    name: {{ name|lower }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/pelson/{{ name }}/archive/v{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - conda-build\n        - gitpython\n        - conda-build-all\n\ntest:\n  imports:\n    - centrally_managed_conda\n\nabout:\n  home: https://github.com/pelson/centrally-managed-conda\n  license: BSD-3\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Tools and documentation for centrally managed conda environment deployment'\n\nextra:\n  recipe-maintainers:\n    - lbdreyer\n    - pelson\n",
+ "rendered_recipe": {},
+ "version": "0.1"
+}

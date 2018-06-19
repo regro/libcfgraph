@@ -1,0 +1,37 @@
+{
+ "about": {
+  "dev_url": "https://github.com/wolverdude/genson/",
+  "home": "https://github.com/wolverdude/genson/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "GenSON is a powerful, user-friendly JSON Schema generator."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/genson-0.2.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/genson-0.2.0-py3.5.egg-info/zip-safe",
+  "Lib/site-packages/genson/__init__.py",
+  "Lib/site-packages/genson/generator.py",
+  "Lib/site-packages/genson/genson.py",
+  "Scripts/genson-script.py",
+  "Scripts/genson.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "genson",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2.0"
+ },
+ "name": "genson",
+ "raw_recipe": "{%set name = \"genson\" %}\n{%set version = \"0.2.0\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"6ea2bb5b87f042d099154535dbdf61f62402b19bb249e82a15435f2340c58dea\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\nbuild:\n  entry_points:\n    - genson = genson.genson:main\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - genson\n\n  commands:\n    - genson --help\n\nabout:\n  home: https://github.com/wolverdude/genson/\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: 'GenSON is a powerful, user-friendly JSON Schema generator.'\n  dev_url: https://github.com/wolverdude/genson/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.2.0"
+}

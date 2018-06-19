@@ -1,0 +1,44 @@
+{
+ "about": {
+  "dev_url": "https://github.com/chemfiles/chemfiles.py",
+  "doc_url": "http://chemfiles.github.io/chemfiles.py/latest/",
+  "home": "http://chemfiles.github.io",
+  "license": "MPL-v2.0",
+  "summary": "Python binding to chemfiles, a modern library for chemistry file reading and writing"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/chemfiles-0.6.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/chemfiles/__init__.py",
+  "lib/python3.4/site-packages/chemfiles/_version.py",
+  "lib/python3.4/site-packages/chemfiles/atom.py",
+  "lib/python3.4/site-packages/chemfiles/cell.py",
+  "lib/python3.4/site-packages/chemfiles/errors.py",
+  "lib/python3.4/site-packages/chemfiles/ffi.py",
+  "lib/python3.4/site-packages/chemfiles/find_chemfiles.py",
+  "lib/python3.4/site-packages/chemfiles/frame.py",
+  "lib/python3.4/site-packages/chemfiles/logging.py",
+  "lib/python3.4/site-packages/chemfiles/selection.py",
+  "lib/python3.4/site-packages/chemfiles/topology.py",
+  "lib/python3.4/site-packages/chemfiles/trajectory.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_1",
+  "build_number": 1,
+  "depends": [
+   "chemfiles-lib ==0.6.2",
+   "numpy",
+   "python 3.4*"
+  ],
+  "license": "MPL-v2.0",
+  "name": "chemfiles-python",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.6.0"
+ },
+ "name": "chemfiles-python",
+ "raw_recipe": "{% set version = \"0.6.0\" %}\n{% set sha256 = \"913a9ca911287e342918458619c29dfd094f4b25f7d6866048b9968fc63be207\" %}\n\npackage:\n  name: chemfiles-python\n  version: {{ version }}\n\nsource:\n  fn: chemfiles.py-{{ version }}.tar.gz\n  url: https://github.com/chemfiles/chemfiles.py/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n      - find_library.patch\n\nbuild:\n  skip: true  # [win]\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - enum34  # [py2k]\n    - numpy\n    - chemfiles-lib ==0.6.2\n  run:\n    - python\n    - enum34  # [py2k]\n    - numpy\n    - chemfiles-lib ==0.6.2\n\ntest:\n  commands:\n    - cd $SRC_DIR/tests\n    - python -m unittest discover\n\nabout:\n  home: http://chemfiles.github.io\n  license: MPL-v2.0\n  license_file: LICENCE.txt\n  summary: Python binding to chemfiles, a modern library for chemistry file reading and writing\n  doc_url: http://chemfiles.github.io/chemfiles.py/latest/\n  dev_url: https://github.com/chemfiles/chemfiles.py\n\nextra:\n  recipe-maintainers:\n    - luthaf\n",
+ "rendered_recipe": {},
+ "version": "0.6.0"
+}

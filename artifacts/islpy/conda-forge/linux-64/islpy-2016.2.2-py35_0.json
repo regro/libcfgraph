@@ -1,0 +1,152 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "\nislpy is a Python wrapper around Sven Verdoolaege's\n[isl](http://www.kotnet.org/~skimo/isl/), a library for manipulating\nsets and relations of integer points bounded by linear constraints.\n\nSupported operations on sets include\n\n-   intersection, union, set difference,\n-   emptiness check,\n-   convex hull,\n-   (integer) affine hull,\n-   integer projection,\n-   computing the lexicographic minimum using parametric integer\n    programming,\n-   coalescing, and\n-   parametric vertex enumeration.\n\nIt also includes an ILP solver based on generalized basis reduction,\ntransitive closures on maps (which may encode infinite graphs),\ndependence analysis and bounds on piecewise step-polynomials.\n",
+  "dev_url": "https://github.com/inducer/islpy",
+  "doc_url": "https://documen.tician.de/islpy",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://github.com/inducer/islpy",
+  "license": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.5-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Wrapper around isl, an integer set library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/islpy/_isl.py",
+  "lib/python3.5/site-packages/islpy/version.py",
+  "lib/python3.5/site-packages/islpy/_isl_cffi.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/islpy-2016.2.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/islpy/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "cffi",
+   "python 3.5*",
+   "six"
+  ],
+  "license": "MIT",
+  "name": "islpy",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2016.2.2"
+ },
+ "name": "islpy",
+ "raw_recipe": "{% set name = \"islpy\" %}\n{% set version = \"2016.2.2\" %}\n{% set sha256 = \"d25f40d3a248f30ac737c8a48d222284f60c298045142c6430d29e92c088c799\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six\n    - cffi\n  run:\n    - python\n    - cffi\n    - six\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - islpy\n\n  source_files:\n    - test\n  commands:\n    - cd test && python -m pytest\n\nabout:\n  home: http://github.com/inducer/islpy\n  license: MIT\n  summary: 'Wrapper around isl, an integer set library'\n\n  description: |\n\n    islpy is a Python wrapper around Sven Verdoolaege's\n    [isl](http://www.kotnet.org/~skimo/isl/), a library for manipulating\n    sets and relations of integer points bounded by linear constraints.\n\n    Supported operations on sets include\n\n    -   intersection, union, set difference,\n    -   emptiness check,\n    -   convex hull,\n    -   (integer) affine hull,\n    -   integer projection,\n    -   computing the lexicographic minimum using parametric integer\n        programming,\n    -   coalescing, and\n    -   parametric vertex enumeration.\n\n    It also includes an ILP solver based on generalized basis reduction,\n    transitive closures on maps (which may encode infinite graphs),\n    dependence analysis and bounds on piecewise step-polynomials.\n\n  doc_url: https://documen.tician.de/islpy\n  dev_url: https://github.com/inducer/islpy\n\nextra:\n  recipe-maintainers:\n  - inducer\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "\nislpy is a Python wrapper around Sven Verdoolaege's\n[isl](http://www.kotnet.org/~skimo/isl/), a library for manipulating\nsets and relations of integer points bounded by linear constraints.\n\nSupported operations on sets include\n\n-   intersection, union, set difference,\n-   emptiness check,\n-   convex hull,\n-   (integer) affine hull,\n-   integer projection,\n-   computing the lexicographic minimum using parametric integer\n    programming,\n-   coalescing, and\n-   parametric vertex enumeration.\n\nIt also includes an ILP solver based on generalized basis reduction,\ntransitive closures on maps (which may encode infinite graphs),\ndependence analysis and bounds on piecewise step-polynomials.\n",
+   "dev_url": "https://github.com/inducer/islpy",
+   "doc_url": "https://documen.tician.de/islpy",
+   "home": "http://github.com/inducer/islpy",
+   "license": "MIT",
+   "summary": "Wrapper around isl, an integer set library"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py35_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "inducer"
+   ]
+  },
+  "package": {
+   "name": "islpy",
+   "version": "2016.2.2"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "cffi",
+    "six"
+   ]
+  },
+  "source": {
+   "fn": "islpy-2016.2.2.tar.gz",
+   "sha256": "d25f40d3a248f30ac737c8a48d222284f60c298045142c6430d29e92c088c799",
+   "url": "https://pypi.io/packages/source/i/islpy/islpy-2016.2.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "cd test && python -m pytest"
+   ],
+   "imports": [
+    "islpy"
+   ],
+   "requires": [
+    "pytest"
+   ],
+   "source_files": [
+    "test"
+   ]
+  }
+ },
+ "version": "2016.2.2"
+}

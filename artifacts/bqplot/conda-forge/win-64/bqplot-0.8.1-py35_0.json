@@ -1,0 +1,58 @@
+{
+ "about": {
+  "home": "https://github.com/bloomberg/bqplot",
+  "license": "Apache License 2.0",
+  "summary": "Plotting library for Jupyter"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/bqplot-0.8.1-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/bqplot-0.8.1-py3.5.egg-info/not-zip-safe",
+  "Lib/site-packages/bqplot/__init__.py",
+  "Lib/site-packages/bqplot/_version.py",
+  "Lib/site-packages/bqplot/axes.py",
+  "Lib/site-packages/bqplot/colorschemes.py",
+  "Lib/site-packages/bqplot/default_tooltip.py",
+  "Lib/site-packages/bqplot/figure.py",
+  "Lib/site-packages/bqplot/install.py",
+  "Lib/site-packages/bqplot/interacts.py",
+  "Lib/site-packages/bqplot/map_data/EuropeMapData.json",
+  "Lib/site-packages/bqplot/map_data/USMapData.json",
+  "Lib/site-packages/bqplot/map_data/WorldMapData.json",
+  "Lib/site-packages/bqplot/market_map.py",
+  "Lib/site-packages/bqplot/marks.py",
+  "Lib/site-packages/bqplot/pyplot.py",
+  "Lib/site-packages/bqplot/scales.py",
+  "Lib/site-packages/bqplot/static/extension.js",
+  "Lib/site-packages/bqplot/static/index.js",
+  "Lib/site-packages/bqplot/static/index.js.map",
+  "Lib/site-packages/bqplot/toolbar.py",
+  "Lib/site-packages/bqplot/traits.py",
+  "Scripts/.bqplot-post-link.bat",
+  "Scripts/.bqplot-pre-unlink.bat",
+  "share/jupyter/nbextensions/bqplot/extension.js",
+  "share/jupyter/nbextensions/bqplot/index.js",
+  "share/jupyter/nbextensions/bqplot/index.js.map"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "ipywidgets >=5.2.2",
+   "numpy >=1.10.4",
+   "pandas",
+   "python 3.5*",
+   "pyzmq >=15.2.0"
+  ],
+  "license": "Apache License 2.0",
+  "name": "bqplot",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.8.1"
+ },
+ "name": "bqplot",
+ "raw_recipe": "{% set version = \"0.8.1\" %}\n\npackage:\n    name: bqplot\n    version: {{ version }}\n\nsource:\n    fn: bqplot-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/b/bqplot/bqplot-{{ version }}.tar.gz\n    md5: 31db0775a8b85add04262632c30ddb4d\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - jupyter\n    run:\n        - python\n        - ipywidgets >=5.2.2\n        - numpy >=1.10.4\n        - pandas\n        # Pinning pyzmq because the current conda-forge pyzmq package does\n        # not work with win+py35\n        - pyzmq >=15.2.0\n\ntest:\n    imports:\n        - bqplot\n\nabout:\n    home: https://github.com/bloomberg/bqplot\n    license: Apache License 2.0\n    summary: Plotting library for Jupyter\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - jasongrout\n",
+ "rendered_recipe": {},
+ "version": "0.8.1"
+}

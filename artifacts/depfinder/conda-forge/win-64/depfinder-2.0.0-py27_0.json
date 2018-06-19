@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "http://github.com/ericdill/depfinder",
+  "license": "BSD 3-Clause",
+  "summary": "Find all the unique imports in your library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/depfinder-2.0.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/depfinder/__init__.py",
+  "Lib/site-packages/depfinder/_version.py",
+  "Lib/site-packages/depfinder/cli.py",
+  "Lib/site-packages/depfinder/main.py",
+  "Scripts/depfinder-script.py",
+  "Scripts/depfinder.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "pyyaml",
+   "stdlib-list"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "depfinder",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.0.0"
+ },
+ "name": "depfinder",
+ "raw_recipe": "{% set version = \"2.0.0\" %}\n{% set sha256 = \"e2c5c40431fa2f70020c4dc963be37784aa9c78ef0579ee39deb6c0789972f37\" %}\n{% set name = \"depfinder\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - stdlib-list\n    - pyyaml\n\ntest:\n  commands:\n    - depfinder -h\n  imports:\n    - depfinder\n\nabout:\n  home: http://github.com/ericdill/depfinder\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: Find all the unique imports in your library \n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - mariusvniekerk\n",
+ "rendered_recipe": {},
+ "version": "2.0.0"
+}

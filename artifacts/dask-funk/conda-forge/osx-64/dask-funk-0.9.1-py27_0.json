@@ -1,0 +1,40 @@
+{
+ "about": {
+  "description": "dask-funk provides an extension to dask that creates keyword named\nfunctions (hence the funk!) from dasks or function graphs represented\nas dictionaries. It is inspired by Plumatic's wonderful Graph library\nfor clojure.\n",
+  "dev_url": "https://github.com/Savvysherpa/dask-funk",
+  "doc_url": "https://github.com/Savvysherpa/dask-funk",
+  "home": "https://github.com/Savvysherpa/dask-funk",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Composable keyword function graphs"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/dask_funk-0.9.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/daskfunk/__init__.py",
+  "lib/python2.7/site-packages/daskfunk/_version.py",
+  "lib/python2.7/site-packages/daskfunk/compatibility.py",
+  "lib/python2.7/site-packages/daskfunk/core.py",
+  "lib/python2.7/site-packages/daskfunk/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "dask >=0.8.0",
+   "python 2.7*",
+   "toolz >=0.7.4"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "dask-funk",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.9.1"
+ },
+ "name": "dask-funk",
+ "raw_recipe": "{% set name = \"dask-funk\" %}\n{% set version = \"0.9.1\" %}\n{% set sha256 = \"6e06e25e4aab1ace603d59b047ae1ac9b49205d07ecf7eddbd09bf8253935979\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n  run:\n    - python\n    - dask >=0.8.0\n    - toolz >=0.7.4\n\ntest:\n  imports:\n    - daskfunk\n\nabout:\n  home: https://github.com/Savvysherpa/dask-funk\n  license_family: MIT\n  license: MIT\n  license_file: LICENSE.txt\n  summary: \"Composable keyword function graphs\"\n  description: |\n    dask-funk provides an extension to dask that creates keyword named\n    functions (hence the funk!) from dasks or function graphs represented\n    as dictionaries. It is inspired by Plumatic's wonderful Graph library\n    for clojure.\n  doc_url: https://github.com/Savvysherpa/dask-funk\n  dev_url: https://github.com/Savvysherpa/dask-funk\n\nextra:\n  recipe-maintainers:\n    - bmabey\n",
+ "rendered_recipe": {},
+ "version": "0.9.1"
+}

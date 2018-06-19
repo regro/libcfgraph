@@ -1,0 +1,38 @@
+{
+ "about": {
+  "home": "http://www.lua.org/",
+  "license": "MIT",
+  "summary": "Lua is a powerful, fast, lightweight, embeddable scripting language"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/lua",
+  "bin/luac",
+  "include/lauxlib.h",
+  "include/lua.h",
+  "include/lua.hpp",
+  "include/luaconf.h",
+  "include/lualib.h",
+  "lib/liblua.a",
+  "man/man1/lua.1",
+  "man/man1/luac.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "ncurses 5.9*",
+   "readline 6.2*"
+  ],
+  "license": "MIT",
+  "name": "lua",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "5.3.3"
+ },
+ "name": "lua",
+ "raw_recipe": "{% set version = \"5.3.3\" %}\n\npackage:\n  name: lua\n  version: {{ version }}\n\nsource:\n  fn: lua-{{ version }}.tar.gz\n  url: http://www.lua.org/ftp/lua-{{ version }}.tar.gz\n  md5: 703f75caa4fdf4a911c1a72e67a27498\n  patches:\n    # Enables Lua to look for packages on a relative path\n    - luaconf.patch\n    # Enables readline on linux\n    - Makefile.patch\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - readline 6.2*\n    - ncurses 5.9*\n  run:\n    - readline 6.2*\n    - ncurses 5.9*\n\ntest:\n  commands:\n    - lua -v\n    - lua -e \"print(package.path)\"\n\nabout:\n  home: http://www.lua.org/\n  summary: Lua is a powerful, fast, lightweight, embeddable scripting language\n  license: MIT\n\nextra:\n  recipe-maintainers:\n    - alexbw\n",
+ "rendered_recipe": {},
+ "version": "5.3.3"
+}

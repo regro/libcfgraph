@@ -1,0 +1,155 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.16",
+  "conda_private": false,
+  "conda_version": "4.2.16",
+  "description": "The Climate Data Management System is an object-oriented data\nmanagement system, specialized for organizing multidimensional,\ngridded data used in climate analysis and simulation.\n",
+  "dev_url": "https://github.com/UV-CDAT/libcdms",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/UV-CDAT/libcdms",
+  "license": "2-Clause BSD",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "clyent-1.2.2-py36_0",
+   "conda-forge::conda-4.2.16-py36_0",
+   "conda-build-2.1.4-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.0-0",
+   "conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.8-py36_1",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_0",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Climate Data Management System library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/cdimport",
+  "include/cdms.inc",
+  "include/cdms.h",
+  "bin/cuget",
+  "bin/cudump",
+  "bin/cddump",
+  "include/cddrs.h",
+  "include/fcddrs.h",
+  "lib/libcdms.a",
+  "include/cdunif.h",
+  "bin/cdfile"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "g2clib",
+   "hdf5 1.8.17|1.8.17.*",
+   "jasper",
+   "jpeg 9*",
+   "libdrs",
+   "libnetcdf 4.4.*",
+   "libpng >=1.6.28,<1.7",
+   "libtiff 4.0.*"
+  ],
+  "license": "2-Clause BSD",
+  "name": "libcdms",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.8"
+ },
+ "name": "libcdms",
+ "raw_recipe": "{% set name = \"libcdms\" %}\n{% set version = \"2.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/UV-CDAT/libcdms/archive/master.tar.gz\n  sha256: 5456bfa2ac3b5ff7d0d05fce7ac2da3d2cdf08017a4f4019c99ada91f7e48649\n\nbuild:\n  number: 0\n  skip: True  # [win] \n\nrequirements:\n  build:\n    - hdf5 1.8.17|1.8.17.*\n    - libnetcdf 4.4.*\n    - jasper\n    - g2clib\n    - libpng >=1.6.28,<1.7\n    - libtiff 4.0.*\n    - jpeg 9*\n    - libdrs\n  run:\n    - hdf5 1.8.17|1.8.17.*\n    - libnetcdf 4.4.*\n    - jasper\n    - g2clib\n    - libpng >=1.6.28,<1.7\n    - libtiff 4.0.*\n    - jpeg 9*\n    - libdrs\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libcdms.a\n\nabout:\n  home: https://github.com/UV-CDAT/libcdms\n  license: '2-Clause BSD'\n  license_file: 'LICENSE'\n  summary: 'Climate Data Management System library'\n  description: |\n      The Climate Data Management System is an object-oriented data \n      management system, specialized for organizing multidimensional, \n      gridded data used in climate analysis and simulation.\n  dev_url: https://github.com/UV-CDAT/libcdms\n\nextra:\n  recipe-maintainers:\n    - dnadeau4\n    - doutriaux1\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "The Climate Data Management System is an object-oriented data\nmanagement system, specialized for organizing multidimensional,\ngridded data used in climate analysis and simulation.\n",
+   "dev_url": "https://github.com/UV-CDAT/libcdms",
+   "home": "https://github.com/UV-CDAT/libcdms",
+   "license": "2-Clause BSD",
+   "license_file": "LICENSE",
+   "summary": "Climate Data Management System library"
+  },
+  "build": {
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "dnadeau4",
+    "doutriaux1"
+   ]
+  },
+  "package": {
+   "name": "libcdms",
+   "version": "2.8"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "hdf5 1.8.17|1.8.17.*",
+    "libnetcdf 4.4.*",
+    "jasper",
+    "g2clib",
+    "libpng >=1.6.28,<1.7",
+    "libtiff 4.0.*",
+    "jpeg 9*",
+    "libdrs"
+   ]
+  },
+  "source": {
+   "fn": "libcdms-2.8.tar.gz",
+   "sha256": "5456bfa2ac3b5ff7d0d05fce7ac2da3d2cdf08017a4f4019c99ada91f7e48649",
+   "url": "https://github.com/UV-CDAT/libcdms/archive/master.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/lib/libcdms.a"
+   ]
+  }
+ },
+ "version": "2.8"
+}

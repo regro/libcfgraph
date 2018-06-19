@@ -1,0 +1,39 @@
+{
+ "about": {
+  "home": "https://github.com/jcrist/crick",
+  "license": "BSD 3-Clause",
+  "summary": "High performance approximate and streaming algorithms."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/crick-0.0.3-py3.6.egg-info/PKG-INFO",
+  "Lib/site-packages/crick-0.0.3-py3.6.egg-info/not-zip-safe",
+  "Lib/site-packages/crick/__init__.py",
+  "Lib/site-packages/crick/_version.py",
+  "Lib/site-packages/crick/space_saving.cp36-win_amd64.pyd",
+  "Lib/site-packages/crick/stats.cp36-win_amd64.pyd",
+  "Lib/site-packages/crick/tdigest.cp36-win_amd64.pyd",
+  "Lib/site-packages/crick/tests/__init__.py",
+  "Lib/site-packages/crick/tests/test_space_saving.py",
+  "Lib/site-packages/crick/tests/test_stats.py",
+  "Lib/site-packages/crick/tests/test_tdigest.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py36_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.11*",
+   "python 3.6*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "crick",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.0.3"
+ },
+ "name": "crick",
+ "raw_recipe": "{% set name = \"crick\" %}\n{% set version = \"0.0.3\" %}\n{% set md5 = \"5e33357a3fd2c02ddbafac77e2b25d35\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - cython\n    - setuptools\n    - python\n    - numpy x.x\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - crick\n  commands:\n    - py.test -v --pyargs crick\n\nabout:\n  home: https://github.com/jcrist/crick\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'High performance approximate and streaming algorithms.'\n\nextra:\n  recipe-maintainers:\n    - jcrist\n",
+ "rendered_recipe": {},
+ "version": "0.0.3"
+}

@@ -1,0 +1,32 @@
+{
+ "about": {
+  "description": "ccache is a compiler cache. It speeds up recompilation by caching\nprevious compilations and detecting when the same compilation is\nbeing done again. Supported languages are C, C++, Objective-C and Objective-C++.\n",
+  "dev_url": "https://github.com/ccache/ccache",
+  "doc_url": "https://ccache.samba.org/manual.html",
+  "home": "https://ccache.samba.org/",
+  "license": "GPL-3.0",
+  "summary": "a compiler cache"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/ccache",
+  "share/man/man1/ccache.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "zlib 1.2.*"
+  ],
+  "license": "GPL-3.0",
+  "name": "ccache",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "3.3.2"
+ },
+ "name": "ccache",
+ "raw_recipe": "{% set name = \"ccache\" %}\n{% set version = \"3.3.2\" %}\n{% set sha256 = \"d2b2033ac351f24e754b27984fd7250074b9eb776d2f9ef96913f20bd5475877\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: https://www.samba.org/ftp/ccache/{{ name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - zlib 1.2.*\n    - xz 5.2.*\n  run:\n    - zlib 1.2.*\n\ntest:\n  commands:\n    - ccache --help\n    - ccache --version\n\nabout:\n  home: https://ccache.samba.org/\n  license: GPL-3.0\n  summary: 'a compiler cache'\n\n  description: |\n    ccache is a compiler cache. It speeds up recompilation by caching\n    previous compilations and detecting when the same compilation is\n    being done again. Supported languages are C, C++, Objective-C and Objective-C++.\n  doc_url: https://ccache.samba.org/manual.html\n  dev_url: https://github.com/ccache/ccache\n\nextra:\n  recipe-maintainers:\n    - edisongustavo\n",
+ "rendered_recipe": {},
+ "version": "3.3.2"
+}

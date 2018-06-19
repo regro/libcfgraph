@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "https://github.com/maxcountryman/flask-bcrypt",
+  "license": "BSD 3-Clause",
+  "summary": "Bcrypt hashing for Flask."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/Flask_Bcrypt-0.7.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/Flask_Bcrypt-0.7.1-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/Flask_Bcrypt-0.7.1-py3.5.egg-info/version_info.json",
+  "lib/python3.5/site-packages/flask_bcrypt.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "bcrypt",
+   "flask",
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "flask-bcrypt",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.7.1"
+ },
+ "name": "flask-bcrypt",
+ "raw_recipe": "{% set name = \"flask-bcrypt\" %}\n{% set camelName = \"Flask-Bcrypt\" %}\n{% set version = \"0.7.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"d71c8585b2ee1c62024392ebdbc447438564e2c8c02b4e57b56a4cafd8d13c5f\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - flask\n    - bcrypt\n\ntest:\n  imports:\n    - flask_bcrypt\n\nabout:\n  home: https://github.com/maxcountryman/flask-bcrypt\n  license: BSD 3-Clause\n  summary: 'Bcrypt hashing for Flask.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.7.1"
+}

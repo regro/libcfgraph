@@ -1,0 +1,60 @@
+{
+ "about": {
+  "dev_url": "https://github.com/martindurant/fastparquet",
+  "home": "http://github.com/martindurant/fastparquet",
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "summary": "Python interface to the parquet format"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/fastparquet-0.0.4.post1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/fastparquet/__init__.py",
+  "lib/python3.5/site-packages/fastparquet/api.py",
+  "lib/python3.5/site-packages/fastparquet/benchmarks/columns.py",
+  "lib/python3.5/site-packages/fastparquet/compression.py",
+  "lib/python3.5/site-packages/fastparquet/converted_types.py",
+  "lib/python3.5/site-packages/fastparquet/core.py",
+  "lib/python3.5/site-packages/fastparquet/dataframe.py",
+  "lib/python3.5/site-packages/fastparquet/encoding.py",
+  "lib/python3.5/site-packages/fastparquet/parquet.thrift",
+  "lib/python3.5/site-packages/fastparquet/schema.py",
+  "lib/python3.5/site-packages/fastparquet/test/__init__.py",
+  "lib/python3.5/site-packages/fastparquet/test/test_api.py",
+  "lib/python3.5/site-packages/fastparquet/test/test_compression.py",
+  "lib/python3.5/site-packages/fastparquet/test/test_converted_types.py",
+  "lib/python3.5/site-packages/fastparquet/test/test_dataframe.py",
+  "lib/python3.5/site-packages/fastparquet/test/test_encoding.py",
+  "lib/python3.5/site-packages/fastparquet/test/test_output.py",
+  "lib/python3.5/site-packages/fastparquet/test/test_read.py",
+  "lib/python3.5/site-packages/fastparquet/test/test_util.py",
+  "lib/python3.5/site-packages/fastparquet/test/test_with_n.py",
+  "lib/python3.5/site-packages/fastparquet/thrift_filetransport.py",
+  "lib/python3.5/site-packages/fastparquet/thrift_structures.py",
+  "lib/python3.5/site-packages/fastparquet/util.py",
+  "lib/python3.5/site-packages/fastparquet/writer.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "numba",
+   "numpy",
+   "pandas",
+   "pytest",
+   "python 3.5*",
+   "thriftpy"
+  ],
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "name": "fastparquet",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.0.4post1"
+ },
+ "name": "fastparquet",
+ "raw_recipe": "{% set name = \"fastparquet\" %}\n{% set version = \"0.0.4post1\" %}\n{% set fn_suffix = \"0.0.4.post1.tar.gz\" %}\n{% set sha256 = \"3f8e6c21bd26bdb41800e9408fe7560e040d4416e16a1b45b46f61a41d0c2665\" %}\n\npackage:\n  name: {{ name }}\n  version: \"{{ version }}\"\n\nsource:\n  fn: {{ name }}-{{ fn_suffix }}\n  url: https://pypi.io/packages/source/f/{{ name }}/{{ name }}-{{ fn_suffix }}\n  sha256: \"{{ sha256 }}\"\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - pandas\n    - numpy\n    - numba\n    - thriftpy\n    - pytest\n\ntest:\n  imports:\n    - fastparquet\n\nabout:\n  home: http://github.com/martindurant/fastparquet\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Python interface to the parquet format'\n  dev_url: https://github.com/martindurant/fastparquet\n\nextra:\n  recipe-maintainers:\n    - martindurant\n",
+ "rendered_recipe": {},
+ "version": "0.0.4post1"
+}

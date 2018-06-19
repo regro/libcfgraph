@@ -1,0 +1,60 @@
+{
+ "about": {
+  "description": "Stateful programmatic web browsing in Python, after Andy Lester's Perl module WWW::Mechanize.\n",
+  "dev_url": "https://github.com/jjlee/mechanize",
+  "home": "http://wwwsearch.sourceforge.net/mechanize/",
+  "license": "BSD 3-Clause or ZPL 2.1",
+  "summary": "Stateful programmatic web browsing."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/mechanize-0.2.5-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/mechanize-0.2.5-py2.7.egg-info/zip-safe",
+  "Lib/site-packages/mechanize/__init__.py",
+  "Lib/site-packages/mechanize/_auth.py",
+  "Lib/site-packages/mechanize/_beautifulsoup.py",
+  "Lib/site-packages/mechanize/_clientcookie.py",
+  "Lib/site-packages/mechanize/_debug.py",
+  "Lib/site-packages/mechanize/_firefox3cookiejar.py",
+  "Lib/site-packages/mechanize/_form.py",
+  "Lib/site-packages/mechanize/_gzip.py",
+  "Lib/site-packages/mechanize/_headersutil.py",
+  "Lib/site-packages/mechanize/_html.py",
+  "Lib/site-packages/mechanize/_http.py",
+  "Lib/site-packages/mechanize/_lwpcookiejar.py",
+  "Lib/site-packages/mechanize/_markupbase.py",
+  "Lib/site-packages/mechanize/_mechanize.py",
+  "Lib/site-packages/mechanize/_mozillacookiejar.py",
+  "Lib/site-packages/mechanize/_msiecookiejar.py",
+  "Lib/site-packages/mechanize/_opener.py",
+  "Lib/site-packages/mechanize/_pullparser.py",
+  "Lib/site-packages/mechanize/_request.py",
+  "Lib/site-packages/mechanize/_response.py",
+  "Lib/site-packages/mechanize/_rfc3986.py",
+  "Lib/site-packages/mechanize/_sgmllib_copy.py",
+  "Lib/site-packages/mechanize/_sockettimeout.py",
+  "Lib/site-packages/mechanize/_testcase.py",
+  "Lib/site-packages/mechanize/_urllib2.py",
+  "Lib/site-packages/mechanize/_urllib2_fork.py",
+  "Lib/site-packages/mechanize/_useragent.py",
+  "Lib/site-packages/mechanize/_util.py",
+  "Lib/site-packages/mechanize/_version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause or ZPL 2.1",
+  "name": "mechanize",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2.5"
+ },
+ "name": "mechanize",
+ "raw_recipe": "{% set name = \"mechanize\" %}\n{% set version = \"0.2.5\" %}\n{% set sha256 = \"2e67b20d107b30c00ad814891a095048c35d9d8cb9541801cebe85684cc84766\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [py3k]\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - mechanize\n\nabout:\n  home: http://wwwsearch.sourceforge.net/mechanize/\n  license: BSD 3-Clause or ZPL 2.1\n  license_file: COPYING.txt\n  summary: 'Stateful programmatic web browsing.'\n  description: |\n    Stateful programmatic web browsing in Python, after Andy Lester's Perl module WWW::Mechanize.\n  dev_url: https://github.com/jjlee/mechanize\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
+ "rendered_recipe": {},
+ "version": "0.2.5"
+}

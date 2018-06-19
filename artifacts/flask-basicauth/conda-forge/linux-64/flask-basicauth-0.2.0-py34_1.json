@@ -1,0 +1,35 @@
+{
+ "about": {
+  "dev_url": "https://github.com/jpvanhal/flask-basicauth",
+  "doc_url": "https://flask-basicauth.readthedocs.io/en/latest/",
+  "home": "https://github.com/jpvanhal/flask-basicauth",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "HTTP basic access authentication for Flask."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/Flask_BasicAuth-0.2.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/Flask_BasicAuth-0.2.0-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/flask_basicauth.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_1",
+  "build_number": 1,
+  "depends": [
+   "flask",
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "flask-basicauth",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2.0"
+ },
+ "name": "flask-basicauth",
+ "raw_recipe": "{%set name = \"Flask-BasicAuth\" %}\n{%set version = \"0.2.0\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"df5ebd489dc0914c224419da059d991eb72988a01cdd4b956d52932ce7d501ff\" %}\n{%set build_num = \"1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  \n  run:\n    - python\n    - flask\n\ntest:\n  imports:\n    - flask_basicauth\n\nabout:\n  home: https://github.com/jpvanhal/flask-basicauth\n  license: BSD 3-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: 'HTTP basic access authentication for Flask.'\n  doc_url: https://flask-basicauth.readthedocs.io/en/latest/\n  dev_url: https://github.com/jpvanhal/flask-basicauth\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.2.0"
+}

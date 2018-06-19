@@ -1,0 +1,43 @@
+{
+ "about": {
+  "description": "Free Lossless Audio Codec.",
+  "doc_url": "https://wiki.xiph.org/",
+  "home": "https://www.xiph.org/",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "summary": "Flac audio format"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/libFLAC.dll",
+  "Library/include/FLAC/all.h",
+  "Library/include/FLAC/assert.h",
+  "Library/include/FLAC/callback.h",
+  "Library/include/FLAC/export.h",
+  "Library/include/FLAC/format.h",
+  "Library/include/FLAC/metadata.h",
+  "Library/include/FLAC/ordinals.h",
+  "Library/include/FLAC/stream_decoder.h",
+  "Library/include/FLAC/stream_encoder.h",
+  "Library/lib/libFLAC.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc9_0",
+  "build_number": 0,
+  "depends": [
+   "libogg 1.3.*"
+  ],
+  "features": "vc9",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "name": "libflac",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.3.1"
+ },
+ "name": "libflac",
+ "raw_recipe": "{% set name = \"flac\" %}\n{% set version = \"1.3.1\" %}\n{% set sha256 = \"e0c23c92af0aac830683a6ab6784dd0c11aaf04249709b9d600675b3b2441c3e\" %}\n\npackage:\n  name: lib{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/xiph/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - cmake  # [win]\n    - pkgconfig  # [unix]\n    - autoconf  # [unix]\n    - automake  # [unix]\n    - libtool  # [unix]\n    - gettext  # [unix]\n    - toolchain\n    - libogg 1.3.*\n  run:\n    - libogg 1.3.*\n\ntest:\n  requires:\n    - python {{ environ['PY_VER'] + '*' }}  # [win]\n  commands:\n    - test -f $PREFIX/lib/libFLAC.la  # [unix]\n    - test -f $PREFIX/lib/libFLAC++.la  # [unix]\n    - test -f $PREFIX/bin/flac  # [unix]\n    - test -f $PREFIX/bin/metaflac  # [unix]\n    - test -f $PREFIX/lib/libFLAC.dylib  # [osx]\n    - test -f $PREFIX/lib/libFLAC++.dylib  # [osx]\n    - test -f $PREFIX/lib/libFLAC.so  # [linux]\n    - test -f $PREFIX/lib/libFLAC++.so  # [linux]\n    - if not exist %LIBRARY_LIB%\\\\libflac.lib exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\libflac.dll exit 1  # [win]\n\nabout:\n  home: https://www.xiph.org/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: COPYING.Xiph\n  summary: \"Flac audio format\"\n  description: Free Lossless Audio Codec.\n  doc_url: https://wiki.xiph.org/\n\nextra:\n  recipe-maintainers:\n    - dschreij\n",
+ "rendered_recipe": {},
+ "version": "1.3.1"
+}

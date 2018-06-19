@@ -1,0 +1,48 @@
+{
+ "about": {
+  "home": "http://www.libjpeg-turbo.org/",
+  "license": "IJG, modified 3-clause BSD and zlib",
+  "summary": "IJG JPEG compliant runtime library with SIMD and other optimizations"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/cjpeg.exe",
+  "Library/bin/djpeg.exe",
+  "Library/bin/jpeg8.dll",
+  "Library/bin/jpegtran.exe",
+  "Library/bin/rdjpgcom.exe",
+  "Library/bin/tjbench.exe",
+  "Library/bin/turbojpeg.dll",
+  "Library/bin/wrjpgcom.exe",
+  "Library/doc/README.ijg",
+  "Library/doc/README.md",
+  "Library/doc/example.c",
+  "Library/include/jconfig.h",
+  "Library/include/jerror.h",
+  "Library/include/jmorecfg.h",
+  "Library/include/jpeglib.h",
+  "Library/include/turbojpeg.h",
+  "Library/lib/jpeg-static.lib",
+  "Library/lib/jpeg.lib",
+  "Library/lib/turbojpeg-static.lib",
+  "Library/lib/turbojpeg.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc10_0",
+  "build_number": 0,
+  "depends": [
+   "vc 10"
+  ],
+  "features": "vc10",
+  "license": "IJG, modified 3-clause BSD and zlib",
+  "name": "libjpeg-turbo",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.5.1"
+ },
+ "name": "libjpeg-turbo",
+ "raw_recipe": "{% set version = \"1.5.1\" %}\n\npackage:\n    name: libjpeg-turbo\n    version: {{ version }}\n\nsource:\n    fn: libjpeg-turbo-{{ version }}.tar.gz\n    url: http://downloads.sourceforge.net/project/libjpeg-turbo/{{ version }}/libjpeg-turbo-{{ version }}.tar.gz\n    md5: 55deb139b0cac3c8200b75d485fc13f3\n\nbuild:\n    number: 0\n    features:\n        - vc9  # [win and py27]\n        - vc10  # [win and py34]\n        - vc14  # [win and py35]\n        \nrequirements:\n    build:\n        - python  # [win]\n        - cmake  # [win]\n        - msinttypes  # [win]\n        - autoconf  # [unix]\n        - automake  # [unix]\n        - libtool  # [unix]\n        - yasm\n        - vc   9  # [win and py27]\n        - vc  10  # [win and py34]\n        - vc  14  # [win and py35]\n\n    run:\n        - vc   9  # [win and py27]\n        - vc  10  # [win and py34]\n        - vc  14  # [win and py35]\n\ntest:\n    files:\n        - testorig.jpg\n    commands:\n        - djpeg -dct int -ppm -outfile testout.ppm testorig.jpg\n\nabout:\n    home: http://www.libjpeg-turbo.org/\n    license: IJG, modified 3-clause BSD and zlib\n    summary: IJG JPEG compliant runtime library with SIMD and other optimizations\n    \nextra:    \n    recipe-maintainers:\n        - valgur\n",
+ "rendered_recipe": {},
+ "version": "1.5.1"
+}

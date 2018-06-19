@@ -1,0 +1,40 @@
+{
+ "about": {
+  "home": "https://pypi.python.org/pypi/ipython-sql",
+  "license": "MIT",
+  "summary": "RDBMS access via IPython"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/ipython_sql-0.3.6-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/ipython_sql-0.3.6-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/sql/__init__.py",
+  "lib/python2.7/site-packages/sql/column_guesser.py",
+  "lib/python2.7/site-packages/sql/connection.py",
+  "lib/python2.7/site-packages/sql/magic.py",
+  "lib/python2.7/site-packages/sql/parse.py",
+  "lib/python2.7/site-packages/sql/run.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "ipython >=1.0",
+   "prettytable",
+   "python 2.7*",
+   "six",
+   "sqlalchemy >=0.6.7",
+   "sqlparse"
+  ],
+  "license": "MIT",
+  "name": "ipython-sql",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3.6"
+ },
+ "name": "ipython-sql",
+ "raw_recipe": "{% set version = \"0.3.6\" %}\n{% set md5 = \"d4feb00ac5806d7640b2545a43974766\" %}\n\npackage:\n  name: ipython-sql\n  version: {{ version }}\n\nsource:\n  fn: ipython-sql-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/i/ipython-sql/ipython-sql-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - prettytable\n    - ipython >=1.0  # [not win]\n    - ipython >=1.0  # [win and not py35]\n    - ipython >=1.0,<5  # [win and py35]\n    - sqlparse\n    - six\n\n  run:\n    - python\n    - prettytable\n    - ipython >=1.0  # [not win]\n    - ipython >=1.0  # [win and not py35]\n    - ipython >=1.0,<5  # [win and py35]\n    - sqlalchemy >=0.6.7\n    - sqlparse\n    - six\n\ntest:\n  imports:\n    - sql\n\nabout:\n  home: https://pypi.python.org/pypi/ipython-sql\n  license: MIT\n  #TODO catherinedevlin/ipython-sql#58 \n  #license_file: <LICENSE>\n  summary: 'RDBMS access via IPython'\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
+ "rendered_recipe": {},
+ "version": "0.3.6"
+}

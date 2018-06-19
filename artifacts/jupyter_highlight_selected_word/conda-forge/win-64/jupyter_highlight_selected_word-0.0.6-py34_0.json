@@ -1,0 +1,38 @@
+{
+ "about": {
+  "home": "https://github.com/jcb91/jupyter_highlight_selected_word",
+  "license": "BSD 3-clause",
+  "summary": "Jupyter nbextension which enables the CodeMirror addon \"Match Highlighter\",\nwhich highlights all instances of the selected word in the current editor.\n"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/jupyter_highlight_selected_word-0.0.6-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/jupyter_highlight_selected_word/__init__.py",
+  "Lib/site-packages/jupyter_highlight_selected_word/static/highlight_selected_word/README.md",
+  "Lib/site-packages/jupyter_highlight_selected_word/static/highlight_selected_word/configurator.yaml",
+  "Lib/site-packages/jupyter_highlight_selected_word/static/highlight_selected_word/main.css",
+  "Lib/site-packages/jupyter_highlight_selected_word/static/highlight_selected_word/main.js",
+  "Scripts/.jupyter_highlight_selected_word-post-link.bat",
+  "Scripts/.jupyter_highlight_selected_word-pre-unlink.bat"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "jupyter_contrib_core >=0.3",
+   "notebook >=4.0",
+   "python 3.4*",
+   "setuptools"
+  ],
+  "license": "BSD 3-clause",
+  "name": "jupyter_highlight_selected_word",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.0.6"
+ },
+ "name": "jupyter_highlight_selected_word",
+ "raw_recipe": "{% set name = 'jupyter_highlight_selected_word' %}\n{% set version = '0.0.6' %}\n{% set sha256 = '7d4be1208f7b5b0c0b42b832716759afa46c80b4597739c76e4ea607474acf56' %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - jupyter_contrib_core >=0.3\n    - notebook >=4.0\n\ntest:\n  imports:\n    - jupyter_highlight_selected_word\n\nabout:\n  summary: |\n      Jupyter nbextension which enables the CodeMirror addon \"Match Highlighter\",\n      which highlights all instances of the selected word in the current editor.\n  home: https://github.com/jcb91/jupyter_highlight_selected_word\n  license_file: LICENSE.txt\n  license: BSD 3-clause\n\nextra:\n  recipe-maintainers:\n    - jcb91\n",
+ "rendered_recipe": {},
+ "version": "0.0.6"
+}

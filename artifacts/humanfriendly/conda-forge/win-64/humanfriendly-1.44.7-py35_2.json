@@ -1,0 +1,40 @@
+{
+ "about": {
+  "home": "https://humanfriendly.readthedocs.org",
+  "license": "MIT",
+  "summary": "Human friendly output for text interfaces using Python."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/humanfriendly-1.44.7-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/humanfriendly/__init__.py",
+  "Lib/site-packages/humanfriendly/cli.py",
+  "Lib/site-packages/humanfriendly/compat.py",
+  "Lib/site-packages/humanfriendly/prompts.py",
+  "Lib/site-packages/humanfriendly/sphinx.py",
+  "Lib/site-packages/humanfriendly/tables.py",
+  "Lib/site-packages/humanfriendly/terminal.py",
+  "Lib/site-packages/humanfriendly/tests.py",
+  "Lib/site-packages/humanfriendly/text.py",
+  "Lib/site-packages/humanfriendly/usage.py",
+  "Scripts/humanfriendly-script.py",
+  "Scripts/humanfriendly.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_2",
+  "build_number": 2,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "humanfriendly",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.44.7"
+ },
+ "name": "humanfriendly",
+ "raw_recipe": "{% set version = \"1.44.7\" %}\n\npackage:\n    name: humanfriendly\n    version: {{ version }}\n\nsource:\n    fn: humanfriendly-1.44.7.tar.gz\n    url: https://pypi.io/packages/source/h/humanfriendly/humanfriendly-{{ version }}.tar.gz\n    sha256: fcee758612edc6fead9b8fd1d5a473eab2c3a84cf8766f3ce70862ccd35e8a64\n\nbuild:\n    number: 2\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    entry_points:\n        - humanfriendly = humanfriendly.cli:main\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - humanfriendly\n    commands:\n        - humanfriendly --help  # [not osx]\n    requires:\n        - capturer >=2.1  # [not win]\n        - coloredlogs >=2.0\n\nabout:\n    home: https://humanfriendly.readthedocs.org\n    license: MIT\n    summary: 'Human friendly output for text interfaces using Python.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.44.7"
+}

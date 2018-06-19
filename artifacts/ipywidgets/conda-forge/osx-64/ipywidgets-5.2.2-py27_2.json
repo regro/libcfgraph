@@ -1,0 +1,63 @@
+{
+ "about": {
+  "home": "https://github.com/ipython/ipywidgets",
+  "license": "BSD 3-clause",
+  "summary": "Widgets for the Jupyter Notebook"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/ipywidgets-5.2.2.dist-info/DESCRIPTION.rst",
+  "lib/python2.7/site-packages/ipywidgets-5.2.2.dist-info/INSTALLER",
+  "lib/python2.7/site-packages/ipywidgets-5.2.2.dist-info/METADATA",
+  "lib/python2.7/site-packages/ipywidgets-5.2.2.dist-info/RECORD",
+  "lib/python2.7/site-packages/ipywidgets-5.2.2.dist-info/WHEEL",
+  "lib/python2.7/site-packages/ipywidgets-5.2.2.dist-info/metadata.json",
+  "lib/python2.7/site-packages/ipywidgets/__init__.py",
+  "lib/python2.7/site-packages/ipywidgets/_version.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/__init__.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/domwidget.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/eventful.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/interaction.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/tests/__init__.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/tests/test_interaction.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/tests/test_link.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/tests/test_traits.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/trait_types.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/widget.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/widget_bool.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/widget_box.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/widget_button.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/widget_color.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/widget_controller.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/widget_float.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/widget_image.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/widget_int.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/widget_layout.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/widget_link.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/widget_output.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/widget_selection.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/widget_selectioncontainer.py",
+  "lib/python2.7/site-packages/ipywidgets/widgets/widget_string.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_2",
+  "build_number": 2,
+  "depends": [
+   "ipykernel >=4.2.2",
+   "ipython >=4.0.0",
+   "python 2.7*",
+   "traitlets >=4.2.1",
+   "widgetsnbextension >=1.2.6"
+  ],
+  "license": "BSD 3-clause",
+  "name": "ipywidgets",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "5.2.2"
+ },
+ "name": "ipywidgets",
+ "raw_recipe": "{% set version = \"5.2.2\" %}\n\npackage:\n  name: ipywidgets\n  version: {{ version }}\n\nsource:\n  fn: ipywidgets-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/i/ipywidgets/ipywidgets-{{ version }}.tar.gz\n  md5: 317e49cc76353352939c2527920f3ebe\n\nbuild:\n  number: 2\n  script: python -m pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n    - ipython >=4.0.0\n    - ipykernel >=4.2.2\n    - traitlets >=4.2.1\n    - widgetsnbextension >=1.2.6\n\ntest:\n  imports:\n    - ipywidgets\n\nabout:\n  home: https://github.com/ipython/ipywidgets\n  license: BSD 3-clause\n  license_file: COPYING.md\n  summary: Widgets for the Jupyter Notebook\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n    - pelson\n    - SylvainCorlay\n    - willingc\n",
+ "rendered_recipe": {},
+ "version": "5.2.2"
+}

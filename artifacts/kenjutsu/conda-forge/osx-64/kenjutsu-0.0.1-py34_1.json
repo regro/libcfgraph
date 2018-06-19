@@ -1,0 +1,36 @@
+{
+ "about": {
+  "dev_url": "https://github.com/jakirkham/kenjutsu",
+  "doc_url": "https://kenjutsu.readthedocs.io/",
+  "home": "https://github.com/jakirkham/kenjutsu",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Python utility functions for slices."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/kenjutsu-0.0.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/kenjutsu-0.0.1-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/kenjutsu/__init__.py",
+  "lib/python3.4/site-packages/kenjutsu/_version.py",
+  "lib/python3.4/site-packages/kenjutsu/kenjutsu.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_1",
+  "build_number": 1,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "kenjutsu",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.0.1"
+ },
+ "name": "kenjutsu",
+ "raw_recipe": "{% set name = \"kenjutsu\" %}\n{% set version = \"0.0.1\" %}\n{% set sha256 = \"9a0a4a877eedfd0b7a0895503c5ec688ddf35c963d3d7d7898881100e5b51701\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - kenjutsu\n\nabout:\n  home: https://github.com/jakirkham/kenjutsu\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Python utility functions for slices.\n  doc_url: https://kenjutsu.readthedocs.io/\n  dev_url: https://github.com/jakirkham/kenjutsu\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.0.1"
+}

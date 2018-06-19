@@ -1,0 +1,45 @@
+{
+ "about": {
+  "description": "marshmallow is an ORM/ODM/framework-agnostic library for\nconverting complex datatypes, such as objects, to and from\nnative Python datatypes.\n",
+  "dev_url": "https://github.com/marshmallow-code/marshmallow/",
+  "doc_url": "http://marshmallow.readthedocs.io/en/latest/",
+  "home": "http://github.com/marshmallow-code/marshmallow",
+  "license": "MIT",
+  "summary": "A lightweight library for converting complex datatypes to and from native Python datatypes."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/marshmallow-2.10.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/marshmallow-2.10.0-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/marshmallow/__init__.py",
+  "lib/python2.7/site-packages/marshmallow/base.py",
+  "lib/python2.7/site-packages/marshmallow/class_registry.py",
+  "lib/python2.7/site-packages/marshmallow/compat.py",
+  "lib/python2.7/site-packages/marshmallow/decorators.py",
+  "lib/python2.7/site-packages/marshmallow/exceptions.py",
+  "lib/python2.7/site-packages/marshmallow/fields.py",
+  "lib/python2.7/site-packages/marshmallow/marshalling.py",
+  "lib/python2.7/site-packages/marshmallow/ordereddict.py",
+  "lib/python2.7/site-packages/marshmallow/orderedset.py",
+  "lib/python2.7/site-packages/marshmallow/schema.py",
+  "lib/python2.7/site-packages/marshmallow/utils.py",
+  "lib/python2.7/site-packages/marshmallow/validate.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "marshmallow",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.10.0"
+ },
+ "name": "marshmallow",
+ "raw_recipe": "{% set name = \"marshmallow\" %}\n{% set version = \"2.10.0\" %}\n{% set sha256 = \"4f9dc3d7afddf164e4d7ad758f5355fd8283de59b2a216cf2b0b298a27111f7c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - marshmallow\n\nabout:\n  home: http://github.com/marshmallow-code/marshmallow\n  license: MIT\n  license_file: LICENSE\n  summary: 'A lightweight library for converting complex datatypes to and from native Python datatypes.'\n\n  description: |\n    marshmallow is an ORM/ODM/framework-agnostic library for \n    converting complex datatypes, such as objects, to and from \n    native Python datatypes.\n  doc_url: http://marshmallow.readthedocs.io/en/latest/\n  dev_url: https://github.com/marshmallow-code/marshmallow/\n\nextra:\n  recipe-maintainers:\n    - hajapy\n",
+ "rendered_recipe": {},
+ "version": "2.10.0"
+}

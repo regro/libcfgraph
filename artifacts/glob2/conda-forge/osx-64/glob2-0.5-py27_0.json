@@ -1,0 +1,32 @@
+{
+ "about": {
+  "home": "https://github.com/miracle2k/python-glob2",
+  "license": "BSD-2-Clause",
+  "summary": "Version of the glob module that supports recursion via **, and can capture patterns."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/glob2-0.5-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/glob2/__init__.py",
+  "lib/python2.7/site-packages/glob2/compat.py",
+  "lib/python2.7/site-packages/glob2/fnmatch.py",
+  "lib/python2.7/site-packages/glob2/impl.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD-2-Clause",
+  "name": "glob2",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.5"
+ },
+ "name": "glob2",
+ "raw_recipe": "{% set name = \"glob2\" %}\n{% set version = \"0.5\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/miracle2k/python-glob2/archive/v{{ version }}.tar.gz\n  sha256: dea12519a27949c2aa3a14f557d08847debfeae0be58e29391ee1d9ceed80174\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - glob2\n\nabout:\n  home: https://github.com/miracle2k/python-glob2\n  license: BSD-2-Clause\n  license_file: LICENSE\n  summary: Version of the glob module that supports recursion via **, and can capture patterns.\n\nextra:\n  recipe-maintainers:\n    - dfroger\n",
+ "rendered_recipe": {},
+ "version": "0.5"
+}

@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "https://github.com/dask/hdfs3",
+  "license": "BSD 3-Clause",
+  "summary": "Python wrapper for libhdfs3"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/hdfs3-0.1.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/hdfs3-0.1.2-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/hdfs3/__init__.py",
+  "lib/python3.5/site-packages/hdfs3/compatibility.py",
+  "lib/python3.5/site-packages/hdfs3/core.py",
+  "lib/python3.5/site-packages/hdfs3/lib.py",
+  "lib/python3.5/site-packages/hdfs3/mapping.py",
+  "lib/python3.5/site-packages/hdfs3/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "libhdfs3",
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "hdfs3",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1.2"
+ },
+ "name": "hdfs3",
+ "raw_recipe": "{% set version = \"0.1.2\" %}\n\npackage:\n  name: hdfs3\n  version: \"{{ version }}\"\n\nsource:\n  fn: hdfs3-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/h/hdfs3/hdfs3-{{ version }}.tar.gz\n  md5: 824887b9b1756701003153fd4b39af8f\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  # This packages uses libhdfs3, which is primarily used with HDFS on Linux.\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - libhdfs3\n\n  run:\n    - python\n    - libhdfs3\n\ntest:\n  imports:\n    - hdfs3\n\nabout:\n  home: https://github.com/dask/hdfs3\n  license: BSD 3-Clause\n  summary: Python wrapper for libhdfs3\n\nextra:\n  recipe-maintainers:\n    - mrocklin\n    - martindurant\n    - koverholt\n",
+ "rendered_recipe": {},
+ "version": "0.1.2"
+}

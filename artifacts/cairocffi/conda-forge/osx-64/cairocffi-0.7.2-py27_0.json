@@ -1,0 +1,48 @@
+{
+ "about": {
+  "home": "https://github.com/SimonSapin/cairocffi",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "cffi-based cairo bindings for Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/cairocffi-0.7.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/cairocffi/__init__.py",
+  "lib/python2.7/site-packages/cairocffi/_ffi.py",
+  "lib/python2.7/site-packages/cairocffi/_ffi_pixbuf.py",
+  "lib/python2.7/site-packages/cairocffi/compat.py",
+  "lib/python2.7/site-packages/cairocffi/constants.py",
+  "lib/python2.7/site-packages/cairocffi/context.py",
+  "lib/python2.7/site-packages/cairocffi/ffi_build.py",
+  "lib/python2.7/site-packages/cairocffi/fonts.py",
+  "lib/python2.7/site-packages/cairocffi/matrix.py",
+  "lib/python2.7/site-packages/cairocffi/patterns.py",
+  "lib/python2.7/site-packages/cairocffi/pixbuf.py",
+  "lib/python2.7/site-packages/cairocffi/surfaces.py",
+  "lib/python2.7/site-packages/cairocffi/test_cairo.py",
+  "lib/python2.7/site-packages/cairocffi/test_pixbuf.py",
+  "lib/python2.7/site-packages/cairocffi/test_xcb.py",
+  "lib/python2.7/site-packages/cairocffi/xcb.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "cairo",
+   "cffi >=1.1.0",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "cairocffi",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.7.2"
+ },
+ "name": "cairocffi",
+ "raw_recipe": "{% set name = \"cairocffi\" %}\n{% set version = \"0.7.2\" %}\n{% set sha256 = \"e42b4256d27bd960cbf3b91a6c55d602defcdbc2a73f7317849c80279feeb975\" %}\n\npackage:\n  name: cairocffi\n  version: \"{{ version }}\"\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - dlopen-patch.linux.txt  # [linux]\n    - dlopen-patch.osx.txt  # [osx]\n\nbuild:\n  number: 0\n  skip: True  # [win]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cffi >=1.1.0\n    - cairo\n  run:\n    - python\n    - cffi >=1.1.0\n    - cairo\n\ntest:\n  imports:\n    - cairocffi\n\nabout:\n  home: https://github.com/SimonSapin/cairocffi\n  license: BSD 3-Clause\n  summary: 'cffi-based cairo bindings for Python'\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n",
+ "rendered_recipe": {},
+ "version": "0.7.2"
+}

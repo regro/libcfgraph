@@ -1,0 +1,164 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://www.unidata.ucar.edu/software/netcdf/",
+  "license": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "clyent-1.2.2-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-build-2.1.4-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.0-0",
+   "conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.8-py36_1",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.11-py36_0",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Libraries and data formats that support array-oriented scientific data."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/libnetcdf.a",
+  "share/man/man1/ncgen3.1",
+  "bin/nccopy",
+  "lib/libnetcdf.dylib",
+  "bin/ncgen3",
+  "share/man/man1/nccopy.1",
+  "lib/libnetcdf.11.0.0.dylib",
+  "share/man/man3/netcdf.3",
+  "lib/cmake/netCDF/netCDFTargets.cmake",
+  "lib/pkgconfig/netcdf.pc",
+  "share/man/man1/ncgen.1",
+  "lib/cmake/netCDF/netCDFTargets-debug.cmake",
+  "lib/cmake/netCDF/netCDFConfig.cmake",
+  "include/netcdf.h",
+  "share/man/man1/ncdump.1",
+  "bin/ncdump",
+  "include/netcdf_meta.h",
+  "lib/libnetcdf.11.dylib",
+  "bin/ncgen",
+  "lib/cmake/netCDF/netCDFConfigVersion.cmake",
+  "bin/nc-config",
+  "lib/libnetcdf.settings"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "3",
+  "build_number": 3,
+  "depends": [
+   "curl",
+   "hdf4",
+   "hdf5 1.8.17|1.8.17.*",
+   "zlib 1.2.*"
+  ],
+  "license": "MIT",
+  "name": "libnetcdf",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "4.4.0"
+ },
+ "name": "libnetcdf",
+ "raw_recipe": "{% set version = \"4.4.0\" %}\n\npackage:\n  name: libnetcdf\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/Unidata/netcdf-c/archive/v{{ version }}.tar.gz\n  sha256: 09b78b152d3fd373bee4b5738dc05c7b2f5315fe34aa2d94ee9256661119112f\n  patches:\n    - big_files.patch  # [win]\n\nbuild:\n  number: 3\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - cmake\n    - pkg-config  # [not win]\n    - msinttypes  # [win]\n    - curl\n    - zlib 1.2.*\n    - hdf4\n    - hdf5 1.8.17|1.8.17.*\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n  run:\n    - curl\n    - zlib 1.2.*\n    - hdf4\n    - hdf5 1.8.17|1.8.17.*\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n\ntest:\n  commands:\n    - nc-config --all  # [not win]\n    - test -f ${PREFIX}/lib/libnetcdf.a  # [not win]\n    - test -f ${PREFIX}/lib/libnetcdf.so  # [linux]\n    - test -f ${PREFIX}/lib/libnetcdf.dylib  # [osx]\n    - ncdump -h http://geoport-dev.whoi.edu/thredds/dodsC/estofs/atlantic\n    # FIXME: the next two are failing at the moment.\n    - ncdump -h http://thredds.ucar.edu/thredds/dodsC/grib/NCEP/GFS/Global_0p5deg/GFS_Global_0p5deg_20170215_1200.grib2\n    - ncdump -h https://data.nodc.noaa.gov/thredds/dodsC/ioos/sccoos/scripps_pier/scripps_pier-2016.nc\n    - conda inspect linkages -p $PREFIX libnetcdf  # [not win]\n    - conda inspect objects -p $PREFIX libnetcdf  # [osx]\n\nabout:\n  home: http://www.unidata.ucar.edu/software/netcdf/\n  license: MIT\n  license_file: COPYRIGHT\n  summary: 'Libraries and data formats that support array-oriented scientific data.'\n\nextra:\n  recipe-maintainers:\n    - groutr\n    - ocefpaf\n    - kmuehlbauer\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.unidata.ucar.edu/software/netcdf/",
+   "license": "MIT",
+   "license_file": "COPYRIGHT",
+   "summary": "Libraries and data formats that support array-oriented scientific data."
+  },
+  "build": {
+   "features": "",
+   "number": "3",
+   "string": "3"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "groutr",
+    "ocefpaf",
+    "kmuehlbauer"
+   ]
+  },
+  "package": {
+   "name": "libnetcdf",
+   "version": "4.4.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "curl",
+    "zlib 1.2.*",
+    "hdf4",
+    "hdf5 1.8.17|1.8.17.*"
+   ]
+  },
+  "source": {
+   "fn": "v4.4.0.tar.gz",
+   "patches": "",
+   "sha256": "09b78b152d3fd373bee4b5738dc05c7b2f5315fe34aa2d94ee9256661119112f",
+   "url": "https://github.com/Unidata/netcdf-c/archive/v4.4.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "nc-config --all",
+    "test -f ${PREFIX}/lib/libnetcdf.a",
+    "test -f ${PREFIX}/lib/libnetcdf.dylib",
+    "ncdump -h http://geoport-dev.whoi.edu/thredds/dodsC/estofs/atlantic",
+    "ncdump -h http://thredds.ucar.edu/thredds/dodsC/grib/NCEP/GFS/Global_0p5deg/GFS_Global_0p5deg_20170215_1200.grib2",
+    "ncdump -h https://data.nodc.noaa.gov/thredds/dodsC/ioos/sccoos/scripps_pier/scripps_pier-2016.nc",
+    "conda inspect linkages -p $PREFIX libnetcdf",
+    "conda inspect objects -p $PREFIX libnetcdf"
+   ]
+  }
+ },
+ "version": "4.4.0"
+}

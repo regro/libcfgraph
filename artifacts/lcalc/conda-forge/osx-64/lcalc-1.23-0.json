@@ -1,0 +1,168 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://oto.math.uwaterloo.ca/~mrubinst/L_function_public/L.html",
+  "license": "GPLv2+",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.4-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "C++ L-function class library and command line interface"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/libLfunction/Lgmpfrxx.h",
+  "include/libLfunction/.Lexplicit_formula.h.swp",
+  "include/libLfunction/Lcomplex.h",
+  "include/libLfunction/Lglobals.h",
+  "lib/libLfunction.dylib",
+  "include/libLfunction/mpfr_mul_d.h",
+  "include/libLfunction/Lvalue.h",
+  "include/libLfunction/Lcommon.h",
+  "include/libLfunction/L.h",
+  "include/libLfunction/Lgram.h",
+  "include/libLfunction/Lnumeric.h",
+  "include/libLfunction/Lnumberzeros.h",
+  "bin/lcalc",
+  "include/libLfunction/Ldokchitser.h",
+  "include/libLfunction/Lriemannsiegel.h",
+  "include/libLfunction/Lcommandline_twist.h",
+  "include/libLfunction/Lcommandline_globals.h",
+  "include/libLfunction/getopt.h",
+  "include/libLfunction/Lcommandline_misc.h",
+  "include/libLfunction/Lcommandline_values_zeros.h",
+  "include/libLfunction/Lcommon_ld.h",
+  "include/libLfunction/Lcommandline.h",
+  "include/libLfunction/Lprint.h",
+  "include/libLfunction/cmdline.h",
+  "include/libLfunction/Ldirichlet_series.h",
+  "include/libLfunction/Lmisc.h",
+  "include/libLfunction/Lint_complex.h",
+  "include/libLfunction/.Lvalue.h.swp",
+  "include/libLfunction/Lriemannsiegel_blfi.h",
+  "include/libLfunction/Lcommandline_elliptic.h",
+  "include/libLfunction/Lcommandline_numbertheory.h",
+  "include/libLfunction/Lfind_zeros.h",
+  "include/libLfunction/Lexplicit_formula.h",
+  "include/libLfunction/Lgamma.h"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "gmp >=5.0.1,<7",
+   "mpfr 3.*",
+   "pari"
+  ],
+  "license": "GPLv2+",
+  "name": "lcalc",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.23"
+ },
+ "name": "lcalc",
+ "raw_recipe": "{% set version = \"1.23\" %}\n{% set name = \"lcalc\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://oto.math.uwaterloo.ca/~mrubinst/L_function_public/CODE/L-{{ version }}.tar.gz\n  sha256: 3d1f47bdb3156c085faab3c4ccaaf68063175d3fba9b4c85adea52d032bcd46a\n  patches:\n    - patches/clang.patch\n    - patches/lcalc-1.23_default_parameters_1.patch\n    - patches/lcalc-1.23_default_parameters_2.patch\n    - patches/Lcommon.h.patch\n    - patches/Makefile.patch\n    - patches/pari-2.7.patch\n    - patches/time.h.patch\n    - patches/include_pari.patch\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - pari\n    - gmp >=5.0.1,<7\n    - mpfr 3.*\n  run:\n    - pari\n    - gmp >=5.0.1,<7\n    - mpfr 3.*\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/libLfunction/L.h\n    - test -f ${PREFIX}/lib/libLfunction.dylib     # [osx]\n    - test -f ${PREFIX}/lib/libLfunction.so        # [linux]\n\nabout:\n  home: http://oto.math.uwaterloo.ca/~mrubinst/L_function_public/L.html\n  license: GPLv2+\n  license_file: COPYING\n  summary: C++ L-function class library and command line interface\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://oto.math.uwaterloo.ca/~mrubinst/L_function_public/L.html",
+   "license": "GPLv2+",
+   "license_file": "COPYING",
+   "summary": "C++ L-function class library and command line interface"
+  },
+  "build": {
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "isuruf"
+   ]
+  },
+  "package": {
+   "name": "lcalc",
+   "version": "1.23"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "pari",
+    "gmp >=5.0.1,<7",
+    "mpfr 3.*"
+   ]
+  },
+  "source": {
+   "fn": "lcalc-1.23.tar.gz",
+   "patches": [
+    "patches/clang.patch",
+    "patches/lcalc-1.23_default_parameters_1.patch",
+    "patches/lcalc-1.23_default_parameters_2.patch",
+    "patches/Lcommon.h.patch",
+    "patches/Makefile.patch",
+    "patches/pari-2.7.patch",
+    "patches/time.h.patch",
+    "patches/include_pari.patch"
+   ],
+   "sha256": "3d1f47bdb3156c085faab3c4ccaaf68063175d3fba9b4c85adea52d032bcd46a",
+   "url": "http://oto.math.uwaterloo.ca/~mrubinst/L_function_public/CODE/L-1.23.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/include/libLfunction/L.h",
+    "test -f ${PREFIX}/lib/libLfunction.dylib"
+   ]
+  }
+ },
+ "version": "1.23"
+}
