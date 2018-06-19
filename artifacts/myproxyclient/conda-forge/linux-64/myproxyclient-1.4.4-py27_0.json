@@ -1,0 +1,48 @@
+{
+ "about": {
+  "home": "https://github.com/cedadev/MyProxyClient",
+  "license": "BSD 3-clause",
+  "summary": "MyProxy Client"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/myproxyclient",
+  "lib/python2.7/site-packages/MyProxyClient-1.4.4-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/MyProxyClient-1.4.4-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/myproxy/LICENSE",
+  "lib/python2.7/site-packages/myproxy/__init__.py",
+  "lib/python2.7/site-packages/myproxy/client.py",
+  "lib/python2.7/site-packages/myproxy/script.py",
+  "lib/python2.7/site-packages/myproxy/test/README",
+  "lib/python2.7/site-packages/myproxy/test/__init__.py",
+  "lib/python2.7/site-packages/myproxy/test/expired.crt",
+  "lib/python2.7/site-packages/myproxy/test/localhost.crt",
+  "lib/python2.7/site-packages/myproxy/test/myProxyClient.cfg",
+  "lib/python2.7/site-packages/myproxy/test/myProxyClientTest.cfg",
+  "lib/python2.7/site-packages/myproxy/test/openssl.conf",
+  "lib/python2.7/site-packages/myproxy/test/test_myproxyclient.py",
+  "lib/python2.7/site-packages/myproxy/test/testuser.crt",
+  "lib/python2.7/site-packages/myproxy/test/testuser.key",
+  "lib/python2.7/site-packages/myproxy/utils/__init__.py",
+  "lib/python2.7/site-packages/myproxy/utils/openssl.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "pyopenssl",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-clause",
+  "name": "myproxyclient",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.4.4"
+ },
+ "metadata_version": 1,
+ "name": "myproxyclient",
+ "raw_recipe": "{% set name = \"MyProxyClient\" %}\n{% set version = \"1.4.4\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_val = \"98e952e8e6cf25cae90cfbc3fd71e510e1aa78eb493a45148a0c32204e78609a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  entry_points:\n    - myproxyclient = myproxy.script:main\n  skip: True  # [py3k]\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pyopenssl\n\ntest:\n  imports:\n    - myproxy\n    - myproxy.test\n    - myproxy.utils\n  commands:\n    - myproxyclient --help\n\nabout:\n  home: https://github.com/cedadev/MyProxyClient\n  license: BSD 3-clause\n  license_file: myproxy/LICENSE\n  summary: 'MyProxy Client'\n\nextra:\n  recipe-maintainers:\n    - agoodm\n    - jarifibrahim\n",
+ "rendered_recipe": {},
+ "version": "1.4.4"
+}

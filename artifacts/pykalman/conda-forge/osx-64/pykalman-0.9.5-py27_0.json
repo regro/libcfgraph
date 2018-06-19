@@ -1,0 +1,44 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pykalman-0.9.5-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pykalman/__init__.py",
+  "lib/python2.7/site-packages/pykalman/datasets/__init__.py",
+  "lib/python2.7/site-packages/pykalman/datasets/base.py",
+  "lib/python2.7/site-packages/pykalman/sqrt/__init__.py",
+  "lib/python2.7/site-packages/pykalman/sqrt/bierman.py",
+  "lib/python2.7/site-packages/pykalman/sqrt/cholesky.py",
+  "lib/python2.7/site-packages/pykalman/sqrt/tests/__init__.py",
+  "lib/python2.7/site-packages/pykalman/sqrt/tests/test_bierman.py",
+  "lib/python2.7/site-packages/pykalman/sqrt/tests/test_cholesky.py",
+  "lib/python2.7/site-packages/pykalman/sqrt/tests/test_unscented.py",
+  "lib/python2.7/site-packages/pykalman/sqrt/unscented.py",
+  "lib/python2.7/site-packages/pykalman/standard.py",
+  "lib/python2.7/site-packages/pykalman/tests/__init__.py",
+  "lib/python2.7/site-packages/pykalman/tests/test_standard.py",
+  "lib/python2.7/site-packages/pykalman/tests/test_unscented.py",
+  "lib/python2.7/site-packages/pykalman/unscented.py",
+  "lib/python2.7/site-packages/pykalman/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 2.7*",
+   "scipy"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pykalman",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.9.5"
+ },
+ "metadata_version": 1,
+ "name": "pykalman",
+ "raw_recipe": "{% set version = \"0.9.5\" %}\n\npackage:\n  name: pykalman\n  version: {{ version }}\n\nsource:\n  fn: pykalman-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pykalman/pykalman-{{ version }}.tar.gz\n  md5: 8baa2921cdfd2a5193ac67e23c2f7e5e\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy\n    - scipy\n\ntest:\n  imports:\n    - pykalman\n    - pykalman.datasets\n    - pykalman.sqrt\n    - pykalman.sqrt.tests\n    - pykalman.tests\n\nabout:\n  home: http://pykalman.github.io\n  license: BSD 3-Clause\n  summary: 'An implementation of the Kalman Filter, Kalman Smoother, and EM algorithm in Python'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.9.5"
+}

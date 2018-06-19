@@ -1,0 +1,38 @@
+{
+ "about": {
+  "dev_url": "http://github.com/jospolfliet/pandas-profiling",
+  "home": "http://github.com/jospolfliet/pandas-profiling",
+  "license": "MIT",
+  "summary": "Generate profile report for pandas DataFrame"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pandas_profiling-1.1.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pandas_profiling/__init__.py",
+  "lib/python2.7/site-packages/pandas_profiling/base.py",
+  "lib/python2.7/site-packages/pandas_profiling/formatters.py",
+  "lib/python2.7/site-packages/pandas_profiling/pandas_profiling.mplstyle",
+  "lib/python2.7/site-packages/pandas_profiling/templates.py",
+  "lib/python2.7/site-packages/pandas_profiling/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib >=1.4",
+   "pandas >=0.16",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "pandas-profiling",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.1.0"
+ },
+ "metadata_version": 1,
+ "name": "pandas-profiling",
+ "raw_recipe": "{% set name = \"pandas-profiling\" %}\n{% set version = \"1.1.0\" %}\n{% set md5 = \"22f1c22418b5c07f371735e74440e631\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [win and py3k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pandas >=0.16\n    - matplotlib >=1.4\n\ntest:\n  imports:\n    - pandas_profiling\n\nabout:\n  home: http://github.com/jospolfliet/pandas-profiling\n  license: MIT\n  # license_file: LICENSE # When added to MANIFEST.in \u2013 JosPolfliet/pandas-profiling#22\n  summary: 'Generate profile report for pandas DataFrame'\n  dev_url: http://github.com/jospolfliet/pandas-profiling\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
+ "rendered_recipe": {},
+ "version": "1.1.0"
+}

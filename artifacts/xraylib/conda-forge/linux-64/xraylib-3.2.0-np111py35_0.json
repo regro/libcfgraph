@@ -1,0 +1,53 @@
+{
+ "about": {
+  "home": "https://github.com/tschoonj/xraylib/wiki",
+  "license": "BSD 3-Clause",
+  "summary": "A library for X-ray matter interaction cross sections for X-ray fluorescence applications"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/xraylib",
+  "include/xraylib/xraylib-auger.h",
+  "include/xraylib/xraylib-crystal-diffraction.h",
+  "include/xraylib/xraylib-defs.h",
+  "include/xraylib/xraylib-lines.h",
+  "include/xraylib/xraylib-nist-compounds.h",
+  "include/xraylib/xraylib-parser.h",
+  "include/xraylib/xraylib-radionuclides.h",
+  "include/xraylib/xraylib-shells.h",
+  "include/xraylib/xraylib.h",
+  "lib/libxrl.a",
+  "lib/libxrl.la",
+  "lib/libxrl.so",
+  "lib/libxrl.so.7",
+  "lib/libxrl.so.7.2.0",
+  "lib/pkgconfig/libxrl.pc",
+  "lib/python3.5/site-packages/_xraylib.la",
+  "lib/python3.5/site-packages/_xraylib.so",
+  "lib/python3.5/site-packages/xrayhelp.py",
+  "lib/python3.5/site-packages/xraylib.py",
+  "lib/python3.5/site-packages/xraylib_np.la",
+  "lib/python3.5/site-packages/xraylib_np.so",
+  "lib/python3.5/site-packages/xraymessages.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.11*",
+   "python 3.5*",
+   "scipy >=0.7.0"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "xraylib",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "3.2.0"
+ },
+ "metadata_version": 1,
+ "name": "xraylib",
+ "raw_recipe": "{% set version = \"3.2.0\" %}\n\npackage:\n  name: xraylib\n  version: {{ version }}\n\nsource:\n  fn: xraylib-{{ version }}.tar.gz\n  url: https://github.com/tschoonj/xraylib/archive/xraylib-{{ version }}.tar.gz\n  sha256: 4f4ab07f47619fa5458efbcd5ea51cd2c76c11a474ef869432235719c5bcdb41\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - scipy >=0.7.0\n    - cython\n    - swig\n    - autoconf\n    - libtool\n    - automake\n\n  run:\n    - python\n    - numpy x.x\n    - scipy >=0.7.0\n\ntest:\n  commands:\n    - xraylib\n  imports:\n    - xraylib\n\nabout:\n  license: BSD 3-Clause\n  home: https://github.com/tschoonj/xraylib/wiki\n  summary: A library for X-ray matter interaction cross sections for X-ray fluorescence applications\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - tacaswell\n    - licode\n    - tschoonj\n",
+ "rendered_recipe": {},
+ "version": "3.2.0"
+}

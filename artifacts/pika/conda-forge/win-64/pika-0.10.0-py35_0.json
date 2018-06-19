@@ -1,0 +1,46 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pika-0.10.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/pika-0.10.0-py3.5.egg-info/zip-safe",
+  "Lib/site-packages/pika/__init__.py",
+  "Lib/site-packages/pika/adapters/__init__.py",
+  "Lib/site-packages/pika/adapters/base_connection.py",
+  "Lib/site-packages/pika/adapters/blocking_connection.py",
+  "Lib/site-packages/pika/adapters/libev_connection.py",
+  "Lib/site-packages/pika/adapters/select_connection.py",
+  "Lib/site-packages/pika/adapters/tornado_connection.py",
+  "Lib/site-packages/pika/adapters/twisted_connection.py",
+  "Lib/site-packages/pika/amqp_object.py",
+  "Lib/site-packages/pika/callback.py",
+  "Lib/site-packages/pika/channel.py",
+  "Lib/site-packages/pika/compat.py",
+  "Lib/site-packages/pika/connection.py",
+  "Lib/site-packages/pika/credentials.py",
+  "Lib/site-packages/pika/data.py",
+  "Lib/site-packages/pika/exceptions.py",
+  "Lib/site-packages/pika/frame.py",
+  "Lib/site-packages/pika/heartbeat.py",
+  "Lib/site-packages/pika/spec.py",
+  "Lib/site-packages/pika/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-clause",
+  "name": "pika",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.10.0"
+ },
+ "metadata_version": 1,
+ "name": "pika",
+ "raw_recipe": "{% set version = \"0.10.0\" %}\n\npackage:\n  name: pika\n  version: {{ version }}\n\nsource:\n  fn: pika-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pika/pika-{{ version }}.tar.gz\n  sha256: 7277b4d12a99efa4058782614d84138983f9f89d690bdfcea66290d810806459\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pika\n\nabout:\n  home: http://pika.readthedocs.org\n  license: BSD 3-clause\n  summary: Pure Python RabbitMQ/AMQP 0-9-1 client library\n\nextra:\n  recipe-maintainers:\n    - frol\n",
+ "rendered_recipe": {},
+ "version": "0.10.0"
+}

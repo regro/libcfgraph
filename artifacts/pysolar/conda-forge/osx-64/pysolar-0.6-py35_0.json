@@ -1,0 +1,145 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Pysolar is a collection of Python libraries for simulating the irradiation of any point on earth by the sun.\nIt includes code for extremely precise ephemeris calculations, and more.\n",
+  "dev_url": "https://github.com/pingswept/pysolar",
+  "doc_url": "http://docs.pysolar.org/en/latest/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://pysolar.org/",
+  "license": "GPL-3.0",
+  "license_family": "GPL",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "A collection of Python libraries for simulating the irradiation of any point on earth by the sun"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/Pysolar/rest.py",
+  "lib/python3.5/site-packages/Pysolar/query_usno.py",
+  "lib/python3.5/site-packages/Pysolar/util.py",
+  "lib/python3.5/site-packages/Pysolar/simulate.py",
+  "lib/python3.5/site-packages/Pysolar/elevation.py",
+  "lib/python3.5/site-packages/Pysolar-0.6-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/Pysolar/__init__.py",
+  "lib/python3.5/site-packages/Pysolar/radiation.py",
+  "lib/python3.5/site-packages/Pysolar/testsolar.py",
+  "lib/python3.5/site-packages/Pysolar/solar.py",
+  "lib/python3.5/site-packages/Pysolar/julian.py",
+  "lib/python3.5/site-packages/Pysolar/constants.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.5*",
+   "pytz"
+  ],
+  "license": "GPL-3.0",
+  "license_family": "GPL",
+  "name": "pysolar",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.6"
+ },
+ "metadata_version": 1,
+ "name": "pysolar",
+ "raw_recipe": "{% set name = \"pysolar\" %}\n{% set version = \"0.6\" %}\n{% set sha256 = \"244a6f3287a4483b78b705f14057bd48f27bcac2b25bef3a16d0449b9fa05f6e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/pingswept/pysolar/archive/0.6.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - pytz\n\ntest:\n  imports:\n    - Pysolar\n\nabout:\n  home: http://pysolar.org/\n  license: GPL-3.0\n  license_family: GPL\n  summary: 'A collection of Python libraries for simulating the irradiation of any point on earth by the sun'\n  description: |\n    Pysolar is a collection of Python libraries for simulating the irradiation of any point on earth by the sun.\n    It includes code for extremely precise ephemeris calculations, and more.\n  doc_url: http://docs.pysolar.org/en/latest/\n  dev_url: https://github.com/pingswept/pysolar\n\nextra:\n  recipe-maintainers:\n    - robintw\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Pysolar is a collection of Python libraries for simulating the irradiation of any point on earth by the sun.\nIt includes code for extremely precise ephemeris calculations, and more.\n",
+   "dev_url": "https://github.com/pingswept/pysolar",
+   "doc_url": "http://docs.pysolar.org/en/latest/",
+   "home": "http://pysolar.org/",
+   "license": "GPL-3.0",
+   "license_family": "GPL",
+   "summary": "A collection of Python libraries for simulating the irradiation of any point on earth by the sun"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py35_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "robintw"
+   ]
+  },
+  "package": {
+   "name": "pysolar",
+   "version": "0.6"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "numpy",
+    "pytz"
+   ]
+  },
+  "source": {
+   "fn": "pysolar-0.6.tar.gz",
+   "sha256": "244a6f3287a4483b78b705f14057bd48f27bcac2b25bef3a16d0449b9fa05f6e",
+   "url": "https://github.com/pingswept/pysolar/archive/0.6.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "Pysolar"
+   ]
+  }
+ },
+ "version": "0.6"
+}

@@ -1,0 +1,32 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/certifi-2016.2.28-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/certifi-2016.2.28-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/certifi/__init__.py",
+  "lib/python2.7/site-packages/certifi/__main__.py",
+  "lib/python2.7/site-packages/certifi/cacert.pem",
+  "lib/python2.7/site-packages/certifi/core.py",
+  "lib/python2.7/site-packages/certifi/old_root.pem",
+  "lib/python2.7/site-packages/certifi/weak.pem"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "ISC",
+  "name": "certifi",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2016.2.28"
+ },
+ "metadata_version": 1,
+ "name": "certifi",
+ "raw_recipe": "{% set version = \"2016.2.28\" %}\n\npackage:\n  name: certifi\n  version: {{ version }}\n\nsource:\n  fn: certifi-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/c/certifi/certifi-{{ version }}.tar.gz\n  sha256: 5e8eccf95924658c97b990b50552addb64f55e1e3dfe4880456ac1f287dc79d0\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - certifi\n\nabout:\n  home: http://certifi.io/\n  license: ISC\n  summary: Python package for providing Mozilla's CA Bundle.\n\nextra:\n  recipe-maintainers:\n    - dan-blanchard\n    - pelson\n",
+ "rendered_recipe": {},
+ "version": "2016.2.28"
+}
