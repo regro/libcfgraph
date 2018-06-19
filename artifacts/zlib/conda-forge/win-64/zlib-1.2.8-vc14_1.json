@@ -1,0 +1,32 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/zlib.dll",
+  "Library/include/zconf.h",
+  "Library/include/zlib.h",
+  "Library/lib/z.lib",
+  "Library/lib/zdll.lib",
+  "Library/lib/zlib.lib",
+  "Library/lib/zlibstatic.lib",
+  "Library/share/man/man3/zlib.3",
+  "Library/share/pkgconfig/zlib.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc14_1",
+  "build_number": 1,
+  "depends": [],
+  "features": "vc14",
+  "license": "zlib (http://zlib.net/zlib_license.html)",
+  "license_family": "Other",
+  "name": "zlib",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.2.8"
+ },
+ "name": "zlib",
+ "raw_recipe": "{% set version = \"1.2.8\" %}\n\npackage:\n    name: zlib\n    version: {{ version }}\n\nsource:\n    fn: zlib-{{ version }}.tar.gz\n    url: http://zlib.net/zlib-{{ version }}.tar.gz\n    sha256: 36658cb768a54c1d4dec43c3116c27ed893e88b02ecfcb44f2166f9c0b7f2a0d\n\nbuild:\n    number: 1\n    features:\n        - vc9  # [win and py27]\n        - vc10  # [win and py34]\n        - vc14  # [win and py35]\n\nrequirements:\n    build:\n        - cmake\n        - python  # [win]\n        - msinttypes  # [win and py<35]\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libz.a  # [unix]\n        - conda inspect linkages -n _test zlib  # [linux]\n\nabout:\n    home: http://zlib.net/\n    license: zlib (http://zlib.net/zlib_license.html)\n    summary: Massively spiffy yet delicately unobtrusive compression library\n    license_family: Other\n    license_file: license.txt\n\nextra:\n    recipe-maintainers:\n        - groutr\n        - msarahan\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.2.8"
+}

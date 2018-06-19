@@ -1,0 +1,29 @@
+{
+ "about": {
+  "home": "http://code.google.com/p/prettytable",
+  "license": "BSD 3-Clause",
+  "summary": "A simple Python library for easily displaying tabular data in a visually appealing ASCII table format"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/prettytable-0.7.2-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/prettytable.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "prettytable",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.7.2"
+ },
+ "name": "prettytable",
+ "raw_recipe": "{%set name = \"prettytable\" %}\n{%set version = \"0.7.2\" %}\n{%set hash_type=\"sha256\" %}\n{%set hash_val = \"2d5460dc9db74a32bcc8f9f67de68b2c4f4d2f01fa3bd518764c69156d9cacd9\" %}\n\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type}}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: http://code.google.com/p/prettytable\n  license: BSD 3-Clause\n  summary: 'A simple Python library for easily displaying tabular data in a visually appealing ASCII table format'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.7.2"
+}

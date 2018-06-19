@@ -1,0 +1,71 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/backports.shutil_get_terminal_size-1.0.0.dist-info/DESCRIPTION.rst",
+  "Lib/site-packages/backports.shutil_get_terminal_size-1.0.0.dist-info/INSTALLER",
+  "Lib/site-packages/backports.shutil_get_terminal_size-1.0.0.dist-info/METADATA",
+  "Lib/site-packages/backports.shutil_get_terminal_size-1.0.0.dist-info/RECORD",
+  "Lib/site-packages/backports.shutil_get_terminal_size-1.0.0.dist-info/WHEEL",
+  "Lib/site-packages/backports.shutil_get_terminal_size-1.0.0.dist-info/metadata.json",
+  "Lib/site-packages/backports/__init__.py",
+  "Lib/site-packages/backports/shutil_get_terminal_size/__init__.py",
+  "Lib/site-packages/backports/shutil_get_terminal_size/get_terminal_size.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "backports.shutil_get_terminal_size",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.0"
+ },
+ "name": "backports.shutil_get_terminal_size",
+ "raw_recipe": "package:\n    name: backports.shutil_get_terminal_size\n    version: 1.0.0\n\nsource:\n    fn: backports.shutil_get_terminal_size-1.0.0.tar.gz\n    url: https://pypi.python.org/packages/ec/9c/368086faa9c016efce5da3e0e13ba392c9db79e3ab740b763fe28620b18b/backports.shutil_get_terminal_size-1.0.0.tar.gz\n    md5: 03267762480bd86b50580dc19dff3c66\n\nbuild:\n    number: 0\n    script: pip install --no-deps .\n\nrequirements:\n    build:\n        - python\n        - pip\n    run:\n        - python\n\ntest:\n    imports:\n        - backports\n        - backports.shutil_get_terminal_size\n\nabout:\n    home: https://github.com/chrippa/backports.shutil_get_terminal_size\n    license: MIT\n    summary: A backport of the get_terminal_size function from Python 3.3's shutil\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/chrippa/backports.shutil_get_terminal_size",
+   "license": "MIT",
+   "summary": "A backport of the get_terminal_size function from Python 3.3's shutil"
+  },
+  "build": {
+   "number": 0,
+   "script": "pip install --no-deps ."
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "backports.shutil_get_terminal_size",
+   "version": "1.0.0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "pip"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "backports.shutil_get_terminal_size-1.0.0.tar.gz",
+   "md5": "03267762480bd86b50580dc19dff3c66",
+   "url": "https://pypi.python.org/packages/ec/9c/368086faa9c016efce5da3e0e13ba392c9db79e3ab740b763fe28620b18b/backports.shutil_get_terminal_size-1.0.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "backports",
+    "backports.shutil_get_terminal_size"
+   ]
+  }
+ },
+ "version": "1.0.0"
+}

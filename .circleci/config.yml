@@ -1,0 +1,49 @@
+version: 2
+
+jobs:
+  reap:
+    working_directory: ~/repo
+    docker:
+      - image: continuumio/miniconda3:latest
+    steps:
+      - checkout
+      - run:
+          name: Update Conda
+          command: |
+            conda config --set always_yes True
+            conda config --add channels conda-forge
+            conda update --all
+            conda install pip
+            pip install git+https:///github.com/regro/libcflib@branch
+      - run:
+          name: Run fetcher
+          command: |
+            python -m libcflib.preloader artifacts
+      - run:
+          name: Report diff
+          command: |
+            git add .
+            git diff
+      - run:
+          name: commit changes
+          command: |
+            git config user.name circleci
+            git config user.email circleci@libcfgraph.regro.github.com
+            git commit -m "Updated graph"
+      - run:
+          name: push changes
+          command: |
+            git push https://${GH_PUSH_TOKEN}@github.com/regro/libcfgraph.git
+
+workflows:
+   version: 2
+   hourly:
+     triggers:
+       - schedule:
+           cron: "0 * * * *"
+           filters:
+             branches:
+               only:
+                 - master
+     jobs:
+       - reap

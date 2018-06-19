@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "https://github.com/matze/pkgconfig",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "A Python interface to the pkg-config command line tool"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pkgconfig-1.1.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pkgconfig/__init__.py",
+  "lib/python3.4/site-packages/pkgconfig/pkgconfig.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_1",
+  "build_number": 1,
+  "depends": [
+   "pkg-config",
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "pkgconfig",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.1.0"
+ },
+ "name": "pkgconfig",
+ "raw_recipe": "{% set name = \"pkgconfig\" %}\n{% set version = \"1.1.0\" %}\n{% set sha256 = \"4de443a62f4b83d883a7b3895d4d4d3ca1934383ebdbeb0f2e6ab126085d812a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/matze/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - nose >=1.0\n  run:\n    - python\n    - pkg-config        # [unix]\n    - m2w64-pkg-config  # [win]\n\ntest:\n  imports:\n    - pkgconfig\n\nabout:\n  home: https://github.com/matze/pkgconfig\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A Python interface to the pkg-config command line tool'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - lbdreyer\n",
+ "rendered_recipe": {},
+ "version": "1.1.0"
+}

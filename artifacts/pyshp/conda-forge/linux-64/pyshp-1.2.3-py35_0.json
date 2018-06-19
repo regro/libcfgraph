@@ -1,0 +1,26 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pyshp-1.2.3-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pyshp-1.2.3-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/shapefile.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "pyshp",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.2.3"
+ },
+ "name": "pyshp",
+ "raw_recipe": "{% set version = \"1.2.3\" %}\n\npackage:\n    name: pyshp\n    version: {{ version }}\n\nsource:\n    fn: pyshp-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/p/pyshp/pyshp-{{ version }}.tar.gz\n    md5: f857099a57f93830e0c72a31e9c506a8\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - shapefile\n\nabout:\n    home: https://pypi.python.org/pypi/pyshp\n    license: MIT\n    summary: Pure Python read/write support for ESRI Shapefile format.\n\nextra:\n    recipe-maintainers:\n        - pelson\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.2.3"
+}

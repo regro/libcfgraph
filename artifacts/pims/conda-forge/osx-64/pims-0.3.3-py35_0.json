@@ -1,0 +1,53 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/PIMS-0.3.3-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pims/__init__.py",
+  "lib/python3.5/site-packages/pims/_version.py",
+  "lib/python3.5/site-packages/pims/api.py",
+  "lib/python3.5/site-packages/pims/base_frames.py",
+  "lib/python3.5/site-packages/pims/bioformats.py",
+  "lib/python3.5/site-packages/pims/cine.py",
+  "lib/python3.5/site-packages/pims/display.py",
+  "lib/python3.5/site-packages/pims/ffmpeg_reader.py",
+  "lib/python3.5/site-packages/pims/frame.py",
+  "lib/python3.5/site-packages/pims/image_sequence.py",
+  "lib/python3.5/site-packages/pims/norpix_reader.py",
+  "lib/python3.5/site-packages/pims/pyav_reader.py",
+  "lib/python3.5/site-packages/pims/spe_stack.py",
+  "lib/python3.5/site-packages/pims/tests/__init__.py",
+  "lib/python3.5/site-packages/pims/tests/test_bioformats.py",
+  "lib/python3.5/site-packages/pims/tests/test_common.py",
+  "lib/python3.5/site-packages/pims/tests/test_display.py",
+  "lib/python3.5/site-packages/pims/tests/test_factories.py",
+  "lib/python3.5/site-packages/pims/tests/test_frame.py",
+  "lib/python3.5/site-packages/pims/tests/test_norpix.py",
+  "lib/python3.5/site-packages/pims/tiff_stack.py",
+  "lib/python3.5/site-packages/pims/utils/__init__.py",
+  "lib/python3.5/site-packages/pims/utils/misc.py",
+  "lib/python3.5/site-packages/pims/utils/sort.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy >=1.7",
+   "pillow",
+   "python 3.5*",
+   "scikit-image",
+   "six >=1.8",
+   "slicerator >=0.9.4"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pims",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.3"
+ },
+ "name": "pims",
+ "raw_recipe": "{% set version = \"0.3.3\" %}\npackage:\n  name: pims\n  version: {{ version }}\n\nsource:\n  url: https://github.com/soft-matter/pims/archive/v{{ version }}.tar.gz\n  fn: pims-v{{ version }}.tar.gz\n  sha256: b764c53bfa43863f9909d7bed6fcc95008edc4e6eedb979d78a2702531282a46\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - slicerator >=0.9.4\n    - six >=1.8\n    - numpy >=1.7\n\n  run:\n    - python\n    - slicerator >=0.9.4\n    - six >=1.8\n    - numpy >=1.7\n    - scikit-image  # one of { scikit-image | matplotlib | scipy }\n    - pillow  # optional, but necessary for ipython rich display\n\ntest:\n  imports:\n    - pims\n    - pims.api\n    - pims.base_frames\n    - pims.bioformats\n    - pims.cine\n    - pims.display\n    - pims.ffmpeg_reader\n    - pims.frame\n    - pims.image_sequence\n    - pims.norpix_reader\n    - pims.pyav_reader\n    - pims.spe_stack\n    - pims.tiff_stack\n    - pims.tests\n    - pims.utils\n    - pims.utils.misc\n    - pims.utils.sort\n\nabout:\n  home: https://github.com/soft-matter/pims\n  license: BSD 3-Clause\n  summary: >\n      Python Image Sequence. Load video and sequential images in many formats \n      with a simple, consistent interface.\n\nextra:\n  recipe-maintainers:\n    - danielballan\n    - ericdill\n    - licode\n    - tacaswell\n",
+ "rendered_recipe": {},
+ "version": "0.3.3"
+}
