@@ -36,14 +36,14 @@ jobs:
             git push https://${GH_PUSH_TOKEN}@github.com/regro/libcfgraph.git
 
 workflows:
-   version: 2
-   hourly:
-     triggers:
-       - schedule:
-           cron: "0 * * * *"
-           filters:
-             branches:
-               only:
-                 - master
-     jobs:
-       - reap
+  version: 2
+  hourly:
+    triggers:
+      - schedule:
+          cron: "0 * * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - reap
