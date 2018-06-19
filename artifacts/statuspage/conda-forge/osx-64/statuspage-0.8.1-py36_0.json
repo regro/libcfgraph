@@ -1,0 +1,156 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/jayfk/statuspage",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.4-py36_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.3-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_0",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "A statuspage generator that lets you host your statuspage for free on Github."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/statuspage/template/statuspage.js",
+  "lib/python3.6/site-packages/statuspage/statuspage.py",
+  "lib/python3.6/site-packages/statuspage/tests.py",
+  "lib/python3.6/site-packages/statuspage/template/template.html",
+  "lib/python3.6/site-packages/statuspage-0.8.1-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/statuspage-0.8.1-py3.6.egg-info/not-zip-safe",
+  "bin/statuspage",
+  "lib/python3.6/site-packages/statuspage/__init__.py",
+  "lib/python3.6/site-packages/statuspage/template/translations.ini",
+  "lib/python3.6/site-packages/statuspage/template/style.css"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "click",
+   "jinja2",
+   "markdown2",
+   "pygithub",
+   "python 3.6*",
+   "requests",
+   "tqdm"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "statuspage",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.8.1"
+ },
+ "metadata_version": 1,
+ "name": "statuspage",
+ "raw_recipe": "{% set name = \"statuspage\" %}\n{% set version = \"0.8.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 4eb5f3bc2ea33f59f0b42c9cd2ef6c909e09069b7c96a71dae32f72dab068b02\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  preserve_egg_dir: True\n  entry_points:\n    - statuspage=statuspage.statuspage:cli\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pygithub\n    - click\n    - jinja2\n    - tqdm\n    - requests\n    - markdown2\n\ntest:\n  commands:\n    - statuspage --help\n\nabout:\n  home: https://github.com/jayfk/statuspage\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: A statuspage generator that lets you host your statuspage for free on Github.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/jayfk/statuspage",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "A statuspage generator that lets you host your statuspage for free on Github."
+  },
+  "build": {
+   "entry_points": [
+    "statuspage=statuspage.statuspage:cli"
+   ],
+   "number": "0",
+   "preserve_egg_dir": "True",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt",
+   "string": "py36_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "statuspage",
+   "version": "0.8.1"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "pygithub",
+    "click",
+    "jinja2",
+    "tqdm",
+    "requests",
+    "markdown2"
+   ]
+  },
+  "source": {
+   "fn": "statuspage-0.8.1.tar.gz",
+   "sha256": "4eb5f3bc2ea33f59f0b42c9cd2ef6c909e09069b7c96a71dae32f72dab068b02",
+   "url": "https://pypi.io/packages/source/s/statuspage/statuspage-0.8.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "statuspage --help"
+   ]
+  }
+ },
+ "version": "0.8.1"
+}

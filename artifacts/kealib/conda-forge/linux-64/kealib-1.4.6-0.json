@@ -1,0 +1,33 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/kea-config",
+  "include/libkea/KEAAttributeTable.h",
+  "include/libkea/KEAAttributeTableFile.h",
+  "include/libkea/KEAAttributeTableInMem.h",
+  "include/libkea/KEACommon.h",
+  "include/libkea/KEAException.h",
+  "include/libkea/KEAImageIO.h",
+  "lib/libkea.so",
+  "lib/libkea.so.1.4.6"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "hdf5 1.8.15.1"
+  ],
+  "license": "MIT",
+  "name": "kealib",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.4.6"
+ },
+ "metadata_version": 1,
+ "name": "kealib",
+ "raw_recipe": "{% set version = \"1.4.6\" %}\n\npackage:\n    name: kealib\n    version: {{ version }}\n\nsource:\n    fn: kealib-{{ version }}.tar.gz\n    url: https://bitbucket.org/chchrsc/kealib/downloads/kealib-{{ version }}.tar.gz\n    md5: 789174bd519736ac1e726613b6eb7672\n\nbuild:\n    number: 0\n    features:\n        - vc9  # [win and py27]\n        - vc10  # [win and py34]\n        - vc14  # [win and py35]\n        \nrequirements:\n    build:\n        - python  # [win]    \n        - cmake\n        - hdf5 1.8.15.1\n\n    run:\n        - hdf5 1.8.15.1\n\nabout:\n    home: kealib.org\n    license: MIT\n    summary: The KEA format provides an implementation of the GDAL specification within the the HDF5 file format.\n\nextra:\n    recipe-maintainers:\n        - gillins\n",
+ "rendered_recipe": {},
+ "version": "1.4.6"
+}

@@ -1,0 +1,30 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/cdo"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [
+   "jasper",
+   "libgcc",
+   "libnetcdf 4.3*",
+   "libuuid",
+   "netcdf-fortran",
+   "proj.4"
+  ],
+  "license": "GPLv2",
+  "name": "cdo",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.7.1"
+ },
+ "metadata_version": 1,
+ "name": "cdo",
+ "raw_recipe": "{% set version = \"1.7.1\" %}\n\npackage:\n    name: cdo\n    version: {{ version }}\n\nsource:\n    fn: cdo-{{ version }}.tar.gz\n    url: https://code.zmaw.de/attachments/download/12070/cdo-{{ version }}.tar.gz\n    md5: f513a4bef1cf081cab3cfdc79d177bc5\n\nbuild:\n    number: 1\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - jasper\n        - libnetcdf 4.3*\n        - netcdf-fortran\n        - proj.4\n        - libuuid\n    run:\n        - jasper\n        - libnetcdf 4.3*\n        - netcdf-fortran\n        - proj.4\n        - libgcc\n        - libuuid\n\ntest:\n    commands:\n        - cdo -h\n        - conda inspect linkages -n _test cdo  # [linux]\n\nabout:\n    home: https://code.zmaw.de/projects/cdo\n    license: GPLv2\n    summary: CLI tools to manipulate and analyse Climate and NWP model Data\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.7.1"
+}

@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "http://www.freedesktop.org/wiki/Software/pkg-config/",
+  "license": "GPL 2",
+  "summary": "Interface for querying installed libraries for use during compilation."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/pkg-config",
+  "bin/x86_64-unknown-linux-gnu-pkg-config",
+  "share/aclocal/pkg.m4",
+  "share/doc/pkg-config/pkg-config-guide.html",
+  "share/man/man1/pkg-config.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "zlib 1.2*"
+  ],
+  "license": "GPL 2",
+  "name": "pkg-config",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.29.1"
+ },
+ "metadata_version": 1,
+ "name": "pkg-config",
+ "raw_recipe": "{% set version = \"0.29.1\" %}\n\npackage:\n  name: pkg-config\n  version: {{ version }}\n\nsource:\n  fn: pkg-config-{{ version }}.tar.gz\n  url: https://pkg-config.freedesktop.org/releases/pkg-config-{{ version }}.tar.gz\n  sha256: beb43c9e064555469bd4390dcfd8030b1536e0aa103f08d7abf7ae8cac0cb001\n\nbuild:\n  skip: True  # [win]\n  number: 0\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - zlib 1.2*\n    - python\n    - automake\n  run:\n    - zlib 1.2*\n\ntest:\n  commands:\n    - pkg-config --help\n    - '[ \"$(pkg-config freetype2 --cflags)\" == \"-I$PREFIX/include/freetype2\" ]'\n\n  requires:\n    - freetype\n\nabout:\n  home: http://www.freedesktop.org/wiki/Software/pkg-config/\n  license: GPL 2\n  summary: Interface for querying installed libraries for use during compilation.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - mdboom\n    - ocefpaf\n    - tacaswell\n",
+ "rendered_recipe": {},
+ "version": "0.29.1"
+}
