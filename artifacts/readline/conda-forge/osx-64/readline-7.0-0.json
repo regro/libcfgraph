@@ -1,0 +1,170 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html",
+  "license": "GPL3",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "library for editing command lines as they are typed in"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/libhistory.7.0.dylib",
+  "share/readline/rlbasic.c",
+  "share/info/rluserman.info",
+  "lib/libreadline.dylib",
+  "share/readline/fileman.c",
+  "share/readline/hist_purgecmd.c",
+  "lib/libhistory.7.dylib",
+  "share/man/man3/history.3",
+  "lib/libreadline.7.0.dylib",
+  "share/readline/excallback.c",
+  "share/info/readline.info",
+  "include/readline/keymaps.h",
+  "share/readline/rltest.c",
+  "share/readline/rl.c",
+  "share/readline/rl-fgets.c",
+  "share/doc/readline/README",
+  "share/readline/histexamp.c",
+  "share/doc/readline/INSTALL",
+  "lib/libhistory.dylib",
+  "include/readline/history.h",
+  "include/readline/rlstdc.h",
+  "share/info/history.info",
+  "lib/libhistory.a",
+  "include/readline/chardefs.h",
+  "share/readline/rlevent.c",
+  "share/readline/rlcat.c",
+  "share/readline/hist_erasedups.c",
+  "lib/libreadline.a",
+  "lib/libreadline.7.dylib",
+  "include/readline/readline.h",
+  "share/readline/rlptytest.c",
+  "share/man/man3/readline.3",
+  "share/readline/rl-callbacktest.c",
+  "share/info/dir",
+  "include/readline/tilde.h",
+  "include/readline/rlconf.h",
+  "include/readline/rltypedefs.h",
+  "share/doc/readline/CHANGES",
+  "share/readline/rlversion.c",
+  "share/readline/manexamp.c"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "ncurses 5.9*"
+  ],
+  "license": "GPL3",
+  "name": "readline",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "7.0"
+ },
+ "metadata_version": 1,
+ "name": "readline",
+ "raw_recipe": "{% set version = \"7.0\" %}\n\npackage:\n  name: readline\n  version: {{ version }}\n\nsource:\n  url: ftp://ftp.gnu.org/gnu/readline/readline-{{ version }}.tar.gz\n  fn: readline-{{ version }}.tar.gz\n  sha256: 750d437185286f40a369e1e4f4764eda932b9459b5ec9a731628393dd3d32334\n  patches:\n    - patches/readline70-001\n\nbuild:\n  skip: true  # [win]\n  number: 0\n\nrequirements:\n  build:\n    - pkg-config\n    - ncurses 5.9*\n  run:\n    - ncurses 5.9*\n\ntest:\n  commands:\n  {% set readline_libs = [\n    'libreadline',\n    'libhistory'\n  ] %}\n  {% for lib in readline_libs %}\n    - test -f ${PREFIX}/lib/{{ lib }}.a\n    - test -f ${PREFIX}/lib/{{ lib }}.so      # [linux]\n    - test -f ${PREFIX}/lib/{{ lib }}.dylib   # [osx]\n  {% endfor %}\n\nabout:\n  home: https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html\n  license: GPL3\n  summary: library for editing command lines as they are typed in\n\nextra:\n  recipe-maintainers:\n    - croth1\n    - jakirkham\n    - jjhelmus\n    - pelson\n    - msarahan\n    - asmeurer\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html",
+   "license": "GPL3",
+   "summary": "library for editing command lines as they are typed in"
+  },
+  "build": {
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "croth1",
+    "jakirkham",
+    "jjhelmus",
+    "pelson",
+    "msarahan",
+    "asmeurer"
+   ]
+  },
+  "package": {
+   "name": "readline",
+   "version": "7.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "ncurses 5.9*"
+   ]
+  },
+  "source": {
+   "fn": "readline-7.0.tar.gz",
+   "patches": [
+    "patches/readline70-001"
+   ],
+   "sha256": "750d437185286f40a369e1e4f4764eda932b9459b5ec9a731628393dd3d32334",
+   "url": "ftp://ftp.gnu.org/gnu/readline/readline-7.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/lib/libreadline.a",
+    "test -f ${PREFIX}/lib/libreadline.dylib",
+    "test -f ${PREFIX}/lib/libhistory.a",
+    "test -f ${PREFIX}/lib/libhistory.dylib"
+   ]
+  }
+ },
+ "version": "7.0"
+}

@@ -1,0 +1,69 @@
+{
+ "about": {
+  "home": "https://github.com/conda-forge/vs2008_express_x64_patch-feedstock",
+  "license": "BSD 3-Clause",
+  "summary": "Workaround to help CMake find the appropriate x64 compiler on VS 2008 Express with VS compiler for python on top."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Scripts/setup_x64.bat",
+  "Scripts/x64/600dd186-2429-11d7-8bf6-00b0d03daa06.reg",
+  "Scripts/x64/600dd187-2429-11d7-8bf6-00b0d03daa06.reg",
+  "Scripts/x64/600dd188-2429-11d7-8bf6-00b0d03daa06.reg",
+  "Scripts/x64/600dd189-2429-11d7-8bf6-00b0d03daa06.reg",
+  "Scripts/x64/656d875f-2429-11d7-8bf6-00b0d03daa06.reg",
+  "Scripts/x64/656d8760-2429-11d7-8bf6-00b0d03daa06.reg",
+  "Scripts/x64/656d8763-2429-11d7-8bf6-00b0d03daa06.reg",
+  "Scripts/x64/656d8766-2429-11d7-8bf6-00b0d03daa06.reg",
+  "Scripts/x64/VC_OBJECTS_PLATFORM_INFO.reg"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "BSD 3-Clause",
+  "name": "vs2008_express_vc_python_patch",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.0"
+ },
+ "metadata_version": 1,
+ "name": "vs2008_express_vc_python_patch",
+ "raw_recipe": "package:\n  name: vs2008_express_vc_python_patch\n  version: 1.0.0\n\nbuild:\n  number: 0\n  skip: true  # [not win]\n  script:\n    - if not exist %SCRIPTS% mkdir %SCRIPTS%\n    - xcopy /i /v /f %RECIPE_DIR%\\\\vs2008_patch\\\\setup_x64.bat %SCRIPTS%\\\\\n    - xcopy /i /v /f /s %RECIPE_DIR%\\\\vs2008_patch\\\\x64 %SCRIPTS%\\\\x64\\\\\n\ntest:\n  commands:\n    - IF NOT EXIST %SCRIPTS%\\\\setup_x64.bat exit 1\n    - IF NOT EXIST %SCRIPTS%\\\\x64 exit 1\n\nabout:\n  home: https://github.com/conda-forge/vs2008_express_x64_patch-feedstock\n  summary: Workaround to help CMake find the appropriate x64 compiler on VS 2008 Express with VS compiler for python on top.\n  license: BSD 3-Clause\n\nextra:\n  recipe-maintainers:\n    - msarahan\n    - patricksnape\n    - jakirkham\n    - shadowwalkersb\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/conda-forge/vs2008_express_x64_patch-feedstock",
+   "license": "BSD 3-Clause",
+   "summary": "Workaround to help CMake find the appropriate x64 compiler on VS 2008 Express with VS compiler for python on top."
+  },
+  "build": {
+   "number": 0,
+   "script": [
+    "if not exist %SCRIPTS% mkdir %SCRIPTS%",
+    "xcopy /i /v /f %RECIPE_DIR%\\\\vs2008_patch\\\\setup_x64.bat %SCRIPTS%\\\\",
+    "xcopy /i /v /f /s %RECIPE_DIR%\\\\vs2008_patch\\\\x64 %SCRIPTS%\\\\x64\\\\"
+   ],
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "msarahan",
+    "patricksnape",
+    "jakirkham",
+    "shadowwalkersb"
+   ]
+  },
+  "package": {
+   "name": "vs2008_express_vc_python_patch",
+   "version": "1.0.0"
+  },
+  "test": {
+   "commands": [
+    "IF NOT EXIST %SCRIPTS%\\\\setup_x64.bat exit 1",
+    "IF NOT EXIST %SCRIPTS%\\\\x64 exit 1"
+   ]
+  }
+ },
+ "version": "1.0.0"
+}

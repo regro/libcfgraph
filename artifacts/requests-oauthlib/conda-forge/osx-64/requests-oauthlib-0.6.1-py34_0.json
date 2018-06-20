@@ -1,0 +1,40 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/requests_oauthlib-0.6.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/requests_oauthlib-0.6.1-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/requests_oauthlib/__init__.py",
+  "lib/python3.4/site-packages/requests_oauthlib/compliance_fixes/__init__.py",
+  "lib/python3.4/site-packages/requests_oauthlib/compliance_fixes/douban.py",
+  "lib/python3.4/site-packages/requests_oauthlib/compliance_fixes/facebook.py",
+  "lib/python3.4/site-packages/requests_oauthlib/compliance_fixes/linkedin.py",
+  "lib/python3.4/site-packages/requests_oauthlib/compliance_fixes/mailchimp.py",
+  "lib/python3.4/site-packages/requests_oauthlib/compliance_fixes/slack.py",
+  "lib/python3.4/site-packages/requests_oauthlib/compliance_fixes/weibo.py",
+  "lib/python3.4/site-packages/requests_oauthlib/oauth1_auth.py",
+  "lib/python3.4/site-packages/requests_oauthlib/oauth1_session.py",
+  "lib/python3.4/site-packages/requests_oauthlib/oauth2_auth.py",
+  "lib/python3.4/site-packages/requests_oauthlib/oauth2_session.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "oauthlib >=0.6.2",
+   "python 3.4*",
+   "requests >=2.0.0"
+  ],
+  "license": "ISC",
+  "name": "requests-oauthlib",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.6.1"
+ },
+ "metadata_version": 1,
+ "name": "requests-oauthlib",
+ "raw_recipe": "{%set name = \"requests-oauthlib\" %}\n{%set version = \"0.6.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"905306080ec0cc6b3c65c8101f471fccfdb9994c16dd116524fd3fc0790d46d7\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - oauthlib >=0.6.2\n    - requests >=2.0.0\n\n  run:\n    - python\n    - oauthlib >=0.6.2\n    - requests >=2.0.0\n\ntest:\n  imports:\n    - requests_oauthlib\n    - requests_oauthlib.compliance_fixes\n\nabout:\n  home: https://github.com/requests/requests-oauthlib\n  license: ISC\n  summary: 'OAuthlib authentication support for Requests.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.6.1"
+}

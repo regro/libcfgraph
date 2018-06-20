@@ -1,0 +1,37 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/gflags_completions.sh",
+  "include/gflags/gflags.h",
+  "include/gflags/gflags_completions.h",
+  "include/gflags/gflags_declare.h",
+  "include/gflags/gflags_gflags.h",
+  "lib/cmake/gflags/gflags-config-version.cmake",
+  "lib/cmake/gflags/gflags-config.cmake",
+  "lib/cmake/gflags/gflags-export-noconfig.cmake",
+  "lib/cmake/gflags/gflags-export.cmake",
+  "lib/libgflags.2.1.2.dylib",
+  "lib/libgflags.2.dylib",
+  "lib/libgflags.dylib",
+  "lib/libgflags_nothreads.2.1.2.dylib",
+  "lib/libgflags_nothreads.2.dylib",
+  "lib/libgflags_nothreads.dylib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "BSD",
+  "name": "gflags",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.1.2"
+ },
+ "metadata_version": 1,
+ "name": "gflags",
+ "raw_recipe": "{% set version = \"2.1.2\" %}\n\npackage:\n  name: gflags\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/gflags/gflags/archive/v{{ version }}.tar.gz\n  sha1: 8bdbade9d041339dc14b4ab426e2354a5af38478\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - cmake\n\ntest:\n  commands:\n    - exit $(test -f ${PREFIX}/lib/libgflags.dylib)            # [osx]\n    - exit $(test -f ${PREFIX}/lib/libgflags_nothreads.dylib)  # [osx]\n    - exit $(test -f ${PREFIX}/lib/libgflags.so)               # [linux]\n    - exit $(test -f ${PREFIX}/lib/libgflags_nothreads.so)     # [linux]\n\nabout:\n  home: https://github.com/gflags/gflags\n  license: BSD\n  summary: A C++ library that implements commandline flags processing.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "2.1.2"
+}
