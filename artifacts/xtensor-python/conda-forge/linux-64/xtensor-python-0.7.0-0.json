@@ -1,0 +1,148 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Multi dimensional arrays with broadcasting and lazy computing",
+  "dev_url": "https://github.com/QuantStack/xtensor-python",
+  "doc_url": "http://xtensor.readthedocs.io",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://quantstack.net/xtensor",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-0",
+   "conda-forge::certifi-2017.1.23-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.4-py35_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.2-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_2",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.12-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Python bindings for xtensor, the C++ tensor algebra library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/xtensor-python/pytensor.hpp",
+  "include/xtensor-python/pycontainer.hpp",
+  "include/xtensor-python/pyvectorize.hpp",
+  "include/xtensor-python/pyarray.hpp",
+  "include/xtensor-python/pybuffer_adaptor.hpp",
+  "include/xtensor-python/xtensor_python_config.hpp"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "pybind11 ==2.0.1",
+   "xtensor ==0.7.2"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "xtensor-python",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.7.0"
+ },
+ "metadata_version": 1,
+ "name": "xtensor-python",
+ "raw_recipe": "{% set name = \"xtensor-python\" %}\n{% set version = \"0.7.0\" %}\n{% set sha256 = \"939da966fdee8aafa55519cd1c5fc82c63d81165fdaf44b6249d077c619fbd4a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/QuantStack/xtensor-python/archive/{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:\n  run:\n    - xtensor ==0.7.2\n    - pybind11 ==2.0.1\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/xtensor-python  # [unix]\n    - test -f ${PREFIX}/include/xtensor-python/pyarray.hpp  # [unix]\n    - if exist %PREFIX%\\include\\xtensor-python\\pyarray.hpp (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://quantstack.net/xtensor\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Python bindings for xtensor, the C++ tensor algebra library'\n  description: 'Multi dimensional arrays with broadcasting and lazy computing'\n  doc_url: http://xtensor.readthedocs.io\n  dev_url: https://github.com/QuantStack/xtensor-python\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Multi dimensional arrays with broadcasting and lazy computing",
+   "dev_url": "https://github.com/QuantStack/xtensor-python",
+   "doc_url": "http://xtensor.readthedocs.io",
+   "home": "http://quantstack.net/xtensor",
+   "license": "BSD 3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "Python bindings for xtensor, the C++ tensor algebra library"
+  },
+  "build": {
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "SylvainCorlay",
+    "JohanMabille"
+   ]
+  },
+  "package": {
+   "name": "xtensor-python",
+   "version": "0.7.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "xtensor ==0.7.2",
+    "pybind11 ==2.0.1"
+   ]
+  },
+  "source": {
+   "fn": "xtensor-python-0.7.0.tar.gz",
+   "sha256": "939da966fdee8aafa55519cd1c5fc82c63d81165fdaf44b6249d077c619fbd4a",
+   "url": "https://github.com/QuantStack/xtensor-python/archive/0.7.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -d ${PREFIX}/include/xtensor-python",
+    "test -f ${PREFIX}/include/xtensor-python/pyarray.hpp"
+   ]
+  }
+ },
+ "version": "0.7.0"
+}

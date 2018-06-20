@@ -1,0 +1,35 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/iterm2_tools-2.3-py3.5.egg-info",
+  "lib/python3.5/site-packages/iterm2_tools/__init__.py",
+  "lib/python3.5/site-packages/iterm2_tools/_version.py",
+  "lib/python3.5/site-packages/iterm2_tools/images.py",
+  "lib/python3.5/site-packages/iterm2_tools/ipython.py",
+  "lib/python3.5/site-packages/iterm2_tools/shell_integration.py",
+  "lib/python3.5/site-packages/iterm2_tools/tests/__init__.py",
+  "lib/python3.5/site-packages/iterm2_tools/tests/aloha_cat.png",
+  "lib/python3.5/site-packages/iterm2_tools/tests/test_images.py",
+  "lib/python3.5/site-packages/iterm2_tools/tests/test_ipython.py",
+  "lib/python3.5/site-packages/iterm2_tools/tests/test_shell_integration.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "iterm2-tools",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.3"
+ },
+ "metadata_version": 1,
+ "name": "iterm2-tools",
+ "raw_recipe": "{% set version = \"2.3\" %}\n\npackage:\n  name: iterm2-tools\n  version: {{ version }}\n\nsource:\n  fn: iterm2-tools-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/i/iterm2-tools/iterm2-tools-{{ version }}.tar.gz\n  sha1: a49135aa73f45e135d4a27b6693e10afe597dcb6\n\nbuild:\n  number: 0\n  script: python setup.py install\n  skip: true  # [not osx]\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - iterm2_tools\n    - iterm2_tools.tests\n\nabout:\n  home: https://github.com/asmeurer/iterm2-tools\n  license: MIT\n  summary: 'iTerm2 tools.'\n\n  description: |\n    Some tools for working with iTerm2's proprietary escape codes.\n  doc_url: https://iterm2-tools.readthedocs.org/\n  dev_url: https://github.com/asmeurer/iterm2-tools\n\nextra:\n  recipe-maintainers:\n    - asmeurer\n",
+ "rendered_recipe": {},
+ "version": "2.3"
+}
