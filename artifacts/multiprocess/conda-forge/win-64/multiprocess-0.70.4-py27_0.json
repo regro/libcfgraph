@@ -1,0 +1,46 @@
+{
+ "about": {
+  "home": "http://trac.mystic.cacr.caltech.edu/project/pathos/wiki.html",
+  "license": "BSD 3-Clause",
+  "summary": "better multiprocessing and multithreading in python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/_multiprocess.pyd",
+  "Lib/site-packages/multiprocess-0.70.4-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/multiprocess-0.70.4-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/multiprocess/__init__.py",
+  "Lib/site-packages/multiprocess/connection.py",
+  "Lib/site-packages/multiprocess/dummy/__init__.py",
+  "Lib/site-packages/multiprocess/dummy/connection.py",
+  "Lib/site-packages/multiprocess/forking.py",
+  "Lib/site-packages/multiprocess/heap.py",
+  "Lib/site-packages/multiprocess/managers.py",
+  "Lib/site-packages/multiprocess/pool.py",
+  "Lib/site-packages/multiprocess/process.py",
+  "Lib/site-packages/multiprocess/queues.py",
+  "Lib/site-packages/multiprocess/reduction.py",
+  "Lib/site-packages/multiprocess/sharedctypes.py",
+  "Lib/site-packages/multiprocess/synchronize.py",
+  "Lib/site-packages/multiprocess/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "dill >=0.2.5",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "multiprocess",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.70.4"
+ },
+ "metadata_version": 1,
+ "name": "multiprocess",
+ "raw_recipe": "{% set version = \"0.70.4\" %}\n\npackage:\n  name: multiprocess\n  version: {{ version }}\n\nsource:\n  fn: multiprocess-0.70.4.tgz\n  url: https://pypi.python.org/packages/source/m/multiprocess/multiprocess-0.70.4.tgz\n  md5: 587596fff965e66a4f474a283a72f180 \n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools >=0.6\n    - dill >=0.2.5\n\n  run:\n    - python\n    - dill >=0.2.5\n\ntest:\n  imports:\n    - multiprocess\n    - multiprocess.dummy\n\nabout:\n  home: http://trac.mystic.cacr.caltech.edu/project/pathos/wiki.html\n  license: BSD 3-Clause\n  license_file: COPYING.txt\n  summary: better multiprocessing and multithreading in python\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
+ "rendered_recipe": {},
+ "version": "0.70.4"
+}

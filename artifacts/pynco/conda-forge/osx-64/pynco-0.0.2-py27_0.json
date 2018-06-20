@@ -1,0 +1,78 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/nco-0.0.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/nco/__init__.py",
+  "lib/python2.7/site-packages/nco/nco.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "h5py",
+   "nco",
+   "netcdf4",
+   "numpy",
+   "python 2.7*",
+   "python-dateutil",
+   "scipy"
+  ],
+  "license": "GPLv2",
+  "name": "pynco",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.0.2"
+ },
+ "metadata_version": 1,
+ "name": "pynco",
+ "raw_recipe": "package:\n    name: pynco\n    version: 0.0.2\n\nsource:\n    git_url: https://github.com/nco/pynco.git\n    git_tag: 0.0.2\n\nbuild:\n    number: 0\n    skip: True  # [win]\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - python-dateutil\n        - h5py\n        - netcdf4\n        - numpy\n        - scipy\n        - nco\n\ntest:\n    imports:\n        - nco\n\nabout:\n    home: https://github.com/nco/pynco\n    license: GPLv2\n    summary: Python bindings to NCO\n\nextra:\n    recipe-maintainers:\n        - jhamman\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/nco/pynco",
+   "license": "GPLv2",
+   "summary": "Python bindings to NCO"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt",
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jhamman",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "pynco",
+   "version": "0.0.2"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "python-dateutil",
+    "h5py",
+    "netcdf4",
+    "numpy",
+    "scipy",
+    "nco"
+   ]
+  },
+  "source": {
+   "git_tag": "0.0.2",
+   "git_url": "https://github.com/nco/pynco.git"
+  },
+  "test": {
+   "imports": [
+    "nco"
+   ]
+  }
+ },
+ "version": "0.0.2"
+}

@@ -1,0 +1,66 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/django_typed_models-0.5.0-py3.4.egg",
+  "lib/python3.4/site-packages/django_typed_models.pth"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "django",
+   "python 3.4*"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "django-typed-models",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.5.0"
+ },
+ "metadata_version": 1,
+ "name": "django-typed-models",
+ "raw_recipe": "package:\n    name: django-typed-models\n    version: 0.5.0\n\nsource:\n    fn: django-typed-models-0.5.0.tar.gz\n    url: https://pypi.python.org/packages/source/d/django-typed-models/django-typed-models-0.5.0.tar.gz\n    md5: d58e0eb6e699deeecb729e61a2d957f2\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n        - django\n\ntest:\n    imports:\n        - typedmodels\n\nabout:\n    home: http://github.com/craigds/django-typed-models\n    license: BSD-3-Clause\n    summary: Sane single table model inheritance for Django\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - kwilcox\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://github.com/craigds/django-typed-models",
+   "license": "BSD-3-Clause",
+   "summary": "Sane single table model inheritance for Django"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "kwilcox"
+   ]
+  },
+  "package": {
+   "name": "django-typed-models",
+   "version": "0.5.0"
+  },
+  "requirements": {
+   "build": [
+    "python"
+   ],
+   "run": [
+    "python",
+    "django"
+   ]
+  },
+  "source": {
+   "fn": "django-typed-models-0.5.0.tar.gz",
+   "md5": "d58e0eb6e699deeecb729e61a2d957f2",
+   "url": "https://pypi.python.org/packages/source/d/django-typed-models/django-typed-models-0.5.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "typedmodels"
+   ]
+  }
+ },
+ "version": "0.5.0"
+}

@@ -1,0 +1,56 @@
+{
+ "about": {
+  "home": "https://stuvel.eu/rsa",
+  "license": "Apache 2.0",
+  "summary": "Pure-Python RSA implementation"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/pyrsa-decrypt",
+  "bin/pyrsa-decrypt-bigfile",
+  "bin/pyrsa-encrypt",
+  "bin/pyrsa-encrypt-bigfile",
+  "bin/pyrsa-keygen",
+  "bin/pyrsa-priv2pub",
+  "bin/pyrsa-sign",
+  "bin/pyrsa-verify",
+  "lib/python2.7/site-packages/rsa-3.4.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/rsa/__init__.py",
+  "lib/python2.7/site-packages/rsa/_compat.py",
+  "lib/python2.7/site-packages/rsa/_version133.py",
+  "lib/python2.7/site-packages/rsa/_version200.py",
+  "lib/python2.7/site-packages/rsa/asn1.py",
+  "lib/python2.7/site-packages/rsa/bigfile.py",
+  "lib/python2.7/site-packages/rsa/cli.py",
+  "lib/python2.7/site-packages/rsa/common.py",
+  "lib/python2.7/site-packages/rsa/core.py",
+  "lib/python2.7/site-packages/rsa/key.py",
+  "lib/python2.7/site-packages/rsa/parallel.py",
+  "lib/python2.7/site-packages/rsa/pem.py",
+  "lib/python2.7/site-packages/rsa/pkcs1.py",
+  "lib/python2.7/site-packages/rsa/prime.py",
+  "lib/python2.7/site-packages/rsa/randnum.py",
+  "lib/python2.7/site-packages/rsa/transform.py",
+  "lib/python2.7/site-packages/rsa/util.py",
+  "lib/python2.7/site-packages/rsa/varblock.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "pyasn1 >=0.1.3",
+   "python 2.7*"
+  ],
+  "license": "Apache 2.0",
+  "name": "rsa",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "3.4.2"
+ },
+ "metadata_version": 1,
+ "name": "rsa",
+ "raw_recipe": "{%set name = \"rsa\" %}\n{%set version = \"3.4.2\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"25df4e10c263fb88b5ace923dd84bf9aa7f5019687b5e55382ffcdb8bede9db5\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  entry_points:\n    - pyrsa-priv2pub = rsa.util:private_to_public\n    - pyrsa-keygen = rsa.cli:keygen\n    - pyrsa-encrypt = rsa.cli:encrypt\n    - pyrsa-decrypt = rsa.cli:decrypt\n    - pyrsa-sign = rsa.cli:sign\n    - pyrsa-verify = rsa.cli:verify\n    - pyrsa-encrypt-bigfile = rsa.cli:encrypt_bigfile\n    - pyrsa-decrypt-bigfile = rsa.cli:decrypt_bigfile\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pyasn1 >=0.1.3\n\n  run:\n    - python\n    - pyasn1 >=0.1.3\n\ntest:\n  imports:\n    - rsa\n\n  commands:\n    - pyrsa-priv2pub --help\n    - pyrsa-keygen --help\n    - pyrsa-encrypt --help\n    - pyrsa-decrypt --help\n    - pyrsa-sign --help\n    - pyrsa-verify --help\n    - pyrsa-encrypt-bigfile --help\n    - pyrsa-decrypt-bigfile --help\n\nabout:\n  home: https://stuvel.eu/rsa\n  license: Apache 2.0\n  summary: 'Pure-Python RSA implementation'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "3.4.2"
+}

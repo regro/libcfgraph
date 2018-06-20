@@ -1,0 +1,44 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pyflakes-1.2.3-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/pyflakes-1.2.3-py3.4.egg-info/pbr.json",
+  "Lib/site-packages/pyflakes/__init__.py",
+  "Lib/site-packages/pyflakes/__main__.py",
+  "Lib/site-packages/pyflakes/api.py",
+  "Lib/site-packages/pyflakes/checker.py",
+  "Lib/site-packages/pyflakes/messages.py",
+  "Lib/site-packages/pyflakes/reporter.py",
+  "Lib/site-packages/pyflakes/scripts/__init__.py",
+  "Lib/site-packages/pyflakes/scripts/pyflakes.py",
+  "Lib/site-packages/pyflakes/test/__init__.py",
+  "Lib/site-packages/pyflakes/test/harness.py",
+  "Lib/site-packages/pyflakes/test/test_api.py",
+  "Lib/site-packages/pyflakes/test/test_doctests.py",
+  "Lib/site-packages/pyflakes/test/test_imports.py",
+  "Lib/site-packages/pyflakes/test/test_other.py",
+  "Lib/site-packages/pyflakes/test/test_return_with_arguments_inside_generator.py",
+  "Lib/site-packages/pyflakes/test/test_undefined_names.py",
+  "Scripts/pyflakes-script.py",
+  "Scripts/pyflakes.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "pyflakes",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.2.3"
+ },
+ "metadata_version": 1,
+ "name": "pyflakes",
+ "raw_recipe": "{%set name = \"pyflakes\" %}\n{%set version = \"1.2.3\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"2e4a1b636d8809d8f0a69f341acf15b2e401a3221ede11be439911d23ce2139e\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: https://github.com/PyCQA/pyflakes\n  license: MIT\n  summary: 'Pyflakes analyzes programs and detects various errors.'\n\nextra:\n  recipe-maintainers:\n    - sigmavirus24\n",
+ "rendered_recipe": {},
+ "version": "1.2.3"
+}

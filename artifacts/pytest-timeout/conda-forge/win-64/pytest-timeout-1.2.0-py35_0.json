@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "https://bitbucket.org/pytest-dev/pytest-timeout",
+  "license": "MIT",
+  "summary": "This is a plugin which will terminate tests after a certain timeout."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pytest_timeout-1.2.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/pytest_timeout.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "pytest >=2.8.0",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "pytest-timeout",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.2.0"
+ },
+ "metadata_version": 1,
+ "name": "pytest-timeout",
+ "raw_recipe": "{% set name = \"pytest-timeout\" %}\n{% set version = \"1.2.0\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"c29e3168f10897728059bd6b8ca20b28733d7fe6b8f6c09bb9d89f6146f27cb8\" %}\n{% set ext = \"tar.gz\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ ext }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ ext }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - pytest >=2.8.0\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - pytest_timeout\n  commands:\n    - py.test --help\n\nabout:\n  home: https://bitbucket.org/pytest-dev/pytest-timeout\n  license: MIT\n  license_file: LICENSE\n  summary: This is a plugin which will terminate tests after a certain timeout.\n\nextra:\n  recipe-maintainers:\n    - flub\n    - nicoddemus\n",
+ "rendered_recipe": {},
+ "version": "1.2.0"
+}
