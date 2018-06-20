@@ -1,0 +1,38 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/tzlocal-1.1.2-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/tzlocal-1.1.2-py3.4.egg-info/zip-safe",
+  "lib/python3.4/site-packages/tzlocal/__init__.py",
+  "lib/python3.4/site-packages/tzlocal/darwin.py",
+  "lib/python3.4/site-packages/tzlocal/test_data/Harare",
+  "lib/python3.4/site-packages/tzlocal/test_data/localtime/etc/localtime",
+  "lib/python3.4/site-packages/tzlocal/test_data/timezone/etc/timezone",
+  "lib/python3.4/site-packages/tzlocal/test_data/timezone_setting/etc/conf.d/clock",
+  "lib/python3.4/site-packages/tzlocal/test_data/zone_setting/etc/sysconfig/clock",
+  "lib/python3.4/site-packages/tzlocal/tests.py",
+  "lib/python3.4/site-packages/tzlocal/unix.py",
+  "lib/python3.4/site-packages/tzlocal/win32.py",
+  "lib/python3.4/site-packages/tzlocal/windows_tz.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "pytz"
+  ],
+  "license": "CC0 1.0 Universal",
+  "name": "tzlocal",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.1.2"
+ },
+ "metadata_version": 1,
+ "name": "tzlocal",
+ "raw_recipe": "{% set version = \"1.1.2\" %}\n\npackage:\n  name: tzlocal\n  version: {{ version }}\n\nsource:\n  fn: tzlocal-{{ version }}.tar.gz\n  url: https://github.com/regebro/tzlocal/archive/{{ version }}.tar.gz\n  sha256: 939de4cf9535f61a5c1a99f34a447e3992f8046fd1bedeac9ec7892b419cf963\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytz\n\n  run:\n    - python\n    - pytz\n\ntest:\n  imports:\n    - tzlocal\n  requires:\n    - setuptools\n  commands:\n    - cd {{ environ.SRC_DIR }} && python setup.py test\n\nabout:\n  home: https://github.com/regebro/tzlocal\n  license: CC0 1.0 Universal\n  summary: 'tzinfo object for the local timezone'\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - licode\n    - tacaswell\n",
+ "rendered_recipe": {},
+ "version": "1.1.2"
+}

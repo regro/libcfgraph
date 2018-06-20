@@ -1,0 +1,34 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/kea-config",
+  "Library/bin/libkea.dll",
+  "Library/include/libkea/KEAAttributeTable.h",
+  "Library/include/libkea/KEAAttributeTableFile.h",
+  "Library/include/libkea/KEAAttributeTableInMem.h",
+  "Library/include/libkea/KEACommon.h",
+  "Library/include/libkea/KEAException.h",
+  "Library/include/libkea/KEAImageIO.h",
+  "Library/lib/libkea.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc10_3",
+  "build_number": 3,
+  "depends": [
+   "hdf5 1.8.17|1.8.17.*"
+  ],
+  "features": "vc10",
+  "license": "MIT",
+  "name": "kealib",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.4.6"
+ },
+ "metadata_version": 1,
+ "name": "kealib",
+ "raw_recipe": "{% set version = \"1.4.6\" %}\n\npackage:\n    name: kealib\n    version: {{ version }}\n\nsource:\n    fn: kealib-{{ version }}.tar.gz\n    url: https://bitbucket.org/chchrsc/kealib/downloads/kealib-{{ version }}.tar.gz\n    md5: 789174bd519736ac1e726613b6eb7672\n\nbuild:\n    number: 3\n    features:\n        - vc9  # [win and py27]\n        - vc10  # [win and py34]\n        - vc14  # [win and py35]\n\nrequirements:\n    build:\n        - toolchain\n        - python  # [win]\n        - cmake\n        - hdf5 1.8.17|1.8.17.*\n\n    run:\n        - hdf5 1.8.17|1.8.17.*\n\nabout:\n    home: kealib.org\n    license: MIT\n    summary: The KEA format provides an implementation of the GDAL specification within the the HDF5 file format.\n\nextra:\n    recipe-maintainers:\n        - gillins\n",
+ "rendered_recipe": {},
+ "version": "1.4.6"
+}

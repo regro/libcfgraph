@@ -1,0 +1,34 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/gribapi/__init__.py",
+  "lib/python2.7/site-packages/gribapi/_gribapi_swig.a",
+  "lib/python2.7/site-packages/gribapi/_gribapi_swig.la",
+  "lib/python2.7/site-packages/gribapi/_gribapi_swig.so",
+  "lib/python2.7/site-packages/gribapi/gribapi_swig.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_0",
+  "build_number": 0,
+  "depends": [
+   "ecmwf_grib 1.14.7",
+   "jasper",
+   "libnetcdf",
+   "libpng",
+   "numpy 1.11*",
+   "python 2.7*"
+  ],
+  "license": "Apache-2.0",
+  "name": "python-ecmwf_grib",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.14.7"
+ },
+ "metadata_version": 1,
+ "name": "python-ecmwf_grib",
+ "raw_recipe": "{% set version = \"1.14.7\" %}\n\npackage:\n    name: python-ecmwf_grib\n    version: {{ version }}\n\nsource:\n    fn: grib_api-{{ version }}.tar.gz\n    url: https://software.ecmwf.int/wiki/download/attachments/3473437/grib_api-{{ version }}-Source.tar.gz\n    md5: b3caa51fd2c2ae6e4e304e570489074f\n\nbuild:\n    number: 0\n    skip: True  # [win or py3k]\n    detect_binary_files_with_prefix: true\n\nrequirements:\n    build:\n        - python\n        - numpy x.x\n        - jasper\n        - libpng\n        - libnetcdf\n        - ecmwf_grib {{ version }}\n    run:\n        - python\n        - numpy x.x\n        - jasper\n        - libpng\n        - libnetcdf\n        - ecmwf_grib {{ version }}\n\ntest:\n    imports:\n        - gribapi\n\nabout:\n    home: https://software.ecmwf.int/wiki/display/GRIB/Home\n    license: Apache-2.0\n    summary: The ECMWF API for encoding and decoding WMO FM-92 GRIB edition 1 and edition 2 messages.\n\nextra:\n    recipe-maintainers:\n        - pelson\n        - rhattersley\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.14.7"
+}
