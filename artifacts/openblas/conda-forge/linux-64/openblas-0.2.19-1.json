@@ -1,0 +1,153 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://www.openblas.net/",
+  "license": "BSD 3-Clause",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.4-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.5-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "An optimized BLAS library based on GotoBLAS2 1.13 BSD version."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/libopenblas.a",
+  "lib/pkgconfig/cblas.pc",
+  "lib/libopenblasp-r0.2.19.a",
+  "include/lapacke_utils.h",
+  "include/lapacke.h",
+  "lib/libopenblas.so",
+  "lib/cmake/openblas/OpenBLASConfigVersion.cmake",
+  "lib/libopenblasp-r0.2.19.so",
+  "lib/pkgconfig/lapack.pc",
+  "lib/pkgconfig/blas.pc",
+  "include/f77blas.h",
+  "lib/libopenblas.so.0",
+  "include/lapacke_mangling.h",
+  "lib/cmake/openblas/OpenBLASConfig.cmake",
+  "include/cblas.h",
+  "include/openblas_config.h",
+  "include/lapacke_config.h"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [
+   "libgfortran"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "openblas",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2.19"
+ },
+ "metadata_version": 1,
+ "name": "openblas",
+ "raw_recipe": "{% set version = \"0.2.19\" %}\n\npackage:\n  name: openblas\n  version: {{ version }}\n\nsource:\n  fn: openblas-{{ version }}.tar.gz\n  url: https://github.com/xianyi/OpenBLAS/archive/v{{ version }}.tar.gz\n  sha256: 9c40b5e4970f27c5f6911cb0a28aa26b6c83f17418b69f8e5a116bb983ca8557\n  patches:\n    # Create pkg-config files, blas.pc, cblas.pc and lapack.pc\n    - pkg-config.patch\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  track_features:\n    - vc9     # [win and py27]\n    - vc10    # [win and py34]\n    - vc14    # [win and py35]\n\nrequirements:\n  build:\n    - toolchain\n    - python           # [win]\n    - perl 5.22.2.1\n    - gcc              # [unix]\n\n  run:\n    - libgfortran\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libopenblas.a                            # [unix]\n    - test -f ${PREFIX}/lib/libopenblas.so                           # [linux]\n    - test -f ${PREFIX}/lib/libopenblas.dylib                        # [osx]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\libopenblas.lib exit 1    # [win]\n\nabout:\n  home: http://www.openblas.net/\n  license: BSD 3-Clause\n  summary: An optimized BLAS library based on GotoBLAS2 1.13 BSD version.\n\nextra:\n  recipe-maintainers:\n    - gillins\n    - groutr\n    - jakirkham\n    - jschueller\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.openblas.net/",
+   "license": "BSD 3-Clause",
+   "summary": "An optimized BLAS library based on GotoBLAS2 1.13 BSD version."
+  },
+  "build": {
+   "number": "1",
+   "string": "1",
+   "track_features": ""
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "gillins",
+    "groutr",
+    "jakirkham",
+    "jschueller"
+   ]
+  },
+  "package": {
+   "name": "openblas",
+   "version": "0.2.19"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "libgfortran"
+   ]
+  },
+  "source": {
+   "fn": "openblas-0.2.19.tar.gz",
+   "patches": [
+    "pkg-config.patch"
+   ],
+   "sha256": "9c40b5e4970f27c5f6911cb0a28aa26b6c83f17418b69f8e5a116bb983ca8557",
+   "url": "https://github.com/xianyi/OpenBLAS/archive/v0.2.19.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/lib/libopenblas.a",
+    "test -f ${PREFIX}/lib/libopenblas.so"
+   ]
+  }
+ },
+ "version": "0.2.19"
+}

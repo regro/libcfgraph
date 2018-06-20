@@ -1,0 +1,42 @@
+{
+ "about": {
+  "description": "smart_open is a Python 2 & Python 3 library\nfor efficient streaming of very large files\nfrom/to S3, HDFS, WebHDFS or local (compressed) files.\n",
+  "dev_url": "https://github.com/RaRe-Technologies/smart_open",
+  "home": "https://github.com/RaRe-Technologies/smart_open",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "A Python library for efficient streaming of large files"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/smart_open-1.3.5-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/smart_open/__init__.py",
+  "lib/python3.4/site-packages/smart_open/gzipstreamfile.py",
+  "lib/python3.4/site-packages/smart_open/smart_open_lib.py",
+  "lib/python3.4/site-packages/smart_open/tests/__init__.py",
+  "lib/python3.4/site-packages/smart_open/tests/test_gzipstreamfile.py",
+  "lib/python3.4/site-packages/smart_open/tests/test_smart_open.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "boto >=2.32",
+   "bz2file",
+   "python 3.4*",
+   "requests"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "smart_open",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.3.5"
+ },
+ "metadata_version": 1,
+ "name": "smart_open",
+ "raw_recipe": "{% set name = \"smart_open\" %}\n{% set version = \"1.3.5\" %}\n{% set sha256 = \"379bec2c08c518a30fe58e781abcae8d4e58bc0024c950f13d55ebcc899e3aba\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n    \n  run:\n    - python\n    - boto >=2.32\n    - bz2file\n    - requests\n\ntest:\n  imports:\n    - smart_open\n    - smart_open.tests\n\nabout:\n  home: https://github.com/RaRe-Technologies/smart_open\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A Python library for efficient streaming of large files'\n\n  description: |\n    smart_open is a Python 2 & Python 3 library \n    for efficient streaming of very large files\n    from/to S3, HDFS, WebHDFS or local (compressed) files. \n  dev_url: https://github.com/RaRe-Technologies/smart_open\n\nextra:\n  recipe-maintainers:\n    - souravsingh\n    - tmylk\n",
+ "rendered_recipe": {},
+ "version": "1.3.5"
+}

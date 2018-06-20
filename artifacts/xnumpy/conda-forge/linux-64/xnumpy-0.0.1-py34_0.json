@@ -1,0 +1,38 @@
+{
+ "about": {
+  "dev_url": "https://github.com/jakirkham/xnumpy",
+  "doc_url": "https://xnumpy.readthedocs.io/",
+  "home": "https://github.com/jakirkham/xnumpy",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Python utility functions for slices."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/xnumpy-0.0.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/xnumpy-0.0.1-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/xnumpy/__init__.py",
+  "lib/python3.4/site-packages/xnumpy/_version.py",
+  "lib/python3.4/site-packages/xnumpy/core.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "xnumpy",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.0.1"
+ },
+ "metadata_version": 1,
+ "name": "xnumpy",
+ "raw_recipe": "{% set name = \"xnumpy\" %}\n{% set version = \"0.0.1\" %}\n{% set sha256 = \"4649c57a404e1ab9429d33f9d63c82a5cccb8a72cf524d130176c3b0dd59af96\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy\n\ntest:\n  imports:\n    - xnumpy\n\nabout:\n  home: https://github.com/jakirkham/xnumpy\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Python utility functions for slices.\n  doc_url: https://xnumpy.readthedocs.io/\n  dev_url: https://github.com/jakirkham/xnumpy\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.0.1"
+}

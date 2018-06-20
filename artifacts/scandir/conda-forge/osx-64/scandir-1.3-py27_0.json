@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "https://github.com/benhoyt/scandir",
+  "license": "BSD 3-Clause",
+  "summary": "scandir, a better directory iterator and faster os.walk()"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/_scandir.so",
+  "lib/python2.7/site-packages/scandir-1.3-py2.7.egg-info",
+  "lib/python2.7/site-packages/scandir.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "scandir",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.3"
+ },
+ "metadata_version": 1,
+ "name": "scandir",
+ "raw_recipe": "{% set version = \"1.3\" %}\n{% set sha256 = \"b57987392228376a6782ec26aeb5cae7878c7d426e85af85753b7c5ee6e14012\" %}\n\npackage:\n  name: scandir\n  version: {{ version }}\n\nsource:\n  fn: scandir-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/s/scandir/scandir-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - scandir\n\nabout:\n  home: https://github.com/benhoyt/scandir\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'scandir, a better directory iterator and faster os.walk()'\n\nextra:\n  recipe-maintainers:\n    - kain88-de\n",
+ "rendered_recipe": {},
+ "version": "1.3"
+}

@@ -1,0 +1,73 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/windrose-1.6-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/windrose/__init__.py",
+  "lib/python2.7/site-packages/windrose/version.py",
+  "lib/python2.7/site-packages/windrose/windrose.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib",
+   "numpy",
+   "python 2.7*"
+  ],
+  "license": "CEA CNRS Inria Logiciel Libre License, version 2.1 (CeCILL-2.1)",
+  "name": "windrose",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.6"
+ },
+ "metadata_version": 1,
+ "name": "windrose",
+ "raw_recipe": "package:\n    name: windrose\n    version: 1.6\n\nsource:\n    fn: windrose-1.6.tar.gz\n    url: https://pypi.python.org/packages/source/w/windrose/windrose-1.6.tar.gz\n    md5: 6394781fae13fc36bd9b8523475e9e4d\n    patches:\n        - setup-patch.patch\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - matplotlib\n        - numpy\n\ntest:\n    imports:\n        - windrose\n\nabout:\n    home: https://github.com/scls19fr/windrose\n    license: CEA CNRS Inria Logiciel Libre License, version 2.1 (CeCILL-2.1)\n    summary: Python Matplotlib, Numpy library to manage wind data, draw windrose.\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/scls19fr/windrose",
+   "license": "CEA CNRS Inria Logiciel Libre License, version 2.1 (CeCILL-2.1)",
+   "summary": "Python Matplotlib, Numpy library to manage wind data, draw windrose."
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "windrose",
+   "version": 1.6
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "matplotlib",
+    "numpy"
+   ]
+  },
+  "source": {
+   "fn": "windrose-1.6.tar.gz",
+   "md5": "6394781fae13fc36bd9b8523475e9e4d",
+   "patches": [
+    "setup-patch.patch"
+   ],
+   "url": "https://pypi.python.org/packages/source/w/windrose/windrose-1.6.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "windrose"
+   ]
+  }
+ },
+ "version": "1.6"
+}
