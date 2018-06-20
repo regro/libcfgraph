@@ -1,0 +1,39 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/django_rest_hooks-1.2.2-py3.4.egg-info",
+  "lib/python3.4/site-packages/rest_hooks/__init__.py",
+  "lib/python3.4/site-packages/rest_hooks/admin.py",
+  "lib/python3.4/site-packages/rest_hooks/client.py",
+  "lib/python3.4/site-packages/rest_hooks/migrations/0001_initial.py",
+  "lib/python3.4/site-packages/rest_hooks/migrations/__init__.py",
+  "lib/python3.4/site-packages/rest_hooks/models.py",
+  "lib/python3.4/site-packages/rest_hooks/signals.py",
+  "lib/python3.4/site-packages/rest_hooks/south_migrations/0001_initial.py",
+  "lib/python3.4/site-packages/rest_hooks/south_migrations/__init__.py",
+  "lib/python3.4/site-packages/rest_hooks/tasks.py",
+  "lib/python3.4/site-packages/rest_hooks/tests.py",
+  "lib/python3.4/site-packages/rest_hooks/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "django >=1.4",
+   "python 3.4*",
+   "requests"
+  ],
+  "license": "BSD License",
+  "name": "django-rest-hooks",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.2.2"
+ },
+ "metadata_version": 1,
+ "name": "django-rest-hooks",
+ "raw_recipe": "{% set version = \"1.2.2\" %}\n\npackage:\n  name: django-rest-hooks\n  version: {{ version }}\n\nsource:\n  fn: django-rest-hooks-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/django-rest-hooks/django-rest-hooks-{{ version }}.tar.gz\n  sha256: c121ffbc1ee4a116bd9d5b39e3c97152f409d84dd4d13e121465d20a03ac0dcf\n\nbuild:\n  script: python setup.py install\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - django >=1.4\n    - requests\n\n  run:\n    - python\n    - django >=1.4\n    - requests\n\ntest:\n  imports:\n    - rest_hooks\n\nabout:\n  home: http://github.com/zapier/django-rest-hooks\n  license: BSD License\n  summary: A powerful mechanism for sending real time API notifications via a new subscription model.\n\nextra:\n  recipe-maintainers:\n    - Korijn\n    - IvoFlipse\n    - Maxyme\n",
+ "rendered_recipe": {},
+ "version": "1.2.2"
+}

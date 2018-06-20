@@ -1,0 +1,34 @@
+{
+ "about": {
+  "description": "pyxDamerauLevenshtein implements the Damerau-Levenshtein (DL) edit distance\nalgorithm for Python in Cython for high performance.\n",
+  "dev_url": "https://github.com/gfairchild/pyxDamerauLevenshtein",
+  "doc_url": "https://github.com/gfairchild/pyxDamerauLevenshtein",
+  "home": "https://github.com/gfairchild/pyxDamerauLevenshtein",
+  "license": "BSD 3-Clause License",
+  "summary": "Simple, fast, extensible JSON encoder/decoder for Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pyxDamerauLevenshtein-1.4.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pyxdameraulevenshtein.cpython-35m-x86_64-linux-gnu.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause License",
+  "name": "pyxdameraulevenshtein",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.4.1"
+ },
+ "metadata_version": 1,
+ "name": "pyxdameraulevenshtein",
+ "raw_recipe": "# Note: there are many handy hints in comments in this example -- remove them when you've finalized your recipe\n\n# Jinja variables help maintain the recipe as you'll update the version only here.\n{% set name = \"pyxDamerauLevenshtein\" %}\n{% set version = \"1.4.1\" %}\n{% set sha256 = \"24f031120b3e62a171c3b3a6f17afdddec8aacb83504257589af20dea4293323\" %}\n# sha256 is the prefered checksum -- you can get it for a file with:\n#  `openssl sha256 <file name>`.\n# You may need the openssl package, available on conda-forge\n#  `conda install openssl -c conda-forge``\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  # If the installation is complex, or different between Unix and Windows, use separate bld.bat and build.sh files instead of this key.\n  # By default, the package will be built for Python 2.7, 3.4, and above, for all major OSs.\n  # Add the line \"skip: True  # [py<34]\" (for example) to limit to Python 3.4 and newer, or \"skip: True  # [not win]\" to limit to Windows.\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    # When setuptools is available add the `--single-version-externally-managed --record record.txt` above.\n    - setuptools\n    - cython\n    - numpy\n  run:\n    - python\n    - numpy\n\ntest:\n  # Some package might need a `test/commands` key to check CLI.\n  imports:\n    - pyxdameraulevenshtein\nabout:\n  home: https://github.com/gfairchild/pyxDamerauLevenshtein\n  # Remember to specify the license variants for BSD, Apache, GPL, and LGLP.\n  # Prefer the short version, e.g: GPL-2.0 instead of GNU General Public License version 2.0\n  # See https://opensource.org/licenses/alphabetical\n  license: BSD 3-Clause License\n  # It is strongly encouraged to include a license file in the package,\n  # (even if the license doesn't require it) using the license_file entry.\n  # See http://conda.pydata.org/docs/building/meta-yaml.html#license-file\n  # license_file: LICENSE.txt PyPi packaging error\n  summary: 'Simple, fast, extensible JSON encoder/decoder for Python'\n\n  # The remaining entries in this section are optional, but recommended\n  description: |\n    pyxDamerauLevenshtein implements the Damerau-Levenshtein (DL) edit distance\n    algorithm for Python in Cython for high performance.\n  doc_url: https://github.com/gfairchild/pyxDamerauLevenshtein\n  dev_url: https://github.com/gfairchild/pyxDamerauLevenshtein\n\nextra:\n  recipe-maintainers:\n    # GitHub IDs for maintainers of the recipe.\n    # Always check with the people listed below if they are OK becoming maintainers of the recipe. (There will be spam!)\n    - CJ-Wright\n",
+ "rendered_recipe": {},
+ "version": "1.4.1"
+}

@@ -1,0 +1,58 @@
+{
+ "about": {
+  "home": "https://github.com/symengine/symengine.py",
+  "license": "MIT",
+  "summary": "Python wrappers for SymEngine, a fast symbolic manipulation library, written in C++"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/python3.4m/symengine/pywrapper.h",
+  "lib/python3.4/site-packages/symengine-0.2.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/symengine/__init__.py",
+  "lib/python3.4/site-packages/symengine/compatibility.py",
+  "lib/python3.4/site-packages/symengine/lib/__init__.py",
+  "lib/python3.4/site-packages/symengine/lib/config.pxi",
+  "lib/python3.4/site-packages/symengine/lib/symengine.pxd",
+  "lib/python3.4/site-packages/symengine/lib/symengine_wrapper.cpython-34m.so",
+  "lib/python3.4/site-packages/symengine/lib/symengine_wrapper.pxd",
+  "lib/python3.4/site-packages/symengine/sympy_compat.py",
+  "lib/python3.4/site-packages/symengine/tests/__init__.py",
+  "lib/python3.4/site-packages/symengine/tests/test_arit.py",
+  "lib/python3.4/site-packages/symengine/tests/test_dict_basic.py",
+  "lib/python3.4/site-packages/symengine/tests/test_eval.py",
+  "lib/python3.4/site-packages/symengine/tests/test_expr.py",
+  "lib/python3.4/site-packages/symengine/tests/test_functions.py",
+  "lib/python3.4/site-packages/symengine/tests/test_integer.py",
+  "lib/python3.4/site-packages/symengine/tests/test_lambdify.py",
+  "lib/python3.4/site-packages/symengine/tests/test_matrices.py",
+  "lib/python3.4/site-packages/symengine/tests/test_ntheory.py",
+  "lib/python3.4/site-packages/symengine/tests/test_sage.py",
+  "lib/python3.4/site-packages/symengine/tests/test_series_expansion.py",
+  "lib/python3.4/site-packages/symengine/tests/test_subs.py",
+  "lib/python3.4/site-packages/symengine/tests/test_symbol.py",
+  "lib/python3.4/site-packages/symengine/tests/test_sympify.py",
+  "lib/python3.4/site-packages/symengine/tests/test_sympy_compat.py",
+  "lib/python3.4/site-packages/symengine/tests/test_sympy_conv.py",
+  "lib/python3.4/site-packages/symengine/tests/test_var.py",
+  "lib/python3.4/site-packages/symengine/utilities.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "symengine 0.2.0"
+  ],
+  "license": "MIT",
+  "name": "python-symengine",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2.0"
+ },
+ "metadata_version": 1,
+ "name": "python-symengine",
+ "raw_recipe": "{% set version = \"0.2.0\" %}\n{% set commit = \"v0.2.0\" %}\n\npackage:\n  name: python-symengine\n  version: {{ version }}\n\nsource:\n  fn: {{ commit }}.tar.gz\n  url: https://github.com/symengine/symengine.py/archive/{{ commit }}.tar.gz\n  sha256: 8f6468137baa7f799e047dd0b9149c4017d8d32e755f1e0329209680879c1f8f\n\nbuild:\n  number: 0\n  skip: true        # [win and not py35]\n  features:\n    - vc14          # [win and py35]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - symengine     0.2.0\n    - python\n    - cython\n    - setuptools\n  run:\n    - symengine     0.2.0\n    - python\n\ntest:\n  requires:\n    - pytest\n    - sympy\n  imports:\n    - symengine\n  commands:\n    - python -c $'import symengine;\\nif not symengine.test():\\n raise Exception(\"Tests failed\")'    # [unix]\n\nabout:\n  home: https://github.com/symengine/symengine.py\n  license: MIT\n  summary: 'Python wrappers for SymEngine, a fast symbolic manipulation library, written in C++'\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - certik\n",
+ "rendered_recipe": {},
+ "version": "0.2.0"
+}
