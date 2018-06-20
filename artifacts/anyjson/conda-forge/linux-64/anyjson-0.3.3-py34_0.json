@@ -1,0 +1,27 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/anyjson-0.3.3-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/anyjson-0.3.3-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/anyjson/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD License",
+  "name": "anyjson",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3.3"
+ },
+ "metadata_version": 1,
+ "name": "anyjson",
+ "raw_recipe": "{% set version = \"0.3.3\" %}\n\npackage:\n    name: anyjson\n    version: {{ version }}\n\nsource:\n    fn: anyjson-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/a/anyjson/anyjson-{{ version }}.tar.gz\n    md5: 2ea28d6ec311aeeebaf993cb3008b27c\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - anyjson\n\nabout:\n    home: http://bitbucket.org/runeh/anyjson/\n    license: BSD License\n    summary: Loads whichever is the fastest JSON module installed and provides a uniform API\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n",
+ "rendered_recipe": {},
+ "version": "0.3.3"
+}

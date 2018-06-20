@@ -1,0 +1,41 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/_cmt.so",
+  "lib/python2.7/site-packages/cmt-0.5.0-py2.7.egg-info",
+  "lib/python2.7/site-packages/cmt/__init__.py",
+  "lib/python2.7/site-packages/cmt/models/__init__.py",
+  "lib/python2.7/site-packages/cmt/nonlinear/__init__.py",
+  "lib/python2.7/site-packages/cmt/tools/__init__.py",
+  "lib/python2.7/site-packages/cmt/tools/colors.py",
+  "lib/python2.7/site-packages/cmt/tools/images.py",
+  "lib/python2.7/site-packages/cmt/tools/masks.py",
+  "lib/python2.7/site-packages/cmt/tools/spikes.py",
+  "lib/python2.7/site-packages/cmt/transforms/__init__.py",
+  "lib/python2.7/site-packages/cmt/transforms/stackedaffinetransform.py",
+  "lib/python2.7/site-packages/cmt/utils/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np110py27_0",
+  "build_number": 0,
+  "depends": [
+   "libgcc",
+   "numpy 1.10*",
+   "pillow",
+   "python 2.7*",
+   "scipy"
+  ],
+  "license": "MIT",
+  "name": "cmt",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.5.0"
+ },
+ "metadata_version": 1,
+ "name": "cmt",
+ "raw_recipe": "{% set version = \"0.5.0\" %}\n\npackage:\n  name: cmt\n  version: {{ version }}\n\nsource:\n  fn: cmt-v{{ version }}.tar.gz\n  url: https://github.com/lucastheis/cmt/archive/v{{ version }}.tar.gz\n  sha1: 7482caefa5359a351ac834920a092b5594098d70\n  patches:\n    # Workaround to ensure `gcc` compiler is used on Mac.\n    # See issue ( https://github.com/lucastheis/cmt/issues/10 ).\n    # No patch submitted as this will require discussion with the developer.\n    - setup.py.patch\n    # Incorrect import here makes tests fail and reduces functionality.\n    # See issue ( https://github.com/lucastheis/cmt/issues/14 ).\n    # Patch for this has been submitted.\n    # See pull request ( https://github.com/lucastheis/cmt/pull/18 ).\n    - images.py.patch\n    # Test failure here is caused due to an inability to pickle.\n    # See issue ( https://github.com/lucastheis/cmt/issues/12 ).\n    # Patch for this has been submitted.\n    # See pull request ( https://github.com/lucastheis/cmt/pull/17 ).\n    - mcbm_test.py.patch\n    # Test failure here is caused due to sporadic numerical issue.\n    # See issue ( https://github.com/lucastheis/cmt/issues/16 ).\n    # Patch for this has been submitted.\n    # See pull request ( https://github.com/lucastheis/cmt/pull/20 ).\n    - mcgsm_test.py.patch\n    # Test failure here is caused due to numerical issue.\n    # See issue ( https://github.com/lucastheis/cmt/issues/15 ).\n    # Patch for this has been submitted.\n    # See pull request ( https://github.com/lucastheis/cmt/pull/19 ).\n    - univariate_test.py.patch\n\nbuild:\n  number: 0\n  skip: true      # [win or py3k]\n\nrequirements:\n  build:\n    - automake\n    - libtool\n    - gcc\n    - python\n    - numpy x.x\n    - scipy\n    - pillow\n\n  run:\n    - libgcc\n    - python\n    - numpy x.x\n    - scipy\n    - pillow\n\ntest:\n  imports:\n    - cmt\n\n  commands:\n    - python ${SRC_DIR}/code/cmt/python/tests/fvbn_test.py\n    - python ${SRC_DIR}/code/cmt/python/tests/glm_test.py\n    - python ${SRC_DIR}/code/cmt/python/tests/gsm_test.py\n    # Test failure here is caused due to an inability to pickle.\n    # See issue ( https://github.com/lucastheis/cmt/issues/12 ).\n    - python ${SRC_DIR}/code/cmt/python/tests/mcbm_test.py\n    # Test failure here is caused due to sporadic numerical issue.\n    # See issue ( https://github.com/lucastheis/cmt/issues/16 ).\n    - python ${SRC_DIR}/code/cmt/python/tests/mcgsm_test.py\n    - python ${SRC_DIR}/code/cmt/python/tests/mixture_test.py\n    - python ${SRC_DIR}/code/cmt/python/tests/mlr_test.py\n    - python ${SRC_DIR}/code/cmt/python/tests/nonlinear_test.py\n    - python ${SRC_DIR}/code/cmt/python/tests/preconditioner_test.py\n    - python ${SRC_DIR}/code/cmt/python/tests/speed.py\n    - python ${SRC_DIR}/code/cmt/python/tests/stm_test.py\n    # Test failure here is caused due to a missing/incorrect import.\n    # See issue ( https://github.com/lucastheis/cmt/issues/14 ).\n    - python ${SRC_DIR}/code/cmt/python/tests/tools_test.py\n    # Test failure here is caused due to numerical issue.\n    # See issue ( https://github.com/lucastheis/cmt/issues/15 ).\n    - python ${SRC_DIR}/code/cmt/python/tests/univariate_test.py\n\nabout:\n  home: https://github.com/lucastheis/cmt\n  license: MIT\n  summary: Fast implementations of several probabilistic models.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.5.0"
+}

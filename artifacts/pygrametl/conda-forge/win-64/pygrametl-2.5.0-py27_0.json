@@ -1,0 +1,42 @@
+{
+ "about": {
+  "home": "http://pygrametl.org/",
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "summary": "ETL programming in Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pygrametl-2.5-py2.7.egg-info",
+  "Lib/site-packages/pygrametl/FIFODict.py",
+  "Lib/site-packages/pygrametl/JDBCConnectionWrapper.py",
+  "Lib/site-packages/pygrametl/__init__.py",
+  "Lib/site-packages/pygrametl/aggregators.py",
+  "Lib/site-packages/pygrametl/datasources.py",
+  "Lib/site-packages/pygrametl/jythonmultiprocessing.py",
+  "Lib/site-packages/pygrametl/jythonsupport/Value.class",
+  "Lib/site-packages/pygrametl/jythonsupport/Value.java",
+  "Lib/site-packages/pygrametl/parallel.py",
+  "Lib/site-packages/pygrametl/steps.py",
+  "Lib/site-packages/pygrametl/tables.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "name": "pygrametl",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.5.0"
+ },
+ "metadata_version": 1,
+ "name": "pygrametl",
+ "raw_recipe": "{% set version = \"2.5.0\" %}\n{% set name = \"pygrametl\" %}\n\npackage:\n  name: pygrametl\n  version: {{ version }}\n\nsource:\n  fn: pygrametl-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7db0b98f6c817fc39e3d049c74b6aafbe0807e9322565fca1acdf9cf83607ad1\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pygrametl\n\nabout:\n  home: http://pygrametl.org/\n  license: BSD 2-Clause\n  license_file: LICENSE.txt\n  license_family: BSD\n  summary: 'ETL programming in Python'\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - mariusvniekerk\n",
+ "rendered_recipe": {},
+ "version": "2.5.0"
+}

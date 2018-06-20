@@ -1,0 +1,46 @@
+{
+ "about": {
+  "home": "https://github.com/vega/ipyvega",
+  "license": "BSD-3-Clause",
+  "summary": "An IPython/Jupyter widget for Vega and Vega-Lite"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/vega-0.4.2-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/vega/__init__.py",
+  "Lib/site-packages/vega/base.py",
+  "Lib/site-packages/vega/static/index.js",
+  "Lib/site-packages/vega/static/index.js.map",
+  "Lib/site-packages/vega/static/vega-lite.html",
+  "Lib/site-packages/vega/static/vega.html",
+  "Lib/site-packages/vega/static/vega.js",
+  "Lib/site-packages/vega/tests/__init__.py",
+  "Lib/site-packages/vega/tests/test_outputs.py",
+  "Lib/site-packages/vega/tests/test_utils.py",
+  "Lib/site-packages/vega/utils.py",
+  "Lib/site-packages/vega/vega.py",
+  "Lib/site-packages/vega/vegalite.py",
+  "Scripts/.vega-post-link.bat",
+  "Scripts/.vega-pre-unlink.bat"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_1",
+  "build_number": 1,
+  "depends": [
+   "ipython",
+   "jupyter",
+   "python 3.4*"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "vega",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.4.2"
+ },
+ "metadata_version": 1,
+ "name": "vega",
+ "raw_recipe": "{% set version = \"0.4.2\" %}\n\npackage:\n  name: vega\n  version: {{ version }}\n\nsource:\n  fn: vega-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/v/vega/vega-{{ version }}.tar.gz\n  md5: 1b5ba6ce77d4c240f6dde55cb8df5dd9\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - jupyter\n    - notebook >=4.2\n\n  run:\n    - python\n    - ipython\n    - jupyter\n\ntest:\n  imports:\n    - vega\n\nabout:\n  home: https://github.com/vega/ipyvega\n  license: BSD-3-Clause\n  summary: 'An IPython/Jupyter widget for Vega and Vega-Lite'\n\nextra:\n  recipe-maintainers:\n    - jakevdp\n    - ellisonbg\n    - domoritz\n",
+ "rendered_recipe": {},
+ "version": "0.4.2"
+}

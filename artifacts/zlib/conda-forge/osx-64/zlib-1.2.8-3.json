@@ -1,0 +1,30 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "include/zconf.h",
+  "include/zlib.h",
+  "lib/libz.1.2.8.dylib",
+  "lib/libz.1.dylib",
+  "lib/libz.a",
+  "lib/libz.dylib",
+  "lib/pkgconfig/zlib.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "3",
+  "build_number": 3,
+  "depends": [],
+  "license": "zlib (http://zlib.net/zlib_license.html)",
+  "license_family": "Other",
+  "name": "zlib",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.2.8"
+ },
+ "metadata_version": 1,
+ "name": "zlib",
+ "raw_recipe": "{% set version = \"1.2.8\" %}\n\npackage:\n    name: zlib\n    version: {{ version }}\n\nsource:\n    fn: zlib-{{ version }}.tar.gz\n    url: http://zlib.net/zlib-{{ version }}.tar.gz\n    sha256: 36658cb768a54c1d4dec43c3116c27ed893e88b02ecfcb44f2166f9c0b7f2a0d\n\nbuild:\n    number: 3\n    features:\n        - vc9  # [win and py27]\n        - vc10  # [win and py34]\n        - vc14  # [win and py35]\n\nrequirements:\n    build:\n        - python  # [win]\n        - cmake  # [win]\n        - msinttypes  # [win and py<35]\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libz.a  # [unix]\n        - conda inspect linkages -n _test zlib  # [linux]\n\nabout:\n    home: http://zlib.net/\n    license: zlib (http://zlib.net/zlib_license.html)\n    summary: Massively spiffy yet delicately unobtrusive compression library\n    license_family: Other\n    license_file: license.txt\n\nextra:\n    recipe-maintainers:\n        - groutr\n        - msarahan\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.2.8"
+}
