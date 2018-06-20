@@ -1,0 +1,36 @@
+{
+ "about": {
+  "dev_url": "https://github.com/appliedsec/pygeoip",
+  "home": "https://github.com/appliedsec/pygeoip",
+  "license": "LGPL 3.0",
+  "license_family": "LGPL",
+  "summary": "Pure Python GeoIP API"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pygeoip-0.3.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pygeoip/__init__.py",
+  "lib/python2.7/site-packages/pygeoip/const.py",
+  "lib/python2.7/site-packages/pygeoip/timezone.py",
+  "lib/python2.7/site-packages/pygeoip/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "LGPL 3.0",
+  "license_family": "LGPL",
+  "name": "pygeoip",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.2"
+ },
+ "metadata_version": 1,
+ "name": "pygeoip",
+ "raw_recipe": "{%set name = \"pygeoip\" %}\n{%set version = \"0.3.2\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"f22c4e00ddf1213e0fae36dc60b46ee7c25a6339941ec1a975539014c1f9a96d\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pygeoip\n\nabout:\n  home: https://github.com/appliedsec/pygeoip\n  license: LGPL 3.0\n  license_file:  LICENSE.md\n  license_family: LGPL\n  summary: 'Pure Python GeoIP API'\n  dev_url: https://github.com/appliedsec/pygeoip\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.3.2"
+}

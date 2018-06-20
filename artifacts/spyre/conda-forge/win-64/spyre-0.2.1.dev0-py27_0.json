@@ -1,0 +1,44 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/DataSpyre-0.2.1-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/spyre/View.py",
+  "Lib/site-packages/spyre/__init__.py",
+  "Lib/site-packages/spyre/banner.html",
+  "Lib/site-packages/spyre/example_show_all_the_inputs.py",
+  "Lib/site-packages/spyre/model.py",
+  "Lib/site-packages/spyre/public/css/style.css",
+  "Lib/site-packages/spyre/public/images/loading_wheel.gif",
+  "Lib/site-packages/spyre/public/js/d3.v3.js",
+  "Lib/site-packages/spyre/public/js/jquery-2.0.3.min.js",
+  "Lib/site-packages/spyre/public/js/sorttable.js",
+  "Lib/site-packages/spyre/public/js/spyre.js",
+  "Lib/site-packages/spyre/server.py",
+  "Lib/site-packages/spyre/tezt_app2.py",
+  "Lib/site-packages/spyre/view.html"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "cherrypy",
+   "jinja2",
+   "matplotlib",
+   "numpy",
+   "pandas",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "spyre",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2.1.dev0"
+ },
+ "metadata_version": 1,
+ "name": "spyre",
+ "raw_recipe": "{% set version = \"0.2.1\" %}\n{% set commit = \"ba37d1b6327afbc2c7cf8e7b8ef1d9a6fbd17d76\" %}\n\npackage:\n    name: spyre\n    version: {{ version }}.dev0\n\nsource:\n    fn: {{ commit }}.tar.gz\n    url: https://github.com/adamhajari/spyre/archive/{{ commit }}.tar.gz\n    sha256: 33afc505c032edbec16146c8afba6aa33fc5d0e768a6d9339dac4989bdd4ad7b\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - pandas\n        - cherrypy\n        - jinja2\n        - matplotlib\n\ntest:\n    imports:\n        - spyre\n\nabout:\n    home: https://github.com/adamhajari/spyre\n    license: MIT\n    summary: Web Application Framework for simple user interface\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.2.1.dev0"
+}

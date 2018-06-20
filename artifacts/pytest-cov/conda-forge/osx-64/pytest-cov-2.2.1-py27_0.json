@@ -1,0 +1,34 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pytest-cov.pth",
+  "lib/python2.7/site-packages/pytest_cov-2.2.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pytest_cov-2.2.1-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/pytest_cov/__init__.py",
+  "lib/python2.7/site-packages/pytest_cov/embed.py",
+  "lib/python2.7/site-packages/pytest_cov/engine.py",
+  "lib/python2.7/site-packages/pytest_cov/plugin.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "coverage",
+   "pytest",
+   "python 2.7*",
+   "setuptools"
+  ],
+  "license": "MIT",
+  "name": "pytest-cov",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.2.1"
+ },
+ "metadata_version": 1,
+ "name": "pytest-cov",
+ "raw_recipe": "{% set version = \"2.2.1\" %}\n\npackage:\n  name: pytest-cov\n  version: {{ version }}\n\nsource:\n  fn: pytest-cov-{{version}}.tar.gz\n  url: https://pypi.python.org/packages/source/p/pytest-cov/pytest-cov-{{version}}.tar.gz\n  md5: d4c65c5561343e6c6a583d5fd29e6a63\n\nbuild:\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - pytest\n    - coverage\n\ntest:\n  commands:\n    - \"py.test --traceconfig | grep pytest-cov-{{version}}\"\n\nabout:\n  home: https://github.com/pytest-dev/pytest-cov\n  license: MIT\n  summary: 'Pytest plugin for measuring coverage'\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
+ "rendered_recipe": {},
+ "version": "2.2.1"
+}

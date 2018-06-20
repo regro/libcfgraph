@@ -1,0 +1,44 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pyresample-1.1.6-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/pyresample-1.1.6-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/pyresample/__init__.py",
+  "Lib/site-packages/pyresample/_multi_proc.py",
+  "Lib/site-packages/pyresample/_spatial_mp.py",
+  "Lib/site-packages/pyresample/data_reduce.py",
+  "Lib/site-packages/pyresample/geo_filter.py",
+  "Lib/site-packages/pyresample/geometry.py",
+  "Lib/site-packages/pyresample/grid.py",
+  "Lib/site-packages/pyresample/image.py",
+  "Lib/site-packages/pyresample/kd_tree.py",
+  "Lib/site-packages/pyresample/plot.py",
+  "Lib/site-packages/pyresample/spherical_geometry.py",
+  "Lib/site-packages/pyresample/utils.py",
+  "Lib/site-packages/pyresample/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "configobj",
+   "numexpr",
+   "numpy",
+   "pyproj",
+   "python 2.7*",
+   "scipy"
+  ],
+  "license": "LGPL-3.0",
+  "name": "pyresample",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.1.6"
+ },
+ "metadata_version": 1,
+ "name": "pyresample",
+ "raw_recipe": "{% set version = \"1.1.6\" %}\n\npackage:\n    name: pyresample\n    version: {{ version }}\n\nsource:\n    fn: pyresample-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/p/pyresample/pyresample-{{ version }}.tar.gz\n    md5: 1f1b0cbf8a104b082ee742418d0bb07a\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - scipy\n        - pyproj\n        - numpy\n        - configobj\n        - pykdtree  # [not win]\n        - numexpr\n\ntest:\n    imports:\n        - pyresample\n\nabout:\n  home: https://github.com/mraspaud/pyresample/\n  license: LGPL-3.0\n  summary: Resampling of remote sensing data in Python\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.1.6"
+}

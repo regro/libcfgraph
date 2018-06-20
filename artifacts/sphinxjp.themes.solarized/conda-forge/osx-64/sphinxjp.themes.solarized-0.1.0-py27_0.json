@@ -1,0 +1,45 @@
+{
+ "about": {
+  "home": "http://bitbucket.org/miiton/sphinxjp.themes.solarized",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "A sphinx theme based on solarized color scheme."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/sphinxjp.themes.solarized-0.1.0-py2.7-nspkg.pth",
+  "lib/python2.7/site-packages/sphinxjp.themes.solarized-0.1.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/sphinxjp.themes.solarized-0.1.0-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/sphinxjp/themes/solarized/__init__.py",
+  "lib/python2.7/site-packages/sphinxjp/themes/solarized/templates/solarized/layout.html",
+  "lib/python2.7/site-packages/sphinxjp/themes/solarized/templates/solarized/static/.default.css_t.swo",
+  "lib/python2.7/site-packages/sphinxjp/themes/solarized/templates/solarized/static/default.css_t",
+  "lib/python2.7/site-packages/sphinxjp/themes/solarized/templates/solarized/static/information.png",
+  "lib/python2.7/site-packages/sphinxjp/themes/solarized/templates/solarized/static/note.png",
+  "lib/python2.7/site-packages/sphinxjp/themes/solarized/templates/solarized/static/topic.png",
+  "lib/python2.7/site-packages/sphinxjp/themes/solarized/templates/solarized/static/warning.png",
+  "lib/python2.7/site-packages/sphinxjp/themes/solarized/templates/solarized/theme.conf"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "docutils",
+   "python 2.7*",
+   "sphinx",
+   "sphinxjp.themecore"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "sphinxjp.themes.solarized",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.0"
+ },
+ "metadata_version": 1,
+ "name": "sphinxjp.themes.solarized",
+ "raw_recipe": "{% set version = \"0.1.0\" %}\n{% set sha256 = \"a9405e7fc875b9d5db80a8615ab7acb2cc6c98310ad65a1a7310652f0df8baaf\" %}\n\npackage:\n  name: sphinxjp.themes.solarized\n  version: {{ version }}\n\nsource:\n  fn: sphinxjp.themes.solarized-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/s/sphinxjp.themes.solarized/sphinxjp.themes.solarized-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - docutils\n    - sphinx\n    - sphinxjp.themecore\n\ntest:\n  imports:\n    - sphinxjp.themes\n    - sphinxjp\n    - sphinxjp.themes.solarized\n\nabout:\n  home: http://bitbucket.org/miiton/sphinxjp.themes.solarized\n  license: MIT\n  license_file: src/LICENSE.txt\n  license_family: MIT\n  summary: 'A sphinx theme based on solarized color scheme.'\n\nextra:\n  recipe-maintainers:\n    - johannesring\n",
+ "rendered_recipe": {},
+ "version": "0.1.0"
+}

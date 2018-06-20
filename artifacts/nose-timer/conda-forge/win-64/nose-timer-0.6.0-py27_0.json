@@ -1,0 +1,29 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/nose_timer-0.6.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/nosetimer/__init__.py",
+  "Lib/site-packages/nosetimer/plugin.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "nose",
+   "python 2.7*",
+   "termcolor"
+  ],
+  "license": "MIT or BSD 4-Clause",
+  "name": "nose-timer",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.6.0"
+ },
+ "metadata_version": 1,
+ "name": "nose-timer",
+ "raw_recipe": "{% set version = \"0.6.0\" %}\n\npackage:\n  name: nose-timer\n  version: {{ version }}\n\nsource:\n  fn: nose-timer-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/n/nose-timer/nose-timer-{{ version }}.tar.gz\n  md5: 739fb9901de979e9f52ecdca272c105d\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - nose\n    - termcolor\n\n  run:\n    - python\n    - nose\n    - termcolor\n\ntest:\n  imports:\n    - nosetimer\n\nabout:\n  home: https://github.com/mahmoudimus/nose-timer\n  license: MIT or BSD 4-Clause\n  summary: A timer plugin for nosetests.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.6.0"
+}

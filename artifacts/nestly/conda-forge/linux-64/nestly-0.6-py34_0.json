@@ -1,0 +1,46 @@
+{
+ "about": {
+  "description": "nestly is a collection of functions designed to ease running software\nwith combinatorial choices of parameters. It can easily do so for\n\"cartesian products\" of parameter choices, but can do much more--\narbitrary \"backwards-looking\" dependencies can be used.\n\nThe vision here is that we take a fixed set of parameters and generate\na single type of output for each defined combination, which can then\nbe combined in some way for comparison and retrieval. We would like to\nset things up tidily with nested directories for output reflecting\nnested parameter choices.\n",
+  "dev_url": "https://github.com/fhcrc/nestly",
+  "doc_url": "http://nestly.readthedocs.org/",
+  "home": "https://github.com/fhcrc/nestly",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "A collection of functions designed to make running software with combinatorial choices of parameters easier."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/nestagg",
+  "bin/nestrun",
+  "lib/python3.4/site-packages/nestly-0.6-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/nestly/__init__.py",
+  "lib/python3.4/site-packages/nestly/_py3.py",
+  "lib/python3.4/site-packages/nestly/core.py",
+  "lib/python3.4/site-packages/nestly/scons.py",
+  "lib/python3.4/site-packages/nestly/scripts/__init__.py",
+  "lib/python3.4/site-packages/nestly/scripts/nestagg.py",
+  "lib/python3.4/site-packages/nestly/scripts/nestrun.py",
+  "lib/python3.4/site-packages/nestly/test/__init__.py",
+  "lib/python3.4/site-packages/nestly/test/test_core.py",
+  "lib/python3.4/site-packages/nestly/test/test_scons.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "nestly",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.6"
+ },
+ "metadata_version": 1,
+ "name": "nestly",
+ "raw_recipe": "{% set name = \"nestly\" %}\n{% set version = \"0.6\" %}\n{% set sha256 = \"209adc1ea67c124a88952dc2d2286b465a0d6516c34c2a81a834f0b094bd2ff3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - nestrun = nestly.scripts.nestrun:main\n    - nestagg = nestly.scripts.nestagg:main\n  \nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - nestly\n  commands:\n    - nestrun --help\n    - nestagg --help \n\nabout:\n  home: https://github.com/fhcrc/nestly\n  license: MIT\n  license_family: MIT\n  summary: 'A collection of functions designed to make running software with combinatorial choices of parameters easier.'\n  description: |\n    nestly is a collection of functions designed to ease running software\n    with combinatorial choices of parameters. It can easily do so for\n    \"cartesian products\" of parameter choices, but can do much more--\n    arbitrary \"backwards-looking\" dependencies can be used.\n\n    The vision here is that we take a fixed set of parameters and generate\n    a single type of output for each defined combination, which can then\n    be combined in some way for comparison and retrieval. We would like to\n    set things up tidily with nested directories for output reflecting\n    nested parameter choices.\n\n  doc_url: http://nestly.readthedocs.org/\n  dev_url: https://github.com/fhcrc/nestly\n\nextra:\n  recipe-maintainers:\n    - cswarth\n",
+ "rendered_recipe": {},
+ "version": "0.6"
+}

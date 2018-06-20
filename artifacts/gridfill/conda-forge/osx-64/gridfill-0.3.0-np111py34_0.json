@@ -1,0 +1,30 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/gridfill-0.3.0-py3.4.egg-info",
+  "lib/python3.4/site-packages/gridfill/__init__.py",
+  "lib/python3.4/site-packages/gridfill/gridfill.py",
+  "lib/python3.4/site-packages/gridfill_f.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py34_0",
+  "build_number": 0,
+  "depends": [
+   "libgcc",
+   "numpy 1.11*",
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "gridfill",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.0"
+ },
+ "metadata_version": 1,
+ "name": "gridfill",
+ "raw_recipe": "{% set version = \"0.3.0\" %}\n\npackage:\n    name: gridfill\n    version: {{ version }}\n\nsource:\n    fn: v{{ version }}.tar.gz\n    url: https://github.com/ajdawson/gridfill/archive/v{{ version }}.tar.gz\n    md5: 4d26437253b77d756e5b37e516c63b51\n\nbuild:\n    number: 0\n    skip: True  # [win and py3k or win64]\n\nrequirements:\n    build:\n        - python\n        - numpy x.x\n        - mingwpy  # [win]\n        - gcc  # [unix]\n    run:\n        - python\n        - numpy x.x\n        - libgcc  # [unix]\n\ntest:\n    requires:\n        - nose\n    imports:\n        - gridfill\n\nabout:\n    home: https://github.com/ajdawson/gridfill\n    license: MIT\n    summary: Fill missing values in a grid by solving Poisson's equation via an iterative relaxation scheme\n\nextra:\n    recipe-maintainers:\n        - ajdawson\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.3.0"
+}
