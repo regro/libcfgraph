@@ -1,0 +1,161 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.9",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "ORCID is an open, non-profit, community-based effort to provide a registry\nof unique researcher identifiers and a transparent method of linking research\nactivities and outputs to these identifiers. ORCID is unique in its ability to\nreach across disciplines, research sectors, and national boundaries and its\ncooperation with other identifier systems. orcid is a Python wrapper around\nthe ORCID API\n",
+  "dev_url": "https://github.com/ORCID/python-orcid",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/ORCID/python-orcid",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-0",
+   "conda-forge::certifi-2017.1.23-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.9-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.12.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_2",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Python wrapper around ORCID API"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/orcid/orcid.py",
+  "lib/python3.5/site-packages/orcid/__init__.py",
+  "lib/python3.5/site-packages/orcid-0.7.0-py3.5.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "beautifulsoup4",
+   "python 3.5*",
+   "requests",
+   "simplejson"
+  ],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "name": "orcid",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.7.0"
+ },
+ "metadata_version": 1,
+ "name": "orcid",
+ "raw_recipe": "{% set name = \"orcid\" %}\n{% set version = \"0.7.0\" %}\n{% set sha256 = \"299ba93143b2e212fb44cf035b8c43bb4893075edcd3f5fb3c66ebf23d566c05\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - beautifulsoup4\n    - simplejson\n    - requests\n\ntest:\n  imports:\n    - orcid\n\nabout:\n  home: https://github.com/ORCID/python-orcid\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'Python wrapper around ORCID API'\n\n  description: |\n    ORCID is an open, non-profit, community-based effort to provide a registry\n    of unique researcher identifiers and a transparent method of linking research\n    activities and outputs to these identifiers. ORCID is unique in its ability to\n    reach across disciplines, research sectors, and national boundaries and its\n    cooperation with other identifier systems. orcid is a Python wrapper around\n    the ORCID API\n  dev_url: https://github.com/ORCID/python-orcid\n\nextra:\n  recipe-maintainers:\n    - bryanwweber\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "ORCID is an open, non-profit, community-based effort to provide a registry\nof unique researcher identifiers and a transparent method of linking research\nactivities and outputs to these identifiers. ORCID is unique in its ability to\nreach across disciplines, research sectors, and national boundaries and its\ncooperation with other identifier systems. orcid is a Python wrapper around\nthe ORCID API\n",
+   "dev_url": "https://github.com/ORCID/python-orcid",
+   "home": "https://github.com/ORCID/python-orcid",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "/recipe_root/LICENSE",
+   "summary": "Python wrapper around ORCID API"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py35_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "bryanwweber"
+   ]
+  },
+  "package": {
+   "name": "orcid",
+   "version": "0.7.0"
+  },
+  "requirements": {
+   "build": [
+    "openssl 1.0.2h 3",
+    "tk 8.5.19 1",
+    "setuptools 33.1.1 py35_0",
+    "python 3.5.3 1",
+    "sqlite 3.13.0 1",
+    "ncurses 5.9 10",
+    "zlib 1.2.11 0",
+    "certifi 2017.1.23 py35_0",
+    "readline 6.2 0",
+    "ca-certificates 2017.1.23 0",
+    "xz 5.2.2 0"
+   ],
+   "run": [
+    "python",
+    "beautifulsoup4",
+    "simplejson",
+    "requests"
+   ]
+  },
+  "source": {
+   "fn": "orcid-0.7.0.tar.gz",
+   "sha256": "299ba93143b2e212fb44cf035b8c43bb4893075edcd3f5fb3c66ebf23d566c05",
+   "url": "https://pypi.io/packages/source/o/orcid/orcid-0.7.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "orcid"
+   ]
+  }
+ },
+ "version": "0.7.0"
+}

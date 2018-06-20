@@ -1,0 +1,63 @@
+{
+ "about": {
+  "home": "http://trac.osgeo.org/proj",
+  "license": "MIT",
+  "summary": "Cartographic projection software."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/include/geodesic.h",
+  "Library/include/proj_api.h",
+  "Library/include/projects.h",
+  "Library/lib/proj.lib",
+  "Library/lib/proj_i.lib",
+  "Library/share/GL27",
+  "Library/share/IGNF",
+  "Library/share/epsg",
+  "Library/share/esri",
+  "Library/share/esri.extra",
+  "Library/share/nad.lst",
+  "Library/share/nad27",
+  "Library/share/nad83",
+  "Library/share/other.extra",
+  "Library/share/proj_def.dat",
+  "Library/share/world",
+  "Qt5Core.dll",
+  "Qt5Gui.dll",
+  "Qt5Widgets.dll",
+  "cmake-gui.exe",
+  "cmake.exe",
+  "cmcldeps.exe",
+  "cpack.exe",
+  "cs2cs.exe",
+  "ctest.exe",
+  "etc/conda/activate.d/proj4-activate.bat",
+  "etc/conda/deactivate.d/proj4-deactivate.bat",
+  "geod.exe",
+  "msvcp120.dll",
+  "msvcr120.dll",
+  "nad2bin.exe",
+  "proj.dll",
+  "proj.exe",
+  "qt.conf"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc10_1",
+  "build_number": 1,
+  "depends": [
+   "vc 10"
+  ],
+  "features": "vc10",
+  "license": "MIT",
+  "name": "proj4",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "4.9.3"
+ },
+ "metadata_version": 1,
+ "name": "proj4",
+ "raw_recipe": "{% set version = \"4.9.3\" %}\n\npackage:\n  name: proj4\n  version: {{ version }}\n\nsource:\n  fn:  proj-{{ version }}.tar.gz\n  url: http://download.osgeo.org/proj/proj-{{ version }}.tar.gz\n  sha256: 6984542fea333488de5c82eea58d699e4aff4b359200a9971537cd7e047185f7\n\nbuild:\n  number: 1\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - cmake  # [win]\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n  run:\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n\ntest:\n  commands:\n    - echo -105 40 | proj +proj=utm +zone=13 +ellps=WGS84\n    - echo -117 30 | cs2cs +proj=latlong +datum=NAD27 +to +proj=latlong +datum=NAD83\n    - echo -105 40 | cs2cs +init=epsg:4326 +to +init=epsg:2975\n    #- conda inspect linkages -p $PREFIX proj4  # [not win]\n    #- conda inspect objects -p $PREFIX proj4  # [osx]\n\nabout:\n  home: http://trac.osgeo.org/proj\n  license: MIT\n  summary: 'Cartographic projection software.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - pelson\n",
+ "rendered_recipe": {},
+ "version": "4.9.3"
+}

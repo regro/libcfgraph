@@ -1,0 +1,29 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pygeoif-0.6-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pygeoif-0.6-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/pygeoif/__init__.py",
+  "lib/python3.4/site-packages/pygeoif/geometry.py",
+  "lib/python3.4/site-packages/pygeoif/test_main.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "LGPL",
+  "name": "pygeoif",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.6"
+ },
+ "metadata_version": 1,
+ "name": "pygeoif",
+ "raw_recipe": "{% set version = \"0.6\" %}\n\npackage:\n    name: pygeoif\n    version: {{ version }}\n\nsource:\n    fn: pygeoif-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/p/pygeoif/pygeoif-{{ version }}.tar.gz\n    md5: e5d423724f9894aa2b2a1a8eb2314051\n\nbuild:\n    number: 0\n    preserve_egg_dir: True\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - pygeoif\n    requires:\n        - pytest\n\nabout:\n    home: https://github.com/cleder/pygeoif/\n    license: LGPL\n    summary: A basic implementation of the __geo_interface__\n\nextra:\n    recipe-maintainers:\n        - benjwadams\n        - daf\n        - kwilcox\n        - lukecampbell\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.6"
+}
