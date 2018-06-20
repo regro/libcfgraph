@@ -1,0 +1,51 @@
+{
+ "about": {
+  "home": "https://github.com/lgpage/nbtutor",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "summary": "Visualize Python code execution in Jupyter Notebook cells"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/.nbtutor-post-link.sh",
+  "bin/.nbtutor-pre-unlink.sh",
+  "lib/python2.7/site-packages/nbtutor-1.0.4-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/nbtutor/__init__.py",
+  "lib/python2.7/site-packages/nbtutor/_version.py",
+  "lib/python2.7/site-packages/nbtutor/ipython/__init__.py",
+  "lib/python2.7/site-packages/nbtutor/ipython/debugger.py",
+  "lib/python2.7/site-packages/nbtutor/ipython/history.py",
+  "lib/python2.7/site-packages/nbtutor/ipython/magic.py",
+  "lib/python2.7/site-packages/nbtutor/ipython/utils.py",
+  "lib/python2.7/site-packages/nbtutor/static/nbtutor/css/nbtutor.min.css",
+  "lib/python2.7/site-packages/nbtutor/static/nbtutor/js/nbtutor.deps.min.js",
+  "lib/python2.7/site-packages/nbtutor/static/nbtutor/js/nbtutor.min.js",
+  "lib/python2.7/site-packages/nbtutor/static/nbtutor/js/nbtutor.notebook.min.js",
+  "lib/python2.7/site-packages/nbtutor/static/nbtutor/js/nbtutor.static.min.js",
+  "share/jupyter/nbextensions/nbtutor/css/nbtutor.min.css",
+  "share/jupyter/nbextensions/nbtutor/js/nbtutor.deps.min.js",
+  "share/jupyter/nbextensions/nbtutor/js/nbtutor.min.js",
+  "share/jupyter/nbextensions/nbtutor/js/nbtutor.notebook.min.js",
+  "share/jupyter/nbextensions/nbtutor/js/nbtutor.static.min.js"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "notebook >=4.2.0",
+   "python 2.7*"
+  ],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "name": "nbtutor",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0.4"
+ },
+ "metadata_version": 1,
+ "name": "nbtutor",
+ "raw_recipe": "{% set gh_org = \"lgpage\" %}\n{% set gh_repo = \"nbtutor\" %}\n{% set version = \"1.0.4\" %}\n{% set sha256 = \"64d8f3ecccd77b16086710cd2dac8f2c0c1aef77916862770b7e948af9e05716\" %}\n\npackage:\n  name: {{ gh_repo|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ gh_repo }}-{{ version }}.tar.gz\n  url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - nodejs\n    - notebook >=4.2.0\n    - python\n    - setuptools\n\n  run:\n    - notebook >=4.2.0\n    - python\n\ntest:\n  requires:\n    - coverage\n    - nodejs\n    - notebook >=4.2.0\n    - pytest\n    - pytest-cov\n    - python\n    - requests\n\n  imports:\n    - nbtutor\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENCE.rst\n  summary: Visualize Python code execution in Jupyter Notebook cells\n\nextra:\n  recipe-maintainers:\n    - lgpage\n",
+ "rendered_recipe": {},
+ "version": "1.0.4"
+}

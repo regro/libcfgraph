@@ -1,0 +1,35 @@
+{
+ "about": {
+  "dev_url": "http://bitbucket.org/jezdez/sphinx-pypi-upload/",
+  "home": "http://bitbucket.org/jezdez/sphinx-pypi-upload/",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "setuptools command for uploading Sphinx documentation to PyPI"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/upload_sphinx",
+  "lib/python2.7/site-packages/Sphinx_PyPI_upload-0.2.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/sphinx_pypi_upload.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "setuptools"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "sphinx-pypi-upload",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.1"
+ },
+ "metadata_version": 1,
+ "name": "sphinx-pypi-upload",
+ "raw_recipe": "{%set name = \"Sphinx-PyPI-upload\" %}\n{%set version = \"0.2.1\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"5f919a47ce7a7e6028dba809de81ae1297ac192347cf6fc54efca919d4865159\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  skip: True  # [py3k]\n  preserve_egg_dir: True\n  entry_points:\n    - upload_sphinx = sphinx_pypi_upload:UploadDoc\n\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - sphinx_pypi_upload\n\nabout:\n  home: http://bitbucket.org/jezdez/sphinx-pypi-upload/\n  license: BSD 3-Clause\n  # license_file: No MANIFEST.in included - see https://bitbucket.org/jezdez/sphinx-pypi-upload/issues/7\n  license_family: BSD\n  summary: 'setuptools command for uploading Sphinx documentation to PyPI'\n  dev_url: http://bitbucket.org/jezdez/sphinx-pypi-upload/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.2.1"
+}

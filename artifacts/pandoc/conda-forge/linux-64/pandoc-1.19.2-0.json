@@ -1,0 +1,134 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://johnmacfarlane.net/pandoc/",
+  "license": "GPL-2.0",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.5-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Universal markup converter (repackaged binaries)."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/pandoc-citeproc",
+  "bin/pandoc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "gmp",
+   "zlib 1.2.*"
+  ],
+  "license": "GPL-2.0",
+  "name": "pandoc",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.19.2"
+ },
+ "metadata_version": 1,
+ "name": "pandoc",
+ "raw_recipe": "{% set version = \"1.19.2\" %}\n\npackage:\n  name: pandoc\n  version: {{ version }}\n\nsource:\n  fn: pandoc-{{ version }}-amd64.deb                                                                     # [linux64]\n  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-1-amd64.deb    # [linux64]\n  sha256: 308fa08d427a2b49c6b4d1558884c8fad2f07684997232b4818b98cc7ca14392                               # [linux64]\n  fn: pandoc-{{ version }}.pkg                                                                           # [osx]\n  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-osx.pkg        # [osx]\n  sha256: ebf8af76d94a87803d938e18d1b6f2da472e610a73f48838932a808ca2593239                               # [osx]\n  fn: pandoc-{{ version }}-windows.msi                                                                   # [win]\n  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-windows.msi    # [win]\n  sha256: 63d26519adc2a86f71160058b8a03f2a4911064ef4b4ae3d3900c413e81beac0                               # [win]\n\nbuild:\n   number: 0\n\nrequirements:\n  run:\n    - gmp  # [linux64]\n    - zlib 1.2.*  # [linux64]\n\ntest:\n  commands:\n    - pandoc --help\n    - pandoc --version\n\nabout:\n  home: http://johnmacfarlane.net/pandoc/\n  license: GPL-2.0\n  summary: 'Universal markup converter (repackaged binaries).'\n\nextra:\n  recipe-maintainers:\n    - janschulz\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://johnmacfarlane.net/pandoc/",
+   "license": "GPL-2.0",
+   "summary": "Universal markup converter (repackaged binaries)."
+  },
+  "build": {
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "janschulz",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "pandoc",
+   "version": "1.19.2"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "gmp",
+    "zlib 1.2.*"
+   ]
+  },
+  "source": {
+   "fn": "pandoc-1.19.2-amd64.deb",
+   "sha256": "308fa08d427a2b49c6b4d1558884c8fad2f07684997232b4818b98cc7ca14392",
+   "url": "https://github.com/jgm/pandoc/releases/download/1.19.2/pandoc-1.19.2-1-amd64.deb"
+  },
+  "test": {
+   "commands": [
+    "pandoc --help",
+    "pandoc --version"
+   ]
+  }
+ },
+ "version": "1.19.2"
+}

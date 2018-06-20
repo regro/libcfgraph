@@ -1,0 +1,33 @@
+{
+ "about": {
+  "dev_url": "https://github.com/timbertson/termstyle",
+  "home": "http://gfxmonk.net/dist/0install/python-termstyle.xml",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Console colouring for python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/termstyle-0.1.11-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/termstyle.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "python-termstyle",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.1.11"
+ },
+ "metadata_version": 1,
+ "name": "python-termstyle",
+ "raw_recipe": "{%set name = \"python-termstyle\" %}\n{%set shortname = \"termstyle\" %}\n{%set version = \"0.1.11\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"ef74b83698ea014112040cf32b1a093c1ab3d91c4dd18ecc03ec178fd99c9f9f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ shortname[0] }}/{{ shortname }}/{{ shortname }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - termstyle\n\nabout:\n  home: http://gfxmonk.net/dist/0install/python-termstyle.xml\n  license: BSD 3-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: 'Console colouring for python'\n  dev_url: https://github.com/timbertson/termstyle\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.1.11"
+}

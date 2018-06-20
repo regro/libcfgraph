@@ -1,0 +1,63 @@
+{
+ "about": {
+  "home": "https://toolbelt.readthedocs.org",
+  "license": "Apache-2.0",
+  "summary": "A utility belt for advanced users of python-requests"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/requests_toolbelt-0.7.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/requests_toolbelt/__init__.py",
+  "Lib/site-packages/requests_toolbelt/_compat.py",
+  "Lib/site-packages/requests_toolbelt/adapters/__init__.py",
+  "Lib/site-packages/requests_toolbelt/adapters/appengine.py",
+  "Lib/site-packages/requests_toolbelt/adapters/fingerprint.py",
+  "Lib/site-packages/requests_toolbelt/adapters/host_header_ssl.py",
+  "Lib/site-packages/requests_toolbelt/adapters/socket_options.py",
+  "Lib/site-packages/requests_toolbelt/adapters/source.py",
+  "Lib/site-packages/requests_toolbelt/adapters/ssl.py",
+  "Lib/site-packages/requests_toolbelt/auth/__init__.py",
+  "Lib/site-packages/requests_toolbelt/auth/_digest_auth_compat.py",
+  "Lib/site-packages/requests_toolbelt/auth/guess.py",
+  "Lib/site-packages/requests_toolbelt/auth/handler.py",
+  "Lib/site-packages/requests_toolbelt/auth/http_proxy_digest.py",
+  "Lib/site-packages/requests_toolbelt/cookies/__init__.py",
+  "Lib/site-packages/requests_toolbelt/cookies/forgetful.py",
+  "Lib/site-packages/requests_toolbelt/downloadutils/__init__.py",
+  "Lib/site-packages/requests_toolbelt/downloadutils/stream.py",
+  "Lib/site-packages/requests_toolbelt/downloadutils/tee.py",
+  "Lib/site-packages/requests_toolbelt/exceptions.py",
+  "Lib/site-packages/requests_toolbelt/multipart/__init__.py",
+  "Lib/site-packages/requests_toolbelt/multipart/decoder.py",
+  "Lib/site-packages/requests_toolbelt/multipart/encoder.py",
+  "Lib/site-packages/requests_toolbelt/sessions.py",
+  "Lib/site-packages/requests_toolbelt/streaming_iterator.py",
+  "Lib/site-packages/requests_toolbelt/threaded/__init__.py",
+  "Lib/site-packages/requests_toolbelt/threaded/pool.py",
+  "Lib/site-packages/requests_toolbelt/threaded/thread.py",
+  "Lib/site-packages/requests_toolbelt/utils/__init__.py",
+  "Lib/site-packages/requests_toolbelt/utils/deprecated.py",
+  "Lib/site-packages/requests_toolbelt/utils/dump.py",
+  "Lib/site-packages/requests_toolbelt/utils/formdata.py",
+  "Lib/site-packages/requests_toolbelt/utils/user_agent.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "requests >=2.0.1,<=3.0.0"
+  ],
+  "license": "Apache-2.0",
+  "name": "requests-toolbelt",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.7.0"
+ },
+ "metadata_version": 1,
+ "name": "requests-toolbelt",
+ "raw_recipe": "{% set version = \"0.7.0\" %}\n\npackage:\n    name: requests-toolbelt\n    version: {{ version }}\n\nsource:\n    fn: requests-toolbelt-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/r/requests-toolbelt/requests-toolbelt-{{ version }}.tar.gz\n    md5: bfe2009905f460f4764c32cfbbf4205f\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - requests >=2.0.1,<=3.0.0\n\ntest:\n    imports:\n        - requests_toolbelt\n        - requests_toolbelt.adapters\n        - requests_toolbelt.auth\n        - requests_toolbelt.downloadutils\n        - requests_toolbelt.multipart\n        - requests_toolbelt.threaded\n        - requests_toolbelt.utils\n\nabout:\n    home: https://toolbelt.readthedocs.org\n    license: Apache-2.0\n    summary: A utility belt for advanced users of python-requests\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - kwilcox\n        - sigmavirus24\n",
+ "rendered_recipe": {},
+ "version": "0.7.0"
+}

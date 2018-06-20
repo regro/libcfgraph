@@ -1,0 +1,56 @@
+{
+ "about": {
+  "description": "sqlparse is a non-validating SQL parser for Python. It provides support\nfor parsing, splitting and formatting SQL statements.\n",
+  "dev_url": "https://github.com/andialbrecht/sqlparse",
+  "doc_url": "https://sqlparse.readthedocs.org",
+  "home": "https://github.com/andialbrecht/sqlparse",
+  "license": "BSD 3-Clause",
+  "summary": "A non-validating SQL parser module for Python."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/sqlparse-0.2.1-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/sqlparse/__init__.py",
+  "Lib/site-packages/sqlparse/__main__.py",
+  "Lib/site-packages/sqlparse/cli.py",
+  "Lib/site-packages/sqlparse/compat.py",
+  "Lib/site-packages/sqlparse/engine/__init__.py",
+  "Lib/site-packages/sqlparse/engine/filter_stack.py",
+  "Lib/site-packages/sqlparse/engine/grouping.py",
+  "Lib/site-packages/sqlparse/engine/statement_splitter.py",
+  "Lib/site-packages/sqlparse/exceptions.py",
+  "Lib/site-packages/sqlparse/filters/__init__.py",
+  "Lib/site-packages/sqlparse/filters/aligned_indent.py",
+  "Lib/site-packages/sqlparse/filters/others.py",
+  "Lib/site-packages/sqlparse/filters/output.py",
+  "Lib/site-packages/sqlparse/filters/reindent.py",
+  "Lib/site-packages/sqlparse/filters/right_margin.py",
+  "Lib/site-packages/sqlparse/filters/tokens.py",
+  "Lib/site-packages/sqlparse/formatter.py",
+  "Lib/site-packages/sqlparse/keywords.py",
+  "Lib/site-packages/sqlparse/lexer.py",
+  "Lib/site-packages/sqlparse/sql.py",
+  "Lib/site-packages/sqlparse/tokens.py",
+  "Lib/site-packages/sqlparse/utils.py",
+  "Scripts/sqlformat-script.py",
+  "Scripts/sqlformat.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "sqlparse",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2.1"
+ },
+ "metadata_version": 1,
+ "name": "sqlparse",
+ "raw_recipe": "{% set version = \"0.2.1\" %}\n\npackage:\n  name: sqlparse\n  version: {{ version }}\n\nsource:\n  fn: sqlparse-{{ version }}.tar.gz\n  url: https://github.com/andialbrecht/sqlparse/archive/{{ version }}.tar.gz\n  sha256: a1919e7895a66d285395a67e09f865610e06330e8a2d309ad76c09390d4c7b47\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - sqlformat = sqlparse.__main__:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - sqlparse\n\nabout:\n  home: https://github.com/andialbrecht/sqlparse\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'A non-validating SQL parser module for Python.'\n  description: |\n    sqlparse is a non-validating SQL parser for Python. It provides support\n    for parsing, splitting and formatting SQL statements.\n  doc_url: https://sqlparse.readthedocs.org\n  dev_url: https://github.com/andialbrecht/sqlparse\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.2.1"
+}
