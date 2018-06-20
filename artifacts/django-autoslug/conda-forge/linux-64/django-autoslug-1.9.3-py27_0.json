@@ -1,0 +1,71 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/autoslug/__init__.py",
+  "lib/python2.7/site-packages/autoslug/fields.py",
+  "lib/python2.7/site-packages/autoslug/models.py",
+  "lib/python2.7/site-packages/autoslug/settings.py",
+  "lib/python2.7/site-packages/autoslug/utils.py",
+  "lib/python2.7/site-packages/django_autoslug-1.9.3-py2.7.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "django",
+   "python 2.7*"
+  ],
+  "license": "LGPL-3.0",
+  "name": "django-autoslug",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.9.3"
+ },
+ "metadata_version": 1,
+ "name": "django-autoslug",
+ "raw_recipe": "package:\n    name: django-autoslug\n    version: 1.9.3\n\nsource:\n    fn: django-autoslug-1.9.3.tar.gz\n    url: https://pypi.python.org/packages/source/d/django-autoslug/django-autoslug-1.9.3.tar.gz\n    md5: d91e4f04869a282398ca6efc623f2b34\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - django\n\ntest:\n    commands:\n        - python -c \"import django; from django.conf import settings; settings.configure(); django.setup(); import autoslug\"\n\nabout:\n    home: http://bitbucket.org/neithere/django-autoslug/\n    license: LGPL-3.0\n    summary: An automated slug field for Django\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - kwilcox\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://bitbucket.org/neithere/django-autoslug/",
+   "license": "LGPL-3.0",
+   "summary": "An automated slug field for Django"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "kwilcox"
+   ]
+  },
+  "package": {
+   "name": "django-autoslug",
+   "version": "1.9.3"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "django"
+   ]
+  },
+  "source": {
+   "fn": "django-autoslug-1.9.3.tar.gz",
+   "md5": "d91e4f04869a282398ca6efc623f2b34",
+   "url": "https://pypi.python.org/packages/source/d/django-autoslug/django-autoslug-1.9.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python -c \"import django; from django.conf import settings; settings.configure(); django.setup(); import autoslug\""
+   ]
+  }
+ },
+ "version": "1.9.3"
+}

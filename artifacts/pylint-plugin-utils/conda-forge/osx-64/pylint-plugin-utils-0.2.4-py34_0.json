@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "https://github.com/landscapeio/pylint-plugin-utils",
+  "license": "GPL 2",
+  "summary": "Utilities and helpers for writing Pylint plugins"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pylint_plugin_utils-0.2.4-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pylint_plugin_utils-0.2.4-py3.4.egg-info/pbr.json",
+  "lib/python3.4/site-packages/pylint_plugin_utils/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "astroid",
+   "pylint",
+   "python 3.4*"
+  ],
+  "license": "GPL 2",
+  "name": "pylint-plugin-utils",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.4"
+ },
+ "metadata_version": 1,
+ "name": "pylint-plugin-utils",
+ "raw_recipe": "{% set name = \"pylint-plugin-utils\" %}\n{% set version = \"0.2.4\" %}\n{% set sha256 = \"6844b4d0525aa41ff69c5d44c6edc640e3dab98446abeb499501757f09a3cd71\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pylint\n    - astroid\n\n  run:\n    - python\n    - pylint\n    - astroid\n\ntest:\n  imports:\n    - pylint_plugin_utils\n\nabout:\n  home: https://github.com/landscapeio/pylint-plugin-utils\n  license: GPL 2\n  summary: 'Utilities and helpers for writing Pylint plugins'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.2.4"
+}

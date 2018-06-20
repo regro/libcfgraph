@@ -1,0 +1,30 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pykdtree-1.1.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pykdtree-1.1.1-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/pykdtree/__init__.py",
+  "lib/python2.7/site-packages/pykdtree/kdtree.so",
+  "lib/python2.7/site-packages/pykdtree/test_tree.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.11*",
+   "python 2.7*"
+  ],
+  "license": "LGPL-3.0",
+  "name": "pykdtree",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.1.1"
+ },
+ "metadata_version": 1,
+ "name": "pykdtree",
+ "raw_recipe": "{% set version = \"1.1.1\" %}\n\npackage:\n    name: pykdtree\n    version: {{ version }}\n\nsource:\n    fn: pykdtree-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/p/pykdtree/pykdtree-{{ version }}.tar.gz\n    md5: 936b0844b3d06d8f2f2a1ca40f587cfb\n\nbuild:\n    number: 0\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - numpy x.x\n        - gcc  # [osx]\n    run:\n        - python\n        - numpy x.x\n        - libgcc  # [osx]\n\ntest:\n    imports:\n        - pykdtree\n\nabout:\n    home: https://pypi.python.org/pypi/pykdtree\n    license: LGPL-3.0\n    summary: Fast kd-tree implementation with OpenMP-enabled queries\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.1.1"
+}

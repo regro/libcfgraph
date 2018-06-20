@@ -1,0 +1,34 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/ipdb-0.10.1-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/ipdb-0.10.1-py3.4.egg-info/zip-safe",
+  "Lib/site-packages/ipdb/__init__.py",
+  "Lib/site-packages/ipdb/__main__.py",
+  "Lib/site-packages/ipdb/stdout.py",
+  "Scripts/ipdb-script.py",
+  "Scripts/ipdb.exe",
+  "Scripts/ipdb3-script.py",
+  "Scripts/ipdb3.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "ipython",
+   "python 3.4*"
+  ],
+  "license": "BSD-3",
+  "name": "ipdb",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.10.1"
+ },
+ "metadata_version": 1,
+ "name": "ipdb",
+ "raw_recipe": "{% set name = \"ipdb\" %}\n{% set version = \"0.10.1\" %}\n{% set sha256 = \"55b9006024e79aae918ce81fa1f2102868c047e65a4ef22d336a30059b297e50\" %}\n\n{% set gh_org = \"gotcha\"  %}\n{% set gh_repo = name %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  entry_points:\n    - ipdb = ipdb.__main__:main\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - ipython\n\ntest:\n  imports:\n    - ipdb\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: BSD-3\n  summary: \"Integration of IPython pdb\"\n\nextra:\n  recipe-maintainers:\n    - vamega\n",
+ "rendered_recipe": {},
+ "version": "0.10.1"
+}
