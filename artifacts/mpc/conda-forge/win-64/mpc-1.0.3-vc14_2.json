@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "http://www.multiprecision.org/",
+  "license": "COPYING.LESSER",
+  "summary": "A C library for the arithmetic of complex numbers with arbitrarily high precision."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/mpc.dll",
+  "Library/bin/mpc.pdb",
+  "Library/include/mpc.h",
+  "Library/lib/mpc.lib",
+  "Library/lib/mpc_static.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc14_2",
+  "build_number": 2,
+  "depends": [
+   "mpfr",
+   "mpir",
+   "vc 14"
+  ],
+  "features": "vc14",
+  "license": "COPYING.LESSER",
+  "name": "mpc",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.3"
+ },
+ "metadata_version": 1,
+ "name": "mpc",
+ "raw_recipe": "{% set version = \"1.0.3\" %}\n{% set commit = \"58fa4d15fff10f26c490518bc0da2b69732e22ee\" %}\n\npackage:\n  name: mpc\n  version: {{ version }}\n\nsource:\n  fn: mpc-{{ version }}.tar.gz                                              # [unix]\n  url: http://www.multiprecision.org/mpc/download/mpc-{{ version }}.tar.gz  # [unix]\n  sha1: b8be66396c726fdc36ebb0f692ed8a8cca3bcc66                            # [unix]\n  fn: {{ commit }}.zip                                                      # [win]\n  url: https://github.com/BrianGladman/mpc/archive/{{ commit }}.zip         # [win]\n  md5: a3ccbbb17770110427a983638824f31b                                     # [win]\n\nbuild:\n  number: 2\n  skip: true          # [win and not py35]\n  features:\n    - vc14            # [win and py35]\n\nrequirements:\n  build:\n    - python          # [win]\n    - m4              # [unix]\n    - libtool         # [unix]\n    - gmp             # [unix]\n    - mpir            # [win]\n    - mpfr\n  run:\n    - gmp             # [unix]\n    - mpir            # [win]\n    - vc 14           # [win]\n    - mpfr\n\ntest:\n  commands:\n    - if not exist %LIBRARY_INC%\\\\mpc.h exit 1                  # [win]\n    - if not exist %LIBRARY_LIB%\\\\mpc.lib exit 1                # [win]\n    - if not exist %LIBRARY_BIN%\\\\mpc.dll exit 1                # [win]\n    - if not exist %LIBRARY_LIB%\\\\mpc_static.lib exit 1         # [win]\n    - test -f ${PREFIX}/include/mpc.h                           # [unix]\n    - test -f ${PREFIX}/lib/libmpc.a                            # [unix]\n    - test -f ${PREFIX}/lib/libmpc.dylib                        # [osx]\n    - test -f ${PREFIX}/lib/libmpc.so                           # [linux]\n\nabout:\n  home: http://www.multiprecision.org/\n  license: LGPL 3\n  license: COPYING.LESSER\n  summary: A C library for the arithmetic of complex numbers with arbitrarily high precision.\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.0.3"
+}

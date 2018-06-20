@@ -1,0 +1,39 @@
+{
+ "about": {
+  "home": "http://github.com/peterbe/premailer",
+  "license": "BSD3",
+  "summary": "Turns CSS blocks into style attributes"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/premailer-3.0.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/premailer-3.0.1-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/premailer/__init__.py",
+  "lib/python3.4/site-packages/premailer/__main__.py",
+  "lib/python3.4/site-packages/premailer/cache.py",
+  "lib/python3.4/site-packages/premailer/merge_style.py",
+  "lib/python3.4/site-packages/premailer/premailer.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "cssselect",
+   "cssutils",
+   "lxml",
+   "python 3.4*",
+   "requests"
+  ],
+  "license": "BSD3",
+  "name": "premailer",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "3.0.1"
+ },
+ "metadata_version": 1,
+ "name": "premailer",
+ "raw_recipe": "{% set name = \"premailer\" %}\n{% set version = \"3.0.1\" %}\n{% set sha256 = \"4e71cc09ad1438f827d1070ffac54ceb3a6a07c995fa82cb34c1ef163adeb432\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - lxml\n    - cssselect\n    - cssutils\n    - requests\n    - argparse  # [py26]\n    - orderedict  # [py26]\n\ntest:\n  imports:\n    - premailer\n\nabout:\n  home: http://github.com/peterbe/premailer\n  license: BSD3\n  summary: Turns CSS blocks into style attributes\n\nextra:\n  recipe-maintainers:\n    - vamega\n",
+ "rendered_recipe": {},
+ "version": "3.0.1"
+}

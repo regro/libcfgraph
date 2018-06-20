@@ -1,0 +1,185 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.10.7",
+  "conda_private": false,
+  "conda_version": "4.5.4",
+  "dev_url": "https://github.com/01org/tbb",
+  "doc_url": "https://software.intel.com/en-us/node/506039",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "home": "http://www.threadingbuildingblocks.org",
+  "license": "Apache 2.0",
+  "license_file": "LICENSE",
+  "root_pkgs": [
+   "anaconda-client 1.6.14 py_0",
+   "asn1crypto 0.24.0 py36_0",
+   "beautifulsoup4 4.6.0 py36_0",
+   "ca-certificates 2018.4.16 0",
+   "certifi 2018.4.16 py36_0",
+   "cffi 1.11.5 py36h945400d_0",
+   "chardet 3.0.4 py36h420ce6e_1",
+   "clyent 1.2.2 py36_0",
+   "conda 4.5.4 py36_0",
+   "conda-build 3.10.7 py36_1",
+   "conda-env 2.6.0 h36134e3_1",
+   "conda-forge-ci-setup 1.3.5 0",
+   "conda-verify 2.0.0 py36_0",
+   "console_shortcut 0.1.1 h6bb2dd7_3",
+   "cryptography 2.2.2 py36hfa6e2cd_0",
+   "decorator 4.3.0 py_0",
+   "filelock 3.0.4 py36_0",
+   "glob2 0.6 py_0",
+   "idna 2.6 py36h148d497_1",
+   "ipython_genutils 0.2.0 py36_0",
+   "jinja2 2.10 py36_0",
+   "jsonschema 2.6.0 py36_1",
+   "jupyter_core 4.4.0 py_0",
+   "markupsafe 1.0 py36_0",
+   "menuinst 1.4.11 py36hfa6e2cd_0",
+   "nbformat 4.4.0 py36_0",
+   "openssl 1.0.2o vc14_0",
+   "pip 9.0.3 py36_0",
+   "pkginfo 1.4.2 py36_0",
+   "psutil 5.4.5 py36_0",
+   "pycosat 0.6.3 py36h413d8a4_0",
+   "pycparser 2.18 py36hd053e01_1",
+   "pyopenssl 17.5.0 py36h5b7d817_0",
+   "pysocks 1.6.8 py36_0",
+   "python 3.6.5 h0c2934d_0",
+   "python-dateutil 2.7.3 py_0",
+   "pytz 2018.4 py_0",
+   "pywin32 223 py36hfa6e2cd_0",
+   "pyyaml 3.12 py36_1",
+   "requests 2.18.4 py36h4371aae_1",
+   "ruamel_yaml 0.15.35 py36hfa6e2cd_1",
+   "setuptools 39.0.1 py36_0",
+   "six 1.11.0 py36h4db2310_1",
+   "traitlets 4.3.2 py36_0",
+   "urllib3 1.22 py36h276f60a_0",
+   "vc 14 h0510ff6_3",
+   "vs2008_express_vc_python_patch 1.0.0 0",
+   "vs2015_runtime 14.0.25123 3",
+   "wheel 0.31.0 py36_0",
+   "wincertstore 0.2 py36h7fe50ca_0",
+   "win_inet_pton 1.0.1 py36he67d7fd_1",
+   "yaml 0.1.7 vc14_0"
+  ],
+  "summary": "High level abstract threading library"
+ },
+ "conda_build_config": {
+  "c_compiler": "vs2015",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "vs2008",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "python",
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "2.7",
+  "r_base": "3.4",
+  "target_platform": "win-64",
+  "vc": "14",
+  "zip_keys": [
+   "cxx_compiler",
+   "python"
+  ]
+ },
+ "files": [
+  "Library/bin/tbb.dll",
+  "Library/bin/tbbmalloc.dll",
+  "Library/bin/tbbmalloc_proxy.dll"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "hdc96acc_0",
+  "build_number": 0,
+  "depends": [
+   "vc 9.*"
+  ],
+  "license": "Apache 2.0",
+  "name": "tbb",
+  "platform": "win",
+  "subdir": "win-64",
+  "timestamp": 1528167262384,
+  "version": "2018.0.4"
+ },
+ "metadata_version": 1,
+ "name": "tbb",
+ "raw_recipe": "{% set version = \"2018.0.4\" %}\n\n{% set year = version.split('.')[0]|int %}\n{% set update = version.split('.')[2]|int %}\n{% if update == 0 %}\n{%   set vtag = \"%d\" % year %}\n{% else %}\n{%   set vtag = \"%d_U%d\" % (year, update) %}\n{% endif %}\n{% set vinterface = (year-2008)*1000 + update %}  # just guess, does not fit the previous versions before 2018\n\n{% set build = 'python build/build.py --make-tool=mingw32-make --build-prefix=vc%VS_MAJOR%' %}  # [win]\n{% set build = 'python build/build.py --build-args=\"stdver=c++11 CXXFLAGS= CFLAGS=\"' %}         # [unix]\n\npackage:\n  name: tbb\n  version: {{ version }}\n\nsource:\n  fn: tbb{{ vtag }}_oss_src.tgz\n  url: https://github.com/01org/tbb/archive/{{ vtag }}.tar.gz\n  sha256: d5604a04787c8a037d4944eeb89792e7c45f6a83c141b20df7ee89c2fb012ed1\n\nbuild:\n  number: 0\n  script_env:\n    - OS    # [win]\n\nrequirements:\n  build:\n    - python *\n    - {{ compiler('cxx') }}\n    - m2w64-make                                         # [win]\n\ntest:\n  requires:\n    - python *               # any python version is ok for sake of testing of shared libraries\n  commands:\n    - python -c \"import ctypes; assert {{ vinterface }} == ctypes.cdll[r'libtbb.so.2']       ['TBB_runtime_interface_version']()\"  # [linux]\n    - python -c \"import ctypes; assert {{ vinterface }} == ctypes.cdll[r'libtbb${SHLIB_EXT}']['TBB_runtime_interface_version']()\"  # [unix and not linux]\n    - python -c \"import ctypes; assert {{ vinterface }} == ctypes.cdll[r'tbb.dll']           ['TBB_runtime_interface_version']()\"  # [win]\n\noutputs:\n  - name: tbb\n    build:\n      script: {{ build }} --install-libs\n\n  - name: tbb-devel\n    build:\n      script: {{ build }} --no-rebuild --install-devel --install-docs\n    requirements:\n      build:\n        - python *\n        - {{ compiler('cxx') }}\n        - m2w64-make                                     # [win]\n      run:\n        - {{ pin_subpackage('tbb', exact=True) }}        # development package is for specific version of tbb\n    test:\n      commands:\n        - if not exist %PREFIX%\\Library\\include\\tbb\\tbb.h exit 1  # [win]\n        - if not exist %PREFIX%\\Library\\lib\\tbb.lib exit 1        # [win]\n        - test -f ${PREFIX}/include/tbb/tbb.h                     # [unix]\n\n  - name: tbb4py\n    build:\n      script: {{ build }} --no-rebuild --install-python\n      entry_points:\n        - python-tbb = tbb:_main\n    requirements:\n      build:\n        - {{ compiler('cxx') }}\n        - m2w64-make                                     # [win]\n        - swig\n      host:\n        - python\n        - {{ pin_subpackage('tbb-devel', exact=True) }}\n      run:\n        - tbb >={{ version }}                            # while python module works with any compatible tbb...\n        - python\n    test:\n      requires:\n        - python\n        - {{ pin_subpackage('tbb', exact=True) }}        # we want to test with this specific tbb package\n      imports:\n        - tbb\n        - TBB\n      commands:\n        - python-tbb -h\n        - python -m TBB -h\n        - python -m tbb -h\n        - python -m tbb test\n    about:\n      summary: TBB module for Python\n      license: Apache 2.0\n      dev_url: https://github.com/01org/tbb\n\nabout:\n  home: http://www.threadingbuildingblocks.org\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: High level abstract threading library\n  dev_url: https://github.com/01org/tbb\n  doc_url: https://software.intel.com/en-us/node/506039\n\nextra:\n  recipe-maintainers:\n    - jschueller\n    - anton-malakhov\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "https://github.com/01org/tbb",
+   "doc_url": "https://software.intel.com/en-us/node/506039",
+   "home": "http://www.threadingbuildingblocks.org",
+   "license": "Apache 2.0",
+   "license_file": "LICENSE",
+   "summary": "High level abstract threading library"
+  },
+  "build": {
+   "number": "0",
+   "script": "python build/build.py --make-tool=mingw32-make --build-prefix=vc%VS_MAJOR% --install-libs",
+   "script_env": [
+    "OS"
+   ],
+   "string": "hdc96acc_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "anton-malakhov",
+    "jschueller"
+   ]
+  },
+  "package": {
+   "name": "tbb",
+   "version": "2018.0.4"
+  },
+  "requirements": {
+   "build": [
+    "m2w64-make 4.1.2351.a80a8b8 2",
+    "msys2-conda-epoch 20160418 1",
+    "python 3.6.5 1",
+    "vs2008_win-64 9.00.30729.1 hb7fc0b5_1",
+    "vs2015_runtime 14.0.25420 0"
+   ],
+   "host": [
+    "vc 9 0",
+    "vs2008_runtime 9.0.30729.6161 0"
+   ],
+   "run": [
+    "vc 9.*"
+   ]
+  },
+  "source": {
+   "fn": "tbb2018_U4_oss_src.tgz",
+   "sha256": "d5604a04787c8a037d4944eeb89792e7c45f6a83c141b20df7ee89c2fb012ed1",
+   "url": "https://github.com/01org/tbb/archive/2018_U4.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python -c \"import ctypes; assert 10004 == ctypes.cdll[r'tbb.dll']           ['TBB_runtime_interface_version']()\""
+   ],
+   "requires": [
+    "python *"
+   ]
+  }
+ },
+ "version": "2018.0.4"
+}
