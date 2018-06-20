@@ -1,0 +1,45 @@
+{
+ "about": {
+  "home": "http://pexpect.sourceforge.net/",
+  "license": "ISC",
+  "summary": "Pexpect makes Python a better tool for controlling other applications."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pexpect-4.2.0-py3.5.egg-info",
+  "Lib/site-packages/pexpect/ANSI.py",
+  "Lib/site-packages/pexpect/FSM.py",
+  "Lib/site-packages/pexpect/__init__.py",
+  "Lib/site-packages/pexpect/async.py",
+  "Lib/site-packages/pexpect/bashrc.sh",
+  "Lib/site-packages/pexpect/exceptions.py",
+  "Lib/site-packages/pexpect/expect.py",
+  "Lib/site-packages/pexpect/fdpexpect.py",
+  "Lib/site-packages/pexpect/popen_spawn.py",
+  "Lib/site-packages/pexpect/pty_spawn.py",
+  "Lib/site-packages/pexpect/pxssh.py",
+  "Lib/site-packages/pexpect/replwrap.py",
+  "Lib/site-packages/pexpect/run.py",
+  "Lib/site-packages/pexpect/screen.py",
+  "Lib/site-packages/pexpect/spawnbase.py",
+  "Lib/site-packages/pexpect/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "ISC",
+  "name": "pexpect",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "4.2.0"
+ },
+ "metadata_version": 1,
+ "name": "pexpect",
+ "raw_recipe": "{% set version = \"4.2.0\" %}\n\npackage:\n  name: pexpect\n  version: {{ version }}\n\nsource:\n  fn: pexpect-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pexpect/pexpect-{{ version }}.tar.gz\n  md5: 8071ec5df0f3d515daedafad672d1632\n  patches:\n      # See https://github.com/pexpect/pexpect/issues/290\n      - no_async.patch  # [py2k]\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - ptyprocess  # [not win]\n\ntest:\n  imports:\n    - pexpect\n\nabout:\n  home: http://pexpect.sourceforge.net/\n  license: ISC\n  summary: Pexpect makes Python a better tool for controlling other applications.\n\nextra:\n  recipe-maintainers:\n    - jquast\n    - pelson\n    - takluyver\n",
+ "rendered_recipe": {},
+ "version": "4.2.0"
+}

@@ -1,0 +1,38 @@
+{
+ "about": {
+  "home": "https://github.com/landscapeio/requirements-detector",
+  "license": "MIT",
+  "summary": "Python tool to find and list requirements of a Python project"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/detect-requirements",
+  "lib/python3.4/site-packages/requirements_detector-0.5.2-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/requirements_detector-0.5.2-py3.4.egg-info/pbr.json",
+  "lib/python3.4/site-packages/requirements_detector/__init__.py",
+  "lib/python3.4/site-packages/requirements_detector/detect.py",
+  "lib/python3.4/site-packages/requirements_detector/formatters.py",
+  "lib/python3.4/site-packages/requirements_detector/requirement.py",
+  "lib/python3.4/site-packages/requirements_detector/run.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "astroid >=1.4",
+   "python 3.4*",
+   "setuptools"
+  ],
+  "license": "MIT",
+  "name": "requirements-detector",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.5.2"
+ },
+ "metadata_version": 1,
+ "name": "requirements-detector",
+ "raw_recipe": "{% set name = \"requirements-detector\" %}\n{% set version = \"0.5.2\" %}\n{% set sha256 = \"f790cc2d8a7084a5f111384a606363fb7b78d0e486d49b34c5093859eaa358f3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - astroid >=1.4\n\ntest:\n  imports:\n    - requirements_detector\n\nabout:\n  home: https://github.com/landscapeio/requirements-detector\n  license: MIT\n  license_file: LICENSE\n  summary: Python tool to find and list requirements of a Python project\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.5.2"
+}

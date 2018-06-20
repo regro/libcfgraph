@@ -1,0 +1,41 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/cjpeg",
+  "bin/djpeg",
+  "bin/jpegtran",
+  "bin/rdjpgcom",
+  "bin/wrjpgcom",
+  "include/jconfig.h",
+  "include/jerror.h",
+  "include/jmorecfg.h",
+  "include/jpeglib.h",
+  "lib/libjpeg.a",
+  "lib/libjpeg.la",
+  "lib/libjpeg.so",
+  "lib/libjpeg.so.9",
+  "lib/libjpeg.so.9.2.0",
+  "share/man/man1/cjpeg.1",
+  "share/man/man1/djpeg.1",
+  "share/man/man1/jpegtran.1",
+  "share/man/man1/rdjpgcom.1",
+  "share/man/man1/wrjpgcom.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "Custom free software license",
+  "name": "jpeg",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "9b"
+ },
+ "metadata_version": 1,
+ "name": "jpeg",
+ "raw_recipe": "{% set version = \"9b\" %}\n\npackage:\n    name: jpeg\n    version: {{ version }}\n\nsource:\n    fn: jpegsrc.v9b.tar.gz\n    url: http://www.ijg.org/files/jpegsrc.v{{ version }}.tar.gz\n    md5: 6a9996ce116ec5c52b4870dbcd6d3ddb\n    patches:\n        - CMakeLists.txt.patch  # [win]\n\nbuild:\n    number: 0\n    features:\n        - vc9  # [win and py27]\n        - vc10  # [win and py34]\n        - vc14  # [win and py35]\n        \nrequirements:\n    build:\n        - python  # [win]\n        - cmake  # [win]\n\ntest:\n    requires:\n        - python {{ environ['PY_VER'] + '*' }}  # [win]\n    files:\n        - testorig.jpg\n    commands:\n        - djpeg -dct int -ppm -outfile testout.ppm testorig.jpg\n\nabout:\n    home: http://www.ijg.org/\n    license: Custom free software license\n    summary: read/write jpeg COM, EXIF, IPTC medata\n    \nextra:    \n    recipe-maintainers:\n        - gillins\n",
+ "rendered_recipe": {},
+ "version": "9b"
+}
