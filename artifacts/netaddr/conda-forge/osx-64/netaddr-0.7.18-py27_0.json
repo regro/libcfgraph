@@ -1,0 +1,49 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/netaddr",
+  "lib/python2.7/site-packages/netaddr-0.7.18-py2.7.egg-info",
+  "lib/python2.7/site-packages/netaddr/__init__.py",
+  "lib/python2.7/site-packages/netaddr/compat.py",
+  "lib/python2.7/site-packages/netaddr/core.py",
+  "lib/python2.7/site-packages/netaddr/eui/__init__.py",
+  "lib/python2.7/site-packages/netaddr/eui/iab.idx",
+  "lib/python2.7/site-packages/netaddr/eui/ieee.py",
+  "lib/python2.7/site-packages/netaddr/eui/oui.idx",
+  "lib/python2.7/site-packages/netaddr/fbsocket.py",
+  "lib/python2.7/site-packages/netaddr/ip/__init__.py",
+  "lib/python2.7/site-packages/netaddr/ip/glob.py",
+  "lib/python2.7/site-packages/netaddr/ip/iana.py",
+  "lib/python2.7/site-packages/netaddr/ip/ipv4-address-space.xml",
+  "lib/python2.7/site-packages/netaddr/ip/ipv6-address-space.xml",
+  "lib/python2.7/site-packages/netaddr/ip/ipv6-unicast-address-assignments.xml",
+  "lib/python2.7/site-packages/netaddr/ip/multicast-addresses.xml",
+  "lib/python2.7/site-packages/netaddr/ip/nmap.py",
+  "lib/python2.7/site-packages/netaddr/ip/rfc1924.py",
+  "lib/python2.7/site-packages/netaddr/ip/sets.py",
+  "lib/python2.7/site-packages/netaddr/strategy/__init__.py",
+  "lib/python2.7/site-packages/netaddr/strategy/eui48.py",
+  "lib/python2.7/site-packages/netaddr/strategy/eui64.py",
+  "lib/python2.7/site-packages/netaddr/strategy/ipv4.py",
+  "lib/python2.7/site-packages/netaddr/strategy/ipv6.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-clause",
+  "name": "netaddr",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.7.18"
+ },
+ "metadata_version": 1,
+ "name": "netaddr",
+ "raw_recipe": "{% set name = \"netaddr\" %}\r\n{% set version = \"0.7.18\" %}\r\n\r\npackage:\r\n  name: {{ name }}\r\n  version: {{ version }}\r\n\r\nsource:\r\n  fn: {{ name }}-{{ version }}.tar.gz\r\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\r\n  sha256: a1f5c9fcf75ac2579b9995c843dade33009543c04f218ff7c007b3c81695bd19\r\n\r\nbuild:\r\n  number: 0\r\n  script: python setup.py install\r\n\r\nrequirements:\r\n  build:\r\n    - python\r\n\r\n  run:\r\n    - python\r\n\r\ntest:\r\n  imports:\r\n    - netaddr\r\n    - netaddr.eui\r\n    - netaddr.ip\r\n    - netaddr.strategy\r\n\r\nabout:\r\n  home: http://github.com/drkjam/netaddr\r\n  license: BSD 3-clause\r\n  summary: 'Pythonic manipulation of IPv4, IPv6, CIDR, EUI and MAC network addresses'\r\n\r\nextra:\r\n  recipe-maintainers:\r\n    - mariusvniekerk\r\n    - drkjam\r\n",
+ "rendered_recipe": {},
+ "version": "0.7.18"
+}

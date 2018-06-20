@@ -1,0 +1,172 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Spglib is a library for finding and handling crystal symmetries.\n",
+  "dev_url": "https://github.com/atztogo/spglib",
+  "doc_url": "https://atztogo.github.io/spglib/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://atztogo.github.io/spglib/",
+  "license": "BSD-3-clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-1",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Space symmetry groups spglib module."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/spglib/__init__.py",
+  "lib/python3.6/site-packages/spglib-1.9.9.44-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/spglib/_spglib.cpython-36m-darwin.so",
+  "lib/python3.6/site-packages/spglib/spglib.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py36_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.11*",
+   "python 3.6*"
+  ],
+  "license": "BSD-3-clause",
+  "license_family": "BSD",
+  "name": "spglib",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.9.9.44"
+ },
+ "metadata_version": 1,
+ "name": "spglib",
+ "raw_recipe": "{% set name = \"spglib\" %}\n{% set version = \"1.9.9.44\" %}\n{% set sha256 = \"13cdd4d711c1c9672488a9b17305abb715ed3b2e4851de514b8666dae9864b39\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: \n    - python setup.py install --single-version-externally-managed --record record.txt \n\nrequirements:\n  build:\n    - python\n    - numpy x.x\n    - setuptools\n    - toolchain\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  imports:\n    - spglib\n  source_files:\n    - test\n  commands:\n    - cd test\n    - python -m unittest discover -b\n\n\nabout:\n  home: https://atztogo.github.io/spglib/\n  license: BSD-3-clause\n  license_family: BSD\n  license_file: {{ environ.RECIPE_DIR }}/COPYING\n  summary: 'Space symmetry groups spglib module.'\n\n\n  description: |\n    Spglib is a library for finding and handling crystal symmetries.\n  doc_url: https://atztogo.github.io/spglib/\n  dev_url: https://github.com/atztogo/spglib\n\nextra:\n  recipe-maintainers:\n    - jochym\n    - atztogo\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Spglib is a library for finding and handling crystal symmetries.\n",
+   "dev_url": "https://github.com/atztogo/spglib",
+   "doc_url": "https://atztogo.github.io/spglib/",
+   "home": "https://atztogo.github.io/spglib/",
+   "license": "BSD-3-clause",
+   "license_family": "BSD",
+   "license_file": "/Users/travis/build/conda-forge/spglib-feedstock/recipe/COPYING",
+   "summary": "Space symmetry groups spglib module."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "script": [
+    "python setup.py install --single-version-externally-managed --record record.txt"
+   ],
+   "string": "np111py36_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "jochym",
+    "atztogo"
+   ]
+  },
+  "package": {
+   "name": "spglib",
+   "version": "1.9.9.44"
+  },
+  "requirements": {
+   "build": [
+    "blas 1.1 openblas",
+    "ca-certificates 2017.1.23 1",
+    "certifi 2017.4.17 py36_0",
+    "libgfortran 3.0.0 0",
+    "ncurses 5.9 10",
+    "numpy 1.11.3 py36_blas_openblas_200",
+    "openblas 0.2.19 2",
+    "openssl 1.0.2k 0",
+    "python 3.6.1 2",
+    "readline 6.2 0",
+    "setuptools 33.1.1 py36_0",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "toolchain 2.0.0 0",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python",
+    "numpy x.x"
+   ]
+  },
+  "source": {
+   "fn": "spglib-1.9.9.44.tar.gz",
+   "sha256": "13cdd4d711c1c9672488a9b17305abb715ed3b2e4851de514b8666dae9864b39",
+   "url": "https://pypi.io/packages/source/s/spglib/spglib-1.9.9.44.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "cd test",
+    "python -m unittest discover -b"
+   ],
+   "imports": [
+    "spglib"
+   ],
+   "source_files": [
+    "test"
+   ]
+  }
+ },
+ "version": "1.9.9.44"
+}

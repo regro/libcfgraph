@@ -1,0 +1,49 @@
+{
+ "about": {
+  "description": "pycparser is a complete parser of the C language, written in pure Python using the PLY parsing library.\nIt parses C code into an AST and can serve as a front-end for C compilers or analysis tools.\n",
+  "dev_url": "https://github.com/eliben/pycparser",
+  "home": "https://github.com/eliben/pycparser",
+  "license": "BSD 3-clause",
+  "summary": "Complete C99 parser in pure Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pycparser-2.17-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pycparser/__init__.py",
+  "lib/python3.5/site-packages/pycparser/_ast_gen.py",
+  "lib/python3.5/site-packages/pycparser/_build_tables.py",
+  "lib/python3.5/site-packages/pycparser/_c_ast.cfg",
+  "lib/python3.5/site-packages/pycparser/ast_transforms.py",
+  "lib/python3.5/site-packages/pycparser/c_ast.py",
+  "lib/python3.5/site-packages/pycparser/c_generator.py",
+  "lib/python3.5/site-packages/pycparser/c_lexer.py",
+  "lib/python3.5/site-packages/pycparser/c_parser.py",
+  "lib/python3.5/site-packages/pycparser/lextab.py",
+  "lib/python3.5/site-packages/pycparser/ply/__init__.py",
+  "lib/python3.5/site-packages/pycparser/ply/cpp.py",
+  "lib/python3.5/site-packages/pycparser/ply/ctokens.py",
+  "lib/python3.5/site-packages/pycparser/ply/lex.py",
+  "lib/python3.5/site-packages/pycparser/ply/yacc.py",
+  "lib/python3.5/site-packages/pycparser/ply/ygen.py",
+  "lib/python3.5/site-packages/pycparser/plyparser.py",
+  "lib/python3.5/site-packages/pycparser/yacctab.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-clause",
+  "name": "pycparser",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.17"
+ },
+ "metadata_version": 1,
+ "name": "pycparser",
+ "raw_recipe": "{% set name = \"pycparser\" %}\n{% set version = \"2.17\" %}\n{% set sha256 = \"0aac31e917c24cb3357f5a4d5566f2cc91a19ca41862f6c3c22dc60a629673b6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - pycparser\n    - pycparser.ply\n\nabout:\n  home: https://github.com/eliben/pycparser\n  license: BSD 3-clause\n  license_file: LICENSE\n  summary: 'Complete C99 parser in pure Python'\n  description: |\n    pycparser is a complete parser of the C language, written in pure Python using the PLY parsing library.\n    It parses C code into an AST and can serve as a front-end for C compilers or analysis tools.\n  dev_url: https://github.com/eliben/pycparser\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
+ "rendered_recipe": {},
+ "version": "2.17"
+}

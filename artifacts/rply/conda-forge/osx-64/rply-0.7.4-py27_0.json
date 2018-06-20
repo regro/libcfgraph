@@ -1,0 +1,145 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Welcome to RPLY! A pure python parser generator, that\nalso works with RPython. It is a more-or-less direct port\nof David Beazley\u2019s awesome PLY, with a new public API, and RPython support.\n",
+  "dev_url": "https://github.com/alex/rply",
+  "doc_url": "https://rply.readthedocs.io/en/latest/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/alex/rply",
+  "license": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.4-py36_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.2-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_0",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "A pure Python Lex/Yacc that works with RPython"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/rply/parser.py",
+  "lib/python2.7/site-packages/rply/errors.py",
+  "lib/python2.7/site-packages/rply/utils.py",
+  "lib/python2.7/site-packages/rply/grammar.py",
+  "lib/python2.7/site-packages/rply/lexergenerator.py",
+  "lib/python2.7/site-packages/rply/__init__.py",
+  "lib/python2.7/site-packages/rply/lexer.py",
+  "lib/python2.7/site-packages/rply/token.py",
+  "lib/python2.7/site-packages/rply/parsergenerator.py",
+  "lib/python2.7/site-packages/rply-0.7.4-py2.7.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "appdirs",
+   "python 2.7*"
+  ],
+  "license": "BSD",
+  "name": "rply",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.7.4"
+ },
+ "metadata_version": 1,
+ "name": "rply",
+ "raw_recipe": "{% set name = \"rply\" %}\n{% set version = \"0.7.4\" %}\n{% set sha256 = \"723303d6c5f05a7ee19f59531f66c8c7d41cfaef2676057369db1eb5520b378b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - appdirs\n\n  run:\n    - python\n    - appdirs\n\ntest:\n  imports:\n    - rply\n\nabout:\n  home: https://github.com/alex/rply\n  license: BSD\n  license_file: LICENSE\n  summary: 'A pure Python Lex/Yacc that works with RPython'\n  description: |\n    Welcome to RPLY! A pure python parser generator, that\n    also works with RPython. It is a more-or-less direct port\n    of David Beazley\u2019s awesome PLY, with a new public API, and RPython support.\n  doc_url: https://rply.readthedocs.io/en/latest/\n  dev_url: https://github.com/alex/rply\n\nextra:\n  recipe-maintainers:\n    - drewokane\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Welcome to RPLY! A pure python parser generator, that\nalso works with RPython. It is a more-or-less direct port\nof David Beazley\u2019s awesome PLY, with a new public API, and RPython support.\n",
+   "dev_url": "https://github.com/alex/rply",
+   "doc_url": "https://rply.readthedocs.io/en/latest/",
+   "home": "https://github.com/alex/rply",
+   "license": "BSD",
+   "license_file": "LICENSE",
+   "summary": "A pure Python Lex/Yacc that works with RPython"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py27_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "drewokane"
+   ]
+  },
+  "package": {
+   "name": "rply",
+   "version": "0.7.4"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "appdirs"
+   ]
+  },
+  "source": {
+   "fn": "rply-0.7.4.tar.gz",
+   "sha256": "723303d6c5f05a7ee19f59531f66c8c7d41cfaef2676057369db1eb5520b378b",
+   "url": "https://pypi.io/packages/source/r/rply/rply-0.7.4.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "rply"
+   ]
+  }
+ },
+ "version": "0.7.4"
+}

@@ -1,0 +1,34 @@
+{
+ "about": {
+  "home": "http://github.com/wtforms/wtforms-appengine/",
+  "license": "BSD 3-Clause",
+  "summary": "Appengine tools for WTForms"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/WTForms_Appengine-0.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/wtforms_appengine/__init__.py",
+  "lib/python3.5/site-packages/wtforms_appengine/db.py",
+  "lib/python3.5/site-packages/wtforms_appengine/fields.py",
+  "lib/python3.5/site-packages/wtforms_appengine/ndb.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "python 3.5*",
+   "wtforms >=1.0.5"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "wtforms-appengine",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1"
+ },
+ "metadata_version": 1,
+ "name": "wtforms-appengine",
+ "raw_recipe": "{%set name = \"wtforms-appengine\" %}\n{%set camelName = \"WTForms-Appengine\" %}\n{%set version = \"0.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"56824d785458a8da68fab3d3ba3561831115965197a85a624e4bb9534c69fe19\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.zip\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - wtforms >=1.0.5\n\n  run:\n    - python\n    - wtforms >=1.0.5\n\ntest:\n  imports:\n    - wtforms_appengine\n\nabout:\n  home: http://github.com/wtforms/wtforms-appengine/\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Appengine tools for WTForms'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.1"
+}
