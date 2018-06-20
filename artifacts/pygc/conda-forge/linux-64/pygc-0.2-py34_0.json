@@ -1,0 +1,69 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pygc-0.2-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pygc/__init__.py",
+  "lib/python3.4/site-packages/pygc/gc.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.4*"
+  ],
+  "license": "GNU General Public License v3 (GPLv3)",
+  "name": "pygc",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2"
+ },
+ "metadata_version": 1,
+ "name": "pygc",
+ "raw_recipe": "package:\n    name: pygc\n    version: 0.2\n\nsource:\n    fn: pygc-0.2.tar.gz\n    url: https://pypi.python.org/packages/source/p/pygc/pygc-0.2.tar.gz\n    md5: 76d35e92a60086ef76d37178ae92fda1\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - numpy\n    run:\n        - python\n        - numpy\n\ntest:\n    imports:\n        - pygc\n\nabout:\n    home: https://github.com/kwilcox/pygc\n    license: GNU General Public License v3 (GPLv3)\n    summary: Great Circle calculations in Python using Vincenty's formulae\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/kwilcox/pygc",
+   "license": "GNU General Public License v3 (GPLv3)",
+   "summary": "Great Circle calculations in Python using Vincenty's formulae"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "kwilcox",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "pygc",
+   "version": 0.2
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "numpy"
+   ],
+   "run": [
+    "python",
+    "numpy"
+   ]
+  },
+  "source": {
+   "fn": "pygc-0.2.tar.gz",
+   "md5": "76d35e92a60086ef76d37178ae92fda1",
+   "url": "https://pypi.python.org/packages/source/p/pygc/pygc-0.2.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "pygc"
+   ]
+  }
+ },
+ "version": "0.2"
+}

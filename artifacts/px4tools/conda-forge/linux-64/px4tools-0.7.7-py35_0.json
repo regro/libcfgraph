@@ -1,0 +1,159 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.1",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/dronecrew/px4tools",
+  "license": "BSD 3-Clause",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.1-py35_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.2-5",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.4-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-32.3.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.8-3"
+  ],
+  "summary": "Python log crunching for PX4."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/test/__init__.py",
+  "lib/python3.5/site-packages/test/test_analysis.py",
+  "lib/python3.5/site-packages/px4tools/mapping.py",
+  "lib/python3.5/site-packages/px4tools/logsysid.py",
+  "lib/python3.5/site-packages/px4tools-0.7.7-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/test/sdlog2_dump.py",
+  "lib/python3.5/site-packages/px4tools/version.py",
+  "lib/python3.5/site-packages/px4tools/__init__.py",
+  "lib/python3.5/site-packages/test/test_px42csv.py",
+  "bin/px42csv",
+  "lib/python3.5/site-packages/px4tools/px42csv.py",
+  "lib/python3.5/site-packages/px4tools/analysis.py",
+  "lib/python3.5/site-packages/px4tools/ulog.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "basemap",
+   "matplotlib",
+   "numpy",
+   "pandas",
+   "python 3.5*",
+   "scipy"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "px4tools",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.7.7"
+ },
+ "metadata_version": 1,
+ "name": "px4tools",
+ "raw_recipe": "{% set name = \"px4tools\" %}\n{% set version = \"0.7.7\" %}\n{% set sha256 = \"5f04382ce192e99a6b70f85183a1c1c19f026034f81c7612d36e1ea41ab6ea7f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/dronecrew/px4tools/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  entry_points:\n    - px42csv=px4tools.px42csv:main\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - scipy\n    - numpy\n    - pandas\n    - matplotlib\n    - basemap\n\ntest:\n  import:\n    - px4tools\n  commands:\n    - px42csv -h\n\nabout:\n  home: https://github.com/dronecrew/px4tools\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'Python log crunching for PX4.'\n\nextra:\n  recipe-maintainers:\n    - jgoppert\n\n#  vim: set et fenc=utf-8 ff=unix sts=0 sw=2 ts=2 : \n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/dronecrew/px4tools",
+   "license": "BSD 3-Clause",
+   "license_file": "LICENSE",
+   "summary": "Python log crunching for PX4."
+  },
+  "build": {
+   "entry_points": [
+    "px42csv=px4tools.px42csv:main"
+   ],
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py35_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jgoppert"
+   ]
+  },
+  "package": {
+   "name": "px4tools",
+   "version": "0.7.7"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "scipy",
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "basemap"
+   ]
+  },
+  "source": {
+   "fn": "px4tools-0.7.7.tar.gz",
+   "sha256": "5f04382ce192e99a6b70f85183a1c1c19f026034f81c7612d36e1ea41ab6ea7f",
+   "url": "https://github.com/dronecrew/px4tools/archive/v0.7.7.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "px42csv -h"
+   ],
+   "import": [
+    "px4tools"
+   ]
+  }
+ },
+ "version": "0.7.7"
+}

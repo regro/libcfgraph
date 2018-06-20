@@ -1,0 +1,52 @@
+{
+ "about": {
+  "home": "http://mpld3.github.com",
+  "license": "BSD 3-Clause",
+  "summary": "D3 Viewer for Matplotlib."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/mpld3-0.3-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/mpld3/__about__.py",
+  "lib/python2.7/site-packages/mpld3/__init__.py",
+  "lib/python2.7/site-packages/mpld3/_display.py",
+  "lib/python2.7/site-packages/mpld3/_server.py",
+  "lib/python2.7/site-packages/mpld3/js/d3.v3.min.js",
+  "lib/python2.7/site-packages/mpld3/js/mpld3.v0.3.js",
+  "lib/python2.7/site-packages/mpld3/js/mpld3.v0.3.min.js",
+  "lib/python2.7/site-packages/mpld3/mpld3renderer.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/__init__.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/_py3k_compat.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/exporter.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/renderers/__init__.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/renderers/base.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/renderers/fake_renderer.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/renderers/vega_renderer.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/renderers/vincent_renderer.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/tools.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/utils.py",
+  "lib/python2.7/site-packages/mpld3/plugins.py",
+  "lib/python2.7/site-packages/mpld3/urls.py",
+  "lib/python2.7/site-packages/mpld3/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "jinja2",
+   "matplotlib",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "mpld3",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3"
+ },
+ "metadata_version": 1,
+ "name": "mpld3",
+ "raw_recipe": "{% set version = \"0.3\" %}\n\npackage:\n  name: mpld3\n  version: {{ version }}\n\nsource:\n  fn: mpld3-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/m/mpld3/mpld3-{{ version }}.tar.gz\n  sha256: 4d455884a211bf99b37ecc760759435c7bb6a5955de47d8daf4967e301878ab7\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - jinja2\n    - matplotlib\n\ntest:\n  imports:\n    - mpld3\n\nabout:\n  home: http://mpld3.github.com\n  license: BSD 3-Clause\n  summary: 'D3 Viewer for Matplotlib.'\n\nextra:\n  recipe-maintainers:\n    - etgalloway\n    - jakevdp\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.3"
+}

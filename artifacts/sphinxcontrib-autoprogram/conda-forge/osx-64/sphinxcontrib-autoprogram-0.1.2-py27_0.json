@@ -1,0 +1,34 @@
+{
+ "about": {
+  "home": "https://bitbucket.org/birkenfeld/sphinx-contrib",
+  "license": "BSD 2-Clause",
+  "summary": "Documenting CLI programs"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/sphinxcontrib/autoprogram.py",
+  "lib/python2.7/site-packages/sphinxcontrib_autoprogram-0.1.2-py2.7-nspkg.pth",
+  "lib/python2.7/site-packages/sphinxcontrib_autoprogram-0.1.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/sphinxcontrib_autoprogram-0.1.2-py2.7.egg-info/not-zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "six",
+   "sphinx >=1.2"
+  ],
+  "license": "BSD 2-Clause",
+  "name": "sphinxcontrib-autoprogram",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.2"
+ },
+ "metadata_version": 1,
+ "name": "sphinxcontrib-autoprogram",
+ "raw_recipe": "{% set version = \"0.1.2\" %}\npackage:\n  name: sphinxcontrib-autoprogram\n  version: {{ version }}\n\nsource:\n  fn: sphinxcontrib-autoprogram-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/s/sphinxcontrib-autoprogram/sphinxcontrib-autoprogram-{{ version }}.tar.gz\n  md5: 0601b888f1f68b14742dc07fb21479b9\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - sphinx >=1.2\n    - six\n\n  run:\n    - python\n    - sphinx >=1.2\n    - six\n\ntest:\n  imports:\n    - sphinxcontrib\n\nabout:\n  home: https://bitbucket.org/birkenfeld/sphinx-contrib\n  license: BSD 2-Clause\n  summary: 'Documenting CLI programs'\n\nextra:\n  recipe-maintainers:\n    - asmeurer\n",
+ "rendered_recipe": {},
+ "version": "0.1.2"
+}

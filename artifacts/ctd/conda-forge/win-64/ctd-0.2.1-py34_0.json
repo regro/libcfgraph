@@ -1,0 +1,78 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/ctd-0.2.1-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/ctd/__init__.py",
+  "Lib/site-packages/ctd/ctd.py",
+  "Lib/site-packages/ctd/plotting.py",
+  "Lib/site-packages/ctd/processing.py",
+  "Lib/site-packages/ctd/utilities.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "gsw",
+   "matplotlib",
+   "numpy",
+   "pandas",
+   "python 3.4*",
+   "scipy"
+  ],
+  "license": "MIT License",
+  "name": "ctd",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2.1"
+ },
+ "metadata_version": 1,
+ "name": "ctd",
+ "raw_recipe": "package:\n    name: ctd\n    version: 0.2.1\n\nsource:\n    fn: ctd-0.2.1.tar.gz\n    url: https://pypi.python.org/packages/source/c/ctd/ctd-0.2.1.tar.gz\n    md5: 59f90c1e989c702ee9c6969ecadea8bc\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - scipy\n        - matplotlib\n        - pandas\n        - gsw\n\ntest:\n    imports:\n        - ctd\n\nabout:\n    home: http://pypi.python.org/pypi/ctd/\n    license: MIT License\n    summary: Tools to load hydrographic data formats as pandas DataFrames\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://pypi.python.org/pypi/ctd/",
+   "license": "MIT License",
+   "summary": "Tools to load hydrographic data formats as pandas DataFrames"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "ctd",
+   "version": "0.2.1"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "pandas",
+    "gsw"
+   ]
+  },
+  "source": {
+   "fn": "ctd-0.2.1.tar.gz",
+   "md5": "59f90c1e989c702ee9c6969ecadea8bc",
+   "url": "https://pypi.python.org/packages/source/c/ctd/ctd-0.2.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "ctd"
+   ]
+  }
+ },
+ "version": "0.2.1"
+}

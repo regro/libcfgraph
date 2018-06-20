@@ -1,0 +1,36 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "include/snappy-c.h",
+  "include/snappy-sinksource.h",
+  "include/snappy-stubs-public.h",
+  "include/snappy.h",
+  "lib/libsnappy.1.dylib",
+  "lib/libsnappy.a",
+  "lib/libsnappy.dylib",
+  "lib/libsnappy.la",
+  "share/doc/snappy/COPYING",
+  "share/doc/snappy/ChangeLog",
+  "share/doc/snappy/INSTALL",
+  "share/doc/snappy/NEWS",
+  "share/doc/snappy/README"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "BSD 3-clause",
+  "license_family": "BSD",
+  "name": "snappy",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.1.3"
+ },
+ "metadata_version": 1,
+ "name": "snappy",
+ "raw_recipe": "{% set version = \"1.1.3\" %}\n\npackage:\n  name: snappy\n  version: {{ version }}\n\nsource:\n  url: https://github.com/google/snappy/releases/download/{{ version }}/snappy-{{ version }}.tar.gz\n  fn: snappy-{{ version }}.tar.gz\n  md5: 7358c82f133dc77798e4c2062a749b73\n\nbuild:\n  number: 0\n  skip: true      # [win]\n\nrequirements:\n  build:\n    - msinttypes  # [win]\n    - libtool     # [unix]\n    - automake    # [unix]\n    - pkg-config  # [unix]\n\ntest:\n  commands:\n    - test -e $PREFIX/include/snappy.h               # [unix]\n    - test -e $PREFIX/include/snappy-stubs-public.h  # [unix]\n    - test -e $PREFIX/lib/libsnappy.dylib            # [osx]\n    - test -e $PREFIX/lib/libsnappy.a                # [unix]\n    - test -e $PREFIX/lib/libsnappy.so               # [linux]\n\nabout:\n  home: https://github.com/google/snappy\n  summary: A fast compressor/decompressor\n  license: BSD 3-clause\n  license_file: COPYING\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - groutr\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.1.3"
+}

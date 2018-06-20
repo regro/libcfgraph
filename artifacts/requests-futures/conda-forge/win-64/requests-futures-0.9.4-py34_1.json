@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "https://github.com/ross/requests-futures",
+  "license": "Apache 2.0",
+  "summary": "Asynchronous Python HTTP for Humans."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/requests_futures-0.9.4-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/requests_futures-0.9.4-py3.4.egg-info/not-zip-safe",
+  "Lib/site-packages/requests_futures/__init__.py",
+  "Lib/site-packages/requests_futures/sessions.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_1",
+  "build_number": 1,
+  "depends": [
+   "python 3.4*",
+   "requests >=1.2.0"
+  ],
+  "license": "Apache 2.0",
+  "name": "requests-futures",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.9.4"
+ },
+ "metadata_version": 1,
+ "name": "requests-futures",
+ "raw_recipe": "{%set name = \"requests-futures\" %}\n{%set version = \"0.9.4\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"2046313d60a3e8bd868adf401694639a7fa963ef42648bb202f077f69d35207a\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - requests >=1.2.0\n    - futures >=2.1.3  # [py<32]\n\n  run:\n    - python\n    - requests >=1.2.0\n    - futures >=2.1.3  # [py<32]\n\ntest:\n  imports:\n    - requests_futures\n\nabout:\n  home: https://github.com/ross/requests-futures\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: 'Asynchronous Python HTTP for Humans.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.9.4"
+}

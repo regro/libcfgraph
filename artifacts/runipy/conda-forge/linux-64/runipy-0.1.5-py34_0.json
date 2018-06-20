@@ -1,0 +1,39 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/runipy",
+  "lib/python3.4/site-packages/runipy-0.1.5-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/runipy-0.1.5-py3.4.egg-info/pbr.json",
+  "lib/python3.4/site-packages/runipy-0.1.5-py3.4.egg-info/zip-safe",
+  "lib/python3.4/site-packages/runipy/__init__.py",
+  "lib/python3.4/site-packages/runipy/_version.py",
+  "lib/python3.4/site-packages/runipy/main.py",
+  "lib/python3.4/site-packages/runipy/notebook_runner.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "ipykernel >=4.0.0",
+   "ipython >=2.3.1",
+   "jinja2 >=2.7.2",
+   "nbconvert >=4.0.0",
+   "nbformat >=4.0.0",
+   "pygments >=1.6",
+   "python 3.4*",
+   "pyzmq >=14.1.0"
+  ],
+  "license": "BSD License",
+  "name": "runipy",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1.5"
+ },
+ "metadata_version": 1,
+ "name": "runipy",
+ "raw_recipe": "{% set version = \"0.1.5\" %}\n\npackage:\n  name: runipy\n  version: {{ version }}\n\nsource:\n  fn: runipy-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/r/runipy/runipy-{{ version }}.tar.gz\n  md5: afef5be6b8103b9d7f5ba9d086f25d53\n\nbuild:\n  number: 0\n  entry_points:\n    - runipy = runipy.main:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - jinja2 >=2.7.2\n    - pygments >=1.6\n    - ipython >=2.3.1\n    - pyzmq >=14.1.0\n    - ipykernel >=4.0.0\n    - nbconvert >=4.0.0\n    - nbformat >=4.0.0\n\n  run:\n    - python\n    - jinja2 >=2.7.2\n    - pygments >=1.6\n    - ipython >=2.3.1\n    - pyzmq >=14.1.0\n    - ipykernel >=4.0.0\n    - nbconvert >=4.0.0\n    - nbformat >=4.0.0\n\ntest:\n  imports:\n    - runipy\n\n  commands:\n    - runipy --help\n\nabout:\n  home: https://github.com/paulgb/runipy\n  license: BSD License\n  summary: 'Run IPython notebooks from the command line'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.1.5"
+}

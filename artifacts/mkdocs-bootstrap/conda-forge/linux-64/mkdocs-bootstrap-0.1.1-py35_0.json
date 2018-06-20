@@ -1,0 +1,45 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/mkdocs_bootstrap-0.1.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/mkdocs_bootstrap-0.1.1-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/mkdocs_bootstrap-0.1.1-py3.5.egg-info/pbr.json",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/__init__.py",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/base.html",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/content.html",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/css/base.css",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/css/bootstrap-3.0.3.min.css",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/css/font-awesome-4.0.3.css",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/css/highlight.css",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/fonts/fontawesome-webfont.eot",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/fonts/fontawesome-webfont.svg",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/fonts/fontawesome-webfont.ttf",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/fonts/fontawesome-webfont.woff",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/img/favicon.ico",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/js/base.js",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/js/bootstrap-3.0.3.min.js",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/js/highlight.pack.js",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/js/jquery-1.10.2.min.js",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/nav.html",
+  "lib/python3.5/site-packages/mkdocs_bootstrap/toc.html"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD-2-Clause",
+  "name": "mkdocs-bootstrap",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1.1"
+ },
+ "metadata_version": 1,
+ "name": "mkdocs-bootstrap",
+ "raw_recipe": "{% set version = \"0.1.1\" %}\n\npackage:\n    name: mkdocs-bootstrap\n    version: {{ version }}\n\nsource:\n    fn: mkdocs-bootstrap-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/m/mkdocs-bootstrap/mkdocs-bootstrap-{{ version }}.tar.gz\n    md5: db8fb7216b1098cd084685a647b9b6b3\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    preserve_egg_dir: True\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - mkdocs_bootstrap\n\nabout:\n    home: http://www.mkdocs.org\n    license: BSD-2-Clause\n    summary: Bootstrap theme for MkDocs\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.1.1"
+}
