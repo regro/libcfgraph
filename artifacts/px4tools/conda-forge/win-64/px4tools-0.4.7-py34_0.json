@@ -1,0 +1,46 @@
+{
+ "about": {
+  "home": "https://github.com/dronecrew/px4tools",
+  "license": "BSD 3-Clause",
+  "summary": "Python log crunching for PX4."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/px4tools-0.4.7-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/px4tools/__init__.py",
+  "Lib/site-packages/px4tools/analysis.py",
+  "Lib/site-packages/px4tools/logsysid.py",
+  "Lib/site-packages/px4tools/mapping.py",
+  "Lib/site-packages/px4tools/px42csv.py",
+  "Lib/site-packages/px4tools/version.py",
+  "Lib/site-packages/test/__init__.py",
+  "Lib/site-packages/test/sdlog2_dump.py",
+  "Lib/site-packages/test/test_analysis.py",
+  "Lib/site-packages/test/test_px42csv.py",
+  "Scripts/px42csv-script.py",
+  "Scripts/px42csv.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "basemap",
+   "matplotlib",
+   "numpy",
+   "pandas",
+   "python 3.4*",
+   "scipy"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "px4tools",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.4.7"
+ },
+ "metadata_version": 1,
+ "name": "px4tools",
+ "raw_recipe": "{% set name = \"px4tools\" %}\n{% set version = \"0.4.7\" %}\n{% set sha256 = \"63af728fa4c120bc36c360d10f36cfda67f3abbe80d3dfd005260aab19e8b5d0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/dronecrew/px4tools/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  entry_points:\n    - px42csv=px4tools.px42csv:main\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - scipy\n    - numpy\n    - pandas\n    - matplotlib\n    - basemap\n\ntest:\n  requires:\n    - nose\n  commands:\n    - nosetests -sv {{ SRC_DIR }}\n\nabout:\n  home: https://github.com/dronecrew/px4tools\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'Python log crunching for PX4.'\n\nextra:\n  recipe-maintainers:\n    - jgoppert\n",
+ "rendered_recipe": {},
+ "version": "0.4.7"
+}

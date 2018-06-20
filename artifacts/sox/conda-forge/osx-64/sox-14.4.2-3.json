@@ -1,0 +1,43 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/play",
+  "bin/rec",
+  "bin/sox",
+  "bin/soxi",
+  "include/sox.h",
+  "lib/libsox.3.dylib",
+  "lib/libsox.a",
+  "lib/libsox.dylib",
+  "lib/libsox.la",
+  "lib/pkgconfig/sox.pc",
+  "share/man/man1/play.1",
+  "share/man/man1/rec.1",
+  "share/man/man1/sox.1",
+  "share/man/man1/soxi.1",
+  "share/man/man3/libsox.3",
+  "share/man/man7/soxeffect.7",
+  "share/man/man7/soxformat.7"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "3",
+  "build_number": 3,
+  "depends": [
+   "libpng 1.6*",
+   "xz 5.0.*",
+   "zlib 1.2*"
+  ],
+  "license": "LGPLv2",
+  "name": "sox",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "14.4.2"
+ },
+ "metadata_version": 1,
+ "name": "sox",
+ "raw_recipe": "{% set version = \"14.4.2\" %}\n\npackage:\n  name: sox\n  version: {{ version }}\n\nsource:\n  fn: sox-{{ version }}.tar.gz\n  url: http://sourceforge.net/projects/sox/files/sox/{{ version }}/sox-{{ version }}.tar.gz\n  md5: d04fba2d9245e661f245de0577f48a33\n\nbuild:\n  number: 3\n  detect_binary_files_with_prefix: true\n  skip: true                             # [win]\n\nrequirements:\n  build:\n    - libpng 1.6*\n    - zlib 1.2*\n    - xz 5.0.*\n    - toolchain\n\n  run:\n    - libpng 1.6*\n    - zlib 1.2*\n    - xz 5.0.*\n\ntest:\n  commands:\n    - test -e $PREFIX/include/sox.h      # [unix]\n    - test -e $PREFIX/lib/libsox.a       # [unix]\n    - test -e $PREFIX/lib/libsox.so      # [linux]\n    - test -e $PREFIX/lib/libsox.dylib   # [osx]\n    - otool -L $PREFIX/lib/libsox.dylib  # [osx]\n\n\nabout:\n  home: http://sox.sourceforge.net/\n  license: LGPLv2\n  summary: A cross-platform command line utility that can convert various formats of computer audio files in to other formats.\n\nextra:\n  recipe-maintainers:\n    - 183amir\n    - alexbw\n",
+ "rendered_recipe": {},
+ "version": "14.4.2"
+}

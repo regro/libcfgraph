@@ -1,0 +1,34 @@
+{
+ "about": {
+  "dev_url": "https://bitbucket.org/pitrou/pathlib",
+  "doc_url": "https://pathlib.readthedocs.org/",
+  "home": "https://pathlib.readthedocs.org/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Object-oriented filesystem paths"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pathlib-1.0.1-py3.5.egg-info",
+  "lib/python3.5/site-packages/pathlib.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "pathlib",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0.1"
+ },
+ "metadata_version": 1,
+ "name": "pathlib",
+ "raw_recipe": "{% set name = \"pathlib\" %}\n{% set version = \"1.0.1\" %}\n{% set sha256 = \"6940718dfc3eff4258203ad5021090933e5c04707d5ca8cc9e73c94a7894ea9f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pathlib\n\nabout:\n  home: https://pathlib.readthedocs.org/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'Object-oriented filesystem paths'\n  doc_url: https://pathlib.readthedocs.org/\n  dev_url: https://bitbucket.org/pitrou/pathlib\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
+ "rendered_recipe": {},
+ "version": "1.0.1"
+}
