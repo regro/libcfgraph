@@ -1,0 +1,28 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pep257-0.7.0-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/pep257.py",
+  "Scripts/pep257-script.py",
+  "Scripts/pep257.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "pep257",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.7.0"
+ },
+ "metadata_version": 1,
+ "name": "pep257",
+ "raw_recipe": "{% set version = \"0.7.0\" %}\n{% set hash_type = \"md5\" %}\n{% set hash = \"ff3dc9622c2406b7b583a283fbea651e\" %}\n\npackage:\n  name: pep257\n  version: {{ version }}\n\nsource:\n  fn: pep257-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/p/pep257/pep257-{{ version }}.tar.gz \n  {{ hash_type }}: {{ hash }}\n\nbuild:\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n    number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pep257\n\nabout:\n  home: https://github.com/GreenSteam/pep257\n  license: MIT\n  summary: 'Python docstring style checker (replaced by pydocstyle)'\n  description: |\n    pep257 is a static analysis tool for checking compliance with Python\n    PEP 257.\n    The framework for checking docstring style is flexible, and custom checks\n    can be easily added, for example to cover NumPy docstring conventions.\n    pep257 supports Python 2.6, 2.7, 3.2, 3.3, 3.4, pypy and pypy3.\n  doc_url: http://pep257.readthedocs.io/en/latest\n  dev_url: http://github.com/GreenSteam/pep257\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n",
+ "rendered_recipe": {},
+ "version": "0.7.0"
+}

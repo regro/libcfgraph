@@ -1,0 +1,34 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/gribapi/__init__.py",
+  "lib/python2.7/site-packages/gribapi/_gribapi_swig.dylib",
+  "lib/python2.7/site-packages/gribapi/_gribapi_swig.so",
+  "lib/python2.7/site-packages/gribapi/gribapi.py",
+  "lib/python2.7/site-packages/gribapi/gribapi_swig.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_0",
+  "build_number": 0,
+  "depends": [
+   "ecmwf_grib 1.15.0",
+   "jasper",
+   "libnetcdf 4.4.*",
+   "libpng >=1.6.21,<1.7",
+   "numpy 1.11*",
+   "python 2.7*"
+  ],
+  "license": "Apache-2.0",
+  "name": "python-ecmwf_grib",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.15.0"
+ },
+ "metadata_version": 1,
+ "name": "python-ecmwf_grib",
+ "raw_recipe": "{% set version = \"1.15.0\" %}\n\npackage:\n    name: python-ecmwf_grib\n    version: {{ version }}\n\nsource:\n    fn: grib_api-{{ version }}.tar.gz\n    url: https://software.ecmwf.int/wiki/download/attachments/3473437/grib_api-{{ version }}-Source.tar.gz\n    md5: df1e3779df73d09570c338ebe46341cf\n    patches:\n      - gribapi_py3k.patch  # [py3k]\n      - right_python.patch  # [py3k and osx]\n\nbuild:\n    number: 0\n    skip: True  # [win]\n    detect_binary_files_with_prefix: true\n\nrequirements:\n    build:\n        - cmake\n        - python\n        - numpy x.x\n        - jasper\n        - libpng >=1.6.21,<1.7\n        - libnetcdf 4.4.*\n        - ecmwf_grib {{ version }}\n    run:\n        - python\n        - numpy x.x\n        - jasper\n        - libpng >=1.6.21,<1.7\n        - libnetcdf 4.4.*\n        - ecmwf_grib {{ version }}\n\ntest:\n    imports:\n        - gribapi\n\nabout:\n    home: https://software.ecmwf.int/wiki/display/GRIB/Home\n    license: Apache-2.0\n    summary: The ECMWF API for encoding and decoding WMO FM-92 GRIB edition 1 and edition 2 messages.\n\nextra:\n    recipe-maintainers:\n        - pelson\n        - rhattersley\n        - ocefpaf\n        - kmuehlbauer\n",
+ "rendered_recipe": {},
+ "version": "1.15.0"
+}
