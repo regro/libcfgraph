@@ -1,0 +1,23 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/ninja"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "Apache License, Version 2.0",
+  "name": "ninja",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.6.0"
+ },
+ "metadata_version": 1,
+ "name": "ninja",
+ "raw_recipe": "{% set version = \"1.6.0\" %}\n\npackage:\n  name: ninja\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/martine/ninja/archive/v{{ version }}.tar.gz\n  sha1: a6ff055691f6d355234298c21cc18961b4ca2ed9\n\nbuild:\n  number: 0\n  msvc_compiler: 9.0  # [win]\n  # NOTE: Ninja is agnostic to the Python version, so there is no point in\n  # building it on every python version. On the other hand, Windows CI fails\n  # to build Ninja using Python 3.5, so we stick to Python 2.7 for all\n  # platforms to be consistent.\n  skip: True\n  skip: False  # [py27]\n\nrequirements:\n  build:\n    - python\n  run:\n    - vs2008_runtime  # [win]\n\ntest:\n  commands:\n    - ninja --version\n\nabout:\n  home: http://martine.github.io/ninja/\n  license: Apache License, Version 2.0\n  summary: A small build system with a focus on speed\n\nextra:\n  recipe-maintainers:\n    - frol\n",
+ "rendered_recipe": {},
+ "version": "1.6.0"
+}

@@ -1,0 +1,102 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pyke-1.1.1-py3.5.egg-info",
+  "lib/python3.5/site-packages/pyke/__init__.py",
+  "lib/python3.5/site-packages/pyke/ask_tty.py",
+  "lib/python3.5/site-packages/pyke/ask_wx.py",
+  "lib/python3.5/site-packages/pyke/bc_rule.py",
+  "lib/python3.5/site-packages/pyke/condensedPrint.py",
+  "lib/python3.5/site-packages/pyke/contexts.py",
+  "lib/python3.5/site-packages/pyke/fact_base.py",
+  "lib/python3.5/site-packages/pyke/fc_rule.py",
+  "lib/python3.5/site-packages/pyke/goal.py",
+  "lib/python3.5/site-packages/pyke/immutable_dict.py",
+  "lib/python3.5/site-packages/pyke/knowledge_base.py",
+  "lib/python3.5/site-packages/pyke/knowledge_engine.py",
+  "lib/python3.5/site-packages/pyke/krb_compiler/__init__.py",
+  "lib/python3.5/site-packages/pyke/krb_compiler/compiler.krb",
+  "lib/python3.5/site-packages/pyke/krb_compiler/compiler_bc.py",
+  "lib/python3.5/site-packages/pyke/krb_compiler/helpers.py",
+  "lib/python3.5/site-packages/pyke/krb_compiler/kfbparser.py",
+  "lib/python3.5/site-packages/pyke/krb_compiler/kfbparser_tables.py",
+  "lib/python3.5/site-packages/pyke/krb_compiler/kqb_parser.py",
+  "lib/python3.5/site-packages/pyke/krb_compiler/krbparser.py",
+  "lib/python3.5/site-packages/pyke/krb_compiler/krbparser_tables.py",
+  "lib/python3.5/site-packages/pyke/krb_compiler/ply/README",
+  "lib/python3.5/site-packages/pyke/krb_compiler/ply/README.pyke",
+  "lib/python3.5/site-packages/pyke/krb_compiler/ply/__init__.py",
+  "lib/python3.5/site-packages/pyke/krb_compiler/ply/lex.py",
+  "lib/python3.5/site-packages/pyke/krb_compiler/ply/yacc.py",
+  "lib/python3.5/site-packages/pyke/krb_compiler/scanner.py",
+  "lib/python3.5/site-packages/pyke/krb_compiler/scanner_tables.py",
+  "lib/python3.5/site-packages/pyke/krb_traceback.py",
+  "lib/python3.5/site-packages/pyke/pattern.py",
+  "lib/python3.5/site-packages/pyke/qa_helpers.py",
+  "lib/python3.5/site-packages/pyke/question_base.py",
+  "lib/python3.5/site-packages/pyke/rule_base.py",
+  "lib/python3.5/site-packages/pyke/special.py",
+  "lib/python3.5/site-packages/pyke/target_pkg.py",
+  "lib/python3.5/site-packages/pyke/test.py",
+  "lib/python3.5/site-packages/pyke/unique.py",
+  "lib/python3.5/site-packages/pyke/user_question.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "pyke",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.1.1"
+ },
+ "metadata_version": 1,
+ "name": "pyke",
+ "raw_recipe": "package:\n    name: pyke\n    version: 1.1.1\n\nsource:\n    fn: pyke-1.1.1.zip  # [py2k]\n    url: http://download.sourceforge.net/pyke/pyke-1.1.1.zip  # [py2k]\n    sha1: 2d657257fa2181d85fbfb69701b91226deb8b4e0  # [py2k]\n    fn: pyke3-1.1.1.zip  # [py3k]\n    url: http://download.sourceforge.net/pyke/pyke3-1.1.1.zip  # [py3k]\n    sha1: 6f6bfab243564c17218d81fa40bc3bf24e0d5847  # [py3k]\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n\ntest:\n    imports:\n        - pyke\n\nabout:\n    home: http://sourceforge.net/projects/pyke\n    license: MIT\n    summary: Python Knowledge Engine and Automatic Python Program Generator.\n\nextra:\n    recipe-maintainers:\n        - pelson\n        - rhattersley\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://sourceforge.net/projects/pyke",
+   "license": "MIT",
+   "summary": "Python Knowledge Engine and Automatic Python Program Generator."
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pelson",
+    "rhattersley",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "pyke",
+   "version": "1.1.1"
+  },
+  "requirements": {
+   "build": [
+    "python"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "pyke3-1.1.1.zip",
+   "sha1": "6f6bfab243564c17218d81fa40bc3bf24e0d5847",
+   "url": "http://download.sourceforge.net/pyke/pyke3-1.1.1.zip"
+  },
+  "test": {
+   "imports": [
+    "pyke"
+   ]
+  }
+ },
+ "version": "1.1.1"
+}

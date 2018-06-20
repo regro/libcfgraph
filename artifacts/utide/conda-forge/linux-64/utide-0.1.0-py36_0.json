@@ -1,0 +1,150 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.1",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/wesleybowman/UTide",
+  "license": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.1-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.2.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.49.1-2",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.2-4",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.4-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-32.3.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.8-3"
+  ],
+  "summary": "Python distribution of the MatLab package UTide"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/utide/robustfit.py",
+  "lib/python3.6/site-packages/utide/_reconstruct.py",
+  "lib/python3.6/site-packages/utide/periodogram.py",
+  "lib/python3.6/site-packages/utide/constituent_selection.py",
+  "lib/python3.6/site-packages/utide/data/ut_constants.npz",
+  "lib/python3.6/site-packages/utide/confidence.py",
+  "lib/python3.6/site-packages/utide/utilities.py",
+  "lib/python3.6/site-packages/utide/diagnostics.py",
+  "lib/python3.6/site-packages/utide/data/FUV0.npz",
+  "lib/python3.6/site-packages/utide/astronomy.py",
+  "lib/python3.6/site-packages/UTide-0.1.0-py3.6.egg-info/not-zip-safe",
+  "lib/python3.6/site-packages/UTide-0.1.0-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/utide/ellipse_params.py",
+  "lib/python3.6/site-packages/utide/_solve.py",
+  "lib/python3.6/site-packages/utide/__init__.py",
+  "lib/python3.6/site-packages/utide/harmonics.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.6*",
+   "scipy"
+  ],
+  "license": "MIT",
+  "name": "utide",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1.0"
+ },
+ "metadata_version": 1,
+ "name": "utide",
+ "raw_recipe": "{% set version = \"0.1.0\" %}\n\npackage:\n    name: utide\n    version: {{ version }}\n\nsource:\n    fn: UTide-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/U/UTide/UTide-{{ version }}.tar.gz\n    md5: 8b97d5355bfd37889a0b2a8ad8e376a4\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - scipy\n\ntest:\n    imports:\n        - utide\n\nabout:\n    home: https://github.com/wesleybowman/UTide\n    license: MIT\n    summary: Python distribution of the MatLab package UTide\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - wesleybowman\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/wesleybowman/UTide",
+   "license": "MIT",
+   "summary": "Python distribution of the MatLab package UTide"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py36_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "wesleybowman"
+   ]
+  },
+  "package": {
+   "name": "utide",
+   "version": "0.1.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "numpy",
+    "scipy"
+   ]
+  },
+  "source": {
+   "fn": "UTide-0.1.0.tar.gz",
+   "md5": "8b97d5355bfd37889a0b2a8ad8e376a4",
+   "url": "https://pypi.python.org/packages/source/U/UTide/UTide-0.1.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "utide"
+   ]
+  }
+ },
+ "version": "0.1.0"
+}

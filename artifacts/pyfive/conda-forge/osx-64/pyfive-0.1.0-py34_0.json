@@ -1,0 +1,34 @@
+{
+ "about": {
+  "home": "https://github.com/jjhelmus/pyfive",
+  "license": "BSD 3-Clause",
+  "summary": "A pure Python HDF5 file reader"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pyfive-0.1.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pyfive-0.1.0-py3.4.egg-info/pbr.json",
+  "lib/python3.4/site-packages/pyfive/__init__.py",
+  "lib/python3.4/site-packages/pyfive/high_level.py",
+  "lib/python3.4/site-packages/pyfive/low_level.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pyfive",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.0"
+ },
+ "metadata_version": 1,
+ "name": "pyfive",
+ "raw_recipe": "{% set version = \"0.1.0\" %}\n{% set sha256 = \"d96eafa5c80e06125a01f36b10406acf1e6d16493e7a1e67066cf4d1b631f193\" %}\n\npackage:\n  name: pyfive\n  version: {{ version }}\n\nsource:\n  fn: pyfive-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pyfive/pyfive-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n\ntest:\n  imports:\n    - pyfive\n\nabout:\n  home: https://github.com/jjhelmus/pyfive\n  license: BSD 3-Clause\n  summary: 'A pure Python HDF5 file reader'\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n",
+ "rendered_recipe": {},
+ "version": "0.1.0"
+}

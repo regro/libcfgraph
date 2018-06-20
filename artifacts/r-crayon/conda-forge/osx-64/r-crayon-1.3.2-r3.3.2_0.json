@@ -1,0 +1,159 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.16",
+  "conda_private": false,
+  "conda_version": "4.2.16",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/gaborcsardi/crayon",
+  "license": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "clyent-1.2.2-py36_0",
+   "conda-forge::conda-4.2.16-py36_0",
+   "conda-build-2.1.4-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.0-0",
+   "conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.8-py36_1",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_0",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Colored terminal output on terminals that support 'ANSI' color and highlight codes. It also works in 'Emacs' 'ESS'. 'ANSI' color support is automatically detected. Colors and highlighting can be combined and nested. New styles can also be created easily. This package was inspired by the 'chalk' 'JavaScript' project."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/R/library/crayon/DESCRIPTION",
+  "lib/R/library/crayon/R/crayon",
+  "lib/R/library/crayon/INDEX",
+  "lib/R/library/crayon/README.markdown",
+  "lib/R/library/crayon/help/paths.rds",
+  "lib/R/library/crayon/Meta/links.rds",
+  "lib/R/library/crayon/html/00Index.html",
+  "lib/R/library/crayon/help/aliases.rds",
+  "lib/R/library/crayon/help/AnIndex",
+  "lib/R/library/crayon/logo.svg.gz",
+  "lib/R/library/crayon/help/crayon.rdx",
+  "lib/R/library/crayon/NAMESPACE",
+  "lib/R/library/crayon/Meta/hsearch.rds",
+  "lib/R/library/crayon/ANSI-256-OSX.png",
+  "lib/R/library/crayon/R/crayon.rdx",
+  "lib/R/library/crayon/help/crayon.rdb",
+  "lib/R/library/crayon/NEWS.md",
+  "lib/R/library/crayon/R/crayon.rdb",
+  "lib/R/library/crayon/logo.png",
+  "lib/R/library/crayon/Meta/package.rds",
+  "lib/R/library/crayon/Meta/nsInfo.rds",
+  "lib/R/library/crayon/Meta/Rd.rds",
+  "lib/R/library/crayon/html/R.css",
+  "lib/R/library/crayon/LICENSE",
+  "lib/R/library/crayon/ANSI-8-OSX.png"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "r3.3.2_0",
+  "build_number": 0,
+  "depends": [
+   "r-base 3.3.2*"
+  ],
+  "license": "MIT",
+  "name": "r-crayon",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.3.2"
+ },
+ "metadata_version": 1,
+ "name": "r-crayon",
+ "raw_recipe": "{% set version = \"1.3.2\" %}\n\npackage:\n  name: r-crayon\n  version: {{ version }}\n\nsource:\n  fn: crayon_{{ version }}.tar.gz\n  url:\n    - http://cran.r-project.org/src/contrib/crayon_{{ version }}.tar.gz\n    - http://cran.r-project.org/src/contrib/Archive/crayon/crayon_{{ version }}.tar.gz\n  sha256: 9a6b75d63c05fe64baf222f1921330ceb727924bcc5fc2753ff0528d42555e68\n\nbuild:\n  number: 0\n  skip: True  # [win32]\n  script: R CMD INSTALL --build .\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:  # [not win32]\n  build:  # [not win32]\n    - r-base  # [not win32]\n  run:  # [not win32]\n    - r-base  # [not win32]\n\ntest:\n  commands:\n    - R -e \"library('crayon')\"  # [not win]\n    - R -e \\\"library('crayon')\\\"  # [win]\n\nabout:\n  home: https://github.com/gaborcsardi/crayon\n  license: MIT\n  license_file: LICENSE\n  summary: \"Colored terminal output on terminals that support 'ANSI' color and highlight codes.\n    It also works in 'Emacs' 'ESS'. 'ANSI' color support is automatically detected.\n    Colors and highlighting can be combined and nested. New styles can also be created\n    easily. This package was inspired by the 'chalk' 'JavaScript' project.\"\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/gaborcsardi/crayon",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Colored terminal output on terminals that support 'ANSI' color and highlight codes. It also works in 'Emacs' 'ESS'. 'ANSI' color support is automatically detected. Colors and highlighting can be combined and nested. New styles can also be created easily. This package was inspired by the 'chalk' 'JavaScript' project."
+  },
+  "build": {
+   "number": "0",
+   "rpaths": [
+    "lib/R/lib/",
+    "lib/"
+   ],
+   "script": "R CMD INSTALL --build .",
+   "string": "r3.3.2_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "r-crayon",
+   "version": "1.3.2"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "r-base"
+   ]
+  },
+  "source": {
+   "fn": "crayon_1.3.2.tar.gz",
+   "sha256": "9a6b75d63c05fe64baf222f1921330ceb727924bcc5fc2753ff0528d42555e68",
+   "url": [
+    "http://cran.r-project.org/src/contrib/crayon_1.3.2.tar.gz",
+    "http://cran.r-project.org/src/contrib/Archive/crayon/crayon_1.3.2.tar.gz"
+   ]
+  },
+  "test": {
+   "commands": [
+    "R -e \"library('crayon')\""
+   ]
+  }
+ },
+ "version": "1.3.2"
+}

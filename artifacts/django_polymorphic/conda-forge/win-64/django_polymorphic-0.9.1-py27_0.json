@@ -1,0 +1,44 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/django_polymorphic-0.9.1-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/django_polymorphic-0.9.1-py2.7.egg-info/pbr.json",
+  "Lib/site-packages/polymorphic/__init__.py",
+  "Lib/site-packages/polymorphic/admin.py",
+  "Lib/site-packages/polymorphic/base.py",
+  "Lib/site-packages/polymorphic/manager.py",
+  "Lib/site-packages/polymorphic/managers.py",
+  "Lib/site-packages/polymorphic/models.py",
+  "Lib/site-packages/polymorphic/query.py",
+  "Lib/site-packages/polymorphic/query_translate.py",
+  "Lib/site-packages/polymorphic/showfields.py",
+  "Lib/site-packages/polymorphic/templates/admin/polymorphic/add_type_form.html",
+  "Lib/site-packages/polymorphic/templates/admin/polymorphic/change_form.html",
+  "Lib/site-packages/polymorphic/templates/admin/polymorphic/delete_confirmation.html",
+  "Lib/site-packages/polymorphic/templates/admin/polymorphic/object_history.html",
+  "Lib/site-packages/polymorphic/templatetags/__init__.py",
+  "Lib/site-packages/polymorphic/templatetags/polymorphic_admin_tags.py",
+  "Lib/site-packages/polymorphic/tests.py",
+  "Lib/site-packages/polymorphic/tools_for_tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "django",
+   "python 2.7*"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "django_polymorphic",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.9.1"
+ },
+ "metadata_version": 1,
+ "name": "django_polymorphic",
+ "raw_recipe": "{% set version = \"0.9.1\" %}\n\npackage:\n    name: django_polymorphic\n    version: {{ version }}\n\nsource:\n    fn: django_polymorphic-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/d/django_polymorphic/django_polymorphic-{{ version }}.tar.gz\n    md5: 1945d107d037d4c9b7fcdd8b14ce0348\n\nbuild:\n    number: 0\n    preserve_egg_dir: True\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - django\n\ntest:\n    imports:\n        - polymorphic\n\nabout:\n    home: https://github.com/chrisglass/django_polymorphic\n    license: BSD-3-Clause\n    summary: Seamless Polymorphic Inheritance for Django Models\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.9.1"
+}
