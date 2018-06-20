@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "https://github.com/bjonnh/PyOrgMode",
+  "license": "GPLv3",
+  "summary": "A python class for reading and writing orgmode files"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/PyOrgMode-0.1-py3.4.egg-info",
+  "lib/python3.4/site-packages/PyOrgMode/PyOrgMode.py",
+  "lib/python3.4/site-packages/PyOrgMode/__init__.py",
+  "lib/python3.4/site-packages/PyOrgMode/test.py",
+  "lib/python3.4/site-packages/PyOrgMode/test_clock.py",
+  "lib/python3.4/site-packages/PyOrgMode/test_dates.py",
+  "lib/python3.4/site-packages/PyOrgMode/test_parser.py",
+  "lib/python3.4/site-packages/PyOrgMode/test_simple-agenda.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "GPLv3",
+  "name": "pyorgmode",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1"
+ },
+ "metadata_version": 1,
+ "name": "pyorgmode",
+ "raw_recipe": "{% set version = \"0.1\" %}\n{% set name = \"PyOrgMode\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: cd704c620a5873bb0f943a86e62b4c6e831d4a569665f886b05327da6f84ef34\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: https://github.com/bjonnh/PyOrgMode\n  license: GPLv3\n  # https://github.com/bjonnh/PyOrgMode/pull/29\n  # license_file: LICENSE\n  summary: A python class for reading and writing orgmode files\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
+ "rendered_recipe": {},
+ "version": "0.1"
+}

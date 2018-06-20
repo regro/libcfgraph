@@ -1,0 +1,153 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.1",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "High-level APIs for SIMD operations",
+  "dev_url": "https://github.com/QuantStack/xsimd",
+  "doc_url": "http://xsimd.readthedocs.io",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://quantstack.net/xsimd",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.1-py35_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.2-5",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.4-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-32.3.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.8-3"
+  ],
+  "summary": "C++ Wrappers for SIMD Intrinsices"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/xsimd/memory/xaligned_allocator.hpp",
+  "include/xsimd/xsimd.hpp",
+  "include/xsimd/memory/xaligned_stack_buffer.hpp",
+  "share/cmake/xsimd/xsimdConfig.cmake",
+  "include/xsimd/types/xsimd_traits.hpp",
+  "include/xsimd/config/xplatform_config.hpp",
+  "include/xsimd/types/xsimd_base.hpp",
+  "include/xsimd/types/xavx_double.hpp",
+  "share/cmake/xsimd/xsimdConfigVersion.cmake",
+  "include/xsimd/types/xsse_double.hpp",
+  "include/xsimd/config/xsimd_include.hpp",
+  "include/xsimd/types/xavx_float.hpp",
+  "include/xsimd/xsimd_config.hpp",
+  "include/xsimd/types/xsse_float.hpp",
+  "include/xsimd/config/xsimd_config.hpp"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "xsimd",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.1"
+ },
+ "metadata_version": 1,
+ "name": "xsimd",
+ "raw_recipe": "{% set name = \"xsimd\" %}\n{% set version = \"2.0.1\" %}\n{% set sha256 = \"779ca532c9610bafa21a77ce55c974d0739669f327aed53c12742af6d7dcbf8f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/QuantStack/xsimd/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/xsimd  # [unix]\n    - test -f ${PREFIX}/include/xsimd/xsimd.hpp  # [unix]\n    - test -f ${PREFIX}/share/cmake/xsimd/xsimdConfig.cmake  # [unix]\n    - test -f ${PREFIX}/share/cmake/xsimd/xsimdConfigVersion.cmake  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\xsimd\\xsimd.hpp (exit 0) else (exit 1)  # [win]\n    - if exist %PREFIX%\\share\\cmake\\xsimdConfig.cmake (exit 0) else (exit 1)  # [win]\n    - if exist %PREFIX%\\share\\cmake\\xsimdConfigVersion.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://quantstack.net/xsimd\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'C++ Wrappers for SIMD Intrinsices'\n  description: 'High-level APIs for SIMD operations'\n  doc_url: http://xsimd.readthedocs.io\n  dev_url: https://github.com/QuantStack/xsimd\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "High-level APIs for SIMD operations",
+   "dev_url": "https://github.com/QuantStack/xsimd",
+   "doc_url": "http://xsimd.readthedocs.io",
+   "home": "http://quantstack.net/xsimd",
+   "license": "BSD 3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "C++ Wrappers for SIMD Intrinsices"
+  },
+  "build": {
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "SylvainCorlay",
+    "JohanMabille"
+   ]
+  },
+  "package": {
+   "name": "xsimd",
+   "version": "2.0.1"
+  },
+  "requirements": {
+   "build": [],
+   "run": []
+  },
+  "source": {
+   "fn": "xsimd-2.0.1.tar.gz",
+   "sha256": "779ca532c9610bafa21a77ce55c974d0739669f327aed53c12742af6d7dcbf8f",
+   "url": "https://github.com/QuantStack/xsimd/archive/2.0.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -d ${PREFIX}/include/xsimd",
+    "test -f ${PREFIX}/include/xsimd/xsimd.hpp",
+    "test -f ${PREFIX}/share/cmake/xsimd/xsimdConfig.cmake",
+    "test -f ${PREFIX}/share/cmake/xsimd/xsimdConfigVersion.cmake"
+   ]
+  }
+ },
+ "version": "2.0.1"
+}

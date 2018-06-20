@@ -1,0 +1,48 @@
+{
+ "about": {
+  "description": "ObsPyck is a GUI application that is intended to cover the tasks in a\nstandard analysis workflow for seismic events in seismological observatory\npractice.\n",
+  "dev_url": "https://github.com/megies/obspyck",
+  "home": "http://github.com/megies/obspyck",
+  "license": "GPL-2.0",
+  "license_family": "GPL2",
+  "summary": "A GUI application for seismogram analysis"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/obspyck",
+  "lib/python2.7/site-packages/obspyck-0.4.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/obspyck-0.4.1-py2.7.egg-info/pbr.json",
+  "lib/python2.7/site-packages/obspyck/__init__.py",
+  "lib/python2.7/site-packages/obspyck/event_helper.py",
+  "lib/python2.7/site-packages/obspyck/example.cfg",
+  "lib/python2.7/site-packages/obspyck/obspyck.gif",
+  "lib/python2.7/site-packages/obspyck/obspyck.py",
+  "lib/python2.7/site-packages/obspyck/qt_designer.py",
+  "lib/python2.7/site-packages/obspyck/rotate_to_zne.py",
+  "lib/python2.7/site-packages/obspyck/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib",
+   "numpy",
+   "obspy 1.*",
+   "pyqt",
+   "python 2.7*",
+   "scipy"
+  ],
+  "license": "GPL-2.0",
+  "license_family": "GPL2",
+  "name": "obspyck",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.4.1"
+ },
+ "metadata_version": 1,
+ "name": "obspyck",
+ "raw_recipe": "{% set name = \"obspyck\" %}\n{% set version = \"0.4.1\" %}\n{% set sha256 = \"89a8e47493b337ed89e33c6a06afe0ad34736c63cfbc894738ee2559ef574a27\" %}\n \npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [not py27 or win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - obspy 1.*\n    - numpy\n    - scipy\n    - matplotlib\n    - pyqt\n\ntest:\n  imports:\n    - obspyck\n    - obspyck.obspyck\n    - obspyck.util\n    - obspyck.qt_designer\n\nabout:\n  home: http://github.com/megies/obspyck\n  license: GPL-2.0\n  license_family: GPL2\n  license_file: LICENSE.txt\n  summary: 'A GUI application for seismogram analysis'\n\n  description: |\n    ObsPyck is a GUI application that is intended to cover the tasks in a\n    standard analysis workflow for seismic events in seismological observatory\n    practice.\n  dev_url: https://github.com/megies/obspyck\n\nextra:\n  recipe-maintainers:\n    - megies\n",
+ "rendered_recipe": {},
+ "version": "0.4.1"
+}

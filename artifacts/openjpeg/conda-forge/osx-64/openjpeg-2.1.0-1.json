@@ -1,0 +1,84 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/opj_compress",
+  "bin/opj_decompress",
+  "bin/opj_dump",
+  "include/openjpeg-2.1/openjpeg.h",
+  "include/openjpeg-2.1/opj_config.h",
+  "include/openjpeg-2.1/opj_stdint.h",
+  "lib/libopenjp2.2.1.0.dylib",
+  "lib/libopenjp2.7.dylib",
+  "lib/libopenjp2.dylib",
+  "lib/openjpeg-2.1/OpenJPEGConfig.cmake",
+  "lib/openjpeg-2.1/OpenJPEGTargets-noconfig.cmake",
+  "lib/openjpeg-2.1/OpenJPEGTargets.cmake",
+  "lib/pkgconfig/libopenjp2.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [
+   "libpng",
+   "libtiff",
+   "zlib"
+  ],
+  "license": "2-clauses BSD (https://github.com/uclouvain/openjpeg/blob/master/LICENSE)",
+  "name": "openjpeg",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.1.0"
+ },
+ "metadata_version": 1,
+ "name": "openjpeg",
+ "raw_recipe": "package:\n    name: openjpeg\n    version: 2.1.0\n\nsource:\n    fn: version.2.1.tar.gz\n    url: https://github.com/uclouvain/openjpeg/archive/version.2.1.tar.gz\n\nbuild:\n    number: 1\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - cmake\n        - libtiff\n        - libpng\n        - zlib\n    run:\n        - libtiff\n        - libpng\n        - zlib\n\ntest:\n    files:\n        - p0_01.j2k\n    commands:\n        - opj_dump -i p0_01.j2k\n\nabout:\n    home: http://www.openjpeg.org/\n    license: 2-clauses BSD (https://github.com/uclouvain/openjpeg/blob/master/LICENSE)\n    summary: An open-source JPEG 2000 codec written in C\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - gillins\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.openjpeg.org/",
+   "license": "2-clauses BSD (https://github.com/uclouvain/openjpeg/blob/master/LICENSE)",
+   "summary": "An open-source JPEG 2000 codec written in C"
+  },
+  "build": {
+   "number": 1,
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "gillins"
+   ]
+  },
+  "package": {
+   "name": "openjpeg",
+   "version": "2.1.0"
+  },
+  "requirements": {
+   "build": [
+    "cmake",
+    "libtiff",
+    "libpng",
+    "zlib"
+   ],
+   "run": [
+    "libtiff",
+    "libpng",
+    "zlib"
+   ]
+  },
+  "source": {
+   "fn": "version.2.1.tar.gz",
+   "url": "https://github.com/uclouvain/openjpeg/archive/version.2.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "opj_dump -i p0_01.j2k"
+   ],
+   "files": [
+    "p0_01.j2k"
+   ]
+  }
+ },
+ "version": "2.1.0"
+}

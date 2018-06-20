@@ -1,0 +1,58 @@
+{
+ "about": {
+  "description": "The macromolecular transmission format (MMTF) is a binary encoding of\nbiological structures. This repository holds the Python 2 and 3 compatible\nAPI, encoding and decoding libraries.\n",
+  "dev_url": "https://github.com/rcsb/mmtf-python",
+  "doc_url": "https://rcsb.github.io/mmtf-python/docs/api/v1.0.0/",
+  "home": "http://mmtf.rcsb.org",
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "summary": "A decoding library for the PDB mmtf format"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/sample",
+  "lib/python3.5/site-packages/mmtf/__init__.py",
+  "lib/python3.5/site-packages/mmtf/api/__init__.py",
+  "lib/python3.5/site-packages/mmtf/api/default_api.py",
+  "lib/python3.5/site-packages/mmtf/api/mmtf_reader.py",
+  "lib/python3.5/site-packages/mmtf/api/mmtf_writer.py",
+  "lib/python3.5/site-packages/mmtf/codecs/__init__.py",
+  "lib/python3.5/site-packages/mmtf/codecs/codecs.py",
+  "lib/python3.5/site-packages/mmtf/codecs/decoders/__init__.py",
+  "lib/python3.5/site-packages/mmtf/codecs/decoders/decoders.py",
+  "lib/python3.5/site-packages/mmtf/codecs/decoders/numpy_decoders.py",
+  "lib/python3.5/site-packages/mmtf/codecs/default_codec.py",
+  "lib/python3.5/site-packages/mmtf/codecs/encoders/__init__.py",
+  "lib/python3.5/site-packages/mmtf/codecs/encoders/encoders.py",
+  "lib/python3.5/site-packages/mmtf/converters/__init__.py",
+  "lib/python3.5/site-packages/mmtf/converters/converters.py",
+  "lib/python3.5/site-packages/mmtf/converters/numpy_converters.py",
+  "lib/python3.5/site-packages/mmtf/tests/__init__.py",
+  "lib/python3.5/site-packages/mmtf/tests/codec_tests.py",
+  "lib/python3.5/site-packages/mmtf/utils/__init__.py",
+  "lib/python3.5/site-packages/mmtf/utils/codec_utils.py",
+  "lib/python3.5/site-packages/mmtf/utils/constants.py",
+  "lib/python3.5/site-packages/mmtf/utils/decoder_utils.py",
+  "lib/python3.5/site-packages/mmtf_python-1.0.4-py3.5.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "msgpack-python",
+   "python 3.5*"
+  ],
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "name": "mmtf-python",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0.4"
+ },
+ "metadata_version": 1,
+ "name": "mmtf-python",
+ "raw_recipe": "{% set name = \"mmtf-python\" %}\n{% set version = \"1.0.4\" %}\n{% set sha256 = \"8aa92bc66b055f952c88f2dc33cd5dd52e39df376bd8ad88cca1cc344b2990da\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - msgpack-python\n\ntest:\n  imports:\n    - mmtf\n    - mmtf.api\n    - mmtf.codecs\n    - mmtf.codecs.decoders\n    - mmtf.codecs.encoders\n    - mmtf.converters\n    - mmtf.tests\n    - mmtf.utils\n\nabout:\n  home: http://mmtf.rcsb.org\n  license: Apache-2.0\n  license_family: Apache\n  # will be added in the next version\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt'\n  summary: 'A decoding library for the PDB mmtf format'\n  description: |\n    The macromolecular transmission format (MMTF) is a binary encoding of\n    biological structures. This repository holds the Python 2 and 3 compatible\n    API, encoding and decoding libraries.\n  doc_url: https://rcsb.github.io/mmtf-python/docs/api/v1.0.0/\n  dev_url: https://github.com/rcsb/mmtf-python\n\nextra:\n  recipe-maintainers:\n    - kain88-de\n    - orbeckst\n    - richardjgowers\n",
+ "rendered_recipe": {},
+ "version": "1.0.4"
+}

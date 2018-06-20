@@ -1,0 +1,31 @@
+{
+ "about": {
+  "dev_url": "https://github.com/commercialhaskell/stack",
+  "doc_url": "https://docs.haskellstack.org/en/stable/README/",
+  "home": "www.haskellstack.org",
+  "license": "BSD3-like",
+  "summary": "Stack is a cross-platform program for developing Haskell projects."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/stack"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "gmp"
+  ],
+  "license": "BSD3-like",
+  "name": "stack",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.2.0"
+ },
+ "metadata_version": 1,
+ "name": "stack",
+ "raw_recipe": "{% set version = \"1.2.0\" %}\n{% set unixsha256 = \"e67f58964b80f7c999985d16eeb1f32096e18c3f301f7261b4814af3aa7271d3\" %}\n{% set osxsha256 = \"fd137ef2e75a164674e7a8a08efd21e10bce5f9c1a94ddf6937f16a9eec76409\" %}\n\npackage:\n  name: stack\n  version: {{ version }}\n\nsource:\n  fn: stack-{{ version }}-linux-x86_64.tar.gz  # [unix]\n  url: https://github.com/commercialhaskell/stack/releases/download/v{{ version }}/stack-{{ version }}-linux-x86_64-static.tar.gz  # [unix]\n  sha256: {{ unixsha256 }}  # [unix]\n  fn: stack-{{ version }}-osx-x86_64.tar.gz  # [osx]\n  url: https://github.com/commercialhaskell/stack/releases/download/v{{ version }}/stack-{{ version }}-osx-x86_64.tar.gz  # [osx]\n  sha256: {{ osxsha256 }}  # [osx]\n\nbuild:\n  number: 0\n  skip: True  # [win] \n\nrequirements:\n  run:\n    - gmp\n\ntest:\n  commands:\n    - stack --help\n\nabout:\n  home: www.haskellstack.org\n  license: BSD3-like\n  summary: 'Stack is a cross-platform program for developing Haskell projects.'\n  doc_url: https://docs.haskellstack.org/en/stable/README/\n  dev_url: https://github.com/commercialhaskell/stack\n\nextra:\n  recipe-maintainers:\n    - eggzilla\n",
+ "rendered_recipe": {},
+ "version": "1.2.0"
+}

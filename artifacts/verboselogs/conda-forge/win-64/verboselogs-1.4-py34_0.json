@@ -1,0 +1,28 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/verboselogs-1.4-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/verboselogs/__init__.py",
+  "Lib/site-packages/verboselogs/pylint.py",
+  "Lib/site-packages/verboselogs/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "verboselogs",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.4"
+ },
+ "metadata_version": 1,
+ "name": "verboselogs",
+ "raw_recipe": "{% set version = \"1.4\" %}\n\npackage:\n    name: verboselogs\n    version: {{ version }}\n\nsource:\n    fn: verboselogs-{{ version }}.tar.gz\n    url: https://files.pythonhosted.org/packages/cd/b8/d87bbd0eab68c1e13ca7b2a0f38a986ed7f16b006f7bc6115e8043f514fe/verboselogs-1.4.tar.gz\n    md5: 811da460e30f3abd51ada927d6da8b48\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - verboselogs\n\nabout:\n    home: https://verboselogs.readthedocs.io\n    license: MIT\n    summary: \"Verbose logging level for Python's logging module.\"\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.4"
+}

@@ -1,0 +1,155 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "SimpleTAL is a stand alone Python implementation of the TAL, TALES and\nMETAL specifications used in Zope to power HTML and XML\ntemplates. SimpleTAL is an independent implementation of TAL; there are no\ndependencies on Zope nor is any of the Zope work re-used.\n",
+  "doc_url": "http://owlfish.com/software/simpleTAL/py2compatible/api.html",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://owlfish.com/software/simpleTAL/py2compatible/index.html",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-1.0-py36_0",
+   "openssl-1.0.2k-1",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "conda-forge::pycrypto-2.6.1-py36_1",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "a stand alone Python implementation of the TAL, TALES and METAL specifications used in Zope"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/simpletal/FixedHTMLParser.py",
+  "lib/python2.7/site-packages/SimpleTAL-4.3-py2.7.egg-info",
+  "lib/python2.7/site-packages/simpletal/simpleElementTree.py",
+  "lib/python2.7/site-packages/simpletal/sgmlentitynames.py",
+  "lib/python2.7/site-packages/simpletal/simpleTALES.py",
+  "lib/python2.7/site-packages/simpletal/__init__.py",
+  "lib/python2.7/site-packages/simpletal/simpleTALUtils.py",
+  "lib/python2.7/site-packages/simpletal/simpleTAL.py",
+  "lib/python2.7/site-packages/simpletal/DummyLogger.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "name": "simpletal",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "4.3"
+ },
+ "metadata_version": 1,
+ "name": "simpletal",
+ "raw_recipe": "{% set name = \"SimpleTAL\" %}\n{% set version = \"4.3\" %}\n{% set sha256 = \"359b1654e9de136f4ad873de6729c39a499d2bb749fe539e17567ebba215fa2b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://owlfish.com/software/simpleTAL/downloads/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [py3k]\n  script: python setup.py install\n  \nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - simpletal\n\nabout:\n  home: http://owlfish.com/software/simpleTAL/py2compatible/index.html\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'a stand alone Python implementation of the TAL, TALES and METAL specifications used in Zope'\n  description: |\n    SimpleTAL is a stand alone Python implementation of the TAL, TALES and\n    METAL specifications used in Zope to power HTML and XML\n    templates. SimpleTAL is an independent implementation of TAL; there are no\n    dependencies on Zope nor is any of the Zope work re-used.\n  doc_url: http://owlfish.com/software/simpleTAL/py2compatible/api.html\n\nextra:\n  recipe-maintainers:\n    - stuertz\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "SimpleTAL is a stand alone Python implementation of the TAL, TALES and\nMETAL specifications used in Zope to power HTML and XML\ntemplates. SimpleTAL is an independent implementation of TAL; there are no\ndependencies on Zope nor is any of the Zope work re-used.\n",
+   "doc_url": "http://owlfish.com/software/simpleTAL/py2compatible/api.html",
+   "home": "http://owlfish.com/software/simpleTAL/py2compatible/index.html",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE.txt",
+   "summary": "a stand alone Python implementation of the TAL, TALES and METAL specifications used in Zope"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "script": "python setup.py install",
+   "string": "py27_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "stuertz"
+   ]
+  },
+  "package": {
+   "name": "simpletal",
+   "version": "4.3"
+  },
+  "requirements": {
+   "build": [
+    "ca-certificates 2017.4.17 0",
+    "ncurses 5.9 10",
+    "openssl 1.0.2k 0",
+    "python 2.7.13 1",
+    "readline 6.2 0",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "SimpleTAL-4.3.tar.gz",
+   "sha256": "359b1654e9de136f4ad873de6729c39a499d2bb749fe539e17567ebba215fa2b",
+   "url": "http://owlfish.com/software/simpleTAL/downloads/SimpleTAL-4.3.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "simpletal"
+   ]
+  }
+ },
+ "version": "4.3"
+}

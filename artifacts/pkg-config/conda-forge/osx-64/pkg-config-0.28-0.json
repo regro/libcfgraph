@@ -1,0 +1,77 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/pkg-config",
+  "bin/x86_64-apple-darwin13.4.0-pkg-config",
+  "share/aclocal/pkg.m4",
+  "share/doc/pkg-config/pkg-config-guide.html",
+  "share/man/man1/pkg-config.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "zlib"
+  ],
+  "license": "GPL 2",
+  "name": "pkg-config",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.28"
+ },
+ "metadata_version": 1,
+ "name": "pkg-config",
+ "raw_recipe": "package:\n  name: pkg-config\n  version: 0.28\n\nsource:\n  fn: pkg-config-0.28.zip\n  url: https://github.com/tpn/pkg-config/archive/pkg-config-0.28.zip\n\nbuild:\n  skip: True  # [win]\n  number: 0\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - zlib\n    - autoconf\n    - python\n    - automake\n    - libtool\n  run:\n    - zlib\n\ntest:\n  commands:\n    - pkg-config --help\n    - '[ \"$(pkg-config freetype2 --cflags)\" == \"-I$PREFIX/include/freetype2 \" ]'\n\n  requires:\n    - freetype\n\nabout:\n  home: http://www.freedesktop.org/wiki/Software/pkg-config/\n  license: GPL 2\n  summary: Interface for querying installed libraries for use during compilation.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - mdboom\n    - ocefpaf\n    - tacaswell\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.freedesktop.org/wiki/Software/pkg-config/",
+   "license": "GPL 2",
+   "summary": "Interface for querying installed libraries for use during compilation."
+  },
+  "build": {
+   "detect_binary_files_with_prefix": true,
+   "number": 0,
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham",
+    "mdboom",
+    "ocefpaf",
+    "tacaswell"
+   ]
+  },
+  "package": {
+   "name": "pkg-config",
+   "version": 0.28
+  },
+  "requirements": {
+   "build": [
+    "zlib",
+    "autoconf",
+    "python",
+    "automake",
+    "libtool"
+   ],
+   "run": [
+    "zlib"
+   ]
+  },
+  "source": {
+   "fn": "pkg-config-0.28.zip",
+   "url": "https://github.com/tpn/pkg-config/archive/pkg-config-0.28.zip"
+  },
+  "test": {
+   "commands": [
+    "pkg-config --help",
+    "[ \"$(pkg-config freetype2 --cflags)\" == \"-I$PREFIX/include/freetype2 \" ]"
+   ],
+   "requires": [
+    "freetype"
+   ]
+  }
+ },
+ "version": "0.28"
+}
