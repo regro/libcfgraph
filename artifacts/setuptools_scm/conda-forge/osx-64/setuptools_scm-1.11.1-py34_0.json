@@ -1,0 +1,35 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/setuptools_scm-1.11.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/setuptools_scm-1.11.1-py3.4.egg-info/zip-safe",
+  "lib/python3.4/site-packages/setuptools_scm/__init__.py",
+  "lib/python3.4/site-packages/setuptools_scm/__main__.py",
+  "lib/python3.4/site-packages/setuptools_scm/discover.py",
+  "lib/python3.4/site-packages/setuptools_scm/git.py",
+  "lib/python3.4/site-packages/setuptools_scm/hacks.py",
+  "lib/python3.4/site-packages/setuptools_scm/hg.py",
+  "lib/python3.4/site-packages/setuptools_scm/integration.py",
+  "lib/python3.4/site-packages/setuptools_scm/utils.py",
+  "lib/python3.4/site-packages/setuptools_scm/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "setuptools_scm",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.11.1"
+ },
+ "metadata_version": 1,
+ "name": "setuptools_scm",
+ "raw_recipe": "{% set version = \"1.11.1\" %}\n\npackage:\n    name: setuptools_scm\n    version: {{ version }}\n\nsource:\n    fn: setuptools_scm-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/s/setuptools_scm/setuptools_scm-{{ version }}.tar.gz\n    md5: 4d19b2bc9580016d991f665ac20e2e8f\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - setuptools_scm\n\nabout:\n    home: https://github.com/pypa/setuptools_scm/\n    license: MIT\n    summary: The blessed package to manage your versions by scm tags\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - kwilcox\n",
+ "rendered_recipe": {},
+ "version": "1.11.1"
+}

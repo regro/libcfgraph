@@ -1,0 +1,46 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/flex",
+  "bin/flex++",
+  "include/FlexLexer.h",
+  "lib/libfl.2.dylib",
+  "lib/libfl.a",
+  "lib/libfl.dylib",
+  "lib/libfl.la",
+  "lib/libfl_pic.2.dylib",
+  "lib/libfl_pic.a",
+  "lib/libfl_pic.dylib",
+  "lib/libfl_pic.la",
+  "share/doc/flex/AUTHORS",
+  "share/doc/flex/COPYING",
+  "share/doc/flex/NEWS",
+  "share/doc/flex/ONEWS",
+  "share/doc/flex/README",
+  "share/doc/flex/TODO",
+  "share/doc/flex/flex.pdf",
+  "share/info/flex.info",
+  "share/info/flex.info-1",
+  "share/info/flex.info-2",
+  "share/man/man1/flex.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [
+   "libiconv"
+  ],
+  "license": "BSD 2-Clause",
+  "name": "flex",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.5.39"
+ },
+ "metadata_version": 1,
+ "name": "flex",
+ "raw_recipe": "{% set version = \"2.5.39\" %}\n\npackage:\n  name: flex\n  version: {{ version }}\n\nsource:\n  fn: flex-{{ version }}.tar.gz\n  url: http://sourceforge.net/projects/flex/files/flex-{{ version }}.tar.gz\n  md5: e133e9ead8ec0a58d81166b461244fde\n  patches:\n    # Patch the Makefile.am based on a bug report on SourceForge.\n    # https://sourceforge.net/p/flex/bugs/182/\n    - Makefile.am.patch\n    # Patch the Makefile.am based on a bug report on SourceForge.\n    # https://sourceforge.net/p/flex/bugs/169/\n    - 0001-bison-test-fixes-Do-not-use-obsolete-bison-construct.patch\n\nbuild:\n  skip: true  # [win]\n  number: 1\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - autoconf\n    - automake\n    - libiconv\n    - libtool\n    - m4\n    - bison\n\n  run:\n    - libiconv\n\ntest:\n  commands:\n    # CLI tests\n    - flex --help\n\n    # Include test\n    - test -f ${PREFIX}/include/FlexLexer.h\n\n    # Lib tests\n    - test -f ${PREFIX}/lib/libfl.a\n    - test -f ${PREFIX}/lib/libfl_pic.a\n    - test -f ${PREFIX}/lib/libfl.dylib      # [osx]\n    - test -f ${PREFIX}/lib/libfl_pic.dylib  # [osx]\n    - test -f ${PREFIX}/lib/libfl.so         # [linux]\n    - test -f ${PREFIX}/lib/libfl_pic.so     # [linux]\n\nabout:\n  home: http://flex.sourceforge.net/\n  license: BSD 2-Clause\n  summary: The Fast Lexical Analyzer\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "2.5.39"
+}

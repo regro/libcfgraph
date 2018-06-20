@@ -1,0 +1,40 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/.vega-post-link.sh",
+  "bin/.vega-pre-unlink.sh",
+  "lib/python3.5/site-packages/vega-0.3.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/vega/__init__.py",
+  "lib/python3.5/site-packages/vega/base.py",
+  "lib/python3.5/site-packages/vega/disable_autoscroll.py",
+  "lib/python3.5/site-packages/vega/static/index.js",
+  "lib/python3.5/site-packages/vega/static/index.js.map",
+  "lib/python3.5/site-packages/vega/static/vega-lite.html",
+  "lib/python3.5/site-packages/vega/static/vega.html",
+  "lib/python3.5/site-packages/vega/static/vega.js",
+  "lib/python3.5/site-packages/vega/utils.py",
+  "lib/python3.5/site-packages/vega/vega.py",
+  "lib/python3.5/site-packages/vega/vegalite.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "ipython",
+   "jupyter",
+   "python 3.5*"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "vega",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.0"
+ },
+ "metadata_version": 1,
+ "name": "vega",
+ "raw_recipe": "{% set version = \"0.3.0\" %}\n\npackage:\n  name: vega\n  version: {{ version }}\n\nsource:\n  fn: vega-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/v/vega/vega-{{ version }}.tar.gz\n  md5: 59c915a18179ec8de48798a7713e7ee5\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - jupyter\n\n  run:\n    - python\n    - ipython\n    - jupyter\n\ntest:\n  imports:\n    - vega\n\nabout:\n  home: https://github.com/vega/ipyvega\n  license: BSD-3-Clause\n  summary: 'An IPython/Jupyter widget for Vega and Vega-Lite'\n\nextra:\n  recipe-maintainers:\n    - jakevdp\n    - ellisonbg\n    - domoritz\n",
+ "rendered_recipe": {},
+ "version": "0.3.0"
+}

@@ -1,0 +1,144 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://pypi.python.org/pypi/pykdtree",
+  "license": "LGPL-3.0",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.4-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.5-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Fast kd-tree implementation with OpenMP-enabled queries."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pykdtree-1.2.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pykdtree/test_tree.py",
+  "lib/python3.5/site-packages/pykdtree/__init__.py",
+  "lib/python3.5/site-packages/pykdtree-1.2.1-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/pykdtree/kdtree.cpython-35m-x86_64-linux-gnu.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np112py35_0",
+  "build_number": 0,
+  "depends": [
+   "libgcc",
+   "numpy 1.12*",
+   "python 3.5*"
+  ],
+  "license": "LGPL-3.0",
+  "name": "pykdtree",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.2.1"
+ },
+ "metadata_version": 1,
+ "name": "pykdtree",
+ "raw_recipe": "{% set version = \"1.2.1\" %}\n\npackage:\n  name: pykdtree\n  version: {{ version }}\n\nsource:\n  fn: pykdtree-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pykdtree/pykdtree-{{ version }}.tar.gz\n  sha256: 5d9dd0b4ad4818996ff2439d0366e514126655c034d73e122f1bb39c3c494b68\n\nbuild:\n  number: 0\n  skip: True  # [np==110 or py34]\n  script:\n    - export USE_OMP=1  # [linux]\n    - export USE_OMP=0  # [osx]\n    - set USE_OMP=0  # [win]\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - msinttypes  # [win and py<35]\n    - gcc  # [linux]\n  run:\n    - python\n    - numpy x.x\n    # Needs libgomp.\n    - libgcc  # [linux]\n\ntest:\n  imports:\n    - pykdtree\n  commands:\n    - conda inspect linkages -p $PREFIX pykdtree  # [not win]\n    - conda inspect objects -p $PREFIX pykdtree  # [osx]\n\nabout:\n  home: https://pypi.python.org/pypi/pykdtree\n  license: LGPL-3.0\n  summary: 'Fast kd-tree implementation with OpenMP-enabled queries.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://pypi.python.org/pypi/pykdtree",
+   "license": "LGPL-3.0",
+   "summary": "Fast kd-tree implementation with OpenMP-enabled queries."
+  },
+  "build": {
+   "number": "0",
+   "script": [
+    "export USE_OMP=1",
+    "python setup.py install --single-version-externally-managed --record record.txt"
+   ],
+   "string": "np112py35_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "pykdtree",
+   "version": "1.2.1"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "numpy x.x",
+    "libgcc"
+   ]
+  },
+  "source": {
+   "fn": "pykdtree-1.2.1.tar.gz",
+   "sha256": "5d9dd0b4ad4818996ff2439d0366e514126655c034d73e122f1bb39c3c494b68",
+   "url": "https://pypi.io/packages/source/p/pykdtree/pykdtree-1.2.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "conda inspect linkages -p $PREFIX pykdtree"
+   ],
+   "imports": [
+    "pykdtree"
+   ]
+  }
+ },
+ "version": "1.2.1"
+}

@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "https://github.com/alecthomas/voluptuous",
+  "license": "BSD3",
+  "summary": "Voluptuous is a Python data validation library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/voluptuous-0.8.11-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/voluptuous.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD3",
+  "name": "voluptuous",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.8.11"
+ },
+ "metadata_version": 1,
+ "name": "voluptuous",
+ "raw_recipe": "{% set version = \"0.8.11\" %}\n{% set sha256 = \"8613dc83e233699eeff8ca6fa5060c788694a429d0fd80eb790e4c3682d3e496\" %}\n\npackage:\n  name: voluptuous\n  version: {{ version }}\n\nsource:\n  fn: voluptuous-{{ version }}.tar.gz\n  url: https://github.com/alecthomas/voluptuous/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - voluptuous\n\nabout:\n  home: https://github.com/alecthomas/voluptuous\n  license: BSD3\n  summary: Voluptuous is a Python data validation library\n\nextra:\n  recipe-maintainers:\n    - vamega\n",
+ "rendered_recipe": {},
+ "version": "0.8.11"
+}

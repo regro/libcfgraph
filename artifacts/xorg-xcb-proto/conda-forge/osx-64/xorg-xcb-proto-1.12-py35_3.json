@@ -1,0 +1,171 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://www.x.org/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "C prototypes for the X.org XCB libraries."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/xcbgen/xtypes.py",
+  "share/xcb/bigreq.xml",
+  "share/xcb/render.xml",
+  "share/xcb/sync.xml",
+  "share/xcb/xvmc.xml",
+  "share/xcb/dpms.xml",
+  "share/xcb/damage.xml",
+  "share/xcb/dri3.xml",
+  "share/xcb/screensaver.xml",
+  "share/xcb/xinerama.xml",
+  "share/xcb/xevie.xml",
+  "share/xcb/record.xml",
+  "share/xcb/xf86dri.xml",
+  "share/xcb/xtest.xml",
+  "share/xcb/xprint.xml",
+  "share/xcb/glx.xml",
+  "share/xcb/xf86vidmode.xml",
+  "share/xcb/xcb.xsd",
+  "share/xcb/xkb.xml",
+  "share/xcb/shm.xml",
+  "share/xcb/dri2.xml",
+  "lib/python3.5/site-packages/xcbgen/expr.py",
+  "share/xcb/xv.xml",
+  "share/xcb/res.xml",
+  "share/xcb/xc_misc.xml",
+  "lib/python3.5/site-packages/xcbgen/state.py",
+  "share/xcb/xproto.xml",
+  "lib/python3.5/site-packages/xcbgen/matcher.py",
+  "lib/python3.5/site-packages/xcbgen/__init__.py",
+  "share/xcb/present.xml",
+  "share/xcb/ge.xml",
+  "share/xcb/randr.xml",
+  "lib/pkgconfig/xcb-proto.pc",
+  "share/xcb/composite.xml",
+  "share/xcb/xfixes.xml",
+  "share/xcb/shape.xml",
+  "lib/python3.5/site-packages/xcbgen/error.py",
+  "share/xcb/xselinux.xml",
+  "lib/python3.5/site-packages/xcbgen/align.py",
+  "share/xcb/xinput.xml"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_3",
+  "build_number": 3,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "xorg-xcb-proto",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.12"
+ },
+ "metadata_version": 1,
+ "name": "xorg-xcb-proto",
+ "raw_recipe": "{% set xorg_name = \"xcb-proto\" %}\n{% set xorg_category = \"xcb\" %}\n{% set name = \"xorg-\" ~ xorg_name %}\n{% set version = \"1.12\" %}\n{% set sha256 = \"5922aba4c664ab7899a29d92ea91a87aa4c1fc7eb5ee550325c3216c480a4906\" %}\n{% set am_version = \"1.15\" %} # keep synchronized with build.sh\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n  patches:\n    - python-35x-fixes.patch\n    - windows-pythondir.patch  # [win]\n\nbuild:\n  number: 3\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - m2-autoconf  # [win]\n    - m2-automake{{ am_version }}  # [win]\n    - m2-libtool  # [win]\n    - m2w64-pkg-config  # [win]\n    - m2w64-toolchain  # [win]\n    - pkg-config  # [not win]\n    - posix  # [win]\n    - python\n    - toolchain\n    - xorg-util-macros\n  run:\n    - python\n\ntest:\n  imports:\n    - xcbgen\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://www.x.org/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'C prototypes for the X.org XCB libraries.'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://www.x.org/",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "COPYING",
+   "summary": "C prototypes for the X.org XCB libraries."
+  },
+  "build": {
+   "detect_binary_files_with_prefix": "true",
+   "number": "3",
+   "string": "py35_3"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pkgw"
+   ]
+  },
+  "package": {
+   "name": "xorg-xcb-proto",
+   "version": "1.12"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "xorg-xcb-proto-1.12.tar.bz2",
+   "patches": [
+    "python-35x-fixes.patch"
+   ],
+   "sha256": "5922aba4c664ab7899a29d92ea91a87aa4c1fc7eb5ee550325c3216c480a4906",
+   "url": "https://www.x.org/releases/individual/xcb/xcb-proto-1.12.tar.bz2"
+  },
+  "test": {
+   "commands": [
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "conda inspect objects -p $PREFIX $PKG_NAME"
+   ],
+   "imports": [
+    "xcbgen"
+   ]
+  }
+ },
+ "version": "1.12"
+}

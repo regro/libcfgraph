@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "http://compression.ca/pbzip2/",
+  "license": "pbzip2 License",
+  "summary": "PBZIP2 is a parallel implementation of the bzip2 block-sorting file compressor"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/pbunzip2",
+  "bin/pbzcat",
+  "bin/pbzip2",
+  "share/man/man1/pbzip2.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "pbzip2 License",
+  "name": "pbzip2",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.1.13"
+ },
+ "metadata_version": 1,
+ "name": "pbzip2",
+ "raw_recipe": "{% set version = \"1.1.13\" %}\n{% set major_version = \"1.1\" %}\n{% set sha1 = \"f61e65a7616a3492815d18689c202d0685fe167d\" %}\n{% set md5 = \"4cb87da2dba05540afce162f34b3a9a6\" %}\n\npackage:\n  name: pbzip2\n  version: {{ version }}\n\nsource:\n  fn: pbzip2-{{ version }}.tar.gz\n  url: https://launchpad.net/pbzip2/{{ major_version }}/{{ version }}/+download/pbzip2-{{ version }}.tar.gz\n  sha1: {{ sha1 }}\n  md5: {{ md5 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - bzip2 1.0.*\n\ntest:\n  commands:\n    - pbzip2 --version\n    - conda inspect linkages -n _test pbzip2\n\nabout:\n  home: http://compression.ca/pbzip2/\n  license: pbzip2 License\n  license_file: COPYING\n  summary: PBZIP2 is a parallel implementation of the bzip2 block-sorting file compressor\n\nextra:\n  recipe-maintainers:\n    - shahin\n",
+ "rendered_recipe": {},
+ "version": "1.1.13"
+}
