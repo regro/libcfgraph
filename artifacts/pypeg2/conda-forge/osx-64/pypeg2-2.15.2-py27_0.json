@@ -1,0 +1,144 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Python is a nice scripting language. It even gives you access to its own parser and compiler.\nIt also gives you access to different other parsers for special purposes like XML and string templates.\nBut sometimes you may want to have your own parser. This is what's pyPEG for. And pyPEG supports Unicode.\n",
+  "dev_url": "https://bitbucket.org/fdik/pypeg",
+  "doc_url": "https://fdik.org/pyPEG",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://fdik.org/pyPEG",
+  "license": "GPL-2.0",
+  "license_family": "GPL",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.4-py36_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.1-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_0",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "A PEG Parser-Interpreter in Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pypeg2/test/test_pyPEG2.py",
+  "lib/python2.7/site-packages/pypeg2/xmlast.py",
+  "lib/python2.7/site-packages/pyPEG2-2.15.2-py2.7.egg-info",
+  "lib/python2.7/site-packages/pypeg2/__init__.py",
+  "lib/python2.7/site-packages/pypeg2/test/__init__.py",
+  "lib/python2.7/site-packages/pypeg2/test/test_xmlast.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "lxml",
+   "python 2.7*"
+  ],
+  "license": "GPL-2.0",
+  "license_family": "GPL",
+  "name": "pypeg2",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.15.2"
+ },
+ "metadata_version": 1,
+ "name": "pypeg2",
+ "raw_recipe": "{% set name = \"pyPEG2\" %}\n{% set version = \"2.15.2\" %}\n{% set sha256 = \"2b2d4f80d8e1a9370b2a91f4a25f4abf7f69b85c8da84cd23ec36451958a1f6d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - lxml\n\ntest:\n  imports:\n    - pypeg2\n\nabout:\n  home: https://fdik.org/pyPEG\n  license: GPL-2.0\n  license_family: GPL\n  license_file: LICENSE.txt\n  summary: 'A PEG Parser-Interpreter in Python'\n\n  description: |\n    Python is a nice scripting language. It even gives you access to its own parser and compiler.\n    It also gives you access to different other parsers for special purposes like XML and string templates.\n    But sometimes you may want to have your own parser. This is what's pyPEG for. And pyPEG supports Unicode.\n  doc_url: https://fdik.org/pyPEG\n  dev_url: https://bitbucket.org/fdik/pypeg\n\nextra:\n  recipe-maintainers:\n    - v0lat1le\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Python is a nice scripting language. It even gives you access to its own parser and compiler.\nIt also gives you access to different other parsers for special purposes like XML and string templates.\nBut sometimes you may want to have your own parser. This is what's pyPEG for. And pyPEG supports Unicode.\n",
+   "dev_url": "https://bitbucket.org/fdik/pypeg",
+   "doc_url": "https://fdik.org/pyPEG",
+   "home": "https://fdik.org/pyPEG",
+   "license": "GPL-2.0",
+   "license_family": "GPL",
+   "license_file": "LICENSE.txt",
+   "summary": "A PEG Parser-Interpreter in Python"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install",
+   "string": "py27_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "v0lat1le"
+   ]
+  },
+  "package": {
+   "name": "pypeg2",
+   "version": "2.15.2"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "lxml"
+   ]
+  },
+  "source": {
+   "fn": "pyPEG2-2.15.2.tar.gz",
+   "sha256": "2b2d4f80d8e1a9370b2a91f4a25f4abf7f69b85c8da84cd23ec36451958a1f6d",
+   "url": "https://pypi.io/packages/source/p/pyPEG2/pyPEG2-2.15.2.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "pypeg2"
+   ]
+  }
+ },
+ "version": "2.15.2"
+}

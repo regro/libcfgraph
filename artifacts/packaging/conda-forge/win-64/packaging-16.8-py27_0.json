@@ -1,0 +1,40 @@
+{
+ "about": {
+  "home": "https://github.com/pypa/packaging",
+  "license": "Apache 2.0 or BSD 2-Clause",
+  "summary": "Core utilities for Python packages"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/packaging-16.8-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/packaging/__about__.py",
+  "Lib/site-packages/packaging/__init__.py",
+  "Lib/site-packages/packaging/_compat.py",
+  "Lib/site-packages/packaging/_structures.py",
+  "Lib/site-packages/packaging/markers.py",
+  "Lib/site-packages/packaging/requirements.py",
+  "Lib/site-packages/packaging/specifiers.py",
+  "Lib/site-packages/packaging/utils.py",
+  "Lib/site-packages/packaging/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "pyparsing",
+   "python 2.7*",
+   "six"
+  ],
+  "license": "Apache 2.0 or BSD 2-Clause",
+  "name": "packaging",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "16.8"
+ },
+ "metadata_version": 1,
+ "name": "packaging",
+ "raw_recipe": "{% set name = \"packaging\" %}\n{% set version = \"16.8\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"5d50835fdf0a7edf0b55e311b7c887786504efea1177abd7e69329a8e5ea619e\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pyparsing\n    - six\n\n  run:\n    - python\n    - pyparsing\n    - six\n\ntest:\n  imports:\n    - packaging\n\nabout:\n  home: https://github.com/pypa/packaging\n  license: Apache 2.0 or BSD 2-Clause\n  license_file: LICENSE\n  summary: Core utilities for Python packages\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - nicoddemus\n",
+ "rendered_recipe": {},
+ "version": "16.8"
+}

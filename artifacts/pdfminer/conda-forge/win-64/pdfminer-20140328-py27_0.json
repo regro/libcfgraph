@@ -1,0 +1,57 @@
+{
+ "about": {
+  "home": "http://euske.github.io/pdfminer/index.html",
+  "license": "MIT",
+  "summary": "PDF parser and analyzer"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pdfminer-20140328-py2.7.egg-info",
+  "Lib/site-packages/pdfminer/__init__.py",
+  "Lib/site-packages/pdfminer/arcfour.py",
+  "Lib/site-packages/pdfminer/ascii85.py",
+  "Lib/site-packages/pdfminer/ccitt.py",
+  "Lib/site-packages/pdfminer/cmapdb.py",
+  "Lib/site-packages/pdfminer/converter.py",
+  "Lib/site-packages/pdfminer/encodingdb.py",
+  "Lib/site-packages/pdfminer/fontmetrics.py",
+  "Lib/site-packages/pdfminer/glyphlist.py",
+  "Lib/site-packages/pdfminer/image.py",
+  "Lib/site-packages/pdfminer/latin_enc.py",
+  "Lib/site-packages/pdfminer/layout.py",
+  "Lib/site-packages/pdfminer/lzw.py",
+  "Lib/site-packages/pdfminer/pdfcolor.py",
+  "Lib/site-packages/pdfminer/pdfdevice.py",
+  "Lib/site-packages/pdfminer/pdfdocument.py",
+  "Lib/site-packages/pdfminer/pdffont.py",
+  "Lib/site-packages/pdfminer/pdfinterp.py",
+  "Lib/site-packages/pdfminer/pdfpage.py",
+  "Lib/site-packages/pdfminer/pdfparser.py",
+  "Lib/site-packages/pdfminer/pdftypes.py",
+  "Lib/site-packages/pdfminer/psparser.py",
+  "Lib/site-packages/pdfminer/rijndael.py",
+  "Lib/site-packages/pdfminer/runlength.py",
+  "Lib/site-packages/pdfminer/utils.py",
+  "Scripts/dumppdf.py",
+  "Scripts/latin2ascii.py",
+  "Scripts/pdf2txt.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "pdfminer",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "20140328"
+ },
+ "metadata_version": 1,
+ "name": "pdfminer",
+ "raw_recipe": "{%set name = \"pdfminer\" %}\n{%set version = \"20140328\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"ba187b93056586a14edd5e630cf63ae96b1cc84b611f55dcddbc997316d9f262\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  skip: True  # [py3k]\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pdfminer\n\nabout:\n  home: http://euske.github.io/pdfminer/index.html\n  license: MIT\n  summary: 'PDF parser and analyzer'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "20140328"
+}

@@ -1,0 +1,38 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/fasteners-0.14.1-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/fasteners/__init__.py",
+  "Lib/site-packages/fasteners/_utils.py",
+  "Lib/site-packages/fasteners/lock.py",
+  "Lib/site-packages/fasteners/process_lock.py",
+  "Lib/site-packages/fasteners/test.py",
+  "Lib/site-packages/fasteners/tests/__init__.py",
+  "Lib/site-packages/fasteners/tests/test_decorators.py",
+  "Lib/site-packages/fasteners/tests/test_helpers.py",
+  "Lib/site-packages/fasteners/tests/test_lock.py",
+  "Lib/site-packages/fasteners/tests/test_process_lock.py",
+  "Lib/site-packages/fasteners/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "monotonic >=0.1",
+   "python 2.7*",
+   "six"
+  ],
+  "license": "Apache License Version 2.0",
+  "name": "fasteners",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.14.1"
+ },
+ "metadata_version": 1,
+ "name": "fasteners",
+ "raw_recipe": "{% set version = \"0.14.1\" %}\n\npackage:\n  name: fasteners\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/harlowja/fasteners.git\n  git_tag: {{ version }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six\n    - monotonic >=0.1\n\n  run:\n    - python\n    - six\n    - monotonic >=0.1\n\ntest:\n  imports:\n    - fasteners\n    - fasteners.tests\n\nabout:\n  home: https://github.com/harlowja/fasteners\n  license: Apache License Version 2.0\n  summary: A python package that provides useful locks.\n\nextra:\n  recipe-maintainers:\n    - alimanfoo\n",
+ "rendered_recipe": {},
+ "version": "0.14.1"
+}

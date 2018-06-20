@@ -1,0 +1,26 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/six-1.10.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/six.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "six",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.10.0"
+ },
+ "metadata_version": 1,
+ "name": "six",
+ "raw_recipe": "{% set version=\"1.10.0\" %}\n\npackage:\n  name: six\n  version: {{ version }}\n\nsource:\n  fn: six-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/s/six/six-{{ version }}.tar.gz\n  md5: 34eed507548117b2ab523ab14b2f8b55\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - six\n\nabout:\n  home: http://pypi.python.org/pypi/six/\n  license: MIT\n  license_file: LICENSE\n  summary: Python 2 and 3 compatibility utilities\n  description: |\n    Six provides simple utilities for wrapping over differences between\n    Python 2 and Python 3. It is intended to support codebases that work on\n    both Python 2 and 3 without modification. six consists of only one Python\n    file, so it is painless to copy into a project.\n  doc_url: http://pythonhosted.org/six/\n  dev_url: https://bitbucket.org/gutworth/six\n\nextra:\n  recipe-maintainers:\n    - msarahan\n",
+ "rendered_recipe": {},
+ "version": "1.10.0"
+}

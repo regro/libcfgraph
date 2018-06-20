@@ -1,0 +1,26 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/namedlist-1.7-py3.4.egg-info",
+  "Lib/site-packages/namedlist.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "Apache 2.0",
+  "name": "namedlist",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.7"
+ },
+ "metadata_version": 1,
+ "name": "namedlist",
+ "raw_recipe": "{% set version = \"1.7\" %}\n\npackage:\n    name: namedlist\n    version: {{ version }}\n\nsource:\n    fn: namedlist-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/88/49/f7db251a949311c4f09f583e1b3c5a7e377220d5913607e6ab453446fe7e/namedlist-{{ version }}.tar.gz\n    md5: 91932e6797b13df64bffcec4b5c810a3\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n\ntest:\n  imports:\n      - namedlist\n\nabout:\n    home: https://bitbucket.org/ericvsmith/namedlist\n    license: Apache 2.0\n    summary: 'Similar to namedtuple, but instances are mutable.'\n\nextra:\n    recipe-maintainers:\n        - DanCodigaMWRA\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.7"
+}
