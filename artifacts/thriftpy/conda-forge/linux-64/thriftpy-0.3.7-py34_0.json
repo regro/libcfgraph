@@ -1,0 +1,113 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/thriftpy-0.3.7-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/thriftpy-0.3.7-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/thriftpy/__init__.py",
+  "lib/python3.4/site-packages/thriftpy/_compat.py",
+  "lib/python3.4/site-packages/thriftpy/contrib/__init__.py",
+  "lib/python3.4/site-packages/thriftpy/contrib/tracking/__init__.py",
+  "lib/python3.4/site-packages/thriftpy/contrib/tracking/tracker.py",
+  "lib/python3.4/site-packages/thriftpy/contrib/tracking/tracking.thrift",
+  "lib/python3.4/site-packages/thriftpy/hook.py",
+  "lib/python3.4/site-packages/thriftpy/parser/__init__.py",
+  "lib/python3.4/site-packages/thriftpy/parser/exc.py",
+  "lib/python3.4/site-packages/thriftpy/parser/lexer.py",
+  "lib/python3.4/site-packages/thriftpy/parser/parser.py",
+  "lib/python3.4/site-packages/thriftpy/protocol/__init__.py",
+  "lib/python3.4/site-packages/thriftpy/protocol/binary.py",
+  "lib/python3.4/site-packages/thriftpy/protocol/compact.py",
+  "lib/python3.4/site-packages/thriftpy/protocol/cybin.cpython-34m.so",
+  "lib/python3.4/site-packages/thriftpy/protocol/exc.py",
+  "lib/python3.4/site-packages/thriftpy/protocol/json.py",
+  "lib/python3.4/site-packages/thriftpy/protocol/multiplex.py",
+  "lib/python3.4/site-packages/thriftpy/rpc.py",
+  "lib/python3.4/site-packages/thriftpy/server.py",
+  "lib/python3.4/site-packages/thriftpy/thrift.py",
+  "lib/python3.4/site-packages/thriftpy/tornado.py",
+  "lib/python3.4/site-packages/thriftpy/transport/__init__.py",
+  "lib/python3.4/site-packages/thriftpy/transport/_ssl.py",
+  "lib/python3.4/site-packages/thriftpy/transport/buffered/__init__.py",
+  "lib/python3.4/site-packages/thriftpy/transport/buffered/cybuffered.cpython-34m.so",
+  "lib/python3.4/site-packages/thriftpy/transport/cybase.cpython-34m.so",
+  "lib/python3.4/site-packages/thriftpy/transport/framed/__init__.py",
+  "lib/python3.4/site-packages/thriftpy/transport/framed/cyframed.cpython-34m.so",
+  "lib/python3.4/site-packages/thriftpy/transport/memory/__init__.py",
+  "lib/python3.4/site-packages/thriftpy/transport/memory/cymemory.cpython-34m.so",
+  "lib/python3.4/site-packages/thriftpy/transport/socket.py",
+  "lib/python3.4/site-packages/thriftpy/transport/sslsocket.py",
+  "lib/python3.4/site-packages/thriftpy/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "ply >=3.4,<4.0",
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "thriftpy",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3.7"
+ },
+ "metadata_version": 1,
+ "name": "thriftpy",
+ "raw_recipe": "package:\n  name: thriftpy\n  version: \"0.3.7\"\n\nsource:\n  fn: thriftpy-0.3.7.tar.gz\n  url: https://pypi.python.org/packages/source/t/thriftpy/thriftpy-0.3.7.tar.gz\n  md5: f7bda2f5fe4f6eee0e3fa0949ea231ef\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - ply >=3.4,<4.0\n    # Cython extensions not enabled on windows\n    - cython  # [not win]\n\n  run:\n    - python\n    - ply >=3.4,<4.0\n\ntest:\n  imports:\n    - thriftpy\n    - thriftpy.contrib\n    - thriftpy.contrib.tracking\n    - thriftpy.parser\n    - thriftpy.protocol\n    - thriftpy.transport\n    - thriftpy.transport.buffered\n    - thriftpy.transport.framed\n    - thriftpy.transport.memory\n    # Cython extensions not enabled on windows\n    - thriftpy.protocol.cybin  # [not win]\n\n  requires:\n    - tornado >=4.0,<5.0\n\nabout:\n  home: https://thriftpy.readthedocs.org/\n  license: MIT\n  summary: 'Pure python implementation of Apache Thrift.'\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://thriftpy.readthedocs.org/",
+   "license": "MIT",
+   "summary": "Pure python implementation of Apache Thrift."
+  },
+  "build": {
+   "number": 0
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mariusvniekerk"
+   ]
+  },
+  "package": {
+   "name": "thriftpy",
+   "version": "0.3.7"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "ply >=3.4,<4.0",
+    "cython"
+   ],
+   "run": [
+    "python",
+    "ply >=3.4,<4.0"
+   ]
+  },
+  "source": {
+   "fn": "thriftpy-0.3.7.tar.gz",
+   "md5": "f7bda2f5fe4f6eee0e3fa0949ea231ef",
+   "url": "https://pypi.python.org/packages/source/t/thriftpy/thriftpy-0.3.7.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "thriftpy",
+    "thriftpy.contrib",
+    "thriftpy.contrib.tracking",
+    "thriftpy.parser",
+    "thriftpy.protocol",
+    "thriftpy.transport",
+    "thriftpy.transport.buffered",
+    "thriftpy.transport.framed",
+    "thriftpy.transport.memory",
+    "thriftpy.protocol.cybin"
+   ],
+   "requires": [
+    "tornado >=4.0,<5.0"
+   ]
+  }
+ },
+ "version": "0.3.7"
+}

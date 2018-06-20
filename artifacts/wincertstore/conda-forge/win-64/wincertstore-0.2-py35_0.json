@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "https://bitbucket.org/tiran/wincertstore",
+  "license": "PSF 2",
+  "summary": "Python module to extract CA and CRL certs from Windows' cert store (ctypes based)."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/wincertstore-0.2-py3.5.egg-info",
+  "Lib/site-packages/wincertstore.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "PSF 2",
+  "name": "wincertstore",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2"
+ },
+ "metadata_version": 1,
+ "name": "wincertstore",
+ "raw_recipe": "{% set name = \"wincertstore\" %}\n{% set version = \"0.2\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n  md5: ae728f2f007185648d0c7a8679b361e2\n\nbuild:\n  number: 0\n  skip: true  # [not win]\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: https://bitbucket.org/tiran/wincertstore\n  license: PSF 2\n  summary: Python module to extract CA and CRL certs from Windows' cert store (ctypes based).\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - patricksnape\n",
+ "rendered_recipe": {},
+ "version": "0.2"
+}

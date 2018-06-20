@@ -1,0 +1,43 @@
+{
+ "about": {
+  "home": "https://github.com/perrygeo/python-raster-stats",
+  "license": "BSD 3-Clause",
+  "summary": "Summarize geospatial raster datasets based on vector geometries."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/rasterstats-0.11.dev0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/rasterstats/__init__.py",
+  "lib/python3.4/site-packages/rasterstats/_version.py",
+  "lib/python3.4/site-packages/rasterstats/cli.py",
+  "lib/python3.4/site-packages/rasterstats/io.py",
+  "lib/python3.4/site-packages/rasterstats/main.py",
+  "lib/python3.4/site-packages/rasterstats/point.py",
+  "lib/python3.4/site-packages/rasterstats/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "cligj >=0.4",
+   "fiona",
+   "gdal 2.1.*",
+   "numpy >=1.9",
+   "python 3.4*",
+   "rasterio >=0.27",
+   "shapely",
+   "simplejson"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "rasterstats",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.11"
+ },
+ "metadata_version": 1,
+ "name": "rasterstats",
+ "raw_recipe": "{% set version = \"0.11\" %}\n\npackage:\n    name: rasterstats\n    version: {{ version }}\n\nsource:\n    fn: rasterstats-{{ version }}.tar.gz\n    url: https://github.com/perrygeo/python-rasterstats/archive/{{ version }}.tar.gz\n    sha256: 0de3487986cb43f19613c653c170091d42b6f460aa7f3270f1646955faf6d5dd\n\nbuild:\n    number: 0\n    preserve_egg_dir: True\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - shapely\n        - numpy >=1.9\n        - rasterio >=0.27\n        - cligj >=0.4\n        - fiona\n        - simplejson\n        - gdal 2.1.*\n\ntest:\n    imports:\n        - rasterstats\n    commands:\n        - rio zonalstats --help\n        - rio pointquery --help\n    requires:\n        - coverage\n        - pyshp >=1.1.4\n        - pytest\n\nabout:\n  home: https://github.com/perrygeo/python-raster-stats\n  license: BSD 3-Clause\n  summary: 'Summarize geospatial raster datasets based on vector geometries.'\n\nextra:\n    recipe-maintainers:\n        - perrygeo\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.11"
+}

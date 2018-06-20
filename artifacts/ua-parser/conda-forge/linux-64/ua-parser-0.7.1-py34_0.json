@@ -1,0 +1,34 @@
+{
+ "about": {
+  "home": "https://github.com/ua-parser/uap-python",
+  "license": "Apache 2.0",
+  "summary": "Python port of Browserscope's user agent parser"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/ua_parser-0.7.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/ua_parser-0.7.1-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/ua_parser/__init__.py",
+  "lib/python3.4/site-packages/ua_parser/_regexes.py",
+  "lib/python3.4/site-packages/ua_parser/user_agent_parser.py",
+  "lib/python3.4/site-packages/ua_parser/user_agent_parser_test.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "Apache 2.0",
+  "name": "ua-parser",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.7.1"
+ },
+ "metadata_version": 1,
+ "name": "ua-parser",
+ "raw_recipe": "{%set name = \"ua-parser\" %}\n{%set version = \"0.7.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"e1f7cb16ccb68d6c93b19348e678500bec8cd1f692e49214dd38ca2d100ada9b\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pyyaml\n\n  run:\n    - python\n\ntest:\n  imports:\n    - ua_parser\n\nabout:\n  home: https://github.com/ua-parser/uap-python\n  license: Apache 2.0\n  summary: \"Python port of Browserscope's user agent parser\"\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.7.1"
+}

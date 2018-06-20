@@ -1,0 +1,74 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/setuptools_scm-1.8.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/setuptools_scm-1.8.0-py3.5.egg-info/zip-safe",
+  "Lib/site-packages/setuptools_scm/__init__.py",
+  "Lib/site-packages/setuptools_scm/__main__.py",
+  "Lib/site-packages/setuptools_scm/discover.py",
+  "Lib/site-packages/setuptools_scm/git.py",
+  "Lib/site-packages/setuptools_scm/hacks.py",
+  "Lib/site-packages/setuptools_scm/hg.py",
+  "Lib/site-packages/setuptools_scm/integration.py",
+  "Lib/site-packages/setuptools_scm/utils.py",
+  "Lib/site-packages/setuptools_scm/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "setuptools_scm",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.8.0"
+ },
+ "metadata_version": 1,
+ "name": "setuptools_scm",
+ "raw_recipe": "package:\n    name: setuptools_scm\n    version: 1.8.0\n\nsource:\n    fn: setuptools_scm-1.8.0.tar.bz2\n    url: https://pypi.python.org/packages/source/s/setuptools_scm/setuptools_scm-1.8.0.tar.bz2\n    md5: 49e83e8fee9ac1d356a634707a62e294\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - setuptools_scm\n\nabout:\n    home: https://github.com/pypa/setuptools_scm/\n    license: MIT\n    summary: The blessed package to manage your versions by scm tags\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - kwilcox\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/pypa/setuptools_scm/",
+   "license": "MIT",
+   "summary": "The blessed package to manage your versions by scm tags"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "kwilcox"
+   ]
+  },
+  "package": {
+   "name": "setuptools_scm",
+   "version": "1.8.0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "setuptools_scm-1.8.0.tar.bz2",
+   "md5": "49e83e8fee9ac1d356a634707a62e294",
+   "url": "https://pypi.python.org/packages/source/s/setuptools_scm/setuptools_scm-1.8.0.tar.bz2"
+  },
+  "test": {
+   "imports": [
+    "setuptools_scm"
+   ]
+  }
+ },
+ "version": "1.8.0"
+}
