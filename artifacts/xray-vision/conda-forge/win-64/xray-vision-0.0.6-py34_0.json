@@ -1,0 +1,63 @@
+{
+ "about": {
+  "home": "https://github.com/Nikea/xray-vision",
+  "license": "3-Clause BSD",
+  "summary": "Visualization widgets and plotting helpers targeted at X-Ray Sciences"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/xray_vision-0.0.6-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/xray_vision/__init__.py",
+  "Lib/site-packages/xray_vision/_version.py",
+  "Lib/site-packages/xray_vision/backend/__init__.py",
+  "Lib/site-packages/xray_vision/backend/mpl/__init__.py",
+  "Lib/site-packages/xray_vision/backend/mpl/contour.py",
+  "Lib/site-packages/xray_vision/backend/mpl/cross_section_2d.py",
+  "Lib/site-packages/xray_vision/backend/mpl/stack_1d.py",
+  "Lib/site-packages/xray_vision/mask/__init__.py",
+  "Lib/site-packages/xray_vision/mask/manual_mask.py",
+  "Lib/site-packages/xray_vision/messenger/__init__.py",
+  "Lib/site-packages/xray_vision/messenger/_class_factory.py",
+  "Lib/site-packages/xray_vision/messenger/mpl/__init__.py",
+  "Lib/site-packages/xray_vision/messenger/mpl/cross_section_2d.py",
+  "Lib/site-packages/xray_vision/messenger/mpl/stack_1d.py",
+  "Lib/site-packages/xray_vision/mpl_plotting/__init__.py",
+  "Lib/site-packages/xray_vision/mpl_plotting/misc.py",
+  "Lib/site-packages/xray_vision/mpl_plotting/roi.py",
+  "Lib/site-packages/xray_vision/mpl_plotting/speckle.py",
+  "Lib/site-packages/xray_vision/mpl_plotting/utils.py",
+  "Lib/site-packages/xray_vision/plotter.py",
+  "Lib/site-packages/xray_vision/qt_widgets/__init__.py",
+  "Lib/site-packages/xray_vision/qt_widgets/control_widgets.py",
+  "Lib/site-packages/xray_vision/qt_widgets/displaydict.py",
+  "Lib/site-packages/xray_vision/qt_widgets/query_widget.py",
+  "Lib/site-packages/xray_vision/qt_widgets/real_time.py",
+  "Lib/site-packages/xray_vision/qt_widgets/util.py",
+  "Lib/site-packages/xray_vision/utils/__init__.py",
+  "Lib/site-packages/xray_vision/utils/mpl_helpers.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib",
+   "numpy",
+   "pandas",
+   "pyqt",
+   "python 3.4*",
+   "scipy",
+   "six"
+  ],
+  "license": "3-Clause BSD",
+  "name": "xray-vision",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.0.6"
+ },
+ "metadata_version": 1,
+ "name": "xray-vision",
+ "raw_recipe": "{% set version = \"0.0.6\" %}\n\npackage:\n    name: xray-vision\n    version: {{ version }}\n\nsource:\n    url: https://github.com/Nikea/xray-vision/archive/v{{ version }}.tar.gz\n    fn: xray-vision-v{{ version }}.tar.gz\n    sha256: 09fbd0d8d684d0fdf5104358e80415a0648c8fdd137345a5eca0374fcca14324\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - matplotlib\n        - numpy\n        - pandas\n        - pyqt\n        - python\n        - scipy\n        - six\n\ntest:\n    imports:\n        - xray_vision\n        - xray_vision.backend\n        - xray_vision.backend.mpl\n        - xray_vision.mask\n        - xray_vision.messenger\n        - xray_vision.messenger.mpl\n        - xray_vision.mpl_plotting\n        - xray_vision.qt_widgets\n        - xray_vision.utils\n\nabout:\n    home: https://github.com/Nikea/xray-vision\n    license: 3-Clause BSD\n    summary: Visualization widgets and plotting helpers targeted at X-Ray Sciences\n\nextra:\n    recipe-maintainers:\n        - ericdill\n        - licode\n        - tacaswell\n",
+ "rendered_recipe": {},
+ "version": "0.0.6"
+}

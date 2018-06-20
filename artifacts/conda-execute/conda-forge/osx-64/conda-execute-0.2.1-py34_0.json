@@ -1,0 +1,73 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/conda-execute",
+  "bin/conda-tmpenv",
+  "lib/python3.4/site-packages/conda_execute-0.2.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/conda_execute/__init__.py",
+  "lib/python3.4/site-packages/conda_execute/_version.py",
+  "lib/python3.4/site-packages/conda_execute/cli.py",
+  "lib/python3.4/site-packages/conda_execute/config.py",
+  "lib/python3.4/site-packages/conda_execute/pid_info.py",
+  "lib/python3.4/site-packages/conda_execute/tmp_env.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "conda",
+   "psutil",
+   "python 3.4*",
+   "setuptools",
+   "yaml"
+  ],
+  "license": "BSD",
+  "name": "conda-execute",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.1"
+ },
+ "metadata_version": 1,
+ "name": "conda-execute",
+ "raw_recipe": "package:\n  name: conda-execute\n  version: 0.2.1\n\nsource:\n  git_url: https://github.com/pelson/conda-execute.git\n  git_tag: v0.2.1\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - yaml\n    - conda\n    - psutil\n\ntest:\n  imports:\n    - conda_execute\n  commands:\n    - conda execute --help\n    - conda tmpenv --help\n\nabout:\n  home: https://github.com/pelson/conda-execute\n  license: BSD\n  summary: 'Execute scripts in isolated temporary environments.'\n\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/pelson/conda-execute",
+   "license": "BSD",
+   "summary": "Execute scripts in isolated temporary environments."
+  },
+  "package": {
+   "name": "conda-execute",
+   "version": "0.2.1"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "setuptools",
+    "yaml",
+    "conda",
+    "psutil"
+   ]
+  },
+  "source": {
+   "git_tag": "v0.2.1",
+   "git_url": "https://github.com/pelson/conda-execute.git"
+  },
+  "test": {
+   "commands": [
+    "conda execute --help",
+    "conda tmpenv --help"
+   ],
+   "imports": [
+    "conda_execute"
+   ]
+  }
+ },
+ "version": "0.2.1"
+}

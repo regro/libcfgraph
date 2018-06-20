@@ -1,0 +1,27 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pytest_faulthandler-1.3.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pytest_faulthandler.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "pytest",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "pytest-faulthandler",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.3.0"
+ },
+ "metadata_version": 1,
+ "name": "pytest-faulthandler",
+ "raw_recipe": "{% set name = \"pytest-faulthandler\" %}\n{% set version = \"1.3.0\" %}\n{% set hash_type = \"md5\" %}\n{% set hash = \"d9dadfc87bcb1b7ebeb12916a2fda49b\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/p/pytest-faulthandler/pytest-faulthandler-{{ version }}.zip\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - pytest\n    - setuptools\n  run:\n    - python\n    - pytest\n\ntest:\n  imports:\n    - pytest_faulthandler\n\nabout:\n  home: https://github.com/pytest-dev/pytest-faulthandler\n  license: MIT\n  summary: py.test plugin that activates the fault handler module for tests\n\nextra:\n  recipe-maintainers:\n    - nicoddemus\n",
+ "rendered_recipe": {},
+ "version": "1.3.0"
+}

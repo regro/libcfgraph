@@ -1,0 +1,32 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/curve_keygen",
+  "include/zmq.h",
+  "include/zmq_utils.h",
+  "lib/libzmq.5.dylib",
+  "lib/libzmq.a",
+  "lib/libzmq.dylib",
+  "lib/libzmq.la",
+  "lib/pkgconfig/libzmq.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "libsodium"
+  ],
+  "license": "LGPL 3",
+  "name": "zeromq",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "4.1.5"
+ },
+ "metadata_version": 1,
+ "name": "zeromq",
+ "raw_recipe": "{% set version = \"4.1.5\" %}\n{% set ver_maj_min_str = \"-\".join(version.split(\".\")[:2]) %}\n\npackage:\n  name: zeromq\n  version: {{ version }}\n\nsource:\n  fn: zeromq-{{ version }}.tar.gz\n  url: https://github.com/zeromq/zeromq{{ ver_maj_min_str }}/releases/download/v{{ version }}/zeromq-{{ version }}.tar.gz\n  sha1: 2b7490b77860be3060b1b1f92cd73184d309ca69\n  patches:\n    # Patch to avoid failing tests on Mac. See issues for details.\n    # https://github.com/zeromq/libzmq/issues/1509\n    # https://github.com/zeromq/libzmq/issues/1878\n    # https://github.com/zeromq/libzmq/issues/1464\n    - Makefile.am.mac.patch    # [osx]\n    # Patch to avoid a failing test on Linux. See issue for details.\n    # https://github.com/zeromq/libzmq/issues/1462\n    - Makefile.am.linux.patch  # [linux]\n\nbuild:\n  skip: true      # [win]\n  number: 0\n\nrequirements:\n  build:\n    - automake    # [unix]\n    - autoconf    # [unix]\n    - libtool     # [unix]\n    - pkg-config  # [unix]\n    - libsodium   # [unix]\n\n  run:\n    - libsodium   # [unix]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libzmq.a           # [unix]\n    - test -f ${PREFIX}/lib/libzmq.dylib       # [osx]\n    - test -f ${PREFIX}/lib/libzmq.so          # [linux]\n\nabout:\n  home: http://zeromq.org\n  license: LGPL 3\n  summary: A high-performance asynchronous messaging library.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n",
+ "rendered_recipe": {},
+ "version": "4.1.5"
+}

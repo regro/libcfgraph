@@ -1,0 +1,144 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "dev_url": "https://github.com/requests/requests-oauthlib",
+  "doc_url": "https://github.com/requests/requests-oauthlib",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/requests/requests-oauthlib",
+  "license": "ISC",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "OAuthlib authentication support for Requests."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/requests_oauthlib/oauth1_auth.py",
+  "lib/python3.6/site-packages/requests_oauthlib-0.7.0-py3.6.egg-info/not-zip-safe",
+  "lib/python3.6/site-packages/requests_oauthlib/oauth2_auth.py",
+  "lib/python3.6/site-packages/requests_oauthlib/oauth2_session.py",
+  "lib/python3.6/site-packages/requests_oauthlib/__init__.py",
+  "lib/python3.6/site-packages/requests_oauthlib/compliance_fixes/linkedin.py",
+  "lib/python3.6/site-packages/requests_oauthlib/compliance_fixes/__init__.py",
+  "lib/python3.6/site-packages/requests_oauthlib/compliance_fixes/mailchimp.py",
+  "lib/python3.6/site-packages/requests_oauthlib/compliance_fixes/weibo.py",
+  "lib/python3.6/site-packages/requests_oauthlib/compliance_fixes/douban.py",
+  "lib/python3.6/site-packages/requests_oauthlib/compliance_fixes/slack.py",
+  "lib/python3.6/site-packages/requests_oauthlib-0.7.0-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/requests_oauthlib/oauth1_session.py",
+  "lib/python3.6/site-packages/requests_oauthlib/compliance_fixes/facebook.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_1",
+  "build_number": 1,
+  "depends": [
+   "oauthlib >=0.6.2",
+   "python 3.6*",
+   "requests >=2.0.0"
+  ],
+  "license": "ISC",
+  "name": "requests-oauthlib",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.7.0"
+ },
+ "metadata_version": 1,
+ "name": "requests-oauthlib",
+ "raw_recipe": "{%set name = \"requests-oauthlib\" %}\n{%set version = \"0.7.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"198807c592b75438485c890f0403b1a8e363c86be1a87da687be18991a6850b0\" %}\n{%set build_num = \"1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - oauthlib >=0.6.2\n    - requests >=2.0.0\n\n  run:\n    - python\n    - oauthlib >=0.6.2\n    - requests >=2.0.0\n\ntest:\n  imports:\n    - requests_oauthlib\n    - requests_oauthlib.compliance_fixes\n\nabout:\n  home: https://github.com/requests/requests-oauthlib\n  license: ISC\n  license_file: LICENSE\n  summary: 'OAuthlib authentication support for Requests.'\n  dev_url: https://github.com/requests/requests-oauthlib\n  doc_url: https://github.com/requests/requests-oauthlib\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "https://github.com/requests/requests-oauthlib",
+   "doc_url": "https://github.com/requests/requests-oauthlib",
+   "home": "https://github.com/requests/requests-oauthlib",
+   "license": "ISC",
+   "license_file": "LICENSE",
+   "summary": "OAuthlib authentication support for Requests."
+  },
+  "build": {
+   "number": "1",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt",
+   "string": "py36_1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pmlandwehr"
+   ]
+  },
+  "package": {
+   "name": "requests-oauthlib",
+   "version": "0.7.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "oauthlib >=0.6.2",
+    "requests >=2.0.0"
+   ]
+  },
+  "source": {
+   "fn": "requests-oauthlib-0.7.0.tar.gz",
+   "sha256": "198807c592b75438485c890f0403b1a8e363c86be1a87da687be18991a6850b0",
+   "url": "https://pypi.io/packages/source/r/requests-oauthlib/requests-oauthlib-0.7.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "requests_oauthlib",
+    "requests_oauthlib.compliance_fixes"
+   ]
+  }
+ },
+ "version": "0.7.0"
+}
