@@ -1,0 +1,169 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Tenacity is general-purpose retrying library, written in Python, to simplify the task of\nadding retry behavior to just about anything. It originates from a fork of Retrying\n",
+  "dev_url": "http://github.com/jd/tenacity",
+  "doc_url": "http://tenacity.readthedocs.io",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://github.com/jd/tenacity",
+  "license": "Apache 2.0",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Retry a flaky function whenever an exception occurs until it works"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/tenacity/wait.py",
+  "lib/python3.6/site-packages/tenacity/after.py",
+  "lib/python3.6/site-packages/tenacity/__init__.py",
+  "lib/python3.6/site-packages/tenacity/before.py",
+  "lib/python3.6/site-packages/tenacity/tests/__init__.py",
+  "lib/python3.6/site-packages/tenacity/_utils.py",
+  "lib/python3.6/site-packages/tenacity-4.1.0-py3.6.egg-info/pbr.json",
+  "lib/python3.6/site-packages/tenacity-4.1.0-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/tenacity-4.1.0-py3.6.egg-info/not-zip-safe",
+  "lib/python3.6/site-packages/tenacity/tests/test_async.py",
+  "lib/python3.6/site-packages/tenacity/tests/test_tenacity.py",
+  "lib/python3.6/site-packages/tenacity/stop.py",
+  "lib/python3.6/site-packages/tenacity/async.py",
+  "lib/python3.6/site-packages/tenacity/retry.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "monotonic >=0.6",
+   "python 3.6*",
+   "six >=1.9.0"
+  ],
+  "license": "Apache 2.0",
+  "name": "tenacity",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "4.1.0"
+ },
+ "metadata_version": 1,
+ "name": "tenacity",
+ "raw_recipe": "{% set name = \"tenacity\" %}\n{% set version = \"4.1.0\" %}\n{% set sha256 = \"9d800437c8495c78c54615d7f839725afd8858d7f8bb360ee03addb90039fe96\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - pbr\n    - setuptools\n  run:\n    - python\n    - futures >=3  # [py27]\n    - monotonic >=0.6\n    - six >=1.9.0\n\ntest:\n  imports:\n    - tenacity\n\nabout:\n  home: http://github.com/jd/tenacity\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: 'Retry a flaky function whenever an exception occurs until it works'\n\n  description: |\n    Tenacity is general-purpose retrying library, written in Python, to simplify the task of \n    adding retry behavior to just about anything. It originates from a fork of Retrying\n  doc_url: http://tenacity.readthedocs.io\n  dev_url: http://github.com/jd/tenacity\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Tenacity is general-purpose retrying library, written in Python, to simplify the task of\nadding retry behavior to just about anything. It originates from a fork of Retrying\n",
+   "dev_url": "http://github.com/jd/tenacity",
+   "doc_url": "http://tenacity.readthedocs.io",
+   "home": "http://github.com/jd/tenacity",
+   "license": "Apache 2.0",
+   "license_file": "LICENSE",
+   "summary": "Retry a flaky function whenever an exception occurs until it works"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py36_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "sodre"
+   ]
+  },
+  "package": {
+   "name": "tenacity",
+   "version": "4.1.0"
+  },
+  "requirements": {
+   "build": [
+    "ca-certificates 2017.1.23 1",
+    "certifi 2017.4.17 py36_0",
+    "ncurses 5.9 10",
+    "openssl 1.0.2k 0",
+    "pbr 3.0.0 py36_0",
+    "pip 9.0.1 py36_0",
+    "python 3.6.1 1",
+    "readline 6.2 0",
+    "setuptools 33.1.1 py36_0",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "wheel 0.29.0 py36_0",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python",
+    "monotonic >=0.6",
+    "six >=1.9.0"
+   ]
+  },
+  "source": {
+   "fn": "tenacity-4.1.0.tar.gz",
+   "sha256": "9d800437c8495c78c54615d7f839725afd8858d7f8bb360ee03addb90039fe96",
+   "url": "https://pypi.io/packages/source/t/tenacity/tenacity-4.1.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "tenacity"
+   ]
+  }
+ },
+ "version": "4.1.0"
+}

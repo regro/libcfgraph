@@ -1,0 +1,57 @@
+{
+ "about": {
+  "home": "http://euske.github.io/pdfminer/index.html",
+  "license": "MIT",
+  "summary": "PDF parser and analyzer"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/dumppdf.py",
+  "bin/latin2ascii.py",
+  "bin/pdf2txt.py",
+  "lib/python2.7/site-packages/pdfminer-20140328-py2.7.egg-info",
+  "lib/python2.7/site-packages/pdfminer/__init__.py",
+  "lib/python2.7/site-packages/pdfminer/arcfour.py",
+  "lib/python2.7/site-packages/pdfminer/ascii85.py",
+  "lib/python2.7/site-packages/pdfminer/ccitt.py",
+  "lib/python2.7/site-packages/pdfminer/cmapdb.py",
+  "lib/python2.7/site-packages/pdfminer/converter.py",
+  "lib/python2.7/site-packages/pdfminer/encodingdb.py",
+  "lib/python2.7/site-packages/pdfminer/fontmetrics.py",
+  "lib/python2.7/site-packages/pdfminer/glyphlist.py",
+  "lib/python2.7/site-packages/pdfminer/image.py",
+  "lib/python2.7/site-packages/pdfminer/latin_enc.py",
+  "lib/python2.7/site-packages/pdfminer/layout.py",
+  "lib/python2.7/site-packages/pdfminer/lzw.py",
+  "lib/python2.7/site-packages/pdfminer/pdfcolor.py",
+  "lib/python2.7/site-packages/pdfminer/pdfdevice.py",
+  "lib/python2.7/site-packages/pdfminer/pdfdocument.py",
+  "lib/python2.7/site-packages/pdfminer/pdffont.py",
+  "lib/python2.7/site-packages/pdfminer/pdfinterp.py",
+  "lib/python2.7/site-packages/pdfminer/pdfpage.py",
+  "lib/python2.7/site-packages/pdfminer/pdfparser.py",
+  "lib/python2.7/site-packages/pdfminer/pdftypes.py",
+  "lib/python2.7/site-packages/pdfminer/psparser.py",
+  "lib/python2.7/site-packages/pdfminer/rijndael.py",
+  "lib/python2.7/site-packages/pdfminer/runlength.py",
+  "lib/python2.7/site-packages/pdfminer/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "pdfminer",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "20140328"
+ },
+ "metadata_version": 1,
+ "name": "pdfminer",
+ "raw_recipe": "{%set name = \"pdfminer\" %}\n{%set version = \"20140328\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"ba187b93056586a14edd5e630cf63ae96b1cc84b611f55dcddbc997316d9f262\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  skip: True  # [py3k]\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pdfminer\n\nabout:\n  home: http://euske.github.io/pdfminer/index.html\n  license: MIT\n  summary: 'PDF parser and analyzer'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "20140328"
+}

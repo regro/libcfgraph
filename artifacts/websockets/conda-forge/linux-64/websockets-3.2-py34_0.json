@@ -1,0 +1,51 @@
+{
+ "about": {
+  "description": "websockets is a library for developing WebSocket servers and clients in\nPython. It implements RFC 6455 with a focus on correctness and simplicity.\nIt passes the Autobahn Testsuite. Built on top of asyncio, Python's\nstandard asynchronous I/O framework, it provides a straightforward API\nbased on coroutines, making it easy to write highly concurrent\napplications.\n",
+  "dev_url": "https://github.com/aaugustin/websockets",
+  "doc_url": "https://websockets.readthedocs.io/en/stable/index.html",
+  "home": "https://websockets.readthedocs.io/en/stable/index.html",
+  "license": "BSD 3-clause",
+  "license_family": "BSD",
+  "summary": "A library for developing WebSocket servers and clients in Python."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/websockets-3.2-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/websockets/__init__.py",
+  "lib/python3.4/site-packages/websockets/client.py",
+  "lib/python3.4/site-packages/websockets/compatibility.py",
+  "lib/python3.4/site-packages/websockets/exceptions.py",
+  "lib/python3.4/site-packages/websockets/framing.py",
+  "lib/python3.4/site-packages/websockets/handshake.py",
+  "lib/python3.4/site-packages/websockets/http.py",
+  "lib/python3.4/site-packages/websockets/protocol.py",
+  "lib/python3.4/site-packages/websockets/server.py",
+  "lib/python3.4/site-packages/websockets/test_client_server.py",
+  "lib/python3.4/site-packages/websockets/test_framing.py",
+  "lib/python3.4/site-packages/websockets/test_handshake.py",
+  "lib/python3.4/site-packages/websockets/test_http.py",
+  "lib/python3.4/site-packages/websockets/test_protocol.py",
+  "lib/python3.4/site-packages/websockets/test_uri.py",
+  "lib/python3.4/site-packages/websockets/uri.py",
+  "lib/python3.4/site-packages/websockets/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD 3-clause",
+  "license_family": "BSD",
+  "name": "websockets",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "3.2"
+ },
+ "metadata_version": 1,
+ "name": "websockets",
+ "raw_recipe": "{% set name = \"websockets\" %}\n{% set version = \"3.2\" %}\n{% set sha256 = \"cc6620f33b5d68f7f36cc82f2fb947a92f572f569c3f905b232bcf81623e6128\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/aaugustin/websockets/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - websockets\n\nabout:\n  home: https://websockets.readthedocs.io/en/stable/index.html\n  license: BSD 3-clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'A library for developing WebSocket servers and clients in Python.'\n  description: |\n    websockets is a library for developing WebSocket servers and clients in\n    Python. It implements RFC 6455 with a focus on correctness and simplicity.\n    It passes the Autobahn Testsuite. Built on top of asyncio, Python's\n    standard asynchronous I/O framework, it provides a straightforward API\n    based on coroutines, making it easy to write highly concurrent\n    applications.\n  doc_url: https://websockets.readthedocs.io/en/stable/index.html\n  dev_url: https://github.com/aaugustin/websockets\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "rendered_recipe": {},
+ "version": "3.2"
+}

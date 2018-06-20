@@ -1,0 +1,153 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.1",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home",
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-build-2.1.1-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.2.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.49.1-2",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_0",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.2-3",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.4-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-32.3.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.8-3"
+  ],
+  "summary": "ECMWF ecCodes Copyright 2005-2016 ECMWF."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/eccodes-2.0.2-py2.7.egg-info",
+  "lib/python2.7/site-packages/gribapi/gribapi_swig.py",
+  "lib/python2.7/site-packages/gribapi/__init__.py",
+  "lib/python2.7/site-packages/eccodes/__init__.py",
+  "lib/python2.7/site-packages/gribapi/_gribapi_swig.so",
+  "lib/python2.7/site-packages/eccodes/eccodes.py",
+  "lib/python2.7/site-packages/gribapi/gribapi.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_1",
+  "build_number": 1,
+  "depends": [
+   "eccodes 2.0.2",
+   "jasper",
+   "libnetcdf 4.4.*",
+   "libpng >=1.6.23,<1.7",
+   "numpy 1.11*",
+   "python 2.7*"
+  ],
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "name": "python-eccodes",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.2"
+ },
+ "metadata_version": 1,
+ "name": "python-eccodes",
+ "raw_recipe": "{% set version = \"2.0.2\" %}\n\npackage:\n  name: python-eccodes\n  version: {{ version }}\n\nsource:\n  url: https://software.ecmwf.int/wiki/download/attachments/45757960/eccodes-{{ version }}-Source.tar.gz\n  fn: eccodes-{{ version }}-Source.tar.gz\n  sha256: e0368dd4dbd85edfd6a9fbe442a10fea611a773550f7ea7ce1f56ee0b340f6cb\n\nbuild:\n  number: 1\n  skip: True  # [win or py3k]\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - cmake\n    - python\n    - numpy x.x\n    - boost 1.63.*\n    - jasper\n    - libpng >=1.6.23,<1.7\n    - libnetcdf 4.4.*\n    - perl\n    - eccodes {{ version }}\n  run:\n    - python\n    - numpy x.x\n    - jasper\n    - libpng >=1.6.23,<1.7\n    - libnetcdf 4.4.*\n    - eccodes {{ version }}\n\ntest:\n  imports:\n    - eccodes\n    - gribapi\n\nabout:\n  home: https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home\n  license: Apache 2.0\n  license_family: Apache\n  summary: ECMWF ecCodes Copyright 2005-2016 ECMWF.\n\nextra:\n  recipe-maintainers:\n    - kmuehlbauer\n    - pelson\n    - ocefpaf\n    - kynan\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home",
+   "license": "Apache 2.0",
+   "license_family": "Apache",
+   "summary": "ECMWF ecCodes Copyright 2005-2016 ECMWF."
+  },
+  "build": {
+   "detect_binary_files_with_prefix": "true",
+   "number": "1",
+   "string": "np111py27_1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "kmuehlbauer",
+    "pelson",
+    "ocefpaf",
+    "kynan"
+   ]
+  },
+  "package": {
+   "name": "python-eccodes",
+   "version": "2.0.2"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "numpy x.x",
+    "jasper",
+    "libpng >=1.6.23,<1.7",
+    "libnetcdf 4.4.*",
+    "eccodes 2.0.2"
+   ]
+  },
+  "source": {
+   "fn": "eccodes-2.0.2-Source.tar.gz",
+   "sha256": "e0368dd4dbd85edfd6a9fbe442a10fea611a773550f7ea7ce1f56ee0b340f6cb",
+   "url": "https://software.ecmwf.int/wiki/download/attachments/45757960/eccodes-2.0.2-Source.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "eccodes",
+    "gribapi"
+   ]
+  }
+ },
+ "version": "2.0.2"
+}

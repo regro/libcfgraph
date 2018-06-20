@@ -1,0 +1,63 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/xmlwf.exe",
+  "Library/include/expat.h",
+  "Library/include/expat_external.h",
+  "Library/lib/expat.lib",
+  "Library/lib/pkgconfig/expat.pc",
+  "Library/share/man/man1/xmlwf.1",
+  "Scripts/expat.dll"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "MIT",
+  "name": "expat",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.1.0"
+ },
+ "metadata_version": 1,
+ "name": "expat",
+ "raw_recipe": "package:\n    name: expat\n    version: 2.1.0\n\nsource:\n    fn: expat-2.1.0.tar.gz\n    url: http://sourceforge.net/projects/expat/files/expat/2.1.0/expat-2.1.0.tar.gz/download\n\nbuild:\n    number: 0\n\nrequirements:\n    build:\n        - msinttypes  # [win]\n\ntest:\n    commands:\n        - xmlwf.exe -h  # [win]\n        - xmlwf -h  # [not win]\n\nabout:\n    home: http://expat.sourceforge.net/\n    license: MIT\n    summary: Expat XML parser library in C.\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - kwilcox\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://expat.sourceforge.net/",
+   "license": "MIT",
+   "summary": "Expat XML parser library in C."
+  },
+  "build": {
+   "number": 0
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "kwilcox"
+   ]
+  },
+  "package": {
+   "name": "expat",
+   "version": "2.1.0"
+  },
+  "requirements": {
+   "build": [
+    "msinttypes"
+   ]
+  },
+  "source": {
+   "fn": "expat-2.1.0.tar.gz",
+   "url": "http://sourceforge.net/projects/expat/files/expat/2.1.0/expat-2.1.0.tar.gz/download"
+  },
+  "test": {
+   "commands": [
+    "xmlwf.exe -h",
+    "xmlwf -h"
+   ]
+  }
+ },
+ "version": "2.1.0"
+}

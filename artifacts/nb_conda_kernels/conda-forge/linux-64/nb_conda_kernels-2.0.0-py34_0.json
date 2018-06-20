@@ -1,0 +1,50 @@
+{
+ "about": {
+  "home": "https://github.com/Anaconda-Platform/nb_conda_kernels",
+  "license": "BSD-3-Clause",
+  "summary": "Launch Jupyter kernels for any installed conda environment"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/.nb_conda_kernels-post-link.sh",
+  "bin/.nb_conda_kernels-pre-unlink.sh",
+  "lib/python3.4/site-packages/nb_conda_kernels-2.0.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/nb_conda_kernels-2.0.0-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/nb_conda_kernels/__init__.py",
+  "lib/python3.4/site-packages/nb_conda_kernels/_version.py",
+  "lib/python3.4/site-packages/nb_conda_kernels/install.py",
+  "lib/python3.4/site-packages/nb_conda_kernels/logos/python/logo-32x32.png",
+  "lib/python3.4/site-packages/nb_conda_kernels/logos/python/logo-64x64.png",
+  "lib/python3.4/site-packages/nb_conda_kernels/logos/r/logo-64x64.png",
+  "lib/python3.4/site-packages/nb_conda_kernels/manager.py",
+  "lib/python3.4/site-packages/nb_conda_kernels/tests/__init__.py",
+  "lib/python3.4/site-packages/nb_conda_kernels/tests/js/_utils.js",
+  "lib/python3.4/site-packages/nb_conda_kernels/tests/js/test_notebook_basic.js",
+  "lib/python3.4/site-packages/nb_conda_kernels/tests/js/test_notebook_default_py.js",
+  "lib/python3.4/site-packages/nb_conda_kernels/tests/js/test_notebook_default_r.js",
+  "lib/python3.4/site-packages/nb_conda_kernels/tests/js/test_notebook_env_py.js",
+  "lib/python3.4/site-packages/nb_conda_kernels/tests/js/test_notebook_env_r.js",
+  "lib/python3.4/site-packages/nb_conda_kernels/tests/js/test_notebook_root_py.js",
+  "lib/python3.4/site-packages/nb_conda_kernels/tests/test_api.py",
+  "lib/python3.4/site-packages/nb_conda_kernels/tests/test_notebook.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "notebook >=4.2.0",
+   "python 3.4*"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "nb_conda_kernels",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.0"
+ },
+ "metadata_version": 1,
+ "name": "nb_conda_kernels",
+ "raw_recipe": "{% set version = \"2.0.0\" %}\n{% set gh_org = \"Anaconda-Platform\" %}\n{% set gh_repo = \"nb_conda_kernels\" %}\n\npackage:\n  name: {{ gh_repo }}\n  version: {{ version }}\n\nsource:\n  fn: {{ gh_repo }}-{{ version }}.tar.gz\n  url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/{{ version }}.tar.gz\n  sha256: 738dab837fbc2ba515c91d64bf84486361913caae9fd9479933919973c215405\n\nbuild:\n  number: 0\n  script:\n    - python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - notebook >=4.2.0\n    - python\n\ntest:\n  requires:\n    - coverage\n    - flake8\n    - nodejs\n    - nose\n    - notebook >=4.2.0\n    - python\n    - requests\n    - mock  # [py2k]\n  imports:\n    - nb_conda_kernels\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: BSD-3-Clause\n  summary: Launch Jupyter kernels for any installed conda environment\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "rendered_recipe": {},
+ "version": "2.0.0"
+}

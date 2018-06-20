@@ -1,0 +1,51 @@
+{
+ "about": {
+  "home": "http://tinycss.readthedocs.io/",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Tinycss is a complete yet simple CSS parser for Python."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/tinycss-0.4-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/tinycss/__init__.py",
+  "lib/python3.5/site-packages/tinycss/color3.py",
+  "lib/python3.5/site-packages/tinycss/css21.py",
+  "lib/python3.5/site-packages/tinycss/decoding.py",
+  "lib/python3.5/site-packages/tinycss/fonts3.py",
+  "lib/python3.5/site-packages/tinycss/page3.py",
+  "lib/python3.5/site-packages/tinycss/parsing.py",
+  "lib/python3.5/site-packages/tinycss/speedups.cpython-35m-darwin.so",
+  "lib/python3.5/site-packages/tinycss/tests/__init__.py",
+  "lib/python3.5/site-packages/tinycss/tests/speed.py",
+  "lib/python3.5/site-packages/tinycss/tests/test_api.py",
+  "lib/python3.5/site-packages/tinycss/tests/test_color3.py",
+  "lib/python3.5/site-packages/tinycss/tests/test_css21.py",
+  "lib/python3.5/site-packages/tinycss/tests/test_decoding.py",
+  "lib/python3.5/site-packages/tinycss/tests/test_fonts3.py",
+  "lib/python3.5/site-packages/tinycss/tests/test_page3.py",
+  "lib/python3.5/site-packages/tinycss/tests/test_tokenizer.py",
+  "lib/python3.5/site-packages/tinycss/token_data.py",
+  "lib/python3.5/site-packages/tinycss/tokenizer.py",
+  "lib/python3.5/site-packages/tinycss/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "tinycss",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.4"
+ },
+ "metadata_version": 1,
+ "name": "tinycss",
+ "raw_recipe": "{% set name = \"tinycss\" %}\n{% set version = \"0.4\" %}\n{% set sha256 = \"12306fb50e5e9e7eaeef84b802ed877488ba80e35c672867f548c0924a76716e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - tinycss\n\nabout:\n  home: http://tinycss.readthedocs.io/\n  license: BSD 3-Clause\n  summary: 'Tinycss is a complete yet simple CSS parser for Python.'\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n",
+ "rendered_recipe": {},
+ "version": "0.4"
+}
