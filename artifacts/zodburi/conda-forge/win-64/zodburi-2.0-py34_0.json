@@ -1,0 +1,42 @@
+{
+ "about": {
+  "dev_url": "https://github.com/Pylons/zodburi",
+  "doc_url": "https://zodburi.readthedocs.io/en/latest/",
+  "home": "https://github.com/Pylons/zodburi",
+  "license": "ZPL 2.1",
+  "license_family": "Other",
+  "summary": "Construct ZODB storage instances from URIs."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/zodburi-2.0-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/zodburi-2.0-py3.4.egg-info/not-zip-safe",
+  "Lib/site-packages/zodburi/__init__.py",
+  "Lib/site-packages/zodburi/_compat.py",
+  "Lib/site-packages/zodburi/datatypes.py",
+  "Lib/site-packages/zodburi/resolvers.py",
+  "Lib/site-packages/zodburi/tests/__init__.py",
+  "Lib/site-packages/zodburi/tests/test_datatypes.py",
+  "Lib/site-packages/zodburi/tests/test_resolvers.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "setuptools"
+  ],
+  "license": "ZPL 2.1",
+  "license_family": "Other",
+  "name": "zodburi",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.0"
+ },
+ "metadata_version": 1,
+ "name": "zodburi",
+ "raw_recipe": "{%set name = \"zodburi\" %}\n{%set version = \"2.0\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"c04b9beca032bb7b968a3464417596ba4607a927c5e65929860962ddba1cccc0\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - zodburi\n\nabout:\n  home: https://github.com/Pylons/zodburi\n  license: ZPL 2.1\n  # license_file: No MANIFEST.in\n  license_family: Other\n  summary: 'Construct ZODB storage instances from URIs.'\n  doc_url: https://zodburi.readthedocs.io/en/latest/\n  dev_url: https://github.com/Pylons/zodburi\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "2.0"
+}
