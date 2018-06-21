@@ -1,0 +1,44 @@
+{
+ "about": {
+  "dev_url": "https://github.com/rmcgibbo/sphinxcontrib-autodoc_doxygen",
+  "doc_url": "https://rawgit.com/rmcgibbo/sphinxcontrib-autodoc_doxygen/gh-pages/index.html",
+  "home": "https://github.com/rmcgibbo/sphinxcontrib-autodoc_doxygen",
+  "license": "MIT",
+  "summary": "Doxygen / Sphinx bridge, with autodoc and autosummary"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/sphinxcontrib/autodoc_doxygen/__init__.py",
+  "lib/python3.6/site-packages/sphinxcontrib/autodoc_doxygen/autodoc.py",
+  "lib/python3.6/site-packages/sphinxcontrib/autodoc_doxygen/autosummary/__init__.py",
+  "lib/python3.6/site-packages/sphinxcontrib/autodoc_doxygen/autosummary/generate.py",
+  "lib/python3.6/site-packages/sphinxcontrib/autodoc_doxygen/autosummary/templates/doxyclass.rst",
+  "lib/python3.6/site-packages/sphinxcontrib/autodoc_doxygen/xmlutils.py",
+  "lib/python3.6/site-packages/sphinxcontrib_autodoc_doxygen-0.3.2-py3.6-nspkg.pth",
+  "lib/python3.6/site-packages/sphinxcontrib_autodoc_doxygen-0.3.2-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/sphinxcontrib_autodoc_doxygen-0.3.2-py3.6.egg-info/not-zip-safe",
+  "lib/python3.6/site-packages/sphinxcontrib_autodoc_doxygen-0.3.2-py3.6.egg-info/pbr.json"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "docutils >=0.11",
+   "jinja2 >=2.3",
+   "lxml",
+   "python 3.6*",
+   "sphinx >=1.5"
+  ],
+  "license": "MIT",
+  "name": "sphinxcontrib-autodoc_doxygen",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.2"
+ },
+ "metadata_version": 1,
+ "name": "sphinxcontrib-autodoc_doxygen",
+ "raw_recipe": "{% set name = \"sphinxcontrib-autodoc_doxygen\" %}\n{% set version = \"0.3.2\" %}\n{% set sha256 = \"cc13ca218db2907c9e3cb530d21b5a7ab6c17502958b931b3e1b82b506497e1a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - sphinx >=1.5\n    - docutils >=0.11\n    - jinja2 >=2.3\n    - lxml\n    - pbr\n  run:\n    - python\n    - sphinx >=1.5\n    - docutils >=0.11\n    - jinja2 >=2.3\n    - lxml\n\ntest:\n  requires:\n    - mock\n  imports:\n    - sphinxcontrib.autodoc_doxygen\n\nabout:\n  home: https://github.com/rmcgibbo/sphinxcontrib-autodoc_doxygen\n  license: MIT\n  license_file: LICENSE\n  summary: 'Doxygen / Sphinx bridge, with autodoc and autosummary'\n  doc_url: https://rawgit.com/rmcgibbo/sphinxcontrib-autodoc_doxygen/gh-pages/index.html\n  dev_url: https://github.com/rmcgibbo/sphinxcontrib-autodoc_doxygen\n\nextra:\n  recipe-maintainers:\n    - rmcgibbo\n",
+ "rendered_recipe": {},
+ "version": "0.3.2"
+}

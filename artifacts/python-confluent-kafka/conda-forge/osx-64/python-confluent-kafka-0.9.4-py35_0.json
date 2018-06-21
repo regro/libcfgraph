@@ -1,0 +1,155 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Confluent's Kafka client for Python wraps the librdkafka C library,\nproviding full Kafka protocol support with great performance and\nreliability.\n",
+  "doc_url": "http://docs.confluent.io/current/clients/confluent-kafka-python/index.html",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/confluentinc/confluent-kafka-python",
+  "license": "Apache 2.0",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.4-py36_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.3-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_0",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Confluent's Apache Kafka client for Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/confluent_kafka/__init__.py",
+  "lib/python3.5/site-packages/confluent_kafka/avro/serializer/__init__.py",
+  "lib/python3.5/site-packages/confluent_kafka/cimpl.cpython-35m-darwin.so",
+  "lib/python3.5/site-packages/confluent_kafka/avro/cached_schema_registry_client.py",
+  "LICENSE",
+  "lib/python3.5/site-packages/confluent_kafka/kafkatest/verifiable_client.py",
+  "lib/python3.5/site-packages/confluent_kafka/kafkatest/verifiable_consumer.py",
+  "lib/python3.5/site-packages/confluent_kafka/avro/__init__.py",
+  "lib/python3.5/site-packages/confluent_kafka/kafkatest/__init__.py",
+  "lib/python3.5/site-packages/confluent_kafka/kafkatest/verifiable_producer.py",
+  "lib/python3.5/site-packages/confluent_kafka/avro/serializer/message_serializer.py",
+  "lib/python3.5/site-packages/confluent_kafka-0.9.4-py3.5.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "fastavro",
+   "librdkafka 0.9.4",
+   "python 3.5*",
+   "python-avro",
+   "requests"
+  ],
+  "license": "Apache 2.0",
+  "name": "python-confluent-kafka",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.9.4"
+ },
+ "metadata_version": 1,
+ "name": "python-confluent-kafka",
+ "raw_recipe": "{% set pkgname = \"python-confluent-kafka\" %}\n{% set name = \"confluent-kafka\" %}\n{% set version = \"0.9.4\" %}\n{% set sha256hash = \"931bcc3512245ae003c86aa860fb62bbfb4036763a3c2908c50150e412bf0aed\" %}\n\npackage:\n  name: {{ pkgname|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256hash }}\n\nbuild:\n  number: 0\n  # There is no win build for librdkafka at this time.\n  # Neither python-avro for py36.\n  skip: True  # [win or py36]\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n    - librdkafka 0.9.4\n  run:\n    - python\n    - librdkafka 0.9.4\n    - fastavro\n    - requests\n    - python-avro\n\ntest:\n  imports:\n    - confluent_kafka\n    - confluent_kafka.avro\n\n  commands:\n    - conda inspect linkages {{ pkgname }}  # [unix]\n    - conda inspect objects {{ pkgname }}   # [osx]\n\nabout:\n  home: https://github.com/confluentinc/confluent-kafka-python\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: \"Confluent's Apache Kafka client for Python\"\n  description: |\n    Confluent's Kafka client for Python wraps the librdkafka C library,\n    providing full Kafka protocol support with great performance and\n    reliability.\n  doc_url: http://docs.confluent.io/current/clients/confluent-kafka-python/index.html\n\nextra:\n  recipe-maintainers:\n    - rolando\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Confluent's Kafka client for Python wraps the librdkafka C library,\nproviding full Kafka protocol support with great performance and\nreliability.\n",
+   "doc_url": "http://docs.confluent.io/current/clients/confluent-kafka-python/index.html",
+   "home": "https://github.com/confluentinc/confluent-kafka-python",
+   "license": "Apache 2.0",
+   "license_file": "LICENSE",
+   "summary": "Confluent's Apache Kafka client for Python"
+  },
+  "build": {
+   "number": "0",
+   "string": "py35_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "rolando"
+   ]
+  },
+  "package": {
+   "name": "python-confluent-kafka",
+   "version": "0.9.4"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "librdkafka 0.9.4",
+    "fastavro",
+    "requests",
+    "python-avro"
+   ]
+  },
+  "source": {
+   "fn": "confluent-kafka-0.9.4.tar.gz",
+   "sha256": "931bcc3512245ae003c86aa860fb62bbfb4036763a3c2908c50150e412bf0aed",
+   "url": "https://pypi.io/packages/source/c/confluent-kafka/confluent-kafka-0.9.4.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "conda inspect linkages python-confluent-kafka",
+    "conda inspect objects python-confluent-kafka"
+   ],
+   "imports": [
+    "confluent_kafka",
+    "confluent_kafka.avro"
+   ]
+  }
+ },
+ "version": "0.9.4"
+}

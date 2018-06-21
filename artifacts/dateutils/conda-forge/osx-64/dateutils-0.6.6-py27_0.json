@@ -1,0 +1,33 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/dateadd",
+  "bin/datediff",
+  "lib/python2.7/site-packages/dateutils-0.6.6-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/dateutils-0.6.6-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/dateutils/__init__.py",
+  "lib/python2.7/site-packages/dateutils/dateadd.py",
+  "lib/python2.7/site-packages/dateutils/datediff.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "python-dateutil",
+   "pytz"
+  ],
+  "license": "BSD",
+  "name": "dateutils",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.6.6"
+ },
+ "metadata_version": 1,
+ "name": "dateutils",
+ "raw_recipe": "{% set version = \"0.6.6\" %}\n\npackage:\n    name: dateutils\n    version: {{ version }}\n\nsource:\n    fn: dateutils-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/d/dateutils/dateutils-{{ version }}.tar.gz\n    md5: 2ba7fcac03635f1f1cad0d94d785001b\n\nbuild:\n    number: 0\n    skip: True  # [py3k]\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    entry_points:\n        - dateadd = dateutils.dateadd:main\n        - datediff = dateutils.datediff:main\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - argparse  # [py26]\n        - python-dateutil\n        - pytz\n\ntest:\n    imports:\n        - dateutils\n    commands:\n        - dateadd --help\n        - datediff --help\n\nabout:\n    home: https://pypi.python.org/pypi/dateutils/\n    license: BSD\n    summary: Various utilities for working with date and datetime objects\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.6.6"
+}
