@@ -1,0 +1,57 @@
+{
+ "about": {
+  "dev_url": "https://github.com/libgit2/pygit2",
+  "doc_url": "http://www.pygit2.org/",
+  "home": "http://github.com/libgit2/pygit2",
+  "license": "GPLv2 with linking exception",
+  "license_family": "GPL2",
+  "summary": "Python bindings for libgit2."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/_pygit2.cpython-34m.so",
+  "lib/python3.4/site-packages/pygit2-0.25.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pygit2-0.25.0-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/pygit2/__init__.py",
+  "lib/python3.4/site-packages/pygit2/_build.py",
+  "lib/python3.4/site-packages/pygit2/_libgit2.abi3.so",
+  "lib/python3.4/site-packages/pygit2/_run.py",
+  "lib/python3.4/site-packages/pygit2/blame.py",
+  "lib/python3.4/site-packages/pygit2/config.py",
+  "lib/python3.4/site-packages/pygit2/credentials.py",
+  "lib/python3.4/site-packages/pygit2/decl.h",
+  "lib/python3.4/site-packages/pygit2/errors.py",
+  "lib/python3.4/site-packages/pygit2/ffi.py",
+  "lib/python3.4/site-packages/pygit2/index.py",
+  "lib/python3.4/site-packages/pygit2/py2.py",
+  "lib/python3.4/site-packages/pygit2/py3.py",
+  "lib/python3.4/site-packages/pygit2/refspec.py",
+  "lib/python3.4/site-packages/pygit2/remote.py",
+  "lib/python3.4/site-packages/pygit2/repository.py",
+  "lib/python3.4/site-packages/pygit2/settings.py",
+  "lib/python3.4/site-packages/pygit2/submodule.py",
+  "lib/python3.4/site-packages/pygit2/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "cffi",
+   "libgit2 0.25.*",
+   "python 3.4*",
+   "six"
+  ],
+  "license": "GPLv2 with linking exception",
+  "license_family": "GPL2",
+  "name": "pygit2",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.25.0"
+ },
+ "metadata_version": 1,
+ "name": "pygit2",
+ "raw_recipe": "{% set name = \"pygit2\" %}\n{% set version_major   = \"0\" %}\n{% set version_minor   = \"25\" %}\n{% set version_revison = \"0\" %}\n{% set version = \".\".join([version_major, version_minor, version_revison]) %}\n{% set sha256 = \"de0ed85fd840dfeb32bcaa94c643307551dc0d967c3714e49087e7edc0cdc571\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  features:\n    - vc9    # [win and py27]\n    - vc10   # [win and py34]\n    - vc14   # [win and py35]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cffi\n    - libgit2 {{version_major}}.{{version_minor}}.*\n\n  run:\n    - python\n    - cffi\n    - six\n    - libgit2 {{version_major}}.{{version_minor}}.*\n\ntest:\n  imports:\n    - pygit2\n\nabout:\n  home: http://github.com/libgit2/pygit2\n  summary: 'Python bindings for libgit2.'\n  license: GPLv2 with linking exception\n  license_family: GPL2\n  license_file: COPYING\n  doc_url: http://www.pygit2.org/\n  dev_url: https://github.com/libgit2/pygit2\n\nextra:\n  recipe-maintainers:\n    - kszucs\n    - shadowwalkersb\n",
+ "rendered_recipe": {},
+ "version": "0.25.0"
+}

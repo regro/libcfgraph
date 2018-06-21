@@ -1,0 +1,36 @@
+{
+ "about": {
+  "dev_url": "http://github.com/jackmaney/python-stdlib-list",
+  "doc_url": "https://jackmaney.github.io/python-stdlib-list",
+  "home": "http://github.com/jackmaney/python-stdlib-list",
+  "license": "BSD 3-Clause",
+  "summary": "A list of Python Standard Libraries (2.6-7, 3.2-5)"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/stdlib_list-0.3.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/stdlib_list/__init__.py",
+  "lib/python3.5/site-packages/stdlib_list/_version.py",
+  "lib/python3.5/site-packages/stdlib_list/base.py",
+  "lib/python3.5/site-packages/stdlib_list/fetch.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "sphinx"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "stdlib-list",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.2"
+ },
+ "metadata_version": 1,
+ "name": "stdlib-list",
+ "raw_recipe": "{% set version = \"0.3.2\" %}\n{% set sha256 = \"2b30b7a9f14777ca697fb83165061e50211b1b466a8fc52f85b35fd3a4e4a468\" %}\n\npackage:\n  name: stdlib-list\n  version: {{ version }}\n\nsource:\n  fn: stdlib_list-{{ version }}.tar.gz\n  url: https://github.com/jackmaney/python-stdlib-list/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - sphinx\n\ntest:\n  imports:\n    - stdlib_list\n\nabout:\n  home: http://github.com/jackmaney/python-stdlib-list\n  license: BSD 3-Clause\n  summary: A list of Python Standard Libraries (2.6-7, 3.2-5)\n  dev_url: http://github.com/jackmaney/python-stdlib-list\n  doc_url: https://jackmaney.github.io/python-stdlib-list\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - mariusvniekerk\n",
+ "rendered_recipe": {},
+ "version": "0.3.2"
+}

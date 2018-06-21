@@ -1,0 +1,39 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/PyJWT-1.4.0-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/jwt/__init__.py",
+  "Lib/site-packages/jwt/__main__.py",
+  "Lib/site-packages/jwt/algorithms.py",
+  "Lib/site-packages/jwt/api_jws.py",
+  "Lib/site-packages/jwt/api_jwt.py",
+  "Lib/site-packages/jwt/compat.py",
+  "Lib/site-packages/jwt/contrib/__init__.py",
+  "Lib/site-packages/jwt/contrib/algorithms/__init__.py",
+  "Lib/site-packages/jwt/contrib/algorithms/py_ecdsa.py",
+  "Lib/site-packages/jwt/contrib/algorithms/pycrypto.py",
+  "Lib/site-packages/jwt/exceptions.py",
+  "Lib/site-packages/jwt/utils.py",
+  "Scripts/jwt-script.py",
+  "Scripts/jwt.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "pyjwt",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.4.0"
+ },
+ "metadata_version": 1,
+ "name": "pyjwt",
+ "raw_recipe": "{%set name = \"pyjwt\" %}\n{%set camelName = \"PyJWT\" %}\n{%set version = \"1.4.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"e1b2386cfad541445b1d43e480b02ca37ec57259fd1a23e79415b57ba5d8a694\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  entry_points:\n    - jwt = jwt.__main__:main\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n\n  run:\n    - python\n\ntest:\n  imports:\n    - jwt\n    - jwt.contrib\n    - jwt.contrib.algorithms\n\n  commands:\n    - jwt --help\n\nabout:\n  home: http://github.com/jpadilla/pyjwt\n  license: MIT\n  summary: 'JSON Web Token implementation in Python'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.4.0"
+}

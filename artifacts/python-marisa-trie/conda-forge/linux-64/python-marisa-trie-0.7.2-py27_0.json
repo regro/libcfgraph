@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "https://github.com/pytries/marisa-trie",
+  "license": "MIT",
+  "summary": "Static memory-efficient & fast Trie-like structures for Python (based on marisa-trie C++ library)"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/marisa_trie-0.7.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/marisa_trie.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "python-marisa-trie",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.7.2"
+ },
+ "metadata_version": 1,
+ "name": "python-marisa-trie",
+ "raw_recipe": "{%set conda_forge_name = \"python-marisa-trie\" %}\n{%set pypi_name = \"marisa-trie\" %}\n{%set version = \"0.7.2\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"4b39f84c511a6e8e3a060b20bc41ff3b5393cb46381336e2156dc9b2290506b3\" %}\n\npackage:\n  name: {{ conda_forge_name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ pypi_name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/{{ pypi_name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n  patches:\n    - louds-trie.patch  # [win and py35]\n    # patch for windows build issue; see https://github.com/pytries/marisa-trie/commit/1883107b420e19b30f18b1f92b19d7f9d536fa5d\n\nbuild:\n  number: 0\n  script:\n    - python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - toolchain\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - marisa_trie\n\nabout:\n  home: https://github.com/pytries/marisa-trie\n  license: MIT\n  summary: 'Static memory-efficient & fast Trie-like structures for Python (based on marisa-trie C++ library)'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - kmike\n    - superbobry\n",
+ "rendered_recipe": {},
+ "version": "0.7.2"
+}

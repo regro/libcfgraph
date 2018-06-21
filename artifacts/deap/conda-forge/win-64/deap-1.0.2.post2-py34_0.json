@@ -1,0 +1,48 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/deap-1.0.2-py3.4.egg-info",
+  "Lib/site-packages/deap/__init__.py",
+  "Lib/site-packages/deap/algorithms.py",
+  "Lib/site-packages/deap/base.py",
+  "Lib/site-packages/deap/benchmarks/__init__.py",
+  "Lib/site-packages/deap/benchmarks/binary.py",
+  "Lib/site-packages/deap/benchmarks/gp.py",
+  "Lib/site-packages/deap/benchmarks/movingpeaks.py",
+  "Lib/site-packages/deap/benchmarks/tools.py",
+  "Lib/site-packages/deap/cma.py",
+  "Lib/site-packages/deap/creator.py",
+  "Lib/site-packages/deap/gp.py",
+  "Lib/site-packages/deap/tests/__init__.py",
+  "Lib/site-packages/deap/tests/test_logbook.py",
+  "Lib/site-packages/deap/tests/test_pickle.py",
+  "Lib/site-packages/deap/tools/__init__.py",
+  "Lib/site-packages/deap/tools/crossover.py",
+  "Lib/site-packages/deap/tools/emo.py",
+  "Lib/site-packages/deap/tools/init.py",
+  "Lib/site-packages/deap/tools/migration.py",
+  "Lib/site-packages/deap/tools/mutation.py",
+  "Lib/site-packages/deap/tools/selection.py",
+  "Lib/site-packages/deap/tools/support.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.4*"
+  ],
+  "license": "LGPL-3.0",
+  "name": "deap",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.2.post2"
+ },
+ "metadata_version": 1,
+ "name": "deap",
+ "raw_recipe": "{% set version = \"1.0.2.post2\" %}\n{% set gh_org = \"DEAP\" %}\n{% set gh_repo = \"deap\" %}\n{% set pkg_name = \"DEAP\" %}\n{% set commit = \"a4dc75208662ce40158ba0c9eb0045d0bcc66d70\" %}\n\npackage:\n  name: {{ gh_repo }}\n  version: {{ version }}\n\nsource:\n  fn: {{ gh_repo }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ gh_repo[0] }}/{{ gh_repo }}/{{ gh_repo }}-{{ version }}.tar.gz\n  sha256: c52bd32b8f0143db3a0b90f2b976c920b588638d6999ca0d038d8b1c07f7950b\n\nbuild:\n  number: 0\n  script:\n    - python setup.py install\n\nrequirements:\n  build:\n    - numpy\n    - pypandoc\n    - python\n\n  run:\n    - python\n    - numpy\n\ntest:\n  requires:\n    - numpy\n    - python\n  imports:\n    - deap\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: LGPL-3.0\n  summary: Distributed Evolutionary Algorithms in Python\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n    - rhiever\n    - tonyfast\n",
+ "rendered_recipe": {},
+ "version": "1.0.2.post2"
+}

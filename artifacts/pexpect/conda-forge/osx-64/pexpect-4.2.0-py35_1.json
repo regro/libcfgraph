@@ -1,0 +1,46 @@
+{
+ "about": {
+  "home": "http://pexpect.sourceforge.net/",
+  "license": "ISC",
+  "summary": "Pexpect makes Python a better tool for controlling other applications."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pexpect-4.2.0-py3.5.egg-info",
+  "lib/python3.5/site-packages/pexpect/ANSI.py",
+  "lib/python3.5/site-packages/pexpect/FSM.py",
+  "lib/python3.5/site-packages/pexpect/__init__.py",
+  "lib/python3.5/site-packages/pexpect/async.py",
+  "lib/python3.5/site-packages/pexpect/bashrc.sh",
+  "lib/python3.5/site-packages/pexpect/exceptions.py",
+  "lib/python3.5/site-packages/pexpect/expect.py",
+  "lib/python3.5/site-packages/pexpect/fdpexpect.py",
+  "lib/python3.5/site-packages/pexpect/popen_spawn.py",
+  "lib/python3.5/site-packages/pexpect/pty_spawn.py",
+  "lib/python3.5/site-packages/pexpect/pxssh.py",
+  "lib/python3.5/site-packages/pexpect/replwrap.py",
+  "lib/python3.5/site-packages/pexpect/run.py",
+  "lib/python3.5/site-packages/pexpect/screen.py",
+  "lib/python3.5/site-packages/pexpect/spawnbase.py",
+  "lib/python3.5/site-packages/pexpect/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "ptyprocess",
+   "python 3.5*"
+  ],
+  "license": "ISC",
+  "name": "pexpect",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "4.2.0"
+ },
+ "metadata_version": 1,
+ "name": "pexpect",
+ "raw_recipe": "{% set version = \"4.2.0\" %}\n\npackage:\n  name: pexpect\n  version: {{ version }}\n\nsource:\n  fn: pexpect-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pexpect/pexpect-{{ version }}.tar.gz\n  md5: 8071ec5df0f3d515daedafad672d1632\n\nbuild:\n  number: 1\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - ptyprocess  # [not win]\n\ntest:\n  imports:\n    - pexpect\n\nabout:\n  home: http://pexpect.sourceforge.net/\n  license: ISC\n  summary: Pexpect makes Python a better tool for controlling other applications.\n\nextra:\n  recipe-maintainers:\n    - jquast\n    - pelson\n    - takluyver\n",
+ "rendered_recipe": {},
+ "version": "4.2.0"
+}

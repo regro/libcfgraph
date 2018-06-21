@@ -1,0 +1,47 @@
+{
+ "about": {
+  "home": "https://github.com/felipeam86/otwrapy",
+  "license": "LGPLv3",
+  "summary": "General purpose OpenTURNS python wrapper tools"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/beam_wrapper",
+  "lib/python2.7/site-packages/otwrapy-0.6-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/otwrapy-0.6-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/otwrapy/__init__.py",
+  "lib/python2.7/site-packages/otwrapy/_otwrapy.py",
+  "lib/python2.7/site-packages/otwrapy/examples/__init__.py",
+  "lib/python2.7/site-packages/otwrapy/examples/beam/__init__.py",
+  "lib/python2.7/site-packages/otwrapy/examples/beam/_probability_model.py",
+  "lib/python2.7/site-packages/otwrapy/examples/beam/beam",
+  "lib/python2.7/site-packages/otwrapy/examples/beam/beam_input_template.xml",
+  "lib/python2.7/site-packages/otwrapy/examples/beam/beam_wrapper",
+  "lib/python2.7/site-packages/otwrapy/examples/beam/sample_E.csv",
+  "lib/python2.7/site-packages/otwrapy/examples/beam/wrapper.py",
+  "lib/python2.7/site-packages/tests/__init__.py",
+  "lib/python2.7/site-packages/tests/test_wrapper.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "ipyparallel >=5.0.1",
+   "joblib >=0.9.3",
+   "numpy",
+   "openturns",
+   "python 2.7*"
+  ],
+  "license": "LGPLv3",
+  "name": "otwrapy",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.6"
+ },
+ "metadata_version": 1,
+ "name": "otwrapy",
+ "raw_recipe": "{% set version = \"0.6\" %}\n\npackage:\n  name: otwrapy\n  version: {{ version }}\n\nsource:\n  fn: otwrapy-{{ version }}.tar.gz\n  url: https://github.com/felipeam86/otwrapy/archive/{{ version }}.tar.gz\n  sha256: f7fb1c4a39a55b96bbe5c91c718b06b063223a2d2fb04442df3197fce47f50c4\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n    - numpy\n    - openturns\n  run:\n    - python\n    - numpy\n    - joblib >=0.9.3\n    - ipyparallel >=5.0.1\n    - openturns\n\ntest:\n  imports:\n    - otwrapy\n\nabout:\n  home: https://github.com/felipeam86/otwrapy\n  license: LGPLv3\n  license_file: LICENSE\n  summary: General purpose OpenTURNS python wrapper tools\n\n\nextra:\n  recipe-maintainers:\n    - jschueller\n    - felipeam86\n",
+ "rendered_recipe": {},
+ "version": "0.6"
+}

@@ -1,0 +1,32 @@
+{
+ "about": {
+  "home": "http://github.com/mbr/visitor",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "A tiny pythonic visitor implementation."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/visitor-0.1.3-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/visitor/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "visitor",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.3"
+ },
+ "metadata_version": 1,
+ "name": "visitor",
+ "raw_recipe": "{%set name = \"visitor\" %}\n{%set version = \"0.1.3\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"2c737903b2b6864ebc6167eef7cf3b997126f1aa94bdf590f90f1436d23e480a\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - visitor\n\nabout:\n  home: http://github.com/mbr/visitor\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: 'A tiny pythonic visitor implementation.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.1.3"
+}
