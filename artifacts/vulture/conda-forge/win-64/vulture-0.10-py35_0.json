@@ -1,0 +1,32 @@
+{
+ "about": {
+  "home": "https://bitbucket.org/jendrikseipp/vulture",
+  "license": "MIT",
+  "summary": "Find dead code"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/vulture-0.10-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/vulture.py",
+  "Scripts/vulture-script.py",
+  "Scripts/vulture.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "vulture",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.10"
+ },
+ "metadata_version": 1,
+ "name": "vulture",
+ "raw_recipe": "{% set name = \"vulture\" %}\n{% set version = \"0.10\" %}\n{% set sha256 = \"9c2dc36b84f3729361990b4488b7fde1cbe5afb9e3b59456aafc6928684fcd4b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - vulture = vulture:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - vulture\n\n  commands:\n    - vulture --help\n\nabout:\n  home: https://bitbucket.org/jendrikseipp/vulture\n  license: MIT\n  summary: 'Find dead code'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.10"
+}

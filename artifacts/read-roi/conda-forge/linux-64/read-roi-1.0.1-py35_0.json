@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "https://github.com/hadim/read_roi/",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Read ROI files .zip or .roi generated with ImageJ."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/read_roi-1.0.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/read_roi/__init__.py",
+  "lib/python3.5/site-packages/read_roi/_read_roi.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "read-roi",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0.1"
+ },
+ "metadata_version": 1,
+ "name": "read-roi",
+ "raw_recipe": "{% set name = \"read-roi\" %}\n{% set version = \"1.0.1\" %}\n{% set sha256 = \"4a1d41c3268f6c231cccb9c67d96c6a7bf6783a9c94362a2c14327240a5ef25f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - read_roi\n\nabout:\n  home: https://github.com/hadim/read_roi/\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'Read ROI files .zip or .roi generated with ImageJ.'\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - hadim\n",
+ "rendered_recipe": {},
+ "version": "1.0.1"
+}

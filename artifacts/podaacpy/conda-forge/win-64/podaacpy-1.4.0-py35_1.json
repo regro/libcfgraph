@@ -1,0 +1,43 @@
+{
+ "about": {
+  "doc_url": "http://podaacpy.readthedocs.org/en/latest/",
+  "home": "https://github.com/lewismc/podaacpy",
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "summary": "A python utility library for interacting with NASA JPLs PO.DAAC"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/podaac/__init__.py",
+  "Lib/site-packages/podaac/mcc.py",
+  "Lib/site-packages/podaac/podaac.py",
+  "Lib/site-packages/podaac/podaac_utils.py",
+  "Lib/site-packages/podaac/tests/__init__.py",
+  "Lib/site-packages/podaac/tests/mcc_test.py",
+  "Lib/site-packages/podaac/tests/podaac_test.py",
+  "Lib/site-packages/podaacpy-1.4.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/podaacpy-1.4.0-py3.5.egg-info/not-zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "beautifulsoup4",
+   "future",
+   "python 3.5*",
+   "requests"
+  ],
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "name": "podaacpy",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.4.0"
+ },
+ "metadata_version": 1,
+ "name": "podaacpy",
+ "raw_recipe": "{% set name = \"podaacpy\" %}\n{% set version = \"1.4.0\" %}\n{% set sha256 = \"419a2f093d71c3d974254e3c0c51650574c69551cda2f0a3422b58e5cfa070bb\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - beautifulsoup4\n    - future\n    - requests\n\ntest:\n  imports:\n    - podaac\n\nabout:\n  home: https://github.com/lewismc/podaacpy\n  license: Apache 2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'A python utility library for interacting with NASA JPLs PO.DAAC'\n  doc_url: http://podaacpy.readthedocs.org/en/latest/\n\nextra:\n  recipe-maintainers:\n    - agoodm\n    - lewismc\n",
+ "rendered_recipe": {},
+ "version": "1.4.0"
+}

@@ -1,0 +1,63 @@
+{
+ "about": {
+  "home": "https://github.com/pytest-dev/py",
+  "license": "MIT",
+  "summary": "library with cross-python path, ini-parsing, io, code, log facilities"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/py-1.4.31-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/py-1.4.31-py3.5.egg-info/not-zip-safe",
+  "Lib/site-packages/py/__init__.py",
+  "Lib/site-packages/py/__metainfo.py",
+  "Lib/site-packages/py/_apipkg.py",
+  "Lib/site-packages/py/_builtin.py",
+  "Lib/site-packages/py/_code/__init__.py",
+  "Lib/site-packages/py/_code/_assertionnew.py",
+  "Lib/site-packages/py/_code/_assertionold.py",
+  "Lib/site-packages/py/_code/_py2traceback.py",
+  "Lib/site-packages/py/_code/assertion.py",
+  "Lib/site-packages/py/_code/code.py",
+  "Lib/site-packages/py/_code/source.py",
+  "Lib/site-packages/py/_error.py",
+  "Lib/site-packages/py/_iniconfig.py",
+  "Lib/site-packages/py/_io/__init__.py",
+  "Lib/site-packages/py/_io/capture.py",
+  "Lib/site-packages/py/_io/saferepr.py",
+  "Lib/site-packages/py/_io/terminalwriter.py",
+  "Lib/site-packages/py/_log/__init__.py",
+  "Lib/site-packages/py/_log/log.py",
+  "Lib/site-packages/py/_log/warning.py",
+  "Lib/site-packages/py/_path/__init__.py",
+  "Lib/site-packages/py/_path/cacheutil.py",
+  "Lib/site-packages/py/_path/common.py",
+  "Lib/site-packages/py/_path/local.py",
+  "Lib/site-packages/py/_path/svnurl.py",
+  "Lib/site-packages/py/_path/svnwc.py",
+  "Lib/site-packages/py/_process/__init__.py",
+  "Lib/site-packages/py/_process/cmdexec.py",
+  "Lib/site-packages/py/_process/forkedfunc.py",
+  "Lib/site-packages/py/_process/killproc.py",
+  "Lib/site-packages/py/_std.py",
+  "Lib/site-packages/py/_xmlgen.py",
+  "Lib/site-packages/py/test.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "py",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.4.31"
+ },
+ "metadata_version": 1,
+ "name": "py",
+ "raw_recipe": "{% set name = \"py\" %}\n{% set version = \"1.4.31\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"a6501963c725fc2554dabfece8ae9a8fb5e149c0ac0a42fd2b02c5c1c57fc114\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/py/py-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - py\n    - py.code\n    - py.io\n    - py.log\n    - py.path\n    - py.process\n\nabout:\n  home: https://github.com/pytest-dev/py\n  license: MIT\n  license_file: LICENSE\n  summary: \"library with cross-python path, ini-parsing, io, code, log facilities\"\n\nextra:\n  recipe-maintainers:\n    - nicoddemus\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.4.31"
+}
