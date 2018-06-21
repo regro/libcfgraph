@@ -1,0 +1,162 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "This package calculates the masses, center of mass positions, and inertia\ntensors that correspond to the human inertia model developed by Yeadon in\n(Yeadon, 1990). The package allows for the input of both measurements and\nconfiguration variables (joint angles), and provides 3D visualization using\nthe MayaVi package.\n",
+  "dev_url": "https://github.com/chrisdembia/yeadon/",
+  "doc_url": "http://yeadon.readthedocs.org/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/chrisdembia/yeadon/",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Estimates the inertial properties of a human."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/yeadon/exceptions.py",
+  "lib/python2.7/site-packages/yeadon/version.py",
+  "lib/python2.7/site-packages/yeadon/solid.py",
+  "lib/python2.7/site-packages/yeadon/tests/__init__.py",
+  "lib/python2.7/site-packages/yeadon/utils.py",
+  "lib/python2.7/site-packages/yeadon/__init__.py",
+  "lib/python2.7/site-packages/yeadon/tests/test_segment.py",
+  "lib/python2.7/site-packages/yeadon/gui.py",
+  "lib/python2.7/site-packages/yeadon-1.3.0-py2.7.egg-info/PKG-INFO",
+  "bin/yeadon",
+  "lib/python2.7/site-packages/yeadon/tests/test_ui.py",
+  "lib/python2.7/site-packages/yeadon/tests/test_human.py",
+  "lib/python2.7/site-packages/yeadon/ui.py",
+  "lib/python2.7/site-packages/yeadon/segment.py",
+  "lib/python2.7/site-packages/yeadon/inertia.py",
+  "lib/python2.7/site-packages/yeadon/tests/test_solid.py",
+  "lib/python2.7/site-packages/yeadon/tests/test_inertia.py",
+  "lib/python2.7/site-packages/yeadon/human.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "mayavi >=4.0",
+   "numpy >=1.6.1",
+   "python 2.7*",
+   "pyyaml >=3.10"
+  ],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "name": "yeadon",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.3.0"
+ },
+ "metadata_version": 1,
+ "name": "yeadon",
+ "raw_recipe": "{% set name = \"yeadon\" %}\n{% set version = \"1.3.0\" %}\n{% set sha256 = \"9b1e7b39a70fb9eee864472416980ad30fa9d22616af1d41173a26908810cce8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy >=1.6.1\n    - pyyaml >=3.10\n    # NOTE : mayavi is not currently available for these two scenarios: 1) osx\n    # and Python 3, 2) any platform and Python 3.6. As this improves, this\n    # selector should be modified.\n    - mayavi >=4.0  # [(not py36) and not (osx and py3k)]\n\ntest:\n  files:\n    - ice_skating.py\n    - male1.txt\n    - import_test.py\n    - test.sh\n  commands:\n    - bash test.sh  # [linux]\n    - python ice_skating.py  # [osx or win]\n    - python import_test.py  # [osx or win]\n\nabout:\n  home: https://github.com/chrisdembia/yeadon/\n  doc_url: http://yeadon.readthedocs.org/\n  dev_url: https://github.com/chrisdembia/yeadon/\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Estimates the inertial properties of a human.'\n  description: |\n    This package calculates the masses, center of mass positions, and inertia\n    tensors that correspond to the human inertia model developed by Yeadon in\n    (Yeadon, 1990). The package allows for the input of both measurements and\n    configuration variables (joint angles), and provides 3D visualization using\n    the MayaVi package.\n\nextra:\n  recipe-maintainers:\n    - moorepants\n    - chrisdembia\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "This package calculates the masses, center of mass positions, and inertia\ntensors that correspond to the human inertia model developed by Yeadon in\n(Yeadon, 1990). The package allows for the input of both measurements and\nconfiguration variables (joint angles), and provides 3D visualization using\nthe MayaVi package.\n",
+   "dev_url": "https://github.com/chrisdembia/yeadon/",
+   "doc_url": "http://yeadon.readthedocs.org/",
+   "home": "https://github.com/chrisdembia/yeadon/",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE.txt",
+   "summary": "Estimates the inertial properties of a human."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py27_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "moorepants",
+    "chrisdembia"
+   ]
+  },
+  "package": {
+   "name": "yeadon",
+   "version": "1.3.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "numpy >=1.6.1",
+    "pyyaml >=3.10",
+    "mayavi >=4.0"
+   ]
+  },
+  "source": {
+   "fn": "yeadon-1.3.0.tar.gz",
+   "sha256": "9b1e7b39a70fb9eee864472416980ad30fa9d22616af1d41173a26908810cce8",
+   "url": "https://pypi.io/packages/source/y/yeadon/yeadon-1.3.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python ice_skating.py",
+    "python import_test.py"
+   ],
+   "files": [
+    "ice_skating.py",
+    "male1.txt",
+    "import_test.py",
+    "test.sh"
+   ]
+  }
+ },
+ "version": "1.3.0"
+}

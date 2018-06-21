@@ -1,0 +1,38 @@
+{
+ "about": {
+  "description": "Extends the sortedcontainers library with recipes for other collections.",
+  "dev_url": "https://github.com/grantjenks/sortedcollections",
+  "doc_url": "http://www.grantjenks.com/docs/sortedcollections/",
+  "home": "http://www.grantjenks.com/docs/sortedcollections/",
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "summary": "Python Sorted Collections"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/sortedcollections-0.4.2-py3.6.egg-info/PKG-INFO",
+  "Lib/site-packages/sortedcollections/__init__.py",
+  "Lib/site-packages/sortedcollections/ordereddict.py",
+  "Lib/site-packages/sortedcollections/recipes.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.6*",
+   "sortedcontainers"
+  ],
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "name": "sortedcollections",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.4.2"
+ },
+ "metadata_version": 1,
+ "name": "sortedcollections",
+ "raw_recipe": "{% set name = \"sortedcollections\" %}\n{% set version = \"0.4.2\" %}\n{% set sha256 = \"8aefd6cf0bb0a89888f192859c3dbf997b906b33cd4ce175d568fb972cfdb489\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - sortedcontainers\n\ntest:\n  imports:\n    - sortedcollections\n\n\nabout:\n  home: http://www.grantjenks.com/docs/sortedcollections/\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Python Sorted Collections'\n\n  description: Extends the sortedcontainers library with recipes for other \n               collections.\n  doc_url: http://www.grantjenks.com/docs/sortedcollections/\n  dev_url: https://github.com/grantjenks/sortedcollections\n\nextra:\n  recipe-maintainers:\n    - grantjenks\n    - mrocklin\n",
+ "rendered_recipe": {},
+ "version": "0.4.2"
+}

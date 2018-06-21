@@ -1,0 +1,32 @@
+{
+ "about": {
+  "home": "https://github.com/pytest-dev/pytest-mock",
+  "license": "MIT",
+  "summary": "Thin-wrapper around the mock package for easier use with py.test"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pytest_mock-1.1-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/pytest_mock.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "mock",
+   "pytest",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "pytest-mock",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.1"
+ },
+ "metadata_version": 1,
+ "name": "pytest-mock",
+ "raw_recipe": "{% set name = \"pytest-mock\" %}\n{% set version = \"1.1\" %}\n{% set hash_type = \"md5\" %}\n{% set hash = \"671c00dbbffee75d197eeec38c9bee91\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/p/pytest-mock/pytest-mock-{{ version }}.zip\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - pytest\n    - setuptools\n  run:\n    - python\n    - pytest\n    - mock  # [py26 or py27]\n\ntest:\n  imports:\n    - pytest_mock\n\nabout:\n  home: https://github.com/pytest-dev/pytest-mock\n  license: MIT\n  summary: Thin-wrapper around the mock package for easier use with py.test\n\nextra:\n  recipe-maintainers:\n    - nicoddemus",
+ "rendered_recipe": {},
+ "version": "1.1"
+}

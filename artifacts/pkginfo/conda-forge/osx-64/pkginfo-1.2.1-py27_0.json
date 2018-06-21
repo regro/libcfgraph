@@ -1,0 +1,48 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/pkginfo",
+  "lib/python2.7/site-packages/pkginfo-1.2.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pkginfo-1.2.1-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/pkginfo/__init__.py",
+  "lib/python2.7/site-packages/pkginfo/_compat.py",
+  "lib/python2.7/site-packages/pkginfo/bdist.py",
+  "lib/python2.7/site-packages/pkginfo/commandline.py",
+  "lib/python2.7/site-packages/pkginfo/develop.py",
+  "lib/python2.7/site-packages/pkginfo/distribution.py",
+  "lib/python2.7/site-packages/pkginfo/index.py",
+  "lib/python2.7/site-packages/pkginfo/installed.py",
+  "lib/python2.7/site-packages/pkginfo/sdist.py",
+  "lib/python2.7/site-packages/pkginfo/tests/__init__.py",
+  "lib/python2.7/site-packages/pkginfo/tests/test_bdist.py",
+  "lib/python2.7/site-packages/pkginfo/tests/test_commandline.py",
+  "lib/python2.7/site-packages/pkginfo/tests/test_develop.py",
+  "lib/python2.7/site-packages/pkginfo/tests/test_distribution.py",
+  "lib/python2.7/site-packages/pkginfo/tests/test_index.py",
+  "lib/python2.7/site-packages/pkginfo/tests/test_installed.py",
+  "lib/python2.7/site-packages/pkginfo/tests/test_sdist.py",
+  "lib/python2.7/site-packages/pkginfo/tests/test_utils.py",
+  "lib/python2.7/site-packages/pkginfo/tests/test_wheel.py",
+  "lib/python2.7/site-packages/pkginfo/utils.py",
+  "lib/python2.7/site-packages/pkginfo/wheel.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "PSF",
+  "name": "pkginfo",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.2.1"
+ },
+ "metadata_version": 1,
+ "name": "pkginfo",
+ "raw_recipe": "{% set version = \"1.2.1\" %}\n\npackage:\n  name: pkginfo\n  version: {{ version }}\n\nsource:\n  fn: pkginfo-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pkginfo/pkginfo-{{ version }}.tar.gz\n  md5: 4489be0244c003744ca18758fa12e468\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - pkginfo = pkginfo.commandline:main\n  \nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pkginfo\n\nabout:\n  home: https://pypi.python.org/pypi/pkginfo/\n  license: PSF\n  summary: 'Query metadatdata from sdists / bdists / installed packages.'\n\nextra:\n  recipe-maintainers:\n    - janschulz\n",
+ "rendered_recipe": {},
+ "version": "1.2.1"
+}

@@ -1,0 +1,81 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/isodate-0.5.4-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/isodate/__init__.py",
+  "lib/python3.4/site-packages/isodate/duration.py",
+  "lib/python3.4/site-packages/isodate/isodates.py",
+  "lib/python3.4/site-packages/isodate/isodatetime.py",
+  "lib/python3.4/site-packages/isodate/isoduration.py",
+  "lib/python3.4/site-packages/isodate/isoerror.py",
+  "lib/python3.4/site-packages/isodate/isostrf.py",
+  "lib/python3.4/site-packages/isodate/isotime.py",
+  "lib/python3.4/site-packages/isodate/isotzinfo.py",
+  "lib/python3.4/site-packages/isodate/tests/__init__.py",
+  "lib/python3.4/site-packages/isodate/tests/test_date.py",
+  "lib/python3.4/site-packages/isodate/tests/test_datetime.py",
+  "lib/python3.4/site-packages/isodate/tests/test_duration.py",
+  "lib/python3.4/site-packages/isodate/tests/test_pickle.py",
+  "lib/python3.4/site-packages/isodate/tests/test_strf.py",
+  "lib/python3.4/site-packages/isodate/tests/test_time.py",
+  "lib/python3.4/site-packages/isodate/tzinfo.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD License",
+  "name": "isodate",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.5.4"
+ },
+ "metadata_version": 1,
+ "name": "isodate",
+ "raw_recipe": "package:\n    name: isodate\n    version: 0.5.4\n\nsource:\n    fn: isodate-0.5.4.tar.gz\n    url: https://pypi.python.org/packages/source/i/isodate/isodate-0.5.4.tar.gz\n    md5: 9da3ea2af54a6261d854e73d2266030e\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed  --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - isodate\n        - isodate.tests\n\nabout:\n    home: http://cheeseshop.python.org/pypi/isodate\n    license: BSD License\n    summary: An ISO 8601 date/time/duration parser and formatter\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://cheeseshop.python.org/pypi/isodate",
+   "license": "BSD License",
+   "summary": "An ISO 8601 date/time/duration parser and formatter"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed  --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "isodate",
+   "version": "0.5.4"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "isodate-0.5.4.tar.gz",
+   "md5": "9da3ea2af54a6261d854e73d2266030e",
+   "url": "https://pypi.python.org/packages/source/i/isodate/isodate-0.5.4.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "isodate",
+    "isodate.tests"
+   ]
+  }
+ },
+ "version": "0.5.4"
+}
