@@ -1,0 +1,48 @@
+{
+ "about": {
+  "home": "http://github.com/bright-dev/xsgen",
+  "license": "BSD 3-clause",
+  "summary": "A medium fidelity reactor model for the Cyclus Fuel Cycle simulator."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/xsgen",
+  "lib/python3.5/site-packages/xsgen-0.1-py3.5.egg-info",
+  "lib/python3.5/site-packages/xsgen/__init__.py",
+  "lib/python3.5/site-packages/xsgen/base.py",
+  "lib/python3.5/site-packages/xsgen/brightlite.py",
+  "lib/python3.5/site-packages/xsgen/buk.py",
+  "lib/python3.5/site-packages/xsgen/main.py",
+  "lib/python3.5/site-packages/xsgen/nuc_track.py",
+  "lib/python3.5/site-packages/xsgen/openmc_origen.py",
+  "lib/python3.5/site-packages/xsgen/plugins.py",
+  "lib/python3.5/site-packages/xsgen/post.py",
+  "lib/python3.5/site-packages/xsgen/pre.py",
+  "lib/python3.5/site-packages/xsgen/statepoint.py",
+  "lib/python3.5/site-packages/xsgen/tally_types.py",
+  "lib/python3.5/site-packages/xsgen/tape9.py",
+  "lib/python3.5/site-packages/xsgen/test.py",
+  "lib/python3.5/site-packages/xsgen/testing.py",
+  "lib/python3.5/site-packages/xsgen/utils.py",
+  "lib/python3.5/site-packages/xsgen/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "openmc",
+   "pyne"
+  ],
+  "license": "BSD 3-clause",
+  "name": "xsgen",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1"
+ },
+ "metadata_version": 1,
+ "name": "xsgen",
+ "raw_recipe": "{% set version = \"0.1\" %}\n{% set org = \"bright-dev\" %}\n{% set branch = \"master\" %}\n{% set sha256 = \"7c111789560fe6d5fad901f6d278417125043d9d4f8b1331000469ff581d65dc\" %}\n\n\npackage:\n  name: xsgen\n  version: {{ version }}\n\nsource:\n  fn: xsgen-{{ version }}-{{ sha256 }}.tar.gz\n  url: https://github.com/{{ org }}/xsgen/archive/{{ branch }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  script: python setup.py install\n  number: 0\n  skip: True  # [win or not py35]\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - python\n  run:\n    - pyne\n    - openmc\n\ntest:\n  # Some package might need a `test/commands` key to check CLI.\n  imports:\n    - xsgen\n  commands:\n    - xsgen -h\n\nabout:\n  home: http://github.com/bright-dev/xsgen\n  license: BSD 3-clause\n  license_file: license.rst\n  summary: \"A medium fidelity reactor model for the Cyclus Fuel Cycle simulator.\"\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - flanflanagan\n",
+ "rendered_recipe": {},
+ "version": "0.1"
+}

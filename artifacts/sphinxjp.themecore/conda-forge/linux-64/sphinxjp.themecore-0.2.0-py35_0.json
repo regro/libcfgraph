@@ -1,0 +1,34 @@
+{
+ "about": {
+  "home": "http://bitbucket.org/shimizukawa/sphinxjp.themecore",
+  "license": "MIT",
+  "summary": "A sphinx theme plugin support extension. #sphinxjp"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/sphinxjp.themecore-0.2.0-py3.5-nspkg.pth",
+  "lib/python3.5/site-packages/sphinxjp.themecore-0.2.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/sphinxjp.themecore-0.2.0-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/sphinxjp/themecore/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "docutils",
+   "python 3.5*",
+   "sphinx"
+  ],
+  "license": "MIT",
+  "name": "sphinxjp.themecore",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2.0"
+ },
+ "metadata_version": 1,
+ "name": "sphinxjp.themecore",
+ "raw_recipe": "{% set version = \"0.2.0\" %}\n{% set sha256 = \"55729fd3f70b0073da007829b54f533296a9787f03d68a45d747192fcae8c2ad\" %}\n\npackage:\n  name: sphinxjp.themecore\n  version: {{ version }}\n\nsource:\n  fn: sphinxjp.themecore-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/s/sphinxjp.themecore/sphinxjp.themecore-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - docutils\n    - sphinx\n\n  run:\n    - python\n    - docutils\n    - sphinx\n\ntest:\n  imports:\n    - sphinxjp\n    - sphinxjp.themecore\n\nabout:\n  home: http://bitbucket.org/shimizukawa/sphinxjp.themecore\n  license: MIT\n  # FIXME: add license file once added by upstream\n  #license_file: LICENSE.txt\n  summary: 'A sphinx theme plugin support extension. #sphinxjp'\n\nextra:\n  recipe-maintainers:\n    - johannesring\n",
+ "rendered_recipe": {},
+ "version": "0.2.0"
+}

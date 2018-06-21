@@ -1,0 +1,182 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "dev_url": "https://github.com/jswhit/pygrib",
+  "doc_url": "https://jswhit.github.io/pygrib/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/jswhit/pygrib",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.3-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Python GRIB (editions 1 and 2) reader."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/g2clib.cpython-36m-darwin.so",
+  "lib/python3.6/site-packages/pygrib-2.0.2-py3.6.egg-info",
+  "bin/cnvgrib1to2",
+  "bin/grib_repack",
+  "bin/grib_list",
+  "lib/python3.6/site-packages/redtoreg.cpython-36m-darwin.so",
+  "lib/python3.6/site-packages/ncepgrib2.py",
+  "lib/python3.6/site-packages/pygrib.cpython-36m-darwin.so",
+  "bin/cnvgrib2to1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "ecmwf_grib",
+   "jasper",
+   "libpng >=1.6.23,<1.7",
+   "numpy",
+   "pyproj",
+   "python 3.6*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "pygrib",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.0.2"
+ },
+ "metadata_version": 1,
+ "name": "pygrib",
+ "raw_recipe": "{%set name = \"pygrib\" %}\n{%set version = \"2.0.2\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"82eb5e6037217f7ef200521ffc90c59c1db6008ca10d84a5e8ae80008b94ae00\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - python\n    - ecmwf_grib\n    - jasper\n    - libpng >=1.6.23,<1.7\n    - pyproj\n\n  run:\n    - python\n    - ecmwf_grib\n    - jasper\n    - libpng >=1.6.23,<1.7\n    - pyproj\n    - numpy\n\ntest:\n  imports:\n    - pygrib\n  commands:\n    - grib_repack -h\n    #- conda inspect linkages -p $PREFIX pygrib  # [not win]\n    #- conda inspect objects -p $PREFIX pygrib  # [osx]\n\nabout:\n  home: https://github.com/jswhit/pygrib\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'Python GRIB (editions 1 and 2) reader.'\n  doc_url: https://jswhit.github.io/pygrib/\n  dev_url: https://github.com/jswhit/pygrib\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n    - jjhelmus\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "https://github.com/jswhit/pygrib",
+   "doc_url": "https://jswhit.github.io/pygrib/",
+   "home": "https://github.com/jswhit/pygrib",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "COPYING",
+   "summary": "Python GRIB (editions 1 and 2) reader."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "string": "py36_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "dopplershift",
+    "jjhelmus",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "pygrib",
+   "version": "2.0.2"
+  },
+  "requirements": {
+   "build": [
+    "ca-certificates 2017.1.23 1",
+    "curl 7.52.1 0",
+    "ecmwf_grib 1.19.0 0",
+    "hdf4 4.2.12 0",
+    "hdf5 1.8.17 9",
+    "jasper 1.900.1 4",
+    "jpeg 9b 0",
+    "libgfortran 3.0.0 0",
+    "libnetcdf 4.4.1.1 4",
+    "libpng 1.6.28 0",
+    "mkl 2017.0.1 0",
+    "ncurses 5.9 10",
+    "numpy 1.12.1 py36_0",
+    "openssl 1.0.2k 0",
+    "pyproj 1.9.5.1 py36_0",
+    "python 3.6.1 0",
+    "readline 6.2 0",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python",
+    "ecmwf_grib",
+    "jasper",
+    "libpng >=1.6.23,<1.7",
+    "pyproj",
+    "numpy"
+   ]
+  },
+  "source": {
+   "fn": "pygrib-2.0.2.tar.gz",
+   "sha256": "82eb5e6037217f7ef200521ffc90c59c1db6008ca10d84a5e8ae80008b94ae00",
+   "url": "https://pypi.io/packages/source/p/pygrib/pygrib-2.0.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "grib_repack -h"
+   ],
+   "imports": [
+    "pygrib"
+   ]
+  }
+ },
+ "version": "2.0.2"
+}

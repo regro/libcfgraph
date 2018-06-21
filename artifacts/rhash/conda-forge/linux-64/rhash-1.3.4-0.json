@@ -1,0 +1,174 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "RHash is a console utility for computing and verifying hash sums of files. It supports CRC32, MD4, MD5, SHA1, SHA256, SHA512, SHA3, Tiger, TTH, Torrent BTIH, AICH, ED2K, GOST R 34.11-94, RIPEMD-160, HAS-160, EDON-R 256/512, WHIRLPOOL and SNEFRU hash sums.\n",
+  "dev_url": "https://github.com/rhash/RHash",
+  "doc_url": "http://rhash.anz.ru/manpage.php",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://rhash.anz.ru/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-1",
+   "conda-forge::certifi-2017.4.17-py35_0",
+   "conda-forge::chardet-3.0.2-py35_1",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.10-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.12.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::openssl-1.0.2k-0",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2017.2-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Great utility for computing hash sums"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/librhash.a",
+  "share/man/man1/ed2k-link.1",
+  "bin/ed2k-link",
+  "share/man/man1/tth-hash.1",
+  "include/rhash_torrent.h",
+  "share/man/man1/tiger-hash.1",
+  "share/man/man1/sfv-hash.1",
+  "share/man/man1/magnet-link.1",
+  "share/man/man1/gost-hash.1",
+  "lib/librhash.so.0",
+  "bin/gost-hash",
+  "bin/has160-hash",
+  "bin/tiger-hash",
+  "bin/whirlpool-hash",
+  "bin/tth-hash",
+  "bin/rhash",
+  "share/man/man1/whirlpool-hash.1",
+  "bin/magnet-link",
+  "include/rhash.h",
+  "share/man/man1/rhash.1",
+  "bin/sfv-hash",
+  "etc/rhashrc",
+  "share/man/man1/has160-hash.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "rhash",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.3.4"
+ },
+ "metadata_version": 1,
+ "name": "rhash",
+ "raw_recipe": "{% set name = \"rhash\" %}\n{% set version = \"1.3.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/rhash/RHash/archive/v{{ version }}.tar.gz\n  sha256: 1f6daa0c066c94d2575f0aace76f34e5800c51f59f4b30029ddcfa9799564f98\n  patches:\n    # osx port patch, not accepted upstream\n    # https://sourceforge.net/p/rhash/feature-requests/23/\n    - librhash-osx.patch  # [osx]\n\nbuild:\n  number: 0\n  skip: true  # [win or not py36]\n\nrequirements:\n  build:\n    - toolchain\n    - python\n\ntest:\n  commands:\n    - test -f \"$PREFIX/include/rhash.h\"\n    - test -f \"$PREFIX/lib/librhash.a\"  # [unix]\n    - test -f \"$PREFIX/lib/librhash.so.0\"  # [linux]\n    - test -f \"$PREFIX/lib/librhash.0.dylib\"  # [osx]\n    - rhash --version\n\nabout:\n  home: http://rhash.anz.ru/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'Great utility for computing hash sums'\n  description: |\n    RHash is a console utility for computing and verifying hash sums of files. It supports CRC32, MD4, MD5, SHA1, SHA256, SHA512, SHA3, Tiger, TTH, Torrent BTIH, AICH, ED2K, GOST R 34.11-94, RIPEMD-160, HAS-160, EDON-R 256/512, WHIRLPOOL and SNEFRU hash sums.\n  doc_url: http://rhash.anz.ru/manpage.php\n  dev_url: https://github.com/rhash/RHash\n\nextra:\n  recipe-maintainers:\n    - xantares\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "RHash is a console utility for computing and verifying hash sums of files. It supports CRC32, MD4, MD5, SHA1, SHA256, SHA512, SHA3, Tiger, TTH, Torrent BTIH, AICH, ED2K, GOST R 34.11-94, RIPEMD-160, HAS-160, EDON-R 256/512, WHIRLPOOL and SNEFRU hash sums.\n",
+   "dev_url": "https://github.com/rhash/RHash",
+   "doc_url": "http://rhash.anz.ru/manpage.php",
+   "home": "http://rhash.anz.ru/",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "COPYING",
+   "summary": "Great utility for computing hash sums"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "xantares"
+   ]
+  },
+  "package": {
+   "name": "rhash",
+   "version": "1.3.4"
+  },
+  "requirements": {
+   "build": [
+    "openssl 1.0.2k 0",
+    "ncurses 5.9 10",
+    "sqlite 3.13.0 1",
+    "zlib 1.2.11 0",
+    "toolchain 2.0.0 0",
+    "xz 5.2.2 0",
+    "ca-certificates 2017.1.23 1",
+    "readline 6.2 0",
+    "tk 8.5.19 1",
+    "python 3.6.1 0"
+   ],
+   "run": []
+  },
+  "source": {
+   "fn": "rhash-1.3.4.tar.gz",
+   "patches": "",
+   "sha256": "1f6daa0c066c94d2575f0aace76f34e5800c51f59f4b30029ddcfa9799564f98",
+   "url": "https://github.com/rhash/RHash/archive/v1.3.4.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f \"$PREFIX/include/rhash.h\"",
+    "test -f \"$PREFIX/lib/librhash.a\"",
+    "test -f \"$PREFIX/lib/librhash.so.0\"",
+    "rhash --version"
+   ]
+  }
+ },
+ "version": "1.3.4"
+}

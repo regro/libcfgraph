@@ -1,0 +1,38 @@
+{
+ "about": {
+  "home": "https://github.com/asascience-open/thredds_crawler",
+  "license": "MIT",
+  "summary": "A Python library for crawling THREDDS servers."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/thredds_crawler-1.5.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/thredds_crawler/__init__.py",
+  "lib/python3.5/site-packages/thredds_crawler/crawl.py",
+  "lib/python3.5/site-packages/thredds_crawler/tests/__init__.py",
+  "lib/python3.5/site-packages/thredds_crawler/tests/test_crawler.py",
+  "lib/python3.5/site-packages/thredds_crawler/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "lxml",
+   "netcdf4",
+   "python 3.5*",
+   "pytz",
+   "requests"
+  ],
+  "license": "MIT",
+  "name": "thredds_crawler",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.5.2"
+ },
+ "metadata_version": 1,
+ "name": "thredds_crawler",
+ "raw_recipe": "{% set name = \"thredds_crawler\" %}\n{% set version = \"1.5.2\" %}\n{% set sha256 = \"ecb2b1858ee5775a58dfc0517b1ebab6266324544a8f6e70dc6731084dd1da56\" %}\n{% set build = 0 %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/ioos/thredds_crawler/archive/{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: {{ build }}\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - requests\n        - lxml\n        - netcdf4\n        - pytz\n\ntest:\n    imports:\n        - thredds_crawler\n\nabout:\n    home: https://github.com/asascience-open/thredds_crawler\n    license: MIT\n    summary: 'A Python library for crawling THREDDS servers.'\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.5.2"
+}

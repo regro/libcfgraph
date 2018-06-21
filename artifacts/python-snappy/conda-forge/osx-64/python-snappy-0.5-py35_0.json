@@ -1,0 +1,28 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/_snappy.cpython-35m-darwin.so",
+  "lib/python3.5/site-packages/python_snappy-0.5-py3.5.egg-info",
+  "lib/python3.5/site-packages/snappy.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "snappy"
+  ],
+  "license": "BSD 3-clause",
+  "name": "python-snappy",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.5"
+ },
+ "metadata_version": 1,
+ "name": "python-snappy",
+ "raw_recipe": "{% set version = \"0.5\" %}\n\npackage:\n  name: python-snappy\n  version: \"{{ version }}\"\n\nsource:\n  fn: python-snappy-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/p/python-snappy/python-snappy-{{ version }}.tar.gz\n  md5: 044fb0ac21888c0b4eee0c4f15e75504\n\nbuild:\n    number: 0\n    skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - snappy\n    - cmake\n  run:\n    - python\n    - snappy\n\ntest:\n  imports:\n     - snappy\n\nabout:\n  home: http://github.com/andrix/python-snappy\n  license: BSD 3-clause\n  summary: 'Python library for the snappy compression library from Google'\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
+ "rendered_recipe": {},
+ "version": "0.5"
+}
