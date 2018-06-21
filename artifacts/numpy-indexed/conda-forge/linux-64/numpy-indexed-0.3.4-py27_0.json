@@ -1,0 +1,43 @@
+{
+ "about": {
+  "home": "https://github.com/EelcoHoogendoorn/Numpy_arraysetops_EP",
+  "license": "LGPL-3.0",
+  "summary": "Numpy extensions for set and group_by operations on nd-arrays"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/numpy_indexed-0.3.4-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/numpy_indexed/__init__.py",
+  "lib/python2.7/site-packages/numpy_indexed/arraysetops.py",
+  "lib/python2.7/site-packages/numpy_indexed/examples.py",
+  "lib/python2.7/site-packages/numpy_indexed/funcs.py",
+  "lib/python2.7/site-packages/numpy_indexed/grouping.py",
+  "lib/python2.7/site-packages/numpy_indexed/index.py",
+  "lib/python2.7/site-packages/numpy_indexed/monkey_patch.py",
+  "lib/python2.7/site-packages/numpy_indexed/semantics.py",
+  "lib/python2.7/site-packages/numpy_indexed/tests/__init__.py",
+  "lib/python2.7/site-packages/numpy_indexed/tests/test_indexed.py",
+  "lib/python2.7/site-packages/numpy_indexed/tests/test_numpy.py",
+  "lib/python2.7/site-packages/numpy_indexed/utility.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "future",
+   "numpy",
+   "python 2.7*"
+  ],
+  "license": "LGPL-3.0",
+  "name": "numpy-indexed",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3.4"
+ },
+ "metadata_version": 1,
+ "name": "numpy-indexed",
+ "raw_recipe": "{% set version = \"0.3.4\" %}\n\npackage:\n  name: numpy-indexed\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.gz\n  url: https://github.com/EelcoHoogendoorn/Numpy_arraysetops_EP/archive/{{ version }}.tar.gz\n  md5: 767e91e8d5b7ebea9119cb5721df5a52\n  \nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  number: 0\n  \nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy\n    - pyyaml\n    - future\n  run:\n    - python\n    - numpy\n    - future\n\ntest:\n  commands:\n    - py.test --pyargs numpy_indexed\n  imports:\n    - numpy_indexed\n  requires:\n    - pytest\n  \nabout:\n  home: https://github.com/EelcoHoogendoorn/Numpy_arraysetops_EP\n  license: LGPL-3.0\n  summary: Numpy extensions for set and group_by operations on nd-arrays\n\nextra:\n  recipe-maintainers:\n    - ivoflipse\n    - Korijn\n    - EelcoHoogendoorn\n",
+ "rendered_recipe": {},
+ "version": "0.3.4"
+}

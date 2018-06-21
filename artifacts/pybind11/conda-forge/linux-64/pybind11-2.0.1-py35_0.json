@@ -1,0 +1,48 @@
+{
+ "about": {
+  "home": "https://github.com/pybind/pybind11/",
+  "license": "BSD 3-Clause",
+  "summary": "Seamless operability between C++11 and Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/python3.5m/pybind11/attr.h",
+  "include/python3.5m/pybind11/cast.h",
+  "include/python3.5m/pybind11/chrono.h",
+  "include/python3.5m/pybind11/common.h",
+  "include/python3.5m/pybind11/complex.h",
+  "include/python3.5m/pybind11/descr.h",
+  "include/python3.5m/pybind11/eigen.h",
+  "include/python3.5m/pybind11/eval.h",
+  "include/python3.5m/pybind11/functional.h",
+  "include/python3.5m/pybind11/numpy.h",
+  "include/python3.5m/pybind11/operators.h",
+  "include/python3.5m/pybind11/options.h",
+  "include/python3.5m/pybind11/pybind11.h",
+  "include/python3.5m/pybind11/pytypes.h",
+  "include/python3.5m/pybind11/stl.h",
+  "include/python3.5m/pybind11/stl_bind.h",
+  "include/python3.5m/pybind11/typeid.h",
+  "lib/python3.5/site-packages/pybind11-2.0.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pybind11/__init__.py",
+  "lib/python3.5/site-packages/pybind11/_version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pybind11",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.1"
+ },
+ "metadata_version": 1,
+ "name": "pybind11",
+ "raw_recipe": "{% set version = \"2.0.1\" %}\n\npackage:\n    name: pybind11\n    version: {{ version }}\n\nsource:\n    fn: pybind11-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/p/pybind11/pybind11-{{ version }}.tar.gz\n    sha256: 1b1a4824aad88b1073fe8dbd21683e1e5228f3ed3b29c2785fbf5dea6bf1063c\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - pybind11\n\nabout:\n    home: https://github.com/pybind/pybind11/\n    license: BSD 3-Clause\n    summary: Seamless operability between C++11 and Python\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - wjakob\n",
+ "rendered_recipe": {},
+ "version": "2.0.1"
+}

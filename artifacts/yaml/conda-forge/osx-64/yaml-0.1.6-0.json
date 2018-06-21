@@ -1,0 +1,28 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "include/yaml.h",
+  "lib/libyaml-0.2.dylib",
+  "lib/libyaml.a",
+  "lib/libyaml.dylib",
+  "lib/libyaml.la",
+  "lib/pkgconfig/yaml-0.1.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "MIT",
+  "name": "yaml",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.6"
+ },
+ "metadata_version": 1,
+ "name": "yaml",
+ "raw_recipe": "{% set version = \"0.1.6\" %}\n\npackage:\n  name: yaml\n  version: {{ version }}\n\nsource:\n  fn: yaml-{{ version }}.tar.gz\n  url: http://pyyaml.org/download/libyaml/yaml-{{ version }}.tar.gz\n  md5: 5fe00cda18ca5daeb43762b80c38e06e\n  patches:\n    # Change CMakeLists so that we can build static and shared libraries.\n    # See this PR ( https://github.com/yaml/libyaml/pull/10 ) for details.\n    - CMakeLists.txt.patch\n\nbuild:\n  number: 0\n  features:\n    - vc9                # [win and py27]\n    - vc10               # [win and py34]\n    - vc14               # [win and py35]\n\nrequirements:\n  build:\n    - cmake              # [win]\n    - python             # [win]\n    - pkg-config         # [unix]\n    - libtool            # [unix]\n\ntest:\n  requires:\n    - python {{ environ['PY_VER'] + '*' }}            # [win]\n\n  commands:\n    # Check headers.\n    - test -f \"${PREFIX}/include/yaml.h\"              # [unix]\n    - if not exist %LIBRARY_INC%\\\\yaml.h exit 1       # [win]\n\n    # Check libraries.\n    - test -f \"${PREFIX}/lib/libyaml.a\"               # [unix]\n    - test -f \"${PREFIX}/lib/libyaml.dylib\"           # [osx]\n    - test -f \"${PREFIX}/lib/libyaml.so\"              # [linux]\n    - if not exist %LIBRARY_LIB%\\\\yaml_static.lib exit 1     # [win]\n    - if not exist %LIBRARY_LIB%\\\\yaml.lib exit 1     # [win]\n    - if not exist %LIBRARY_BIN%\\\\yaml.dll exit 1     # [win]\n\nabout:\n  home: http://pyyaml.org/wiki/LibYAML'\n  license: MIT\n  summary: A C library for parsing and emitting YAML.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.1.6"
+}

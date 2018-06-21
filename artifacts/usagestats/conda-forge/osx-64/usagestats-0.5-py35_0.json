@@ -1,0 +1,129 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "This package is meant to easily get usage statistics from the users of your\nprogram.\n\nStatistics will be collected but won't be uploaded until the user opts in.\nA message will be printed on stderr asking the user to explicitely opt in or\nopt out.\n",
+  "dev_url": "http://github.com/remram44/usagestats",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://github.com/remram44/usagestats",
+  "license": "Apache-2.0",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Anonymous usage statistics collecter"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/usagestats-0.5-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/usagestats.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "requests"
+  ],
+  "license": "Apache-2.0",
+  "name": "usagestats",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.5"
+ },
+ "metadata_version": 1,
+ "name": "usagestats",
+ "raw_recipe": "{% set name = \"usagestats\" %}\n{% set version = \"0.5\" %}\n{% set sha256 = \"383b5db49381e7ae937a18bbb6c4975c23d2190bf55222cab4b94370c45ab775\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - requests\n\ntest:\n  imports:\n    - usagestats\n\nabout:\n  home: http://github.com/remram44/usagestats\n  license: Apache-2.0\n  license_file: LICENSE.txt\n  summary: 'Anonymous usage statistics collecter'\n  description: |\n    This package is meant to easily get usage statistics from the users of your\n    program.\n\n    Statistics will be collected but won't be uploaded until the user opts in.\n    A message will be printed on stderr asking the user to explicitely opt in or\n    opt out.\n  dev_url: http://github.com/remram44/usagestats\n\nextra:\n  recipe-maintainers:\n    - remram44\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "This package is meant to easily get usage statistics from the users of your\nprogram.\n\nStatistics will be collected but won't be uploaded until the user opts in.\nA message will be printed on stderr asking the user to explicitely opt in or\nopt out.\n",
+   "dev_url": "http://github.com/remram44/usagestats",
+   "home": "http://github.com/remram44/usagestats",
+   "license": "Apache-2.0",
+   "license_file": "LICENSE.txt",
+   "summary": "Anonymous usage statistics collecter"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py35_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "remram44"
+   ]
+  },
+  "package": {
+   "name": "usagestats",
+   "version": "0.5"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "requests"
+   ]
+  },
+  "source": {
+   "fn": "usagestats-0.5.tar.gz",
+   "sha256": "383b5db49381e7ae937a18bbb6c4975c23d2190bf55222cab4b94370c45ab775",
+   "url": "https://pypi.io/packages/source/u/usagestats/usagestats-0.5.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "usagestats"
+   ]
+  }
+ },
+ "version": "0.5"
+}

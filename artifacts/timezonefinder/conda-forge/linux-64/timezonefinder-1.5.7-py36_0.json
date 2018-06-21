@@ -1,0 +1,153 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "This is a fast and lightweight python project for looking up the\ncorresponding timezone for a given lat/lng on earth entirely offline.\n\nThis project is derived from and has been successfully tested against\npytzwhere (github), but aims at providing improved performance and usability.\n",
+  "dev_url": "https://github.com/MrMinimal64/timezonefinder",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/MrMinimal64/timezonefinder",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.5-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "A lightweight python library for finding the timezone of any point on earth (coordinates), but fast! "
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/timezonefinder/helpers_numba.py",
+  "lib/python3.6/site-packages/timezonefinder/file_converter.py",
+  "lib/python3.6/site-packages/timezonefinder/timezone_data.bin",
+  "lib/python3.6/site-packages/timezonefinder/functional.py",
+  "lib/python3.6/site-packages/timezonefinder-1.5.7-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/timezonefinder/helpers.py",
+  "lib/python3.6/site-packages/timezonefinder/__init__.py",
+  "lib/python3.6/site-packages/timezonefinder/timezone_names.py",
+  "lib/python3.6/site-packages/timezonefinder/timezonefinder.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "numba",
+   "numpy",
+   "python 3.6*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "timezonefinder",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.5.7"
+ },
+ "metadata_version": 1,
+ "name": "timezonefinder",
+ "raw_recipe": "{% set name = \"timezonefinder\" %}\n{% set version = \"1.5.7\" %}\n{% set sha256 = \"c9de5429aca0d991459d0103e7feaae9c8d0be4516d88018411b775abe5c4579\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - numba    # [py>27]\n\ntest:\n  imports:\n    - timezonefinder\n    - timezonefinder.timezonefinder\n    - timezonefinder.helpers\n    - timezonefinder.functional\n\nabout:\n  home: https://github.com/MrMinimal64/timezonefinder\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A lightweight python library for finding the timezone of any point on earth (coordinates), but fast! '\n  description: |\n    This is a fast and lightweight python project for looking up the\n    corresponding timezone for a given lat/lng on earth entirely offline.\n\n    This project is derived from and has been successfully tested against\n    pytzwhere (github), but aims at providing improved performance and usability.\n  dev_url: https://github.com/MrMinimal64/timezonefinder\n\nextra:\n  recipe-maintainers:\n    - snowman2\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "This is a fast and lightweight python project for looking up the\ncorresponding timezone for a given lat/lng on earth entirely offline.\n\nThis project is derived from and has been successfully tested against\npytzwhere (github), but aims at providing improved performance and usability.\n",
+   "dev_url": "https://github.com/MrMinimal64/timezonefinder",
+   "home": "https://github.com/MrMinimal64/timezonefinder",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "A lightweight python library for finding the timezone of any point on earth (coordinates), but fast! "
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py36_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "snowman2"
+   ]
+  },
+  "package": {
+   "name": "timezonefinder",
+   "version": "1.5.7"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "numpy",
+    "numba"
+   ]
+  },
+  "source": {
+   "fn": "timezonefinder-1.5.7.tar.gz",
+   "sha256": "c9de5429aca0d991459d0103e7feaae9c8d0be4516d88018411b775abe5c4579",
+   "url": "https://pypi.io/packages/source/t/timezonefinder/timezonefinder-1.5.7.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "timezonefinder",
+    "timezonefinder.timezonefinder",
+    "timezonefinder.helpers",
+    "timezonefinder.functional"
+   ]
+  }
+ },
+ "version": "1.5.7"
+}

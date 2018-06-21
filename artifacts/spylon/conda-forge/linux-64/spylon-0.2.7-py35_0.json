@@ -1,0 +1,47 @@
+{
+ "about": {
+  "home": "https://github.com/MaxPoint/spylon",
+  "license": "BSD 3-clause",
+  "summary": "Utilities to work with Scala/Java code with py4j"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/pyspark_yarn_client_conda",
+  "bin/pyspark_yarn_cluster_conda",
+  "lib/python3.5/site-packages/spylon-0.2.7-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/spylon-0.2.7-py3.5.egg-info/pbr.json",
+  "lib/python3.5/site-packages/spylon/__init__.py",
+  "lib/python3.5/site-packages/spylon/_version.py",
+  "lib/python3.5/site-packages/spylon/common.py",
+  "lib/python3.5/site-packages/spylon/simple/__init__.py",
+  "lib/python3.5/site-packages/spylon/spark/__init__.py",
+  "lib/python3.5/site-packages/spylon/spark/launcher.py",
+  "lib/python3.5/site-packages/spylon/spark/progress.py",
+  "lib/python3.5/site-packages/spylon/spark/spark_properties_1.6.0.json",
+  "lib/python3.5/site-packages/spylon/spark/spark_properties_1.6.1.json",
+  "lib/python3.5/site-packages/spylon/spark/spark_properties_latest.json",
+  "lib/python3.5/site-packages/spylon/spark/utils.py",
+  "lib/python3.5/site-packages/spylon/spark/yarn_launcher.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "findspark",
+   "pandas",
+   "python 3.5*",
+   "pyyaml"
+  ],
+  "license": "BSD 3-clause",
+  "name": "spylon",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2.7"
+ },
+ "metadata_version": 1,
+ "name": "spylon",
+ "raw_recipe": "{% set name = \"spylon\" %}\n{% set version = \"0.2.7\" %}\n{% set hashtype = \"sha256\" %}\n{% set hash = \"decb5792c46e4a002ff56fd5ac8db0b76a662624c3723886f5d5b91885d350c5\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hashtype }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - pyspark_yarn_client_conda=spylon.spark.yarn_launcher:pyspark_conda_yarn_client\n    - pyspark_yarn_cluster_conda=spylon.spark.yarn_launcher:pyspark_conda_yarn_cluster\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - findspark\n    - pandas\n    - pyyaml\n\ntest:\n  imports:\n    - spylon\n    - spylon.spark\n    - spylon.spark.yarn_launcher\n\nabout:\n  home: https://github.com/MaxPoint/spylon\n  license: BSD 3-clause\n  summary: Utilities to work with Scala/Java code with py4j\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n    - ericdill\n",
+ "rendered_recipe": {},
+ "version": "0.2.7"
+}
