@@ -1,0 +1,29 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/funcsigs-1.0.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/funcsigs-1.0.2-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/funcsigs-1.0.2-py3.5.egg-info/pbr.json",
+  "lib/python3.5/site-packages/funcsigs/__init__.py",
+  "lib/python3.5/site-packages/funcsigs/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "Apache 2.0",
+  "name": "funcsigs",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0.2"
+ },
+ "metadata_version": 1,
+ "name": "funcsigs",
+ "raw_recipe": "{% set name = \"funcsigs\" %}\n{% set version = \"1.0.2\" %}\n{% set checksum = \"a7bb0f2cf3a3fd1ab2732cb49eba4252c2af4240442415b4abce3b87022a8f50\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ checksum }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: http://funcsigs.readthedocs.org\n  license: Apache 2.0\n  summary: Python function signatures from PEP362 for Python 2.6, 2.7 and 3.2+.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.0.2"
+}

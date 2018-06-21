@@ -1,0 +1,38 @@
+{
+ "about": {
+  "description": "Viridis is a Python library for tree data and algorithms. It is named\nafter _Morelia viridis_, the green tree python. It is compatible with and\ntested with 100% coverage on Python 3.5.\n",
+  "dev_url": "https://github.com/jni/viridis",
+  "doc_url": "https://github.com/jni/viridis",
+  "home": "https://github.com/jni/viridis",
+  "license": "BSD 3-clause",
+  "license_family": "BSD",
+  "summary": "A tree Python library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/viridis-0.4.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/viridis/__init__.py",
+  "lib/python3.5/site-packages/viridis/tree.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "networkx",
+   "numpy",
+   "python 3.5*"
+  ],
+  "license": "BSD 3-clause",
+  "license_family": "BSD",
+  "name": "viridis",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.4.1"
+ },
+ "metadata_version": 1,
+ "name": "viridis",
+ "raw_recipe": "{% set name = \"viridis\" %}\n{% set version = \"0.4.1\" %}\n{% set sha256 = \"59c0598e0e144bda22fefd0174ad827d095f0ef9baf62f51334436e93b7e748b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [py < 35]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - networkx\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - viridis.tree\n  commands:\n    - py.test --doctest-modules --pyargs viridis\n\nabout:\n  home: https://github.com/jni/viridis\n  license_family: BSD\n  license: BSD 3-clause\n  # Uncomment line below when license.txt is added to PyPI source dist\n  # license_file: license.txt\n  summary: 'A tree Python library'\n\n  description: |\n    Viridis is a Python library for tree data and algorithms. It is named\n    after _Morelia viridis_, the green tree python. It is compatible with and\n    tested with 100% coverage on Python 3.5.\n  doc_url: https://github.com/jni/viridis\n  dev_url: https://github.com/jni/viridis\n\nextra:\n  recipe-maintainers:\n    - jni\n",
+ "rendered_recipe": {},
+ "version": "0.4.1"
+}
