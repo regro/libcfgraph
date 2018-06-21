@@ -1,0 +1,45 @@
+{
+ "about": {
+  "home": "https://github.com/pybind/pybind11/",
+  "license": "BSD 3-Clause",
+  "summary": "Seamless operability between C++11 and Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/python2.7/pybind11/attr.h",
+  "include/python2.7/pybind11/cast.h",
+  "include/python2.7/pybind11/common.h",
+  "include/python2.7/pybind11/complex.h",
+  "include/python2.7/pybind11/descr.h",
+  "include/python2.7/pybind11/eigen.h",
+  "include/python2.7/pybind11/functional.h",
+  "include/python2.7/pybind11/numpy.h",
+  "include/python2.7/pybind11/operators.h",
+  "include/python2.7/pybind11/pybind11.h",
+  "include/python2.7/pybind11/pytypes.h",
+  "include/python2.7/pybind11/stl.h",
+  "include/python2.7/pybind11/stl_bind.h",
+  "include/python2.7/pybind11/typeid.h",
+  "lib/python2.7/site-packages/pybind11-1.8.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pybind11/__init__.py",
+  "lib/python2.7/site-packages/pybind11/_version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pybind11",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.8.1"
+ },
+ "metadata_version": 1,
+ "name": "pybind11",
+ "raw_recipe": "{% set version = \"1.8.1\" %}\n\npackage:\n    name: pybind11\n    version: {{ version }}\n\nsource:\n    fn: pybind11-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/p/pybind11/pybind11-{{ version }}.tar.gz\n    md5: 67845d8fd89a1c400dc7c61ccdee14d6\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - pybind11\n\nabout:\n    home: https://github.com/pybind/pybind11/\n    license: BSD 3-Clause\n    summary: Seamless operability between C++11 and Python\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - wjakob\n",
+ "rendered_recipe": {},
+ "version": "1.8.1"
+}

@@ -1,0 +1,39 @@
+{
+ "about": {
+  "home": "https://bitbucket.org/pytest-dev/pytest-localserver",
+  "license": "MIT",
+  "summary": "pytest-localserver is a plugin for the pytest testing framework which enables you to test server connections locally."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pytest_localserver-0.3.6-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pytest_localserver-0.3.6-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/pytest_localserver/__init__.py",
+  "lib/python3.5/site-packages/pytest_localserver/ca.crt",
+  "lib/python3.5/site-packages/pytest_localserver/http.py",
+  "lib/python3.5/site-packages/pytest_localserver/https.py",
+  "lib/python3.5/site-packages/pytest_localserver/plugin.py",
+  "lib/python3.5/site-packages/pytest_localserver/server.pem",
+  "lib/python3.5/site-packages/pytest_localserver/smtp.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "pytest",
+   "python 3.5*",
+   "werkzeug >=0.10"
+  ],
+  "license": "MIT",
+  "name": "pytest-localserver",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3.6"
+ },
+ "metadata_version": 1,
+ "name": "pytest-localserver",
+ "raw_recipe": "{% set name = \"pytest-localserver\" %}\n{% set version = \"0.3.6\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"fa4e29a5eaf912055955c924652061e6eac0c13747cd6af7b119ed989fbeb03c\" %}\n{% set ext = \"tar.gz\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ ext }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ ext }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - werkzeug >=0.10\n  run:\n    - python\n    - pytest\n    - werkzeug >=0.10\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - pytest_localserver\n  commands:\n    - py.test --help\n\nabout:\n  home: https://bitbucket.org/pytest-dev/pytest-localserver\n  license: MIT\n  summary: pytest-localserver is a plugin for the pytest testing framework which enables you to test server connections locally.\n\nextra:\n  recipe-maintainers:\n    - nicoddemus\n",
+ "rendered_recipe": {},
+ "version": "0.3.6"
+}

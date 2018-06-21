@@ -1,0 +1,184 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.9",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://openturns.org/",
+  "license": "LGPL3",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-0",
+   "conda-forge::certifi-2017.1.23-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.9-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.12.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_2",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "FFTW module"
+ },
+ "conda_build_config": {},
+ "files": [
+  "share/otfftw/examples/t_FFTW_std.cxx",
+  "include/otfftw/swig/otfftw_module.i",
+  "lib/python2.7/site-packages/otfftw/_otfftw.so",
+  "lib/python2.7/site-packages/otfftw/__init__.py",
+  "include/otfftw/swig/FFTW.i",
+  "include/otfftw/OTFFTWprivate.hxx",
+  "lib/cmake/otfftw/Useotfftw.cmake",
+  "lib/libotfftw.so",
+  "lib/cmake/otfftw/otfftwConfig.cmake",
+  "lib/libotfftw.so.0.1.0",
+  "lib/libotfftw.so.0",
+  "lib/python2.7/site-packages/otfftw/otfftw.py",
+  "include/otfftw/FFTW.hxx",
+  "share/otfftw/examples/t_FFTW_std.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "fftw",
+   "openturns",
+   "python 2.7*"
+  ],
+  "license": "LGPL3",
+  "name": "otfftw",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.4"
+ },
+ "metadata_version": 1,
+ "name": "otfftw",
+ "raw_recipe": "{% set version = \"0.4\" %}\n{% set ot_version = \"1.9rc1\" %}\n\npackage:\n  name: otfftw\n  version: {{ version }}\n\nsource:\n  fn: otfftw-{{ version }}.tar.gz  # [not win]\n  url: https://github.com/openturns/otfftw/archive/v{{ version }}.tar.gz  # [not win]\n  sha256: d2181ef88997787e297d5158d51f734a97de6a6147de4febf094ca2290c4f8fc  # [not win]\n\n  fn: otfftw-{{ version }}-py2.7-i686.exe  # [win32 and py27]\n  url: https://github.com/openturns/build-modules/releases/download/v{{ ot_version }}/otfftw-{{ version }}-py2.7-i686.exe  # [win32 and py27]\n  sha256: 62d302ef3e7282550634a518d8f5a36b00bfcd97c5f0306152f302132d281f53  # [win32 and py27]\n\n  fn: otfftw-{{ version }}-py2.7-x86_64.exe  # [win64 and py27]\n  url: https://github.com/openturns/build-modules/releases/download/v{{ ot_version }}/otfftw-{{ version }}-py2.7-x86_64.exe  # [win64 and py27]\n  sha256: 5b7764c407d06ee8c9db2a8fb359b87500a9391cd226d3bcf4bea11ad596d912  # [win64 and py27]\n\n  fn: otfftw-{{ version }}-py3.5-i686.exe  # [win32 and py35]\n  url: https://github.com/openturns/build-modules/releases/download/v{{ ot_version }}/otfftw-{{ version }}-py3.5-i686.exe  # [win32 and py35]\n  sha256: b081a2deb4dafa60cd0d892d4a1beffbf60db2c17030f40db2e3b7627b769c38  # [win32 and py35]\n\n  fn: otfftw-{{ version }}-py3.5-x86_64.exe  # [win64 and py35]\n  url: https://github.com/openturns/build-modules/releases/download/v{{ ot_version }}/otfftw-{{ version }}-py3.5-x86_64.exe  # [win64 and py35]\n  sha256: bd3184f637c6180a2677945402a57683776e0619afde1c036faf50dfb6bfba78  # [win64 and py35]\n\n  fn: otfftw-{{ version }}-py3.6-i686.exe  # [win32 and py36]\n  url: https://github.com/openturns/build-modules/releases/download/v{{ ot_version }}/otfftw-{{ version }}-py3.6-i686.exe  # [win32 and py36]\n  sha256: 6bf4c18a636c071a067f2d721c930df4f51d89328887c76a1fdbf3cec8bef491  # [win32 and py36]\n\n  fn: otfftw-{{ version }}-py3.6-x86_64.exe  # [win64 and py36]\n  url: https://github.com/openturns/build-modules/releases/download/v{{ ot_version }}/otfftw-{{ version }}-py3.6-x86_64.exe  # [win64 and py36]\n  sha256: f845a28e8da3ec9102e6ea58548a55b57895d3a356541578d2087c2f5d5bb263  # [win64 and py36]\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - cmake  # [not win]\n    - swig  # [not win]\n    - openturns  # [not win]\n    - fftw  # [not win]\n\n  run:\n    - python\n    - openturns\n    - fftw  # [not win]\n\ntest:\n  imports:\n    - otfftw\n\nabout:\n  home: http://openturns.org/\n  license: LGPL3\n  license_file: COPYING.LESSER  # [not win]\n  summary: FFTW module\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://openturns.org/",
+   "license": "LGPL3",
+   "license_file": "COPYING.LESSER",
+   "summary": "FFTW module"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "string": "py27_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "jschueller"
+   ]
+  },
+  "package": {
+   "name": "otfftw",
+   "version": "0.4"
+  },
+  "requirements": {
+   "build": [
+    "libarchive 3.2.1 2",
+    "libgfortran 3.0.0 1",
+    "tk 8.5.19 1",
+    "tbb 2017_20170226 0",
+    "openturns 1.9rc1 py27_blas_openblas_201",
+    "hmat-oss 1.5.0 blas_openblas_200",
+    "xz 5.2.2 0",
+    "numpy 1.12.1 py27_blas_openblas_200",
+    "toolchain 2.0.0 0",
+    "muparser 2.2.5 2",
+    "swig 3.0.12 0",
+    "libxml2 2.9.4 4",
+    "openssl 1.0.2h 3",
+    "blas 1.1 openblas",
+    "libiconv 1.14 4",
+    "ncurses 5.9 10",
+    "libuv 1.11.0 0",
+    "readline 6.2 0",
+    "icu 58.1 1",
+    "pcre 8.39 0",
+    "nlopt 2.4.2 py27_1",
+    "python 2.7.13 0",
+    "openblas 0.2.19 1",
+    "cmake 3.7.1 4",
+    "zlib 1.2.11 0",
+    "boost-cpp 1.63.0 2",
+    "fftw 3.3.6 0",
+    "jsoncpp 0.10.6 1",
+    "curl 7.52.1 0",
+    "ca-certificates 2017.1.23 0",
+    "expat 2.1.0 2",
+    "bzip2 1.0.6 1",
+    "sqlite 3.13.0 1"
+   ],
+   "run": [
+    "python",
+    "openturns",
+    "fftw"
+   ]
+  },
+  "source": {
+   "fn": "otfftw-0.4.tar.gz",
+   "sha256": "d2181ef88997787e297d5158d51f734a97de6a6147de4febf094ca2290c4f8fc",
+   "url": "https://github.com/openturns/otfftw/archive/v0.4.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "otfftw"
+   ]
+  }
+ },
+ "version": "0.4"
+}

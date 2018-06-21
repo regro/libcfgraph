@@ -1,0 +1,27 @@
+{
+ "about": {
+  "home": "http://www.info-zip.org/",
+  "license": "BSD-like",
+  "summary": "simple program for unzipping files"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/unzip"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "BSD-like",
+  "name": "unzip",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "6.0"
+ },
+ "metadata_version": 1,
+ "name": "unzip",
+ "raw_recipe": "{% set version=\"6.0\" %}\n{% set sha256=\"036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37\"  %}\n\npackage:\n  name: unzip\n  version: {{ version }}\n\nsource:\n  url: ftp://ftp.info-zip.org/pub/infozip/src/unzip{{ version.replace(\".\", \"\") }}.tgz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n  script: make -f unix/Makefile generic && mv unzip $PREFIX/bin\n\ntest:\n  commands:\n    - unzip -h\n\nabout:\n  home: http://www.info-zip.org/\n  license: BSD-like\n  license_file: LICENSE\n  summary: simple program for unzipping files\n\nextra:\n  recipe-maintainers:\n    - msarahan\n    - jerowe\n",
+ "rendered_recipe": {},
+ "version": "6.0"
+}

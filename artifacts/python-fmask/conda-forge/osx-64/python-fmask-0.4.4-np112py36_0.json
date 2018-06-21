@@ -1,0 +1,209 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.8",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://pythonfmask.org",
+  "license": "GPL-3.0",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.8-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Implementation in Python of the cloud and shadow algorithms known collectively as Fmask."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/fmask/__init__.py",
+  "bin/fmask_usgsLandsatTOA.py",
+  "bin/fmask_expandWildcards.py",
+  "lib/python3.6/site-packages/fmask/_valueindexes.cpython-36m-darwin.so",
+  "lib/python3.6/site-packages/fmask/_fillminima.cpython-36m-darwin.so",
+  "lib/python3.6/site-packages/fmask/fmaskerrors.py",
+  "lib/python3.6/site-packages/fmask/saturationcheck.py",
+  "bin/fmask_usgsLandsatSaturationMask.py",
+  "bin/fmask_sentinel2Stacked.py",
+  "bin/fmask_sentinel2makeAnglesImage.py",
+  "bin/fmask_usgsLandsatMakeAnglesImage.py",
+  "lib/python3.6/site-packages/python_fmask-0.4.4-py3.6.egg-info",
+  "lib/python3.6/site-packages/fmask/fillminima.py",
+  "lib/python3.6/site-packages/fmask/landsatTOA.py",
+  "bin/fmask_usgsLandsatStacked.py",
+  "lib/python3.6/site-packages/fmask/landsatangles.py",
+  "lib/python3.6/site-packages/fmask/sen2meta.py",
+  "lib/python3.6/site-packages/fmask/valueindexes.py",
+  "lib/python3.6/site-packages/fmask/fmask.py",
+  "lib/python3.6/site-packages/fmask/config.py",
+  "lib/python3.6/site-packages/fmask/zerocheck.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np112py36_0",
+  "build_number": 0,
+  "depends": [
+   "gdal 2.1.*",
+   "numpy 1.12*",
+   "python 3.6*",
+   "rios",
+   "scipy"
+  ],
+  "license": "GPL-3.0",
+  "name": "python-fmask",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.4.4"
+ },
+ "metadata_version": 1,
+ "name": "python-fmask",
+ "raw_recipe": "{% set version = \"0.4.4\" %}\n\npackage:\n  name: python-fmask\n  version: {{ version }}\n\nsource:\n  fn: python-fmask-{{ version }}.tar.gz\n  url: https://bitbucket.org/chchrsc/python-fmask/downloads/python-fmask-{{ version }}.tar.gz\n  sha256: be57a62a2ee08d90fd3d63b7388e3563e70d2016016f3d0ed3b067411431a0e2\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - numpy x.x\n    - scipy\n    - gdal 2.1.*\n    - rios\n  run:\n    - python\n    - numpy x.x\n    - scipy\n    - gdal 2.1.*\n    - rios\n    \ntest:\n  imports:\n    - fmask.fmask\n  commands:\n    - fmask_sentinel2makeAnglesImage.py -h  # [unix]\n    - fmask_sentinel2Stacked.py -h  # [unix]\n    - fmask_usgsLandsatMakeAnglesImage.py -h  # [unix]\n    - fmask_usgsLandsatSaturationMask.py -h  # [unix]\n    - fmask_usgsLandsatStacked.py -h  # [unix]\n    - fmask_usgsLandsatTOA.py -h  # [unix]\n    - fmask_expandWildcards fmask_sentinel2makeAnglesImage.py -h  # [win]\n    - fmask_expandWildcards fmask_sentinel2Stacked.py -h  # [win]\n    - fmask_expandWildcards fmask_usgsLandsatMakeAnglesImage.py -h  # [win]\n    - fmask_expandWildcards fmask_usgsLandsatSaturationMask.py -h  # [win]\n    - fmask_expandWildcards fmask_usgsLandsatStacked.py -h  # [win]\n    - fmask_expandWildcards fmask_usgsLandsatTOA.py -h  # [win]\n\nabout:\n  home: http://pythonfmask.org\n  license: GPL-3.0\n  summary: Implementation in Python of the cloud and shadow algorithms known collectively as Fmask.\n\nextra:\n  recipe-maintainers:\n    - gillins\n    - robintw\n    - danclewley\n    - neilflood\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://pythonfmask.org",
+   "license": "GPL-3.0",
+   "summary": "Implementation in Python of the cloud and shadow algorithms known collectively as Fmask."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "script": "python setup.py install",
+   "string": "np112py36_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "gillins",
+    "robintw",
+    "danclewley",
+    "neilflood"
+   ]
+  },
+  "package": {
+   "name": "python-fmask",
+   "version": "0.4.4"
+  },
+  "requirements": {
+   "build": [
+    "blas 1.1 openblas",
+    "ca-certificates 2017.1.23 0",
+    "curl 7.52.1 0",
+    "expat 2.1.0 2",
+    "freexl 1.0.2 1",
+    "gdal 2.1.3 np112py36_2",
+    "geos 3.5.1 1",
+    "giflib 5.1.4 0",
+    "hdf4 4.2.12 0",
+    "hdf5 1.8.17 9",
+    "icu 58.1 1",
+    "jpeg 9b 0",
+    "json-c 0.12 0",
+    "kealib 1.4.6 3",
+    "libdap4 3.18.3 2",
+    "libgfortran 3.0.0 0",
+    "libiconv 1.14 4",
+    "libnetcdf 4.4.1.1 2",
+    "libpng 1.6.28 0",
+    "libpq 9.5.4 3",
+    "libspatialite 4.3.0a 14",
+    "libtiff 4.0.6 7",
+    "libxml2 2.9.4 4",
+    "ncurses 5.9 10",
+    "numpy 1.12.1 py36_blas_openblas_200",
+    "openblas 0.2.19 1",
+    "openjpeg 2.1.2 2",
+    "openssl 1.0.2h 3",
+    "pcre 8.39 0",
+    "proj4 4.9.3 3",
+    "python 3.6.1 0",
+    "readline 6.2 0",
+    "rios 1.4.3 py36_1",
+    "scipy 0.19.0 np112py36_blas_openblas_200",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "xerces-c 3.1.4 3",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python",
+    "numpy x.x",
+    "scipy",
+    "gdal 2.1.*",
+    "rios"
+   ]
+  },
+  "source": {
+   "fn": "python-fmask-0.4.4.tar.gz",
+   "sha256": "be57a62a2ee08d90fd3d63b7388e3563e70d2016016f3d0ed3b067411431a0e2",
+   "url": "https://bitbucket.org/chchrsc/python-fmask/downloads/python-fmask-0.4.4.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "fmask_sentinel2makeAnglesImage.py -h",
+    "fmask_sentinel2Stacked.py -h",
+    "fmask_usgsLandsatMakeAnglesImage.py -h",
+    "fmask_usgsLandsatSaturationMask.py -h",
+    "fmask_usgsLandsatStacked.py -h",
+    "fmask_usgsLandsatTOA.py -h"
+   ],
+   "imports": [
+    "fmask.fmask"
+   ]
+  }
+ },
+ "version": "0.4.4"
+}

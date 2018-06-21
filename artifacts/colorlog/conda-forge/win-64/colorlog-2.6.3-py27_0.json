@@ -1,0 +1,38 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/colorlog-2.6.3-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/colorlog-2.6.3-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/colorlog/__init__.py",
+  "Lib/site-packages/colorlog/colorlog.py",
+  "Lib/site-packages/colorlog/escape_codes.py",
+  "Lib/site-packages/colorlog/logging.py",
+  "Lib/site-packages/colorlog/tests/conftest.py",
+  "Lib/site-packages/colorlog/tests/test_colorlog.py",
+  "Lib/site-packages/colorlog/tests/test_config.py",
+  "Lib/site-packages/colorlog/tests/test_escape_codes.py",
+  "Lib/site-packages/colorlog/tests/test_example.py",
+  "Lib/site-packages/colorlog/tests/test_exports.py",
+  "Lib/site-packages/colorlog/tests/test_logging.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "colorama",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "colorlog",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.6.3"
+ },
+ "metadata_version": 1,
+ "name": "colorlog",
+ "raw_recipe": "{% set version = \"2.6.3\" %}\n\npackage:\n  name: colorlog\n  version: {{ version }}\n\nsource:\n  fn: colorlog-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/colorlog/colorlog-{{ version }}.tar.gz\n  md5: 7c80dc31fb37ae5f7d519b6796f7a7e0\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - colorama  # [win]\n\n  run:\n    - python\n    - colorama  # [win]\n\ntest:\n  imports:\n    - colorlog\n\nabout:\n  home: https://github.com/borntyping/python-colorlog\n  license: MIT\n  summary: Log formatting with colors!\n\nextra:\n  recipe-maintainers:\n    - frol\n    - borntyping\n",
+ "rendered_recipe": {},
+ "version": "2.6.3"
+}
