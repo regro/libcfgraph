@@ -1,0 +1,33 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/MarkupSafe-0.18-py3.4-win-amd64.egg-info/PKG-INFO",
+  "Lib/site-packages/MarkupSafe-0.18-py3.4-win-amd64.egg-info/not-zip-safe",
+  "Lib/site-packages/markupsafe/__init__.py",
+  "Lib/site-packages/markupsafe/_compat.py",
+  "Lib/site-packages/markupsafe/_constants.py",
+  "Lib/site-packages/markupsafe/_native.py",
+  "Lib/site-packages/markupsafe/_speedups.c",
+  "Lib/site-packages/markupsafe/_speedups.pyd",
+  "Lib/site-packages/markupsafe/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD 3-clause",
+  "name": "markupsafe",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.18"
+ },
+ "metadata_version": 1,
+ "name": "markupsafe",
+ "raw_recipe": "{% set version = \"0.18\" %}\n\npackage:\n  name: markupsafe\n  version: {{ version }}\n\nsource:\n  fn: MarkupSafe-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/M/MarkupSafe/MarkupSafe-{{ version }}.tar.gz\n  md5: f8d252fd05371e51dec2fe9a36890687\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - markupsafe\n\nabout:\n  home: http://github.com/mitsuhiko/markupsafe\n  license: BSD 3-clause\n  summary: A Python module that implements the jinja2.Markup string\n\nextra:\n  recipe-maintainers:\n    - pelson\n",
+ "rendered_recipe": {},
+ "version": "0.18"
+}

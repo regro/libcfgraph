@@ -1,0 +1,47 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pyFFTW-0.10.4-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pyfftw/__init__.py",
+  "lib/python2.7/site-packages/pyfftw/__init__.pyo",
+  "lib/python2.7/site-packages/pyfftw/builders/__init__.py",
+  "lib/python2.7/site-packages/pyfftw/builders/__init__.pyo",
+  "lib/python2.7/site-packages/pyfftw/builders/_utils.py",
+  "lib/python2.7/site-packages/pyfftw/builders/_utils.pyo",
+  "lib/python2.7/site-packages/pyfftw/builders/builders.py",
+  "lib/python2.7/site-packages/pyfftw/builders/builders.pyo",
+  "lib/python2.7/site-packages/pyfftw/interfaces/__init__.py",
+  "lib/python2.7/site-packages/pyfftw/interfaces/__init__.pyo",
+  "lib/python2.7/site-packages/pyfftw/interfaces/_utils.py",
+  "lib/python2.7/site-packages/pyfftw/interfaces/_utils.pyo",
+  "lib/python2.7/site-packages/pyfftw/interfaces/cache.py",
+  "lib/python2.7/site-packages/pyfftw/interfaces/cache.pyo",
+  "lib/python2.7/site-packages/pyfftw/interfaces/numpy_fft.py",
+  "lib/python2.7/site-packages/pyfftw/interfaces/numpy_fft.pyo",
+  "lib/python2.7/site-packages/pyfftw/interfaces/scipy_fftpack.py",
+  "lib/python2.7/site-packages/pyfftw/interfaces/scipy_fftpack.pyo",
+  "lib/python2.7/site-packages/pyfftw/pyfftw.so",
+  "lib/python2.7/site-packages/pyfftw/version.py",
+  "lib/python2.7/site-packages/pyfftw/version.pyo"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np110py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.10*",
+   "python 2.7*"
+  ],
+  "license": "BSD or GPL 2",
+  "name": "pyfftw",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.10.4"
+ },
+ "metadata_version": 1,
+ "name": "pyfftw",
+ "raw_recipe": "{% set version = \"0.10.4\" %}\n\npackage:\n    name: pyfftw\n    version: {{ version }}\n\nsource:\n    fn: pyFFTW-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/p/pyFFTW/pyFFTW-{{ version }}.tar.gz\n    md5: 7fb59450308881bb48d9f178947d950e\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n    build:\n        - cython\n        - python\n        - numpy x.x\n        - fftw\n    run:\n        - python\n        - numpy x.x\n\nabout:\n    home: http://hgomersall.github.com/pyFFTW/\n    license: BSD or GPL 2\n    summary: 'A pythonic wrapper around FFTW, the FFT library, presenting a unified interface for all the supported transforms.'\n\nextra:\n    recipe-maintainers:\n        - grlee77\n        - jakirkham\n        - jjhelmus\n",
+ "rendered_recipe": {},
+ "version": "0.10.4"
+}

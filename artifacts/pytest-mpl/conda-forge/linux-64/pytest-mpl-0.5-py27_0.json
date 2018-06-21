@@ -1,0 +1,31 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pytest_mpl-0.5-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pytest_mpl-0.5-py2.7.egg-info/pbr.json",
+  "lib/python2.7/site-packages/pytest_mpl/__init__.py",
+  "lib/python2.7/site-packages/pytest_mpl/plugin.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib",
+   "pytest",
+   "python 2.7*",
+   "setuptools"
+  ],
+  "license": "BSD",
+  "name": "pytest-mpl",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.5"
+ },
+ "metadata_version": 1,
+ "name": "pytest-mpl",
+ "raw_recipe": "{% set version = \"0.5\" %}\n\npackage:\n  name: pytest-mpl\n  version: {{ version }}\n\nsource:\n  fn: pytest-mpl-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/p/pytest-mpl/pytest-mpl-{{version}}.tar.gz\n  md5: 760d6304b933dd21cf576366caccfae3\n\nbuild:\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - pytest\n    - matplotlib\n\ntest:\n  commands:\n    - \"py.test --traceconfig | grep pytest-mpl-{{version}}\"\n\nabout:\n  home: https://github.com/astrofrog/pytest-mpl\n  license: BSD\n  summary: 'pytest plugin to help with testing figures output from Matplotlib'\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n    - astrofrog\n",
+ "rendered_recipe": {},
+ "version": "0.5"
+}

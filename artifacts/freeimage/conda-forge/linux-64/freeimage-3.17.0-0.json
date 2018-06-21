@@ -1,0 +1,27 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "include/FreeImage.h",
+  "lib/libfreeimage-3.17.0.so",
+  "lib/libfreeimage.a",
+  "lib/libfreeimage.so",
+  "lib/libfreeimage.so.3"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "GPLv2 and FreeImage Public License",
+  "name": "freeimage",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "3.17.0"
+ },
+ "metadata_version": 1,
+ "name": "freeimage",
+ "raw_recipe": "{% set version = \"3.17.0\" %}\n\n\npackage:\n    name: freeimage\n    version: {{ version }}\n    # note: also update version in run_test.py\n\nsource:\n    fn: FreeImage3170.zip\n    url: http://optimate.dl.sourceforge.net/project/freeimage/Source%20Distribution/{{ version }}/FreeImage{{ version.replace(\".\", \"\") }}.zip\n    md5: 459e15f0ec75d6efa3c7bd63277ead86\n    \n    patches:\n        - Makefile.osx.patch  # [osx]\n\nbuild:\n    number: 0\n    skip: true  # [win]\n\ntest:\n    requires:\n        - python\n    commands:\n        - python run_test.py\n\nabout:\n    home: http://freeimage.sourceforge.net/\n    license: GPLv2 and FreeImage Public License\n    summary: Helps provide support for many common image formats (PNG, JPEG, TIFF, BMP and others).\n\nextra:\n    recipe-maintainers:\n        - almarklein\n        - jakirkham\n        - msarahan\n",
+ "rendered_recipe": {},
+ "version": "3.17.0"
+}

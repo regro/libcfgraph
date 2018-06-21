@@ -1,0 +1,42 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pysgrid-0.1.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pysgrid/__init__.py",
+  "lib/python3.5/site-packages/pysgrid/custom_exceptions.py",
+  "lib/python3.5/site-packages/pysgrid/lookup.py",
+  "lib/python3.5/site-packages/pysgrid/processing_2d.py",
+  "lib/python3.5/site-packages/pysgrid/read_netcdf.py",
+  "lib/python3.5/site-packages/pysgrid/sgrid.py",
+  "lib/python3.5/site-packages/pysgrid/tests/__init__.py",
+  "lib/python3.5/site-packages/pysgrid/tests/test_processing_2d.py",
+  "lib/python3.5/site-packages/pysgrid/tests/test_read_netcdf.py",
+  "lib/python3.5/site-packages/pysgrid/tests/test_sgrid.py",
+  "lib/python3.5/site-packages/pysgrid/tests/test_utils.py",
+  "lib/python3.5/site-packages/pysgrid/tests/test_variables.py",
+  "lib/python3.5/site-packages/pysgrid/tests/write_nc_test_files.py",
+  "lib/python3.5/site-packages/pysgrid/utils.py",
+  "lib/python3.5/site-packages/pysgrid/variables.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "netcdf4",
+   "numpy",
+   "python 3.5*"
+  ],
+  "license": "BSD",
+  "name": "pysgrid",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.1"
+ },
+ "metadata_version": 1,
+ "name": "pysgrid",
+ "raw_recipe": "{% set version = \"0.1.1\" %}\n\npackage:\n    name: pysgrid\n    version: {{ version }}\n\nsource:\n    fn: v{{ version }}.tar.gz\n    url: https://github.com/sgrid/pysgrid/archive/v{{ version }}.tar.gz\n    md5: cec0fbcf461f42687dd3c3b5ab667e8f\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - netcdf4\n\ntest:\n    imports:\n        - pysgrid\n\nabout:\n    home: https://github.com/sgrid/pysgrid\n    license: BSD\n    summary: Python package for working with staggered gridded data\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.1.1"
+}

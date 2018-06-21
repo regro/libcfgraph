@@ -1,0 +1,30 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/_spherepack.cpython-34m.so",
+  "lib/python3.4/site-packages/pyspharm-1.0.9-py3.4.egg-info",
+  "lib/python3.4/site-packages/spharm/__init__.py",
+  "lib/python3.4/site-packages/spharm/spharm.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np110py34_0",
+  "build_number": 0,
+  "depends": [
+   "libgcc",
+   "numpy 1.10*",
+   "python 3.4*"
+  ],
+  "license": "MIT and https://www2.cisl.ucar.edu/resources/legacy/spherepack/license",
+  "name": "pyspharm",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0.9"
+ },
+ "metadata_version": 1,
+ "name": "pyspharm",
+ "raw_recipe": "{% set version = \"1.0.9\" %}\n{% set commit = \"cb3b00fd5e23eb6763012582d2bc8858809267d7\" %}\n\npackage:\n    name: pyspharm\n    version: {{ version }}\n\nsource:\n    fn: {{ commit }}.tar.gz\n    url: https://github.com/jswhit/pyspharm/archive/{{ commit }}.tar.gz\n    md5: 6d942bdadd4cb26dfe9c3ee01fa149d1\n\nbuild:\n    number: 0\n    skip: True  # [win and py3k or win64]\n\nrequirements:\n    build:\n        - python\n        - numpy x.x\n        - mingwpy  # [win]\n        - gcc  # [unix]\n    run:\n        - python\n        - numpy x.x\n        - libgcc  # [unix]\n\ntest:\n    imports:\n        - spharm\n\nabout:\n    home: https://code.google.com/p/pyspharm/\n    license: MIT and https://www2.cisl.ucar.edu/resources/legacy/spherepack/license\n    summary: Provides an object-oriented python interface to the NCAR SPHEREPACK library\n\nextra:\n    recipe-maintainers:\n        - ajdawson\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.0.9"
+}

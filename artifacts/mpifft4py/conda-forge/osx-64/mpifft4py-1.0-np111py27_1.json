@@ -1,0 +1,45 @@
+{
+ "about": {
+  "description": "mpiFFT4py performs FFTs in parallel in Python. It is developed to be able\nto do FFTs in parallel on a three-dimensional computational box\n(a structured grid), but there are also routines for doing the FFTs on a\n2D mesh. It implements both the slab and the pencil decompositions.\n",
+  "home": "https://github.com/spectralDNS/mpiFFT4py",
+  "license": "LGPL-3.0",
+  "summary": "Parallel FFT in 3D or 2D using MPI for Python. Slab or pencil decomposition possible in 3D."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/mpiFFT4py-1.0-py2.7.egg-info",
+  "lib/python2.7/site-packages/mpiFFT4py/__init__.py",
+  "lib/python2.7/site-packages/mpiFFT4py/cython/__init__.py",
+  "lib/python2.7/site-packages/mpiFFT4py/cython/maths.so",
+  "lib/python2.7/site-packages/mpiFFT4py/line.py",
+  "lib/python2.7/site-packages/mpiFFT4py/mpibase.py",
+  "lib/python2.7/site-packages/mpiFFT4py/pencil.py",
+  "lib/python2.7/site-packages/mpiFFT4py/serialFFT/__init__.py",
+  "lib/python2.7/site-packages/mpiFFT4py/serialFFT/numpy_fft.py",
+  "lib/python2.7/site-packages/mpiFFT4py/serialFFT/pyfftw_fft.py",
+  "lib/python2.7/site-packages/mpiFFT4py/slab.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_1",
+  "build_number": 1,
+  "depends": [
+   "cython",
+   "mpi4py",
+   "numpy 1.11*",
+   "pyfftw",
+   "python 2.7*",
+   "scipy"
+  ],
+  "license": "LGPL-3.0",
+  "name": "mpifft4py",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0"
+ },
+ "metadata_version": 1,
+ "name": "mpifft4py",
+ "raw_recipe": "{% set name = \"mpiFFT4py\" %}\n{% set version = \"1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/spectralDNS/{{ name }}/archive/{{ name }}-{{ version }}.tar.gz\n  sha256: 875fcae6df37dfb1929490e73eb58d79fd0edb9b1a823eda80838af51fb1fd15\n\nbuild:\n  skip: true  # [win]\n  number: 1\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - cython\n    - numpy x.x\n\n  run:\n    - python\n    - numpy x.x\n    - scipy\n    - mpi4py\n    - cython\n    - pyfftw\n\ntest:\n  requires:\n    - pytest\n\n  imports:\n    - mpiFFT4py\n\nabout:\n  home: https://github.com/spectralDNS/mpiFFT4py\n  license: LGPL-3.0\n  license_file: LICENSE\n  summary: 'Parallel FFT in 3D or 2D using MPI for Python. Slab or pencil decomposition possible in 3D.'\n  description: |\n    mpiFFT4py performs FFTs in parallel in Python. It is developed to be able\n    to do FFTs in parallel on a three-dimensional computational box\n    (a structured grid), but there are also routines for doing the FFTs on a\n    2D mesh. It implements both the slab and the pencil decompositions.\n\nextra:\n  recipe-maintainers:\n    - mikaem\n",
+ "rendered_recipe": {},
+ "version": "1.0"
+}
