@@ -1,0 +1,142 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Python wrapper around RapidJSON. RapidJSON is an extremely fast C++ json serialization library.\nWe do not support legacy python versions, you will need to upgrade to Python 3 to use this library.\n",
+  "dev_url": "https://github.com/python-rapidjson/python-rapidjson",
+  "doc_url": "https://python-rapidjson.readthedocs.io",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/python-rapidjson/python-rapidjson",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-0",
+   "conda-forge::certifi-2017.1.23-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.4-py35_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.1-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_2",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.12-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Python wrapper around rapidjson"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/python_rapidjson-0.0.11-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/rapidjson.cpython-36m-x86_64-linux-gnu.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.6*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "python-rapidjson",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.0.11"
+ },
+ "metadata_version": 1,
+ "name": "python-rapidjson",
+ "raw_recipe": "{% set name = \"python-rapidjson\" %}\n{% set version = \"0.0.11\" %}\n{% set sha256 = \"d8f7969d503f94ba3a68525e78f468afb427129aaee4d21d8c0dc7743469fb37\" %}\n{% set rapidjson_version = \"1.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  features:\n    - vc10  # [win and py34]\n    - vc14  # [win and py>34]\n  skip: True  # [py27]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n    - rapidjson =={{ rapidjson_version }}\n\n  run:\n    - python\n\ntest:\n  imports:\n    - rapidjson\n\nabout:\n  home: https://github.com/python-rapidjson/python-rapidjson\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Python wrapper around rapidjson'\n  description: |\n    Python wrapper around RapidJSON. RapidJSON is an extremely fast C++ json serialization library.\n    We do not support legacy python versions, you will need to upgrade to Python 3 to use this library.\n  doc_url: https://python-rapidjson.readthedocs.io\n  dev_url: https://github.com/python-rapidjson/python-rapidjson\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - hajapy\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Python wrapper around RapidJSON. RapidJSON is an extremely fast C++ json serialization library.\nWe do not support legacy python versions, you will need to upgrade to Python 3 to use this library.\n",
+   "dev_url": "https://github.com/python-rapidjson/python-rapidjson",
+   "doc_url": "https://python-rapidjson.readthedocs.io",
+   "home": "https://github.com/python-rapidjson/python-rapidjson",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Python wrapper around rapidjson"
+  },
+  "build": {
+   "features": "",
+   "number": "0",
+   "string": "py36_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "SylvainCorlay",
+    "hajapy"
+   ]
+  },
+  "package": {
+   "name": "python-rapidjson",
+   "version": "0.0.11"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "python-rapidjson-0.0.11.tar.gz",
+   "sha256": "d8f7969d503f94ba3a68525e78f468afb427129aaee4d21d8c0dc7743469fb37",
+   "url": "https://pypi.io/packages/source/p/python-rapidjson/python-rapidjson-0.0.11.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "rapidjson"
+   ]
+  }
+ },
+ "version": "0.0.11"
+}

@@ -1,0 +1,35 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/.widgetsnbextension-post-link.sh",
+  "bin/.widgetsnbextension-pre-unlink.sh",
+  "lib/python2.7/site-packages/widgetsnbextension-1.2.6-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/widgetsnbextension-1.2.6-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/widgetsnbextension/__init__.py",
+  "lib/python2.7/site-packages/widgetsnbextension/_version.py",
+  "lib/python2.7/site-packages/widgetsnbextension/static/extension.js",
+  "lib/python2.7/site-packages/widgetsnbextension/static/extension.js.map",
+  "share/jupyter/nbextensions/jupyter-js-widgets/extension.js",
+  "share/jupyter/nbextensions/jupyter-js-widgets/extension.js.map"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_3",
+  "build_number": 3,
+  "depends": [
+   "notebook >=4.2.0",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-clause",
+  "name": "widgetsnbextension",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.2.6"
+ },
+ "metadata_version": 1,
+ "name": "widgetsnbextension",
+ "raw_recipe": "{% set version = \"1.2.6\" %}\n\npackage:\n    name: widgetsnbextension\n    version: {{ version }}\n\nsource:\n    fn: widgetsnbextension-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/w/widgetsnbextension/widgetsnbextension-{{ version }}.tar.gz\n    md5: 0aa4e152c9ba2d704389dc2453f448c7\n\nbuild:\n    number: 3\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - notebook >=4.2.0\n    run:\n        - python\n        - notebook >=4.2.0\n\ntest:\n    imports:\n        - widgetsnbextension\n\nabout:\n    home: http://ipython.org\n    license: BSD 3-clause\n    summary: IPython HTML widgets for Jupyter\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n    - pelson\n    - SylvainCorlay\n    - willingc\n",
+ "rendered_recipe": {},
+ "version": "1.2.6"
+}

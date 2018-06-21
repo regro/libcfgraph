@@ -1,0 +1,31 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/geojsonio",
+  "lib/python2.7/site-packages/geojsonio-0.0.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/geojsonio-0.0.2-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/geojsonio/__init__.py",
+  "lib/python2.7/site-packages/geojsonio/geojsonio.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "github3.py",
+   "python 2.7*",
+   "six"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "geojsonio",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.0.2"
+ },
+ "metadata_version": 1,
+ "name": "geojsonio",
+ "raw_recipe": "{% set version = \"0.0.2\" %}\n\npackage:\n    name: geojsonio\n    version: {{ version }}\n\nsource:\n    fn: geojsonio-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/g/geojsonio/geojsonio-{{ version }}.tar.gz\n    md5: e75b0ec0786d456dc630f93874106bfd\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    entry_points:\n        - geojsonio = geojsonio:main\n\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - github3.py\n        - six\n\ntest:\n    imports:\n        - geojsonio\n    commands:\n        - geojsonio --help\n\nabout:\n    home: https://github.com/jwass/geojsonio.py\n    license: BSD-3-Clause\n    summary: geojsonio CLI - Python.\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.0.2"
+}

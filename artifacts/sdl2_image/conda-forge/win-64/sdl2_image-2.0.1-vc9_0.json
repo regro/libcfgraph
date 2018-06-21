@@ -1,0 +1,36 @@
+{
+ "about": {
+  "description": "Simple DirectMedia Layer is a cross-platform development library designed to\nprovide low level access to audio, keyboard, mouse, joystick, and graphics\nhardware via OpenGL and Direct3D.\n",
+  "dev_url": "http://hg.libsdl.org/SDL_image/",
+  "doc_url": "https://www.libsdl.org/projects/SDL_image/docs/index.html",
+  "home": "https://www.libsdl.org/projects/SDL_image/",
+  "license": "ZLIB",
+  "summary": "Library for loading images as SDL surfaces and textures"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/SDL2_image.dll",
+  "Library/include/SDL2/SDL_image.h",
+  "Library/include/SDL2/miniz.h",
+  "Library/lib/SDL2_image.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc9_0",
+  "build_number": 0,
+  "depends": [
+   "sdl2 2.0.*"
+  ],
+  "features": "vc9",
+  "license": "ZLIB",
+  "name": "sdl2_image",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.0.1"
+ },
+ "metadata_version": 1,
+ "name": "sdl2_image",
+ "raw_recipe": "{% set name = \"SDL2_image\" %}\n{% set version = \"2.0.1\" %}\n{% set sha256 = \"3a3eafbceea5125c04be585373bfd8b3a18f259bd7eae3efc4e6d8e60e0d7f64\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn:  {{ name }}-{{ version }}.tar.gz\n  url:  https://www.libsdl.org/projects/SDL_image/release/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: true  # [win and py34]\n  number: 0\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - cmake  # [win]\n    - autoconf  # [unix]\n    - automake  # [unix]\n    - libtool  # [unix]\n    - toolchain\n    - sdl2 2.0.*\n    - jpeg 9*\n    - libpng >=1.6.23,<1.7\n    - libtiff 4.0.*\n    - zlib 1.2.*\n    - libwebp 0.5.*\n\n  run:\n    - sdl2 2.0.*\n\ntest:\n  requires:\n    - python {{ environ['PY_VER'] + '*' }}  # [win]\n  commands:\n    - test -f $PREFIX/lib/libSDL2_image.a  # [unix]\n    - test -f $PREFIX/lib/libSDL2_image.dylib  # [osx]\n    - test -f $PREFIX/lib/libSDL2_image.so  # [linux]\n    - test -f $PREFIX/include/SDL2/SDL_image.h  # [unix]\n    - if not exist %LIBRARY_LIB%\\\\SDL2_image.lib exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\SDL2_image.dll exit 1  # [win]\n    - if not exist %LIBRARY_INC%\\\\SDL2\\\\SDL_image.h exit 1  # [win]\n    - if not exist %LIBRARY_INC%\\\\SDL2\\\\miniz.h exit 1  # [win]\n\nabout:\n  home: https://www.libsdl.org/projects/SDL_image/\n  license: ZLIB\n  license_file: COPYING.txt\n  summary: \"Library for loading images as SDL surfaces and textures\"\n  description: |\n    Simple DirectMedia Layer is a cross-platform development library designed to \n    provide low level access to audio, keyboard, mouse, joystick, and graphics \n    hardware via OpenGL and Direct3D.\n  doc_url: https://www.libsdl.org/projects/SDL_image/docs/index.html\n  dev_url: http://hg.libsdl.org/SDL_image/\n\nextra:\n  recipe-maintainers:\n    - dschreij\n",
+ "rendered_recipe": {},
+ "version": "2.0.1"
+}

@@ -1,0 +1,29 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/circleclient-0.1.6-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/circleclient-0.1.6-py3.4.egg-info/not-zip-safe",
+  "Lib/site-packages/circleclient/__init__.py",
+  "Lib/site-packages/circleclient/circleclient.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "requests"
+  ],
+  "license": "MIT",
+  "name": "circleclient",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.1.6"
+ },
+ "metadata_version": 1,
+ "name": "circleclient",
+ "raw_recipe": "{% set name = \"circleclient\" %}\n{% set version = \"0.1.6\" %}\n{% set checksum = \"7aadf04294b5d8e9b668e749d8781c1aecfd022b1627349fa2d9473b3f4ce0b6\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ checksum }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - requests\n\n  run:\n    - python\n    - requests\n\ntest:\n  imports:\n    - circleclient\n\nabout:\n  home: http://github.com/qba73/circleclient/\n  license: MIT\n  summary: Python client for CircleCI API\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.1.6"
+}

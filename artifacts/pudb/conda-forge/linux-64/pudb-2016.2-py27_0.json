@@ -1,0 +1,50 @@
+{
+ "about": {
+  "dev_url": "https://github.com/inducer/pudb",
+  "home": "http://pypi.python.org/pypi/pudb",
+  "license": "MIT",
+  "summary": "A full-screen, console-based Python debugger"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/pudb",
+  "lib/python2.7/site-packages/pudb-2016.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pudb-2016.2-py2.7.egg-info/pbr.json",
+  "lib/python2.7/site-packages/pudb/__init__.py",
+  "lib/python2.7/site-packages/pudb/__main__.py",
+  "lib/python2.7/site-packages/pudb/b.py",
+  "lib/python2.7/site-packages/pudb/debugger.py",
+  "lib/python2.7/site-packages/pudb/ipython.py",
+  "lib/python2.7/site-packages/pudb/lowlevel.py",
+  "lib/python2.7/site-packages/pudb/py3compat.py",
+  "lib/python2.7/site-packages/pudb/remote.py",
+  "lib/python2.7/site-packages/pudb/run.py",
+  "lib/python2.7/site-packages/pudb/settings.py",
+  "lib/python2.7/site-packages/pudb/shell.py",
+  "lib/python2.7/site-packages/pudb/source_view.py",
+  "lib/python2.7/site-packages/pudb/theme.py",
+  "lib/python2.7/site-packages/pudb/ui_tools.py",
+  "lib/python2.7/site-packages/pudb/var_view.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "pygments >=1.0",
+   "python 2.7*",
+   "setuptools",
+   "urwid >=1.1.1"
+  ],
+  "license": "MIT",
+  "name": "pudb",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2016.2"
+ },
+ "metadata_version": 1,
+ "name": "pudb",
+ "raw_recipe": "{% set version = \"2016.2\" %}\n\npackage:\n  name: pudb\n  version: {{ version }}\n\nsource:\n  fn: pudb-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pudb/pudb-{{ version }}.tar.gz\n  md5: 4573b70163329c1cb59836a357bfdf7c\n\nbuild:\n  # conda skeleton added this, but I'm unsure why it would be needed.\n  # preserve_egg_dir: True\n  entry_points:\n    - pudb = pudb.run:main\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  # Urwid is skipped on Windows\n  skip: true  # [win]\nrequirements:\n  build:\n    - python\n    - setuptools\n    - urwid >=1.1.1\n    - pygments >=1.0\n  run:\n    - python\n    - setuptools\n    - urwid >=1.1.1\n    - pygments >=1.0\n\ntest:\n  imports:\n    - pudb\n\n  commands:\n    - pudb --help\n\nabout:\n  home: http://pypi.python.org/pypi/pudb\n  license: MIT\n  summary: 'A full-screen, console-based Python debugger'\n\n  dev_url: https://github.com/inducer/pudb\n\nextra:\n  recipe-maintainers:\n    - asmeurer\n    - inducer\n",
+ "rendered_recipe": {},
+ "version": "2016.2"
+}
