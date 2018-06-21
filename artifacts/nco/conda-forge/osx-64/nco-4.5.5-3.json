@@ -1,0 +1,128 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/ncap",
+  "bin/ncap2",
+  "bin/ncatted",
+  "bin/ncbo",
+  "bin/ncdiff",
+  "bin/ncea",
+  "bin/ncecat",
+  "bin/nces",
+  "bin/ncflint",
+  "bin/ncks",
+  "bin/ncpdq",
+  "bin/ncra",
+  "bin/ncrcat",
+  "bin/ncremap",
+  "bin/ncrename",
+  "bin/ncwa",
+  "include/libnco_c++.hh",
+  "include/nco_att.hh",
+  "include/nco_dmn.hh",
+  "include/nco_fl.hh",
+  "include/nco_hgh.hh",
+  "include/nco_utl.hh",
+  "include/nco_var.hh",
+  "lib/libnco.a",
+  "lib/libnco.la",
+  "lib/libnco_c++.a",
+  "lib/libnco_c++.la",
+  "share/man/man1/ncap.1",
+  "share/man/man1/ncap2.1",
+  "share/man/man1/ncatted.1",
+  "share/man/man1/ncbo.1",
+  "share/man/man1/ncecat.1",
+  "share/man/man1/nces.1",
+  "share/man/man1/ncflint.1",
+  "share/man/man1/ncks.1",
+  "share/man/man1/nco.1",
+  "share/man/man1/ncpdq.1",
+  "share/man/man1/ncra.1",
+  "share/man/man1/ncrcat.1",
+  "share/man/man1/ncremap.1",
+  "share/man/man1/ncrename.1",
+  "share/man/man1/ncwa.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "3",
+  "build_number": 3,
+  "depends": [
+   "expat",
+   "gsl",
+   "hdf5 1.8.15.1",
+   "krb5",
+   "libgcc",
+   "libnetcdf",
+   "udunits2"
+  ],
+  "license": "GPL-3.0",
+  "name": "nco",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "4.5.5"
+ },
+ "metadata_version": 1,
+ "name": "nco",
+ "raw_recipe": "package:\n    name: nco\n    version: 4.5.5\n\nsource:\n    git_url: https://github.com/nco/nco.git\n    git_tag: 4.5.5\n\nbuild:\n    number: 3\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - gsl\n        - antlr\n        - curl\n        - zlib\n        - hdf5 1.8.15.1\n        - libnetcdf\n        - udunits2\n        - expat\n        - krb5\n        - texinfo\n    run:\n        - gsl\n        - hdf5 1.8.15.1\n        - libnetcdf\n        - udunits2\n        - expat\n        - libgcc\n        - krb5\n\ntest:\n    commands:\n        - ncks --help\n        - ncks -M http://test.opendap.org:80/opendap/data/ncml/sample_virtual_dataset.ncml\n        - ncks -F --dimension samples,1 http://test.opendap.org:80/opendap/data/ncml/sample_virtual_dataset.ncml\n        - ncap2 --help\n        - conda inspect linkages -n _test nco  # [linux]\n\nabout:\n    home: http://nco.sourceforge.net/\n    license: GPL-3.0\n    summary: Suite of programs for manipulating NetCDF/HDF4 files\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - kwilcox\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://nco.sourceforge.net/",
+   "license": "GPL-3.0",
+   "summary": "Suite of programs for manipulating NetCDF/HDF4 files"
+  },
+  "build": {
+   "number": 3,
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "kwilcox"
+   ]
+  },
+  "package": {
+   "name": "nco",
+   "version": "4.5.5"
+  },
+  "requirements": {
+   "build": [
+    "gsl",
+    "antlr",
+    "curl",
+    "zlib",
+    "hdf5 1.8.15.1",
+    "libnetcdf",
+    "udunits2",
+    "expat",
+    "krb5",
+    "texinfo"
+   ],
+   "run": [
+    "gsl",
+    "hdf5 1.8.15.1",
+    "libnetcdf",
+    "udunits2",
+    "expat",
+    "libgcc",
+    "krb5"
+   ]
+  },
+  "source": {
+   "git_tag": "4.5.5",
+   "git_url": "https://github.com/nco/nco.git"
+  },
+  "test": {
+   "commands": [
+    "ncks --help",
+    "ncks -M http://test.opendap.org:80/opendap/data/ncml/sample_virtual_dataset.ncml",
+    "ncks -F --dimension samples,1 http://test.opendap.org:80/opendap/data/ncml/sample_virtual_dataset.ncml",
+    "ncap2 --help",
+    "conda inspect linkages -n _test nco"
+   ]
+  }
+ },
+ "version": "4.5.5"
+}
