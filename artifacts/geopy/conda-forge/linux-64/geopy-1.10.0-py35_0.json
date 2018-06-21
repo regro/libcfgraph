@@ -1,0 +1,53 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/geopy-1.10.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/geopy/__init__.py",
+  "lib/python3.5/site-packages/geopy/compat.py",
+  "lib/python3.5/site-packages/geopy/distance.py",
+  "lib/python3.5/site-packages/geopy/exc.py",
+  "lib/python3.5/site-packages/geopy/format.py",
+  "lib/python3.5/site-packages/geopy/geocoders/__init__.py",
+  "lib/python3.5/site-packages/geopy/geocoders/arcgis.py",
+  "lib/python3.5/site-packages/geopy/geocoders/baidu.py",
+  "lib/python3.5/site-packages/geopy/geocoders/base.py",
+  "lib/python3.5/site-packages/geopy/geocoders/bing.py",
+  "lib/python3.5/site-packages/geopy/geocoders/databc.py",
+  "lib/python3.5/site-packages/geopy/geocoders/dot_us.py",
+  "lib/python3.5/site-packages/geopy/geocoders/geocodefarm.py",
+  "lib/python3.5/site-packages/geopy/geocoders/geonames.py",
+  "lib/python3.5/site-packages/geopy/geocoders/googlev3.py",
+  "lib/python3.5/site-packages/geopy/geocoders/ignfrance.py",
+  "lib/python3.5/site-packages/geopy/geocoders/navidata.py",
+  "lib/python3.5/site-packages/geopy/geocoders/opencage.py",
+  "lib/python3.5/site-packages/geopy/geocoders/openmapquest.py",
+  "lib/python3.5/site-packages/geopy/geocoders/osm.py",
+  "lib/python3.5/site-packages/geopy/geocoders/placefinder.py",
+  "lib/python3.5/site-packages/geopy/geocoders/smartystreets.py",
+  "lib/python3.5/site-packages/geopy/geocoders/what3words.py",
+  "lib/python3.5/site-packages/geopy/geocoders/yandex.py",
+  "lib/python3.5/site-packages/geopy/location.py",
+  "lib/python3.5/site-packages/geopy/point.py",
+  "lib/python3.5/site-packages/geopy/units.py",
+  "lib/python3.5/site-packages/geopy/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT License",
+  "name": "geopy",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.10.0"
+ },
+ "metadata_version": 1,
+ "name": "geopy",
+ "raw_recipe": "{% set version = \"1.10.0\" %}\n\npackage:\n    name: geopy\n    version: {{ version }}\n\nsource:\n    fn: geopy-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/g/geopy/geopy-{{ version }}.tar.gz\n    md5: 57cab8fd885a88ad4acecc53346e4c39\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - geopy\n        - geopy.geocoders\n\nabout:\n    home: https://github.com/geopy/geopy\n    license: MIT License\n    summary: Python Geocoding Toolbox\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.10.0"
+}

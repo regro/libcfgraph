@@ -1,0 +1,35 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/catimg",
+  "lib/python3.5/site-packages/catimg-1.1.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/catimg-1.1.1-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/catimg/__init__.py",
+  "lib/python3.5/site-packages/catimg/__main__.py",
+  "lib/python3.5/site-packages/catimg/_version.py",
+  "lib/python3.5/site-packages/catimg/imgur.py",
+  "lib/python3.5/site-packages/catimg/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "imgurpython",
+   "iterm2-tools >=2.0",
+   "python 3.5*",
+   "requests"
+  ],
+  "license": "MIT",
+  "name": "catimg",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.1.1"
+ },
+ "metadata_version": 1,
+ "name": "catimg",
+ "raw_recipe": "{% set version = \"1.1.1\" %}\n\npackage:\n  name: catimg\n  version: {{ version }}\n\nsource:\n  fn: catimg-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/catimg/catimg-{{ version }}.tar.gz\n  md5: 94227c65936a5e4cada9260efe0125c4\n\nbuild:\n  entry_points:\n    - catimg = catimg.__main__:main\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: true  # [py2k or not osx]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - requests\n    - imgurpython\n    - iterm2-tools >=2.0\n  run:\n    - python\n    - requests\n    - imgurpython\n    - iterm2-tools >=2.0\n\ntest:\n  imports:\n    - catimg\n\n  commands:\n    - catimg --help\n\nabout:\n  home: https://github.com/asmeurer/catimg\n  license: MIT\n  summary: 'Print an image of a cat from Imgur to iTerm2.'\n\n  description: |\n    Print an image of a cat from Imgur to iTerm2.\n\n    Uses iTerm2's proprietary escape codes and Imgur to display an image of a\n    cat in your terminal.\n\n    NOTE: I do not own the images that you see, nor have I any control over\n    them. You will see some image that is tagged as \"cat\" on Imgur. That could\n    be anything. I do filter out images that are tagged NSFW, but there are no\n    guarantees that you won't see something you wish you hadn't. Use at your\n    own risk.\n\n    SECOND NOTE: This requires iTerm2 2.9 or later. You can download it at\n    https://www.iterm2.com/downloads.html.\n\nextra:\n  recipe-maintainers:\n    - asmeurer\n",
+ "rendered_recipe": {},
+ "version": "1.1.1"
+}

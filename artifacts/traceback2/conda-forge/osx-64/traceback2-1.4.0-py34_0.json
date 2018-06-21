@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "https://github.com/testing-cabal/traceback2",
+  "license": "PSF 2.0",
+  "summary": "Backports of the traceback module"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/traceback2-1.4.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/traceback2-1.4.0-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/traceback2-1.4.0-py3.4.egg-info/pbr.json",
+  "lib/python3.4/site-packages/traceback2/__init__.py",
+  "lib/python3.4/site-packages/traceback2/tests/__init__.py",
+  "lib/python3.4/site-packages/traceback2/tests/test_traceback.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "linecache2",
+   "python 3.4*",
+   "six"
+  ],
+  "license": "PSF 2.0",
+  "name": "traceback2",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.4.0"
+ },
+ "metadata_version": 1,
+ "name": "traceback2",
+ "raw_recipe": "{%set name = \"traceback2\" %}\n{%set version = \"1.4.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"05acc67a09980c2ecfedd3423f7ae0104839eccb55fc645773e1caa0951c3030\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pbr\n\n  run:\n    - python\n    - linecache2\n    - six\n\ntest:\n  imports:\n    - traceback2\n\nabout:\n  home: https://github.com/testing-cabal/traceback2\n  license: PSF 2.0\n  # license_file: No explicit MANIFEST, so must omit this for now.\n  # see https://github.com/testing-cabal/traceback2/issues/9\n  summary: 'Backports of the traceback module'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - anguslees\n",
+ "rendered_recipe": {},
+ "version": "1.4.0"
+}

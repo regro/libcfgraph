@@ -1,0 +1,150 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/antlr",
+  "bin/antlr-config",
+  "include/antlr/ANTLRException.hpp",
+  "include/antlr/ANTLRUtil.hpp",
+  "include/antlr/AST.hpp",
+  "include/antlr/ASTArray.hpp",
+  "include/antlr/ASTFactory.hpp",
+  "include/antlr/ASTNULLType.hpp",
+  "include/antlr/ASTPair.hpp",
+  "include/antlr/ASTRefCount.hpp",
+  "include/antlr/BaseAST.hpp",
+  "include/antlr/BitSet.hpp",
+  "include/antlr/CharBuffer.hpp",
+  "include/antlr/CharInputBuffer.hpp",
+  "include/antlr/CharScanner.hpp",
+  "include/antlr/CharStreamException.hpp",
+  "include/antlr/CharStreamIOException.hpp",
+  "include/antlr/CircularQueue.hpp",
+  "include/antlr/CommonAST.hpp",
+  "include/antlr/CommonASTWithHiddenTokens.hpp",
+  "include/antlr/CommonHiddenStreamToken.hpp",
+  "include/antlr/CommonToken.hpp",
+  "include/antlr/IOException.hpp",
+  "include/antlr/InputBuffer.hpp",
+  "include/antlr/LLkParser.hpp",
+  "include/antlr/LexerSharedInputState.hpp",
+  "include/antlr/MismatchedCharException.hpp",
+  "include/antlr/MismatchedTokenException.hpp",
+  "include/antlr/NoViableAltException.hpp",
+  "include/antlr/NoViableAltForCharException.hpp",
+  "include/antlr/Parser.hpp",
+  "include/antlr/ParserSharedInputState.hpp",
+  "include/antlr/RecognitionException.hpp",
+  "include/antlr/RefCount.hpp",
+  "include/antlr/SemanticException.hpp",
+  "include/antlr/String.hpp",
+  "include/antlr/Token.hpp",
+  "include/antlr/TokenBuffer.hpp",
+  "include/antlr/TokenRefCount.hpp",
+  "include/antlr/TokenStream.hpp",
+  "include/antlr/TokenStreamBasicFilter.hpp",
+  "include/antlr/TokenStreamException.hpp",
+  "include/antlr/TokenStreamHiddenTokenFilter.hpp",
+  "include/antlr/TokenStreamIOException.hpp",
+  "include/antlr/TokenStreamRecognitionException.hpp",
+  "include/antlr/TokenStreamRetryException.hpp",
+  "include/antlr/TokenStreamRewriteEngine.hpp",
+  "include/antlr/TokenStreamSelector.hpp",
+  "include/antlr/TokenWithIndex.hpp",
+  "include/antlr/TreeParser.hpp",
+  "include/antlr/TreeParserSharedInputState.hpp",
+  "include/antlr/config.hpp",
+  "lib/antlr.py",
+  "lib/libantlr.a",
+  "sbin/pyantlr.sh",
+  "share/antlr-2.7.7/__init__.py",
+  "share/antlr-2.7.7/antlr-jedit.xml",
+  "share/antlr-2.7.7/antlr-mode.el",
+  "share/antlr-2.7.7/antlr.py",
+  "share/doc/antlr-2.7.7/closure.gif",
+  "share/doc/antlr-2.7.7/cpp-runtime.html",
+  "share/doc/antlr-2.7.7/csharp-runtime.html",
+  "share/doc/antlr-2.7.7/err.html",
+  "share/doc/antlr-2.7.7/glossary.html",
+  "share/doc/antlr-2.7.7/hidden.stream.gif",
+  "share/doc/antlr-2.7.7/index.html",
+  "share/doc/antlr-2.7.7/inheritance.html",
+  "share/doc/antlr-2.7.7/j-guru-blue.jpg",
+  "share/doc/antlr-2.7.7/jguru-logo.gif",
+  "share/doc/antlr-2.7.7/lexer.html",
+  "share/doc/antlr-2.7.7/lexer.to.parser.tokens.gif",
+  "share/doc/antlr-2.7.7/logo.gif",
+  "share/doc/antlr-2.7.7/metalang.html",
+  "share/doc/antlr-2.7.7/optional.gif",
+  "share/doc/antlr-2.7.7/options.html",
+  "share/doc/antlr-2.7.7/posclosure.gif",
+  "share/doc/antlr-2.7.7/python-runtime.html",
+  "share/doc/antlr-2.7.7/runtime.html",
+  "share/doc/antlr-2.7.7/sor.html",
+  "share/doc/antlr-2.7.7/stream.perspectives.gif",
+  "share/doc/antlr-2.7.7/stream.selector.gif",
+  "share/doc/antlr-2.7.7/stream.splitter.gif",
+  "share/doc/antlr-2.7.7/streams.html",
+  "share/doc/antlr-2.7.7/subrule.gif",
+  "share/doc/antlr-2.7.7/trees.html",
+  "share/doc/antlr-2.7.7/vocab.html"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD-3-clause and GPL-3.0 and Public Domain",
+  "name": "antlr",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.7.7"
+ },
+ "metadata_version": 1,
+ "name": "antlr",
+ "raw_recipe": "package:\n    name: antlr\n    version: 2.7.7\n\nsource:\n    fn: antlr-2.7.7.tar.gz\n    url: http://www.antlr2.org/download/antlr-2.7.7.tar.gz\n    patches:\n        - CharScanner.patch\n\nbuild:\n    number: 1\n    skip: True  # [win]\n    skip: True  # [py3k]\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n\ntest:\n    commands:\n        - antlr-config --version\n\nabout:\n    home: http://www.antlr2.org/\n    license: BSD-3-clause and GPL-3.0 and Public Domain\n    summary: ANother Tool for Language Recognition (ANTLR)\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - kwilcox\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.antlr2.org/",
+   "license": "BSD-3-clause and GPL-3.0 and Public Domain",
+   "summary": "ANother Tool for Language Recognition (ANTLR)"
+  },
+  "build": {
+   "number": 1,
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "kwilcox"
+   ]
+  },
+  "package": {
+   "name": "antlr",
+   "version": "2.7.7"
+  },
+  "requirements": {
+   "build": [
+    "python"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "antlr-2.7.7.tar.gz",
+   "patches": [
+    "CharScanner.patch"
+   ],
+   "url": "http://www.antlr2.org/download/antlr-2.7.7.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "antlr-config --version"
+   ]
+  }
+ },
+ "version": "2.7.7"
+}

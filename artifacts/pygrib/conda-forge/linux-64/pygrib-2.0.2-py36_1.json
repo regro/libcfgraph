@@ -1,0 +1,186 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "dev_url": "https://github.com/jswhit/pygrib",
+  "doc_url": "https://jswhit.github.io/pygrib/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/jswhit/pygrib",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.4.17-0",
+   "conda-forge::certifi-2017.4.17-py35_0",
+   "conda-forge::chardet-3.0.2-py35_1",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.10-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.12.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-1.0-py35_0",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::openssl-1.0.2k-0",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_1",
+   "conda-forge::python-3.5.3-3",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2017.2-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Python GRIB (editions 1 and 2) reader."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/pygrib-2.0.2-py3.6.egg-info",
+  "lib/python3.6/site-packages/g2clib.cpython-36m-x86_64-linux-gnu.so",
+  "bin/grib_repack",
+  "bin/cnvgrib2to1",
+  "bin/cnvgrib1to2",
+  "lib/python3.6/site-packages/redtoreg.cpython-36m-x86_64-linux-gnu.so",
+  "bin/grib_list",
+  "lib/python3.6/site-packages/pygrib.cpython-36m-x86_64-linux-gnu.so",
+  "lib/python3.6/site-packages/ncepgrib2.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_1",
+  "build_number": 1,
+  "depends": [
+   "ecmwf_grib",
+   "jasper",
+   "libpng >=1.6.28,<1.7",
+   "numpy",
+   "pyproj",
+   "python 3.6*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "pygrib",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.2"
+ },
+ "metadata_version": 1,
+ "name": "pygrib",
+ "raw_recipe": "{%set name = \"pygrib\" %}\n{%set version = \"2.0.2\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"82eb5e6037217f7ef200521ffc90c59c1db6008ca10d84a5e8ae80008b94ae00\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - python\n    - ecmwf_grib\n    - jasper\n    - libpng >=1.6.28,<1.7\n    - pyproj\n\n  run:\n    - python\n    - ecmwf_grib\n    - jasper\n    - libpng >=1.6.28,<1.7\n    - pyproj\n    - numpy\n\ntest:\n  imports:\n    - pygrib\n  commands:\n    - grib_repack -h\n    - conda inspect linkages -p $PREFIX pygrib  # [not win]\n    - conda inspect objects -p $PREFIX pygrib  # [osx]\n\nabout:\n  home: https://github.com/jswhit/pygrib\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'Python GRIB (editions 1 and 2) reader.'\n  doc_url: https://jswhit.github.io/pygrib/\n  dev_url: https://github.com/jswhit/pygrib\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n    - jjhelmus\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "https://github.com/jswhit/pygrib",
+   "doc_url": "https://jswhit.github.io/pygrib/",
+   "home": "https://github.com/jswhit/pygrib",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "COPYING",
+   "summary": "Python GRIB (editions 1 and 2) reader."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "1",
+   "string": "py36_1"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "dopplershift",
+    "jjhelmus",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "pygrib",
+   "version": "2.0.2"
+  },
+  "requirements": {
+   "build": [
+    "numpy 1.12.1 py36_0",
+    "jasper 1.900.1 4",
+    "libpng 1.6.28 0",
+    "libgfortran 3.0.0 1",
+    "sqlite 3.13.0 1",
+    "jpeg 9b 0",
+    "ca-certificates 2017.4.17 0",
+    "pyproj 1.9.5.1 py36_0",
+    "libnetcdf 4.4.1.1 5",
+    "curl 7.52.1 0",
+    "ecmwf_grib 1.19.0 0",
+    "mkl 2017.0.1 0",
+    "zlib 1.2.11 0",
+    "hdf5 1.8.18 0",
+    "xz 5.2.2 0",
+    "openssl 1.0.2k 0",
+    "hdf4 4.2.12 0",
+    "readline 6.2 0",
+    "ncurses 5.9 10",
+    "python 3.6.1 3",
+    "tk 8.5.19 1",
+    "libgcc 5.2.0 0"
+   ],
+   "run": [
+    "python",
+    "ecmwf_grib",
+    "jasper",
+    "libpng >=1.6.28,<1.7",
+    "pyproj",
+    "numpy"
+   ]
+  },
+  "source": {
+   "fn": "pygrib-2.0.2.tar.gz",
+   "sha256": "82eb5e6037217f7ef200521ffc90c59c1db6008ca10d84a5e8ae80008b94ae00",
+   "url": "https://pypi.io/packages/source/p/pygrib/pygrib-2.0.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "grib_repack -h",
+    "conda inspect linkages -p $PREFIX pygrib"
+   ],
+   "imports": [
+    "pygrib"
+   ]
+  }
+ },
+ "version": "2.0.2"
+}
