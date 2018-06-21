@@ -1,0 +1,37 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "include/cblas.h",
+  "include/f77blas.h",
+  "include/lapacke.h",
+  "include/lapacke_config.h",
+  "include/lapacke_mangling.h",
+  "include/lapacke_utils.h",
+  "include/openblas_config.h",
+  "lib/cmake/openblas/OpenBLASConfig.cmake",
+  "lib/cmake/openblas/OpenBLASConfigVersion.cmake",
+  "lib/libopenblas-r0.2.18.a",
+  "lib/libopenblas-r0.2.18.dylib",
+  "lib/libopenblas.a",
+  "lib/libopenblas.dylib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "2",
+  "build_number": 2,
+  "depends": [
+   "libgcc"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "openblas",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.18"
+ },
+ "metadata_version": 1,
+ "name": "openblas",
+ "raw_recipe": "{% set version = \"0.2.18\" %}\n\npackage:\n  name: openblas\n  version: {{ version }}\n\nsource:\n  fn: openblas-{{ version }}.tar.gz\n  url: https://github.com/xianyi/OpenBLAS/archive/v{{ version }}.tar.gz\n  md5: 805e7f660877d588ea7e3792cda2ee65\n\nbuild:\n  number: 2\n  skip: true  # [win]\n  track_features:\n    - vc9     # [win and py27]\n    - vc10    # [win and py34]\n    - vc14    # [win and py35]\n\nrequirements:\n  build:\n    - python           # [win]\n    - perl\n    - gcc              # [unix]\n    - cloog 0.18.0 10  # [unix]\n\n  run:\n    - libgfortran      # [linux]\n    - libgcc           # [osx]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libopenblas.a                            # [unix]\n    - test -f ${PREFIX}/lib/libopenblas.so                           # [linux]\n    - test -f ${PREFIX}/lib/libopenblas.dylib                        # [osx]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\libopenblas.lib exit 1    # [win]\n\nabout:\n  home: http://www.openblas.net/\n  license: BSD 3-Clause\n  summary: An optimized BLAS library based on GotoBLAS2 1.13 BSD version.\n\nextra:\n  recipe-maintainers:\n    - gillins\n    - groutr\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.2.18"
+}

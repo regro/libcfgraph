@@ -1,0 +1,60 @@
+{
+ "about": {
+  "home": "http://salib.github.io/SALib/",
+  "license": "MIT",
+  "summary": "Sensitivity Analysis Library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/SALib-0.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/SALib-0.0-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/SALib/__init__.py",
+  "Lib/site-packages/SALib/analyze/__init__.py",
+  "Lib/site-packages/SALib/analyze/common_args.py",
+  "Lib/site-packages/SALib/analyze/delta.py",
+  "Lib/site-packages/SALib/analyze/dgsm.py",
+  "Lib/site-packages/SALib/analyze/fast.py",
+  "Lib/site-packages/SALib/analyze/ff.py",
+  "Lib/site-packages/SALib/analyze/morris.py",
+  "Lib/site-packages/SALib/analyze/sobol.py",
+  "Lib/site-packages/SALib/plotting/__init__.py",
+  "Lib/site-packages/SALib/plotting/morris.py",
+  "Lib/site-packages/SALib/sample/__init__.py",
+  "Lib/site-packages/SALib/sample/common_args.py",
+  "Lib/site-packages/SALib/sample/directions.py",
+  "Lib/site-packages/SALib/sample/fast_sampler.py",
+  "Lib/site-packages/SALib/sample/ff.py",
+  "Lib/site-packages/SALib/sample/finite_diff.py",
+  "Lib/site-packages/SALib/sample/latin.py",
+  "Lib/site-packages/SALib/sample/morris.py",
+  "Lib/site-packages/SALib/sample/morris_util.py",
+  "Lib/site-packages/SALib/sample/optimal_trajectories.py",
+  "Lib/site-packages/SALib/sample/saltelli.py",
+  "Lib/site-packages/SALib/sample/sobol_sequence.py",
+  "Lib/site-packages/SALib/test_functions/Ishigami.py",
+  "Lib/site-packages/SALib/test_functions/Sobol_G.py",
+  "Lib/site-packages/SALib/test_functions/__init__.py",
+  "Lib/site-packages/SALib/util/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib",
+   "numpy",
+   "python 2.7*",
+   "scipy"
+  ],
+  "license": "MIT",
+  "name": "salib",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.1"
+ },
+ "metadata_version": 1,
+ "name": "salib",
+ "raw_recipe": "{% set version = \"1.0.1\" %}\n\npackage:\n  name: salib\n  version: {{ version }}\n\nsource:\n  fn: salib-{{ version }}.tar.gz\n  url: https://github.com/SALib/SALib/archive/v{{ version }}.tar.gz\n  sha256: 10f2582b6227f22a110007d6759ecbf5a377e9bc987e5a81b7cd7fcc4168bbc3\n\nbuild:\n  number: 0\n  script:\n    - git init  # hack to build from tarball\n    - python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - pyscaffold\n  run:\n    - python\n    - numpy\n    - scipy\n    - matplotlib\n\ntest:\n  imports:\n    - SALib\n\nabout:\n  home: http://salib.github.io/SALib/\n  license: MIT\n  license_file: LICENSE.md\n  summary: Sensitivity Analysis Library\n\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
+ "rendered_recipe": {},
+ "version": "1.0.1"
+}

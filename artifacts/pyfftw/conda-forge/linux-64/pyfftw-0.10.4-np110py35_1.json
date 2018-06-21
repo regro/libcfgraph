@@ -1,0 +1,41 @@
+{
+ "about": {
+  "home": "http://hgomersall.github.com/pyFFTW/",
+  "license": "BSD or GPL 2",
+  "summary": "A pythonic wrapper around FFTW, the FFT library, presenting a unified interface for all the supported transforms."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pyFFTW-0.10.4-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pyfftw/__init__.py",
+  "lib/python3.5/site-packages/pyfftw/builders/__init__.py",
+  "lib/python3.5/site-packages/pyfftw/builders/_utils.py",
+  "lib/python3.5/site-packages/pyfftw/builders/builders.py",
+  "lib/python3.5/site-packages/pyfftw/interfaces/__init__.py",
+  "lib/python3.5/site-packages/pyfftw/interfaces/_utils.py",
+  "lib/python3.5/site-packages/pyfftw/interfaces/cache.py",
+  "lib/python3.5/site-packages/pyfftw/interfaces/numpy_fft.py",
+  "lib/python3.5/site-packages/pyfftw/interfaces/scipy_fftpack.py",
+  "lib/python3.5/site-packages/pyfftw/pyfftw.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/pyfftw/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np110py35_1",
+  "build_number": 1,
+  "depends": [
+   "numpy 1.10*",
+   "python 3.5*"
+  ],
+  "license": "BSD or GPL 2",
+  "name": "pyfftw",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.10.4"
+ },
+ "metadata_version": 1,
+ "name": "pyfftw",
+ "raw_recipe": "{% set name = \"pyFFTW\" %}\n{% set version = \"0.10.4\" %}\n{% set sha256 = \"739b436b7c0aeddf99a48749380260364d2dc027cf1d5f63dafb5f50068ede1a\" %}\n\npackage:\n    name: {{ name|lower }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: True  # [win]\n\nrequirements:\n    build:\n        - toolchain\n        - cython\n        - python\n        - setuptools\n        - numpy x.x\n        - fftw\n    run:\n        - python\n        - numpy x.x\n\nabout:\n    home: http://hgomersall.github.com/pyFFTW/\n    license: BSD or GPL 2\n    license_file: LICENSE.txt\n    summary: A pythonic wrapper around FFTW, the FFT library, presenting a unified interface for all the supported transforms.\n\nextra:\n    recipe-maintainers:\n        - grlee77\n        - jakirkham\n        - jjhelmus\n",
+ "rendered_recipe": {},
+ "version": "0.10.4"
+}

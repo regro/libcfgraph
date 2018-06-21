@@ -1,0 +1,46 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/OleFileIO_PL.py",
+  "lib/python3.4/site-packages/olefile-0.42.1-py3.4.egg-info",
+  "lib/python3.4/site-packages/olefile/README.html",
+  "lib/python3.4/site-packages/olefile/README.rst",
+  "lib/python3.4/site-packages/olefile/__init__.py",
+  "lib/python3.4/site-packages/olefile/doc/API.html",
+  "lib/python3.4/site-packages/olefile/doc/API.md",
+  "lib/python3.4/site-packages/olefile/doc/Contribute.html",
+  "lib/python3.4/site-packages/olefile/doc/Contribute.md",
+  "lib/python3.4/site-packages/olefile/doc/Home.html",
+  "lib/python3.4/site-packages/olefile/doc/Home.md",
+  "lib/python3.4/site-packages/olefile/doc/Install.html",
+  "lib/python3.4/site-packages/olefile/doc/Install.md",
+  "lib/python3.4/site-packages/olefile/doc/License.html",
+  "lib/python3.4/site-packages/olefile/doc/License.md",
+  "lib/python3.4/site-packages/olefile/doc/OLE_Overview.html",
+  "lib/python3.4/site-packages/olefile/doc/OLE_Overview.md",
+  "lib/python3.4/site-packages/olefile/doc/OLE_VBA_sample.png",
+  "lib/python3.4/site-packages/olefile/olefile.html",
+  "lib/python3.4/site-packages/olefile/olefile.py",
+  "lib/python3.4/site-packages/olefile/olefile2.html",
+  "lib/python3.4/site-packages/olefile/olefile2.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD License 2-Clause",
+  "name": "olefile",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.42.1"
+ },
+ "metadata_version": 1,
+ "name": "olefile",
+ "raw_recipe": "{% set version = \"0.42.1\" %}\n\npackage:\n  name: olefile\n  version: {{ version }}\n\nsource:\n  fn: olefile-{{ version }}.zip\n  url: https://bitbucket.org/decalage/olefileio_pl/downloads/olefile-{{ version }}.zip\n  sha256: 8a3226dba11349b51a2c6de6af0c889324201f14a8c30992b7877109090e36e0\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - olefile\n\nabout:\n  home: http://www.decalage.info/python/olefileio\n  license:  BSD License 2-Clause\n  summary: >\n      Python package to parse, read and write Microsoft OLE2 files \n      (Structured Storage or Compound Document, Microsoft Office) - \n      Improved version of the OleFileIO module from PIL, the Python \n      Image Library.\n\nextra:\n    recipe-maintainers:\n        - dgursoy\n        - decarlof\n        - ericdill\n        - licode\n        - ravescovi\n        - tacaswell\n",
+ "rendered_recipe": {},
+ "version": "0.42.1"
+}

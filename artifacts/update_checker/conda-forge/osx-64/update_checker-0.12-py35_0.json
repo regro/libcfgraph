@@ -1,0 +1,35 @@
+{
+ "about": {
+  "dev_url": "https://github.com/bboe/update_checker",
+  "home": "https://github.com/bboe/update_checker",
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "summary": "A python module that will check for package updates."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/update_checker-0.12-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/update_checker.py",
+  "lib/python3.5/site-packages/update_checker_test.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "requests >=1.0.2"
+  ],
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "name": "update_checker",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.12"
+ },
+ "metadata_version": 1,
+ "name": "update_checker",
+ "raw_recipe": "{% set name = \"update_checker\" %}\n{% set version = \"0.12\" %}\n{% set sha256 = \"5e265450a0640e8b7e988f323b6b3f1da44cbafdde4884c8e495902843ac367f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - requests >=1.0.2\n\ntest:\n  imports:\n    - update_checker\n\nabout:\n  home: https://github.com/bboe/update_checker\n  license: BSD 2-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  dev_url: https://github.com/bboe/update_checker\n  summary: 'A python module that will check for package updates.'\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
+ "rendered_recipe": {},
+ "version": "0.12"
+}

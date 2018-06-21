@@ -1,0 +1,38 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/cnvgrib1to2",
+  "bin/cnvgrib2to1",
+  "bin/grib_list",
+  "bin/grib_repack",
+  "lib/python3.5/site-packages/g2clib.cpython-35m-darwin.so",
+  "lib/python3.5/site-packages/ncepgrib2.py",
+  "lib/python3.5/site-packages/pygrib-2.0.1-py3.5.egg-info",
+  "lib/python3.5/site-packages/pygrib.cpython-35m-darwin.so",
+  "lib/python3.5/site-packages/redtoreg.cpython-35m-darwin.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_2",
+  "build_number": 2,
+  "depends": [
+   "ecmwf_grib",
+   "jasper",
+   "libpng >=1.6.21,<1.7",
+   "numpy",
+   "pyproj",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "pygrib",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.0.1"
+ },
+ "metadata_version": 1,
+ "name": "pygrib",
+ "raw_recipe": "{% set version = \"2.0.1\" %}\n\npackage:\n  name: pygrib\n  version: {{ version }}\n\nsource:\n  fn: pygrib-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/p/pygrib/pygrib-{{ version }}.tar.gz\n  md5: e9ae04cb987992691b388b16be53214a\n  patches:\n      # Fixed tab/space inconsistency.\n      - tab_space.patch\n\nbuild:\n  number: 2\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - python\n    - ecmwf_grib\n    - jasper\n    - libpng >=1.6.21,<1.7\n    - pyproj\n\n  run:\n    - python\n    - ecmwf_grib\n    - jasper\n    - libpng >=1.6.21,<1.7\n    - pyproj\n    - numpy\n\ntest:\n  commands:\n    - grib_repack -h\n  imports:\n    - pygrib\n\nabout:\n  home: http://github.com/jswhit/pygrib\n  license: MIT\n  summary: 'python GRIB (editions 1 and 2) reader'\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n    - jjhelmus\n",
+ "rendered_recipe": {},
+ "version": "2.0.1"
+}
