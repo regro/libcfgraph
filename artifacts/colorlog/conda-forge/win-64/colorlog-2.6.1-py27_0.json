@@ -1,0 +1,27 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/colorlog-2.6.1-py2.7.egg",
+  "Lib/site-packages/colorlog.pth"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "colorama",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "colorlog",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.6.1"
+ },
+ "metadata_version": 1,
+ "name": "colorlog",
+ "raw_recipe": "{% set version = \"2.6.1\" %}\n\npackage:\n  name: colorlog\n  version: {{ version }}\n\nsource:\n  fn: colorlog-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/c/colorlog/colorlog-{{ version }}.tar.gz\n  md5: 712c85c4c44db0098bed09ed30a18a37\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - colorama  # [win]\n\n  run:\n    - python\n    - colorama  # [win]\n\ntest:\n  imports:\n    - colorlog\n\nabout:\n  home: https://github.com/borntyping/python-colorlog\n  license: MIT\n  summary: Log formatting with colors!\n\nextra:\n  recipe-maintainers:\n    - frol\n",
+ "rendered_recipe": {},
+ "version": "2.6.1"
+}

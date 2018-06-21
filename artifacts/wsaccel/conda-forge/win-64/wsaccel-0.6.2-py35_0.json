@@ -1,0 +1,35 @@
+{
+ "about": {
+  "dev_url": "https://github.com/methane/wsaccel",
+  "home": "https://github.com/methane/wsaccel",
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "summary": "WSAccell is WebSocket accelerator for AutobahnPython, and ws4py"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/wsaccel-0.6.2-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/wsaccel/__init__.py",
+  "Lib/site-packages/wsaccel/utf8validator.cp35-win_amd64.pyd",
+  "Lib/site-packages/wsaccel/xormask.cp35-win_amd64.pyd"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "name": "wsaccel",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.6.2"
+ },
+ "metadata_version": 1,
+ "name": "wsaccel",
+ "raw_recipe": "{% set name = \"wsaccel\" %}\n{% set version = \"0.6.2\" %}\n{% set sha256 = \"425706acf0724d2f6bfa391ec37b4ef121d3432c956029de3cea4e101c218e0c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n    - cython\n  run:\n    - python\n\ntest:\n  imports:\n    - wsaccel\n    - wsaccel.xormask\n    - wsaccel.utf8validator\n\nabout:\n  home: https://github.com/methane/wsaccel\n  license: Apache 2.0\n  license_family: Apache\n  # License file is not included in MANIFEST.in in current release so adding copy to recipe.\n  # The next release will include the license in the source.\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'WSAccell is WebSocket accelerator for AutobahnPython, and ws4py'\n  dev_url: https://github.com/methane/wsaccel\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
+ "rendered_recipe": {},
+ "version": "0.6.2"
+}

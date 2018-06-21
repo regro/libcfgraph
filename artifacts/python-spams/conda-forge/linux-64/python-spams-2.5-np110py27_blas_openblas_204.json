@@ -1,0 +1,153 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.1",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://spams-devel.gforge.inria.fr/",
+  "license": "GPL 3",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-build-2.1.1-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.2.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.49.1-2",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_0",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.2-3",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.4-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-32.3.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.8-3"
+  ],
+  "summary": "An optimization toolbox for solving various sparse estimation problems."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/spams.py",
+  "lib/python2.7/site-packages/_spams_wrap.so",
+  "lib/python2.7/site-packages/spams-2.5-py2.7.egg-info",
+  "lib/python2.7/site-packages/myscipy_rand.py",
+  "lib/python2.7/site-packages/spams_wrap.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np110py27_blas_openblas_204",
+  "build_number": 204,
+  "depends": [
+   "blas 1.1 openblas",
+   "libgcc",
+   "numpy 1.10*",
+   "openblas 0.2.19|0.2.19.*",
+   "python 2.7*",
+   "scipy"
+  ],
+  "features": "blas_openblas",
+  "license": "GPL 3",
+  "name": "python-spams",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.5"
+ },
+ "metadata_version": 1,
+ "name": "python-spams",
+ "raw_recipe": "{% set version = \"2.5\" %}\n{% set date = \"2014-03-27\" %}\n\n{% set variant = \"openblas\" %}\n\npackage:\n  name: python-spams\n  version: {{ version }}\n\nsource:\n  fn: spams-{{ version }}.tar.gz\n  url: http://spams-devel.gforge.inria.fr/hitcounter2.php?file=33816/spams-python-v{{ version }}-svn{{ date }}.tar.gz\n  sha1: f6f6d7fe385773690f886ee6d077a1cdf6f2ba41\n\n  patches:\n    # Fix how BLAS is detected. Mailed to developer.\n    - setup.py.patch\n    # Update bindings for NumPy 1.10.x from 1.9.x.\n    - spams_wrap.cpp.patch\n    - spams_wrap-windows.cpp.patch\n\nbuild:\n  skip: true  # [win or py3k]\n  number: 204\n  detect_binary_files_with_prefix: true\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - gcc\n    - python\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n    - numpy x.x\n    - scipy\n    # For tests.\n    - pillow\n    \n  run:\n    - libgcc\n    - python\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n    - numpy x.x\n    - scipy\n\ntest:\n  imports:\n    - spams\n\nabout:\n  home: http://spams-devel.gforge.inria.fr/\n  license: GPL 3\n  summary: An optimization toolbox for solving various sparse estimation problems.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://spams-devel.gforge.inria.fr/",
+   "license": "GPL 3",
+   "summary": "An optimization toolbox for solving various sparse estimation problems."
+  },
+  "build": {
+   "detect_binary_files_with_prefix": "true",
+   "features": [
+    "blas_openblas"
+   ],
+   "number": "204",
+   "string": "np110py27_blas_openblas_204"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "python-spams",
+   "version": "2.5"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "libgcc",
+    "python",
+    "blas 1.1 openblas",
+    "openblas 0.2.19|0.2.19.*",
+    "numpy x.x",
+    "scipy"
+   ]
+  },
+  "source": {
+   "fn": "spams-2.5.tar.gz",
+   "patches": [
+    "setup.py.patch",
+    "spams_wrap.cpp.patch",
+    "spams_wrap-windows.cpp.patch"
+   ],
+   "sha1": "f6f6d7fe385773690f886ee6d077a1cdf6f2ba41",
+   "url": "http://spams-devel.gforge.inria.fr/hitcounter2.php?file=33816/spams-python-v2.5-svn2014-03-27.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "spams"
+   ]
+  }
+ },
+ "version": "2.5"
+}
