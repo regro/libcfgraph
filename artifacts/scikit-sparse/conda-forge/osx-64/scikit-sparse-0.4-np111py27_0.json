@@ -1,0 +1,44 @@
+{
+ "about": {
+  "home": "https://github.com/scikit-sparse/scikit-sparse",
+  "license": "BSD 2-clause",
+  "summary": "A companion to the scipy.sparse library for sparse matrix manipulation in Python."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/scikit_sparse-0.4-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/sksparse/__init__.py",
+  "lib/python2.7/site-packages/sksparse/_version.py",
+  "lib/python2.7/site-packages/sksparse/cholmod.so",
+  "lib/python2.7/site-packages/sksparse/test_cholmod.py",
+  "lib/python2.7/site-packages/sksparse/test_data/illc1033.mtx.gz",
+  "lib/python2.7/site-packages/sksparse/test_data/illc1033_rhs1.mtx.gz",
+  "lib/python2.7/site-packages/sksparse/test_data/illc1850.mtx.gz",
+  "lib/python2.7/site-packages/sksparse/test_data/illc1850_rhs1.mtx.gz",
+  "lib/python2.7/site-packages/sksparse/test_data/well1033.mtx.gz",
+  "lib/python2.7/site-packages/sksparse/test_data/well1033_rhs1.mtx.gz",
+  "lib/python2.7/site-packages/sksparse/test_data/well1850.mtx.gz",
+  "lib/python2.7/site-packages/sksparse/test_data/well1850_rhs1.mtx.gz"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.11*",
+   "python 2.7*",
+   "scipy",
+   "suitesparse"
+  ],
+  "license": "BSD 2-clause",
+  "name": "scikit-sparse",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.4"
+ },
+ "metadata_version": 1,
+ "name": "scikit-sparse",
+ "raw_recipe": "{% set version = \"0.4\" %}\n\npackage:\n  name: scikit-sparse\n  version: {{ version }}\n\nsource:\n  fn: scikit-sparse-{{ version }}.tar.gz\n  url: https://github.com/scikit-sparse/scikit-sparse/archive/v{{ version }}.tar.gz\n  sha256: 84dac24434a830380303e1bc4e55e8adbdff1edf2c8197f64fbd564c75eea019\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - numpy x.x\n    - suitesparse\n    - cython\n    - setuptools\n  run:\n    - python\n    - numpy x.x\n    - scipy\n    - suitesparse\n\ntest:\n  requires:\n    - nose\n    - setuptools\n  imports:\n    - sksparse\n    - sksparse.cholmod\n  commands:\n    - OPENBLAS_NUM_THREADS=1 nosetests -sv sksparse\n\nabout:\n  home: https://github.com/scikit-sparse/scikit-sparse\n  license: BSD 2-clause\n  summary: A companion to the scipy.sparse library for sparse matrix manipulation in Python.\n\nextra:\n    recipe-maintainers:\n      - grlee77\n      - patricksnape\n      - jor-\n",
+ "rendered_recipe": {},
+ "version": "0.4"
+}
