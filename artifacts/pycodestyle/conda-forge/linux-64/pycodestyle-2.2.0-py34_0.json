@@ -1,0 +1,36 @@
+{
+ "about": {
+  "dev_url": "https://github.com/PyCQA/pycodestyle",
+  "doc_url": "https://pycodestyle.readthedocs.io/",
+  "home": "https://pycodestyle.readthedocs.io/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Python style guide checker"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/pycodestyle",
+  "lib/python3.4/site-packages/pycodestyle-2.2.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pycodestyle-2.2.0-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/pycodestyle.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "pycodestyle",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.2.0"
+ },
+ "metadata_version": 1,
+ "name": "pycodestyle",
+ "raw_recipe": "{% set name = \"pycodestyle\" %}\n{% set version = \"2.2.0\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"df81dc3293e0123e2e8d1f2aaf819600e4ae287d8b3af8b72181af50257e5d9a\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  entry_points:\n    - pycodestyle = pycodestyle:_main\n\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  commands:\n    - pycodestyle --help\n    - pycodestyle --version\n\nabout:\n  home: https://pycodestyle.readthedocs.io/\n  license: MIT\n  license_family: MIT\n  summary: 'Python style guide checker'\n  doc_url: https://pycodestyle.readthedocs.io/\n  dev_url: https://github.com/PyCQA/pycodestyle\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pmlandwehr\n    - jjhelmus\n    - sigmavirus24\n    - dopplershift\n",
+ "rendered_recipe": {},
+ "version": "2.2.0"
+}

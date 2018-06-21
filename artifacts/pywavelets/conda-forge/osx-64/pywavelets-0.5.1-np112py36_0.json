@@ -1,0 +1,153 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/PyWavelets/pywt",
+  "license": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Discrete Wavelet Transforms in Python."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/pywt/_thresholding.py",
+  "lib/python3.6/site-packages/pywt/_extensions/_dwt.cpython-36m-darwin.so",
+  "lib/python3.6/site-packages/pywt/data/__init__.py",
+  "lib/python3.6/site-packages/pywt/_extensions/_swt.cpython-36m-darwin.so",
+  "lib/python3.6/site-packages/pywt/data/camera.npz",
+  "lib/python3.6/site-packages/pywt/data/sst_nino3.npz",
+  "lib/python3.6/site-packages/pywt/_cwt.py",
+  "lib/python3.6/site-packages/pywt/_extensions/_cwt.cpython-36m-darwin.so",
+  "lib/python3.6/site-packages/pywt/data/_readers.py",
+  "lib/python3.6/site-packages/pywt/_swt.py",
+  "lib/python3.6/site-packages/pywt/data/ecg.npy",
+  "lib/python3.6/site-packages/pywt/data/ascent.npz",
+  "lib/python3.6/site-packages/pywt/data/create_dat.py",
+  "lib/python3.6/site-packages/pywt/__init__.py",
+  "lib/python3.6/site-packages/pywt/_functions.py",
+  "lib/python3.6/site-packages/pywt/_wavelet_packets.py",
+  "lib/python3.6/site-packages/pywt/_multilevel.py",
+  "lib/python3.6/site-packages/pywt/_extensions/__init__.py",
+  "lib/python3.6/site-packages/pywt/_dwt.py",
+  "lib/python3.6/site-packages/pywt/_extensions/_pywt.cpython-36m-darwin.so",
+  "lib/python3.6/site-packages/pywt/_multidim.py",
+  "lib/python3.6/site-packages/pywt/version.py",
+  "lib/python3.6/site-packages/pywt/data/aero.npz",
+  "lib/python3.6/site-packages/PyWavelets-0.5.1-py3.6.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np112py36_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.12*",
+   "python 3.6*"
+  ],
+  "license": "MIT",
+  "name": "pywavelets",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.5.1"
+ },
+ "metadata_version": 1,
+ "name": "pywavelets",
+ "raw_recipe": "{% set version = \"0.5.1\" %}\n\npackage:\n  name: pywavelets\n  version: {{ version }}\n\nsource:\n  fn: PyWavelets-{{ version }}.tar.gz\n  url: https://github.com/PyWavelets/pywt/archive/v{{ version }}.tar.gz\n  sha256: dc912325b4752b83303af31925450efb795ec81d6aed1317613f7d5a634c0b50\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - cython\n    - numpy x.x\n    - setuptools\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  requires:\n    - nose\n  commands:\n    - conda inspect linkages -p $PREFIX pywavelets  # [not win]\n    - conda inspect objects -p $PREFIX pywavelets  # [osx]\n\nabout:\n  home: https://github.com/PyWavelets/pywt\n  license: MIT\n  license_file: COPYING\n  summary: 'Discrete Wavelet Transforms in Python.'\n\nextra:\n  recipe-maintainers:\n    - grlee77\n    - jakirkham\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/PyWavelets/pywt",
+   "license": "MIT",
+   "license_file": "COPYING",
+   "summary": "Discrete Wavelet Transforms in Python."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "np112py36_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "grlee77",
+    "jakirkham",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "pywavelets",
+   "version": "0.5.1"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "numpy x.x"
+   ]
+  },
+  "source": {
+   "fn": "PyWavelets-0.5.1.tar.gz",
+   "sha256": "dc912325b4752b83303af31925450efb795ec81d6aed1317613f7d5a634c0b50",
+   "url": "https://github.com/PyWavelets/pywt/archive/v0.5.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "conda inspect linkages -p $PREFIX pywavelets",
+    "conda inspect objects -p $PREFIX pywavelets"
+   ],
+   "requires": [
+    "nose"
+   ]
+  }
+ },
+ "version": "0.5.1"
+}

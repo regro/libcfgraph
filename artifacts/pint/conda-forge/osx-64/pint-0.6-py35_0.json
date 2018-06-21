@@ -1,0 +1,52 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/Pint-0.6-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/Pint-0.6-py3.5.egg-info/zip-safe",
+  "lib/python3.5/site-packages/pint/__init__.py",
+  "lib/python3.5/site-packages/pint/compat/__init__.py",
+  "lib/python3.5/site-packages/pint/compat/chainmap.py",
+  "lib/python3.5/site-packages/pint/compat/lrucache.py",
+  "lib/python3.5/site-packages/pint/compat/nullhandler.py",
+  "lib/python3.5/site-packages/pint/compat/transformdict.py",
+  "lib/python3.5/site-packages/pint/context.py",
+  "lib/python3.5/site-packages/pint/formatting.py",
+  "lib/python3.5/site-packages/pint/measurement.py",
+  "lib/python3.5/site-packages/pint/quantity.py",
+  "lib/python3.5/site-packages/pint/testsuite/__init__.py",
+  "lib/python3.5/site-packages/pint/testsuite/helpers.py",
+  "lib/python3.5/site-packages/pint/testsuite/parameterized.py",
+  "lib/python3.5/site-packages/pint/testsuite/test_contexts.py",
+  "lib/python3.5/site-packages/pint/testsuite/test_formatter.py",
+  "lib/python3.5/site-packages/pint/testsuite/test_issues.py",
+  "lib/python3.5/site-packages/pint/testsuite/test_measurement.py",
+  "lib/python3.5/site-packages/pint/testsuite/test_numpy.py",
+  "lib/python3.5/site-packages/pint/testsuite/test_pitheorem.py",
+  "lib/python3.5/site-packages/pint/testsuite/test_quantity.py",
+  "lib/python3.5/site-packages/pint/testsuite/test_umath.py",
+  "lib/python3.5/site-packages/pint/testsuite/test_unit.py",
+  "lib/python3.5/site-packages/pint/testsuite/test_util.py",
+  "lib/python3.5/site-packages/pint/unit.py",
+  "lib/python3.5/site-packages/pint/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "setuptools"
+  ],
+  "license": "BSD",
+  "name": "pint",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.6"
+ },
+ "metadata_version": 1,
+ "name": "pint",
+ "raw_recipe": "{% set version = \"0.6\" %}\n\npackage:\n  name: pint\n  version: {{ version }}\n\nsource:\n  fn: Pint-{{version}}.zip\n  url: https://pypi.python.org/packages/source/P/Pint/Pint-{{version}}.zip\n  md5: 88aa0918019071546b10c5fbdc91ae5e\n\nbuild:\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - pint\n\nabout:\n  home: https://github.com/hgrecco/pint\n  license: BSD\n  summary: 'Physical quantities module'\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
+ "rendered_recipe": {},
+ "version": "0.6"
+}
