@@ -1,0 +1,41 @@
+{
+ "about": {
+  "description": "rvlib is a statistical package that mimics the API of Julia's\nDistributions.jl package while at the same time achieves a similar\nperformance by exploiting numba.\n",
+  "dev_url": "https://github.com/QuantEcon/rvlib",
+  "home": "https://github.com/QuantEcon/rvlib",
+  "license": "BSD 3-Clause",
+  "summary": "Mimicking the API of Distributions.jl in Python with added numba support."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/rvlib-0.0.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/rvlib/__init__.py",
+  "lib/python3.5/site-packages/rvlib/_rmath_ffi.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/rvlib/metadata.yaml",
+  "lib/python3.5/site-packages/rvlib/specials.py",
+  "lib/python3.5/site-packages/rvlib/univariate.py",
+  "lib/python3.5/site-packages/rvlib/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "cffi",
+   "numba",
+   "numpy",
+   "python 3.5*",
+   "pyyaml"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "rvlib",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.0.1"
+ },
+ "metadata_version": 1,
+ "name": "rvlib",
+ "raw_recipe": "{% set name = \"rvlib\" %}\n{% set version = \"0.0.1\" %}\n{% set sha1 = \"d74f5c10e956c09349a22a1a80e7e225978de253\" %} \n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/QuantEcon/rvlib/archive/{{ version }}.tar.gz\n  sha1: {{ sha1 }}\n\nbuild:\n  skip: True  # [win or not py35]\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cffi\n    - pyyaml\n    - toolchain\n\n  run:\n    - python  # [py35]\n    - numpy\n    - cffi\n    - numba\n    - pyyaml\n\ntest:\n  imports:\n    - rvlib\n\nabout:\n  home: https://github.com/QuantEcon/rvlib\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Mimicking the API of Distributions.jl in Python with added numba support.'\n  description: |\n    rvlib is a statistical package that mimics the API of Julia's \n    Distributions.jl package while at the same time achieves a similar \n    performance by exploiting numba.\n  dev_url: https://github.com/QuantEcon/rvlib\n\nextra:\n  recipe-maintainers:\n    - danielcsaba\n    - spencerlyon2\n",
+ "rendered_recipe": {},
+ "version": "0.0.1"
+}

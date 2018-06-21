@@ -1,0 +1,88 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/nf-config",
+  "include/netcdf.inc",
+  "include/netcdf.mod",
+  "include/netcdf4_f03.mod",
+  "include/netcdf4_nc_interfaces.mod",
+  "include/netcdf4_nf_interfaces.mod",
+  "include/netcdf_f03.mod",
+  "include/netcdf_fortv2_c_interfaces.mod",
+  "include/netcdf_nc_data.mod",
+  "include/netcdf_nc_interfaces.mod",
+  "include/netcdf_nf_data.mod",
+  "include/netcdf_nf_interfaces.mod",
+  "include/typesizes.mod",
+  "lib/libnetcdff.a",
+  "lib/libnetcdff.la",
+  "lib/libnetcdff.so",
+  "lib/libnetcdff.so.6",
+  "lib/libnetcdff.so.6.1.1",
+  "lib/pkgconfig/netcdf-fortran.pc",
+  "share/man/man3/netcdf_fortran.3"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "2",
+  "build_number": 2,
+  "depends": [
+   "krb5",
+   "libgcc",
+   "libnetcdf 4.3*"
+  ],
+  "license": "http://www.unidata.ucar.edu/software/netcdf/copyright.html",
+  "name": "netcdf-fortran",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "4.4.3"
+ },
+ "metadata_version": 1,
+ "name": "netcdf-fortran",
+ "raw_recipe": "package:\n    name: netcdf-fortran\n    version: 4.4.3\n\nsource:\n    git_url: https://github.com/Unidata/netcdf-fortran\n    git_tag: v4.4.3\n\nbuild:\n    number: 2\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - libnetcdf 4.3*\n        - krb5\n        - gcc\n    run:\n        - libnetcdf 4.3*\n        - krb5\n        - libgcc\n\ntest:\n    commands:\n        - nf-config --all\n        - conda inspect linkages -n _test netcdf-fortran  # [linux]\n\nabout:\n    home: https://github.com/Unidata/netcdf-fortran\n    license: http://www.unidata.ucar.edu/software/netcdf/copyright.html\n    summary: Unidata NetCDF Fortran Library\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - bekozi\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/Unidata/netcdf-fortran",
+   "license": "http://www.unidata.ucar.edu/software/netcdf/copyright.html",
+   "summary": "Unidata NetCDF Fortran Library"
+  },
+  "build": {
+   "number": 2,
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "bekozi"
+   ]
+  },
+  "package": {
+   "name": "netcdf-fortran",
+   "version": "4.4.3"
+  },
+  "requirements": {
+   "build": [
+    "libnetcdf 4.3*",
+    "krb5",
+    "gcc"
+   ],
+   "run": [
+    "libnetcdf 4.3*",
+    "krb5",
+    "libgcc"
+   ]
+  },
+  "source": {
+   "git_tag": "v4.4.3",
+   "git_url": "https://github.com/Unidata/netcdf-fortran"
+  },
+  "test": {
+   "commands": [
+    "nf-config --all",
+    "conda inspect linkages -n _test netcdf-fortran"
+   ]
+  }
+ },
+ "version": "4.4.3"
+}

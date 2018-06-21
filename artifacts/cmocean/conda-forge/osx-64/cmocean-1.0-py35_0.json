@@ -1,0 +1,31 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/cmocean-0.3-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/cmocean/__init__.py",
+  "lib/python3.5/site-packages/cmocean/cm.py",
+  "lib/python3.5/site-packages/cmocean/data.py",
+  "lib/python3.5/site-packages/cmocean/plots.py",
+  "lib/python3.5/site-packages/cmocean/tools.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "cmocean",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0"
+ },
+ "metadata_version": 1,
+ "name": "cmocean",
+ "raw_recipe": "{% set version = \"1.0\" %}\n\npackage:\n    name: cmocean\n    version: {{ version }}\n\nsource:\n    fn: cmocean-{{ version }}.tar.gz\n    url: https://github.com/matplotlib/cmocean/archive/{{ version }}.tar.gz\n    sha256: 22e40329f5fd1c6d2136d7b32dfe988f3b8570a360b86bf9786efb2cb20c9aaa\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - matplotlib\n\ntest:\n    imports:\n        - cmocean\n    requires:\n        - pytest\n\nabout:\n    home: https://github.com/matplotlib/cmocean\n    license: MIT\n    summary: 'Colormaps for Oceanography'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.0"
+}

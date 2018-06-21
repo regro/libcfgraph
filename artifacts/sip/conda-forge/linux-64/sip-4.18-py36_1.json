@@ -1,0 +1,37 @@
+{
+ "about": {
+  "description": "SIP is a tool that makes it very easy to create Python bindings for C and\nC++ libraries. SIP comprises a code generator and a Python module. The\ncode generator processes a set of specification files and generates C or\nC++ code which is then compiled to create the bindings extension module.\nThe SIP Python module provides support functions to the automatically\ngenerated code.\n",
+  "dev_url": "https://github.com/ifwe/sip",
+  "doc_url": "http://pyqt.sourceforge.net/Docs/sip4/",
+  "home": "http://www.riverbankcomputing.com/software/sip/intro",
+  "license": "GPL-3.0",
+  "summary": "Create Python bindings for C and C++ libraries"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/sip",
+  "include/python3.6m/sip.h",
+  "lib/python3.6/site-packages/sip.pyi",
+  "lib/python3.6/site-packages/sip.so",
+  "lib/python3.6/site-packages/sipconfig.py",
+  "lib/python3.6/site-packages/sipdistutils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_1",
+  "build_number": 1,
+  "depends": [
+   "python 3.6*"
+  ],
+  "license": "GPL-3.0",
+  "name": "sip",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "4.18"
+ },
+ "metadata_version": 1,
+ "name": "sip",
+ "raw_recipe": "{% set version = \"4.18\" %}\n\npackage:\n  name: sip\n  version: {{ version }}\n\nsource:\n  fn:   sip-{{ version }}.tar.gz  # [unix]\n  url:  http://sourceforge.net/projects/pyqt/files/sip/sip-{{ version }}/sip-{{ version }}.tar.gz  # [unix]\n  sha1: 6704854bc684de3b76c9db61ce54a74e7de5cf45  # [unix]\n  fn:   sip-{{ version }}.zip  # [win]\n  url:  http://sourceforge.net/projects/pyqt/files/sip/sip-{{ version }}/sip-{{ version }}.zip  # [win]\n  sha1: afde507fbee85a1aeb5fcb32e897bd3ea2bc48f5  # [win]\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - sip\n  files:\n    - test\n\nabout:\n  home: http://www.riverbankcomputing.com/software/sip/intro\n  license: GPL-3.0\n  license_file: LICENSE\n  summary: Create Python bindings for C and C++ libraries\n  description: |\n    SIP is a tool that makes it very easy to create Python bindings for C and\n    C++ libraries. SIP comprises a code generator and a Python module. The\n    code generator processes a set of specification files and generates C or\n    C++ code which is then compiled to create the bindings extension module.\n    The SIP Python module provides support functions to the automatically\n    generated code.\n  doc_url: http://pyqt.sourceforge.net/Docs/sip4/\n  dev_url: https://github.com/ifwe/sip\n\nextra:\n  recipe-maintainers:\n    - ccordoba12\n    - msarahan\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "4.18"
+}
