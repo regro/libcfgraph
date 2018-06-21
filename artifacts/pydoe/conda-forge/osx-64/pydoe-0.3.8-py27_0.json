@@ -1,0 +1,44 @@
+{
+ "about": {
+  "description": "The pyDOE package is designed to help the scientist, engineer, statistician, etc., to construct appropriate experimental designs.",
+  "home": "https://github.com/tisimst/pyDOE",
+  "license": "BSD 3-Clause",
+  "summary": "Design of experiments for Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pyDOE-0.3.8-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pyDOE/__init__.py",
+  "lib/python2.7/site-packages/pyDOE/build_regression_matrix.py",
+  "lib/python2.7/site-packages/pyDOE/doe_box_behnken.py",
+  "lib/python2.7/site-packages/pyDOE/doe_composite.py",
+  "lib/python2.7/site-packages/pyDOE/doe_factorial.py",
+  "lib/python2.7/site-packages/pyDOE/doe_fold.py",
+  "lib/python2.7/site-packages/pyDOE/doe_lhs.py",
+  "lib/python2.7/site-packages/pyDOE/doe_plackett_burman.py",
+  "lib/python2.7/site-packages/pyDOE/doe_repeat_center.py",
+  "lib/python2.7/site-packages/pyDOE/doe_star.py",
+  "lib/python2.7/site-packages/pyDOE/doe_union.py",
+  "lib/python2.7/site-packages/pyDOE/var_regression_matrix.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy >=1.8",
+   "python 2.7*",
+   "scipy >=0.13"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pydoe",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.8"
+ },
+ "metadata_version": 1,
+ "name": "pydoe",
+ "raw_recipe": "{% set version = \"0.3.8\" %}\n\npackage:\n  name: pydoe\n  version: {{ version }}\n\nsource:\n    fn: pyDOE-{{ version }}.zip\n    url: https://pypi.io/packages/source/p/pyDOE/pyDOE-{{ version }}.zip\n    sha1: 211c4d74a74109ac134dff31ed20c33141b48dbe\n\nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - scipy >=0.13\n    - numpy >=1.8\n\ntest:\n  imports:\n    - pyDOE\n\nabout:\n  home: https://github.com/tisimst/pyDOE\n  license: BSD 3-Clause\n  summary: Design of experiments for Python\n  description: The pyDOE package is designed to help the scientist, engineer, statistician, etc., to construct appropriate experimental designs.\n\nextra:\n  recipe-maintainers:\n    - melund\n",
+ "rendered_recipe": {},
+ "version": "0.3.8"
+}

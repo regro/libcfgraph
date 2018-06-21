@@ -1,0 +1,42 @@
+{
+ "about": {
+  "home": "https://github.com/timothycrosley/pies",
+  "license": "MIT",
+  "summary": "The simplest way to write one program that runs on both Python 2 and Python 3."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pies-2.6.7-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pies/StringIO.py",
+  "lib/python3.4/site-packages/pies/__init__.py",
+  "lib/python3.4/site-packages/pies/_utils.py",
+  "lib/python3.4/site-packages/pies/ast.py",
+  "lib/python3.4/site-packages/pies/collections.py",
+  "lib/python3.4/site-packages/pies/functools.py",
+  "lib/python3.4/site-packages/pies/imp.py",
+  "lib/python3.4/site-packages/pies/itertools.py",
+  "lib/python3.4/site-packages/pies/overrides.py",
+  "lib/python3.4/site-packages/pies/pickle.py",
+  "lib/python3.4/site-packages/pies/sys.py",
+  "lib/python3.4/site-packages/pies/unittest.py",
+  "lib/python3.4/site-packages/pies/version_info.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "pies",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.6.7"
+ },
+ "metadata_version": 1,
+ "name": "pies",
+ "raw_recipe": "{% set name = \"pies\" %}\n{% set version = \"2.6.7\" %}\n{% set sha256 = \"e8a76923ce0e0f605240901983fe492814a65d3d803efe3013a0e1815b75e4e9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pies2overrides  # [py2k]\n    - enum34          # [py<34]\n    - argparse        # [py3k and py<33]\n    - ordereddict     # [py3k and py<33]\n  run:\n    - python\n    - pies2overrides  # [py2k]\n    - enum34          # [py<34]\n    - argparse        # [py3k and py<33]\n    - ordereddict     # [py3k and py<33]\n\ntest:\n  imports:\n    - pies\n\nabout:\n  home: https://github.com/timothycrosley/pies\n  license: MIT\n  summary: 'The simplest way to write one program that runs on both Python 2 and Python 3.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "2.6.7"
+}

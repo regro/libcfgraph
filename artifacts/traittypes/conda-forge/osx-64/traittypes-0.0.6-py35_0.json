@@ -1,0 +1,37 @@
+{
+ "about": {
+  "home": "https://github.com/jupyter-incubator/traittypes",
+  "license": "BSD 3-Clause",
+  "summary": "Trait types for NumPy, SciPy and friends"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/traittypes-0.0.6-py3.5.egg-info",
+  "lib/python3.5/site-packages/traittypes/__init__.py",
+  "lib/python3.5/site-packages/traittypes/_version.py",
+  "lib/python3.5/site-packages/traittypes/tests/__init__.py",
+  "lib/python3.5/site-packages/traittypes/tests/test_traittypes.py",
+  "lib/python3.5/site-packages/traittypes/traittypes.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "pandas",
+   "python 3.5*",
+   "traitlets >=4.2.2"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "traittypes",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.0.6"
+ },
+ "metadata_version": 1,
+ "name": "traittypes",
+ "raw_recipe": "{% set version = \"0.0.6\" %}\n{% set sha256 = \"d732494aee2d9f6031b42ef1dfc22d14d4bb5663bd4d106f759c1522ec9c1a12\" %}\n\npackage:\n    name: traittypes\n    version: {{ version }}\n\nsource:\n    fn: traittypes-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/t/traittypes/traittypes-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n        - traitlets >=4.2.2\n        - numpy\n        - pandas\n\ntest:\n    imports:\n        - traittypes\n\nabout:\n    home: https://github.com/jupyter-incubator/traittypes\n    license: BSD 3-Clause\n    summary: Trait types for NumPy, SciPy and friends\n    license_file: LICENSE\n\nextra:\n    recipe-maintainers:\n        - SylvainCorlay\n        - jasongrout\n",
+ "rendered_recipe": {},
+ "version": "0.0.6"
+}

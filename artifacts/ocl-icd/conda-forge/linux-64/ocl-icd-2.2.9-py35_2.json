@@ -1,0 +1,163 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.0",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "dev_url": "https://github.com/OCL-dev/ocl-icd",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://forge.imag.fr/projects/ocl-icd/",
+  "license": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-build-2.1.0-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.1.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.49.1-2",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_0",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.2-3",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.4-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-32.3.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.8-3"
+  ],
+  "summary": "An OpenCL ICD Loader under an open-source license"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/OpenCL/cl.h",
+  "include/CL/cl_platform.h",
+  "include/OpenCL/opencl.h",
+  "include/OpenCL/cl_gl_ext.h",
+  "include/CL/opencl.h",
+  "include/CL/cl_gl.h",
+  "include/OpenCL/cl_dx9_media_sharing.h",
+  "lib/libOpenCL.so.1.0.0",
+  "include/CL/cl_ext.h",
+  "lib/libOpenCL.so.1",
+  "lib/libOpenCL.so",
+  "include/OpenCL/cl_gl.h",
+  "lib/pkgconfig/OpenCL.pc",
+  "lib/pkgconfig/ocl-icd.pc",
+  "include/OpenCL/cl_ext.h",
+  "include/CL/cl_d3d10.h",
+  "lib/libOpenCL.la",
+  "include/CL/cl.h",
+  "include/OpenCL/cl_platform.h",
+  "include/OpenCL/cl_d3d11.h",
+  "include/OpenCL/cl_d3d10.h",
+  "include/CL/cl_egl.h",
+  "share/doc/ocl-icd/examples/ocl_icd_bindings.c",
+  "include/ocl_icd.h",
+  "include/OpenCL/cl_egl.h",
+  "include/CL/cl_d3d11.h",
+  "include/CL/cl_gl_ext.h",
+  "include/CL/cl_dx9_media_sharing.h"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_2",
+  "build_number": 2,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD",
+  "name": "ocl-icd",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.2.9"
+ },
+ "metadata_version": 1,
+ "name": "ocl-icd",
+ "raw_recipe": "{% set name = \"ocl-icd\" %}\n{% set version = \"2.2.9\" %}\n{% set sha256 = \"0c8ac13e2c5b737c34de49f9aca6cad3c4d33dd0bbb149b01238d76e798feae5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://forge.imag.fr/frs/download.php/716/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n  # Makes ocl-icd install the OpenCL headers it ships\n  - install-headers.patch\n  - define-cl2-prefix-suffix-on-apple.patch\n  - custom-vendordir.patch\n\nbuild:\n  number: 2\n  skip: True  # [not (linux and py35)]\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - pkg-config\n    - libtool\n    - automake\n    - autoconf\n  run:\n    - python\n\ntest:\n  commands:\n    - test -f $PREFIX/include/CL/cl.h     # [unix]\n    - test -f $PREFIX/lib/libOpenCL.so.1  # [linux]\n\nabout:\n  home: https://forge.imag.fr/projects/ocl-icd/\n  dev_url: https://github.com/OCL-dev/ocl-icd\n  license: BSD\n  license_file: COPYING\n  summary: 'An OpenCL ICD Loader under an open-source license'\n\nextra:\n  recipe-maintainers:\n    - inducer\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "https://github.com/OCL-dev/ocl-icd",
+   "home": "https://forge.imag.fr/projects/ocl-icd/",
+   "license": "BSD",
+   "license_file": "COPYING",
+   "summary": "An OpenCL ICD Loader under an open-source license"
+  },
+  "build": {
+   "number": "2",
+   "string": "py35_2"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "inducer"
+   ]
+  },
+  "package": {
+   "name": "ocl-icd",
+   "version": "2.2.9"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "ocl-icd-2.2.9.tar.gz",
+   "patches": [
+    "install-headers.patch",
+    "define-cl2-prefix-suffix-on-apple.patch",
+    "custom-vendordir.patch"
+   ],
+   "sha256": "0c8ac13e2c5b737c34de49f9aca6cad3c4d33dd0bbb149b01238d76e798feae5",
+   "url": "http://forge.imag.fr/frs/download.php/716/ocl-icd-2.2.9.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/include/CL/cl.h",
+    "test -f $PREFIX/lib/libOpenCL.so.1"
+   ]
+  }
+ },
+ "version": "2.2.9"
+}
