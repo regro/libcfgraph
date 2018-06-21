@@ -1,0 +1,26 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/ordered_set-2.0.1-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/ordered_set.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "ordered-set",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.0.1"
+ },
+ "metadata_version": 1,
+ "name": "ordered-set",
+ "raw_recipe": "{% set version = \"2.0.1\" %}\n\npackage:\n    name: ordered-set\n    version: {{ version }}\n\nsource:\n    fn: ordered-set-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/o/ordered-set/ordered-set-{{ version }}.tar.gz\n    md5: 3111c0dd1417b6421eb982e4cd4d0d68\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - ordered_set\n\nabout:\n    home: http://github.com/LuminosoInsight/ordered-set\n    license: MIT\n    summary: A MutableSet that remembers its order, so that every entry has an index\n\n\nextra:\n    recipe-maintainers:\n        - benjwadams\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "2.0.1"
+}

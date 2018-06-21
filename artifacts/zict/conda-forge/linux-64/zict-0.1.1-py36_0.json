@@ -1,0 +1,40 @@
+{
+ "about": {
+  "home": "http://github.com/mrocklin/zict",
+  "license": "BSD 3-Clause",
+  "summary": "Composable Dictionary Classes"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/zict-0.1.1-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/zict-0.1.1-py3.6.egg-info/not-zip-safe",
+  "lib/python3.6/site-packages/zict/__init__.py",
+  "lib/python3.6/site-packages/zict/buffer.py",
+  "lib/python3.6/site-packages/zict/common.py",
+  "lib/python3.6/site-packages/zict/file.py",
+  "lib/python3.6/site-packages/zict/func.py",
+  "lib/python3.6/site-packages/zict/lmdb.py",
+  "lib/python3.6/site-packages/zict/lru.py",
+  "lib/python3.6/site-packages/zict/sieve.py",
+  "lib/python3.6/site-packages/zict/zip.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "heapdict",
+   "python 3.6*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "zict",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1.1"
+ },
+ "metadata_version": 1,
+ "name": "zict",
+ "raw_recipe": "{% set version = \"0.1.1\" %}\n{% set name = \"zict\" %}\n\npackage:\n  name: {{ name }}\n  version: \"{{ version }}\"\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: e4e2758d8f202a5bb7fd94f45b87cccf2092bfc97786cc0c8321ab35d72e098a\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - heapdict\n\ntest:\n  imports:\n    - zict\n\nabout:\n  home: http://github.com/mrocklin/zict\n  license: BSD 3-Clause\n  summary: 'Composable Dictionary Classes'\n\n\nextra:\n  recipe-maintainers:\n    - mrocklin\n    - pitrou\n",
+ "rendered_recipe": {},
+ "version": "0.1.1"
+}

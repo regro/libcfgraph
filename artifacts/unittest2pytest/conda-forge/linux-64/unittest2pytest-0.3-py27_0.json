@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "https://github.com/pytest-dev/unittest2pytest",
+  "license": "GPL-3.0",
+  "summary": "unittest2pytest is a tool that helps rewriting Python unittest test-cases into pytest test-cases."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/unittest2pytest",
+  "lib/python2.7/site-packages/unittest2pytest-0.3-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/unittest2pytest/__init__.py",
+  "lib/python2.7/site-packages/unittest2pytest/__main__.py",
+  "lib/python2.7/site-packages/unittest2pytest/fixes/__init__.py",
+  "lib/python2.7/site-packages/unittest2pytest/fixes/fix_remove_class.py",
+  "lib/python2.7/site-packages/unittest2pytest/fixes/fix_self_assert.py",
+  "lib/python2.7/site-packages/unittest2pytest/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "GPL-3.0",
+  "name": "unittest2pytest",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3"
+ },
+ "metadata_version": 1,
+ "name": "unittest2pytest",
+ "raw_recipe": "{% set name = \"unittest2pytest\" %}\n{% set version = \"0.3\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"8194beef58f906e312ef40401590ca0ca7b428e535a7d22855b9a64ba19a9eab\" %}\n{% set ext = \"tar.gz\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ ext }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ ext }}\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - unittest2pytest = unittest2pytest.__main__:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:  \n  commands:\n    - unittest2pytest --help\n\nabout:\n  home: https://github.com/pytest-dev/unittest2pytest\n  license: GPL-3.0\n  license_file: COPYING-GPLv3.txt\n  summary: unittest2pytest is a tool that helps rewriting Python unittest test-cases into pytest test-cases.\n\nextra:\n  recipe-maintainers:\n    - nicoddemus\n    - gqmelo\n",
+ "rendered_recipe": {},
+ "version": "0.3"
+}
