@@ -1,0 +1,129 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Vault is a tool for securely accessing secrets. A secret is anything that you\nwant to tightly control access to, such as API keys, passwords, certificates,\nand more. Vault provides a unified interface to any secret, while providing\ntight access control and recording a detailed audit log.\n",
+  "doc_url": "https://www.vaultproject.io/docs/index.html",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://www.vaultproject.io",
+  "license": "MPL 2.0",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "A tool for managing secrets."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/vault"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "MPL 2.0",
+  "name": "vault",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.7.0"
+ },
+ "metadata_version": 1,
+ "name": "vault",
+ "raw_recipe": "{% set version = \"0.7.0\" %}\n\npackage:\n  name: vault\n  version: {{ version }}\n\nsource:\n  url: https://releases.hashicorp.com/vault/{{ version }}/vault_{{ version }}_linux_amd64.zip  # [linux64]\n  url: https://releases.hashicorp.com/vault/{{ version }}/vault_{{ version }}_linux_386.zip  # [linux32]\n  url: https://releases.hashicorp.com/vault/{{ version }}/vault_{{ version }}_darwin_amd64.zip  # [osx]\n  url: https://releases.hashicorp.com/vault/{{ version }}/vault_{{ version }}_windows_amd64.zip  # [win64]\n  url: https://releases.hashicorp.com/vault/{{ version }}/vault_{{ version }}_windows_386.zip  # [win32]\n  fn: vault-{{ version }}.zip\n  sha256: db995adf0e46dd7ae43d2fa3523f44a007a6adc37c3a47de5c667a1361cffc13  # [osx]\n  sha256: b4bcf45ca5fa006a4d7f8e226e0483201c71ee2b7fb01c73db116a4fe6c29c9f  # [linux32]\n  sha256: c6d97220e75335f75bd6f603bb23f1f16fe8e2a9d850ba59599b1a0e4d067aaa  # [linux64]\n  sha256: 50541390d4de9e8906ad60eab2f527ec18660a5e91c3845f7d15e83416706730  # [win32]\n  sha256: c4d4556665709e0e5b11000413f046e23b365eb97eed9ee04f1a5c2598649356  # [win64]\n\nbuild:\n  number: 0\n\ntest:\n  commands:\n    - vault -v\n\nabout:\n  home: https://www.vaultproject.io\n  license: MPL 2.0\n  summary: A tool for managing secrets.\n  description: |\n    Vault is a tool for securely accessing secrets. A secret is anything that you\n    want to tightly control access to, such as API keys, passwords, certificates,\n    and more. Vault provides a unified interface to any secret, while providing\n    tight access control and recording a detailed audit log.\n  doc_url: https://www.vaultproject.io/docs/index.html\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Vault is a tool for securely accessing secrets. A secret is anything that you\nwant to tightly control access to, such as API keys, passwords, certificates,\nand more. Vault provides a unified interface to any secret, while providing\ntight access control and recording a detailed audit log.\n",
+   "doc_url": "https://www.vaultproject.io/docs/index.html",
+   "home": "https://www.vaultproject.io",
+   "license": "MPL 2.0",
+   "summary": "A tool for managing secrets."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "johanneskoester"
+   ]
+  },
+  "package": {
+   "name": "vault",
+   "version": "0.7.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": []
+  },
+  "source": {
+   "fn": "vault-0.7.0.zip",
+   "sha256": "db995adf0e46dd7ae43d2fa3523f44a007a6adc37c3a47de5c667a1361cffc13",
+   "url": "https://releases.hashicorp.com/vault/0.7.0/vault_0.7.0_darwin_amd64.zip"
+  },
+  "test": {
+   "commands": [
+    "vault -v"
+   ]
+  }
+ },
+ "version": "0.7.0"
+}

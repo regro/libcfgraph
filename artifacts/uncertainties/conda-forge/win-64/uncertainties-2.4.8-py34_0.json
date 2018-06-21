@@ -1,0 +1,45 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/uncertainties-2.4.8.1-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/uncertainties/1to2.py",
+  "Lib/site-packages/uncertainties/__init__.py",
+  "Lib/site-packages/uncertainties/core.py",
+  "Lib/site-packages/uncertainties/lib1to2/__init__.py",
+  "Lib/site-packages/uncertainties/lib1to2/fixes/__init__.py",
+  "Lib/site-packages/uncertainties/lib1to2/fixes/fix_std_dev.py",
+  "Lib/site-packages/uncertainties/lib1to2/fixes/fix_std_devs.py",
+  "Lib/site-packages/uncertainties/lib1to2/fixes/fix_uarray_umatrix.py",
+  "Lib/site-packages/uncertainties/lib1to2/fixes/fix_ufloat.py",
+  "Lib/site-packages/uncertainties/lib1to2/test_1to2.py",
+  "Lib/site-packages/uncertainties/test_umath.py",
+  "Lib/site-packages/uncertainties/test_uncertainties.py",
+  "Lib/site-packages/uncertainties/umath.py",
+  "Lib/site-packages/uncertainties/umath_core.py",
+  "Lib/site-packages/uncertainties/unumpy/__init__.py",
+  "Lib/site-packages/uncertainties/unumpy/core.py",
+  "Lib/site-packages/uncertainties/unumpy/test_ulinalg.py",
+  "Lib/site-packages/uncertainties/unumpy/test_unumpy.py",
+  "Lib/site-packages/uncertainties/unumpy/ulinalg.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.4*"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "uncertainties",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.4.8"
+ },
+ "metadata_version": 1,
+ "name": "uncertainties",
+ "raw_recipe": "{% set version = \"2.4.8\" %}\n\npackage:\n    name: uncertainties\n    version: {{ version }}\n\nsource:\n    fn: uncertainties-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/u/uncertainties/uncertainties-{{ version }}.1.tar.gz\n    md5: 1faf2f9f54e077d81b1de649984bc3a1\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n\ntest:\n    imports:\n        - uncertainties\n        - uncertainties.unumpy\n    requires:\n        - nose\n        - numpy\n\nabout:\n    home: http://pythonhosted.org/uncertainties/\n    license: BSD-3-Clause\n    summary: Transparent calculations with uncertainties on the quantities involved (aka \"error propagation\"); fast calculation of derivatives\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "2.4.8"
+}

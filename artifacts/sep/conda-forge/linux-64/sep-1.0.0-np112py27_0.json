@@ -1,0 +1,160 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "SEP makes the core algorithms of Source Extractor available as a\nlibrary of stand-alone functions and classes. These operate directly\non in-memory arrays (no FITS files or configuration files). The code\nis derived from the Source Extractor code base (written in C) and aims\nto produce results compatible with Source Extractor whenever possible.\n",
+  "dev_url": "https://github.com/kbarbary/sep",
+  "doc_url": "http://sep.readthedocs.io/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/kbarbary/sep",
+  "license": "LGPL-3.0",
+  "license_family": "LGPL",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-1",
+   "conda-forge::certifi-2017.4.17-py35_0",
+   "conda-forge::chardet-3.0.2-py35_1",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.10-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.12.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::openssl-1.0.2k-0",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-2",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2017.2-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Astronomical source extraction and photometry library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/sep.so",
+  "lib/python2.7/site-packages/sep-1.0.0-py2.7.egg-info"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np112py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.12*",
+   "python 2.7*"
+  ],
+  "license": "LGPL-3.0",
+  "license_family": "LGPL",
+  "name": "sep",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0.0"
+ },
+ "metadata_version": 1,
+ "name": "sep",
+ "raw_recipe": "{% set name = \"sep\" %}\n{% set version = \"1.0.0\" %}\n{% set sha256 = \"38071648b206706c90012cbf23754002c2e949299a51ed1f8392cb1b1166d1ba\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - numpy x.x\n    - toolchain\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  imports:\n    - sep\n\nabout:\n  home: https://github.com/kbarbary/sep\n  license: LGPL-3.0\n  license_family: LGPL\n  license_file: licenses/LGPL_LICENSE.txt\n  summary: 'Astronomical source extraction and photometry library'\n  description: |\n    SEP makes the core algorithms of Source Extractor available as a\n    library of stand-alone functions and classes. These operate directly\n    on in-memory arrays (no FITS files or configuration files). The code\n    is derived from the Source Extractor code base (written in C) and aims\n    to produce results compatible with Source Extractor whenever possible.\n  doc_url: http://sep.readthedocs.io/\n  dev_url: https://github.com/kbarbary/sep\n\nextra:\n  recipe-maintainers:\n    - kbarbary\n    - mwcraig\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "SEP makes the core algorithms of Source Extractor available as a\nlibrary of stand-alone functions and classes. These operate directly\non in-memory arrays (no FITS files or configuration files). The code\nis derived from the Source Extractor code base (written in C) and aims\nto produce results compatible with Source Extractor whenever possible.\n",
+   "dev_url": "https://github.com/kbarbary/sep",
+   "doc_url": "http://sep.readthedocs.io/",
+   "home": "https://github.com/kbarbary/sep",
+   "license": "LGPL-3.0",
+   "license_family": "LGPL",
+   "license_file": "licenses/LGPL_LICENSE.txt",
+   "summary": "Astronomical source extraction and photometry library"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "script": "python setup.py install",
+   "string": "np112py27_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "kbarbary",
+    "mwcraig"
+   ]
+  },
+  "package": {
+   "name": "sep",
+   "version": "1.0.0"
+  },
+  "requirements": {
+   "build": [
+    "blas 1.1 openblas",
+    "numpy 1.12.1 py27_blas_openblas_200",
+    "sqlite 3.13.0 1",
+    "toolchain 2.0.0 0",
+    "libgfortran 3.0.0 1",
+    "zlib 1.2.11 0",
+    "openssl 1.0.2k 0",
+    "ca-certificates 2017.1.23 1",
+    "python 2.7.13 1",
+    "openblas 0.2.19 2",
+    "tk 8.5.19 1",
+    "ncurses 5.9 10",
+    "readline 6.2 0"
+   ],
+   "run": [
+    "python",
+    "numpy x.x"
+   ]
+  },
+  "source": {
+   "fn": "sep-1.0.0.tar.gz",
+   "sha256": "38071648b206706c90012cbf23754002c2e949299a51ed1f8392cb1b1166d1ba",
+   "url": "https://pypi.io/packages/source/s/sep/sep-1.0.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "sep"
+   ]
+  }
+ },
+ "version": "1.0.0"
+}

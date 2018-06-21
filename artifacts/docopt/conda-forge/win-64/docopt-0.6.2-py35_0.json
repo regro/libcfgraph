@@ -1,0 +1,26 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/docopt-0.6.2-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/docopt.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "docopt",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.6.2"
+ },
+ "metadata_version": 1,
+ "name": "docopt",
+ "raw_recipe": "{% set version = \"0.6.2\" %}\n\npackage:\n    name: docopt\n    version: {{ version }}\n\nsource:\n    fn: docopt-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/d/docopt/docopt-{{ version }}.tar.gz\n    md5: 4bc74561b37fad5d3e7d037f82a4c3b1\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - docopt\n\nabout:\n    home: http://docopt.org\n    license: MIT\n    summary: Pythonic argument parser, that will make you smile\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.6.2"
+}

@@ -1,0 +1,38 @@
+{
+ "about": {
+  "home": "http://nbsphinx.rtfd.org/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Jupyter Notebook Tools for Sphinx"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/nbsphinx-0.2.11-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/nbsphinx-0.2.11-py3.4.egg-info/zip-safe",
+  "Lib/site-packages/nbsphinx.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "docutils",
+   "jinja2",
+   "nbconvert",
+   "nbformat",
+   "python 3.4*",
+   "sphinx"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "nbsphinx",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2.11"
+ },
+ "metadata_version": 1,
+ "name": "nbsphinx",
+ "raw_recipe": "{% set name = \"nbsphinx\" %}\n{% set version = \"0.2.11\" %}\n{% set md5 = \"d816b63db78d32d82c532696b6cbbadc\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - docutils\n    - jinja2\n    - nbconvert\n    - nbformat\n    - sphinx\n\ntest:\n  imports:\n    - nbsphinx\n\nabout:\n  home: http://nbsphinx.rtfd.org/\n  license: MIT\n  summary: 'Jupyter Notebook Tools for Sphinx'\n  license_family: MIT\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ericmjl\n",
+ "rendered_recipe": {},
+ "version": "0.2.11"
+}
