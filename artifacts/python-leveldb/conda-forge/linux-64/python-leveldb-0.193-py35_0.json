@@ -1,0 +1,27 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/leveldb-0.193-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/leveldb.cpython-35m-x86_64-linux-gnu.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "leveldb",
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "python-leveldb",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.193"
+ },
+ "metadata_version": 1,
+ "name": "python-leveldb",
+ "raw_recipe": "{% set version = \"0.193\" %}\n\npackage:\n  name: python-leveldb\n  version: {{ version }}\n\nsource:\n  fn: leveldb-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/l/leveldb/leveldb-{{ version }}.tar.gz\n  md5: 2952434f2a0ce10c44f58542cc561589\n\nbuild:\n  skip: true  # [win]\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - leveldb\n    - python\n    - setuptools\n\n  run:\n    - leveldb\n    - python\n\ntest:\n  imports:\n    - leveldb\n\nabout:\n  home: http://code.google.com/p/py-leveldb/\n  license: BSD 3-Clause\n  summary: Python bindings for leveldb database library\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.193"
+}

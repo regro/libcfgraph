@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "https://pythonhosted.org/pyspec/",
+  "license": "GPL v3.0",
+  "summary": "Reader for SPE files part of pyspec a set of python routines for data analysis of x-ray scattering experiments\n"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/spefile-1.6-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/spefile.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.5*"
+  ],
+  "license": "GPL v3.0",
+  "name": "spefile",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.6"
+ },
+ "metadata_version": 1,
+ "name": "spefile",
+ "raw_recipe": "{% set version = \"1.6\" %}\n\npackage:\n    name: spefile\n    version: {{ version }}\n\nsource:\n    path: src\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n\n    run:\n        - python\n        - numpy\n\ntest:\n    imports:\n        - spefile\n\nabout:\n    # Long term goal is to have the src/ folder in this recipe as a stand-alone\n    # project on github.\n    home: https://pythonhosted.org/pyspec/\n    license: GPL v3.0\n    summary: >\n        Reader for SPE files part of pyspec a set of python routines for data\n        analysis of x-ray scattering experiments\n\nextra:\n    recipe-maintainers:\n        - dgursoy\n        - decarlof\n        - ericdill\n        - licode\n        - ravescovi\n        - tacaswell\n",
+ "rendered_recipe": {},
+ "version": "1.6"
+}

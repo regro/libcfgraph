@@ -1,0 +1,26 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/gperf",
+  "share/doc/gperf.html",
+  "share/info/gperf.info",
+  "share/man/man1/gperf.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "GPL-3",
+  "name": "gperf",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "3.0.4"
+ },
+ "metadata_version": 1,
+ "name": "gperf",
+ "raw_recipe": "{% set version = \"3.0.4\" %}\n{% set sha256 = \"767112a204407e62dbc3106647cf839ed544f3cf5d0f0523aaa2508623aad63e\" %}\n\npackage:\n  name: gperf\n  version: {{ version }}\n\nsource:\n  fn: gperf-{{ version }}.tar.gz\n  url: http://ftp.gnu.org/pub/gnu/gperf/gperf-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - sed         # [osx]\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/bin/gperf\"  # [unix]\n\nabout:\n  home: https://www.gnu.org/software/gperf/\n  license: GPL-3\n  summary: 'GNU gperf is a perfect hash function generator.'\n\nextra:\n  recipe-maintainers:\n    - tfors\n",
+ "rendered_recipe": {},
+ "version": "3.0.4"
+}
