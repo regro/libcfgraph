@@ -1,0 +1,42 @@
+{
+ "about": {
+  "home": "http://github.com/z4r/python-coveralls",
+  "license": "Apache 2.0",
+  "summary": "Python interface to coveralls.io API\\n"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/coveralls",
+  "lib/python3.5/site-packages/coveralls/__init__.py",
+  "lib/python3.5/site-packages/coveralls/api.py",
+  "lib/python3.5/site-packages/coveralls/control.py",
+  "lib/python3.5/site-packages/coveralls/report.py",
+  "lib/python3.5/site-packages/coveralls/repository.py",
+  "lib/python3.5/site-packages/coveralls/tests.py",
+  "lib/python3.5/site-packages/python_coveralls-2.7.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/python_coveralls-2.7.0-py3.5.egg-info/pbr.json"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "coverage ==4.0.3",
+   "python 3.5*",
+   "pyyaml",
+   "requests",
+   "sh",
+   "six"
+  ],
+  "license": "Apache 2.0",
+  "name": "python-coveralls",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.7.0"
+ },
+ "metadata_version": 1,
+ "name": "python-coveralls",
+ "raw_recipe": "{% set version = \"2.7.0\" %}\n\npackage:\n  name: python-coveralls\n  version: {{ version }}\n\nsource:\n  fn: python-coveralls-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/python-coveralls/python-coveralls-{{ version }}.tar.gz\n  sha256: c6ed5c665051e87fdf6ad597c547ab69d14eecfcd22d8c2ed73d3faf249304c5\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - coveralls = coveralls:wear\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pyyaml\n    - requests\n    - coverage ==4.0.3\n    - six\n    - sh\n\ntest:\n  imports:\n    - coveralls\n\n  commands:\n    - coveralls --help\n\nabout:\n  home: http://github.com/z4r/python-coveralls\n  license: Apache 2.0\n  summary: 'Python interface to coveralls.io API\\n'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "2.7.0"
+}

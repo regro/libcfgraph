@@ -1,0 +1,32 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/static",
+  "lib/python2.7/site-packages/static-1.1.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/static/VERSION",
+  "lib/python2.7/site-packages/static/__init__.py",
+  "lib/python2.7/site-packages/static/apps.py",
+  "lib/python2.7/site-packages/static/cli.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "pystache",
+   "python 2.7*",
+   "setuptools"
+  ],
+  "license": "MIT License",
+  "name": "static",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.1.1"
+ },
+ "metadata_version": 1,
+ "name": "static",
+ "raw_recipe": "{% set name = \"static\" %}\n{% set version = \"1.1.1\" %}\n{% set build = 0 %}\n{% set md5 = \"75c738ed25cc69a71299b93369ee4e40\" %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    md5: {{ md5 }}\n\nbuild:\n    number: {{ build }}\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    entry_points:\n        - static=static:command\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - pystache\n    run:\n        - python\n        - setuptools\n        - pystache\n\ntest:\n    imports:\n        - static\n\nabout:\n    home: https://github.com/lukearno/static\n    license: MIT License\n    summary: 'A really simple WSGI way to serve static (or mixed) content.'\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n",
+ "rendered_recipe": {},
+ "version": "1.1.1"
+}

@@ -1,0 +1,45 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/Flask_OAuthlib-0.9.3-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/Flask_OAuthlib-0.9.3-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/flask_oauthlib/__init__.py",
+  "lib/python2.7/site-packages/flask_oauthlib/client.py",
+  "lib/python2.7/site-packages/flask_oauthlib/contrib/__init__.py",
+  "lib/python2.7/site-packages/flask_oauthlib/contrib/apps.py",
+  "lib/python2.7/site-packages/flask_oauthlib/contrib/cache.py",
+  "lib/python2.7/site-packages/flask_oauthlib/contrib/client/__init__.py",
+  "lib/python2.7/site-packages/flask_oauthlib/contrib/client/application.py",
+  "lib/python2.7/site-packages/flask_oauthlib/contrib/client/descriptor.py",
+  "lib/python2.7/site-packages/flask_oauthlib/contrib/client/exceptions.py",
+  "lib/python2.7/site-packages/flask_oauthlib/contrib/client/signals.py",
+  "lib/python2.7/site-packages/flask_oauthlib/contrib/client/structure.py",
+  "lib/python2.7/site-packages/flask_oauthlib/contrib/oauth2.py",
+  "lib/python2.7/site-packages/flask_oauthlib/provider/__init__.py",
+  "lib/python2.7/site-packages/flask_oauthlib/provider/oauth1.py",
+  "lib/python2.7/site-packages/flask_oauthlib/provider/oauth2.py",
+  "lib/python2.7/site-packages/flask_oauthlib/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "flask",
+   "oauthlib >=0.6.2",
+   "python 2.7*",
+   "requests-oauthlib >=0.5.0"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "flask-oauthlib",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.9.3"
+ },
+ "metadata_version": 1,
+ "name": "flask-oauthlib",
+ "raw_recipe": "{%set name = \"flask-oauthlib\" %}\n{%set camelName = \"Flask-OAuthlib\" %}\n{%set version = \"0.9.3\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"ee60f7e996850c3544821ce9746079917e5b839d38ce4190a63482b0a902e791\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - flask\n    - oauthlib >=0.6.2\n    - requests-oauthlib >=0.5.0\n\ntest:\n  imports:\n    - flask_oauthlib\n    - flask_oauthlib.contrib\n    - flask_oauthlib.contrib.client\n    - flask_oauthlib.provider\n\nabout:\n  home: https://github.com/lepture/flask-oauthlib\n  license: BSD 3-Clause\n  summary: 'OAuthlib for Flask'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.9.3"
+}

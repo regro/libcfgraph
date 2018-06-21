@@ -1,0 +1,80 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/codar2netcdf-0.0.1-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/codar2netcdf/__init__.py",
+  "Lib/site-packages/codar2netcdf/codar.py",
+  "Lib/site-packages/codar2netcdf/tests/__init__.py",
+  "Lib/site-packages/codar2netcdf/tests/test_convert.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "netcdf4",
+   "pandas",
+   "python 2.7*",
+   "python-dateutil",
+   "pytz"
+  ],
+  "license": "MIT License",
+  "name": "codar2netcdf",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.0.1"
+ },
+ "metadata_version": 1,
+ "name": "codar2netcdf",
+ "raw_recipe": "package:\n    name: codar2netcdf\n    version: 0.0.1\n\nsource:\n    fn: codar2netcdf-0.0.1.tar.gz\n    url: https://pypi.python.org/packages/source/c/codar2netcdf/codar2netcdf-0.0.1.tar.gz\n    md5: 17f18a793ccd16330f53e67174d0d8bb\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - pandas\n        - netcdf4\n        - pytz\n        - python-dateutil\n\ntest:\n    imports:\n        - codar2netcdf\n        - codar2netcdf.tests\n    requires:\n        - pytest\n\nabout:\n    home: https://github.com/axiom-data-science/codar2netcdf\n    license: MIT License\n    summary: 'A utility to convert CODAR total ASCII files into CF NetCDF files.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - kwilcox\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/axiom-data-science/codar2netcdf",
+   "license": "MIT License",
+   "summary": "A utility to convert CODAR total ASCII files into CF NetCDF files."
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "kwilcox"
+   ]
+  },
+  "package": {
+   "name": "codar2netcdf",
+   "version": "0.0.1"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "pandas",
+    "netcdf4",
+    "pytz",
+    "python-dateutil"
+   ]
+  },
+  "source": {
+   "fn": "codar2netcdf-0.0.1.tar.gz",
+   "md5": "17f18a793ccd16330f53e67174d0d8bb",
+   "url": "https://pypi.python.org/packages/source/c/codar2netcdf/codar2netcdf-0.0.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "codar2netcdf",
+    "codar2netcdf.tests"
+   ],
+   "requires": [
+    "pytest"
+   ]
+  }
+ },
+ "version": "0.0.1"
+}

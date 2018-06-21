@@ -1,0 +1,35 @@
+{
+ "about": {
+  "home": "https://github.com/minrk/pamela",
+  "license": "MIT",
+  "summary": "PAM interface using ctypes"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pamela-0.3.0.dist-info/DESCRIPTION.rst",
+  "lib/python2.7/site-packages/pamela-0.3.0.dist-info/INSTALLER",
+  "lib/python2.7/site-packages/pamela-0.3.0.dist-info/METADATA",
+  "lib/python2.7/site-packages/pamela-0.3.0.dist-info/RECORD",
+  "lib/python2.7/site-packages/pamela-0.3.0.dist-info/WHEEL",
+  "lib/python2.7/site-packages/pamela-0.3.0.dist-info/metadata.json",
+  "lib/python2.7/site-packages/pamela.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "pamela",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.0"
+ },
+ "metadata_version": 1,
+ "name": "pamela",
+ "raw_recipe": "{% set version = \"0.3.0\" %}\n\npackage:\n  name: pamela\n  version: {{ version }}\n\nsource:\n  fn: pamela-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pamela/pamela-{{ version }}.tar.gz\n  md5: de6516118d51eb5fc97017f3b6d5c68b\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script: pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n    - pip\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pamela\n\nabout:\n  home: https://github.com/minrk/pamela\n  license: MIT\n  summary: PAM interface using ctypes\n\nextra:\n  recipe-maintainers:\n    - minrk\n",
+ "rendered_recipe": {},
+ "version": "0.3.0"
+}

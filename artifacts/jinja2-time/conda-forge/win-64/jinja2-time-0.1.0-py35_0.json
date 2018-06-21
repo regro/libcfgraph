@@ -1,0 +1,30 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/jinja2_time-0.1.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/jinja2_time-0.1.0-py3.5.egg-info/not-zip-safe",
+  "Lib/site-packages/jinja2_time/__init__.py",
+  "Lib/site-packages/jinja2_time/jinja2_time.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "arrow",
+   "jinja2",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "jinja2-time",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.1.0"
+ },
+ "metadata_version": 1,
+ "name": "jinja2-time",
+ "raw_recipe": "{% set version = \"0.1.0\" %}\n{% set gh_org = \"hackebrot\" %}\n{% set gh_repo = \"jinja2-time\" %}\n\npackage:\n  name: {{ gh_repo }}\n  version: {{ version }}\n\nsource:\n  fn: {{ gh_repo }}-{{ version }}.tar.gz\n  url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/{{ version }}.tar.gz\n  sha256: a1c48392319077f3ec968028fdc9a2efbff74ad0298a8c45a7de7f35357ff5e2\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - arrow\n    - jinja2\n    - python\n  run:\n    - arrow\n    - jinja2\n    - python\n\ntest:\n  files:\n    - requirements.txt\n  requires:\n    - pytest\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: MIT\n  summary: Jinja2 Extension for Dates and Times\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "rendered_recipe": {},
+ "version": "0.1.0"
+}

@@ -1,0 +1,39 @@
+{
+ "about": {
+  "description": "progress reporter enables developers to simply report several working steps\nvia an easy to use interface. The progress bar visualisation backends are\nimplemented for console and Jupyter notebooks.\n",
+  "dev_url": "https://github.com/marscher/progress_reporter",
+  "doc_url": "https://github.com/marscher/progress_reporter",
+  "home": "https://github.com/marscher/progress_reporter",
+  "license": "MIT",
+  "summary": "Python interface for progress reporting"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/progress_reporter-1.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/progress_reporter/__init__.py",
+  "lib/python3.5/site-packages/progress_reporter/_version.py",
+  "lib/python3.5/site-packages/progress_reporter/bar/__init__.py",
+  "lib/python3.5/site-packages/progress_reporter/bar/_impl.py",
+  "lib/python3.5/site-packages/progress_reporter/bar/gui.py",
+  "lib/python3.5/site-packages/progress_reporter/bar/misc.py",
+  "lib/python3.5/site-packages/progress_reporter/reporter.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "progress_reporter",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.2"
+ },
+ "metadata_version": 1,
+ "name": "progress_reporter",
+ "raw_recipe": "{% set name = \"progress_reporter\" %}\n{% set pypi_name = name.replace('_', '-') %}\n{% set version = \"1.2\" %}\n{% set sha256 = \"85c2643cc1f8b6c5179f7ca2a51c3b8540d59175db8f8b29676e212ef06e223a\" %}\n\npackage:\n  name: {{ name|lower }} \n  version: {{ version }}\n\nsource:\n  fn: {{ pypi_name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ pypi_name}}/{{ pypi_name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - progress_reporter\n    - progress_reporter.bar\n\nabout:\n  home: https://github.com/marscher/progress_reporter\n  license: MIT\n  # TODO: include in next release\n  #  license_file: LICENSE.rst\n  summary: 'Python interface for progress reporting'\n  description: |\n    progress reporter enables developers to simply report several working steps\n    via an easy to use interface. The progress bar visualisation backends are \n    implemented for console and Jupyter notebooks.\n  doc_url: https://github.com/marscher/progress_reporter\n  dev_url: https://github.com/marscher/progress_reporter \n\nextra:\n  recipe-maintainers: \n    - marscher\n",
+ "rendered_recipe": {},
+ "version": "1.2"
+}
