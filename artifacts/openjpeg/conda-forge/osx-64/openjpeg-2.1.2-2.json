@@ -1,0 +1,142 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.0",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p481/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://www.openjpeg.org/",
+  "license": "BSD 2-clauses",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-build-2.1.0-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.1.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "An open-source JPEG 2000 codec written in C."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/openjpeg-2.1/OpenJPEGConfig.cmake",
+  "lib/libopenjp2.7.dylib",
+  "bin/opj_decompress",
+  "bin/opj_compress",
+  "lib/libopenjp2.2.1.2.dylib",
+  "lib/libopenjp2.dylib",
+  "include/openjpeg-2.1/opj_stdint.h",
+  "lib/openjpeg-2.1/OpenJPEGTargets.cmake",
+  "lib/pkgconfig/libopenjp2.pc",
+  "include/openjpeg-2.1/openjpeg.h",
+  "lib/openjpeg-2.1/OpenJPEGTargets-noconfig.cmake",
+  "include/openjpeg-2.1/opj_config.h",
+  "bin/opj_dump"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "2",
+  "build_number": 2,
+  "depends": [
+   "libpng >=1.6.23,<1.7",
+   "libtiff 4.0.*",
+   "zlib 1.2.*"
+  ],
+  "license": "BSD 2-clauses",
+  "name": "openjpeg",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.1.2"
+ },
+ "metadata_version": 1,
+ "name": "openjpeg",
+ "raw_recipe": "{% set version = \"2.1.2\" %}\n\npackage:\n  name: openjpeg\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/uclouvain/openjpeg/archive/v{{ version }}.tar.gz\n  sha256: 4ce77b6ef538ef090d9bde1d5eeff8b3069ab56c4906f083475517c2c023dfa7\n\nbuild:\n  number: 2\n  skip: True  # [py36]\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py>=35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - cmake\n    - libtiff 4.0.*\n    - libpng >=1.6.23,<1.7\n    - zlib 1.2.*\n    - vc 14  # [win and py>=35]\n  run:\n    - libtiff 4.0.*\n    - libpng >=1.6.23,<1.7\n    - zlib 1.2.*\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py>=35]\n\ntest:\n  files:\n    - p0_01.j2k\n  commands:\n    - opj_dump -i p0_01.j2k\n    - conda inspect linkages -p $PREFIX openjpeg  # [not win]\n    - conda inspect objects -p $PREFIX openjpeg  # [osx]\n\nabout:\n    home: http://www.openjpeg.org/\n    license: BSD 2-clauses\n    license_file: LICENSE\n    summary: 'An open-source JPEG 2000 codec written in C.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - gillins\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.openjpeg.org/",
+   "license": "BSD 2-clauses",
+   "license_file": "LICENSE",
+   "summary": "An open-source JPEG 2000 codec written in C."
+  },
+  "build": {
+   "features": "",
+   "number": "2",
+   "string": "2"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "gillins"
+   ]
+  },
+  "package": {
+   "name": "openjpeg",
+   "version": "2.1.2"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "libtiff 4.0.*",
+    "libpng >=1.6.23,<1.7",
+    "zlib 1.2.*"
+   ]
+  },
+  "source": {
+   "fn": "v2.1.2.tar.gz",
+   "sha256": "4ce77b6ef538ef090d9bde1d5eeff8b3069ab56c4906f083475517c2c023dfa7",
+   "url": "https://github.com/uclouvain/openjpeg/archive/v2.1.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "opj_dump -i p0_01.j2k",
+    "conda inspect linkages -p $PREFIX openjpeg",
+    "conda inspect objects -p $PREFIX openjpeg"
+   ],
+   "files": [
+    "p0_01.j2k"
+   ]
+  }
+ },
+ "version": "2.1.2"
+}

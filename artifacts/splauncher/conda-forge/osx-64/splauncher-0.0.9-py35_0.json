@@ -1,0 +1,32 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/splaunch",
+  "lib/python3.5/site-packages/splauncher-0.0.9-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/splauncher-0.0.9-py3.5.egg-info/pbr.json",
+  "lib/python3.5/site-packages/splauncher-0.0.9-py3.5.egg-info/zip-safe",
+  "lib/python3.5/site-packages/splauncher/__init__.py",
+  "lib/python3.5/site-packages/splauncher/_version.py",
+  "lib/python3.5/site-packages/splauncher/core.py",
+  "lib/python3.5/site-packages/versioneer.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD",
+  "name": "splauncher",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.0.9"
+ },
+ "metadata_version": 1,
+ "name": "splauncher",
+ "raw_recipe": "{% set version = \"0.0.9\" %}\n\npackage:\n  name: splauncher\n  version: {{ version }}\n\nsource:\n  fn: splauncher-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/s/splauncher/splauncher-{{ version }}.tar.gz\n  md5: c50931acef7d3a218b32126f17f3afab\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - splauncher\n\nabout:\n  home: https://github.com/jakirkham/splauncher\n  license: BSD\n  summary: 'A simple subprocess launcher with optional DRMAA support.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.0.9"
+}

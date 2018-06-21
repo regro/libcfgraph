@@ -1,0 +1,35 @@
+{
+ "about": {
+  "home": "https://github.com/GrahamDumpleton/wrapt",
+  "license": "BSD 2-Clause",
+  "summary": "Module for decorators, wrappers and monkey patching."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/wrapt-1.10.8-py3.4.egg-info",
+  "lib/python3.4/site-packages/wrapt/__init__.py",
+  "lib/python3.4/site-packages/wrapt/_wrappers.so",
+  "lib/python3.4/site-packages/wrapt/arguments.py",
+  "lib/python3.4/site-packages/wrapt/decorators.py",
+  "lib/python3.4/site-packages/wrapt/importer.py",
+  "lib/python3.4/site-packages/wrapt/wrappers.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD 2-Clause",
+  "name": "wrapt",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.10.8"
+ },
+ "metadata_version": 1,
+ "name": "wrapt",
+ "raw_recipe": "{% set name = \"wrapt\" %}\n{% set version = \"1.10.8\" %}\n{% set sha256 = \"4ea17e814e39883c6cf1bb9b0835d316b2f69f0f0882ffe7dad1ede66ba82c73\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - wrapt\n\nabout:\n  home: https://github.com/GrahamDumpleton/wrapt\n  license: BSD 2-Clause\n  summary: 'Module for decorators, wrappers and monkey patching.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.10.8"
+}

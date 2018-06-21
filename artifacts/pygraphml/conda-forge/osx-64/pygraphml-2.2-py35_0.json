@@ -1,0 +1,39 @@
+{
+ "about": {
+  "home": "https://github.com/hadim/pygraphml/",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Small library to parse GraphML files in Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pygraphml-2.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pygraphml/__init__.py",
+  "lib/python3.5/site-packages/pygraphml/attribute.py",
+  "lib/python3.5/site-packages/pygraphml/edge.py",
+  "lib/python3.5/site-packages/pygraphml/graph.py",
+  "lib/python3.5/site-packages/pygraphml/graphml_parser.py",
+  "lib/python3.5/site-packages/pygraphml/item.py",
+  "lib/python3.5/site-packages/pygraphml/node.py",
+  "lib/python3.5/site-packages/pygraphml/point.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "pygraphml",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.2"
+ },
+ "metadata_version": 1,
+ "name": "pygraphml",
+ "raw_recipe": "{% set name = \"pygraphml\" %}\n{% set version = \"2.2\" %}\n{% set sha256 = \"cbc3aedcf9b2d3c7c7c47c75182588b334ee3cb6ad0df047d2b368cdb0a8dd1b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pygraphml\n\nabout:\n  home: https://github.com/hadim/pygraphml/\n  license: BSD 3-Clause\n  summary: 'Small library to parse GraphML files in Python'\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - hadim\n",
+ "rendered_recipe": {},
+ "version": "2.2"
+}

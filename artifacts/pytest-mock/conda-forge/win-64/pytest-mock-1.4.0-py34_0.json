@@ -1,0 +1,32 @@
+{
+ "about": {
+  "home": "https://github.com/pytest-dev/pytest-mock",
+  "license": "MIT",
+  "summary": "Thin-wrapper around the mock package for easier use with py.test"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/_pytest_mock_version.py",
+  "Lib/site-packages/pytest_mock-1.4.0-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/pytest_mock.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "pytest",
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "pytest-mock",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.4.0"
+ },
+ "metadata_version": 1,
+ "name": "pytest-mock",
+ "raw_recipe": "{% set name = \"pytest-mock\" %}\n{% set version = \"1.4.0\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"23703de886a33b337129867c8befccfdace22d7a49b0a9b17cf937492591a7d2\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pytest-mock/pytest-mock-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - pytest\n    - mock  # [py26 or py27]\n\ntest:\n  imports:\n    - pytest_mock\n\nabout:\n  home: https://github.com/pytest-dev/pytest-mock\n  license: MIT\n  license_file: LICENSE\n  summary: Thin-wrapper around the mock package for easier use with py.test\n\nextra:\n  recipe-maintainers:\n    - nicoddemus",
+ "rendered_recipe": {},
+ "version": "1.4.0"
+}

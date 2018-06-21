@@ -1,0 +1,59 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "vs2008_runtime"
+  ],
+  "license": "Modified BSD License (3-clause)",
+  "name": "vc",
+  "platform": "win",
+  "subdir": "win-64",
+  "track_features": "vc9",
+  "version": "9"
+ },
+ "metadata_version": 1,
+ "name": "vc",
+ "raw_recipe": "package:\n  name: vc\n  version: 9   # [win and py27]\n  version: 10  # [win and py34]\n  version: 14  # [win and py35]\n\nbuild:\n  number: 0\n  track_features:\n    - vc9     # [win and py27]\n    - vc10    # [win and py34]\n    - vc14    # [win and py35]\n  skip: true  # [not win]\n\nrequirements:\n  run:\n    - vs2008_runtime  # [win and py27]\n    - vs2010_runtime  # [win and py34]\n    - vs2015_runtime  # [win and py35]\n\nabout:\n  home: https://github.com/conda/conda/wiki/VC-features\n  license: Modified BSD License (3-clause)\n  summary: A meta-package to track VC features.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - 183amir\n    - pelson\n    - patricksnape\n    - msarahan\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/conda/conda/wiki/VC-features",
+   "license": "Modified BSD License (3-clause)",
+   "summary": "A meta-package to track VC features."
+  },
+  "build": {
+   "number": 0,
+   "skip": true,
+   "track_features": [
+    "vc9",
+    "vc10",
+    "vc14"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham",
+    "183amir",
+    "pelson",
+    "patricksnape",
+    "msarahan"
+   ]
+  },
+  "package": {
+   "name": "vc",
+   "version": 14
+  },
+  "requirements": {
+   "run": [
+    "vs2008_runtime",
+    "vs2010_runtime",
+    "vs2015_runtime"
+   ]
+  }
+ },
+ "version": "9"
+}
