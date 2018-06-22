@@ -1,0 +1,171 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/thrift",
+  "include/thrift/TApplicationException.h",
+  "include/thrift/TDispatchProcessor.h",
+  "include/thrift/TLogging.h",
+  "include/thrift/TOutput.h",
+  "include/thrift/TProcessor.h",
+  "include/thrift/TToString.h",
+  "include/thrift/Thrift.h",
+  "include/thrift/async/TAsyncBufferProcessor.h",
+  "include/thrift/async/TAsyncChannel.h",
+  "include/thrift/async/TAsyncDispatchProcessor.h",
+  "include/thrift/async/TAsyncProcessor.h",
+  "include/thrift/async/TAsyncProtocolProcessor.h",
+  "include/thrift/async/TConcurrentClientSyncInfo.h",
+  "include/thrift/async/TEvhttpClientChannel.h",
+  "include/thrift/async/TEvhttpServer.h",
+  "include/thrift/concurrency/BoostThreadFactory.h",
+  "include/thrift/concurrency/Exception.h",
+  "include/thrift/concurrency/FunctionRunner.h",
+  "include/thrift/concurrency/Monitor.h",
+  "include/thrift/concurrency/Mutex.h",
+  "include/thrift/concurrency/PlatformThreadFactory.h",
+  "include/thrift/concurrency/PosixThreadFactory.h",
+  "include/thrift/concurrency/StdThreadFactory.h",
+  "include/thrift/concurrency/Thread.h",
+  "include/thrift/concurrency/ThreadManager.h",
+  "include/thrift/concurrency/TimerManager.h",
+  "include/thrift/concurrency/Util.h",
+  "include/thrift/config.h",
+  "include/thrift/cxxfunctional.h",
+  "include/thrift/processor/PeekProcessor.h",
+  "include/thrift/processor/StatsProcessor.h",
+  "include/thrift/processor/TMultiplexedProcessor.h",
+  "include/thrift/protocol/TBase64Utils.h",
+  "include/thrift/protocol/TBinaryProtocol.h",
+  "include/thrift/protocol/TBinaryProtocol.tcc",
+  "include/thrift/protocol/TCompactProtocol.h",
+  "include/thrift/protocol/TCompactProtocol.tcc",
+  "include/thrift/protocol/TDebugProtocol.h",
+  "include/thrift/protocol/TJSONProtocol.h",
+  "include/thrift/protocol/TMultiplexedProtocol.h",
+  "include/thrift/protocol/TProtocol.h",
+  "include/thrift/protocol/TProtocolDecorator.h",
+  "include/thrift/protocol/TProtocolException.h",
+  "include/thrift/protocol/TProtocolTap.h",
+  "include/thrift/protocol/TVirtualProtocol.h",
+  "include/thrift/qt/TQIODeviceTransport.h",
+  "include/thrift/qt/TQTcpServer.h",
+  "include/thrift/server/TConnectedClient.h",
+  "include/thrift/server/TNonblockingServer.h",
+  "include/thrift/server/TServer.h",
+  "include/thrift/server/TServerFramework.h",
+  "include/thrift/server/TSimpleServer.h",
+  "include/thrift/server/TThreadPoolServer.h",
+  "include/thrift/server/TThreadedServer.h",
+  "include/thrift/thrift-config.h",
+  "include/thrift/transport/PlatformSocket.h",
+  "include/thrift/transport/TBufferTransports.h",
+  "include/thrift/transport/TFDTransport.h",
+  "include/thrift/transport/TFileTransport.h",
+  "include/thrift/transport/THttpClient.h",
+  "include/thrift/transport/THttpServer.h",
+  "include/thrift/transport/THttpTransport.h",
+  "include/thrift/transport/TPipe.h",
+  "include/thrift/transport/TPipeServer.h",
+  "include/thrift/transport/TSSLServerSocket.h",
+  "include/thrift/transport/TSSLSocket.h",
+  "include/thrift/transport/TServerSocket.h",
+  "include/thrift/transport/TServerTransport.h",
+  "include/thrift/transport/TShortReadTransport.h",
+  "include/thrift/transport/TSimpleFileTransport.h",
+  "include/thrift/transport/TSocket.h",
+  "include/thrift/transport/TSocketPool.h",
+  "include/thrift/transport/TTransport.h",
+  "include/thrift/transport/TTransportException.h",
+  "include/thrift/transport/TTransportUtils.h",
+  "include/thrift/transport/TVirtualTransport.h",
+  "include/thrift/transport/TZlibTransport.h",
+  "include/thrift/windows/GetTimeOfDay.h",
+  "include/thrift/windows/Operators.h",
+  "include/thrift/windows/OverlappedSubmissionThread.h",
+  "include/thrift/windows/SocketPair.h",
+  "include/thrift/windows/Sync.h",
+  "include/thrift/windows/TWinsockSingleton.h",
+  "include/thrift/windows/WinFcntl.h",
+  "include/thrift/windows/config.h",
+  "lib/libthrift.a",
+  "lib/libthrift.so",
+  "lib/libthrift.so.0.9.3",
+  "lib/libthriftz.a",
+  "lib/libthriftz.so",
+  "lib/libthriftz.so.0.9.3"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [
+   "libgcc",
+   "openssl",
+   "zlib 1.2*"
+  ],
+  "license": "Apache 2.0",
+  "name": "thrift-cpp",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.9.3"
+ },
+ "metadata_version": 1,
+ "name": "thrift-cpp",
+ "raw_recipe": "package:\n  name: thrift-cpp\n  version: \"0.9.3\"\n\nsource:\n  fn: thrift-0.9.3.tar.gz\n  url: http://archive.apache.org/dist/thrift/0.9.3/thrift-0.9.3.tar.gz\n  md5: 88d667a8ae870d5adeca8cb7d6795442\n\nbuild:\n  skip: true  # [win]\n  number: 1\n\nrequirements:\n  build:\n    - boost\n    - autoconf\n    - automake\n    - cmake\n    - gcc\n    - libtool\n    - openssl\n    - bison\n    - flex\n    - pkg-config\n    - zlib 1.2*\n\n  run:\n    - libgcc\n    - openssl\n    - zlib 1.2*\n\ntest:\n  commands:\n    - test -f $PREFIX/bin/thrift\n    - test -f $PREFIX/lib/libthrift.a\n    - test -f $PREFIX/include/thrift/Thrift.h\n\nabout:\n  home: http://thrift.apache.org\n  license: Apache 2.0\n  summary: 'Compiler and C++ libraries and headers for the Apache Thrift RPC system'\n\nextra:\n  recipe-maintainers:\n    - wesm\n    - msarahan\n    - jakirkham\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://thrift.apache.org",
+   "license": "Apache 2.0",
+   "summary": "Compiler and C++ libraries and headers for the Apache Thrift RPC system"
+  },
+  "build": {
+   "number": 1,
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "wesm",
+    "msarahan",
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "thrift-cpp",
+   "version": "0.9.3"
+  },
+  "requirements": {
+   "build": [
+    "boost",
+    "autoconf",
+    "automake",
+    "cmake",
+    "gcc",
+    "libtool",
+    "openssl",
+    "bison",
+    "flex",
+    "pkg-config",
+    "zlib 1.2*"
+   ],
+   "run": [
+    "libgcc",
+    "openssl",
+    "zlib 1.2*"
+   ]
+  },
+  "source": {
+   "fn": "thrift-0.9.3.tar.gz",
+   "md5": "88d667a8ae870d5adeca8cb7d6795442",
+   "url": "http://archive.apache.org/dist/thrift/0.9.3/thrift-0.9.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/bin/thrift",
+    "test -f $PREFIX/lib/libthrift.a",
+    "test -f $PREFIX/include/thrift/Thrift.h"
+   ]
+  }
+ },
+ "version": "0.9.3"
+}

@@ -1,0 +1,36 @@
+{
+ "about": {
+  "description": "pytest-json is a plugin for py.test that generates JSON reports for test\nresults.\n",
+  "home": "https://github.com/mattcl/pytest-json",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Generate JSON test reports"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pytest_json-0.4.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pytest_json/__init__.py",
+  "lib/python2.7/site-packages/pytest_json/plugin.py",
+  "lib/python2.7/site-packages/pytest_json/report.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "pytest >=2.3",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "pytest-json",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.4.0"
+ },
+ "metadata_version": 1,
+ "name": "pytest-json",
+ "raw_recipe": "{% set name = \"pytest-json\" %}\n{% set version = \"0.4.0\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"8bf4e1be1691f4416bc12b14785b5ad9e842887b0b2b2d61b37dcb555b208630\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - pytest >=2.3\n    - python\n\ntest:\n  imports:\n    - pytest_json\n\nabout:\n  home: https://github.com/mattcl/pytest-json\n  license: MIT\n  license_family: MIT\n  summary: Generate JSON test reports\n  description: |\n    pytest-json is a plugin for py.test that generates JSON reports for test\n    results.\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n",
+ "rendered_recipe": {},
+ "version": "0.4.0"
+}

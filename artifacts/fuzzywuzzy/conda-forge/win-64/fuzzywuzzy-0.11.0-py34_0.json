@@ -1,0 +1,34 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/fuzzywuzzy-0.11.0-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/fuzzywuzzy-0.11.0-py3.4.egg-info/pbr.json",
+  "Lib/site-packages/fuzzywuzzy-0.11.0-py3.4.egg-info/zip-safe",
+  "Lib/site-packages/fuzzywuzzy/StringMatcher.py",
+  "Lib/site-packages/fuzzywuzzy/__init__.py",
+  "Lib/site-packages/fuzzywuzzy/fuzz.py",
+  "Lib/site-packages/fuzzywuzzy/process.py",
+  "Lib/site-packages/fuzzywuzzy/string_processing.py",
+  "Lib/site-packages/fuzzywuzzy/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "python-levenshtein"
+  ],
+  "license": "MIT",
+  "name": "fuzzywuzzy",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.11.0"
+ },
+ "metadata_version": 1,
+ "name": "fuzzywuzzy",
+ "raw_recipe": "{%set name = \"fuzzywuzzy\" %}\n{%set version = \"0.11.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"3d3d961c24aec15d48e9d2a60d7fdffce18d0a168d4e0ca2dd22571d5c53cc80\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - python-levenshtein\n\ntest:\n  imports:\n    - fuzzywuzzy\n    - fuzzywuzzy.string_processing\n\nabout:\n  home: https://github.com/seatgeek/fuzzywuzzy\n  license: MIT\n  summary: 'Fuzzy string matching in python'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - josegonzalez\n",
+ "rendered_recipe": {},
+ "version": "0.11.0"
+}

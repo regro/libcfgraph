@@ -1,0 +1,32 @@
+{
+ "about": {
+  "home": "https://github.com/amoffat/sh",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Python subprocess interface"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/sh-1.11-py3.5.egg-info",
+  "lib/python3.5/site-packages/sh.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "sh",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.11"
+ },
+ "metadata_version": 1,
+ "name": "sh",
+ "raw_recipe": "{% set name = \"sh\" %}\n{% set version = \"1.11\" %}\n{% set sha256 = \"590fb9b84abf8b1f560df92d73d87965f1e85c6b8330f8a5f6b336b36f0559a4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - sh\n\nabout:\n  home: https://github.com/amoffat/sh\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Python subprocess interface\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.11"
+}

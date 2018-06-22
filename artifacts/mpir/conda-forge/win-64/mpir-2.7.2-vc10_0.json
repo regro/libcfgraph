@@ -1,0 +1,31 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "mpir/lib/x64/Release/config.h",
+  "mpir/lib/x64/Release/gmp-impl.h",
+  "mpir/lib/x64/Release/gmp-mparam.h",
+  "mpir/lib/x64/Release/gmp.h",
+  "mpir/lib/x64/Release/gmpxx.h",
+  "mpir/lib/x64/Release/longlong.h",
+  "mpir/lib/x64/Release/mpir.h",
+  "mpir/lib/x64/Release/mpirxx.h"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc10_0",
+  "build_number": 0,
+  "depends": [],
+  "features": "vc10",
+  "license": "LGPL 3",
+  "name": "mpir",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.7.2"
+ },
+ "metadata_version": 1,
+ "name": "mpir",
+ "raw_recipe": "{% set version = \"2.7.2\" %}\n\npackage:\n  name: mpir\n  version: {{ version }}\n\nsource:\n  fn: mpir-{{ version }}.tar.bz2\n  url: http://mpir.org/mpir-{{ version }}.tar.bz2\n  md5: b31aa1ebc01b5fedf4ac43277c03feec\n\nbuild:\n  number: 0\n  skip: true          # [win and not (py34 or py35)]\n  features:\n    - vc10            # [win and py34]\n    - vc14            # [win and py35]\n\nrequirements:\n  build:\n    - m4              # [unix]\n    - python\n\ntest:\n  requires:\n    - python\n  files:\n    - test.c\n\nabout:\n  home: http://mpir.org/\n  license: LGPL 3\n  summary: Multiple Precision Integers and Rationals.\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "2.7.2"
+}
