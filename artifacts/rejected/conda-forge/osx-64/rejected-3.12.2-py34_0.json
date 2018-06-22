@@ -1,0 +1,44 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/rejected",
+  "lib/python3.4/site-packages/rejected-3.12.2-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/rejected-3.12.2-py3.4.egg-info/zip-safe",
+  "lib/python3.4/site-packages/rejected/__init__.py",
+  "lib/python3.4/site-packages/rejected/consumer.py",
+  "lib/python3.4/site-packages/rejected/controller.py",
+  "lib/python3.4/site-packages/rejected/data.py",
+  "lib/python3.4/site-packages/rejected/example.py",
+  "lib/python3.4/site-packages/rejected/log.py",
+  "lib/python3.4/site-packages/rejected/mcp.py",
+  "lib/python3.4/site-packages/rejected/mixins.py",
+  "lib/python3.4/site-packages/rejected/process.py",
+  "lib/python3.4/site-packages/rejected/state.py",
+  "lib/python3.4/site-packages/rejected/stats.py",
+  "lib/python3.4/site-packages/rejected/statsd.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "helper",
+   "pika >=0.10.0",
+   "psutil",
+   "python 3.4*",
+   "pyyaml",
+   "tornado >=4.2,<4.3"
+  ],
+  "license": "BSD 3-clause",
+  "name": "rejected",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "3.12.2"
+ },
+ "metadata_version": 1,
+ "name": "rejected",
+ "raw_recipe": "{% set version = \"3.12.2\" %}\n\npackage:\n  name: rejected\n  version: {{ version }}\n\nsource:\n  fn: rejected-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/r/rejected/rejected-{{ version }}.tar.gz\n  md5: 1bd216f95124a4a29f3722fe00d1f800\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - rejected = rejected.controller:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - helper\n    - pika >=0.10.0\n    - psutil\n    - pyyaml\n    - tornado >=4.2,<4.3\n\n  run:\n    - python\n    - helper\n    - pika >=0.10.0\n    - psutil\n    - pyyaml\n    - tornado >=4.2,<4.3\n\ntest:\n  imports:\n    - rejected\n  commands:\n    - rejected --help\n\nabout:\n  home: https://rejected.readthedocs.io\n  license: BSD 3-clause\n  summary: An AMQP (RabbitMQ) consumer daemon and message processing framework\n\nextra:\n  recipe-maintainers:\n    - frol\n",
+ "rendered_recipe": {},
+ "version": "3.12.2"
+}

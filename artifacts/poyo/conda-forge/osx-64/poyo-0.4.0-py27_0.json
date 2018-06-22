@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "https://github.com/hackebrot/poyo",
+  "license": "MIT",
+  "summary": "A lightweight YAML Parser for Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/poyo-0.4.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/poyo-0.4.0-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/poyo/__init__.py",
+  "lib/python2.7/site-packages/poyo/_nodes.py",
+  "lib/python2.7/site-packages/poyo/exceptions.py",
+  "lib/python2.7/site-packages/poyo/parser.py",
+  "lib/python2.7/site-packages/poyo/patterns.py",
+  "lib/python2.7/site-packages/poyo/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "poyo",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.4.0"
+ },
+ "metadata_version": 1,
+ "name": "poyo",
+ "raw_recipe": "{% set version = \"0.4.0\" %}\n{% set gh_org = \"hackebrot\" %}\n{% set gh_repo = \"poyo\" %}\n\npackage:\n  name: {{ gh_repo }}\n  version: {{ version }}\n\nsource:\n  fn: {{ gh_repo }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ gh_repo[0] }}/{{ gh_repo }}/{{ gh_repo }}-{{ version }}.tar.gz\n  sha256: 8a95d95193eb0838117cc8847257bf17248ef6d157aaa55ea5c20509a87388b8\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  requires:\n    - pytest\n    - python\n  commands:\n    - cd \"{{ environ[\"SRC_DIR\"] }}\"\n    - py.test\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: MIT\n  summary: A lightweight YAML Parser for Python\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "rendered_recipe": {},
+ "version": "0.4.0"
+}
