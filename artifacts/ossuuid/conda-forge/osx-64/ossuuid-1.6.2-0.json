@@ -1,0 +1,131 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "UIDs are 128 bit numbers which are intended to have a high likelihood of uniqueness\nover space and time and are computationally difficult to guess. They are globally unique\nidentifiers which can be locally generated without contacting a global registration authority.\nUUIDs are intended as unique identifiers for both mass tagging objects with an extremely\nshort lifetime and to reliably identifying very persistent objects across a network.\n",
+  "dev_url": "http://www.ossp.org/pkg/lib/uuid/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "ftp://ftp.ossp.org/pkg/lib/uuid/",
+  "license": "GPL",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Universally Unique Identifier"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/libuuid.la",
+  "lib/libuuid.dylib",
+  "bin/uuid",
+  "lib/libuuid.16.dylib",
+  "lib/libuuid.a",
+  "bin/uuid-config",
+  "include/uuid.h",
+  "share/man/man1/uuid.1",
+  "share/man/man3/uuid.3",
+  "share/man/man1/uuid-config.1",
+  "lib/pkgconfig/uuid.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "GPL",
+  "name": "ossuuid",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.6.2"
+ },
+ "metadata_version": 1,
+ "name": "ossuuid",
+ "raw_recipe": "{% set name = \"ossuuid\" %}\n{% set version = \"1.6.2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-uvcdat-{{ version }}.tar.gz\n  url: http://uvcdat.llnl.gov/cdat/resources/uuid-1.6.2.tar.gz\n  sha256: 11a615225baa5f8bb686824423f50e4427acd3f70d394765bdff32801f0fd5b0\n\nbuild:\n  number: 0\n  skip: True  # [win] \n\nrequirements:\n  build:\n  run:\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libuuid.a\n\nabout:\n  home: ftp://ftp.ossp.org/pkg/lib/uuid/\n  license: GPL\n  summary: 'Universally Unique Identifier'\n  description: |\n    UIDs are 128 bit numbers which are intended to have a high likelihood of uniqueness \n    over space and time and are computationally difficult to guess. They are globally unique \n    identifiers which can be locally generated without contacting a global registration authority. \n    UUIDs are intended as unique identifiers for both mass tagging objects with an extremely \n    short lifetime and to reliably identifying very persistent objects across a network. \n  dev_url: http://www.ossp.org/pkg/lib/uuid/\n\nextra:\n  recipe-maintainers:\n    - dnadeau4\n    - doutriaux1\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "UIDs are 128 bit numbers which are intended to have a high likelihood of uniqueness\nover space and time and are computationally difficult to guess. They are globally unique\nidentifiers which can be locally generated without contacting a global registration authority.\nUUIDs are intended as unique identifiers for both mass tagging objects with an extremely\nshort lifetime and to reliably identifying very persistent objects across a network.\n",
+   "dev_url": "http://www.ossp.org/pkg/lib/uuid/",
+   "home": "ftp://ftp.ossp.org/pkg/lib/uuid/",
+   "license": "GPL",
+   "summary": "Universally Unique Identifier"
+  },
+  "build": {
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "dnadeau4",
+    "doutriaux1"
+   ]
+  },
+  "package": {
+   "name": "ossuuid",
+   "version": "1.6.2"
+  },
+  "requirements": {
+   "build": [],
+   "run": ""
+  },
+  "source": {
+   "fn": "ossuuid-uvcdat-1.6.2.tar.gz",
+   "sha256": "11a615225baa5f8bb686824423f50e4427acd3f70d394765bdff32801f0fd5b0",
+   "url": "http://uvcdat.llnl.gov/cdat/resources/uuid-1.6.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/lib/libuuid.a"
+   ]
+  }
+ },
+ "version": "1.6.2"
+}

@@ -1,0 +1,38 @@
+{
+ "about": {
+  "description": "Spglib is a library for finding and handling crystal symmetries.\n",
+  "dev_url": "https://github.com/atztogo/spglib",
+  "doc_url": "https://atztogo.github.io/spglib/",
+  "home": "https://atztogo.github.io/spglib/",
+  "license": "BSD-3-clause",
+  "license_family": "BSD",
+  "summary": "Space symmetry groups spglib module."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/spglib-1.9.8.15-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/spglib/__init__.py",
+  "lib/python2.7/site-packages/spglib/_spglib.so",
+  "lib/python2.7/site-packages/spglib/spglib.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.11*",
+   "python 2.7*"
+  ],
+  "license": "BSD-3-clause",
+  "license_family": "BSD",
+  "name": "spglib",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.9.8.15"
+ },
+ "metadata_version": 1,
+ "name": "spglib",
+ "raw_recipe": "{% set name = \"spglib\" %}\n{% set version = \"1.9.8.15\" %}\n{% set sha256 = \"53be50ebc417a6e8083ec5308c5b57d934db199d7ccfd5eb0993a929e953940e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\n\nbuild:\n  skip: true  # [win and (py27 or py34)]\n  number: 0\n  script: \n    - python setup.py install --single-version-externally-managed --record record.txt \n\nrequirements:\n  build:\n    - python\n    - numpy x.x\n    - setuptools\n    - toolchain\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  imports:\n    - spglib\n  commands:\n    - cd {{ environ.SRC_DIR }}\n    - cd test \n    - python test_spglib.py\n\n\nabout:\n  home: https://atztogo.github.io/spglib/\n  license: BSD-3-clause\n  license_family: BSD\n  license_file: {{ environ.RECIPE_DIR }}/COPYING\n  summary: 'Space symmetry groups spglib module.'\n\n\n  description: |\n    Spglib is a library for finding and handling crystal symmetries.\n  doc_url: https://atztogo.github.io/spglib/\n  dev_url: https://github.com/atztogo/spglib\n\nextra:\n  recipe-maintainers:\n    - jochym\n    - atztogo\n",
+ "rendered_recipe": {},
+ "version": "1.9.8.15"
+}

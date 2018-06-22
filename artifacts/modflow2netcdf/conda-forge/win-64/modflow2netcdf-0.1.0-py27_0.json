@@ -1,0 +1,99 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/modflow2netcdf-0.0.1.dev0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/modflow2netcdf/__init__.py",
+  "Lib/site-packages/modflow2netcdf/mod2net.py",
+  "Lib/site-packages/modflow2netcdf/output.py",
+  "Lib/site-packages/modflow2netcdf/tests/__init__.py",
+  "Lib/site-packages/modflow2netcdf/tests/test_namefile.py",
+  "Lib/site-packages/modflow2netcdf/utils.py",
+  "Scripts/mod2net-script.py",
+  "Scripts/mod2net.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "flopy",
+   "matplotlib",
+   "netcdf4",
+   "numpy",
+   "pygc",
+   "pyproj",
+   "python 2.7*",
+   "python-dateutil",
+   "pytz",
+   "scipy"
+  ],
+  "license": "MIT",
+  "name": "modflow2netcdf",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.1.0"
+ },
+ "metadata_version": 1,
+ "name": "modflow2netcdf",
+ "raw_recipe": "package:\n    name: modflow2netcdf\n    version: 0.1.0\n\nsource:\n    git_url: https://github.com/axiom-data-science/modflow2netcdf.git\n    git_tag: 0.1.0\n    patches:\n        - np_mpl_version.patch  # See https://github.com/axiom-data-science/modflow2netcdf/issues/9\n\nbuild:\n    number: 0\n    skip: True  # [py3k]\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - matplotlib\n        - scipy\n        - pygc\n        - netcdf4\n        - pyproj\n        - flopy\n        - python-dateutil\n        - pytz\n\ntest:\n    requires:\n        - pytest\n    imports:\n        - modflow2netcdf\n    commands:\n        - mod2net -h\n\nabout:\n    home:  https://github.com/axiom-data-science/modflow2netcdf\n\n    license: MIT\n    summary: Converts Modflow Output files to CF Compliant NetCDF\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/axiom-data-science/modflow2netcdf",
+   "license": "MIT",
+   "summary": "Converts Modflow Output files to CF Compliant NetCDF"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "kwilcox",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "modflow2netcdf",
+   "version": "0.1.0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "numpy",
+    "matplotlib",
+    "scipy",
+    "pygc",
+    "netcdf4",
+    "pyproj",
+    "flopy",
+    "python-dateutil",
+    "pytz"
+   ]
+  },
+  "source": {
+   "git_tag": "0.1.0",
+   "git_url": "https://github.com/axiom-data-science/modflow2netcdf.git",
+   "patches": [
+    "np_mpl_version.patch"
+   ]
+  },
+  "test": {
+   "commands": [
+    "mod2net -h"
+   ],
+   "imports": [
+    "modflow2netcdf"
+   ],
+   "requires": [
+    "pytest"
+   ]
+  }
+ },
+ "version": "0.1.0"
+}
