@@ -1,0 +1,40 @@
+{
+ "about": {
+  "home": "https://github.com/tqdm/tqdm",
+  "license": "Mozilla Public License 2.0 (MPL 2.0) or MIT License",
+  "summary": "A Fast, Extensible Progress Meter"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/tqdm-4.8.4-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/tqdm/__init__.py",
+  "Lib/site-packages/tqdm/__main__.py",
+  "Lib/site-packages/tqdm/_main.py",
+  "Lib/site-packages/tqdm/_tqdm.py",
+  "Lib/site-packages/tqdm/_tqdm_gui.py",
+  "Lib/site-packages/tqdm/_tqdm_notebook.py",
+  "Lib/site-packages/tqdm/_tqdm_pandas.py",
+  "Lib/site-packages/tqdm/_utils.py",
+  "Lib/site-packages/tqdm/_version.py",
+  "Scripts/tqdm-script.py",
+  "Scripts/tqdm.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "Mozilla Public License 2.0 (MPL 2.0) or MIT License",
+  "name": "tqdm",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "4.8.4"
+ },
+ "metadata_version": 1,
+ "name": "tqdm",
+ "raw_recipe": "{% set name = \"tqdm\" %}\n{% set version = \"4.8.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: bab05f8bb6efd2702ab6c532e5e6a758a66c0d2f443e09784b73e4066e6b3a37\n\nbuild:\n  entry_points:\n    - tqdm=tqdm._main:main\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - tqdm\n\n  commands:\n    - tqdm --help\n    - tqdm -v\n\nabout:\n  home: https://github.com/tqdm/tqdm\n  license: Mozilla Public License 2.0 (MPL 2.0) or MIT License\n  summary: 'A Fast, Extensible Progress Meter'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - ericdill\n",
+ "rendered_recipe": {},
+ "version": "4.8.4"
+}

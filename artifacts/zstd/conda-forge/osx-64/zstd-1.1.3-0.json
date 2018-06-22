@@ -1,0 +1,159 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.8",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Zstandard is a real-time compression algorithm, providing high compression\nratios. It offers a very wide range of compression / speed trade-off, while\nbeing backed by a very fast decoder. It also offers a special mode for\nsmall data, called dictionary compression, and can create dictionaries from\nany sample set. Zstandard library is provided as open source software using\na BSD license.\n",
+  "dev_url": "https://github.com/facebook/zstd",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://www.zstd.net",
+  "license": "BSD 3-Clause",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.8-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Zstandard - Fast real-time compression algorithm"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/zstd",
+  "bin/zstdcat",
+  "share/man/man1/zstdcat.1",
+  "lib/libzstd.dylib",
+  "bin/zstdless",
+  "lib/libzstd.a",
+  "include/zstd_errors.h",
+  "lib/pkgconfig/libzstd.pc",
+  "include/zstd.h",
+  "bin/unzstd",
+  "include/zbuff.h",
+  "bin/zstdgrep",
+  "share/man/man1/zstd.1",
+  "lib/libzstd.1.dylib",
+  "include/zdict.h",
+  "lib/libzstd.1.1.3.dylib",
+  "share/man/man1/unzstd.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "BSD 3-Clause",
+  "name": "zstd",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.1.3"
+ },
+ "metadata_version": 1,
+ "name": "zstd",
+ "raw_recipe": "{% set name = \"zstd\" %}\n{% set version = \"1.1.3\" %}\n{% set sha256hash = \"106c532ae840a6ee4aee5258f04f3acab7b3e09b9e9584ebe94e4fbfd899af0a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/facebook/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256hash }}\n  patches:\n    - patches/0001-Fix-VS2008-solution-format-version.patch  # [win]\n    - patches/0002-Fix-order-of-building-for-VS2010.patch    # [win]\n\nbuild:\n  number: 0\n  features:\n    - vc9   # [win and py27]\n    - vc14  # [win and py3k]\n\nrequirements:\n  build:\n    - toolchain   # [unix]\n    - python      # [win]\n    - msinttypes  # [win and py27]\n\ntest:\n  requires:\n    - python      # [win]\n    - pkg-config  # [unix]\n\n  commands:\n    - zstd -be -i5\n\n    - test -f ${PREFIX}/include/{{ name }}.h     # [unix]\n    - test -f ${PREFIX}/lib/lib{{ name }}.a      # [unix]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n\n    - if not exist %LIBRARY_INC%\\{{ name }}.h exit 1              # [win]\n    - if not exist %LIBRARY_LIB%\\lib{{ name }}.def exit 1         # [win]\n    - if not exist %LIBRARY_LIB%\\lib{{ name }}.dll exit 1         # [win]\n    - if not exist %LIBRARY_LIB%\\lib{{ name }}.lib exit 1         # [win]\n    - if not exist %LIBRARY_LIB%\\lib{{ name }}_static.lib exit 1  # [win and not py27]\n\n    - PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig pkg-config --cflags lib{{ name }}  # [unix]\n\n    - conda inspect linkages {{ name }}  # [unix]\n    - conda inspect objects {{ name }}   # [osx]\n\nabout:\n  home: http://www.zstd.net\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: \"Zstandard - Fast real-time compression algorithm\"\n  description: |\n    Zstandard is a real-time compression algorithm, providing high compression\n    ratios. It offers a very wide range of compression / speed trade-off, while\n    being backed by a very fast decoder. It also offers a special mode for\n    small data, called dictionary compression, and can create dictionaries from\n    any sample set. Zstandard library is provided as open source software using\n    a BSD license.\n  dev_url: https://github.com/facebook/zstd\n\nextra:\n  recipe-maintainers:\n    - rolando\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Zstandard is a real-time compression algorithm, providing high compression\nratios. It offers a very wide range of compression / speed trade-off, while\nbeing backed by a very fast decoder. It also offers a special mode for\nsmall data, called dictionary compression, and can create dictionaries from\nany sample set. Zstandard library is provided as open source software using\na BSD license.\n",
+   "dev_url": "https://github.com/facebook/zstd",
+   "home": "http://www.zstd.net",
+   "license": "BSD 3-Clause",
+   "license_file": "LICENSE",
+   "summary": "Zstandard - Fast real-time compression algorithm"
+  },
+  "build": {
+   "features": "",
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "rolando"
+   ]
+  },
+  "package": {
+   "name": "zstd",
+   "version": "1.1.3"
+  },
+  "requirements": {
+   "build": [
+    "toolchain 2.0.0 0"
+   ],
+   "run": []
+  },
+  "source": {
+   "fn": "zstd-1.1.3.tar.gz",
+   "patches": "",
+   "sha256": "106c532ae840a6ee4aee5258f04f3acab7b3e09b9e9584ebe94e4fbfd899af0a",
+   "url": "https://github.com/facebook/zstd/archive/v1.1.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "zstd -be -i5",
+    "test -f ${PREFIX}/include/zstd.h",
+    "test -f ${PREFIX}/lib/libzstd.a",
+    "test -f ${PREFIX}/lib/libzstd.dylib",
+    "PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig pkg-config --cflags libzstd",
+    "conda inspect linkages zstd",
+    "conda inspect objects zstd"
+   ],
+   "requires": [
+    "pkg-config"
+   ]
+  }
+ },
+ "version": "1.1.3"
+}
