@@ -1,0 +1,27 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pickleshare-0.7.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pickleshare.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "python-pathlib2"
+  ],
+  "license": "MIT",
+  "name": "pickleshare",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.7.1"
+ },
+ "metadata_version": 1,
+ "name": "pickleshare",
+ "raw_recipe": "{% set version = \"0.7.1\" %}\n\npackage:\n  name: pickleshare\n  version: {{ version }}\n\nsource:\n  fn: pickleshare-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/p/pickleshare/pickleshare-{{ version }}.tar.gz\n  md5: d039ea7dc706180fc4b7953da3bcb3cb\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - python-pathlib2  # [py<34]\n\ntest:\n  imports:\n    - pickleshare\n\nabout:\n  home: https://github.com/vivainio/pickleshare\n  license: MIT\n  summary: \"Tiny 'shelve'-like database with concurrency support\"\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - takluyver\n",
+ "rendered_recipe": {},
+ "version": "0.7.1"
+}

@@ -1,0 +1,40 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/dateutil/__init__.py",
+  "lib/python3.5/site-packages/dateutil/easter.py",
+  "lib/python3.5/site-packages/dateutil/parser.py",
+  "lib/python3.5/site-packages/dateutil/relativedelta.py",
+  "lib/python3.5/site-packages/dateutil/rrule.py",
+  "lib/python3.5/site-packages/dateutil/tz/__init__.py",
+  "lib/python3.5/site-packages/dateutil/tz/_common.py",
+  "lib/python3.5/site-packages/dateutil/tz/tz.py",
+  "lib/python3.5/site-packages/dateutil/tz/win.py",
+  "lib/python3.5/site-packages/dateutil/tzwin.py",
+  "lib/python3.5/site-packages/dateutil/zoneinfo/__init__.py",
+  "lib/python3.5/site-packages/dateutil/zoneinfo/dateutil-zoneinfo.tar.gz",
+  "lib/python3.5/site-packages/dateutil/zoneinfo/rebuild.py",
+  "lib/python3.5/site-packages/python_dateutil-2.5.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/python_dateutil-2.5.2-py3.5.egg-info/zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "six"
+  ],
+  "license": "BSD",
+  "name": "python-dateutil",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.5.2"
+ },
+ "metadata_version": 1,
+ "name": "python-dateutil",
+ "raw_recipe": "{% set version=\"2.5.2\" %}\n\npackage:\n  name: python-dateutil\n  version: {{ version }}\n\nsource:\n  fn: python-dateutil-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/p/python-dateutil/python-dateutil-{{ version }}.tar.gz\n  md5: eafe168e8f404bf384514f5116eedbb6\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - dateutil\n    - dateutil.rrule\n\nabout:\n  home: https://dateutil.readthedocs.org/\n  license: BSD\n  license_file: LICENSE\n  summary: Extensions to the standard Python datetime module\n  description: |\n    The dateutil module provides powerful extensions to the standard datetime\n    module, available in Python.\n  doc_url: https://dateutil.readthedocs.org/en/latest/\n  dev_url: https://github.com/dateutil/dateutil/\n\nextra:\n  recipe-maintainers:\n    - msarahan\n",
+ "rendered_recipe": {},
+ "version": "2.5.2"
+}

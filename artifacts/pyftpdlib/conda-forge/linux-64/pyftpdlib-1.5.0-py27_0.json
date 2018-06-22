@@ -1,0 +1,54 @@
+{
+ "about": {
+  "description": "Python FTP server library provides a high-level portable interface to easily\nwrite very efficient, scalable and asynchronous FTP servers with Python. It\nis the most complete RFC-959 FTP server implementation available for Python\nprogramming language and it's used in projects like Google Chromium and Bazaar\nand included in Debian, Fedora and FreeBSD package repositories.\n",
+  "dev_url": "https://github.com/giampaolo/pyftpdlib",
+  "doc_url": "http://pythonhosted.org/pyftpdlib/",
+  "home": "https://github.com/giampaolo/pyftpdlib",
+  "license": "MIT",
+  "summary": "pyftpdlib is a high-level library to easily write asynchronous portable FTP servers with Python."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/ftpbench",
+  "bin/pyftpdlib",
+  "lib/python2.7/site-packages/pyftpdlib-1.5.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pyftpdlib/__init__.py",
+  "lib/python2.7/site-packages/pyftpdlib/__main__.py",
+  "lib/python2.7/site-packages/pyftpdlib/_compat.py",
+  "lib/python2.7/site-packages/pyftpdlib/authorizers.py",
+  "lib/python2.7/site-packages/pyftpdlib/filesystems.py",
+  "lib/python2.7/site-packages/pyftpdlib/handlers.py",
+  "lib/python2.7/site-packages/pyftpdlib/ioloop.py",
+  "lib/python2.7/site-packages/pyftpdlib/log.py",
+  "lib/python2.7/site-packages/pyftpdlib/servers.py",
+  "lib/python2.7/site-packages/pyftpdlib/test/README",
+  "lib/python2.7/site-packages/pyftpdlib/test/__init__.py",
+  "lib/python2.7/site-packages/pyftpdlib/test/keycert.pem",
+  "lib/python2.7/site-packages/pyftpdlib/test/runner.py",
+  "lib/python2.7/site-packages/pyftpdlib/test/test_authorizers.py",
+  "lib/python2.7/site-packages/pyftpdlib/test/test_filesystems.py",
+  "lib/python2.7/site-packages/pyftpdlib/test/test_functional.py",
+  "lib/python2.7/site-packages/pyftpdlib/test/test_functional_ssl.py",
+  "lib/python2.7/site-packages/pyftpdlib/test/test_ioloop.py",
+  "lib/python2.7/site-packages/pyftpdlib/test/test_servers.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "pyopenssl",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "pyftpdlib",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.5.0"
+ },
+ "metadata_version": 1,
+ "name": "pyftpdlib",
+ "raw_recipe": "{% set name = \"pyftpdlib\" %}\n{% set version = \"1.5.0\" %}\n{% set sha256 = \"88c1dc3daa8de9ff5b25fd57ae8cc4390b5d034f87f2396ebd93eeb8f6879972\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: release-{{ version }}.tar.gz\n  url: https://github.com/giampaolo/pyftpdlib/archive/release-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - pyftpdlib = clcache:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pyopenssl\n  run:\n    - python\n    - pyopenssl\n\ntest:\n  imports:\n    - pyftpdlib\n    - pyftpdlib.authorizers\n    - pyftpdlib.handlers\n    - pyftpdlib.filesystems\n    - pyftpdlib.servers\n    - pyftpdlib.ioloop\n  commands:\n    - python -m pyftpdlib --help\n\nabout:\n  home: https://github.com/giampaolo/pyftpdlib\n  license: MIT\n  license_file: LICENSE\n  summary: 'pyftpdlib is a high-level library to easily write asynchronous portable FTP servers with Python.'\n  description: |\n    Python FTP server library provides a high-level portable interface to easily\n    write very efficient, scalable and asynchronous FTP servers with Python. It\n    is the most complete RFC-959 FTP server implementation available for Python\n    programming language and it's used in projects like Google Chromium and Bazaar\n    and included in Debian, Fedora and FreeBSD package repositories.\n  doc_url: http://pythonhosted.org/pyftpdlib/\n  dev_url: https://github.com/giampaolo/pyftpdlib\n\nextra:\n  recipe-maintainers:\n    - edisongustavo\n",
+ "rendered_recipe": {},
+ "version": "1.5.0"
+}

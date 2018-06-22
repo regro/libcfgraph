@@ -1,0 +1,33 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/mdb_copy",
+  "bin/mdb_dump",
+  "bin/mdb_load",
+  "bin/mdb_stat",
+  "include/lmdb.h",
+  "lib/liblmdb.a",
+  "lib/liblmdb.so",
+  "share/man/man1/mdb_copy.1",
+  "share/man/man1/mdb_dump.1",
+  "share/man/man1/mdb_load.1",
+  "share/man/man1/mdb_stat.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "OpenLDAP Public License",
+  "name": "lmdb",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.9.18"
+ },
+ "metadata_version": 1,
+ "name": "lmdb",
+ "raw_recipe": "{% set version = \"0.9.18\" %}\n\npackage:\n  name: lmdb\n  version: {{ version }}\n\nsource:\n  fn: LMDB_{{ version }}.tar.gz\n  url: https://github.com/LMDB/lmdb/archive/LMDB_{{ version }}.tar.gz\n  sha1: 375e31bd0a4d8426e5fc4bfdb00d532c206d4f2b\n  patches:\n    - Makefile.patch\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\ntest:\n  commands:\n    - mdb_copy -V                                    # [unix]\n    - mdb_dump -V                                    # [unix]\n    - mdb_load -V                                    # [unix]\n    - mdb_stat -V                                    # [unix]\n    - test -f ${PREFIX}/lib/liblmdb.a                # [unix]\n    - test -f ${PREFIX}/lib/liblmdb.so               # [unix]\n\nabout:\n  home: http://symas.com/mdb/\n  license: OpenLDAP Public License\n  summary: A high-performance embedded transactional key-value store database.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.9.18"
+}

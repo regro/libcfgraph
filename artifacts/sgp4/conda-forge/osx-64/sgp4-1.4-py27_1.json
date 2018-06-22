@@ -1,0 +1,39 @@
+{
+ "about": {
+  "description": "Python implementation of most recent version\nof the SGP4 satellite tracking algorithm.\n",
+  "home": "https://github.com/brandon-rhodes/python-sgp4",
+  "license": "MIT",
+  "summary": "Python implementation of most recent version of the SGP4 satellite tracking algorithm."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/sgp4-1.4-py2.7.egg-info",
+  "lib/python2.7/site-packages/sgp4/SGP4-VER.TLE",
+  "lib/python2.7/site-packages/sgp4/__init__.py",
+  "lib/python2.7/site-packages/sgp4/earth_gravity.py",
+  "lib/python2.7/site-packages/sgp4/ext.py",
+  "lib/python2.7/site-packages/sgp4/io.py",
+  "lib/python2.7/site-packages/sgp4/model.py",
+  "lib/python2.7/site-packages/sgp4/propagation.py",
+  "lib/python2.7/site-packages/sgp4/tcppver.out",
+  "lib/python2.7/site-packages/sgp4/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "sgp4",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.4"
+ },
+ "metadata_version": 1,
+ "name": "sgp4",
+ "raw_recipe": "{% set name = \"sgp4\" %}\n{% set version = \"1.4\" %}\n{% set gh_org = \"brandon-rhodes\" %}\n{% set gh_repo = \"python-sgp4\" %}\n{% set sha256 = \"a7e03a714de969e2ad980830957793d677681b40047d7d052a50fe9e96e6ab7c\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - manifest.patch\n    - tests.patch\n\nbuild:\n  number: 1\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  requires:\n    - numpy\n  imports:\n    - sgp4\n    - sgp4.tests\n  commands:\n    - python -m unittest -v sgp4.tests\n\nabout:\n  home: https://github.com/brandon-rhodes/python-sgp4\n  license: MIT\n  license_file: {{ environ.RECIPE_DIR }}/LICENSE\n  summary: 'Python implementation of most recent version of the SGP4 satellite tracking algorithm.'\n\n  description: |\n    Python implementation of most recent version\n    of the SGP4 satellite tracking algorithm.\n\nextra:\n  recipe-maintainers:\n    - jochym\n    - brandon-rhodes\n",
+ "rendered_recipe": {},
+ "version": "1.4"
+}
