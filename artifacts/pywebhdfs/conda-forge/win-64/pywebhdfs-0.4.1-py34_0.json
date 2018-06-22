@@ -1,0 +1,33 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pywebhdfs-0.4.1-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/pywebhdfs-0.4.1-py3.4.egg-info/not-zip-safe",
+  "Lib/site-packages/pywebhdfs-0.4.1-py3.4.egg-info/pbr.json",
+  "Lib/site-packages/pywebhdfs/__init__.py",
+  "Lib/site-packages/pywebhdfs/errors.py",
+  "Lib/site-packages/pywebhdfs/operations.py",
+  "Lib/site-packages/pywebhdfs/webhdfs.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "requests",
+   "six"
+  ],
+  "license": "Apache License, Version 2.0",
+  "name": "pywebhdfs",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.4.1"
+ },
+ "metadata_version": 1,
+ "name": "pywebhdfs",
+ "raw_recipe": "{% set version = \"0.4.1\" %}\n\npackage:\n  name: pywebhdfs\n  version: {{ version }}\n\nsource:\n  fn: pywebhdfs-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/p/pywebhdfs/pywebhdfs-{{ version }}.tar.gz\n  md5: 4e7866940d77bf880cce5eba2ef75ece\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pbr\n\n  run:\n    - python\n    - requests\n    - six\n\ntest:\n  imports:\n    - pywebhdfs\n\nabout:\n  home: https://github.com/pywebhdfs/pywebhdfs/\n  license: Apache License, Version 2.0\n  summary: Python wrapper for the hadoop WebHDFS Rest API\n\nextra:\n  recipe-maintainers:\n    - frol\n",
+ "rendered_recipe": {},
+ "version": "0.4.1"
+}

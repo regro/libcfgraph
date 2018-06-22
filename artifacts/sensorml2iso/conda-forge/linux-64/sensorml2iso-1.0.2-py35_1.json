@@ -1,0 +1,179 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/ioos/sensorml2iso",
+  "license": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-0",
+   "conda-forge::certifi-2017.1.23-py35_0",
+   "conda-forge::chardet-3.0.2-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.10-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.12.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_2",
+   "conda-forge::openssl-1.0.2k-0",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2017.2-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Query an IOOS SOS service for active sensors and output ISO 19115-2-compliant xml."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/sensorml2iso/templates/macros.xml",
+  "bin/sensorml2iso",
+  "lib/python3.5/site-packages/sensorml2iso/sensorml2iso.py",
+  "lib/python3.5/site-packages/sensorml2iso/command_line.py",
+  "lib/python3.5/site-packages/sensorml2iso/templates/sensorml_iso.xml",
+  "lib/python3.5/site-packages/sensorml2iso/__init__.py",
+  "lib/python3.5/site-packages/sensorml2iso-1.0.2-py3.5.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "geopandas",
+   "jinja2",
+   "lxml",
+   "numpy",
+   "owslib",
+   "pandas",
+   "pyoos",
+   "python 3.5*",
+   "shapely"
+  ],
+  "license": "MIT",
+  "name": "sensorml2iso",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0.2"
+ },
+ "metadata_version": 1,
+ "name": "sensorml2iso",
+ "raw_recipe": "{% set version = \"1.0.2\" %}\n\npackage:\n  name: sensorml2iso\n  version: {{ version }}\n\nsource:\n  fn : sensorml2iso-{{ version }}.tar.gz\n  url: https://github.com/ioos/sensorml2iso/archive/v{{ version }}.tar.gz\n  sha256: 7ca52c28264ef462747c32432f6023a1857ae882d687424994394700b40b7482\n  patches:\n    - template.patch\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - sensorml2iso = sensorml2iso.command_line:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - owslib\n    - geopandas\n    - jinja2\n    - lxml\n    - numpy\n    - pandas\n    - pyoos\n    - shapely\n\ntest:\n  imports:\n    - sensorml2iso\n  commands:\n    - sensorml2iso -h\n    - sensorml2iso -s http://data.nanoos.org/52nsos/sos/kvp\n\nabout:\n  home: https://github.com/ioos/sensorml2iso\n  license: MIT\n  license_file: LICENSE\n  summary: 'Query an IOOS SOS service for active sensors and output ISO 19115-2-compliant xml.'\n\nextra:\n  recipe-maintainers:\n    - mwengren\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/ioos/sensorml2iso",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Query an IOOS SOS service for active sensors and output ISO 19115-2-compliant xml."
+  },
+  "build": {
+   "entry_points": [
+    "sensorml2iso = sensorml2iso.command_line:main"
+   ],
+   "noarch": "",
+   "noarch_python": false,
+   "number": "1",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py35_1"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "mwengren",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "sensorml2iso",
+   "version": "1.0.2"
+  },
+  "requirements": {
+   "build": [
+    "openssl 1.0.2k 0",
+    "python 3.5.3 1",
+    "tk 8.5.19 1",
+    "setuptools 33.1.1 py35_0",
+    "sqlite 3.13.0 1",
+    "ca-certificates 2017.1.23 0",
+    "certifi 2017.1.23 py35_0",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0",
+    "ncurses 5.9 10",
+    "readline 6.2 0"
+   ],
+   "run": [
+    "python",
+    "owslib",
+    "geopandas",
+    "jinja2",
+    "lxml",
+    "numpy",
+    "pandas",
+    "pyoos",
+    "shapely"
+   ]
+  },
+  "source": {
+   "fn": "sensorml2iso-1.0.2.tar.gz",
+   "patches": [
+    "template.patch"
+   ],
+   "sha256": "7ca52c28264ef462747c32432f6023a1857ae882d687424994394700b40b7482",
+   "url": "https://github.com/ioos/sensorml2iso/archive/v1.0.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "sensorml2iso -h",
+    "sensorml2iso -s http://data.nanoos.org/52nsos/sos/kvp"
+   ],
+   "imports": [
+    "sensorml2iso"
+   ]
+  }
+ },
+ "version": "1.0.2"
+}

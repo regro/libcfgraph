@@ -1,0 +1,42 @@
+{
+ "about": {
+  "home": "http://pygrametl.org/",
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "summary": "ETL programming in Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pygrametl-2.5-py3.4.egg-info",
+  "lib/python3.4/site-packages/pygrametl/FIFODict.py",
+  "lib/python3.4/site-packages/pygrametl/JDBCConnectionWrapper.py",
+  "lib/python3.4/site-packages/pygrametl/__init__.py",
+  "lib/python3.4/site-packages/pygrametl/aggregators.py",
+  "lib/python3.4/site-packages/pygrametl/datasources.py",
+  "lib/python3.4/site-packages/pygrametl/jythonmultiprocessing.py",
+  "lib/python3.4/site-packages/pygrametl/jythonsupport/Value.class",
+  "lib/python3.4/site-packages/pygrametl/jythonsupport/Value.java",
+  "lib/python3.4/site-packages/pygrametl/parallel.py",
+  "lib/python3.4/site-packages/pygrametl/steps.py",
+  "lib/python3.4/site-packages/pygrametl/tables.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "name": "pygrametl",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.5.0"
+ },
+ "metadata_version": 1,
+ "name": "pygrametl",
+ "raw_recipe": "{% set version = \"2.5.0\" %}\n{% set name = \"pygrametl\" %}\n\npackage:\n  name: pygrametl\n  version: {{ version }}\n\nsource:\n  fn: pygrametl-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 7db0b98f6c817fc39e3d049c74b6aafbe0807e9322565fca1acdf9cf83607ad1\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pygrametl\n\nabout:\n  home: http://pygrametl.org/\n  license: BSD 2-Clause\n  license_file: LICENSE.txt\n  license_family: BSD\n  summary: 'ETL programming in Python'\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - mariusvniekerk\n",
+ "rendered_recipe": {},
+ "version": "2.5.0"
+}
