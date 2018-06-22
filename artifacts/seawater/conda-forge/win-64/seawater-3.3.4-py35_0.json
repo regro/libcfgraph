@@ -1,0 +1,71 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/seawater-3.3.4-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/seawater/__init__.py",
+  "Lib/site-packages/seawater/constants.py",
+  "Lib/site-packages/seawater/eos80.py",
+  "Lib/site-packages/seawater/extras.py",
+  "Lib/site-packages/seawater/geostrophic.py",
+  "Lib/site-packages/seawater/library.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.5*"
+  ],
+  "license": "MIT License",
+  "name": "seawater",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "3.3.4"
+ },
+ "metadata_version": 1,
+ "name": "seawater",
+ "raw_recipe": "package:\n    name: seawater\n    version: 3.3.4\n\nsource:\n    fn: seawater-3.3.4.tar.gz\n    url: https://pypi.python.org/packages/source/s/seawater/seawater-3.3.4.tar.gz\n    md5: 5e8fe3706cac5e69f9a13f0fcc411302\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n\ntest:\n    imports:\n        - seawater\n\nabout:\n    home: http://pypi.python.org/pypi/seawater/\n    license: MIT License\n    summary: Seawater Library for Python\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://pypi.python.org/pypi/seawater/",
+   "license": "MIT License",
+   "summary": "Seawater Library for Python"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "seawater",
+   "version": "3.3.4"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "numpy"
+   ]
+  },
+  "source": {
+   "fn": "seawater-3.3.4.tar.gz",
+   "md5": "5e8fe3706cac5e69f9a13f0fcc411302",
+   "url": "https://pypi.python.org/packages/source/s/seawater/seawater-3.3.4.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "seawater"
+   ]
+  }
+ },
+ "version": "3.3.4"
+}

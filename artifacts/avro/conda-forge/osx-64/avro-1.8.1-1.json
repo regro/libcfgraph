@@ -1,0 +1,51 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/avroappend",
+  "bin/avrocat",
+  "bin/avromod",
+  "bin/avropipe",
+  "include/avro.h",
+  "include/avro/allocation.h",
+  "include/avro/basics.h",
+  "include/avro/consumer.h",
+  "include/avro/data.h",
+  "include/avro/errors.h",
+  "include/avro/generic.h",
+  "include/avro/io.h",
+  "include/avro/legacy.h",
+  "include/avro/msinttypes.h",
+  "include/avro/msstdint.h",
+  "include/avro/platform.h",
+  "include/avro/refcount.h",
+  "include/avro/resolver.h",
+  "include/avro/schema.h",
+  "include/avro/value.h",
+  "lib/libavro.23.0.0.dylib",
+  "lib/libavro.a",
+  "lib/libavro.dylib",
+  "lib/pkgconfig/avro-c.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [
+   "jansson",
+   "snappy",
+   "xz 5.2.*",
+   "zlib 1.2.*"
+  ],
+  "license": "Apache 2.0",
+  "name": "avro",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.8.1"
+ },
+ "metadata_version": 1,
+ "name": "avro",
+ "raw_recipe": "{% set version = \"1.8.1\" %}\n\npackage:\n    name: avro\n    version: {{ version }}\n\nsource:\n    fn: avro-c-{{ version }}.tar.gz\n    url: https://www-us.apache.org/dist/avro/avro-{{ version }}/c/avro-c-{{ version }}.tar.gz\n    sha1: 93abae3d078e34900c1fee38fb0af2dcde624c8b\n\nbuild:\n    number: 1\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - cmake\n        - snappy\n        - jansson\n        - xz 5.2.*\n        - pkg-config  # [osx]\n        - zlib 1.2.*\n    run:\n        - xz 5.2.*\n        - snappy\n        - jansson\n        - zlib 1.2.*\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libavro.a  # [unix]\n\nabout:\n  home: http://hadoop.apache.org/avro\n  license: Apache 2.0\n  summary: 'Avro is a serialization and RPC framework.'\n\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
+ "rendered_recipe": {},
+ "version": "1.8.1"
+}

@@ -1,0 +1,39 @@
+{
+ "about": {
+  "home": "https://github.com/pytest-dev/pytest-qt",
+  "license": "MIT",
+  "summary": "pytest support for PyQt and PySide applications"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pytest_qt-2.1.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pytestqt/__init__.py",
+  "lib/python3.5/site-packages/pytestqt/_version.py",
+  "lib/python3.5/site-packages/pytestqt/exceptions.py",
+  "lib/python3.5/site-packages/pytestqt/logging.py",
+  "lib/python3.5/site-packages/pytestqt/modeltest.py",
+  "lib/python3.5/site-packages/pytestqt/plugin.py",
+  "lib/python3.5/site-packages/pytestqt/qt_compat.py",
+  "lib/python3.5/site-packages/pytestqt/qtbot.py",
+  "lib/python3.5/site-packages/pytestqt/wait_signal.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "pytest",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "pytest-qt",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.1.0"
+ },
+ "metadata_version": 1,
+ "name": "pytest-qt",
+ "raw_recipe": "{% set name = \"pytest-qt\" %}\n{% set version = \"2.1.0\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"fe77d0506cb9ec86c1c3653362a2052ea4b389fd525baab9c36eefd80a06322f\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pytest-qt/pytest-qt-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - pytest\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - pytest\n\ntest:\n  requires:\n    - pyqt\n    - pytest\n  imports:\n    - pytestqt\n  commands:\n    - py.test --help\n\nabout:\n  home: https://github.com/pytest-dev/pytest-qt\n  license: MIT\n  summary: pytest support for PyQt and PySide applications\n\nextra:\n  recipe-maintainers:\n    - nicoddemus",
+ "rendered_recipe": {},
+ "version": "2.1.0"
+}

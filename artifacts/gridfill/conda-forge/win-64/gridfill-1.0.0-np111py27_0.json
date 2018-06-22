@@ -1,0 +1,40 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/gridfill-1.0.0-py2.7-win-amd64.egg-info/PKG-INFO",
+  "Lib/site-packages/gridfill-1.0.0-py2.7-win-amd64.egg-info/not-zip-safe",
+  "Lib/site-packages/gridfill/__init__.py",
+  "Lib/site-packages/gridfill/_gridfill.pyd",
+  "Lib/site-packages/gridfill/gridfill.py",
+  "Lib/site-packages/gridfill/tests/__init__.py",
+  "Lib/site-packages/gridfill/tests/data/grid.npy",
+  "Lib/site-packages/gridfill/tests/data/soln.npy",
+  "Lib/site-packages/gridfill/tests/data/soln_cyclic.npy",
+  "Lib/site-packages/gridfill/tests/data/soln_cyclic_zonal.npy",
+  "Lib/site-packages/gridfill/tests/data/soln_zonal.npy",
+  "Lib/site-packages/gridfill/tests/test_fill.py",
+  "Lib/site-packages/gridfill/tests/test_fill_cube.py",
+  "Scripts/easy_install-2.7-script.py",
+  "Scripts/easy_install-2.7.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.11*",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "gridfill",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.0"
+ },
+ "metadata_version": 1,
+ "name": "gridfill",
+ "raw_recipe": "{% set version = \"1.0.0\" %}\n\npackage:\n    name: gridfill\n    version: {{ version }}\n\nsource:\n    fn: v{{ version }}.tar.gz\n    url: https://github.com/ajdawson/gridfill/archive/v{{ version }}.tar.gz\n    md5: 7258701d8296f974268e634ea09ed673\n\nbuild:\n    number: 0\n    script:\n        - python setup.py install --single-version-externally-managed --record record.txt  # [not (win and py<35)]\n        - python setup.py build --compiler=mingw32  # [win and py<35]\n        - python setup.py install  # [win and py<35]\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - cython\n        - numpy x.x\n        - mingwpy  # [win and py<35]\n    run:\n        - python\n        - numpy x.x\n\ntest:\n    requires:\n        - nose\n    imports:\n        - gridfill\n\nabout:\n    home: https://github.com/ajdawson/gridfill\n    license: MIT\n    summary: Fill missing values in a grid by solving Poisson's equation via an iterative relaxation scheme\n\nextra:\n    recipe-maintainers:\n        - ajdawson\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.0.0"
+}

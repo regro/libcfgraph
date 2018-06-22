@@ -1,0 +1,75 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/awesome_slugify-1.6.5-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/slugify/__init__.py",
+  "lib/python2.7/site-packages/slugify/alt_translates.py",
+  "lib/python2.7/site-packages/slugify/main.py",
+  "lib/python2.7/site-packages/slugify/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "regex",
+   "unidecode >=0.04.14,<0.05"
+  ],
+  "license": "GPL-3.0",
+  "name": "awesome-slugify",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.6.5"
+ },
+ "metadata_version": 1,
+ "name": "awesome-slugify",
+ "raw_recipe": "package:\n    name: awesome-slugify\n    version: 1.6.5\n\nsource:\n    fn: awesome-slugify-1.6.5.tar.gz\n    url: https://pypi.python.org/packages/source/a/awesome-slugify/awesome-slugify-1.6.5.tar.gz\n    md5: 58b9b751b4670e3c221f008dd61348a8\n    patches:\n        - utf8.patch # [win]\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - regex\n        - unidecode >=0.04.14,<0.05\n\ntest:\n    imports:\n        - slugify\n\nabout:\n    home: https://github.com/dimka665/awesome-slugify\n    license: GPL-3.0\n    summary: Python flexible slugify function\n\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - kwilcox\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/dimka665/awesome-slugify",
+   "license": "GPL-3.0",
+   "summary": "Python flexible slugify function"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "kwilcox"
+   ]
+  },
+  "package": {
+   "name": "awesome-slugify",
+   "version": "1.6.5"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "regex",
+    "unidecode >=0.04.14,<0.05"
+   ]
+  },
+  "source": {
+   "fn": "awesome-slugify-1.6.5.tar.gz",
+   "md5": "58b9b751b4670e3c221f008dd61348a8",
+   "patches": [
+    "utf8.patch"
+   ],
+   "url": "https://pypi.python.org/packages/source/a/awesome-slugify/awesome-slugify-1.6.5.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "slugify"
+   ]
+  }
+ },
+ "version": "1.6.5"
+}

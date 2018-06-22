@@ -1,0 +1,36 @@
+{
+ "about": {
+  "dev_url": "https://github.com/brandon-rhodes/uncommitted",
+  "home": "https://github.com/brandon-rhodes/uncommitted",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Scan filesystem for changes not committed to version control"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/uncommitted",
+  "lib/python3.4/site-packages/uncommitted-1.6-py3.4.egg-info",
+  "lib/python3.4/site-packages/uncommitted/__init__.py",
+  "lib/python3.4/site-packages/uncommitted/command.py",
+  "lib/python3.4/site-packages/uncommitted/test_integration.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "uncommitted",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.6"
+ },
+ "metadata_version": 1,
+ "name": "uncommitted",
+ "raw_recipe": "{% set name = \"uncommitted\" %}\n{% set version = \"1.6\" %}\n{% set sha256 = \"c1bf738447b8968c2c3876e8d02ef848dd899440b565e8e897fda97cd1ba3c7a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n  skip: True  # [win and py3k]\n  preserve_egg_dir: True\n  entry_points:\n    - uncommitted = uncommitted.command:main\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - uncommitted\n\n  commands:\n    - uncommitted --help\n\nabout:\n  home: https://github.com/brandon-rhodes/uncommitted\n  license: MIT\n  license_family: MIT\n  # license_file: LICENSE # When added to MANIFEST.in \u2013 brandon-rhodes/uncommitted#13\n  summary: 'Scan filesystem for changes not committed to version control'\n  dev_url: https://github.com/brandon-rhodes/uncommitted\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
+ "rendered_recipe": {},
+ "version": "1.6"
+}
