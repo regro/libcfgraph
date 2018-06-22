@@ -1,0 +1,56 @@
+{
+ "about": {
+  "home": "https://github.com/alimanfoo/numcodecs",
+  "license": "MIT",
+  "summary": "A Python package providing buffer compression and transformation codecs for use in data storage and communication applications."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/numcodecs-0.0.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/numcodecs/__init__.py",
+  "lib/python3.4/site-packages/numcodecs/abc.py",
+  "lib/python3.4/site-packages/numcodecs/blosc.cpython-34m.so",
+  "lib/python3.4/site-packages/numcodecs/bz2.py",
+  "lib/python3.4/site-packages/numcodecs/categorize.py",
+  "lib/python3.4/site-packages/numcodecs/checksum32.py",
+  "lib/python3.4/site-packages/numcodecs/compat.py",
+  "lib/python3.4/site-packages/numcodecs/delta.py",
+  "lib/python3.4/site-packages/numcodecs/fixedscaleoffset.py",
+  "lib/python3.4/site-packages/numcodecs/lzma.py",
+  "lib/python3.4/site-packages/numcodecs/packbits.py",
+  "lib/python3.4/site-packages/numcodecs/registry.py",
+  "lib/python3.4/site-packages/numcodecs/tests/__init__.py",
+  "lib/python3.4/site-packages/numcodecs/tests/common.py",
+  "lib/python3.4/site-packages/numcodecs/tests/test_blosc.py",
+  "lib/python3.4/site-packages/numcodecs/tests/test_bz2.py",
+  "lib/python3.4/site-packages/numcodecs/tests/test_categorize.py",
+  "lib/python3.4/site-packages/numcodecs/tests/test_checksum32.py",
+  "lib/python3.4/site-packages/numcodecs/tests/test_delta.py",
+  "lib/python3.4/site-packages/numcodecs/tests/test_fixedscaleoffset.py",
+  "lib/python3.4/site-packages/numcodecs/tests/test_lzma.py",
+  "lib/python3.4/site-packages/numcodecs/tests/test_packbits.py",
+  "lib/python3.4/site-packages/numcodecs/tests/test_registry.py",
+  "lib/python3.4/site-packages/numcodecs/tests/test_zlib.py",
+  "lib/python3.4/site-packages/numcodecs/version.py",
+  "lib/python3.4/site-packages/numcodecs/zlib.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "numcodecs",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.0.1"
+ },
+ "metadata_version": 1,
+ "name": "numcodecs",
+ "raw_recipe": "{% set version = \"0.0.1\" %}\n\npackage:\n  name: numcodecs\n  version: {{ version }}\n\nsource:\n  fn: numcodecs-v{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/n/numcodecs/numcodecs-{{ version }}.tar.gz\n  sha256: 5b2095bfec7771be7ea66c27534db8bddef1848ed34d09b7dd28228e952d5076\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - cython\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - numpy\n\ntest:\n  requires:\n    - nose\n  imports:\n    - numcodecs\n    - numcodecs.blosc\n  commands:\n    - nosetests -v numcodecs\n\nabout:\n  home: https://github.com/alimanfoo/numcodecs\n  license: MIT\n  summary: A Python package providing buffer compression and transformation codecs for use in data storage and communication applications.\n\nextra:\n  recipe-maintainers:\n    - alimanfoo\n",
+ "rendered_recipe": {},
+ "version": "0.0.1"
+}

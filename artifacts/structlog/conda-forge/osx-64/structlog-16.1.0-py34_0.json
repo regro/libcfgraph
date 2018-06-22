@@ -1,0 +1,40 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/structlog-16.1.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/structlog-16.1.0-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/structlog/__init__.py",
+  "lib/python3.4/site-packages/structlog/_base.py",
+  "lib/python3.4/site-packages/structlog/_config.py",
+  "lib/python3.4/site-packages/structlog/_frames.py",
+  "lib/python3.4/site-packages/structlog/_generic.py",
+  "lib/python3.4/site-packages/structlog/_loggers.py",
+  "lib/python3.4/site-packages/structlog/_utils.py",
+  "lib/python3.4/site-packages/structlog/dev.py",
+  "lib/python3.4/site-packages/structlog/exceptions.py",
+  "lib/python3.4/site-packages/structlog/processors.py",
+  "lib/python3.4/site-packages/structlog/stdlib.py",
+  "lib/python3.4/site-packages/structlog/threadlocal.py",
+  "lib/python3.4/site-packages/structlog/twisted.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "six"
+  ],
+  "license": "MIT/Apache 2.0",
+  "name": "structlog",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "16.1.0"
+ },
+ "metadata_version": 1,
+ "name": "structlog",
+ "raw_recipe": "{% set version = \"16.1.0\" %}\n{% set sha256 = \"46883e8a48918f18ab99c6413e166dc544acd1ad8bba659d152ac6e82c81c2ca\" %}\n\npackage:\n  name: structlog\n  version: {{ version }}\n\nsource:\n  fn: structlog-{{ version }}.tar.gz\n  url: https://github.com/hynek/structlog/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six\n\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - structlog\n\nabout:\n  home: http://www.structlog.org\n  license: MIT/Apache 2.0\n  summary: Structured Logging for Python\n\nextra:\n  recipe-maintainers:\n    - vamega\n",
+ "rendered_recipe": {},
+ "version": "16.1.0"
+}

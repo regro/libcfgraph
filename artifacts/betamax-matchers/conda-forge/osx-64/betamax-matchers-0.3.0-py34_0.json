@@ -1,0 +1,32 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/betamax_matchers-0.3.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/betamax_matchers/__init__.py",
+  "lib/python3.4/site-packages/betamax_matchers/_compat.py",
+  "lib/python3.4/site-packages/betamax_matchers/form_urlencoded.py",
+  "lib/python3.4/site-packages/betamax_matchers/json_body.py",
+  "lib/python3.4/site-packages/betamax_matchers/multipart.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "betamax >=0.3.2",
+   "python 3.4*",
+   "requests-toolbelt >=0.4.0"
+  ],
+  "license": "Apache",
+  "name": "betamax-matchers",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.0"
+ },
+ "metadata_version": 1,
+ "name": "betamax-matchers",
+ "raw_recipe": "{% set version = \"0.3.0\" %}\n\npackage:\n    name: betamax-matchers\n    version: {{ version }}\n\nsource:\n    fn: betamax-matchers-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/b/betamax-matchers/betamax-matchers-{{ version }}.tar.gz\n    md5: 2ca20c328ed9ff8c2b34ff1ceab637c8\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - betamax >=0.3.2\n        - requests-toolbelt >=0.4.0\n\ntest:\n    imports:\n        - betamax_matchers\n\nabout:\n    home: https://github.com/sigmavirus24/betamax_matchers\n    license: Apache\n    summary: A VCR imitation for python-requests\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.3.0"
+}

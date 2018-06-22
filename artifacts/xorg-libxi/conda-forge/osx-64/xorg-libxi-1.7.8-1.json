@@ -1,0 +1,137 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://www.x.org/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "The X.org input library."
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/X11/extensions/XInput.h",
+  "include/X11/extensions/XInput2.h",
+  "lib/libXi.dylib",
+  "lib/pkgconfig/xi.pc",
+  "lib/libXi.6.dylib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [
+   "xorg-inputproto",
+   "xorg-libx11 1.6.*",
+   "xorg-libxext 1.3.*",
+   "xorg-libxfixes 5.0.*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "xorg-libxi",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.7.8"
+ },
+ "metadata_version": 1,
+ "name": "xorg-libxi",
+ "raw_recipe": "{% set xorg_name = \"libXi\" %}\n{% set xorg_category = \"lib\" %}\n{% set name = \"xorg-\" ~ xorg_name %}\n{% set version = \"1.7.8\" %}\n{% set sha256 = \"d8f2fa8d53141c41ff521627df9b2fa9c05f6f142fd9881152bab36549ac27bb\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  detect_binary_files_with_prefix: true\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - m2w64-pkg-config  # [win]\n    - m2w64-toolchain  # [win]\n    - pkg-config  # [not win]\n    - posix  # [win]\n    - python  # [win]\n    - toolchain\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n    - xorg-inputproto\n    - xorg-kbproto\n    - xorg-libx11 1.6.*\n    - xorg-libxext 1.3.*\n    - xorg-libxfixes 5.0.*\n    - xorg-util-macros\n    - xorg-xextproto\n    - xorg-xproto\n  run:\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n    - xorg-inputproto\n    - xorg-libx11 1.6.*\n    - xorg-libxext 1.3.*\n    - xorg-libxfixes 5.0.*\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://www.x.org/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'The X.org input library.'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://www.x.org/",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "COPYING",
+   "summary": "The X.org input library."
+  },
+  "build": {
+   "detect_binary_files_with_prefix": "true",
+   "features": "",
+   "number": "1",
+   "string": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pkgw"
+   ]
+  },
+  "package": {
+   "name": "xorg-libxi",
+   "version": "1.7.8"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "xorg-inputproto",
+    "xorg-libx11 1.6.*",
+    "xorg-libxext 1.3.*",
+    "xorg-libxfixes 5.0.*"
+   ]
+  },
+  "source": {
+   "fn": "xorg-libXi-1.7.8.tar.bz2",
+   "sha256": "d8f2fa8d53141c41ff521627df9b2fa9c05f6f142fd9881152bab36549ac27bb",
+   "url": "https://www.x.org/releases/individual/lib/libXi-1.7.8.tar.bz2"
+  },
+  "test": {
+   "commands": [
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "conda inspect objects -p $PREFIX $PKG_NAME"
+   ]
+  }
+ },
+ "version": "1.7.8"
+}

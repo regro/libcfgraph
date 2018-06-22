@@ -1,0 +1,61 @@
+{
+ "about": {
+  "home": "https://github.com/kevin1024/vcrpy",
+  "license": "MIT License",
+  "summary": "Automatically mock your HTTP interactions to simplify and speed up testing"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/vcr/__init__.py",
+  "lib/python2.7/site-packages/vcr/cassette.py",
+  "lib/python2.7/site-packages/vcr/compat.py",
+  "lib/python2.7/site-packages/vcr/config.py",
+  "lib/python2.7/site-packages/vcr/errors.py",
+  "lib/python2.7/site-packages/vcr/filters.py",
+  "lib/python2.7/site-packages/vcr/matchers.py",
+  "lib/python2.7/site-packages/vcr/migration.py",
+  "lib/python2.7/site-packages/vcr/patch.py",
+  "lib/python2.7/site-packages/vcr/persist.py",
+  "lib/python2.7/site-packages/vcr/persisters/__init__.py",
+  "lib/python2.7/site-packages/vcr/persisters/filesystem.py",
+  "lib/python2.7/site-packages/vcr/request.py",
+  "lib/python2.7/site-packages/vcr/serialize.py",
+  "lib/python2.7/site-packages/vcr/serializers/__init__.py",
+  "lib/python2.7/site-packages/vcr/serializers/compat.py",
+  "lib/python2.7/site-packages/vcr/serializers/jsonserializer.py",
+  "lib/python2.7/site-packages/vcr/serializers/yamlserializer.py",
+  "lib/python2.7/site-packages/vcr/stubs/__init__.py",
+  "lib/python2.7/site-packages/vcr/stubs/boto3_stubs.py",
+  "lib/python2.7/site-packages/vcr/stubs/boto_stubs.py",
+  "lib/python2.7/site-packages/vcr/stubs/compat.py",
+  "lib/python2.7/site-packages/vcr/stubs/httplib2_stubs.py",
+  "lib/python2.7/site-packages/vcr/stubs/requests_stubs.py",
+  "lib/python2.7/site-packages/vcr/stubs/tornado_stubs.py",
+  "lib/python2.7/site-packages/vcr/stubs/urllib3_stubs.py",
+  "lib/python2.7/site-packages/vcr/util.py",
+  "lib/python2.7/site-packages/vcrpy-1.10.3-py2.7.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_2",
+  "build_number": 2,
+  "depends": [
+   "contextlib2",
+   "mock",
+   "python 2.7*",
+   "pyyaml",
+   "six >=1.5",
+   "wrapt"
+  ],
+  "license": "MIT License",
+  "name": "vcrpy",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.10.3"
+ },
+ "metadata_version": 1,
+ "name": "vcrpy",
+ "raw_recipe": "{% set version = \"1.10.3\" %}\n\npackage:\n  name: vcrpy\n  version: {{ version }}\n\nsource:\n  fn: vcrpy-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/v/vcrpy/vcrpy-{{ version }}.tar.gz\n  sha256: b2c76736999d81d5321b94d997e3480ffbde8fe56d918eb2798d0e0545cb9f21\n\nbuild:\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  number: 2\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pyyaml\n    - wrapt\n    - six >=1.5\n    - mock  # [py27]\n    - contextlib2  # [py27]\n\n  run:\n    - python\n    - pyyaml\n    - wrapt\n    - six >=1.5\n    - mock  # [py27]\n    - contextlib2  # [py27]\n\ntest:\n  # Python imports\n  imports:\n    - vcr\n    - vcr.persisters\n    - vcr.serializers\n    - vcr.stubs\n\nabout:\n  home: https://github.com/kevin1024/vcrpy\n  license: MIT License\n  summary: 'Automatically mock your HTTP interactions to simplify and speed up testing'\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
+ "rendered_recipe": {},
+ "version": "1.10.3"
+}
