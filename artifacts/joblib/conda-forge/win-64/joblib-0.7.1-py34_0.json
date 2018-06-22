@@ -1,0 +1,48 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/joblib-0.7.1-py3.4.egg-info",
+  "Lib/site-packages/joblib/__init__.py",
+  "Lib/site-packages/joblib/_compat.py",
+  "Lib/site-packages/joblib/disk.py",
+  "Lib/site-packages/joblib/format_stack.py",
+  "Lib/site-packages/joblib/func_inspect.py",
+  "Lib/site-packages/joblib/hashing.py",
+  "Lib/site-packages/joblib/logger.py",
+  "Lib/site-packages/joblib/memory.py",
+  "Lib/site-packages/joblib/my_exceptions.py",
+  "Lib/site-packages/joblib/numpy_pickle.py",
+  "Lib/site-packages/joblib/parallel.py",
+  "Lib/site-packages/joblib/test/__init__.py",
+  "Lib/site-packages/joblib/test/common.py",
+  "Lib/site-packages/joblib/test/test_disk.py",
+  "Lib/site-packages/joblib/test/test_format_stack.py",
+  "Lib/site-packages/joblib/test/test_func_inspect.py",
+  "Lib/site-packages/joblib/test/test_hashing.py",
+  "Lib/site-packages/joblib/test/test_logger.py",
+  "Lib/site-packages/joblib/test/test_memory.py",
+  "Lib/site-packages/joblib/test/test_my_exceptions.py",
+  "Lib/site-packages/joblib/test/test_numpy_pickle.py",
+  "Lib/site-packages/joblib/test/test_parallel.py",
+  "Lib/site-packages/joblib/testing.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "joblib",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.7.1"
+ },
+ "metadata_version": 1,
+ "name": "joblib",
+ "raw_recipe": "{% set version = \"0.7.1\" %}\n\npackage:\n    name: joblib\n    version: {{ version }}\n\nsource:\n    fn: joblib-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/j/joblib/joblib-{{ version }}.tar.gz\n    sha256: e57eead7aff9cdfa0d961b11e73f9934af692ef3c4db861ec8cfce56e26fd3b5\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n\ntest:\n    imports:\n        - joblib\n\nabout:\n    home: http://packages.python.org/joblib/\n    license: BSD 3-Clause\n    summary: 'Python function as pipeline jobs.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.7.1"
+}

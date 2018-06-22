@@ -1,0 +1,113 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/Shapely-1.5.13-py3.5-macosx-10.5-x86_64.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/Shapely-1.5.13-py3.5-macosx-10.5-x86_64.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/shapely/__init__.py",
+  "lib/python3.5/site-packages/shapely/_buildcfg.py",
+  "lib/python3.5/site-packages/shapely/_geos.pxi",
+  "lib/python3.5/site-packages/shapely/affinity.py",
+  "lib/python3.5/site-packages/shapely/algorithms/__init__.py",
+  "lib/python3.5/site-packages/shapely/algorithms/cga.py",
+  "lib/python3.5/site-packages/shapely/coords.py",
+  "lib/python3.5/site-packages/shapely/ctypes_declarations.py",
+  "lib/python3.5/site-packages/shapely/examples/__init__.py",
+  "lib/python3.5/site-packages/shapely/examples/dissolve.py",
+  "lib/python3.5/site-packages/shapely/examples/geoms.py",
+  "lib/python3.5/site-packages/shapely/examples/intersect.py",
+  "lib/python3.5/site-packages/shapely/ftools.py",
+  "lib/python3.5/site-packages/shapely/geometry/__init__.py",
+  "lib/python3.5/site-packages/shapely/geometry/base.py",
+  "lib/python3.5/site-packages/shapely/geometry/collection.py",
+  "lib/python3.5/site-packages/shapely/geometry/geo.py",
+  "lib/python3.5/site-packages/shapely/geometry/linestring.py",
+  "lib/python3.5/site-packages/shapely/geometry/multilinestring.py",
+  "lib/python3.5/site-packages/shapely/geometry/multipoint.py",
+  "lib/python3.5/site-packages/shapely/geometry/multipolygon.py",
+  "lib/python3.5/site-packages/shapely/geometry/point.py",
+  "lib/python3.5/site-packages/shapely/geometry/polygon.py",
+  "lib/python3.5/site-packages/shapely/geometry/proxy.py",
+  "lib/python3.5/site-packages/shapely/geos.py",
+  "lib/python3.5/site-packages/shapely/impl.py",
+  "lib/python3.5/site-packages/shapely/iterops.py",
+  "lib/python3.5/site-packages/shapely/linref.py",
+  "lib/python3.5/site-packages/shapely/ops.py",
+  "lib/python3.5/site-packages/shapely/predicates.py",
+  "lib/python3.5/site-packages/shapely/prepared.py",
+  "lib/python3.5/site-packages/shapely/speedups/__init__.py",
+  "lib/python3.5/site-packages/shapely/speedups/_speedups.cpython-35m-darwin.so",
+  "lib/python3.5/site-packages/shapely/speedups/_speedups.py",
+  "lib/python3.5/site-packages/shapely/strtree.py",
+  "lib/python3.5/site-packages/shapely/topology.py",
+  "lib/python3.5/site-packages/shapely/validation.py",
+  "lib/python3.5/site-packages/shapely/vectorized/__init__.py",
+  "lib/python3.5/site-packages/shapely/vectorized/_vectorized.cpython-35m-darwin.so",
+  "lib/python3.5/site-packages/shapely/vectorized/_vectorized.py",
+  "lib/python3.5/site-packages/shapely/wkb.py",
+  "lib/python3.5/site-packages/shapely/wkt.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np110py35_1",
+  "build_number": 1,
+  "depends": [
+   "geos >=3.4",
+   "numpy 1.10*",
+   "python 3.5*"
+  ],
+  "license": "BSD",
+  "name": "shapely",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.5.13"
+ },
+ "metadata_version": 1,
+ "name": "shapely",
+ "raw_recipe": "package:\n    name: shapely\n    version: 1.5.13\n\nsource:\n    fn: Shapely-1.5.13.tar.gz\n    url: https://pypi.python.org/packages/source/S/Shapely/Shapely-1.5.13.tar.gz\n    md5: 5ee549862ae84326f5f5525bbd0b8a50\n    patches:\n        - geos_c.win.patch  # [win]\n        - osx-geos.patch # [osx]\n\nbuild:\n    number: 1\n\nrequirements:\n    build:\n        - python\n        - geos >=3.4\n        - cython\n        - numpy x.x\n        - msinttypes  # [win]\n    run:\n        - python\n        - geos >=3.4\n        - numpy x.x\n\ntest:\n    imports:\n        - shapely\n        - shapely.speedups._speedups\n        - shapely.vectorized._vectorized\n\nabout:\n    home: https://github.com/Toblerity/Shapely\n    license: BSD\n    summary: 'Python package for manipulation and analysis of geometric objects in the Cartesian plane'\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/Toblerity/Shapely",
+   "license": "BSD",
+   "summary": "Python package for manipulation and analysis of geometric objects in the Cartesian plane"
+  },
+  "build": {
+   "number": 1
+  },
+  "package": {
+   "name": "shapely",
+   "version": "1.5.13"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "geos >=3.4",
+    "cython",
+    "numpy x.x",
+    "msinttypes"
+   ],
+   "run": [
+    "python",
+    "geos >=3.4",
+    "numpy x.x"
+   ]
+  },
+  "source": {
+   "fn": "Shapely-1.5.13.tar.gz",
+   "md5": "5ee549862ae84326f5f5525bbd0b8a50",
+   "patches": [
+    "geos_c.win.patch",
+    "osx-geos.patch"
+   ],
+   "url": "https://pypi.python.org/packages/source/S/Shapely/Shapely-1.5.13.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "shapely",
+    "shapely.speedups._speedups",
+    "shapely.vectorized._vectorized"
+   ]
+  }
+ },
+ "version": "1.5.13"
+}

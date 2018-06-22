@@ -1,0 +1,53 @@
+{
+ "about": {
+  "home": "https://github.com/landscapeio/pylint-django",
+  "license": "GPL 2",
+  "summary": "pylint-django is a Pylint plugin to aid Pylint in recognising and understandingerrors caused when using the Django framework"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pylint_django-0.7.2-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/pylint_django-0.7.2-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/pylint_django/__init__.py",
+  "Lib/site-packages/pylint_django/__pkginfo__.py",
+  "Lib/site-packages/pylint_django/augmentations/__init__.py",
+  "Lib/site-packages/pylint_django/checkers/__init__.py",
+  "Lib/site-packages/pylint_django/checkers/django_installed.py",
+  "Lib/site-packages/pylint_django/checkers/models.py",
+  "Lib/site-packages/pylint_django/compat.py",
+  "Lib/site-packages/pylint_django/plugin.py",
+  "Lib/site-packages/pylint_django/transforms/__init__.py",
+  "Lib/site-packages/pylint_django/transforms/fields.py",
+  "Lib/site-packages/pylint_django/transforms/foreignkey.py",
+  "Lib/site-packages/pylint_django/transforms/transforms/django_core_handlers_wsgi.py",
+  "Lib/site-packages/pylint_django/transforms/transforms/django_db_models.py",
+  "Lib/site-packages/pylint_django/transforms/transforms/django_db_models_fields.py",
+  "Lib/site-packages/pylint_django/transforms/transforms/django_db_models_fields_files.py",
+  "Lib/site-packages/pylint_django/transforms/transforms/django_forms.py",
+  "Lib/site-packages/pylint_django/transforms/transforms/django_forms_fields.py",
+  "Lib/site-packages/pylint_django/transforms/transforms/django_utils_translation.py",
+  "Lib/site-packages/pylint_django/transforms/transforms/django_views_generic_base.py",
+  "Lib/site-packages/pylint_django/transforms/transforms/mongoengine.py",
+  "Lib/site-packages/pylint_django/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "pylint >=1.0",
+   "pylint-plugin-utils >=0.2.1",
+   "python 2.7*"
+  ],
+  "license": "GPL 2",
+  "name": "pylint-django",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.7.2"
+ },
+ "metadata_version": 1,
+ "name": "pylint-django",
+ "raw_recipe": "{% set name = \"pylint-django\" %}\n{% set version = \"0.7.2\" %}\n{% set sha256 = \"b8e51d6b694401e23040ddafc3a4c7da92faaa1718b007ad66aa36e40ec84506\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pylint-plugin-utils >=0.2.1\n    - pylint >=1.0\n\ntest:\n  imports:\n    - pylint_django\n    - pylint_django.augmentations\n    - pylint_django.checkers\n    - pylint_django.transforms\n\nabout:\n  home: https://github.com/landscapeio/pylint-django\n  license: GPL 2\n  summary: pylint-django is a Pylint plugin to aid Pylint in recognising and understandingerrors caused when using the Django framework\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.7.2"
+}

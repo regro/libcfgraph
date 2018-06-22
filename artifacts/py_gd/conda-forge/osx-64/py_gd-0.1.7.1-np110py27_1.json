@@ -1,0 +1,188 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.6",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p648/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/Users/travis/.nvm/versions/node/v6.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/NOAA-ORR-ERD/py_gd",
+  "license": "Public Domain",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.6-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.1-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_0",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Pythonic wrappers for the libgd graphics rendering library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/py_gd/test/build_checksums.py",
+  "lib/python2.7/site-packages/py_gd-0.1.5.dist-info/METADATA",
+  "lib/python2.7/site-packages/py_gd-0.1.5.dist-info/RECORD",
+  "lib/python2.7/site-packages/py_gd/test/test_buffer.py",
+  "lib/python2.7/site-packages/py_gd/py_gd.so",
+  "lib/python2.7/site-packages/py_gd/test/intersect_comp.py",
+  "lib/python2.7/site-packages/py_gd-0.1.5.dist-info/INSTALLER",
+  "lib/python2.7/site-packages/py_gd/test/test_gd.py",
+  "lib/python2.7/site-packages/py_gd-0.1.5.dist-info/metadata.json",
+  "lib/python2.7/site-packages/py_gd-0.1.5.dist-info/DESCRIPTION.rst",
+  "lib/python2.7/site-packages/py_gd/test/test_overflow.py",
+  "lib/python2.7/site-packages/py_gd/test/__init__.py",
+  "lib/python2.7/site-packages/py_gd-0.1.5.dist-info/WHEEL",
+  "lib/python2.7/site-packages/py_gd/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np110py27_1",
+  "build_number": 1,
+  "depends": [
+   "libgd 2.2.4",
+   "numpy 1.10*",
+   "python 2.7*"
+  ],
+  "license": "Public Domain",
+  "name": "py_gd",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.7.1"
+ },
+ "metadata_version": 1,
+ "name": "py_gd",
+ "raw_recipe": "{% set version = \"0.1.7.1\" %}\n{% set sha256 = \"47699ba598570ec4eb2f852a2e7db268767a4d3b9042510259dd4492dfc7dee0\" %}\n{% set libgd_version = \"2.2.4\" %}\n\npackage:\n    name: py_gd\n    version: {{ version }}\n\nsource:\n    fn: py_gd-{{ version }}.tar.gz\n    url: https://github.com/NOAA-ORR-ERD/py_gd/archive/v{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    skip: True  # [py3k or win]\n    number: 1\n    script:\n        - python -m pip install --no-deps ./\n\nrequirements:\n    build:\n        - python\n        - pip\n        - libgd {{ libgd_version }}\n        - cython\n        - numpy x.x\n        - toolchain\n\n    run:\n        - python\n        - libgd {{ libgd_version }}\n        - numpy x.x\n\ntest:\n    requires:\n        - pytest\n    imports:\n        - py_gd\n    commands:\n        - py.test --pyargs py_gd\n\nabout:\n    home: https://github.com/NOAA-ORR-ERD/py_gd\n    license: Public Domain\n    summary: 'Pythonic wrappers for the libgd graphics rendering library'\n\nextra:\n    recipe-maintainers:\n        - ChrisBarker-NOAA\n        - jay-hennen\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/NOAA-ORR-ERD/py_gd",
+   "license": "Public Domain",
+   "summary": "Pythonic wrappers for the libgd graphics rendering library"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "1",
+   "script": [
+    "python -m pip install --no-deps ./"
+   ],
+   "string": "np110py27_1"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "ChrisBarker-NOAA",
+    "jay-hennen"
+   ]
+  },
+  "package": {
+   "name": "py_gd",
+   "version": "0.1.7.1"
+  },
+  "requirements": {
+   "build": [
+    "blas 1.1 openblas",
+    "ca-certificates 2017.1.23 0",
+    "certifi 2017.1.23 py27_0",
+    "cython 0.25.2 py27_1",
+    "expat 2.1.0 2",
+    "fontconfig 2.12.1 4",
+    "freetype 2.7 1",
+    "giflib 5.1.4 0",
+    "icu 58.1 1",
+    "jpeg 9b 0",
+    "libgd 2.2.4 1",
+    "libgfortran 3.0.0 0",
+    "libiconv 1.14 4",
+    "libpng 1.6.28 0",
+    "libtiff 4.0.6 7",
+    "libwebp 0.5.2 0",
+    "libxml2 2.9.4 4",
+    "ncurses 5.9 10",
+    "numpy 1.10.4 py27_blas_openblas_205",
+    "openblas 0.2.19 1",
+    "openssl 1.0.2h 3",
+    "pip 9.0.1 py27_0",
+    "python 2.7.12 2",
+    "readline 6.2 0",
+    "setuptools 33.1.0 py27_0",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "toolchain 2.0.0 0",
+    "wheel 0.29.0 py27_0",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python",
+    "libgd 2.2.4",
+    "numpy x.x"
+   ]
+  },
+  "source": {
+   "fn": "py_gd-0.1.7.1.tar.gz",
+   "sha256": "47699ba598570ec4eb2f852a2e7db268767a4d3b9042510259dd4492dfc7dee0",
+   "url": "https://github.com/NOAA-ORR-ERD/py_gd/archive/v0.1.7.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "py.test --pyargs py_gd"
+   ],
+   "imports": [
+    "py_gd"
+   ],
+   "requires": [
+    "pytest"
+   ]
+  }
+ },
+ "version": "0.1.7.1"
+}
