@@ -1,0 +1,98 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/google/apputils/__init__.py",
+  "Lib/site-packages/google/apputils/app.py",
+  "Lib/site-packages/google/apputils/appcommands.py",
+  "Lib/site-packages/google/apputils/basetest.py",
+  "Lib/site-packages/google/apputils/datelib.py",
+  "Lib/site-packages/google/apputils/debug.py",
+  "Lib/site-packages/google/apputils/file_util.py",
+  "Lib/site-packages/google/apputils/humanize.py",
+  "Lib/site-packages/google/apputils/resources.py",
+  "Lib/site-packages/google/apputils/run_script_module.py",
+  "Lib/site-packages/google/apputils/setup_command.py",
+  "Lib/site-packages/google/apputils/shellutil.py",
+  "Lib/site-packages/google/apputils/stopwatch.py",
+  "Lib/site-packages/google_apputils-0.4.2-py2.7-nspkg.pth",
+  "Lib/site-packages/google_apputils-0.4.2-py2.7.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "python-dateutil >=1.4",
+   "python-gflags >=1.4",
+   "pytz >=2010",
+   "setuptools"
+  ],
+  "license": "Apache 2.0",
+  "name": "google-apputils",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.4.2"
+ },
+ "metadata_version": 1,
+ "name": "google-apputils",
+ "raw_recipe": "package:\n  name: google-apputils\n  version: \"0.4.2\"\n\nsource:\n  fn: google-apputils-0.4.2.tar.gz\n  url: https://pypi.python.org/packages/source/g/google-apputils/google-apputils-0.4.2.tar.gz\n  md5: fb9fadf621dbecf28c8dabb5fe37ddb3\n\nbuild:\n  number: 0\n  skip: true              # [py3k]\n  preserve_egg_dir: true\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - python-dateutil >=1.4\n    - python-gflags >=1.4\n    - pytz >=2010\n\n  run:\n    - python\n    - setuptools\n    - python-dateutil >=1.4\n    - python-gflags >=1.4\n    - pytz >=2010\n\ntest:\n  imports:\n    - google\n    - google.apputils\n\n  requires:\n    - mox >=0.5\n    - python-dateutil >=1.4\n    - python-gflags >=1.4\n    - pytz >=2010\n    - unittest2 >=0.5.1  # [py26]\n\nabout:\n  home: https://github.com/google/google-apputils\n  license: Apache 2.0\n  summary: A small collection of utilities for building Python applications at Google.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/google/google-apputils",
+   "license": "Apache 2.0",
+   "summary": "A small collection of utilities for building Python applications at Google."
+  },
+  "build": {
+   "number": 0,
+   "preserve_egg_dir": true,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "google-apputils",
+   "version": "0.4.2"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "python-dateutil >=1.4",
+    "python-gflags >=1.4",
+    "pytz >=2010"
+   ],
+   "run": [
+    "python",
+    "setuptools",
+    "python-dateutil >=1.4",
+    "python-gflags >=1.4",
+    "pytz >=2010"
+   ]
+  },
+  "source": {
+   "fn": "google-apputils-0.4.2.tar.gz",
+   "md5": "fb9fadf621dbecf28c8dabb5fe37ddb3",
+   "url": "https://pypi.python.org/packages/source/g/google-apputils/google-apputils-0.4.2.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "google",
+    "google.apputils"
+   ],
+   "requires": [
+    "mox >=0.5",
+    "python-dateutil >=1.4",
+    "python-gflags >=1.4",
+    "pytz >=2010",
+    "unittest2 >=0.5.1"
+   ]
+  }
+ },
+ "version": "0.4.2"
+}

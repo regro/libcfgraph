@@ -1,0 +1,44 @@
+{
+ "about": {
+  "home": "http://muparser.beltoforion.de/",
+  "license": "MIT",
+  "summary": "A fast math parser library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/muParser.h",
+  "include/muParserBase.h",
+  "include/muParserBytecode.h",
+  "include/muParserCallback.h",
+  "include/muParserDLL.h",
+  "include/muParserDef.h",
+  "include/muParserError.h",
+  "include/muParserFixes.h",
+  "include/muParserInt.h",
+  "include/muParserStack.h",
+  "include/muParserTemplateMagic.h",
+  "include/muParserTest.h",
+  "include/muParserToken.h",
+  "include/muParserTokenReader.h",
+  "lib/libmuparser.2.2.4.dylib",
+  "lib/libmuparser.2.dylib",
+  "lib/libmuparser.dylib",
+  "lib/pkgconfig/muparser.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "2",
+  "build_number": 2,
+  "depends": [],
+  "license": "MIT",
+  "name": "muparser",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.2.5"
+ },
+ "metadata_version": 1,
+ "name": "muparser",
+ "raw_recipe": "{% set version = \"2.2.5\" %}\n\npackage:\n  name: muparser\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/beltoforion/muparser/archive/v{{ version }}.tar.gz \n  md5: 02dae671aa5ad955fdcbcd3fee313fb7\n  patches:\n    - no-console.patch\n\nbuild:\n  number: 2\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake  # [win]\n    - python  # [win]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/muParser.h  # [unix]\n    - test -f ${PREFIX}/lib/libmuparser.so  # [linux]\n    - test -f ${PREFIX}/lib/libmuparser.dylib  # [osx]\n\nabout:\n  home: http://muparser.beltoforion.de/\n  license: MIT\n  summary: A fast math parser library\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
+ "rendered_recipe": {},
+ "version": "2.2.5"
+}

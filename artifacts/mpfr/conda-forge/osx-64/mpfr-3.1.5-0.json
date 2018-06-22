@@ -1,0 +1,47 @@
+{
+ "about": {
+  "home": "http://www.mpfr.org/",
+  "license": "LGPL 3",
+  "summary": "The MPFR library is a C library for multiple-precision floating-point computations with correct rounding."
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/mpf2mpfr.h",
+  "include/mpfr.h",
+  "lib/libmpfr.4.dylib",
+  "lib/libmpfr.a",
+  "lib/libmpfr.dylib",
+  "lib/libmpfr.la",
+  "share/doc/mpfr/AUTHORS",
+  "share/doc/mpfr/BUGS",
+  "share/doc/mpfr/COPYING",
+  "share/doc/mpfr/COPYING.LESSER",
+  "share/doc/mpfr/FAQ.html",
+  "share/doc/mpfr/NEWS",
+  "share/doc/mpfr/TODO",
+  "share/doc/mpfr/examples/ReadMe",
+  "share/doc/mpfr/examples/divworst.c",
+  "share/doc/mpfr/examples/rndo-add.c",
+  "share/doc/mpfr/examples/sample.c",
+  "share/doc/mpfr/examples/version.c",
+  "share/info/mpfr.info"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "gmp"
+  ],
+  "license": "LGPL 3",
+  "name": "mpfr",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "3.1.5"
+ },
+ "metadata_version": 1,
+ "name": "mpfr",
+ "raw_recipe": "{% set version = \"3.1.5\" %}\n{% set commit = \"1535d223d5df0c8f6a2722796efb96c845c25405\" %}\n\npackage:\n  name: mpfr\n  version: {{ version }}\n\nsource:\n  fn: mpfr-{{ version }}.tar.bz2                                                    # [unix]\n  url: http://ftp.gnu.org/gnu/mpfr/mpfr-{{ version }}.tar.gz                        # [unix]\n  sha256: f4eb5070883aee3fd8b927751ea63ff95aebe24418cde852439ce74c3dd2513c          # [unix]\n  fn: {{ commit }}.zip                                                              # [win]\n  url: https://github.com/BrianGladman/mpfr/archive/{{ commit }}.zip                # [win]\n  sha256: 050eb5f8c40e634d2681b5d84764b75bb103c35a7491e999d6a5b3a94b34f325          # [win]\n\nbuild:\n  number: 0\n  features:\n    - vc14            # [win]\n  msvc_compiler: 14.0\n\nrequirements:\n  build:\n    - toolchain\n    - m4              # [unix]\n    - libtool         # [unix]\n    - gmp             # [unix]\n    - vc 14           # [win]\n    - mpir            # [win]\n  run:\n    - gmp             # [unix]\n    - mpir            # [win]\n    - vc 14           # [win]\n\ntest:\n  commands:\n    - if not exist %LIBRARY_INC%\\\\mpfr.h exit 1                # [win]\n    - if not exist %LIBRARY_LIB%\\\\mpfr.lib exit 1              # [win]\n    - if not exist %LIBRARY_BIN%\\\\mpfr.dll exit 1              # [win]\n    - if not exist %LIBRARY_LIB%\\\\mpfr_static.lib exit 1       # [win]\n    - test -f ${PREFIX}/lib/libmpfr.a                          # [unix]\n    - test -f ${PREFIX}/lib/libmpfr.dylib                      # [osx]\n    - test -f ${PREFIX}/lib/libmpfr.so                         # [linux]\n\nabout:\n  home: http://www.mpfr.org/\n  license: LGPL 3\n  license_file: {{ SRC_DIR }}/COPYING.LESSER\n  summary: The MPFR library is a C library for multiple-precision floating-point computations with correct rounding.\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "3.1.5"
+}

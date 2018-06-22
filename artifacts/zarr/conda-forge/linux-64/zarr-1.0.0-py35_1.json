@@ -1,0 +1,49 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/zarr-1.0.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/zarr/__init__.py",
+  "lib/python3.5/site-packages/zarr/attrs.py",
+  "lib/python3.5/site-packages/zarr/blosc.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/zarr/compat.py",
+  "lib/python3.5/site-packages/zarr/compressors.py",
+  "lib/python3.5/site-packages/zarr/core.py",
+  "lib/python3.5/site-packages/zarr/creation.py",
+  "lib/python3.5/site-packages/zarr/errors.py",
+  "lib/python3.5/site-packages/zarr/meta.py",
+  "lib/python3.5/site-packages/zarr/storage.py",
+  "lib/python3.5/site-packages/zarr/sync.py",
+  "lib/python3.5/site-packages/zarr/tests/__init__.py",
+  "lib/python3.5/site-packages/zarr/tests/test_attrs.py",
+  "lib/python3.5/site-packages/zarr/tests/test_compression.py",
+  "lib/python3.5/site-packages/zarr/tests/test_core.py",
+  "lib/python3.5/site-packages/zarr/tests/test_creation.py",
+  "lib/python3.5/site-packages/zarr/tests/test_meta.py",
+  "lib/python3.5/site-packages/zarr/tests/test_storage.py",
+  "lib/python3.5/site-packages/zarr/tests/test_sync.py",
+  "lib/python3.5/site-packages/zarr/tests/test_util.py",
+  "lib/python3.5/site-packages/zarr/util.py",
+  "lib/python3.5/site-packages/zarr/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "fasteners",
+   "numpy",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "zarr",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0.0"
+ },
+ "metadata_version": 1,
+ "name": "zarr",
+ "raw_recipe": "{% set version = \"1.0.0\" %}\n\npackage:\n  name: zarr\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/alimanfoo/zarr.git\n  git_tag: v{{ version }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - numpy\n    - fasteners\n\ntest:\n  imports:\n    - zarr\n    - zarr.blosc\n\nabout:\n  home: https://github.com/alimanfoo/zarr\n  license: MIT\n  summary: An implementation of chunked, compressed, N-dimensional arrays for Python.\n\nextra:\n  recipe-maintainers:\n    - alimanfoo\n",
+ "rendered_recipe": {},
+ "version": "1.0.0"
+}
