@@ -33,7 +33,7 @@ jobs:
       - run:
           name: push changes
           command: |
-            git push https://${GH_PUSH_TOKEN}@github.com/regro/libcfgraph.git | grep -v "https://"
+            git push https://${GH_PUSH_TOKEN}@github.com/regro/libcfgraph.git |& grep -Fv -e "https://"
 
 workflows:
   version: 2
