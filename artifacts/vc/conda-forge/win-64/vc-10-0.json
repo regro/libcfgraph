@@ -1,0 +1,24 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "vs2010_runtime"
+  ],
+  "license": "Modified BSD License (3-clause)",
+  "name": "vc",
+  "platform": "win",
+  "subdir": "win-64",
+  "track_features": "vc10",
+  "version": "10"
+ },
+ "metadata_version": 1,
+ "name": "vc",
+ "raw_recipe": "# Switch the version of this recipe based on the VC_VERSION environment variable.\n{% set VERSION = os.environ.get('VC_VERSION', '9')|string %}\n{% set runtime_years = {'9': '2008', '10': '2010', '14': '2015'} %}\n{% set runtime_year = runtime_years[VERSION] %}\n\npackage:\n  name: vc\n  version: {{ VERSION }}\n\nbuild:\n  number: 0\n  track_features:\n    - vc{{ VERSION }}\n  skip: true  # [not win]\n\nrequirements:\n  run:\n    - vs{{ runtime_year }}_runtime\n\n# We don't need to test anything here - this is purely a metapackage.\ntest: {}\n\nabout:\n  home: https://github.com/conda/conda/wiki/VC-features\n  license: Modified BSD License (3-clause)\n  summary: A meta-package to track VC features.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - 183amir\n    - pelson\n    - patricksnape\n    - msarahan\n",
+ "rendered_recipe": {},
+ "version": "10"
+}
