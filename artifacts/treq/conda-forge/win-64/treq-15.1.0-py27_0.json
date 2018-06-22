@@ -1,0 +1,58 @@
+{
+ "about": {
+  "dev_url": "https://github.com/twisted/treq",
+  "doc_url": "http://treq.readthedocs.io/",
+  "home": "https://github.com/twisted/treq",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Python requests like API built on top of Twisted's HTTP client"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/treq-15.1.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/treq-15.1.0-py2.7.egg-info/pbr.json",
+  "Lib/site-packages/treq/__init__.py",
+  "Lib/site-packages/treq/_utils.py",
+  "Lib/site-packages/treq/_version",
+  "Lib/site-packages/treq/api.py",
+  "Lib/site-packages/treq/auth.py",
+  "Lib/site-packages/treq/client.py",
+  "Lib/site-packages/treq/content.py",
+  "Lib/site-packages/treq/multipart.py",
+  "Lib/site-packages/treq/response.py",
+  "Lib/site-packages/treq/test/__init__.py",
+  "Lib/site-packages/treq/test/test_api.py",
+  "Lib/site-packages/treq/test/test_auth.py",
+  "Lib/site-packages/treq/test/test_client.py",
+  "Lib/site-packages/treq/test/test_content.py",
+  "Lib/site-packages/treq/test/test_multipart.py",
+  "Lib/site-packages/treq/test/test_response.py",
+  "Lib/site-packages/treq/test/test_testing.py",
+  "Lib/site-packages/treq/test/test_treq_integration.py",
+  "Lib/site-packages/treq/test/test_utils.py",
+  "Lib/site-packages/treq/test/util.py",
+  "Lib/site-packages/treq/testing.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "requests >=2.1.0",
+   "setuptools",
+   "twisted >=14.0.2"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "treq",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "15.1.0"
+ },
+ "metadata_version": 1,
+ "name": "treq",
+ "raw_recipe": "{% set name = \"treq\" %}\n{% set version = \"15.1.0\" %}\n{% set sha256 = \"425a47d5d52a993d51211028fb6ade252e5fbea094e878bb4b644096a7322de8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - requests >=2.1.0\n    - twisted >=14.0.2\n\ntest:\n  imports:\n    - treq\n\nabout:\n  home: https://github.com/twisted/treq\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: \"Python requests like API built on top of Twisted's HTTP client\"\n  doc_url: http://treq.readthedocs.io/\n  dev_url: https://github.com/twisted/treq\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
+ "rendered_recipe": {},
+ "version": "15.1.0"
+}

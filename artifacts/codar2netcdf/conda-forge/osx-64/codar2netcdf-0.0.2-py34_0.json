@@ -1,0 +1,33 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/codar2netcdf-0.0.2-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/codar2netcdf/__init__.py",
+  "lib/python3.4/site-packages/codar2netcdf/codar.py",
+  "lib/python3.4/site-packages/codar2netcdf/tests/__init__.py",
+  "lib/python3.4/site-packages/codar2netcdf/tests/test_convert.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "netcdf4",
+   "pandas",
+   "python 3.4*",
+   "python-dateutil",
+   "pytz"
+  ],
+  "license": "MIT License",
+  "name": "codar2netcdf",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.0.2"
+ },
+ "metadata_version": 1,
+ "name": "codar2netcdf",
+ "raw_recipe": "{% set name = \"codar2netcdf\" %}\n{% set version = \"0.0.2\" %}\n{% set md5 = \"30163273ed1d8e8578249731e6d99e73\" %}\n{% set build = 0 %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    md5: {{ md5 }}\n\nbuild:\n    number: {{ build }}\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - pandas\n        - netcdf4\n        - pytz\n        - python-dateutil\n\ntest:\n    imports:\n        - codar2netcdf\n        - codar2netcdf.tests\n    requires:\n        - pytest\n\nabout:\n    home: https://github.com/axiom-data-science/codar2netcdf\n    license: MIT License\n    summary: 'A utility to convert CODAR total ASCII files into CF NetCDF files.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - kwilcox\n",
+ "rendered_recipe": {},
+ "version": "0.0.2"
+}

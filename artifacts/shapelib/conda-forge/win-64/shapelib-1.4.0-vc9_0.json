@@ -1,0 +1,43 @@
+{
+ "about": {
+  "description": "The Shapefile C Library provides the ability to write simple C programs for\nreading, writing and updating (to a limited extent) ESRI Shapefiles,\nand the associated attribute file (.dbf).\n",
+  "home": "http://shapelib.maptools.org/",
+  "license": "MIT",
+  "summary": "Reading, writing and updating of ESRI Shapefiles"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/dbfadd.exe",
+  "Library/bin/dbfcreate.exe",
+  "Library/bin/dbfdump.exe",
+  "Library/bin/shp.dll",
+  "Library/bin/shpadd.exe",
+  "Library/bin/shpcreate.exe",
+  "Library/bin/shpdump.exe",
+  "Library/bin/shprewind.exe",
+  "Library/bin/shptreedump.exe",
+  "Library/include/shapefil.h",
+  "Library/lib/shp.lib",
+  "Library/share/shp/export_shp-release.cmake",
+  "Library/share/shp/export_shp.cmake"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc9_0",
+  "build_number": 0,
+  "depends": [
+   "vc 9"
+  ],
+  "features": "vc9",
+  "license": "MIT",
+  "name": "shapelib",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.4.0"
+ },
+ "metadata_version": 1,
+ "name": "shapelib",
+ "raw_recipe": "{% set name = \"shapelib\" %}\n{% set version = \"1.4.0\" %}\n{% set sha256 = \"3eddd5f2690f2cf18d8d9798267537a2102a289020b9818f9a31eb626f91a7a1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://download.osgeo.org/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n    - cmake\n\n  run:\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n\ntest:\n  commands:\n    - test -e $PREFIX/lib/libshp.so  # [linux]\n    - test -e $PREFIX/lib/libshp.dylib  # [osx]\n    - if not exist %LIBRARY_LIB%\\\\shp.lib exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\shp.dll exit 1  # [win]\n\nabout:\n  home: http://shapelib.maptools.org/\n  license: MIT\n  summary: 'Reading, writing and updating of ESRI Shapefiles'\n  description: |\n    The Shapefile C Library provides the ability to write simple C programs for\n    reading, writing and updating (to a limited extent) ESRI Shapefiles,\n    and the associated attribute file (.dbf).\n\nextra:\n  recipe-maintainers:\n    - kmuehlbauer\n",
+ "rendered_recipe": {},
+ "version": "1.4.0"
+}

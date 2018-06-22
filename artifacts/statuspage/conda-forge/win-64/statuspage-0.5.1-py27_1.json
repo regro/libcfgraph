@@ -1,0 +1,41 @@
+{
+ "about": {
+  "home": "https://github.com/jayfk/statuspage",
+  "license": "MIT",
+  "summary": "A statuspage generator that lets you host your statuspage for free on Github."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/statuspage-0.5.1-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/statuspage-0.5.1-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/statuspage/__init__.py",
+  "Lib/site-packages/statuspage/statuspage.py",
+  "Lib/site-packages/statuspage/template/style.css",
+  "Lib/site-packages/statuspage/template/template.html",
+  "Lib/site-packages/statuspage/tests.py",
+  "Scripts/statuspage-script.py",
+  "Scripts/statuspage.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "click",
+   "jinja2",
+   "pygithub",
+   "python 2.7*",
+   "tqdm"
+  ],
+  "license": "MIT",
+  "name": "statuspage",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.5.1"
+ },
+ "metadata_version": 1,
+ "name": "statuspage",
+ "raw_recipe": "{% set name = \"statuspage\" %}\n{% set version = \"0.5.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 6649b40d41dc97c17dc6a0ab46bf4d10c88043ed3eb536c692997731f91a2cc9\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  preserve_egg_dir: True\n  entry_points:\n    - statuspage=statuspage.statuspage:cli\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pygithub\n    - click\n    - jinja2\n    - tqdm\n\ntest:\n  commands:\n    - statuspage --help\n\nabout:\n  home: https://github.com/jayfk/statuspage\n  license: MIT\n  summary: A statuspage generator that lets you host your statuspage for free on Github.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.5.1"
+}
