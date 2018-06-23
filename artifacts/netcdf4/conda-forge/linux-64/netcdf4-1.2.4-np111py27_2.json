@@ -1,0 +1,95 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/nc3tonc4",
+  "bin/nc4tonc3",
+  "bin/ncinfo",
+  "lib/python2.7/site-packages/netCDF4-1.2.4-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/netCDF4/__init__.py",
+  "lib/python2.7/site-packages/netCDF4/_netCDF4.so",
+  "lib/python2.7/site-packages/netCDF4/utils.py",
+  "lib/python2.7/site-packages/netcdftime/__init__.py",
+  "lib/python2.7/site-packages/netcdftime/_datetime.so",
+  "lib/python2.7/site-packages/netcdftime/netcdftime.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_2",
+  "build_number": 2,
+  "depends": [
+   "hdf5 1.8.17|1.8.17.*",
+   "libnetcdf 4.4.*",
+   "numpy 1.11*",
+   "python 2.7*",
+   "setuptools"
+  ],
+  "license": "OSI Approved",
+  "name": "netcdf4",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.2.4"
+ },
+ "metadata_version": 1,
+ "name": "netcdf4",
+ "raw_recipe": "{% set version = \"1.2.4\" %}\n\npackage:\n    name: netcdf4\n    version: {{ version }}\n\nsource:\n    fn: netCDF4-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/n/netCDF4/netCDF4-{{ version }}.tar.gz\n    md5: fb8083a17644bd559887b026fddd18a8\n\nbuild:\n    number: 2\n    entry_points:\n        - ncinfo = netCDF4.utils:ncinfo\n        - nc4tonc3 = netCDF4.utils:nc4tonc3\n        - nc3tonc4 = netCDF4.utils:nc3tonc4\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - numpy x.x\n        - cython\n        - hdf5 1.8.17|1.8.17.*\n        - libnetcdf 4.4.*\n    run:\n        - python\n        - setuptools\n        - numpy x.x\n        - hdf5 1.8.17|1.8.17.*\n        - libnetcdf 4.4.*\n\ntest:\n    imports:\n        - netCDF4\n        - netcdftime\n    commands:\n        - ncinfo -h\n        - nc4tonc3 -h\n        - nc3tonc4 -h\n\nabout:\n    home: http://github.com/Unidata/netcdf4-python\n    license: OSI Approved\n    summary: Provides an object-oriented python interface to the netCDF version 4 library.\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - pelson\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://github.com/Unidata/netcdf4-python",
+   "license": "OSI Approved",
+   "summary": "Provides an object-oriented python interface to the netCDF version 4 library."
+  },
+  "build": {
+   "entry_points": [
+    "ncinfo = netCDF4.utils:ncinfo",
+    "nc4tonc3 = netCDF4.utils:nc4tonc3",
+    "nc3tonc4 = netCDF4.utils:nc3tonc4"
+   ],
+   "number": "2"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "pelson"
+   ]
+  },
+  "package": {
+   "name": "netcdf4",
+   "version": "1.2.4"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "numpy x.x",
+    "cython",
+    "hdf5 1.8.17|1.8.17.*",
+    "libnetcdf 4.4.*"
+   ],
+   "run": [
+    "python",
+    "setuptools",
+    "numpy x.x",
+    "hdf5 1.8.17|1.8.17.*",
+    "libnetcdf 4.4.*"
+   ]
+  },
+  "source": {
+   "fn": "netCDF4-1.2.4.tar.gz",
+   "md5": "fb8083a17644bd559887b026fddd18a8",
+   "url": "https://pypi.python.org/packages/source/n/netCDF4/netCDF4-1.2.4.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "ncinfo -h",
+    "nc4tonc3 -h",
+    "nc3tonc4 -h"
+   ],
+   "imports": [
+    "netCDF4",
+    "netcdftime"
+   ]
+  }
+ },
+ "version": "1.2.4"
+}

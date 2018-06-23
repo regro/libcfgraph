@@ -1,0 +1,116 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/M2CryptoWin64-0.21.1.post3-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/M2CryptoWin64-0.21.1.post3-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/M2Crypto/ASN1.py",
+  "Lib/site-packages/M2Crypto/AuthCookie.py",
+  "Lib/site-packages/M2Crypto/BIO.py",
+  "Lib/site-packages/M2Crypto/BN.py",
+  "Lib/site-packages/M2Crypto/DH.py",
+  "Lib/site-packages/M2Crypto/DSA.py",
+  "Lib/site-packages/M2Crypto/EC.py",
+  "Lib/site-packages/M2Crypto/EVP.py",
+  "Lib/site-packages/M2Crypto/Engine.py",
+  "Lib/site-packages/M2Crypto/Err.py",
+  "Lib/site-packages/M2Crypto/PGP/PublicKey.py",
+  "Lib/site-packages/M2Crypto/PGP/PublicKeyRing.py",
+  "Lib/site-packages/M2Crypto/PGP/RSA.py",
+  "Lib/site-packages/M2Crypto/PGP/__init__.py",
+  "Lib/site-packages/M2Crypto/PGP/constants.py",
+  "Lib/site-packages/M2Crypto/PGP/packet.py",
+  "Lib/site-packages/M2Crypto/RC4.py",
+  "Lib/site-packages/M2Crypto/RSA.py",
+  "Lib/site-packages/M2Crypto/Rand.py",
+  "Lib/site-packages/M2Crypto/SMIME.py",
+  "Lib/site-packages/M2Crypto/SSL/Checker.py",
+  "Lib/site-packages/M2Crypto/SSL/Cipher.py",
+  "Lib/site-packages/M2Crypto/SSL/Connection.py",
+  "Lib/site-packages/M2Crypto/SSL/Context.py",
+  "Lib/site-packages/M2Crypto/SSL/SSLServer.py",
+  "Lib/site-packages/M2Crypto/SSL/Session.py",
+  "Lib/site-packages/M2Crypto/SSL/TwistedProtocolWrapper.py",
+  "Lib/site-packages/M2Crypto/SSL/__init__.py",
+  "Lib/site-packages/M2Crypto/SSL/cb.py",
+  "Lib/site-packages/M2Crypto/SSL/ssl_dispatcher.py",
+  "Lib/site-packages/M2Crypto/SSL/timeout.py",
+  "Lib/site-packages/M2Crypto/X509.py",
+  "Lib/site-packages/M2Crypto/__init__.py",
+  "Lib/site-packages/M2Crypto/__m2crypto.pyd",
+  "Lib/site-packages/M2Crypto/callback.py",
+  "Lib/site-packages/M2Crypto/ftpslib.py",
+  "Lib/site-packages/M2Crypto/httpslib.py",
+  "Lib/site-packages/M2Crypto/libeay32.dll",
+  "Lib/site-packages/M2Crypto/m2.py",
+  "Lib/site-packages/M2Crypto/m2urllib.py",
+  "Lib/site-packages/M2Crypto/m2urllib2.py",
+  "Lib/site-packages/M2Crypto/m2xmlrpclib.py",
+  "Lib/site-packages/M2Crypto/ssleay32.dll",
+  "Lib/site-packages/M2Crypto/threading.py",
+  "Lib/site-packages/M2Crypto/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "distribute",
+   "openssl 1.0.*",
+   "python 2.7*"
+  ],
+  "license": "MIT License",
+  "name": "m2crypto",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.21.1"
+ },
+ "metadata_version": 1,
+ "name": "m2crypto",
+ "raw_recipe": "{% set version = \"0.24.0\" %}\n{% set version_windows = \"0.21.1\" %}\n{% set version_windows_pypi = \"0.21.1-3\" %}\n\npackage:\n  name: m2crypto\n  version: {{ version }}  # [not win]\n  version: {{ version_windows }}  # [win]\n\nsource:\n  fn: M2Crypto-{{ version }}.tar.gz  # [not win]\n  url: https://pypi.python.org/packages/source/M/M2Crypto/M2Crypto-{{ version }}.tar.gz  # [not win]\n  md5: 8e87235942c76d1ba9f999ee33764fdb  # [not win]\n  fn: M2CryptoWin64-{{ version_windows_pypi }}.tar.gz  # [win]\n  url: https://pypi.python.org/packages/source/M/M2CryptoWin64/M2CryptoWin64-{{ version_windows_pypi }}.tar.gz  # [win]\n  sha1: a7c5aaf01d08cbb842972bc1e9547e5cf5e989bd  # [win]\n\nbuild:\n  number: 1\n  skip: True  # [py3k]\n  preserve_egg_dir: yes\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - swig\n    - openssl 1.0.*\n  run:\n    - python\n    - distribute\n    - openssl 1.0.*\n\ntest:\n  imports:\n    - M2Crypto\n    - M2Crypto.SSL\n\nabout:\n  home: https://gitlab.com/m2crypto/m2crypto\n  license: MIT License\n  summary: 'M2Crypto: A Python crypto and SSL toolkit'\n\nextra:\n  recipe-maintainers:\n    - danielfrg\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://gitlab.com/m2crypto/m2crypto",
+   "license": "MIT License",
+   "summary": "M2Crypto: A Python crypto and SSL toolkit"
+  },
+  "build": {
+   "number": "1",
+   "preserve_egg_dir": "yes"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "danielfrg"
+   ]
+  },
+  "package": {
+   "name": "m2crypto",
+   "version": "0.21.1"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "swig",
+    "openssl 1.0.*"
+   ],
+   "run": [
+    "python",
+    "distribute",
+    "openssl 1.0.*"
+   ]
+  },
+  "source": {
+   "fn": "M2CryptoWin64-0.21.1-3.tar.gz",
+   "sha1": "a7c5aaf01d08cbb842972bc1e9547e5cf5e989bd",
+   "url": "https://pypi.python.org/packages/source/M/M2CryptoWin64/M2CryptoWin64-0.21.1-3.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "M2Crypto",
+    "M2Crypto.SSL"
+   ]
+  }
+ },
+ "version": "0.21.1"
+}

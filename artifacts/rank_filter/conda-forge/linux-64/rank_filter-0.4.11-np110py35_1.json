@@ -1,0 +1,79 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "include/python3.5m/rank_filter/rank_filter.hxx",
+  "include/python3.5m/rank_filter/rank_filter_base.hxx",
+  "include/python3.5m/rank_filter/rank_filter_vigra.hxx",
+  "lib/python3.5/site-packages/rank_filter-0.4.11-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/rank_filter-0.4.11-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/rank_filter-0.4.11-py3.5.egg-info/pbr.json",
+  "lib/python3.5/site-packages/rank_filter.cpython-35m-x86_64-linux-gnu.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np110py35_1",
+  "build_number": 1,
+  "depends": [
+   "boost 1.60.*",
+   "numpy 1.10*",
+   "numpy >=1.7",
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "rank_filter",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.4.11"
+ },
+ "metadata_version": 1,
+ "name": "rank_filter",
+ "raw_recipe": "{% set name = \"rank_filter\" %}\n{% set version = \"0.4.11\" %}\n{% set checksum = \"246f5c73ebd03314d9b2cff3ede74330\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ checksum }}\n\nbuild:\n  skip: true  # [win]\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - boost 1.60.*\n    - python\n    - setuptools >=18.0\n    - numpy x.x\n    - numpy >=1.7\n    - cython >=0.23\n\n  run:\n    - boost 1.60.*\n    - python\n    - numpy x.x\n    - numpy >=1.7\n\ntest:\n  imports:\n    - rank_filter\n\nabout:\n  home: https://github.com/nanshe-org/rank_filter\n  license: BSD 3-Clause\n  summary: 'A simple python module containing an in-place linear rank filter optimized in C++.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/nanshe-org/rank_filter",
+   "license": "BSD 3-Clause",
+   "summary": "A simple python module containing an in-place linear rank filter optimized in C++."
+  },
+  "build": {
+   "number": "1",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "rank_filter",
+   "version": "0.4.11"
+  },
+  "requirements": {
+   "build": [
+    "boost 1.60.*",
+    "python",
+    "setuptools >=18.0",
+    "numpy x.x",
+    "numpy >=1.7",
+    "cython >=0.23"
+   ],
+   "run": [
+    "boost 1.60.*",
+    "python",
+    "numpy x.x",
+    "numpy >=1.7"
+   ]
+  },
+  "source": {
+   "fn": "rank_filter-0.4.11.tar.gz",
+   "md5": "246f5c73ebd03314d9b2cff3ede74330",
+   "url": "https://pypi.python.org/packages/source/r/rank_filter/rank_filter-0.4.11.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "rank_filter"
+   ]
+  }
+ },
+ "version": "0.4.11"
+}

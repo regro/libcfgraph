@@ -1,0 +1,89 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/tika-python",
+  "lib/python3.4/site-packages/tika-1.13-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/tika-1.13-py3.4.egg-info/zip-safe",
+  "lib/python3.4/site-packages/tika/__init__.py",
+  "lib/python3.4/site-packages/tika/config.py",
+  "lib/python3.4/site-packages/tika/detector.py",
+  "lib/python3.4/site-packages/tika/language.py",
+  "lib/python3.4/site-packages/tika/parser.py",
+  "lib/python3.4/site-packages/tika/tests/__init__.py",
+  "lib/python3.4/site-packages/tika/tests/test_tika.py",
+  "lib/python3.4/site-packages/tika/tests/tests_params.py",
+  "lib/python3.4/site-packages/tika/tika.py",
+  "lib/python3.4/site-packages/tika/translate.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_1",
+  "build_number": 1,
+  "depends": [
+   "python 3.4*",
+   "requests",
+   "setuptools"
+  ],
+  "license": "Apache 2.0",
+  "name": "tika",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.13"
+ },
+ "metadata_version": 1,
+ "name": "tika",
+ "raw_recipe": "{% set version = \"1.13\" %}\n\npackage:\n  name: tika\n  version: {{ version }}\n\nsource:\n  fn: tika-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/t/tika/tika-{{ version }}.tar.gz\n  md5: 6f5e508edf645e43f1bd0c41a5b47202\n\nbuild:\n  preserve_egg_dir: True\n  entry_points:\n    - tika-python = tika.tika:main\n\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - requests\n\n  run:\n    - python\n    - setuptools\n    - requests\n\ntest:\n  imports:\n    - tika\n    - tika.tests\n\n  commands:\n    - tika-python --help\n\nabout:\n  home: http://github.com/chrismattmann/tika-python\n  license: Apache 2.0\n  summary: 'Apache Tika Python library'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - chrismattmann\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://github.com/chrismattmann/tika-python",
+   "license": "Apache 2.0",
+   "summary": "Apache Tika Python library"
+  },
+  "build": {
+   "entry_points": [
+    "tika-python = tika.tika:main"
+   ],
+   "number": "1",
+   "preserve_egg_dir": "True",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pmlandwehr",
+    "chrismattmann"
+   ]
+  },
+  "package": {
+   "name": "tika",
+   "version": "1.13"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "requests"
+   ],
+   "run": [
+    "python",
+    "setuptools",
+    "requests"
+   ]
+  },
+  "source": {
+   "fn": "tika-1.13.tar.gz",
+   "md5": "6f5e508edf645e43f1bd0c41a5b47202",
+   "url": "https://pypi.io/packages/source/t/tika/tika-1.13.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "tika-python --help"
+   ],
+   "imports": [
+    "tika",
+    "tika.tests"
+   ]
+  }
+ },
+ "version": "1.13"
+}

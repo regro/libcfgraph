@@ -1,0 +1,62 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Library/include/nlopt.f",
+  "Library/include/nlopt.h",
+  "Library/include/nlopt.hpp",
+  "Library/lib/nlopt-0.dll"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc14_0",
+  "build_number": 0,
+  "depends": [],
+  "features": "vc14",
+  "license": "GNU Lesser General Public License (LGPL)",
+  "name": "nlopt",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.4.2"
+ },
+ "metadata_version": 1,
+ "name": "nlopt",
+ "raw_recipe": "{% set version = \"2.4.2\" %}\n\npackage:\n  name: nlopt\n  version: {{ version }}\n\nsource:\n  fn: nlopt-{{ version }}.tar.gz\n  url: http://ab-initio.mit.edu/nlopt/nlopt-{{ version }}.tar.gz\n  md5: d0b8f139a4acf29b76dbae69ade8ac54\n\nbuild:\n  number: 0\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - python\n    - numpy  # [not win]\n\n  run:\n    - python  # [not win]\n    - numpy  # [not win]\n\ntest:\n  imports:\n    - nlopt  # [not win]\n\nabout:\n  home: http://ab-initio.mit.edu/nlopt\n  license: GNU Lesser General Public License (LGPL)\n  summary: nonlinear optimization library\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://ab-initio.mit.edu/nlopt",
+   "license": "GNU Lesser General Public License (LGPL)",
+   "summary": "nonlinear optimization library"
+  },
+  "build": {
+   "features": [
+    "vc14"
+   ],
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jschueller"
+   ]
+  },
+  "package": {
+   "name": "nlopt",
+   "version": "2.4.2"
+  },
+  "requirements": {
+   "build": [
+    "python"
+   ],
+   "run": ""
+  },
+  "source": {
+   "fn": "nlopt-2.4.2.tar.gz",
+   "md5": "d0b8f139a4acf29b76dbae69ade8ac54",
+   "url": "http://ab-initio.mit.edu/nlopt/nlopt-2.4.2.tar.gz"
+  },
+  "test": {
+   "imports": ""
+  }
+ },
+ "version": "2.4.2"
+}

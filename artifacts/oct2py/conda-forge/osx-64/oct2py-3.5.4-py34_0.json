@@ -1,0 +1,50 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/oct2py-3.5.4-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/oct2py/__init__.py",
+  "lib/python3.4/site-packages/oct2py/compat.py",
+  "lib/python3.4/site-packages/oct2py/core.py",
+  "lib/python3.4/site-packages/oct2py/demo.py",
+  "lib/python3.4/site-packages/oct2py/ipython/__init__.py",
+  "lib/python3.4/site-packages/oct2py/ipython/octavemagic.py",
+  "lib/python3.4/site-packages/oct2py/ipython/tests/__init__.py",
+  "lib/python3.4/site-packages/oct2py/ipython/tests/test_octavemagic.py",
+  "lib/python3.4/site-packages/oct2py/matread.py",
+  "lib/python3.4/site-packages/oct2py/matwrite.py",
+  "lib/python3.4/site-packages/oct2py/speed_check.py",
+  "lib/python3.4/site-packages/oct2py/tests/__init__.py",
+  "lib/python3.4/site-packages/oct2py/tests/roundtrip.m",
+  "lib/python3.4/site-packages/oct2py/tests/test_conversions.py",
+  "lib/python3.4/site-packages/oct2py/tests/test_datatypes.m",
+  "lib/python3.4/site-packages/oct2py/tests/test_misc.py",
+  "lib/python3.4/site-packages/oct2py/tests/test_nodocstring.m",
+  "lib/python3.4/site-packages/oct2py/tests/test_numpy.py",
+  "lib/python3.4/site-packages/oct2py/tests/test_roundtrip.py",
+  "lib/python3.4/site-packages/oct2py/tests/test_usage.py",
+  "lib/python3.4/site-packages/oct2py/thread_check.py",
+  "lib/python3.4/site-packages/oct2py/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "ipython",
+   "numpy",
+   "python 3.4*",
+   "scipy"
+  ],
+  "license": "MIT",
+  "name": "oct2py",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "3.5.4"
+ },
+ "metadata_version": 1,
+ "name": "oct2py",
+ "raw_recipe": "{% set version = \"3.5.4\" %}\n\npackage:\n    name: oct2py\n    version: {{ version }}\n\nsource:\n    fn: v{{ version }}.tar.gz\n    url: https://github.com/blink1073/oct2py/archive/v{{ version }}.tar.gz\n    sha256: 1db3911ab1d96d0618042381a0fd517ce9c6b599c1b37fe462f8caba13753924\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - scipy\n        - ipython\n\nabout:\n    home: http://github.com/blink1073/oct2py\n    license: MIT\n    summary: Python to GNU Octave bridge --> run m-files from python\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "3.5.4"
+}
