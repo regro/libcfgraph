@@ -1,0 +1,73 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/s3fs-0.0.5-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/s3fs-0.0.5-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/s3fs/__init__.py",
+  "lib/python3.5/site-packages/s3fs/core.py",
+  "lib/python3.5/site-packages/s3fs/mapping.py",
+  "lib/python3.5/site-packages/s3fs/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "boto3",
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "s3fs",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.0.5"
+ },
+ "metadata_version": 1,
+ "name": "s3fs",
+ "raw_recipe": "{% set version = \"0.0.5\" %}\n\npackage:\n  name: s3fs\n  version: \"{{ version }}\"\n\nsource:\n  fn: s3fs-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/s/s3fs/s3fs-{{ version }}.tar.gz\n  md5: f7b5bb3a9004288c5f6f3a0c7ecdcabc\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - boto3\n\n  run:\n    - python\n    - boto3\n\ntest:\n  imports:\n    - s3fs\n\nabout:\n  home: http://s3fs.readthedocs.io/en/latest/\n  license: BSD 3-Clause\n  summary: 'Convenient Filesystem interface over S3'\n\nextra:\n  recipe-maintainers:\n    - martindurant\n    - mrocklin\n    - koverholt\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://s3fs.readthedocs.io/en/latest/",
+   "license": "BSD 3-Clause",
+   "summary": "Convenient Filesystem interface over S3"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "martindurant",
+    "mrocklin",
+    "koverholt"
+   ]
+  },
+  "package": {
+   "name": "s3fs",
+   "version": "0.0.5"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "boto3"
+   ],
+   "run": [
+    "python",
+    "boto3"
+   ]
+  },
+  "source": {
+   "fn": "s3fs-0.0.5.tar.gz",
+   "md5": "f7b5bb3a9004288c5f6f3a0c7ecdcabc",
+   "url": "https://pypi.io/packages/source/s/s3fs/s3fs-0.0.5.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "s3fs"
+   ]
+  }
+ },
+ "version": "0.0.5"
+}

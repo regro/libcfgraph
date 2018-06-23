@@ -1,0 +1,141 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.0.12",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://toblerity.github.com/rtree/",
+  "license": "LGPL-2.1",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-build-2.0.12-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-3.4.1-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.49.1-1",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-2",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_0",
+   "conda-forge::ncurses-5.9-9",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-2",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.2-2",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.7-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-29.0.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-0",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.8-3"
+  ],
+  "summary": "R-Tree spatial index for Python GIS."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/Rtree-0.8.3-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/Rtree-0.8.3-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/rtree/__init__.py",
+  "lib/python3.4/site-packages/rtree/core.py",
+  "lib/python3.4/site-packages/rtree/index.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "libspatialindex",
+   "python 3.4*"
+  ],
+  "license": "LGPL-2.1",
+  "name": "rtree",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.8.3"
+ },
+ "metadata_version": 1,
+ "name": "rtree",
+ "raw_recipe": "{% set version = \"0.8.3\" %}\n\npackage:\n  name: rtree\n  version: {{ version }}\n\nsource:\n  fn: rtree-{{ version }}.tar.gz\n  url: https://github.com/Toblerity/rtree/archive/{{ version }}.tar.gz\n  sha256: ab9d29ea3935d189ce32217ad5f5aff464a7ded9e9f9777e2d8dbf11dcf90b93\n  patches:\n    - find_libray.patch\n    - setup-win.path  # [win]\n    - find_libray-win32.patch  # [win32]\n\nbuild:\n  number: 0\n  preserve_egg_dir: True\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - libspatialindex\n  run:\n    - python\n    - libspatialindex\n\ntest:\n  imports:\n    - rtree\n  commands:\n    - conda inspect linkages -p $PREFIX rtree  # [not win]\n    - conda inspect objects -p $PREFIX rtree  # [osx]\n\nabout:\n  home: http://toblerity.github.com/rtree/\n  license: LGPL-2.1\n  license_file: LICENSE.txt\n  summary: 'R-Tree spatial index for Python GIS.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://toblerity.github.com/rtree/",
+   "license": "LGPL-2.1",
+   "license_file": "LICENSE.txt",
+   "summary": "R-Tree spatial index for Python GIS."
+  },
+  "build": {
+   "number": "0",
+   "preserve_egg_dir": "True",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py34_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "rtree",
+   "version": "0.8.3"
+  },
+  "requirements": {
+   "build": null,
+   "run": [
+    "python",
+    "libspatialindex"
+   ]
+  },
+  "source": {
+   "fn": "rtree-0.8.3.tar.gz",
+   "patches": [
+    "find_libray.patch"
+   ],
+   "sha256": "ab9d29ea3935d189ce32217ad5f5aff464a7ded9e9f9777e2d8dbf11dcf90b93",
+   "url": "https://github.com/Toblerity/rtree/archive/0.8.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "conda inspect linkages -p $PREFIX rtree"
+   ],
+   "imports": [
+    "rtree"
+   ]
+  }
+ },
+ "version": "0.8.3"
+}

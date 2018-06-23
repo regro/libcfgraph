@@ -1,0 +1,85 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/matplotlib_venn-0.11.4-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/matplotlib_venn-0.11.4-py3.5.egg-info/pbr.json",
+  "Lib/site-packages/matplotlib_venn-0.11.4-py3.5.egg-info/zip-safe",
+  "Lib/site-packages/matplotlib_venn/__init__.py",
+  "Lib/site-packages/matplotlib_venn/_arc.py",
+  "Lib/site-packages/matplotlib_venn/_common.py",
+  "Lib/site-packages/matplotlib_venn/_math.py",
+  "Lib/site-packages/matplotlib_venn/_region.py",
+  "Lib/site-packages/matplotlib_venn/_util.py",
+  "Lib/site-packages/matplotlib_venn/_venn2.py",
+  "Lib/site-packages/matplotlib_venn/_venn3.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib",
+   "numpy",
+   "python 3.5*",
+   "scipy"
+  ],
+  "license": "MIT License",
+  "name": "matplotlib-venn",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.11.4"
+ },
+ "metadata_version": 1,
+ "name": "matplotlib-venn",
+ "raw_recipe": "{% set version = \"0.11.4\" %}\npackage:\n  name: matplotlib-venn\n  version: {{ version }}\n\nsource:\n  fn: matplotlib-venn-{{ version }}.zip\n  url: https://pypi.io/packages/source/m/matplotlib-venn/matplotlib-venn-{{ version }}.zip\n  md5: 55264984346687371e446b1f8d27a420\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - matplotlib\n    - numpy\n    - scipy\n\n  run:\n    - python\n    - matplotlib\n    - numpy\n    - scipy\n\ntest:\n  imports:\n    - matplotlib_venn\n\n  requires:\n    - pytest\n\nabout:\n  home: https://github.com/konstantint/matplotlib-venn\n  license: MIT License\n  summary: 'Functions for plotting area-proportional two- and three-way Venn diagrams in matplotlib.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/konstantint/matplotlib-venn",
+   "license": "MIT License",
+   "summary": "Functions for plotting area-proportional two- and three-way Venn diagrams in matplotlib."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pmlandwehr"
+   ]
+  },
+  "package": {
+   "name": "matplotlib-venn",
+   "version": "0.11.4"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "matplotlib",
+    "numpy",
+    "scipy"
+   ],
+   "run": [
+    "python",
+    "matplotlib",
+    "numpy",
+    "scipy"
+   ]
+  },
+  "source": {
+   "fn": "matplotlib-venn-0.11.4.zip",
+   "md5": "55264984346687371e446b1f8d27a420",
+   "url": "https://pypi.io/packages/source/m/matplotlib-venn/matplotlib-venn-0.11.4.zip"
+  },
+  "test": {
+   "imports": [
+    "matplotlib_venn"
+   ],
+   "requires": [
+    "pytest"
+   ]
+  }
+ },
+ "version": "0.11.4"
+}

@@ -1,0 +1,71 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/pycodestyle",
+  "lib/python2.7/site-packages/pycodestyle-2.0.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pycodestyle-2.0.0-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/pycodestyle.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT License",
+  "name": "pycodestyle",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.0"
+ },
+ "metadata_version": 1,
+ "name": "pycodestyle",
+ "raw_recipe": "{% set version = \"2.0.0\" %}\n\n\npackage:\n  name: pycodestyle\n  version: {{ version }}\n\nsource:\n  fn: pycodestyle-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pycodestyle/pycodestyle-{{ version }}.tar.gz\n  md5: 733291d308def897c0c48c7840b7f6bc\n\nbuild:\n  entry_points:\n    - pycodestyle = pycodestyle:_main\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  commands:\n    - pycodestyle --help\n    - pycodestyle --version\n\nabout:\n  home: https://pycodestyle.readthedocs.io/\n  license: MIT License\n  summary: 'Python style guide checker'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - jjhelmus\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://pycodestyle.readthedocs.io/",
+   "license": "MIT License",
+   "summary": "Python style guide checker"
+  },
+  "build": {
+   "entry_points": [
+    "pycodestyle = pycodestyle:_main"
+   ],
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pmlandwehr",
+    "jjhelmus"
+   ]
+  },
+  "package": {
+   "name": "pycodestyle",
+   "version": "2.0.0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "pycodestyle-2.0.0.tar.gz",
+   "md5": "733291d308def897c0c48c7840b7f6bc",
+   "url": "https://pypi.io/packages/source/p/pycodestyle/pycodestyle-2.0.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pycodestyle --help",
+    "pycodestyle --version"
+   ]
+  }
+ },
+ "version": "2.0.0"
+}

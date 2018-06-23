@@ -1,0 +1,34 @@
+{
+ "about": {
+  "home": "https://github.com/jjhelmus/pyfive",
+  "license": "BSD 3-Clause",
+  "summary": "A pure Python HDF5 file reader"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pyfive-0.2.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/pyfive-0.2.0-py2.7.egg-info/pbr.json",
+  "Lib/site-packages/pyfive/__init__.py",
+  "Lib/site-packages/pyfive/high_level.py",
+  "Lib/site-packages/pyfive/low_level.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pyfive",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2.0"
+ },
+ "metadata_version": 1,
+ "name": "pyfive",
+ "raw_recipe": "{% set version = \"0.2.0\" %}\n{% set sha256 = \"9ceacc50decd3ea3005e7ea9480bb22040075756ba3f1c6e7f411fe34c2b1f98\" %}\n\npackage:\n  name: pyfive\n  version: {{ version }}\n\nsource:\n  fn: pyfive-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pyfive/pyfive-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n\ntest:\n  imports:\n    - pyfive\n\nabout:\n  home: https://github.com/jjhelmus/pyfive\n  license: BSD 3-Clause\n  summary: 'A pure Python HDF5 file reader'\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n",
+ "rendered_recipe": {},
+ "version": "0.2.0"
+}

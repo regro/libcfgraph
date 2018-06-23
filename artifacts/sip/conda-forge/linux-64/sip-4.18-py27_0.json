@@ -1,0 +1,70 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/sip",
+  "include/python2.7/sip.h",
+  "lib/python2.7/site-packages/sip.pyi",
+  "lib/python2.7/site-packages/sip.so",
+  "lib/python2.7/site-packages/sipconfig.py",
+  "lib/python2.7/site-packages/sipdistutils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "GPL3",
+  "name": "sip",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "4.18"
+ },
+ "metadata_version": 1,
+ "name": "sip",
+ "raw_recipe": "{% set version = \"4.18\" %}\n\npackage:\n  name: sip\n  version: {{ version }}\n\nsource:\n  fn:   sip-{{ version }}.tar.gz  # [unix]\n  url:  http://sourceforge.net/projects/pyqt/files/sip/sip-{{ version }}/sip-{{ version }}.tar.gz  # [unix]\n  sha1: 6704854bc684de3b76c9db61ce54a74e7de5cf45  # [unix]\n  fn:   sip-{{ version }}.zip  # [win]\n  url:  http://sourceforge.net/projects/pyqt/files/sip/sip-{{ version }}/sip-{{ version }}.zip  # [win]\n  sha1: afde507fbee85a1aeb5fcb32e897bd3ea2bc48f5  # [win]\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - python.app  # [osx]\n\n  run:\n    - python\n\ntest:\n  imports:\n    - sip\n  files:\n    - test\n\nabout:\n  home: http://www.riverbankcomputing.com/software/sip/intro\n  license: GPL3\n  summary: Create Python bindings for C and C++ libraries\n\nextra:\n    recipe-maintainers:\n        - ccordoba12\n        - msarahan\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.riverbankcomputing.com/software/sip/intro",
+   "license": "GPL3",
+   "summary": "Create Python bindings for C and C++ libraries"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ccordoba12",
+    "msarahan"
+   ]
+  },
+  "package": {
+   "name": "sip",
+   "version": "4.18"
+  },
+  "requirements": {
+   "build": [
+    "python"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "sip-4.18.tar.gz",
+   "sha1": "6704854bc684de3b76c9db61ce54a74e7de5cf45",
+   "url": "http://sourceforge.net/projects/pyqt/files/sip/sip-4.18/sip-4.18.tar.gz"
+  },
+  "test": {
+   "files": [
+    "test"
+   ],
+   "imports": [
+    "sip"
+   ]
+  }
+ },
+ "version": "4.18"
+}

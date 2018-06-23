@@ -1,0 +1,117 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/M2Crypto-0.23.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/M2Crypto/ASN1.py",
+  "lib/python2.7/site-packages/M2Crypto/AuthCookie.py",
+  "lib/python2.7/site-packages/M2Crypto/BIO.py",
+  "lib/python2.7/site-packages/M2Crypto/BN.py",
+  "lib/python2.7/site-packages/M2Crypto/DH.py",
+  "lib/python2.7/site-packages/M2Crypto/DSA.py",
+  "lib/python2.7/site-packages/M2Crypto/EC.py",
+  "lib/python2.7/site-packages/M2Crypto/EVP.py",
+  "lib/python2.7/site-packages/M2Crypto/Engine.py",
+  "lib/python2.7/site-packages/M2Crypto/Err.py",
+  "lib/python2.7/site-packages/M2Crypto/PGP/PublicKey.py",
+  "lib/python2.7/site-packages/M2Crypto/PGP/PublicKeyRing.py",
+  "lib/python2.7/site-packages/M2Crypto/PGP/RSA.py",
+  "lib/python2.7/site-packages/M2Crypto/PGP/__init__.py",
+  "lib/python2.7/site-packages/M2Crypto/PGP/constants.py",
+  "lib/python2.7/site-packages/M2Crypto/PGP/packet.py",
+  "lib/python2.7/site-packages/M2Crypto/RC4.py",
+  "lib/python2.7/site-packages/M2Crypto/RSA.py",
+  "lib/python2.7/site-packages/M2Crypto/Rand.py",
+  "lib/python2.7/site-packages/M2Crypto/SMIME.py",
+  "lib/python2.7/site-packages/M2Crypto/SSL/Checker.py",
+  "lib/python2.7/site-packages/M2Crypto/SSL/Cipher.py",
+  "lib/python2.7/site-packages/M2Crypto/SSL/Connection.py",
+  "lib/python2.7/site-packages/M2Crypto/SSL/Context.py",
+  "lib/python2.7/site-packages/M2Crypto/SSL/SSLServer.py",
+  "lib/python2.7/site-packages/M2Crypto/SSL/Session.py",
+  "lib/python2.7/site-packages/M2Crypto/SSL/TwistedProtocolWrapper.py",
+  "lib/python2.7/site-packages/M2Crypto/SSL/__init__.py",
+  "lib/python2.7/site-packages/M2Crypto/SSL/cb.py",
+  "lib/python2.7/site-packages/M2Crypto/SSL/ssl_dispatcher.py",
+  "lib/python2.7/site-packages/M2Crypto/SSL/timeout.py",
+  "lib/python2.7/site-packages/M2Crypto/X509.py",
+  "lib/python2.7/site-packages/M2Crypto/__init__.py",
+  "lib/python2.7/site-packages/M2Crypto/__m2crypto.so",
+  "lib/python2.7/site-packages/M2Crypto/_m2crypto.py",
+  "lib/python2.7/site-packages/M2Crypto/callback.py",
+  "lib/python2.7/site-packages/M2Crypto/ftpslib.py",
+  "lib/python2.7/site-packages/M2Crypto/httpslib.py",
+  "lib/python2.7/site-packages/M2Crypto/m2.py",
+  "lib/python2.7/site-packages/M2Crypto/m2urllib.py",
+  "lib/python2.7/site-packages/M2Crypto/m2urllib2.py",
+  "lib/python2.7/site-packages/M2Crypto/m2xmlrpclib.py",
+  "lib/python2.7/site-packages/M2Crypto/threading.py",
+  "lib/python2.7/site-packages/M2Crypto/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "distribute",
+   "openssl 1.0*",
+   "python 2.7*"
+  ],
+  "license": "MIT License",
+  "name": "m2crypto",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.23.0"
+ },
+ "metadata_version": 1,
+ "name": "m2crypto",
+ "raw_recipe": "{% set version = \"0.23.0\" %}\n\npackage:\n  name: m2crypto\n  version: {{ version }}\n\nsource:\n  fn: M2Crypto-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/M/M2Crypto/M2Crypto-{{ version }}.tar.gz\n  md5: 89557730e245294a6cab06de8ad4fb42\n\n  patches:\n    # Sets the OPENSSL_PATH env variable to use OpenSSL from conda and not the system\n    - setup.patch\n\nbuild:\n  number: 0\n  skip: True  # [not linux or py3k]\n  preserve_egg_dir: yes\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - swig\n    - openssl 1.0*\n  run:\n    - python\n    - distribute\n    - openssl 1.0*\n\ntest:\n  imports:\n    - M2Crypto\n    - M2Crypto.SSL\n\nabout:\n  home: https://github.com/martinpaljak/M2Crypto\n  license: MIT License\n  summary: 'M2Crypto: A Python crypto and SSL toolkit'\n\nextra:\n  recipe-maintainers:\n    - danielfrg\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/martinpaljak/M2Crypto",
+   "license": "MIT License",
+   "summary": "M2Crypto: A Python crypto and SSL toolkit"
+  },
+  "build": {
+   "number": "0",
+   "preserve_egg_dir": "yes"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "danielfrg"
+   ]
+  },
+  "package": {
+   "name": "m2crypto",
+   "version": "0.23.0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "swig",
+    "openssl 1.0*"
+   ],
+   "run": [
+    "python",
+    "distribute",
+    "openssl 1.0*"
+   ]
+  },
+  "source": {
+   "fn": "M2Crypto-0.23.0.tar.gz",
+   "md5": "89557730e245294a6cab06de8ad4fb42",
+   "patches": [
+    "setup.patch"
+   ],
+   "url": "https://pypi.python.org/packages/source/M/M2Crypto/M2Crypto-0.23.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "M2Crypto",
+    "M2Crypto.SSL"
+   ]
+  }
+ },
+ "version": "0.23.0"
+}

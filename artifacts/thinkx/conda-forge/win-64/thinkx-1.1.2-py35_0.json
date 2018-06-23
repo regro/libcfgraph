@@ -1,0 +1,82 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/thinkbayes.py",
+  "Lib/site-packages/thinkbayes2.py",
+  "Lib/site-packages/thinkdsp.py",
+  "Lib/site-packages/thinkplot.py",
+  "Lib/site-packages/thinkstats2.py",
+  "Lib/site-packages/thinkx-1.1.2-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/thinkx-1.1.2-py3.5.egg-info/not-zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "markdown",
+   "matplotlib",
+   "numpy",
+   "pandas",
+   "python 3.5*",
+   "scipy"
+  ],
+  "license": "MIT",
+  "name": "thinkx",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.1.2"
+ },
+ "metadata_version": 1,
+ "name": "thinkx",
+ "raw_recipe": "{% set version = \"1.1.2\" %}\n\npackage:\n  name: thinkx\n  version: \"{{ version }}\"\n\nsource:\n  fn: thinkx-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/t/thinkx/thinkx-{{ version }}.tar.gz\n  md5: bf63823040694dd84c7401fbe76c8cee\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - matplotlib\n    - numpy\n    - pandas\n    - scipy\n    - markdown\n\ntest:\n  imports:\n    - thinkbayes  # [not py3k]\n    - thinkbayes2\n    - thinkdsp\n    - thinkplot\n    - thinkstats2\n\nabout:\n  home: http://github.com/AllenDowney/ThinkX\n  license: MIT\n  summary: 'Modules supporting books by Allen Downey'\n\nextra:\n  recipe-maintainers:\n    - koverholt\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://github.com/AllenDowney/ThinkX",
+   "license": "MIT",
+   "summary": "Modules supporting books by Allen Downey"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "koverholt"
+   ]
+  },
+  "package": {
+   "name": "thinkx",
+   "version": "1.1.2"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "scipy",
+    "markdown"
+   ]
+  },
+  "source": {
+   "fn": "thinkx-1.1.2.tar.gz",
+   "md5": "bf63823040694dd84c7401fbe76c8cee",
+   "url": "https://pypi.io/packages/source/t/thinkx/thinkx-1.1.2.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "thinkbayes2",
+    "thinkdsp",
+    "thinkplot",
+    "thinkstats2"
+   ]
+  }
+ },
+ "version": "1.1.2"
+}

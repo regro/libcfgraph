@@ -1,0 +1,49 @@
+{
+ "about": {
+  "description": "The thermotools package is a lowlevel implementation toolbox for the analyis\nof multi-ensemble calculations. It contains estimators for the state-continuous transition-based\nreweighting analysis method (TRAM) and its state-discrete variant (dTRAM), Bennet acceptance ratio\n(BAR) and its multi-state variant (MBAR), and the weighted histogram analysis method (WHAM).\nWhile you can use thermotools on its own, we recommend to use it in combination with PyEMMA.\n",
+  "dev_url": "https://github.com/markovmodel/thermotools",
+  "home": "http://github.com/markovmodel/thermotools",
+  "license": "LGPL",
+  "summary": "Lowlevel implementation of (transition-based and histogram) reweighting analyis methods for Python."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/thermotools-0.2.3-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/thermotools-0.2.3-py3.4.egg-info/pbr.json",
+  "lib/python3.4/site-packages/thermotools/__init__.py",
+  "lib/python3.4/site-packages/thermotools/_version.py",
+  "lib/python3.4/site-packages/thermotools/bar.cpython-34m.so",
+  "lib/python3.4/site-packages/thermotools/callback.py",
+  "lib/python3.4/site-packages/thermotools/cset.py",
+  "lib/python3.4/site-packages/thermotools/dtram.cpython-34m.so",
+  "lib/python3.4/site-packages/thermotools/mbar.cpython-34m.so",
+  "lib/python3.4/site-packages/thermotools/mbar_direct.cpython-34m.so",
+  "lib/python3.4/site-packages/thermotools/tram.cpython-34m.so",
+  "lib/python3.4/site-packages/thermotools/tram_direct.cpython-34m.so",
+  "lib/python3.4/site-packages/thermotools/trammbar.cpython-34m.so",
+  "lib/python3.4/site-packages/thermotools/trammbar_direct.cpython-34m.so",
+  "lib/python3.4/site-packages/thermotools/util.cpython-34m.so",
+  "lib/python3.4/site-packages/thermotools/wham.cpython-34m.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py34_0",
+  "build_number": 0,
+  "depends": [
+   "msmtools >=1.1.4",
+   "numpy 1.11*",
+   "python 3.4*",
+   "scipy"
+  ],
+  "license": "LGPL",
+  "name": "thermotools",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2.3"
+ },
+ "metadata_version": 1,
+ "name": "thermotools",
+ "raw_recipe": "{% set name = \"thermotools\" %}\n{% set version = \"0.2.3\" %}\n{% set sha256 = \"8cd05a705665d9e2da2c1d05b19278945af9927dda7b4edc2c1bf0b1b96d4d71\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cython\n    - numpy x.x\n  run:\n    - python\n    - numpy x.x\n    - scipy\n    - msmtools >=1.1.4\n\ntest:\n  imports:\n    - thermotools \n\nabout:\n  home: http://github.com/markovmodel/thermotools\n  license: LGPL \n  license_file: COPYING.LESSER\n  summary: 'Lowlevel implementation of (transition-based and histogram) reweighting analyis methods for Python.'\n\n  description: |\n    The thermotools package is a lowlevel implementation toolbox for the analyis\n    of multi-ensemble calculations. It contains estimators for the state-continuous transition-based\n    reweighting analysis method (TRAM) and its state-discrete variant (dTRAM), Bennet acceptance ratio\n    (BAR) and its multi-state variant (MBAR), and the weighted histogram analysis method (WHAM).\n    While you can use thermotools on its own, we recommend to use it in combination with PyEMMA.\n  dev_url: https://github.com/markovmodel/thermotools\n\nextra:\n  recipe-maintainers:\n    - marscher\n    - fabian-paul \n    - cwehmeyer \n",
+ "rendered_recipe": {},
+ "version": "0.2.3"
+}

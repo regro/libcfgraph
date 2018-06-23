@@ -1,0 +1,150 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.0.12",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "OpenMC is a Monte Carlo particle transport simulation code focused on\nneutron criticality calculations. It is capable of simulating 3D models\nbased on constructive solid geometry with second-order surfaces. The\nparticle interaction data is based on ACE format cross sections, also\nused in the MCNP and Serpent Monte Carlo codes.\n",
+  "dev_url": "https://github.com/mit-crpg/openmc",
+  "doc_url": "http://mit-crpg.github.io/openmc/index.html",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p481/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://mit-crpg.github.io/openmc/index.html",
+  "license": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-build-2.0.12-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-3.4.2-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_0",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "OpenMC Monte Carlo Code"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/openmc",
+  "share/doc/openmc/copyright",
+  "share/man/man1/openmc.1",
+  "share/openmc/relaxng/cmfd.rnc",
+  "share/openmc/relaxng/cmfd.rng",
+  "share/openmc/relaxng/cross_sections.rnc",
+  "share/openmc/relaxng/cross_sections.rng",
+  "share/openmc/relaxng/geometry.rnc",
+  "share/openmc/relaxng/geometry.rng",
+  "share/openmc/relaxng/materials.rnc",
+  "share/openmc/relaxng/materials.rng",
+  "share/openmc/relaxng/mg_cross_sections.rnc",
+  "share/openmc/relaxng/mg_cross_sections.rng",
+  "share/openmc/relaxng/plots.rnc",
+  "share/openmc/relaxng/plots.rng",
+  "share/openmc/relaxng/readme.rst",
+  "share/openmc/relaxng/settings.rnc",
+  "share/openmc/relaxng/settings.rng",
+  "share/openmc/relaxng/tallies.rnc",
+  "share/openmc/relaxng/tallies.rng"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [
+   "hdf5 1.8.17|1.8.17.*",
+   "libgfortran",
+   "mpich"
+  ],
+  "license": "MIT",
+  "name": "openmc",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.8.0"
+ },
+ "metadata_version": 1,
+ "name": "openmc",
+ "raw_recipe": "{% set org = \"mit-crpg\" %}\n{% set name = \"openmc\" %}\n{% set version = \"0.8.0\" %}\n{% set sha256 = \"8392df2f060cf1db55bc6d6603df3c4fc8e1b58e2cf701679665668a36e35d40\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: true  # [win]\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - pkg-config\n    - gcc\n    - hdf5 1.8.17|1.8.17.*\n    - git\n    - mpich\n  run:\n    - mpich\n    - libgfortran\n    - hdf5 1.8.17|1.8.17.*\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/bin/openmc\"\n    - openmc --version\n\nabout:\n  home: http://mit-crpg.github.io/openmc/index.html\n  license: MIT\n  license_file: LICENSE\n  summary: 'OpenMC Monte Carlo Code'\n  description: |\n    OpenMC is a Monte Carlo particle transport simulation code focused on\n    neutron criticality calculations. It is capable of simulating 3D models\n    based on constructive solid geometry with second-order surfaces. The\n    particle interaction data is based on ACE format cross sections, also\n    used in the MCNP and Serpent Monte Carlo codes.\n  doc_url: http://mit-crpg.github.io/openmc/index.html\n  dev_url: https://github.com/mit-crpg/openmc\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "OpenMC is a Monte Carlo particle transport simulation code focused on\nneutron criticality calculations. It is capable of simulating 3D models\nbased on constructive solid geometry with second-order surfaces. The\nparticle interaction data is based on ACE format cross sections, also\nused in the MCNP and Serpent Monte Carlo codes.\n",
+   "dev_url": "https://github.com/mit-crpg/openmc",
+   "doc_url": "http://mit-crpg.github.io/openmc/index.html",
+   "home": "http://mit-crpg.github.io/openmc/index.html",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "OpenMC Monte Carlo Code"
+  },
+  "build": {
+   "detect_binary_files_with_prefix": "true",
+   "number": "1",
+   "string": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "scopatz"
+   ]
+  },
+  "package": {
+   "name": "openmc",
+   "version": "0.8.0"
+  },
+  "requirements": {
+   "build": null,
+   "run": [
+    "mpich",
+    "libgfortran",
+    "hdf5 1.8.17|1.8.17.*"
+   ]
+  },
+  "source": {
+   "fn": "openmc-0.8.0.tar.gz",
+   "sha256": "8392df2f060cf1db55bc6d6603df3c4fc8e1b58e2cf701679665668a36e35d40",
+   "url": "https://github.com/mit-crpg/openmc/archive/v0.8.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f \"${PREFIX}/bin/openmc\"",
+    "openmc --version"
+   ]
+  }
+ },
+ "version": "0.8.0"
+}
