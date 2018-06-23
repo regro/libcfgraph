@@ -1,0 +1,62 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/y_serial_v060.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "y_serial",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.60"
+ },
+ "metadata_version": 1,
+ "name": "y_serial",
+ "raw_recipe": "{% set version = \"0.60\" %}\n\npackage:\n    name: y_serial\n    version: {{ version }}\n\nsource:\n    fn: y_serial_v060.py\n    url: http://downloads.sourceforge.net/project/yserial/y_serial_v060.py\n    sha256: 92313b2e60afea86fa0812637e271e61e619aaa699e60ab4f061abfb61cd4adb\n\nbuild:\n    number: 0\n    skip: True  # [py3k]\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n\ntest:\n    imports:\n        - y_serial_v060\n\nabout:\n    home: http://yserial.sourceforge.net/\n    license: BSD 3-Clause\n    summary: 'y_serial = serialization + persistence'\n\nextra:\n  recipe-maintainers:\n    - DanCodigaMWRA\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://yserial.sourceforge.net/",
+   "license": "BSD 3-Clause",
+   "summary": "y_serial = serialization + persistence"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "DanCodigaMWRA",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "y_serial",
+   "version": "0.60"
+  },
+  "requirements": {
+   "build": [
+    "python"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "y_serial_v060.py",
+   "sha256": "92313b2e60afea86fa0812637e271e61e619aaa699e60ab4f061abfb61cd4adb",
+   "url": "http://downloads.sourceforge.net/project/yserial/y_serial_v060.py"
+  },
+  "test": {
+   "imports": [
+    "y_serial_v060"
+   ]
+  }
+ },
+ "version": "0.60"
+}

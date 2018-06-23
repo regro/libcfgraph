@@ -1,0 +1,149 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://ipython.org",
+  "license": "BSD 3-clause",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "clyent-1.2.2-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.4-py36_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.1-0",
+   "conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_0",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Interactive Widgets for Jupyter"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/widgetsnbextension/__init__.py",
+  "share/jupyter/nbextensions/jupyter-js-widgets/extension.js",
+  "share/jupyter/nbextensions/jupyter-js-widgets/extension.js.map",
+  "lib/python3.5/site-packages/widgetsnbextension/static/extension.js",
+  "lib/python3.5/site-packages/widgetsnbextension-2.0.0-py3.5.egg-info/PKG-INFO",
+  "bin/.widgetsnbextension-pre-unlink.sh",
+  "bin/.widgetsnbextension-post-link.sh",
+  "lib/python3.5/site-packages/widgetsnbextension/static/extension.js.map",
+  "lib/python3.5/site-packages/widgetsnbextension-2.0.0-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/widgetsnbextension/_version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "ipykernel >=4.5.1",
+   "nbformat >=4.2.0",
+   "notebook >=4.4.1",
+   "python 3.5*",
+   "traitlets >=4.3.1"
+  ],
+  "license": "BSD 3-clause",
+  "name": "widgetsnbextension",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.0.0"
+ },
+ "metadata_version": 1,
+ "name": "widgetsnbextension",
+ "raw_recipe": "{% set version = \"2.0.0\" %}\n{% set sha256 = \"566582a84642d0c0f78b756a954450a38a8743eeb8dad04b7cab3ca66f455e6f\" %}\n\npackage:\n    name: widgetsnbextension\n    version: {{ version }}\n\nsource:\n    fn: widgetsnbextension-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/w/widgetsnbextension/widgetsnbextension-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - notebook >=4.4.1\n    run:\n        - python\n        - notebook >=4.4.1\n        - traitlets >=4.3.1\n        - nbformat >=4.2.0\n        - ipykernel >=4.5.1\n\ntest:\n    imports:\n        - widgetsnbextension\n\nabout:\n    home: http://ipython.org\n    license: BSD 3-clause\n    summary: Interactive Widgets for Jupyter\n\nextra:\n  recipe-maintainers:\n    - jasongrout\n    - jakirkham\n    - minrk\n    - pelson\n    - SylvainCorlay\n    - willingc\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://ipython.org",
+   "license": "BSD 3-clause",
+   "summary": "Interactive Widgets for Jupyter"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py35_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jasongrout",
+    "jakirkham",
+    "minrk",
+    "pelson",
+    "SylvainCorlay",
+    "willingc"
+   ]
+  },
+  "package": {
+   "name": "widgetsnbextension",
+   "version": "2.0.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "notebook >=4.4.1",
+    "traitlets >=4.3.1",
+    "nbformat >=4.2.0",
+    "ipykernel >=4.5.1"
+   ]
+  },
+  "source": {
+   "fn": "widgetsnbextension-2.0.0.tar.gz",
+   "sha256": "566582a84642d0c0f78b756a954450a38a8743eeb8dad04b7cab3ca66f455e6f",
+   "url": "https://pypi.io/packages/source/w/widgetsnbextension/widgetsnbextension-2.0.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "widgetsnbextension"
+   ]
+  }
+ },
+ "version": "2.0.0"
+}

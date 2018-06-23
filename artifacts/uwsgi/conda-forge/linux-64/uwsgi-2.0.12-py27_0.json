@@ -1,0 +1,80 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/uwsgi",
+  "lib/python2.7/site-packages/uWSGI-2.0.12-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/uwsgidecorators.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "libxml2",
+   "openssl 1.0.*",
+   "pcre",
+   "python 2.7*",
+   "yaml",
+   "zlib 1.2*"
+  ],
+  "license": "GPL2",
+  "name": "uwsgi",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.12"
+ },
+ "metadata_version": 1,
+ "name": "uwsgi",
+ "raw_recipe": "{% set version = \"2.0.12\" %}\n\npackage:\n  name: uwsgi\n  version: '{{ version }}'\n\nsource:\n  fn: \"uwsgi-{{ version }}.tar.gz\"\n  url: \"https://pypi.io/packages/source/u/uWSGI/uwsgi-{{ version }}.tar.gz\"\n  md5: 1451cab954bad0d7d7429e4d2c84b5df\n  patches:\n    - darwin.patch  # [osx]\n    # ^^ darwin.patch from https://github.com/unbit/uwsgi/commit/cf62d9f8ca6c9d0d64eaddb45534c8db27978af3\n    #    remove for version >2.0.12\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - python\n    # - jansson  # a json parser library that should be added once available as a conda package\n    - libxml2  # [unix]\n    - openssl 1.0.*\n    - pcre\n    - yaml\n    - zlib 1.2*\n  run:\n    - python\n    # - jansson\n    - libxml2  # [unix]\n    - openssl 1.0.*\n    - pcre\n    - yaml\n    - zlib 1.2*\n\ntest:\n  commands:\n    - uwsgi --version\n\nabout:\n  home: https://github.com/unbit/uwsgi\n  license: GPL2\n  summary: >\n    The uWSGI project aims at developing a full stack for building hosting\n    services. Application servers (for various programming languages and\n    protocols), proxies, process managers and monitors are all implemented.\n\nextra:\n  recipe-maintainers:\n    - kalefranz\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/unbit/uwsgi",
+   "license": "GPL2",
+   "summary": "The uWSGI project aims at developing a full stack for building hosting services. Application servers (for various programming languages and protocols), proxies, process managers and monitors are all implemented.\n"
+  },
+  "build": {
+   "detect_binary_files_with_prefix": "true",
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "kalefranz"
+   ]
+  },
+  "package": {
+   "name": "uwsgi",
+   "version": "2.0.12"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "libxml2",
+    "openssl 1.0.*",
+    "pcre",
+    "yaml",
+    "zlib 1.2*"
+   ],
+   "run": [
+    "python",
+    "libxml2",
+    "openssl 1.0.*",
+    "pcre",
+    "yaml",
+    "zlib 1.2*"
+   ]
+  },
+  "source": {
+   "fn": "uwsgi-2.0.12.tar.gz",
+   "md5": "1451cab954bad0d7d7429e4d2c84b5df",
+   "patches": "",
+   "url": "https://pypi.io/packages/source/u/uWSGI/uwsgi-2.0.12.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "uwsgi --version"
+   ]
+  }
+ },
+ "version": "2.0.12"
+}

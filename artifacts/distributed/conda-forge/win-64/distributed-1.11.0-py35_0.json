@@ -1,0 +1,169 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/distributed-1.11.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/distributed-1.11.0-py3.5.egg-info/not-zip-safe",
+  "Lib/site-packages/distributed/__init__.py",
+  "Lib/site-packages/distributed/batched.py",
+  "Lib/site-packages/distributed/bokeh/__init__.py",
+  "Lib/site-packages/distributed/bokeh/resource_monitor.py",
+  "Lib/site-packages/distributed/bokeh/status/__init__.py",
+  "Lib/site-packages/distributed/bokeh/status/main.py",
+  "Lib/site-packages/distributed/bokeh/status/server_lifecycle.py",
+  "Lib/site-packages/distributed/bokeh/status_monitor.py",
+  "Lib/site-packages/distributed/bokeh/tasks/__init__.py",
+  "Lib/site-packages/distributed/bokeh/tasks/main.py",
+  "Lib/site-packages/distributed/bokeh/tasks/server_lifecycle.py",
+  "Lib/site-packages/distributed/bokeh/worker_monitor.py",
+  "Lib/site-packages/distributed/center.py",
+  "Lib/site-packages/distributed/cli/__init__.py",
+  "Lib/site-packages/distributed/cli/dask_scheduler.py",
+  "Lib/site-packages/distributed/cli/dask_ssh.py",
+  "Lib/site-packages/distributed/cli/dask_worker.py",
+  "Lib/site-packages/distributed/cli/dcluster.py",
+  "Lib/site-packages/distributed/cli/dscheduler.py",
+  "Lib/site-packages/distributed/cli/dworker.py",
+  "Lib/site-packages/distributed/cli/utils.py",
+  "Lib/site-packages/distributed/client.py",
+  "Lib/site-packages/distributed/cluster.py",
+  "Lib/site-packages/distributed/collections.py",
+  "Lib/site-packages/distributed/compatibility.py",
+  "Lib/site-packages/distributed/core.py",
+  "Lib/site-packages/distributed/diagnostics/__init__.py",
+  "Lib/site-packages/distributed/diagnostics/eventstream.py",
+  "Lib/site-packages/distributed/diagnostics/plugin.py",
+  "Lib/site-packages/distributed/diagnostics/progress.py",
+  "Lib/site-packages/distributed/diagnostics/progress_stream.py",
+  "Lib/site-packages/distributed/diagnostics/progressbar.py",
+  "Lib/site-packages/distributed/diagnostics/scheduler.py",
+  "Lib/site-packages/distributed/executor.py",
+  "Lib/site-packages/distributed/hdfs.py",
+  "Lib/site-packages/distributed/http/__init__.py",
+  "Lib/site-packages/distributed/http/core.py",
+  "Lib/site-packages/distributed/http/scheduler.py",
+  "Lib/site-packages/distributed/http/worker.py",
+  "Lib/site-packages/distributed/joblib.py",
+  "Lib/site-packages/distributed/nanny.py",
+  "Lib/site-packages/distributed/protocol.py",
+  "Lib/site-packages/distributed/s3.py",
+  "Lib/site-packages/distributed/scheduler.py",
+  "Lib/site-packages/distributed/sizeof.py",
+  "Lib/site-packages/distributed/utils.py",
+  "Lib/site-packages/distributed/utils_test.py",
+  "Lib/site-packages/distributed/worker.py",
+  "Scripts/dask-scheduler-script.py",
+  "Scripts/dask-scheduler.exe",
+  "Scripts/dask-ssh-script.py",
+  "Scripts/dask-ssh.exe",
+  "Scripts/dask-worker-script.py",
+  "Scripts/dask-worker.exe",
+  "Scripts/dcenter-script.py",
+  "Scripts/dcenter.exe",
+  "Scripts/dcluster-script.py",
+  "Scripts/dcluster.exe",
+  "Scripts/dscheduler-script.py",
+  "Scripts/dscheduler.exe",
+  "Scripts/dworker-script.py",
+  "Scripts/dworker.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "bokeh",
+   "boto3",
+   "click",
+   "cloudpickle >=0.2.1",
+   "dask >=0.10.0",
+   "locket",
+   "msgpack-python",
+   "psutil",
+   "python 3.5*",
+   "s3fs",
+   "six",
+   "tblib",
+   "toolz",
+   "tornado >=4.2"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "distributed",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.11.0"
+ },
+ "metadata_version": 1,
+ "name": "distributed",
+ "raw_recipe": "{% set version = \"1.11.0\" %}\n\npackage:\n  name: distributed\n  version: \"{{ version }}\"\n\nsource:\n  fn: distributed-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/distributed/distributed-{{ version }}.tar.gz\n  md5: 567479ac0cc13ee3a7f45a1af19d346f\n\nbuild:\n  number: 0\n  entry_points:\n    - dask-scheduler=distributed.cli.dask_scheduler:go\n    - dask-ssh=distributed.cli.dask_ssh:go\n    - dask-worker=distributed.cli.dask_worker:go\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - bokeh\n    - boto3\n    - click\n    - cloudpickle >=0.2.1\n    - dask >=0.10.0\n    - locket\n    - msgpack-python\n    - psutil\n    - s3fs\n    - six\n    - tblib\n    - toolz\n    - tornado >=4.2\n\ntest:\n  imports:\n    - distributed\n    - distributed.bokeh\n    - distributed.bokeh.status\n    - distributed.bokeh.tasks\n    - distributed.cli\n    - distributed.diagnostics\n    - distributed.http\n  commands:\n    - dask-scheduler --help\n    - dask-ssh --help\n    - dask-worker --help\n\nabout:\n  home: http://distributed.readthedocs.io/en/latest/\n  license: BSD 3-Clause\n  summary: 'Distributed computing'\n\nextra:\n  recipe-maintainers:\n    - mrocklin\n    - koverholt\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://distributed.readthedocs.io/en/latest/",
+   "license": "BSD 3-Clause",
+   "summary": "Distributed computing"
+  },
+  "build": {
+   "entry_points": [
+    "dask-scheduler=distributed.cli.dask_scheduler:go",
+    "dask-ssh=distributed.cli.dask_ssh:go",
+    "dask-worker=distributed.cli.dask_worker:go"
+   ],
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mrocklin",
+    "koverholt"
+   ]
+  },
+  "package": {
+   "name": "distributed",
+   "version": "1.11.0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "bokeh",
+    "boto3",
+    "click",
+    "cloudpickle >=0.2.1",
+    "dask >=0.10.0",
+    "locket",
+    "msgpack-python",
+    "psutil",
+    "s3fs",
+    "six",
+    "tblib",
+    "toolz",
+    "tornado >=4.2"
+   ]
+  },
+  "source": {
+   "fn": "distributed-1.11.0.tar.gz",
+   "md5": "567479ac0cc13ee3a7f45a1af19d346f",
+   "url": "https://pypi.io/packages/source/d/distributed/distributed-1.11.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "dask-scheduler --help",
+    "dask-ssh --help",
+    "dask-worker --help"
+   ],
+   "imports": [
+    "distributed",
+    "distributed.bokeh",
+    "distributed.bokeh.status",
+    "distributed.bokeh.tasks",
+    "distributed.cli",
+    "distributed.diagnostics",
+    "distributed.http"
+   ]
+  }
+ },
+ "version": "1.11.0"
+}

@@ -1,0 +1,74 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/kernprof",
+  "lib/python3.4/site-packages/_line_profiler.cpython-34m.so",
+  "lib/python3.4/site-packages/kernprof.py",
+  "lib/python3.4/site-packages/line_profiler-1.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/line_profiler.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "psutil",
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "line_profiler",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0"
+ },
+ "metadata_version": 1,
+ "name": "line_profiler",
+ "raw_recipe": "{% set version = \"1.0\" %}\n\npackage:\n  name: line_profiler\n  version: {{ version }}\n\nsource:\n  fn: line_profiler-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/l/line_profiler/line_profiler-{{ version }}.tar.gz\n  md5: 2f8352acfedf83f701a564583db5e14d\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n    - psutil\n\ntest:\n  imports:\n    - kernprof\n    - line_profiler\n\n  commands:\n    - python -m kernprof --help\n    - python -m line_profiler --help\n\nabout:\n  home: https://github.com/rkern/line_profiler\n  license: BSD 3-Clause\n  summary: A module for monitoring memory usage of a python program\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - koverholt\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/rkern/line_profiler",
+   "license": "BSD 3-Clause",
+   "summary": "A module for monitoring memory usage of a python program"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham",
+    "koverholt"
+   ]
+  },
+  "package": {
+   "name": "line_profiler",
+   "version": "1.0"
+  },
+  "requirements": {
+   "build": [
+    "python"
+   ],
+   "run": [
+    "python",
+    "psutil"
+   ]
+  },
+  "source": {
+   "fn": "line_profiler-1.0.tar.gz",
+   "md5": "2f8352acfedf83f701a564583db5e14d",
+   "url": "https://pypi.io/packages/source/l/line_profiler/line_profiler-1.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python -m kernprof --help",
+    "python -m line_profiler --help"
+   ],
+   "imports": [
+    "kernprof",
+    "line_profiler"
+   ]
+  }
+ },
+ "version": "1.0"
+}

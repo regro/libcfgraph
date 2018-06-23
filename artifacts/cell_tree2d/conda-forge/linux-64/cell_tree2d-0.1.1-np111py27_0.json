@@ -1,0 +1,31 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/cell_tree2d-0.1.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/cell_tree2d-0.1.1-py2.7.egg-info/pbr.json",
+  "lib/python2.7/site-packages/cell_tree2d/__init__.py",
+  "lib/python2.7/site-packages/cell_tree2d/cell_tree2d.so",
+  "lib/python2.7/site-packages/cell_tree2d/test/__init__.py",
+  "lib/python2.7/site-packages/cell_tree2d/test/test_cell_tree2d.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.11*",
+   "python 2.7*"
+  ],
+  "license": "Public Domain",
+  "name": "cell_tree2d",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1.1"
+ },
+ "metadata_version": 1,
+ "name": "cell_tree2d",
+ "raw_recipe": "{% set version = \"0.1.1\" %}\n\npackage:\n    name: cell_tree2d\n    version: {{ version }}\n\nsource:\n    fn: cell_tree2d-{{ version }}-1.zip\n    url: https://pypi.python.org/packages/source/c/cell_tree2d/cell_tree2d-{{ version }}-1.zip\n    md5: 06f95190c341e9fc6963dbd40274ef98\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - cython\n        - numpy x.x\n    run:\n        - python\n        - numpy x.x\n\ntest:\n    imports:\n        - cell_tree2d\n\nabout:\n    home: https://github.com/NOAA-ORR-ERD/cell_tree2d\n    license: Public Domain\n    summary: CellTree data structure as described by Garth and Joy 2010\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.1.1"
+}
