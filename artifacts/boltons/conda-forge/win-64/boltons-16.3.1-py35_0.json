@@ -1,0 +1,93 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/boltons-16.3.1-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/boltons-16.3.1-py3.5.egg-info/not-zip-safe",
+  "Lib/site-packages/boltons/__init__.py",
+  "Lib/site-packages/boltons/cacheutils.py",
+  "Lib/site-packages/boltons/debugutils.py",
+  "Lib/site-packages/boltons/deprutils.py",
+  "Lib/site-packages/boltons/dictutils.py",
+  "Lib/site-packages/boltons/easterutils.py",
+  "Lib/site-packages/boltons/ecoutils.py",
+  "Lib/site-packages/boltons/excutils.py",
+  "Lib/site-packages/boltons/fileutils.py",
+  "Lib/site-packages/boltons/formatutils.py",
+  "Lib/site-packages/boltons/funcutils.py",
+  "Lib/site-packages/boltons/gcutils.py",
+  "Lib/site-packages/boltons/iterutils.py",
+  "Lib/site-packages/boltons/jsonutils.py",
+  "Lib/site-packages/boltons/listutils.py",
+  "Lib/site-packages/boltons/mathutils.py",
+  "Lib/site-packages/boltons/mboxutils.py",
+  "Lib/site-packages/boltons/namedutils.py",
+  "Lib/site-packages/boltons/queueutils.py",
+  "Lib/site-packages/boltons/setutils.py",
+  "Lib/site-packages/boltons/socketutils.py",
+  "Lib/site-packages/boltons/statsutils.py",
+  "Lib/site-packages/boltons/strutils.py",
+  "Lib/site-packages/boltons/tableutils.py",
+  "Lib/site-packages/boltons/tbutils.py",
+  "Lib/site-packages/boltons/timeutils.py",
+  "Lib/site-packages/boltons/typeutils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "boltons",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "16.3.1"
+ },
+ "metadata_version": 1,
+ "name": "boltons",
+ "raw_recipe": "{% set version = \"16.3.1\" %}\n\npackage:\n  name: boltons\n  version: '{{ version }}'\n\nsource:\n  fn: '{{ version }}.tar.gz'\n  url: https://github.com/mahmoud/boltons/archive/{{ version }}.tar.gz\n  sha256: 9e4e5a85fd3aa508b499e413cd0b30c8cf8e11b6bc9a44acf1f0c278f85af1f8\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  requires:\n    - pytest\n  commands:\n    - 'py.test --doctest-modules {{ environ.SRC_DIR }}/boltons {{ environ.SRC_DIR }}/tests'\n\nabout:\n  home: https://github.com/mahmoud/boltons\n  license: BSD 3-Clause\n  summary: >\n    boltons should be builtins. Boltons is a set of over 160 BSD-licensed,\n    pure-Python utilities in the same spirit as--and yet conspicuously\n    missing from--the standard library.\n\nextra:\n  recipe-maintainers:\n    - kalefranz\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/mahmoud/boltons",
+   "license": "BSD 3-Clause",
+   "summary": "boltons should be builtins. Boltons is a set of over 160 BSD-licensed, pure-Python utilities in the same spirit as--and yet conspicuously missing from--the standard library.\n"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "kalefranz"
+   ]
+  },
+  "package": {
+   "name": "boltons",
+   "version": "16.3.1"
+  },
+  "requirements": {
+   "build": [
+    "python"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "16.3.1.tar.gz",
+   "sha256": "9e4e5a85fd3aa508b499e413cd0b30c8cf8e11b6bc9a44acf1f0c278f85af1f8",
+   "url": "https://github.com/mahmoud/boltons/archive/16.3.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "py.test --doctest-modules C:\\conda\\conda-bld\\work\\boltons-16.3.1/boltons C:\\conda\\conda-bld\\work\\boltons-16.3.1/tests"
+   ],
+   "requires": [
+    "pytest"
+   ]
+  }
+ },
+ "version": "16.3.1"
+}

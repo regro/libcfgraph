@@ -1,0 +1,39 @@
+{
+ "about": {
+  "home": "https://github.com/Savvysherpa/slda",
+  "license": "MIT",
+  "summary": "Cython implementations of Gibbs sampling for latent Dirichlet allocation and its supervised variants\n"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/slda-0.1.6-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/slda/__init__.py",
+  "lib/python3.4/site-packages/slda/_topic_models.so",
+  "lib/python3.4/site-packages/slda/topic_models.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py34_1",
+  "build_number": 1,
+  "depends": [
+   "cython",
+   "cythongsl",
+   "gsl",
+   "numpy 1.11*",
+   "pypolyagamma",
+   "python 3.4*",
+   "scikit-learn",
+   "scipy"
+  ],
+  "license": "MIT",
+  "name": "slda",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.6"
+ },
+ "metadata_version": 1,
+ "name": "slda",
+ "raw_recipe": "{% set name = \"slda\" %}\n{% set version = \"0.1.6\" %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/Savvysherpa/slda/archive/{{ version }}.tar.gz\n    sha256: aeabfe4edefc566ee97c107f8f9b2c6a478595e24fb35d44d9eeaaa876fb90ce\n\nbuild:\n    number: 1\n    skip: True  # [win or not py3k]\n\nrequirements:\n    build:\n        - cython\n        - cythongsl\n        - gsl\n        - numpy x.x\n        - python\n        - setuptools\n    run:\n        - cython\n        - cythongsl\n        - gsl\n        - numpy x.x\n        - pypolyagamma\n        - python\n        - scikit-learn\n        - scipy\n\ntest:\n    imports:\n        - slda\n\nabout:\n    home: https://github.com/Savvysherpa/slda\n    license: MIT\n    summary: >\n      Cython implementations of Gibbs sampling for latent\n      Dirichlet allocation and its supervised variants\n\nextra:\n    recipe-maintainers:\n        - mmb90\n",
+ "rendered_recipe": {},
+ "version": "0.1.6"
+}

@@ -1,0 +1,113 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/aib.exe",
+  "Library/bin/mser.exe",
+  "Library/bin/sift.exe",
+  "Library/bin/vl.dll",
+  "Library/bin/vl.lib",
+  "Library/include/vl/aib.h",
+  "Library/include/vl/array.h",
+  "Library/include/vl/covdet.h",
+  "Library/include/vl/dsift.h",
+  "Library/include/vl/fisher.h",
+  "Library/include/vl/generic.h",
+  "Library/include/vl/getopt_long.h",
+  "Library/include/vl/gmm.h",
+  "Library/include/vl/heap-def.h",
+  "Library/include/vl/hikmeans.h",
+  "Library/include/vl/hog.h",
+  "Library/include/vl/homkermap.h",
+  "Library/include/vl/host.h",
+  "Library/include/vl/ikmeans.h",
+  "Library/include/vl/imopv.h",
+  "Library/include/vl/imopv_sse2.h",
+  "Library/include/vl/kdtree.h",
+  "Library/include/vl/kmeans.h",
+  "Library/include/vl/lbp.h",
+  "Library/include/vl/liop.h",
+  "Library/include/vl/mathop.h",
+  "Library/include/vl/mathop_avx.h",
+  "Library/include/vl/mathop_sse2.h",
+  "Library/include/vl/mser.h",
+  "Library/include/vl/pgm.h",
+  "Library/include/vl/qsort-def.h",
+  "Library/include/vl/quickshift.h",
+  "Library/include/vl/random.h",
+  "Library/include/vl/rodrigues.h",
+  "Library/include/vl/scalespace.h",
+  "Library/include/vl/shuffle-def.h",
+  "Library/include/vl/sift.h",
+  "Library/include/vl/slic.h",
+  "Library/include/vl/stringop.h",
+  "Library/include/vl/svm.h",
+  "Library/include/vl/svmdataset.h",
+  "Library/include/vl/vlad.h"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc10_0",
+  "build_number": 0,
+  "depends": [],
+  "features": "vc10",
+  "license": "BSD 2-Clause",
+  "name": "vlfeat",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.9.20"
+ },
+ "metadata_version": 1,
+ "name": "vlfeat",
+ "raw_recipe": "{% set version = \"0.9.20\" %}\n\npackage:\n  name: vlfeat\n  version: {{ version }}\n\nsource:\n  fn: vlfeat-{{ version }}-bin.tar.gz\n  url: http://www.vlfeat.org/download/vlfeat-{{ version }}-bin.tar.gz\n  sha1: 1aa063af825b28dca332396732268e98f4821179\n\n  patches:\n    - no_crt_copy.patch    # [win]\n    - no_snprintf.patch    # [win and py35]\n    - vs2010_openmp.patch  # [win and py34]\n    - vs2010_path.patch    # [win64 and py34]\n\nbuild:\n  number: 0\n  features:\n    - vc9     # [win and py27]\n    - vc10    # [win and py34]\n    - vc14    # [win and py35]\n\nrequirements:\n  build:\n    - python  # [win]\n\ntest:\n  requires:\n    - python                                              # [win]\n\n  commands: \n    - sift -h\n    - mser -h\n    - aib -h\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\vl.dll exit 1  # [win]\n    - test -f $PREFIX/lib/libvl.dylib                     # [osx]\n    - test -f $PREFIX/lib/libvl.so                        # [linux]\n\nabout:\n  home: http://www.vlfeat.org/\n  summary: The VLFeat open source library implements popular computer vision algorithms specializing in image understanding and local features extraction and matching.\n  license: BSD 2-Clause\n\nextra:\n  recipe-maintainers:\n    - patricksnape\n    - 183amir\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.vlfeat.org/",
+   "license": "BSD 2-Clause",
+   "summary": "The VLFeat open source library implements popular computer vision algorithms specializing in image understanding and local features extraction and matching."
+  },
+  "build": {
+   "features": [
+    "vc10"
+   ],
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "patricksnape",
+    "183amir"
+   ]
+  },
+  "package": {
+   "name": "vlfeat",
+   "version": "0.9.20"
+  },
+  "requirements": {
+   "build": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "vlfeat-0.9.20-bin.tar.gz",
+   "patches": [
+    "no_crt_copy.patch",
+    "vs2010_openmp.patch",
+    "vs2010_path.patch"
+   ],
+   "sha1": "1aa063af825b28dca332396732268e98f4821179",
+   "url": "http://www.vlfeat.org/download/vlfeat-0.9.20-bin.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "sift -h",
+    "mser -h",
+    "aib -h",
+    "if not exist %PREFIX%\\\\Library\\\\bin\\\\vl.dll exit 1"
+   ],
+   "requires": [
+    "python"
+   ]
+  }
+ },
+ "version": "0.9.20"
+}

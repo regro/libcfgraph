@@ -1,0 +1,125 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/inv",
+  "bin/invoke",
+  "lib/python2.7/site-packages/invoke-0.12.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/invoke-0.12.2-py2.7.egg-info/pbr.json",
+  "lib/python2.7/site-packages/invoke/__init__.py",
+  "lib/python2.7/site-packages/invoke/_version.py",
+  "lib/python2.7/site-packages/invoke/collection.py",
+  "lib/python2.7/site-packages/invoke/complete.py",
+  "lib/python2.7/site-packages/invoke/config.py",
+  "lib/python2.7/site-packages/invoke/context.py",
+  "lib/python2.7/site-packages/invoke/env.py",
+  "lib/python2.7/site-packages/invoke/exceptions.py",
+  "lib/python2.7/site-packages/invoke/executor.py",
+  "lib/python2.7/site-packages/invoke/loader.py",
+  "lib/python2.7/site-packages/invoke/main.py",
+  "lib/python2.7/site-packages/invoke/parser/__init__.py",
+  "lib/python2.7/site-packages/invoke/parser/argument.py",
+  "lib/python2.7/site-packages/invoke/parser/context.py",
+  "lib/python2.7/site-packages/invoke/parser/parser.py",
+  "lib/python2.7/site-packages/invoke/platform.py",
+  "lib/python2.7/site-packages/invoke/program.py",
+  "lib/python2.7/site-packages/invoke/runners.py",
+  "lib/python2.7/site-packages/invoke/tasks.py",
+  "lib/python2.7/site-packages/invoke/util.py",
+  "lib/python2.7/site-packages/invoke/vendor/__init__.py",
+  "lib/python2.7/site-packages/invoke/vendor/fluidity/__init__.py",
+  "lib/python2.7/site-packages/invoke/vendor/fluidity/backwardscompat.py",
+  "lib/python2.7/site-packages/invoke/vendor/fluidity/machine.py",
+  "lib/python2.7/site-packages/invoke/vendor/lexicon/__init__.py",
+  "lib/python2.7/site-packages/invoke/vendor/lexicon/alias_dict.py",
+  "lib/python2.7/site-packages/invoke/vendor/lexicon/attribute_dict.py",
+  "lib/python2.7/site-packages/invoke/vendor/six.py",
+  "lib/python2.7/site-packages/invoke/vendor/yaml2/__init__.py",
+  "lib/python2.7/site-packages/invoke/vendor/yaml2/composer.py",
+  "lib/python2.7/site-packages/invoke/vendor/yaml2/constructor.py",
+  "lib/python2.7/site-packages/invoke/vendor/yaml2/cyaml.py",
+  "lib/python2.7/site-packages/invoke/vendor/yaml2/dumper.py",
+  "lib/python2.7/site-packages/invoke/vendor/yaml2/emitter.py",
+  "lib/python2.7/site-packages/invoke/vendor/yaml2/error.py",
+  "lib/python2.7/site-packages/invoke/vendor/yaml2/events.py",
+  "lib/python2.7/site-packages/invoke/vendor/yaml2/loader.py",
+  "lib/python2.7/site-packages/invoke/vendor/yaml2/nodes.py",
+  "lib/python2.7/site-packages/invoke/vendor/yaml2/parser.py",
+  "lib/python2.7/site-packages/invoke/vendor/yaml2/reader.py",
+  "lib/python2.7/site-packages/invoke/vendor/yaml2/representer.py",
+  "lib/python2.7/site-packages/invoke/vendor/yaml2/resolver.py",
+  "lib/python2.7/site-packages/invoke/vendor/yaml2/scanner.py",
+  "lib/python2.7/site-packages/invoke/vendor/yaml2/serializer.py",
+  "lib/python2.7/site-packages/invoke/vendor/yaml2/tokens.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD-2-Clause",
+  "name": "invoke",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.12.2"
+ },
+ "metadata_version": 1,
+ "name": "invoke",
+ "raw_recipe": "{% set version = \"0.12.2\" %}\n\npackage:\n  name: invoke\n  version: {{ version }}\n\nsource:  \n  fn: invoke-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/i/invoke/invoke-{{ version }}.tar.gz\n  md5: f46192ea664325464a02f1c7f735e3cb\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - invoke = invoke.main:program.run\n    - inv = invoke.main:program.run\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  # Python imports\n  imports:\n    - invoke\n    - invoke.parser\n    - invoke.vendor\n    - invoke.vendor.fluidity\n    - invoke.vendor.lexicon\n    - invoke.vendor.yaml2    # [py2k]\n    - invoke.vendor.yaml3    # [py3k]\n\n  commands:\n    - invoke --help\n    - inv --help\n\nabout:\n  home: http://docs.pyinvoke.org\n  license: BSD-2-Clause\n  summary: 'Pythonic task execution'\n\nextra:\n  recipe-maintainers:\n    - ivoflipse\n    - Korijn\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://docs.pyinvoke.org",
+   "license": "BSD-2-Clause",
+   "summary": "Pythonic task execution"
+  },
+  "build": {
+   "entry_points": [
+    "invoke = invoke.main:program.run",
+    "inv = invoke.main:program.run"
+   ],
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ivoflipse",
+    "Korijn"
+   ]
+  },
+  "package": {
+   "name": "invoke",
+   "version": "0.12.2"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "invoke-0.12.2.tar.gz",
+   "md5": "f46192ea664325464a02f1c7f735e3cb",
+   "url": "https://pypi.python.org/packages/source/i/invoke/invoke-0.12.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "invoke --help",
+    "inv --help"
+   ],
+   "imports": [
+    "invoke",
+    "invoke.parser",
+    "invoke.vendor",
+    "invoke.vendor.fluidity",
+    "invoke.vendor.lexicon",
+    "invoke.vendor.yaml2"
+   ]
+  }
+ },
+ "version": "0.12.2"
+}

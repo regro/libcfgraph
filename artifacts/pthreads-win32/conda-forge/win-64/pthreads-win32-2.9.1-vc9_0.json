@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "https://www.sourceware.org/pthreads-win32/",
+  "license": "LGPL 2",
+  "summary": "Open Source POSIX Threads for Win32"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/pthreadVSE2.dll",
+  "Library/include/pthread.h",
+  "Library/include/sched.h",
+  "Library/include/semaphore.h",
+  "Library/lib/pthreads.lib",
+  "Library/lib/pthreads_static.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc9_0",
+  "build_number": 0,
+  "depends": [],
+  "features": "vc9",
+  "license": "LGPL 2",
+  "name": "pthreads-win32",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.9.1"
+ },
+ "metadata_version": 1,
+ "name": "pthreads-win32",
+ "raw_recipe": "{% set version = \"2.9.1\" %}\n{% set version_dash = \"2-9-1\" %}\n\npackage:\n  name: pthreads-win32\n  version: {{ version }}\n\nsource:\n  fn: pthreads-w32-{{ version_dash }}-release.zip\n  url: ftp://sourceware.org/pub/pthreads-win32/pthreads-w32-{{ version_dash }}-release.zip\n  md5: a3cb284ba0914c9d26e0954f60341354\n  patches:\n    - timespec.patch\n\nbuild:\n  number: 0\n  skip: true          # [not win]\n  features:\n    - vc9             # [win and py27]\n    - vc10            # [win and py34]\n    - vc14            # [win and py35]\n\nrequirements:\n  build:\n    - python\n\ntest:\n  requires:\n    - python\n  commands:\n    - if not exist %LIBRARY_INC%\\pthread.h exit 1\n    - if not exist %LIBRARY_BIN%\\pthreadVSE2.dll exit 1\n    - if not exist %LIBRARY_LIB%\\pthreads.lib exit 1\n    - if not exist %LIBRARY_LIB%\\pthreads_static.lib exit 1\n\nabout:\n  home: https://www.sourceware.org/pthreads-win32/\n  license: LGPL 2\n  summary: Open Source POSIX Threads for Win32\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
+ "rendered_recipe": {},
+ "version": "2.9.1"
+}

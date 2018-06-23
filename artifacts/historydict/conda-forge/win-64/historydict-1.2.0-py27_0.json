@@ -1,0 +1,71 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/historydict-1.1.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/historydict.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "historydict",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.2.0"
+ },
+ "metadata_version": 1,
+ "name": "historydict",
+ "raw_recipe": "{% set version = \"1.2.0\" %}\n\npackage:\n    name: historydict\n    version: {{ version }}\n\nsource:\n    url: https://github.com/Nikea/historydict/archive/v{{ version }}.tar.gz\n    fn: historydict-v{{ version }}.tar.gz\n    sha256: c59d19badded9c2a0b61fd1cd570e94da43446d17f9aa7a4179321f6635ee903\n\nbuild:\n    skip: True  # [py33]\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n\ntest:\n    imports:\n        - historydict\n    requires:\n        - pytest\n    commands:\n        - py.test {{ environ.SRC_DIR }} -vrxs\n\nabout:\n    home: https://github.com/Nikea/historydict\n    license: BSD 3-Clause\n    summary: A persistent dictionary with history backed by sqlite\n\nextra:\n    recipe-maintainers:\n        - ericdill\n        - licode\n        - tacaswell\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/Nikea/historydict",
+   "license": "BSD 3-Clause",
+   "summary": "A persistent dictionary with history backed by sqlite"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ericdill",
+    "licode",
+    "tacaswell"
+   ]
+  },
+  "package": {
+   "name": "historydict",
+   "version": "1.2.0"
+  },
+  "requirements": {
+   "build": [
+    "python"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "historydict-v1.2.0.tar.gz",
+   "sha256": "c59d19badded9c2a0b61fd1cd570e94da43446d17f9aa7a4179321f6635ee903",
+   "url": "https://github.com/Nikea/historydict/archive/v1.2.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "py.test C:\\conda\\conda-bld\\work\\historydict-1.2.0 -vrxs"
+   ],
+   "imports": [
+    "historydict"
+   ],
+   "requires": [
+    "pytest"
+   ]
+  }
+ },
+ "version": "1.2.0"
+}

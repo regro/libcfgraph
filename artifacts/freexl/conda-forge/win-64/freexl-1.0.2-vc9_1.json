@@ -1,0 +1,72 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/freexl.dll",
+  "Library/include/freexl.h",
+  "Library/lib/freexl.lib",
+  "Library/lib/freexl_i.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc9_1",
+  "build_number": 1,
+  "depends": [
+   "libiconv"
+  ],
+  "features": "vc9",
+  "license": "LGPL-2.1",
+  "name": "freexl",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.2"
+ },
+ "metadata_version": 1,
+ "name": "freexl",
+ "raw_recipe": "{% set version = \"1.0.2\" %}\n\npackage:\n    name: freexl\n    version: {{ version }}\n\nsource:\n    fn: freexl-{{ version }}.tar.gz\n    url: http://www.gaia-gis.it/gaia-sins/freexl-{{ version }}.tar.gz\n    md5: 9954640e5fed76a5d9deb9b02b0169a0\n    patches:\n        - makefile.vc.patch  # [win]\n        - nmake.opt.patch  # [win]\n        - freexl.c.patch  # [win]\n\nbuild:\n    number: 1\n    features:\n        - vc9  # [win and py27]\n        - vc10  # [win and py34]\n        - vc14  # [win and py35]  \n\nrequirements:\n    build:\n        - python  # [win]\n        - libiconv\n        \n    run:\n        - libiconv\n        \ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libfreexl.a  # [unix]\n        - conda inspect linkages -n _test freexl  # [linux]\n\nabout:\n    home: https://www.gaia-gis.it/fossil/freexl/index\n    license: LGPL-2.1\n    summary: Extract valid data from within an Excel\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://www.gaia-gis.it/fossil/freexl/index",
+   "license": "LGPL-2.1",
+   "summary": "Extract valid data from within an Excel"
+  },
+  "build": {
+   "features": [
+    "vc9"
+   ],
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "freexl",
+   "version": "1.0.2"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "libiconv"
+   ],
+   "run": [
+    "libiconv"
+   ]
+  },
+  "source": {
+   "fn": "freexl-1.0.2.tar.gz",
+   "md5": "9954640e5fed76a5d9deb9b02b0169a0",
+   "patches": [
+    "makefile.vc.patch",
+    "nmake.opt.patch",
+    "freexl.c.patch"
+   ],
+   "url": "http://www.gaia-gis.it/gaia-sins/freexl-1.0.2.tar.gz"
+  },
+  "test": {
+   "commands": ""
+  }
+ },
+ "version": "1.0.2"
+}
