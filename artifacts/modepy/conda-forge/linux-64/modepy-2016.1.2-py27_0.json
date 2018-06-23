@@ -1,0 +1,49 @@
+{
+ "about": {
+  "dev_url": "http://github.com/inducer/modepy",
+  "doc_url": "https://documen.tician.de/modepy",
+  "home": "http://pypi.python.org/pypi/modepy",
+  "license": "MIT",
+  "summary": "Modes and nodes for high-order methods"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/modepy-2016.1.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/modepy/__init__.py",
+  "lib/python2.7/site-packages/modepy/matrices.py",
+  "lib/python2.7/site-packages/modepy/modal_decay.py",
+  "lib/python2.7/site-packages/modepy/modes.py",
+  "lib/python2.7/site-packages/modepy/nodes.py",
+  "lib/python2.7/site-packages/modepy/quadrature/__init__.py",
+  "lib/python2.7/site-packages/modepy/quadrature/grundmann_moeller.py",
+  "lib/python2.7/site-packages/modepy/quadrature/jacobi_gauss.py",
+  "lib/python2.7/site-packages/modepy/quadrature/vioreanu_rokhlin.py",
+  "lib/python2.7/site-packages/modepy/quadrature/vr_quad_data_tet.py",
+  "lib/python2.7/site-packages/modepy/quadrature/vr_quad_data_tri.py",
+  "lib/python2.7/site-packages/modepy/quadrature/xg_quad_data.py",
+  "lib/python2.7/site-packages/modepy/quadrature/xiao_gimbutas.py",
+  "lib/python2.7/site-packages/modepy/tools.py",
+  "lib/python2.7/site-packages/modepy/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 2.7*",
+   "pytools",
+   "six"
+  ],
+  "license": "MIT",
+  "name": "modepy",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2016.1.2"
+ },
+ "metadata_version": 1,
+ "name": "modepy",
+ "raw_recipe": "{% set name = \"modepy\" %}\n{% set version = \"2016.1.2\" %}\n{% set sha256 = \"6c6281ee873bbaeab28853ee1b8f2607a0b054af13505dccd6d82e64d6cc3419\" %}\n\npackage:\n    name: {{ name|lower }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - pytools\n        - six\n\ntest:\n    requires:\n        - pytest\n    imports:\n        - {{ name }}\n    commands:\n         - cd $SRC_DIR/test && python -m pytest  # [unix]\n         - cd %SRC_DIR%/test && python -m pytest  # [win]\n\nabout:\n    home: http://pypi.python.org/pypi/modepy\n    dev_url: http://github.com/inducer/modepy\n    doc_url: https://documen.tician.de/modepy\n    license: MIT\n    license_file: LICENSE\n    summary: Modes and nodes for high-order methods\n\nextra:\n    recipe-maintainers:\n        - inducer\n",
+ "rendered_recipe": {},
+ "version": "2016.1.2"
+}

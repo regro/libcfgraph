@@ -1,0 +1,71 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/pep8",
+  "lib/python2.7/site-packages/pep8-1.7.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pep8-1.7.0-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/pep8.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT License",
+  "name": "pep8",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.7.0"
+ },
+ "metadata_version": 1,
+ "name": "pep8",
+ "raw_recipe": "{% set version = \"1.7.0\" %}\n\npackage:\n  name: pep8\n  version: {{ version }}\n\nsource:\n  fn: pep8-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pep8/pep8-{{ version }}.tar.gz\n  md5: 2b03109b0618afe3b04b3e63b334ac9d\n\nbuild:\n  entry_points:\n    - pep8 = pep8:_main\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  commands:\n    - pep8 --help\n    - pep8 --version\n\nabout:\n  home: http://pep8.readthedocs.org/\n  license: MIT License\n  summary: 'Python style guide checker'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - jjhelmus\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://pep8.readthedocs.org/",
+   "license": "MIT License",
+   "summary": "Python style guide checker"
+  },
+  "build": {
+   "entry_points": [
+    "pep8 = pep8:_main"
+   ],
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pmlandwehr",
+    "jjhelmus"
+   ]
+  },
+  "package": {
+   "name": "pep8",
+   "version": "1.7.0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "pep8-1.7.0.tar.gz",
+   "md5": "2b03109b0618afe3b04b3e63b334ac9d",
+   "url": "https://pypi.io/packages/source/p/pep8/pep8-1.7.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pep8 --help",
+    "pep8 --version"
+   ]
+  }
+ },
+ "version": "1.7.0"
+}

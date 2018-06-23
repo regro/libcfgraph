@@ -1,0 +1,47 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/siphon-0.4.0-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/siphon/__init__.py",
+  "Lib/site-packages/siphon/_version.py",
+  "Lib/site-packages/siphon/catalog.py",
+  "Lib/site-packages/siphon/cdmr/__init__.py",
+  "Lib/site-packages/siphon/cdmr/cdmremote.py",
+  "Lib/site-packages/siphon/cdmr/cdmremotefeature.py",
+  "Lib/site-packages/siphon/cdmr/cdmrfeature_pb2.py",
+  "Lib/site-packages/siphon/cdmr/coveragedataset.py",
+  "Lib/site-packages/siphon/cdmr/dataset.py",
+  "Lib/site-packages/siphon/cdmr/ncStream_pb2.py",
+  "Lib/site-packages/siphon/cdmr/ncstream.py",
+  "Lib/site-packages/siphon/cdmr/xarray_support.py",
+  "Lib/site-packages/siphon/http_util.py",
+  "Lib/site-packages/siphon/metadata.py",
+  "Lib/site-packages/siphon/ncss.py",
+  "Lib/site-packages/siphon/ncss_dataset.py",
+  "Lib/site-packages/siphon/radarserver.py",
+  "Lib/site-packages/siphon/testing.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "netcdf4",
+   "numpy",
+   "protobuf >=3.0.0a3",
+   "python 3.4*",
+   "requests"
+  ],
+  "license": "MIT License",
+  "name": "siphon",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.4.0"
+ },
+ "metadata_version": 1,
+ "name": "siphon",
+ "raw_recipe": "{% set version = \"0.4.0\" %}\n\npackage:\n    name: siphon\n    version: {{ version }}\n\nsource:\n    fn: siphon-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/s/siphon/siphon-{{ version }}.tar.gz\n    md5: 19a24db825cba554af10c89b8d7aff64\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - protobuf >=3.0.0a3\n        - requests\n        - netcdf4\n        - enum34  # [py27]\n\ntest:\n    imports:\n        - siphon\n        - siphon.cdmr\n        - siphon.catalog\n        - siphon.ncss\n        - siphon.radarserver\n\nabout:\n    home: https://github.com/Unidata/siphon\n    license: MIT License\n    summary: 'A collection of Python utilities for interacting with the Unidata technology stack.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - dopplershift\n",
+ "rendered_recipe": {},
+ "version": "0.4.0"
+}

@@ -1,0 +1,95 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "include/hdfs/BlockLocation.h",
+  "include/hdfs/DirectoryIterator.h",
+  "include/hdfs/Exception.h",
+  "include/hdfs/FileStatus.h",
+  "include/hdfs/FileSystem.h",
+  "include/hdfs/FileSystemStats.h",
+  "include/hdfs/InputStream.h",
+  "include/hdfs/OutputStream.h",
+  "include/hdfs/Permission.h",
+  "include/hdfs/XmlConfig.h",
+  "include/hdfs/hdfs.h",
+  "lib/libhdfs3.a",
+  "lib/libhdfs3.so",
+  "lib/libhdfs3.so.1",
+  "lib/libhdfs3.so.2.2.31",
+  "lib/pkgconfig/libhdfs3.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "boost 1.60.*",
+   "krb5",
+   "libgsasl",
+   "libntlm",
+   "libuuid",
+   "libxml2",
+   "protobuf"
+  ],
+  "license": "Apache 2.0",
+  "name": "libhdfs3",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.2.31"
+ },
+ "metadata_version": 1,
+ "name": "libhdfs3",
+ "raw_recipe": "{% set version = \"2.2.31\" %}\n\npackage:\n  name: libhdfs3\n  version: \"{{ version }}\"\n\nsource:\n  fn: libhdfs3-{{ version }}.tar.gz\n  url: https://github.com/Pivotal-Data-Attic/pivotalrd-libhdfs3/archive/v{{ version }}.tar.gz\n  sha256: b68d112a3c234a50f646071b1de07e5e191018f6762492cd04d57390e1fd5a16\n\nbuild:\n  number: 0\n  # This package is a dependency of hdfs3, which is primarily used with HDFS on Linux.\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - protobuf\n    - libgsasl\n    - libntlm\n    - libxml2\n    - krb5\n    - libuuid\n    - boost 1.60.*\n    - cmake\n  run:\n    - protobuf\n    - libgsasl\n    - libntlm\n    - libxml2\n    - krb5\n    - libuuid\n    - boost 1.60.*\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libhdfs3.so\n\nabout:\n  home: https://github.com/PivotalRD/libhdfs3\n  license: Apache 2.0\n  summary: A Native C/C++ HDFS Client\n\nextra:\n  recipe-maintainers:\n    - koverholt\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/PivotalRD/libhdfs3",
+   "license": "Apache 2.0",
+   "summary": "A Native C/C++ HDFS Client"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "koverholt"
+   ]
+  },
+  "package": {
+   "name": "libhdfs3",
+   "version": "2.2.31"
+  },
+  "requirements": {
+   "build": [
+    "protobuf",
+    "libgsasl",
+    "libntlm",
+    "libxml2",
+    "krb5",
+    "libuuid",
+    "boost 1.60.*",
+    "cmake"
+   ],
+   "run": [
+    "protobuf",
+    "libgsasl",
+    "libntlm",
+    "libxml2",
+    "krb5",
+    "libuuid",
+    "boost 1.60.*"
+   ]
+  },
+  "source": {
+   "fn": "libhdfs3-2.2.31.tar.gz",
+   "sha256": "b68d112a3c234a50f646071b1de07e5e191018f6762492cd04d57390e1fd5a16",
+   "url": "https://github.com/Pivotal-Data-Attic/pivotalrd-libhdfs3/archive/v2.2.31.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/lib/libhdfs3.so"
+   ]
+  }
+ },
+ "version": "2.2.31"
+}

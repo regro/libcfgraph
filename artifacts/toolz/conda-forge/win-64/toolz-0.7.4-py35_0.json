@@ -1,0 +1,89 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/toolz-0.7.4-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/toolz-0.7.4-py3.5.egg-info/not-zip-safe",
+  "Lib/site-packages/toolz/__init__.py",
+  "Lib/site-packages/toolz/compatibility.py",
+  "Lib/site-packages/toolz/curried/__init__.py",
+  "Lib/site-packages/toolz/curried/exceptions.py",
+  "Lib/site-packages/toolz/curried/operator.py",
+  "Lib/site-packages/toolz/dicttoolz.py",
+  "Lib/site-packages/toolz/functoolz.py",
+  "Lib/site-packages/toolz/itertoolz.py",
+  "Lib/site-packages/toolz/recipes.py",
+  "Lib/site-packages/toolz/sandbox/__init__.py",
+  "Lib/site-packages/toolz/sandbox/core.py",
+  "Lib/site-packages/toolz/sandbox/parallel.py",
+  "Lib/site-packages/toolz/tests/test_compatibility.py",
+  "Lib/site-packages/toolz/tests/test_curried.py",
+  "Lib/site-packages/toolz/tests/test_dicttoolz.py",
+  "Lib/site-packages/toolz/tests/test_functoolz.py",
+  "Lib/site-packages/toolz/tests/test_itertoolz.py",
+  "Lib/site-packages/toolz/tests/test_recipes.py",
+  "Lib/site-packages/toolz/tests/test_serialization.py",
+  "Lib/site-packages/toolz/tests/test_utils.py",
+  "Lib/site-packages/toolz/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "toolz",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.7.4"
+ },
+ "metadata_version": 1,
+ "name": "toolz",
+ "raw_recipe": "{% set version = \"0.7.4\" %}\n\npackage:\n  name: toolz\n  version: {{ version }}\n\nsource:\n  fn: toolz-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/t/toolz/toolz-{{ version }}.tar.gz\n  md5: ca663583c6d0c753a8b6f6e994ada814\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - setuptools\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - toolz\n    - toolz.curried\n    - toolz.sandbox\n\nabout:\n  home: http://toolz.readthedocs.org/\n  license: BSD 3-Clause\n  summary: A functional standard library for Python.\n\nextra:\n  recipe-maintainers:\n    - mrocklin\n    - eriknw\n    - jcrist\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://toolz.readthedocs.org/",
+   "license": "BSD 3-Clause",
+   "summary": "A functional standard library for Python."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mrocklin",
+    "eriknw",
+    "jcrist"
+   ]
+  },
+  "package": {
+   "name": "toolz",
+   "version": "0.7.4"
+  },
+  "requirements": {
+   "build": [
+    "setuptools",
+    "python"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "toolz-0.7.4.tar.gz",
+   "md5": "ca663583c6d0c753a8b6f6e994ada814",
+   "url": "https://pypi.io/packages/source/t/toolz/toolz-0.7.4.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "toolz",
+    "toolz.curried",
+    "toolz.sandbox"
+   ]
+  }
+ },
+ "version": "0.7.4"
+}

@@ -1,0 +1,68 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pyparsing-2.1.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pyparsing.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "pyparsing",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.1.1"
+ },
+ "metadata_version": 1,
+ "name": "pyparsing",
+ "raw_recipe": "{% set version=\"2.1.1\" %}\n\npackage:\n  name: pyparsing\n  version: {{ version }}\n\nsource:\n  fn: pyparsing-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pyparsing/pyparsing-{{ version }}.tar.gz\n  md5: 5ce9096d94f553e2bc1fd366fba65558\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - pyparsing\n\nabout:\n  home: http://pyparsing.wikispaces.com/\n  license: MIT\n  license_file: LICENSE\n  summary: Create and execute simple grammars\n  description: |\n    The pyparsing module is an alternative approach to creating and executing\n    simple grammars, vs. the traditional lex/yacc approach, or the use of\n    regular expressions. The pyparsing module provides a library of classes\n    that client code uses to construct the grammar directly in Python code.\n  doc_url: http://pyparsing.wikispaces.com/Documentation\n  dev_url: https://svn.code.sf.net/p/pyparsing/code/\n\nextra:\n  recipe-maintainers:\n    - msarahan\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "The pyparsing module is an alternative approach to creating and executing\nsimple grammars, vs. the traditional lex/yacc approach, or the use of\nregular expressions. The pyparsing module provides a library of classes\nthat client code uses to construct the grammar directly in Python code.\n",
+   "dev_url": "https://svn.code.sf.net/p/pyparsing/code/",
+   "doc_url": "http://pyparsing.wikispaces.com/Documentation",
+   "home": "http://pyparsing.wikispaces.com/",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Create and execute simple grammars"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "msarahan"
+   ]
+  },
+  "package": {
+   "name": "pyparsing",
+   "version": "2.1.1"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "pyparsing-2.1.1.tar.gz",
+   "md5": "5ce9096d94f553e2bc1fd366fba65558",
+   "url": "https://pypi.io/packages/source/p/pyparsing/pyparsing-2.1.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "pyparsing"
+   ]
+  }
+ },
+ "version": "2.1.1"
+}

@@ -1,0 +1,74 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/event_model-1.0.2-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/event_model/__init__.py",
+  "Lib/site-packages/event_model/_version.py",
+  "Lib/site-packages/event_model/schemas/bulk_events.json",
+  "Lib/site-packages/event_model/schemas/event.json",
+  "Lib/site-packages/event_model/schemas/event_descriptor.json",
+  "Lib/site-packages/event_model/schemas/run_start.json",
+  "Lib/site-packages/event_model/schemas/run_stop.json"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "enum34",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "event-model",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.2"
+ },
+ "metadata_version": 1,
+ "name": "event-model",
+ "raw_recipe": "{% set version = \"1.0.2\" %}\n\npackage:\n    name: event-model\n    version: {{ version }}\n\nsource:\n    url: https://github.com/NSLS-II/event-model/archive/v{{ version }}.tar.gz\n    fn: event-model-v{{version}}.tar.gz\n    sha256: b64f3297f7eaa3c67871074a745365596c1e32ae0d5b39ed3b55e956656cf4f0\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n\n    run:\n        - python\n        - enum34  # [py2k]\n\ntest:\n    imports:\n        - event_model\n\nabout:\n    home: https://github.com/NSLS-II/event-model\n    license: BSD 3-Clause\n    summary: data model for event-based data collection and analysis\n\nextra:\n    recipe-maintainers:\n        - ericdill\n        - licode\n        - tacaswell\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/NSLS-II/event-model",
+   "license": "BSD 3-Clause",
+   "summary": "data model for event-based data collection and analysis"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ericdill",
+    "licode",
+    "tacaswell"
+   ]
+  },
+  "package": {
+   "name": "event-model",
+   "version": "1.0.2"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "enum34"
+   ]
+  },
+  "source": {
+   "fn": "event-model-v1.0.2.tar.gz",
+   "sha256": "b64f3297f7eaa3c67871074a745365596c1e32ae0d5b39ed3b55e956656cf4f0",
+   "url": "https://github.com/NSLS-II/event-model/archive/v1.0.2.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "event_model"
+   ]
+  }
+ },
+ "version": "1.0.2"
+}

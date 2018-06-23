@@ -1,0 +1,88 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pykalman-0.9.5-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/pykalman/__init__.py",
+  "Lib/site-packages/pykalman/datasets/__init__.py",
+  "Lib/site-packages/pykalman/datasets/base.py",
+  "Lib/site-packages/pykalman/sqrt/__init__.py",
+  "Lib/site-packages/pykalman/sqrt/bierman.py",
+  "Lib/site-packages/pykalman/sqrt/cholesky.py",
+  "Lib/site-packages/pykalman/sqrt/tests/__init__.py",
+  "Lib/site-packages/pykalman/sqrt/tests/test_bierman.py",
+  "Lib/site-packages/pykalman/sqrt/tests/test_cholesky.py",
+  "Lib/site-packages/pykalman/sqrt/tests/test_unscented.py",
+  "Lib/site-packages/pykalman/sqrt/unscented.py",
+  "Lib/site-packages/pykalman/standard.py",
+  "Lib/site-packages/pykalman/tests/__init__.py",
+  "Lib/site-packages/pykalman/tests/test_standard.py",
+  "Lib/site-packages/pykalman/tests/test_unscented.py",
+  "Lib/site-packages/pykalman/unscented.py",
+  "Lib/site-packages/pykalman/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.5*",
+   "scipy"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pykalman",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.9.5"
+ },
+ "metadata_version": 1,
+ "name": "pykalman",
+ "raw_recipe": "{% set version = \"0.9.5\" %}\n\npackage:\n  name: pykalman\n  version: {{ version }}\n\nsource:\n  fn: pykalman-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pykalman/pykalman-{{ version }}.tar.gz\n  md5: 8baa2921cdfd2a5193ac67e23c2f7e5e\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy\n    - scipy\n\ntest:\n  imports:\n    - pykalman\n    - pykalman.datasets\n    - pykalman.sqrt\n    - pykalman.sqrt.tests\n    - pykalman.tests\n\nabout:\n  home: http://pykalman.github.io\n  license: BSD 3-Clause\n  summary: 'An implementation of the Kalman Filter, Kalman Smoother, and EM algorithm in Python'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://pykalman.github.io",
+   "license": "BSD 3-Clause",
+   "summary": "An implementation of the Kalman Filter, Kalman Smoother, and EM algorithm in Python"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pmlandwehr"
+   ]
+  },
+  "package": {
+   "name": "pykalman",
+   "version": "0.9.5"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "numpy",
+    "scipy"
+   ]
+  },
+  "source": {
+   "fn": "pykalman-0.9.5.tar.gz",
+   "md5": "8baa2921cdfd2a5193ac67e23c2f7e5e",
+   "url": "https://pypi.io/packages/source/p/pykalman/pykalman-0.9.5.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "pykalman",
+    "pykalman.datasets",
+    "pykalman.sqrt",
+    "pykalman.sqrt.tests",
+    "pykalman.tests"
+   ]
+  }
+ },
+ "version": "0.9.5"
+}

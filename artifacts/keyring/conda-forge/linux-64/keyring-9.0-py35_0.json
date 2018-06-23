@@ -1,0 +1,117 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/keyring",
+  "lib/python3.5/site-packages/keyring-9.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/keyring/__init__.py",
+  "lib/python3.5/site-packages/keyring/__main__.py",
+  "lib/python3.5/site-packages/keyring/backend.py",
+  "lib/python3.5/site-packages/keyring/backends/OS_X.py",
+  "lib/python3.5/site-packages/keyring/backends/SecretService.py",
+  "lib/python3.5/site-packages/keyring/backends/Windows.py",
+  "lib/python3.5/site-packages/keyring/backends/_OS_X_API.py",
+  "lib/python3.5/site-packages/keyring/backends/__init__.py",
+  "lib/python3.5/site-packages/keyring/backends/fail.py",
+  "lib/python3.5/site-packages/keyring/backends/kwallet.py",
+  "lib/python3.5/site-packages/keyring/cli.py",
+  "lib/python3.5/site-packages/keyring/core.py",
+  "lib/python3.5/site-packages/keyring/credentials.py",
+  "lib/python3.5/site-packages/keyring/errors.py",
+  "lib/python3.5/site-packages/keyring/getpassbackend.py",
+  "lib/python3.5/site-packages/keyring/http.py",
+  "lib/python3.5/site-packages/keyring/py27compat.py",
+  "lib/python3.5/site-packages/keyring/py33compat.py",
+  "lib/python3.5/site-packages/keyring/tests/__init__.py",
+  "lib/python3.5/site-packages/keyring/tests/backends/__init__.py",
+  "lib/python3.5/site-packages/keyring/tests/backends/test_OS_X.py",
+  "lib/python3.5/site-packages/keyring/tests/backends/test_SecretService.py",
+  "lib/python3.5/site-packages/keyring/tests/backends/test_Windows.py",
+  "lib/python3.5/site-packages/keyring/tests/backends/test_kwallet.py",
+  "lib/python3.5/site-packages/keyring/tests/test_backend.py",
+  "lib/python3.5/site-packages/keyring/tests/util.py",
+  "lib/python3.5/site-packages/keyring/util/__init__.py",
+  "lib/python3.5/site-packages/keyring/util/escape.py",
+  "lib/python3.5/site-packages/keyring/util/platform_.py",
+  "lib/python3.5/site-packages/keyring/util/properties.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "Python Software Foundation License or MIT License",
+  "name": "keyring",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "9.0"
+ },
+ "metadata_version": 1,
+ "name": "keyring",
+ "raw_recipe": "{% set version = \"9.0\" %}\n\npackage:\n    name: keyring\n    version: {{ version }}\n\nsource:\n    fn: keyring-{{ version }}.tar.gz\n    url: https://files.pythonhosted.org/packages/source/k/keyring/keyring-{{ version }}.tar.gz\n    sha256: 1c1222298da2100128f821c57096c69cb6cec0d22ba3b66c2859ae95ae473799\n    patches:\n        - verbose-tests.patch\n        - use-pywin32.patch\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n    entry_points:\n        - keyring=keyring.cli:main\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - setuptools_scm >=1.9\n        - pywin32  # [win]\n    run:\n        - python\n        - pywin32  # [win]\n\ntest:\n    imports:\n        - keyring\n        - keyring.backends\n        - keyring.tests\n        - keyring.tests.backends\n        - keyring.util\n    commands:\n        - keyring --help\n        - cd {{ environ.SRC_DIR }} && python setup.py test -v\n    requires:\n        - pytest >=2.8\n        - pytest-runner\n        - setuptools_scm >=1.9\n\nabout:\n    home: https://github.com/jaraco/keyring\n    license: Python Software Foundation License or MIT License\n    summary: 'Store and access your passwords safely.'\n\nextra:\n    recipe-maintainers:\n        - ericdill\n        - licode\n        - tacaswell\n\n# See\n# http://docs.continuum.io/conda/build.html for\n# more information about meta.yaml\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/jaraco/keyring",
+   "license": "Python Software Foundation License or MIT License",
+   "summary": "Store and access your passwords safely."
+  },
+  "build": {
+   "entry_points": [
+    "keyring=keyring.cli:main"
+   ],
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ericdill",
+    "licode",
+    "tacaswell"
+   ]
+  },
+  "package": {
+   "name": "keyring",
+   "version": "9.0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "setuptools_scm >=1.9"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "keyring-9.0.tar.gz",
+   "patches": [
+    "verbose-tests.patch",
+    "use-pywin32.patch"
+   ],
+   "sha256": "1c1222298da2100128f821c57096c69cb6cec0d22ba3b66c2859ae95ae473799",
+   "url": "https://files.pythonhosted.org/packages/source/k/keyring/keyring-9.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "keyring --help",
+    "cd /feedstock_root/build_artefacts/work/keyring-9.0 && python setup.py test -v"
+   ],
+   "imports": [
+    "keyring",
+    "keyring.backends",
+    "keyring.tests",
+    "keyring.tests.backends",
+    "keyring.util"
+   ],
+   "requires": [
+    "pytest >=2.8",
+    "pytest-runner",
+    "setuptools_scm >=1.9"
+   ]
+  }
+ },
+ "version": "9.0"
+}
