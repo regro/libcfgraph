@@ -1,0 +1,194 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.10.9",
+  "conda_private": false,
+  "conda_version": "4.5.5",
+  "description": "SSTP is Microsofts Remote Access Solution (RAS) for PPP over SSL. It can\nbe used instead of PPTP or L2TP, and is only available with Windows\nVista/7 connecting to a Windows 2008 Server. The advantage of SSTP\ncompared to PPTP and L2TP is that it cannot be easily blocked by\nfirewalls since the traffic is transmitted over HTTPS on port 443.\nWindows Vista/7 uses SSTP if PPTP or L2TP cannot be established. For\nfurther information on SSTP check out wikipedia's article on Secure\nSocket Tunneling Protocol.\n\nhttp://en.wikipedia.org/wiki/Secure_Socket_Tunneling_Protocol\n",
+  "dev_url": "https://sourceforge.net/projects/sstp-client/",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "home": "http://sstp-client.sourceforge.net/",
+  "license": "GPL-2.0",
+  "license_family": "GPL",
+  "root_pkgs": [
+   "anaconda-client 1.6.14 py_0",
+   "asn1crypto 0.24.0 py36_0",
+   "beautifulsoup4 4.6.0 py36_0",
+   "ca-certificates 2018.4.16 0",
+   "certifi 2018.4.16 py36_0",
+   "cffi 1.11.5 py36h342bebf_0",
+   "chardet 3.0.4 py36h96c241c_1",
+   "clyent 1.2.2 py36_0",
+   "conda 4.5.5 py36_0",
+   "conda-build 3.10.9 py36_0",
+   "conda-env 2.6.0 h36134e3_0",
+   "conda-forge-ci-setup 1.3.5 0",
+   "conda-verify 2.0.0 py36_0",
+   "cryptography 2.2.2 py36h1de35cc_0",
+   "decorator 4.3.0 py_0",
+   "filelock 3.0.4 py36_0",
+   "glob2 0.6 py_0",
+   "idna 2.6 py36h8628d0a_1",
+   "ipython_genutils 0.2.0 py36_0",
+   "jinja2 2.10 py36_0",
+   "jsonschema 2.6.0 py36_1",
+   "jupyter_core 4.4.0 py_0",
+   "libcxx 4.0.1 h579ed51_0",
+   "libcxxabi 4.0.1 hebd6815_0",
+   "libedit 3.1.20170329 hb402a30_2",
+   "libffi 3.2.1 h475c297_4",
+   "markupsafe 1.0 py36_0",
+   "nbformat 4.4.0 py36_0",
+   "ncurses 6.1 h0a44026_0",
+   "openssl 1.0.2o 0",
+   "pip 10.0.1 py36_0",
+   "pkginfo 1.4.2 py36_0",
+   "psutil 5.4.6 py36_0",
+   "pycosat 0.6.3 py36hee92d8f_0",
+   "pycparser 2.18 py36h724b2fc_1",
+   "pyopenssl 18.0.0 py36_0",
+   "pysocks 1.6.8 py36_0",
+   "python 3.6.5 hc167b69_1",
+   "python-dateutil 2.7.3 py_0",
+   "python.app 2 py36_8",
+   "pytz 2018.5 py_0",
+   "pyyaml 3.12 py36_1",
+   "readline 7.0 hc1231fa_4",
+   "requests 2.18.4 py36h4516966_1",
+   "ruamel_yaml 0.15.37 py36h1de35cc_2",
+   "setuptools 39.2.0 py36_0",
+   "six 1.11.0 py36h0e22d5e_1",
+   "sqlite 3.23.1 hf1716c9_0",
+   "tk 8.6.7 h35a86e2_3",
+   "traitlets 4.3.2 py36_0",
+   "urllib3 1.22 py36h68b9469_0",
+   "wheel 0.31.1 py36_0",
+   "xz 5.2.4 h1de35cc_4",
+   "yaml 0.1.7 hc338f04_2",
+   "zlib 1.2.11 hf3cbc9b_2"
+  ],
+  "summary": "SSTP (Microsofts Remote Access Solution for PPP over SSL) client"
+ },
+ "conda_build_config": {
+  "CONDA_BUILD_SYSROOT": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk",
+  "MACOSX_DEPLOYMENT_TARGET": "10.9",
+  "c_compiler": "toolchain_c",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "clangxx",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "numpy",
+  "libevent": "2.0.22",
+  "lua": "5",
+  "macos_machine": "x86_64-apple-darwin13.4.0",
+  "macos_min_version": "10.9",
+  "numpy": "1.11",
+  "openssl": "1.0.2",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "libevent": {
+    "max_pin": "x.x.x"
+   },
+   "openssl": {
+    "max_pin": "x.x.x"
+   },
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.6",
+  "r_base": "3.4",
+  "target_platform": "osx-64"
+ },
+ "files": [
+  "bin/sstpc",
+  "include/sstp-client/sstp-api.h",
+  "lib/libsstp_api-0.dylib",
+  "lib/libsstp_api.a",
+  "lib/libsstp_api.dylib",
+  "lib/libsstp_api.la",
+  "lib/pkgconfig/sstp-client-1.0.pc",
+  "share/doc/sstp-client/sstp-test-nopty.example",
+  "share/doc/sstp-client/sstp-test.example",
+  "share/man/man8/sstpc.8"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "h0e3c91b_0",
+  "build_number": 0,
+  "depends": [
+   "libevent >=2.0.22,<2.0.23.0a0",
+   "openssl >=1.0.2o,<1.0.3a"
+  ],
+  "license": "GPL-2.0",
+  "license_family": "GPL",
+  "name": "sstp-client",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "timestamp": 1530768367501,
+  "version": "1.0.12"
+ },
+ "metadata_version": 1,
+ "name": "sstp-client",
+ "raw_recipe": "{% set name = \"sstp-client\" %}\n{% set version = \"1.0.12\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://sourceforge.net/projects/{{name}}/files/{{name}}/{{name}}-{{version}}.tar.gz\n  sha1: afe80911a5ec033eac583242c642cc5ad00e6ac4\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - pkg-config\n    - libevent\n    - openssl\n  run:\n    - libevent\n    - openssl\n\ntest:\n  commands:\n    - sstpc --help\n\nabout:\n  home: http://sstp-client.sourceforge.net/\n  license: GPL-2.0\n  license_family: GPL\n  summary: \"SSTP (Microsofts Remote Access Solution for PPP over SSL) client\"\n\n  # The remaining entries in this section are optional, but recommended\n  description: |\n      SSTP is Microsofts Remote Access Solution (RAS) for PPP over SSL. It can\n      be used instead of PPTP or L2TP, and is only available with Windows\n      Vista/7 connecting to a Windows 2008 Server. The advantage of SSTP\n      compared to PPTP and L2TP is that it cannot be easily blocked by\n      firewalls since the traffic is transmitted over HTTPS on port 443.\n      Windows Vista/7 uses SSTP if PPTP or L2TP cannot be established. For\n      further information on SSTP check out wikipedia's article on Secure\n      Socket Tunneling Protocol.\n\n      http://en.wikipedia.org/wiki/Secure_Socket_Tunneling_Protocol\n  dev_url: https://sourceforge.net/projects/sstp-client/\n\nextra:\n  recipe-maintainers:\n    - asmeurer\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "SSTP is Microsofts Remote Access Solution (RAS) for PPP over SSL. It can\nbe used instead of PPTP or L2TP, and is only available with Windows\nVista/7 connecting to a Windows 2008 Server. The advantage of SSTP\ncompared to PPTP and L2TP is that it cannot be easily blocked by\nfirewalls since the traffic is transmitted over HTTPS on port 443.\nWindows Vista/7 uses SSTP if PPTP or L2TP cannot be established. For\nfurther information on SSTP check out wikipedia's article on Secure\nSocket Tunneling Protocol.\n\nhttp://en.wikipedia.org/wiki/Secure_Socket_Tunneling_Protocol\n",
+   "dev_url": "https://sourceforge.net/projects/sstp-client/",
+   "home": "http://sstp-client.sourceforge.net/",
+   "license": "GPL-2.0",
+   "license_family": "GPL",
+   "summary": "SSTP (Microsofts Remote Access Solution for PPP over SSL) client"
+  },
+  "build": {
+   "number": "0",
+   "string": "h0e3c91b_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "asmeurer"
+   ]
+  },
+  "package": {
+   "name": "sstp-client",
+   "version": "1.0.12"
+  },
+  "requirements": {
+   "build": [
+    "ca-certificates 2018.4.16 0",
+    "libevent 2.0.22 hdffb7b8_1",
+    "openssl 1.0.2o 0",
+    "pkg-config 0.29.2 1",
+    "toolchain 2.1.6 0",
+    "toolchain_c_osx-64 2.1.6 0",
+    "zlib 1.2.11 h470a237_3"
+   ],
+   "run": [
+    "libevent >=2.0.22,<2.0.23.0a0",
+    "openssl >=1.0.2o,<1.0.3a"
+   ]
+  },
+  "source": {
+   "sha1": "afe80911a5ec033eac583242c642cc5ad00e6ac4",
+   "url": "https://sourceforge.net/projects/sstp-client/files/sstp-client/sstp-client-1.0.12.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "sstpc --help"
+   ]
+  }
+ },
+ "version": "1.0.12"
+}
