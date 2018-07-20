@@ -20,6 +20,10 @@ jobs:
           command: |
             python -m libcflib.preloader artifacts
       - run:
+          name: Index artifacts
+          command: |
+            python -m libcflib.indexer artifacts
+      - run:
           name: Report diff
           command: |
             git add .
