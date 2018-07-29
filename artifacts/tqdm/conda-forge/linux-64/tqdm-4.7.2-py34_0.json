@@ -1,0 +1,81 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/tqdm",
+  "lib/python3.4/site-packages/tqdm-4.7.2-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/tqdm/__init__.py",
+  "lib/python3.4/site-packages/tqdm/__main__.py",
+  "lib/python3.4/site-packages/tqdm/_main.py",
+  "lib/python3.4/site-packages/tqdm/_tqdm.py",
+  "lib/python3.4/site-packages/tqdm/_tqdm_gui.py",
+  "lib/python3.4/site-packages/tqdm/_tqdm_notebook.py",
+  "lib/python3.4/site-packages/tqdm/_tqdm_pandas.py",
+  "lib/python3.4/site-packages/tqdm/_utils.py",
+  "lib/python3.4/site-packages/tqdm/_version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "Mozilla Public License 2.0 (MPL 2.0) or MIT License",
+  "name": "tqdm",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "4.7.2"
+ },
+ "metadata_version": 1,
+ "name": "tqdm",
+ "raw_recipe": "{% set version = \"4.7.2\" %}\n\npackage:\n  name: tqdm\n  version: {{ version }}\n\nsource:\n  fn: tqdm-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/t/tqdm/tqdm-{{ version }}.tar.gz\n  md5: 63dcfa4910aa10ed7bf5c6e4a961ad7f\n\nbuild:\n  entry_points:\n    - tqdm=tqdm._main:main\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - tqdm\n\n  commands:\n    - tqdm --help\n    - tqdm -v\n\nabout:\n  home: https://github.com/tqdm/tqdm\n  license: Mozilla Public License 2.0 (MPL 2.0) or MIT License\n  summary: 'A Fast, Extensible Progress Meter'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - ericdill\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/tqdm/tqdm",
+   "license": "Mozilla Public License 2.0 (MPL 2.0) or MIT License",
+   "summary": "A Fast, Extensible Progress Meter"
+  },
+  "build": {
+   "entry_points": [
+    "tqdm=tqdm._main:main"
+   ],
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pmlandwehr",
+    "ericdill"
+   ]
+  },
+  "package": {
+   "name": "tqdm",
+   "version": "4.7.2"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "tqdm-4.7.2.tar.gz",
+   "md5": "63dcfa4910aa10ed7bf5c6e4a961ad7f",
+   "url": "https://pypi.io/packages/source/t/tqdm/tqdm-4.7.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "tqdm --help",
+    "tqdm -v"
+   ],
+   "imports": [
+    "tqdm"
+   ]
+  }
+ },
+ "version": "4.7.2"
+}

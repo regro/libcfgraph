@@ -1,0 +1,52 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/_ruamel_yaml.so",
+  "lib/python2.7/site-packages/ruamel.yaml-0.11.11-py2.7-nspkg.pth",
+  "lib/python2.7/site-packages/ruamel.yaml-0.11.11-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/ruamel/yaml/__init__.py",
+  "lib/python2.7/site-packages/ruamel/yaml/comments.py",
+  "lib/python2.7/site-packages/ruamel/yaml/compat.py",
+  "lib/python2.7/site-packages/ruamel/yaml/composer.py",
+  "lib/python2.7/site-packages/ruamel/yaml/configobjwalker.py",
+  "lib/python2.7/site-packages/ruamel/yaml/constructor.py",
+  "lib/python2.7/site-packages/ruamel/yaml/cyaml.py",
+  "lib/python2.7/site-packages/ruamel/yaml/dumper.py",
+  "lib/python2.7/site-packages/ruamel/yaml/emitter.py",
+  "lib/python2.7/site-packages/ruamel/yaml/error.py",
+  "lib/python2.7/site-packages/ruamel/yaml/events.py",
+  "lib/python2.7/site-packages/ruamel/yaml/loader.py",
+  "lib/python2.7/site-packages/ruamel/yaml/main.py",
+  "lib/python2.7/site-packages/ruamel/yaml/nodes.py",
+  "lib/python2.7/site-packages/ruamel/yaml/parser.py",
+  "lib/python2.7/site-packages/ruamel/yaml/reader.py",
+  "lib/python2.7/site-packages/ruamel/yaml/representer.py",
+  "lib/python2.7/site-packages/ruamel/yaml/resolver.py",
+  "lib/python2.7/site-packages/ruamel/yaml/scalarstring.py",
+  "lib/python2.7/site-packages/ruamel/yaml/scanner.py",
+  "lib/python2.7/site-packages/ruamel/yaml/serializer.py",
+  "lib/python2.7/site-packages/ruamel/yaml/tokens.py",
+  "lib/python2.7/site-packages/ruamel/yaml/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "python 2.7*",
+   "ruamel.ordereddict",
+   "setuptools"
+  ],
+  "license": "MIT",
+  "name": "ruamel.yaml",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.11.11"
+ },
+ "metadata_version": 1,
+ "name": "ruamel.yaml",
+ "raw_recipe": "{% set version = \"0.11.11\" %}\n\npackage:\n    name: ruamel.yaml\n    version: {{ version }}\n\nsource:\n    fn: ruamel.yaml.{{ version }}.tar.gz\n    url: https://bitbucket.org/ruamel/yaml/get/{{ version }}.tar.bz2\n    md5: 88e58c8f50c3f471dc3a73e4d603e327\n\nbuild:\n    number: 1\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - setuptools\n        - ruamel.ordereddict   # [py26 or py27]\n\ntest:\n    imports:\n        - ruamel.yaml\n\nabout:\n    home: https://bitbucket.org/ruamel/yaml\n    license: MIT\n    summary: \"A YAML package for Python. It is a derivative of Kirill Simonov's PyYAML 3.11 which supports YAML1.1\"\n\nextra:\n    recipe-maintainers:\n         - jakirkham\n         - pelson\n",
+ "rendered_recipe": {},
+ "version": "0.11.11"
+}

@@ -1,0 +1,145 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://github.com/UV-CDAT/ci-bots",
+  "license": "BSD 3-clause",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-1.0-py36_0",
+   "openssl-1.0.2k-1",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Continuous Integration Tools"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/cibot-0.2-py3.5.egg-info",
+  "lib/python3.5/site-packages/cibot/cibot.py",
+  "lib/python3.5/site-packages/cibot/__init__.py",
+  "bin/ci-bot"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "requests"
+  ],
+  "license": "BSD 3-clause",
+  "name": "cibots",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2"
+ },
+ "metadata_version": 1,
+ "name": "cibots",
+ "raw_recipe": "{% set version = 0.2 %}\n{% set name = \"cibots\" %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    url: https://github.com/UV-CDAT/ci-bots/archive/{{ version }}.tar.gz\n    sha256: 93385842e6e5f127d70e1d60b4400d454fe0c81ace97bca4aa457ca7c9c648cc\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - requests\n\ntest:\n  command:\n    - python run_tests.py -v2\n\nabout:\n    home:  http://github.com/UV-CDAT/ci-bots\n    license: BSD 3-clause\n    license_file: LICENCE.txt\n    summary: 'Continuous Integration Tools'\n\nextra:\n  recipe-maintainers:\n    - doutriaux1\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://github.com/UV-CDAT/ci-bots",
+   "license": "BSD 3-clause",
+   "license_file": "LICENCE.txt",
+   "summary": "Continuous Integration Tools"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "script": "python setup.py install",
+   "string": "py35_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "doutriaux1"
+   ]
+  },
+  "package": {
+   "name": "cibots",
+   "version": "0.2"
+  },
+  "requirements": {
+   "build": [
+    "ca-certificates 2017.4.17 0",
+    "ncurses 5.9 10",
+    "openssl 1.0.2k 0",
+    "python 3.5.3 3",
+    "readline 6.2 0",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python",
+    "requests"
+   ]
+  },
+  "source": {
+   "sha256": "93385842e6e5f127d70e1d60b4400d454fe0c81ace97bca4aa457ca7c9c648cc",
+   "url": "https://github.com/UV-CDAT/ci-bots/archive/0.2.tar.gz"
+  },
+  "test": {
+   "command": [
+    "python run_tests.py -v2"
+   ]
+  }
+ },
+ "version": "0.2"
+}

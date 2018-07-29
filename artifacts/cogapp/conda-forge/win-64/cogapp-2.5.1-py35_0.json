@@ -1,0 +1,44 @@
+{
+ "about": {
+  "description": "Cog is a file generation tool. It lets you use pieces of Python\ncode as generators in your source files to generate whatever text\nyou need.\n",
+  "dev_url": "https://bitbucket.org/ned/cog",
+  "doc_url": "http://nedbatchelder.com/code/cog",
+  "home": "http://nedbatchelder.com/code/cog",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Cog: A code generator for executing Python snippets in source files."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/cogapp-2.5.1-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/cogapp/__init__.py",
+  "Lib/site-packages/cogapp/__main__.py",
+  "Lib/site-packages/cogapp/backward.py",
+  "Lib/site-packages/cogapp/cogapp.py",
+  "Lib/site-packages/cogapp/makefiles.py",
+  "Lib/site-packages/cogapp/test_cogapp.py",
+  "Lib/site-packages/cogapp/test_makefiles.py",
+  "Lib/site-packages/cogapp/test_whiteutils.py",
+  "Lib/site-packages/cogapp/whiteutils.py",
+  "Scripts/cog.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "cogapp",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.5.1"
+ },
+ "metadata_version": 1,
+ "name": "cogapp",
+ "raw_recipe": "{% set name = \"cogapp\" %}\n{% set version = \"2.5.1\" %}\n{% set sha256 = \"f8cf2288fb5a2087eb4a00d8b347ddc86e9058d4ab26b8c868433eb401adfe1c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - cogapp\n\nabout:\n  home: http://nedbatchelder.com/code/cog\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'Cog: A code generator for executing Python snippets in source files.'\n\n  description: |\n    Cog is a file generation tool. It lets you use pieces of Python\n    code as generators in your source files to generate whatever text\n    you need.\n  doc_url: http://nedbatchelder.com/code/cog\n  dev_url: https://bitbucket.org/ned/cog\n\nextra:\n  recipe-maintainers:\n    - johannesring\n    - edisongustavo\n",
+ "rendered_recipe": {},
+ "version": "2.5.1"
+}

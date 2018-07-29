@@ -1,0 +1,30 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/snuggs-1.3.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/snuggs-1.3.1-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/snuggs/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "click",
+   "numpy",
+   "pyparsing",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "snuggs",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.3.1"
+ },
+ "metadata_version": 1,
+ "name": "snuggs",
+ "raw_recipe": "{% set version = \"1.3.1\" %}\n\npackage:\n    name: snuggs\n    version: {{ version }}\n\nsource:\n    fn: snuggs-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/s/snuggs/snuggs-{{ version }}.tar.gz\n    md5: f812255b9b89d178a96c39395dba263d\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - click\n        - numpy\n        - pyparsing\n\ntest:\n    imports:\n        - snuggs\n\nabout:\n    home: https://github.com/mapbox/snuggs\n    license: MIT\n    summary: Snuggs are s-expressions for Numpy\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.3.1"
+}

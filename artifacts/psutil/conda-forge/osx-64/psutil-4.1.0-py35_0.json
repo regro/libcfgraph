@@ -1,0 +1,48 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/psutil-4.1.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/psutil/__init__.py",
+  "lib/python3.5/site-packages/psutil/_common.py",
+  "lib/python3.5/site-packages/psutil/_compat.py",
+  "lib/python3.5/site-packages/psutil/_psbsd.py",
+  "lib/python3.5/site-packages/psutil/_pslinux.py",
+  "lib/python3.5/site-packages/psutil/_psosx.py",
+  "lib/python3.5/site-packages/psutil/_psposix.py",
+  "lib/python3.5/site-packages/psutil/_pssunos.py",
+  "lib/python3.5/site-packages/psutil/_psutil_osx.cpython-35m-darwin.so",
+  "lib/python3.5/site-packages/psutil/_psutil_posix.cpython-35m-darwin.so",
+  "lib/python3.5/site-packages/psutil/_pswindows.py",
+  "lib/python3.5/site-packages/psutil/tests/__init__.py",
+  "lib/python3.5/site-packages/psutil/tests/runner.py",
+  "lib/python3.5/site-packages/psutil/tests/test_bsd.py",
+  "lib/python3.5/site-packages/psutil/tests/test_linux.py",
+  "lib/python3.5/site-packages/psutil/tests/test_memory_leaks.py",
+  "lib/python3.5/site-packages/psutil/tests/test_misc.py",
+  "lib/python3.5/site-packages/psutil/tests/test_osx.py",
+  "lib/python3.5/site-packages/psutil/tests/test_posix.py",
+  "lib/python3.5/site-packages/psutil/tests/test_process.py",
+  "lib/python3.5/site-packages/psutil/tests/test_sunos.py",
+  "lib/python3.5/site-packages/psutil/tests/test_system.py",
+  "lib/python3.5/site-packages/psutil/tests/test_windows.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "psutil",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "4.1.0"
+ },
+ "metadata_version": 1,
+ "name": "psutil",
+ "raw_recipe": "{% set version = \"4.1.0\" %}\n\npackage:\n  name: psutil\n  version: {{ version }}\n\nsource:\n  fn: psutil-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/p/psutil/psutil-{{ version }}.tar.gz\n  md5: 017e1023484ebf436d3514ebeaf2e7e9\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  requires:\n    - ipaddress    # [py<33]\n    - mock         # [py<33]\n    - unittest2    # [py<27]\n\n  imports:\n    - psutil\n    - psutil.tests\n\nabout:\n  home: https://github.com/giampaolo/psutil\n  license: BSD 3-Clause\n  summary: A cross-platform process and system utilities module for Python\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n",
+ "rendered_recipe": {},
+ "version": "4.1.0"
+}

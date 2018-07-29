@@ -1,0 +1,48 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/geopandas-0.1.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/geopandas/__init__.py",
+  "lib/python3.5/site-packages/geopandas/base.py",
+  "lib/python3.5/site-packages/geopandas/geocode.py",
+  "lib/python3.5/site-packages/geopandas/geodataframe.py",
+  "lib/python3.5/site-packages/geopandas/geoseries.py",
+  "lib/python3.5/site-packages/geopandas/io/__init__.py",
+  "lib/python3.5/site-packages/geopandas/io/file.py",
+  "lib/python3.5/site-packages/geopandas/io/sql.py",
+  "lib/python3.5/site-packages/geopandas/plotting.py",
+  "lib/python3.5/site-packages/geopandas/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "descartes",
+   "fiona",
+   "gdal 1.11.4",
+   "geopy ==1.10.0",
+   "matplotlib",
+   "pandas",
+   "psycopg2",
+   "pyproj",
+   "pysal",
+   "python 3.5*",
+   "rtree",
+   "shapely",
+   "six",
+   "sqlalchemy"
+  ],
+  "license": "BSD",
+  "name": "geopandas",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1.1"
+ },
+ "metadata_version": 1,
+ "name": "geopandas",
+ "raw_recipe": "{% set version = \"0.1.1\" %}\n\npackage:\n    name: geopandas\n    version: {{ version }}\n\nsource:\n    fn: geopandas-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/g/geopandas/geopandas-{{ version }}.tar.gz\n    md5: a01b5d3eb6bc097665a0ba297c39029f\n\nbuild:\n    number: 1\n    skip: True  # [py35 and win]\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - cython\n    run:\n        - python\n        - pandas\n        - pyproj\n        - shapely\n        - fiona\n        - gdal 1.11.4\n        - six\n        - rtree\n        - descartes\n        - matplotlib\n        - psycopg2  # [not win]\n        - sqlalchemy\n        - geopy ==1.10.0\n        - pysal\n\ntest:\n    imports:\n        - geopandas\n        - geopandas.io\n    files:\n        - test.cpg\n        - test.dbf\n        - test.shp\n        - test.shx\n\nabout:\n    home: http://geopandas.org\n    license: BSD\n    summary: Geographic pandas extensions\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.1.1"
+}

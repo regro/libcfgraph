@@ -1,0 +1,32 @@
+{
+ "about": {
+  "home": "http://bitbucket.org/hpk42/pytest-cache",
+  "license": "MIT",
+  "summary": "pytest plugin with mechanisms for caching across test runs"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pytest_cache-1.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pytest_cache.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "execnet >=1.1.dev1",
+   "pytest >=2.2",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "pytest-cache",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0"
+ },
+ "metadata_version": 1,
+ "name": "pytest-cache",
+ "raw_recipe": "{% set name = \"pytest-cache\" %}\n{% set version = \"1.0\" %}\n{% set sha256 = \"be7468edd4d3d83f1e844959fd6e3fd28e77a481440a7118d430130ea31b07a9\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - pytest >=2.2\n    - execnet >=1.1.dev1\n\ntest:\n  imports:\n    - pytest_cache\n\nabout:\n  home: http://bitbucket.org/hpk42/pytest-cache\n  license: MIT\n  license_file: LICENSE\n  summary: 'pytest plugin with mechanisms for caching across test runs'\n\nextra:\n  recipe-maintainers:\n    - bjodah\n",
+ "rendered_recipe": {},
+ "version": "1.0"
+}

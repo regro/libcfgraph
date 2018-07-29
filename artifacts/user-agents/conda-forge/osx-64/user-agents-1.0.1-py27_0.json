@@ -1,0 +1,35 @@
+{
+ "about": {
+  "home": "https://github.com/selwin/python-user-agents",
+  "license": "MIT",
+  "summary": "A library to identify devices (phones, tablets) and their capabilities by parsing (browser/HTTP) user agent strings"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/user_agents-1.0.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/user_agents-1.0.1-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/user_agents/__init__.py",
+  "lib/python2.7/site-packages/user_agents/compat.py",
+  "lib/python2.7/site-packages/user_agents/parsers.py",
+  "lib/python2.7/site-packages/user_agents/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "ua-parser >=0.4.1"
+  ],
+  "license": "MIT",
+  "name": "user-agents",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0.1"
+ },
+ "metadata_version": 1,
+ "name": "user-agents",
+ "raw_recipe": "{%set name = \"user-agents\" %}\n{%set version = \"1.0.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"b5976d971e9e55ec8d80f6c6428f6de5de1467844a0d37184b5ee5e40929e939\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  skip: True  # [py35]\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - ua-parser >=0.4.1\n\ntest:\n  imports:\n    - user_agents\n\nabout:\n  home: https://github.com/selwin/python-user-agents\n  license: MIT\n  summary: 'A library to identify devices (phones, tablets) and their capabilities by parsing (browser/HTTP) user agent strings'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.0.1"
+}

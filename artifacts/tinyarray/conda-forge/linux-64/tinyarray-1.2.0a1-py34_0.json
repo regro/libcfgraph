@@ -1,0 +1,32 @@
+{
+ "about": {
+  "description": "Tinyarrays are similar to NumPy arrays, but optimized for small sizes.\nCommon operations on very small arrays are to 3-7 times faster than\nwith NumPy (with NumPy 1.6 it used to be up to 35 times), and 3 times\nless memory is used to store them. Tinyarrays are useful if you need\nmany small arrays of numbers, and cannot combine them into a few\nlarge ones.\n",
+  "doc_url": "https://gitlab.kwant-project.org/kwant/tinyarray",
+  "home": "http://git.kwant-project.org/tinyarray/about/",
+  "license": "BSD 2-Clause",
+  "summary": "Arrays of numbers for Python, optimized for small sizes"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/tinyarray-unknown-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/tinyarray.cpython-34m.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD 2-Clause",
+  "name": "tinyarray",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.2.0a1"
+ },
+ "metadata_version": 1,
+ "name": "tinyarray",
+ "raw_recipe": "{% set name = \"tinyarray\" %}\n{% set version = \"1.2.0a1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://gitlab.kwant-project.org/kwant/tinyarray/repository/archive.tar.gz?ref=v{{ version }}\n  sha256: e155a1c373c90d81877f953810f108cff72cf22a50c44b9cf86a803035198d04\n  \nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n    - nose\n  run:\n    - python\n\ntest:\n  requires:\n    - numpy\n#    - nose\n#  source_files:\n#    - test_tinyarray.py\n#  commands:\n#    - python test_tinyarray.py\n  imports:\n    - tinyarray\n\nabout:\n  home: http://git.kwant-project.org/tinyarray/about/\n  license: BSD 2-Clause\n  license_file: LICENSE.rst\n  summary: 'Arrays of numbers for Python, optimized for small sizes'\n  description: |\n    Tinyarrays are similar to NumPy arrays, but optimized for small sizes. \n    Common operations on very small arrays are to 3-7 times faster than \n    with NumPy (with NumPy 1.6 it used to be up to 35 times), and 3 times \n    less memory is used to store them. Tinyarrays are useful if you need \n    many small arrays of numbers, and cannot combine them into a few \n    large ones.\n  doc_url: https://gitlab.kwant-project.org/kwant/tinyarray\n\nextra:\n  recipe-maintainers:\n    - basnijholt\n",
+ "rendered_recipe": {},
+ "version": "1.2.0a1"
+}

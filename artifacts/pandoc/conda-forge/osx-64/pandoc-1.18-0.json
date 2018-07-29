@@ -1,0 +1,28 @@
+{
+ "about": {
+  "home": "http://johnmacfarlane.net/pandoc/",
+  "license": "GPL-2.0",
+  "summary": "Universal markup converter (repackaged binaries)."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/pandoc",
+  "bin/pandoc-citeproc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "GPL-2.0",
+  "name": "pandoc",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.18"
+ },
+ "metadata_version": 1,
+ "name": "pandoc",
+ "raw_recipe": "{% set version = \"1.18\" %}\n\npackage:\n  name: pandoc\n  version: {{ version }}\n\nsource:\n  fn: pandoc-{{ version }}-amd64.deb                                                                     # [linux64]\n  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-1-amd64.deb    # [linux64]\n  sha256: c2216843dff1da7535055c6cf95cf35160ff7c698dae58a21b83a9c1d68df018                               # [linux64]\n  fn: pandoc-{{ version }}.pkg                                                                           # [osx]\n  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-osx.pkg        # [osx]\n  sha256: 747ae7bfddeeed48d83c449559ceae8ecfc5cfa1fccdbab9f22a23c31913ae76                               # [osx]\n  fn: pandoc-{{ version }}-windows.msi                                                                   # [win]\n  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-windows.msi    # [win]\n  sha256: 30c308603a960c69a72710f0e56ba0e60e1556d76a83dc6034f52af89871ad8b                               # [win]\n\nbuild:\n   number: 0\n\nrequirements:\n  run:\n    - gmp  # [linux64]\n    - zlib 1.2.*  # [linux64]\n\ntest:\n  commands:\n    - pandoc --help\n    - pandoc --version\n\nabout:\n  home: http://johnmacfarlane.net/pandoc/\n  license: GPL-2.0\n  summary: 'Universal markup converter (repackaged binaries).'\n\nextra:\n  recipe-maintainers:\n    - janschulz\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.18"
+}

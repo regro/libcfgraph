@@ -1,0 +1,61 @@
+{
+ "about": {
+  "description": "Monty is the missing complement to Python. Monty implements supplementary useful functions\nfor Python that are not part of the standard library. Examples include useful utilities like\ntransparent support for zipped files, useful design patterns such as singleton and cached_class,\nand many more.\n",
+  "dev_url": "https://github.com/materialsvirtuallab/monty",
+  "doc_url": "https://materialsvirtuallab.github.io/monty/",
+  "home": "https://github.com/materialsvirtuallab/monty",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Monty is the missing complement to Python."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/monty-0.9.6-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/monty/__init__.py",
+  "lib/python2.7/site-packages/monty/bisect.py",
+  "lib/python2.7/site-packages/monty/collections.py",
+  "lib/python2.7/site-packages/monty/design_patterns.py",
+  "lib/python2.7/site-packages/monty/dev.py",
+  "lib/python2.7/site-packages/monty/fnmatch.py",
+  "lib/python2.7/site-packages/monty/fractions.py",
+  "lib/python2.7/site-packages/monty/functools.py",
+  "lib/python2.7/site-packages/monty/inspect.py",
+  "lib/python2.7/site-packages/monty/io.py",
+  "lib/python2.7/site-packages/monty/itertools.py",
+  "lib/python2.7/site-packages/monty/json.py",
+  "lib/python2.7/site-packages/monty/logging.py",
+  "lib/python2.7/site-packages/monty/math.py",
+  "lib/python2.7/site-packages/monty/msgpack.py",
+  "lib/python2.7/site-packages/monty/operator.py",
+  "lib/python2.7/site-packages/monty/os/__init__.py",
+  "lib/python2.7/site-packages/monty/os/path.py",
+  "lib/python2.7/site-packages/monty/pprint.py",
+  "lib/python2.7/site-packages/monty/re.py",
+  "lib/python2.7/site-packages/monty/serialization.py",
+  "lib/python2.7/site-packages/monty/shutil.py",
+  "lib/python2.7/site-packages/monty/string.py",
+  "lib/python2.7/site-packages/monty/subprocess.py",
+  "lib/python2.7/site-packages/monty/tempfile.py",
+  "lib/python2.7/site-packages/monty/termcolor.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "six"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "monty",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.9.6"
+ },
+ "metadata_version": 1,
+ "name": "monty",
+ "raw_recipe": "{% set name = \"monty\" %}\n{% set version = \"0.9.6\" %}\n{% set sha256 = \"bbf05646c4e86731c2398a57b1044add7487fc4ad03122578599ddd9a8892780\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - monty\n    - monty.os\n\nabout:\n  home: https://github.com/materialsvirtuallab/monty\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.rst\n  summary: 'Monty is the missing complement to Python.'\n  description: |\n    Monty is the missing complement to Python. Monty implements supplementary useful functions\n    for Python that are not part of the standard library. Examples include useful utilities like\n    transparent support for zipped files, useful design patterns such as singleton and cached_class, \n    and many more.\n  doc_url: https://materialsvirtuallab.github.io/monty/\n  dev_url: https://github.com/materialsvirtuallab/monty\n\nextra:\n  recipe-maintainers:\n    - shyuep\n",
+ "rendered_recipe": {},
+ "version": "0.9.6"
+}

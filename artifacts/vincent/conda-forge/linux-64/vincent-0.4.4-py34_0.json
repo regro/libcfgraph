@@ -1,0 +1,82 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/vincent-0.4.4-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/vincent-0.4.4-py3.4.egg-info/zip-safe",
+  "lib/python3.4/site-packages/vincent/__init__.py",
+  "lib/python3.4/site-packages/vincent/_compat.py",
+  "lib/python3.4/site-packages/vincent/axes.py",
+  "lib/python3.4/site-packages/vincent/charts.py",
+  "lib/python3.4/site-packages/vincent/colors.py",
+  "lib/python3.4/site-packages/vincent/core.py",
+  "lib/python3.4/site-packages/vincent/data.py",
+  "lib/python3.4/site-packages/vincent/legends.py",
+  "lib/python3.4/site-packages/vincent/marks.py",
+  "lib/python3.4/site-packages/vincent/properties.py",
+  "lib/python3.4/site-packages/vincent/scales.py",
+  "lib/python3.4/site-packages/vincent/transforms.py",
+  "lib/python3.4/site-packages/vincent/values.py",
+  "lib/python3.4/site-packages/vincent/vega_template.html",
+  "lib/python3.4/site-packages/vincent/visualization.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "pandas",
+   "python 3.4*"
+  ],
+  "license": "MIT License",
+  "name": "vincent",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.4.4"
+ },
+ "metadata_version": 1,
+ "name": "vincent",
+ "raw_recipe": "package:\n    name: vincent\n    version: 0.4.4\n\nsource:\n    fn: vincent-0.4.4.tar.gz\n    url: https://pypi.python.org/packages/source/v/vincent/vincent-0.4.4.tar.gz\n    md5: 65636863500dc8b1c5f9d32efdddd514\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - pandas\n    run:\n        - python\n        - pandas\n\ntest:\n    imports:\n        - vincent\n\nabout:\n    home: https://github.com/wrobstory/vincent\n    license: MIT License\n    summary: A Python to Vega translator\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/wrobstory/vincent",
+   "license": "MIT License",
+   "summary": "A Python to Vega translator"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "vincent",
+   "version": "0.4.4"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "pandas"
+   ],
+   "run": [
+    "python",
+    "pandas"
+   ]
+  },
+  "source": {
+   "fn": "vincent-0.4.4.tar.gz",
+   "md5": "65636863500dc8b1c5f9d32efdddd514",
+   "url": "https://pypi.python.org/packages/source/v/vincent/vincent-0.4.4.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "vincent"
+   ]
+  }
+ },
+ "version": "0.4.4"
+}

@@ -1,0 +1,37 @@
+{
+ "about": {
+  "home": "https://github.com/ContinuumIO/anaconda-verify",
+  "license": "BSD 3-Clause",
+  "summary": "tool for validating conda recipes and conda packages"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/anaconda-verify",
+  "lib/python2.7/site-packages/anaconda_verify-1.2.0-py2.7.egg-info",
+  "lib/python2.7/site-packages/anaconda_verify/__init__.py",
+  "lib/python2.7/site-packages/anaconda_verify/const.py",
+  "lib/python2.7/site-packages/anaconda_verify/main.py",
+  "lib/python2.7/site-packages/anaconda_verify/package.py",
+  "lib/python2.7/site-packages/anaconda_verify/recipe.py",
+  "lib/python2.7/site-packages/anaconda_verify/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "pyyaml"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "anaconda-verify",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.2.0"
+ },
+ "metadata_version": 1,
+ "name": "anaconda-verify",
+ "raw_recipe": "{% set name = \"anaconda-verify\" %}\n{% set version = \"1.2.0\" %}\n{% set checksum = \"e790262f88b3c3ef4ac9d647e0a385ea8ec665ba34509879d0a2270456f5220e\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/ContinuumIO/anaconda-verify/archive/{{ version }}.tar.gz\n  sha256: {{ checksum }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n  entry_points:\n    - anaconda-verify = anaconda_verify.main:main\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n    - pyyaml\n\ntest:\n  imports:\n    - anaconda_verify\n\n  commands:\n    - anaconda-verify --help\n\nabout:\n  home: https://github.com/ContinuumIO/anaconda-verify\n  license: BSD 3-Clause\n  summary: tool for validating conda recipes and conda packages\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.2.0"
+}

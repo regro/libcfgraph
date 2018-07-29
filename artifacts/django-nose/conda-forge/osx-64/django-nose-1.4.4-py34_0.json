@@ -1,0 +1,48 @@
+{
+ "about": {
+  "dev_url": "http://github.com/django-nose/django-nose",
+  "doc_url": "https://django-nose.readthedocs.io/",
+  "home": "http://github.com/django-nose/django-nose",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Makes your Django tests simple and snappy"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/django_nose-1.4.4-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/django_nose-1.4.4-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/django_nose/__init__.py",
+  "lib/python3.4/site-packages/django_nose/fixture_tables.py",
+  "lib/python3.4/site-packages/django_nose/management/__init__.py",
+  "lib/python3.4/site-packages/django_nose/management/commands/__init__.py",
+  "lib/python3.4/site-packages/django_nose/management/commands/test.py",
+  "lib/python3.4/site-packages/django_nose/plugin.py",
+  "lib/python3.4/site-packages/django_nose/runner.py",
+  "lib/python3.4/site-packages/django_nose/testcases.py",
+  "lib/python3.4/site-packages/django_nose/tools.py",
+  "lib/python3.4/site-packages/django_nose/utils.py",
+  "lib/python3.4/site-packages/testapp/migrations/0001_initial.py",
+  "lib/python3.4/site-packages/testapp/migrations/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "django >=1.8,<1.11",
+   "nose >=1.2.1",
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "django-nose",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.4.4"
+ },
+ "metadata_version": 1,
+ "name": "django-nose",
+ "raw_recipe": "{% set name = \"django-nose\" %}\n{% set version = \"1.4.4\" %}\n{% set sha256 = \"c0b904927fcc2f9d8c55ad1afa18c2e77d74f44ef162c35e07930af5a73ba4ba\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - django >=1.8,<1.11\n    - nose >=1.2.1\n\ntest:\n  imports:\n    - django_nose\n    - django_nose.management\n    - django_nose.management.commands\n\nabout:\n  home: http://github.com/django-nose/django-nose\n  license: BSD 3-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: 'Makes your Django tests simple and snappy'\n\n  dev_url: http://github.com/django-nose/django-nose\n  doc_url: https://django-nose.readthedocs.io/\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
+ "rendered_recipe": {},
+ "version": "1.4.4"
+}

@@ -1,0 +1,39 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pytest_xdist-1.14-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pytest_xdist-1.14-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/xdist/__init__.py",
+  "lib/python2.7/site-packages/xdist/_version.py",
+  "lib/python2.7/site-packages/xdist/boxed.py",
+  "lib/python2.7/site-packages/xdist/dsession.py",
+  "lib/python2.7/site-packages/xdist/looponfail.py",
+  "lib/python2.7/site-packages/xdist/newhooks.py",
+  "lib/python2.7/site-packages/xdist/plugin.py",
+  "lib/python2.7/site-packages/xdist/remote.py",
+  "lib/python2.7/site-packages/xdist/slavemanage.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "execnet >=1.1",
+   "py >=1.4.22",
+   "pytest >=2.4.2",
+   "python 2.7*",
+   "setuptools"
+  ],
+  "license": "MIT",
+  "name": "pytest-xdist",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.14"
+ },
+ "metadata_version": 1,
+ "name": "pytest-xdist",
+ "raw_recipe": "{% set version = \"1.14\" %}\n{% set hash_type = \"md5\" %}\n{% set hash = \"958699a0487226505470e984f1843329\" %}\n\npackage:\n  name: pytest-xdist\n  version: {{ version }}\n\nsource:\n  fn: pytest-xdist-{{ version }}.zip\n  url: https://pypi.io/packages/source/p/pytest-xdist/pytest-xdist-{{ version }}.zip\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - execnet >=1.1\n    - py >=1.4.22\n    - pytest >=2.4.2\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - execnet >=1.1\n    - py >=1.4.22\n    - pytest >=2.4.2\n    - setuptools\n\ntest:\n  imports:\n    - xdist\n\nabout:\n  home: https://github.com/pytest-dev/pytest-xdist\n  license: MIT\n  license_file: LICENSE\n  summary: py.test xdist plugin for distributed testing and loop-on-failing modes\n  dev_url: https://github.com/pytest-dev/pytest-xdist\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n",
+ "rendered_recipe": {},
+ "version": "1.14"
+}

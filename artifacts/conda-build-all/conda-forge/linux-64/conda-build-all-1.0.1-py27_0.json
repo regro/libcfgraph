@@ -1,0 +1,58 @@
+{
+ "about": {
+  "home": "https://github.com/scitools/conda-build-all",
+  "license": "BSD 3-clause",
+  "summary": "conda build-all is a conda subcommand which allows multiple distributions to be built (and uploaded) in a single command"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/conda-build-all",
+  "lib/python2.7/site-packages/conda_build_all-1.0.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/conda_build_all/__init__.py",
+  "lib/python2.7/site-packages/conda_build_all/_version.py",
+  "lib/python2.7/site-packages/conda_build_all/artefact_destination.py",
+  "lib/python2.7/site-packages/conda_build_all/build.py",
+  "lib/python2.7/site-packages/conda_build_all/builder.py",
+  "lib/python2.7/site-packages/conda_build_all/cli.py",
+  "lib/python2.7/site-packages/conda_build_all/inspect_binstar.py",
+  "lib/python2.7/site-packages/conda_build_all/order_deps.py",
+  "lib/python2.7/site-packages/conda_build_all/resolved_distribution.py",
+  "lib/python2.7/site-packages/conda_build_all/tests/__init__.py",
+  "lib/python2.7/site-packages/conda_build_all/tests/integration/__init__.py",
+  "lib/python2.7/site-packages/conda_build_all/tests/integration/test_builder.py",
+  "lib/python2.7/site-packages/conda_build_all/tests/integration/test_cli.py",
+  "lib/python2.7/site-packages/conda_build_all/tests/integration/test_inspect_binstar.py",
+  "lib/python2.7/site-packages/conda_build_all/tests/unit/__init__.py",
+  "lib/python2.7/site-packages/conda_build_all/tests/unit/dummy_index.py",
+  "lib/python2.7/site-packages/conda_build_all/tests/unit/test_artefact_destination.py",
+  "lib/python2.7/site-packages/conda_build_all/tests/unit/test_builder.py",
+  "lib/python2.7/site-packages/conda_build_all/tests/unit/test_order_deps.py",
+  "lib/python2.7/site-packages/conda_build_all/tests/unit/test_resolved_distribution.py",
+  "lib/python2.7/site-packages/conda_build_all/tests/unit/test_version_matrix.py",
+  "lib/python2.7/site-packages/conda_build_all/version_matrix.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "anaconda-client",
+   "conda >4",
+   "conda-build >=1.21.7",
+   "gitpython",
+   "mock",
+   "python 2.7*",
+   "setuptools"
+  ],
+  "license": "BSD 3-clause",
+  "name": "conda-build-all",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0.1"
+ },
+ "metadata_version": 1,
+ "name": "conda-build-all",
+ "raw_recipe": "{% set version = \"1.0.1\" %}\n\npackage:\n  name: conda-build-all\n  version: {{ version }}\n\nsource:\n    fn: conda-build-all_v{{ version }}.tar.gz\n    url: https://github.com/SciTools/conda-build-all/archive/v{{version}}.tar.gz\n    sha256: 1e34102f9055ce99500ce8ec87933d46a482cd20b865a180f2b064b4baf345f0\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - gitpython\n    - conda >4\n    - conda-build >=1.21.7\n    - anaconda-client\n    - mock\n\ntest:\n  imports:\n    - conda_build_all\n  commands:\n    - conda build-all --version\n\nabout:\n  license: BSD 3-clause\n  home: https://github.com/scitools/conda-build-all\n  summary: conda build-all is a conda subcommand which allows multiple distributions to be built (and uploaded) in a single command\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n    - ocefpaf\n    - marqh\n",
+ "rendered_recipe": {},
+ "version": "1.0.1"
+}

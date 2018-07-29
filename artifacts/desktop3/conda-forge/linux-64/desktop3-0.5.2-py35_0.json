@@ -1,0 +1,36 @@
+{
+ "about": {
+  "description": "The desktop package provides desktop environment detection and\nresource opening support for a selection of common and standardised\ndesktop environments.\n",
+  "dev_url": "https://github.com/eight04/pyDesktop3",
+  "home": "https://github.com/eight04/pyDesktop3",
+  "license": "GNU Lesser General Public License v3 or later (LGPLv3+)",
+  "license_family": "LGPL",
+  "summary": "Simple desktop integration for Python."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/desktop/__init__.py",
+  "lib/python3.5/site-packages/desktop/dialog.py",
+  "lib/python3.5/site-packages/desktop/windows.py",
+  "lib/python3.5/site-packages/desktop3-0.5.2-py3.5.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "GNU Lesser General Public License v3 or later (LGPLv3+)",
+  "license_family": "LGPL",
+  "name": "desktop3",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.5.2"
+ },
+ "metadata_version": 1,
+ "name": "desktop3",
+ "raw_recipe": "{% set name = \"desktop3\" %}\r\n{% set version = \"0.5.2\" %}\r\n{% set hash_type = \"sha256\" %}\r\n{% set hash = \"37e8bfbfbd0ce97471fc48bf5b9ddb2459b7e5f2756b2f5e682831f365723615\" %}\r\n{% set ext = \"zip\" %}\r\n\r\npackage:\r\n  name: {{ name|lower }}\r\n  version: {{ version }}\r\n\r\nsource:\r\n  fn: {{ name }}-{{ version }}.{{ ext }}\r\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ ext }}\r\n  {{ hash_type }}: {{ hash }}\r\n\r\nbuild:\r\n  number: 0\r\n  skip: true  # [py2k]\r\n  script: python setup.py install --single-version-externally-managed --record record.txt\r\n\r\nrequirements:\r\n  build:\r\n    - python\r\n    - setuptools\r\n\r\n  run:\r\n    - python\r\n\r\ntest:\r\n  imports:\r\n    - desktop\r\n\r\nabout:\r\n  home: https://github.com/eight04/pyDesktop3\r\n  license: GNU Lesser General Public License v3 or later (LGPLv3+)\r\n  license_family: LGPL\r\n  license_file: 'docs/COPYING.txt'\r\n  summary: 'Simple desktop integration for Python.'\r\n  description: |\r\n    The desktop package provides desktop environment detection and\r\n    resource opening support for a selection of common and standardised\r\n    desktop environments.\r\n  dev_url: https://github.com/eight04/pyDesktop3\r\n\r\nextra:\r\n  recipe-maintainers:\r\n    - eight04\r\n    - tadeu\r\n",
+ "rendered_recipe": {},
+ "version": "0.5.2"
+}

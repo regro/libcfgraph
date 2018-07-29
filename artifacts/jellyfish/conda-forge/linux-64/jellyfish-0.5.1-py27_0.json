@@ -1,0 +1,39 @@
+{
+ "about": {
+  "dev_url": "http://github.com/jamesturk/jellyfish",
+  "doc_url": "https://jellyfish.readthedocs.io/en/latest/",
+  "home": "http://github.com/jamesturk/jellyfish",
+  "license": "LICENSE",
+  "license_family": "BSD",
+  "summary": "a library for doing approximate and phonetic matching of strings."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/jellyfish-0.5.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/jellyfish/__init__.py",
+  "lib/python2.7/site-packages/jellyfish/_jellyfish.py",
+  "lib/python2.7/site-packages/jellyfish/cjellyfish.so",
+  "lib/python2.7/site-packages/jellyfish/compat.py",
+  "lib/python2.7/site-packages/jellyfish/porter.py",
+  "lib/python2.7/site-packages/jellyfish/test.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "LICENSE",
+  "license_family": "BSD",
+  "name": "jellyfish",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.5.1"
+ },
+ "metadata_version": 1,
+ "name": "jellyfish",
+ "raw_recipe": "{%set name = \"jellyfish\" %}\n{%set version = \"0.5.1\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"e297b7a5d00579b0da0474a89273fff759f305de88e05d6a1d0ebd4cb58c49e8\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - jellyfish\n\nabout:\n  home: http://github.com/jamesturk/jellyfish\n  license: BSD 2-Clause\n  license: LICENSE\n  license_family: BSD\n  summary: 'a library for doing approximate and phonetic matching of strings.'\n  dev_url: http://github.com/jamesturk/jellyfish\n  doc_url: https://jellyfish.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.5.1"
+}

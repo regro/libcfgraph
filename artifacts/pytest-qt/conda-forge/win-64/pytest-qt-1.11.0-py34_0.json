@@ -1,0 +1,33 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pytest_qt-1.11.0-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/pytestqt/__init__.py",
+  "Lib/site-packages/pytestqt/exceptions.py",
+  "Lib/site-packages/pytestqt/logging.py",
+  "Lib/site-packages/pytestqt/plugin.py",
+  "Lib/site-packages/pytestqt/qt_compat.py",
+  "Lib/site-packages/pytestqt/qtbot.py",
+  "Lib/site-packages/pytestqt/wait_signal.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "pytest",
+   "python 3.4*"
+  ],
+  "license": "LGPL",
+  "name": "pytest-qt",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.11.0"
+ },
+ "metadata_version": 1,
+ "name": "pytest-qt",
+ "raw_recipe": "{% set name = \"pytest-qt\" %}\n{% set version = \"1.11.0\" %}\n{% set hash_type = \"md5\" %}\n{% set hash = \"c1be9518ab1915e22f8b8a6710d31626\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/p/pytest-qt/pytest-qt-{{ version }}.zip\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - pytest\n    - setuptools\n  run:\n    - python\n    - pytest\n\ntest:\n  requires:\n    - pyqt\n    - pytest\n  imports:\n    - pytestqt\n  commands:\n    - py.test --help\n\nabout:\n  home: https://github.com/pytest-dev/pytest-qt\n  license: LGPL\n  summary: pytest support for PyQt and PySide applications\n\nextra:\n  recipe-maintainers:\n    - nicoddemus",
+ "rendered_recipe": {},
+ "version": "1.11.0"
+}

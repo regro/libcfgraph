@@ -1,0 +1,33 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/drmaa-0.7.6-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/drmaa/__init__.py",
+  "Lib/site-packages/drmaa/const.py",
+  "Lib/site-packages/drmaa/errors.py",
+  "Lib/site-packages/drmaa/helpers.py",
+  "Lib/site-packages/drmaa/session.py",
+  "Lib/site-packages/drmaa/version.py",
+  "Lib/site-packages/drmaa/wrappers.py",
+  "Scripts/.python-drmaa-post-link.bat"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "python-drmaa",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.7.6"
+ },
+ "metadata_version": 1,
+ "name": "python-drmaa",
+ "raw_recipe": "{% set version = \"0.7.6\" %}\n\npackage:\n  name: python-drmaa\n  version: {{ version }}\n\nsource:\n  fn: drmaa-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/d/drmaa/drmaa-{{ version }}.tar.gz\n  md5: 3cb6dade683d0621fb14871ef1261f9b\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  files:\n    - run_test.py\n  commands:\n    - python run_test.py\n\nabout:\n  home: https://github.com/pygridtools/drmaa-python\n  license: BSD 3-Clause\n  summary: Python wrapper around the C DRMAA library.\n\nextra:\n  recipe-maintainers:\n    - dan-blanchard\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.7.6"
+}

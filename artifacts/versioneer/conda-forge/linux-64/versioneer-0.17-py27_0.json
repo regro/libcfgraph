@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "https://github.com/warner/python-versioneer",
+  "license": "Public Domain",
+  "summary": "Easy VCS-based management of project version strings"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/versioneer",
+  "lib/python2.7/site-packages/versioneer-0.17-py2.7.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "Public Domain",
+  "name": "versioneer",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.17"
+ },
+ "metadata_version": 1,
+ "name": "versioneer",
+ "raw_recipe": "{% set name = \"versioneer\" %}\n{% set version = \"0.17\" %}\n{% set sha256 = \"67e556474e221449187dca32969b8fc933e440f9c4c8556732814f156689cb55\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  commands:\n    - versioneer version\n\nabout:\n  home: https://github.com/warner/python-versioneer\n  license: Public Domain\n  summary: Easy VCS-based management of project version strings\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.17"
+}

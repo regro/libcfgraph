@@ -1,0 +1,68 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/assetid-0.0.4-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/assetid/__init__.py",
+  "lib/python3.4/site-packages/assetid/tests/__init__.py",
+  "lib/python3.4/site-packages/assetid/tests/test_urn.py",
+  "lib/python3.4/site-packages/assetid/urn.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "assetid",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.0.4"
+ },
+ "metadata_version": 1,
+ "name": "assetid",
+ "raw_recipe": "{% set name = \"assetid\" %}\n{% set version = \"0.0.4\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: assetid-{{ version}}.tar.gz\n  url: https://github.com/axiom-data-science/assetid/archive/{{ version }}.tar.gz\n  sha256: dcd45cd619d2b747e2b895b0b37306fca1369a6220a57d3a680fed2037e28a24\n\nbuild:\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - assetid\n    - assetid.tests\n\nabout:\n  home: \"https://github.com/axiom-data-science/{{ name }}\"\n  license: MIT\n  summary: 'An ocean data asset ID parser developed and used by Axiom Data Science'\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/axiom-data-science/assetid",
+   "license": "MIT",
+   "summary": "An ocean data asset ID parser developed and used by Axiom Data Science"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "kwilcox"
+   ]
+  },
+  "package": {
+   "name": "assetid",
+   "version": "0.0.4"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "assetid-0.0.4.tar.gz",
+   "sha256": "dcd45cd619d2b747e2b895b0b37306fca1369a6220a57d3a680fed2037e28a24",
+   "url": "https://github.com/axiom-data-science/assetid/archive/0.0.4.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "assetid",
+    "assetid.tests"
+   ]
+  }
+ },
+ "version": "0.0.4"
+}

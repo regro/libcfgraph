@@ -1,0 +1,40 @@
+{
+ "about": {
+  "home": "http://heasarc.gsfc.nasa.gov/fitsio/fitsio.html",
+  "license": "fitsio",
+  "summary": "A library for reading and writing FITS files"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/cookbook",
+  "bin/fitscopy",
+  "bin/fpack",
+  "bin/funpack",
+  "bin/imcopy",
+  "bin/smem",
+  "bin/speed",
+  "bin/testprog",
+  "include/drvrsmem.h",
+  "include/fitsio.h",
+  "include/fitsio2.h",
+  "include/longnam.h",
+  "lib/libcfitsio.a",
+  "lib/pkgconfig/cfitsio.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "fitsio",
+  "name": "cfitsio",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "3.410"
+ },
+ "metadata_version": 1,
+ "name": "cfitsio",
+ "raw_recipe": "{% set name = \"cfitsio\" %}\n{% set version = \"3.410\" %}\n{% set nodotversion = \"3410\" %}\n{% set sha256 = \"a556ac7ea1965545dcb4d41cfef8e4915eeb8c0faa1b52f7ff70870f8bb5734c\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}{{ nodotversion }}.tar.gz\n  url: ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/{{ name }}{{ nodotversion }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libcfitsio.a\n\nabout:\n  home: http://heasarc.gsfc.nasa.gov/fitsio/fitsio.html\n  license: fitsio\n  license_file: License.txt\n  summary: \"A library for reading and writing FITS files\"\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
+ "rendered_recipe": {},
+ "version": "3.410"
+}

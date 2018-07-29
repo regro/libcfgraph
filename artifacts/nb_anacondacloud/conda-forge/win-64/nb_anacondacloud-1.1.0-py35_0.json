@@ -1,0 +1,96 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/nb_anacondacloud-1.1.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/nb_anacondacloud-1.1.0-py3.5.egg-info/not-zip-safe",
+  "Lib/site-packages/nb_anacondacloud/__init__.py",
+  "Lib/site-packages/nb_anacondacloud/_version.py",
+  "Lib/site-packages/nb_anacondacloud/handlers.py",
+  "Lib/site-packages/nb_anacondacloud/static/main.js",
+  "Lib/site-packages/nb_anacondacloud/tests/__init__.py",
+  "Lib/site-packages/nb_anacondacloud/tests/fixtures/package.json",
+  "Lib/site-packages/nb_anacondacloud/tests/fixtures/release.json",
+  "Lib/site-packages/nb_anacondacloud/tests/fixtures/upload.json",
+  "Lib/site-packages/nb_anacondacloud/tests/fixtures/user.json",
+  "Lib/site-packages/nb_anacondacloud/tests/fixtures/user_orgs.json",
+  "Lib/site-packages/nb_anacondacloud/tests/js/_utils.js",
+  "Lib/site-packages/nb_anacondacloud/tests/js/auth/test_00_basics.js",
+  "Lib/site-packages/nb_anacondacloud/tests/js/auth/test_01_auth.js",
+  "Lib/site-packages/nb_anacondacloud/tests/js/noauth/test_50_noauth.js",
+  "Lib/site-packages/nb_anacondacloud/tests/patched.py",
+  "Lib/site-packages/nb_anacondacloud/tests/test_notebook.py",
+  "Lib/site-packages/nb_anacondacloud/uploader.py",
+  "Scripts/.nb_anacondacloud-post-link.bat",
+  "Scripts/.nb_anacondacloud-pre-unlink.bat",
+  "share/jupyter/nbextensions/nb_anacondacloud/main.js"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "anaconda-client",
+   "notebook >=4.2.0",
+   "python 3.5*"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "nb_anacondacloud",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.1.0"
+ },
+ "metadata_version": 1,
+ "name": "nb_anacondacloud",
+ "raw_recipe": "{% set version = \"1.1.0\" %}\n{% set gh_org = \"Anaconda-Platform\" %}\n{% set gh_repo = \"nb_anacondacloud\" %}\n\npackage:\n  name: {{ gh_repo }}\n  version: {{ version }}\n\nsource:\n  fn: {{ gh_repo }}-{{ version }}.tar.gz\n  url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/{{ version }}.tar.gz\n  sha256: a87a762511d912d2aaec5093a845f4163fc9ff789c8ad7bd004d42714d424707\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - anaconda-client\n    - notebook >=4.2.0\n    - python\n    - setuptools\n\n  run:\n    - anaconda-client\n    - notebook >=4.2.0\n    - python\n\ntest:\n  requires:\n    - anaconda-client\n    - coverage\n    - flake8\n    - nodejs\n    - nose\n    - notebook >=4.2.0\n    - python\n    - requests\n    - mock  # [py2k]\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: BSD-3-Clause\n  summary: Interact with Anaconda Cloud\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/Anaconda-Platform/nb_anacondacloud",
+   "license": "BSD-3-Clause",
+   "summary": "Interact with Anaconda Cloud"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "nb_anacondacloud",
+   "version": "1.1.0"
+  },
+  "requirements": {
+   "build": [
+    "anaconda-client",
+    "notebook >=4.2.0",
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "anaconda-client",
+    "notebook >=4.2.0",
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "nb_anacondacloud-1.1.0.tar.gz",
+   "sha256": "a87a762511d912d2aaec5093a845f4163fc9ff789c8ad7bd004d42714d424707",
+   "url": "https://github.com/Anaconda-Platform/nb_anacondacloud/archive/1.1.0.tar.gz"
+  },
+  "test": {
+   "requires": [
+    "anaconda-client",
+    "coverage",
+    "flake8",
+    "nodejs",
+    "nose",
+    "notebook >=4.2.0",
+    "python",
+    "requests"
+   ]
+  }
+ },
+ "version": "1.1.0"
+}

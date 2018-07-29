@@ -1,0 +1,27 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/mongoquery-1.1.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/mongoquery-1.1.0-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/mongoquery/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "Public Domain",
+  "name": "mongoquery",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.1.0"
+ },
+ "metadata_version": 1,
+ "name": "mongoquery",
+ "raw_recipe": "{% set version = \"1.1.0\" %}\n\npackage:\n    name: mongoquery\n    version: {{ version }}\n\nsource:\n    url: https://github.com/kapouille/mongoquery/archive/v{{ version }}.tar.gz\n    fn: mongoquery-v{{ version }}.tar.gz\n    sha256: d1e87f6038ea074273610b6258e5af7477de61c782f6424fc7ecf3416df3e645\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - setuptools\n        - python\n    run:\n        - python\n\ntest:\n    imports:\n        - mongoquery\n    requires:\n        - pytest\n    commands:\n        - py.test {{ environ.SRC_DIR }}/tests -vrsx\n\nabout:\n    home: https://github.com/kapouille/mongoquery\n    license: Public Domain\n    summary: >\n        A utility library that provides a MongoDB-like query\n        language for querying python collections. It's mainly\n        intended to parse objects structured as fundamental types in\n        a similar fashion to what is produced by JSON or YAML\n        parsers.\n\nextra:\n    recipe-maintainers:\n        - ericdill\n        - kapouille\n        - licode\n        - tacaswell\n",
+ "rendered_recipe": {},
+ "version": "1.1.0"
+}

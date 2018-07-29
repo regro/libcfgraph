@@ -1,0 +1,157 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/scikit-sparse/scikit-sparse",
+  "license": "BSD 2-clause",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.5-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "A companion to the scipy.sparse library for sparse matrix manipulation in Python."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/sksparse/test_data/illc1033.mtx.gz",
+  "lib/python2.7/site-packages/sksparse/test_data/well1850.mtx.gz",
+  "lib/python2.7/site-packages/sksparse/test_data/illc1033_rhs1.mtx.gz",
+  "lib/python2.7/site-packages/sksparse/cholmod.so",
+  "lib/python2.7/site-packages/sksparse/test_cholmod.py",
+  "lib/python2.7/site-packages/sksparse/_version.py",
+  "lib/python2.7/site-packages/sksparse/test_data/well1850_rhs1.mtx.gz",
+  "lib/python2.7/site-packages/sksparse/test_data/well1033_rhs1.mtx.gz",
+  "lib/python2.7/site-packages/scikit_sparse-0.4.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/sksparse/__init__.py",
+  "lib/python2.7/site-packages/sksparse/test_data/illc1850_rhs1.mtx.gz",
+  "lib/python2.7/site-packages/sksparse/test_data/illc1850.mtx.gz",
+  "lib/python2.7/site-packages/sksparse/test_data/well1033.mtx.gz"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np112py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.12*",
+   "python 2.7*",
+   "scipy",
+   "suitesparse"
+  ],
+  "license": "BSD 2-clause",
+  "name": "scikit-sparse",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.4.1"
+ },
+ "metadata_version": 1,
+ "name": "scikit-sparse",
+ "raw_recipe": "{% set version = \"0.4.1\" %}\n\npackage:\n  name: scikit-sparse\n  version: {{ version }}\n\nsource:\n  fn: scikit-sparse-{{ version }}.tar.gz\n  url: https://github.com/scikit-sparse/scikit-sparse/archive/v{{ version }}.tar.gz\n  sha256: 0af547156b73c83350676474a93fd4613afbabac37a461b6b0e71a06e1a13c65\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - numpy x.x\n    - suitesparse\n    - cython\n    - setuptools\n  run:\n    - python\n    - numpy x.x\n    - scipy\n    - suitesparse\n\ntest:\n  requires:\n    - nose\n    - setuptools\n  imports:\n    - sksparse\n    - sksparse.cholmod\n  commands:\n    - OPENBLAS_NUM_THREADS=1 nosetests -sv sksparse\n\nabout:\n  home: https://github.com/scikit-sparse/scikit-sparse\n  license: BSD 2-clause\n  summary: A companion to the scipy.sparse library for sparse matrix manipulation in Python.\n\nextra:\n    recipe-maintainers:\n      - grlee77\n      - patricksnape\n      - jor-\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/scikit-sparse/scikit-sparse",
+   "license": "BSD 2-clause",
+   "summary": "A companion to the scipy.sparse library for sparse matrix manipulation in Python."
+  },
+  "build": {
+   "number": "0",
+   "string": "np112py27_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "grlee77",
+    "patricksnape",
+    "jor-"
+   ]
+  },
+  "package": {
+   "name": "scikit-sparse",
+   "version": "0.4.1"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "numpy x.x",
+    "scipy",
+    "suitesparse"
+   ]
+  },
+  "source": {
+   "fn": "scikit-sparse-0.4.1.tar.gz",
+   "sha256": "0af547156b73c83350676474a93fd4613afbabac37a461b6b0e71a06e1a13c65",
+   "url": "https://github.com/scikit-sparse/scikit-sparse/archive/v0.4.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "OPENBLAS_NUM_THREADS=1 nosetests -sv sksparse"
+   ],
+   "imports": [
+    "sksparse",
+    "sksparse.cholmod"
+   ],
+   "requires": [
+    "nose",
+    "setuptools"
+   ]
+  }
+ },
+ "version": "0.4.1"
+}

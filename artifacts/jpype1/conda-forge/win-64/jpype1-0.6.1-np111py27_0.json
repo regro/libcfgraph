@@ -1,0 +1,62 @@
+{
+ "about": {
+  "description": "A Python to Java bridge.",
+  "doc_url": "http://jpype.readthedocs.io/en/stable/",
+  "home": "https://github.com/originell/jpype/",
+  "license": "Apache 2.0",
+  "summary": "A Python to Java bridge."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/JPype1-0.6.1-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/JPype1-0.6.1-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/_jpype.pyd",
+  "Lib/site-packages/jpype/JClassUtil.py",
+  "Lib/site-packages/jpype/__init__.py",
+  "Lib/site-packages/jpype/_core.py",
+  "Lib/site-packages/jpype/_darwin.py",
+  "Lib/site-packages/jpype/_gui.py",
+  "Lib/site-packages/jpype/_jarray.py",
+  "Lib/site-packages/jpype/_jclass.py",
+  "Lib/site-packages/jpype/_jcollection.py",
+  "Lib/site-packages/jpype/_jexception.py",
+  "Lib/site-packages/jpype/_jobject.py",
+  "Lib/site-packages/jpype/_jpackage.py",
+  "Lib/site-packages/jpype/_jproxy.py",
+  "Lib/site-packages/jpype/_jvmfinder.py",
+  "Lib/site-packages/jpype/_jwrapper.py",
+  "Lib/site-packages/jpype/_linux.py",
+  "Lib/site-packages/jpype/_properties.py",
+  "Lib/site-packages/jpype/_pykeywords.py",
+  "Lib/site-packages/jpype/_refdaemon.py",
+  "Lib/site-packages/jpype/_windows.py",
+  "Lib/site-packages/jpype/awt/__init__.py",
+  "Lib/site-packages/jpype/awt/event/WindowAdapter.py",
+  "Lib/site-packages/jpype/awt/event/__init__.py",
+  "Lib/site-packages/jpype/nio.py",
+  "Lib/site-packages/jpype/reflect.py",
+  "Lib/site-packages/jpypex/__init__.py",
+  "Lib/site-packages/jpypex/swing/AbstractAction.py",
+  "Lib/site-packages/jpypex/swing/__init__.py",
+  "Lib/site-packages/jpypex/swing/pyutils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.11*",
+   "python 2.7*"
+  ],
+  "license": "Apache 2.0",
+  "name": "jpype1",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.6.1"
+ },
+ "metadata_version": 1,
+ "name": "jpype1",
+ "raw_recipe": "{% set version = \"0.6.1\" %}\n\npackage:\n  name: jpype1\n  version: {{ version }}\n\nsource:\n  fn: jpype-{{ version }}.tar.gz\n  url: https://github.com/originell/jpype/archive/v{{ version }}.tar.gz\n  sha256: f7e81ef2e722a26929d329d2a15e2638f5b28f15a30d1dff1c88e6c3d38a85d8\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  imports:\n    - jpype\n\nabout:\n  home: https://github.com/originell/jpype/\n  license: Apache 2.0\n  license_file: LICENSE\n  summary: 'A Python to Java bridge.'\n  description: 'A Python to Java bridge.'\n  doc_url: http://jpype.readthedocs.io/en/stable/\n\nextra:\n  recipe-maintainers:\n    - caspervdw\n    - marscher\n",
+ "rendered_recipe": {},
+ "version": "0.6.1"
+}

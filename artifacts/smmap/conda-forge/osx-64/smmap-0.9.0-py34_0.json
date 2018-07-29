@@ -1,0 +1,66 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/smmap-0.9.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/smmap-0.9.0-py3.4.egg-info/zip-safe",
+  "lib/python3.4/site-packages/smmap/__init__.py",
+  "lib/python3.4/site-packages/smmap/buf.py",
+  "lib/python3.4/site-packages/smmap/exc.py",
+  "lib/python3.4/site-packages/smmap/mman.py",
+  "lib/python3.4/site-packages/smmap/test/__init__.py",
+  "lib/python3.4/site-packages/smmap/test/lib.py",
+  "lib/python3.4/site-packages/smmap/test/test_buf.py",
+  "lib/python3.4/site-packages/smmap/test/test_mman.py",
+  "lib/python3.4/site-packages/smmap/test/test_tutorial.py",
+  "lib/python3.4/site-packages/smmap/test/test_util.py",
+  "lib/python3.4/site-packages/smmap/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD License",
+  "name": "smmap",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.9.0"
+ },
+ "metadata_version": 1,
+ "name": "smmap",
+ "raw_recipe": "package:\n  name: smmap\n  version: \"0.9.0\"\n\nsource:\n  fn: smmap-0.9.0.tar.gz\n  url: https://pypi.python.org/packages/source/s/smmap/smmap-0.9.0.tar.gz\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - smmap\n    - smmap.test\n\nabout:\n  home: https://github.com/Byron/smmap\n  license: BSD License\n  summary: 'A pure git implementation of a sliding window memory map manager'\n\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/Byron/smmap",
+   "license": "BSD License",
+   "summary": "A pure git implementation of a sliding window memory map manager"
+  },
+  "package": {
+   "name": "smmap",
+   "version": "0.9.0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "smmap-0.9.0.tar.gz",
+   "url": "https://pypi.python.org/packages/source/s/smmap/smmap-0.9.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "smmap",
+    "smmap.test"
+   ]
+  }
+ },
+ "version": "0.9.0"
+}

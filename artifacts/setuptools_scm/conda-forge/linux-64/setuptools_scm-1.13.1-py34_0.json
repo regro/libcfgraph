@@ -1,0 +1,45 @@
+{
+ "about": {
+  "home": "https://github.com/pypa/setuptools_scm/",
+  "license": "MIT",
+  "summary": "The blessed package to manage your versions by scm tags."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/setuptools_scm-0.0.0.dist-info/DESCRIPTION.rst",
+  "lib/python3.4/site-packages/setuptools_scm-0.0.0.dist-info/INSTALLER",
+  "lib/python3.4/site-packages/setuptools_scm-0.0.0.dist-info/METADATA",
+  "lib/python3.4/site-packages/setuptools_scm-0.0.0.dist-info/RECORD",
+  "lib/python3.4/site-packages/setuptools_scm-0.0.0.dist-info/WHEEL",
+  "lib/python3.4/site-packages/setuptools_scm-0.0.0.dist-info/metadata.json",
+  "lib/python3.4/site-packages/setuptools_scm-0.0.0.dist-info/zip-safe",
+  "lib/python3.4/site-packages/setuptools_scm/__init__.py",
+  "lib/python3.4/site-packages/setuptools_scm/__main__.py",
+  "lib/python3.4/site-packages/setuptools_scm/discover.py",
+  "lib/python3.4/site-packages/setuptools_scm/git.py",
+  "lib/python3.4/site-packages/setuptools_scm/hacks.py",
+  "lib/python3.4/site-packages/setuptools_scm/hg.py",
+  "lib/python3.4/site-packages/setuptools_scm/integration.py",
+  "lib/python3.4/site-packages/setuptools_scm/utils.py",
+  "lib/python3.4/site-packages/setuptools_scm/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "setuptools"
+  ],
+  "license": "MIT",
+  "name": "setuptools_scm",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.13.1"
+ },
+ "metadata_version": 1,
+ "name": "setuptools_scm",
+ "raw_recipe": "{% set version = \"1.13.1\" %}\n\npackage:\n  name: setuptools_scm\n  version: {{ version }}\n\nsource:\n  fn: setuptools_scm-{{ version }}.tar.gz\n  url: https://github.com/pypa/setuptools_scm/archive/v{{ version }}.tar.gz\n  sha256: 295dd25103311c6627991d652e7dd6fd9f5ad61742a32dd829e92d30e0f2889b\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - setuptools_scm\n\nabout:\n  home: https://github.com/pypa/setuptools_scm/\n  license: MIT\n  summary: 'The blessed package to manage your versions by scm tags.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - kwilcox\n",
+ "rendered_recipe": {},
+ "version": "1.13.1"
+}

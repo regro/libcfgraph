@@ -1,0 +1,53 @@
+{
+ "about": {
+  "home": "http://pypi.python.org/pypi/pykml",
+  "license": "BSD 3-Clause",
+  "summary": "Python KML library."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pykml-0.1.3-py3.6.egg-info/PKG-INFO",
+  "Lib/site-packages/pykml/__init__.py",
+  "Lib/site-packages/pykml/factory.py",
+  "Lib/site-packages/pykml/helpers.py",
+  "Lib/site-packages/pykml/parser.py",
+  "Lib/site-packages/pykml/schemas/atom-author-link.xsd",
+  "Lib/site-packages/pykml/schemas/kml22gx.xsd",
+  "Lib/site-packages/pykml/schemas/ogckml22.xsd",
+  "Lib/site-packages/pykml/schemas/xAL.xsd",
+  "Lib/site-packages/pykml/test/__init__.py",
+  "Lib/site-packages/pykml/test/test_factory.py",
+  "Lib/site-packages/pykml/test/test_helpers.py",
+  "Lib/site-packages/pykml/test/test_parser.py",
+  "Lib/site-packages/pykml/test/test_util.py",
+  "Lib/site-packages/pykml/test/testfiles/google_kml_developers_guide/complete_tour_example.kml",
+  "Lib/site-packages/pykml/test/testfiles/google_kml_tutorial/using_the_cdata_element.kml",
+  "Lib/site-packages/pykml/test/testfiles/simple_file_with_comments.kml",
+  "Lib/site-packages/pykml/util.py",
+  "Scripts/csv2kml-script.py",
+  "Scripts/csv2kml.exe",
+  "Scripts/kml2pykml-script.py",
+  "Scripts/kml2pykml.exe",
+  "Scripts/validate_kml-script.py",
+  "Scripts/validate_kml.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "lxml >=2.2.6",
+   "python 3.6*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pykml",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.1.3"
+ },
+ "metadata_version": 1,
+ "name": "pykml",
+ "raw_recipe": "{% set version = \"0.1.3\" %}\n\npackage:\n  name: pykml\n  version: {{ version }}\n\nsource:\n  fn: pykml-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pykml/pykml-{{ version }}.tar.gz\n  sha256: e1a133e582f0b4652a6b00bac970b446d90580664e5a634a670731c990ff9f05\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  preserve_egg_dir: True\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - lxml >=2.2.6\n\ntest:\n  imports:\n    - pykml\n\nabout:\n  home: http://pypi.python.org/pypi/pykml\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Python KML library.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - tylere\n",
+ "rendered_recipe": {},
+ "version": "0.1.3"
+}

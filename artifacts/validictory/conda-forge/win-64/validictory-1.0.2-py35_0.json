@@ -1,0 +1,46 @@
+{
+ "about": {
+  "description": "validictory is a general purpose of Python data validator.\nWorks with Python 2.7 and Python 3.3+\n",
+  "dev_url": "http://github.com/jamesturk/validictory",
+  "doc_url": "http://validictory.readthedocs.io",
+  "home": "http://github.com/jamesturk/validictory",
+  "license": "MIT",
+  "summary": "A general purpose python data validator"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/validictory-1.0.2-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/validictory-1.0.2-py3.5.egg-info/pbr.json",
+  "Lib/site-packages/validictory/__init__.py",
+  "Lib/site-packages/validictory/tests/__init__.py",
+  "Lib/site-packages/validictory/tests/test_apply_default.py",
+  "Lib/site-packages/validictory/tests/test_disallow_unknown_properties.py",
+  "Lib/site-packages/validictory/tests/test_fail_fast.py",
+  "Lib/site-packages/validictory/tests/test_items.py",
+  "Lib/site-packages/validictory/tests/test_other.py",
+  "Lib/site-packages/validictory/tests/test_properties.py",
+  "Lib/site-packages/validictory/tests/test_remove_unknown_properties.py",
+  "Lib/site-packages/validictory/tests/test_schema_schema.py",
+  "Lib/site-packages/validictory/tests/test_type.py",
+  "Lib/site-packages/validictory/tests/test_values.py",
+  "Lib/site-packages/validictory/validator.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "validictory",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.2"
+ },
+ "metadata_version": 1,
+ "name": "validictory",
+ "raw_recipe": "{% set name = \"validictory\" %}\n{% set version = \"1.0.2\" %}\n{% set sha256 = \"9eeee360b9bfb6a2644796e69ae8ba0c39f04a2e75d6cd5f3707c6ac7c58d170\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - validictory\n    - validictory.tests\n\nabout:\n  home: http://github.com/jamesturk/validictory\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'A general purpose python data validator'\n\n  description: |\n    validictory is a general purpose of Python data validator.\n    Works with Python 2.7 and Python 3.3+\n  doc_url: http://validictory.readthedocs.io\n  dev_url: http://github.com/jamesturk/validictory\n\nextra:\n  recipe-maintainers:\n    - souravsingh\n",
+ "rendered_recipe": {},
+ "version": "1.0.2"
+}

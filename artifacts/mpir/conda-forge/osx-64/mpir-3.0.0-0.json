@@ -1,0 +1,161 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.9",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://mpir.org/",
+  "license": "LGPL 3",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.9-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Multiple Precision Integers and Rationals."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/libmpirxx.dylib",
+  "lib/libmpirxx.la",
+  "lib/libmpir.a",
+  "share/info/mpir.info-2",
+  "lib/libmpirxx.a",
+  "share/info/mpir.info-1",
+  "lib/libmpir.dylib",
+  "lib/libmpir.23.dylib",
+  "share/info/mpir.info",
+  "lib/libmpirxx.8.dylib",
+  "include/mpirxx.h",
+  "include/mpir.h",
+  "lib/libmpir.la"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "LGPL 3",
+  "name": "mpir",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "3.0.0"
+ },
+ "metadata_version": 1,
+ "name": "mpir",
+ "raw_recipe": "{% set version = \"3.0.0\" %}\n\npackage:\n  name: mpir\n  version: {{ version }}\n\nsource:\n  fn: mpir-{{ version }}.tar.bz2\n  url: http://mpir.org/mpir-{{ version }}.tar.bz2\n  sha256: 52f63459cf3f9478859de29e00357f004050ead70b45913f2c2269d9708675bb\n\nbuild:\n  number: 0\n  skip: true          # [win and not (py34 or py35)]\n  skip: true          # [unix and not py35]\n  features:\n    - vc14            # [win and py35]\n\nrequirements:\n  build:\n    - m4              # [unix]\n    - python\n    - toolchain       # [unix]\n    - yasm            # [unix]\n    - vc 14           # [win and py35]\n  run:\n    - vc 14           # [win and py35]\n\ntest:\n  files:\n    - test.c\n  commands:\n    - if not exist %LIBRARY_INC%\\\\mpir.h exit 1                # [win]\n    - if not exist %LIBRARY_INC%\\\\mpirxx.h exit 1              # [win]\n    - if not exist %LIBRARY_INC%\\\\gmp.h exit 1                 # [win]\n    - if not exist %LIBRARY_INC%\\\\gmpxx.h exit 1               # [win]\n\n    - if not exist %LIBRARY_LIB%\\\\mpir.lib exit 1              # [win]\n    - if not exist %LIBRARY_LIB%\\\\gmp.lib exit 1               # [win]\n    - if not exist %LIBRARY_BIN%\\\\mpir.dll exit 1              # [win]\n    - if not exist %LIBRARY_BIN%\\\\gmp.dll exit 1               # [win]\n\n    - if not exist %LIBRARY_LIB%\\\\mpir_static.lib exit 1       # [win]\n    - if not exist %LIBRARY_LIB%\\\\mpirxx_static.lib exit 1     # [win]\n    - if not exist %LIBRARY_LIB%\\\\gmp_static.lib exit 1        # [win]\n    - if not exist %LIBRARY_LIB%\\\\gmpxx_static.lib exit 1      # [win]\n\n    - test -f $PREFIX/include/mpir.h                           # [unix]\n    - test -f $PREFIX/include/mpirxx.h                         # [unix]\n    - test -f $PREFIX/lib/libmpir.a                            # [unix]\n    - test -f $PREFIX/lib/libmpirxx.a                          # [unix]\n\n    - test -f $PREFIX/lib/libmpir.so                           # [linux]\n    - test -f $PREFIX/lib/libmpirxx.so                         # [linux]\n\n    - test -f $PREFIX/lib/libmpir.dylib                        # [osx]\n    - test -f $PREFIX/lib/libmpirxx.dylib                      # [osx]\n\nabout:\n  home: http://mpir.org/\n  license: LGPL 3\n  license_file: COPYING.LIB\n  summary: Multiple Precision Integers and Rationals.\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - jakirkham\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://mpir.org/",
+   "license": "LGPL 3",
+   "license_file": "COPYING.LIB",
+   "summary": "Multiple Precision Integers and Rationals."
+  },
+  "build": {
+   "features": "",
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "isuruf",
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "mpir",
+   "version": "3.0.0"
+  },
+  "requirements": {
+   "build": [
+    "ca-certificates 2017.1.23 0",
+    "m4 1.4.17 1",
+    "ncurses 5.9 10",
+    "openssl 1.0.2k 0",
+    "python 3.5.3 1",
+    "readline 6.2 0",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "toolchain 2.0.0 0",
+    "xz 5.2.2 0",
+    "yasm 1.3.0 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": ""
+  },
+  "source": {
+   "fn": "mpir-3.0.0.tar.bz2",
+   "sha256": "52f63459cf3f9478859de29e00357f004050ead70b45913f2c2269d9708675bb",
+   "url": "http://mpir.org/mpir-3.0.0.tar.bz2"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/include/mpir.h",
+    "test -f $PREFIX/include/mpirxx.h",
+    "test -f $PREFIX/lib/libmpir.a",
+    "test -f $PREFIX/lib/libmpirxx.a",
+    "test -f $PREFIX/lib/libmpir.dylib",
+    "test -f $PREFIX/lib/libmpirxx.dylib"
+   ],
+   "files": [
+    "test.c"
+   ]
+  }
+ },
+ "version": "3.0.0"
+}

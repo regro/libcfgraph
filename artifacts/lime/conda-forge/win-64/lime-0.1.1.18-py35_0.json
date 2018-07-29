@@ -1,0 +1,42 @@
+{
+ "about": {
+  "dev_url": "https://github.com/marcotcr/lime",
+  "doc_url": "https://lime-ml.readthedocs.io/",
+  "home": "https://github.com/marcotcr/lime",
+  "license": "BSD-2-Clause",
+  "license_family": "BSD",
+  "summary": "Explaining the predictions of any machine learning classifier"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/lime-0.1.1.18-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/lime-0.1.1.18-py3.5.egg-info/not-zip-safe",
+  "Lib/site-packages/lime/__init__.py",
+  "Lib/site-packages/lime/bundle.js",
+  "Lib/site-packages/lime/discretize.py",
+  "Lib/site-packages/lime/explanation.py",
+  "Lib/site-packages/lime/lime_base.py",
+  "Lib/site-packages/lime/lime_tabular.py",
+  "Lib/site-packages/lime/lime_text.py",
+  "Lib/site-packages/lime/webpack.config.js"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD-2-Clause",
+  "license_family": "BSD",
+  "name": "lime",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.1.1.18"
+ },
+ "metadata_version": 1,
+ "name": "lime",
+ "raw_recipe": "{% set name = \"lime\" %}\n{% set version = \"0.1.1.18\" %}\n{% set sha256 = \"d341ed9cceedb853914d583ebbf1d6be6305a9bc6e9f0860e3233b553878d4f1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - lime\n\nabout:\n  home: https://github.com/marcotcr/lime\n  license: BSD-2-Clause\n  license_family: BSD\n#  license_file: LICENSE  # When added to MANIFEST.in \u2013 marcotcr/lime#40\n  summary: 'Explaining the predictions of any machine learning classifier'\n  doc_url: https://lime-ml.readthedocs.io/\n  dev_url: https://github.com/marcotcr/lime\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
+ "rendered_recipe": {},
+ "version": "0.1.1.18"
+}

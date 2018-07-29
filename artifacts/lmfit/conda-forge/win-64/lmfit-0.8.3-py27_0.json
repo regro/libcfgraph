@@ -1,0 +1,51 @@
+{
+ "about": {
+  "home": "http://lmfit.github.io/lmfit-py/",
+  "license": "lmfit",
+  "license_family": "BSD",
+  "summary": "Non-Linear Least Squares Minimization, with flexible Parameter settings, based on scipy.optimize.leastsq, and with many additional classes and methods for curve fitting http:/lmfit.github.io/lmfit-py/\n"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/lmfit-0.8.3-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/lmfit/__init__.py",
+  "Lib/site-packages/lmfit/_differentialevolution.py",
+  "Lib/site-packages/lmfit/_version.py",
+  "Lib/site-packages/lmfit/asteval.py",
+  "Lib/site-packages/lmfit/astutils.py",
+  "Lib/site-packages/lmfit/confidence.py",
+  "Lib/site-packages/lmfit/lineshapes.py",
+  "Lib/site-packages/lmfit/minimizer.py",
+  "Lib/site-packages/lmfit/model.py",
+  "Lib/site-packages/lmfit/models.py",
+  "Lib/site-packages/lmfit/ordereddict.py",
+  "Lib/site-packages/lmfit/parameter.py",
+  "Lib/site-packages/lmfit/printfuncs.py",
+  "Lib/site-packages/lmfit/ui/__init__.py",
+  "Lib/site-packages/lmfit/ui/basefitter.py",
+  "Lib/site-packages/lmfit/ui/ipy_fitter.py",
+  "Lib/site-packages/lmfit/uncertainties/__init__.py",
+  "Lib/site-packages/lmfit/uncertainties/umath.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 2.7*",
+   "scipy"
+  ],
+  "license": "lmfit",
+  "license_family": "BSD",
+  "name": "lmfit",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.8.3"
+ },
+ "metadata_version": 1,
+ "name": "lmfit",
+ "raw_recipe": "{% set version = \"0.8.3\" %}\n\npackage:\n  name: lmfit\n  version: {{ version }}\n\nsource:\n  url: https://github.com/lmfit/lmfit-py/archive/{{ version }}.tar.gz\n  fn: lmfit-{{ version }}.tar.gz\n  sha256: cb96919efe57e800cec3187edb88fb8c4aecd0b5687f7fd9d6e4bd10f746880a\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - numpy\n    - scipy\n\n  run:\n    - numpy\n    - python\n    - scipy\n\ntest:\n  imports:\n    - lmfit\n\nabout:\n  home: http://lmfit.github.io/lmfit-py/\n  license: lmfit\n  license_family: BSD\n  summary: >\n      Non-Linear Least Squares Minimization, with flexible Parameter\n      settings, based on scipy.optimize.leastsq, and with many additional\n      classes and methods for curve fitting http:/lmfit.github.io/lmfit-py/\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - tacaswell\n    - licode\n    - newville\n    - danielballan\n",
+ "rendered_recipe": {},
+ "version": "0.8.3"
+}

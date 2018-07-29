@@ -1,0 +1,154 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.0.11",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "dev_url": "https://github.com/Unidata/netcdf4-python",
+  "doc_url": "https://unidata.github.io/netcdf4-python",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p481/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://github.com/Unidata/netcdf4-python",
+  "license": "OSI Approved and MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-build-2.0.11-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-3.4.1-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_0",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.7-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Provides an object-oriented python interface to the netCDF version 4 library."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/nc3tonc4",
+  "bin/nc4tonc3",
+  "bin/ncinfo",
+  "lib/python3.4/site-packages/netCDF4-1.2.6-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/netCDF4/__init__.py",
+  "lib/python3.4/site-packages/netCDF4/_netCDF4.so",
+  "lib/python3.4/site-packages/netCDF4/utils.py",
+  "lib/python3.4/site-packages/netcdftime/__init__.py",
+  "lib/python3.4/site-packages/netcdftime/_netcdftime.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py34_0",
+  "build_number": 0,
+  "depends": [
+   "hdf5 1.8.17|1.8.17.*",
+   "libnetcdf 4.4.*",
+   "numpy 1.11*",
+   "python 3.4*",
+   "setuptools"
+  ],
+  "license": "OSI Approved and MIT",
+  "name": "netcdf4",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.2.6"
+ },
+ "metadata_version": 1,
+ "name": "netcdf4",
+ "raw_recipe": "{% set version = \"1.2.6\" %}\n\npackage:\n  name: netcdf4\n  version: {{ version }}\n\nsource:\n  fn: netCDF4-{{ version }}.tar.gz\n  url: https://github.com/Unidata/netcdf4-python/archive/v{{ version }}rel.tar.gz\n  sha256: c85321110ca979e81852705c0cf9fc659cd2b7233d6de67e26905833dcce1f45\n\nbuild:\n  number: 0\n  entry_points:\n    - ncinfo = netCDF4.utils:ncinfo\n    - nc4tonc3 = netCDF4.utils:nc4tonc3\n    - nc3tonc4 = netCDF4.utils:nc3tonc4\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - cython\n    - hdf5 1.8.17|1.8.17.*\n    - libnetcdf 4.4.*\n  run:\n    - python\n    - setuptools\n    - numpy x.x\n    - hdf5 1.8.17|1.8.17.*\n    - libnetcdf 4.4.*\n\ntest:\n  imports:\n    - netCDF4\n    - netcdftime\n  commands:\n    - ncinfo -h\n    - nc4tonc3 -h\n    - nc3tonc4 -h\n    - conda inspect linkages -p $PREFIX netcdf4  # [not win]\n    - conda inspect objects -p $PREFIX netcdf4  # [osx]\n\nabout:\n  home: http://github.com/Unidata/netcdf4-python\n  license: OSI Approved and MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/COPYING'\n  summary: 'Provides an object-oriented python interface to the netCDF version 4 library.'\n  dev_url: https://github.com/Unidata/netcdf4-python\n  doc_url: https://unidata.github.io/netcdf4-python\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - pelson\n    - dopplershift\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "https://github.com/Unidata/netcdf4-python",
+   "doc_url": "https://unidata.github.io/netcdf4-python",
+   "home": "http://github.com/Unidata/netcdf4-python",
+   "license": "OSI Approved and MIT",
+   "license_file": "/Users/travis/build/conda-forge/netcdf4-feedstock/recipe/COPYING",
+   "summary": "Provides an object-oriented python interface to the netCDF version 4 library."
+  },
+  "build": {
+   "entry_points": [
+    "ncinfo = netCDF4.utils:ncinfo",
+    "nc4tonc3 = netCDF4.utils:nc4tonc3",
+    "nc3tonc4 = netCDF4.utils:nc3tonc4"
+   ],
+   "number": "0",
+   "string": "np111py34_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "pelson",
+    "dopplershift"
+   ]
+  },
+  "package": {
+   "name": "netcdf4",
+   "version": "1.2.6"
+  },
+  "requirements": {
+   "build": null,
+   "run": [
+    "python",
+    "setuptools",
+    "numpy x.x",
+    "hdf5 1.8.17|1.8.17.*",
+    "libnetcdf 4.4.*"
+   ]
+  },
+  "source": {
+   "fn": "netCDF4-1.2.6.tar.gz",
+   "sha256": "c85321110ca979e81852705c0cf9fc659cd2b7233d6de67e26905833dcce1f45",
+   "url": "https://github.com/Unidata/netcdf4-python/archive/v1.2.6rel.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "ncinfo -h",
+    "nc4tonc3 -h",
+    "nc3tonc4 -h",
+    "conda inspect linkages -p $PREFIX netcdf4",
+    "conda inspect objects -p $PREFIX netcdf4"
+   ],
+   "imports": [
+    "netCDF4",
+    "netcdftime"
+   ]
+  }
+ },
+ "version": "1.2.6"
+}

@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "http://packages.python.org/cmd2/",
+  "license": "MIT License",
+  "summary": "Extra features for standard library's cmd module"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/cmd2-0.6.8-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/cmd2.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "pyparsing >=2.0.1",
+   "python 3.5*"
+  ],
+  "license": "MIT License",
+  "name": "cmd2",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.6.8"
+ },
+ "metadata_version": 1,
+ "name": "cmd2",
+ "raw_recipe": "{%set name = \"cmd2\" %}\n{%set version = \"0.6.8\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"ac780d8c31fc107bf6b4edcbcea711de4ff776d59d89bb167f8819d2d83764a8\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n  patches:\n     - python35-compat.patch  # [py35]\n     # this patch is taken from upstream; see https://bitbucket.org/catherinedevlin/cmd2/issues/18/python-35-renames-subprocessmswindows\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pyparsing >=2.0.1\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: http://packages.python.org/cmd2/\n  license: MIT License\n  summary: \"Extra features for standard library's cmd module\"\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.6.8"
+}

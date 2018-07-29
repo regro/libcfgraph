@@ -1,0 +1,28 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/gflags2man.py",
+  "lib/python2.7/site-packages/gflags.py",
+  "lib/python2.7/site-packages/gflags_validators.py",
+  "lib/python2.7/site-packages/python_gflags-2.0-py2.7.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "python-gflags",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0"
+ },
+ "metadata_version": 1,
+ "name": "python-gflags",
+ "raw_recipe": "{% set version = \"2.0\" %}\n\npackage:\n  name: python-gflags\n  version: {{ version }}\n\nsource:\n  fn: python-gflags-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/p/python-gflags/python-gflags-{{ version }}.tar.gz\n  md5: 23c9a793959a54971b1f094b0c6d03b1\n\nbuild:\n  number: 1\n  skip: True  # [py3k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - gflags\n\nabout:\n  home: https://github.com/google/python-gflags\n  license: BSD 3-Clause\n  summary: Google Commandline Flags Module for Python\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "2.0"
+}

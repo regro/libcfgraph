@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "https://github.com/Azure/azure-sdk-for-python",
+  "license": "Apache-2.0",
+  "summary": "Microsoft Azure Network Resource Management Client Library for Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/azure/mgmt/network/__init__.py",
+  "Lib/site-packages/azure/mgmt/network/networkresourceprovider.py",
+  "Lib/site-packages/azure_mgmt_network-0.20.1-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/azure_mgmt_network-0.20.1-py2.7.egg-info/not-zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "azure-mgmt-common",
+   "python 2.7*"
+  ],
+  "license": "Apache-2.0",
+  "name": "azure-mgmt-network",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.20.1"
+ },
+ "metadata_version": 1,
+ "name": "azure-mgmt-network",
+ "raw_recipe": "{% set version = \"0.20.1\" %}\n\npackage:\n  name: azure-mgmt-network\n  version: {{ version }}\n\nsource:\n  fn: azure-mgmt-network-{{ version }}.zip\n  url: https://pypi.io/packages/source/a/azure-mgmt-network/azure-mgmt-network-{{ version }}.zip\n  md5: ad8c0b76dbf8b259738304c3ca9710ba\n  \nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - azure-mgmt-common\n    \n  run:\n    - python\n    - azure-mgmt-common\n\ntest:\n  imports:\n    - azure\n    - azure.mgmt\n    - azure.mgmt.network\n  commands:\n    - python -m unittest discover -p \"test_*.py\"\n\nabout:\n  home: https://github.com/Azure/azure-sdk-for-python\n  license: Apache-2.0\n  summary: 'Microsoft Azure Network Resource Management Client Library for Python'\n\nextra:\n  recipe-maintainers:\n    - ivoflipse\n    - Korijn\n    - Maxyme\n",
+ "rendered_recipe": {},
+ "version": "0.20.1"
+}

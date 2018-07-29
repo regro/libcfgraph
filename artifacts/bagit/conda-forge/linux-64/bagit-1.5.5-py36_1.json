@@ -1,0 +1,36 @@
+{
+ "about": {
+  "dev_url": "https://github.com/LibraryOfCongress/bagit-python",
+  "doc_url": "https://libraryofcongress.github.io/bagit-python/",
+  "home": "https://libraryofcongress.github.io/bagit-python/",
+  "license": "Public-Domain",
+  "license_family": "Public-Domain",
+  "summary": "Work with BagIt packages from Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/bagit.py",
+  "lib/python3.6/site-packages/bagit-1.5.5.dev49+ng613a828-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/bagit.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_1",
+  "build_number": 1,
+  "depends": [
+   "python 3.6*",
+   "setuptools"
+  ],
+  "license": "Public-Domain",
+  "license_family": "Public-Domain",
+  "name": "bagit",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.5.5"
+ },
+ "metadata_version": 1,
+ "name": "bagit",
+ "raw_recipe": "# https://github.com/LibraryOfCongress/bagit-python/issues/70\n{% set name = \"bagit\" %}\n{% set version = \"1.5.5\" %}\n{% set commit = \"c0ba65714823c054b3a8b610e8967e70478204f3\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/LibraryOfCongress/bagit-python.git\n  git_rev: 613a82849d0dd43761e005606cd4c7ba3cd44188\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - bagit\n  commands:\n    - bagit.py --version\n\nabout:\n  home: https://libraryofcongress.github.io/bagit-python/\n  summary: 'Work with BagIt packages from Python'\n  license: Public-Domain\n  license_family: Public-Domain\n  dev_url: https://github.com/LibraryOfCongress/bagit-python\n  doc_url: https://libraryofcongress.github.io/bagit-python/\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n",
+ "rendered_recipe": {},
+ "version": "1.5.5"
+}

@@ -1,0 +1,44 @@
+{
+ "about": {
+  "home": "http://github.com/chrismattmann/tika-python",
+  "license": "Apache 2.0",
+  "summary": "Apache Tika Python library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/tika-1.13.1-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/tika-1.13.1-py3.5.egg-info/zip-safe",
+  "Lib/site-packages/tika/__init__.py",
+  "Lib/site-packages/tika/config.py",
+  "Lib/site-packages/tika/detector.py",
+  "Lib/site-packages/tika/language.py",
+  "Lib/site-packages/tika/parser.py",
+  "Lib/site-packages/tika/tests/__init__.py",
+  "Lib/site-packages/tika/tests/test_tika.py",
+  "Lib/site-packages/tika/tests/tests_params.py",
+  "Lib/site-packages/tika/tika.py",
+  "Lib/site-packages/tika/translate.py",
+  "Scripts/tika-python-script.py",
+  "Scripts/tika-python.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "requests",
+   "setuptools"
+  ],
+  "license": "Apache 2.0",
+  "name": "tika",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.13.1"
+ },
+ "metadata_version": 1,
+ "name": "tika",
+ "raw_recipe": "{%set name = \"tika\" %}\n{%set version = \"1.13.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"9d32ecb41206ee7f1f3960946d6a79b18f9711162ce1a116bdd2700fcf7ddd2f\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  preserve_egg_dir: True\n  entry_points:\n    - tika-python = tika.tika:main\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - requests\n\ntest:\n  imports:\n    - tika\n    - tika.tests\n\n  commands:\n    - tika-python --help\n\nabout:\n  home: http://github.com/chrismattmann/tika-python\n  license: Apache 2.0\n  summary: 'Apache Tika Python library'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - chrismattmann\n",
+ "rendered_recipe": {},
+ "version": "1.13.1"
+}

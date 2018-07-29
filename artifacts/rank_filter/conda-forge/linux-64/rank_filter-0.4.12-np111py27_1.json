@@ -1,0 +1,140 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.0",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/nanshe-org/rank_filter",
+  "license": "BSD 3-Clause",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-build-2.1.0-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.2.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.49.1-2",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_0",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.2-3",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.4-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-32.3.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.8-3"
+  ],
+  "summary": "A simple python module containing an in-place linear rank filter optimized in C++."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/rank_filter-0.4.12-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/rank_filter-0.4.12-py2.7.egg-info/PKG-INFO",
+  "include/python2.7/rank_filter/rank_filter.hxx",
+  "include/python2.7/rank_filter/rank_filter_vigra.hxx",
+  "lib/python2.7/site-packages/rank_filter.so",
+  "include/python2.7/rank_filter/rank_filter_base.hxx"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_1",
+  "build_number": 1,
+  "depends": [
+   "boost 1.62.*",
+   "numpy 1.11*",
+   "numpy >=1.7",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "rank_filter",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.4.12"
+ },
+ "metadata_version": 1,
+ "name": "rank_filter",
+ "raw_recipe": "{% set name = \"rank_filter\" %}\n{% set version = \"0.4.12\" %}\n{% set checksum = \"a55775639a2763747c7e7d48178836c69cab776cb6cf675f6063cca27c2093d5\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ checksum }}\n\nbuild:\n  skip: true  # [win]\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - boost 1.62.*\n    - python\n    - setuptools >=18.0\n    - numpy x.x\n    - numpy >=1.7\n    - cython >=0.23\n\n  run:\n    - boost 1.62.*\n    - python\n    - numpy x.x\n    - numpy >=1.7\n\ntest:\n  imports:\n    - rank_filter\n\nabout:\n  home: https://github.com/nanshe-org/rank_filter\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'A simple python module containing an in-place linear rank filter optimized in C++.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/nanshe-org/rank_filter",
+   "license": "BSD 3-Clause",
+   "license_file": "LICENSE.txt",
+   "summary": "A simple python module containing an in-place linear rank filter optimized in C++."
+  },
+  "build": {
+   "number": "1",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt",
+   "string": "np111py27_1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "rank_filter",
+   "version": "0.4.12"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "boost 1.62.*",
+    "python",
+    "numpy x.x",
+    "numpy >=1.7"
+   ]
+  },
+  "source": {
+   "fn": "rank_filter-0.4.12.tar.gz",
+   "sha256": "a55775639a2763747c7e7d48178836c69cab776cb6cf675f6063cca27c2093d5",
+   "url": "https://pypi.io/packages/source/r/rank_filter/rank_filter-0.4.12.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "rank_filter"
+   ]
+  }
+ },
+ "version": "0.4.12"
+}

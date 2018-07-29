@@ -1,0 +1,83 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "include/gsasl-compat.h",
+  "include/gsasl-mech.h",
+  "include/gsasl.h",
+  "lib/libgsasl.a",
+  "lib/libgsasl.la",
+  "lib/libgsasl.so",
+  "lib/libgsasl.so.7",
+  "lib/libgsasl.so.7.9.6",
+  "lib/pkgconfig/libgsasl.pc",
+  "share/locale/en@boldquot/LC_MESSAGES/libgsasl.mo",
+  "share/locale/en@quot/LC_MESSAGES/libgsasl.mo",
+  "share/locale/eo/LC_MESSAGES/libgsasl.mo",
+  "share/locale/fi/LC_MESSAGES/libgsasl.mo",
+  "share/locale/fr/LC_MESSAGES/libgsasl.mo",
+  "share/locale/ga/LC_MESSAGES/libgsasl.mo",
+  "share/locale/id/LC_MESSAGES/libgsasl.mo",
+  "share/locale/it/LC_MESSAGES/libgsasl.mo",
+  "share/locale/nl/LC_MESSAGES/libgsasl.mo",
+  "share/locale/pl/LC_MESSAGES/libgsasl.mo",
+  "share/locale/ro/LC_MESSAGES/libgsasl.mo",
+  "share/locale/sk/LC_MESSAGES/libgsasl.mo",
+  "share/locale/sr/LC_MESSAGES/libgsasl.mo",
+  "share/locale/sv/LC_MESSAGES/libgsasl.mo",
+  "share/locale/uk/LC_MESSAGES/libgsasl.mo",
+  "share/locale/vi/LC_MESSAGES/libgsasl.mo",
+  "share/locale/zh_CN/LC_MESSAGES/libgsasl.mo"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "LGPL-2.1",
+  "name": "libgsasl",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.8.0"
+ },
+ "metadata_version": 1,
+ "name": "libgsasl",
+ "raw_recipe": "{% set version = \"1.8.0\" %}\n\npackage:\n  name: libgsasl\n  version: \"{{ version }}\"\n\nsource:\n  fn: libgsasl-{{ version }}.tar.gz\n  url: ftp://ftp.gnu.org/gnu/gsasl/libgsasl-{{ version }}.tar.gz\n  md5: 5dbdf859f6e60e05813370e2b193b92b\n\nbuild:\n  number: 0\n  # This package is a dependency of libhdfs3, which is primarily used with HDFS on Linux.\n  skip: True  # [not linux]\n\ntest:\n  commands:\n    - test -f $PREFIX/include/gsasl-compat.h\n    - test -f $PREFIX/include/gsasl-mech.h\n    - test -f $PREFIX/include/gsasl.h\n    - test -f $PREFIX/lib/libgsasl.a\n    - test -f $PREFIX/lib/libgsasl.la\n    - test -f $PREFIX/lib/libgsasl.so\n    - test -f $PREFIX/lib/libgsasl.so.7\n    - test -f $PREFIX/lib/libgsasl.so.7.9.6\n\nabout:\n  home: http://www.gnu.org/software/gsasl/\n  license: LGPL-2.1\n  summary: Implementation of the Simple Authentication and Security Layer framework\n\nextra:\n  recipe-maintainers:\n    - koverholt\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.gnu.org/software/gsasl/",
+   "license": "LGPL-2.1",
+   "summary": "Implementation of the Simple Authentication and Security Layer framework"
+  },
+  "build": {
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "koverholt"
+   ]
+  },
+  "package": {
+   "name": "libgsasl",
+   "version": "1.8.0"
+  },
+  "source": {
+   "fn": "libgsasl-1.8.0.tar.gz",
+   "md5": "5dbdf859f6e60e05813370e2b193b92b",
+   "url": "ftp://ftp.gnu.org/gnu/gsasl/libgsasl-1.8.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/include/gsasl-compat.h",
+    "test -f $PREFIX/include/gsasl-mech.h",
+    "test -f $PREFIX/include/gsasl.h",
+    "test -f $PREFIX/lib/libgsasl.a",
+    "test -f $PREFIX/lib/libgsasl.la",
+    "test -f $PREFIX/lib/libgsasl.so",
+    "test -f $PREFIX/lib/libgsasl.so.7",
+    "test -f $PREFIX/lib/libgsasl.so.7.9.6"
+   ]
+  }
+ },
+ "version": "1.8.0"
+}

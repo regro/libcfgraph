@@ -1,0 +1,41 @@
+{
+ "about": {
+  "dev_url": "https://github.com/zyga/versiontools",
+  "doc_url": "https://versiontools.readthedocs.io/en/latest/",
+  "home": "https://launchpad.net/versiontools",
+  "license": "LGPL 3.0",
+  "license_family": "LGPL",
+  "summary": "Smart replacement for plain tuple used in __version__"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/versiontools-1.9.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/versiontools-1.9.1-py3.4.egg-info/zip-safe",
+  "lib/python3.4/site-packages/versiontools/__init__.py",
+  "lib/python3.4/site-packages/versiontools/bzr_support.py",
+  "lib/python3.4/site-packages/versiontools/git_support.py",
+  "lib/python3.4/site-packages/versiontools/hg_support.py",
+  "lib/python3.4/site-packages/versiontools/setuptools_hooks.py",
+  "lib/python3.4/site-packages/versiontools/tests.py",
+  "lib/python3.4/site-packages/versiontools/versiontools_support.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "LGPL 3.0",
+  "license_family": "LGPL",
+  "name": "versiontools",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.9.1"
+ },
+ "metadata_version": 1,
+ "name": "versiontools",
+ "raw_recipe": "{%set name = \"versiontools\" %}\n{%set version = \"1.9.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"a969332887a18a9c98b0df0ea4d4ca75972f24ca94f06fb87d591377e83414f6\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  preserve_egg_dir: True\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - versiontools\n    - versiontools.setuptools_hooks\n    - versiontools.bzr_support\n    - versiontools.git_support\n    - versiontools.hg_support\n\nabout:\n  home: https://launchpad.net/versiontools\n  license: LGPL 3.0\n  # license_file: No LICENSE included in package - see https://github.com/zyga/versiontools/issues/3\n  license_family: LGPL\n  summary: 'Smart replacement for plain tuple used in __version__'\n  doc_url: https://versiontools.readthedocs.io/en/latest/\n  dev_url: https://github.com/zyga/versiontools\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.9.1"
+}

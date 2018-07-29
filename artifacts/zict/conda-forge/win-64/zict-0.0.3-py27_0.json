@@ -1,0 +1,37 @@
+{
+ "about": {
+  "home": "http://github.com/mrocklin/zict",
+  "license": "BSD 3-Clause",
+  "summary": "Composable Dictionary Classes"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/zict-0.0.3-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/zict-0.0.3-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/zict/__init__.py",
+  "Lib/site-packages/zict/buffer.py",
+  "Lib/site-packages/zict/file.py",
+  "Lib/site-packages/zict/func.py",
+  "Lib/site-packages/zict/lru.py",
+  "Lib/site-packages/zict/zip.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "heapdict",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "zict",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.0.3"
+ },
+ "metadata_version": 1,
+ "name": "zict",
+ "raw_recipe": "{% set version = \"0.0.3\" %}\n{% set name = \"zict\" %}\n\npackage:\n  name: {{ name }}\n  version: \"{{ version }}\"\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: 14d301243f5f734a349c4a48eb367549\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - heapdict\n\ntest:\n  imports:\n    - zict\n\nabout:\n  home: http://github.com/mrocklin/zict\n  license: BSD 3-Clause\n  summary: 'Composable Dictionary Classes'\n\nextra:\n  recipe-maintainers:\n    - mrocklin\n",
+ "rendered_recipe": {},
+ "version": "0.0.3"
+}

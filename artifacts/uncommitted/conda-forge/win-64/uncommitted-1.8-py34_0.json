@@ -1,0 +1,38 @@
+{
+ "about": {
+  "dev_url": "https://github.com/brandon-rhodes/uncommitted",
+  "home": "https://github.com/brandon-rhodes/uncommitted",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Scan filesystem for changes not committed to version control"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/uncommitted-1.8-py3.4.egg-info",
+  "Lib/site-packages/uncommitted/__init__.py",
+  "Lib/site-packages/uncommitted/command.py",
+  "Lib/site-packages/uncommitted/test_integration.py",
+  "Lib/site-packages/uncommitted/test_unit.py",
+  "Scripts/uncommitted-script.py",
+  "Scripts/uncommitted.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "uncommitted",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.8"
+ },
+ "metadata_version": 1,
+ "name": "uncommitted",
+ "raw_recipe": "{% set name = \"uncommitted\" %}\n{% set version = \"1.8\" %}\n{% set sha256 = \"2dee253029ade921fec3d648ac4bff640a7658436d5fc4feebb84b55c4b435e3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n  preserve_egg_dir: True\n  entry_points:\n    - uncommitted = uncommitted.command:main\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - uncommitted\n\n  commands:\n    - uncommitted --help\n\nabout:\n  home: https://github.com/brandon-rhodes/uncommitted\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Scan filesystem for changes not committed to version control'\n  dev_url: https://github.com/brandon-rhodes/uncommitted\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
+ "rendered_recipe": {},
+ "version": "1.8"
+}

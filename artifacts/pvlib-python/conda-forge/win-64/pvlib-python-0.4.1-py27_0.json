@@ -1,0 +1,56 @@
+{
+ "about": {
+  "home": "https://github.com/pvlib/pvlib-python",
+  "license": "BSD 3-Clause",
+  "summary": "A set functions and classes for simulating the performance of photovoltaic energy systems."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pvlib-0.4.1-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/pvlib-0.4.1-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/pvlib/__init__.py",
+  "Lib/site-packages/pvlib/_version.py",
+  "Lib/site-packages/pvlib/atmosphere.py",
+  "Lib/site-packages/pvlib/clearsky.py",
+  "Lib/site-packages/pvlib/data/12839.tm2",
+  "Lib/site-packages/pvlib/data/703165TY.csv",
+  "Lib/site-packages/pvlib/data/LinkeTurbidities.mat",
+  "Lib/site-packages/pvlib/data/sam-library-cec-inverters-2015-6-30.csv",
+  "Lib/site-packages/pvlib/data/sam-library-cec-modules-2015-6-30.csv",
+  "Lib/site-packages/pvlib/data/sam-library-sandia-modules-2015-6-30.csv",
+  "Lib/site-packages/pvlib/data/variables_style_rules.csv",
+  "Lib/site-packages/pvlib/forecast.py",
+  "Lib/site-packages/pvlib/irradiance.py",
+  "Lib/site-packages/pvlib/location.py",
+  "Lib/site-packages/pvlib/modelchain.py",
+  "Lib/site-packages/pvlib/pvsystem.py",
+  "Lib/site-packages/pvlib/solarposition.py",
+  "Lib/site-packages/pvlib/spa.py",
+  "Lib/site-packages/pvlib/tmy.py",
+  "Lib/site-packages/pvlib/tools.py",
+  "Lib/site-packages/pvlib/tracking.py",
+  "Lib/site-packages/pvlib/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy >=1.9.0",
+   "pandas >=0.14.0",
+   "python 2.7*",
+   "pytz",
+   "six"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pvlib-python",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.4.1"
+ },
+ "metadata_version": 1,
+ "name": "pvlib-python",
+ "raw_recipe": "{% set version = \"0.4.1\" %}\n\npackage:\n  name: pvlib-python\n  version: {{ version }}\n\nsource:\n  fn: pvlib-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pvlib/pvlib-{{ version }}.tar.gz\n  md5: ee58588b4582d41e1f62e838931dc256\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy >=1.9.0\n    - pandas >=0.14.0\n    - pytz\n    - six\n\n  run:\n    - python\n    - numpy >=1.9.0\n    - pandas >=0.14.0\n    - pytz\n    - six\n\ntest:\n  imports:\n    - pvlib\n\nabout:\n  home: https://github.com/pvlib/pvlib-python\n  license: BSD 3-Clause\n  summary: 'A set functions and classes for simulating the performance of photovoltaic energy systems.'\n\nextra:\n  recipe-maintainers:\n    - wholmgren\n",
+ "rendered_recipe": {},
+ "version": "0.4.1"
+}

@@ -1,0 +1,145 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://web.maths.unsw.edu.au/~davidharvey/code/zn_poly/",
+  "license": "GPLv2+",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.4-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.5-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "zn_poly is a C library for polynomial arithmetic in Z/nZ[x], where n is any modulus that fits into an unsigned long."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/libzn_poly.a",
+  "lib/libzn_poly.so",
+  "include/zn_poly/zn_poly.h",
+  "include/zn_poly/wide_arith.h"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "gmp >=5.0.1,<7"
+  ],
+  "license": "GPLv2+",
+  "name": "zn_poly",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.9"
+ },
+ "metadata_version": 1,
+ "name": "zn_poly",
+ "raw_recipe": "{% set version = \"0.9\" %}\n{% set name = \"zn_poly\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://web.maths.unsw.edu.au/~davidharvey/code/zn_poly/releases/{{ name }}-{{ version }}.tar.gz\n  sha256: a1a085897c68889720ad27e98d2b54753397bd5a85433126327bc4b35511b4cf\n  patches:\n    # Patches from https://github.com/sagemath/sage\n    # Fix potential redefinition of `ulong` (in combination with other headers).\n    - patches/profiler.c.patch\n    - patches/zn_poly.h.patch\n    # Fix \"jump into scope of identifier with variably modified type\" errors.\n    - patches/mpn_mulmid-tune.c.patch\n    - patches/mulmid-tune.c.patch\n    - patches/mul-tune.c.patch\n    # Fix a potential problem when the value of ZNP_mpn_smp_kara_thresh is SIZE_MAX\n    - patches/mpn_mulmid-test.c.patch\n    # fix provided by upstream (David Harvey)\n    - patches/fix_fudge_factor_in_nuss-test.c.patch\n    # Improves the Python script creating the Makeefile for better use at least\n    # within Sage; see patch for details.\n    - patches/makemakefile.py.patch\n\n\nbuild:\n  number: 0\n  skip: true  # [win or py!=36]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - gmp >=5.0.1,<7\n    - python\n  run:\n    - gmp >=5.0.1,<7\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/{{ name }}/{{ name }}.h\n    - test -f ${PREFIX}/lib/lib{{ name }}.a\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]\n\nabout:\n  home: http://web.maths.unsw.edu.au/~davidharvey/code/zn_poly/\n  license: GPLv2+\n  license_file: {{ RECIPE_DIR }}/LICENSE\n  summary: zn_poly is a C library for polynomial arithmetic in Z/nZ[x], where n is any modulus that fits into an unsigned long.\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://web.maths.unsw.edu.au/~davidharvey/code/zn_poly/",
+   "license": "GPLv2+",
+   "license_file": "/recipe_root/LICENSE",
+   "summary": "zn_poly is a C library for polynomial arithmetic in Z/nZ[x], where n is any modulus that fits into an unsigned long."
+  },
+  "build": {
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "isuruf"
+   ]
+  },
+  "package": {
+   "name": "zn_poly",
+   "version": "0.9"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "gmp >=5.0.1,<7"
+   ]
+  },
+  "source": {
+   "fn": "zn_poly-0.9.tar.gz",
+   "patches": [
+    "patches/profiler.c.patch",
+    "patches/zn_poly.h.patch",
+    "patches/mpn_mulmid-tune.c.patch",
+    "patches/mulmid-tune.c.patch",
+    "patches/mul-tune.c.patch",
+    "patches/mpn_mulmid-test.c.patch",
+    "patches/fix_fudge_factor_in_nuss-test.c.patch",
+    "patches/makemakefile.py.patch"
+   ],
+   "sha256": "a1a085897c68889720ad27e98d2b54753397bd5a85433126327bc4b35511b4cf",
+   "url": "http://web.maths.unsw.edu.au/~davidharvey/code/zn_poly/releases/zn_poly-0.9.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/include/zn_poly/zn_poly.h",
+    "test -f ${PREFIX}/lib/libzn_poly.a",
+    "test -f ${PREFIX}/lib/libzn_poly.so"
+   ]
+  }
+ },
+ "version": "0.9"
+}

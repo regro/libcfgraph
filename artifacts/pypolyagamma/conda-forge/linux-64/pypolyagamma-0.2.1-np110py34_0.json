@@ -1,0 +1,35 @@
+{
+ "about": {
+  "home": "https://github.com/slinderman/pypolyagamma",
+  "license": "MIT",
+  "summary": "A port of Jesse Windles PolyaGamma sampling code using Cython."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pypolyagamma-0.2.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pypolyagamma/__init__.py",
+  "lib/python3.4/site-packages/pypolyagamma/pypolyagamma.cpython-34m.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np110py34_0",
+  "build_number": 0,
+  "depends": [
+   "gsl",
+   "libgcc",
+   "numpy 1.10*",
+   "python 3.4*",
+   "scipy"
+  ],
+  "license": "MIT",
+  "name": "pypolyagamma",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2.1"
+ },
+ "metadata_version": 1,
+ "name": "pypolyagamma",
+ "raw_recipe": "{% set name = \"pypolyagamma\" %}\n{% set version = \"0.2.1\" %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/slinderman/pypolyagamma/archive/{{ version }}.tar.gz\n    sha256: 57cbf8e12aafa137940c3a693b873c53037fa80cd5d2a8b1a6709d102e718452\n\nbuild:\n    number: 0\n    skip: True  # [win or not py3k]\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - numpy x.x\n        - cython\n        - gsl\n        - gcc\n    run:\n        - python\n        - numpy x.x\n        - scipy\n        - gsl\n        - libgcc\n\ntest:\n    imports:\n        - pypolyagamma\n\nabout:\n    home: https://github.com/slinderman/pypolyagamma\n    license: MIT\n    summary: A port of Jesse Windles PolyaGamma sampling code using Cython.\n\nextra:\n    recipe-maintainers:\n        - slinderman\n        - mmb90\n",
+ "rendered_recipe": {},
+ "version": "0.2.1"
+}

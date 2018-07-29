@@ -1,0 +1,123 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/sagemath/sage",
+  "license": "Public Domain",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.4-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.5-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "The table of MOLS (10 000 integers) from the Handbook of Combinatorial Designs, 2ed"
+ },
+ "conda_build_config": {},
+ "files": [],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "Public Domain",
+  "name": "sagemath-db-combinatorial-designs",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "20140630"
+ },
+ "metadata_version": 1,
+ "name": "sagemath-db-combinatorial-designs",
+ "raw_recipe": "{% set version = \"20140630\" %}\n{% set name = \"sagemath-db-combinatorial-designs\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: http://files.sagemath.org/spkg/upstream/combinatorial_designs/combinatorial_designs-{{ version }}.tar.bz2\n  sha256: c9486c6d7ec71da338589a6e301723be4e55e02dcfc41f8dba11a682e3b3482e\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\ntest:\n  commands:\n    - test -f $PREFIX/share/combinatorial_designs/MOLS_table.txt\n\nabout:\n  home: https://github.com/sagemath/sage\n  license: Public Domain\n  summary: The table of MOLS (10 000 integers) from the Handbook of Combinatorial Designs, 2ed\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/sagemath/sage",
+   "license": "Public Domain",
+   "summary": "The table of MOLS (10 000 integers) from the Handbook of Combinatorial Designs, 2ed"
+  },
+  "build": {
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "isuruf"
+   ]
+  },
+  "package": {
+   "name": "sagemath-db-combinatorial-designs",
+   "version": "20140630"
+  },
+  "requirements": {
+   "build": [],
+   "run": []
+  },
+  "source": {
+   "fn": "sagemath-db-combinatorial-designs-20140630.tar.bz2",
+   "sha256": "c9486c6d7ec71da338589a6e301723be4e55e02dcfc41f8dba11a682e3b3482e",
+   "url": "http://files.sagemath.org/spkg/upstream/combinatorial_designs/combinatorial_designs-20140630.tar.bz2"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/share/combinatorial_designs/MOLS_table.txt"
+   ]
+  }
+ },
+ "version": "20140630"
+}

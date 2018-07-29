@@ -1,0 +1,41 @@
+{
+ "about": {
+  "description": "a Python module for calculating variance and adding confidence intervals to scikit-learn\nrandom forest regression or classification objects. The core functions calculate an in-bag and\nerror bars for random forest objects\n",
+  "dev_url": "https://github.com/scikit-learn-contrib/forest-confidence-interval",
+  "doc_url": "http://contrib.scikit-learn.org/forest-confidence-interval/",
+  "home": "https://github.com/scikit-learn-contrib/forest-confidence-interval",
+  "license": "MIT",
+  "summary": "calculate confidence intervals for scikit-learn random forest regression or classification objects"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/forestci-0.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/forestci/__init__.py",
+  "lib/python3.5/site-packages/forestci/due.py",
+  "lib/python3.5/site-packages/forestci/forestci.py",
+  "lib/python3.5/site-packages/forestci/tests/__init__.py",
+  "lib/python3.5/site-packages/forestci/tests/test_forestci.py",
+  "lib/python3.5/site-packages/forestci/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.5*",
+   "scikit-learn",
+   "scipy"
+  ],
+  "license": "MIT",
+  "name": "forestci",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1"
+ },
+ "metadata_version": 1,
+ "name": "forestci",
+ "raw_recipe": "{% set name = \"forestci\" %}\n{% set version = \"0.1\" %}\n{% set sha256 = \"e706ec046c802c2e1036fd8ee306f1d9841b1a9239d0346f8c1849c5966578e0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy\n    - scipy\n  run:\n    - python\n    - scikit-learn\n    - numpy\n    - scipy\n\ntest:\n  imports:\n    - forestci\n \nabout:\n  home: https://github.com/scikit-learn-contrib/forest-confidence-interval\n  license: MIT\n  # The LICENSE.txt file is not in the MANIFEST.in, so this will fail when trying to build from the pypi tarball since it won't be there. \n  # Comment out license_file line and add it once theMANIFEST.in has been patched upstream.\n  #license_file: LICENSE.txt\n  summary: 'calculate confidence intervals for scikit-learn random forest regression or classification objects'\n\n  description: |\n    a Python module for calculating variance and adding confidence intervals to scikit-learn\n    random forest regression or classification objects. The core functions calculate an in-bag and \n    error bars for random forest objects\n  doc_url: http://contrib.scikit-learn.org/forest-confidence-interval/\n  dev_url: https://github.com/scikit-learn-contrib/forest-confidence-interval\n\nextra:\n  recipe-maintainers:\n    - arokem\n    - kpolimis\n",
+ "rendered_recipe": {},
+ "version": "0.1"
+}

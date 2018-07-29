@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "https://github.com/cgoldberg/xvfbwrapper",
+  "license": "MIT",
+  "summary": "run headless display inside X virtual framebuffer (Xvfb)"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/xvfbwrapper-0.2.8-py3.5.egg-info",
+  "Lib/site-packages/xvfbwrapper.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "xvfbwrapper",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2.8"
+ },
+ "metadata_version": 1,
+ "name": "xvfbwrapper",
+ "raw_recipe": "{% set version = \"0.2.8\" %}\n\npackage:\n  name: xvfbwrapper\n  version: {{ version }}\n\nsource:\n  fn: xvfbwrapper-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/x/xvfbwrapper/xvfbwrapper-{{ version }}.tar.gz\n  md5: c8ce7c35fc555a6af272e7e17cf0b5c0\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - xvfbwrapper\n\nabout:\n  home: https://github.com/cgoldberg/xvfbwrapper\n  license: MIT\n  summary: 'run headless display inside X virtual framebuffer (Xvfb)'\n\nextra:\n  recipe-maintainers:\n    - chrisfilo\n    - satra\n",
+ "rendered_recipe": {},
+ "version": "0.2.8"
+}

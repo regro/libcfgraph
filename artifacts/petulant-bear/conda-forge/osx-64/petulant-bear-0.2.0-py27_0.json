@@ -1,0 +1,33 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/petulant_bear-0.2.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/petulantbear/__init__.py",
+  "lib/python2.7/site-packages/petulantbear/create_test_nc_file.py",
+  "lib/python2.7/site-packages/petulantbear/netcdf2ncml.py",
+  "lib/python2.7/site-packages/petulantbear/netcdf_etree.py",
+  "lib/python2.7/site-packages/petulantbear/test_pb.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "lxml",
+   "netcdf4",
+   "numpy",
+   "python 2.7*"
+  ],
+  "license": "GPLv3",
+  "name": "petulant-bear",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.0"
+ },
+ "metadata_version": 1,
+ "name": "petulant-bear",
+ "raw_recipe": "{% set version = \"0.2.0\" %}\n\npackage:\n    name: petulant-bear\n    version: {{ version }}\n\nsource:\n    git_url: https://github.com/ioos/petulant-bear.git\n    git_tag: v{{ version }}\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - netcdf4\n        - numpy\n        - lxml\n\ntest:\n    imports:\n        - petulantbear\n\nabout:\n    home: https://github.com/ioos/petulant-bear\n    license: GPLv3\n    summary: Presents etree interface to netcdf4-python objects using NCML data model\n\nextra:\n    recipe-maintainers:\n        - benjwadams\n        - daf\n        - kwilcox\n        - lukecampbell\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.2.0"
+}

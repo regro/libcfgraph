@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "http://github.com/uri-templates/uritemplate-py/",
+  "license": "Apache 2.0",
+  "summary": "URI Templates"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/uritemplate-0.6-py3.5.egg-info",
+  "Lib/site-packages/uritemplate/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "simplejson >=2.5.0"
+  ],
+  "license": "Apache 2.0",
+  "name": "uritemplate",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.6"
+ },
+ "metadata_version": 1,
+ "name": "uritemplate",
+ "raw_recipe": "{%set name = \"uritemplate\" %}\n{%set version = \"0.6\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"a30e230aeb7ebedbcb5da9999a17fa8a30e512e6d5b06f73d47c6e03c8e357fd\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - simplejson >=2.5.0\n\n  run:\n    - python\n    - simplejson >=2.5.0\n\ntest:\n  imports:\n    - uritemplate\n\nabout:\n  home: http://github.com/uri-templates/uritemplate-py/\n  license: Apache 2.0\n  summary: 'URI Templates'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.6"
+}

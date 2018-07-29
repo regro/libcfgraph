@@ -1,0 +1,33 @@
+{
+ "about": {
+  "dev_url": "http://github.com/miguelgrinberg/flask-httpauth/",
+  "home": "http://github.com/miguelgrinberg/flask-httpauth/",
+  "license": "MIT",
+  "summary": "Basic and Digest HTTP authentication for Flask routes"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/Flask_HTTPAuth-3.2.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/Flask_HTTPAuth-3.2.0-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/flask_httpauth.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "flask",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "flask-httpauth",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "3.2.0"
+ },
+ "metadata_version": 1,
+ "name": "flask-httpauth",
+ "raw_recipe": "{% set name = \"Flask-HTTPAuth\" %}\n{% set version = \"3.2.0\" %}\n{% set sha256 = \"cf53acd441321ff6f369ae54e423dbec8d4c6204934c13368651cdd402805b61\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - flask\n\n  run:\n    - python\n    - flask\n\ntest:\n  imports:\n    - flask_httpauth\n\nabout:\n  home: http://github.com/miguelgrinberg/flask-httpauth/\n  license: MIT\n  summary: 'Basic and Digest HTTP authentication for Flask routes'\n  dev_url: http://github.com/miguelgrinberg/flask-httpauth/\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
+ "rendered_recipe": {},
+ "version": "3.2.0"
+}

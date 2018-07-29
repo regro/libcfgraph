@@ -1,0 +1,32 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/xcover",
+  "lib/python2.7/site-packages/nosexcover-1.0.10-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/nosexcover-1.0.10-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/nosexcover/__init__.py",
+  "lib/python2.7/site-packages/nosexcover/nosexcover.py",
+  "lib/python2.7/site-packages/nosexcover/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "coverage >=3.4",
+   "nose",
+   "python 2.7*"
+  ],
+  "license": "MIT License",
+  "name": "nosexcover",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0.10"
+ },
+ "metadata_version": 1,
+ "name": "nosexcover",
+ "raw_recipe": "{%set version = \"1.0.10\" %}\n\npackage:\n  name: nosexcover\n  version: {{ version }}\n\nsource:\n  fn: nosexcover-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/n/nosexcover/nosexcover-{{ version }}.tar.gz\n  md5: 12bf494a801b376debeb6a167c247391\n\nbuild:\n  preserve_egg_dir: True\n  entry_points:\n    - xcover = nosexcover.nosexcover:XCoverage\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - nose\n    - coverage >=3.4\n\ntest:\n  imports:\n    - nosexcover\n    - nosexcover.nosexcover\n\nabout:\n  home: http://github.com/cmheisel/nose-xcover/\n  license: MIT License\n  summary: 'Extends nose.plugins.cover to add Cobertura-style XML reports'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.0.10"
+}

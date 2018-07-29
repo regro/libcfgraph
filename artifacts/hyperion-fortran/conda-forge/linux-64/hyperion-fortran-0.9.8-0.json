@@ -1,0 +1,42 @@
+{
+ "about": {
+  "home": "https://github.com/hyperion-rt/hyperion",
+  "license": "BSD 2-Clause",
+  "summary": "Hyperion Radiation Transfer Code"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/hyperion_amr",
+  "bin/hyperion_amr_mpi",
+  "bin/hyperion_car",
+  "bin/hyperion_car_mpi",
+  "bin/hyperion_cyl",
+  "bin/hyperion_cyl_mpi",
+  "bin/hyperion_oct",
+  "bin/hyperion_oct_mpi",
+  "bin/hyperion_sph",
+  "bin/hyperion_sph_mpi",
+  "bin/hyperion_vor",
+  "bin/hyperion_vor_mpi"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "hdf5",
+   "libgfortran",
+   "mpich"
+  ],
+  "license": "BSD 2-Clause",
+  "name": "hyperion-fortran",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.9.8"
+ },
+ "metadata_version": 1,
+ "name": "hyperion-fortran",
+ "raw_recipe": "{% set version = \"0.9.8\" %}\n\npackage:\n  name: hyperion-fortran\n  version: {{version}}\n\nsource:\n  fn: Hyperion-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/h/hyperion/Hyperion-{{version}}.tar.gz\n  md5: 970ebfa8b65c4a181fcdd788ee71dd38\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n\n  build:\n    - hdf5\n    - mpich\n    - gcc  # [not win]\n\n  run:\n    - hdf5\n    - mpich\n    - libgfortran  # [not win]\n\ntest:\n  files:\n    - amr.rtin\n    - car.rtin\n    - cyl.rtin\n    - oct.rtin\n    - sph.rtin\n    - vor.rtin\n\nabout:\n  home: https://github.com/hyperion-rt/hyperion\n  license: BSD 2-Clause\n  summary: Hyperion Radiation Transfer Code\n\nextra:\n  recipe-maintainers:\n    - astrofrog\n",
+ "rendered_recipe": {},
+ "version": "0.9.8"
+}

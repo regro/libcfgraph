@@ -1,0 +1,165 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.8",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "ScaLAPACK is a library of high-performance linear algebra routines for parallel distributed\nmemory machines. ScaLAPACK solves dense and banded linear systems, least squares problems,\neigenvalue problems, and singular value problems.\n",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://www.netlib.org/scalapack/",
+  "license": "BSD-2-Clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.8-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "ScaLAPACK is a library of high-performance linear algebra routines for parallel distributed memory machines"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/pkgconfig/scalapack.pc",
+  "lib/libscalapack.dylib",
+  "lib/cmake/scalapack-2.0.2/scalapack-config-version.cmake",
+  "lib/cmake/scalapack-2.0.2/scalapack-targets.cmake",
+  "lib/cmake/scalapack-2.0.2/scalapack-config.cmake",
+  "lib/cmake/scalapack-2.0.2/scalapack-targets-noconfig.cmake"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "mpich",
+   "openblas 0.2.19"
+  ],
+  "license": "BSD-2-Clause",
+  "license_family": "BSD",
+  "name": "scalapack",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.0.2"
+ },
+ "metadata_version": 1,
+ "name": "scalapack",
+ "raw_recipe": "{% set name = \"scalapack\" %}\n{% set version = \"2.0.2\" %}\n{% set sha256 = \"0c74aeae690fe5ee4db7926f49c5d0bb69ce09eea75beb915e00bba07530395c\" %}\n{% set mpi = 'mpich' %}\n{% set openblas_version = '0.2.19' %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://www.netlib.org/{{ name }}/{{ name }}-{{ version }}.tgz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - {{ mpi }}\n    - cmake\n    - gcc\n    - openblas {{openblas_version}}\n  run:\n    - {{ mpi }}\n    - openblas {{openblas_version}}\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libscalapack.dylib  # [osx]\n    - test -f $PREFIX/lib/libscalapack.so  # [linux]\n\nabout:\n  home: http://www.netlib.org/scalapack/\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: ScaLAPACK is a library of high-performance linear algebra routines for parallel distributed memory machines\n  description: |\n    ScaLAPACK is a library of high-performance linear algebra routines for parallel distributed\n    memory machines. ScaLAPACK solves dense and banded linear systems, least squares problems,\n    eigenvalue problems, and singular value problems.\n\nextra:\n  recipe-maintainers:\n    - minrk\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "ScaLAPACK is a library of high-performance linear algebra routines for parallel distributed\nmemory machines. ScaLAPACK solves dense and banded linear systems, least squares problems,\neigenvalue problems, and singular value problems.\n",
+   "home": "http://www.netlib.org/scalapack/",
+   "license": "BSD-2-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "ScaLAPACK is a library of high-performance linear algebra routines for parallel distributed memory machines"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "minrk"
+   ]
+  },
+  "package": {
+   "name": "scalapack",
+   "version": "2.0.2"
+  },
+  "requirements": {
+   "build": [
+    "bzip2 1.0.6 1",
+    "ca-certificates 2017.1.23 0",
+    "cloog 0.18.0 0",
+    "cmake 3.7.1 4",
+    "curl 7.52.1 0",
+    "expat 2.1.0 2",
+    "gcc 4.8.5 8",
+    "gmp 6.1.2 0",
+    "isl 0.12.2 1",
+    "jsoncpp 0.10.6 1",
+    "libarchive 3.2.1 2",
+    "libgfortran 3.0.0 0",
+    "libiconv 1.14 4",
+    "libuv 1.11.0 0",
+    "mpc 1.0.3 3",
+    "mpfr 3.1.5 0",
+    "mpich 3.2 4",
+    "ncurses 5.9 10",
+    "openblas 0.2.19 1",
+    "openssl 1.0.2h 3",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "mpich",
+    "openblas 0.2.19"
+   ]
+  },
+  "source": {
+   "fn": "scalapack-2.0.2.tar.gz",
+   "sha256": "0c74aeae690fe5ee4db7926f49c5d0bb69ce09eea75beb915e00bba07530395c",
+   "url": "http://www.netlib.org/scalapack/scalapack-2.0.2.tgz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/lib/libscalapack.dylib"
+   ]
+  }
+ },
+ "version": "2.0.2"
+}

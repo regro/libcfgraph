@@ -1,0 +1,60 @@
+{
+ "about": {
+  "home": "https://github.com/axiom-data-science/feedstockrot",
+  "license": "MIT",
+  "summary": "Tool to check how rotten conda-forge feedstocks are"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/feedstockrot",
+  "lib/python3.5/site-packages/feedstockrot-1.0.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/feedstockrot/__init__.py",
+  "lib/python3.5/site-packages/feedstockrot/command_line.py",
+  "lib/python3.5/site-packages/feedstockrot/feedstockrot.py",
+  "lib/python3.5/site-packages/feedstockrot/package.py",
+  "lib/python3.5/site-packages/feedstockrot/package_sources/__init__.py",
+  "lib/python3.5/site-packages/feedstockrot/package_sources/condaforge.py",
+  "lib/python3.5/site-packages/feedstockrot/package_sources/github.py",
+  "lib/python3.5/site-packages/feedstockrot/package_sources/pypi.py",
+  "lib/python3.5/site-packages/feedstockrot/package_sources/source.py",
+  "lib/python3.5/site-packages/feedstockrot/tests/__init__.py",
+  "lib/python3.5/site-packages/feedstockrot/tests/helpers/__init__.py",
+  "lib/python3.5/site-packages/feedstockrot/tests/helpers/helpers.py",
+  "lib/python3.5/site-packages/feedstockrot/tests/helpers/mock/__init__.py",
+  "lib/python3.5/site-packages/feedstockrot/tests/helpers/mock/condaforge.py",
+  "lib/python3.5/site-packages/feedstockrot/tests/helpers/mock/github.py",
+  "lib/python3.5/site-packages/feedstockrot/tests/helpers/mock/mock.py",
+  "lib/python3.5/site-packages/feedstockrot/tests/helpers/mock/pypi.py",
+  "lib/python3.5/site-packages/feedstockrot/tests/helpers/packageinfo.py",
+  "lib/python3.5/site-packages/feedstockrot/tests/package_sources/__init__.py",
+  "lib/python3.5/site-packages/feedstockrot/tests/package_sources/test_condaforge.py",
+  "lib/python3.5/site-packages/feedstockrot/tests/package_sources/test_github.py",
+  "lib/python3.5/site-packages/feedstockrot/tests/package_sources/test_pypi.py",
+  "lib/python3.5/site-packages/feedstockrot/tests/test_feedstockrot.py",
+  "lib/python3.5/site-packages/feedstockrot/tests/test_package.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "jinja2",
+   "packaging",
+   "pygithub",
+   "python 3.5*",
+   "pyyaml",
+   "requests",
+   "setuptools"
+  ],
+  "license": "MIT",
+  "name": "feedstockrot",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0.0"
+ },
+ "metadata_version": 1,
+ "name": "feedstockrot",
+ "raw_recipe": "{% set name = \"feedstockrot\" %}\n{% set version = \"1.0.0\" %}\n{% set build = 0 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: feedstockrot-{{ version }}.tar.gz\n  url: https://github.com/axiom-data-science/feedstockrot/archive/{{ version }}.tar.gz\n  sha256: 32181231186dce986cfd9684001cb63d1411e9a8ca531e129b3600f875cce6ea\n\nbuild:\n  skip: true  # [not py35]\n  number: {{ build }}\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - feedstockrot = feedstockrot.command_line:main_run\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - requests\n    - packaging\n    - pygithub\n    - pyyaml\n    - jinja2\n\ntest:\n  imports:\n    - feedstockrot\n    - feedstockrot.tests\n  commands:\n    - feedstockrot --help\n\nabout:\n  home: https://github.com/axiom-data-science/feedstockrot\n  license: MIT\n  summary: Tool to check how rotten conda-forge feedstocks are\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n",
+ "rendered_recipe": {},
+ "version": "1.0.0"
+}

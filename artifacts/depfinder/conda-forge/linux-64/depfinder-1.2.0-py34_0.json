@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "http://github.com/ericdill/depfinder",
+  "license": "BSD 3-Clause",
+  "summary": "Find all the unique imports in your library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/depfinder",
+  "lib/python3.4/site-packages/depfinder-1.2.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/depfinder/__init__.py",
+  "lib/python3.4/site-packages/depfinder/_version.py",
+  "lib/python3.4/site-packages/depfinder/cli.py",
+  "lib/python3.4/site-packages/depfinder/main.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "pyyaml",
+   "stdlib-list"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "depfinder",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.2.0"
+ },
+ "metadata_version": 1,
+ "name": "depfinder",
+ "raw_recipe": "{% set version = \"1.2.0\" %}\n{% set sha256 = \"3f9b8b597e0693f5104c8fe4572fa7fa02426bb40e3bd77813ad8eae43b4b1ab\" %}\n\npackage:\n  name: depfinder\n  version: {{ version }}\n\nsource:\n  fn: depfinder-{{ version }}.tar.gz\n  url: https://github.com/ericdill/depfinder/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - stdlib-list\n    - pyyaml\n\ntest:\n  commands:\n    - depfinder -h\n  imports:\n    - depfinder\n\nabout:\n  home: http://github.com/ericdill/depfinder\n  license: BSD 3-Clause\n  summary: Find all the unique imports in your library \n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - mariusvniekerk\n",
+ "rendered_recipe": {},
+ "version": "1.2.0"
+}

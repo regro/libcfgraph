@@ -1,0 +1,49 @@
+{
+ "about": {
+  "description": "ftputil is a high-level FTP client library for the Python programming\nlanguage. ftputil implements a virtual file system for accessing FTP\nservers, that is, it can generate file-like objects for remote files.\nThe library supports many functions similar to those in the os, os.path\nand shutil modules. ftputil has convenience functions for conditional\nuploads and downloads, and handles FTP clients and servers in different\ntimezones.\n",
+  "doc_url": "http://ftputil.sschwarzer.net/trac/wiki/Documentation",
+  "home": "http://ftputil.sschwarzer.net/",
+  "license": "BSD 3-Clause",
+  "summary": "High-level FTP client library (virtual file system and more)"
+ },
+ "conda_build_config": {},
+ "files": [
+  "doc/ftputil/ftputil.html",
+  "doc/ftputil/whats_new_in_ftputil_3.0.html",
+  "lib/python3.5/site-packages/ftputil-3.3.1-py3.5.egg-info",
+  "lib/python3.5/site-packages/ftputil/__init__.py",
+  "lib/python3.5/site-packages/ftputil/compat.py",
+  "lib/python3.5/site-packages/ftputil/error.py",
+  "lib/python3.5/site-packages/ftputil/file.py",
+  "lib/python3.5/site-packages/ftputil/file_transfer.py",
+  "lib/python3.5/site-packages/ftputil/host.py",
+  "lib/python3.5/site-packages/ftputil/lrucache.py",
+  "lib/python3.5/site-packages/ftputil/path.py",
+  "lib/python3.5/site-packages/ftputil/session.py",
+  "lib/python3.5/site-packages/ftputil/session_adapter.py",
+  "lib/python3.5/site-packages/ftputil/socket_file_adapter.py",
+  "lib/python3.5/site-packages/ftputil/stat.py",
+  "lib/python3.5/site-packages/ftputil/stat_cache.py",
+  "lib/python3.5/site-packages/ftputil/sync.py",
+  "lib/python3.5/site-packages/ftputil/tool.py",
+  "lib/python3.5/site-packages/ftputil/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "ftputil",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "3.3.1"
+ },
+ "metadata_version": 1,
+ "name": "ftputil",
+ "raw_recipe": "{% set name = \"ftputil\" %}\n{% set version = \"3.3.1\" %}\n{% set md5 = \"464c5c9ccabceff4fd20346bf801e5d3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --record record.txt\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - ftputil\n  commands:\n    - python -c \"from ftputil import FTPHost\"\n\nabout:\n  home: http://ftputil.sschwarzer.net/\n  license: BSD 3-Clause\n  summary: 'High-level FTP client library (virtual file system and more)'\n\n  description: |\n    ftputil is a high-level FTP client library for the Python programming\n    language. ftputil implements a virtual file system for accessing FTP\n    servers, that is, it can generate file-like objects for remote files.\n    The library supports many functions similar to those in the os, os.path\n    and shutil modules. ftputil has convenience functions for conditional\n    uploads and downloads, and handles FTP clients and servers in different\n    timezones.\n  doc_url: http://ftputil.sschwarzer.net/trac/wiki/Documentation\n\nextra:\n  recipe-maintainers:\n    - edisongustavo\n",
+ "rendered_recipe": {},
+ "version": "3.3.1"
+}

@@ -1,0 +1,40 @@
+{
+ "about": {
+  "dev_url": "https://github.com/bndr/pipreqs",
+  "home": "https://github.com/bndr/pipreqs",
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "summary": "Pip requirements.txt generator based on imports in project"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/pipreqs",
+  "lib/python3.4/site-packages/pipreqs-0.4.4-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pipreqs-0.4.4-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/pipreqs/__init__.py",
+  "lib/python3.4/site-packages/pipreqs/mapping",
+  "lib/python3.4/site-packages/pipreqs/pipreqs.py",
+  "lib/python3.4/site-packages/pipreqs/stdlib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "docopt",
+   "python 3.4*",
+   "yarg"
+  ],
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "name": "pipreqs",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.4.4"
+ },
+ "metadata_version": 1,
+ "name": "pipreqs",
+ "raw_recipe": "{% set name = \"pipreqs\" %}\n{% set version = \"0.4.4\" %}\n{% set sha256 = \"06b1589e54bc82233a444f313b344395ddb08079d66511190b3a463e04676221\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - pipreqs=pipreqs.pipreqs:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - docopt\n    - yarg\n\ntest:\n  imports:\n    - pipreqs\n\n  commands:\n    - pipreqs --help\n\nabout:\n  home: https://github.com/bndr/pipreqs\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Pip requirements.txt generator based on imports in project'\n  dev_url: https://github.com/bndr/pipreqs\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
+ "rendered_recipe": {},
+ "version": "0.4.4"
+}

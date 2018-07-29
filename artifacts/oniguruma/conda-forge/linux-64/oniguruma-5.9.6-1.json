@@ -1,0 +1,32 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/onig-config",
+  "include/oniggnu.h",
+  "include/onigposix.h",
+  "include/oniguruma.h",
+  "lib/libonig.a",
+  "lib/libonig.la",
+  "lib/libonig.so",
+  "lib/libonig.so.2",
+  "lib/libonig.so.2.0.0",
+  "lib/pkgconfig/oniguruma.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [],
+  "license": "BSD 2-Clause",
+  "name": "oniguruma",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "5.9.6"
+ },
+ "metadata_version": 1,
+ "name": "oniguruma",
+ "raw_recipe": "{% set version = \"5.9.6\" %}\n\npackage:\n  name: oniguruma\n  version: {{ version }}\n\nsource:\n  fn: onig-{{ version }}.tar.gz\n  url: https://github.com/kkos/oniguruma/releases/download/v{{ version }}/onig-{{ version }}.tar.gz\n  md5: d08f10ea5c94919780e6b7bed1ef9830\n\nbuild:\n  number: 1\n  skip: True  # [win]\n\ntest:\n  commands:\n    - exit $(test -f ${PREFIX}/lib/libonig.a)          # [not win]\n\nabout:\n    home: https://github.com/kkos/oniguruma\n    license: BSD 2-Clause\n    summary: A regular expression library.\n\nextra:\n    recipe-maintainers:\n        - jakirkham\n        - kkos\n",
+ "rendered_recipe": {},
+ "version": "5.9.6"
+}

@@ -1,0 +1,38 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/gridfill-1.0.0-py2.7-macosx-10.5-x86_64.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/gridfill-1.0.0-py2.7-macosx-10.5-x86_64.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/gridfill/__init__.py",
+  "lib/python2.7/site-packages/gridfill/_gridfill.so",
+  "lib/python2.7/site-packages/gridfill/gridfill.py",
+  "lib/python2.7/site-packages/gridfill/tests/__init__.py",
+  "lib/python2.7/site-packages/gridfill/tests/data/grid.npy",
+  "lib/python2.7/site-packages/gridfill/tests/data/soln.npy",
+  "lib/python2.7/site-packages/gridfill/tests/data/soln_cyclic.npy",
+  "lib/python2.7/site-packages/gridfill/tests/data/soln_cyclic_zonal.npy",
+  "lib/python2.7/site-packages/gridfill/tests/data/soln_zonal.npy",
+  "lib/python2.7/site-packages/gridfill/tests/test_fill.py",
+  "lib/python2.7/site-packages/gridfill/tests/test_fill_cube.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.11*",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "gridfill",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0.0"
+ },
+ "metadata_version": 1,
+ "name": "gridfill",
+ "raw_recipe": "{% set version = \"1.0.0\" %}\n\npackage:\n    name: gridfill\n    version: {{ version }}\n\nsource:\n    fn: v{{ version }}.tar.gz\n    url: https://github.com/ajdawson/gridfill/archive/v{{ version }}.tar.gz\n    md5: 7258701d8296f974268e634ea09ed673\n\nbuild:\n    number: 0\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - cython\n        - numpy x.x\n    run:\n        - python\n        - numpy x.x\n\ntest:\n    requires:\n        - nose\n    imports:\n        - gridfill\n\nabout:\n    home: https://github.com/ajdawson/gridfill\n    license: MIT\n    summary: Fill missing values in a grid by solving Poisson's equation via an iterative relaxation scheme\n\nextra:\n    recipe-maintainers:\n        - ajdawson\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.0.0"
+}

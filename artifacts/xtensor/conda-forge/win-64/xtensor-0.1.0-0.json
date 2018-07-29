@@ -1,0 +1,47 @@
+{
+ "about": {
+  "description": "Multi dimensional arrays with broadcasting and lazy computing",
+  "dev_url": "https://github.com/QuantStack/xtensor",
+  "doc_url": "http://xtensor.readthedocs.io",
+  "home": "http://quantstack.net/xtensor",
+  "license": "BSD",
+  "summary": "The C++ tensor algebra library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/include/xtensor/xarray.hpp",
+  "Library/include/xtensor/xarray_base.hpp",
+  "Library/include/xtensor/xassign.hpp",
+  "Library/include/xtensor/xexception.hpp",
+  "Library/include/xtensor/xexpression.hpp",
+  "Library/include/xtensor/xfunction.hpp",
+  "Library/include/xtensor/xindex.hpp",
+  "Library/include/xtensor/xio.hpp",
+  "Library/include/xtensor/xiterator.hpp",
+  "Library/include/xtensor/xmath.hpp",
+  "Library/include/xtensor/xnoalias.hpp",
+  "Library/include/xtensor/xoperation.hpp",
+  "Library/include/xtensor/xscalar.hpp",
+  "Library/include/xtensor/xsemantic.hpp",
+  "Library/include/xtensor/xslice.hpp",
+  "Library/include/xtensor/xutils.hpp",
+  "Library/include/xtensor/xvectorize.hpp",
+  "Library/include/xtensor/xview.hpp"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "BSD",
+  "name": "xtensor",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.1.0"
+ },
+ "metadata_version": 1,
+ "name": "xtensor",
+ "raw_recipe": "{% set name = \"xtensor\" %}\n{% set version = \"0.1.0\" %}\n{% set sha256 = \"025709893b89229f7723fd5c36faaaf8155c2d6558d63c2c51e9de1904f01c42\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/QuantStack/xtensor/archive/{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\ntest:\n  requires:\n    - gtest\n    - cmake\n\n  commands:\n    - test -d ${PREFIX}/include/xtensor  # [unix]\n    - test -f ${PREFIX}/include/xtensor/xarray.hpp  # [unix]\n    - if exist %LIBRARY_INC%\\xtensor\\xarray.hpp (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://quantstack.net/xtensor\n  license: BSD\n  license_file: LICENSE\n  summary: 'The C++ tensor algebra library'\n  description: 'Multi dimensional arrays with broadcasting and lazy computing'\n  doc_url: http://xtensor.readthedocs.io\n  dev_url: https://github.com/QuantStack/xtensor\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - jmabille\n",
+ "rendered_recipe": {},
+ "version": "0.1.0"
+}

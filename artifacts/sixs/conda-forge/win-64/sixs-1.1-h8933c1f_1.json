@@ -1,0 +1,202 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.12.0",
+  "conda_private": false,
+  "conda_version": "4.5.8",
+  "description": "The 6S code is a basic RT code used for calculation of lookup\ntables in the MODIS atmospheric correction algorithm.\nIt enables accurate simulations of satellite and plane observation,\naccounting for elevated targets, use of anisotropic and lambertian surfaces\nand calculation of gaseous absorption. 6S website is http://6s.ltdri.org.\n",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "home": "https://bitbucket.org/petebunting/6s",
+  "license": "MIT",
+  "license_family": "MIT",
+  "root_pkgs": [
+   "anaconda-client 1.6.14 py_0",
+   "asn1crypto 0.24.0 py36_0",
+   "beautifulsoup4 4.6.0 py36_0",
+   "ca-certificates 2018.4.16 0",
+   "certifi 2018.4.16 py36_0",
+   "cffi 1.11.5 py36h945400d_0",
+   "chardet 3.0.4 py36h420ce6e_1",
+   "clyent 1.2.2 py_1",
+   "conda 4.5.8 py36_1",
+   "conda-build 3.12.0 py36_2",
+   "conda-env 2.6.0 h36134e3_1",
+   "conda-forge-ci-setup 1.3.5 0",
+   "console_shortcut 0.1.1 h6bb2dd7_3",
+   "cryptography 2.2.2 py36hfa6e2cd_0",
+   "decorator 4.3.0 py_0",
+   "filelock 3.0.4 py_1",
+   "glob2 0.6 py_0",
+   "idna 2.6 py36h148d497_1",
+   "ipython_genutils 0.2.0 py_1",
+   "jinja2 2.10 py_1",
+   "jsonschema 2.6.0 py36_1",
+   "jupyter_core 4.4.0 py_0",
+   "markupsafe 1.0 py36_0",
+   "menuinst 1.4.11 py36hfa6e2cd_0",
+   "nbformat 4.4.0 py_1",
+   "openssl 1.0.2o vc14_0",
+   "pip 9.0.3 py36_0",
+   "pkginfo 1.4.2 py_1",
+   "psutil 5.4.6 py36_0",
+   "pycosat 0.6.3 py36h413d8a4_0",
+   "pycparser 2.18 py36hd053e01_1",
+   "pyopenssl 17.5.0 py36h5b7d817_0",
+   "pysocks 1.6.8 py36_0",
+   "python 3.6.5 h0c2934d_0",
+   "python-dateutil 2.7.3 py_0",
+   "pytz 2018.5 py_0",
+   "pywin32 223 py36hfa6e2cd_0",
+   "pyyaml 3.12 py36_1",
+   "requests 2.18.4 py36h4371aae_1",
+   "ruamel_yaml 0.15.35 py36hfa6e2cd_1",
+   "setuptools 39.0.1 py36_0",
+   "six 1.11.0 py36h4db2310_1",
+   "traitlets 4.3.2 py36_0",
+   "urllib3 1.22 py36h276f60a_0",
+   "vc 14 0",
+   "vs2008_express_vc_python_patch 1.0.0 0",
+   "vs2015_runtime 15.5.2 3",
+   "wheel 0.31.0 py36_0",
+   "wincertstore 0.2 py36h7fe50ca_0",
+   "win_inet_pton 1.0.1 py36he67d7fd_1",
+   "yaml 0.1.7 vc14_0"
+  ],
+  "summary": "A basic RT code used for atmospheric correction & atmospheric simulations"
+ },
+ "conda_build_config": {
+  "c_compiler": "vs2008",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "vs2015",
+  "fortran_compiler": "flang",
+  "ignore_build_only_deps": "numpy",
+  "lua": "5",
+  "m2w64_c_compiler": "m2w64-toolchain",
+  "m2w64_fortran_compiler": "m2w64-toolchain",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.6",
+  "r_base": "3.4",
+  "target_platform": "win-64",
+  "vc": "14"
+ },
+ "files": [
+  "Library/bin/sixs.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "h8933c1f_1",
+  "build_number": 1,
+  "depends": [
+   "m2w64-gcc-libgfortran",
+   "m2w64-gcc-libs"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "sixs",
+  "platform": "win",
+  "subdir": "win-64",
+  "timestamp": 1532627447196,
+  "version": "1.1"
+ },
+ "metadata_version": 1,
+ "name": "sixs",
+ "raw_recipe": "{% set name = \"sixs\" %}\n{% set version = \"1.1\" %}\n{% set sha256 = \"4253664bfed35a659ac602d4472780df7c665d67021d495327f47eb7325a2d7e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://bitbucket.org/petebunting/6s/get/Version%201.1.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('fortran') }}        # [unix]\n    - {{ compiler('m2w64_fortran') }}  # [win]\n    - {{ compiler('c') }}        # [unix]\n    - {{ compiler('m2w64_c') }}  # [win]\n  host:\n  run:\n    - m2w64-gcc-libgfortran  # [win]\n\n\ntest:\n  files:\n  - Example_In_1.txt\n\nabout:\n  home: https://bitbucket.org/petebunting/6s\n  summary: A basic RT code used for atmospheric correction & atmospheric\n    simulations\n  license: MIT\n  license_family: MIT\n  description:  |\n    The 6S code is a basic RT code used for calculation of lookup\n    tables in the MODIS atmospheric correction algorithm.\n    It enables accurate simulations of satellite and plane observation,\n    accounting for elevated targets, use of anisotropic and lambertian surfaces\n    and calculation of gaseous absorption. 6S website is http://6s.ltdri.org.\n\nextra:\n  recipe-maintainers:\n    - robintw\n    - danclewley\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "The 6S code is a basic RT code used for calculation of lookup\ntables in the MODIS atmospheric correction algorithm.\nIt enables accurate simulations of satellite and plane observation,\naccounting for elevated targets, use of anisotropic and lambertian surfaces\nand calculation of gaseous absorption. 6S website is http://6s.ltdri.org.\n",
+   "home": "https://bitbucket.org/petebunting/6s",
+   "license": "MIT",
+   "license_family": "MIT",
+   "summary": "A basic RT code used for atmospheric correction & atmospheric simulations"
+  },
+  "build": {
+   "number": "1",
+   "string": "h8933c1f_1"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "danclewley",
+    "robintw"
+   ]
+  },
+  "package": {
+   "name": "sixs",
+   "version": "1.1"
+  },
+  "requirements": {
+   "build": [
+    "cmake 3.12.0 h95aeb29_0",
+    "m2w64-binutils 2.25.1 5",
+    "m2w64-bzip2 1.0.6 6",
+    "m2w64-crt-git 5.0.0.4636.2595836 2",
+    "m2w64-gcc 5.3.0 6",
+    "m2w64-gcc-ada 5.3.0 6",
+    "m2w64-gcc-fortran 5.3.0 6",
+    "m2w64-gcc-libgfortran 5.3.0 6",
+    "m2w64-gcc-libs 5.3.0 7",
+    "m2w64-gcc-libs-core 5.3.0 7",
+    "m2w64-gcc-objc 5.3.0 6",
+    "m2w64-gmp 6.1.0 2",
+    "m2w64-headers-git 5.0.0.4636.c0ad18a 2",
+    "m2w64-isl 0.16.1 2",
+    "m2w64-libiconv 1.14 6",
+    "m2w64-libmangle-git 5.0.0.4509.2e5a9a2 2",
+    "m2w64-libwinpthread-git 5.0.0.4634.697f757 2",
+    "m2w64-make 4.1.2351.a80a8b8 2",
+    "m2w64-mpc 1.0.3 3",
+    "m2w64-mpfr 3.1.4 4",
+    "m2w64-pkg-config 0.29.1 2",
+    "m2w64-toolchain 5.3.0 7",
+    "m2w64-toolchain_win-64 2.1.6 0",
+    "m2w64-tools-git 5.0.0.4592.90b8472 2",
+    "m2w64-windows-default-manifest 6.4 3",
+    "m2w64-winpthreads-git 5.0.0.4634.697f757 2",
+    "m2w64-zlib 1.2.8 10",
+    "msys2-conda-epoch 20160418 1",
+    "vs2015_runtime 14.0.25420 0"
+   ],
+   "host": [
+    "m2w64-gcc-libgfortran 5.3.0 6",
+    "m2w64-gcc-libs 5.3.0 7",
+    "m2w64-gcc-libs-core 5.3.0 7",
+    "m2w64-gmp 6.1.0 2",
+    "m2w64-libwinpthread-git 5.0.0.4634.697f757 2",
+    "msys2-conda-epoch 20160418 1"
+   ],
+   "run": [
+    "m2w64-gcc-libgfortran",
+    "m2w64-gcc-libs"
+   ]
+  },
+  "source": {
+   "fn": "sixs-1.1.tar.gz",
+   "sha256": "4253664bfed35a659ac602d4472780df7c665d67021d495327f47eb7325a2d7e",
+   "url": "https://bitbucket.org/petebunting/6s/get/Version%201.1.tar.gz"
+  },
+  "test": {
+   "files": [
+    "Example_In_1.txt"
+   ]
+  }
+ },
+ "version": "1.1"
+}

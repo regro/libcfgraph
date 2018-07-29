@@ -1,0 +1,79 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "include/HDFEOSVersion.h",
+  "include/HE2_config.h",
+  "include/HdfEosDef.h",
+  "include/cfortHdf.h",
+  "include/ease.h",
+  "lib/libGctp.a",
+  "lib/libGctp.la",
+  "lib/libhdfeos.a",
+  "lib/libhdfeos.la"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "4",
+  "build_number": 4,
+  "depends": [
+   "hdf4",
+   "jpeg 9*",
+   "zlib 1.2*"
+  ],
+  "license": "BSD",
+  "name": "hdfeos2",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.19.1"
+ },
+ "metadata_version": 1,
+ "name": "hdfeos2",
+ "raw_recipe": "package:\n    name: hdfeos2\n    version: 2.19.1\n\nsource:\n    fn: HDF-EOS2.19v1.00.tar.Z\n    url: ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/HDF-EOS2.19v1.00.tar.Z\n    md5: b8648484fc78a2db7073dd603f3fb251\n\nbuild:\n    number: 4\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - hdf4\n        - zlib 1.2*\n        - jpeg 9*\n    run:\n        - hdf4\n        - zlib 1.2*\n        - jpeg 9*\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libGctp.a  # [unix]\n        - test -f ${PREFIX}/lib/libhdfeos.a  # [unix]\n        - conda inspect linkages -n _test hdfeos2  # [linux]\n\nabout:\n    home: http://hdfeos.org/index.php\n    license: BSD\n    summary: Earth Observing System HDF\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - jhamman\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://hdfeos.org/index.php",
+   "license": "BSD",
+   "summary": "Earth Observing System HDF"
+  },
+  "build": {
+   "number": 4,
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "jhamman"
+   ]
+  },
+  "package": {
+   "name": "hdfeos2",
+   "version": "2.19.1"
+  },
+  "requirements": {
+   "build": [
+    "hdf4",
+    "zlib 1.2*",
+    "jpeg 9*"
+   ],
+   "run": [
+    "hdf4",
+    "zlib 1.2*",
+    "jpeg 9*"
+   ]
+  },
+  "source": {
+   "fn": "HDF-EOS2.19v1.00.tar.Z",
+   "md5": "b8648484fc78a2db7073dd603f3fb251",
+   "url": "ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos/latest_release/HDF-EOS2.19v1.00.tar.Z"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/lib/libGctp.a",
+    "test -f ${PREFIX}/lib/libhdfeos.a",
+    "conda inspect linkages -n _test hdfeos2"
+   ]
+  }
+ },
+ "version": "2.19.1"
+}

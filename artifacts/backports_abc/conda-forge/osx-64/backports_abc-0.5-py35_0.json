@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "https://github.com/cython/backports_abc",
+  "license": "PSF 2",
+  "summary": "A backport of recent additions to the `collections.abc` module."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/backports_abc-0.5-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/backports_abc.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "PSF 2",
+  "name": "backports_abc",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.5"
+ },
+ "metadata_version": 1,
+ "name": "backports_abc",
+ "raw_recipe": "{% set version=\"0.5\" %}\n\npackage:\n  name: backports_abc\n  version: {{ version }}\n\nsource:\n  fn: backports_abc-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/b/backports_abc/backports_abc-{{ version }}.tar.gz\n  sha256: 033be54514a03e255df75c5aee8f9e672f663f93abb723444caec8fe43437bde\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - backports_abc\n\nabout:\n  home: https://github.com/cython/backports_abc\n  license: PSF 2\n  summary: A backport of recent additions to the `collections.abc` module.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.5"
+}

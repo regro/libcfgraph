@@ -1,0 +1,28 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/iso8601-0.1.11-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/iso8601/__init__.py",
+  "lib/python2.7/site-packages/iso8601/iso8601.py",
+  "lib/python2.7/site-packages/iso8601/test_iso8601.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "iso8601",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.11"
+ },
+ "metadata_version": 1,
+ "name": "iso8601",
+ "raw_recipe": "{% set version = \"0.1.11\" %}\n{% set sha256 = \"e8fb52f78880ae063336c94eb5b87b181e6a0cc33a6c008511bac9a6e980ef30\" %}\n\npackage:\n    name: iso8601\n    version: {{ version }}\n\nsource:\n    fn: iso8601-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/i/iso8601/iso8601-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - iso8601\n\nabout:\n    home: https://bitbucket.org/micktwomey/pyiso8601\n    license: MIT\n    summary: 'Simple module to parse ISO 8601 dates'\n    doc_url: http://pyiso8601.readthedocs.io/en/latest/\n\nextra:\n    recipe-maintainers:\n        - ChrisBarker-NOAA\n        - JamesMakela-NOAA\n",
+ "rendered_recipe": {},
+ "version": "0.1.11"
+}

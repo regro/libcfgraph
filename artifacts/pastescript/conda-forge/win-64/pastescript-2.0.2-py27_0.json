@@ -1,0 +1,113 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/PasteScript-2.0.2-py2.7-nspkg.pth",
+  "Lib/site-packages/PasteScript-2.0.2-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/PasteScript-2.0.2-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/paste/script/__init__.py",
+  "Lib/site-packages/paste/script/appinstall.py",
+  "Lib/site-packages/paste/script/bool_optparse.py",
+  "Lib/site-packages/paste/script/cgi_server.py",
+  "Lib/site-packages/paste/script/checkperms.py",
+  "Lib/site-packages/paste/script/cherrypy_server.py",
+  "Lib/site-packages/paste/script/command.py",
+  "Lib/site-packages/paste/script/copydir.py",
+  "Lib/site-packages/paste/script/create_distro.py",
+  "Lib/site-packages/paste/script/default_sysconfig.py",
+  "Lib/site-packages/paste/script/entrypoints.py",
+  "Lib/site-packages/paste/script/epdesc.py",
+  "Lib/site-packages/paste/script/exe.py",
+  "Lib/site-packages/paste/script/filemaker.py",
+  "Lib/site-packages/paste/script/flup_server.py",
+  "Lib/site-packages/paste/script/grep.py",
+  "Lib/site-packages/paste/script/help.py",
+  "Lib/site-packages/paste/script/interfaces.py",
+  "Lib/site-packages/paste/script/paster-templates/basic_package/+package+/__init__.py",
+  "Lib/site-packages/paste/script/paster-templates/basic_package/setup.cfg",
+  "Lib/site-packages/paste/script/paster-templates/basic_package/setup.py_tmpl",
+  "Lib/site-packages/paste/script/pluginlib.py",
+  "Lib/site-packages/paste/script/request.py",
+  "Lib/site-packages/paste/script/serve.py",
+  "Lib/site-packages/paste/script/templates.py",
+  "Lib/site-packages/paste/script/testapp.py",
+  "Lib/site-packages/paste/script/twisted_web2_server.py",
+  "Lib/site-packages/paste/script/util/__init__.py",
+  "Lib/site-packages/paste/script/util/logging_config.py",
+  "Lib/site-packages/paste/script/util/secret.py",
+  "Lib/site-packages/paste/script/wsgiutils_server.py",
+  "Scripts/paster-script.py",
+  "Scripts/paster.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "paste >=1.3",
+   "pastedeploy",
+   "python 2.7*",
+   "six"
+  ],
+  "license": "MIT",
+  "name": "pastescript",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.0.2"
+ },
+ "metadata_version": 1,
+ "name": "pastescript",
+ "raw_recipe": "package:\n    name: pastescript\n    version: 2.0.2\n\nsource:\n    fn: PasteScript-2.0.2.tar.gz\n    url: https://pypi.python.org/packages/source/P/PasteScript/PasteScript-2.0.2.tar.gz\n    md5: ccb3045445097192ca71a13b746c77b2\n\nbuild:\n    number: 0\n    skip: True  # [py3k]\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - paste >=1.3\n        - pastedeploy\n        - six\n    run:\n        - python\n        - paste >=1.3\n        - pastedeploy\n        - six\n\ntest:\n    imports:\n        - paste\n        - paste.script\n        - paste.script.util\n    requires:\n        - nose >=0.11\n\nabout:\n    home: http://pythonpaste.org/script/\n    license: MIT\n    summary: A pluggable command-line frontend, including commands to setup package file layouts\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://pythonpaste.org/script/",
+   "license": "MIT",
+   "summary": "A pluggable command-line frontend, including commands to setup package file layouts"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "pastescript",
+   "version": "2.0.2"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "paste >=1.3",
+    "pastedeploy",
+    "six"
+   ],
+   "run": [
+    "python",
+    "paste >=1.3",
+    "pastedeploy",
+    "six"
+   ]
+  },
+  "source": {
+   "fn": "PasteScript-2.0.2.tar.gz",
+   "md5": "ccb3045445097192ca71a13b746c77b2",
+   "url": "https://pypi.python.org/packages/source/P/PasteScript/PasteScript-2.0.2.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "paste",
+    "paste.script",
+    "paste.script.util"
+   ],
+   "requires": [
+    "nose >=0.11"
+   ]
+  }
+ },
+ "version": "2.0.2"
+}

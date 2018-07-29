@@ -1,0 +1,52 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/sfood",
+  "bin/sfood-checker",
+  "bin/sfood-cluster",
+  "bin/sfood-copy",
+  "bin/sfood-filter-stdlib",
+  "bin/sfood-flatten",
+  "bin/sfood-graph",
+  "bin/sfood-imports",
+  "bin/sfood-target-files",
+  "lib/python2.7/site-packages/snakefood-1.4-py2.7.egg-info",
+  "lib/python2.7/site-packages/snakefood/__init__.py",
+  "lib/python2.7/site-packages/snakefood/astpretty.py",
+  "lib/python2.7/site-packages/snakefood/checker.py",
+  "lib/python2.7/site-packages/snakefood/cluster.py",
+  "lib/python2.7/site-packages/snakefood/copy.py",
+  "lib/python2.7/site-packages/snakefood/depends.py",
+  "lib/python2.7/site-packages/snakefood/fallback/__init__.py",
+  "lib/python2.7/site-packages/snakefood/fallback/collections.py",
+  "lib/python2.7/site-packages/snakefood/fallback/pkgutil.py",
+  "lib/python2.7/site-packages/snakefood/filter.py",
+  "lib/python2.7/site-packages/snakefood/find.py",
+  "lib/python2.7/site-packages/snakefood/flatten.py",
+  "lib/python2.7/site-packages/snakefood/gendeps.py",
+  "lib/python2.7/site-packages/snakefood/graph.py",
+  "lib/python2.7/site-packages/snakefood/list.py",
+  "lib/python2.7/site-packages/snakefood/local.py",
+  "lib/python2.7/site-packages/snakefood/roots.py",
+  "lib/python2.7/site-packages/snakefood/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "GPL 2.0",
+  "name": "snakefood",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.4"
+ },
+ "metadata_version": 1,
+ "name": "snakefood",
+ "raw_recipe": "{%set name = \"snakefood\" %}\n{%set version = \"1.4\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"295784668032254e7391ca99ba7060edd3ae4eca1a330ac11627b18ab5923b77\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  skip: True  # [py3k]\n  number: 0\n  script: python setup.py install --record=record.txt\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - snakefood\n    - snakefood.fallback\n\nabout:\n  home: http://furius.ca/snakefood\n  license: GPL 2.0\n  summary: 'Dependency Graphing for Python'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.4"
+}

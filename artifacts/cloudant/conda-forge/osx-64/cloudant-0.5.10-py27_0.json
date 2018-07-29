@@ -1,0 +1,42 @@
+{
+ "about": {
+  "dev_url": "https://github.com/cloudant-labs/cloudant",
+  "home": "https://cloudant-labs.github.io/cloudant-python/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Asynchronous Cloudant / CouchDB Interface"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/cloudant-0.5.10-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/cloudant-0.5.10-py2.7.egg-info/pbr.json",
+  "lib/python2.7/site-packages/cloudant/__init__.py",
+  "lib/python2.7/site-packages/cloudant/account.py",
+  "lib/python2.7/site-packages/cloudant/attachment.py",
+  "lib/python2.7/site-packages/cloudant/database.py",
+  "lib/python2.7/site-packages/cloudant/design.py",
+  "lib/python2.7/site-packages/cloudant/document.py",
+  "lib/python2.7/site-packages/cloudant/index.py",
+  "lib/python2.7/site-packages/cloudant/resource.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "requests-futures ==0.9.4"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "cloudant",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.5.10"
+ },
+ "metadata_version": 1,
+ "name": "cloudant",
+ "raw_recipe": "{%set name = \"cloudant\" %}\n{%set version = \"0.5.10\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"ed79234cd796c777a10ebf02287af3deb8739c594e66a1d012a2955161942b31\" %}\n{%set build_num = \"0\"%}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  skip: True  # [py3k]\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - requests-futures ==0.9.4\n\ntest:\n  imports:\n    - cloudant\n\nabout:\n  home: https://cloudant-labs.github.io/cloudant-python/\n  license: MIT\n  # license_file: No MANIFEST.in or LICENSE\n  license_family: MIT\n  summary: 'Asynchronous Cloudant / CouchDB Interface'\n  dev_url: https://github.com/cloudant-labs/cloudant\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.5.10"
+}

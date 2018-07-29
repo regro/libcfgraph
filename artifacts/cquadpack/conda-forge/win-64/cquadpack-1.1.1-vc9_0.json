@@ -1,0 +1,36 @@
+{
+ "about": {
+  "description": "Unlike ports created by translators, this port reimplements the algorithms to\ntake advantage of C program structure and dynamic memory. Every effort has been\nmade to leave the low level code intact, except where some opportunity to convert\nfrom unstructured blocks to more structured form was taken.\n",
+  "dev_url": "https://github.com/ESSS/cquadpack",
+  "home": "https://github.com/ESSS/cquadpack",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "A complete port of the QUADPACK Fortran codes to C"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/include/cquadpack.h",
+  "Library/include/cquadpack_export.h",
+  "Library/lib/cquadpack.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc9_0",
+  "build_number": 0,
+  "depends": [
+   "vc 9"
+  ],
+  "features": "vc9",
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "cquadpack",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.1.1"
+ },
+ "metadata_version": 1,
+ "name": "cquadpack",
+ "raw_recipe": "{% set name = \"cquadpack\" %}\n{% set version = \"1.1.1\" %}\n{% set sha256 = \"e193023a33b6b6d86d92935ddce4f1b7efe35e259e06c88bd45e20d7e896ae38\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/ESSS/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [osx]\n  features:\n    - vc9   # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n    - toolchain\n    - cmake\n  run:\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n\ntest:\n  commands:\n    - test -f $PREFIX/include/cquadpack.h  # [unix]\n    - if not exist %LIBRARY_INC%\\cquadpack.h exit 1  # [win]\n\nabout:\n  home: https://github.com/ESSS/cquadpack\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A complete port of the QUADPACK Fortran codes to C'\n\n  description: |\n    Unlike ports created by translators, this port reimplements the algorithms to\n    take advantage of C program structure and dynamic memory. Every effort has been\n    made to leave the low level code intact, except where some opportunity to convert\n    from unstructured blocks to more structured form was taken.\n  dev_url: https://github.com/ESSS/cquadpack\n\nextra:\n  recipe-maintainers:\n    - edisongustavo\n",
+ "rendered_recipe": {},
+ "version": "1.1.1"
+}

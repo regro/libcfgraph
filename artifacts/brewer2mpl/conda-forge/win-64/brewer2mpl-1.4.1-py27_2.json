@@ -1,0 +1,43 @@
+{
+ "about": {
+  "doc_url": "https://github.com/jiffyclub/palettable/wiki/brewer2mpl",
+  "home": "https://github.com/jiffyclub/palettable/wiki/brewer2mpl",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Connect colorbrewer2.org color maps to Python and matplotlib"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/brewer2mpl-1.4.1-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/brewer2mpl/__init__.py",
+  "Lib/site-packages/brewer2mpl/brewer2mpl.py",
+  "Lib/site-packages/brewer2mpl/data/colorbrewer_all_schemes.csv",
+  "Lib/site-packages/brewer2mpl/data/colorbrewer_all_schemes.json",
+  "Lib/site-packages/brewer2mpl/data/colorbrewer_schemes_csv_to_json.py",
+  "Lib/site-packages/brewer2mpl/diverging.py",
+  "Lib/site-packages/brewer2mpl/qualitative.py",
+  "Lib/site-packages/brewer2mpl/sequential.py",
+  "Lib/site-packages/brewer2mpl/wesanderson/__init__.py",
+  "Lib/site-packages/brewer2mpl/wesanderson/wesanderson.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_2",
+  "build_number": 2,
+  "depends": [
+   "python 2.7*",
+   "setuptools"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "brewer2mpl",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.4.1"
+ },
+ "metadata_version": 1,
+ "name": "brewer2mpl",
+ "raw_recipe": "{% set name = \"brewer2mpl\" %}\n{% set version = \"1.4.1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2e094d1bea766885aa77e4ed40cc718af6458a1d5e08cc87a5f453c6095b1b1c\n\nbuild:\n  number: 2\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - brewer2mpl\n    - brewer2mpl.wesanderson\n\nabout:\n  home: https://github.com/jiffyclub/palettable/wiki/brewer2mpl\n  license: MIT\n  license_family: MIT\n  summary: 'Connect colorbrewer2.org color maps to Python and matplotlib'\n  doc_url: https://github.com/jiffyclub/palettable/wiki/brewer2mpl\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.4.1"
+}

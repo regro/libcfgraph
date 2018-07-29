@@ -1,0 +1,24 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Library/ssl/cacert.pem",
+  "Library/ssl/cert.pem"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "ISC",
+  "name": "ca-certificates",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2016.2.28"
+ },
+ "metadata_version": 1,
+ "name": "ca-certificates",
+ "raw_recipe": "{% set version = \"2016.2.28\" %}\n\npackage:\n  name: ca-certificates\n  version: {{ version }}\n\n# This does not have a source because it pulls these from certifi at present.\n\nbuild:\n  number: 0\n  skip: true  # [not py35]\n  # As openssl includes these (dependency of Python), they will be removed afterwards.\n  # This is our way of ensuring these files are kept anyways. Once conda-forge has its\n  # own openssl, this will no longer be necessary.\n  #\n  # Note: The Windows copy of openssl does not include these.\n  always_include_files:\n    - ssl/cert.pem      # [unix]\n    - ssl/cacert.pem    # [unix]\n\nrequirements:\n  build:\n    - python\n    - certifi {{ version }}\n\ntest:\n  requires:\n    - curl\n\n  commands:\n    # Verify the certificates are there.\n    - test -f \"${PREFIX}/ssl/cacert.pem\"                                      # [unix]\n    - test -f \"${PREFIX}/ssl/cert.pem\"                                        # [unix]\n    - if not exist %LIBRARY_PREFIX%\\\\ssl\\\\cacert.pem exit 1                   # [win]\n    - if not exist %LIBRARY_PREFIX%\\\\ssl\\\\cert.pem exit 1                     # [win]\n\n    # Use the certificates to download something.\n    - curl --cacert \"${PREFIX}/ssl/cacert.pem\" https://www.google.com         # [unix]\n    - curl --cacert %LIBRARY_PREFIX%\\\\ssl\\\\cacert.pem https://www.google.com  # [win]\n\nabout:\n  home: https://github.com/conda-forge/ca-certificates-feedstock\n  license: ISC\n  summary: Certificates for use with other packages.\n\nextra:\n  recipe-maintainers:\n     - jakirkham\n     - msarahan\n     - pelson\n",
+ "rendered_recipe": {},
+ "version": "2016.2.28"
+}

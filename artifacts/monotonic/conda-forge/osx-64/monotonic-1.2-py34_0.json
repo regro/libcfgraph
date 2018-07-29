@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "https://github.com/atdt/monotonic",
+  "license": "Apache License Version 2.0",
+  "summary": "An implementation of time.monotonic() for Python 2 & Python 3."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/monotonic-1.2-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/monotonic-1.2-py3.4.egg-info/pbr.json",
+  "lib/python3.4/site-packages/monotonic.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "Apache License Version 2.0",
+  "name": "monotonic",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.2"
+ },
+ "metadata_version": 1,
+ "name": "monotonic",
+ "raw_recipe": "{% set name = \"monotonic\" %}\n{% set version = \"1.2\" %}\n{% set md5 = \"d14c93aabc3d6af25ef086b032b123cf\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - monotonic\n\nabout:\n  home: https://github.com/atdt/monotonic\n  license: Apache License Version 2.0\n  summary: An implementation of time.monotonic() for Python 2 & Python 3.\n\nextra:\n  recipe-maintainers:\n    - alimanfoo\n    - anguslees\n",
+ "rendered_recipe": {},
+ "version": "1.2"
+}

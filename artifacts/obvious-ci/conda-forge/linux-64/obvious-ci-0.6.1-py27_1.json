@@ -1,0 +1,48 @@
+{
+ "about": {
+  "home": "https://github.com/pelson/Obvious-CI",
+  "license": "BSD 3-Clause",
+  "summary": "Tools to simplify Continuous Integration, particularly for conda building."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/obvci_appveyor_python_build_env.cmd",
+  "bin/obvci_conda_build_dir",
+  "bin/obvci_install_conda_build_tools.py",
+  "bin/obvci_install_miniconda.ps1",
+  "bin/obvci_install_miniconda.sh",
+  "lib/python2.7/site-packages/Obvious_ci-0.6.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/obvci/__init__.py",
+  "lib/python2.7/site-packages/obvci/_version.py",
+  "lib/python2.7/site-packages/obvci/cli/__init__.py",
+  "lib/python2.7/site-packages/obvci/cli/conda_build_dir.py",
+  "lib/python2.7/site-packages/obvci/conda_tools/__init__.py",
+  "lib/python2.7/site-packages/obvci/conda_tools/build.py",
+  "lib/python2.7/site-packages/obvci/conda_tools/build_directory.py",
+  "lib/python2.7/site-packages/obvci/conda_tools/from_conda_manifest_core_vn_matrix.py",
+  "lib/python2.7/site-packages/obvci/conda_tools/inspect_binstar.py",
+  "lib/python2.7/site-packages/obvci/conda_tools/order_deps.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "anaconda-client",
+   "conda",
+   "conda-build",
+   "python 2.7*",
+   "setuptools"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "obvious-ci",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.6.1"
+ },
+ "metadata_version": 1,
+ "name": "obvious-ci",
+ "raw_recipe": "{% set version=\"0.6.1\" %}\n\npackage:\n  name: obvious-ci\n  version: {{version}}\n\nsource:\n  url: https://github.com/pelson/Obvious-CI/archive/v{{ version }}.tar.gz\n  fn: obvious-ci_v{{ version }}.tar.gz\n  sha256: 03a39402a6c09cd4342109bebfe6aac05a09d11e04e39f7b2f0ddfcbd33d2d91\n  patches:\n    - miniconda_url.patch\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - anaconda-client\n    - conda\n    - conda-build\n\ntest:\n  imports:\n    - obvci\n    - obvci.conda_tools\n    - obvci.cli\n  commands:\n    - unset CONDA_NPY && obvci_conda_build_dir --help  # [not win]\n    - obvci_conda_build_dir --help  # [win]\n\nabout:\n  home: https://github.com/pelson/Obvious-CI\n  license: BSD 3-Clause\n  summary: Tools to simplify Continuous Integration, particularly for conda building.\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - mwcraig\n",
+ "rendered_recipe": {},
+ "version": "0.6.1"
+}

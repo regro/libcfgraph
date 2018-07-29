@@ -1,0 +1,45 @@
+{
+ "about": {
+  "home": "https://github.com/spyder-ide/qtpy",
+  "license": "MIT",
+  "summary": "A uniform layer to support PyQt5, PyQt4 and PySide with a single codebase"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/QtPy-1.1.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/qtpy/QtCore.py",
+  "lib/python3.5/site-packages/qtpy/QtDesigner.py",
+  "lib/python3.5/site-packages/qtpy/QtGui.py",
+  "lib/python3.5/site-packages/qtpy/QtNetwork.py",
+  "lib/python3.5/site-packages/qtpy/QtPrintSupport.py",
+  "lib/python3.5/site-packages/qtpy/QtSvg.py",
+  "lib/python3.5/site-packages/qtpy/QtTest.py",
+  "lib/python3.5/site-packages/qtpy/QtWebEngineWidgets.py",
+  "lib/python3.5/site-packages/qtpy/QtWidgets.py",
+  "lib/python3.5/site-packages/qtpy/__init__.py",
+  "lib/python3.5/site-packages/qtpy/_patch/__init__.py",
+  "lib/python3.5/site-packages/qtpy/_patch/qcombobox.py",
+  "lib/python3.5/site-packages/qtpy/_version.py",
+  "lib/python3.5/site-packages/qtpy/compat.py",
+  "lib/python3.5/site-packages/qtpy/py3compat.py",
+  "lib/python3.5/site-packages/qtpy/uic.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "qtpy",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.1.1"
+ },
+ "metadata_version": 1,
+ "name": "qtpy",
+ "raw_recipe": "{% set version = \"1.1.1\" %}\n\npackage:\n  name: qtpy\n  version: {{version}}\n\nsource:\n  fn: qtpy-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/q/qtpy/QtPy-{{version}}.tar.gz\n  md5: 181a1cc9c010e0c1f4daa3f0f69e3782\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  requires:\n    - pyqt\n  imports:\n    - qtpy\n\nabout:\n  home: https://github.com/spyder-ide/qtpy\n  license: MIT\n  summary: A uniform layer to support PyQt5, PyQt4 and PySide with a single codebase\n\nextra:\n  recipe-maintainers:\n    - ccordoba12\n    - goanpeca\n    - astrofrog\n    - Nodd\n",
+ "rendered_recipe": {},
+ "version": "1.1.1"
+}

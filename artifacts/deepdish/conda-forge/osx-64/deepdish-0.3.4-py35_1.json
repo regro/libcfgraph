@@ -1,0 +1,151 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "The primary feature of deepdish is its ability to save and load\nall kinds of data as HDF5. It can save any Python data structure,\noffering the same ease of use as pickling or numpy.save.\n",
+  "dev_url": "https://github.com/uchicago-cs/deepdish",
+  "doc_url": "http://deepdish.readthedocs.io/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p648/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/Users/travis/.nvm/versions/node/v6.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://deepdish.io/",
+  "license": "BSD 2-Clause",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Deep learning and data science tools from the University of Chicago."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/deepdish/core.py",
+  "lib/python3.5/site-packages/deepdish/io/ls.py",
+  "lib/python3.5/site-packages/deepdish/io/hdf5io.py",
+  "lib/python3.5/site-packages/deepdish/__init__.py",
+  "lib/python3.5/site-packages/deepdish/util/__init__.py",
+  "bin/ddls",
+  "lib/python3.5/site-packages/deepdish/parallel/mpi.py",
+  "lib/python3.5/site-packages/deepdish/util/padding.py",
+  "lib/python3.5/site-packages/deepdish/util/saveable.py",
+  "lib/python3.5/site-packages/deepdish/parallel/__init__.py",
+  "lib/python3.5/site-packages/deepdish/parallel/fallback.py",
+  "lib/python3.5/site-packages/deepdish/io/__init__.py",
+  "lib/python3.5/site-packages/deepdish/six.py",
+  "lib/python3.5/site-packages/deepdish/image.py",
+  "lib/python3.5/site-packages/deepdish-0.3.4-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/deepdish/conf.py",
+  "lib/python3.5/site-packages/deepdish/util/zca_whitening.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "numpy",
+   "pytables",
+   "python 3.5*",
+   "scipy"
+  ],
+  "license": "BSD 2-Clause",
+  "name": "deepdish",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.4"
+ },
+ "metadata_version": 1,
+ "name": "deepdish",
+ "raw_recipe": "{% set name = \"deepdish\" %}\n{% set version = \"0.3.4\" %}\n{% set sha256 = \"8917287e5bf4a615a5f07e336b5c402257c81ee18347abaa09b673f12b395b46\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.zip\n  url: https://github.com/uchicago-cs/{{ name }}/archive/v{{ version }}.zip\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n    - scipy\n    - pytables\n\ntest:\n  imports:\n    - deepdish\n\nabout:\n  home: http://deepdish.io/\n  license: BSD 2-Clause\n  license_file: LICENSE\n  summary: 'Deep learning and data science tools from the University of Chicago.'\n  description: |\n    The primary feature of deepdish is its ability to save and load \n    all kinds of data as HDF5. It can save any Python data structure, \n    offering the same ease of use as pickling or numpy.save.\n  doc_url: http://deepdish.readthedocs.io/\n  dev_url: https://github.com/uchicago-cs/deepdish\n\nextra:\n  recipe-maintainers:\n    - basnijholt\n    - gustavla\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "The primary feature of deepdish is its ability to save and load\nall kinds of data as HDF5. It can save any Python data structure,\noffering the same ease of use as pickling or numpy.save.\n",
+   "dev_url": "https://github.com/uchicago-cs/deepdish",
+   "doc_url": "http://deepdish.readthedocs.io/",
+   "home": "http://deepdish.io/",
+   "license": "BSD 2-Clause",
+   "license_file": "LICENSE",
+   "summary": "Deep learning and data science tools from the University of Chicago."
+  },
+  "build": {
+   "number": "1",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py35_1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "basnijholt",
+    "gustavla"
+   ]
+  },
+  "package": {
+   "name": "deepdish",
+   "version": "0.3.4"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "numpy",
+    "scipy",
+    "pytables"
+   ]
+  },
+  "source": {
+   "fn": "v0.3.4.zip",
+   "sha256": "8917287e5bf4a615a5f07e336b5c402257c81ee18347abaa09b673f12b395b46",
+   "url": "https://github.com/uchicago-cs/deepdish/archive/v0.3.4.zip"
+  },
+  "test": {
+   "imports": [
+    "deepdish"
+   ]
+  }
+ },
+ "version": "0.3.4"
+}

@@ -1,0 +1,37 @@
+{
+ "about": {
+  "description": "Opens a notebook, strips its output, and writes the outputless version to the\noriginal file.\n\nUseful mainly as a git filter or pre-commit hook for users who don't want to\ntrack output in VCS.\n\nThis does mostly the same thing as the `Clear All Output` command in the\nnotebook UI.\n",
+  "dev_url": "https://github.com/kynan/nbstripout",
+  "doc_url": "https://pypi.python.org/pypi/nbstripout",
+  "home": "https://github.com/kynan/nbstripout",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "strip output from Jupyter and IPython notebooks"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/nbstripout-0.2.8-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/nbstripout.py",
+  "Scripts/nbstripout-script.py",
+  "Scripts/nbstripout.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "nbstripout",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2.8"
+ },
+ "metadata_version": 1,
+ "name": "nbstripout",
+ "raw_recipe": "{% set name = \"nbstripout\" %}\n{% set version = \"0.2.8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8ca27ab35204b8352b376c071ed4543696d1dbb5088ab93dd282b134fdffd8fb\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - nbstripout = nbstripout:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n  run:\n    - python\n\ntest:\n  requires:\n    - nbformat\n  imports:\n    - nbstripout\n  commands:\n    - nbstripout --help\n\n# Not running tests since pytest-cram and pytest-flake8 are not yet conda packaged\n\n# test:\n#   source_files:\n#     - tests\n#   requires:\n#     - pytest\n#     - pytest-flake8\n#     - pytest-cram\n#   commands:\n#     - python setup.py test\n\nabout:\n  home: https://github.com/kynan/nbstripout\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'strip output from Jupyter and IPython notebooks'\n  description: |\n    Opens a notebook, strips its output, and writes the outputless version to the\n    original file.\n\n    Useful mainly as a git filter or pre-commit hook for users who don't want to\n    track output in VCS.\n\n    This does mostly the same thing as the `Clear All Output` command in the\n    notebook UI.\n  doc_url: https://pypi.python.org/pypi/nbstripout\n  dev_url: https://github.com/kynan/nbstripout\n\nextra:\n  recipe-maintainers:\n    - kynan\n",
+ "rendered_recipe": {},
+ "version": "0.2.8"
+}

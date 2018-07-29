@@ -1,0 +1,57 @@
+{
+ "about": {
+  "home": "https://github.com/Blosc/bloscpack",
+  "license": "Apache 2.0",
+  "summary": "Command line interface to and serialization format for Blosc"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/blpk",
+  "lib/python3.5/site-packages/bloscpack-0.10.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/bloscpack/__init__.py",
+  "lib/python3.5/site-packages/bloscpack/abstract_io.py",
+  "lib/python3.5/site-packages/bloscpack/abstract_objects.py",
+  "lib/python3.5/site-packages/bloscpack/append.py",
+  "lib/python3.5/site-packages/bloscpack/args.py",
+  "lib/python3.5/site-packages/bloscpack/checksums.py",
+  "lib/python3.5/site-packages/bloscpack/cli.py",
+  "lib/python3.5/site-packages/bloscpack/compat_util.py",
+  "lib/python3.5/site-packages/bloscpack/constants.py",
+  "lib/python3.5/site-packages/bloscpack/defaults.py",
+  "lib/python3.5/site-packages/bloscpack/exceptions.py",
+  "lib/python3.5/site-packages/bloscpack/file_io.py",
+  "lib/python3.5/site-packages/bloscpack/headers.py",
+  "lib/python3.5/site-packages/bloscpack/log.py",
+  "lib/python3.5/site-packages/bloscpack/memory_io.py",
+  "lib/python3.5/site-packages/bloscpack/metacodecs.py",
+  "lib/python3.5/site-packages/bloscpack/numpy_io.py",
+  "lib/python3.5/site-packages/bloscpack/pretty.py",
+  "lib/python3.5/site-packages/bloscpack/serializers.py",
+  "lib/python3.5/site-packages/bloscpack/sysutil.py",
+  "lib/python3.5/site-packages/bloscpack/testutil.py",
+  "lib/python3.5/site-packages/bloscpack/util.py",
+  "lib/python3.5/site-packages/bloscpack/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "blosc",
+   "numpy",
+   "python 3.5*",
+   "python-blosc",
+   "six"
+  ],
+  "license": "Apache 2.0",
+  "name": "bloscpack",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.10.0"
+ },
+ "metadata_version": 1,
+ "name": "bloscpack",
+ "raw_recipe": "{% set version = \"0.10.0\" %}\n\npackage:\n  name: bloscpack\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/b/bloscpack/bloscpack-{{ version }}.tar.gz\n  sha256: c97150f0d5e06efcdf87452cb92f25d13511f5f9e6b75be7d9e0f4df3758f707\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - blpk=bloscpack.cli:main\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - six\n    - blosc\n    - python-blosc\n    - numpy\n\ntest:\n  imports:\n    - bloscpack\n  commands:\n    - blpk --help\n\nabout:\n  home: https://github.com/Blosc/bloscpack\n  license: Apache 2.0\n  summary: 'Command line interface to and serialization format for Blosc'\n\nextra:\n  recipe-maintainers:\n    - danielfrg\n",
+ "rendered_recipe": {},
+ "version": "0.10.0"
+}

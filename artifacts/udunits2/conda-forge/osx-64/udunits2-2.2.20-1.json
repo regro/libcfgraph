@@ -1,0 +1,107 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/.udunits2-post-link.sh",
+  "bin/udunits2",
+  "build_prefix.a",
+  "include/converter.h",
+  "include/udunits.h",
+  "include/udunits2.h",
+  "lib/libudunits2.0.dylib",
+  "lib/libudunits2.a",
+  "lib/libudunits2.dylib",
+  "lib/libudunits2.la",
+  "patchbinary.py",
+  "share/doc/udunits/CHANGE_LOG",
+  "share/doc/udunits/COPYRIGHT",
+  "share/doc/udunits/README",
+  "share/doc/udunits/udunits2-accepted.xml",
+  "share/doc/udunits/udunits2-base.xml",
+  "share/doc/udunits/udunits2-common.xml",
+  "share/doc/udunits/udunits2-derived.xml",
+  "share/doc/udunits/udunits2-prefixes.xml",
+  "share/doc/udunits/udunits2.xml",
+  "share/info/udunits2.info",
+  "share/info/udunits2lib.info",
+  "share/info/udunits2prog.info",
+  "share/udunits/udunits2-accepted.xml",
+  "share/udunits/udunits2-base.xml",
+  "share/udunits/udunits2-common.xml",
+  "share/udunits/udunits2-derived.xml",
+  "share/udunits/udunits2-prefixes.xml",
+  "share/udunits/udunits2.xml"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [
+   "expat"
+  ],
+  "license": "https://github.com/Unidata/UDUNITS-2/blob/master/COPYRIGHT",
+  "name": "udunits2",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.2.20"
+ },
+ "metadata_version": 1,
+ "name": "udunits2",
+ "raw_recipe": "package:\n    name: udunits2\n    version: 2.2.20\n\nsource:\n    fn: v2.2.20.tar.gz\n    url: https://github.com/Unidata/UDUNITS-2/archive/v2.2.20.tar.gz\n    sha1: a0d30024af16749a4a5ca60133b32735ae52f9e2\n\nbuild:\n    number: 1\n    detect_binary_files_with_prefix: true\n    features:\n        - vc9  # [win and py27]\n        - vc10  # [win and py34]\n        - vc14  # [win and py35]\n\nrequirements:\n    build:\n        - python  # [win]\n        - cmake  # [win]\n        - automake  # [not win]\n        - libtool  # [not win]\n        - texinfo  # [not win]\n        - expat\n    run:\n        - expat\n\ntest:\n    requires:\n        # Tests don't really need Python, but conda throws\n        - python {{ environ['PY_VER'] + '*' }}  # [win]\n    commands:\n        - udunits2 -h\n        - udunits2 -H meter -W miles\n        - conda inspect linkages udunits2 --name _test  # [linux]\n\nabout:\n    home: http://www.unidata.ucar.edu/software/udunits/\n    license: https://github.com/Unidata/UDUNITS-2/blob/master/COPYRIGHT\n    summary: The UDUNITS package supports units of physical quantities.\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n        - ocefpaf\n        - pelson\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.unidata.ucar.edu/software/udunits/",
+   "license": "https://github.com/Unidata/UDUNITS-2/blob/master/COPYRIGHT",
+   "summary": "The UDUNITS package supports units of physical quantities."
+  },
+  "build": {
+   "detect_binary_files_with_prefix": true,
+   "features": [
+    "vc9",
+    "vc10",
+    "vc14"
+   ],
+   "number": 1
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "kwilcox",
+    "ocefpaf",
+    "pelson"
+   ]
+  },
+  "package": {
+   "name": "udunits2",
+   "version": "2.2.20"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "cmake",
+    "automake",
+    "libtool",
+    "texinfo",
+    "expat"
+   ],
+   "run": [
+    "expat"
+   ]
+  },
+  "source": {
+   "fn": "v2.2.20.tar.gz",
+   "sha1": "a0d30024af16749a4a5ca60133b32735ae52f9e2",
+   "url": "https://github.com/Unidata/UDUNITS-2/archive/v2.2.20.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "udunits2 -h",
+    "udunits2 -H meter -W miles",
+    "conda inspect linkages udunits2 --name _test"
+   ],
+   "requires": [
+    "python {{ environ['PY_VER'] + '*' }}"
+   ]
+  }
+ },
+ "version": "2.2.20"
+}

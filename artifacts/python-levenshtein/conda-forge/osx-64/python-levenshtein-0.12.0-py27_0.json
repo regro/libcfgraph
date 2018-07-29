@@ -1,0 +1,31 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/Levenshtein/StringMatcher.py",
+  "lib/python2.7/site-packages/Levenshtein/__init__.py",
+  "lib/python2.7/site-packages/Levenshtein/_levenshtein.c",
+  "lib/python2.7/site-packages/Levenshtein/_levenshtein.h",
+  "lib/python2.7/site-packages/Levenshtein/_levenshtein.so",
+  "lib/python2.7/site-packages/python_Levenshtein-0.12.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/python_Levenshtein-0.12.0-py2.7.egg-info/not-zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "GPL 2.0",
+  "name": "python-levenshtein",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.12.0"
+ },
+ "metadata_version": 1,
+ "name": "python-levenshtein",
+ "raw_recipe": "{%set name = \"python-levenshtein\" %}\n{%set camelName = \"python-Levenshtein\" %}\n{%set version = \"0.12.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"033a11de5e3d19ea25c9302d11224e1a1898fe5abd23c61c7c360c25195e3eb1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  preserve_egg_dir: True\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - Levenshtein\n\nabout:\n  home: http://github.com/ztane/python-Levenshtein\n  license: GPL 2.0\n  summary: 'Python extension for computing string edit distances and similarities.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.12.0"
+}

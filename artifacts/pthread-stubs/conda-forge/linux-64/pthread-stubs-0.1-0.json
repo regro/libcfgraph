@@ -1,0 +1,27 @@
+{
+ "about": {
+  "home": "http://xcb.freedesktop.org/",
+  "license": "MIT",
+  "summary": "Stubs missing from libc for standard pthread functions"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/pkgconfig/pthread-stubs.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "MIT",
+  "name": "pthread-stubs",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1"
+ },
+ "metadata_version": 1,
+ "name": "pthread-stubs",
+ "raw_recipe": "{% set version = \"0.1\" %}\n{% set md5 = \"774eabaf33440d534efe108ef9130a7d\" %}\n\npackage:\n  name: pthread-stubs\n  version: {{ version }}\n\nsource:\n  fn: libpthread-stubs-{{ version }}.tar.bz2\n  url: http://xcb.freedesktop.org/dist/libpthread-stubs-{{ version }}.tar.bz2\n  md5: {{ md5 }}\n\nbuild:\n  skip: true  # [win or osx]\n  number: 0\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/pkgconfig/pthread-stubs.pc\n\nabout:\n    home: http://xcb.freedesktop.org/\n    license: MIT\n    summary: \"Stubs missing from libc for standard pthread functions\"\n\nextra:\n  recipe-maintainers:\n    - ccordoba12\n    - mingwandroid\n",
+ "rendered_recipe": {},
+ "version": "0.1"
+}

@@ -1,0 +1,154 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://hdfeos.org/index.php",
+  "license": "Public Domain",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.4.17-0",
+   "conda-forge::certifi-2017.4.17-py35_0",
+   "conda-forge::chardet-3.0.2-py35_1",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.10-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.12.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-1.0-py35_0",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::openssl-1.0.2k-0",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_1",
+   "conda-forge::python-3.5.3-3",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2017.2-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Earth Observing System HDF."
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/ease.h",
+  "include/HE5_GctpFunc.h",
+  "include/cproj.h",
+  "lib/libhe5_hdfeos.a",
+  "lib/libGctp.a",
+  "include/proj.h",
+  "include/tutils.h",
+  "include/isin.h",
+  "include/HE5_config.h",
+  "lib/libGctp.la",
+  "include/cfortHdf.h",
+  "lib/libhe5_hdfeos.la",
+  "include/HE5_HdfEosDef.h"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "7",
+  "build_number": 7,
+  "depends": [
+   "hdf5 1.8.18|1.8.18.*",
+   "zlib 1.2.*"
+  ],
+  "license": "Public Domain",
+  "name": "hdfeos5",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "5.1.15"
+ },
+ "metadata_version": 1,
+ "name": "hdfeos5",
+ "raw_recipe": "{% set version = \"5.1.15\" %}\n\npackage:\n  name: hdfeos5\n  version: {{ version }}\n\nsource:\n  fn: HDF-EOS{{ version }}.tar.Z\n  url: ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos5/latest_release/HDF-EOS{{ version }}.tar.Z\n  sha256: 119588067abf139c1c600a4519b880d04a3933049576c88acdc8ff6fc71803dd\n  patches:\n    # http://hdfeos.org/forums/showthread.php?t=673\n    - EHapi.c.patch\n\nbuild:\n  number: 7\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - hdf5 1.8.18|1.8.18.*\n    - zlib 1.2.*\n  run:\n    - hdf5 1.8.18|1.8.18.*\n    - zlib 1.2.*\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libGctp.a  # [not win]\n    - test -f ${PREFIX}/lib/libhe5_hdfeos.a  # [not win]\n    #- conda inspect linkages -p $PREFIC hdfeos2  # [not win]\n    #- conda inspect objects -p $PREFIX hdfeos2  # [osx]\n\nabout:\n  home: http://hdfeos.org/index.php\n  license: Public Domain\n  summary: 'Earth Observing System HDF.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - jhamman\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://hdfeos.org/index.php",
+   "license": "Public Domain",
+   "summary": "Earth Observing System HDF."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "7",
+   "string": "7"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "ocefpaf",
+    "jhamman"
+   ]
+  },
+  "package": {
+   "name": "hdfeos5",
+   "version": "5.1.15"
+  },
+  "requirements": {
+   "build": [
+    "zlib 1.2.11 0",
+    "hdf5 1.8.18 0",
+    "libgfortran 3.0.0 1"
+   ],
+   "run": [
+    "hdf5 1.8.18|1.8.18.*",
+    "zlib 1.2.*"
+   ]
+  },
+  "source": {
+   "fn": "HDF-EOS5.1.15.tar.Z",
+   "patches": [
+    "EHapi.c.patch"
+   ],
+   "sha256": "119588067abf139c1c600a4519b880d04a3933049576c88acdc8ff6fc71803dd",
+   "url": "ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos5/latest_release/HDF-EOS5.1.15.tar.Z"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/lib/libGctp.a",
+    "test -f ${PREFIX}/lib/libhe5_hdfeos.a"
+   ]
+  }
+ },
+ "version": "5.1.15"
+}

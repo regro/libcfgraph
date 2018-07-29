@@ -1,0 +1,38 @@
+{
+ "about": {
+  "dev_url": "https://github.com/theskumar/python-dotenv/",
+  "home": "https://github.com/theskumar/python-dotenv/",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Get and set values in your .env file in local and production servers like Heroku does."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/dotenv",
+  "lib/python3.5/site-packages/dotenv/__init__.py",
+  "lib/python3.5/site-packages/dotenv/cli.py",
+  "lib/python3.5/site-packages/dotenv/ipython.py",
+  "lib/python3.5/site-packages/dotenv/main.py",
+  "lib/python3.5/site-packages/python_dotenv-0.6.1-py3.5.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "click >=5.0",
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "python-dotenv",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.6.1"
+ },
+ "metadata_version": 1,
+ "name": "python-dotenv",
+ "raw_recipe": "{% set name = \"python-dotenv\" %}\n{% set version = \"0.6.1\" %}\n{% set sha256 = \"bd8ed28f7365de0cbd0a28bf77bc5171444e7031853172749b5cea6c85a3928f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - dotenv = dotenv:cli.cli\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - click >=5.0\n\ntest:\n  imports:\n    - dotenv\n\nabout:\n  home: https://github.com/theskumar/python-dotenv/\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Get and set values in your .env file in local and production servers like Heroku does.'\n  dev_url: https://github.com/theskumar/python-dotenv/\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
+ "rendered_recipe": {},
+ "version": "0.6.1"
+}

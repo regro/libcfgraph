@@ -1,0 +1,43 @@
+{
+ "about": {
+  "home": "http://pypi.python.org/pypi/ctd/",
+  "license": "MIT",
+  "summary": "Tools to load hydrographic data formats as pandas DataFrames."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/ctd-0.2.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/ctd/__init__.py",
+  "lib/python3.5/site-packages/ctd/ctd.py",
+  "lib/python3.5/site-packages/ctd/plotting.py",
+  "lib/python3.5/site-packages/ctd/processing.py",
+  "lib/python3.5/site-packages/ctd/tests/__init__.py",
+  "lib/python3.5/site-packages/ctd/tests/test_ctd.py",
+  "lib/python3.5/site-packages/ctd/tests/test_plotting.py",
+  "lib/python3.5/site-packages/ctd/tests/test_processing.py",
+  "lib/python3.5/site-packages/ctd/utilities.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "gsw",
+   "matplotlib",
+   "numpy",
+   "pandas",
+   "python 3.5*",
+   "scipy"
+  ],
+  "license": "MIT",
+  "name": "ctd",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.2"
+ },
+ "metadata_version": 1,
+ "name": "ctd",
+ "raw_recipe": "{% set version = \"0.2.2\" %}\n\npackage:\n    name: ctd\n    version: {{ version }}\n\nsource:\n    fn: ctd-{{ version }}.tar.gz\n    url: https://github.com/pyoceans/python-ctd/releases/download/v{{ version }}/ctd-{{ version }}.tar.gz\n    sha256: f99ccda7d374a5f6707e2e8a947976c40bc0ebf42dbc788c1489f25c785314f4\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - scipy\n        - matplotlib\n        - pandas\n        - gsw\n\ntest:\n    imports:\n        - ctd\n\nabout:\n    home: http://pypi.python.org/pypi/ctd/\n    license: MIT\n    summary: 'Tools to load hydrographic data formats as pandas DataFrames.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.2.2"
+}

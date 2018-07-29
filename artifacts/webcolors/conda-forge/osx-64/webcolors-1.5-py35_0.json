@@ -1,0 +1,26 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/webcolors-1.5-py3.5.egg-info",
+  "lib/python3.5/site-packages/webcolors.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD License",
+  "name": "webcolors",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.5"
+ },
+ "metadata_version": 1,
+ "name": "webcolors",
+ "raw_recipe": "{% set version = \"1.5\" %}\n\npackage:\n  name: webcolors\n  version: {{ version }}\n\nsource:\n  fn: webcolors-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/w/webcolors/webcolors-{{ version }}.tar.gz\n  md5: 2e9da1bbb7a087c6108e05be64640afb\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - webcolors\n\nabout:\n  home: https://github.com/ubernostrum/webcolors\n  license: BSD License\n  summary: 'A library for working with color names and color value formats defined by the HTML and CSS specifications for use in documents on the Web.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.5"
+}

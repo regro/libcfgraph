@@ -1,0 +1,43 @@
+{
+ "about": {
+  "description": "Python Utils is a collection of small Python functions and classes which make common patterns shorter and easier. It is by no means a complete collection but it has served me quite a bit in the past and I will keep extending it.\nOne of the libraries using Python Utils is Django Utils.\n",
+  "dev_url": "https://github.com/WoLpH/python-utils",
+  "doc_url": "http://python-utils.readthedocs.io/",
+  "home": "https://github.com/WoLpH/python-utils",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "summary": "Python Utils is a collection of small Python functions and classes which make common patterns shorter and easier."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/python_utils-2.0.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/python_utils-2.0.0-py3.5.egg-info/pbr.json",
+  "Lib/site-packages/python_utils/__about__.py",
+  "Lib/site-packages/python_utils/__init__.py",
+  "Lib/site-packages/python_utils/compat.py",
+  "Lib/site-packages/python_utils/converters.py",
+  "Lib/site-packages/python_utils/formatters.py",
+  "Lib/site-packages/python_utils/import_.py",
+  "Lib/site-packages/python_utils/logger.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "six"
+  ],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "name": "python-utils",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.0.0"
+ },
+ "metadata_version": 1,
+ "name": "python-utils",
+ "raw_recipe": "{% set name = \"python-utils\" %}\n{% set version = \"2.0.0\" %}\n{% set sha256 = \"746777e47158641cf97da342dffdc5d1f9901823615d1fdab75ce68ce39194dd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - python_utils\n    - python_utils.converters\n    - python_utils.formatters\n\nabout:\n  home: https://github.com/WoLpH/python-utils\n  license: BSD-3-Clause\n  license_family: BSD\n  summary: 'Python Utils is a collection of small Python functions and classes which make common patterns shorter and easier.'\n  description: |\n    Python Utils is a collection of small Python functions and classes which make common patterns shorter and easier. It is by no means a complete collection but it has served me quite a bit in the past and I will keep extending it.\n    One of the libraries using Python Utils is Django Utils.\n  doc_url: http://python-utils.readthedocs.io/\n  dev_url: https://github.com/WoLpH/python-utils\n\nextra:\n  recipe-maintainers:\n    - MaartenBreddels\n    - WoLpH\n",
+ "rendered_recipe": {},
+ "version": "2.0.0"
+}

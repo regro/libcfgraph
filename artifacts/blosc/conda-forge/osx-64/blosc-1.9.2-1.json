@@ -1,0 +1,35 @@
+{
+ "about": {
+  "home": "https://github.com/Blosc/c-blosc",
+  "license": "BSD 3-Clause License",
+  "summary": "A blocking, shuffling and loss-less compression library that can be faster than `memcpy()`"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/blosc-export.h",
+  "include/blosc.h",
+  "lib/libblosc.1.9.2.dylib",
+  "lib/libblosc.1.dylib",
+  "lib/libblosc.a",
+  "lib/libblosc.dylib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [
+   "snappy",
+   "zlib 1.2.*"
+  ],
+  "license": "BSD 3-Clause License",
+  "name": "blosc",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.9.2"
+ },
+ "metadata_version": 1,
+ "name": "blosc",
+ "raw_recipe": "{% set version = \"1.9.2\" %}\n\npackage:\n  name: blosc\n  version: {{ version }}\n\nsource:\n  url: https://github.com/Blosc/c-blosc/archive/v{{ version }}.tar.gz\n  sha256: 6349ab927705a451439b2e23ec5c3473f6b7e444e6d4aafaff76b789713e9fee\n\nbuild:\n  number: 1\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - zlib 1.2.*\n    - snappy\n  run:\n    - snappy\n    - zlib 1.2.*\n\ntest:\n  commands:\n    - test -e $PREFIX/include/blosc.h                # [unix]\n    - test -e $PREFIX/include/blosc-export.h         # [unix]\n    - test -e $PREFIX/lib/libblosc.a                 # [unix]\n    - test -e $PREFIX/lib/libblosc.dylib             # [osx]\n    - test -e $PREFIX/lib/libblosc.so                # [linux]\n\nabout:\n  home: https://github.com/Blosc/c-blosc\n  license: BSD 3-Clause License\n  license_file: LICENSES/BLOSC.txt\n  summary: 'A blocking, shuffling and loss-less compression library that can be faster than `memcpy()`'\n\nextra:\n  recipe-maintainers:\n    - danielfrg\n    - FrancescElies\n",
+ "rendered_recipe": {},
+ "version": "1.9.2"
+}

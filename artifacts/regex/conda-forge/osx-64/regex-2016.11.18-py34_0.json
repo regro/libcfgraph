@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "https://bitbucket.org/mrabarnett/mrab-regex",
+  "license": "Python-2.0",
+  "summary": "Alternative regular expression module, to replace re."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/_regex.so",
+  "lib/python3.4/site-packages/_regex_core.py",
+  "lib/python3.4/site-packages/regex-2016.11.18-py3.4.egg-info",
+  "lib/python3.4/site-packages/regex.py",
+  "lib/python3.4/site-packages/test_regex.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "Python-2.0",
+  "name": "regex",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2016.11.18"
+ },
+ "metadata_version": 1,
+ "name": "regex",
+ "raw_recipe": "{% set version = \"2016.11.18\" %}\n\npackage:\n  name: regex\n  version: {{ version }}\n\nsource:\n  fn: regex-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/r/regex/regex-{{ version }}.tar.gz\n  sha256: 869918f4d5444e4526a2df7e0f34f324d87e998650e775e8bbc3963296d0cd88\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - regex\n\nabout:\n  home: https://bitbucket.org/mrabarnett/mrab-regex\n  license: Python-2.0\n  summary: 'Alternative regular expression module, to replace re.'\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "2016.11.18"
+}

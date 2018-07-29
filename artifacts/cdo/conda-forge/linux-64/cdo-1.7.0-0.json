@@ -1,0 +1,76 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/cdo"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "jasper",
+   "libgcc",
+   "libnetcdf",
+   "libuuid",
+   "netcdf-fortran",
+   "proj.4"
+  ],
+  "license": "GNU General Public License v2",
+  "name": "cdo",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.7.0"
+ },
+ "metadata_version": 1,
+ "name": "cdo",
+ "raw_recipe": "package:\n    name: cdo\n    version: 1.7.0\n\nsource:\n    fn: cdo-1.7.0.tar.gz\n    url: https://code.zmaw.de/attachments/download/11392/cdo-1.7.0.tar.gz\n    md5: cca30c3c79335ad734e1838806f7bfc2\n\nbuild:\n    number: 0\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - jasper\n        - libnetcdf\n        - netcdf-fortran\n        - proj.4\n        - libuuid\n    run:\n        - jasper\n        - libnetcdf\n        - netcdf-fortran\n        - proj.4\n        - libgcc\n        - libuuid\n\ntest:\n    commands:\n        - cdo -h\n\nabout:\n    home: https://code.zmaw.de/projects/cdo\n    license: GNU General Public License v2\n    summary: CLI tools to manipulate and analyse Climate and NWP model Data\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://code.zmaw.de/projects/cdo",
+   "license": "GNU General Public License v2",
+   "summary": "CLI tools to manipulate and analyse Climate and NWP model Data"
+  },
+  "build": {
+   "number": 0,
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "cdo",
+   "version": "1.7.0"
+  },
+  "requirements": {
+   "build": [
+    "jasper",
+    "libnetcdf",
+    "netcdf-fortran",
+    "proj.4",
+    "libuuid"
+   ],
+   "run": [
+    "jasper",
+    "libnetcdf",
+    "netcdf-fortran",
+    "proj.4",
+    "libgcc",
+    "libuuid"
+   ]
+  },
+  "source": {
+   "fn": "cdo-1.7.0.tar.gz",
+   "md5": "cca30c3c79335ad734e1838806f7bfc2",
+   "url": "https://code.zmaw.de/attachments/download/11392/cdo-1.7.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "cdo -h"
+   ]
+  }
+ },
+ "version": "1.7.0"
+}

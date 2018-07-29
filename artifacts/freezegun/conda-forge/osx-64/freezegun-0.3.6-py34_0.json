@@ -1,0 +1,71 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/freezegun-0.3.6-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/freezegun/__init__.py",
+  "lib/python3.4/site-packages/freezegun/api.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "python-dateutil >=1.0,!=2.0",
+   "six"
+  ],
+  "license": "Apache-2.0",
+  "name": "freezegun",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.6"
+ },
+ "metadata_version": 1,
+ "name": "freezegun",
+ "raw_recipe": "package:\n    name: freezegun\n    version: 0.3.6\n\nsource:\n    fn: freezegun-0.3.6.tar.gz\n    url: https://pypi.python.org/packages/source/f/freezegun/freezegun-0.3.6.tar.gz\n    md5: c321cf7392343f91e524eec0b601e8ec\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - six\n        - python-dateutil >=1.0,!=2.0\n    run:\n        - python\n        - six\n        - python-dateutil >=1.0,!=2.0\n\ntest:\n    imports:\n        - freezegun\n\nabout:\n    home: https://github.com/spulec/freezegun\n    license: Apache-2.0\n    summary: Let your Python tests travel through time\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/spulec/freezegun",
+   "license": "Apache-2.0",
+   "summary": "Let your Python tests travel through time"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "freezegun",
+   "version": "0.3.6"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "six",
+    "python-dateutil >=1.0,!=2.0"
+   ],
+   "run": [
+    "python",
+    "six",
+    "python-dateutil >=1.0,!=2.0"
+   ]
+  },
+  "source": {
+   "fn": "freezegun-0.3.6.tar.gz",
+   "md5": "c321cf7392343f91e524eec0b601e8ec",
+   "url": "https://pypi.python.org/packages/source/f/freezegun/freezegun-0.3.6.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "freezegun"
+   ]
+  }
+ },
+ "version": "0.3.6"
+}

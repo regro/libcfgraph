@@ -1,0 +1,136 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/SciTools-incubator/python-stratify",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.4-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Vectorized interpolators that are especially useful for Nd vertical interpolation/stratification of atmospheric and oceanographic datasets."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/stratify/tests/performance.py",
+  "lib/python3.5/site-packages/stratify-0.1a0-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/stratify/__init__.py",
+  "lib/python3.5/site-packages/stratify/_vinterp.cpython-35m-darwin.so",
+  "lib/python3.5/site-packages/stratify-0.1a0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/stratify/tests/__init__.py",
+  "lib/python3.5/site-packages/stratify/tests/test_vinterp.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np112py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.12*",
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "python-stratify",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1a1"
+ },
+ "metadata_version": 1,
+ "name": "python-stratify",
+ "raw_recipe": "{% set name = \"python-stratify\" %}\n{% set version = \"0.1a1\" %}\n{% set sha256 = \"dc98cf7d104f6fb33c2672558504c66331a16f437d81aaee1259f838af35d9d1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: python-stratify-{{ version }}.tar.gz\n  url: https://github.com/SciTools-incubator/python-stratify/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - cython\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  imports:\n    - stratify\n\nabout:\n  home: https://github.com/SciTools-incubator/python-stratify\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Vectorized interpolators that are especially useful for Nd vertical interpolation/stratification of atmospheric and oceanographic datasets.'\n\nextra:\n  recipe-maintainers:\n    - bjlittle\n    - lbdreyer\n    - ocefpaf\n    - pelson\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/SciTools-incubator/python-stratify",
+   "license": "BSD 3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "Vectorized interpolators that are especially useful for Nd vertical interpolation/stratification of atmospheric and oceanographic datasets."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "np112py35_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bjlittle",
+    "lbdreyer",
+    "ocefpaf",
+    "pelson"
+   ]
+  },
+  "package": {
+   "name": "python-stratify",
+   "version": "0.1a1"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "numpy x.x"
+   ]
+  },
+  "source": {
+   "fn": "python-stratify-0.1a1.tar.gz",
+   "sha256": "dc98cf7d104f6fb33c2672558504c66331a16f437d81aaee1259f838af35d9d1",
+   "url": "https://github.com/SciTools-incubator/python-stratify/archive/v0.1a1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "stratify"
+   ]
+  }
+ },
+ "version": "0.1a1"
+}

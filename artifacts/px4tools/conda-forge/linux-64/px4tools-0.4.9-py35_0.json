@@ -1,0 +1,45 @@
+{
+ "about": {
+  "home": "https://github.com/dronecrew/px4tools",
+  "license": "BSD 3-Clause",
+  "summary": "Python log crunching for PX4."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/px42csv",
+  "lib/python3.5/site-packages/px4tools-0.4.9-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/px4tools/__init__.py",
+  "lib/python3.5/site-packages/px4tools/analysis.py",
+  "lib/python3.5/site-packages/px4tools/logsysid.py",
+  "lib/python3.5/site-packages/px4tools/mapping.py",
+  "lib/python3.5/site-packages/px4tools/px42csv.py",
+  "lib/python3.5/site-packages/px4tools/version.py",
+  "lib/python3.5/site-packages/test/__init__.py",
+  "lib/python3.5/site-packages/test/sdlog2_dump.py",
+  "lib/python3.5/site-packages/test/test_analysis.py",
+  "lib/python3.5/site-packages/test/test_px42csv.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "basemap",
+   "matplotlib",
+   "numpy",
+   "pandas",
+   "python 3.5*",
+   "scipy"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "px4tools",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.4.9"
+ },
+ "metadata_version": 1,
+ "name": "px4tools",
+ "raw_recipe": "{% set name = \"px4tools\" %}\n{% set version = \"0.4.9\" %}\n{% set sha256 = \"edaeed4d2d8dc51dc9f790e84e355df3e350ce63889879e4b91725a0861e191c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/dronecrew/px4tools/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  entry_points:\n    - px42csv=px4tools.px42csv:main\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - scipy\n    - numpy\n    - pandas\n    - matplotlib\n    - basemap\n\ntest:\n  requires:\n    - nose\n  commands:\n    - nosetests -sv {{ SRC_DIR }}\n\nabout:\n  home: https://github.com/dronecrew/px4tools\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'Python log crunching for PX4.'\n\nextra:\n  recipe-maintainers:\n    - jgoppert\n",
+ "rendered_recipe": {},
+ "version": "0.4.9"
+}

@@ -1,0 +1,25 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/c99conv.exe",
+  "Library/bin/c99wrap.exe",
+  "Library/bin/makedef"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "Apache v2",
+  "name": "c99-to-c89",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.3"
+ },
+ "metadata_version": 1,
+ "name": "c99-to-c89",
+ "raw_recipe": "{% set version = \"1.0.3\" %}\n\npackage:\n  name: c99-to-c89\n  version: {{ version }}\n\nsource:\n  fn: c99-to-c89-{{ version }}.zip  # [win]\n  url: https://github.com/libav/c99-to-c89/releases/download/release-1.0.3/c99-to-c89-{{ version }}.zip  # [win]\n  md5: d58bc9741f258841aa3196a1b4155e51\n\nbuild:\n  number: 0\n  skip: True  # [unix]\n  \ntest:\n  commands:\n    # Would be good to run this - but can't because there are no version or help\n    # commands and without the proper input arguments it always returns exit code 1\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\c99wrap.exe exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\c99conv.exe exit 1  # [win]\n\nabout:\n  home: https://github.com/libav/c99-to-c89/\n  license: Apache v2\n  summary: 'Tool to convert C99 code to MSVC-compatible C89'\n\nextra:\n  recipe-maintainers:\n    - patricksnape\n",
+ "rendered_recipe": {},
+ "version": "1.0.3"
+}

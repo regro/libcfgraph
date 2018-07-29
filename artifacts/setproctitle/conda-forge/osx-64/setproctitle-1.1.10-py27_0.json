@@ -1,0 +1,26 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/setproctitle-1.1.10-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/setproctitle.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD License",
+  "name": "setproctitle",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.1.10"
+ },
+ "metadata_version": 1,
+ "name": "setproctitle",
+ "raw_recipe": "{% set version = \"1.1.10\" %}\n\npackage:\n    name: setproctitle\n    version: {{ version }}\n\nsource:\n    fn: setproctitle-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/s/setproctitle/setproctitle-{{ version }}.tar.gz\n    md5: 2dcdd1b761700a5a13252fea3dfd1977\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - setproctitle\n\nabout:\n    home: http://code.google.com/p/py-setproctitle/\n    license: BSD License\n    summary: 'A library to allow customization of the process title.'\n\nextra:\n    recipe-maintainers:\n        - pelson\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.1.10"
+}

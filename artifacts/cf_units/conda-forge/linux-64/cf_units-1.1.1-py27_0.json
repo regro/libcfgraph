@@ -1,0 +1,44 @@
+{
+ "about": {
+  "home": "http://www.scitools.org.uk/iris",
+  "license": "GNU Lesser General Public License",
+  "summary": "Units of measure as required by the Climate and Forecast (CF) metadata conventions."
+ },
+ "conda_build_config": {},
+ "files": [
+  "cf_units/COPYING",
+  "cf_units/COPYING.LESSER",
+  "lib/python2.7/site-packages/cf_units-1.1.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/cf_units/__init__.py",
+  "lib/python2.7/site-packages/cf_units/_version.py",
+  "lib/python2.7/site-packages/cf_units/config.py",
+  "lib/python2.7/site-packages/cf_units/etc/site.cfg",
+  "lib/python2.7/site-packages/cf_units/etc/site.cfg.template",
+  "lib/python2.7/site-packages/cf_units/tests/__init__.py",
+  "lib/python2.7/site-packages/cf_units/tests/test_coding_standards.py",
+  "lib/python2.7/site-packages/cf_units/tests/test_unit.py",
+  "lib/python2.7/site-packages/cf_units/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "netcdf4",
+   "numpy",
+   "python 2.7*",
+   "six",
+   "udunits2"
+  ],
+  "license": "GNU Lesser General Public License",
+  "name": "cf_units",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.1.1"
+ },
+ "metadata_version": 1,
+ "name": "cf_units",
+ "raw_recipe": "{% set version = \"1.1.1\" %}\n\npackage:\n    name: cf_units\n    version: {{ version }}\n\nsource:\n    fn: cf_units-{{ version }}.tar.gz\n    url: https://github.com/SciTools/cf_units/archive/v{{ version }}.tar.gz\n    sha256: a535d0418facc7c38d201312811c54d63b578f2d35c3818395b3427468d6b791\n\nbuild:\n    number: 0\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - six\n        - udunits2\n        - netcdf4\n        - numpy\n\ntest:\n    imports:\n        - cf_units\n\nabout:\n    home: http://www.scitools.org.uk/iris\n    license: GNU Lesser General Public License\n    summary: Units of measure as required by the Climate and Forecast (CF) metadata conventions.\n\nextra:\n    recipe-maintainers:\n        - bjlittle\n        - dkillick\n        - ocefpaf\n        - pelson\n",
+ "rendered_recipe": {},
+ "version": "1.1.1"
+}

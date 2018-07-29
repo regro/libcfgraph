@@ -1,0 +1,34 @@
+{
+ "about": {
+  "home": "https://github.com/mapbox/cligj",
+  "license": "BSD 3-Clause",
+  "summary": "Click params for commmand line interfaces to GeoJSON."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/cligj-0.4.0-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/cligj-0.4.0-py3.6.egg-info/not-zip-safe",
+  "lib/python3.6/site-packages/cligj/__init__.py",
+  "lib/python3.6/site-packages/cligj/features.py",
+  "lib/python3.6/site-packages/cligj/plugins.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "click >=4.0",
+   "python 3.6*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "cligj",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.4.0"
+ },
+ "metadata_version": 1,
+ "name": "cligj",
+ "raw_recipe": "{% set version = \"0.4.0\" %}\n\npackage:\n  name: cligj\n  version: {{ version }}\n\nsource:\n  fn: cligj-0.4.0.tar.gz\n  url: https://pypi.io/packages/source/c/cligj/cligj-{{ version }}.tar.gz\n  sha256: 12ad07994f5c1173b06087ffbaacec52f9ebe4687926e5aacfc22b6b0c8b3f54\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - click >=4.0\n  run:\n    - python\n    - click >=4.0\n\ntest:\n  imports:\n    - cligj\n\nabout:\n  home: https://github.com/mapbox/cligj\n  license: BSD 3-Clause\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'Click params for commmand line interfaces to GeoJSON.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.4.0"
+}

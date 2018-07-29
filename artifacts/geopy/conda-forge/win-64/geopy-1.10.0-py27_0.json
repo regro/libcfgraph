@@ -1,0 +1,53 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/geopy-1.10.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/geopy/__init__.py",
+  "Lib/site-packages/geopy/compat.py",
+  "Lib/site-packages/geopy/distance.py",
+  "Lib/site-packages/geopy/exc.py",
+  "Lib/site-packages/geopy/format.py",
+  "Lib/site-packages/geopy/geocoders/__init__.py",
+  "Lib/site-packages/geopy/geocoders/arcgis.py",
+  "Lib/site-packages/geopy/geocoders/baidu.py",
+  "Lib/site-packages/geopy/geocoders/base.py",
+  "Lib/site-packages/geopy/geocoders/bing.py",
+  "Lib/site-packages/geopy/geocoders/databc.py",
+  "Lib/site-packages/geopy/geocoders/dot_us.py",
+  "Lib/site-packages/geopy/geocoders/geocodefarm.py",
+  "Lib/site-packages/geopy/geocoders/geonames.py",
+  "Lib/site-packages/geopy/geocoders/googlev3.py",
+  "Lib/site-packages/geopy/geocoders/ignfrance.py",
+  "Lib/site-packages/geopy/geocoders/navidata.py",
+  "Lib/site-packages/geopy/geocoders/opencage.py",
+  "Lib/site-packages/geopy/geocoders/openmapquest.py",
+  "Lib/site-packages/geopy/geocoders/osm.py",
+  "Lib/site-packages/geopy/geocoders/placefinder.py",
+  "Lib/site-packages/geopy/geocoders/smartystreets.py",
+  "Lib/site-packages/geopy/geocoders/what3words.py",
+  "Lib/site-packages/geopy/geocoders/yandex.py",
+  "Lib/site-packages/geopy/location.py",
+  "Lib/site-packages/geopy/point.py",
+  "Lib/site-packages/geopy/units.py",
+  "Lib/site-packages/geopy/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT License",
+  "name": "geopy",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.10.0"
+ },
+ "metadata_version": 1,
+ "name": "geopy",
+ "raw_recipe": "{% set version = \"1.10.0\" %}\n\npackage:\n    name: geopy\n    version: {{ version }}\n\nsource:\n    fn: geopy-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/g/geopy/geopy-{{ version }}.tar.gz\n    md5: 57cab8fd885a88ad4acecc53346e4c39\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - geopy\n        - geopy.geocoders\n\nabout:\n    home: https://github.com/geopy/geopy\n    license: MIT License\n    summary: Python Geocoding Toolbox\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.10.0"
+}

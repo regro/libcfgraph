@@ -1,0 +1,140 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/ARTview-1.2.3-py2.7.egg-info",
+  "Lib/site-packages/artview/__init__.py",
+  "Lib/site-packages/artview/__main__.py",
+  "Lib/site-packages/artview/components/__init__.py",
+  "Lib/site-packages/artview/components/component_control.py",
+  "Lib/site-packages/artview/components/display_select_region.py",
+  "Lib/site-packages/artview/components/field.py",
+  "Lib/site-packages/artview/components/level.py",
+  "Lib/site-packages/artview/components/limits.py",
+  "Lib/site-packages/artview/components/menu.py",
+  "Lib/site-packages/artview/components/navigator.py",
+  "Lib/site-packages/artview/components/pick_value.py",
+  "Lib/site-packages/artview/components/plot_grid.py",
+  "Lib/site-packages/artview/components/plot_grid_legacy.py",
+  "Lib/site-packages/artview/components/plot_points.py",
+  "Lib/site-packages/artview/components/plot_radar.py",
+  "Lib/site-packages/artview/components/plot_simple.py",
+  "Lib/site-packages/artview/components/select_region.py",
+  "Lib/site-packages/artview/components/tools.py",
+  "Lib/site-packages/artview/core/__init__.py",
+  "Lib/site-packages/artview/core/common.py",
+  "Lib/site-packages/artview/core/core.py",
+  "Lib/site-packages/artview/core/points.py",
+  "Lib/site-packages/artview/core/variable_choose.py",
+  "Lib/site-packages/artview/icons/__init__.py",
+  "Lib/site-packages/artview/icons/arrow_go_first_icon.png",
+  "Lib/site-packages/artview/icons/arrow_go_last_icon.png",
+  "Lib/site-packages/artview/icons/arrow_go_next_icon.png",
+  "Lib/site-packages/artview/icons/arrow_go_previous_icon.png",
+  "Lib/site-packages/artview/icons/arrow_play_icon.png",
+  "Lib/site-packages/artview/icons/playback_pause_icon.png",
+  "Lib/site-packages/artview/icons/playback_record_icon.png",
+  "Lib/site-packages/artview/icons/playback_seek_backward_icon.png",
+  "Lib/site-packages/artview/icons/playback_seek_forward_icon.png",
+  "Lib/site-packages/artview/icons/playback_skip_backward_icon.png",
+  "Lib/site-packages/artview/icons/playback_skip_forward_icon.png",
+  "Lib/site-packages/artview/icons/playback_start_icon.png",
+  "Lib/site-packages/artview/icons/playback_stop_icon.png",
+  "Lib/site-packages/artview/icons/save_icon.png",
+  "Lib/site-packages/artview/modes.py",
+  "Lib/site-packages/artview/parser.py",
+  "Lib/site-packages/artview/plugins/__init__.py",
+  "Lib/site-packages/artview/plugins/calculate_attenuation.py",
+  "Lib/site-packages/artview/plugins/console.py",
+  "Lib/site-packages/artview/plugins/dealias_region_based.py",
+  "Lib/site-packages/artview/plugins/dealias_unwrap_phase.py",
+  "Lib/site-packages/artview/plugins/gatefilter.py",
+  "Lib/site-packages/artview/plugins/io.py",
+  "Lib/site-packages/artview/plugins/manual_filter.py",
+  "Lib/site-packages/artview/plugins/manual_unfold.py",
+  "Lib/site-packages/artview/plugins/mapper.py",
+  "Lib/site-packages/artview/plugins/phase_proc_lp.py",
+  "Lib/site-packages/artview/scripts/__init__.py",
+  "Lib/site-packages/artview/scripts/_common.py",
+  "Lib/site-packages/artview/scripts/_parse_field.py",
+  "Lib/site-packages/artview/scripts/compare_fields.py",
+  "Lib/site-packages/artview/scripts/corrections.py",
+  "Lib/site-packages/artview/scripts/edit_radar.py",
+  "Lib/site-packages/artview/scripts/gatefilter.py",
+  "Lib/site-packages/artview/scripts/grid.py",
+  "Lib/site-packages/artview/scripts/manual_unfold.py",
+  "Lib/site-packages/artview/scripts/map_to_grid.py",
+  "Lib/site-packages/artview/scripts/radar.py",
+  "Lib/site-packages/artview/scripts/radar_and_grid.py",
+  "Lib/site-packages/artview/scripts/select_region.py",
+  "Lib/site-packages/artview/scripts/standard.py",
+  "Lib/site-packages/artview/scripts/view.py",
+  "Lib/site-packages/artview/setup.py",
+  "Lib/site-packages/artview/version.py",
+  "Lib/site-packages/artview/view.py",
+  "Scripts/artview-script.py",
+  "Scripts/artview.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "arm_pyart >=1.5",
+   "matplotlib >=1.1",
+   "pyqt >=4.6",
+   "python 2.7*"
+  ],
+  "license": "BSD",
+  "name": "artview",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.2"
+ },
+ "metadata_version": 1,
+ "name": "artview",
+ "raw_recipe": "package:\n  name: artview\n  version: \"1.2\"\n\nsource:\n  git_url: https://github.com/nguy/artview\n  git_rev: v1.2\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - arm_pyart >=1.5\n    - matplotlib >=1.1\n    - pyqt >=4.6\n  run:\n    - python\n    - arm_pyart >=1.5\n    - matplotlib >=1.1\n    - pyqt >=4.6\n\ntest:\n  imports:\n    - artview\n\nabout:\n  home: https://github.com/nguy/artview\n  license: BSD\n  summary: ARM Radar Toolkit Viewer\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/nguy/artview",
+   "license": "BSD",
+   "summary": "ARM Radar Toolkit Viewer"
+  },
+  "build": {
+   "number": 0
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jjhelmus"
+   ]
+  },
+  "package": {
+   "name": "artview",
+   "version": "1.2"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "arm_pyart >=1.5",
+    "matplotlib >=1.1",
+    "pyqt >=4.6"
+   ],
+   "run": [
+    "python",
+    "arm_pyart >=1.5",
+    "matplotlib >=1.1",
+    "pyqt >=4.6"
+   ]
+  },
+  "source": {
+   "git_rev": "v1.2",
+   "git_url": "https://github.com/nguy/artview"
+  },
+  "test": {
+   "imports": [
+    "artview"
+   ]
+  }
+ },
+ "version": "1.2"
+}

@@ -1,0 +1,152 @@
+{
+ "about": {
+  "home": "http://matplotlib.org/basemap",
+  "license": "MIT",
+  "summary": "Plot on map projections using matplotlib."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/_geoslib.pyd",
+  "Lib/site-packages/basemap-1.0.8-py2.7.egg-info",
+  "Lib/site-packages/mpl_toolkits/__init__.py",
+  "Lib/site-packages/mpl_toolkits/basemap/__init__.py",
+  "Lib/site-packages/mpl_toolkits/basemap/cm.py",
+  "Lib/site-packages/mpl_toolkits/basemap/diagnostic.py",
+  "Lib/site-packages/mpl_toolkits/basemap/proj.py",
+  "Lib/site-packages/mpl_toolkits/basemap/solar.py",
+  "Lib/site-packages/mpl_toolkits/basemap/test.py",
+  "Library/share/basemap/GL27",
+  "Library/share/basemap/IGNF",
+  "Library/share/basemap/README",
+  "Library/share/basemap/bmng.jpg",
+  "Library/share/basemap/countries_c.dat",
+  "Library/share/basemap/countries_l.dat",
+  "Library/share/basemap/countriesmeta_c.dat",
+  "Library/share/basemap/countriesmeta_l.dat",
+  "Library/share/basemap/epsg",
+  "Library/share/basemap/esri",
+  "Library/share/basemap/esri.extra",
+  "Library/share/basemap/etopo1.jpg",
+  "Library/share/basemap/gshhs_c.dat",
+  "Library/share/basemap/gshhs_l.dat",
+  "Library/share/basemap/gshhsmeta_c.dat",
+  "Library/share/basemap/gshhsmeta_l.dat",
+  "Library/share/basemap/lsmask_1.25min_c.bin",
+  "Library/share/basemap/lsmask_1.25min_f.bin",
+  "Library/share/basemap/lsmask_1.25min_h.bin",
+  "Library/share/basemap/lsmask_1.25min_i.bin",
+  "Library/share/basemap/lsmask_1.25min_l.bin",
+  "Library/share/basemap/lsmask_10min_c.bin",
+  "Library/share/basemap/lsmask_10min_f.bin",
+  "Library/share/basemap/lsmask_10min_h.bin",
+  "Library/share/basemap/lsmask_10min_i.bin",
+  "Library/share/basemap/lsmask_10min_l.bin",
+  "Library/share/basemap/lsmask_2.5min_c.bin",
+  "Library/share/basemap/lsmask_2.5min_f.bin",
+  "Library/share/basemap/lsmask_2.5min_h.bin",
+  "Library/share/basemap/lsmask_2.5min_i.bin",
+  "Library/share/basemap/lsmask_2.5min_l.bin",
+  "Library/share/basemap/lsmask_5min_c.bin",
+  "Library/share/basemap/lsmask_5min_f.bin",
+  "Library/share/basemap/lsmask_5min_h.bin",
+  "Library/share/basemap/lsmask_5min_i.bin",
+  "Library/share/basemap/lsmask_5min_l.bin",
+  "Library/share/basemap/nad.lst",
+  "Library/share/basemap/nad27",
+  "Library/share/basemap/nad83",
+  "Library/share/basemap/ntf_r93.gsb",
+  "Library/share/basemap/ntv1_can.dat",
+  "Library/share/basemap/ntv2_out.dist",
+  "Library/share/basemap/nzgd2kgrid0005.gsb",
+  "Library/share/basemap/other.extra",
+  "Library/share/basemap/pj_out27.dist",
+  "Library/share/basemap/pj_out83.dist",
+  "Library/share/basemap/proj_def.dat",
+  "Library/share/basemap/proj_outIGNF.dist",
+  "Library/share/basemap/rivers_c.dat",
+  "Library/share/basemap/rivers_l.dat",
+  "Library/share/basemap/riversmeta_c.dat",
+  "Library/share/basemap/riversmeta_l.dat",
+  "Library/share/basemap/shadedrelief.jpg",
+  "Library/share/basemap/states_c.dat",
+  "Library/share/basemap/states_l.dat",
+  "Library/share/basemap/statesmeta_c.dat",
+  "Library/share/basemap/statesmeta_l.dat",
+  "Library/share/basemap/td_out.dist",
+  "Library/share/basemap/testIGNF",
+  "Library/share/basemap/testdatumfile",
+  "Library/share/basemap/tv_out.dist",
+  "Library/share/basemap/world"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_2",
+  "build_number": 2,
+  "depends": [
+   "geos 3.4.*",
+   "matplotlib",
+   "numpy 1.11*",
+   "pyproj",
+   "pyshp",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "basemap",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.8.dev0"
+ },
+ "metadata_version": 1,
+ "name": "basemap",
+ "raw_recipe": "package:\n    name: basemap\n    version: 1.0.8.dev0\n\nsource:\n  git_url: https://github.com/matplotlib/basemap.git\n  git_tag: 116aefb\n  patches:\n      - basemap-1.0.8dev-datadir.patch\n\nbuild:\n    number: 2\n\nrequirements:\n    build:\n        - python\n        - numpy x.x\n        - geos 3.4.*\n    run:\n        - python\n        - numpy x.x\n        - geos 3.4.*\n        - matplotlib\n        - pyproj\n        - pyshp\n\ntest:\n    imports:\n        - mpl_toolkits.basemap\n    commands:\n        - conda inspect linkages -n _test basemap  # [not win]\nabout:\n    home: http://matplotlib.org/basemap\n    license: MIT\n    summary: 'Plot on map projections using matplotlib.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://matplotlib.org/basemap",
+   "license": "MIT",
+   "summary": "Plot on map projections using matplotlib."
+  },
+  "build": {
+   "number": 2
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "basemap",
+   "version": "1.0.8.dev0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "numpy x.x",
+    "geos 3.4.*"
+   ],
+   "run": [
+    "python",
+    "numpy x.x",
+    "geos 3.4.*",
+    "matplotlib",
+    "pyproj",
+    "pyshp"
+   ]
+  },
+  "source": {
+   "git_tag": "116aefb",
+   "git_url": "https://github.com/matplotlib/basemap.git",
+   "patches": [
+    "basemap-1.0.8dev-datadir.patch"
+   ]
+  },
+  "test": {
+   "commands": [
+    "conda inspect linkages -n _test basemap"
+   ],
+   "imports": [
+    "mpl_toolkits.basemap"
+   ]
+  }
+ },
+ "version": "1.0.8.dev0"
+}

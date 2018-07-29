@@ -1,0 +1,36 @@
+{
+ "about": {
+  "description": "METIS is a set of serial programs for partitioning graphs, partitioning\nfinite element meshes, and producing fill reducing orderings for sparse\nmatrices. The algorithms implemented in METIS are based on the multilevel\nrecursive-bisection, multilevel k-way, and multi-constraint partitioning\nschemes developed in our lab.\n",
+  "doc_url": "http://glaros.dtc.umn.edu/gkhome/metis/metis/faq",
+  "home": "http://glaros.dtc.umn.edu/gkhome/metis/metis/overview",
+  "license": "Apache License 2.0",
+  "summary": "METIS - Serial Graph Partitioning and Fill-reducing Matrix Ordering"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/cmpfillin",
+  "bin/gpmetis",
+  "bin/graphchk",
+  "bin/m2gmetis",
+  "bin/mpmetis",
+  "bin/ndmetis",
+  "include/metis.h",
+  "lib/libmetis.a"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [],
+  "license": "Apache License 2.0",
+  "name": "metis",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "5.1.0"
+ },
+ "metadata_version": 1,
+ "name": "metis",
+ "raw_recipe": "{% set name = \"metis\" %}\n{% set version = \"5.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: metis-5.1.0.tar.gz\n  md5: 5465e67079419a69e0116de24fce58fe\n  url: http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz\n\nbuild:\n  skip: true  # [win]\n  number: 1\n  binary_relocation: true\n\nrequirements:\n  build:\n    - cmake\n    - toolchain\n\ntest:\n  commands:\n    - graphchk\n    - cmpfillin -h\n    - mpmetis -h\n    - gpmetis -h\n    - ndmetis -h\n    - gpmetis -h\n    - m2gmetis -h\n\nabout:\n  home: http://glaros.dtc.umn.edu/gkhome/metis/metis/overview\n  license: Apache License 2.0\n  license_file: LICENSE.txt\n  summary: 'METIS - Serial Graph Partitioning and Fill-reducing Matrix Ordering'\n  description: |\n    METIS is a set of serial programs for partitioning graphs, partitioning \n    finite element meshes, and producing fill reducing orderings for sparse \n    matrices. The algorithms implemented in METIS are based on the multilevel \n    recursive-bisection, multilevel k-way, and multi-constraint partitioning \n    schemes developed in our lab.\n  doc_url: http://glaros.dtc.umn.edu/gkhome/metis/metis/faq\n\nextra:\n  recipe-maintainers:\n    - basnijholt\n",
+ "rendered_recipe": {},
+ "version": "5.1.0"
+}

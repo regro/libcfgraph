@@ -1,0 +1,149 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.16",
+  "conda_private": false,
+  "conda_version": "4.2.16",
+  "description": "YAJL is a small event-driven (SAX-style) JSON parser written in ANSI C, and\na small validating JSON generator. YAJL is released under the ISC license.\n",
+  "dev_url": "https://github.com/lloyd/yajl",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://lloyd.github.io/yajl/",
+  "license": "ISC",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "clyent-1.2.2-py36_0",
+   "conda-forge::conda-4.2.16-py36_0",
+   "conda-build-2.1.4-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.0-0",
+   "conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.8-py36_1",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_0",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Yet Another JSON Library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/yajl/yajl_parse.h",
+  "lib/libyajl.2.1.0.dylib",
+  "lib/libyajl_s.a",
+  "bin/json_verify",
+  "lib/libyajl.dylib",
+  "bin/json_reformat",
+  "lib/libyajl.2.dylib",
+  "include/yajl/yajl_gen.h",
+  "include/yajl/yajl_tree.h",
+  "include/yajl/yajl_common.h",
+  "share/pkgconfig/yajl.pc",
+  "include/yajl/yajl_version.h"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "ISC",
+  "name": "yajl",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.1.0"
+ },
+ "metadata_version": 1,
+ "name": "yajl",
+ "raw_recipe": "{% set author = \"lloyd\" %}\n{% set name = \"yajl\" %}\n{% set version = \"2.1.0\" %}\n{% set sha256sum = \"3fb73364a5a30efe615046d07e6db9d09fd2b41c763c5f7d3bfb121cd5c5ac5a\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/{{ author }}/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256sum }}\n\nbuild:\n  number: 0\n  features:\n    - vc9   # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py>=35]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake 3.*\n    - python     # [win]\n    - vc 9       # [win and py27]\n    - vc 10      # [win and py34]\n    - vc 14      # [win and py>=35]\n\n  run:\n    - vc 9       # [win and py27]\n    - vc 10      # [win and py34]\n    - vc 14      # [win and py>=35]\n\ntest:\n  requires:\n    - pkg-config  # [unix]\n\n  commands:\n    - echo \"{}\" | json_reformat  # [unix]\n    - echo \"{}\" | json_verify  # [unix]\n\n    - test -f ${PREFIX}/include/{{ name }}/{{ name }}_common.h  # [unix]\n    - test -f ${PREFIX}/lib/lib{{ name }}_s.a  # [unix]\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so  # [linux]\n    - pkg-config --cflags --libs {{ name }}  # [unix]\n\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\{{name }}\\\\{{ name }}_common.h exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\{{ name }}_s.lib exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\{{ name }}.dll exit 1  # [win]\n\n    - conda inspect linkages -p $PREFIX {{ name }}  # [unix]\n    - conda inspect objects -p $PREFIX {{ name }}  # [osx]\n\nabout:\n  home: https://lloyd.github.io/yajl/\n  license: ISC\n  license_file: COPYING\n  summary: Yet Another JSON Library\n  description: |\n    YAJL is a small event-driven (SAX-style) JSON parser written in ANSI C, and\n    a small validating JSON generator. YAJL is released under the ISC license.\n  dev_url: https://github.com/lloyd/yajl\n\nextra:\n  recipe-maintainers:\n    - rolando\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "YAJL is a small event-driven (SAX-style) JSON parser written in ANSI C, and\na small validating JSON generator. YAJL is released under the ISC license.\n",
+   "dev_url": "https://github.com/lloyd/yajl",
+   "home": "https://lloyd.github.io/yajl/",
+   "license": "ISC",
+   "license_file": "COPYING",
+   "summary": "Yet Another JSON Library"
+  },
+  "build": {
+   "features": "",
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "rolando"
+   ]
+  },
+  "package": {
+   "name": "yajl",
+   "version": "2.1.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": ""
+  },
+  "source": {
+   "fn": "yajl-2.1.0.tar.gz",
+   "sha256": "3fb73364a5a30efe615046d07e6db9d09fd2b41c763c5f7d3bfb121cd5c5ac5a",
+   "url": "https://github.com/lloyd/yajl/archive/2.1.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "echo \"{}\" | json_reformat",
+    "echo \"{}\" | json_verify",
+    "test -f ${PREFIX}/include/yajl/yajl_common.h",
+    "test -f ${PREFIX}/lib/libyajl_s.a",
+    "test -f ${PREFIX}/lib/libyajl.dylib",
+    "pkg-config --cflags --libs yajl",
+    "conda inspect linkages -p $PREFIX yajl",
+    "conda inspect objects -p $PREFIX yajl"
+   ],
+   "requires": [
+    "pkg-config"
+   ]
+  }
+ },
+ "version": "2.1.0"
+}

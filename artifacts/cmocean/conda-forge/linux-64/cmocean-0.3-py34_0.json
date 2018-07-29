@@ -1,0 +1,75 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/cmocean-0.3-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/cmocean-0.3-py3.4.egg-info/pbr.json",
+  "lib/python3.4/site-packages/cmocean/__init__.py",
+  "lib/python3.4/site-packages/cmocean/cm.py",
+  "lib/python3.4/site-packages/cmocean/data.py",
+  "lib/python3.4/site-packages/cmocean/parula_smooth.py",
+  "lib/python3.4/site-packages/cmocean/plots.py",
+  "lib/python3.4/site-packages/cmocean/tools.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib",
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "cmocean",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3"
+ },
+ "metadata_version": 1,
+ "name": "cmocean",
+ "raw_recipe": "{% set version = \"0.3\" %}\n\npackage:\n    name: cmocean\n    version: {{ version }}\n\nsource:\n    fn: cmocean-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/c/cmocean/cmocean-{{ version }}.tar.gz\n    sha256: 59799e78cf6f4bbe34afeaadbc8b7e570379ac92c8ad179a03418a1b6d44074d\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - matplotlib\n\ntest:\n    imports:\n        - cmocean\n    requires:\n        - pytest\n\nabout:\n    home: https://github.com/matplotlib/cmocean\n    license: MIT\n    summary: 'Colormaps for Oceanography'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/matplotlib/cmocean",
+   "license": "MIT",
+   "summary": "Colormaps for Oceanography"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "cmocean",
+   "version": "0.3"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "matplotlib"
+   ]
+  },
+  "source": {
+   "fn": "cmocean-0.3.tar.gz",
+   "sha256": "59799e78cf6f4bbe34afeaadbc8b7e570379ac92c8ad179a03418a1b6d44074d",
+   "url": "https://pypi.io/packages/source/c/cmocean/cmocean-0.3.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "cmocean"
+   ],
+   "requires": [
+    "pytest"
+   ]
+  }
+ },
+ "version": "0.3"
+}

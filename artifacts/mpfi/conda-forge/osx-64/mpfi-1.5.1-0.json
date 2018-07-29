@@ -1,0 +1,134 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "dev_url": "https://gforge.inria.fr/scm/?group_id=157",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://mpfi.gforge.inria.fr/",
+  "license": "LGPL 3",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "A multiple precision interval arithmetic library based on MPFR"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/mpfi_io.h",
+  "lib/libmpfi.a",
+  "include/mpfi.h",
+  "share/info/mpfi.info",
+  "lib/libmpfi.dylib",
+  "share/info/dir",
+  "lib/libmpfi.0.dylib",
+  "lib/libmpfi.la"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "gmp",
+   "mpfr"
+  ],
+  "license": "LGPL 3",
+  "name": "mpfi",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.5.1"
+ },
+ "metadata_version": 1,
+ "name": "mpfi",
+ "raw_recipe": "{% set version = \"1.5.1\" %}\n{% set name = \"mpfi\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://gforge.inria.fr/frs/download.php/latestfile/181/{{ name }}-{{ version }}.tar.gz\n  sha256: ea2725c6f38ddd8f3677c9b0ce8da8f52fe69e34aa85c01fb98074dc4e3458bc\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - gmp\n    - mpfr\n  run:\n    - gmp\n    - mpfr\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/{{ name }}.h\n    - test -f ${PREFIX}/lib/lib{{ name }}.a\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]\n\nabout:\n  home: http://mpfi.gforge.inria.fr/\n  license: LGPL 3\n  license_file: {{ SRC_DIR }}/COPYING\n  summary: A multiple precision interval arithmetic library based on MPFR\n  dev_url: https://gforge.inria.fr/scm/?group_id=157\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "https://gforge.inria.fr/scm/?group_id=157",
+   "home": "http://mpfi.gforge.inria.fr/",
+   "license": "LGPL 3",
+   "license_file": "/Users/travis/miniconda3/conda-bld/recipe_1486480159569/work/mpfi-1.5.1/COPYING",
+   "summary": "A multiple precision interval arithmetic library based on MPFR"
+  },
+  "build": {
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "isuruf"
+   ]
+  },
+  "package": {
+   "name": "mpfi",
+   "version": "1.5.1"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "gmp",
+    "mpfr"
+   ]
+  },
+  "source": {
+   "fn": "mpfi-1.5.1.tar.gz",
+   "sha256": "ea2725c6f38ddd8f3677c9b0ce8da8f52fe69e34aa85c01fb98074dc4e3458bc",
+   "url": "https://gforge.inria.fr/frs/download.php/latestfile/181/mpfi-1.5.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/include/mpfi.h",
+    "test -f ${PREFIX}/lib/libmpfi.a",
+    "test -f ${PREFIX}/lib/libmpfi.dylib"
+   ]
+  }
+ },
+ "version": "1.5.1"
+}

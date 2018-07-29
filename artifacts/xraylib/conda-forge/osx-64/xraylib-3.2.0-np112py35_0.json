@@ -1,0 +1,159 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/tschoonj/xraylib/wiki",
+  "license": "BSD 3-Clause",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "clyent-1.2.2-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.4-py36_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.1-0",
+   "conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_0",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "A library for X-ray matter interaction cross sections for X-ray fluorescence applications"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/xraylib_np.so",
+  "include/xraylib/xraylib-parser.h",
+  "include/xraylib/xraylib-crystal-diffraction.h",
+  "lib/python3.5/site-packages/_xraylib.la",
+  "lib/ruby/site_ruby/2.0.0/x86_64-darwin14.1.0/xraylib.la",
+  "include/xraylib/xraylib-shells.h",
+  "lib/libxrl.la",
+  "lib/python3.5/site-packages/_xraylib.so",
+  "lib/python3.5/site-packages/xrayhelp.py",
+  "bin/xraylib",
+  "include/xraylib/xraylib-lines.h",
+  "lib/python3.5/site-packages/xraymessages.py",
+  "lib/python3.5/site-packages/xraylib_np.la",
+  "lib/libxrl.dylib",
+  "include/xraylib/xraylib-defs.h",
+  "include/xraylib/xraylib-nist-compounds.h",
+  "include/xraylib/xraylib-auger.h",
+  "lib/python3.5/site-packages/xraylib.py",
+  "lib/pkgconfig/libxrl.pc",
+  "include/xraylib/xraylib-radionuclides.h",
+  "include/xraylib/xraylib.h",
+  "lib/libxrl.a",
+  "lib/libxrl.7.dylib",
+  "lib/ruby/site_ruby/2.0.0/x86_64-darwin14.1.0/xraylib.bundle"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np112py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.12*",
+   "python 3.5*",
+   "scipy >=0.7.0"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "xraylib",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "3.2.0"
+ },
+ "metadata_version": 1,
+ "name": "xraylib",
+ "raw_recipe": "{% set version = \"3.2.0\" %}\n\npackage:\n  name: xraylib\n  version: {{ version }}\n\nsource:\n  fn: xraylib-{{ version }}.tar.gz\n  url: https://github.com/tschoonj/xraylib/archive/xraylib-{{ version }}.tar.gz\n  sha256: 4f4ab07f47619fa5458efbcd5ea51cd2c76c11a474ef869432235719c5bcdb41\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - scipy >=0.7.0\n    - cython\n    - swig\n    - autoconf\n    - libtool\n    - automake\n\n  run:\n    - python\n    - numpy x.x\n    - scipy >=0.7.0\n\ntest:\n  commands:\n    - xraylib\n  imports:\n    - xraylib\n\nabout:\n  license: BSD 3-Clause\n  home: https://github.com/tschoonj/xraylib/wiki\n  summary: A library for X-ray matter interaction cross sections for X-ray fluorescence applications\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - tacaswell\n    - licode\n    - tschoonj\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/tschoonj/xraylib/wiki",
+   "license": "BSD 3-Clause",
+   "summary": "A library for X-ray matter interaction cross sections for X-ray fluorescence applications"
+  },
+  "build": {
+   "number": "0",
+   "string": "np112py35_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ericdill",
+    "tacaswell",
+    "licode",
+    "tschoonj"
+   ]
+  },
+  "package": {
+   "name": "xraylib",
+   "version": "3.2.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "numpy x.x",
+    "scipy >=0.7.0"
+   ]
+  },
+  "source": {
+   "fn": "xraylib-3.2.0.tar.gz",
+   "sha256": "4f4ab07f47619fa5458efbcd5ea51cd2c76c11a474ef869432235719c5bcdb41",
+   "url": "https://github.com/tschoonj/xraylib/archive/xraylib-3.2.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "xraylib"
+   ],
+   "imports": [
+    "xraylib"
+   ]
+  }
+ },
+ "version": "3.2.0"
+}

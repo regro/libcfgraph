@@ -1,0 +1,46 @@
+{
+ "about": {
+  "home": "https://github.com/liris/websocket-client",
+  "license": "LGPL",
+  "summary": "WebSocket client for python. hybi13 is supported."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/websocket/__init__.py",
+  "Lib/site-packages/websocket/_abnf.py",
+  "Lib/site-packages/websocket/_app.py",
+  "Lib/site-packages/websocket/_core.py",
+  "Lib/site-packages/websocket/_exceptions.py",
+  "Lib/site-packages/websocket/_handshake.py",
+  "Lib/site-packages/websocket/_http.py",
+  "Lib/site-packages/websocket/_logging.py",
+  "Lib/site-packages/websocket/_socket.py",
+  "Lib/site-packages/websocket/_ssl_compat.py",
+  "Lib/site-packages/websocket/_url.py",
+  "Lib/site-packages/websocket/_utils.py",
+  "Lib/site-packages/websocket/cacert.pem",
+  "Lib/site-packages/websocket/tests/__init__.py",
+  "Lib/site-packages/websocket/tests/test_websocket.py",
+  "Lib/site-packages/websocket_client-0.37.0-py2.7.egg-info/PKG-INFO",
+  "Scripts/wsdump.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "six"
+  ],
+  "license": "LGPL",
+  "name": "websocket-client",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.37.0"
+ },
+ "metadata_version": 1,
+ "name": "websocket-client",
+ "raw_recipe": "{%set name = \"websocket-client\" %}\n{%set snakename = \"websocket_client\" %}\n{%set version = \"0.37.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"678b246d816b94018af5297e72915160e2feb042e0cde1a9397f502ac3a52f41\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ snakename }}/{{ snakename }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six\n\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - websocket\n    - websocket.tests\n\nabout:\n  home: https://github.com/liris/websocket-client\n  license: LGPL\n  summary: 'WebSocket client for python. hybi13 is supported.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.37.0"
+}

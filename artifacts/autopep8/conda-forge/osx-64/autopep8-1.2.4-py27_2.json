@@ -1,0 +1,30 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/autopep8",
+  "lib/python2.7/site-packages/autopep8-1.2.4-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/autopep8-1.2.4-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/autopep8.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_2",
+  "build_number": 2,
+  "depends": [
+   "pep8 >=1.5.7",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "autopep8",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.2.4"
+ },
+ "metadata_version": 1,
+ "name": "autopep8",
+ "raw_recipe": "{% set name = \"autopep8\" %}\n{% set version = \"1.2.4\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 38e31e266e29808e8a65a307778ed8e402e1f0d87472009420d6d18146cdeaa2\n\nbuild:\n  entry_points:\n    - autopep8 = autopep8:main\n\n  number: 2\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pep8 >=1.5.7\n\ntest:\n  commands:\n    - autopep8 --help\n    - autopep8 --version\n\nabout:\n  home: https://github.com/hhatto/autopep8\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: 'A tool that automatically formats Python code to conform to the PEP 8 style guide'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.2.4"
+}

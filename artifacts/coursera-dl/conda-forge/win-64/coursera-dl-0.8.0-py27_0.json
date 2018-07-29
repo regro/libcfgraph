@@ -1,0 +1,58 @@
+{
+ "about": {
+  "dev_url": "https://github.com/coursera-dl/coursera-dl",
+  "home": "https://github.com/coursera-dl/coursera-dl",
+  "license": "LGPL-3.0",
+  "license_family": "LGPL",
+  "summary": "Script for downloading Coursera.org videos and naming them."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/coursera/__init__.py",
+  "Lib/site-packages/coursera/api.py",
+  "Lib/site-packages/coursera/commandline.py",
+  "Lib/site-packages/coursera/cookies.py",
+  "Lib/site-packages/coursera/coursera_dl.py",
+  "Lib/site-packages/coursera/credentials.py",
+  "Lib/site-packages/coursera/define.py",
+  "Lib/site-packages/coursera/downloaders.py",
+  "Lib/site-packages/coursera/extractors.py",
+  "Lib/site-packages/coursera/filtering.py",
+  "Lib/site-packages/coursera/formatting.py",
+  "Lib/site-packages/coursera/network.py",
+  "Lib/site-packages/coursera/parallel.py",
+  "Lib/site-packages/coursera/playlist.py",
+  "Lib/site-packages/coursera/py2devtools.py",
+  "Lib/site-packages/coursera/sampler.py",
+  "Lib/site-packages/coursera/utils.py",
+  "Lib/site-packages/coursera/workflow.py",
+  "Lib/site-packages/coursera_dl-0.8.0-py2.7.egg-info/PKG-INFO",
+  "Scripts/coursera-dl-script.py",
+  "Scripts/coursera-dl.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "beautifulsoup4 >=4.1.3",
+   "keyring >=4.0",
+   "pyasn1 >=0.1.7",
+   "python 2.7*",
+   "requests >=2.10.0",
+   "six >=1.5.0",
+   "urllib3 >=1.10"
+  ],
+  "license": "LGPL-3.0",
+  "license_family": "LGPL",
+  "name": "coursera-dl",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.8.0"
+ },
+ "metadata_version": 1,
+ "name": "coursera-dl",
+ "raw_recipe": "{% set name = \"coursera-dl\" %}\n{% set version = \"0.8.0\" %}\n{% set sha256 = \"31adb07092ffd384759280d94daad577a1255a51e95519ce74a2eaf36008722e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - coursera-dl=coursera.coursera_dl:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - beautifulsoup4 >=4.1.3\n    - requests >=2.10.0\n    - six >=1.5.0\n    - urllib3 >=1.10\n    - pyasn1 >=0.1.7\n    - keyring >=4.0\n\ntest:\n  imports:\n    - coursera\n  commands:\n    - coursera-dl --help\n  requires:\n    - pytest\n    - pytest-cov\n    - pytest-xdist\n    - mock >=1.0.1\n    - coverage >=3.7\n\nabout:\n  home: https://github.com/coursera-dl/coursera-dl\n  license: LGPL-3.0\n  license_file: LICENSE\n  license_family: LGPL\n  summary: 'Script for downloading Coursera.org videos and naming them.'\n  dev_url: https://github.com/coursera-dl/coursera-dl\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
+ "rendered_recipe": {},
+ "version": "0.8.0"
+}

@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "http://cheeseshop.python.org/pypi/simplegeneric",
+  "license": "Zope Public License",
+  "summary": "Simple generic functions (similar to Python's own len(), pickle.dump(), etc.)"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/simplegeneric-0.8.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/simplegeneric.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "Zope Public License",
+  "name": "simplegeneric",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.8.1"
+ },
+ "metadata_version": 1,
+ "name": "simplegeneric",
+ "raw_recipe": "{% set version = \"0.8.1\" %}\n\npackage:\n  name: simplegeneric\n  version: {{ version }}\n\nsource:\n  fn: simplegeneric-{{ version }}.zip\n  url: https://pypi.python.org/packages/source/s/simplegeneric/simplegeneric-{{ version }}.zip\n  md5: f9c1fab00fd981be588fc32759f474e3\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - simplegeneric\n\nabout:\n  home: http://cheeseshop.python.org/pypi/simplegeneric\n  license: Zope Public License\n  summary: \"Simple generic functions (similar to Python's own len(), pickle.dump(), etc.)\"\n\nextra:\n  recipe-maintainers:\n    - minrk\n    - msarahan\n    - pelson\n",
+ "rendered_recipe": {},
+ "version": "0.8.1"
+}

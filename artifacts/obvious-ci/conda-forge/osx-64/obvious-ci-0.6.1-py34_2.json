@@ -1,0 +1,158 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.3",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p648@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p648/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/Users/travis/.nvm/versions/node/v6.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/pelson/Obvious-CI",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.3-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Tools to simplify Continuous Integration, particularly for conda building."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/obvci/conda_tools/build.py",
+  "bin/obvci_appveyor_python_build_env.cmd",
+  "bin/obvci_conda_build_dir",
+  "bin/obvci_install_conda_build_tools.py",
+  "lib/python3.4/site-packages/obvci/conda_tools/order_deps.py",
+  "lib/python3.4/site-packages/obvci/cli/__init__.py",
+  "lib/python3.4/site-packages/Obvious_ci-0.6.1-py3.4.egg-info/PKG-INFO",
+  "bin/obvci_install_miniconda.ps1",
+  "lib/python3.4/site-packages/obvci/conda_tools/inspect_binstar.py",
+  "lib/python3.4/site-packages/obvci/cli/conda_build_dir.py",
+  "lib/python3.4/site-packages/obvci/conda_tools/build_directory.py",
+  "lib/python3.4/site-packages/obvci/conda_tools/from_conda_manifest_core_vn_matrix.py",
+  "lib/python3.4/site-packages/obvci/_version.py",
+  "bin/obvci_install_miniconda.sh",
+  "lib/python3.4/site-packages/obvci/conda_tools/__init__.py",
+  "lib/python3.4/site-packages/obvci/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_2",
+  "build_number": 2,
+  "depends": [
+   "anaconda-client",
+   "conda",
+   "conda-build",
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "obvious-ci",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.6.1"
+ },
+ "metadata_version": 1,
+ "name": "obvious-ci",
+ "raw_recipe": "{% set version = \"0.6.1\" %}\n\npackage:\n  name: obvious-ci\n  version: {{ version }}\n\nsource:\n  url: https://github.com/pelson/Obvious-CI/archive/v{{ version }}.tar.gz\n  fn: obvious-ci_v{{ version }}.tar.gz\n  sha256: 03a39402a6c09cd4342109bebfe6aac05a09d11e04e39f7b2f0ddfcbd33d2d91\n  patches:\n    - miniconda_url.patch\n\nbuild:\n  number: 2\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - obvci_conda_build_dir = obvci.cli.conda_build_dir:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - anaconda-client\n    - conda\n    - conda-build\n\ntest:\n  imports:\n    - obvci\n    - obvci.conda_tools\n    - obvci.cli\n\n  commands:\n    - unset CONDA_NPY && obvci_conda_build_dir --help  # [not win]\n    - obvci_conda_build_dir --help                     # [win]\n\nabout:\n  home: https://github.com/pelson/Obvious-CI\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Tools to simplify Continuous Integration, particularly for conda building.\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - mwcraig\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/pelson/Obvious-CI",
+   "license": "BSD 3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "Tools to simplify Continuous Integration, particularly for conda building."
+  },
+  "build": {
+   "entry_points": [
+    "obvci_conda_build_dir = obvci.cli.conda_build_dir:main"
+   ],
+   "number": "2",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt",
+   "string": "py34_2"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pelson",
+    "mwcraig"
+   ]
+  },
+  "package": {
+   "name": "obvious-ci",
+   "version": "0.6.1"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "anaconda-client",
+    "conda",
+    "conda-build"
+   ]
+  },
+  "source": {
+   "fn": "obvious-ci_v0.6.1.tar.gz",
+   "patches": [
+    "miniconda_url.patch"
+   ],
+   "sha256": "03a39402a6c09cd4342109bebfe6aac05a09d11e04e39f7b2f0ddfcbd33d2d91",
+   "url": "https://github.com/pelson/Obvious-CI/archive/v0.6.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "unset CONDA_NPY && obvci_conda_build_dir --help"
+   ],
+   "imports": [
+    "obvci",
+    "obvci.conda_tools",
+    "obvci.cli"
+   ]
+  }
+ },
+ "version": "0.6.1"
+}

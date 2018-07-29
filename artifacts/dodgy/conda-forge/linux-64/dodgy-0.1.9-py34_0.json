@@ -1,0 +1,34 @@
+{
+ "about": {
+  "home": "https://github.com/landscapeio/dodgy",
+  "license": "MIT",
+  "summary": "Dodgy: Searches for dodgy looking lines in Python code"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/dodgy",
+  "lib/python3.4/site-packages/dodgy-0.1.9-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/dodgy/__init__.py",
+  "lib/python3.4/site-packages/dodgy/__pkginfo__.py",
+  "lib/python3.4/site-packages/dodgy/checks.py",
+  "lib/python3.4/site-packages/dodgy/run.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "dodgy",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1.9"
+ },
+ "metadata_version": 1,
+ "name": "dodgy",
+ "raw_recipe": "{% set name = \"dodgy\" %}\n{% set version = \"0.1.9\" %}\n{% set sha256 = \"65e13cf878d7aff129f1461c13cb5fd1bb6dfe66bb5327e09379c3877763280c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - dodgy\n\nabout:\n  home: https://github.com/landscapeio/dodgy\n  license: MIT\n  summary: 'Dodgy: Searches for dodgy looking lines in Python code'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.1.9"
+}

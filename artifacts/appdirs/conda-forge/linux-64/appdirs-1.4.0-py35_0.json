@@ -1,0 +1,64 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/appdirs-1.4.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/appdirs.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT License",
+  "name": "appdirs",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.4.0"
+ },
+ "metadata_version": 1,
+ "name": "appdirs",
+ "raw_recipe": "package:\n    name: appdirs\n    version: 1.4.0\n\nsource:\n    fn: appdirs-1.4.0.tar.gz\n    url: https://pypi.python.org/packages/source/a/appdirs/appdirs-1.4.0.tar.gz\n    md5: 1d17b4c9694ab84794e228f28dc3275b\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - appdirs\n\nabout:\n    home: http://github.com/ActiveState/appdirs\n    license: MIT License\n    summary: A small Python module for determining appropriate platform-specific dirs\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://github.com/ActiveState/appdirs",
+   "license": "MIT License",
+   "summary": "A small Python module for determining appropriate platform-specific dirs"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "appdirs",
+   "version": "1.4.0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "appdirs-1.4.0.tar.gz",
+   "md5": "1d17b4c9694ab84794e228f28dc3275b",
+   "url": "https://pypi.python.org/packages/source/a/appdirs/appdirs-1.4.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "appdirs"
+   ]
+  }
+ },
+ "version": "1.4.0"
+}

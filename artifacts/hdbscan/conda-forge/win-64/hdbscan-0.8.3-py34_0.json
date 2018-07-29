@@ -1,0 +1,39 @@
+{
+ "about": {
+  "home": "http://github.com/lmcinnes/hdbscan",
+  "license": "BSD 3-Clause",
+  "summary": "Clustering based on density with variable density clusters"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/hdbscan-0.8.3-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/hdbscan/__init__.py",
+  "Lib/site-packages/hdbscan/_hdbscan_boruvka.pyd",
+  "Lib/site-packages/hdbscan/_hdbscan_linkage.pyd",
+  "Lib/site-packages/hdbscan/_hdbscan_reachability.pyd",
+  "Lib/site-packages/hdbscan/_hdbscan_tree.pyd",
+  "Lib/site-packages/hdbscan/dist_metrics.pyd",
+  "Lib/site-packages/hdbscan/hdbscan_.py",
+  "Lib/site-packages/hdbscan/plots.py",
+  "Lib/site-packages/hdbscan/robust_single_linkage_.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "scikit-learn >=0.16"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "hdbscan",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.8.3"
+ },
+ "metadata_version": 1,
+ "name": "hdbscan",
+ "raw_recipe": "{% set version = \"0.8.3\" %}\n\npackage:\n  name: hdbscan\n  version: {{ version }}\n\nsource:\n  fn: hdbscan-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/h/hdbscan/hdbscan-{{ version }}.tar.gz\n  sha256: b6561909ba0ffed8c75cd19bc0ffe827dd06570cf2f1fb2779d1404a76d14a85\n\nbuild:\n  number: 0\n  script: \n    # FIXME: This is a hack to make sure the environment is activated.\n    # The reason this is required is due to the conda-build issue\n    # mentioned below.\n    #\n    # https://github.com/conda/conda-build/issues/910\n    #\n    - source activate \"${CONDA_DEFAULT_ENV}\"  # [unix]\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n    - scikit-learn >=0.16\n    - cython >=0.17\n\n  run:\n    - python\n    - scikit-learn >=0.16\n\ntest:\n  imports:\n    - hdbscan\n\nabout:\n  home: http://github.com/lmcinnes/hdbscan\n  license: BSD 3-Clause\n  summary: 'Clustering based on density with variable density clusters'\n\nextra:\n  recipe-maintainers:\n    - lmcinnes\n",
+ "rendered_recipe": {},
+ "version": "0.8.3"
+}

@@ -1,0 +1,34 @@
+{
+ "about": {
+  "home": "https://github.com/hackebrot/pytest-cookies",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "A Pytest plugin for your Cookiecutter templates"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pytest_cookies-0.2.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/pytest_cookies.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "cookiecutter >=1.4.0",
+   "pytest >=2.8.1",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "pytest-cookies",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2.0"
+ },
+ "metadata_version": 1,
+ "name": "pytest-cookies",
+ "raw_recipe": "{% set name = \"pytest-cookies\" %}\n{% set version = \"0.2.0\" %}\n{% set sha256 = \"8822dcc1095edcd45a45db727fee647c7abbee111691380dd7e82c462c7b90f4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  preserve_egg_dir: true\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pytest >=2.8.1\n    - cookiecutter >=1.4.0\n\ntest:\n  imports:\n    - pytest_cookies\n\nabout:\n  home: https://github.com/hackebrot/pytest-cookies\n  license: MIT\n  license_family: MIT\n  # Not included in the sdist yet.\n  # Please see the linked PR.\n  #\n  # https://github.com/hackebrot/pytest-cookies/pull/10\n  #\n  #license_file: LICENSE\n  summary: A Pytest plugin for your Cookiecutter templates\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.2.0"
+}

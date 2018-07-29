@@ -1,0 +1,30 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/glpsol",
+  "include/glpk.h",
+  "lib/libglpk.40.dylib",
+  "lib/libglpk.a",
+  "lib/libglpk.dylib",
+  "lib/libglpk.la"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "gmp"
+  ],
+  "license": "GNU General Public License v3",
+  "name": "glpk",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "4.59"
+ },
+ "metadata_version": 1,
+ "name": "glpk",
+ "raw_recipe": "{% set version = \"4.59\" %}\n\npackage:\n  name: glpk\n  version: {{ version }}\n\nsource:\n  fn: glpk-{{ version }}.tar.gz\n  url: http://ftp.gnu.org/gnu/glpk/glpk-{{ version }}.tar.gz\n  md5: c84ce7b8286ab91f2e871cd82050e2fe\n\nbuild:\n   number: 0\n   features:\n     - vc9      [win and py27]\n     - vc10     [win and py34]\n     - vc14     [win and py35]\n\nrequirements:\n  build:\n    - gmp      [not win]\n\n  run:\n    # python is a Windows run dependency in order to get the correct vc feature\n    - python   [win]\n    - gmp      [not win]\n\ntest:\n  files:\n    - test.c\n    - setup.py\n    - spam.c\n    - plan.mps\n\n  commands:\n    - glpsol --mps plan.mps\n    - python setup.py test\n\nabout:\n  home: https://www.gnu.org/software/glpk/\n  license: GNU General Public License v3\n  summary: GNU Linear Programming Kit\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n    - aebrahim\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "4.59"
+}

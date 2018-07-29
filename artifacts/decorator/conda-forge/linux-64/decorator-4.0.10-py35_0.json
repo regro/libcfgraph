@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "https://github.com/micheles/decorator",
+  "license": "BSD 3-Clause",
+  "summary": "Better living through Python with decorators"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/decorator-4.0.10-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/decorator-4.0.10-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/decorator.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "decorator",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "4.0.10"
+ },
+ "metadata_version": 1,
+ "name": "decorator",
+ "raw_recipe": "{% set version = \"4.0.10\" %}\n\npackage:\n  name: decorator\n  version: {{ version }}\n\nsource:\n  fn: decorator-{{ version }}.tar.gz\n  url: https://github.com/micheles/decorator/archive/{{ version }}.tar.gz\n  sha256: 89d9874d29f422ad97a2769646a1a9256bb365a79ddfbbda71a62f33e774100d\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - decorator\n\nabout:\n  home: https://github.com/micheles/decorator\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: Better living through Python with decorators\n\nextra:\n  recipe-maintainers:\n    - msarahan\n    - pelson\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "4.0.10"
+}

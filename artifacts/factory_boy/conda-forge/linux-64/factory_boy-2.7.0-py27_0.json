@@ -1,0 +1,49 @@
+{
+ "about": {
+  "dev_url": "https://github.com/rbarrois/factory_boy",
+  "doc_url": "https://factoryboy.readthedocs.io/en/latest/",
+  "home": "https://github.com/rbarrois/factory_boy",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "A versatile test fixtures replacement based on thoughtbot's factory_girl for Ruby."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/factory/__init__.py",
+  "lib/python2.7/site-packages/factory/alchemy.py",
+  "lib/python2.7/site-packages/factory/base.py",
+  "lib/python2.7/site-packages/factory/compat.py",
+  "lib/python2.7/site-packages/factory/containers.py",
+  "lib/python2.7/site-packages/factory/declarations.py",
+  "lib/python2.7/site-packages/factory/django.py",
+  "lib/python2.7/site-packages/factory/errors.py",
+  "lib/python2.7/site-packages/factory/faker.py",
+  "lib/python2.7/site-packages/factory/fuzzy.py",
+  "lib/python2.7/site-packages/factory/helpers.py",
+  "lib/python2.7/site-packages/factory/mogo.py",
+  "lib/python2.7/site-packages/factory/mongoengine.py",
+  "lib/python2.7/site-packages/factory/utils.py",
+  "lib/python2.7/site-packages/factory_boy-2.7.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/factory_boy-2.7.0-py2.7.egg-info/pbr.json"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "fake-factory >=0.5.0",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "factory_boy",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.7.0"
+ },
+ "metadata_version": 1,
+ "name": "factory_boy",
+ "raw_recipe": "{%set name = \"factory_boy\" %}\n{%set version = \"2.7.0\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"a65ff40d2f478d926539e4687e8033c1eff0f8ec9ea9031a8f7e0d385014a6aa\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - fake-factory >=0.5.0\n\ntest:\n  imports:\n    - factory\n\nabout:\n  home: https://github.com/rbarrois/factory_boy\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: \"A versatile test fixtures replacement based on thoughtbot's factory_girl for Ruby.\"\n  dev_url: https://github.com/rbarrois/factory_boy\n  doc_url: https://factoryboy.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "2.7.0"
+}

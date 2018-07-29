@@ -1,0 +1,32 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/xo",
+  "lib/python3.5/site-packages/exofrills-0.1.11-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/exofrills-0.1.11-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/xo.py",
+  "license",
+  "readme.rst"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "pygments >=1.6",
+   "python 3.5*",
+   "urwid >=1.1.1"
+  ],
+  "license": "WTFPL v2",
+  "name": "xo",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.11"
+ },
+ "metadata_version": 1,
+ "name": "xo",
+ "raw_recipe": "{% set version = \"0.1.11\" %}\n# obtained sha256 with \"shasum -a -b\" command\n{% set sha256 = \"bab75f582326bb0db4e49a991ec075908b73fab91e0110482304f21ae5e34cd2\" %}\n\npackage:\n  name: xo\n  version: {{ version }}\n\nsource:\n  fn: xo-{{ sha256 }}.tar.gz\n  url: https://github.com/scopatz/xo/archive/8f486a2709d376d00f98c09a86179bce2a99099a.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: true  # [win or py2k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - urwid >=1.1.1\n    - pygments >=1.6\n\ntest:\n  commands:\n    - xo --help\n\nabout:\n  home: http://exofrills.org/\n  license: WTFPL v2\n  summary: \"exofrills text editor\"\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "rendered_recipe": {},
+ "version": "0.1.11"
+}

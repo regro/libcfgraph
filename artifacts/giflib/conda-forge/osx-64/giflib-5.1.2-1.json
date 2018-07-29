@@ -1,0 +1,35 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/gif2rgb",
+  "bin/gifbuild",
+  "bin/gifclrmp",
+  "bin/gifecho",
+  "bin/giffix",
+  "bin/gifinto",
+  "bin/giftext",
+  "bin/giftool",
+  "include/gif_lib.h",
+  "lib/libgif.7.dylib",
+  "lib/libgif.a",
+  "lib/libgif.dylib",
+  "lib/libgif.la"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [],
+  "license": "MIT",
+  "name": "giflib",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "5.1.2"
+ },
+ "metadata_version": 1,
+ "name": "giflib",
+ "raw_recipe": "{% set version = \"5.1.2\" %}\n\npackage:\n    name: giflib\n    version: {{ version }}\n\nsource:\n    fn: giflib-{{ version }}.tar.gz\n    url: http://downloads.sourceforge.net/project/giflib/giflib-{{ version }}.tar.gz\n    md5: 241a5825d00a36055fcc71874d97cf7b\n\nbuild:\n    number: 1\n    skip: True  # [win]\n\ntest:\n    commands:\n        - gif2rgb -h\n        - gifbuild -h\n        - gifclrmp -h\n        - gifecho -h\n        - giffix -h\n        - gifinto -h\n        - giftext -h\n        - conda inspect linkages giflib --name _test  # [linux]\n\nabout:\n    home: http://giflib.sourceforge.net\n    license: MIT\n    summary: Library for reading and writing gif images\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "5.1.2"
+}

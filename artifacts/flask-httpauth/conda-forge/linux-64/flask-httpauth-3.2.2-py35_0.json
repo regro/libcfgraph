@@ -1,0 +1,158 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.8",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "dev_url": "http://github.com/miguelgrinberg/flask-httpauth/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://github.com/miguelgrinberg/flask-httpauth/",
+  "license": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-0",
+   "conda-forge::certifi-2017.1.23-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.8-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_2",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Basic and Digest HTTP authentication for Flask routes"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/flask_httpauth.py",
+  "lib/python3.5/site-packages/Flask_HTTPAuth-3.2.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/Flask_HTTPAuth-3.2.2-py3.5.egg-info/not-zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "flask",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "flask-httpauth",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "3.2.2"
+ },
+ "metadata_version": 1,
+ "name": "flask-httpauth",
+ "raw_recipe": "{% set name = \"Flask-HTTPAuth\" %}\n{% set version = \"3.2.2\" %}\n{% set sha256 = \"df39b02a5ef71d4dc6c7ea43bd0ed84342eb8d66d50a7cd34d2ce13f5812440d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - flask\n\n  run:\n    - python\n    - flask\n\ntest:\n  imports:\n    - flask_httpauth\n\nabout:\n  home: http://github.com/miguelgrinberg/flask-httpauth/\n  license: MIT\n  license_file: LICENSE\n  summary: 'Basic and Digest HTTP authentication for Flask routes'\n  dev_url: http://github.com/miguelgrinberg/flask-httpauth/\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "http://github.com/miguelgrinberg/flask-httpauth/",
+   "home": "http://github.com/miguelgrinberg/flask-httpauth/",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Basic and Digest HTTP authentication for Flask routes"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt",
+   "string": "py35_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "synapticarbors"
+   ]
+  },
+  "package": {
+   "name": "flask-httpauth",
+   "version": "3.2.2"
+  },
+  "requirements": {
+   "build": [
+    "xz 5.2.2 0",
+    "jinja2 2.9.5 py35_0",
+    "openssl 1.0.2h 3",
+    "itsdangerous 0.24 py35_1",
+    "ncurses 5.9 10",
+    "readline 6.2 0",
+    "werkzeug 0.11.10 py35_0",
+    "markupsafe 0.23 py35_1",
+    "setuptools 33.1.1 py35_0",
+    "python 3.5.3 1",
+    "sqlite 3.13.0 1",
+    "ca-certificates 2017.1.23 0",
+    "certifi 2017.1.23 py35_0",
+    "zlib 1.2.11 0",
+    "flask 0.12 py35_0",
+    "tk 8.5.19 1",
+    "click 6.7 py35_0"
+   ],
+   "run": [
+    "python",
+    "flask"
+   ]
+  },
+  "source": {
+   "fn": "Flask-HTTPAuth-3.2.2.tar.gz",
+   "sha256": "df39b02a5ef71d4dc6c7ea43bd0ed84342eb8d66d50a7cd34d2ce13f5812440d",
+   "url": "https://pypi.io/packages/source/F/Flask-HTTPAuth/Flask-HTTPAuth-3.2.2.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "flask_httpauth"
+   ]
+  }
+ },
+ "version": "3.2.2"
+}

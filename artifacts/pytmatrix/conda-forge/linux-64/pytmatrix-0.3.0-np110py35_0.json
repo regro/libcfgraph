@@ -1,0 +1,91 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pytmatrix-0.3.0-py3.5.egg-info",
+  "lib/python3.5/site-packages/pytmatrix/__init__.py",
+  "lib/python3.5/site-packages/pytmatrix/fortran_tm/__init__.py",
+  "lib/python3.5/site-packages/pytmatrix/fortran_tm/ampld.par.f",
+  "lib/python3.5/site-packages/pytmatrix/fortran_tm/pytmatrix.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/pytmatrix/ice_refr.dat",
+  "lib/python3.5/site-packages/pytmatrix/orientation.py",
+  "lib/python3.5/site-packages/pytmatrix/psd.py",
+  "lib/python3.5/site-packages/pytmatrix/quadrature/__init__.py",
+  "lib/python3.5/site-packages/pytmatrix/quadrature/quadrature.py",
+  "lib/python3.5/site-packages/pytmatrix/radar.py",
+  "lib/python3.5/site-packages/pytmatrix/refractive.py",
+  "lib/python3.5/site-packages/pytmatrix/scatter.py",
+  "lib/python3.5/site-packages/pytmatrix/test/__init__.py",
+  "lib/python3.5/site-packages/pytmatrix/test/test_tmatrix.py",
+  "lib/python3.5/site-packages/pytmatrix/tmatrix.py",
+  "lib/python3.5/site-packages/pytmatrix/tmatrix_aux.py",
+  "lib/python3.5/site-packages/pytmatrix/tmatrix_psd.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np110py35_0",
+  "build_number": 0,
+  "depends": [
+   "libgcc",
+   "numpy 1.10*",
+   "python 3.5*",
+   "scipy"
+  ],
+  "license": "MIT",
+  "name": "pytmatrix",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3.0"
+ },
+ "metadata_version": 1,
+ "name": "pytmatrix",
+ "raw_recipe": "{% set version = \"0.3.0\" %}\n\npackage:\n  name: pytmatrix\n  version: {{ version }}\n\nsource:\n  fn: pytmatrix-{{ version }}.tar.gz\n  url: https://github.com/jleinonen/pytmatrix/archive/{{ version }}.tar.gz\n  sha256: 8733122ab547638fcf586e2069c231e61b411d283d42c4d0923258165f0aaa4b\n\nbuild:\n  number: 0\n  script: python setup.py install\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - numpy x.x\n    - scipy\n    - gcc  # [not win]\n  run:\n    - python\n    - numpy x.x\n    - scipy\n    - libgcc  # [not win]\n\ntest:\n  imports:\n    - pytmatrix\n  commands:\n    - python -c \"from pytmatrix.test import test_tmatrix; test_tmatrix.run_tests()\"\n\nabout:\n  home: https://github.com/jleinonen/pytmatrix\n  license: MIT\n  summary: A Python code for computing the scattering properties of homogeneous nonspherical scatterers with the T-Matrix method.\n\nextra:\n  recipe-maintainers:\n    - kmuehlbauer\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/jleinonen/pytmatrix",
+   "license": "MIT",
+   "summary": "A Python code for computing the scattering properties of homogeneous nonspherical scatterers with the T-Matrix method."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "kmuehlbauer"
+   ]
+  },
+  "package": {
+   "name": "pytmatrix",
+   "version": "0.3.0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "numpy x.x",
+    "scipy",
+    "gcc"
+   ],
+   "run": [
+    "python",
+    "numpy x.x",
+    "scipy",
+    "libgcc"
+   ]
+  },
+  "source": {
+   "fn": "pytmatrix-0.3.0.tar.gz",
+   "sha256": "8733122ab547638fcf586e2069c231e61b411d283d42c4d0923258165f0aaa4b",
+   "url": "https://github.com/jleinonen/pytmatrix/archive/0.3.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python -c \"from pytmatrix.test import test_tmatrix; test_tmatrix.run_tests()\""
+   ],
+   "imports": [
+    "pytmatrix"
+   ]
+  }
+ },
+ "version": "0.3.0"
+}

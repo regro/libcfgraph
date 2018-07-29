@@ -1,0 +1,156 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.9",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Eight is inspired by six, nine, and python-future, but provides better\ninternationalization (i18n) support, is more lightweight, easier to use,\nand unambiguously biased toward Python 3 code: if you remove eight from\nyour code, it will continue to function exactly as it did with eight on\nPython 3.\n",
+  "dev_url": "https://github.com/kislyuk/eight",
+  "doc_url": "https://eight.readthedocs.io/en/latest/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/kislyuk/eight",
+  "license": "Apache-2.0",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-0",
+   "conda-forge::certifi-2017.1.23-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.9-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.12.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_2",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Eight is a Python module that provides a minimalist compatibility layer between Python 3 and 2"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/eight/__init__.py",
+  "lib/python3.5/site-packages/eight-0.3.3-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/eight/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "future 0.15.2",
+   "python 3.5*"
+  ],
+  "license": "Apache-2.0",
+  "name": "eight",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3.3"
+ },
+ "metadata_version": 1,
+ "name": "eight",
+ "raw_recipe": "{% set name = \"eight\" %}\n{% set version = \"0.3.3\" %}\n{% set sha256 = \"b76605189e4484c769c4ee8d8029999756e2b35a4f6c71e4b40e5268400a98a6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - future 0.15.2\n  run:\n    - python\n    - future 0.15.2\n\ntest:\n  imports:\n    - eight\n\nabout:\n  home: https://github.com/kislyuk/eight\n  license: Apache-2.0\n  summary: 'Eight is a Python module that provides a minimalist compatibility layer between Python 3 and 2'\n  description: |\n    Eight is inspired by six, nine, and python-future, but provides better\n    internationalization (i18n) support, is more lightweight, easier to use,\n    and unambiguously biased toward Python 3 code: if you remove eight from\n    your code, it will continue to function exactly as it did with eight on\n    Python 3.\n  doc_url: https://eight.readthedocs.io/en/latest/\n  dev_url: https://github.com/kislyuk/eight\n\nextra:\n  recipe-maintainers:\n    - cmutel\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Eight is inspired by six, nine, and python-future, but provides better\ninternationalization (i18n) support, is more lightweight, easier to use,\nand unambiguously biased toward Python 3 code: if you remove eight from\nyour code, it will continue to function exactly as it did with eight on\nPython 3.\n",
+   "dev_url": "https://github.com/kislyuk/eight",
+   "doc_url": "https://eight.readthedocs.io/en/latest/",
+   "home": "https://github.com/kislyuk/eight",
+   "license": "Apache-2.0",
+   "summary": "Eight is a Python module that provides a minimalist compatibility layer between Python 3 and 2"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "1",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py35_1"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "cmutel"
+   ]
+  },
+  "package": {
+   "name": "eight",
+   "version": "0.3.3"
+  },
+  "requirements": {
+   "build": [
+    "tk 8.5.19 1",
+    "openssl 1.0.2k 0",
+    "setuptools 33.1.1 py35_0",
+    "readline 6.2 0",
+    "sqlite 3.13.0 1",
+    "zlib 1.2.11 0",
+    "ca-certificates 2017.1.23 0",
+    "certifi 2017.1.23 py35_0",
+    "xz 5.2.2 0",
+    "python 3.5.3 1",
+    "ncurses 5.9 10",
+    "future 0.15.2 py35_0"
+   ],
+   "run": [
+    "python",
+    "future 0.15.2"
+   ]
+  },
+  "source": {
+   "fn": "eight-0.3.3.tar.gz",
+   "sha256": "b76605189e4484c769c4ee8d8029999756e2b35a4f6c71e4b40e5268400a98a6",
+   "url": "https://pypi.io/packages/source/e/eight/eight-0.3.3.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "eight"
+   ]
+  }
+ },
+ "version": "0.3.3"
+}

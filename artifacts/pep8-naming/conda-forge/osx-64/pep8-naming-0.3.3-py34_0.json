@@ -1,0 +1,28 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pep8_naming-0.3.3-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pep8_naming-0.3.3-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/pep8ext_naming.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "flake8",
+   "python 3.4*"
+  ],
+  "license": "MIT License",
+  "name": "pep8-naming",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.3"
+ },
+ "metadata_version": 1,
+ "name": "pep8-naming",
+ "raw_recipe": "{% set version = \"0.3.3\" %}\n\npackage:\n  name: pep8-naming\n  version: {{ version }}\n\nsource:\n  fn: pep8-naming-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/p/pep8-naming/pep8-naming-{{ version }}.tar.gz\n  md5: 566f05660200993191312d51cd5a6cc9\n\nbuild:\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - flake8\n\ntest:\n  commands:\n    - \"flake8 --version | grep naming:\"\n\nabout:\n  home: https://github.com/PyCQA/pep8-naming\n  license: MIT License\n  summary: 'Plug-in for flake 8 to check the PEP-8 naming conventions'\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
+ "rendered_recipe": {},
+ "version": "0.3.3"
+}

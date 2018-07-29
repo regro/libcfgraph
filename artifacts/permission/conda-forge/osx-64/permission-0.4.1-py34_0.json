@@ -1,0 +1,35 @@
+{
+ "about": {
+  "description": "Simple and flexible permission control for Flask-style apps. It features\nsimple (all you need to do is subclassing Rule and Permission class), and\nflexible (support rule inheritance and bitwise operations(& and |) to build\nyour own rules) design.\n",
+  "dev_url": "https://github.com/hustlzp/permission",
+  "home": "https://github.com/hustlzp/permission",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Simple and flexible permission control for Flask-style apps"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/permission-0.4.1-py3.4.egg-info",
+  "lib/python3.4/site-packages/permission/__init__.py",
+  "lib/python3.4/site-packages/permission/permission.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "permission",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.4.1"
+ },
+ "metadata_version": 1,
+ "name": "permission",
+ "raw_recipe": "{% set name = \"permission\" %}\n{% set version = \"0.4.1\" %}\n{% set sha256 = \"f2cd126123fb9f3f4f80a9640cf3aea688b06701525e02c25aa17221c0d871c8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - permission\n\nabout:\n  home: https://github.com/hustlzp/permission\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Simple and flexible permission control for Flask-style apps'\n\n  description: |\n    Simple and flexible permission control for Flask-style apps. It features\n    simple (all you need to do is subclassing Rule and Permission class), and\n    flexible (support rule inheritance and bitwise operations(& and |) to build\n    your own rules) design.\n  dev_url: https://github.com/hustlzp/permission\n\nextra:\n  recipe-maintainers:\n    - frol\n",
+ "rendered_recipe": {},
+ "version": "0.4.1"
+}

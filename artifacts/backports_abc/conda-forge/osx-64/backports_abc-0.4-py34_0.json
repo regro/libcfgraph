@@ -1,0 +1,26 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/backports_abc-0.4-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/backports_abc.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "PSF 2",
+  "name": "backports_abc",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.4"
+ },
+ "metadata_version": 1,
+ "name": "backports_abc",
+ "raw_recipe": "{% set version=\"0.4\" %}\n\npackage:\n  name: backports_abc\n  version: {{ version }}\n\nsource:\n  fn: backports_abc-0.4.tar.gz\n  url: https://pypi.io/packages/source/b/backports_abc/backports_abc-{{ version }}.tar.gz\n  md5: 0b65a216ce9dc9c1a7e20a729dd7c05b\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - backports_abc\n\nabout:\n  home: https://github.com/cython/backports_abc\n  license: PSF 2\n  summary: A backport of recent additions to the `collections.abc` module.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.4"
+}

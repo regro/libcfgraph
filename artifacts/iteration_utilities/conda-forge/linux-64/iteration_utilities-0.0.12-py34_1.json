@@ -1,0 +1,43 @@
+{
+ "about": {
+  "dev_url": "https://github.com/MSeifert04/iteration_utilities",
+  "doc_url": "http://iteration-utilities.rtfd.io",
+  "home": "https://github.com/MSeifert04/iteration_utilities",
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "summary": "Utilities based on Pythons iterators and generators."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/iteration_utilities-0.0.12-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/iteration_utilities-0.0.12-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/iteration_utilities/__init__.py",
+  "lib/python3.4/site-packages/iteration_utilities/_cfuncs.cpython-34m.so",
+  "lib/python3.4/site-packages/iteration_utilities/_helpers/__init__.py",
+  "lib/python3.4/site-packages/iteration_utilities/_helpers/_performance.py",
+  "lib/python3.4/site-packages/iteration_utilities/_recipes/__init__.py",
+  "lib/python3.4/site-packages/iteration_utilities/_recipes/_additional.py",
+  "lib/python3.4/site-packages/iteration_utilities/_recipes/_core.py",
+  "lib/python3.4/site-packages/iteration_utilities/_utils.py",
+  "lib/python3.4/site-packages/iteration_utilities/core.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_1",
+  "build_number": 1,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "name": "iteration_utilities",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.0.12"
+ },
+ "metadata_version": 1,
+ "name": "iteration_utilities",
+ "raw_recipe": "{% set name = \"iteration_utilities\" %}\n{% set version = \"0.0.12\" %}\n{% set sha256 = \"c36fca43bcb4707abbb07159ec1d13d4dd400d7b7a3bda8863f25eb3322926f6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  features:\n  - vc9  # [win and py27]\n  - vc10  # [win and py34]\n  - vc14  # [win and py35]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n    - pytest-runner\n  run:\n    - python\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - iteration_utilities\n\nabout:\n  home: https://github.com/MSeifert04/iteration_utilities\n  license: Apache-2.0\n  license_family: Apache\n  license_file: LICENSE.rst\n  summary: 'Utilities based on Pythons iterators and generators.'\n  doc_url: http://iteration-utilities.rtfd.io\n  dev_url: https://github.com/MSeifert04/iteration_utilities\n\nextra:\n  recipe-maintainers:\n    - MSeifert04\n",
+ "rendered_recipe": {},
+ "version": "0.0.12"
+}

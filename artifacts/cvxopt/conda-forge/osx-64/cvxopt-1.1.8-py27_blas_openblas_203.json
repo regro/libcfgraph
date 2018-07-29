@@ -1,0 +1,51 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/cvxopt-1.1.8-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/cvxopt-1.1.8-py2.7.egg-info/pbr.json",
+  "lib/python2.7/site-packages/cvxopt/__init__.py",
+  "lib/python2.7/site-packages/cvxopt/amd.so",
+  "lib/python2.7/site-packages/cvxopt/base.so",
+  "lib/python2.7/site-packages/cvxopt/blas.so",
+  "lib/python2.7/site-packages/cvxopt/cholmod.so",
+  "lib/python2.7/site-packages/cvxopt/coneprog.py",
+  "lib/python2.7/site-packages/cvxopt/cvxprog.py",
+  "lib/python2.7/site-packages/cvxopt/fftw.so",
+  "lib/python2.7/site-packages/cvxopt/glpk.so",
+  "lib/python2.7/site-packages/cvxopt/gsl.so",
+  "lib/python2.7/site-packages/cvxopt/info.py",
+  "lib/python2.7/site-packages/cvxopt/lapack.so",
+  "lib/python2.7/site-packages/cvxopt/misc.py",
+  "lib/python2.7/site-packages/cvxopt/misc_solvers.so",
+  "lib/python2.7/site-packages/cvxopt/modeling.py",
+  "lib/python2.7/site-packages/cvxopt/msk.py",
+  "lib/python2.7/site-packages/cvxopt/printing.py",
+  "lib/python2.7/site-packages/cvxopt/solvers.py",
+  "lib/python2.7/site-packages/cvxopt/umfpack.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_blas_openblas_203",
+  "build_number": 203,
+  "depends": [
+   "blas 1.1 openblas",
+   "fftw",
+   "glpk",
+   "gsl",
+   "openblas 0.2.18*",
+   "python 2.7*"
+  ],
+  "features": "blas_openblas",
+  "license": "GPL 3",
+  "name": "cvxopt",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.1.8"
+ },
+ "metadata_version": 1,
+ "name": "cvxopt",
+ "raw_recipe": "{% set version = \"1.1.8\" %}\n\n{% set variant = \"openblas\" %}\n\n\npackage:\n  name: cvxopt\n  version: {{ version }}\n\nsource:\n  fn: cvxopt-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/cvxopt/cvxopt-{{ version }}.tar.gz\n  md5: d4ff0a0e51aba93f838a70302a088eea\n  patches:\n    # Add a patch that fixes the linking order and adds a missing library.\n    # Also, fixes the environment variable used for SuiteSparse includes.\n    # See this commit\n    # ( https://github.com/cvxopt/cvxopt/commit/4e89755cb6aaf6493a49a3ad99dd5d5e007e1a5a ).\n    # ( https://github.com/cvxopt/cvxopt/commit/007c1a0ea9df9a54e9f99cacbde56a6047518375 ).\n    # Also, see this PR to show how these were backported.\n    # ( https://github.com/cvxopt/cvxopt/pull/61 )\n    - cvxopt_PR_61.diff\n\nbuild:\n  skip: true  # [win]\n  number: 203\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.18*\n    - gsl\n    - fftw\n    - glpk\n    - suitesparse 4.4.*\n\n  run:\n    - python\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.18*\n    - gsl\n    - fftw\n    - glpk\n\ntest:\n  imports:\n    - cvxopt\n\nabout:\n  home: http://cvxopt.org\n  license: GPL 3\n  summary: Convex optimization package\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jjhelmus\n    - martinandersen\n",
+ "rendered_recipe": {},
+ "version": "1.1.8"
+}

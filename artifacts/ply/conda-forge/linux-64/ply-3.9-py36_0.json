@@ -1,0 +1,40 @@
+{
+ "about": {
+  "description": "PLY is a 100% Python implementation of the common parsing tools lex and\nyacc.\n",
+  "dev_url": "https://github.com/dabeaz/ply",
+  "doc_url": "http://www.dabeaz.com/ply/index.html",
+  "home": "http://www.dabeaz.com/ply/index.html",
+  "license": "BSD 3-clause",
+  "license_family": "BSD",
+  "summary": "Python Lex-Yacc"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/ply-3.9-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/ply/__init__.py",
+  "lib/python3.6/site-packages/ply/cpp.py",
+  "lib/python3.6/site-packages/ply/ctokens.py",
+  "lib/python3.6/site-packages/ply/lex.py",
+  "lib/python3.6/site-packages/ply/yacc.py",
+  "lib/python3.6/site-packages/ply/ygen.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.6*"
+  ],
+  "license": "BSD 3-clause",
+  "license_family": "BSD",
+  "name": "ply",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "3.9"
+ },
+ "metadata_version": 1,
+ "name": "ply",
+ "raw_recipe": "{% set name = \"ply\" %}\n{% set version = \"3.9\" %}\n{% set sha256 = \"118e7d8fa38d0221aa2ae673184a0a265c6d83a20e9528ef71825b3983ac1dd6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/dabeaz/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - ply.lex\n    - ply.yacc\n\nabout:\n  home: http://www.dabeaz.com/ply/index.html\n  license: BSD 3-clause\n  license_family: BSD\n  license_file: README.md\n  summary: 'Python Lex-Yacc'\n  description: |\n    PLY is a 100% Python implementation of the common parsing tools lex and\n    yacc.\n  doc_url: http://www.dabeaz.com/ply/index.html\n  dev_url: https://github.com/dabeaz/ply\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "rendered_recipe": {},
+ "version": "3.9"
+}

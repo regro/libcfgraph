@@ -1,0 +1,83 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/conda-testenv",
+  "lib/python2.7/site-packages/conda_testenv-0.1.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/conda_testenv-0.1.0-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/conda_testenv/__init__.py",
+  "lib/python2.7/site-packages/conda_testenv/_version.py",
+  "lib/python2.7/site-packages/conda_testenv/cli.py",
+  "lib/python2.7/site-packages/conda_testenv/conda_build_test.py",
+  "lib/python2.7/site-packages/conda_testenv/test_env.py",
+  "lib/python2.7/site-packages/conda_testenv/tests/__init__.py",
+  "lib/python2.7/site-packages/conda_testenv/tests/integration/__init__.py",
+  "lib/python2.7/site-packages/conda_testenv/tests/integration/test.py",
+  "lib/python2.7/site-packages/conda_testenv/tests/integration/test_recipes/a/build.sh",
+  "lib/python2.7/site-packages/conda_testenv/tests/integration/test_recipes/a/meta.yaml",
+  "lib/python2.7/site-packages/conda_testenv/tests/integration/test_recipes/b/build.sh",
+  "lib/python2.7/site-packages/conda_testenv/tests/integration/test_recipes/b/meta.yaml",
+  "lib/python2.7/site-packages/conda_testenv/tests/integration/test_recipes/c/meta.yaml",
+  "lib/python2.7/site-packages/conda_testenv/tests/integration/test_recipes/c/run_test.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "conda",
+   "conda-build",
+   "python 2.7*",
+   "setuptools"
+  ],
+  "license": "BSD",
+  "name": "conda-testenv",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.0"
+ },
+ "metadata_version": 1,
+ "name": "conda-testenv",
+ "raw_recipe": "package:\n  name: conda-testenv\n  version: 0.1.0\n\nsource:\n  git_url: https://github.com/SciTools/conda-testenv.git\n  git_tag: v0.1.0\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - conda\n    - conda-build\n\ntest:\n  imports:\n    - conda_testenv\n  commands:\n    - conda testenv --help\n    - conda-testenv --help\n    - conda-testenv --version\n\nabout:\n  home: https://github.com/SciTools/conda-testenv\n  license: BSD\n  summary: 'Run tests of all packages in an environment.'\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/SciTools/conda-testenv",
+   "license": "BSD",
+   "summary": "Run tests of all packages in an environment."
+  },
+  "build": {
+   "number": 1
+  },
+  "package": {
+   "name": "conda-testenv",
+   "version": "0.1.0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "setuptools",
+    "conda",
+    "conda-build"
+   ]
+  },
+  "source": {
+   "git_tag": "v0.1.0",
+   "git_url": "https://github.com/SciTools/conda-testenv.git"
+  },
+  "test": {
+   "commands": [
+    "conda testenv --help",
+    "conda-testenv --help",
+    "conda-testenv --version"
+   ],
+   "imports": [
+    "conda_testenv"
+   ]
+  }
+ },
+ "version": "0.1.0"
+}

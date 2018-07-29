@@ -1,0 +1,43 @@
+{
+ "about": {
+  "home": "https://github.com/danielballan/nbexamples",
+  "license": "BSD-3-Clause",
+  "summary": "Conda environment and package access extension from within Jupyter"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/nbexamples-0.2.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/nbexamples/__init__.py",
+  "Lib/site-packages/nbexamples/_version.py",
+  "Lib/site-packages/nbexamples/handlers.py",
+  "Lib/site-packages/nbexamples/static/custom.css",
+  "Lib/site-packages/nbexamples/static/examples.css",
+  "Lib/site-packages/nbexamples/static/examples.js",
+  "Lib/site-packages/nbexamples/static/main.js",
+  "Lib/site-packages/nbexamples/static/submit-example-button.js",
+  "Lib/site-packages/nbexamples/strip_output.py",
+  "Scripts/.nbexamples-post-link.bat",
+  "Scripts/.nbexamples-pre-unlink.bat"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "nbconvert",
+   "nbformat",
+   "notebook >=4.2.0",
+   "python 2.7*"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "nbexamples",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2.0"
+ },
+ "metadata_version": 1,
+ "name": "nbexamples",
+ "raw_recipe": "{% set version = \"0.2.0\" %}\n{% set gh_org = \"danielballan\" %}\n{% set gh_repo = \"nbexamples\" %}\n\npackage:\n  name: {{ gh_repo }}\n  version: {{ version }}\n\nsource:\n  fn: {{ gh_repo }}-v{{ version }}.tar.gz\n  url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/v{{ version }}.tar.gz\n  sha256: f391b42ea6856d92a06fafa18ede464e400c9b2804a2a022d0b7197fd4bd4061\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - notebook >=4.2.0\n    - python\n    - setuptools\n  run:\n    - nbconvert\n    - nbformat\n    - notebook >=4.2.0\n    - python\n\ntest:\n  imports:\n    - nbexamples\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: BSD-3-Clause\n  summary: Conda environment and package access extension from within Jupyter\n\nextra:\n  recipe-maintainers:\n    - danielballan\n    - ericdill\n    - mariusvniekerk\n    - parente\n",
+ "rendered_recipe": {},
+ "version": "0.2.0"
+}

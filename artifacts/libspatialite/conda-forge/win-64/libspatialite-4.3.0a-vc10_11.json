@@ -1,0 +1,58 @@
+{
+ "about": {
+  "home": "https://www.gaia-gis.it/fossil/libspatialite/index",
+  "license": "LGPL-2.1",
+  "summary": "Extend the SQLite core to support fully fledged Spatial SQL capabilities."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/spatialite.dll",
+  "Library/include/spatialite.h",
+  "Library/include/spatialite/control_points.h",
+  "Library/include/spatialite/debug.h",
+  "Library/include/spatialite/gaiaaux.h",
+  "Library/include/spatialite/gaiaexif.h",
+  "Library/include/spatialite/gaiageo.h",
+  "Library/include/spatialite/gaiamatrix.h",
+  "Library/include/spatialite/geopackage.h",
+  "Library/include/spatialite/gg_advanced.h",
+  "Library/include/spatialite/gg_const.h",
+  "Library/include/spatialite/gg_core.h",
+  "Library/include/spatialite/gg_dxf.h",
+  "Library/include/spatialite/gg_dynamic.h",
+  "Library/include/spatialite/gg_formats.h",
+  "Library/include/spatialite/gg_mbr.h",
+  "Library/include/spatialite/gg_structs.h",
+  "Library/include/spatialite/gg_wfs.h",
+  "Library/include/spatialite/gg_xml.h",
+  "Library/include/spatialite/spatialite.h",
+  "Library/include/spatialite/sqlite.h",
+  "Library/lib/spatialite.lib",
+  "Library/lib/spatialite_i.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc10_11",
+  "build_number": 11,
+  "depends": [
+   "freexl",
+   "geos 3.4.*",
+   "libxml2",
+   "proj4 4.9.3",
+   "sqlite 3.13.*",
+   "vc 10",
+   "zlib 1.2.*"
+  ],
+  "features": "vc10",
+  "license": "LGPL-2.1",
+  "name": "libspatialite",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "4.3.0a"
+ },
+ "metadata_version": 1,
+ "name": "libspatialite",
+ "raw_recipe": "{% set version = \"4.3.0a\" %}\n\npackage:\n  name: libspatialite\n  version: {{ version }}\n\nsource:\n  fn: libspatialite-{{ version }}.tar.gz\n  url: http://www.gaia-gis.it/gaia-sins/libspatialite-{{ version }}.tar.gz\n  md5: 6b380b332c00da6f76f432b10a1a338c\n  patches:\n    # Skips 3 tests (check_extension, check_sql_stmt, and check_get_normal_zoom_extension_load) that are failing on OS X.\n    # Re-visit this once a new release is out.\n    - skip_failing_test.patch  # [osx]\n    - makefile.vc.patch  # [win]\n    - config-msvc.patch  # [win]\n    - gg_extras.patch  # [win]\n\nbuild:\n  number: 11\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - sqlite 3.13.*\n    - geos 3.4.*\n    - proj4 4.9.3\n    - freexl\n    - zlib 1.2.*\n    - libxml2\n    - pkg-config  # [not win]\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n  run:\n    - sqlite 3.13.*\n    - geos 3.4.*\n    - proj4 4.9.3\n    - freexl\n    - zlib 1.2.*\n    - libxml2\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n\ntest:\n  commands:\n    #- conda inspect linkages -p $PREFIX libspatialite  # [not win]\n    #- conda inspect objects -p $PREFIX libspatialite  # [osx]\n\nabout:\n  home: https://www.gaia-gis.it/fossil/libspatialite/index\n  license: LGPL-2.1\n  summary: 'Extend the SQLite core to support fully fledged Spatial SQL capabilities.'\n\nextra:\n  recipe-maintainers:\n    - danclewley\n    - gillins\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "4.3.0a"
+}

@@ -1,0 +1,53 @@
+{
+ "about": {
+  "description": "OpenMC is a Monte Carlo particle transport simulation code focused on\nneutron criticality calculations. It is capable of simulating 3D models\nbased on constructive solid geometry with second-order surfaces. The\nparticle interaction data is based on ACE format cross sections, also\nused in the MCNP and Serpent Monte Carlo codes.\n",
+  "dev_url": "https://github.com/mit-crpg/openmc",
+  "doc_url": "http://mit-crpg.github.io/openmc/index.html",
+  "home": "http://mit-crpg.github.io/openmc/index.html",
+  "license": "MIT",
+  "summary": "OpenMC Monte Carlo Code"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/openmc",
+  "share/doc/openmc/copyright",
+  "share/man/man1/openmc.1",
+  "share/openmc/relaxng/cmfd.rnc",
+  "share/openmc/relaxng/cmfd.rng",
+  "share/openmc/relaxng/cross_sections.rnc",
+  "share/openmc/relaxng/cross_sections.rng",
+  "share/openmc/relaxng/geometry.rnc",
+  "share/openmc/relaxng/geometry.rng",
+  "share/openmc/relaxng/materials.rnc",
+  "share/openmc/relaxng/materials.rng",
+  "share/openmc/relaxng/mg_cross_sections.rnc",
+  "share/openmc/relaxng/mg_cross_sections.rng",
+  "share/openmc/relaxng/plots.rnc",
+  "share/openmc/relaxng/plots.rng",
+  "share/openmc/relaxng/readme.rst",
+  "share/openmc/relaxng/settings.rnc",
+  "share/openmc/relaxng/settings.rng",
+  "share/openmc/relaxng/tallies.rnc",
+  "share/openmc/relaxng/tallies.rng"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "hdf5 1.8.17|1.8.17.*",
+   "libgfortran",
+   "mpich"
+  ],
+  "license": "MIT",
+  "name": "openmc",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.8.0"
+ },
+ "metadata_version": 1,
+ "name": "openmc",
+ "raw_recipe": "{% set org = \"mit-crpg\" %}\n{% set name = \"openmc\" %}\n{% set version = \"0.8.0\" %}\n{% set sha256 = \"8392df2f060cf1db55bc6d6603df3c4fc8e1b58e2cf701679665668a36e35d40\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/{{ org }}/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - pkg-config\n    - gcc\n    - hdf5 1.8.17|1.8.17.*\n    - git\n    - mpich\n  run:\n    - mpich\n    - libgfortran\n    - hdf5 1.8.17|1.8.17.*\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/bin/openmc\"\n    - openmc --version\n\nabout:\n  home: http://mit-crpg.github.io/openmc/index.html\n  license: MIT\n  license_file: LICENSE\n  summary: 'OpenMC Monte Carlo Code'\n  description: |\n    OpenMC is a Monte Carlo particle transport simulation code focused on\n    neutron criticality calculations. It is capable of simulating 3D models\n    based on constructive solid geometry with second-order surfaces. The\n    particle interaction data is based on ACE format cross sections, also\n    used in the MCNP and Serpent Monte Carlo codes.\n  doc_url: http://mit-crpg.github.io/openmc/index.html\n  dev_url: https://github.com/mit-crpg/openmc\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "rendered_recipe": {},
+ "version": "0.8.0"
+}

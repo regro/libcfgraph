@@ -1,0 +1,26 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/geolinks-0.2.0-py3.5.egg-info",
+  "lib/python3.5/site-packages/geolinks/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "geolinks",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.0"
+ },
+ "metadata_version": 1,
+ "name": "geolinks",
+ "raw_recipe": "{% set version = \"0.2.0\" %}\n\npackage:\n    name: geolinks\n    version: {{ version }}\n\nsource:\n    fn: geolinks-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/g/geolinks/geolinks-{{ version }}.tar.gz\n    md5: d3deb3ae7afd2670b8deb9bf00c7a13c\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n\ntest:\n    imports:\n        - geolinks\n\nabout:\n    home: https://github.com/geopython/geolinks\n    license: MIT\n    summary: Utilities to deal with geospatial links\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.2.0"
+}

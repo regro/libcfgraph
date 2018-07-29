@@ -1,0 +1,61 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/csabathy",
+  "include/csa.h",
+  "lib/libcsa.a",
+  "lib/libcsa.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "libgcc"
+  ],
+  "license": "Simplified BSD",
+  "name": "csa",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.22.0"
+ },
+ "metadata_version": 1,
+ "name": "csa",
+ "raw_recipe": "package:\n    name: csa\n    version: 1.22.0\n\nsource:\n    git_url: https://github.com/sakov/csa-c.git\n    git_tag: v1.22.0\n\nbuild:\n    number: 0\n    skip: True  # [win]\n\nrequirements:\n    run:\n        - libgcc\n\ntest:\n    commands:\n        - csabathy -V\n\nabout:\n    home: https://github.com/sakov/csa-c\n    license: Simplified BSD\n    summary: Cubic Spline Approximation\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/sakov/csa-c",
+   "license": "Simplified BSD",
+   "summary": "Cubic Spline Approximation"
+  },
+  "build": {
+   "number": 0,
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "csa",
+   "version": "1.22.0"
+  },
+  "requirements": {
+   "run": [
+    "libgcc"
+   ]
+  },
+  "source": {
+   "git_tag": "v1.22.0",
+   "git_url": "https://github.com/sakov/csa-c.git"
+  },
+  "test": {
+   "commands": [
+    "csabathy -V"
+   ]
+  }
+ },
+ "version": "1.22.0"
+}

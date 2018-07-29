@@ -1,0 +1,55 @@
+{
+ "about": {
+  "home": "http://openturns.org/",
+  "license": "LGPLv3",
+  "summary": "Morris screening module"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/otmorris/__init__.py",
+  "Lib/site-packages/otmorris/_otmorris.pyd",
+  "Lib/site-packages/otmorris/examples/t_MorrisExperiment_std.py",
+  "Lib/site-packages/otmorris/examples/t_Morris_std.cxx",
+  "Lib/site-packages/otmorris/examples/t_Morris_std.py",
+  "Lib/site-packages/otmorris/include/otmorris/Morris.hxx",
+  "Lib/site-packages/otmorris/include/otmorris/MorrisExperiment.hxx",
+  "Lib/site-packages/otmorris/include/otmorris/MorrisExperimentGrid.hxx",
+  "Lib/site-packages/otmorris/include/otmorris/MorrisExperimentImplementation.hxx",
+  "Lib/site-packages/otmorris/include/otmorris/MorrisExperimentLHS.hxx",
+  "Lib/site-packages/otmorris/include/otmorris/OTMORRISprivate.hxx",
+  "Lib/site-packages/otmorris/include/otmorris/swig/Morris.i",
+  "Lib/site-packages/otmorris/include/otmorris/swig/MorrisExperiment.i",
+  "Lib/site-packages/otmorris/include/otmorris/swig/MorrisExperimentGrid.i",
+  "Lib/site-packages/otmorris/include/otmorris/swig/MorrisExperimentGrid_doc.i",
+  "Lib/site-packages/otmorris/include/otmorris/swig/MorrisExperimentImplementation.i",
+  "Lib/site-packages/otmorris/include/otmorris/swig/MorrisExperimentImplementation_doc.i",
+  "Lib/site-packages/otmorris/include/otmorris/swig/MorrisExperimentLHS.i",
+  "Lib/site-packages/otmorris/include/otmorris/swig/MorrisExperimentLHS_doc.i",
+  "Lib/site-packages/otmorris/include/otmorris/swig/MorrisExperiment_doc.i",
+  "Lib/site-packages/otmorris/include/otmorris/swig/Morris_doc.i",
+  "Lib/site-packages/otmorris/include/otmorris/swig/otmorris_module.i",
+  "Lib/site-packages/otmorris/libotmorris.dll",
+  "Lib/site-packages/otmorris/otmorris.py",
+  "Lib/site-packages/otmorris/plot_sensitivity.py",
+  "Lib/site-packages/otmorris/uninst-otmorris.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_3",
+  "build_number": 3,
+  "depends": [
+   "openturns",
+   "python 3.4*"
+  ],
+  "license": "LGPLv3",
+  "name": "otmorris",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.1"
+ },
+ "metadata_version": 1,
+ "name": "otmorris",
+ "raw_recipe": "{% set version = \"0.1\" %}\n\npackage:\n  name: otmorris\n  version: {{ version }}\n\nsource:\n  fn: otmorris-{{ version }}.tar.gz  # [not win]\n  url: https://github.com/openturns/otmorris/archive/v{{ version }}.tar.gz  # [not win]\n  sha256: 385e7c9d73fc424b319679853a8d9a4e62a5553be634c46ec9faa70986e16242  # [not win]\n\n  fn: otmorris-{{ version }}-py2.7-i686.exe  # [win32 and py27]\n  url: https://github.com/openturns/build/releases/download/v1.8/otmorris-{{ version }}-py2.7-i686.exe  # [win32 and py27]\n  sha256: 3998869d9f1673ad0af13795e17ed4ed0e3b0ae7249bc098b4ac373640d134fd  # [win32 and py27]\n\n  fn: otmorris-{{ version }}-py2.7-x86_64.exe  # [win64 and py27]\n  url: https://github.com/openturns/build/releases/download/v1.8/otmorris-{{ version }}-py2.7-x86_64.exe  # [win64 and py27]\n  sha256: d57b08b10c3d83d08fb87541497054b0c72567beb46a1e3baaaa7fe45bbfbb7f  # [win64 and py27]\n\n  fn: otmorris-{{ version }}-py3.4-i686.exe  # [win32 and py34]\n  url: https://github.com/openturns/build/releases/download/v1.8/otmorris-{{ version }}-py3.4-i686.exe  # [win32 and py34]\n  sha256: e8737b946b17abcea8b795603fce7d76995df8a44c9247737774ad0a18e9fddd  # [win32 and py34]\n\n  fn: otmorris-{{ version }}-py3.4-x86_64.exe  # [win64 and py34]\n  url: https://github.com/openturns/build/releases/download/v1.8/otmorris-{{ version }}-py3.4-x86_64.exe  # [win64 and py34]\n  sha256: 0aa4ee6392f6e12f93ba2e9b63d273f07e8bd084c3566b36ad355bdf971feaaf  # [win64 and py34]\n\n  fn: otmorris-{{ version }}-py3.5-i686.exe  # [win32 and py35]\n  url: https://github.com/openturns/build/releases/download/v1.8/otmorris-{{ version }}-py3.5-i686.exe  # [win32 and py35]\n  sha256: 145ca77604e77674c4a1ea0a302a62cf3cc219ea5918e3229e36c72f2bac44a6  # [win32 and py35]\n\n  fn: otmorris-{{ version }}-py3.5-x86_64.exe  # [win64 and py35]\n  url: https://github.com/openturns/build/releases/download/v1.8/otmorris-{{ version }}-py3.5-x86_64.exe  # [win64 and py35]\n  sha256: 0632900125169bbac08fbed866821f68246f5ea79d5001040b21bda994b8ab65  # [win64 and py35]\n\n  patches:\n    # https://github.com/openturns/otmorris/pull/9\n    - 0001-Take-interval-into-account-in-MorrisExperimentGrid.patch  # [unix]\n\nbuild:\n  number: 3\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - cmake  # [not win]\n    - swig  # [not win]\n    - openturns  # [not win]\n\n  run:\n    - python\n    - openturns\n\ntest:\n  imports:\n    - otmorris\n\nabout:\n  home: http://openturns.org/\n  license: LGPLv3\n  license_file: COPYING.LESSER  # [not win]\n  summary: Morris screening module\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
+ "rendered_recipe": {},
+ "version": "0.1"
+}

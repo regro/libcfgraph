@@ -1,0 +1,57 @@
+{
+ "about": {
+  "dev_url": "http://github.com/jospolfliet/pandas-profiling",
+  "home": "http://github.com/jospolfliet/pandas-profiling",
+  "license": "MIT",
+  "summary": "Generate profile report for pandas DataFrame"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pandas_profiling-1.3.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pandas_profiling/__init__.py",
+  "lib/python2.7/site-packages/pandas_profiling/base.py",
+  "lib/python2.7/site-packages/pandas_profiling/formatters.py",
+  "lib/python2.7/site-packages/pandas_profiling/pandas_profiling.mplstyle",
+  "lib/python2.7/site-packages/pandas_profiling/templates.py",
+  "lib/python2.7/site-packages/pandas_profiling/templates/_row_footer.html",
+  "lib/python2.7/site-packages/pandas_profiling/templates/_row_header.html",
+  "lib/python2.7/site-packages/pandas_profiling/templates/_row_header_ignore.html",
+  "lib/python2.7/site-packages/pandas_profiling/templates/base.html",
+  "lib/python2.7/site-packages/pandas_profiling/templates/freq_table.html",
+  "lib/python2.7/site-packages/pandas_profiling/templates/freq_table_row.html",
+  "lib/python2.7/site-packages/pandas_profiling/templates/mini_freq_table.html",
+  "lib/python2.7/site-packages/pandas_profiling/templates/mini_freq_table_row.html",
+  "lib/python2.7/site-packages/pandas_profiling/templates/overview.html",
+  "lib/python2.7/site-packages/pandas_profiling/templates/row_cat.html",
+  "lib/python2.7/site-packages/pandas_profiling/templates/row_const.html",
+  "lib/python2.7/site-packages/pandas_profiling/templates/row_corr.html",
+  "lib/python2.7/site-packages/pandas_profiling/templates/row_date.html",
+  "lib/python2.7/site-packages/pandas_profiling/templates/row_num.html",
+  "lib/python2.7/site-packages/pandas_profiling/templates/row_unique.html",
+  "lib/python2.7/site-packages/pandas_profiling/templates/sample.html",
+  "lib/python2.7/site-packages/pandas_profiling/templates/wrapper.html",
+  "lib/python2.7/site-packages/pandas_profiling/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "jinja2 >=2.8",
+   "matplotlib >=1.4",
+   "pandas >=0.16",
+   "python 2.7*",
+   "six >=1.9"
+  ],
+  "license": "MIT",
+  "name": "pandas-profiling",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.3.0"
+ },
+ "metadata_version": 1,
+ "name": "pandas-profiling",
+ "raw_recipe": "{% set name = \"pandas-profiling\" %}\n{% set version = \"1.3.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"53244ffc5e924fe702d599fba13988268257207e45b104ccbb2f922458c9591e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pandas >=0.16\n    - matplotlib >=1.4\n    - jinja2 >=2.8\n    - six >=1.9\n\ntest:\n  imports:\n    - pandas_profiling\n\nabout:\n  home: http://github.com/jospolfliet/pandas-profiling\n  license: MIT\n  license_file: LICENSE\n  summary: 'Generate profile report for pandas DataFrame'\n  dev_url: http://github.com/jospolfliet/pandas-profiling\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
+ "rendered_recipe": {},
+ "version": "1.3.0"
+}

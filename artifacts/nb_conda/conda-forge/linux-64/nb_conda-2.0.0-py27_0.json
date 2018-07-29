@@ -1,0 +1,61 @@
+{
+ "about": {
+  "home": "https://github.com/Anaconda-Platform/nb_conda",
+  "license": "BSD-3-Clause",
+  "summary": "Conda environment and package access extension from within Jupyter"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/.nb_conda-post-link.sh",
+  "bin/.nb_conda-pre-unlink.sh",
+  "lib/python2.7/site-packages/nb_conda-2.0.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/nb_conda-2.0.0-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/nb_conda/__init__.py",
+  "lib/python2.7/site-packages/nb_conda/_version.py",
+  "lib/python2.7/site-packages/nb_conda/envmanager.py",
+  "lib/python2.7/site-packages/nb_conda/handlers.py",
+  "lib/python2.7/site-packages/nb_conda/static/common.js",
+  "lib/python2.7/site-packages/nb_conda/static/conda.css",
+  "lib/python2.7/site-packages/nb_conda/static/main.js",
+  "lib/python2.7/site-packages/nb_conda/static/menu.html",
+  "lib/python2.7/site-packages/nb_conda/static/models.js",
+  "lib/python2.7/site-packages/nb_conda/static/tab.html",
+  "lib/python2.7/site-packages/nb_conda/static/tree.js",
+  "lib/python2.7/site-packages/nb_conda/static/urls.js",
+  "lib/python2.7/site-packages/nb_conda/static/views.js",
+  "lib/python2.7/site-packages/nb_conda/tests/__init__.py",
+  "lib/python2.7/site-packages/nb_conda/tests/js/_utils.js",
+  "lib/python2.7/site-packages/nb_conda/tests/js/test_notebook_basic.js",
+  "lib/python2.7/site-packages/nb_conda/tests/test_api.py",
+  "lib/python2.7/site-packages/nb_conda/tests/test_notebook.py",
+  "share/jupyter/nbextensions/nb_conda/common.js",
+  "share/jupyter/nbextensions/nb_conda/conda.css",
+  "share/jupyter/nbextensions/nb_conda/main.js",
+  "share/jupyter/nbextensions/nb_conda/menu.html",
+  "share/jupyter/nbextensions/nb_conda/models.js",
+  "share/jupyter/nbextensions/nb_conda/tab.html",
+  "share/jupyter/nbextensions/nb_conda/tree.js",
+  "share/jupyter/nbextensions/nb_conda/urls.js",
+  "share/jupyter/nbextensions/nb_conda/views.js"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "nb_conda_kernels >=2.0.0",
+   "notebook >=4.2.0",
+   "python 2.7*"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "nb_conda",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.0"
+ },
+ "metadata_version": 1,
+ "name": "nb_conda",
+ "raw_recipe": "{% set version = \"2.0.0\" %}\n{% set gh_org = \"Anaconda-Platform\" %}\n{% set gh_repo = \"nb_conda\" %}\n\npackage:\n  name: {{ gh_repo }}\n  version: {{ version }}\n\nsource:\n  fn: {{ gh_repo }}-{{ version }}.tar.gz\n  url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/{{ version }}.tar.gz\n  sha256: 21239dd3a0b563d5a8eccb5904edf8e8e561b90f513f8d8a1f7cf235e4db031a\n\nbuild:\n  number: 0\n  script:\n    - python setup.py install --single-version-externally-managed --record=record.txt\n    - jupyter nbextension install nb_conda --py --sys-prefix --overwrite\n\nrequirements:\n  build:\n    - nodejs\n    - notebook >=4.2.0\n    - python\n    - setuptools\n  run:\n    - nb_conda_kernels >=2.0.0\n    - notebook >=4.2.0\n    - python\n\ntest:\n  requires:\n    - coverage\n    - flake8\n    - nb_conda_kernels\n    - nodejs\n    - nose\n    - notebook >=4.2.0\n    - python\n    - requests\n    - mock  # [py2k]\n  imports:\n    - nb_conda\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: BSD-3-Clause\n  summary: Conda environment and package access extension from within Jupyter\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "rendered_recipe": {},
+ "version": "2.0.0"
+}

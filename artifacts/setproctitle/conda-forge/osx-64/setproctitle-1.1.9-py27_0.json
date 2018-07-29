@@ -1,0 +1,58 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/setproctitle-1.1.9-py2.7.egg-info",
+  "lib/python2.7/site-packages/setproctitle.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD License",
+  "name": "setproctitle",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.1.9"
+ },
+ "metadata_version": 1,
+ "name": "setproctitle",
+ "raw_recipe": "package:\n    name: setproctitle\n    version: \"1.1.9\"\n\nsource:\n    fn: setproctitle-1.1.9.tar.gz\n    url: https://pypi.python.org/packages/source/s/setproctitle/setproctitle-1.1.9.tar.gz\n    md5: 95d9e56c69437246460a20804961d70d\n\nbuild:\n    script: python setup.py install\n    number: 0\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n\ntest:\n    imports:\n        - setproctitle\n\nabout:\n    home: http://code.google.com/p/py-setproctitle/\n    license: BSD License\n    summary: 'A library to allow customization of the process title.'\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://code.google.com/p/py-setproctitle/",
+   "license": "BSD License",
+   "summary": "A library to allow customization of the process title."
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install"
+  },
+  "package": {
+   "name": "setproctitle",
+   "version": "1.1.9"
+  },
+  "requirements": {
+   "build": [
+    "python"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "setproctitle-1.1.9.tar.gz",
+   "md5": "95d9e56c69437246460a20804961d70d",
+   "url": "https://pypi.python.org/packages/source/s/setproctitle/setproctitle-1.1.9.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "setproctitle"
+   ]
+  }
+ },
+ "version": "1.1.9"
+}

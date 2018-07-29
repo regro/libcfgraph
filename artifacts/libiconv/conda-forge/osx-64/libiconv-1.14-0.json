@@ -1,0 +1,84 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/iconv",
+  "include/iconv.h",
+  "include/libcharset.h",
+  "include/localcharset.h",
+  "lib/charset.alias",
+  "lib/libcharset.1.dylib",
+  "lib/libcharset.a",
+  "lib/libcharset.dylib",
+  "lib/libcharset.la",
+  "lib/libiconv.2.dylib",
+  "lib/libiconv.dylib",
+  "lib/libiconv.la",
+  "share/doc/libiconv/iconv.1.html",
+  "share/doc/libiconv/iconv.3.html",
+  "share/doc/libiconv/iconv_close.3.html",
+  "share/doc/libiconv/iconv_open.3.html",
+  "share/doc/libiconv/iconv_open_into.3.html",
+  "share/doc/libiconv/iconvctl.3.html",
+  "share/man/man1/iconv.1",
+  "share/man/man3/iconv.3",
+  "share/man/man3/iconv_close.3",
+  "share/man/man3/iconv_open.3",
+  "share/man/man3/iconv_open_into.3",
+  "share/man/man3/iconvctl.3"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "GPL and LGPL",
+  "name": "libiconv",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.14"
+ },
+ "metadata_version": 1,
+ "name": "libiconv",
+ "raw_recipe": "package:\n    name: libiconv\n    version: 1.14\n\nsource:\n    fn: libiconv-1.14.tar.gz\n    url: http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.14.tar.gz\n    md5: e34509b1623cec449dfeb73d7ce9c6c6\n    patches:\n        - patch1.patch  # [linux]\n\nbuild:\n    number: 0\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - gcc\n\ntest:\n    commands:\n        - iconv --help\n\nabout:\n    home: https://www.gnu.org/software/libiconv/\n    license: GPL and LGPL\n    summary: Provides iconv for systems which don't have one (or that cannot convert from/to Unicode.)\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - jhamman\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://www.gnu.org/software/libiconv/",
+   "license": "GPL and LGPL",
+   "summary": "Provides iconv for systems which don't have one (or that cannot convert from/to Unicode.)"
+  },
+  "build": {
+   "number": 0,
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "jhamman"
+   ]
+  },
+  "package": {
+   "name": "libiconv",
+   "version": 1.14
+  },
+  "requirements": {
+   "build": [
+    "gcc"
+   ]
+  },
+  "source": {
+   "fn": "libiconv-1.14.tar.gz",
+   "md5": "e34509b1623cec449dfeb73d7ce9c6c6",
+   "patches": [
+    "patch1.patch"
+   ],
+   "url": "http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.14.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "iconv --help"
+   ]
+  }
+ },
+ "version": "1.14"
+}

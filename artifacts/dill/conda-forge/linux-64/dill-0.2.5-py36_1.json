@@ -1,0 +1,145 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://www.cacr.caltech.edu/~mmckerns",
+  "license": "BSD 3-Clause",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-0",
+   "conda-forge::certifi-2017.1.23-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.4-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_2",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "A utility for serialization of python objects."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/dill/pointers.py",
+  "lib/python3.6/site-packages/dill/settings.py",
+  "lib/python3.6/site-packages/dill/__diff.py",
+  "lib/python3.6/site-packages/dill-0.2.5-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/dill/dill.py",
+  "lib/python3.6/site-packages/dill/__init__.py",
+  "bin/unpickle.py",
+  "lib/python3.6/site-packages/dill/info.py",
+  "lib/python3.6/site-packages/dill/objtypes.py",
+  "lib/python3.6/site-packages/dill/temp.py",
+  "lib/python3.6/site-packages/dill/source.py",
+  "lib/python3.6/site-packages/dill/_objects.py",
+  "lib/python3.6/site-packages/dill/detect.py",
+  "bin/get_objgraph.py",
+  "lib/python3.6/site-packages/dill-0.2.5-py3.6.egg-info/not-zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_1",
+  "build_number": 1,
+  "depends": [
+   "python 3.6*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "dill",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2.5"
+ },
+ "metadata_version": 1,
+ "name": "dill",
+ "raw_recipe": "{% set version = \"0.2.5\" %}\n\npackage:\n    name: dill\n    version: {{ version }}\n\nsource:\n    fn: dill-{{ version }}.tgz\n    url: https://pypi.io/packages/source/d/dill/dill-{{ version }}.tgz\n    md5: 5b0c312f034914be2e230457747d9b6c\n\nbuild:\n    number: 1\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - pyreadline  # [win]\n        - python\n\ntest:\n    imports:\n        - dill\n\nabout:\n    home: http://www.cacr.caltech.edu/~mmckerns\n    license: BSD 3-Clause\n    summary: 'A utility for serialization of python objects.'\n\nextra:\n    recipe-maintainers:\n        - DanCodigaMWRA\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.cacr.caltech.edu/~mmckerns",
+   "license": "BSD 3-Clause",
+   "summary": "A utility for serialization of python objects."
+  },
+  "build": {
+   "number": "1",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py36_1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "DanCodigaMWRA",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "dill",
+   "version": "0.2.5"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "dill-0.2.5.tgz",
+   "md5": "5b0c312f034914be2e230457747d9b6c",
+   "url": "https://pypi.io/packages/source/d/dill/dill-0.2.5.tgz"
+  },
+  "test": {
+   "imports": [
+    "dill"
+   ]
+  }
+ },
+ "version": "0.2.5"
+}

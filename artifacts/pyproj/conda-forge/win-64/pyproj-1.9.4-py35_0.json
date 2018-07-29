@@ -1,0 +1,104 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/lib2to3/Grammar3.5.1.final.0.pickle",
+  "Lib/lib2to3/PatternGrammar3.5.1.final.0.pickle",
+  "Lib/site-packages/pyproj-1.9.4-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/pyproj/__init__.py",
+  "Lib/site-packages/pyproj/_proj.cp35-win_amd64.pyd",
+  "Lib/site-packages/pyproj/data/FL",
+  "Lib/site-packages/pyproj/data/GL27",
+  "Lib/site-packages/pyproj/data/IGNF",
+  "Lib/site-packages/pyproj/data/MD",
+  "Lib/site-packages/pyproj/data/README",
+  "Lib/site-packages/pyproj/data/TN",
+  "Lib/site-packages/pyproj/data/WI",
+  "Lib/site-packages/pyproj/data/WO",
+  "Lib/site-packages/pyproj/data/alaska",
+  "Lib/site-packages/pyproj/data/conus",
+  "Lib/site-packages/pyproj/data/epsg",
+  "Lib/site-packages/pyproj/data/esri",
+  "Lib/site-packages/pyproj/data/esri.extra",
+  "Lib/site-packages/pyproj/data/hawaii",
+  "Lib/site-packages/pyproj/data/nad.lst",
+  "Lib/site-packages/pyproj/data/nad27",
+  "Lib/site-packages/pyproj/data/nad83",
+  "Lib/site-packages/pyproj/data/ntf_r93.gsb",
+  "Lib/site-packages/pyproj/data/ntv1_can.dat",
+  "Lib/site-packages/pyproj/data/ntv2_out.dist",
+  "Lib/site-packages/pyproj/data/null",
+  "Lib/site-packages/pyproj/data/nzgd2kgrid0005.gsb",
+  "Lib/site-packages/pyproj/data/other.extra",
+  "Lib/site-packages/pyproj/data/pj_out27.dist",
+  "Lib/site-packages/pyproj/data/pj_out83.dist",
+  "Lib/site-packages/pyproj/data/proj_def.dat",
+  "Lib/site-packages/pyproj/data/proj_outIGNF.dist",
+  "Lib/site-packages/pyproj/data/prvi",
+  "Lib/site-packages/pyproj/data/stgeorge",
+  "Lib/site-packages/pyproj/data/stlrnc",
+  "Lib/site-packages/pyproj/data/stpaul",
+  "Lib/site-packages/pyproj/data/td_out.dist",
+  "Lib/site-packages/pyproj/data/test27",
+  "Lib/site-packages/pyproj/data/test83",
+  "Lib/site-packages/pyproj/data/testIGNF",
+  "Lib/site-packages/pyproj/data/testdatumfile",
+  "Lib/site-packages/pyproj/data/testntv2",
+  "Lib/site-packages/pyproj/data/testvarious",
+  "Lib/site-packages/pyproj/data/tv_out.dist",
+  "Lib/site-packages/pyproj/data/world",
+  "Lib/site-packages/pyproj/datadir.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.5*"
+  ],
+  "license": "OSI",
+  "name": "pyproj",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.9.4"
+ },
+ "metadata_version": 1,
+ "name": "pyproj",
+ "raw_recipe": "package:\n    name: pyproj\n    version: \"1.9.4\"\n\nsource:\n    git_url: https://github.com/ocefpaf/pyproj.git\n    git_tag: import_sys\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n\ntest:\n    imports:\n        - pyproj\n\nabout:\n    home: https://github.com/jswhit/pyproj\n    license: OSI\n    summary: 'Python interface to PROJ.4 library'\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/jswhit/pyproj",
+   "license": "OSI",
+   "summary": "Python interface to PROJ.4 library"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "package": {
+   "name": "pyproj",
+   "version": "1.9.4"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "numpy"
+   ]
+  },
+  "source": {
+   "git_tag": "import_sys",
+   "git_url": "https://github.com/ocefpaf/pyproj.git"
+  },
+  "test": {
+   "imports": [
+    "pyproj"
+   ]
+  }
+ },
+ "version": "1.9.4"
+}

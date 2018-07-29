@@ -1,0 +1,41 @@
+{
+ "about": {
+  "home": "http://github.com/slackhq/python-slackclient",
+  "license": "MIT",
+  "summary": "Python client for Slack.com"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/slackclient-1.0.1-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/slackclient-1.0.1-py3.5.egg-info/not-zip-safe",
+  "Lib/site-packages/slackclient/__init__.py",
+  "Lib/site-packages/slackclient/_channel.py",
+  "Lib/site-packages/slackclient/_client.py",
+  "Lib/site-packages/slackclient/_im.py",
+  "Lib/site-packages/slackclient/_server.py",
+  "Lib/site-packages/slackclient/_slackrequest.py",
+  "Lib/site-packages/slackclient/_user.py",
+  "Lib/site-packages/slackclient/_util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "requests",
+   "six",
+   "websocket-client"
+  ],
+  "license": "MIT",
+  "name": "slackclient",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.1"
+ },
+ "metadata_version": 1,
+ "name": "slackclient",
+ "raw_recipe": "{%set name = \"slackclient\" %}\n{%set version = \"1.0.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"4555589335b99b8b8c8faf217aceb7be13d789414ebad757a2eebcd8e9ad273e\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - websocket-client\n    - requests\n    - six\n\ntest:\n  imports:\n    - slackclient\n\nabout:\n  home: http://github.com/slackhq/python-slackclient\n  license: MIT\n  summary: 'Python client for Slack.com'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.0.1"
+}

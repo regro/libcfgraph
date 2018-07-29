@@ -1,0 +1,49 @@
+{
+ "about": {
+  "description": "Kuyruk is a simple and easy way of distributing tasks to run on servers.\nIt uses RabbitMQ as message broker and depends on amqp which is a\npure-Python RabbitMQ client library. Compatible with Python 2.7+ and 3.4+.\nAll design decisions is based on simplicity. Speed is not first priority.\nKuyruk only supports RabbitMQ and does not plan to support any other\nbackend. Kuyruk is designed for long running mission critical jobs. For\nthis reason Kuyruk sends acknowledgement only after the task is fully\nprocessed.\n",
+  "dev_url": "https://github.com/cenkalti/kuyruk",
+  "doc_url": "http://kuyruk.readthedocs.io/",
+  "home": "https://github.com/cenkalti/kuyruk",
+  "license": "MIT",
+  "summary": "Simple task queue for Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/kuyruk",
+  "lib/python3.5/site-packages/Kuyruk-7.0.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/Kuyruk-7.0.1-py3.5.egg-info/zip-safe",
+  "lib/python3.5/site-packages/kuyruk/__init__.py",
+  "lib/python3.5/site-packages/kuyruk/__main__.py",
+  "lib/python3.5/site-packages/kuyruk/config.py",
+  "lib/python3.5/site-packages/kuyruk/exceptions.py",
+  "lib/python3.5/site-packages/kuyruk/heartbeat.py",
+  "lib/python3.5/site-packages/kuyruk/importer.py",
+  "lib/python3.5/site-packages/kuyruk/result.py",
+  "lib/python3.5/site-packages/kuyruk/signals.py",
+  "lib/python3.5/site-packages/kuyruk/task.py",
+  "lib/python3.5/site-packages/kuyruk/worker.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "amqp >=1.4.6",
+   "blinker >=1.3",
+   "monotonic >=1.1",
+   "python 3.5*",
+   "setproctitle >=1.1.8",
+   "setuptools"
+  ],
+  "license": "MIT",
+  "name": "kuyruk",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "7.0.1"
+ },
+ "metadata_version": 1,
+ "name": "kuyruk",
+ "raw_recipe": "{% set name = \"Kuyruk\" %}\n{% set version = \"7.0.1\" %}\n{% set sha256 = \"cf99407cc6d2cafb379528039a26d0d59586bc3724377064a9c713bca40882d8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - kuyruk = kuyruk.__main__:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    # setuptools is required as a run dependency:\n    # https://github.com/cenkalti/kuyruk/pull/45\n    - setuptools\n    - amqp >=1.4.6\n    - setproctitle >=1.1.8\n    - blinker >=1.3\n    - monotonic >=1.1\n\ntest:\n  imports:\n    - kuyruk\n  commands:\n    - kuyruk --help\n\nabout:\n  home: https://github.com/cenkalti/kuyruk\n  license: MIT\n  license_file: LICENSE\n  summary: 'Simple task queue for Python'\n  description: |\n    Kuyruk is a simple and easy way of distributing tasks to run on servers.\n    It uses RabbitMQ as message broker and depends on amqp which is a\n    pure-Python RabbitMQ client library. Compatible with Python 2.7+ and 3.4+.\n    All design decisions is based on simplicity. Speed is not first priority.\n    Kuyruk only supports RabbitMQ and does not plan to support any other\n    backend. Kuyruk is designed for long running mission critical jobs. For\n    this reason Kuyruk sends acknowledgement only after the task is fully\n    processed.\n  doc_url: http://kuyruk.readthedocs.io/\n  dev_url: https://github.com/cenkalti/kuyruk\n\nextra:\n  recipe-maintainers:\n    - frol\n    - cenkalti\n",
+ "rendered_recipe": {},
+ "version": "7.0.1"
+}

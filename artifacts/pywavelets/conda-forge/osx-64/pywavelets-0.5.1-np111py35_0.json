@@ -1,0 +1,53 @@
+{
+ "about": {
+  "home": "https://github.com/PyWavelets/pywt",
+  "license": "MIT",
+  "summary": "Discrete Wavelet Transforms in Python."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/PyWavelets-0.5.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pywt/__init__.py",
+  "lib/python3.5/site-packages/pywt/_cwt.py",
+  "lib/python3.5/site-packages/pywt/_dwt.py",
+  "lib/python3.5/site-packages/pywt/_extensions/__init__.py",
+  "lib/python3.5/site-packages/pywt/_extensions/_cwt.cpython-35m-darwin.so",
+  "lib/python3.5/site-packages/pywt/_extensions/_dwt.cpython-35m-darwin.so",
+  "lib/python3.5/site-packages/pywt/_extensions/_pywt.cpython-35m-darwin.so",
+  "lib/python3.5/site-packages/pywt/_extensions/_swt.cpython-35m-darwin.so",
+  "lib/python3.5/site-packages/pywt/_functions.py",
+  "lib/python3.5/site-packages/pywt/_multidim.py",
+  "lib/python3.5/site-packages/pywt/_multilevel.py",
+  "lib/python3.5/site-packages/pywt/_swt.py",
+  "lib/python3.5/site-packages/pywt/_thresholding.py",
+  "lib/python3.5/site-packages/pywt/_wavelet_packets.py",
+  "lib/python3.5/site-packages/pywt/data/__init__.py",
+  "lib/python3.5/site-packages/pywt/data/_readers.py",
+  "lib/python3.5/site-packages/pywt/data/aero.npz",
+  "lib/python3.5/site-packages/pywt/data/ascent.npz",
+  "lib/python3.5/site-packages/pywt/data/camera.npz",
+  "lib/python3.5/site-packages/pywt/data/create_dat.py",
+  "lib/python3.5/site-packages/pywt/data/ecg.npy",
+  "lib/python3.5/site-packages/pywt/data/sst_nino3.npz",
+  "lib/python3.5/site-packages/pywt/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.11*",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "pywavelets",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.5.1"
+ },
+ "metadata_version": 1,
+ "name": "pywavelets",
+ "raw_recipe": "{% set version = \"0.5.1\" %}\n\npackage:\n  name: pywavelets\n  version: {{ version }}\n\nsource:\n  fn: PyWavelets-{{ version }}.tar.gz\n  url: https://github.com/PyWavelets/pywt/archive/v{{ version }}.tar.gz\n  sha256: dc912325b4752b83303af31925450efb795ec81d6aed1317613f7d5a634c0b50\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - cython\n    - numpy x.x\n    - setuptools\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  requires:\n    - nose\n  commands:\n    #- conda inspect linkages -p $PREFIX pywavelets  # [not win]\n    #- conda inspect objects -p $PREFIX pywavelets  # [osx]\n\nabout:\n  home: https://github.com/PyWavelets/pywt\n  license: MIT\n  summary: 'Discrete Wavelet Transforms in Python.'\n\nextra:\n  recipe-maintainers:\n    - grlee77\n    - jakirkham\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.5.1"
+}

@@ -1,0 +1,94 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pvlib-0.3.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pvlib-0.3.2-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/pvlib/__init__.py",
+  "lib/python3.5/site-packages/pvlib/_version.py",
+  "lib/python3.5/site-packages/pvlib/atmosphere.py",
+  "lib/python3.5/site-packages/pvlib/clearsky.py",
+  "lib/python3.5/site-packages/pvlib/data/12839.tm2",
+  "lib/python3.5/site-packages/pvlib/data/703165TY.csv",
+  "lib/python3.5/site-packages/pvlib/data/LinkeTurbidities.mat",
+  "lib/python3.5/site-packages/pvlib/data/variables_style_rules.csv",
+  "lib/python3.5/site-packages/pvlib/irradiance.py",
+  "lib/python3.5/site-packages/pvlib/location.py",
+  "lib/python3.5/site-packages/pvlib/modelchain.py",
+  "lib/python3.5/site-packages/pvlib/pvsystem.py",
+  "lib/python3.5/site-packages/pvlib/solarposition.py",
+  "lib/python3.5/site-packages/pvlib/spa.py",
+  "lib/python3.5/site-packages/pvlib/tmy.py",
+  "lib/python3.5/site-packages/pvlib/tools.py",
+  "lib/python3.5/site-packages/pvlib/tracking.py",
+  "lib/python3.5/site-packages/pvlib/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy >=1.8.2",
+   "pandas >=0.13.1",
+   "python 3.5*",
+   "pytz",
+   "six"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pvlib-python",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3.2"
+ },
+ "metadata_version": 1,
+ "name": "pvlib-python",
+ "raw_recipe": "{% set version = \"0.3.2\" %}\n\npackage:\n  name: pvlib-python\n  version: {{ version }}\n\nsource:\n  fn: pvlib-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pvlib/pvlib-{{ version }}.tar.gz\n  md5: 552fcf215911b5bb7b7a2e5ad6a9a6e6\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy >=1.8.2\n    - pandas >=0.13.1\n    - pytz\n    - six\n\n  run:\n    - python\n    - numpy >=1.8.2\n    - pandas >=0.13.1\n    - pytz\n    - six\n\ntest:\n  imports:\n    - pvlib\n\nabout:\n  home: https://github.com/pvlib/pvlib-python\n  license: BSD 3-Clause\n  summary: 'The PVLIB toolbox provides a set functions for simulating the performance of photovoltaic energy systems.'\n\nextra:\n  recipe-maintainers:\n    - wholmgren\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/pvlib/pvlib-python",
+   "license": "BSD 3-Clause",
+   "summary": "The PVLIB toolbox provides a set functions for simulating the performance of photovoltaic energy systems."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "wholmgren"
+   ]
+  },
+  "package": {
+   "name": "pvlib-python",
+   "version": "0.3.2"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "numpy >=1.8.2",
+    "pandas >=0.13.1",
+    "pytz",
+    "six"
+   ],
+   "run": [
+    "python",
+    "numpy >=1.8.2",
+    "pandas >=0.13.1",
+    "pytz",
+    "six"
+   ]
+  },
+  "source": {
+   "fn": "pvlib-0.3.2.tar.gz",
+   "md5": "552fcf215911b5bb7b7a2e5ad6a9a6e6",
+   "url": "https://pypi.io/packages/source/p/pvlib/pvlib-0.3.2.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "pvlib"
+   ]
+  }
+ },
+ "version": "0.3.2"
+}

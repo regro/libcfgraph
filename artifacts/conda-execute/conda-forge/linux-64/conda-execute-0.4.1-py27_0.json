@@ -1,0 +1,81 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/conda-execute",
+  "bin/conda-tmpenv",
+  "lib/python2.7/site-packages/conda_execute-0.4.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/conda_execute/__init__.py",
+  "lib/python2.7/site-packages/conda_execute/_version.py",
+  "lib/python2.7/site-packages/conda_execute/config.py",
+  "lib/python2.7/site-packages/conda_execute/execute.py",
+  "lib/python2.7/site-packages/conda_execute/lock.py",
+  "lib/python2.7/site-packages/conda_execute/tmpenv.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "conda",
+   "psutil",
+   "python 2.7*",
+   "pyyaml",
+   "setuptools"
+  ],
+  "license": "BSD",
+  "name": "conda-execute",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.4.1"
+ },
+ "metadata_version": 1,
+ "name": "conda-execute",
+ "raw_recipe": "package:\n  name: conda-execute\n  version: 0.4.1\n\nsource:\n  git_url: https://github.com/pelson/conda-execute.git\n  git_tag: v0.4.1\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - pyyaml\n    - conda\n    - psutil\n\ntest:\n  imports:\n    - conda_execute\n  commands:\n    - conda execute --help\n    - conda tmpenv --help\n\nabout:\n  home: https://github.com/pelson/conda-execute\n  license: BSD\n  summary: 'Execute scripts in isolated temporary environments.'\n\nextra:\n  recipe-maintainers:\n    - pelson\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/pelson/conda-execute",
+   "license": "BSD",
+   "summary": "Execute scripts in isolated temporary environments."
+  },
+  "build": {
+   "number": 0
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pelson"
+   ]
+  },
+  "package": {
+   "name": "conda-execute",
+   "version": "0.4.1"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "setuptools",
+    "pyyaml",
+    "conda",
+    "psutil"
+   ]
+  },
+  "source": {
+   "git_tag": "v0.4.1",
+   "git_url": "https://github.com/pelson/conda-execute.git"
+  },
+  "test": {
+   "commands": [
+    "conda execute --help",
+    "conda tmpenv --help"
+   ],
+   "imports": [
+    "conda_execute"
+   ]
+  }
+ },
+ "version": "0.4.1"
+}

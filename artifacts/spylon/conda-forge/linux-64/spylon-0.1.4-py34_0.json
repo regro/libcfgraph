@@ -1,0 +1,42 @@
+{
+ "about": {
+  "home": "https://github.com/MaxPoint/spylon",
+  "license": "BSD 3-clause",
+  "summary": "Utilities to work with Scala/Java code with py4j"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/spylon-0.1.4-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/spylon-0.1.4-py3.4.egg-info/pbr.json",
+  "lib/python3.4/site-packages/spylon/__init__.py",
+  "lib/python3.4/site-packages/spylon/common.py",
+  "lib/python3.4/site-packages/spylon/simple/__init__.py",
+  "lib/python3.4/site-packages/spylon/spark/__init__.py",
+  "lib/python3.4/site-packages/spylon/spark/launcher.py",
+  "lib/python3.4/site-packages/spylon/spark/spark.py",
+  "lib/python3.4/site-packages/spylon/spark/spark_properties_1.6.0.json",
+  "lib/python3.4/site-packages/spylon/spark/spark_properties_1.6.1.json",
+  "lib/python3.4/site-packages/spylon/spark/spark_properties_latest.json",
+  "lib/python3.4/site-packages/spylon/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "findspark",
+   "pandas",
+   "python 3.4*"
+  ],
+  "license": "BSD 3-clause",
+  "name": "spylon",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1.4"
+ },
+ "metadata_version": 1,
+ "name": "spylon",
+ "raw_recipe": "{% set name = \"spylon\" %}\n{% set version = \"0.1.4\" %}\n{% set hashtype = \"md5\" %}\n{% set hash = \"eaf338a8daabb4a86bc825243fb31ce5\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hashtype }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - findspark\n    - pandas\n\ntest:\n  imports:\n    - spylon\n    - spylon.spark\n\nabout:\n  home: https://github.com/MaxPoint/spylon\n  license: BSD 3-clause\n  summary: Utilities to work with Scala/Java code with py4j\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
+ "rendered_recipe": {},
+ "version": "0.1.4"
+}

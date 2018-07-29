@@ -1,0 +1,36 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/mplexporter-0.0.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/mplexporter/__init__.py",
+  "lib/python3.4/site-packages/mplexporter/_py3k_compat.py",
+  "lib/python3.4/site-packages/mplexporter/exporter.py",
+  "lib/python3.4/site-packages/mplexporter/renderers/__init__.py",
+  "lib/python3.4/site-packages/mplexporter/renderers/base.py",
+  "lib/python3.4/site-packages/mplexporter/renderers/fake_renderer.py",
+  "lib/python3.4/site-packages/mplexporter/renderers/vega_renderer.py",
+  "lib/python3.4/site-packages/mplexporter/renderers/vincent_renderer.py",
+  "lib/python3.4/site-packages/mplexporter/tools.py",
+  "lib/python3.4/site-packages/mplexporter/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib",
+   "python 3.4*"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "mplexporter",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.0.1"
+ },
+ "metadata_version": 1,
+ "name": "mplexporter",
+ "raw_recipe": "{% set version = \"0.0.1\" %}\n\npackage:\n    name: mplexporter\n    version: {{ version }}\n\nsource:\n    git_url: https://github.com/mpld3/mplexporter.git\n    git_tag: 7bfe2ba772db2f63a4c6eddc583dab495ead39c1\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - matplotlib\n\ntest:\n    imports:\n        - mplexporter\n\nabout:\n    home: https://github.com/mpld3/mplexporter\n    license: BSD-3-Clause\n    summary: General Matplotlib Exporter\n\nextra:\n    recipe-maintainers:\n        - jakevdp\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.0.1"
+}

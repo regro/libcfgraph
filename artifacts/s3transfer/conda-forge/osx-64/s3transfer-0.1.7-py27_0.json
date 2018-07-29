@@ -1,0 +1,43 @@
+{
+ "about": {
+  "home": "https://github.com/boto/s3transfer",
+  "license": "Apache 2.0",
+  "summary": "An Amazon S3 Transfer Manager"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/s3transfer-0.1.7-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/s3transfer/__init__.py",
+  "lib/python2.7/site-packages/s3transfer/compat.py",
+  "lib/python2.7/site-packages/s3transfer/copies.py",
+  "lib/python2.7/site-packages/s3transfer/delete.py",
+  "lib/python2.7/site-packages/s3transfer/download.py",
+  "lib/python2.7/site-packages/s3transfer/exceptions.py",
+  "lib/python2.7/site-packages/s3transfer/futures.py",
+  "lib/python2.7/site-packages/s3transfer/manager.py",
+  "lib/python2.7/site-packages/s3transfer/subscribers.py",
+  "lib/python2.7/site-packages/s3transfer/tasks.py",
+  "lib/python2.7/site-packages/s3transfer/upload.py",
+  "lib/python2.7/site-packages/s3transfer/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "botocore >=1.3.0,<2.0.0",
+   "futures >=2.2.0,<4.0.0",
+   "python 2.7*"
+  ],
+  "license": "Apache 2.0",
+  "name": "s3transfer",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.7"
+ },
+ "metadata_version": 1,
+ "name": "s3transfer",
+ "raw_recipe": "{%set name = \"s3transfer\" %}\n{%set version = \"0.1.7\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"433d067bafb099a7d1653ae09ba39a7e479c90fcef06d396c8e6823f2a3cfd86\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - botocore >=1.3.0,<2.0.0\n    - futures >=2.2.0,<4.0.0  # [not py3k]\n\n  run:\n    - python\n    - botocore >=1.3.0,<2.0.0\n    - futures >=2.2.0,<4.0.0  # [not py3k]\n\ntest:\n  imports:\n    - s3transfer\n\nabout:\n  home: https://github.com/boto/s3transfer\n  license: Apache 2.0\n  summary: 'An Amazon S3 Transfer Manager'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - proinsias\n",
+ "rendered_recipe": {},
+ "version": "0.1.7"
+}

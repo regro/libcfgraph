@@ -1,0 +1,35 @@
+{
+ "about": {
+  "dev_url": "https://github.com/Anorov/PySocks",
+  "doc_url": "https://github.com/Anorov/PySocks/blob/master/README.md",
+  "home": "https://github.com/Anorov/PySocks",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "A Python SOCKS client module. See https://github.com/Anorov/PySocks for more information."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/PySocks-1.5.7-py3.5.egg-info",
+  "lib/python3.5/site-packages/socks.py",
+  "lib/python3.5/site-packages/sockshandler.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "pysocks",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.5.7"
+ },
+ "metadata_version": 1,
+ "name": "pysocks",
+ "raw_recipe": "{%set name = \"pysocks\" %}\n{%set camelName = \"PySocks\" %}\n{%set version = \"1.5.7\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"e51c7694b10288e6fd9a28e15c0bcce9aca0327e7b32ebcd9af05fcd56f38b88\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - socks\n\nabout:\n  home: https://github.com/Anorov/PySocks\n  license: BSD 3-Clause\n  # license_file: no MANIFEST listing or LICENSE - see https://github.com/Anorov/PySocks/issues/49\n  summary: 'A Python SOCKS client module. See https://github.com/Anorov/PySocks for more information.'\n  license_family: BSD\n  doc_url: https://github.com/Anorov/PySocks/blob/master/README.md\n  dev_url: https://github.com/Anorov/PySocks\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.5.7"
+}

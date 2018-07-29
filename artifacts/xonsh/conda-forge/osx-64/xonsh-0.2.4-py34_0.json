@@ -1,0 +1,108 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/xonsh",
+  "lib/python3.4/site-packages/xonsh-0.2.4-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/xonsh/__init__.py",
+  "lib/python3.4/site-packages/xonsh/aliases.py",
+  "lib/python3.4/site-packages/xonsh/ast.py",
+  "lib/python3.4/site-packages/xonsh/base_shell.py",
+  "lib/python3.4/site-packages/xonsh/built_ins.py",
+  "lib/python3.4/site-packages/xonsh/completer.py",
+  "lib/python3.4/site-packages/xonsh/diff_history.py",
+  "lib/python3.4/site-packages/xonsh/dirstack.py",
+  "lib/python3.4/site-packages/xonsh/environ.py",
+  "lib/python3.4/site-packages/xonsh/execer.py",
+  "lib/python3.4/site-packages/xonsh/foreign_shells.py",
+  "lib/python3.4/site-packages/xonsh/history.py",
+  "lib/python3.4/site-packages/xonsh/imphooks.py",
+  "lib/python3.4/site-packages/xonsh/inspectors.py",
+  "lib/python3.4/site-packages/xonsh/jobs.py",
+  "lib/python3.4/site-packages/xonsh/jupyter_kernel.py",
+  "lib/python3.4/site-packages/xonsh/lazyjson.py",
+  "lib/python3.4/site-packages/xonsh/lexer.py",
+  "lib/python3.4/site-packages/xonsh/main.py",
+  "lib/python3.4/site-packages/xonsh/openpy.py",
+  "lib/python3.4/site-packages/xonsh/parser.py",
+  "lib/python3.4/site-packages/xonsh/parser_table.py",
+  "lib/python3.4/site-packages/xonsh/pretty.py",
+  "lib/python3.4/site-packages/xonsh/proc.py",
+  "lib/python3.4/site-packages/xonsh/ptk/__init__.py",
+  "lib/python3.4/site-packages/xonsh/ptk/completer.py",
+  "lib/python3.4/site-packages/xonsh/ptk/history.py",
+  "lib/python3.4/site-packages/xonsh/ptk/key_bindings.py",
+  "lib/python3.4/site-packages/xonsh/ptk/shell.py",
+  "lib/python3.4/site-packages/xonsh/pyghooks.py",
+  "lib/python3.4/site-packages/xonsh/readline_shell.py",
+  "lib/python3.4/site-packages/xonsh/replay.py",
+  "lib/python3.4/site-packages/xonsh/shell.py",
+  "lib/python3.4/site-packages/xonsh/teepty.py",
+  "lib/python3.4/site-packages/xonsh/timings.py",
+  "lib/python3.4/site-packages/xonsh/tools.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "ply",
+   "python 3.4*"
+  ],
+  "license": "BSD",
+  "name": "xonsh",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.4"
+ },
+ "metadata_version": 1,
+ "name": "xonsh",
+ "raw_recipe": "package:\n  name: xonsh\n  version: \"0.2.4\"\n\nsource:\n  url: https://github.com/scopatz/xonsh/archive/0.2.4.tar.gz\n  fn: xonsh_0.2.4.tar.gz\n\nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - xonsh = xonsh.main:main\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - python\n    - ply\n    - setuptools\n    - jupyter\n  run:\n    - python\n    - ply\n    - prompt_toolkit  # [win]\n\ntest:\n  requires:\n    - nose\n  imports:\n    - xonsh\n  commands:\n    - xonsh -h\n\nabout:\n  home: http://xonsh.org/\n  license: BSD\n  summary: xonsh is a Python-ish, BASHwards-facing shell.\n\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://xonsh.org/",
+   "license": "BSD",
+   "summary": "xonsh is a Python-ish, BASHwards-facing shell."
+  },
+  "build": {
+   "entry_points": [
+    "xonsh = xonsh.main:main"
+   ],
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt",
+   "skip": true
+  },
+  "package": {
+   "name": "xonsh",
+   "version": "0.2.4"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "ply",
+    "setuptools",
+    "jupyter"
+   ],
+   "run": [
+    "python",
+    "ply",
+    "prompt_toolkit"
+   ]
+  },
+  "source": {
+   "fn": "xonsh_0.2.4.tar.gz",
+   "url": "https://github.com/scopatz/xonsh/archive/0.2.4.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "xonsh -h"
+   ],
+   "imports": [
+    "xonsh"
+   ],
+   "requires": [
+    "nose"
+   ]
+  }
+ },
+ "version": "0.2.4"
+}

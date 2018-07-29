@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "https://github.com/mher/chartkick.py",
+  "license": "MIT",
+  "summary": "Create beautiful Javascript charts with minimal code"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/chartkick-0.4.2-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/chartkick/__init__.py",
+  "Lib/site-packages/chartkick/ext.py",
+  "Lib/site-packages/chartkick/js/chartkick.js",
+  "Lib/site-packages/chartkick/options.py",
+  "Lib/site-packages/chartkick/template.py",
+  "Lib/site-packages/chartkick/templatetags/__init__.py",
+  "Lib/site-packages/chartkick/templatetags/chartkick.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "chartkick",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.4.2"
+ },
+ "metadata_version": 1,
+ "name": "chartkick",
+ "raw_recipe": "{%set name = \"chartkick\" %}\n{%set version = \"0.4.2\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"298f9555df45e0b8bffc2613b1efd41cd74bf0dfaf850dcedb4d9984af50174f\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - chartkick\n    - chartkick.templatetags\n\nabout:\n  home: https://github.com/mher/chartkick.py\n  license: MIT\n  summary: 'Create beautiful Javascript charts with minimal code'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.4.2"
+}

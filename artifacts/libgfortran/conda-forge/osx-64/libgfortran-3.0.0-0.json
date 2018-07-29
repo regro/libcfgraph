@@ -1,0 +1,29 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/libgcc_s.1.dylib",
+  "lib/libgcc_s_ppc64.1.dylib",
+  "lib/libgcc_s_x86_64.1.dylib",
+  "lib/libgfortran.3.dylib",
+  "lib/libgfortran.dylib",
+  "lib/libquadmath.0.dylib",
+  "lib/libquadmath.dylib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "GPL 3 (with GCC Runtime Library Exception 3.1)",
+  "name": "libgfortran",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "3.0.0"
+ },
+ "metadata_version": 1,
+ "name": "libgfortran",
+ "raw_recipe": "{% set libgfortran_version = [3, 0, 0] %}\n{% set libquadmath_version = [0, 0, 0] %}\n{% set libgcc_s_version = [1, 0, 0] %}\n\n\npackage:\n  name: libgfortran\n  version: {{ libgfortran_version|join('.') }}\n\nbuild:\n  number: 0\n  skip: true                                                  # [not osx]\n  always_include_files:\n    - lib/libgfortran.dylib                                   # [osx]\n    - lib/libgfortran.{{ libgfortran_version[0] }}.dylib      # [osx]\n\n    # Including libquadmath for the time\n    # being. This will need to be broken\n    # out in the long term.\n    - lib/libquadmath.dylib                                   # [osx]\n    - lib/libquadmath.{{ libquadmath_version[0] }}.dylib      # [osx]\n\n    # Including libgcc_s for the time\n    # being. This will need to be broken\n    # out in the long term.\n    - lib/libgcc_s.{{ libgcc_s_version[0] }}.dylib         # [osx]\n    - lib/libgcc_s_ppc64.{{ libgcc_s_version[0] }}.dylib   # [osx]\n    - lib/libgcc_s_x86_64.{{ libgcc_s_version[0] }}.dylib  # [osx]\n\nrequirements:\n  build:\n    - gcc 4.8.5\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/lib/libgfortran.dylib\"                                   # [osx]\n    - test -f \"${PREFIX}/lib/libgfortran.{{ libgfortran_version[0] }}.dylib\"      # [osx]\n\n    # Including libquadmath for the time\n    # being. This will need to be broken\n    # out in the long term.\n    - test -f \"${PREFIX}/lib/libquadmath.dylib\"                                   # [osx]\n    - test -f \"${PREFIX}/lib/libquadmath.{{ libquadmath_version[0] }}.dylib\"      # [osx]\n\n    # Including libgcc_s for the time\n    # being. This will need to be broken\n    # out in the long term.\n    - test -f \"${PREFIX}/lib/libgcc_s.{{ libgcc_s_version[0] }}.dylib\"         # [osx]\n    - test -f \"${PREFIX}/lib/libgcc_s_ppc64.{{ libgcc_s_version[0] }}.dylib\"   # [osx]\n    - test -f \"${PREFIX}/lib/libgcc_s_x86_64.{{ libgcc_s_version[0] }}.dylib\"  # [osx]\n\nabout:\n  home: http://gcc.gnu.org/\n  summary: Fortran libraries from the GNU Compiler Collection\n  license: GPL 3 (with GCC Runtime Library Exception 3.1)\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - msarahan\n    - pelson\n",
+ "rendered_recipe": {},
+ "version": "3.0.0"
+}

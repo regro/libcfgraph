@@ -1,0 +1,129 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p481/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://entrypoints.readthedocs.io/",
+  "license": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Discover and load entry points from installed packages"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/entrypoints-0.2.2.dist-info/WHEEL",
+  "lib/python3.4/site-packages/entrypoints.py",
+  "lib/python3.4/site-packages/entrypoints-0.2.2.dist-info/METADATA",
+  "lib/python3.4/site-packages/entrypoints-0.2.2.dist-info/INSTALLER",
+  "lib/python3.4/site-packages/entrypoints-0.2.2.dist-info/RECORD"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_1",
+  "build_number": 1,
+  "depends": [
+   "configparser",
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "entrypoints",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.2"
+ },
+ "metadata_version": 1,
+ "name": "entrypoints",
+ "raw_recipe": "{% set name = \"entrypoints\" %}\n{% set version = \"0.2.2\" %}\n{% set wheel_tag = \"py2.py3-none-any\" %}\n{% set fn = \"{}-{}-{}.whl\".format(name, version, wheel_tag) %}\n{% set sha256 = \"0a0685962ee5ac303f470acbb659f0f97aef5b9deb6b85d059691c706ef6e45e\" %}\n\npackage:\n    name: entrypoints\n    version: {{ version }}\n\nsource:\n    fn: {{ fn }}\n    url: https://pypi.io/packages/py2.py3/{{ name[0] }}/{{ name }}/{{ fn }}\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 1\n    script: pip install --no-deps {{ fn }}\n\nrequirements:\n    build:\n        - python\n        - pip\n    run:\n        - python\n        - configparser  # [py2k or py34]\n\ntest:\n    imports:\n        - entrypoints\n\nabout:\n    home: https://entrypoints.readthedocs.io/\n    license: MIT\n    summary: Discover and load entry points from installed packages\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - minrk\n    - takluyver\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://entrypoints.readthedocs.io/",
+   "license": "MIT",
+   "summary": "Discover and load entry points from installed packages"
+  },
+  "build": {
+   "number": "1",
+   "script": "pip install --no-deps entrypoints-0.2.2-py2.py3-none-any.whl",
+   "string": "py34_1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pelson",
+    "minrk",
+    "takluyver"
+   ]
+  },
+  "package": {
+   "name": "entrypoints",
+   "version": "0.2.2"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "configparser"
+   ]
+  },
+  "source": {
+   "fn": "entrypoints-0.2.2-py2.py3-none-any.whl",
+   "sha256": "0a0685962ee5ac303f470acbb659f0f97aef5b9deb6b85d059691c706ef6e45e",
+   "url": "https://pypi.io/packages/py2.py3/e/entrypoints/entrypoints-0.2.2-py2.py3-none-any.whl"
+  },
+  "test": {
+   "imports": [
+    "entrypoints"
+   ]
+  }
+ },
+ "version": "0.2.2"
+}

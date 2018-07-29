@@ -1,0 +1,132 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.0.12",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://symas.com/mdb/",
+  "license": "OpenLDAP Public",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.0.12-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.2.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "A high-performance embedded transactional key-value store database."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/mdb_copy",
+  "bin/mdb_dump",
+  "bin/mdb_load",
+  "bin/mdb_stat",
+  "include/lmdb.h",
+  "lib/liblmdb.a",
+  "lib/liblmdb.so",
+  "share/man/man1/mdb_copy.1",
+  "share/man/man1/mdb_dump.1",
+  "share/man/man1/mdb_load.1",
+  "share/man/man1/mdb_stat.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [],
+  "license": "OpenLDAP Public",
+  "name": "lmdb",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.9.18"
+ },
+ "metadata_version": 1,
+ "name": "lmdb",
+ "raw_recipe": "{% set version = \"0.9.18\" %}\n\npackage:\n  name: lmdb\n  version: {{ version }}\n\nsource:\n  fn: LMDB_{{ version }}.tar.gz\n  url: https://github.com/LMDB/lmdb/archive/LMDB_{{ version }}.tar.gz\n  sha1: 375e31bd0a4d8426e5fc4bfdb00d532c206d4f2b\n  patches:\n    - Makefile.patch\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\ntest:\n  commands:\n    - mdb_copy -V                                    # [unix]\n    - mdb_dump -V                                    # [unix]\n    - mdb_load -V                                    # [unix]\n    - mdb_stat -V                                    # [unix]\n    - test -f ${PREFIX}/lib/liblmdb.a                # [unix]\n    - test -f ${PREFIX}/lib/liblmdb.so               # [unix]\n\nabout:\n  home: http://symas.com/mdb/\n  license: OpenLDAP Public\n  license_file: libraries/liblmdb/LICENSE\n  summary: A high-performance embedded transactional key-value store database.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://symas.com/mdb/",
+   "license": "OpenLDAP Public",
+   "license_file": "libraries/liblmdb/LICENSE",
+   "summary": "A high-performance embedded transactional key-value store database."
+  },
+  "build": {
+   "number": "1",
+   "string": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "lmdb",
+   "version": "0.9.18"
+  },
+  "requirements": {
+   "build": []
+  },
+  "source": {
+   "fn": "LMDB_0.9.18.tar.gz",
+   "patches": [
+    "Makefile.patch"
+   ],
+   "sha1": "375e31bd0a4d8426e5fc4bfdb00d532c206d4f2b",
+   "url": "https://github.com/LMDB/lmdb/archive/LMDB_0.9.18.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "mdb_copy -V",
+    "mdb_dump -V",
+    "mdb_load -V",
+    "mdb_stat -V",
+    "test -f ${PREFIX}/lib/liblmdb.a",
+    "test -f ${PREFIX}/lib/liblmdb.so"
+   ]
+  }
+ },
+ "version": "0.9.18"
+}

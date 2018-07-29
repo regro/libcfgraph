@@ -1,0 +1,41 @@
+{
+ "about": {
+  "home": "https://github.com/agoragames/chai",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Easy to use mocking, stubbing and spying framework."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/chai-1.1.1-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/chai/__init__.py",
+  "lib/python3.6/site-packages/chai/_termcolor.py",
+  "lib/python3.6/site-packages/chai/chai.py",
+  "lib/python3.6/site-packages/chai/comparators.py",
+  "lib/python3.6/site-packages/chai/exception.py",
+  "lib/python3.6/site-packages/chai/expectation.py",
+  "lib/python3.6/site-packages/chai/mock.py",
+  "lib/python3.6/site-packages/chai/python2.py",
+  "lib/python3.6/site-packages/chai/spy.py",
+  "lib/python3.6/site-packages/chai/stub.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.6*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "chai",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.1.1"
+ },
+ "metadata_version": 1,
+ "name": "chai",
+ "raw_recipe": "{% set version = \"1.1.1\" %}\n\npackage:\n  name: chai\n  version: {{ version }}\n\nsource:\n  fn: chai-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/chai/chai-{{ version }}.tar.gz\n  sha256: 7489a1124c780972ef383b2930fc9307afe8667d009fcaf69d97b29ce370d304\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - chai\n\nabout:\n  home: https://github.com/agoragames/chai\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Easy to use mocking, stubbing and spying framework.'\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - bollwyvl \n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.1.1"
+}

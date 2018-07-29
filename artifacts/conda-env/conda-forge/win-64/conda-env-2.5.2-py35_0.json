@@ -1,0 +1,58 @@
+{
+ "about": {
+  "home": "https://github.com/conda/conda-env",
+  "license": "BSD 3-Clause",
+  "summary": "Tools for interacting with conda environments."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/conda_env-2.5.0alpha-py3.5.egg-info",
+  "Lib/site-packages/conda_env/__init__.py",
+  "Lib/site-packages/conda_env/cli/__init__.py",
+  "Lib/site-packages/conda_env/cli/main.py",
+  "Lib/site-packages/conda_env/cli/main_attach.py",
+  "Lib/site-packages/conda_env/cli/main_create.py",
+  "Lib/site-packages/conda_env/cli/main_export.py",
+  "Lib/site-packages/conda_env/cli/main_list.py",
+  "Lib/site-packages/conda_env/cli/main_remove.py",
+  "Lib/site-packages/conda_env/cli/main_update.py",
+  "Lib/site-packages/conda_env/cli/main_upload.py",
+  "Lib/site-packages/conda_env/compat.py",
+  "Lib/site-packages/conda_env/env.py",
+  "Lib/site-packages/conda_env/exceptions.py",
+  "Lib/site-packages/conda_env/installers/__init__.py",
+  "Lib/site-packages/conda_env/installers/base.py",
+  "Lib/site-packages/conda_env/installers/conda.py",
+  "Lib/site-packages/conda_env/installers/pip.py",
+  "Lib/site-packages/conda_env/pip_util.py",
+  "Lib/site-packages/conda_env/specs/__init__.py",
+  "Lib/site-packages/conda_env/specs/binstar.py",
+  "Lib/site-packages/conda_env/specs/notebook.py",
+  "Lib/site-packages/conda_env/specs/requirements.py",
+  "Lib/site-packages/conda_env/specs/yaml_file.py",
+  "Lib/site-packages/conda_env/utils/__init__.py",
+  "Lib/site-packages/conda_env/utils/notebooks.py",
+  "Lib/site-packages/conda_env/utils/uploader.py",
+  "Lib/site-packages/conda_env/yaml.py",
+  "Scripts/conda-env-script.py",
+  "Scripts/conda-env.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "conda-env",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.5.2"
+ },
+ "metadata_version": 1,
+ "name": "conda-env",
+ "raw_recipe": "{% set version = \"2.5.2\" %}\n\npackage:\n  name: conda-env\n  version: {{ version }}\n\nsource:\n  fn: conda-env-{{ version }}.tar.gz\n  url: https://github.com/conda/conda-env/archive/v{{ version }}.tar.gz\n  sha256: 7ca59fa861a3145e94c0d1377bf0bd78735f19123234bd3fcf4024a8f8e8ce03\n\nbuild:\n  number: 0\n  script: python setup.py install\n  entry_points:\n    - conda-env = conda_env.cli.main:main\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - conda_env\n\n  commands:\n    - which conda-env  # [unix]\n    - where conda-env  # [win]\n    - conda env\n    - conda env -h\n    - conda env list -h\n    - conda env create -h\n    - conda env export -h\n    - conda env remove -h\n\nabout:\n  home: https://github.com/conda/conda-env\n  summary: Tools for interacting with conda environments.\n  license: BSD 3-Clause\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - kalefranz\n    - mcg1969\n    - msarahan\n    - pelson\n",
+ "rendered_recipe": {},
+ "version": "2.5.2"
+}

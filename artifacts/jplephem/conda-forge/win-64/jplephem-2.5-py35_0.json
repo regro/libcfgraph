@@ -1,0 +1,36 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/jplephem-2.5-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/jplephem/__init__.py",
+  "Lib/site-packages/jplephem/__main__.py",
+  "Lib/site-packages/jplephem/ascii.py",
+  "Lib/site-packages/jplephem/commandline.py",
+  "Lib/site-packages/jplephem/daf.py",
+  "Lib/site-packages/jplephem/ephem.py",
+  "Lib/site-packages/jplephem/jpltest.py",
+  "Lib/site-packages/jplephem/names.py",
+  "Lib/site-packages/jplephem/spk.py",
+  "Lib/site-packages/jplephem/test.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "jplephem",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.5"
+ },
+ "metadata_version": 1,
+ "name": "jplephem",
+ "raw_recipe": "{% set version = \"2.5\" %}\n\npackage:\n  name: jplephem\n  version: {{ version }}\n\nsource:\n  fn: jplephem-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/j/jplephem/jplephem-{{ version }}.tar.gz\n  md5: 2880f4a443cbc3ec3c9d90a9bc8e7d22\n  patches:\n    - 0001_use-setuptools.patch\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy\n\n  run:\n    - python\n    - numpy\n\ntest:\n  imports:\n    - jplephem\n\nabout:\n  home: https://pypi.python.org/pypi/jplephem\n  license: MIT\n  summary: \"Python version of NASA DE4xx ephemerides, the basis for the Astronomical Alamanac\"\n\nextra:\n  recipe-maintainers:\n    - juanlu001\n",
+ "rendered_recipe": {},
+ "version": "2.5"
+}

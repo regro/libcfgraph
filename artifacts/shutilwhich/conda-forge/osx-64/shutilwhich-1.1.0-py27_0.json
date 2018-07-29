@@ -1,0 +1,34 @@
+{
+ "about": {
+  "dev_url": "http://github.com/mbr/shutilwhich",
+  "home": "http://github.com/mbr/shutilwhich",
+  "license": "PSF 2",
+  "license_family": "PSF",
+  "summary": "shutil.which for those not using Python 3.3 yet."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/shutilwhich-1.1.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/shutilwhich/__init__.py",
+  "lib/python2.7/site-packages/shutilwhich/lib.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "PSF 2",
+  "license_family": "PSF",
+  "name": "shutilwhich",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.1.0"
+ },
+ "metadata_version": 1,
+ "name": "shutilwhich",
+ "raw_recipe": "{%set name = \"shutilwhich\" %}\n{%set version = \"1.1.0\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"db1f39c6461e42f630fa617bb8c79090f7711c9ca493e615e43d0610ecb64dc6\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  skip: True  # [py>=33]\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - shutilwhich\n\nabout:\n  home: http://github.com/mbr/shutilwhich\n  license: PSF 2\n  # license_file: No LICENSE or MANIFEST.in - see https://github.com/mbr/shutilwhich/issues/2\n  license_family: PSF\n  summary: 'shutil.which for those not using Python 3.3 yet.'\n  dev_url: http://github.com/mbr/shutilwhich\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.1.0"
+}

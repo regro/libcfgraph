@@ -1,0 +1,45 @@
+{
+ "about": {
+  "home": "https://github.com/timothycrosley/pies",
+  "license": "MIT",
+  "summary": "Defines override classes that should be included with pies only if running on Python2."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/builtins.py",
+  "lib/python2.7/site-packages/copyreg.py",
+  "lib/python2.7/site-packages/html/__init__.py",
+  "lib/python2.7/site-packages/html/entities.py",
+  "lib/python2.7/site-packages/html/parser.py",
+  "lib/python2.7/site-packages/http/__init__.py",
+  "lib/python2.7/site-packages/http/client.py",
+  "lib/python2.7/site-packages/http/cookiejar.py",
+  "lib/python2.7/site-packages/http/cookies.py",
+  "lib/python2.7/site-packages/http/server.py",
+  "lib/python2.7/site-packages/pies2overrides-2.6.7-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/queue.py",
+  "lib/python2.7/site-packages/reprlib.py",
+  "lib/python2.7/site-packages/socketserver.py",
+  "lib/python2.7/site-packages/xmlrpc/__init__.py",
+  "lib/python2.7/site-packages/xmlrpc/client.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "ipaddress",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "pies2overrides",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.6.7"
+ },
+ "metadata_version": 1,
+ "name": "pies2overrides",
+ "raw_recipe": "{% set name = \"pies2overrides\" %}\n{% set version = \"2.6.7\" %}\n{% set sha256 = \"d8fa2879d038faca9e41bd470a77f66acdb04d5726ad0fa60f52fbd427d92390\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [not py2k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - ipaddress\n    - argparse     # [py26]\n    - ordereddict  # [py26]\n  run:\n    - python\n    - ipaddress\n    - argparse     # [py26]\n    - ordereddict  # [py26]\n\ntest:\n  imports:\n    - builtins\n    - copyreg\n    - queue\n    - reprlib\n    - socketserver\n    - html\n    - http\n    - xmlrpc\n\nabout:\n  home: https://github.com/timothycrosley/pies\n  license: MIT\n  summary: 'Defines override classes that should be included with pies only if running on Python2.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "2.6.7"
+}

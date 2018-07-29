@@ -1,0 +1,141 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.9",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://www.videolan.org/developers/x264.html",
+  "license": "GPL 2",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-0",
+   "conda-forge::certifi-2017.1.23-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.9-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.12.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_2",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "A free software library for encoding video streams into the H.264/MPEG-4 AVC format."
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/x264_config.h",
+  "lib/libx264.a",
+  "include/x264.h",
+  "lib/pkgconfig/x264.pc",
+  "bin/x264",
+  "lib/libx264.so.138",
+  "lib/libx264.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "2",
+  "build_number": 2,
+  "depends": [],
+  "license": "GPL 2",
+  "name": "x264",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "20131217"
+ },
+ "metadata_version": 1,
+ "name": "x264",
+ "raw_recipe": "{% set version = \"20131217\" %}\n\npackage:\n  name: x264\n  version: 20131217\n\nsource:\n  fn: x264-snapshot-{{ version }}-2245-stable.tar.bz2\n  url: http://download.videolan.org/pub/videolan/x264/snapshots/x264-snapshot-{{ version }}-2245-stable.tar.bz2\n  md5: cfd27222c7aa9983259ddb10f7f570a6\n\nbuild:\n  number: 2\n  skip: true         # [win]\n\nrequirements:\n  build:\n    - yasm\n    - perl 5.20.3.1\n    - gcc            # [osx]\n\n  run:\n    - libgcc         # [osx]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/x264.h         # [unix]\n    - test -f ${PREFIX}/lib/libx264.a          # [unix]\n    - test -f ${PREFIX}/lib/libx264.dylib      # [osx]\n    - test -f ${PREFIX}/lib/libx264.so         # [linux]\n    - x264 --help                              # [unix]\n\nabout:\n  home: http://www.videolan.org/developers/x264.html\n  license: GPL 2\n  license_file: COPYING\n  summary: A free software library for encoding video streams into the H.264/MPEG-4 AVC format.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.videolan.org/developers/x264.html",
+   "license": "GPL 2",
+   "license_file": "COPYING",
+   "summary": "A free software library for encoding video streams into the H.264/MPEG-4 AVC format."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "2",
+   "string": "2"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "x264",
+   "version": "20131217"
+  },
+  "requirements": {
+   "build": [
+    "yasm 1.3.0 0",
+    "perl 5.20.3.1 2"
+   ],
+   "run": ""
+  },
+  "source": {
+   "fn": "x264-snapshot-20131217-2245-stable.tar.bz2",
+   "md5": "cfd27222c7aa9983259ddb10f7f570a6",
+   "url": "http://download.videolan.org/pub/videolan/x264/snapshots/x264-snapshot-20131217-2245-stable.tar.bz2"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/include/x264.h",
+    "test -f ${PREFIX}/lib/libx264.a",
+    "test -f ${PREFIX}/lib/libx264.so",
+    "x264 --help"
+   ]
+  }
+ },
+ "version": "20131217"
+}

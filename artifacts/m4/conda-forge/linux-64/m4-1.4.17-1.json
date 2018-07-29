@@ -1,0 +1,129 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.0.11",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://www.gnu.org/software/m4/",
+  "license": "GPL-3.0",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-build-2.0.11-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-3.4.1-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.49.1-1",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-2",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_0",
+   "conda-forge::ncurses-5.9-9",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-2",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.2-2",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.7-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-29.0.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-0",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.8-3"
+  ],
+  "summary": "Implementation of the traditional Unix macro processor."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/m4",
+  "share/info/dir",
+  "share/info/m4.info",
+  "share/info/m4.info-1",
+  "share/info/m4.info-2",
+  "share/man/man1/m4.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [],
+  "license": "GPL-3.0",
+  "name": "m4",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.4.17"
+ },
+ "metadata_version": 1,
+ "name": "m4",
+ "raw_recipe": "{% set version = \"1.4.17\" %}\n\npackage:\n  name: m4\n  version: {{ version }}\n\nsource:\n  fn: m4-{{ version }}.tar.gz\n  url: http://ftp.gnu.org/gnu/m4/m4-{{ version }}.tar.gz\n  sha256: 3ce725133ee552b8b4baca7837fb772940b25e81b2a9dc92537aeaf733538c9e\n\nbuild:\n  number: 1\n  skip: True  # [win]\n\ntest:\n  commands:\n    - m4 --help\n    - m4 --version\n    - conda inspect linkages -p $PREFIX m4  # [not win]\n    - conda inspect objects -p $PREFIX m4  # [osx]\n\nabout:\n  home: http://www.gnu.org/software/m4/\n  license: GPL-3.0\n  license_file: COPYING\n  summary: 'Implementation of the traditional Unix macro processor.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.gnu.org/software/m4/",
+   "license": "GPL-3.0",
+   "license_file": "COPYING",
+   "summary": "Implementation of the traditional Unix macro processor."
+  },
+  "build": {
+   "number": "1",
+   "string": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "m4",
+   "version": "1.4.17"
+  },
+  "requirements": {
+   "build": []
+  },
+  "source": {
+   "fn": "m4-1.4.17.tar.gz",
+   "sha256": "3ce725133ee552b8b4baca7837fb772940b25e81b2a9dc92537aeaf733538c9e",
+   "url": "http://ftp.gnu.org/gnu/m4/m4-1.4.17.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "m4 --help",
+    "m4 --version",
+    "conda inspect linkages -p $PREFIX m4"
+   ]
+  }
+ },
+ "version": "1.4.17"
+}

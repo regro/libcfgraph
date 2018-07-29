@@ -1,0 +1,54 @@
+{
+ "about": {
+  "description": "Pytools is a big bag of things that are \"missing\" from the Python standard\nlibrary. This is mainly a dependency of my other software packages, and is\nprobably of little interest to you unless you use those. If you're curious\nnonetheless, here's what's on offer.\n",
+  "dev_url": "http://github.com/inducer/pytools",
+  "home": "http://pypi.python.org/pypi/pytools",
+  "license": "MIT",
+  "summary": "A collection of tools for Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pytools-2016.2.6-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pytools/__init__.py",
+  "lib/python2.7/site-packages/pytools/arithmetic_container.py",
+  "lib/python2.7/site-packages/pytools/batchjob.py",
+  "lib/python2.7/site-packages/pytools/convergence.py",
+  "lib/python2.7/site-packages/pytools/datatable.py",
+  "lib/python2.7/site-packages/pytools/debug.py",
+  "lib/python2.7/site-packages/pytools/decorator.py",
+  "lib/python2.7/site-packages/pytools/diskdict.py",
+  "lib/python2.7/site-packages/pytools/lex.py",
+  "lib/python2.7/site-packages/pytools/log.py",
+  "lib/python2.7/site-packages/pytools/mpi.py",
+  "lib/python2.7/site-packages/pytools/mpiwrap.py",
+  "lib/python2.7/site-packages/pytools/obj_array.py",
+  "lib/python2.7/site-packages/pytools/persistent_dict.py",
+  "lib/python2.7/site-packages/pytools/prefork.py",
+  "lib/python2.7/site-packages/pytools/py_codegen.py",
+  "lib/python2.7/site-packages/pytools/spatial_btree.py",
+  "lib/python2.7/site-packages/pytools/stopwatch.py",
+  "lib/python2.7/site-packages/pytools/test.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "appdirs >=1.4.0",
+   "decorator >=3.2.0",
+   "numpy",
+   "python 2.7*",
+   "six"
+  ],
+  "license": "MIT",
+  "name": "pytools",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2016.2.6"
+ },
+ "metadata_version": 1,
+ "name": "pytools",
+ "raw_recipe": "{% set name = \"pytools\" %}\n{% set version = \"2016.2.6\" %}\n{% set sha256 = \"6dd49932b8f81a8b622685cff3dd515e351a9290aef0fd5d020e4df00c06aa95\" %}\n\npackage:\n    name: {{ name|lower }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - six\n    run:\n        - python\n        - numpy\n        - decorator >=3.2.0\n        - appdirs >=1.4.0\n        - six\n\ntest:\n    requires:\n        - pytest\n    imports:\n        - {{ name }}\n    commands:\n        - cd $SRC_DIR/test && python -m pytest  # [unix]\n        - cd %SRC_DIR%/test && python -m pytest  # [win]\n\n\nabout:\n    home: http://pypi.python.org/pypi/{{ name }}\n    license: MIT\n    license_file: LICENSE\n    summary: A collection of tools for Python\n\n    description: |\n        Pytools is a big bag of things that are \"missing\" from the Python standard\n        library. This is mainly a dependency of my other software packages, and is\n        probably of little interest to you unless you use those. If you're curious\n        nonetheless, here's what's on offer.\n\n    dev_url: http://github.com/inducer/{{ name }}\n\nextra:\n    recipe-maintainers:\n        - inducer\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "2016.2.6"
+}

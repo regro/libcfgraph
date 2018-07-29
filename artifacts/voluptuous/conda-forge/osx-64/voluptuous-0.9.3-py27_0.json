@@ -1,0 +1,35 @@
+{
+ "about": {
+  "home": "https://github.com/alecthomas/voluptuous",
+  "license": "BSD3",
+  "summary": "Voluptuous is a Python data validation library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/voluptuous-0.9.3-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/voluptuous/__init__.py",
+  "lib/python2.7/site-packages/voluptuous/error.py",
+  "lib/python2.7/site-packages/voluptuous/humanize.py",
+  "lib/python2.7/site-packages/voluptuous/schema_builder.py",
+  "lib/python2.7/site-packages/voluptuous/util.py",
+  "lib/python2.7/site-packages/voluptuous/validators.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD3",
+  "name": "voluptuous",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.9.3"
+ },
+ "metadata_version": 1,
+ "name": "voluptuous",
+ "raw_recipe": "{% set name = \"voluptuous\" %}\n{% set version = \"0.9.3\" %}\n{% set sha256 = \"ed5a11fda273754caabb6becd5fe172ee2621cd2c8ff8279433173bb7b0ec568\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - flake8\n\n  run:\n    - python\n\ntest:\n  imports:\n    - voluptuous\n\nabout:\n  home: https://github.com/alecthomas/voluptuous\n  license: BSD3\n  summary: Voluptuous is a Python data validation library\n\nextra:\n  recipe-maintainers:\n    - tusharmakkar08\n    - vamega\n",
+ "rendered_recipe": {},
+ "version": "0.9.3"
+}

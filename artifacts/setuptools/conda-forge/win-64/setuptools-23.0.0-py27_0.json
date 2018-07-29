@@ -1,0 +1,37 @@
+{
+ "about": {
+  "description": "Setuptools is a fully-featured, actively-maintained, and stable library\ndesigned to facilitate packaging Python projects.\n",
+  "dev_url": "https://github.com/pypa/setuptools",
+  "doc_url": "http://pythonhosted.org/setuptools/",
+  "home": "https://pypi.python.org/pypi/setuptools",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Download, build, install, upgrade, and uninstall Python packages"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/setuptools-23.0.0-py2.7.egg",
+  "Lib/site-packages/setuptools.pth",
+  "Scripts/easy_install-script.py",
+  "Scripts/easy_install.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "setuptools",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "23.0.0"
+ },
+ "metadata_version": 1,
+ "name": "setuptools",
+ "raw_recipe": "{% set version = \"23.0.0\" %}\n\npackage:\n  name: setuptools\n  version: {{ version }}\n\nsource:\n  fn: setuptools-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/s/setuptools/setuptools-{{ version }}.tar.gz\n  md5: 100a90664040f8ff232fbac02a4c5652\n  patches:\n    # modify setuptools to barf if used in conda build (encourage people to add all deps in meta.yaml)\n    - nodownload.patch\n    # Don't install certifi or wincertstore\n    - setup.patch\n\nbuild:\n  number: 0\n  entry_points:\n    - easy_install = setuptools.command.easy_install:main\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  commands:\n    - easy_install --help\n  imports:\n    - setuptools\n    - easy_install\n    - pkg_resources\n\nabout:\n  home: https://pypi.python.org/pypi/setuptools\n  license: MIT\n  license_family: MIT\n  summary: Download, build, install, upgrade, and uninstall Python packages\n  description: |\n    Setuptools is a fully-featured, actively-maintained, and stable library\n    designed to facilitate packaging Python projects.\n  doc_url: http://pythonhosted.org/setuptools/\n  dev_url: https://github.com/pypa/setuptools\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - msarahan\n",
+ "rendered_recipe": {},
+ "version": "23.0.0"
+}

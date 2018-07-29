@@ -1,0 +1,60 @@
+{
+ "about": {
+  "home": "https://github.com/conda-forge/conda-forge-build-setup-feedstock",
+  "license": "BSD 3-clause",
+  "summary": "A package installed by conda-forge each time a build is run on CI. This package has side-effects to your conda config."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Scripts/run_conda_forge_build_setup.bat"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "BSD 3-clause",
+  "name": "conda-forge-build-setup",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "3.0.0"
+ },
+ "metadata_version": 1,
+ "name": "conda-forge-build-setup",
+ "raw_recipe": "package:\n  name: conda-forge-build-setup\n  version: 3.0.0\n\nbuild:\n  number: 0\n  script:\n    - if not exist \"%LIBRARY_BIN%\" mkdir \"%LIBRARY_BIN%\"                                                                 # [win]\n    - mkdir -p \"${PREFIX}/bin\"                                                                                           # [unix]\n    - COPY \"%RECIPE_DIR%\\\\run_conda_forge_build_setup_win\" \"%SCRIPTS%\\\\run_conda_forge_build_setup.bat\"                  # [win]\n    - cp \"${RECIPE_DIR}/run_conda_forge_build_setup_osx\" \"${PREFIX}/bin/run_conda_forge_build_setup\"                     # [osx]\n    - cp \"${RECIPE_DIR}/run_conda_forge_build_setup_linux\" \"${PREFIX}/bin/run_conda_forge_build_setup\"                   # [linux]\n\ntest:\n  commands:\n    - if not exist \"%SCRIPTS%\\\\run_conda_forge_build_setup.bat\" exit 1                                                   # [win]\n    - test -f \"${PREFIX}/bin/run_conda_forge_build_setup\"                                                                # [unix]\n\nabout:\n  home: https://github.com/conda-forge/conda-forge-build-setup-feedstock\n  summary: A package installed by conda-forge each time a build is run on CI. This package has side-effects to your conda config.\n  license: BSD 3-clause\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - ocefpaf\n    - pelson\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/conda-forge/conda-forge-build-setup-feedstock",
+   "license": "BSD 3-clause",
+   "summary": "A package installed by conda-forge each time a build is run on CI. This package has side-effects to your conda config."
+  },
+  "build": {
+   "number": 0,
+   "script": [
+    "if not exist \"%LIBRARY_BIN%\" mkdir \"%LIBRARY_BIN%\"",
+    "mkdir -p \"${PREFIX}/bin\"",
+    "COPY \"%RECIPE_DIR%\\\\run_conda_forge_build_setup_win\" \"%SCRIPTS%\\\\run_conda_forge_build_setup.bat\"",
+    "cp \"${RECIPE_DIR}/run_conda_forge_build_setup_osx\" \"${PREFIX}/bin/run_conda_forge_build_setup\"",
+    "cp \"${RECIPE_DIR}/run_conda_forge_build_setup_linux\" \"${PREFIX}/bin/run_conda_forge_build_setup\""
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham",
+    "ocefpaf",
+    "pelson"
+   ]
+  },
+  "package": {
+   "name": "conda-forge-build-setup",
+   "version": "3.0.0"
+  },
+  "test": {
+   "commands": [
+    "if not exist \"%SCRIPTS%\\\\run_conda_forge_build_setup.bat\" exit 1",
+    "test -f \"${PREFIX}/bin/run_conda_forge_build_setup\""
+   ]
+  }
+ },
+ "version": "3.0.0"
+}

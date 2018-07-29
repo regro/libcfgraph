@@ -1,0 +1,28 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/probableparsing-0.0.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/probableparsing/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "future",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "probableparsing",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.0.1"
+ },
+ "metadata_version": 1,
+ "name": "probableparsing",
+ "raw_recipe": "{% set name = \"probableparsing\" %}\n{% set version = \"0.0.1\" %}\n{% set hashtype = \"md5\" %}\n{% set hash = \"960a1fab176276070111f1f9b2080cca\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hashtype }}: {{ hash }}\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - future\n    run:\n        - python\n        - future\ntest:\n    imports:\n        - {{name}}\n\nabout:\n    home: https://github.com/datamade/probableparsing\n    license: MIT\n    license_family: MIT\n    summary: Common methods for probable parsing\n\nextra:\n    recipe-maintainers:\n        - wyseguy7\n        - ericdill\n",
+ "rendered_recipe": {},
+ "version": "0.0.1"
+}

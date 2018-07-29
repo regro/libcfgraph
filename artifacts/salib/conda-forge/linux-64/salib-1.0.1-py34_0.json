@@ -1,0 +1,60 @@
+{
+ "about": {
+  "home": "http://salib.github.io/SALib/",
+  "license": "MIT",
+  "summary": "Sensitivity Analysis Library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/SALib-0.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/SALib-0.0-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/SALib/__init__.py",
+  "lib/python3.4/site-packages/SALib/analyze/__init__.py",
+  "lib/python3.4/site-packages/SALib/analyze/common_args.py",
+  "lib/python3.4/site-packages/SALib/analyze/delta.py",
+  "lib/python3.4/site-packages/SALib/analyze/dgsm.py",
+  "lib/python3.4/site-packages/SALib/analyze/fast.py",
+  "lib/python3.4/site-packages/SALib/analyze/ff.py",
+  "lib/python3.4/site-packages/SALib/analyze/morris.py",
+  "lib/python3.4/site-packages/SALib/analyze/sobol.py",
+  "lib/python3.4/site-packages/SALib/plotting/__init__.py",
+  "lib/python3.4/site-packages/SALib/plotting/morris.py",
+  "lib/python3.4/site-packages/SALib/sample/__init__.py",
+  "lib/python3.4/site-packages/SALib/sample/common_args.py",
+  "lib/python3.4/site-packages/SALib/sample/directions.py",
+  "lib/python3.4/site-packages/SALib/sample/fast_sampler.py",
+  "lib/python3.4/site-packages/SALib/sample/ff.py",
+  "lib/python3.4/site-packages/SALib/sample/finite_diff.py",
+  "lib/python3.4/site-packages/SALib/sample/latin.py",
+  "lib/python3.4/site-packages/SALib/sample/morris.py",
+  "lib/python3.4/site-packages/SALib/sample/morris_util.py",
+  "lib/python3.4/site-packages/SALib/sample/optimal_trajectories.py",
+  "lib/python3.4/site-packages/SALib/sample/saltelli.py",
+  "lib/python3.4/site-packages/SALib/sample/sobol_sequence.py",
+  "lib/python3.4/site-packages/SALib/test_functions/Ishigami.py",
+  "lib/python3.4/site-packages/SALib/test_functions/Sobol_G.py",
+  "lib/python3.4/site-packages/SALib/test_functions/__init__.py",
+  "lib/python3.4/site-packages/SALib/util/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib",
+   "numpy",
+   "python 3.4*",
+   "scipy"
+  ],
+  "license": "MIT",
+  "name": "salib",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0.1"
+ },
+ "metadata_version": 1,
+ "name": "salib",
+ "raw_recipe": "{% set version = \"1.0.1\" %}\n\npackage:\n  name: salib\n  version: {{ version }}\n\nsource:\n  fn: salib-{{ version }}.tar.gz\n  url: https://github.com/SALib/SALib/archive/v{{ version }}.tar.gz\n  sha256: 10f2582b6227f22a110007d6759ecbf5a377e9bc987e5a81b7cd7fcc4168bbc3\n\nbuild:\n  number: 0\n  script:\n    - git init  # hack to build from tarball\n    - python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - pyscaffold\n  run:\n    - python\n    - numpy\n    - scipy\n    - matplotlib\n\ntest:\n  imports:\n    - SALib\n\nabout:\n  home: http://salib.github.io/SALib/\n  license: MIT\n  license_file: LICENSE.md\n  summary: Sensitivity Analysis Library\n\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
+ "rendered_recipe": {},
+ "version": "1.0.1"
+}

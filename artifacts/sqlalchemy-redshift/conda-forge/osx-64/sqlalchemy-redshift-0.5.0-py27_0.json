@@ -1,0 +1,42 @@
+{
+ "about": {
+  "dev_url": "https://github.com/sqlalchemy-redshift/sqlalchemy-redshift",
+  "doc_url": "https://sqlalchemy-redshift.readthedocs.io/en/latest/",
+  "home": "https://github.com/sqlalchemy-redshift/sqlalchemy-redshift",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Amazon Redshift SQLAlchemy Dialect"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/redshift_sqlalchemy/__init__.py",
+  "lib/python2.7/site-packages/sqlalchemy_redshift-0.5.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/sqlalchemy_redshift/__init__.py",
+  "lib/python2.7/site-packages/sqlalchemy_redshift/commands.py",
+  "lib/python2.7/site-packages/sqlalchemy_redshift/compat.py",
+  "lib/python2.7/site-packages/sqlalchemy_redshift/dialect.py",
+  "lib/python2.7/site-packages/sqlalchemy_redshift/redshift-ssl-ca-cert.pem"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "psycopg2 >=2.5",
+   "python 2.7*",
+   "setuptools",
+   "sqlalchemy >=0.9.2"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "sqlalchemy-redshift",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.5.0"
+ },
+ "metadata_version": 1,
+ "name": "sqlalchemy-redshift",
+ "raw_recipe": "{% set name = \"sqlalchemy-redshift\" %}\n{% set version = \"0.5.0\" %}\n{% set sha256 = \"8ea22cbdf10ff043e9f99f63ce11f4c4b9c5c52ea643df29048309fb284232f4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/sqlalchemy-redshift/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - sqlalchemy >=0.9.2\n    - psycopg2 >=2.5\n\ntest:\n  imports:\n    - sqlalchemy_redshift\n\nabout:\n  home: https://github.com/sqlalchemy-redshift/sqlalchemy-redshift\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Amazon Redshift SQLAlchemy Dialect'\n\n  doc_url: https://sqlalchemy-redshift.readthedocs.io/en/latest/\n  dev_url: https://github.com/sqlalchemy-redshift/sqlalchemy-redshift\n\nextra:\n  recipe-maintainers:\n    - mcg1969\n",
+ "rendered_recipe": {},
+ "version": "0.5.0"
+}

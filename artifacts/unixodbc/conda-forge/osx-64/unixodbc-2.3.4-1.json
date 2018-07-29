@@ -1,0 +1,167 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "The unixODBC Project goals are to develop and promote unixODBC to be the\ndefinitive standard for ODBC on non MS Windows platforms. This is to\ninclude GUI support for both KDE and GNOME.\n",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://www.unixodbc.org/",
+  "license": "LGPL-2.1",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "ODBC on non MS Windows platforms"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/odbcinst",
+  "share/man/man1/isql.1",
+  "lib/libodbccr.dylib",
+  "include/sqlext.h",
+  "bin/isql",
+  "include/odbcinstext.h",
+  "include/unixodbc_conf.h",
+  "lib/libodbccr.2.dylib",
+  "lib/libodbcinst.la",
+  "include/autotest.h",
+  "bin/slencheck",
+  "include/sqltypes.h",
+  "share/man/man1/odbc_config.1",
+  "lib/libodbc.la",
+  "share/man/man1/odbcinst.1",
+  "bin/dltest",
+  "share/man/man5/odbc.ini.5",
+  "bin/odbc_config",
+  "lib/libodbc.2.dylib",
+  "include/sqlspi.h",
+  "include/sql.h",
+  "include/uodbc_extras.h",
+  "include/uodbc_stats.h",
+  "include/odbcinst.h",
+  "share/man/man5/odbcinst.ini.5",
+  "bin/iusql",
+  "lib/libodbcinst.2.dylib",
+  "share/man/man1/iusql.1",
+  "lib/libodbc.dylib",
+  "share/man/man7/unixODBC.7",
+  "lib/libodbccr.la",
+  "lib/libodbcinst.dylib",
+  "include/sqlucode.h",
+  "share/man/man1/dltest.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [],
+  "license": "LGPL-2.1",
+  "name": "unixodbc",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.3.4"
+ },
+ "metadata_version": 1,
+ "name": "unixodbc",
+ "raw_recipe": "{% set name = \"unixODBC\" %}\n{% set version = \"2.3.4\" %}\n{% set sha256 = \"2e1509a96bb18d248bf08ead0d74804957304ff7c6f8b2e5965309c632421e39\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://www.unixodbc.org/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libodbc.2.dylib  # [osx]\n    - test -f $PREFIX/lib/libodbc.dylib  # [osx]\n    - test -f $PREFIX/lib/libodbcinst.2.dylib  # [osx]\n    - test -f $PREFIX/lib/libodbcinst.dylib  # [osx]\n    - test -f $PREFIX/lib/libodbc.so.2.0.0  # [linux]\n    - test -f $PREFIX/lib/libodbc.so  # [linux]\n    - test -f $PREFIX/lib/libodbcinst.so.2.0.0  # [linux]\n    - test -f $PREFIX/lib/libodbcinst.so  # [linux]\n\nabout:\n  home: http://www.unixodbc.org/\n  license: LGPL-2.1\n  license_file: COPYING\n  summary: 'ODBC on non MS Windows platforms'\n  description: |\n    The unixODBC Project goals are to develop and promote unixODBC to be the\n    definitive standard for ODBC on non MS Windows platforms. This is to\n    include GUI support for both KDE and GNOME.\n\nextra:\n  recipe-maintainers:\n    - MathMagique\n    - xhochy\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "The unixODBC Project goals are to develop and promote unixODBC to be the\ndefinitive standard for ODBC on non MS Windows platforms. This is to\ninclude GUI support for both KDE and GNOME.\n",
+   "home": "http://www.unixodbc.org/",
+   "license": "LGPL-2.1",
+   "license_file": "COPYING",
+   "summary": "ODBC on non MS Windows platforms"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "1",
+   "string": "1"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "MathMagique",
+    "xhochy"
+   ]
+  },
+  "package": {
+   "name": "unixodbc",
+   "version": "2.3.4"
+  },
+  "requirements": {
+   "build": [
+    "toolchain 2.0.0 0"
+   ],
+   "run": []
+  },
+  "source": {
+   "fn": "unixODBC-2.3.4.tar.gz",
+   "sha256": "2e1509a96bb18d248bf08ead0d74804957304ff7c6f8b2e5965309c632421e39",
+   "url": "http://www.unixodbc.org/unixODBC-2.3.4.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/lib/libodbc.2.dylib",
+    "test -f $PREFIX/lib/libodbc.dylib",
+    "test -f $PREFIX/lib/libodbcinst.2.dylib",
+    "test -f $PREFIX/lib/libodbcinst.dylib"
+   ]
+  }
+ },
+ "version": "2.3.4"
+}

@@ -1,0 +1,151 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.9",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "This module contains functions for converting between Julian dates and calendar dates.\n",
+  "dev_url": "https://github.com/phn/jdcal",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/phn/jdcal",
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.9-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Julian dates from proleptic Gregorian and Julian calendars."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/jdcal.py",
+  "lib/python3.6/site-packages/jdcal-1.3-py3.6.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.6*"
+  ],
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "name": "jdcal",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.3"
+ },
+ "metadata_version": 1,
+ "name": "jdcal",
+ "raw_recipe": "{% set name = \"jdcal\" %}\n{% set version = \"1.3\" %}\n{% set sha256 = \"b760160f8dc8cc51d17875c6b663fafe64be699e10ce34b6a95184b5aa0fdc9e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - jdcal\n\nabout:\n  home: https://github.com/phn/jdcal\n  license: BSD 2-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Julian dates from proleptic Gregorian and Julian calendars.'\n\n  description: |\n    This module contains functions for converting between Julian dates and calendar dates.\n  dev_url: https://github.com/phn/jdcal\n\nextra:\n  recipe-maintainers:\n    - curtisalexander\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "This module contains functions for converting between Julian dates and calendar dates.\n",
+   "dev_url": "https://github.com/phn/jdcal",
+   "home": "https://github.com/phn/jdcal",
+   "license": "BSD 2-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE.txt",
+   "summary": "Julian dates from proleptic Gregorian and Julian calendars."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py36_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "curtisalexander"
+   ]
+  },
+  "package": {
+   "name": "jdcal",
+   "version": "1.3"
+  },
+  "requirements": {
+   "build": [
+    "ca-certificates 2017.1.23 0",
+    "certifi 2017.1.23 py36_0",
+    "ncurses 5.9 10",
+    "openssl 1.0.2k 0",
+    "python 3.6.1 0",
+    "readline 6.2 0",
+    "setuptools 33.1.1 py36_0",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "jdcal-1.3.tar.gz",
+   "sha256": "b760160f8dc8cc51d17875c6b663fafe64be699e10ce34b6a95184b5aa0fdc9e",
+   "url": "https://pypi.io/packages/source/j/jdcal/jdcal-1.3.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "jdcal"
+   ]
+  }
+ },
+ "version": "1.3"
+}

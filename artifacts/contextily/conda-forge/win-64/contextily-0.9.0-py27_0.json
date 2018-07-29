@@ -1,0 +1,40 @@
+{
+ "about": {
+  "home": "https://github.com/darribas/contextily",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Context geo-tiles in Python."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/contextily-0.9.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/contextily-0.9.0-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/contextily/__init__.py",
+  "Lib/site-packages/contextily/tile_providers.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "cartopy",
+   "mercantile",
+   "pandas",
+   "pillow",
+   "python 2.7*",
+   "rasterio",
+   "six"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "contextily",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.9.0"
+ },
+ "metadata_version": 1,
+ "name": "contextily",
+ "raw_recipe": "{% set version = \"0.9.0\" %}\n\npackage:\n  name: contextily\n  version: {{ version }}\n\nsource:\n  fn: contextily-{{ version }}.tar.gz\n  url: https://github.com/darribas/contextily/archive/v{{ version }}.tar.gz\n  sha256: cd96cf7b6deab9c6470f539877d483161febd41521ddc9a313d5f14885db792b\n\nbuild:\n  number: 0\n  skip: True  # [py3k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - cartopy\n    - pandas\n    - pillow\n    - rasterio\n    - six\n    - mercantile\n\ntest:\n  imports:\n    - contextily\n\nabout:\n  home: https://github.com/darribas/contextily\n  license: BSD 3-Clause\n  summary: 'Context geo-tiles in Python.'\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - darribas\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.9.0"
+}

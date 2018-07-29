@@ -1,0 +1,48 @@
+{
+ "about": {
+  "home": "https://github.com/rtfd/CommonMark-py",
+  "license": "BSD 3-Clause",
+  "summary": "Python parser for the CommonMark Markdown spec"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/CommonMark-0.7.2-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/CommonMark/__init__.py",
+  "Lib/site-packages/CommonMark/blocks.py",
+  "Lib/site-packages/CommonMark/cmark.py",
+  "Lib/site-packages/CommonMark/common.py",
+  "Lib/site-packages/CommonMark/dump.py",
+  "Lib/site-packages/CommonMark/entitytrans.py",
+  "Lib/site-packages/CommonMark/inlines.py",
+  "Lib/site-packages/CommonMark/main.py",
+  "Lib/site-packages/CommonMark/node.py",
+  "Lib/site-packages/CommonMark/render/__init__.py",
+  "Lib/site-packages/CommonMark/render/html.py",
+  "Lib/site-packages/CommonMark/render/renderer.py",
+  "Lib/site-packages/CommonMark/tests/__init__.py",
+  "Lib/site-packages/CommonMark/tests/run_spec_tests.py",
+  "Lib/site-packages/CommonMark/tests/unit_tests.py",
+  "Lib/site-packages/CommonMark/utils.py",
+  "Scripts/cmark-script.py",
+  "Scripts/cmark.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "future",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "commonmark",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.7.2"
+ },
+ "metadata_version": 1,
+ "name": "commonmark",
+ "raw_recipe": "{% set name = \"CommonMark\" %}\n{% set version = \"0.7.2\" %}\n{% set sha256 = \"3cf8971d85b5782563ef8a3cc9c9ec92f09f4e6b856e42b0cbf1931927218e1b\" %}\n\npackage:\n  name: {{ name | lower }}\n  version: {{ version }}\n\nsource:\n  fn:  {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - cmark = CommonMark.cmark:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - future\n\ntest:\n  imports:\n    - CommonMark\n    - CommonMark.render\n    - CommonMark.tests\n\n  commands:\n    - cmark --help\n\nabout:\n  home: https://github.com/rtfd/CommonMark-py\n  license: BSD 3-Clause\n  summary: 'Python parser for the CommonMark Markdown spec'\n  license_file: LICENSE\n\nextra:\n  recipe-maintainers:\n    - ericmjl\n",
+ "rendered_recipe": {},
+ "version": "0.7.2"
+}

@@ -1,0 +1,168 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "gf2x is a C/C++ software package containing routines for fast arithmetic\nin GF(2)[x] (multiplication, squaring, GCD) and searching for\nirreducible/primitive trinomials.\n",
+  "dev_url": "http://gforge.inria.fr/projects/gf2x/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://gf2x.gforge.inria.fr",
+  "license": "GPL v2+",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-1.0-py36_0",
+   "openssl-1.0.2k-1",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "conda-forge::pycrypto-2.6.1-py36_1",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "gf2x is a library for multiplying polynomials over the binary field."
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/gf2x/gf2x-thresholds.h",
+  "include/gf2x/gf2x-config.h",
+  "include/gf2x/gf2x_mul1.h",
+  "lib/libgf2x.la",
+  "include/gf2x/gf2x_mul8.h",
+  "lib/libgf2x.dylib",
+  "include/gf2x.h",
+  "include/gf2x/gf2x-impl.h",
+  "include/gf2x/gf2x_mul3.h",
+  "lib/libgf2x.a",
+  "lib/libgf2x.1.dylib",
+  "include/gf2x/gf2x-tfft.h",
+  "include/gf2x/gf2x_mul5.h",
+  "include/gf2x/gf2x-small.h",
+  "include/gf2x/gf2x_mul6.h",
+  "include/gf2x/gf2x_mul7.h",
+  "include/gf2x/gf2x_mul9.h",
+  "include/gf2x/gf2x_mul2.h",
+  "include/gf2x/gf2x_mul4.h"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [],
+  "license": "GPL v2+",
+  "name": "gf2x",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "track_features": "gf2x",
+  "version": "1.1"
+ },
+ "metadata_version": 1,
+ "name": "gf2x",
+ "raw_recipe": "{% set version = \"1.1\" %}\n{% set name = \"gf2x\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://gforge.inria.fr/frs/download.php/file/30873/{{ name }}-{{ version }}.tar.gz\n  sha256: 0d3f01604680102a00ca34e079903cc4d5a3208afda223748979b724d358849f\n  patches:\n    # patches from https://github.com/sagemath/sage\n    # pass no-undefined flag to libtool.\n    - patches/0001-Trac-15014-Let-gf2x-build-a-shared-library-on-Cygwin.patch\n    # backport upstream fix for non-portable tr use\n    - patches/0002-tr-portability.patch\n    # backport upstream improved check for sse2\n    - patches/0003-Improve-detection-of-sse2-support.patch\n    # add option --disable-hardware-specific-code to build system. This is partly backported from upstream.\n    - patches/0004-Add-disable-hardware-specific-code.patch\n    # (upstream patch) Fix bug in shell script such that 'make check' always fails upon errors.\n    - patches/0006-Fix_make_check_not_failing_on_errors.patch\n\n\nbuild:\n  number: 1\n  skip: true        # [win]\n  track_features:\n    - gf2x\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - automake\n\ntest:\n  commands:\n    - test -f $PREFIX/include/gf2x.h\n    - test -f $PREFIX/lib/lib{{ name }}.a\n    - test -f $PREFIX/lib/lib{{ name }}.so         # [linux]\n    - test -f $PREFIX/lib/lib{{ name }}.dylib      # [osx]\n\nabout:\n  home: http://gf2x.gforge.inria.fr\n  dev_url: http://gforge.inria.fr/projects/gf2x/\n  license: GPL v2+\n  license_file: COPYING\n  summary: gf2x is a library for multiplying polynomials over the binary field.\n  description: |\n    gf2x is a C/C++ software package containing routines for fast arithmetic\n    in GF(2)[x] (multiplication, squaring, GCD) and searching for\n    irreducible/primitive trinomials.\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "gf2x is a C/C++ software package containing routines for fast arithmetic\nin GF(2)[x] (multiplication, squaring, GCD) and searching for\nirreducible/primitive trinomials.\n",
+   "dev_url": "http://gforge.inria.fr/projects/gf2x/",
+   "home": "http://gf2x.gforge.inria.fr",
+   "license": "GPL v2+",
+   "license_file": "COPYING",
+   "summary": "gf2x is a library for multiplying polynomials over the binary field."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "1",
+   "string": "1",
+   "track_features": [
+    "gf2x"
+   ]
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "isuruf"
+   ]
+  },
+  "package": {
+   "name": "gf2x",
+   "version": "1.1"
+  },
+  "requirements": {
+   "build": [
+    "autoconf 2.69 pl5.20.3.1_4",
+    "automake 1.15 pl5.20.3.1_0",
+    "libtool 2.4.6 0",
+    "m4 1.4.17 1",
+    "perl 5.20.3.1 2",
+    "toolchain 2.0.0 0"
+   ],
+   "run": []
+  },
+  "source": {
+   "fn": "gf2x-1.1.tar.gz",
+   "patches": [
+    "patches/0001-Trac-15014-Let-gf2x-build-a-shared-library-on-Cygwin.patch",
+    "patches/0002-tr-portability.patch",
+    "patches/0003-Improve-detection-of-sse2-support.patch",
+    "patches/0004-Add-disable-hardware-specific-code.patch",
+    "patches/0006-Fix_make_check_not_failing_on_errors.patch"
+   ],
+   "sha256": "0d3f01604680102a00ca34e079903cc4d5a3208afda223748979b724d358849f",
+   "url": "http://gforge.inria.fr/frs/download.php/file/30873/gf2x-1.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/include/gf2x.h",
+    "test -f $PREFIX/lib/libgf2x.a",
+    "test -f $PREFIX/lib/libgf2x.dylib"
+   ]
+  }
+ },
+ "version": "1.1"
+}

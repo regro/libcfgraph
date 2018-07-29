@@ -1,0 +1,53 @@
+{
+ "about": {
+  "home": "https://github.com/PyWavelets/pywt",
+  "license": "MIT",
+  "summary": "Discrete Wavelet Transforms in Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/PyWavelets-0.5.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pywt/__init__.py",
+  "lib/python2.7/site-packages/pywt/_cwt.py",
+  "lib/python2.7/site-packages/pywt/_dwt.py",
+  "lib/python2.7/site-packages/pywt/_extensions/__init__.py",
+  "lib/python2.7/site-packages/pywt/_extensions/_cwt.so",
+  "lib/python2.7/site-packages/pywt/_extensions/_dwt.so",
+  "lib/python2.7/site-packages/pywt/_extensions/_pywt.so",
+  "lib/python2.7/site-packages/pywt/_extensions/_swt.so",
+  "lib/python2.7/site-packages/pywt/_functions.py",
+  "lib/python2.7/site-packages/pywt/_multidim.py",
+  "lib/python2.7/site-packages/pywt/_multilevel.py",
+  "lib/python2.7/site-packages/pywt/_swt.py",
+  "lib/python2.7/site-packages/pywt/_thresholding.py",
+  "lib/python2.7/site-packages/pywt/_wavelet_packets.py",
+  "lib/python2.7/site-packages/pywt/data/__init__.py",
+  "lib/python2.7/site-packages/pywt/data/_readers.py",
+  "lib/python2.7/site-packages/pywt/data/aero.npz",
+  "lib/python2.7/site-packages/pywt/data/ascent.npz",
+  "lib/python2.7/site-packages/pywt/data/camera.npz",
+  "lib/python2.7/site-packages/pywt/data/create_dat.py",
+  "lib/python2.7/site-packages/pywt/data/ecg.npy",
+  "lib/python2.7/site-packages/pywt/data/sst_nino3.npz",
+  "lib/python2.7/site-packages/pywt/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.11*",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "pywavelets",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.5.0"
+ },
+ "metadata_version": 1,
+ "name": "pywavelets",
+ "raw_recipe": "{% set version = \"0.5.0\" %}\n\npackage:\n    name: pywavelets\n    version: {{ version }}\n\nsource:\n    fn: PyWavelets-{{ version }}.tar.gz\n    url: https://github.com/PyWavelets/pywt/archive/v{{ version }}.tar.gz\n    sha256: 99157c11df6c8fb37ca159ce644190a0b9d0c62c830f8a0e2dbe948819c093f3\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - cython\n        - numpy x.x\n        - setuptools\n    run:\n        - python\n        - numpy x.x\n\ntest:\n    requires:\n        - nose\n    commands:\n#        - conda inspect linkages -p ${PREFIX} pywavelets  # [linux]\n\nabout:\n    home: https://github.com/PyWavelets/pywt\n    license: MIT\n    summary: Discrete Wavelet Transforms in Python\n\nextra:\n    recipe-maintainers:\n        - grlee77\n        - jakirkham\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.5.0"
+}

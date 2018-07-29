@@ -1,0 +1,151 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.0.12",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/gitpython-developers/gitdb",
+  "license": "BSD 3-Clause",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.0.12-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.2.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Git Object Database"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/gitdb-0.6.4-py2.7.egg-info",
+  "lib/python2.7/site-packages/gitdb/__init__.py",
+  "lib/python2.7/site-packages/gitdb/_perf.so",
+  "lib/python2.7/site-packages/gitdb/base.py",
+  "lib/python2.7/site-packages/gitdb/const.py",
+  "lib/python2.7/site-packages/gitdb/db/__init__.py",
+  "lib/python2.7/site-packages/gitdb/db/base.py",
+  "lib/python2.7/site-packages/gitdb/db/git.py",
+  "lib/python2.7/site-packages/gitdb/db/loose.py",
+  "lib/python2.7/site-packages/gitdb/db/mem.py",
+  "lib/python2.7/site-packages/gitdb/db/pack.py",
+  "lib/python2.7/site-packages/gitdb/db/ref.py",
+  "lib/python2.7/site-packages/gitdb/exc.py",
+  "lib/python2.7/site-packages/gitdb/fun.py",
+  "lib/python2.7/site-packages/gitdb/pack.py",
+  "lib/python2.7/site-packages/gitdb/stream.py",
+  "lib/python2.7/site-packages/gitdb/test/__init__.py",
+  "lib/python2.7/site-packages/gitdb/test/lib.py",
+  "lib/python2.7/site-packages/gitdb/test/test_base.py",
+  "lib/python2.7/site-packages/gitdb/test/test_example.py",
+  "lib/python2.7/site-packages/gitdb/test/test_pack.py",
+  "lib/python2.7/site-packages/gitdb/test/test_stream.py",
+  "lib/python2.7/site-packages/gitdb/test/test_util.py",
+  "lib/python2.7/site-packages/gitdb/typ.py",
+  "lib/python2.7/site-packages/gitdb/util.py",
+  "lib/python2.7/site-packages/gitdb/utils/__init__.py",
+  "lib/python2.7/site-packages/gitdb/utils/compat.py",
+  "lib/python2.7/site-packages/gitdb/utils/encoding.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "python 2.7*",
+   "smmap >=0.8.3"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "gitdb",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.6.4"
+ },
+ "metadata_version": 1,
+ "name": "gitdb",
+ "raw_recipe": "{% set version = \"0.6.4\" %}\n\npackage:\n  name: gitdb\n  version: {{ version }}\n\nsource:\n  fn: gitdb-0.6.4.tar.gz\n  url: https://pypi.io/packages/source/g/gitdb/gitdb-0.6.4.tar.gz\n  sha256: a3ebbc27be035a2e874ed904df516e35f4a29a778a764385de09de9e0f139658\n\nbuild:\n  number: 1\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n    - smmap >=0.8.3\n\ntest:\n  imports:\n    - gitdb\n    - gitdb.db\n\nabout:\n  home: https://github.com/gitpython-developers/gitdb\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'Git Object Database'\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/gitpython-developers/gitdb",
+   "license": "BSD 3-Clause",
+   "license_file": "LICENSE",
+   "summary": "Git Object Database"
+  },
+  "build": {
+   "number": "1",
+   "script": "python setup.py install",
+   "string": "py27_1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pelson",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "gitdb",
+   "version": "0.6.4"
+  },
+  "requirements": {
+   "build": null,
+   "run": [
+    "python",
+    "smmap >=0.8.3"
+   ]
+  },
+  "source": {
+   "fn": "gitdb-0.6.4.tar.gz",
+   "sha256": "a3ebbc27be035a2e874ed904df516e35f4a29a778a764385de09de9e0f139658",
+   "url": "https://pypi.io/packages/source/g/gitdb/gitdb-0.6.4.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "gitdb",
+    "gitdb.db"
+   ]
+  }
+ },
+ "version": "0.6.4"
+}

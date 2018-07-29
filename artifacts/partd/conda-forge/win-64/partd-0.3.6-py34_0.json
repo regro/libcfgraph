@@ -1,0 +1,42 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/partd-0.3.6-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/partd-0.3.6-py3.4.egg-info/not-zip-safe",
+  "Lib/site-packages/partd/__init__.py",
+  "Lib/site-packages/partd/buffer.py",
+  "Lib/site-packages/partd/compatibility.py",
+  "Lib/site-packages/partd/compressed.py",
+  "Lib/site-packages/partd/core.py",
+  "Lib/site-packages/partd/dict.py",
+  "Lib/site-packages/partd/encode.py",
+  "Lib/site-packages/partd/file.py",
+  "Lib/site-packages/partd/numpy.py",
+  "Lib/site-packages/partd/pandas.py",
+  "Lib/site-packages/partd/pickle.py",
+  "Lib/site-packages/partd/python.py",
+  "Lib/site-packages/partd/utils.py",
+  "Lib/site-packages/partd/zmq.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "locket",
+   "python 3.4*",
+   "toolz"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "partd",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.3.6"
+ },
+ "metadata_version": 1,
+ "name": "partd",
+ "raw_recipe": "{% set version = \"0.3.6\" %}\n\npackage:\n  name: partd\n  version: {{ version }}\n\nsource:\n  fn: partd-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/partd/partd-{{ version }}.tar.gz\n  md5: 4fe19796e22c85f7917e40f618f349fb\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - locket\n    - toolz\n\n  run:\n    - python\n    - locket\n    - toolz\n\ntest:\n  imports:\n    - partd\n\nabout:\n  home: https://github.com/dask/partd\n  license: BSD 3-Clause\n  summary: Concurrent appendable key-value storage\n\nextra:\n  recipe-maintainers:\n    - jcrist\n    - mrocklin\n    - koverholt\n",
+ "rendered_recipe": {},
+ "version": "0.3.6"
+}

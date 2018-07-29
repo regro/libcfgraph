@@ -1,0 +1,50 @@
+{
+ "about": {
+  "home": "http://py4j.sourceforge.net/",
+  "license": "BSD 3-Clause",
+  "summary": "Enables Python programs to dynamically access arbitrary Java objects"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/py4j-0.8.2.1-py3.4.egg-info",
+  "Lib/site-packages/py4j/__init__.py",
+  "Lib/site-packages/py4j/compat.py",
+  "Lib/site-packages/py4j/finalizer.py",
+  "Lib/site-packages/py4j/java_collections.py",
+  "Lib/site-packages/py4j/java_gateway.py",
+  "Lib/site-packages/py4j/protocol.py",
+  "Lib/site-packages/py4j/tests/__init__.py",
+  "Lib/site-packages/py4j/tests/byte_string_test.py",
+  "Lib/site-packages/py4j/tests/finalizer_test.py",
+  "Lib/site-packages/py4j/tests/java_array_test.py",
+  "Lib/site-packages/py4j/tests/java_callback_test.py",
+  "Lib/site-packages/py4j/tests/java_gateway_test.py",
+  "Lib/site-packages/py4j/tests/java_list_test.py",
+  "Lib/site-packages/py4j/tests/java_map_test.py",
+  "Lib/site-packages/py4j/tests/java_set_test.py",
+  "Lib/site-packages/py4j/tests/multithreadtest.py",
+  "Lib/site-packages/py4j/tests/py4j_callback_example.py",
+  "Lib/site-packages/py4j/tests/py4j_callback_example2.py",
+  "Lib/site-packages/py4j/tests/py4j_example.py",
+  "Lib/site-packages/py4j/version.py",
+  "share/py4j/py4j0.8.2.1.jar"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_1",
+  "build_number": 1,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "py4j",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.8.2.1"
+ },
+ "metadata_version": 1,
+ "name": "py4j",
+ "raw_recipe": "{%set name = \"py4j\" %}\n{%set version = \"0.8.2.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"c2c9bcb4d967982b0362e97e4b218b54eca283ac975524c1ba1a27c209dfdcc7\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 1\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - py4j\n    - py4j.tests\n\nabout:\n  home: http://py4j.sourceforge.net/\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Enables Python programs to dynamically access arbitrary Java objects'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.8.2.1"
+}

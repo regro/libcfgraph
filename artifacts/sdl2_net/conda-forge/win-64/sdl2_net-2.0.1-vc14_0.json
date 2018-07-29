@@ -1,0 +1,36 @@
+{
+ "about": {
+  "description": "Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D.\n",
+  "dev_url": "http://hg.libsdl.org/SDL_net/",
+  "doc_url": "https://www.libsdl.org/projects/SDL_net/docs/index.html",
+  "home": "https://www.libsdl.org/projects/SDL_net/",
+  "license": "ZLIB",
+  "summary": "Small sample cross-platform networking library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/SDL2_net.dll",
+  "Library/include/SDL2/SDL_net.h",
+  "Library/include/SDL2/SDLnetsys.h",
+  "Library/lib/SDL2_net.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc14_0",
+  "build_number": 0,
+  "depends": [
+   "sdl2"
+  ],
+  "features": "vc14",
+  "license": "ZLIB",
+  "name": "sdl2_net",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.0.1"
+ },
+ "metadata_version": 1,
+ "name": "sdl2_net",
+ "raw_recipe": "{% set name = \"SDL2_net\" %}\n{% set version = \"2.0.1\" %}\n{% set sha256 = \"15ce8a7e5a23dafe8177c8df6e6c79b6749a03fff1e8196742d3571657609d21\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn:  {{ name }}-{{ version }}.tar.gz\n  url:  https://www.libsdl.org/projects/SDL_net/release/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - cmake  # [win]\n    - toolchain\n    - sdl2\n\n  run:\n    - sdl2\n\ntest:\n  requires:\n    - python {{ environ['PY_VER'] + '*' }}  # [win]\n  commands:\n    - test -f $PREFIX/lib/libSDL2_net.a  # [unix]\n    - test -f $PREFIX/lib/libSDL2_net.dylib  # [osx]\n    - test -f $PREFIX/lib/libSDL2_net.so  # [linux]\n    - test -f $PREFIX/include/SDL2/SDL_net.h  # [unix]\n    - if not exist %LIBRARY_LIB%\\\\SDL2_net.lib exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\SDL2_net.dll exit 1  # [win]\n    - if not exist %LIBRARY_INC%\\\\SDL2\\\\SDL_net.h exit 1  # [win]\n\nabout:\n  home: https://www.libsdl.org/projects/SDL_net/\n  license: ZLIB\n  license_file: COPYING.txt\n  summary: \"Small sample cross-platform networking library\"\n  description: |\n    Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D.\n  doc_url: https://www.libsdl.org/projects/SDL_net/docs/index.html\n  dev_url: http://hg.libsdl.org/SDL_net/\n\nextra:\n  recipe-maintainers:\n    - dschreij\n",
+ "rendered_recipe": {},
+ "version": "2.0.1"
+}

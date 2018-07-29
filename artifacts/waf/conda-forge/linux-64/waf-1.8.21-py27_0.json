@@ -1,0 +1,29 @@
+{
+ "about": {
+  "home": "https://waf.io",
+  "license": "BSD 3-Clause",
+  "summary": "A build automation tool."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/waf"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "waf",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.8.21"
+ },
+ "metadata_version": 1,
+ "name": "waf",
+ "raw_recipe": "{% set name = \"waf\" %}\n{% set version = \"1.8.21\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/waf-project/waf/archive/{{ name }}-{{ version }}.tar.gz\n  sha256: 4007f38b5a0de2f0def758e30e0f66b0c3d7be0f7b832299e78b514513f3b013\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script:\n    - python waf-light --make-waf --tool=swig,cython,boost,use_config\n    - cp waf \"${PREFIX}/bin\"     # [unix]\n    - copy waf \"%LIBRARY_BIN%\"   # [win]\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  commands:\n    - waf --help\n\nabout:\n  home: https://waf.io\n  license: BSD 3-Clause\n  summary: A build automation tool.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.8.21"
+}

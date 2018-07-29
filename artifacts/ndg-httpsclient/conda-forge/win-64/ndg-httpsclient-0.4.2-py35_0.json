@@ -1,0 +1,56 @@
+{
+ "about": {
+  "dev_url": "https://github.com/cedadev/ndg_httpsclient",
+  "doc_url": "http://pythonhosted.org/ndg-httpsclient",
+  "home": "https://github.com/cedadev/ndg_httpsclient",
+  "license": "BSD 3-Clause",
+  "summary": "Provides enhanced HTTPS support for httplib and urllib2 using PyOpenSSL."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/ndg/httpsclient/LICENSE",
+  "Lib/site-packages/ndg/httpsclient/__init__.py",
+  "Lib/site-packages/ndg/httpsclient/https.py",
+  "Lib/site-packages/ndg/httpsclient/ssl_context_util.py",
+  "Lib/site-packages/ndg/httpsclient/ssl_peer_verification.py",
+  "Lib/site-packages/ndg/httpsclient/ssl_socket.py",
+  "Lib/site-packages/ndg/httpsclient/subj_alt_name.py",
+  "Lib/site-packages/ndg/httpsclient/test/README",
+  "Lib/site-packages/ndg/httpsclient/test/__init__.py",
+  "Lib/site-packages/ndg/httpsclient/test/pki/ca/08bd99c7.0",
+  "Lib/site-packages/ndg/httpsclient/test/pki/ca/ade0138a.0",
+  "Lib/site-packages/ndg/httpsclient/test/pki/localhost.crt",
+  "Lib/site-packages/ndg/httpsclient/test/pki/localhost.key",
+  "Lib/site-packages/ndg/httpsclient/test/scripts/openssl_https_server.sh",
+  "Lib/site-packages/ndg/httpsclient/test/test_https.py",
+  "Lib/site-packages/ndg/httpsclient/test/test_urllib2.py",
+  "Lib/site-packages/ndg/httpsclient/test/test_utils.py",
+  "Lib/site-packages/ndg/httpsclient/urllib2_build_opener.py",
+  "Lib/site-packages/ndg/httpsclient/utils.py",
+  "Lib/site-packages/ndg_httpsclient-0.4.2-py3.5-nspkg.pth",
+  "Lib/site-packages/ndg_httpsclient-0.4.2-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/ndg_httpsclient-0.4.2-py3.5.egg-info/not-zip-safe",
+  "Scripts/ndg_httpclient-script.py",
+  "Scripts/ndg_httpclient.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "pyasn1",
+   "pyopenssl",
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "ndg-httpsclient",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.4.2"
+ },
+ "metadata_version": 1,
+ "name": "ndg-httpsclient",
+ "raw_recipe": "{% set name = \"ndg-httpsclient\" %}\n{% set pypi_name = \"ndg_httpsclient\" %}\n{% set version = \"0.4.2\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"580987ef194334c50389e0d7de885fccf15605c13c6eecaabd8d6c43768eb8ac\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ pypi_name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ pypi_name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - ndg_httpclient = ndg.httpsclient.utils:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - pyasn1\n    - pyopenssl\n\ntest:\n  imports:\n    - ndg\n    - ndg.httpsclient\n    - ndg.httpsclient.test\n\nabout:\n  home: https://github.com/cedadev/ndg_httpsclient\n  license: BSD 3-Clause\n  license_file: ndg/httpsclient/LICENSE\n  summary: Provides enhanced HTTPS support for httplib and urllib2 using PyOpenSSL.\n  doc_url: http://pythonhosted.org/ndg-httpsclient\n  dev_url: https://github.com/cedadev/ndg_httpsclient\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n",
+ "rendered_recipe": {},
+ "version": "0.4.2"
+}

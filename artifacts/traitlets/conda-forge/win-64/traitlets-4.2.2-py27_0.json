@@ -1,0 +1,59 @@
+{
+ "about": {
+  "home": "http://ipython.org/",
+  "license": "BSD 3-clause",
+  "summary": "configuration system for Python applications"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/traitlets-4.2.2.dist-info/DESCRIPTION.rst",
+  "Lib/site-packages/traitlets-4.2.2.dist-info/INSTALLER",
+  "Lib/site-packages/traitlets-4.2.2.dist-info/METADATA",
+  "Lib/site-packages/traitlets-4.2.2.dist-info/RECORD",
+  "Lib/site-packages/traitlets-4.2.2.dist-info/WHEEL",
+  "Lib/site-packages/traitlets-4.2.2.dist-info/metadata.json",
+  "Lib/site-packages/traitlets/__init__.py",
+  "Lib/site-packages/traitlets/_version.py",
+  "Lib/site-packages/traitlets/config/__init__.py",
+  "Lib/site-packages/traitlets/config/application.py",
+  "Lib/site-packages/traitlets/config/configurable.py",
+  "Lib/site-packages/traitlets/config/loader.py",
+  "Lib/site-packages/traitlets/config/manager.py",
+  "Lib/site-packages/traitlets/config/tests/__init__.py",
+  "Lib/site-packages/traitlets/config/tests/test_application.py",
+  "Lib/site-packages/traitlets/config/tests/test_configurable.py",
+  "Lib/site-packages/traitlets/config/tests/test_loader.py",
+  "Lib/site-packages/traitlets/log.py",
+  "Lib/site-packages/traitlets/tests/__init__.py",
+  "Lib/site-packages/traitlets/tests/_warnings.py",
+  "Lib/site-packages/traitlets/tests/test_traitlets.py",
+  "Lib/site-packages/traitlets/tests/utils.py",
+  "Lib/site-packages/traitlets/traitlets.py",
+  "Lib/site-packages/traitlets/utils/__init__.py",
+  "Lib/site-packages/traitlets/utils/getargspec.py",
+  "Lib/site-packages/traitlets/utils/importstring.py",
+  "Lib/site-packages/traitlets/utils/sentinel.py",
+  "Lib/site-packages/traitlets/utils/tests/__init__.py",
+  "Lib/site-packages/traitlets/utils/tests/test_importstring.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "decorator",
+   "ipython_genutils",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-clause",
+  "name": "traitlets",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "4.2.2"
+ },
+ "metadata_version": 1,
+ "name": "traitlets",
+ "raw_recipe": "{% set version = \"4.2.2\" %}\n\npackage:\n  name: traitlets\n  version: {{ version }}\n\nsource:\n  fn: traitlets-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/t/traitlets/traitlets-{{ version }}.tar.gz\n  md5: d0725f9818bd9e112a6531da26d433b8\n\nbuild:\n  number: 0\n  script: pip install --no-deps .\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - ipython_genutils\n    - decorator\n    # enum34 and six will be added in a later release\n\ntest:\n  imports:\n    - traitlets\n    - traitlets.config\n\nabout:\n  home: http://ipython.org/\n  license: BSD 3-clause\n  summary: configuration system for Python applications\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n    - minrk\n",
+ "rendered_recipe": {},
+ "version": "4.2.2"
+}

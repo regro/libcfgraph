@@ -1,0 +1,37 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/avro/HandshakeRequest.avsc",
+  "Lib/site-packages/avro/HandshakeResponse.avsc",
+  "Lib/site-packages/avro/__init__.py",
+  "Lib/site-packages/avro/datafile.py",
+  "Lib/site-packages/avro/io.py",
+  "Lib/site-packages/avro/ipc.py",
+  "Lib/site-packages/avro/protocol.py",
+  "Lib/site-packages/avro/schema.py",
+  "Lib/site-packages/avro/tool.py",
+  "Lib/site-packages/avro/txipc.py",
+  "Lib/site-packages/avro_python3-1.7.7-py3.4.egg-info/PKG-INFO",
+  "Scripts/avro-script.py",
+  "Scripts/avro.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "Apache 2.0",
+  "name": "python-avro",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.7.7"
+ },
+ "metadata_version": 1,
+ "name": "python-avro",
+ "raw_recipe": "{% set version = \"1.7.7\" %}\n\npackage:\n  name: python-avro\n  version: {{ version }}\n\nsource:  # [py27 or py3k]\n  # Avro exist as two versions in apache avro for py2 and py3.\n  fn: avro-{{ version }}.tar.gz  # [py27]\n  url: https://pypi.python.org/packages/source/a/avro/avro-{{ version }}.tar.gz  # [py27]\n  md5: e21ae1dffea4c96ff151ce35ca5a8875  # [py27]\n\n  fn: avro-python3-{{ version }}.tar.gz  # [py3k]\n  url: https://pypi.python.org/packages/source/a/avro-python3/avro-python3-{{ version }}.tar.gz  # [py3k]\n  md5: bd36c1e6fbb77ccff58c60bed48b982e  # [py3k]\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n  imports:\n    - avro\n\nabout:\n  home: http://hadoop.apache.org/avro\n  license: Apache 2.0\n  summary: 'Avro is a serialization and RPC framework.'\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
+ "rendered_recipe": {},
+ "version": "1.7.7"
+}

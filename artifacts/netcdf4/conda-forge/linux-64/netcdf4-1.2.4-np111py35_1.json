@@ -1,0 +1,38 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/nc3tonc4",
+  "bin/nc4tonc3",
+  "bin/ncinfo",
+  "lib/python3.5/site-packages/netCDF4-1.2.4-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/netCDF4/__init__.py",
+  "lib/python3.5/site-packages/netCDF4/_netCDF4.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/netCDF4/utils.py",
+  "lib/python3.5/site-packages/netcdftime/__init__.py",
+  "lib/python3.5/site-packages/netcdftime/_datetime.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/netcdftime/netcdftime.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py35_1",
+  "build_number": 1,
+  "depends": [
+   "hdf5 1.8.15*",
+   "libnetcdf 4.3*",
+   "numpy 1.11*",
+   "python 3.5*",
+   "setuptools"
+  ],
+  "license": "OSI Approved",
+  "name": "netcdf4",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.2.4"
+ },
+ "metadata_version": 1,
+ "name": "netcdf4",
+ "raw_recipe": "{% set version = \"1.2.4\" %}\n\npackage:\n    name: netcdf4\n    version: {{ version }}\n\nsource:\n    fn: netCDF4-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/n/netCDF4/netCDF4-{{ version }}.tar.gz\n    md5: fb8083a17644bd559887b026fddd18a8\n\nbuild:\n    number: 1\n    entry_points:\n        - ncinfo = netCDF4.utils:ncinfo\n        - nc4tonc3 = netCDF4.utils:nc4tonc3\n        - nc3tonc4 = netCDF4.utils:nc3tonc4\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - numpy x.x\n        - cython\n        - hdf5 1.8.15*\n        - libnetcdf 4.3*\n    run:\n        - python\n        - setuptools\n        - numpy x.x\n        - hdf5 1.8.15*\n        - libnetcdf 4.3*\n\ntest:\n    imports:\n        - netCDF4\n        - netcdftime\n    commands:\n        - ncinfo -h\n        - nc4tonc3 -h\n        - nc3tonc4 -h\n\nabout:\n    home: http://github.com/Unidata/netcdf4-python\n    license: OSI Approved\n    summary: Provides an object-oriented python interface to the netCDF version 4 library.\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - pelson\n",
+ "rendered_recipe": {},
+ "version": "1.2.4"
+}

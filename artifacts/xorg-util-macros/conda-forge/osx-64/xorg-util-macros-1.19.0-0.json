@@ -1,0 +1,126 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.1",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://www.x.org/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.1-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.2.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Development utility macros for X.org software."
+ },
+ "conda_build_config": {},
+ "files": [
+  "share/util-macros/config.guess",
+  "share/pkgconfig/xorg-macros.pc",
+  "share/util-macros/INSTALL",
+  "share/aclocal/xorg-macros.m4",
+  "share/util-macros/config.sub"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "xorg-util-macros",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.19.0"
+ },
+ "metadata_version": 1,
+ "name": "xorg-util-macros",
+ "raw_recipe": "{% set xorg_name = \"util-macros\" %}\n{% set xorg_category = \"util\" %}\n{% set name = \"xorg-\" ~ xorg_name %}\n{% set version = \"1.19.0\" %}\n{% set sha256 = \"2835b11829ee634e19fa56517b4cfc52ef39acea0cd82e15f68096e27cbed0ba\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - curl  # [win]\n    - m2w64-pkg-config  # [win]\n    - pkg-config  # [not win]\n    - posix  # [win]\n    - toolchain\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX {{ name }}  # [not win]\n    - conda inspect objects -p $PREFIX {{ name }}  # [osx]\n\nabout:\n  home: https://www.x.org/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'Development utility macros for X.org software.'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://www.x.org/",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "COPYING",
+   "summary": "Development utility macros for X.org software."
+  },
+  "build": {
+   "detect_binary_files_with_prefix": "true",
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pkgw"
+   ]
+  },
+  "package": {
+   "name": "xorg-util-macros",
+   "version": "1.19.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": []
+  },
+  "source": {
+   "fn": "xorg-util-macros-1.19.0.tar.bz2",
+   "sha256": "2835b11829ee634e19fa56517b4cfc52ef39acea0cd82e15f68096e27cbed0ba",
+   "url": "https://www.x.org/releases/individual/util/util-macros-1.19.0.tar.bz2"
+  },
+  "test": {
+   "commands": [
+    "conda inspect linkages -p $PREFIX xorg-util-macros",
+    "conda inspect objects -p $PREFIX xorg-util-macros"
+   ]
+  }
+ },
+ "version": "1.19.0"
+}

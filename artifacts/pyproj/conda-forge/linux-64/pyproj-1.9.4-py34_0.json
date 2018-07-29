@@ -1,0 +1,102 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pyproj-1.9.4-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pyproj/__init__.py",
+  "lib/python3.4/site-packages/pyproj/_proj.cpython-34m.so",
+  "lib/python3.4/site-packages/pyproj/data/FL",
+  "lib/python3.4/site-packages/pyproj/data/GL27",
+  "lib/python3.4/site-packages/pyproj/data/IGNF",
+  "lib/python3.4/site-packages/pyproj/data/MD",
+  "lib/python3.4/site-packages/pyproj/data/README",
+  "lib/python3.4/site-packages/pyproj/data/TN",
+  "lib/python3.4/site-packages/pyproj/data/WI",
+  "lib/python3.4/site-packages/pyproj/data/WO",
+  "lib/python3.4/site-packages/pyproj/data/alaska",
+  "lib/python3.4/site-packages/pyproj/data/conus",
+  "lib/python3.4/site-packages/pyproj/data/epsg",
+  "lib/python3.4/site-packages/pyproj/data/esri",
+  "lib/python3.4/site-packages/pyproj/data/esri.extra",
+  "lib/python3.4/site-packages/pyproj/data/hawaii",
+  "lib/python3.4/site-packages/pyproj/data/nad.lst",
+  "lib/python3.4/site-packages/pyproj/data/nad27",
+  "lib/python3.4/site-packages/pyproj/data/nad83",
+  "lib/python3.4/site-packages/pyproj/data/ntf_r93.gsb",
+  "lib/python3.4/site-packages/pyproj/data/ntv1_can.dat",
+  "lib/python3.4/site-packages/pyproj/data/ntv2_out.dist",
+  "lib/python3.4/site-packages/pyproj/data/null",
+  "lib/python3.4/site-packages/pyproj/data/nzgd2kgrid0005.gsb",
+  "lib/python3.4/site-packages/pyproj/data/other.extra",
+  "lib/python3.4/site-packages/pyproj/data/pj_out27.dist",
+  "lib/python3.4/site-packages/pyproj/data/pj_out83.dist",
+  "lib/python3.4/site-packages/pyproj/data/proj_def.dat",
+  "lib/python3.4/site-packages/pyproj/data/proj_outIGNF.dist",
+  "lib/python3.4/site-packages/pyproj/data/prvi",
+  "lib/python3.4/site-packages/pyproj/data/stgeorge",
+  "lib/python3.4/site-packages/pyproj/data/stlrnc",
+  "lib/python3.4/site-packages/pyproj/data/stpaul",
+  "lib/python3.4/site-packages/pyproj/data/td_out.dist",
+  "lib/python3.4/site-packages/pyproj/data/test27",
+  "lib/python3.4/site-packages/pyproj/data/test83",
+  "lib/python3.4/site-packages/pyproj/data/testIGNF",
+  "lib/python3.4/site-packages/pyproj/data/testdatumfile",
+  "lib/python3.4/site-packages/pyproj/data/testntv2",
+  "lib/python3.4/site-packages/pyproj/data/testvarious",
+  "lib/python3.4/site-packages/pyproj/data/tv_out.dist",
+  "lib/python3.4/site-packages/pyproj/data/world",
+  "lib/python3.4/site-packages/pyproj/datadir.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.4*"
+  ],
+  "license": "OSI",
+  "name": "pyproj",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.9.4"
+ },
+ "metadata_version": 1,
+ "name": "pyproj",
+ "raw_recipe": "package:\n    name: pyproj\n    version: \"1.9.4\"\n\nsource:\n    git_url: https://github.com/ocefpaf/pyproj.git\n    git_tag: import_sys\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n\ntest:\n    imports:\n        - pyproj\n\nabout:\n    home: https://github.com/jswhit/pyproj\n    license: OSI\n    summary: 'Python interface to PROJ.4 library'\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/jswhit/pyproj",
+   "license": "OSI",
+   "summary": "Python interface to PROJ.4 library"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "package": {
+   "name": "pyproj",
+   "version": "1.9.4"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "numpy"
+   ]
+  },
+  "source": {
+   "git_tag": "import_sys",
+   "git_url": "https://github.com/ocefpaf/pyproj.git"
+  },
+  "test": {
+   "imports": [
+    "pyproj"
+   ]
+  }
+ },
+ "version": "1.9.4"
+}

@@ -1,0 +1,51 @@
+{
+ "about": {
+  "dev_url": "https://github.com/zopefoundation/zodbpickle",
+  "home": "http://pypi.python.org/pypi/zodbpickle",
+  "license": "PSF 2 and ZPL 2.1",
+  "license_family": "Other",
+  "summary": "Fork of Python 3 pickle module."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/zodbpickle-0.6.0-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/zodbpickle-0.6.0-py3.4.egg-info/not-zip-safe",
+  "Lib/site-packages/zodbpickle/__init__.py",
+  "Lib/site-packages/zodbpickle/_pickle.pyd",
+  "Lib/site-packages/zodbpickle/_pickle_27.c",
+  "Lib/site-packages/zodbpickle/_pickle_32.c",
+  "Lib/site-packages/zodbpickle/_pickle_33.c",
+  "Lib/site-packages/zodbpickle/fastpickle.py",
+  "Lib/site-packages/zodbpickle/pickle.py",
+  "Lib/site-packages/zodbpickle/pickle_2.py",
+  "Lib/site-packages/zodbpickle/pickle_3.py",
+  "Lib/site-packages/zodbpickle/pickletools_2.py",
+  "Lib/site-packages/zodbpickle/pickletools_3.py",
+  "Lib/site-packages/zodbpickle/slowpickle.py",
+  "Lib/site-packages/zodbpickle/tests/__init__.py",
+  "Lib/site-packages/zodbpickle/tests/pickletester_2.py",
+  "Lib/site-packages/zodbpickle/tests/pickletester_3.py",
+  "Lib/site-packages/zodbpickle/tests/test_pickle.py",
+  "Lib/site-packages/zodbpickle/tests/test_pickle_2.py",
+  "Lib/site-packages/zodbpickle/tests/test_pickle_3.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "PSF 2 and ZPL 2.1",
+  "license_family": "Other",
+  "name": "zodbpickle",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.6.0"
+ },
+ "metadata_version": 1,
+ "name": "zodbpickle",
+ "raw_recipe": "{%set name = \"zodbpickle\" %}\n{%set version = \"0.6.0\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"ea3248be966159e7791e3db0e35ea992b9235d52e7d39835438686741d196665\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  preserve_egg_dir: True\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n\n  run:\n    - python\n\ntest:\n  imports:\n    - zodbpickle\n    - zodbpickle.tests\n\nabout:\n  home: http://pypi.python.org/pypi/zodbpickle\n  license: PSF 2 and ZPL 2.1\n  license_file: LICENSE.txt\n  license_family: Other\n  summary: 'Fork of Python 3 pickle module.'\n  dev_url: https://github.com/zopefoundation/zodbpickle\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.6.0"
+}

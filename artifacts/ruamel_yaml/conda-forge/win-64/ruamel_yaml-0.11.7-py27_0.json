@@ -1,0 +1,55 @@
+{
+ "about": {
+  "home": "https://bitbucket.org/kalefranz/yaml",
+  "license": "MIT",
+  "summary": "A fork of ruamel.yaml."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/ruamel.yaml-0.11.7-py2.7-nspkg.pth",
+  "Lib/site-packages/ruamel.yaml-0.11.7-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/ruamel/yaml/__init__.py",
+  "Lib/site-packages/ruamel/yaml/comments.py",
+  "Lib/site-packages/ruamel/yaml/compat.py",
+  "Lib/site-packages/ruamel/yaml/composer.py",
+  "Lib/site-packages/ruamel/yaml/configobjwalker.py",
+  "Lib/site-packages/ruamel/yaml/constructor.py",
+  "Lib/site-packages/ruamel/yaml/cyaml.py",
+  "Lib/site-packages/ruamel/yaml/dumper.py",
+  "Lib/site-packages/ruamel/yaml/emitter.py",
+  "Lib/site-packages/ruamel/yaml/error.py",
+  "Lib/site-packages/ruamel/yaml/events.py",
+  "Lib/site-packages/ruamel/yaml/loader.py",
+  "Lib/site-packages/ruamel/yaml/main.py",
+  "Lib/site-packages/ruamel/yaml/nodes.py",
+  "Lib/site-packages/ruamel/yaml/parser_.py",
+  "Lib/site-packages/ruamel/yaml/reader.py",
+  "Lib/site-packages/ruamel/yaml/representer.py",
+  "Lib/site-packages/ruamel/yaml/resolver.py",
+  "Lib/site-packages/ruamel/yaml/scalarstring.py",
+  "Lib/site-packages/ruamel/yaml/scanner.py",
+  "Lib/site-packages/ruamel/yaml/serializer.py",
+  "Lib/site-packages/ruamel/yaml/tokens.py",
+  "Lib/site-packages/ruamel/yaml/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "setuptools",
+   "yaml"
+  ],
+  "license": "MIT",
+  "name": "ruamel_yaml",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.11.7"
+ },
+ "metadata_version": 1,
+ "name": "ruamel_yaml",
+ "raw_recipe": "{% set version = \"0.11.7\" %}\n\npackage:\n  name: ruamel_yaml\n  version: 0.11.7\n\nsource:\n  fn: ruamel_yaml-{{ version }}.tar.gz\n  url: https://bitbucket.org/kalefranz/yaml/get/1CBC6A8.tar.gz\n  sha256: a705cb1f0eea40d17da713161af3ed00ffa724e401fbd49f35f979bd9529cd00\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - yaml\n\n  run:\n    - python\n    - setuptools\n    - yaml\n\ntest:\n  imports:\n    - ruamel.yaml\n\nabout:\n  home: https://bitbucket.org/kalefranz/yaml\n  license: MIT\n  summary: A fork of ruamel.yaml.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.11.7"
+}

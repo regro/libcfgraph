@@ -1,0 +1,57 @@
+{
+ "about": {
+  "dev_url": "https://github.com/OCL-dev/ocl-icd",
+  "home": "https://forge.imag.fr/projects/ocl-icd/",
+  "license": "BSD",
+  "summary": "An OpenCL ICD Loader under an open-source license"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/CL/cl.h",
+  "include/CL/cl_d3d10.h",
+  "include/CL/cl_d3d11.h",
+  "include/CL/cl_dx9_media_sharing.h",
+  "include/CL/cl_egl.h",
+  "include/CL/cl_ext.h",
+  "include/CL/cl_gl.h",
+  "include/CL/cl_gl_ext.h",
+  "include/CL/cl_platform.h",
+  "include/CL/opencl.h",
+  "include/OpenCL/cl.h",
+  "include/OpenCL/cl_d3d10.h",
+  "include/OpenCL/cl_d3d11.h",
+  "include/OpenCL/cl_dx9_media_sharing.h",
+  "include/OpenCL/cl_egl.h",
+  "include/OpenCL/cl_ext.h",
+  "include/OpenCL/cl_gl.h",
+  "include/OpenCL/cl_gl_ext.h",
+  "include/OpenCL/cl_platform.h",
+  "include/OpenCL/opencl.h",
+  "include/ocl_icd.h",
+  "lib/libOpenCL.la",
+  "lib/libOpenCL.so",
+  "lib/libOpenCL.so.1",
+  "lib/libOpenCL.so.1.0.0",
+  "lib/pkgconfig/OpenCL.pc",
+  "lib/pkgconfig/ocl-icd.pc",
+  "share/doc/ocl-icd/examples/ocl_icd_bindings.c"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD",
+  "name": "ocl-icd",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.2.9"
+ },
+ "metadata_version": 1,
+ "name": "ocl-icd",
+ "raw_recipe": "{% set name = \"ocl-icd\" %}\n{% set version = \"2.2.9\" %}\n{% set sha256 = \"0c8ac13e2c5b737c34de49f9aca6cad3c4d33dd0bbb149b01238d76e798feae5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://forge.imag.fr/frs/download.php/716/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n  # Makes ocl-icd install the OpenCL headers it ships\n  - install-headers.patch\n  - install-headers-post-automake.patch\n  - define-cl2-prefix-suffix-on-apple.patch\n\nbuild:\n  number: 1\n  skip: True  # [not (linux and py35)]\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - pkg-config\n  run:\n    - python\n\ntest:\n  commands:\n    - test -f $PREFIX/include/CL/cl.h     # [unix]\n    - test -f $PREFIX/lib/libOpenCL.so.1  # [linux]\n\nabout:\n  home: https://forge.imag.fr/projects/ocl-icd/\n  dev_url: https://github.com/OCL-dev/ocl-icd\n  license: BSD\n  license_file: COPYING\n  summary: 'An OpenCL ICD Loader under an open-source license'\n\nextra:\n  recipe-maintainers:\n    - inducer\n",
+ "rendered_recipe": {},
+ "version": "2.2.9"
+}

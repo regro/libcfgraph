@@ -1,0 +1,100 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/lmfit-0.9.3-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/lmfit/__init__.py",
+  "Lib/site-packages/lmfit/_differentialevolution.py",
+  "Lib/site-packages/lmfit/_version.py",
+  "Lib/site-packages/lmfit/asteval.py",
+  "Lib/site-packages/lmfit/astutils.py",
+  "Lib/site-packages/lmfit/confidence.py",
+  "Lib/site-packages/lmfit/lineshapes.py",
+  "Lib/site-packages/lmfit/minimizer.py",
+  "Lib/site-packages/lmfit/model.py",
+  "Lib/site-packages/lmfit/models.py",
+  "Lib/site-packages/lmfit/ordereddict.py",
+  "Lib/site-packages/lmfit/parameter.py",
+  "Lib/site-packages/lmfit/printfuncs.py",
+  "Lib/site-packages/lmfit/ui/__init__.py",
+  "Lib/site-packages/lmfit/ui/basefitter.py",
+  "Lib/site-packages/lmfit/ui/ipy_fitter.py",
+  "Lib/site-packages/lmfit/uncertainties/__init__.py",
+  "Lib/site-packages/lmfit/uncertainties/umath.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "emcee",
+   "numpy",
+   "python 3.5*",
+   "scipy"
+  ],
+  "license": "lmfit",
+  "license_family": "BSD",
+  "name": "lmfit",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.9.3"
+ },
+ "metadata_version": 1,
+ "name": "lmfit",
+ "raw_recipe": "{% set version = \"0.9.3\" %}\n\npackage:\n  name: lmfit\n  version: {{ version }}\n\nsource:\n  url: https://github.com/lmfit/lmfit-py/archive/{{ version }}.tar.gz\n  fn: lmfit-{{ version }}.tar.gz\n  sha256: e15c629b30cd70da525db6e66e3532d923a95e7a5f183906c83badf22c6be70c\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - numpy\n    - scipy\n\n  run:\n    - emcee\n    - numpy\n    - python\n    - scipy\n\ntest:\n  requires:\n    - nose\n  commands:\n    - nosetests -sv {{ environ.SRC_DIR }}\n  imports:\n    - lmfit\n\nabout:\n  home: http://lmfit.github.io/lmfit-py/\n  license: lmfit\n  license_family: BSD \n  summary: >\n      Non-Linear Least Squares Minimization, with flexible Parameter\n      settings, based on scipy.optimize.leastsq, and with many additional\n      classes and methods for curve fitting http:/lmfit.github.io/lmfit-py/\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - tacaswell\n    - licode\n    - newville\n    - danielballan\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://lmfit.github.io/lmfit-py/",
+   "license": "lmfit",
+   "license_family": "BSD",
+   "summary": "Non-Linear Least Squares Minimization, with flexible Parameter settings, based on scipy.optimize.leastsq, and with many additional classes and methods for curve fitting http:/lmfit.github.io/lmfit-py/\n"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ericdill",
+    "tacaswell",
+    "licode",
+    "newville",
+    "danielballan"
+   ]
+  },
+  "package": {
+   "name": "lmfit",
+   "version": "0.9.3"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "numpy",
+    "scipy"
+   ],
+   "run": [
+    "emcee",
+    "numpy",
+    "python",
+    "scipy"
+   ]
+  },
+  "source": {
+   "fn": "lmfit-0.9.3.tar.gz",
+   "sha256": "e15c629b30cd70da525db6e66e3532d923a95e7a5f183906c83badf22c6be70c",
+   "url": "https://github.com/lmfit/lmfit-py/archive/0.9.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "nosetests -sv C:\\conda\\conda-bld\\work\\lmfit-py-0.9.3"
+   ],
+   "imports": [
+    "lmfit"
+   ],
+   "requires": [
+    "nose"
+   ]
+  }
+ },
+ "version": "0.9.3"
+}

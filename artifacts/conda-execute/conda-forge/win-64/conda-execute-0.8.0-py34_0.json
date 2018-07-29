@@ -1,0 +1,43 @@
+{
+ "about": {
+  "home": "https://github.com/pelson/conda-execute",
+  "license": "BSD 3-Clause",
+  "summary": "Execute scripts in isolated temporary environments."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/conda_execute-0.8.0-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/conda_execute/__init__.py",
+  "Lib/site-packages/conda_execute/_version.py",
+  "Lib/site-packages/conda_execute/config.py",
+  "Lib/site-packages/conda_execute/execute.py",
+  "Lib/site-packages/conda_execute/lock.py",
+  "Lib/site-packages/conda_execute/tmpenv.py",
+  "Scripts/conda-execute-script.py",
+  "Scripts/conda-execute.exe",
+  "Scripts/conda-tmpenv-script.py",
+  "Scripts/conda-tmpenv.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "conda >=4.1.0",
+   "psutil",
+   "python 3.4*",
+   "pyyaml",
+   "setuptools"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "conda-execute",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.8.0"
+ },
+ "metadata_version": 1,
+ "name": "conda-execute",
+ "raw_recipe": "{% set version = \"0.8.0\" %}\n\npackage:\n  name: conda-execute\n  version: {{ version }}\n\nsource:\n  fn: conda-execute-{{ version }}.tar.gz\n  url: https://github.com/pelson/conda-execute/archive/v{{ version }}.tar.gz\n  sha256: b5e589fec98d91311128acf5413ed48c21db413b046f7f8b3cf32a3a0bac9b76\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - pyyaml\n    - conda >=4.1.0\n    - psutil\n\ntest:\n  imports:\n    - conda_execute\n  commands:\n    - conda execute --help\n    - conda tmpenv --help\n\nabout:\n  home: https://github.com/pelson/conda-execute\n  license: BSD 3-Clause\n  summary: 'Execute scripts in isolated temporary environments.'\n\nextra:\n  recipe-maintainers:\n    - pelson\n",
+ "rendered_recipe": {},
+ "version": "0.8.0"
+}

@@ -1,0 +1,34 @@
+{
+ "about": {
+  "dev_url": "https://github.com/savoirfairelinux/flake8-copyright",
+  "home": "https://github.com/savoirfairelinux/flake8-copyright",
+  "license": "LGPL-3.0",
+  "license_family": "LGPL",
+  "summary": "Flake8 plugin to check for copyright notices in all python files."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/flake8_copyright-0.2.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/flake8_copyright.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "flake8",
+   "python 3.4*"
+  ],
+  "license": "LGPL-3.0",
+  "license_family": "LGPL",
+  "name": "flake8-copyright",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2.0"
+ },
+ "metadata_version": 1,
+ "name": "flake8-copyright",
+ "raw_recipe": "{% set name = \"flake8-copyright\" %}\n{% set version = \"0.2.0\" %}\n{% set sha256 = \"aeef26eb4d5223c9cd5b101e68175fcef6d2b353bf36da688fdde62fccfe2b73\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - flake8\n\ntest:\n  commands:\n    - \"flake8 --version | grep flake8_copyright:\"\n\nabout:\n  home: https://github.com/savoirfairelinux/flake8-copyright\n  license: LGPL-3.0\n  license_family: LGPL\n  summary: 'Flake8 plugin to check for copyright notices in all python files.'\n  dev_url: https://github.com/savoirfairelinux/flake8-copyright\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
+ "rendered_recipe": {},
+ "version": "0.2.0"
+}

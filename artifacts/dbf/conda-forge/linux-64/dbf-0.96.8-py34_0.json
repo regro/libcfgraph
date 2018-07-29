@@ -1,0 +1,40 @@
+{
+ "about": {
+  "description": "Dbf is a pure Python package for reading/writing dBase, FoxPro, and\nVisual FoxPro .dbf files. Currently supports dBase III, Clipper, FoxPro,\nand Visual FoxPro tables. Text is returned as unicode, and codepage settings\nin tables are honored.\n",
+  "dev_url": "https://bitbucket.org/stoneleaf/dbf",
+  "doc_url": "http://pythonhosted.org/dbf/",
+  "home": "https://pypi.python.org/pypi/dbf",
+  "license": "BSD 3-clause",
+  "license_family": "BSD",
+  "summary": "Pure python package for reading/writing dBase, FoxPro, and Visual FoxPro .dbf files (including memos)"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/dbf-0.96.8-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/dbf/__init__.py",
+  "lib/python3.4/site-packages/dbf/_index.py",
+  "lib/python3.4/site-packages/dbf/test.py",
+  "lib/python3.4/site-packages/dbf/ver_2.py",
+  "lib/python3.4/site-packages/dbf/ver_32.py",
+  "lib/python3.4/site-packages/dbf/ver_33.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD 3-clause",
+  "license_family": "BSD",
+  "name": "dbf",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.96.8"
+ },
+ "metadata_version": 1,
+ "name": "dbf",
+ "raw_recipe": "{% set name = \"dbf\" %}\n{% set version = \"0.96.8\" %}\n{% set sha256 = \"618f6c6c85a0c2ffe3b5063801d198198b1d8a84ee6202974fdda8c9883e16fd\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - enum34  # [py<34]\n\ntest:\n  imports:\n    - dbf\n\nabout:\n  home: https://pypi.python.org/pypi/dbf\n  license: BSD 3-clause\n  license_family: BSD\n  summary: 'Pure python package for reading/writing dBase, FoxPro, and Visual FoxPro .dbf files (including memos)'\n\n  description: |\n    Dbf is a pure Python package for reading/writing dBase, FoxPro, and\n    Visual FoxPro .dbf files. Currently supports dBase III, Clipper, FoxPro,\n    and Visual FoxPro tables. Text is returned as unicode, and codepage settings\n    in tables are honored.\n  doc_url: http://pythonhosted.org/dbf/\n  dev_url: https://bitbucket.org/stoneleaf/dbf\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
+ "rendered_recipe": {},
+ "version": "0.96.8"
+}

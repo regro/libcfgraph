@@ -1,0 +1,571 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/r/osx-64",
+   "https://repo.continuum.io/pkgs/r/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.17",
+  "conda_env_version": "4.3.22",
+  "conda_private": false,
+  "conda_version": "4.3.22",
+  "description": "Einsum is a very powerful function for contracting tensors of arbitrary dimension and index. However, it is only optimized to contract two terms at a time resulting in non-optimal scaling.\nFor example, let us examine the following index transformation: `M_{pqrs} = C_{pi} C_{qj} I_{ijkl} C_{rk} C_{sl}`\nWe can then develop two seperate implementations that produce the same result: ```python N = 10 C = np.random.rand(N, N) I = np.random.rand(N, N, N, N)\ndef naive(I, C):\n    return np.einsum('pi,qj,ijkl,rk,sl->pqrs', C, C, I, C, C)\n\ndef optimized(I, C):\n    K = np.einsum('pi,ijkl->pjkl', C, I)\n    K = np.einsum('qj,pjkl->pqkl', C, K)\n    K = np.einsum('rk,pqkl->pqrl', C, K)\n    K = np.einsum('sl,pqrl->pqrs', C, K)\n    return K\n```\nThe einsum function does not consider building intermediate arrays; therefore, helping einsum out by building these intermediate arrays can result in a considerable cost savings even for small N (N=10):\n```python np.allclose(naive(I, C), optimized(I, C)) True\n%timeit naive(I, C) 1 loops, best of 3: 934 ms per loop\n%timeit optimized(I, C) 1000 loops, best of 3: 527 \u00b5s per loop ```\nA 2000 fold speed up for 4 extra lines of code! This contraction can be further complicated by considering that the shape of the C matrices need not be the same, in this case the ordering in which the indices are transformed matters greatly. Logic can be built that optimizes the ordering; however, this is a lot of time and effort for a single expression. The opt_einsum package is a drop in replacement for the np.einsum function and can handle all of this logic for you:\n```python from opt_einsum import contract\n%timeit contract('pi,qj,ijkl,rk,sl->pqrs', C, C, I, C, C) 1000 loops, best of 3: 324 \u00b5s per loop ```\nThe above will automatically find the optimal contraction order, in this case identical to that of the optimized function above, and compute the products for you. In this case, it even uses `np.dot` under the hood to exploit any vendor BLAS functionality that your NumPy build has!\n",
+  "dev_url": "https://github.com/dgasmith/opt_einsum",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://github.com/dgasmith/opt_einsum",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "conda-forge",
+    "dist_name": "anaconda-client-1.6.3-py36_0",
+    "name": "anaconda-client",
+    "platform": null,
+    "version": "1.6.3",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "defaults",
+    "dist_name": "asn1crypto-0.22.0-py36_0",
+    "name": "asn1crypto",
+    "platform": null,
+    "version": "0.22.0",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "conda-forge",
+    "dist_name": "beautifulsoup4-4.5.3-py36_0",
+    "name": "beautifulsoup4",
+    "platform": null,
+    "version": "4.5.3",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "defaults",
+    "dist_name": "cffi-1.10.0-py36_0",
+    "name": "cffi",
+    "platform": null,
+    "version": "1.10.0",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 1,
+    "build_string": "py36_1",
+    "channel": "conda-forge",
+    "dist_name": "chardet-3.0.2-py36_1",
+    "name": "chardet",
+    "platform": null,
+    "version": "3.0.2",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "conda-forge",
+    "dist_name": "clyent-1.2.1-py36_0",
+    "name": "clyent",
+    "platform": null,
+    "version": "1.2.1",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "conda-forge",
+    "dist_name": "conda-4.3.22-py36_0",
+    "name": "conda",
+    "platform": null,
+    "version": "4.3.22",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "conda-forge",
+    "dist_name": "conda-build-2.1.17-py36_0",
+    "name": "conda-build",
+    "platform": null,
+    "version": "2.1.17",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "0",
+    "channel": "conda-forge",
+    "dist_name": "conda-env-2.6.0-0",
+    "name": "conda-env",
+    "platform": null,
+    "version": "2.6.0",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "0",
+    "channel": "conda-forge",
+    "dist_name": "conda-forge-build-setup-4.4.8-0",
+    "name": "conda-forge-build-setup",
+    "platform": null,
+    "version": "4.4.8",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "conda-forge",
+    "dist_name": "conda-verify-2.0.0-py36_0",
+    "name": "conda-verify",
+    "platform": null,
+    "version": "2.0.0",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "defaults",
+    "dist_name": "cryptography-1.8.1-py36_0",
+    "name": "cryptography",
+    "platform": null,
+    "version": "1.8.1",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "conda-forge",
+    "dist_name": "filelock-2.0.6-py36_0",
+    "name": "filelock",
+    "platform": null,
+    "version": "2.0.6",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "defaults",
+    "dist_name": "idna-2.5-py36_0",
+    "name": "idna",
+    "platform": null,
+    "version": "2.5",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "conda-forge",
+    "dist_name": "jinja2-2.9.5-py36_0",
+    "name": "jinja2",
+    "platform": null,
+    "version": "2.9.5",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "conda-forge",
+    "dist_name": "markupsafe-1.0-py36_0",
+    "name": "markupsafe",
+    "platform": null,
+    "version": "1.0",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "0",
+    "channel": "defaults",
+    "dist_name": "openssl-1.0.2l-0",
+    "name": "openssl",
+    "platform": null,
+    "version": "1.0.2l",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "defaults",
+    "dist_name": "packaging-16.8-py36_0",
+    "name": "packaging",
+    "platform": null,
+    "version": "16.8",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 1,
+    "build_string": "py36_1",
+    "channel": "defaults",
+    "dist_name": "pip-9.0.1-py36_1",
+    "name": "pip",
+    "platform": null,
+    "version": "9.0.1",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "conda-forge",
+    "dist_name": "pkginfo-1.2.1-py36_0",
+    "name": "pkginfo",
+    "platform": null,
+    "version": "1.2.1",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "defaults",
+    "dist_name": "pycosat-0.6.2-py36_0",
+    "name": "pycosat",
+    "platform": null,
+    "version": "0.6.2",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "defaults",
+    "dist_name": "pycparser-2.17-py36_0",
+    "name": "pycparser",
+    "platform": null,
+    "version": "2.17",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 1,
+    "build_string": "py36_1",
+    "channel": "conda-forge",
+    "dist_name": "pycrypto-2.6.1-py36_1",
+    "name": "pycrypto",
+    "platform": null,
+    "version": "2.6.1",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "defaults",
+    "dist_name": "pyopenssl-17.0.0-py36_0",
+    "name": "pyopenssl",
+    "platform": null,
+    "version": "17.0.0",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "defaults",
+    "dist_name": "pyparsing-2.1.4-py36_0",
+    "name": "pyparsing",
+    "platform": null,
+    "version": "2.1.4",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 2,
+    "build_string": "2",
+    "channel": "defaults",
+    "dist_name": "python-3.6.1-2",
+    "name": "python",
+    "platform": null,
+    "version": "3.6.1",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "conda-forge",
+    "dist_name": "python-dateutil-2.6.0-py36_0",
+    "name": "python-dateutil",
+    "platform": null,
+    "version": "2.6.0",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "conda-forge",
+    "dist_name": "pytz-2017.2-py36_0",
+    "name": "pytz",
+    "platform": null,
+    "version": "2017.2",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 1,
+    "build_string": "py36_1",
+    "channel": "conda-forge",
+    "dist_name": "pyyaml-3.12-py36_1",
+    "name": "pyyaml",
+    "platform": null,
+    "version": "3.12",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 2,
+    "build_string": "2",
+    "channel": "defaults",
+    "dist_name": "readline-6.2-2",
+    "name": "readline",
+    "platform": null,
+    "version": "6.2",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "defaults",
+    "dist_name": "requests-2.14.2-py36_0",
+    "name": "requests",
+    "platform": null,
+    "version": "2.14.2",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 1,
+    "build_string": "py36_1",
+    "channel": "defaults",
+    "dist_name": "ruamel_yaml-0.11.14-py36_1",
+    "name": "ruamel_yaml",
+    "platform": null,
+    "version": "0.11.14",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "defaults",
+    "dist_name": "setuptools-27.2.0-py36_0",
+    "name": "setuptools",
+    "platform": null,
+    "version": "27.2.0",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "defaults",
+    "dist_name": "six-1.10.0-py36_0",
+    "name": "six",
+    "platform": null,
+    "version": "1.10.0",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "0",
+    "channel": "defaults",
+    "dist_name": "sqlite-3.13.0-0",
+    "name": "sqlite",
+    "platform": null,
+    "version": "3.13.0",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "0",
+    "channel": "defaults",
+    "dist_name": "tk-8.5.18-0",
+    "name": "tk",
+    "platform": null,
+    "version": "8.5.18",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "py36_0",
+    "channel": "defaults",
+    "dist_name": "wheel-0.29.0-py36_0",
+    "name": "wheel",
+    "platform": null,
+    "version": "0.29.0",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 1,
+    "build_string": "1",
+    "channel": "defaults",
+    "dist_name": "xz-5.2.2-1",
+    "name": "xz",
+    "platform": null,
+    "version": "5.2.2",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 0,
+    "build_string": "0",
+    "channel": "defaults",
+    "dist_name": "yaml-0.1.6-0",
+    "name": "yaml",
+    "platform": null,
+    "version": "0.1.6",
+    "with_features_depends": null
+   },
+   {
+    "base_url": null,
+    "build_number": 3,
+    "build_string": "3",
+    "channel": "defaults",
+    "dist_name": "zlib-1.2.8-3",
+    "name": "zlib",
+    "platform": null,
+    "version": "1.2.8",
+    "with_features_depends": null
+   }
+  ],
+  "summary": "A contraction optimizer for the NumPy Einsum function."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/opt_einsum/helpers.py",
+  "lib/python3.5/site-packages/opt_einsum/paths.py",
+  "lib/python3.5/site-packages/opt_einsum/__init__.py",
+  "lib/python3.5/site-packages/opt_einsum/parser.py",
+  "lib/python3.5/site-packages/opt_einsum/contract.py",
+  "lib/python3.5/site-packages/opt_einsum-1.0.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/opt_einsum/blas.py",
+  "lib/python3.5/site-packages/opt_einsum-1.0.1-py3.5.egg-info/zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "opt_einsum",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0.1"
+ },
+ "metadata_version": 1,
+ "name": "opt_einsum",
+ "raw_recipe": "{% set name = \"opt_einsum\" %}\n{% set version = \"1.0.1\" %}\n{% set sha256 = \"247794e7f97ab451ea8f24245fd84174197bec76bd96a4a42b5678884e19e147\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/dgasmith/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy\n\ntest:\n  source_files:\n    - test\n  requires:\n    - python\n    - pytest\n  commands:\n    - py.test -v ./test\n\nabout:\n  home: http://github.com/dgasmith/opt_einsum\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A contraction optimizer for the NumPy Einsum function.'\n\n  description: >\n    Einsum is a very powerful function for contracting tensors of arbitrary dimension and index.\n    However, it is only optimized to contract two terms at a time resulting in non-optimal scaling.\n    \n    For example, let us examine the following index transformation:\n    `M_{pqrs} = C_{pi} C_{qj} I_{ijkl} C_{rk} C_{sl}`\n    \n    We can then develop two seperate implementations that produce the same result:\n    ```python\n    N = 10\n    C = np.random.rand(N, N)\n    I = np.random.rand(N, N, N, N)\n    \n    def naive(I, C):\n        # N^8 scaling\n        return np.einsum('pi,qj,ijkl,rk,sl->pqrs', C, C, I, C, C)\n    \n    def optimized(I, C):\n        # N^5 scaling\n        K = np.einsum('pi,ijkl->pjkl', C, I)\n        K = np.einsum('qj,pjkl->pqkl', C, K)\n        K = np.einsum('rk,pqkl->pqrl', C, K)\n        K = np.einsum('sl,pqrl->pqrs', C, K)\n        return K\n    ```\n    \n    The einsum function does not consider building intermediate arrays; therefore, helping einsum out by building these intermediate arrays can result in a considerable cost savings even for small N (N=10):\n    \n    ```python\n    np.allclose(naive(I, C), optimized(I, C))\n    True\n    \n    %timeit naive(I, C)\n    1 loops, best of 3: 934 ms per loop\n    \n    %timeit optimized(I, C)\n    1000 loops, best of 3: 527 \u00b5s per loop\n    ```\n    \n    A 2000 fold speed up for 4 extra lines of code!\n    This contraction can be further complicated by considering that the shape of the C matrices need not be the same, in this case the ordering in which the indices are transformed matters greatly.\n    Logic can be built that optimizes the ordering; however, this is a lot of time and effort for a single expression.\n    The opt_einsum package is a drop in replacement for the np.einsum function and can handle all of this logic for you:\n    \n    ```python\n    from opt_einsum import contract\n    \n    %timeit contract('pi,qj,ijkl,rk,sl->pqrs', C, C, I, C, C)\n    1000 loops, best of 3: 324 \u00b5s per loop\n    ```\n    \n    The above will automatically find the optimal contraction order, in this case identical to that of the optimized function above, and compute the products for you. In this case, it even uses `np.dot` under the hood to exploit any vendor BLAS functionality that your NumPy build has!\n  dev_url: https://github.com/dgasmith/opt_einsum\n\nextra:\n  recipe-maintainers:\n    - dgasmith\n    - loriab\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Einsum is a very powerful function for contracting tensors of arbitrary dimension and index. However, it is only optimized to contract two terms at a time resulting in non-optimal scaling.\nFor example, let us examine the following index transformation: `M_{pqrs} = C_{pi} C_{qj} I_{ijkl} C_{rk} C_{sl}`\nWe can then develop two seperate implementations that produce the same result: ```python N = 10 C = np.random.rand(N, N) I = np.random.rand(N, N, N, N)\ndef naive(I, C):\n    return np.einsum('pi,qj,ijkl,rk,sl->pqrs', C, C, I, C, C)\n\ndef optimized(I, C):\n    K = np.einsum('pi,ijkl->pjkl', C, I)\n    K = np.einsum('qj,pjkl->pqkl', C, K)\n    K = np.einsum('rk,pqkl->pqrl', C, K)\n    K = np.einsum('sl,pqrl->pqrs', C, K)\n    return K\n```\nThe einsum function does not consider building intermediate arrays; therefore, helping einsum out by building these intermediate arrays can result in a considerable cost savings even for small N (N=10):\n```python np.allclose(naive(I, C), optimized(I, C)) True\n%timeit naive(I, C) 1 loops, best of 3: 934 ms per loop\n%timeit optimized(I, C) 1000 loops, best of 3: 527 \u00b5s per loop ```\nA 2000 fold speed up for 4 extra lines of code! This contraction can be further complicated by considering that the shape of the C matrices need not be the same, in this case the ordering in which the indices are transformed matters greatly. Logic can be built that optimizes the ordering; however, this is a lot of time and effort for a single expression. The opt_einsum package is a drop in replacement for the np.einsum function and can handle all of this logic for you:\n```python from opt_einsum import contract\n%timeit contract('pi,qj,ijkl,rk,sl->pqrs', C, C, I, C, C) 1000 loops, best of 3: 324 \u00b5s per loop ```\nThe above will automatically find the optimal contraction order, in this case identical to that of the optimized function above, and compute the products for you. In this case, it even uses `np.dot` under the hood to exploit any vendor BLAS functionality that your NumPy build has!\n",
+   "dev_url": "https://github.com/dgasmith/opt_einsum",
+   "home": "http://github.com/dgasmith/opt_einsum",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "A contraction optimizer for the NumPy Einsum function."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py35_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "dgasmith",
+    "loriab"
+   ]
+  },
+  "package": {
+   "name": "opt_einsum",
+   "version": "1.0.1"
+  },
+  "requirements": {
+   "build": [
+    "ca-certificates 2017.4.17 0",
+    "certifi 2017.4.17 py35_0",
+    "ncurses 5.9 10",
+    "openssl 1.0.2l 0",
+    "python 3.5.3 3",
+    "readline 6.2 0",
+    "setuptools 33.1.1 py35_0",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python",
+    "numpy"
+   ]
+  },
+  "source": {
+   "fn": "opt_einsum-1.0.1.tar.gz",
+   "sha256": "247794e7f97ab451ea8f24245fd84174197bec76bd96a4a42b5678884e19e147",
+   "url": "https://github.com/dgasmith/opt_einsum/archive/v1.0.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "py.test -v ./test"
+   ],
+   "requires": [
+    "python",
+    "pytest"
+   ],
+   "source_files": [
+    "test"
+   ]
+  }
+ },
+ "version": "1.0.1"
+}

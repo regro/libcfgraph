@@ -1,0 +1,56 @@
+{
+ "about": {
+  "home": "https://github.com/axiom-data-science/pyaxiom",
+  "license": "MIT License",
+  "summary": "An ocean data toolkit developed and used by Axiom Data Science"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/binner",
+  "lib/python3.5/site-packages/pyaxiom-1.1.16-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pyaxiom/__init__.py",
+  "lib/python3.5/site-packages/pyaxiom/netcdf/__init__.py",
+  "lib/python3.5/site-packages/pyaxiom/netcdf/clone.py",
+  "lib/python3.5/site-packages/pyaxiom/netcdf/dataset.py",
+  "lib/python3.5/site-packages/pyaxiom/netcdf/grids/__init__.py",
+  "lib/python3.5/site-packages/pyaxiom/netcdf/grids/binner.py",
+  "lib/python3.5/site-packages/pyaxiom/netcdf/grids/collection.py",
+  "lib/python3.5/site-packages/pyaxiom/netcdf/sensors/__init__.py",
+  "lib/python3.5/site-packages/pyaxiom/netcdf/sensors/profile.py",
+  "lib/python3.5/site-packages/pyaxiom/netcdf/sensors/timeseries.py",
+  "lib/python3.5/site-packages/pyaxiom/netcdf/utils.py",
+  "lib/python3.5/site-packages/pyaxiom/tests/__init__.py",
+  "lib/python3.5/site-packages/pyaxiom/tests/test_enhanced_dataset.py",
+  "lib/python3.5/site-packages/pyaxiom/tests/test_netcdf_collection.py",
+  "lib/python3.5/site-packages/pyaxiom/tests/test_timeseries.py",
+  "lib/python3.5/site-packages/pyaxiom/tests/test_urn.py",
+  "lib/python3.5/site-packages/pyaxiom/tests/test_utils.py",
+  "lib/python3.5/site-packages/pyaxiom/urn.py",
+  "lib/python3.5/site-packages/pyaxiom/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "netcdf4",
+   "numpy",
+   "pandas",
+   "pyncml",
+   "pynco",
+   "python 3.5*",
+   "python-dateutil",
+   "pytz"
+  ],
+  "license": "MIT License",
+  "name": "pyaxiom",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.1.16"
+ },
+ "metadata_version": 1,
+ "name": "pyaxiom",
+ "raw_recipe": "{% set name = \"pyaxiom\" %}\n{% set version = \"1.1.16\" %}\n{% set build = 0 %}\n{% set sha256 = \"b2701194df809c0f46e1791554b14100f1c25d0d70580dbd4694e96fae229368\" %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/axiom-data-science/pyaxiom/archive/{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: {{ build }}\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    entry_points:\n        - binner=pyaxiom.netcdf.grids.binner:run\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - pytz\n        - python-dateutil\n        - netcdf4\n        - pandas\n        - pyncml\n        - pynco  # [not win]\n\ntest:\n    imports:\n        - pyaxiom\n        - pyaxiom.netcdf\n        - pyaxiom.netcdf.grids\n        - pyaxiom.netcdf.sensors\n        - pyaxiom.tests\n    commands:\n        - binner --help\n\nabout:\n    home: https://github.com/axiom-data-science/pyaxiom\n    license: MIT License\n    summary: An ocean data toolkit developed and used by Axiom Data Science\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.1.16"
+}

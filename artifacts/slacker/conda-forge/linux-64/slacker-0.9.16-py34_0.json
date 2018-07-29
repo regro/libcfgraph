@@ -1,0 +1,32 @@
+{
+ "about": {
+  "home": "https://github.com/os/slacker",
+  "license": "Apache 2.0",
+  "summary": "Slack API client"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/slacker-0.9.16-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/slacker/__init__.py",
+  "lib/python3.4/site-packages/slacker/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "requests"
+  ],
+  "license": "Apache 2.0",
+  "name": "slacker",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.9.16"
+ },
+ "metadata_version": 1,
+ "name": "slacker",
+ "raw_recipe": "{% set version = \"0.9.16\" %}\n\npackage:\n    name: slacker\n    version: {{ version }}\n\nsource:\n    url: https://github.com/os/slacker/archive/v{{ version }}.tar.gz\n    fn: slacker-{{ version }}.tar.gz\n    sha256: 453d554adcc33df92db926fc4f5ad2a5a10364cdae4503ec1ca67bf4a8684592\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - setuptools\n        - python\n    run:\n        - python\n        - requests\n\ntest:\n    imports:\n        - slacker\n    requires:\n        - pytest\n        - mock\n    commands:\n        - py.test {{ environ.SRC_DIR }}/tests -vrsx\n\nabout:\n    home: https://github.com/os/slacker\n    license: Apache 2.0\n    summary: Slack API client\n\nextra:\n    recipe-maintainers:\n        - ericdill\n        - licode\n        - os\n        - tacaswell\n",
+ "rendered_recipe": {},
+ "version": "0.9.16"
+}

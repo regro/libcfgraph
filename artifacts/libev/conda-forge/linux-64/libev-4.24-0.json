@@ -1,0 +1,154 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.8",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://software.schmorp.de/pkg/libev.html",
+  "license": "BSD-2-Clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-0",
+   "conda-forge::certifi-2017.1.23-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.8-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_2",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "A full-featured and high-performance event loop that is loosely modeled after libevent, but without its limitations and bugs."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/libev.a",
+  "include/event.h",
+  "lib/libev.so.4",
+  "include/ev++.h",
+  "lib/libev.so",
+  "lib/libev.la",
+  "share/man/man3/ev.3",
+  "include/ev.h",
+  "lib/libev.so.4.0.0"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "BSD-2-Clause",
+  "license_family": "BSD",
+  "name": "libev",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "4.24"
+ },
+ "metadata_version": 1,
+ "name": "libev",
+ "raw_recipe": "{% set name = \"libev\" %}\n{% set version = \"4.24\" %}\n{% set sha256 = \"973593d3479abdf657674a55afe5f78624b0e440614e2b8cb3a07f16d4d7f821\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://dist.schmorp.de/libev/Attic/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - gcc\n    - toolchain\n    - libtool\n\ntest:\n  commands:\n    # Check for headers.\n    - test -f \"${PREFIX}/include/ev.h\"\n    - test -f \"${PREFIX}/include/ev++.h\"\n    - test -f \"${PREFIX}/include/event.h\"\n\n    # Check for libraries.\n    {% set libs = [\n        \"libev\",\n    ] %}\n\n    {% for each_lib in libs %}\n    - test -f \"${PREFIX}/lib/{{ each_lib }}.a\"\n    - test -f \"${PREFIX}/lib/{{ each_lib }}.dylib\"         # [osx]\n    - test -f \"${PREFIX}/lib/{{ each_lib }}.so\"            # [linux]\n    - test -f \"${PREFIX}/lib/{{ each_lib }}.la\"\n    {% endfor %}\n\n\nabout:\n  home: http://software.schmorp.de/pkg/libev.html\n  license: BSD-2-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: A full-featured and high-performance event loop that is loosely modeled after libevent, but without its limitations and bugs.\n\nextra:\n  recipe-maintainers:\n    - petercable\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://software.schmorp.de/pkg/libev.html",
+   "license": "BSD-2-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "A full-featured and high-performance event loop that is loosely modeled after libevent, but without its limitations and bugs."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "petercable"
+   ]
+  },
+  "package": {
+   "name": "libev",
+   "version": "4.24"
+  },
+  "requirements": {
+   "build": [
+    "cloog 0.18.0 0",
+    "gcc 4.8.5 7",
+    "mpfr 3.1.5 0",
+    "gmp 6.1.2 0",
+    "toolchain 2.0.0 0",
+    "mpc 1.0.3 4",
+    "isl 0.12.2 0",
+    "libtool 2.4.6 0"
+   ],
+   "run": []
+  },
+  "source": {
+   "fn": "libev-4.24.tar.gz",
+   "sha256": "973593d3479abdf657674a55afe5f78624b0e440614e2b8cb3a07f16d4d7f821",
+   "url": "http://dist.schmorp.de/libev/Attic/libev-4.24.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f \"${PREFIX}/include/ev.h\"",
+    "test -f \"${PREFIX}/include/ev++.h\"",
+    "test -f \"${PREFIX}/include/event.h\"",
+    "test -f \"${PREFIX}/lib/libev.a\"",
+    "test -f \"${PREFIX}/lib/libev.so\"",
+    "test -f \"${PREFIX}/lib/libev.la\""
+   ]
+  }
+ },
+ "version": "4.24"
+}

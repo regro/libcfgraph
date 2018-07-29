@@ -1,0 +1,40 @@
+{
+ "about": {
+  "dev_url": "https://github.com/hzdg/django-enumfields",
+  "doc_url": "https://github.com/hzdg/django-enumfields/blob/master/README.rst",
+  "home": "https://github.com/hzdg/django-enumfields",
+  "license": "MIT",
+  "summary": "Real Python Enums for Django"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/django_enumfields-0.8.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/django_enumfields-0.8.2-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/enumfields/__init__.py",
+  "lib/python3.5/site-packages/enumfields/admin.py",
+  "lib/python3.5/site-packages/enumfields/compat.py",
+  "lib/python3.5/site-packages/enumfields/enums.py",
+  "lib/python3.5/site-packages/enumfields/fields.py",
+  "lib/python3.5/site-packages/enumfields/forms.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "django",
+   "python 3.5*",
+   "six"
+  ],
+  "license": "MIT",
+  "name": "django-enumfields",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.8.2"
+ },
+ "metadata_version": 1,
+ "name": "django-enumfields",
+ "raw_recipe": "{% set name = \"django-enumfields\" %}\n{% set version = \"0.8.2\" %}\n{% set md5 = \"99082460cf2cea2c76c2f8bd79c61aa7\" %}\n{% set build = 0 %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    md5: {{ md5 }}\n\nbuild:\n    number: {{ build }}\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - django\n        - six\n        - enum34  # [py27]\n\ntest:\n    imports:\n        - enumfields\n\nabout:\n    home: https://github.com/hzdg/django-enumfields\n    license: MIT\n    summary: Real Python Enums for Django\n    doc_url: https://github.com/hzdg/django-enumfields/blob/master/README.rst\n    dev_url: https://github.com/hzdg/django-enumfields\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n",
+ "rendered_recipe": {},
+ "version": "0.8.2"
+}

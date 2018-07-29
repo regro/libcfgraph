@@ -1,0 +1,163 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/hyperion-rt/hyperion",
+  "license": "BSD 2-Clause",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.4.17-0",
+   "conda-forge::certifi-2017.4.17-py35_0",
+   "conda-forge::chardet-3.0.2-py35_1",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.10-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.12.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-1.0-py35_0",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::openssl-1.0.2k-0",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_1",
+   "conda-forge::python-3.5.3-3",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2017.2-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Hyperion Radiation Transfer Code"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/hyperion_sph",
+  "bin/hyperion_amr_mpi",
+  "bin/hyperion_oct",
+  "bin/hyperion_sph_mpi",
+  "bin/hyperion_vor",
+  "bin/hyperion_cyl_mpi",
+  "bin/hyperion_car",
+  "bin/hyperion_oct_mpi",
+  "bin/hyperion_car_mpi",
+  "bin/hyperion_cyl",
+  "bin/hyperion_amr",
+  "bin/hyperion_vor_mpi"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "2",
+  "build_number": 2,
+  "depends": [
+   "hdf5 1.8.18|1.8.18.*",
+   "libgfortran",
+   "mpich"
+  ],
+  "license": "BSD 2-Clause",
+  "name": "hyperion-fortran",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.9.8"
+ },
+ "metadata_version": 1,
+ "name": "hyperion-fortran",
+ "raw_recipe": "{% set version = \"0.9.8\" %}\n\npackage:\n  name: hyperion-fortran\n  version: {{version}}\n\nsource:\n  fn: Hyperion-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/h/hyperion/Hyperion-{{version}}.tar.gz\n  md5: 970ebfa8b65c4a181fcdd788ee71dd38\n\nbuild:\n  number: 2\n  skip: True  # [win]\n\nrequirements:\n\n  build:\n    - hdf5 1.8.18|1.8.18.*\n    - mpich\n    - gcc  # [not win]\n\n  run:\n    - hdf5 1.8.18|1.8.18.*\n    - mpich\n    - libgfortran  # [not win]\n\ntest:\n  files:\n    - amr.rtin\n    - car.rtin\n    - cyl.rtin\n    - oct.rtin\n    - sph.rtin\n    - vor.rtin\n\nabout:\n  home: https://github.com/hyperion-rt/hyperion\n  license: BSD 2-Clause\n  summary: Hyperion Radiation Transfer Code\n\nextra:\n  recipe-maintainers:\n    - astrofrog\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/hyperion-rt/hyperion",
+   "license": "BSD 2-Clause",
+   "summary": "Hyperion Radiation Transfer Code"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "2",
+   "string": "2"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "astrofrog"
+   ]
+  },
+  "package": {
+   "name": "hyperion-fortran",
+   "version": "0.9.8"
+  },
+  "requirements": {
+   "build": [
+    "gcc 4.8.5 7",
+    "mpfr 3.1.5 0",
+    "libgcc 5.2.0 0",
+    "isl 0.12.2 0",
+    "zlib 1.2.11 0",
+    "gmp 6.1.2 0",
+    "libgfortran 3.0.0 1",
+    "mpich 3.2 4",
+    "cloog 0.18.0 0",
+    "hdf5 1.8.18 0",
+    "mpc 1.0.3 4"
+   ],
+   "run": [
+    "hdf5 1.8.18|1.8.18.*",
+    "mpich",
+    "libgfortran"
+   ]
+  },
+  "source": {
+   "fn": "Hyperion-0.9.8.tar.gz",
+   "md5": "970ebfa8b65c4a181fcdd788ee71dd38",
+   "url": "https://pypi.io/packages/source/h/hyperion/Hyperion-0.9.8.tar.gz"
+  },
+  "test": {
+   "files": [
+    "amr.rtin",
+    "car.rtin",
+    "cyl.rtin",
+    "oct.rtin",
+    "sph.rtin",
+    "vor.rtin"
+   ]
+  }
+ },
+ "version": "0.9.8"
+}

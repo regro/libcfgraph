@@ -1,0 +1,199 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.11.0",
+  "conda_private": false,
+  "conda_version": "4.5.8",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "home": "https://www.x.org/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "license_file": "COPYING",
+  "root_pkgs": [
+   "anaconda-client 1.6.14 py_0",
+   "asn1crypto 0.24.0 py36_0",
+   "beautifulsoup4 4.6.0 py36_0",
+   "ca-certificates 2018.4.16 0",
+   "certifi 2018.4.16 py36_0",
+   "cffi 1.11.5 py36h342bebf_0",
+   "chardet 3.0.4 py36h96c241c_1",
+   "clyent 1.2.2 py_1",
+   "conda 4.5.8 py36_1",
+   "conda-build 3.11.0 py36_0",
+   "conda-env 2.6.0 h36134e3_0",
+   "conda-forge-ci-setup 1.3.5 0",
+   "conda-verify 2.0.0 py36_0",
+   "cryptography 2.2.2 py36h1de35cc_0",
+   "decorator 4.3.0 py_0",
+   "filelock 3.0.4 py_1",
+   "glob2 0.6 py_0",
+   "idna 2.6 py36h8628d0a_1",
+   "ipython_genutils 0.2.0 py_1",
+   "jinja2 2.10 py_1",
+   "jsonschema 2.6.0 py36_1",
+   "jupyter_core 4.4.0 py_0",
+   "libcxx 4.0.1 h579ed51_0",
+   "libcxxabi 4.0.1 hebd6815_0",
+   "libedit 3.1.20170329 hb402a30_2",
+   "libffi 3.2.1 h475c297_4",
+   "markupsafe 1.0 py36_0",
+   "nbformat 4.4.0 py_1",
+   "ncurses 6.1 h0a44026_0",
+   "openssl 1.0.2o 0",
+   "pip 10.0.1 py36_0",
+   "pkginfo 1.4.2 py_1",
+   "psutil 5.4.6 py36_0",
+   "pycosat 0.6.3 py36hee92d8f_0",
+   "pycparser 2.18 py36h724b2fc_1",
+   "pyopenssl 18.0.0 py36_0",
+   "pysocks 1.6.8 py36_0",
+   "python 3.6.5 hc167b69_1",
+   "python-dateutil 2.7.3 py_0",
+   "python.app 2 py36_8",
+   "pytz 2018.5 py_0",
+   "pyyaml 3.12 py36_1",
+   "readline 7.0 hc1231fa_4",
+   "requests 2.18.4 py36h4516966_1",
+   "ruamel_yaml 0.15.37 py36h1de35cc_2",
+   "setuptools 39.2.0 py36_0",
+   "six 1.11.0 py36h0e22d5e_1",
+   "sqlite 3.23.1 hf1716c9_0",
+   "tk 8.6.7 h35a86e2_3",
+   "traitlets 4.3.2 py36_0",
+   "urllib3 1.22 py36h68b9469_0",
+   "wheel 0.31.1 py36_0",
+   "xz 5.2.4 h1de35cc_4",
+   "yaml 0.1.7 hc338f04_2",
+   "zlib 1.2.11 hf3cbc9b_2"
+  ],
+  "summary": "The X.org input library."
+ },
+ "conda_build_config": {
+  "CONDA_BUILD_SYSROOT": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk",
+  "MACOSX_DEPLOYMENT_TARGET": "10.9",
+  "c_compiler": "toolchain_c",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "clangxx",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "numpy",
+  "lua": "5",
+  "macos_machine": "x86_64-apple-darwin13.4.0",
+  "macos_min_version": "10.9",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.6",
+  "r_base": "3.4",
+  "target_platform": "osx-64"
+ },
+ "files": [
+  "include/X11/extensions/XInput.h",
+  "include/X11/extensions/XInput2.h",
+  "lib/libXi.6.dylib",
+  "lib/libXi.dylib",
+  "lib/pkgconfig/xi.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "h470a237_2",
+  "build_number": 2,
+  "depends": [
+   "xorg-inputproto",
+   "xorg-libx11 1.6.*",
+   "xorg-libxext 1.3.*",
+   "xorg-libxfixes 5.0.*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "xorg-libxi",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "timestamp": 1532440386382,
+  "version": "1.7.9"
+ },
+ "metadata_version": 1,
+ "name": "xorg-libxi",
+ "raw_recipe": "{% set xorg_name = \"libXi\" %}\n{% set xorg_category = \"lib\" %}\n{% set name = \"xorg-\" ~ xorg_name %}\n{% set version = \"1.7.9\" %}\n{% set sha256 = \"c2e6b8ff84f9448386c1b5510a5cf5a16d788f76db018194dacdc200180faf45\" %}\n{% set am_version = \"1.15\" %} # keep synchronized with build.sh\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 2\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - m2-autoconf  # [win]\n    - m2-automake{{ am_version }}  # [win]\n    - m2-libtool  # [win]\n    - m2w64-pkg-config  # [win]\n    - pkg-config  # [not win]\n    - posix  # [win]\n    - {{ compiler('c') }}        # [unix]\n    - {{ compiler('m2w64_c') }}  # [win]\n  host:\n    - pthread-stubs\n    - xorg-inputproto\n    - xorg-kbproto\n    - xorg-libx11 1.6.*\n    - xorg-libxext 1.3.*\n    - xorg-libxfixes 5.0.*\n    - xorg-util-macros\n    - xorg-xextproto\n    - xorg-xproto\n  run:\n    - xorg-inputproto\n    - xorg-libx11 1.6.*\n    - xorg-libxext 1.3.*\n    - xorg-libxfixes 5.0.*\n\ntest:\n  commands:\n    {% set lib_idents = [ \"Xi\" ] %}\n    {% for lib_ident in lib_idents %}\n    - test -f $PREFIX/lib/lib{{ lib_ident }}.dylib  # [osx]\n    - test -f $PREFIX/lib/lib{{ lib_ident }}.so  # [linux]\n    - if not exist %PREFIX%/Library/lib/lib{{ lib_ident }}.dll.a exit /b 1  # [win]\n    - if not exist %PREFIX%/Library/bin/msys-{{ lib_ident }}-*.dll exit /b 1  # [win]\n    {% endfor %}\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://www.x.org/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'The X.org input library.'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://www.x.org/",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "COPYING",
+   "summary": "The X.org input library."
+  },
+  "build": {
+   "detect_binary_files_with_prefix": true,
+   "number": "2",
+   "string": "h470a237_2"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "pkgw"
+   ]
+  },
+  "package": {
+   "name": "xorg-libxi",
+   "version": "1.7.9"
+  },
+  "requirements": {
+   "build": [
+    "pkg-config 0.29.2 hf5063d0_2",
+    "toolchain 2.1.6 0",
+    "toolchain_c_osx-64 2.1.6 0",
+    "zlib 1.2.11 h470a237_3"
+   ],
+   "host": [
+    "libxcb 1.13 h470a237_2",
+    "pthread-stubs 0.4 h470a237_1",
+    "xorg-fixesproto 5.0 h470a237_2",
+    "xorg-inputproto 2.3.2 h470a237_2",
+    "xorg-kbproto 1.0.7 h470a237_2",
+    "xorg-libx11 1.6.5 h470a237_2",
+    "xorg-libxau 1.0.8 h470a237_6",
+    "xorg-libxdmcp 1.1.2 h470a237_7",
+    "xorg-libxext 1.3.3 h470a237_4",
+    "xorg-libxfixes 5.0.3 h470a237_4",
+    "xorg-util-macros 1.19.2 h470a237_1",
+    "xorg-xextproto 7.3.0 h470a237_2",
+    "xorg-xproto 7.0.31 h470a237_7"
+   ],
+   "run": [
+    "xorg-inputproto",
+    "xorg-libx11 1.6.*",
+    "xorg-libxext 1.3.*",
+    "xorg-libxfixes 5.0.*"
+   ]
+  },
+  "source": {
+   "fn": "xorg-libXi-1.7.9.tar.bz2",
+   "sha256": "c2e6b8ff84f9448386c1b5510a5cf5a16d788f76db018194dacdc200180faf45",
+   "url": "https://www.x.org/releases/individual/lib/libXi-1.7.9.tar.bz2"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/lib/libXi.dylib",
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "conda inspect objects -p $PREFIX $PKG_NAME"
+   ]
+  }
+ },
+ "version": "1.7.9"
+}

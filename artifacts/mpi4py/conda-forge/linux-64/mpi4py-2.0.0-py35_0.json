@@ -1,0 +1,58 @@
+{
+ "about": {
+  "description": "MPI for Python provides bindings of the Message Passing Interface (MPI)\nstandard for the Python programming language, allowing any Python program\nto exploit multiple processors.\n",
+  "dev_url": "https://bitbucket.org/mpi4py/mpi4py",
+  "doc_url": "http://mpi4py.readthedocs.org/",
+  "home": "http://pythonhosted.org/mpi4py/",
+  "license": "BSD 2-clause",
+  "summary": "Provides bindings of the MPI standard for Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/mpi4py-2.0.0.dist-info/DESCRIPTION.rst",
+  "lib/python3.5/site-packages/mpi4py-2.0.0.dist-info/INSTALLER",
+  "lib/python3.5/site-packages/mpi4py-2.0.0.dist-info/METADATA",
+  "lib/python3.5/site-packages/mpi4py-2.0.0.dist-info/RECORD",
+  "lib/python3.5/site-packages/mpi4py-2.0.0.dist-info/WHEEL",
+  "lib/python3.5/site-packages/mpi4py-2.0.0.dist-info/metadata.json",
+  "lib/python3.5/site-packages/mpi4py/MPI.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/mpi4py/MPI.pxd",
+  "lib/python3.5/site-packages/mpi4py/__init__.py",
+  "lib/python3.5/site-packages/mpi4py/__main__.py",
+  "lib/python3.5/site-packages/mpi4py/dl.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/mpi4py/include/mpi4py/MPI.pxd",
+  "lib/python3.5/site-packages/mpi4py/include/mpi4py/__init__.pxd",
+  "lib/python3.5/site-packages/mpi4py/include/mpi4py/__init__.pyx",
+  "lib/python3.5/site-packages/mpi4py/include/mpi4py/libmpi.pxd",
+  "lib/python3.5/site-packages/mpi4py/include/mpi4py/mpi.pxi",
+  "lib/python3.5/site-packages/mpi4py/include/mpi4py/mpi4py.MPI.h",
+  "lib/python3.5/site-packages/mpi4py/include/mpi4py/mpi4py.MPI_api.h",
+  "lib/python3.5/site-packages/mpi4py/include/mpi4py/mpi4py.h",
+  "lib/python3.5/site-packages/mpi4py/include/mpi4py/mpi4py.i",
+  "lib/python3.5/site-packages/mpi4py/lib-pmpi/libmpe.so",
+  "lib/python3.5/site-packages/mpi4py/lib-pmpi/libvt-hyb.so",
+  "lib/python3.5/site-packages/mpi4py/lib-pmpi/libvt-mpi.so",
+  "lib/python3.5/site-packages/mpi4py/lib-pmpi/libvt.so",
+  "lib/python3.5/site-packages/mpi4py/libmpi.pxd",
+  "lib/python3.5/site-packages/mpi4py/mpi.cfg"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "mpich",
+   "python 3.5*"
+  ],
+  "license": "BSD 2-clause",
+  "name": "mpi4py",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.0"
+ },
+ "metadata_version": 1,
+ "name": "mpi4py",
+ "raw_recipe": "{% set version=\"2.0.0\" %}\n\npackage:\n  name: mpi4py\n  version: {{ version }}\n\nsource:\n  fn: mpi4py-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/m/mpi4py/mpi4py-{{ version }}.tar.gz\n  md5: 4f7d8126d7367c239fd67615680990e3\n\nbuild:\n  number: 0\n  script: pip install --no-deps .\n  detect_binary_files_with_prefix: true\n  # TODO: build with msmpi when it works\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - python\n    - pip\n    - mpich          # [unix]\n  run:\n    - python\n    - mpich          # [unix]\n\ntest:\n  imports:\n    - mpi4py\n    - mpi4py.MPI\n\nabout:\n  home: http://pythonhosted.org/mpi4py/\n  license: BSD 2-clause\n  summary: Provides bindings of the MPI standard for Python\n  description: |\n     MPI for Python provides bindings of the Message Passing Interface (MPI)\n     standard for the Python programming language, allowing any Python program\n     to exploit multiple processors.\n  doc_url: http://mpi4py.readthedocs.org/\n  dev_url: https://bitbucket.org/mpi4py/mpi4py\n\nextra:\n  recipe-maintainers:\n    - minrk\n    - msarahan\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "2.0.0"
+}

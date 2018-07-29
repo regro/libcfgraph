@@ -1,0 +1,32 @@
+{
+ "about": {
+  "home": "https://github.com/Azure/azure-sdk-for-python",
+  "license": "Apache-2.0",
+  "summary": "Microsoft Azure Resource Management Namespace Package"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/azure/mgmt/__init__.py",
+  "lib/python2.7/site-packages/azure_mgmt_nspkg-1.0.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/azure_mgmt_nspkg-1.0.0-py2.7.egg-info/not-zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "azure-nspkg",
+   "python 2.7*"
+  ],
+  "license": "Apache-2.0",
+  "name": "azure-mgmt-nspkg",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0.0"
+ },
+ "metadata_version": 1,
+ "name": "azure-mgmt-nspkg",
+ "raw_recipe": "{% set version = \"1.0.0\" %}\n\npackage:\n  name: azure-mgmt-nspkg\n  version: {{ version }}\n\nsource:\n  fn: azure-mgmt-nspkg-{{ version }}.zip\n  url: https://pypi.io/packages/source/a/azure-mgmt-nspkg/azure-mgmt-nspkg-{{ version }}.zip\n  md5: 4605b225a393b34292e6fb1bdc77a92c\n  \nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - azure-nspkg\n  \n  run:\n    - python\n    - azure-nspkg\n\ntest:\n  imports:\n    - azure\n    - azure.mgmt\n  commands:\n    - python -m unittest discover -p \"test_*.py\"\n\nabout:\n  home: https://github.com/Azure/azure-sdk-for-python\n  license: Apache-2.0\n  summary: 'Microsoft Azure Resource Management Namespace Package'\n\nextra:\n  recipe-maintainers:\n    - ivoflipse\n    - Korijn\n    - Maxyme\n",
+ "rendered_recipe": {},
+ "version": "1.0.0"
+}

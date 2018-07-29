@@ -1,0 +1,46 @@
+{
+ "about": {
+  "description": "skan: skeleton analysis in Python.\n\nInspired by the \"Analyze skeletons\" Fiji plugin by\nIgnacio Arganda-Carreras.\n",
+  "dev_url": "https://github.com/jni/skan",
+  "doc_url": "https://github.com/jni/skan",
+  "home": "http://github.com/jni/skan",
+  "license": "BSD 3-clause",
+  "summary": "skan: skeleton analysis in Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/skan-0.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/skan/__init__.py",
+  "lib/python3.5/site-packages/skan/_testdata.py",
+  "lib/python3.5/site-packages/skan/csr.py",
+  "lib/python3.5/site-packages/skan/draw.py",
+  "lib/python3.5/site-packages/skan/nputil.py",
+  "lib/python3.5/site-packages/skan/nx.py",
+  "lib/python3.5/site-packages/skan/pre.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib >=1.5",
+   "networkx >=1.11",
+   "numba >=0.29",
+   "numpy >=1.11",
+   "pandas >=0.18",
+   "python 3.5*",
+   "scikit-image >=0.12",
+   "scipy >=0.18"
+  ],
+  "license": "BSD 3-clause",
+  "name": "skan",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2"
+ },
+ "metadata_version": 1,
+ "name": "skan",
+ "raw_recipe": "{% set name = \"skan\" %}\n{% set version = \"0.2\" %}\n{% set sha256 = \"c62c2decb810b73f25c3edbf8dd07228a983a4bff5d7db95c633f5804c2e5cea\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip : True  # [py<35]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - numpy >=1.11\n    - scipy >=0.18\n    - networkx >=1.11\n    - pandas >=0.18\n    - numba >=0.29\n    - matplotlib >=1.5\n    - scikit-image >=0.12\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - skan\n  commands:\n    - py.test --pyargs skan --doctest-modules\n\nabout:\n  home: http://github.com/jni/skan\n  license: BSD 3-clause\n  license_file: LICENSE\n  summary: 'skan: skeleton analysis in Python'\n\n  description: |\n    skan: skeleton analysis in Python.\n\n    Inspired by the \"Analyze skeletons\" Fiji plugin by\n    Ignacio Arganda-Carreras.\n  doc_url: https://github.com/jni/skan\n  dev_url: https://github.com/jni/skan\n\nextra:\n  recipe-maintainers:\n    - jni\n",
+ "rendered_recipe": {},
+ "version": "0.2"
+}

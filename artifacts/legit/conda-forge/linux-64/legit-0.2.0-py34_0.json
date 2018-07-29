@@ -1,0 +1,40 @@
+{
+ "about": {
+  "home": "https://github.com/kennethreitz/legit",
+  "license": "BSD-3",
+  "summary": "Git for Humans."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/legit",
+  "lib/python3.4/site-packages/legit-0.2.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/legit/__init__.py",
+  "lib/python3.4/site-packages/legit/bootstrap.py",
+  "lib/python3.4/site-packages/legit/cli.py",
+  "lib/python3.4/site-packages/legit/core.py",
+  "lib/python3.4/site-packages/legit/helpers.py",
+  "lib/python3.4/site-packages/legit/scm.py",
+  "lib/python3.4/site-packages/legit/settings.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "clint >=0.4.1",
+   "gitpython >=0.3.4",
+   "python 3.4*",
+   "six >=1.9.0"
+  ],
+  "license": "BSD-3",
+  "name": "legit",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2.0"
+ },
+ "metadata_version": 1,
+ "name": "legit",
+ "raw_recipe": "{% set packagename = 'legit' %}\n{% set version = \"0.2.0\" %}\n{% set md5 = \"5df3cd402b0de8f0251a87904b5eb88c\" %}\n\npackage:\n  name: {{ packagename }}\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/kennethreitz/legit\n  git_tag: v{{ version }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - legit = legit.cli:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - clint >=0.4.1\n    - gitpython >=0.3.4\n    - six >=1.9.0\n\ntest:\n  # Some package might need a `test/commands` key to check CLI.\n  imports:\n    - {{ packagename }}\n\n  commands:\n    - mkdir test-git-repo\n    - cd test-git-repo\n    - git init\n    # legit needs a remote or it exits with a non-zero status\n    # so we just need to add a fake one\n    - git remote add origin http://\n    - legit help\n  requires:\n    - git\n\nabout:\n  home: https://github.com/kennethreitz/legit\n  license: BSD-3\n  summary: 'Git for Humans.'\n\nextra:\n  recipe-maintainers:\n    - ericmjl\n",
+ "rendered_recipe": {},
+ "version": "0.2.0"
+}

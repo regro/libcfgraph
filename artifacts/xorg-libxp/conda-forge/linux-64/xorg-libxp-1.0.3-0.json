@@ -1,0 +1,162 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://www.x.org/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-0",
+   "conda-forge::certifi-2017.1.23-py35_0",
+   "conda-forge::chardet-3.0.2-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.10-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.12.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_2",
+   "conda-forge::openssl-1.0.2k-0",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2017.2-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "The X.org print library."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/libXp.so.6",
+  "lib/libXp.so.6.2.0",
+  "lib/pkgconfig/xp.pc",
+  "lib/libXp.so",
+  "lib/libXp.a",
+  "lib/libXp.la"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "xorg-libx11 1.6.*",
+   "xorg-libxau",
+   "xorg-libxext"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "xorg-libxp",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0.3"
+ },
+ "metadata_version": 1,
+ "name": "xorg-libxp",
+ "raw_recipe": "{% set xorg_name = \"libXp\" %}\n{% set xorg_category = \"lib\" %}\n{% set name = \"xorg-\" ~ xorg_name %}\n{% set version = \"1.0.3\" %}\n{% set sha256 = \"7f360c9905849c3587d48efc0f0ecbc852c19f61a52b18530d6b005cb9148c57\" %}\n{% set am_version = \"1.15\" %} # keep synchronized with build.sh\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  detect_binary_files_with_prefix: true\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py>=35]\n\n  # Windows build failing. See https://ci.appveyor.com/project/epruesse/staged-recipes/build/1.0.64/job/p3bt0xipb8cms0hm#L1194\n  # Error:\n  # In file included from XpJob.c:44:0:\n  # $PREFIX/include/X11/extensions/Printstr.h:116:18: error: conflicting types for 'CARD32'\n  # #define PCONTEXT CARD32\n  #                ^\n  # In file included from $PREFIX/include/X11/Xproto.h:72:0,\n  #               from $PREFIX/include/X11/extensions/Printstr.h:64,\n  #               from XpJob.c:44:\n  # $PREFIX/include/X11/Xmd.h:111:23: note: previous declaration of 'CARD32' was here\n  # typedef unsigned long CARD32;\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - m2-autoconf  # [win]\n    - m2-automake{{ am_version }}  # [win]\n    - m2-libtool  # [win]\n    - m2w64-pkg-config  # [win]\n    - m2w64-toolchain  # [win]\n    - pkg-config  # [not win]\n    - posix  # [win]\n    - python  # [win]\n    - toolchain\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py>=35]\n    - xorg-libx11 1.6.*\n    - xorg-libpthread-stubs\n    - xorg-libxext\n    - xorg-xextproto\n    - xorg-printproto\n    - xorg-libxau\n    - xorg-util-macros  # [win]\n\n  run:\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py>=35]\n    - xorg-libx11 1.6.*\n    - xorg-libxext\n    - xorg-libxau\n\ntest:\n  commands:\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: https://www.x.org/\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'The X.org print library.'\n\nextra:\n  recipe-maintainers:\n    - pkgw\n    - epruesse\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://www.x.org/",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "COPYING",
+   "summary": "The X.org print library."
+  },
+  "build": {
+   "detect_binary_files_with_prefix": "true",
+   "features": "",
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "pkgw",
+    "epruesse"
+   ]
+  },
+  "package": {
+   "name": "xorg-libxp",
+   "version": "1.0.3"
+  },
+  "requirements": {
+   "build": [
+    "xorg-libx11 1.6.4 6",
+    "xorg-xextproto 7.3.0 1",
+    "xorg-xproto 7.0.31 6",
+    "xorg-libxau 1.0.8 3",
+    "pkg-config 0.29.1 1",
+    "libxcb 1.12 1",
+    "toolchain 2.0.0 0",
+    "xorg-kbproto 1.0.7 1",
+    "xorg-libxdmcp 1.1.2 3",
+    "zlib 1.2.11 0",
+    "xorg-libpthread-stubs 0.3 1",
+    "xorg-libxext 1.3.3 2",
+    "xorg-printproto 1.0.5 0"
+   ],
+   "run": [
+    "xorg-libx11 1.6.*",
+    "xorg-libxext",
+    "xorg-libxau"
+   ]
+  },
+  "source": {
+   "fn": "xorg-libXp-1.0.3.tar.bz2",
+   "sha256": "7f360c9905849c3587d48efc0f0ecbc852c19f61a52b18530d6b005cb9148c57",
+   "url": "https://www.x.org/releases/individual/lib/libXp-1.0.3.tar.bz2"
+  },
+  "test": {
+   "commands": [
+    "conda inspect linkages -p $PREFIX $PKG_NAME"
+   ]
+  }
+ },
+ "version": "1.0.3"
+}

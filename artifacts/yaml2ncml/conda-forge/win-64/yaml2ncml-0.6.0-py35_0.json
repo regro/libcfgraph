@@ -1,0 +1,37 @@
+{
+ "about": {
+  "home": "https://github.com/usgs-cmg/yaml2ncml",
+  "license": "MIT",
+  "summary": "NcML aggregation from YAML specification."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/yaml2ncml-0.6.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/yaml2ncml-0.6.0-py3.5.egg-info/not-zip-safe",
+  "Lib/site-packages/yaml2ncml/__init__.py",
+  "Lib/site-packages/yaml2ncml/yaml2ncml.py",
+  "Scripts/yaml2ncml-script.py",
+  "Scripts/yaml2ncml.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "docopt",
+   "netcdf4",
+   "python 3.5*",
+   "ruamel.yaml"
+  ],
+  "license": "MIT",
+  "name": "yaml2ncml",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.6.0"
+ },
+ "metadata_version": 1,
+ "name": "yaml2ncml",
+ "raw_recipe": "{% set version = \"0.6.0\" %}\n\npackage:\n  name: yaml2ncml\n  version: {{ version }}\n\nsource:\n  fn: yaml2ncml-{{ version }}.tar.gz\n  url: https://github.com/USGS-CMG/yaml2ncml/archive/v{{ version }}.tar.gz\n  sha256:\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - docopt\n    - netcdf4\n    - ruamel.yaml\n\ntest:\n  imports:\n    - yaml2ncml\n  commands:\n    - yaml2ncml --version\n\nabout:\n  home: https://github.com/usgs-cmg/yaml2ncml\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'NcML aggregation from YAML specification.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - rsignell-usgs\n",
+ "rendered_recipe": {},
+ "version": "0.6.0"
+}

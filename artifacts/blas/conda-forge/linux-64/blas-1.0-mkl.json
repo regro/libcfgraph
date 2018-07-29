@@ -1,0 +1,53 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [],
+ "index": {
+  "arch": "x86_64",
+  "build": "mkl",
+  "build_number": 0,
+  "depends": [
+   "mkl"
+  ],
+  "license": "BSD 3-clause",
+  "name": "blas",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "track_features": "blas_mkl",
+  "version": "1.0"
+ },
+ "metadata_version": 1,
+ "name": "blas",
+ "raw_recipe": "# Some useful notes can be found at https://conda-forge.hackpad.com/BLAS-Numpy-Friends-86De62hoNdT\n\n{% set variant = os.environ.get('BLAS_VARIANT', 'openblas') %}\n\n# The version should be in the form X.Y, where X denotes major infrastructural change to how blas is managed,\n# and Y denoting blas priority. Currently Y=0 not default, Y=1 default blas.\n{% set Y = 1 if variant == 'openblas' else 0 %}\npackage:\n  name: blas\n  version: 1.{{ Y }}\n\nbuild:\n  # We mustn't use the build number in the blas package - because we are defining the string,\n  # manually we would not be producing unique filenames.\n  number: 0\n  string: {{ variant }}\n  track_features:\n    # The \"blas\" package must always track a feature, else it will be\n    # prioritised over all others.\n    - blas_{{ variant }}\n\n{% if variant != \"noblas\" %}\nrequirements:\n  run:\n    - {{ variant }}\n{% endif %}\n\ntest: {}\n\nabout:\n  home: https://github.com/conda-forge/blas-feedstock\n  license: BSD 3-clause\n  summary: Metapackage to select the BLAS variant. Use conda's pinning mechanism in your environment to control which variant you want.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/conda-forge/blas-feedstock",
+   "license": "BSD 3-clause",
+   "summary": "Metapackage to select the BLAS variant. Use conda's pinning mechanism in your environment to control which variant you want."
+  },
+  "build": {
+   "number": "0",
+   "string": "mkl",
+   "track_features": [
+    "blas_mkl"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham",
+    "pelson"
+   ]
+  },
+  "package": {
+   "name": "blas",
+   "version": "1.0"
+  },
+  "requirements": {
+   "run": [
+    "mkl"
+   ]
+  },
+  "test": {}
+ },
+ "version": "1.0"
+}

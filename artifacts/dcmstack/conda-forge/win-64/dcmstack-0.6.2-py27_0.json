@@ -1,0 +1,78 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/dcmstack-0.6.2-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/dcmstack/__init__.py",
+  "Lib/site-packages/dcmstack/dcmmeta.py",
+  "Lib/site-packages/dcmstack/dcmstack.py",
+  "Lib/site-packages/dcmstack/dcmstack_cli.py",
+  "Lib/site-packages/dcmstack/extract.py",
+  "Lib/site-packages/dcmstack/nitool_cli.py",
+  "Scripts/dcmstack-script.py",
+  "Scripts/dcmstack.exe",
+  "Scripts/nitool-script.py",
+  "Scripts/nitool.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "nibabel",
+   "pydicom",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "dcmstack",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.6.2"
+ },
+ "metadata_version": 1,
+ "name": "dcmstack",
+ "raw_recipe": "{% set version = \"0.6.2\" %}\n\npackage:\n  name: dcmstack\n  version: {{ version }}\n\nsource:\n  fn: dcmstack-{{ version }}.tar.gz\n  url: https://github.com/moloney/dcmstack/archive/v{{ version }}.tar.gz\n  md5: 3409d0bcbb79e1790cb2639c7bfb1a6a\n\nbuild:\n  number: 0\n  skip: true  # [py3k]\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - nibabel\n  run:\n    - python\n    - pydicom\n    - nibabel\n\ntest:\n  imports:\n    - dcmstack\n\nabout:\n  home: http://dcmstack.readthedocs.io/\n  license: MIT\n  summary: This package provides DICOM to Nifti conversion with the added ability to extract and summarize meta data from the source DICOMs.\n\nextra:\n  recipe-maintainers:\n    - arokem\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://dcmstack.readthedocs.io/",
+   "license": "MIT",
+   "summary": "This package provides DICOM to Nifti conversion with the added ability to extract and summarize meta data from the source DICOMs."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "arokem"
+   ]
+  },
+  "package": {
+   "name": "dcmstack",
+   "version": "0.6.2"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "nibabel"
+   ],
+   "run": [
+    "python",
+    "pydicom",
+    "nibabel"
+   ]
+  },
+  "source": {
+   "fn": "dcmstack-0.6.2.tar.gz",
+   "md5": "3409d0bcbb79e1790cb2639c7bfb1a6a",
+   "url": "https://github.com/moloney/dcmstack/archive/v0.6.2.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "dcmstack"
+   ]
+  }
+ },
+ "version": "0.6.2"
+}

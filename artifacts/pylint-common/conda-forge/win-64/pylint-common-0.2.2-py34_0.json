@@ -1,0 +1,34 @@
+{
+ "about": {
+  "home": "https://github.com/landscapeio/pylint-common",
+  "license": "GPL 2",
+  "summary": "pylint-common is a Pylint plugin to improve Pylint error analysis of the standard Python library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pylint_common-0.2.2-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/pylint_common-0.2.2-py3.4.egg-info/not-zip-safe",
+  "Lib/site-packages/pylint_common/__init__.py",
+  "Lib/site-packages/pylint_common/augmentations.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "pylint >=1.0",
+   "pylint-plugin-utils",
+   "python 3.4*"
+  ],
+  "license": "GPL 2",
+  "name": "pylint-common",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2.2"
+ },
+ "metadata_version": 1,
+ "name": "pylint-common",
+ "raw_recipe": "{% set name = \"pylint-common\" %}\n{% set version = \"0.2.2\" %}\n{% set sha256 = \"0abe78dc9259927fcad69f2f8220f8c70da62d32bf8393b8768f5ef6c9870e11\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pylint >=1.0\n    # Was not explicitly listed.\n    # However it is being imported.\n    # So have added it as a dependency.\n    # See linked issue for details.\n    #\n    # https://github.com/landscapeio/pylint-common/issues/2\n    #\n    - pylint-plugin-utils\n\ntest:\n  imports:\n    - pylint_common\n\nabout:\n  home: https://github.com/landscapeio/pylint-common\n  license: GPL 2\n  summary: 'pylint-common is a Pylint plugin to improve Pylint error analysis of the standard Python library'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.2.2"
+}

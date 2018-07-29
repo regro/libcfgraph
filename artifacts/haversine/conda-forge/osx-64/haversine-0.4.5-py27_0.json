@@ -1,0 +1,63 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/haversine-0.4.5-py2.7.egg-info",
+  "lib/python2.7/site-packages/haversine/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "haversine",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.4.5"
+ },
+ "metadata_version": 1,
+ "name": "haversine",
+ "raw_recipe": "package:\n    name: haversine\n    version: 0.4.5\n\nsource:\n    fn: haversine-0.4.5.tar.gz\n    url: https://pypi.python.org/packages/source/h/haversine/haversine-0.4.5.tar.gz\n    md5: 555c853c2bd88fcad335dc910d176af4\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n\ntest:\n    imports:\n        - haversine\n\nabout:\n    home: https://github.com/mapado/haversine\n    license: MIT\n    summary: Calculate the distance between 2 points on Earth\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/mapado/haversine",
+   "license": "MIT",
+   "summary": "Calculate the distance between 2 points on Earth"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "haversine",
+   "version": "0.4.5"
+  },
+  "requirements": {
+   "build": [
+    "python"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "haversine-0.4.5.tar.gz",
+   "md5": "555c853c2bd88fcad335dc910d176af4",
+   "url": "https://pypi.python.org/packages/source/h/haversine/haversine-0.4.5.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "haversine"
+   ]
+  }
+ },
+ "version": "0.4.5"
+}

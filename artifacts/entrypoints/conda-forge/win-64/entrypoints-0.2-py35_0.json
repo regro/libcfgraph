@@ -1,0 +1,25 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/entrypoints.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "entrypoints",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2"
+ },
+ "metadata_version": 1,
+ "name": "entrypoints",
+ "raw_recipe": "{% set version = \"0.2\" %}\n\npackage:\n    name: entrypoints\n    version: {{ version }}\n\nsource:\n    fn: {{ version }}.tar.gz\n    url: https://github.com/takluyver/entrypoints/archive/{{ version }}.tar.gz\n    md5: bcbad7a52241a7e604657675f94f2f08\n\nbuild:\n    number: 0\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n        - configparser  # [not py35]\n\ntest:\n    imports:\n        - entrypoints\n\nabout:\n    home: http://entrypoints.readthedocs.org/en/latest/\n    license: MIT\n    summary: Discover and load entry points from installed packages\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - minrk\n    - takluyver\n",
+ "rendered_recipe": {},
+ "version": "0.2"
+}

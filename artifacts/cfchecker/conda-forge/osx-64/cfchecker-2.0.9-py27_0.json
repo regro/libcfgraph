@@ -1,0 +1,33 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/cfchecks",
+  "lib/python2.7/site-packages/cfchecker-2.0.9-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/cfchecker-2.0.9-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/cfchecker/__init__.py",
+  "lib/python2.7/site-packages/cfchecker/cfchecks.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "cdat-lite",
+   "numpy",
+   "python 2.7*",
+   "setuptools",
+   "udunits2"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "cfchecker",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.0.9"
+ },
+ "metadata_version": 1,
+ "name": "cfchecker",
+ "raw_recipe": "{% set version = \"2.0.9\" %}\n\npackage:\n    name: cfchecker\n    version: {{ version }}\n\nsource:\n    fn: cfchecker-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/c/cfchecker/cfchecker-{{ version }}.tar.gz\n    md5: e36c556454e21d88aaa9f0394429032f\n    patches:\n        # Ensure our udunits2 lib is used on all platforms.\n        - ctypes.patch\n\nbuild:\n    skip: True  # [win or py3k]\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    entry_points:\n        - cfchecks = cfchecker:cfchecks_main\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - numpy\n        - cdat-lite\n        - udunits2\n    run:\n        - python\n        - setuptools\n        - numpy\n        - cdat-lite\n        - udunits2\n\ntest:\n    commands:\n        - cfchecks -h\n    imports:\n        - cfchecker\n\nabout:\n  home: https://pypi.python.org/pypi/cfchecker\n  license: BSD 3-Clause\n  summary: The NetCDF Climate Forcast Conventions compliance checker\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "2.0.9"
+}

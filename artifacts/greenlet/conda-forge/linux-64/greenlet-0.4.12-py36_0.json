@@ -1,0 +1,154 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "The greenlet package is a spin-off of Stackless, a version of CPython that\nsupports micro-threads called \"tasklets\". Tasklets run pseudo-concurrently\n(typically in a single or a few OS-level threads) and are synchronized with\ndata exchanges on \"channels\".\n\nA \"greenlet\", on the other hand, is a still more primitive notion of\nmicro-thread with no implicit scheduling; coroutines, in other words. This\nis useful when you want to control exactly when your code runs. You can\nbuild custom scheduled micro-threads on top of greenlet; however, it seems\nthat greenlets are useful on their own as a way to make advanced control\nflow structures. For example, we can recreate generators; the difference\nwith Python's own generators is that our generators can call nested\nfunctions and the nested functions can yield values too. Additionally,\nyou don't need a \"yield\" keyword. See the example in\ntests/test_generator.py.\n\nGreenlets are provided as a C extension module for the regular unmodified\ninterpreter.\n\nGreenlets are lightweight coroutines for in-process concurrent programming.\n",
+  "dev_url": "https://github.com/python-greenlet/greenlet",
+  "doc_url": "https://greenlet.readthedocs.io",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/python-greenlet/greenlet",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-1",
+   "conda-forge::certifi-2017.4.17-py35_0",
+   "conda-forge::chardet-3.0.2-py35_1",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.10-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.12.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::openssl-1.0.2k-0",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-3",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2017.2-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Lightweight in-process concurrent programming"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/greenlet-0.4.12-py3.6.egg-info",
+  "lib/python3.6/site-packages/greenlet.cpython-36m-x86_64-linux-gnu.so",
+  "include/python3.6m/greenlet/greenlet.h"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.6*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "greenlet",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.4.12"
+ },
+ "metadata_version": 1,
+ "name": "greenlet",
+ "raw_recipe": "{% set name = \"greenlet\" %}\n{% set version = \"0.4.12\" %}\n{% set sha256 = \"e4c99c6010a5d153d481fdaf63b8a0782825c0721506d880403a3b9b82ae347e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - greenlet\n\nabout:\n  home: https://github.com/python-greenlet/greenlet\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Lightweight in-process concurrent programming'\n\n  description: |\n    The greenlet package is a spin-off of Stackless, a version of CPython that\n    supports micro-threads called \"tasklets\". Tasklets run pseudo-concurrently\n    (typically in a single or a few OS-level threads) and are synchronized with\n    data exchanges on \"channels\".\n\n    A \"greenlet\", on the other hand, is a still more primitive notion of\n    micro-thread with no implicit scheduling; coroutines, in other words. This\n    is useful when you want to control exactly when your code runs. You can\n    build custom scheduled micro-threads on top of greenlet; however, it seems\n    that greenlets are useful on their own as a way to make advanced control\n    flow structures. For example, we can recreate generators; the difference\n    with Python's own generators is that our generators can call nested\n    functions and the nested functions can yield values too. Additionally,\n    you don't need a \"yield\" keyword. See the example in\n    tests/test_generator.py.\n\n    Greenlets are provided as a C extension module for the regular unmodified\n    interpreter.\n\n    Greenlets are lightweight coroutines for in-process concurrent programming.\n  doc_url: https://greenlet.readthedocs.io\n  dev_url: https://github.com/python-greenlet/greenlet\n\nextra:\n  recipe-maintainers:\n    - curtisalexander\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "The greenlet package is a spin-off of Stackless, a version of CPython that\nsupports micro-threads called \"tasklets\". Tasklets run pseudo-concurrently\n(typically in a single or a few OS-level threads) and are synchronized with\ndata exchanges on \"channels\".\n\nA \"greenlet\", on the other hand, is a still more primitive notion of\nmicro-thread with no implicit scheduling; coroutines, in other words. This\nis useful when you want to control exactly when your code runs. You can\nbuild custom scheduled micro-threads on top of greenlet; however, it seems\nthat greenlets are useful on their own as a way to make advanced control\nflow structures. For example, we can recreate generators; the difference\nwith Python's own generators is that our generators can call nested\nfunctions and the nested functions can yield values too. Additionally,\nyou don't need a \"yield\" keyword. See the example in\ntests/test_generator.py.\n\nGreenlets are provided as a C extension module for the regular unmodified\ninterpreter.\n\nGreenlets are lightweight coroutines for in-process concurrent programming.\n",
+   "dev_url": "https://github.com/python-greenlet/greenlet",
+   "doc_url": "https://greenlet.readthedocs.io",
+   "home": "https://github.com/python-greenlet/greenlet",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Lightweight in-process concurrent programming"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "script": "python setup.py install",
+   "string": "py36_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "curtisalexander"
+   ]
+  },
+  "package": {
+   "name": "greenlet",
+   "version": "0.4.12"
+  },
+  "requirements": {
+   "build": [
+    "openssl 1.0.2k 0",
+    "zlib 1.2.11 0",
+    "python 3.6.1 2",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "ca-certificates 2017.4.17 0",
+    "readline 6.2 0",
+    "ncurses 5.9 10",
+    "xz 5.2.2 0"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "greenlet-0.4.12.tar.gz",
+   "sha256": "e4c99c6010a5d153d481fdaf63b8a0782825c0721506d880403a3b9b82ae347e",
+   "url": "https://pypi.io/packages/source/g/greenlet/greenlet-0.4.12.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "greenlet"
+   ]
+  }
+ },
+ "version": "0.4.12"
+}

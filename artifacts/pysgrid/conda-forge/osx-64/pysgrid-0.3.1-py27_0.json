@@ -1,0 +1,54 @@
+{
+ "about": {
+  "home": "https://github.com/sgrid/pysgrid",
+  "license": "BSD 3-Clause",
+  "summary": "Python package for working with staggered gridded data."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pysgrid-0.3.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pysgrid-0.3.1-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/pysgrid/__init__.py",
+  "lib/python2.7/site-packages/pysgrid/lookup.py",
+  "lib/python2.7/site-packages/pysgrid/processing_2d.py",
+  "lib/python2.7/site-packages/pysgrid/read_netcdf.py",
+  "lib/python2.7/site-packages/pysgrid/sgrid.py",
+  "lib/python2.7/site-packages/pysgrid/tests/__init__.py",
+  "lib/python2.7/site-packages/pysgrid/tests/test_interpolation.py",
+  "lib/python2.7/site-packages/pysgrid/tests/test_processing_2d.py",
+  "lib/python2.7/site-packages/pysgrid/tests/test_read_netcdf.py",
+  "lib/python2.7/site-packages/pysgrid/tests/test_sgrid_deltares.py",
+  "lib/python2.7/site-packages/pysgrid/tests/test_sgrid_non_compliant.py",
+  "lib/python2.7/site-packages/pysgrid/tests/test_sgrid_parsing.py",
+  "lib/python2.7/site-packages/pysgrid/tests/test_sgrid_roms.py",
+  "lib/python2.7/site-packages/pysgrid/tests/test_sgrid_variable_deltares.py",
+  "lib/python2.7/site-packages/pysgrid/tests/test_sgrid_variable_roms.py",
+  "lib/python2.7/site-packages/pysgrid/tests/test_sgrid_variable_wrf.py",
+  "lib/python2.7/site-packages/pysgrid/tests/test_sgrid_wrf.py",
+  "lib/python2.7/site-packages/pysgrid/tests/test_utils.py",
+  "lib/python2.7/site-packages/pysgrid/tests/write_nc_test_files.py",
+  "lib/python2.7/site-packages/pysgrid/utils.py",
+  "lib/python2.7/site-packages/pysgrid/variables.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "cell_tree2d",
+   "netcdf4",
+   "numpy",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pysgrid",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.1"
+ },
+ "metadata_version": 1,
+ "name": "pysgrid",
+ "raw_recipe": "{% set version = \"0.3.1\" %}\n\npackage:\n    name: pysgrid\n    version: {{ version }}\n\nsource:\n    fn: v{{ version }}.tar.gz\n    url: https://github.com/sgrid/pysgrid/archive/v{{ version }}.tar.gz\n    sha256: 63b07ef0c2acf4c949e6c362d70f8ff024434f819691fe6895fe475267dd1aab\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - netcdf4\n        - cell_tree2d\n\ntest:\n    imports:\n        - pysgrid\n\nabout:\n    home: https://github.com/sgrid/pysgrid\n    license: BSD 3-Clause\n    summary: 'Python package for working with staggered gridded data.'\n\nextra:\n    recipe-maintainers:\n        - ayan-usgs\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.3.1"
+}

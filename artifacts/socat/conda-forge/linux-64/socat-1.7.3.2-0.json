@@ -1,0 +1,156 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.8",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "socat is a relay for bidirectional data transfer between two independent data\nchannels. Each of these data channels may be a file, pipe, device (serial line\netc. or a pseudo terminal), a socket (UNIX, IP4, IP6 - raw, UDP, TCP), an\nSSL socket, proxy CONNECT connection, a file descriptor (stdin etc.), the GNU\nline editor (readline), a program, or a combination of two of these.\nThese modes include generation of \"listening\" sockets, named pipes, and pseudo\nterminals.\n\nsocat can be used, e.g., as TCP port forwarder (one-shot or daemon), as an\nexternal socksifier, for attacking weak firewalls, as a shell interface to UNIX\nsockets, IP6 relay, for redirecting TCP oriented programs to a serial line, to\nlogically connect serial lines on different computers, or to establish a\nrelatively secure environment (su and  chroot) for running client or server\nshell scripts with network connections.\n",
+  "dev_url": "http://repo.or.cz/r/socat.git",
+  "doc_url": "http://www.dest-unreach.org/socat/doc/README",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://www.dest-unreach.org/socat/",
+  "license": "GPL-2.0",
+  "license_family": "GPL",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-0",
+   "conda-forge::certifi-2017.1.23-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.8-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_2",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.12-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "A relay for bidirectional transfer between data channels (netcat++)"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/procan",
+  "bin/filan",
+  "share/man/man1/socat.1",
+  "bin/socat"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "openssl 1.0.2*",
+   "readline 6.*"
+  ],
+  "license": "GPL-2.0",
+  "license_family": "GPL",
+  "name": "socat",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.7.3.2"
+ },
+ "metadata_version": 1,
+ "name": "socat",
+ "raw_recipe": "{% set name = \"socat\" %}\n{% set version = \"1.7.3.2\" %}\n{% set sha256 = \"e3561f808739383eb10fada1e5d4f26883f0311b34fd0af7837d0c95ef379251\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.bz2\n  url: http://www.dest-unreach.org/{{ name }}/download/{{ name }}-{{ version }}.tar.bz2\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - openssl 1.0.2*\n    - readline 6.*\n  run:\n    - openssl 1.0.2*\n    - readline 6.*\n\ntest:\n  commands:\n    - filan -h\n    - procan -h\n    - socat -h\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [linux]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://www.dest-unreach.org/socat/\n  license: GPL-2.0\n  license_family: GPL\n  license_file: COPYING\n  summary: A relay for bidirectional transfer between data channels (netcat++)\n\n  # The remaining entries in this section are optional, but recommended\n  description: |\n      socat is a relay for bidirectional data transfer between two independent data\n      channels. Each of these data channels may be a file, pipe, device (serial line\n      etc. or a pseudo terminal), a socket (UNIX, IP4, IP6 - raw, UDP, TCP), an\n      SSL socket, proxy CONNECT connection, a file descriptor (stdin etc.), the GNU\n      line editor (readline), a program, or a combination of two of these. \n      These modes include generation of \"listening\" sockets, named pipes, and pseudo\n      terminals.\n\n      socat can be used, e.g., as TCP port forwarder (one-shot or daemon), as an\n      external socksifier, for attacking weak firewalls, as a shell interface to UNIX\n      sockets, IP6 relay, for redirecting TCP oriented programs to a serial line, to\n      logically connect serial lines on different computers, or to establish a\n      relatively secure environment (su and  chroot) for running client or server\n      shell scripts with network connections. \n  doc_url: http://www.dest-unreach.org/socat/doc/README\n  dev_url: http://repo.or.cz/r/socat.git\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "socat is a relay for bidirectional data transfer between two independent data\nchannels. Each of these data channels may be a file, pipe, device (serial line\netc. or a pseudo terminal), a socket (UNIX, IP4, IP6 - raw, UDP, TCP), an\nSSL socket, proxy CONNECT connection, a file descriptor (stdin etc.), the GNU\nline editor (readline), a program, or a combination of two of these.\nThese modes include generation of \"listening\" sockets, named pipes, and pseudo\nterminals.\n\nsocat can be used, e.g., as TCP port forwarder (one-shot or daemon), as an\nexternal socksifier, for attacking weak firewalls, as a shell interface to UNIX\nsockets, IP6 relay, for redirecting TCP oriented programs to a serial line, to\nlogically connect serial lines on different computers, or to establish a\nrelatively secure environment (su and  chroot) for running client or server\nshell scripts with network connections.\n",
+   "dev_url": "http://repo.or.cz/r/socat.git",
+   "doc_url": "http://www.dest-unreach.org/socat/doc/README",
+   "home": "http://www.dest-unreach.org/socat/",
+   "license": "GPL-2.0",
+   "license_family": "GPL",
+   "license_file": "COPYING",
+   "summary": "A relay for bidirectional transfer between data channels (netcat++)"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "sodre"
+   ]
+  },
+  "package": {
+   "name": "socat",
+   "version": "1.7.3.2"
+  },
+  "requirements": {
+   "build": [
+    "toolchain 2.0.0 0",
+    "readline 6.3 1",
+    "ncurses 5.9 10",
+    "openssl 1.0.2h 3",
+    "ca-certificates 2017.1.23 0"
+   ],
+   "run": [
+    "openssl 1.0.2*",
+    "readline 6.*"
+   ]
+  },
+  "source": {
+   "fn": "socat-1.7.3.2.tar.bz2",
+   "sha256": "e3561f808739383eb10fada1e5d4f26883f0311b34fd0af7837d0c95ef379251",
+   "url": "http://www.dest-unreach.org/socat/download/socat-1.7.3.2.tar.bz2"
+  },
+  "test": {
+   "commands": [
+    "filan -h",
+    "procan -h",
+    "socat -h",
+    "conda inspect linkages -p $PREFIX $PKG_NAME"
+   ]
+  }
+ },
+ "version": "1.7.3.2"
+}

@@ -1,0 +1,56 @@
+{
+ "about": {
+  "home": "http://matplotlib.org/basemap",
+  "license": "GPL-2.0",
+  "summary": "Plot on map projections (with coastlines and political boundaries) using matplotlib."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/share/basemap/UScounties.dbf",
+  "Library/share/basemap/UScounties.prj",
+  "Library/share/basemap/UScounties.shp",
+  "Library/share/basemap/UScounties.shx",
+  "Library/share/basemap/countries_f.dat",
+  "Library/share/basemap/countries_h.dat",
+  "Library/share/basemap/countries_i.dat",
+  "Library/share/basemap/countriesmeta_f.dat",
+  "Library/share/basemap/countriesmeta_h.dat",
+  "Library/share/basemap/countriesmeta_i.dat",
+  "Library/share/basemap/gshhs_f.dat",
+  "Library/share/basemap/gshhs_h.dat",
+  "Library/share/basemap/gshhs_i.dat",
+  "Library/share/basemap/gshhsmeta_f.dat",
+  "Library/share/basemap/gshhsmeta_h.dat",
+  "Library/share/basemap/gshhsmeta_i.dat",
+  "Library/share/basemap/rivers_f.dat",
+  "Library/share/basemap/rivers_h.dat",
+  "Library/share/basemap/rivers_i.dat",
+  "Library/share/basemap/riversmeta_f.dat",
+  "Library/share/basemap/riversmeta_h.dat",
+  "Library/share/basemap/riversmeta_i.dat",
+  "Library/share/basemap/states_f.dat",
+  "Library/share/basemap/states_h.dat",
+  "Library/share/basemap/states_i.dat",
+  "Library/share/basemap/statesmeta_f.dat",
+  "Library/share/basemap/statesmeta_h.dat",
+  "Library/share/basemap/statesmeta_i.dat"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "2",
+  "build_number": 2,
+  "depends": [
+   "basemap >1.0.7"
+  ],
+  "license": "GPL-2.0",
+  "name": "basemap-data-hires",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.8.dev0"
+ },
+ "metadata_version": 1,
+ "name": "basemap-data-hires",
+ "raw_recipe": "{% set version = \"1.0.8.dev0\" %}\n{% set commit = \"b80bfdc34da508c247bb2124b6cc5f025c4f1b46\" %}\n\npackage:\n  name: basemap-data-hires\n  version: {{ version }}\n\nsource:\n  fn: {{ commit }}.tar.gz\n  url: https://github.com/matplotlib/basemap/archive/{{ commit }}.tar.gz\n  sha256: fe697260e981135d1fe86f3560ff581ed5239239697b9b17d14890c3b897156e\n\nbuild:\n  number: 2\n\nrequirements:\n  build:\n    - basemap >1.0.7\n  run:\n    - basemap >1.0.7\n\ntest:\n  imports:\n    - mpl_toolkits.basemap\n\nabout:\n  home: http://matplotlib.org/basemap\n  license: GPL-2.0\n  summary: 'Plot on map projections (with coastlines and political boundaries) using matplotlib.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.0.8.dev0"
+}

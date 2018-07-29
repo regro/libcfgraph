@@ -1,0 +1,94 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/opj_compress",
+  "bin/opj_decompress",
+  "bin/opj_dump",
+  "include/openjpeg-2.1/openjpeg.h",
+  "include/openjpeg-2.1/opj_config.h",
+  "include/openjpeg-2.1/opj_stdint.h",
+  "lib/libopenjp2.so",
+  "lib/libopenjp2.so.2.1.0",
+  "lib/libopenjp2.so.7",
+  "lib/openjpeg-2.1/OpenJPEGConfig.cmake",
+  "lib/openjpeg-2.1/OpenJPEGTargets-noconfig.cmake",
+  "lib/openjpeg-2.1/OpenJPEGTargets.cmake",
+  "lib/pkgconfig/libopenjp2.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "4",
+  "build_number": 4,
+  "depends": [
+   "libpng 1.6*",
+   "libtiff 4.0.6",
+   "zlib 1.2*"
+  ],
+  "license": "BSD 2-clauses",
+  "name": "openjpeg",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.1.0"
+ },
+ "metadata_version": 1,
+ "name": "openjpeg",
+ "raw_recipe": "package:\n    name: openjpeg\n    version: 2.1.0\n\nsource:\n    fn: version.2.1.tar.gz\n    url: https://github.com/uclouvain/openjpeg/archive/version.2.1.tar.gz\n    md5: 3e1c451c087f8462955426da38aa3b3d\n\nbuild:\n    number: 4\n    features:\n        - vc9  # [win and py27]\n        - vc10  # [win and py34]\n        - vc14  # [win and py35]\n\nrequirements:\n    build:\n        - python  # [win]\n        - cmake\n        - libtiff 4.0.6\n        - libpng 1.6*\n        - zlib 1.2*\n    run:\n        - libtiff 4.0.6\n        - libpng 1.6*\n        - zlib 1.2*\n\ntest:\n    requires:\n        - python {{ environ['PY_VER'] + '*' }}  # [win]\n    files:\n        - p0_01.j2k\n    commands:\n        - opj_dump -i p0_01.j2k\n        - conda inspect linkages -n _test openjpeg  # [linux]\n\nabout:\n    home: http://www.openjpeg.org/\n    license: BSD 2-clauses\n    summary: An open-source JPEG 2000 codec written in C\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - gillins\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.openjpeg.org/",
+   "license": "BSD 2-clauses",
+   "summary": "An open-source JPEG 2000 codec written in C"
+  },
+  "build": {
+   "features": [
+    "vc9",
+    "vc10",
+    "vc14"
+   ],
+   "number": 4
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "gillins"
+   ]
+  },
+  "package": {
+   "name": "openjpeg",
+   "version": "2.1.0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "cmake",
+    "libtiff 4.0.6",
+    "libpng 1.6*",
+    "zlib 1.2*"
+   ],
+   "run": [
+    "libtiff 4.0.6",
+    "libpng 1.6*",
+    "zlib 1.2*"
+   ]
+  },
+  "source": {
+   "fn": "version.2.1.tar.gz",
+   "md5": "3e1c451c087f8462955426da38aa3b3d",
+   "url": "https://github.com/uclouvain/openjpeg/archive/version.2.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "opj_dump -i p0_01.j2k",
+    "conda inspect linkages -n _test openjpeg"
+   ],
+   "files": [
+    "p0_01.j2k"
+   ],
+   "requires": [
+    "python {{ environ['PY_VER'] + '*' }}"
+   ]
+  }
+ },
+ "version": "2.1.0"
+}

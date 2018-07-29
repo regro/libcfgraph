@@ -1,0 +1,154 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.1",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://zeromq.org",
+  "license": "LGPL 3",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.1-py35_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.2-5",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.4-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-32.3.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.8-3"
+  ],
+  "summary": "A high-performance asynchronous messaging library."
+ },
+ "conda_build_config": {},
+ "files": [
+  "share/cmake/ZeroMQ/ZeroMQConfigVersion.cmake",
+  "include/zmq.h",
+  "include/zmq_utils.h",
+  "lib/pkgconfig/libzmq.pc",
+  "lib/libzmq.so.4.2.1",
+  "lib/libzmq.so",
+  "lib/libzmq.a",
+  "lib/libzmq.so.5.1.1",
+  "share/cmake/ZeroMQ/ZeroMQConfig.cmake"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "libsodium"
+  ],
+  "license": "LGPL 3",
+  "name": "zeromq",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "4.2.1"
+ },
+ "metadata_version": 1,
+ "name": "zeromq",
+ "raw_recipe": "{% set name = \"zeromq\" %}\n{% set version = \"4.2.1\" %}\n{% set sha256 = \"27d1e82a099228ee85a7ddb2260f40830212402c605a4a10b5e5498a7e0e9d03\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/zeromq/libzmq/releases/download/v{{ version }}/zeromq-{{ version }}.tar.gz\n\n  sha256: {{ sha256 }}\n  patches:\n    # Fixes in libzmq's cmake which enable a cmake build on windows, and cmake\n    # install in general.\n    #\n    # zeromq/libzmq#2304\n    # zeromq/libzmq#2295\n    # zeromq/libzmq#2294\n    # zeromq/libzmq#2311\n    # zeromq/libzmq#2317\n    # zeromq/libzmq#2318\n    #\n    - 0001-Windows-cmake-build-fixed.patch\n    - 0002-CPack-option-and-.txt-files-installation-dir.patch\n    - 0003-cmake-install-config-file.patch\n    - 0004-INSTALLATION-instructions.patch\n    - 0005-cmake-install-on-linux-fixed.patch\n    - 0006-Problem-name-of-static-library-generated-by-cmake-di.patch\n    - 0007-Problem-cmake-artefacts-different-from-make-generate.patch\n    - 0008-CMake-static-library-output-does-not-match-ZeroMQ-Co.patch\n\nbuild:\n  number: 0\n  skip: true  # [win and py27]\n  features:\n    - vc9     # [win and py27]\n    - vc10    # [win and py34]\n    - vc14    # [win and py>=35]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - libsodium\n    - python  # [win]\n    - vc 9    # [win and py27]\n    - vc 10   # [win and py34]\n    - vc 14   # [win and py>=35]\n\n  run:\n    - libsodium\n    - vc 9    # [win and py27]\n    - vc 10   # [win and py34]\n    - vc 14   # [win and py>=35]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libzmq.a         # [unix]\n    - test -f ${PREFIX}/lib/libzmq.so        # [linux]\n    - test -f ${PREFIX}/lib/libzmq.dylib     # [osx]\n    - test -f ${PREFIX}/share/cmake/ZeroMQ/ZeroMQConfig.cmake         # [unix]\n    - test -f ${PREFIX}/share/cmake/ZeroMQ/ZeroMQConfigVersion.cmake  # [unix]\n    - if exist %LIBRARY_LIB%\\libzmq-mt-s-{{ version | replace('.', '_') }}.lib (exit 0) else (exit 1)  # [win]\n    - if exist %LIBRARY_BIN%\\libzmq-mt-{{ version | replace('.', '_') }}.dll (exit 0) else (exit 1)    # [win]\n    - if exist %LIBRARY_LIB%\\libzmq-mt-{{ version | replace('.', '_') }}.lib (exit 0) else (exit 1)    # [win]\n    - if exist %LIBRARY_BIN%\\libzmq.dll (exit 0) else (exit 1)                                         # [win]\n    - if exist %LIBRARY_LIB%\\libzmq.lib (exit 0) else (exit 1)                                         # [win]\n    - if exist %LIBRARY_PREFIX%\\share\\cmake\\ZeroMQ\\ZeroMQConfig.cmake (exit 0) else (exit 1)           # [win]\n    - if exist %LIBRARY_PREFIX%\\share\\cmake\\ZeroMQ\\ZeroMQConfigVersion.cmake (exit 0) else (exit 1)    # [win]\n\nabout:\n  home: http://zeromq.org\n  license: LGPL 3\n  summary: A high-performance asynchronous messaging library.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n    - SylvainCorlay\n    - JohanMabille\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://zeromq.org",
+   "license": "LGPL 3",
+   "summary": "A high-performance asynchronous messaging library."
+  },
+  "build": {
+   "features": "",
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham",
+    "minrk",
+    "SylvainCorlay",
+    "JohanMabille"
+   ]
+  },
+  "package": {
+   "name": "zeromq",
+   "version": "4.2.1"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "libsodium"
+   ]
+  },
+  "source": {
+   "fn": "zeromq-4.2.1.tar.gz",
+   "patches": [
+    "0001-Windows-cmake-build-fixed.patch",
+    "0002-CPack-option-and-.txt-files-installation-dir.patch",
+    "0003-cmake-install-config-file.patch",
+    "0004-INSTALLATION-instructions.patch",
+    "0005-cmake-install-on-linux-fixed.patch",
+    "0006-Problem-name-of-static-library-generated-by-cmake-di.patch",
+    "0007-Problem-cmake-artefacts-different-from-make-generate.patch",
+    "0008-CMake-static-library-output-does-not-match-ZeroMQ-Co.patch"
+   ],
+   "sha256": "27d1e82a099228ee85a7ddb2260f40830212402c605a4a10b5e5498a7e0e9d03",
+   "url": "https://github.com/zeromq/libzmq/releases/download/v4.2.1/zeromq-4.2.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/lib/libzmq.a",
+    "test -f ${PREFIX}/lib/libzmq.so",
+    "test -f ${PREFIX}/share/cmake/ZeroMQ/ZeroMQConfig.cmake",
+    "test -f ${PREFIX}/share/cmake/ZeroMQ/ZeroMQConfigVersion.cmake"
+   ]
+  }
+ },
+ "version": "4.2.1"
+}

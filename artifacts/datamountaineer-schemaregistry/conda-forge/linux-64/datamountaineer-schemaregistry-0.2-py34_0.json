@@ -1,0 +1,102 @@
+{
+ "about": {
+  "home": "https://github.com/datamountaineer/python-serializers",
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "summary": "DataMountaineer Python 3.5 Confluent Schema Registry Client"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/datamountaineer/__init__.py",
+  "lib/python3.4/site-packages/datamountaineer/schemaregistry/__init__.py",
+  "lib/python3.4/site-packages/datamountaineer/schemaregistry/client/ClientError.py",
+  "lib/python3.4/site-packages/datamountaineer/schemaregistry/client/SchemaRegistryClient.py",
+  "lib/python3.4/site-packages/datamountaineer/schemaregistry/client/__init__.py",
+  "lib/python3.4/site-packages/datamountaineer/schemaregistry/serializers/MessageSerializer.py",
+  "lib/python3.4/site-packages/datamountaineer/schemaregistry/serializers/Util.py",
+  "lib/python3.4/site-packages/datamountaineer/schemaregistry/serializers/__init__.py",
+  "lib/python3.4/site-packages/datamountaineer/schemaregistry/tests/__init__.py",
+  "lib/python3.4/site-packages/datamountaineer/schemaregistry/tests/data_gen.py",
+  "lib/python3.4/site-packages/datamountaineer/schemaregistry/tests/mock_registry.py",
+  "lib/python3.4/site-packages/datamountaineer/schemaregistry/tests/test_cached_client.py",
+  "lib/python3.4/site-packages/datamountaineer/schemaregistry/tests/test_message_serializer.py",
+  "lib/python3.4/site-packages/datamountaineer/schemaregistry/tests/test_registry.py",
+  "lib/python3.4/site-packages/datamountaineer/schemaregistry/tests/test_util.py",
+  "lib/python3.4/site-packages/datamountaineer_schemaregistry-0.2-py3.4.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "fastavro",
+   "python 3.4*",
+   "python-avro"
+  ],
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "name": "datamountaineer-schemaregistry",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2"
+ },
+ "metadata_version": 1,
+ "name": "datamountaineer-schemaregistry",
+ "raw_recipe": "package:\n  name: datamountaineer-schemaregistry\n  version: \"0.2\"\n\nsource:\n  git_url: https://github.com/datamountaineer/python-serializers.git\n  git_rev: 3a55967d29524f406548f2afa844f92f18d12a7d\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [py2k]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - fastavro\n    - python-avro\n\n  run:\n    - python\n    - fastavro\n    - python-avro\n\ntest:\n  requires:\n    - mock\n    - pytest\n  commands:\n    - py.test {{ environ['SRC_DIR'] }}\n  imports:\n    - datamountaineer\n    - datamountaineer.schemaregistry\n    - datamountaineer.schemaregistry.tests\n    - datamountaineer.schemaregistry.client\n    - datamountaineer.schemaregistry.serializers\n\nabout:\n  home: https://github.com/datamountaineer/python-serializers\n  license: Apache 2.0\n  summary: 'DataMountaineer Python 3.5 Confluent Schema Registry Client'\n  license_family: Apache\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/datamountaineer/python-serializers",
+   "license": "Apache 2.0",
+   "license_family": "Apache",
+   "summary": "DataMountaineer Python 3.5 Confluent Schema Registry Client"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "kwilcox"
+   ]
+  },
+  "package": {
+   "name": "datamountaineer-schemaregistry",
+   "version": "0.2"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "fastavro",
+    "python-avro"
+   ],
+   "run": [
+    "python",
+    "fastavro",
+    "python-avro"
+   ]
+  },
+  "source": {
+   "git_rev": "3a55967d29524f406548f2afa844f92f18d12a7d",
+   "git_url": "https://github.com/datamountaineer/python-serializers.git"
+  },
+  "test": {
+   "commands": [
+    "py.test {{ environ['SRC_DIR'] }}"
+   ],
+   "imports": [
+    "datamountaineer",
+    "datamountaineer.schemaregistry",
+    "datamountaineer.schemaregistry.tests",
+    "datamountaineer.schemaregistry.client",
+    "datamountaineer.schemaregistry.serializers"
+   ],
+   "requires": [
+    "mock",
+    "pytest"
+   ]
+  }
+ },
+ "version": "0.2"
+}

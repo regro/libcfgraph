@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "http://code.google.com/p/pymox/",
+  "license": "Apache License, Version 2.0",
+  "summary": "Mock object framework"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/mox-0.5.3-py2.7.egg-info",
+  "lib/python2.7/site-packages/mox.py",
+  "lib/python2.7/site-packages/stubout.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "Apache License, Version 2.0",
+  "name": "mox",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.5.3"
+ },
+ "metadata_version": 1,
+ "name": "mox",
+ "raw_recipe": "{% set version = \"0.5.3\" %}\n\npackage:\n  name: mox\n  version: {{ version }}\n\nsource:\n  fn: mox-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/m/mox/mox-{{ version }}.tar.gz\n  md5: 6de7371e7e8bd9e2dad3fef2646f4a43\n\nbuild:\n  number: 1\n  skip: true  # [py3k]\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - mox\n\nabout:\n  home: http://code.google.com/p/pymox/\n  license: Apache License, Version 2.0\n  summary: 'Mock object framework'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.5.3"
+}

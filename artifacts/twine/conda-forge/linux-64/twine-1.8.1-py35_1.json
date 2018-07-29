@@ -1,0 +1,49 @@
+{
+ "about": {
+  "home": "https://github.com/pypa/twine",
+  "license": "Apache Software License 2.0",
+  "summary": "Collection of utilities for interacting with PyPI"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/twine",
+  "lib/python3.5/site-packages/twine-1.8.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/twine-1.8.1-py3.5.egg-info/pbr.json",
+  "lib/python3.5/site-packages/twine/__init__.py",
+  "lib/python3.5/site-packages/twine/__main__.py",
+  "lib/python3.5/site-packages/twine/_installed.py",
+  "lib/python3.5/site-packages/twine/cli.py",
+  "lib/python3.5/site-packages/twine/commands/__init__.py",
+  "lib/python3.5/site-packages/twine/commands/register.py",
+  "lib/python3.5/site-packages/twine/commands/upload.py",
+  "lib/python3.5/site-packages/twine/exceptions.py",
+  "lib/python3.5/site-packages/twine/package.py",
+  "lib/python3.5/site-packages/twine/repository.py",
+  "lib/python3.5/site-packages/twine/utils.py",
+  "lib/python3.5/site-packages/twine/wheel.py",
+  "lib/python3.5/site-packages/twine/wininst.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "clint",
+   "pkginfo >=1.0",
+   "python 3.5*",
+   "requests >=2.5.0",
+   "requests-toolbelt >=0.5.1",
+   "setuptools >=0.7.0"
+  ],
+  "license": "Apache Software License 2.0",
+  "name": "twine",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.8.1"
+ },
+ "metadata_version": 1,
+ "name": "twine",
+ "raw_recipe": "{% set version = \"1.8.1\" %}\n\npackage:\n  name: twine\n  version: {{ version }}\n\nsource:\n  fn: twine-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/t/twine/twine-{{ version }}.tar.gz\n  sha256: 68b663691a947b844f92853c992d42bb68b6333bffc9ab7f661346b001c1da82\n\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - twine = twine.__main__:main\n\nrequirements:\n  build:\n    - python\n    - pkginfo >=1.0\n    - requests >=2.5.0\n    - requests-toolbelt >=0.5.1\n    - setuptools >=0.7.0\n    - clint\n    \n  run:\n    - python\n    - pkginfo >=1.0\n    - requests >=2.5.0\n    - requests-toolbelt >=0.5.1\n    - setuptools >=0.7.0\n    - clint\n\ntest:\n  imports:\n    - twine\n    - twine.commands\n  commands:\n    - twine --help\n\nabout:\n  home: https://github.com/pypa/twine\n  license: Apache Software License 2.0\n  license_file: LICENSE\n  summary: 'Collection of utilities for interacting with PyPI'\n\nextra:\n  recipe-maintainers:\n    - janschulz\n",
+ "rendered_recipe": {},
+ "version": "1.8.1"
+}

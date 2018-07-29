@@ -1,0 +1,40 @@
+{
+ "about": {
+  "description": "The PyPrind (Python Progress Indicator) module provides a progress bar\nand a percentage indicator object that let you track the progress of a\nloop structure or other iterative computation.\n",
+  "dev_url": "https://github.com/rasbt/pyprind",
+  "doc_url": "http://pythonhosted.org/PyPrind/",
+  "home": "https://github.com/rasbt/pyprind",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "summary": "A progress bar and a percentage indicator object that let you track the progress of an iterative computation"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/PyPrind-2.9.9-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pyprind/__init__.py",
+  "lib/python2.7/site-packages/pyprind/generator_factory.py",
+  "lib/python2.7/site-packages/pyprind/prog_class.py",
+  "lib/python2.7/site-packages/pyprind/progbar.py",
+  "lib/python2.7/site-packages/pyprind/progpercent.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "psutil >=3.2.0",
+   "python 2.7*"
+  ],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "name": "pyprind",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.9.9"
+ },
+ "metadata_version": 1,
+ "name": "pyprind",
+ "raw_recipe": "{% set name = \"PyPrind\" %}\n{% set version = \"2.9.9\" %}\n{% set sha256 = \"83fca8b860a1e6481416fbde3cd59b825867870f00939946abe6cd1c6039feb3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - psutil >=3.2.0\n\ntest:\n  imports:\n    - pyprind\n\nabout:\n  home: https://github.com/rasbt/pyprind\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'A progress bar and a percentage indicator object that let you track the progress of an iterative computation'\n  description: |\n    The PyPrind (Python Progress Indicator) module provides a progress bar\n    and a percentage indicator object that let you track the progress of a\n    loop structure or other iterative computation.\n  doc_url: http://pythonhosted.org/PyPrind/\n  dev_url: https://github.com/rasbt/pyprind\n\nextra:\n  recipe-maintainers:\n    - cmutel\n",
+ "rendered_recipe": {},
+ "version": "2.9.9"
+}

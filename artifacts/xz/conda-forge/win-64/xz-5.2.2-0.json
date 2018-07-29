@@ -1,0 +1,46 @@
+{
+ "about": {
+  "home": "http://tukaani.org/xz/",
+  "license": "LGPL-2.1 and GPL-2.0",
+  "summary": "The xz command is a very powerful program for compressing files"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/liblzma.dll",
+  "Library/include/lzma.h",
+  "Library/include/lzma/base.h",
+  "Library/include/lzma/bcj.h",
+  "Library/include/lzma/block.h",
+  "Library/include/lzma/check.h",
+  "Library/include/lzma/container.h",
+  "Library/include/lzma/delta.h",
+  "Library/include/lzma/filter.h",
+  "Library/include/lzma/hardware.h",
+  "Library/include/lzma/index.h",
+  "Library/include/lzma/index_hash.h",
+  "Library/include/lzma/lzma12.h",
+  "Library/include/lzma/stream_flags.h",
+  "Library/include/lzma/version.h",
+  "Library/include/lzma/vli.h",
+  "Library/lib/liblzma.lib",
+  "Library/lib/liblzma_static.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "vs2015_runtime"
+  ],
+  "license": "LGPL-2.1 and GPL-2.0",
+  "name": "xz",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "5.2.2"
+ },
+ "metadata_version": 1,
+ "name": "xz",
+ "raw_recipe": "{% set version = \"5.2.2\" %}\n\npackage:\n    name: xz\n    version: {{ version }}\n\nsource:\n    fn:  xz-{{ version }}.tar.bz2\n    url: http://tukaani.org/xz/xz-{{ version }}.tar.gz\n    sha256: 73df4d5d34f0468bd57d09f2d8af363e95ed6cc3a4a86129d2f2c366259902a2\n\nbuild:\n    number: 0\n    # Limited to VS 2015 on Win for now - for sake of C99 support.\n    msvc_compiler: 14.0  # [win]\n\nrequirements:\n    run:\n       # Limited to VS 2015 on Win for now - for sake of C99 support.\n       - vs2015_runtime  # [win]\n\ntest:\n    commands:\n        - xz --help  # [not win]\n        - unxz --help  # [not win]\n        - lzma --help  # [not win]\n        - conda inspect linkages -n _test xz  # [linux]\n        # Note: no xz executable exists on windows right now - only libs.\n        - if not exist %PREFIX%\\\\Library\\\\bin\\\\liblzma.dll exit 1  # [win]\n        - if not exist %PREFIX%\\\\Library\\\\lib\\\\liblzma.lib exit 1  # [win]\n        - if not exist %PREFIX%\\\\Library\\\\lib\\\\liblzma_static.lib exit 1  # [win]\n        - if not exist %PREFIX%\\\\Library\\\\include\\\\lzma.h exit 1  # [win]\n\nabout:\n    home: http://tukaani.org/xz/\n    summary: The xz command is a very powerful program for compressing files\n    license: LGPL-2.1 and GPL-2.0\n\nextra:\n    recipe-maintainers:\n        - msarahan\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "5.2.2"
+}

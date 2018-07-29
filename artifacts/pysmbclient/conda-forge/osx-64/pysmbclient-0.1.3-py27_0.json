@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "http://bitbucket.org/nosklo/pysmbclient",
+  "license": "GPL 3.0",
+  "summary": "A convenient smbclient wrapper"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/PySmbClient-0.1.3-py2.7.egg-info",
+  "lib/python2.7/site-packages/smbclient.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "GPL 3.0",
+  "name": "pysmbclient",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.3"
+ },
+ "metadata_version": 1,
+ "name": "pysmbclient",
+ "raw_recipe": "{%set name = \"pysmbclient\" %}\n{%set camelName = \"PySmbClient\" %}\n{%set version = \"0.1.3\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"d7026bd9ac3d494b77c7916c49759b240da2b91ddda381b6efd1a0fb37042886\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - smbclient\n\nabout:\n  home: http://bitbucket.org/nosklo/pysmbclient\n  license: GPL 3.0\n  summary: 'A convenient smbclient wrapper'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.1.3"
+}

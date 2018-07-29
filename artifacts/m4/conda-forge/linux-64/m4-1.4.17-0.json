@@ -1,0 +1,28 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/m4",
+  "share/info/dir",
+  "share/info/m4.info",
+  "share/info/m4.info-1",
+  "share/info/m4.info-2",
+  "share/man/man1/m4.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "GPL3",
+  "name": "m4",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.4.17"
+ },
+ "metadata_version": 1,
+ "name": "m4",
+ "raw_recipe": "{% set version = \"1.4.17\" %}\n\npackage:\n    name: m4\n    version: {{ version }}\n\nsource:\n    fn: m4-{{ version }}.tar.gz\n    url: http://ftp.gnu.org/gnu/m4/m4-{{ version }}.tar.gz\n\nbuild:\n    number: 0\n    skip: True  # [win]\n\ntest:\n    commands:\n        - m4 --help\n        - m4 --version\n\nabout:\n    home: http://www.gnu.org/software/m4/\n    license: GPL3\n    summary: Implementation of the traditional Unix macro processor.\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.4.17"
+}

@@ -1,0 +1,41 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/jupyter-console",
+  "lib/python2.7/site-packages/jupyter_console-4.1.1-py2.7.egg-info",
+  "lib/python2.7/site-packages/jupyter_console/__init__.py",
+  "lib/python2.7/site-packages/jupyter_console/__main__.py",
+  "lib/python2.7/site-packages/jupyter_console/_version.py",
+  "lib/python2.7/site-packages/jupyter_console/app.py",
+  "lib/python2.7/site-packages/jupyter_console/completer.py",
+  "lib/python2.7/site-packages/jupyter_console/interactiveshell.py",
+  "lib/python2.7/site-packages/jupyter_console/tests/__init__.py",
+  "lib/python2.7/site-packages/jupyter_console/tests/test_console.py",
+  "lib/python2.7/site-packages/jupyter_console/tests/test_image_handler.py",
+  "lib/python2.7/site-packages/jupyter_console/tests/writetofile.py",
+  "lib/python2.7/site-packages/jupyter_console/zmqhistory.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "ipykernel",
+   "ipython",
+   "jupyter_client",
+   "pexpect",
+   "python 2.7*"
+  ],
+  "license": "BSD",
+  "name": "jupyter_console",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "4.1.1"
+ },
+ "metadata_version": 1,
+ "name": "jupyter_console",
+ "raw_recipe": "{% set version = \"4.1.1\" %}\n\npackage:\n  name: jupyter_console\n  version: {{ version }}\n\nsource:\n  fn: jupyter_console-{{ version }}.tar.gz\n  url: https://github.com/jupyter/jupyter_console/archive/{{ version }}.tar.gz\n  md5: a8b077ae0a5c57e9518ac039ad5febb8\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - jupyter_client\n    - ipython\n    - ipykernel\n    - pexpect  # [not win]\n    - pyreadline  # [win]\n\ntest:\n  commands:\n    - jupyter-console -h\n  imports:\n    - jupyter_console\n\nabout:\n  home: http://jupyter.org\n  license: BSD\n  summary: Jupyter terminal console\n\nextra:\n  recipe-maintainers:\n    - minrk\n    - pelson\n    - takluyver\n",
+ "rendered_recipe": {},
+ "version": "4.1.1"
+}

@@ -1,0 +1,164 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.0",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p481/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://github.com/apache/arrow",
+  "license": "Apache 2.0",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-build-2.1.0-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.2.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "C++ libraries for Apache Arrow"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/arrow/status.h",
+  "lib/libarrow.dylib",
+  "include/arrow/ipc/adapter.h",
+  "lib/libarrow_ipc.dylib",
+  "lib/pkgconfig/arrow-io.pc",
+  "lib/libarrow_ipc.a",
+  "include/arrow/column.h",
+  "include/arrow/test-util.h",
+  "include/arrow/schema.h",
+  "include/arrow/ipc/json.h",
+  "lib/pkgconfig/arrow.pc",
+  "include/arrow/type.h",
+  "include/arrow/util/random.h",
+  "include/arrow/memory_pool.h",
+  "include/arrow/util/macros.h",
+  "include/arrow/ipc/metadata.h",
+  "lib/libarrow_jemalloc.a",
+  "include/arrow/util/bit-util.h",
+  "include/arrow/type_traits.h",
+  "include/arrow/table.h",
+  "include/arrow/pretty_print.h",
+  "include/arrow/io/file.h",
+  "include/arrow/io/interfaces.h",
+  "lib/pkgconfig/arrow-jemalloc.pc",
+  "include/arrow/io/hdfs.h",
+  "lib/libarrow.a",
+  "include/arrow/jemalloc/memory_pool.h",
+  "include/arrow/api.h",
+  "include/arrow/util/logging.h",
+  "include/arrow/util/visibility.h",
+  "include/arrow/ipc/file.h",
+  "lib/libarrow_io.dylib",
+  "lib/pkgconfig/arrow-ipc.pc",
+  "include/arrow/io/memory.h",
+  "lib/libarrow_io.a",
+  "lib/libarrow_jemalloc.dylib",
+  "include/arrow/array.h",
+  "include/arrow/type_fwd.h",
+  "include/arrow/builder.h",
+  "include/arrow/buffer.h"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "9",
+  "build_number": 9,
+  "depends": [
+   "jemalloc"
+  ],
+  "license": "Apache 2.0",
+  "name": "arrow-cpp",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.post"
+ },
+ "metadata_version": 1,
+ "name": "arrow-cpp",
+ "raw_recipe": "{% set version = \"0.1.post\" %}\n{% set commit = \"3195948f64770520c7ed4c8a7888b33402ad6519\" %}\n\npackage:\n  name: arrow-cpp\n  version: {{ version }}\n\n\nsource:\n  fn: {{ commit }}.tar.gz\n  url: https://github.com/apache/arrow/archive/{{ commit }}.tar.gz\n  sha256: 2ca012ab8a2a441c4fb1ff33d416c9466d250285634f23dc291748caf4457726\n\nbuild:\n  number: 9\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - boost 1.63.*\n    - flatbuffers\n    - cmake\n    - jemalloc\n\n  run:\n    - jemalloc\n\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libarrow.a  # [unix]\n    - test -f $PREFIX/lib/libarrow.so  # [linux]\n    - test -f $PREFIX/lib/libarrow_io.a  # [unix]\n    - test -f $PREFIX/lib/libarrow_io.so  # [linux]\n    - test -f $PREFIX/lib/libarrow_ipc.a  # [unix]\n    - test -f $PREFIX/lib/libarrow_ipc.so  # [linux]\n    - test -f $PREFIX/lib/libarrow_jemalloc.so  # [linux]\n    - test -f $PREFIX/lib/libarrow.dylib  # [osx]\n    - test -f $PREFIX/lib/libarrow_io.dylib  # [osx]\n    - test -f $PREFIX/lib/libarrow_ipc.dylib  # [osx]\n    - test -f $PREFIX/lib/libarrow_jemalloc.dylib  # [osx]\n\nabout:\n  home: http://github.com/apache/arrow\n  license: Apache 2.0\n  summary: 'C++ libraries for Apache Arrow'\n\nextra:\n  recipe-maintainers:\n    - wesm\n    - xhochy\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://github.com/apache/arrow",
+   "license": "Apache 2.0",
+   "summary": "C++ libraries for Apache Arrow"
+  },
+  "build": {
+   "number": "9",
+   "string": "9"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "wesm",
+    "xhochy"
+   ]
+  },
+  "package": {
+   "name": "arrow-cpp",
+   "version": "0.1.post"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "jemalloc"
+   ]
+  },
+  "source": {
+   "fn": "3195948f64770520c7ed4c8a7888b33402ad6519.tar.gz",
+   "sha256": "2ca012ab8a2a441c4fb1ff33d416c9466d250285634f23dc291748caf4457726",
+   "url": "https://github.com/apache/arrow/archive/3195948f64770520c7ed4c8a7888b33402ad6519.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/lib/libarrow.a",
+    "test -f $PREFIX/lib/libarrow_io.a",
+    "test -f $PREFIX/lib/libarrow_ipc.a",
+    "test -f $PREFIX/lib/libarrow.dylib",
+    "test -f $PREFIX/lib/libarrow_io.dylib",
+    "test -f $PREFIX/lib/libarrow_ipc.dylib",
+    "test -f $PREFIX/lib/libarrow_jemalloc.dylib"
+   ]
+  }
+ },
+ "version": "0.1.post"
+}

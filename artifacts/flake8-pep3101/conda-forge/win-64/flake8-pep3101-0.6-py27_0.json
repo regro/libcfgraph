@@ -1,0 +1,35 @@
+{
+ "about": {
+  "dev_url": "https://github.com/gforcada/flake8-pep3101",
+  "home": "https://github.com/gforcada/flake8-pep3101",
+  "license": "GPL-2.0",
+  "license_family": "GPL2",
+  "summary": "Check for uses of old % formatting rather than .format() method"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/flake8_pep3101-0.6-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/flake8_pep3101-0.6-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/flake8_pep3101.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "flake8",
+   "python 2.7*"
+  ],
+  "license": "GPL-2.0",
+  "license_family": "GPL2",
+  "name": "flake8-pep3101",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.6"
+ },
+ "metadata_version": 1,
+ "name": "flake8-pep3101",
+ "raw_recipe": "{% set name = \"flake8-pep3101\" %}\n{% set version = \"0.6\" %}\n{% set sha256 = \"c4c846e25052cb10d37ed542c122c068a96a14188aeb9841cab4a985adc819c2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - flake8\n\ntest:\n  commands:\n    - \"flake8 --version | grep flake8_pep3101:\"\n\nabout:\n  home: https://github.com/gforcada/flake8-pep3101\n  license: GPL-2.0\n  license_family: GPL2\n  license_file: LICENSE\n  summary: 'Check for uses of old % formatting rather than .format() method'\n  dev_url: https://github.com/gforcada/flake8-pep3101\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
+ "rendered_recipe": {},
+ "version": "0.6"
+}

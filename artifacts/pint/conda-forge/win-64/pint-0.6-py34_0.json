@@ -1,0 +1,52 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/Pint-0.6-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/Pint-0.6-py3.4.egg-info/zip-safe",
+  "Lib/site-packages/pint/__init__.py",
+  "Lib/site-packages/pint/compat/__init__.py",
+  "Lib/site-packages/pint/compat/chainmap.py",
+  "Lib/site-packages/pint/compat/lrucache.py",
+  "Lib/site-packages/pint/compat/nullhandler.py",
+  "Lib/site-packages/pint/compat/transformdict.py",
+  "Lib/site-packages/pint/context.py",
+  "Lib/site-packages/pint/formatting.py",
+  "Lib/site-packages/pint/measurement.py",
+  "Lib/site-packages/pint/quantity.py",
+  "Lib/site-packages/pint/testsuite/__init__.py",
+  "Lib/site-packages/pint/testsuite/helpers.py",
+  "Lib/site-packages/pint/testsuite/parameterized.py",
+  "Lib/site-packages/pint/testsuite/test_contexts.py",
+  "Lib/site-packages/pint/testsuite/test_formatter.py",
+  "Lib/site-packages/pint/testsuite/test_issues.py",
+  "Lib/site-packages/pint/testsuite/test_measurement.py",
+  "Lib/site-packages/pint/testsuite/test_numpy.py",
+  "Lib/site-packages/pint/testsuite/test_pitheorem.py",
+  "Lib/site-packages/pint/testsuite/test_quantity.py",
+  "Lib/site-packages/pint/testsuite/test_umath.py",
+  "Lib/site-packages/pint/testsuite/test_unit.py",
+  "Lib/site-packages/pint/testsuite/test_util.py",
+  "Lib/site-packages/pint/unit.py",
+  "Lib/site-packages/pint/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "setuptools"
+  ],
+  "license": "BSD",
+  "name": "pint",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.6"
+ },
+ "metadata_version": 1,
+ "name": "pint",
+ "raw_recipe": "{% set version = \"0.6\" %}\n\npackage:\n  name: pint\n  version: {{ version }}\n\nsource:\n  fn: Pint-{{version}}.zip\n  url: https://pypi.python.org/packages/source/P/Pint/Pint-{{version}}.zip\n  md5: 88aa0918019071546b10c5fbdc91ae5e\n\nbuild:\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - pint\n\nabout:\n  home: https://github.com/hgrecco/pint\n  license: BSD\n  summary: 'Physical quantities module'\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
+ "rendered_recipe": {},
+ "version": "0.6"
+}

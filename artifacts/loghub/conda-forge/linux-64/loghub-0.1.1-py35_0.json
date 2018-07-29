@@ -1,0 +1,38 @@
+{
+ "about": {
+  "description": "Generate changelogs based on Github milestones or tags.\n",
+  "dev_url": "https://github.com/spyder-ide/loghub",
+  "home": "https://github.com/spyder-ide/loghub",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Generate changelogs based on Github milestones or tags."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/loghub",
+  "lib/python3.5/site-packages/loghub-0.1.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/loghub/__init__.py",
+  "lib/python3.5/site-packages/loghub/external/__init__.py",
+  "lib/python3.5/site-packages/loghub/external/github.py",
+  "lib/python3.5/site-packages/loghub/main.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "loghub",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1.1"
+ },
+ "metadata_version": 1,
+ "name": "loghub",
+ "raw_recipe": "{% set name = \"loghub\" %}\n{% set version = \"0.1.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"79c4867319f61257e7a643494910d35891fb08791951656731f315c73924b289\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - loghub = loghub.main:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  commands:\n    - loghub --help\n\nabout:\n  home: https://github.com/spyder-ide/loghub\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: Generate changelogs based on Github milestones or tags.\n  description: |\n    Generate changelogs based on Github milestones or tags.\n  dev_url: https://github.com/spyder-ide/loghub\n\nextra:\n  recipe-maintainers:\n    - ccordoba12\n    - goanpeca\n",
+ "rendered_recipe": {},
+ "version": "0.1.1"
+}

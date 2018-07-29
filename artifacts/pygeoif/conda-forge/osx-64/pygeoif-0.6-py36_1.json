@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "https://github.com/cleder/pygeoif/",
+  "license": "LGPL-2.1",
+  "summary": "A basic implementation of the __geo_interface__"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/pygeoif-0.6-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/pygeoif-0.6-py3.6.egg-info/not-zip-safe",
+  "lib/python3.6/site-packages/pygeoif/__init__.py",
+  "lib/python3.6/site-packages/pygeoif/geometry.py",
+  "lib/python3.6/site-packages/pygeoif/test_main.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_1",
+  "build_number": 1,
+  "depends": [
+   "python 3.6*"
+  ],
+  "license": "LGPL-2.1",
+  "name": "pygeoif",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.6"
+ },
+ "metadata_version": 1,
+ "name": "pygeoif",
+ "raw_recipe": "{% set version = \"0.6\" %}\n\npackage:\n  name: pygeoif\n  version: {{ version }}\n\nsource:\n  fn: pygeoif-{{ version }}.tar.gz\n  url: https://github.com/cleder/pygeoif/archive/{{ version }}.tar.gz\n  sha256: 2fa3436d8635bb6071a9531d51aa911c2db22cc9944cd75bc56012d92e349d26\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - pygeoif\n  requires:\n    - pytest\n\nabout:\n  home: https://github.com/cleder/pygeoif/\n  license: LGPL-2.1\n  summary: 'A basic implementation of the __geo_interface__'\n\nextra:\n  recipe-maintainers:\n    - benjwadams\n    - daf\n    - kwilcox\n    - lukecampbell\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.6"
+}

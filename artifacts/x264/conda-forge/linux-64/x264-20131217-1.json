@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "http://www.videolan.org/developers/x264.html",
+  "license": "GPL 2",
+  "summary": "A free software library for encoding video streams into the H.264/MPEG-4 AVC format."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/x264",
+  "include/x264.h",
+  "include/x264_config.h",
+  "lib/libx264.a",
+  "lib/libx264.so",
+  "lib/libx264.so.138",
+  "lib/pkgconfig/x264.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [],
+  "license": "GPL 2",
+  "name": "x264",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "20131217"
+ },
+ "metadata_version": 1,
+ "name": "x264",
+ "raw_recipe": "{% set version = \"20131217\" %}\n\npackage:\n    name: x264\n    version: 20131217\n\nsource:\n    fn: x264-snapshot-{{ version }}-2245-stable.tar.bz2\n    url: http://download.videolan.org/pub/videolan/x264/snapshots/x264-snapshot-{{ version }}-2245-stable.tar.bz2\n    md5: cfd27222c7aa9983259ddb10f7f570a6\n\nbuild:\n    number: 1\n    skip: true  # [win]\n\nrequirements:\n    build:\n      - yasm\n      - perl\n      - gcc     # [osx]\n\n    run:\n      - libgcc  # [osx]\n\ntest:\n    commands:\n        - test -f ${PREFIX}/include/x264.h         # [unix]\n        - test -f ${PREFIX}/lib/libx264.a          # [unix]\n        - test -f ${PREFIX}/lib/libx264.dylib      # [osx]\n        - test -f ${PREFIX}/lib/libx264.so         # [linux]\n        - x264 --help                              # [unix]\n\nabout:\n    home: http://www.videolan.org/developers/x264.html\n    license: GPL 2\n    summary: A free software library for encoding video streams into the H.264/MPEG-4 AVC format.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "20131217"
+}

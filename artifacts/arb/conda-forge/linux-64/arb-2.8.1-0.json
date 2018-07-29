@@ -1,0 +1,52 @@
+{
+ "about": {
+  "home": "http://arblib.org",
+  "license": "GPL v2+",
+  "summary": "A C library for arbitrary-precision interval arithmetic"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/acb.h",
+  "include/acb_calc.h",
+  "include/acb_hypgeom.h",
+  "include/acb_mat.h",
+  "include/acb_modular.h",
+  "include/acb_poly.h",
+  "include/arb.h",
+  "include/arb_calc.h",
+  "include/arb_mat.h",
+  "include/arb_poly.h",
+  "include/arf.h",
+  "include/bernoulli.h",
+  "include/fmpr.h",
+  "include/fmprb.h",
+  "include/fmpz_extras.h",
+  "include/hypgeom.h",
+  "include/mag.h",
+  "include/partitions.h",
+  "lib/libarb.a",
+  "lib/libarb.so",
+  "lib/libarb.so.1",
+  "lib/libarb.so.1.1.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "gmp",
+   "libflint",
+   "mpfr"
+  ],
+  "license": "GPL v2+",
+  "name": "arb",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.8.1"
+ },
+ "metadata_version": 1,
+ "name": "arb",
+ "raw_recipe": "{% set version = \"2.8.1\" %}\n\npackage:\n  name: arb\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.gz\n  url: https://github.com/fredrik-johansson/arb/archive/{{ version }}.tar.gz\n  sha256: f4f4ec2d59b348c5e89eaf0b33734bce83a2ef85ab4748b24b984d07f5651012\n\nbuild:\n  number: 0\n  skip: true        # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - gmp\n    - mpfr\n    - libflint\n  run:\n    - gmp\n    - mpfr\n    - libflint\n\ntest:\n  commands:\n    - test -f $PREFIX/include/arb.h\n    - test -f $PREFIX/lib/libarb.a\n    - test -f $PREFIX/lib/libarb.so         # [linux]\n    - test -f $PREFIX/lib/libarb.dylib      # [osx]\n\nabout:\n  home: http://arblib.org\n  license: GPL v2+\n  license_file: gpl-2.0.txt\n  summary: 'A C library for arbitrary-precision interval arithmetic'\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
+ "rendered_recipe": {},
+ "version": "2.8.1"
+}

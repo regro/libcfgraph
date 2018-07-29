@@ -1,0 +1,69 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/mprof",
+  "lib/python3.4/site-packages/memory_profiler-0.41-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/memory_profiler.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "psutil",
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "memory_profiler",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.41"
+ },
+ "metadata_version": 1,
+ "name": "memory_profiler",
+ "raw_recipe": "{% set version = \"0.41\" %}\n\npackage:\n  name: memory_profiler\n  version: {{ version }}\n\nsource:\n  fn: memory_profiler-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/m/memory_profiler/memory_profiler-{{ version }}.tar.gz\n  md5: 8615aecbcc5cf1a761c819b9f4976cad\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n    - psutil\n\ntest:\n  imports:\n    - memory_profiler\n\n  commands:\n    - python -m memory_profiler --help\n\nabout:\n  home: http://pypi.python.org/pypi/memory_profiler\n  license: BSD 3-Clause\n  summary: A module for monitoring memory usage of a python program\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://pypi.python.org/pypi/memory_profiler",
+   "license": "BSD 3-Clause",
+   "summary": "A module for monitoring memory usage of a python program"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "memory_profiler",
+   "version": "0.41"
+  },
+  "requirements": {
+   "build": [
+    "python"
+   ],
+   "run": [
+    "python",
+    "psutil"
+   ]
+  },
+  "source": {
+   "fn": "memory_profiler-0.41.tar.gz",
+   "md5": "8615aecbcc5cf1a761c819b9f4976cad",
+   "url": "https://pypi.io/packages/source/m/memory_profiler/memory_profiler-0.41.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python -m memory_profiler --help"
+   ],
+   "imports": [
+    "memory_profiler"
+   ]
+  }
+ },
+ "version": "0.41"
+}

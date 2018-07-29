@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "https://github.com/pyoceans/gridgeo",
+  "license": "MIT",
+  "summary": "Quick grid visualization and conversion to GIS formats."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/gridgeo-0.2.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/gridgeo/__init__.py",
+  "lib/python3.4/site-packages/gridgeo/gridgeo.py",
+  "lib/python3.4/site-packages/gridgeo/utilities.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "fiona",
+   "pysgrid",
+   "python 3.4*",
+   "pyugrid",
+   "shapely"
+  ],
+  "license": "MIT",
+  "name": "gridgeo",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.1"
+ },
+ "metadata_version": 1,
+ "name": "gridgeo",
+ "raw_recipe": "{% set version = \"0.2.1\" %}\n\npackage:\n    name: gridgeo\n    version: {{ version }}\n\nsource:\n    fn: v{{ version }}.tar.gz\n    url: https://github.com/pyoceans/gridgeo/archive/v{{ version }}.tar.gz\n    sha256: 02c302fc3cd4ecb3702a96715563c3672db38dc764373a2b0eb7a5906a9388a2\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - pyugrid\n        - pysgrid\n        - shapely\n        - fiona\n\ntest:\n    imports:\n        - gridgeo\n\nabout:\n    home: https://github.com/pyoceans/gridgeo\n    license: MIT\n    summary: 'Quick grid visualization and conversion to GIS formats.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.2.1"
+}

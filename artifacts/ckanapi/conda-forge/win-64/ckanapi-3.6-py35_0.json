@@ -1,0 +1,60 @@
+{
+ "about": {
+  "home": "https://github.com/ckan/ckanapi",
+  "license": "MIT",
+  "summary": "A command line interface and Python module for accessing the CKAN Action API"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/ckanapi-3.6-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/ckanapi-3.6-py3.5.egg-info/not-zip-safe",
+  "Lib/site-packages/ckanapi/__init__.py",
+  "Lib/site-packages/ckanapi/cli/__init__.py",
+  "Lib/site-packages/ckanapi/cli/action.py",
+  "Lib/site-packages/ckanapi/cli/delete.py",
+  "Lib/site-packages/ckanapi/cli/dump.py",
+  "Lib/site-packages/ckanapi/cli/load.py",
+  "Lib/site-packages/ckanapi/cli/main.py",
+  "Lib/site-packages/ckanapi/cli/paster.py",
+  "Lib/site-packages/ckanapi/cli/utils.py",
+  "Lib/site-packages/ckanapi/cli/workers.py",
+  "Lib/site-packages/ckanapi/common.py",
+  "Lib/site-packages/ckanapi/errors.py",
+  "Lib/site-packages/ckanapi/localckan.py",
+  "Lib/site-packages/ckanapi/remoteckan.py",
+  "Lib/site-packages/ckanapi/testappckan.py",
+  "Lib/site-packages/ckanapi/tests/__init__.py",
+  "Lib/site-packages/ckanapi/tests/mock/mock_ckan.py",
+  "Lib/site-packages/ckanapi/tests/test_call.py",
+  "Lib/site-packages/ckanapi/tests/test_cli_action.py",
+  "Lib/site-packages/ckanapi/tests/test_cli_dump.py",
+  "Lib/site-packages/ckanapi/tests/test_cli_load.py",
+  "Lib/site-packages/ckanapi/tests/test_cli_workers.py",
+  "Lib/site-packages/ckanapi/tests/test_remote.py",
+  "Lib/site-packages/ckanapi/tests/test_testapp.py",
+  "Lib/site-packages/ckanapi/version.py",
+  "Scripts/ckanapi-script.py",
+  "Scripts/ckanapi.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "docopt",
+   "python 3.5*",
+   "requests",
+   "simplejson"
+  ],
+  "license": "MIT",
+  "name": "ckanapi",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "3.6"
+ },
+ "metadata_version": 1,
+ "name": "ckanapi",
+ "raw_recipe": "{% set version = \"3.6\" %}\n\npackage:\n    name: ckanapi\n    version: {{ version }}\n\nsource:\n    fn: ckanapi-{{ version }}.tar.gz\n    url: https://github.com/ckan/ckanapi/archive/ckanapi-{{ version }}.tar.gz\n    sha256: 96241d06c15afa6d2883ae2438359b4d6b7e59f0b308c13b0497805707935c95\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - docopt\n        - requests\n        - simplejson\n\ntest:\n  imports:\n    - ckanapi\n    - ckanapi.cli\n    - ckanapi.tests\n\nabout:\n  home: https://github.com/ckan/ckanapi\n  license: MIT\n  summary: A command line interface and Python module for accessing the CKAN Action API\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "3.6"
+}

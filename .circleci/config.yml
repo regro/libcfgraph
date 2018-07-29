@@ -1,0 +1,65 @@
+version: 2
+
+jobs:
+  reap:
+    working_directory: ~/repo
+    docker:
+      - image: continuumio/miniconda3:latest
+    steps:
+      - run:
+          name: Git LFS (installl)
+          command: |
+            apt-get update
+            curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
+            apt-get install git-lfs
+      - run:
+          name: Git LFS (configure)
+          command: |
+            mkdir -p ~/.ssh
+            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+            ssh git@github.com git-lfs-authenticate "${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}" download
+      - checkout
+      - run:
+          name: LFS Pull
+          command: git lfs pull
+      - run:
+          name: Update Conda
+          command: |
+            conda config --set always_yes True
+            conda config --add channels conda-forge
+            conda update --all
+            conda install pip
+            pip install git+https:///github.com/regro/libcflib@master
+      - run:
+          name: Run fetcher
+          command: |
+            python -m libcflib.preloader artifacts
+          no_output_timeout: 60m
+      - run:
+          name: Report diff
+          command: |
+            git add .
+            git diff
+      - run:
+          name: commit changes
+          command: |
+            git config user.name circleci
+            git config user.email circleci@libcfgraph.regro.github.com
+            git commit -m "Updated graph"
+      - run:
+          name: push changes
+          command: |
+            git push https://${GH_PUSH_TOKEN}@github.com/regro/libcfgraph.git |& grep -Fv -e "https://"
+
+workflows:
+  version: 2
+  hourly:
+    triggers:
+      - schedule:
+          cron: "22 * * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - reap

@@ -1,0 +1,130 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "pep257 is a static analysis tool for checking compliance with Python\nPEP 257.\nThe framework for checking docstring style is flexible, and custom checks\ncan be easily added, for example to cover NumPy docstring conventions.\npep257 supports Python 2.6, 2.7, 3.2, 3.3, 3.4, pypy and pypy3.\n",
+  "dev_url": "http://github.com/GreenSteam/pep257",
+  "doc_url": "http://pep257.readthedocs.io/en/latest",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/GreenSteam/pep257",
+  "license": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Python docstring style checker (replaced by pydocstyle)"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/pep257",
+  "lib/python3.6/site-packages/pep257-0.7.0-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/pep257.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.6*"
+  ],
+  "license": "MIT",
+  "name": "pep257",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.7.0"
+ },
+ "metadata_version": 1,
+ "name": "pep257",
+ "raw_recipe": "{% set version = \"0.7.0\" %}\n{% set hash_type = \"md5\" %}\n{% set hash = \"ff3dc9622c2406b7b583a283fbea651e\" %}\n\npackage:\n  name: pep257\n  version: {{ version }}\n\nsource:\n  fn: pep257-{{version}}.tar.gz\n  url: https://pypi.io/packages/source/p/pep257/pep257-{{ version }}.tar.gz \n  {{ hash_type }}: {{ hash }}\n\nbuild:\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n    number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pep257\n\nabout:\n  home: https://github.com/GreenSteam/pep257\n  license: MIT\n  summary: 'Python docstring style checker (replaced by pydocstyle)'\n  description: |\n    pep257 is a static analysis tool for checking compliance with Python\n    PEP 257.\n    The framework for checking docstring style is flexible, and custom checks\n    can be easily added, for example to cover NumPy docstring conventions.\n    pep257 supports Python 2.6, 2.7, 3.2, 3.3, 3.4, pypy and pypy3.\n  doc_url: http://pep257.readthedocs.io/en/latest\n  dev_url: http://github.com/GreenSteam/pep257\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n    - jakirkham\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "pep257 is a static analysis tool for checking compliance with Python\nPEP 257.\nThe framework for checking docstring style is flexible, and custom checks\ncan be easily added, for example to cover NumPy docstring conventions.\npep257 supports Python 2.6, 2.7, 3.2, 3.3, 3.4, pypy and pypy3.\n",
+   "dev_url": "http://github.com/GreenSteam/pep257",
+   "doc_url": "http://pep257.readthedocs.io/en/latest",
+   "home": "https://github.com/GreenSteam/pep257",
+   "license": "MIT",
+   "summary": "Python docstring style checker (replaced by pydocstyle)"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt",
+   "string": "py36_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "goanpeca",
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "pep257",
+   "version": "0.7.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "pep257-0.7.0.tar.gz",
+   "md5": "ff3dc9622c2406b7b583a283fbea651e",
+   "url": "https://pypi.io/packages/source/p/pep257/pep257-0.7.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "pep257"
+   ]
+  }
+ },
+ "version": "0.7.0"
+}

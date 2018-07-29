@@ -1,0 +1,46 @@
+{
+ "about": {
+  "dev_url": "https://github.com/reclosedev/requests-cache",
+  "doc_url": "http://requests-cache.readthedocs.io/en/latest/",
+  "home": "https://github.com/reclosedev/requests-cache",
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "summary": "Persistent cache for requests library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/requests_cache-0.4.12-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/requests_cache/__init__.py",
+  "Lib/site-packages/requests_cache/backends/__init__.py",
+  "Lib/site-packages/requests_cache/backends/base.py",
+  "Lib/site-packages/requests_cache/backends/mongo.py",
+  "Lib/site-packages/requests_cache/backends/redis.py",
+  "Lib/site-packages/requests_cache/backends/sqlite.py",
+  "Lib/site-packages/requests_cache/backends/storage/__init__.py",
+  "Lib/site-packages/requests_cache/backends/storage/dbdict.py",
+  "Lib/site-packages/requests_cache/backends/storage/mongodict.py",
+  "Lib/site-packages/requests_cache/backends/storage/redisdict.py",
+  "Lib/site-packages/requests_cache/compat.py",
+  "Lib/site-packages/requests_cache/core.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "requests >=1.1.0"
+  ],
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "name": "requests-cache",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.4.12"
+ },
+ "metadata_version": 1,
+ "name": "requests-cache",
+ "raw_recipe": "{%set name = \"requests-cache\" %}\n{%set version = \"0.4.12\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"efe2319b04b5a89e5c7582630dc47eb206f05d9b20b7a4c64228c39d61339dd3\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - requests >=1.1.0\n\ntest:\n  imports:\n    - requests_cache\n    - requests_cache.backends\n    - requests_cache.backends.storage\n\nabout:\n  home: https://github.com/reclosedev/requests-cache\n  license: BSD 2-Clause\n  license_file: LICENSE\n  license_family: BSD\n  summary: 'Persistent cache for requests library'\n  dev_url: https://github.com/reclosedev/requests-cache\n  doc_url: http://requests-cache.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.4.12"
+}

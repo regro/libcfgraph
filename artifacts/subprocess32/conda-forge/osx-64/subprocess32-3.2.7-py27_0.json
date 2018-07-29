@@ -1,0 +1,27 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/_posixsubprocess.so",
+  "lib/python2.7/site-packages/subprocess32-3.2.7-py2.7.egg-info",
+  "lib/python2.7/site-packages/subprocess32.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "Python Software Foundation License",
+  "name": "subprocess32",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "3.2.7"
+ },
+ "metadata_version": 1,
+ "name": "subprocess32",
+ "raw_recipe": "{% set version = \"3.2.7\" %}\n\npackage:\n    name: subprocess32\n    version: {{ version }}\n\nsource:\n    fn: subprocess32-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/s/subprocess32/subprocess32-{{ version }}.tar.gz\n    md5: 824c801e479d3e916879aae3e9c15e16\n\nbuild:\n    number: 0\n    skip: True  # [not py2k]\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n\ntest:\n    imports:\n        - subprocess32\n\nabout:\n    home: https://github.com/google/python-subprocess32\n    license: Python Software Foundation License\n    summary: 'A backport of the subprocess module from Python 3.2/3.3 for use on 2.x.'\n\nextra:\n  recipe-maintainers:\n    - tacaswell\n    - mdboom\n",
+ "rendered_recipe": {},
+ "version": "3.2.7"
+}

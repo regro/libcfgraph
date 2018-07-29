@@ -1,0 +1,82 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/tqdm-4.7.4-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/tqdm/__init__.py",
+  "Lib/site-packages/tqdm/__main__.py",
+  "Lib/site-packages/tqdm/_main.py",
+  "Lib/site-packages/tqdm/_tqdm.py",
+  "Lib/site-packages/tqdm/_tqdm_gui.py",
+  "Lib/site-packages/tqdm/_tqdm_notebook.py",
+  "Lib/site-packages/tqdm/_tqdm_pandas.py",
+  "Lib/site-packages/tqdm/_utils.py",
+  "Lib/site-packages/tqdm/_version.py",
+  "Scripts/tqdm-script.py",
+  "Scripts/tqdm.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "Mozilla Public License 2.0 (MPL 2.0) or MIT License",
+  "name": "tqdm",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "4.7.4"
+ },
+ "metadata_version": 1,
+ "name": "tqdm",
+ "raw_recipe": "{% set version = \"4.7.4\" %}\n\npackage:\n  name: tqdm\n  version: {{ version }}\n\nsource:\n  fn: tqdm-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/t/tqdm/tqdm-{{ version }}.tar.gz\n  md5: 81a59bec1dbc03fd937510c8a574b5e8\n\nbuild:\n  entry_points:\n    - tqdm=tqdm._main:main\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - tqdm\n\n  commands:\n    - tqdm --help\n    - tqdm -v\n\nabout:\n  home: https://github.com/tqdm/tqdm\n  license: Mozilla Public License 2.0 (MPL 2.0) or MIT License\n  summary: 'A Fast, Extensible Progress Meter'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - ericdill\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/tqdm/tqdm",
+   "license": "Mozilla Public License 2.0 (MPL 2.0) or MIT License",
+   "summary": "A Fast, Extensible Progress Meter"
+  },
+  "build": {
+   "entry_points": [
+    "tqdm=tqdm._main:main"
+   ],
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pmlandwehr",
+    "ericdill"
+   ]
+  },
+  "package": {
+   "name": "tqdm",
+   "version": "4.7.4"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "tqdm-4.7.4.tar.gz",
+   "md5": "81a59bec1dbc03fd937510c8a574b5e8",
+   "url": "https://pypi.io/packages/source/t/tqdm/tqdm-4.7.4.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "tqdm --help",
+    "tqdm -v"
+   ],
+   "imports": [
+    "tqdm"
+   ]
+  }
+ },
+ "version": "4.7.4"
+}

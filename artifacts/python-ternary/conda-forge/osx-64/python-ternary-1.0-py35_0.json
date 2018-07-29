@@ -1,0 +1,34 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/python_ternary-1.0-py3.5.egg-info",
+  "lib/python3.5/site-packages/ternary/__init__.py",
+  "lib/python3.5/site-packages/ternary/colormapping.py",
+  "lib/python3.5/site-packages/ternary/coordinates.py",
+  "lib/python3.5/site-packages/ternary/heatmapping.py",
+  "lib/python3.5/site-packages/ternary/helpers.py",
+  "lib/python3.5/site-packages/ternary/lines.py",
+  "lib/python3.5/site-packages/ternary/plotting.py",
+  "lib/python3.5/site-packages/ternary/ternary_axes_subplot.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib >=1.4",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "python-ternary",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0"
+ },
+ "metadata_version": 1,
+ "name": "python-ternary",
+ "raw_recipe": "{% set version = \"1.0\" %}\n\npackage:\n    name: python-ternary\n    version: {{ version }}\n\nsource:\n    fn: python-ternary-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/p/python-ternary/python-ternary-{{ version }}.tar.gz\n    md5: b4afa32a9cb8b8c7156ba9f9f9b481f8\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n        - matplotlib >=1.4\n\ntest:\n    imports:\n        - ternary\nabout:\n    home: https://github.com/marcharper/python-ternary\n    license: MIT\n    summary: Make ternary plots in matplotlib\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.0"
+}

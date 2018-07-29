@@ -1,0 +1,39 @@
+{
+ "about": {
+  "home": "https://github.com/coleifer/wtf-peewee/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "WTForms integration for peewee models"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/wtf_peewee-0.2.6-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/wtf_peewee-0.2.6-py3.5.egg-info/not-zip-safe",
+  "Lib/site-packages/wtfpeewee/__init__.py",
+  "Lib/site-packages/wtfpeewee/_compat.py",
+  "Lib/site-packages/wtfpeewee/fields.py",
+  "Lib/site-packages/wtfpeewee/orm.py",
+  "Lib/site-packages/wtfpeewee/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "peewee >=2.0.0",
+   "python 3.5*",
+   "wtforms"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "wtf-peewee",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2.6"
+ },
+ "metadata_version": 1,
+ "name": "wtf-peewee",
+ "raw_recipe": "{%set name = \"wtf-peewee\" %}\n{%set version = \"0.2.6\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"41dcf298ca7d7bd1978557eb10336575976fe630b5ad5b2c6451d7a12caa3826\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - peewee >=2.0.0\n    - wtforms\n\ntest:\n  imports:\n    - wtfpeewee\n    - wtfpeewee.fields\n    - wtfpeewee.orm\n\nabout:\n  home: https://github.com/coleifer/wtf-peewee/\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: 'WTForms integration for peewee models'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.2.6"
+}

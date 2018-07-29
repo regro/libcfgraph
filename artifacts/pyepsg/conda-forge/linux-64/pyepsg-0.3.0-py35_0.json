@@ -1,0 +1,27 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pyepsg-0.3.0-py3.5.egg-info",
+  "lib/python3.5/site-packages/pyepsg.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "requests"
+  ],
+  "license": "LGPL",
+  "name": "pyepsg",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3.0"
+ },
+ "metadata_version": 1,
+ "name": "pyepsg",
+ "raw_recipe": "{% set version = \"0.3.0\" %}\n\npackage:\n    name: pyepsg\n    version: {{ version }}\n\nsource:\n    fn: pyepsg-{{ version }}.tar.gz\n    url: https://github.com/rhattersley/pyepsg/archive/v{{ version }}.tar.gz\n    sha256: e9dc5566eb8fc0015e49d899721930d4d93eaa172712d560a93373b8a21dc3c2\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n        - requests\n\ntest:\n    imports:\n        - pyepsg\n\nabout:\n    home: https://pypi.python.org/pypi/pyepsg\n    license: LGPL\n    summary: Easy access to the EPSG database via http://epsg.io/\n\nextra:\n    recipe-maintainers:\n        - pelson\n        - rhattersley\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.3.0"
+}

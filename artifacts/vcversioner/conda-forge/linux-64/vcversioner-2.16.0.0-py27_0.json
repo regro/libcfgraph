@@ -1,0 +1,31 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/vcversioner-2.16.0.0.dist-info/DESCRIPTION.rst",
+  "lib/python2.7/site-packages/vcversioner-2.16.0.0.dist-info/INSTALLER",
+  "lib/python2.7/site-packages/vcversioner-2.16.0.0.dist-info/METADATA",
+  "lib/python2.7/site-packages/vcversioner-2.16.0.0.dist-info/RECORD",
+  "lib/python2.7/site-packages/vcversioner-2.16.0.0.dist-info/WHEEL",
+  "lib/python2.7/site-packages/vcversioner-2.16.0.0.dist-info/metadata.json",
+  "lib/python2.7/site-packages/vcversioner.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "ISC",
+  "name": "vcversioner",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.16.0.0"
+ },
+ "metadata_version": 1,
+ "name": "vcversioner",
+ "raw_recipe": "{% set version = \"2.16.0.0\" %}\n\npackage:\n  name: vcversioner\n  version: {{ version }}\n\nsource:\n  fn: vcversioner-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/c5/cc/33162c0a7b28a4d8c83da07bc2b12cee58c120b4a9e8bba31c41c8d35a16/vcversioner-{{ version }}.tar.gz\n  md5: aab6ef5e0cf8614a1b1140ed5b7f107d\n\nbuild:\n  number: 0\n  script: pip install .\n\nrequirements:\n  build:\n    - python\n    - pip\n  run:\n    - python\n\ntest:\n  imports:\n    - vcversioner\n\nabout:\n  home: https://github.com/habnabit/vcversioner\n  license: ISC\n  summary: Take version numbers from version control\n\nextra:\n  recipe-maintainers:\n    - minrk\n",
+ "rendered_recipe": {},
+ "version": "2.16.0.0"
+}

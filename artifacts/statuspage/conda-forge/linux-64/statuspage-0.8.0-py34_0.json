@@ -1,0 +1,47 @@
+{
+ "about": {
+  "home": "https://github.com/jayfk/statuspage",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "A statuspage generator that lets you host your statuspage for free on Github."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/statuspage",
+  "lib/python3.4/site-packages/statuspage-0.8.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/statuspage-0.8.0-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/statuspage/__init__.py",
+  "lib/python3.4/site-packages/statuspage/statuspage.py",
+  "lib/python3.4/site-packages/statuspage/template/localizations.js",
+  "lib/python3.4/site-packages/statuspage/template/statuspage.js",
+  "lib/python3.4/site-packages/statuspage/template/style.css",
+  "lib/python3.4/site-packages/statuspage/template/template.html",
+  "lib/python3.4/site-packages/statuspage/template/translations.ini",
+  "lib/python3.4/site-packages/statuspage/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "click",
+   "jinja2",
+   "markdown2",
+   "pygithub",
+   "python 3.4*",
+   "requests",
+   "tqdm"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "statuspage",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.8.0"
+ },
+ "metadata_version": 1,
+ "name": "statuspage",
+ "raw_recipe": "{% set name = \"statuspage\" %}\n{% set version = \"0.8.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 4b1f50967167ecdc90332870667ce7e299919a7bbd9df3209f6563418202f341\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  preserve_egg_dir: True\n  entry_points:\n    - statuspage=statuspage.statuspage:cli\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pygithub\n    - click\n    - jinja2\n    - tqdm\n    - requests\n    - markdown2\n\ntest:\n  commands:\n    - statuspage --help\n\nabout:\n  home: https://github.com/jayfk/statuspage\n  license: MIT\n  license_family: MIT\n  summary: A statuspage generator that lets you host your statuspage for free on Github.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.8.0"
+}

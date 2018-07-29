@@ -1,0 +1,27 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pycosat-0.6.1-py3.4.egg-info",
+  "Lib/site-packages/pycosat.pyd",
+  "Lib/site-packages/test_pycosat.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "pycosat",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.6.1"
+ },
+ "metadata_version": 1,
+ "name": "pycosat",
+ "raw_recipe": "{% set version = \"0.6.1\" %}\n\npackage:\n  name: pycosat\n  version: {{ version }}\n\nsource:\n  fn: pycosat-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pycosat/pycosat-{{ version }}.tar.gz\n  md5: c1fc35b17865f5f992595ae0362f9f9f\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pycosat\n\nabout:\n  home: https://github.com/ContinuumIO/pycosat\n  license: MIT\n  summary: Bindings to picosat (a SAT solver)\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - kalefranz\n    - mcg1969\n    - msarahan\n    - pelson\n",
+ "rendered_recipe": {},
+ "version": "0.6.1"
+}

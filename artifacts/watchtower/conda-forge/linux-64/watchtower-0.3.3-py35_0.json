@@ -1,0 +1,36 @@
+{
+ "about": {
+  "description": "Watchtower is a log handler for Amazon Web Services CloudWatch Logs. CloudWatch\nLogs is a log management service built into AWS. It is conceptually similar to\nservices like Splunk and Loggly, but is more lightweight, cheaper, and tightly\nintegrated with the rest of AWS.  Watchtower, in turn, is a lightweight adapter\nbetween the Python logging system and CloudWatch Logs. It uses the boto3 AWS\nSDK, and lets you plug your application logging directly into CloudWatch without\nthe need to install a system-wide log collector. It aggregates logs into batches\nto avoid sending an API request per each log message, while guaranteeing a\ndelivery deadline (60 seconds by default).\n",
+  "dev_url": "https://github.com/kislyuk/watchtower",
+  "doc_url": "https://watchtower.readthedocs.io/",
+  "home": "http://github.com/kislyuk/watchtower",
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "summary": "Python CloudWatch Logging: Log Analytics and Application Intelligence"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/watchtower-0.3.3-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/watchtower/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "boto3 >=1.3.0",
+   "python 3.5*"
+  ],
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "name": "watchtower",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3.3"
+ },
+ "metadata_version": 1,
+ "name": "watchtower",
+ "raw_recipe": "{% set name = \"watchtower\" %}\n{% set version = \"0.3.3\" %}\n{% set sha256 = \"ca42e70617a1a35e5dd0663010ef588489a83cfaf273d018b7affaec225c0a54\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/kislyuk/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - boto3 >=1.3.0\n\ntest:\n  imports:\n    - watchtower\n\nabout:\n  home: http://github.com/kislyuk/watchtower\n  license: Apache 2.0\n  license_family: Apache\n  license_file: LICENSE\n  summary: 'Python CloudWatch Logging: Log Analytics and Application Intelligence'\n\n  description: |\n    Watchtower is a log handler for Amazon Web Services CloudWatch Logs. CloudWatch \n    Logs is a log management service built into AWS. It is conceptually similar to \n    services like Splunk and Loggly, but is more lightweight, cheaper, and tightly\n    integrated with the rest of AWS.  Watchtower, in turn, is a lightweight adapter\n    between the Python logging system and CloudWatch Logs. It uses the boto3 AWS \n    SDK, and lets you plug your application logging directly into CloudWatch without\n    the need to install a system-wide log collector. It aggregates logs into batches \n    to avoid sending an API request per each log message, while guaranteeing a \n    delivery deadline (60 seconds by default).  \n  doc_url: https://watchtower.readthedocs.io/\n  dev_url: https://github.com/kislyuk/watchtower\n\nextra:\n  recipe-maintainers:\n    - mcg1969\n",
+ "rendered_recipe": {},
+ "version": "0.3.3"
+}

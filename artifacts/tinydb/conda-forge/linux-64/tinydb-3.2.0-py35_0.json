@@ -1,0 +1,46 @@
+{
+ "about": {
+  "home": "https://github.com/msiemens/tinydb",
+  "license": "MIT",
+  "summary": "TinyDB is a tiny, document oriented database optimized for your happiness :)\n"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/tests/__init__.py",
+  "lib/python3.5/site-packages/tests/conftest.py",
+  "lib/python3.5/site-packages/tests/test_middlewares.py",
+  "lib/python3.5/site-packages/tests/test_operations.py",
+  "lib/python3.5/site-packages/tests/test_queries.py",
+  "lib/python3.5/site-packages/tests/test_storages.py",
+  "lib/python3.5/site-packages/tests/test_tables.py",
+  "lib/python3.5/site-packages/tests/test_tinydb.py",
+  "lib/python3.5/site-packages/tests/test_utils.py",
+  "lib/python3.5/site-packages/tinydb-3.2.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/tinydb-3.2.0-py3.5.egg-info/zip-safe",
+  "lib/python3.5/site-packages/tinydb/__init__.py",
+  "lib/python3.5/site-packages/tinydb/database.py",
+  "lib/python3.5/site-packages/tinydb/middlewares.py",
+  "lib/python3.5/site-packages/tinydb/operations.py",
+  "lib/python3.5/site-packages/tinydb/queries.py",
+  "lib/python3.5/site-packages/tinydb/storages.py",
+  "lib/python3.5/site-packages/tinydb/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "tinydb",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "3.2.0"
+ },
+ "metadata_version": 1,
+ "name": "tinydb",
+ "raw_recipe": "{% set version = \"3.2.0\" %}\n\npackage:\n    name: tinydb\n    version: {{ version }}\n\nsource:\n    url: https://github.com/msiemens/tinydb/archive/v{{ version }}.tar.gz\n    fn: tinydb-{{ version }}.tar.gz\n    sha256: 434062a7ec7cc385f8f43f49820acf6ed423fcea1d354caf0abf548bddf5ca6e\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - setuptools\n        - python\n    run:\n        - python\n\ntest:\n    imports:\n        - tinydb\n    requires:\n        - pytest\n    commands:\n        - py.test {{ environ.SRC_DIR }}/tests -vrsx\n\nabout:\n    home: https://github.com/msiemens/tinydb\n    license: MIT\n    summary: >\n        TinyDB is a tiny, document oriented database optimized for your \n        happiness :)\n\nextra:\n    recipe-maintainers:\n        - ericdill\n        - licode\n        - msiemens\n        - tacaswell\n",
+ "rendered_recipe": {},
+ "version": "3.2.0"
+}

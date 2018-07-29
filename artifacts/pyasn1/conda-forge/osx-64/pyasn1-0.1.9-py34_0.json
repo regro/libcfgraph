@@ -1,0 +1,61 @@
+{
+ "about": {
+  "doc_url": "http://pyasn1.sourceforge.net/",
+  "home": "http://sourceforge.net/projects/pyasn1/",
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "summary": "ASN.1 types and codecs"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pyasn1-0.1.9-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pyasn1-0.1.9-py3.4.egg-info/zip-safe",
+  "lib/python3.4/site-packages/pyasn1/__init__.py",
+  "lib/python3.4/site-packages/pyasn1/codec/__init__.py",
+  "lib/python3.4/site-packages/pyasn1/codec/ber/__init__.py",
+  "lib/python3.4/site-packages/pyasn1/codec/ber/decoder.py",
+  "lib/python3.4/site-packages/pyasn1/codec/ber/encoder.py",
+  "lib/python3.4/site-packages/pyasn1/codec/ber/eoo.py",
+  "lib/python3.4/site-packages/pyasn1/codec/cer/__init__.py",
+  "lib/python3.4/site-packages/pyasn1/codec/cer/decoder.py",
+  "lib/python3.4/site-packages/pyasn1/codec/cer/encoder.py",
+  "lib/python3.4/site-packages/pyasn1/codec/der/__init__.py",
+  "lib/python3.4/site-packages/pyasn1/codec/der/decoder.py",
+  "lib/python3.4/site-packages/pyasn1/codec/der/encoder.py",
+  "lib/python3.4/site-packages/pyasn1/compat/__init__.py",
+  "lib/python3.4/site-packages/pyasn1/compat/binary.py",
+  "lib/python3.4/site-packages/pyasn1/compat/octets.py",
+  "lib/python3.4/site-packages/pyasn1/debug.py",
+  "lib/python3.4/site-packages/pyasn1/error.py",
+  "lib/python3.4/site-packages/pyasn1/type/__init__.py",
+  "lib/python3.4/site-packages/pyasn1/type/base.py",
+  "lib/python3.4/site-packages/pyasn1/type/char.py",
+  "lib/python3.4/site-packages/pyasn1/type/constraint.py",
+  "lib/python3.4/site-packages/pyasn1/type/error.py",
+  "lib/python3.4/site-packages/pyasn1/type/namedtype.py",
+  "lib/python3.4/site-packages/pyasn1/type/namedval.py",
+  "lib/python3.4/site-packages/pyasn1/type/tag.py",
+  "lib/python3.4/site-packages/pyasn1/type/tagmap.py",
+  "lib/python3.4/site-packages/pyasn1/type/univ.py",
+  "lib/python3.4/site-packages/pyasn1/type/useful.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "name": "pyasn1",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.9"
+ },
+ "metadata_version": 1,
+ "name": "pyasn1",
+ "raw_recipe": "{%set name = \"pyasn1\" %}\n{%set version = \"0.1.9\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"853cacd96d1f701ddd67aa03ecc05f51890135b7262e922710112f12a2ed2a7f\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pyasn1\n    - pyasn1.codec\n    - pyasn1.codec.ber\n    - pyasn1.codec.cer\n    - pyasn1.codec.der\n    - pyasn1.compat\n    - pyasn1.type\n\nabout:\n  home: http://sourceforge.net/projects/pyasn1/\n  license: BSD 2-Clause\n  license_file: LICENSE.txt\n  summary: 'ASN.1 types and codecs'\n  license_family: BSD\n  doc_url: http://pyasn1.sourceforge.net/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.1.9"
+}

@@ -1,0 +1,27 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/tabulate",
+  "lib/python3.5/site-packages/tabulate-0.7.5-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/tabulate.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "tabulate",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.7.5"
+ },
+ "metadata_version": 1,
+ "name": "tabulate",
+ "raw_recipe": "{% set version = \"0.7.5\" %}\n\npackage:\n  name: tabulate\n  version: {{ version }}\n\nsource:\n  fn: tabulate-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/t/tabulate/tabulate-{{ version }}.tar.gz\n  md5: 576e1f063b8e74dbfeda02d978564987\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - tabulate\n\nabout:\n  home: https://bitbucket.org/astanin/python-tabulate\n  license: MIT\n  summary: Pretty-print tabular data in Python, a library and a command-line utility.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.7.5"
+}

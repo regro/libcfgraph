@@ -1,0 +1,36 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/ioos_qartod-0.0.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/ioos_qartod/__init__.py",
+  "lib/python2.7/site-packages/ioos_qartod/qc_tests/__init__.py",
+  "lib/python2.7/site-packages/ioos_qartod/qc_tests/auxillary_checks.py",
+  "lib/python2.7/site-packages/ioos_qartod/qc_tests/qc.py",
+  "lib/python2.7/site-packages/test/__init__.py",
+  "lib/python2.7/site-packages/test/test_auxillary_checks.py",
+  "lib/python2.7/site-packages/test/test_qartod_qc.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "pandas",
+   "pyproj",
+   "python 2.7*",
+   "quantities"
+  ],
+  "license": "Apache 2.0",
+  "name": "ioos_qartod",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.0.2"
+ },
+ "metadata_version": 1,
+ "name": "ioos_qartod",
+ "raw_recipe": "{% set version = \"0.0.2\" %}\n\npackage:\n    name: ioos_qartod\n    version: {{ version }}\n\nsource:\n    fn: ioos_qartod-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/i/ioos_qartod/ioos_qartod-{{ version }}.tar.gz\n    md5: d83d2ba1adcf36eae80bf86a536ce112\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - pandas\n        - quantities\n        - pyproj\n\ntest:\n    imports:\n        - ioos_qartod\n\nabout:\n    home: https://pypi.python.org/pypi/ioos_qartod\n    license: Apache 2.0\n    summary: Collection of utilities, scripts and tests to assist in automated quality assurance\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.0.2"
+}

@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "https://github.com/hmeine/qimage2ndarray",
+  "license": "BSD 3-Clause",
+  "summary": "Conversion between QImages and numpy.ndarrays."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/qimage2ndarray-1.5.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/qimage2ndarray/__init__.py",
+  "lib/python3.5/site-packages/qimage2ndarray/dynqt.py",
+  "lib/python3.5/site-packages/qimage2ndarray/qimageview_python.py",
+  "lib/python3.5/site-packages/qimage2ndarray/qt_driver.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "numpy",
+   "pyqt 4.11.*",
+   "python 3.5*",
+   "sip"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "qimage2ndarray",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.5.1"
+ },
+ "metadata_version": 1,
+ "name": "qimage2ndarray",
+ "raw_recipe": "{% set version=\"1.5.1\" %}\n\npackage:\n  name: qimage2ndarray\n  version: {{ version }}\n\nsource:\n  fn: qimage2ndarray-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/q/qimage2ndarray/qimage2ndarray-{{ version }}.tar.gz\n  md5: 73743819ccf6043f237c6b7f63732674\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy\n    - sip\n    - pyqt 4.11.*\n\n  run:\n    - python\n    - numpy\n    - sip\n    - pyqt 4.11.*\n\ntest:\n  imports:\n    - qimage2ndarray\n\nabout:\n  home: https://github.com/hmeine/qimage2ndarray\n  license: BSD 3-Clause\n  summary: Conversion between QImages and numpy.ndarrays.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.5.1"
+}

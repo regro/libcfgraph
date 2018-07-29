@@ -1,0 +1,109 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/readelf.py",
+  "lib/python2.7/site-packages/elftools/__init__.py",
+  "lib/python2.7/site-packages/elftools/common/__init__.py",
+  "lib/python2.7/site-packages/elftools/common/construct_utils.py",
+  "lib/python2.7/site-packages/elftools/common/exceptions.py",
+  "lib/python2.7/site-packages/elftools/common/py3compat.py",
+  "lib/python2.7/site-packages/elftools/common/utils.py",
+  "lib/python2.7/site-packages/elftools/construct/__init__.py",
+  "lib/python2.7/site-packages/elftools/construct/adapters.py",
+  "lib/python2.7/site-packages/elftools/construct/core.py",
+  "lib/python2.7/site-packages/elftools/construct/debug.py",
+  "lib/python2.7/site-packages/elftools/construct/lib/__init__.py",
+  "lib/python2.7/site-packages/elftools/construct/lib/binary.py",
+  "lib/python2.7/site-packages/elftools/construct/lib/bitstream.py",
+  "lib/python2.7/site-packages/elftools/construct/lib/container.py",
+  "lib/python2.7/site-packages/elftools/construct/lib/hex.py",
+  "lib/python2.7/site-packages/elftools/construct/lib/py3compat.py",
+  "lib/python2.7/site-packages/elftools/construct/macros.py",
+  "lib/python2.7/site-packages/elftools/dwarf/__init__.py",
+  "lib/python2.7/site-packages/elftools/dwarf/abbrevtable.py",
+  "lib/python2.7/site-packages/elftools/dwarf/callframe.py",
+  "lib/python2.7/site-packages/elftools/dwarf/compileunit.py",
+  "lib/python2.7/site-packages/elftools/dwarf/constants.py",
+  "lib/python2.7/site-packages/elftools/dwarf/descriptions.py",
+  "lib/python2.7/site-packages/elftools/dwarf/die.py",
+  "lib/python2.7/site-packages/elftools/dwarf/dwarf_expr.py",
+  "lib/python2.7/site-packages/elftools/dwarf/dwarfinfo.py",
+  "lib/python2.7/site-packages/elftools/dwarf/enums.py",
+  "lib/python2.7/site-packages/elftools/dwarf/lineprogram.py",
+  "lib/python2.7/site-packages/elftools/dwarf/locationlists.py",
+  "lib/python2.7/site-packages/elftools/dwarf/ranges.py",
+  "lib/python2.7/site-packages/elftools/dwarf/structs.py",
+  "lib/python2.7/site-packages/elftools/elf/__init__.py",
+  "lib/python2.7/site-packages/elftools/elf/constants.py",
+  "lib/python2.7/site-packages/elftools/elf/descriptions.py",
+  "lib/python2.7/site-packages/elftools/elf/dynamic.py",
+  "lib/python2.7/site-packages/elftools/elf/elffile.py",
+  "lib/python2.7/site-packages/elftools/elf/enums.py",
+  "lib/python2.7/site-packages/elftools/elf/gnuversions.py",
+  "lib/python2.7/site-packages/elftools/elf/relocation.py",
+  "lib/python2.7/site-packages/elftools/elf/sections.py",
+  "lib/python2.7/site-packages/elftools/elf/segments.py",
+  "lib/python2.7/site-packages/elftools/elf/structs.py",
+  "lib/python2.7/site-packages/pyelftools-0.23-py2.7.egg-info"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "Public domain",
+  "name": "pyelftools",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.23"
+ },
+ "metadata_version": 1,
+ "name": "pyelftools",
+ "raw_recipe": "package:\n  name: pyelftools\n  version: \"0.23\"\n\nsource:\n  fn: pyelftools-0.23.tar.gz\n  url: https://pypi.python.org/packages/source/p/pyelftools/pyelftools-0.23.tar.gz\n  md5: aa7cefa8bd2f63d7b017440c9084f310\n\nbuild:\n  skip: True  # [not linux]\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - elftools\n    - elftools.common\n    - elftools.construct\n    - elftools.construct.lib\n    - elftools.dwarf\n    - elftools.elf\n\nabout:\n  home: https://github.com/eliben/pyelftools\n  license: Public domain\n  summary: 'Library for analyzing ELF files and DWARF debugging information'\n\nextra:\n  recipe-maintainers:\n    - msarahan\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/eliben/pyelftools",
+   "license": "Public domain",
+   "summary": "Library for analyzing ELF files and DWARF debugging information"
+  },
+  "build": {
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "msarahan"
+   ]
+  },
+  "package": {
+   "name": "pyelftools",
+   "version": "0.23"
+  },
+  "requirements": {
+   "build": [
+    "python"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "pyelftools-0.23.tar.gz",
+   "md5": "aa7cefa8bd2f63d7b017440c9084f310",
+   "url": "https://pypi.python.org/packages/source/p/pyelftools/pyelftools-0.23.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "elftools",
+    "elftools.common",
+    "elftools.construct",
+    "elftools.construct.lib",
+    "elftools.dwarf",
+    "elftools.elf"
+   ]
+  }
+ },
+ "version": "0.23"
+}

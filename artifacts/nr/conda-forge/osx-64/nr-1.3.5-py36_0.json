@@ -1,0 +1,164 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/NiklasRosenstein/py-nr",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.3-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "collection of programming utilities"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/nr/types/__init__.py",
+  "lib/python3.6/site-packages/nr/misc/__init__.py",
+  "lib/python3.6/site-packages/nr/parse/gitignore.py",
+  "lib/python3.6/site-packages/nr-1.3.5-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/nr/types/recordclass.py",
+  "lib/python3.6/site-packages/nr/__init__.py",
+  "lib/python3.6/site-packages/nr/types/version.py",
+  "lib/python3.6/site-packages/nr/misc/archive.py",
+  "lib/python3.6/site-packages/nr/misc/cli.py",
+  "lib/python3.6/site-packages/nr/types/singleton.py",
+  "lib/python3.6/site-packages/nr/py/test_bytecode.py",
+  "lib/python3.6/site-packages/nr/py/bytecode.py",
+  "lib/python3.6/site-packages/nr/parse/__init__.py",
+  "lib/python3.6/site-packages/nr/types/test_version.py",
+  "lib/python3.6/site-packages/nr/types/enum.py",
+  "lib/python3.6/site-packages/nr/parse/strex.py",
+  "lib/python3.6/site-packages/nr/concurrency.py",
+  "lib/python3.6/site-packages/nr/py/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.6*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "nr",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.3.5"
+ },
+ "metadata_version": 1,
+ "name": "nr",
+ "raw_recipe": "{% set name = \"nr\" %}\n{% set version = \"1.3.5\" %}\n{% set sha256 = \"43f4b1df4168647604242209d4551085977262d0f4b9030430363b2cd75c4374\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/NiklasRosenstein/py-nr\n  # This commit fix the problem of dependence to pandoc\n  # for version 1.3.5\n  git_rev: 8dd050aa2fbd0c1399203539c78fe7d0b29b6b9b\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - pip\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - nr\n\nabout:\n  home: https://github.com/NiklasRosenstein/py-nr\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'collection of programming utilities'\n\nextra:\n  recipe-maintainers:\n    - dfroger\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/NiklasRosenstein/py-nr",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE.txt",
+   "summary": "collection of programming utilities"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py36_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "dfroger"
+   ]
+  },
+  "package": {
+   "name": "nr",
+   "version": "1.3.5"
+  },
+  "requirements": {
+   "build": [
+    "ca-certificates 2017.1.23 1",
+    "certifi 2017.4.17 py36_0",
+    "ncurses 5.9 10",
+    "openssl 1.0.2k 0",
+    "pip 9.0.1 py36_0",
+    "python 3.6.1 0",
+    "readline 6.2 0",
+    "setuptools 33.1.1 py36_0",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "wheel 0.29.0 py36_0",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "git_rev": "8dd050aa2fbd0c1399203539c78fe7d0b29b6b9b",
+   "git_url": "/Users/travis/build/conda-forge/nr-feedstock/recipe/https:/github.com/NiklasRosenstein/py-nr"
+  },
+  "test": {
+   "imports": [
+    "nr"
+   ]
+  }
+ },
+ "version": "1.3.5"
+}

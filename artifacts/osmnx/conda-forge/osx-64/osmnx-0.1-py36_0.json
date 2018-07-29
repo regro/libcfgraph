@@ -1,0 +1,43 @@
+{
+ "about": {
+  "home": "https://github.com/gboeing/osmnx",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Retrieve, construct, analyze, and visualize street networks from OpenStreetMap"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/osmnx-0.1-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/osmnx/__init__.py",
+  "lib/python3.6/site-packages/osmnx/osmnx.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "descartes",
+   "geopandas >=0.2",
+   "geopy >=1.11",
+   "matplotlib",
+   "networkx",
+   "numpy",
+   "pandas >=0.19",
+   "python 3.6*",
+   "requests",
+   "rtree >=0.8.3",
+   "shapely"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "osmnx",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1"
+ },
+ "metadata_version": 1,
+ "name": "osmnx",
+ "raw_recipe": "{% set version = \"0.1\" %}\n\npackage:\n  name: osmnx\n  version: {{ version }}\n\nsource:\n  fn: osmnx-{{ version }}.tar.gz\n  url: https://github.com/gboeing/osmnx/archive/v{{ version }}.tar.gz\n  sha256: 9fda466d434022b55f41f0511c99cdf59bf5119630caa5263a315f2d3ab3524c\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - requests\n    - numpy\n    - pandas >=0.19\n    - geopandas >=0.2\n    - networkx\n    - matplotlib\n    - shapely\n    - descartes\n    - geopy >=1.11\n    - rtree >=0.8.3\n\ntest:\n  imports:\n    - osmnx\n\nabout:\n  home: https://github.com/gboeing/osmnx\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'Retrieve, construct, analyze, and visualize street networks from OpenStreetMap'\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - gboeing\n",
+ "rendered_recipe": {},
+ "version": "0.1"
+}

@@ -1,0 +1,129 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/rasterio-0.32.0.post1-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/rasterio-0.32.0.post1-py3.4.egg-info/not-zip-safe",
+  "Lib/site-packages/rasterio/__init__.py",
+  "Lib/site-packages/rasterio/_base.pyd",
+  "Lib/site-packages/rasterio/_copy.pyd",
+  "Lib/site-packages/rasterio/_drivers.pyd",
+  "Lib/site-packages/rasterio/_err.pyd",
+  "Lib/site-packages/rasterio/_example.pyd",
+  "Lib/site-packages/rasterio/_features.pyd",
+  "Lib/site-packages/rasterio/_fill.pyd",
+  "Lib/site-packages/rasterio/_io.pyd",
+  "Lib/site-packages/rasterio/_warp.pyd",
+  "Lib/site-packages/rasterio/coords.py",
+  "Lib/site-packages/rasterio/crs.py",
+  "Lib/site-packages/rasterio/dtypes.py",
+  "Lib/site-packages/rasterio/enums.py",
+  "Lib/site-packages/rasterio/errors.py",
+  "Lib/site-packages/rasterio/features.py",
+  "Lib/site-packages/rasterio/fill.py",
+  "Lib/site-packages/rasterio/five.py",
+  "Lib/site-packages/rasterio/profiles.py",
+  "Lib/site-packages/rasterio/rio/__init__.py",
+  "Lib/site-packages/rasterio/rio/bands.py",
+  "Lib/site-packages/rasterio/rio/calc.py",
+  "Lib/site-packages/rasterio/rio/convert.py",
+  "Lib/site-packages/rasterio/rio/features.py",
+  "Lib/site-packages/rasterio/rio/helpers.py",
+  "Lib/site-packages/rasterio/rio/info.py",
+  "Lib/site-packages/rasterio/rio/main.py",
+  "Lib/site-packages/rasterio/rio/merge.py",
+  "Lib/site-packages/rasterio/rio/options.py",
+  "Lib/site-packages/rasterio/rio/overview.py",
+  "Lib/site-packages/rasterio/rio/sample.py",
+  "Lib/site-packages/rasterio/rio/warp.py",
+  "Lib/site-packages/rasterio/sample.py",
+  "Lib/site-packages/rasterio/tool.py",
+  "Lib/site-packages/rasterio/tools/__init__.py",
+  "Lib/site-packages/rasterio/tools/mask.py",
+  "Lib/site-packages/rasterio/tools/merge.py",
+  "Lib/site-packages/rasterio/transform.py",
+  "Lib/site-packages/rasterio/vfs.py",
+  "Lib/site-packages/rasterio/warnings.py",
+  "Lib/site-packages/rasterio/warp.py",
+  "Scripts/rio-script.py",
+  "Scripts/rio.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np110py34_3",
+  "build_number": 3,
+  "depends": [
+   "affine",
+   "click-plugins",
+   "cligj",
+   "gdal 1.11.4",
+   "numpy 1.10*",
+   "python 3.4*",
+   "snuggs"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "rasterio",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.32.0"
+ },
+ "metadata_version": 1,
+ "name": "rasterio",
+ "raw_recipe": "package:\n    name: rasterio\n    version: 0.32.0\n\nsource:\n    fn: rasterio-0.32.0.post1.tar.gz\n    url: https://pypi.python.org/packages/source/r/rasterio/rasterio-0.32.0.post1.tar.gz\n    md5: 0cc07d16345ad281ab4e7faf24d40f97\n\nbuild:\n    number: 3\n    entry_points:\n        - rio = rasterio.rio.main:main_group\n\nrequirements:\n    build:\n        - python\n        - numpy x.x\n        - cython\n        - gdal 1.11.4\n        - setuptools\n    run:\n        - python\n        - affine\n        - cligj\n        - enum34  # [py27]\n        - numpy x.x\n        - snuggs\n        - gdal 1.11.4\n        - click-plugins\n\ntest:\n    imports:\n        - rasterio\n    commands:\n        - rio --help\n\nabout:\n    home: https://github.com/mapbox/rasterio\n    license: BSD 3-Clause\n    summary: Rasterio reads and writes geospatial raster datasets\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - ceholden\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/mapbox/rasterio",
+   "license": "BSD 3-Clause",
+   "summary": "Rasterio reads and writes geospatial raster datasets"
+  },
+  "build": {
+   "entry_points": [
+    "rio = rasterio.rio.main:main_group"
+   ],
+   "number": 3
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "ceholden"
+   ]
+  },
+  "package": {
+   "name": "rasterio",
+   "version": "0.32.0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "numpy x.x",
+    "cython",
+    "gdal 1.11.4",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "affine",
+    "cligj",
+    "enum34",
+    "numpy x.x",
+    "snuggs",
+    "gdal 1.11.4",
+    "click-plugins"
+   ]
+  },
+  "source": {
+   "fn": "rasterio-0.32.0.post1.tar.gz",
+   "md5": "0cc07d16345ad281ab4e7faf24d40f97",
+   "url": "https://pypi.python.org/packages/source/r/rasterio/rasterio-0.32.0.post1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "rio --help"
+   ],
+   "imports": [
+    "rasterio"
+   ]
+  }
+ },
+ "version": "0.32.0"
+}

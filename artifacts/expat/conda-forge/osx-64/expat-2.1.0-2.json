@@ -1,0 +1,31 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/xmlwf",
+  "include/expat.h",
+  "include/expat_external.h",
+  "lib/libexpat.1.dylib",
+  "lib/libexpat.a",
+  "lib/libexpat.dylib",
+  "lib/libexpat.la",
+  "lib/pkgconfig/expat.pc",
+  "share/man/man1/xmlwf.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "2",
+  "build_number": 2,
+  "depends": [],
+  "license": "MIT",
+  "name": "expat",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.1.0"
+ },
+ "metadata_version": 1,
+ "name": "expat",
+ "raw_recipe": "{% set version = \"2.1.0\" %}\n\npackage:\n    name: expat\n    version: {{ version }}\n\nsource:\n    fn: expat-{{ version }}.tar.bz2\n    url: http://downloads.sourceforge.net/project/expat/expat/{{ version }}/expat-{{ version }}.tar.gz\n    md5: dd7dab7a5fea97d2a6a43f511449b7cd\n\nbuild:\n    number: 2\n    features:\n        - vc9  # [win and py27]\n        - vc10  # [win and py34]\n        - vc14  # [win and py35]\n\nrequirements:\n    build:\n        - cmake  # [win]\n        - python  # [win]\n        - msinttypes  # [win]\n\ntest:\n    requires:\n        - python {{ environ['PY_VER'] + '*' }}  # [win]\n    commands:\n        - xmlwf -h\n\nabout:\n    home: http://expat.sourceforge.net/\n    license: MIT\n    summary: Expat XML parser library in C\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n        - ocefpaf\n        - pelson\n",
+ "rendered_recipe": {},
+ "version": "2.1.0"
+}

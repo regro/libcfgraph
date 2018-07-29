@@ -1,0 +1,165 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.10.5",
+  "conda_private": false,
+  "conda_version": "4.5.4",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "home": "https://github.com/conda-forge/toolchain-feedstock",
+  "license": "BSD 3-Clause",
+  "root_pkgs": [
+   "cffi 1.11.5 py36_0",
+   "pyopenssl 18.0.0 py36_0",
+   "cryptography 2.2.1 py36_0",
+   "xz 5.2.3 0",
+   "packaging 17.1 py_0",
+   "requests 2.18.4 py36_1",
+   "certifi 2018.4.16 py36_0",
+   "readline 7.0 0",
+   "chardet 3.0.4 py36_0",
+   "urllib3 1.22 py36_0",
+   "setuptools 39.2.0 py36_0",
+   "zlib 1.2.11 0",
+   "yaml 0.1.7 0",
+   "pycparser 2.18 py36_0",
+   "asn1crypto 0.24.0 py36_0",
+   "libffi 3.2.1 3",
+   "tk 8.6.7 0",
+   "conda 4.5.4 py36_0",
+   "ruamel_yaml 0.15.35 py36_0",
+   "pysocks 1.6.8 py36_1",
+   "pip 9.0.3 py36_0",
+   "idna 2.6 py36_1",
+   "wheel 0.31.0 py36_0",
+   "python 3.6.5 1",
+   "pycosat 0.6.3 py36_0",
+   "ncurses 5.9 10",
+   "six 1.11.0 py36_1",
+   "ca-certificates 2018.4.16 0",
+   "pyparsing 2.2.0 py36_0",
+   "sqlite 3.20.1 2",
+   "conda-env 2.6.0 0",
+   "openssl 1.0.2o 0",
+   "traitlets 4.3.2 py36_0",
+   "pytz 2018.4 py_0",
+   "git 2.14.2 3",
+   "glob2 0.5 py36_0",
+   "conda-verify 2.0.0 py36_0",
+   "filelock 3.0.4 py36_0",
+   "jsonschema 2.6.0 py36_1",
+   "anaconda-client 1.6.14 py_0",
+   "pyyaml 3.12 py36_1",
+   "beautifulsoup4 4.6.0 py36_0",
+   "patchelf 0.9 2",
+   "clyent 1.2.2 py36_0",
+   "curl 7.60.0 0",
+   "tini 0.18.0 0",
+   "ipython_genutils 0.2.0 py36_0",
+   "libiconv 1.15 0",
+   "krb5 1.14.6 0",
+   "expat 2.2.5 0",
+   "nbformat 4.4.0 py36_0",
+   "decorator 4.3.0 py_0",
+   "libssh2 1.8.0 2",
+   "pkginfo 1.4.2 py36_0",
+   "python-dateutil 2.7.3 py_0",
+   "jinja2 2.10 py36_0",
+   "conda-build 3.10.5 py36_0",
+   "conda-forge-ci-setup 1.3.4 0",
+   "jupyter_core 4.4.0 py_0",
+   "markupsafe 1.0 py36_0",
+   "psutil 5.4.5 py36_0",
+   "gosu 1.10 0"
+  ],
+  "summary": "A meta-package to enable the right toolchain."
+ },
+ "conda_build_config": {
+  "c_compiler": "gcc",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "python",
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.6",
+  "r_base": "3.4",
+  "target_platform": "linux-64"
+ },
+ "files": [],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "toolchain 2.1.4 0"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "toolchain_fort_linux-64",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1527325034791,
+  "version": "2.1.4"
+ },
+ "metadata_version": 1,
+ "name": "toolchain_fort_linux-64",
+ "raw_recipe": "# This file created by conda-build 3.10.5\n# ------------------------------------------------\n\npackage:\n    name: toolchain_fort_linux-64\n    version: 2.1.4\nbuild:\n    noarch: false\n    number: '0'\n    run_exports:\n        strong:\n            - libgfortran-ng >=4.9\n    string: '0'\nrequirements:\n    host:\n        - toolchain 2.1.4 0\n    run:\n        - toolchain 2.1.4 0\nabout:\n    home: https://github.com/conda-forge/toolchain-feedstock\n    license: BSD 3-Clause\n    summary: A meta-package to enable the right toolchain.\nextra:\n    copy_test_source_files: true\n    final: true\n    recipe-maintainers:\n        - isuruf\n        - jakirkham\n        - msarahan\n        - patricksnape\n        - pelson\n        - scopatz\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/conda-forge/toolchain-feedstock",
+   "license": "BSD 3-Clause",
+   "summary": "A meta-package to enable the right toolchain."
+  },
+  "build": {
+   "noarch": false,
+   "number": "0",
+   "run_exports": {
+    "strong": [
+     "libgfortran-ng >=4.9"
+    ]
+   },
+   "string": "0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "isuruf",
+    "jakirkham",
+    "msarahan",
+    "patricksnape",
+    "pelson",
+    "scopatz"
+   ]
+  },
+  "package": {
+   "name": "toolchain_fort_linux-64",
+   "version": "2.1.4"
+  },
+  "requirements": {
+   "host": [
+    "toolchain 2.1.4 0"
+   ],
+   "run": [
+    "toolchain 2.1.4 0"
+   ]
+  }
+ },
+ "version": "2.1.4"
+}

@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "https://github.com/bebraw/pypandoc",
+  "license": "MIT",
+  "summary": "Thin wrapper for \"pandoc\""
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/pypandoc-1.3.3-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pypandoc/__init__.py",
+  "lib/python3.5/site-packages/pypandoc/pandoc_download.py",
+  "lib/python3.5/site-packages/pypandoc/py3compat.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "pandoc",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "pypandoc",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.3.3"
+ },
+ "metadata_version": 1,
+ "name": "pypandoc",
+ "raw_recipe": "{% set version = \"1.3.3\" %}\npackage:\n  name: pypandoc\n  version: {{ version }}\n\nsource:\n  fn: pypandoc-{{ version }}.zip\n  url: https://github.com/bebraw/pypandoc/archive/v{{ version }}.zip\n  sha1: e72e645b0776ac5e3e817b9fd1d3c635a2b21924\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pandoc\n  run:\n    - python\n    - pandoc\n\ntest:\n  imports:\n    - pypandoc\n  commands:\n    - python -c \"import pypandoc; print(pypandoc.get_pandoc_version())\"\n\nabout:\n  home: https://github.com/bebraw/pypandoc\n  license: MIT\n  summary: 'Thin wrapper for \"pandoc\"'\n\nextra:\n  recipe-maintainers:\n    - janschulz\n",
+ "rendered_recipe": {},
+ "version": "1.3.3"
+}

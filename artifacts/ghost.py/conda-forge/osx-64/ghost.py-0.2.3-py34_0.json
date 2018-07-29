@@ -1,0 +1,54 @@
+{
+ "about": {
+  "dev_url": "https://github.com/jeanphix/Ghost.py",
+  "doc_url": "https://ghost-py.readthedocs.io/en/latest/",
+  "home": "https://github.com/jeanphix/Ghost.py",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Webkit based webclient."
+ },
+ "conda_build_config": {},
+ "files": [
+  "ghost/README.rst",
+  "lib/python3.4/site-packages/Ghost.py-0.2.3-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/Ghost.py-0.2.3-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/ghost/__init__.py",
+  "lib/python3.4/site-packages/ghost/bindings.py",
+  "lib/python3.4/site-packages/ghost/ext/__init__.py",
+  "lib/python3.4/site-packages/ghost/ext/django/__init__.py",
+  "lib/python3.4/site-packages/ghost/ext/django/test.py",
+  "lib/python3.4/site-packages/ghost/ghost.py",
+  "lib/python3.4/site-packages/ghost/logger.py",
+  "lib/python3.4/site-packages/ghost/test.py",
+  "lib/python3.4/site-packages/tests/__init__.py",
+  "lib/python3.4/site-packages/tests/app.py",
+  "lib/python3.4/site-packages/tests/ghost/__init__.py",
+  "lib/python3.4/site-packages/tests/ghost/bindings.py",
+  "lib/python3.4/site-packages/tests/ghost/ext/__init__.py",
+  "lib/python3.4/site-packages/tests/ghost/ext/django/__init__.py",
+  "lib/python3.4/site-packages/tests/ghost/ext/django/test.py",
+  "lib/python3.4/site-packages/tests/ghost/ghost.py",
+  "lib/python3.4/site-packages/tests/ghost/logger.py",
+  "lib/python3.4/site-packages/tests/ghost/test.py",
+  "lib/python3.4/site-packages/tests/run.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "ghost.py",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.3"
+ },
+ "metadata_version": 1,
+ "name": "ghost.py",
+ "raw_recipe": "{%set name = \"Ghost.py\" %}\n{%set version = \"0.2.3\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"efd1a2b027fd803cf615570b1520a07dc80cc13fc656646221428d86a653310a\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - ghost\n    - ghost.ext\n    - ghost.ext.django\n    - tests\n    - tests.ghost\n    - tests.ghost.ext\n    - tests.ghost.ext.django\n\nabout:\n  home: https://github.com/jeanphix/Ghost.py\n  license: MIT\n  # license_file: No LICENSE in MANIFEST.in - see https://github.com/jeanphix/Ghost.py/issues/311\n  license_family: MIT\n  summary: 'Webkit based webclient.'\n  dev_url: https://github.com/jeanphix/Ghost.py\n  doc_url: https://ghost-py.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.2.3"
+}

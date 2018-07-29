@@ -1,0 +1,50 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/oct2py-3.5.9-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/oct2py/__init__.py",
+  "Lib/site-packages/oct2py/compat.py",
+  "Lib/site-packages/oct2py/core.py",
+  "Lib/site-packages/oct2py/demo.py",
+  "Lib/site-packages/oct2py/ipython/__init__.py",
+  "Lib/site-packages/oct2py/ipython/octavemagic.py",
+  "Lib/site-packages/oct2py/ipython/tests/__init__.py",
+  "Lib/site-packages/oct2py/ipython/tests/test_octavemagic.py",
+  "Lib/site-packages/oct2py/matread.py",
+  "Lib/site-packages/oct2py/matwrite.py",
+  "Lib/site-packages/oct2py/speed_check.py",
+  "Lib/site-packages/oct2py/tests/__init__.py",
+  "Lib/site-packages/oct2py/tests/roundtrip.m",
+  "Lib/site-packages/oct2py/tests/test_conversions.py",
+  "Lib/site-packages/oct2py/tests/test_datatypes.m",
+  "Lib/site-packages/oct2py/tests/test_misc.py",
+  "Lib/site-packages/oct2py/tests/test_nodocstring.m",
+  "Lib/site-packages/oct2py/tests/test_numpy.py",
+  "Lib/site-packages/oct2py/tests/test_roundtrip.py",
+  "Lib/site-packages/oct2py/tests/test_usage.py",
+  "Lib/site-packages/oct2py/thread_check.py",
+  "Lib/site-packages/oct2py/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "ipython",
+   "numpy",
+   "python 3.4*",
+   "scipy"
+  ],
+  "license": "MIT",
+  "name": "oct2py",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "3.5.9"
+ },
+ "metadata_version": 1,
+ "name": "oct2py",
+ "raw_recipe": "{% set version = \"3.5.9\" %}\n\npackage:\n    name: oct2py\n    version: {{ version }}\n\nsource:\n    fn: oct2py-{{ version }}.tar.gz\n    url: https://github.com/blink1073/oct2py/archive/v{{ version }}.tar.gz\n    sha256: f58a92afce6d350a5728e711cf8e6422b5e97426ecffea185a33c1983c0ebfb2\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - scipy\n        - ipython\n\nabout:\n    home: http://github.com/blink1073/oct2py\n    license: MIT\n    summary: Python to GNU Octave bridge --> run m-files from python\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "3.5.9"
+}

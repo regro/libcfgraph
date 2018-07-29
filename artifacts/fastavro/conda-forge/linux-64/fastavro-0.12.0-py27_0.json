@@ -1,0 +1,42 @@
+{
+ "about": {
+  "dev_url": "https://github.com/tebeka/fastavro",
+  "home": "https://github.com/tebeka/fastavro",
+  "license": "MIT",
+  "summary": "Fast read/write of AVRO files"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/fastavro",
+  "lib/python2.7/site-packages/fastavro-0.12.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/fastavro-0.12.0-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/fastavro/__init__.py",
+  "lib/python2.7/site-packages/fastavro/__main__.py",
+  "lib/python2.7/site-packages/fastavro/_reader.so",
+  "lib/python2.7/site-packages/fastavro/_schema.so",
+  "lib/python2.7/site-packages/fastavro/_six.so",
+  "lib/python2.7/site-packages/fastavro/_writer.so",
+  "lib/python2.7/site-packages/fastavro/reader.py",
+  "lib/python2.7/site-packages/fastavro/schema.py",
+  "lib/python2.7/site-packages/fastavro/six.py",
+  "lib/python2.7/site-packages/fastavro/writer.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "fastavro",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.12.0"
+ },
+ "metadata_version": 1,
+ "name": "fastavro",
+ "raw_recipe": "{% set name = \"fastavro\" %}\n{% set version = \"0.12.0\" %}\n{% set sha256 = \"5788ce2ba2effb2f5b2b6fab59696f336da92abd92b44081587a395f350dae38\" %}\n\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{name}}-{{ version }}.tar.gz\n    url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\n\n\nrequirements:\n    build:\n        - python\n        - cython\n        - setuptools\n    run:\n        - python\n\ntest:\n    requires:\n        - nose\n        - flake8\n    imports:\n        - {{ name }}\n\nabout:\n    home: https://github.com/tebeka/{{ name }}\n    license: MIT\n    summary: Fast read/write of AVRO files\n    dev_url: https://github.com/tebeka/{{ name }}\n\nextra:\n    recipe-maintainers:\n        - tebeka\n",
+ "rendered_recipe": {},
+ "version": "0.12.0"
+}

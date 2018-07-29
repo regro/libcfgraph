@@ -1,0 +1,42 @@
+{
+ "about": {
+  "home": "http://hdfeos.org/index.php",
+  "license": "Public Domain",
+  "summary": "Earth Observing System HDF."
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/HE5_GctpFunc.h",
+  "include/HE5_HdfEosDef.h",
+  "include/HE5_config.h",
+  "include/cfortHdf.h",
+  "include/cproj.h",
+  "include/ease.h",
+  "include/isin.h",
+  "include/proj.h",
+  "include/tutils.h",
+  "lib/libGctp.a",
+  "lib/libGctp.la",
+  "lib/libhe5_hdfeos.a",
+  "lib/libhe5_hdfeos.la"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "6",
+  "build_number": 6,
+  "depends": [
+   "hdf5 1.8.17|1.8.17.*",
+   "zlib 1.2.*"
+  ],
+  "license": "Public Domain",
+  "name": "hdfeos5",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "5.1.15"
+ },
+ "metadata_version": 1,
+ "name": "hdfeos5",
+ "raw_recipe": "{% set version = \"5.1.15\" %}\n\npackage:\n    name: hdfeos5\n    version: {{ version }}\n\nsource:\n    fn: HDF-EOS{{ version }}.tar.Z\n    url: ftp://edhs1.gsfc.nasa.gov/edhs/hdfeos5/latest_release/HDF-EOS{{ version }}.tar.Z\n    sha256: 119588067abf139c1c600a4519b880d04a3933049576c88acdc8ff6fc71803dd\n    patches:\n        # http://hdfeos.org/forums/showthread.php?t=673\n        - EHapi.c.patch\n\nbuild:\n    number: 6\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - hdf5 1.8.17|1.8.17.*\n        - zlib 1.2.*\n    run:\n        - hdf5 1.8.17|1.8.17.*\n        - zlib 1.2.*\n\ntest:\n    commands:\n        - test -f ${PREFIX}/lib/libGctp.a  # [unix]\n        - test -f ${PREFIX}/lib/libhe5_hdfeos.a  # [unix]\n        - conda inspect linkages -n _test hdfeos5  # [unix]\n\nabout:\n    home: http://hdfeos.org/index.php\n    license: Public Domain\n    summary: 'Earth Observing System HDF.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - jhamman\n",
+ "rendered_recipe": {},
+ "version": "5.1.15"
+}

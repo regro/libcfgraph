@@ -1,0 +1,176 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "xeus is a library meant to facilitate the implementation of kernels for Jupyter. It takes the burden of implementing the Jupyter Kernel protocol so developers can focus on implementing the interpreter part of the Kernel.",
+  "dev_url": "https://github.com/QuantStack/xeus",
+  "doc_url": "http://xeus.readthedocs.io",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://quantstack.net/xeus",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "C++ implementation of the Jupyter Kernel protocol"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/xeus/xmessage.hpp",
+  "include/xeus/xserver.hpp",
+  "include/xeus/xjson.hpp",
+  "include/xeus/xkernel.hpp",
+  "share/cmake/xeus/xeusConfig.cmake",
+  "include/xeus/xauthentication.hpp",
+  "include/xeus/xkernel_configuration.hpp",
+  "lib/libxeus.dylib",
+  "share/cmake/xeus/xeusConfigVersion.cmake",
+  "include/xeus/xguid.hpp",
+  "include/xeus/xinterpreter.hpp",
+  "include/xeus/xeus.hpp"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "cryptopp",
+   "zeromq"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "xeus",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.0"
+ },
+ "metadata_version": 1,
+ "name": "xeus",
+ "raw_recipe": "{% set name = \"xeus\" %}\n{% set version = \"0.2.0\" %}\n{% set sha256 = \"778fadf459beec37788eeae93efc40b9ade624c69f631b4f96447071e03eb4d4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/QuantStack/xeus/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win and py<35]\n  features:   # [win]\n    - vc14    # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - python  # [win]\n    - vc 14   # [win and py>=35]\n    - cppzmq\n    - zeromq\n    - cryptopp\n    - rapidjson\n    - libuuid  # [linux]\n  run:\n    - zeromq\n    - cryptopp\n    - libuuid  # [linux]\n    - vc 14    # [win and py>=35]\n    \ntest:\n  commands:\n    - test -d ${PREFIX}/include/xeus  # [unix]\n    - test -f ${PREFIX}/include/xeus/xeus.hpp  # [unix]\n    - test -f ${PREFIX}/share/cmake/xeus/xeusConfig.cmake  # [unix]\n    - test -f ${PREFIX}/share/cmake/xeus/xeusConfigVersion.cmake  # [unix]\n    - if exist %LIBRARY_PREFIX%\\include\\xeus\\xeus.hpp (exit 0) else (exit 1)  # [win]\n    - if exist %PREFIX%\\share\\cmake\\xeusConfig.cmake (exit 0) else (exit 1)  # [win]\n    - if exist %PREFIX%\\share\\cmake\\xeusConfigVersion.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://quantstack.net/xeus\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'C++ implementation of the Jupyter Kernel protocol'\n  description: 'xeus is a library meant to facilitate the implementation of kernels for Jupyter. It takes the burden of implementing the Jupyter Kernel protocol so developers can focus on implementing the interpreter part of the Kernel.'\n  doc_url: http://xeus.readthedocs.io\n  dev_url: https://github.com/QuantStack/xeus\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "xeus is a library meant to facilitate the implementation of kernels for Jupyter. It takes the burden of implementing the Jupyter Kernel protocol so developers can focus on implementing the interpreter part of the Kernel.",
+   "dev_url": "https://github.com/QuantStack/xeus",
+   "doc_url": "http://xeus.readthedocs.io",
+   "home": "http://quantstack.net/xeus",
+   "license": "BSD 3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "C++ implementation of the Jupyter Kernel protocol"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "SylvainCorlay",
+    "JohanMabille"
+   ]
+  },
+  "package": {
+   "name": "xeus",
+   "version": "0.2.0"
+  },
+  "requirements": {
+   "build": [
+    "bzip2 1.0.6 1",
+    "ca-certificates 2017.1.23 1",
+    "cmake 3.7.1 4",
+    "cppzmq 4.2.1 0",
+    "cryptopp 5.6.5 1",
+    "curl 7.52.1 0",
+    "expat 2.1.0 2",
+    "jsoncpp 0.10.6 1",
+    "libarchive 3.2.1 2",
+    "libiconv 1.14 4",
+    "libsodium 1.0.10 0",
+    "libuv 1.11.0 0",
+    "ncurses 5.9 10",
+    "openssl 1.0.2k 0",
+    "rapidjson 1.1.0 0",
+    "toolchain 2.0.0 0",
+    "xz 5.2.2 0",
+    "zeromq 4.2.1 1",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "zeromq",
+    "cryptopp"
+   ]
+  },
+  "source": {
+   "fn": "xeus-0.2.0.tar.gz",
+   "sha256": "778fadf459beec37788eeae93efc40b9ade624c69f631b4f96447071e03eb4d4",
+   "url": "https://github.com/QuantStack/xeus/archive/0.2.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -d ${PREFIX}/include/xeus",
+    "test -f ${PREFIX}/include/xeus/xeus.hpp",
+    "test -f ${PREFIX}/share/cmake/xeus/xeusConfig.cmake",
+    "test -f ${PREFIX}/share/cmake/xeus/xeusConfigVersion.cmake"
+   ]
+  }
+ },
+ "version": "0.2.0"
+}

@@ -1,0 +1,148 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.1",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p481/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://mpld3.github.com",
+  "license": "BSD 3-Clause",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-build-2.1.1-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.2.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "D3 Viewer for Matplotlib."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/mpld3/plugins.py",
+  "lib/python3.6/site-packages/mpld3/mplexporter/renderers/vega_renderer.py",
+  "lib/python3.6/site-packages/mpld3/_server.py",
+  "lib/python3.6/site-packages/mpld3/js/d3.v3.min.js",
+  "lib/python3.6/site-packages/mpld3-0.3-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/mpld3/mplexporter/renderers/fake_renderer.py",
+  "lib/python3.6/site-packages/mpld3/__about__.py",
+  "lib/python3.6/site-packages/mpld3/mplexporter/utils.py",
+  "lib/python3.6/site-packages/mpld3/mplexporter/__init__.py",
+  "lib/python3.6/site-packages/mpld3/utils.py",
+  "lib/python3.6/site-packages/mpld3/mpld3renderer.py",
+  "lib/python3.6/site-packages/mpld3/mplexporter/exporter.py",
+  "lib/python3.6/site-packages/mpld3/mplexporter/_py3k_compat.py",
+  "lib/python3.6/site-packages/mpld3/mplexporter/tools.py",
+  "lib/python3.6/site-packages/mpld3/_display.py",
+  "lib/python3.6/site-packages/mpld3/mplexporter/renderers/__init__.py",
+  "lib/python3.6/site-packages/mpld3/mplexporter/renderers/vincent_renderer.py",
+  "lib/python3.6/site-packages/mpld3/mplexporter/renderers/base.py",
+  "lib/python3.6/site-packages/mpld3/__init__.py",
+  "lib/python3.6/site-packages/mpld3/js/mpld3.v0.3.min.js",
+  "lib/python3.6/site-packages/mpld3/js/mpld3.v0.3.js",
+  "lib/python3.6/site-packages/mpld3/urls.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "jinja2",
+   "matplotlib",
+   "python 3.6*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "mpld3",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3"
+ },
+ "metadata_version": 1,
+ "name": "mpld3",
+ "raw_recipe": "{% set version = \"0.3\" %}\n\npackage:\n  name: mpld3\n  version: {{ version }}\n\nsource:\n  fn: mpld3-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/m/mpld3/mpld3-{{ version }}.tar.gz\n  sha256: 4d455884a211bf99b37ecc760759435c7bb6a5955de47d8daf4967e301878ab7\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - jinja2\n    - matplotlib\n\ntest:\n  imports:\n    - mpld3\n\nabout:\n  home: http://mpld3.github.com\n  license: BSD 3-Clause\n  summary: 'D3 Viewer for Matplotlib.'\n\nextra:\n  recipe-maintainers:\n    - etgalloway\n    - jakevdp\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://mpld3.github.com",
+   "license": "BSD 3-Clause",
+   "summary": "D3 Viewer for Matplotlib."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py36_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "etgalloway",
+    "jakevdp",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "mpld3",
+   "version": "0.3"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "jinja2",
+    "matplotlib"
+   ]
+  },
+  "source": {
+   "fn": "mpld3-0.3.tar.gz",
+   "sha256": "4d455884a211bf99b37ecc760759435c7bb6a5955de47d8daf4967e301878ab7",
+   "url": "https://pypi.io/packages/source/m/mpld3/mpld3-0.3.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "mpld3"
+   ]
+  }
+ },
+ "version": "0.3"
+}

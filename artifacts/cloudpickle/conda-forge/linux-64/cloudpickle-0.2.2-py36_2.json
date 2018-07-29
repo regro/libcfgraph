@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "https://github.com/cloudpipe/cloudpickle",
+  "license": "BSD 3-Clause",
+  "summary": "Extended pickling support for Python objects"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/cloudpickle-0.2.2-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/cloudpickle/__init__.py",
+  "lib/python3.6/site-packages/cloudpickle/cloudpickle.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_2",
+  "build_number": 2,
+  "depends": [
+   "python 3.6*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "cloudpickle",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2.2"
+ },
+ "metadata_version": 1,
+ "name": "cloudpickle",
+ "raw_recipe": "{% set version = \"0.2.2\" %}\n\npackage:\n  name: cloudpickle\n  version: {{ version }}\n\nsource:\n  fn: cloudpickle-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/cloudpickle/cloudpickle-{{ version }}.tar.gz\n  sha256: 9da26af07a25431d8a3c412d4c8e78823c1298655d354f4f570ece1b995f8e74\n\nbuild:\n  number: 2\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - cloudpickle\n\nabout:\n  home: https://github.com/cloudpipe/cloudpickle\n  license: BSD 3-Clause\n  summary: Extended pickling support for Python objects\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - ogrisel\n    - rgbkrk\n    - mrocklin\n",
+ "rendered_recipe": {},
+ "version": "0.2.2"
+}

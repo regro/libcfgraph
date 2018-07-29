@@ -1,0 +1,39 @@
+{
+ "about": {
+  "home": "http://spams-devel.gforge.inria.fr/",
+  "license": "GPL 3",
+  "summary": "An optimization toolbox for solving various sparse estimation problems."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/_spams_wrap.so",
+  "lib/python2.7/site-packages/myscipy_rand.py",
+  "lib/python2.7/site-packages/spams-2.5-py2.7.egg-info",
+  "lib/python2.7/site-packages/spams.py",
+  "lib/python2.7/site-packages/spams_wrap.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_blas_openblas_202",
+  "build_number": 202,
+  "depends": [
+   "blas 1.1 openblas",
+   "libgcc",
+   "numpy 1.11*",
+   "openblas 0.2.18|0.2.18.*",
+   "python 2.7*",
+   "scipy"
+  ],
+  "features": "blas_openblas",
+  "license": "GPL 3",
+  "name": "python-spams",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.5"
+ },
+ "metadata_version": 1,
+ "name": "python-spams",
+ "raw_recipe": "{% set version = \"2.5\" %}\n{% set date = \"2014-03-27\" %}\n\n{% set variant = \"openblas\" %}\n\npackage:\n  name: python-spams\n  version: {{ version }}\n\nsource:\n  fn: spams-{{ version }}.tar.gz\n  url: http://spams-devel.gforge.inria.fr/hitcounter2.php?file=33816/spams-python-v{{ version }}-svn{{ date }}.tar.gz\n  sha1: f6f6d7fe385773690f886ee6d077a1cdf6f2ba41\n\n  patches:\n    # Fix how BLAS is detected. Mailed to developer.\n    - setup.py.patch\n    # Update bindings for NumPy 1.10.x from 1.9.x.\n    - spams_wrap.cpp.patch\n    - spams_wrap-windows.cpp.patch\n\nbuild:\n  skip: true  # [win or py3k]\n  number: 202\n  detect_binary_files_with_prefix: true\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - gcc\n    - python\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.18|0.2.18.*\n    - numpy x.x\n    - scipy\n    # For tests.\n    - pillow\n    \n  run:\n    - libgcc\n    - python\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.18|0.2.18.*\n    - numpy x.x\n    - scipy\n\ntest:\n  imports:\n    - spams\n\nabout:\n  home: http://spams-devel.gforge.inria.fr/\n  license: GPL 3\n  summary: An optimization toolbox for solving various sparse estimation problems.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "2.5"
+}

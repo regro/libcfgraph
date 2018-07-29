@@ -1,0 +1,37 @@
+{
+ "about": {
+  "home": "https://github.com/hickford/MechanicalSoup",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "A Python library for automating interaction with websites"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/MechanicalSoup-0.6.0-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/mechanicalsoup/__init__.py",
+  "Lib/site-packages/mechanicalsoup/browser.py",
+  "Lib/site-packages/mechanicalsoup/form.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "beautifulsoup4",
+   "python 3.4*",
+   "requests >=2.0",
+   "six >=1.4"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "mechanicalsoup",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.6.0"
+ },
+ "metadata_version": 1,
+ "name": "mechanicalsoup",
+ "raw_recipe": "{% set version = \"0.6.0\" %}\n\npackage:\n  name: mechanicalsoup\n  version: {{ version }}\n\nsource:\n  fn: mechanicalSoup-{{ version }}.tar.gz\n  url: https://github.com/hickford/MechanicalSoup/archive/v{{ version }}.tar.gz\n  sha256: 8d7b00a8a56b2b527d5a338bb0b2ba74044d29fd3b84a6f3aa8521e208d4c850\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - requests >=2.0\n    - beautifulsoup4\n    - six >=1.4\n\ntest:\n  imports:\n    - mechanicalsoup\n\nabout:\n  home: https://github.com/hickford/MechanicalSoup\n  license: MIT\n  license_file: LICENSE\n  summary: 'A Python library for automating interaction with websites'\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.6.0"
+}

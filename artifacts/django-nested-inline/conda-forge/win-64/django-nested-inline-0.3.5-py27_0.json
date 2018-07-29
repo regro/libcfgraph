@@ -1,0 +1,36 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/django_nested_inline-0.3.5-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/django_nested_inline-0.3.5-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/example/__init__.py",
+  "Lib/site-packages/example/admin.py",
+  "Lib/site-packages/example/models.py",
+  "Lib/site-packages/nested_inline/__init__.py",
+  "Lib/site-packages/nested_inline/admin.py",
+  "Lib/site-packages/nested_inline/static/admin/css/forms-nested.css",
+  "Lib/site-packages/nested_inline/static/admin/js/inlines-nested.js",
+  "Lib/site-packages/nested_inline/static/admin/js/inlines-nested.min.js",
+  "Lib/site-packages/nested_inline/templates/admin/edit_inline/stacked-nested.html",
+  "Lib/site-packages/nested_inline/templates/admin/edit_inline/tabular-nested.html"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT License",
+  "name": "django-nested-inline",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.3.5"
+ },
+ "metadata_version": 1,
+ "name": "django-nested-inline",
+ "raw_recipe": "{% set version = \"0.3.5\" %}\n\npackage:\n    name: django-nested-inline\n    version: {{ version }}\n\nsource:\n    fn: django-nested-inline-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/d/django-nested-inline/django-nested-inline-{{ version }}.tar.gz\n    md5: e59b87c90a0eebcccf902ae243121578\n    patches:\n        - zipsafe.patch\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - example\n        - nested_inline\n\nabout:\n    home: https://github.com/s-block/django-nested-inline\n    license: MIT License\n    summary: Recursive nesting of inline forms for Django Admin\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n",
+ "rendered_recipe": {},
+ "version": "0.3.5"
+}

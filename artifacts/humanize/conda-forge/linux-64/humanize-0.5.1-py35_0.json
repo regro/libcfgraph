@@ -1,0 +1,42 @@
+{
+ "about": {
+  "home": "https://github.com/jmoiron/humanize",
+  "license": "MIT License",
+  "summary": "python humanize utilities"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/humanize-0.5.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/humanize-0.5.1-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/humanize/__init__.py",
+  "lib/python3.5/site-packages/humanize/compat.py",
+  "lib/python3.5/site-packages/humanize/filesize.py",
+  "lib/python3.5/site-packages/humanize/i18n.py",
+  "lib/python3.5/site-packages/humanize/locale/fr_FR/LC_MESSAGES/humanize.mo",
+  "lib/python3.5/site-packages/humanize/locale/fr_FR/LC_MESSAGES/humanize.po",
+  "lib/python3.5/site-packages/humanize/locale/ko_KR/LC_MESSAGES/humanize.mo",
+  "lib/python3.5/site-packages/humanize/locale/ko_KR/LC_MESSAGES/humanize.po",
+  "lib/python3.5/site-packages/humanize/locale/ru_RU/LC_MESSAGES/humanize.mo",
+  "lib/python3.5/site-packages/humanize/locale/ru_RU/LC_MESSAGES/humanize.po",
+  "lib/python3.5/site-packages/humanize/number.py",
+  "lib/python3.5/site-packages/humanize/time.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT License",
+  "name": "humanize",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.5.1"
+ },
+ "metadata_version": 1,
+ "name": "humanize",
+ "raw_recipe": "{% set version = \"0.5.1\" %}\npackage:\n  name: humanize\n  version: {{ version }}\n\nsource:\n  fn: humanize-{{ version }}.tar.gz\n  url: https://github.com/jmoiron/humanize/archive/{{ version }}.tar.gz\n  sha256: e3f3ac75e647f75eec48c3950385ab7585c1c1cde2a6c1479c1f58e055a3e868\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - humanize\n\nabout:\n  home: https://github.com/jmoiron/humanize\n  license: MIT License\n  summary: python humanize utilities\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - licode\n    - tacaswell\n",
+ "rendered_recipe": {},
+ "version": "0.5.1"
+}

@@ -1,0 +1,39 @@
+{
+ "about": {
+  "dev_url": "http://github.com/jamesturk/jellyfish",
+  "doc_url": "https://jellyfish.readthedocs.io/en/latest/",
+  "home": "http://github.com/jamesturk/jellyfish",
+  "license": "LICENSE",
+  "license_family": "BSD",
+  "summary": "a library for doing approximate and phonetic matching of strings."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/jellyfish-0.5.6-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/jellyfish/__init__.py",
+  "Lib/site-packages/jellyfish/_jellyfish.py",
+  "Lib/site-packages/jellyfish/cjellyfish.pyd",
+  "Lib/site-packages/jellyfish/compat.py",
+  "Lib/site-packages/jellyfish/porter.py",
+  "Lib/site-packages/jellyfish/test.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "LICENSE",
+  "license_family": "BSD",
+  "name": "jellyfish",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.5.6"
+ },
+ "metadata_version": 1,
+ "name": "jellyfish",
+ "raw_recipe": "{%set name = \"jellyfish\" %}\n{%set version = \"0.5.6\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"887a9a49d0caee913a883c3e7eb185f6260ebe2137562365be422d1316bd39c9\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - jellyfish\n\nabout:\n  home: http://github.com/jamesturk/jellyfish\n  license: BSD 2-Clause\n  license: LICENSE\n  license_family: BSD\n  summary: 'a library for doing approximate and phonetic matching of strings.'\n  dev_url: http://github.com/jamesturk/jellyfish\n  doc_url: https://jellyfish.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.5.6"
+}

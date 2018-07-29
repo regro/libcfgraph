@@ -1,0 +1,33 @@
+{
+ "about": {
+  "description": "Doxygen is the de facto standard tool for\ngenerating documentation from annotated C++ sources,\nbut it also supports other popular programming\nlanguages such as C, Objective-C, C#, PHP, Java,\nPython, IDL (Corba, Microsoft, and UNO/OpenOffice flavors),\nFortran, VHDL, Tcl, and to some extent D.\n",
+  "dev_url": "https://github.com/doxygen/doxygen",
+  "doc_url": "http://www.stack.nl/~dimitri/doxygen/manual/index.html",
+  "home": "http://www.stack.nl/~dimitri/doxygen/index.html",
+  "license": "GPL2",
+  "summary": "Generate documentation from source code"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/doxygen"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "libiconv",
+   "m4"
+  ],
+  "license": "GPL2",
+  "name": "doxygen",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.8.13"
+ },
+ "metadata_version": 1,
+ "name": "doxygen",
+ "raw_recipe": "{% set name = \"doxygen\" %}\n{% set version = \"1.8.13\" %}\n{% set sha256 = \"af667887bd7a87dc0dbf9ac8d86c96b552dfb8ca9c790ed1cbffaa6131573f6b\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.src.tar.gz\n  url: ftp://ftp.stack.nl/pub/users/dimitri/{{ name }}-{{ version }}.src.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - doxygen_test_patch.diff\n    # CMake finds iconv_open in glibc, but finds iconv.h from libiconv.\n    # Make sure both are found from one place.\n    - find_iconv.patch\n\nbuild:\n  number: 0\n  skip: True  # [win or not py35]\n  features:\n      - vc9    # [win and py27]\n      - vc10   # [win and py34]\n      - vc14   # [win and py35]\n\nrequirements:\n  build:\n    - cmake\n    - toolchain\n    - flex\n    - bison\n    - python\n    - libiconv\n  run:\n    - m4\n    - libiconv\n\ntest:\n  commands:\n    - doxygen --help\n\nabout:\n  home: http://www.stack.nl/~dimitri/doxygen/index.html\n  license: GPL2\n  license_file: LICENSE\n  summary: 'Generate documentation from source code'\n\n  description: |\n    Doxygen is the de facto standard tool for \n    generating documentation from annotated C++ sources, \n    but it also supports other popular programming \n    languages such as C, Objective-C, C#, PHP, Java, \n    Python, IDL (Corba, Microsoft, and UNO/OpenOffice flavors), \n    Fortran, VHDL, Tcl, and to some extent D.\n  doc_url: http://www.stack.nl/~dimitri/doxygen/manual/index.html\n  dev_url: https://github.com/doxygen/doxygen\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
+ "rendered_recipe": {},
+ "version": "1.8.13"
+}

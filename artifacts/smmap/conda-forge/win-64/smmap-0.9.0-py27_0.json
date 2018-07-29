@@ -1,0 +1,66 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/smmap-0.9.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/smmap-0.9.0-py2.7.egg-info/zip-safe",
+  "Lib/site-packages/smmap/__init__.py",
+  "Lib/site-packages/smmap/buf.py",
+  "Lib/site-packages/smmap/exc.py",
+  "Lib/site-packages/smmap/mman.py",
+  "Lib/site-packages/smmap/test/__init__.py",
+  "Lib/site-packages/smmap/test/lib.py",
+  "Lib/site-packages/smmap/test/test_buf.py",
+  "Lib/site-packages/smmap/test/test_mman.py",
+  "Lib/site-packages/smmap/test/test_tutorial.py",
+  "Lib/site-packages/smmap/test/test_util.py",
+  "Lib/site-packages/smmap/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD License",
+  "name": "smmap",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.9.0"
+ },
+ "metadata_version": 1,
+ "name": "smmap",
+ "raw_recipe": "package:\n  name: smmap\n  version: \"0.9.0\"\n\nsource:\n  fn: smmap-0.9.0.tar.gz\n  url: https://pypi.python.org/packages/source/s/smmap/smmap-0.9.0.tar.gz\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - smmap\n    - smmap.test\n\nabout:\n  home: https://github.com/Byron/smmap\n  license: BSD License\n  summary: 'A pure git implementation of a sliding window memory map manager'\n\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/Byron/smmap",
+   "license": "BSD License",
+   "summary": "A pure git implementation of a sliding window memory map manager"
+  },
+  "package": {
+   "name": "smmap",
+   "version": "0.9.0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "smmap-0.9.0.tar.gz",
+   "url": "https://pypi.python.org/packages/source/s/smmap/smmap-0.9.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "smmap",
+    "smmap.test"
+   ]
+  }
+ },
+ "version": "0.9.0"
+}

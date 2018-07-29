@@ -1,0 +1,52 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/capnp/__init__.pxd",
+  "lib/python2.7/site-packages/capnp/__init__.py",
+  "lib/python2.7/site-packages/capnp/_gen.py",
+  "lib/python2.7/site-packages/capnp/c++.capnp",
+  "lib/python2.7/site-packages/capnp/helpers/__init__.pxd",
+  "lib/python2.7/site-packages/capnp/helpers/asyncHelper.h",
+  "lib/python2.7/site-packages/capnp/helpers/capabilityHelper.h",
+  "lib/python2.7/site-packages/capnp/helpers/checkCompiler.h",
+  "lib/python2.7/site-packages/capnp/helpers/fixMaybe.h",
+  "lib/python2.7/site-packages/capnp/helpers/helpers.pxd",
+  "lib/python2.7/site-packages/capnp/helpers/non_circular.pxd",
+  "lib/python2.7/site-packages/capnp/helpers/rpcHelper.h",
+  "lib/python2.7/site-packages/capnp/helpers/serialize.h",
+  "lib/python2.7/site-packages/capnp/includes/__init__.pxd",
+  "lib/python2.7/site-packages/capnp/includes/capnp_cpp.pxd",
+  "lib/python2.7/site-packages/capnp/includes/schema_cpp.pxd",
+  "lib/python2.7/site-packages/capnp/includes/types.pxd",
+  "lib/python2.7/site-packages/capnp/lib/__init__.pxd",
+  "lib/python2.7/site-packages/capnp/lib/__init__.py",
+  "lib/python2.7/site-packages/capnp/lib/capnp.pxd",
+  "lib/python2.7/site-packages/capnp/lib/capnp.pyx",
+  "lib/python2.7/site-packages/capnp/lib/capnp.so",
+  "lib/python2.7/site-packages/capnp/lib/pickle_helper.py",
+  "lib/python2.7/site-packages/capnp/schema.capnp",
+  "lib/python2.7/site-packages/capnp/templates/module.pyx",
+  "lib/python2.7/site-packages/capnp/templates/setup.py.tmpl",
+  "lib/python2.7/site-packages/capnp/version.py",
+  "lib/python2.7/site-packages/pycapnp-0.5.7-py2.7.egg-info"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 2-clause",
+  "name": "pycapnp",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.5.7"
+ },
+ "metadata_version": 1,
+ "name": "pycapnp",
+ "raw_recipe": "{% set version = \"0.5.7\" %}\n\npackage:\n  name: pycapnp\n  version: {{ version }}\n\nsource:\n  fn: pycapnp-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pycapnp/pycapnp-{{ version }}.tar.gz\n  md5: d47396d6724593afcbb728b87ac6de07\n\nbuild:\n  number: 0\n  # pycapnp does not support Windows due to the lack of dynamic API support in\n  # C++ Cap'n Proto on Windows:\n  # https://github.com/jparyani/pycapnp/issues/53\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - capnproto\n\n  run:\n    - python\n\ntest:\n  imports:\n    - capnp\n\nabout:\n  home: http://jparyani.github.io/pycapnp/\n  license: BSD 2-clause\n  summary: \"A python wrapping of the C++ implementation of the Cap'n Proto library\"\n\nextra:\n  recipe-maintainers:\n    - frol\n",
+ "rendered_recipe": {},
+ "version": "0.5.7"
+}

@@ -1,0 +1,45 @@
+{
+ "about": {
+  "home": "http://www.scitools.org.uk/iris",
+  "license": "GNU Lesser General Public License",
+  "summary": "Units of measure as required by the Climate and Forecast (CF) metadata conventions."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/cf_units-1.1.3-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/cf_units/__init__.py",
+  "Lib/site-packages/cf_units/_version.py",
+  "Lib/site-packages/cf_units/config.py",
+  "Lib/site-packages/cf_units/etc/site.cfg",
+  "Lib/site-packages/cf_units/etc/site.cfg.template",
+  "Lib/site-packages/cf_units/tests/__init__.py",
+  "Lib/site-packages/cf_units/tests/test_coding_standards.py",
+  "Lib/site-packages/cf_units/tests/test_unit.py",
+  "Lib/site-packages/cf_units/util.py",
+  "share/doc/cf_units/COPYING",
+  "share/doc/cf_units/COPYING.LESSER",
+  "share/doc/cf_units/README.rst"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "netcdf4",
+   "numpy",
+   "python 3.4*",
+   "six",
+   "udunits2"
+  ],
+  "license": "GNU Lesser General Public License",
+  "name": "cf_units",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.1.3"
+ },
+ "metadata_version": 1,
+ "name": "cf_units",
+ "raw_recipe": "{% set version = \"1.1.3\" %}\n\npackage:\n    name: cf_units\n    version: {{ version }}\n\nsource:\n    fn: cf_units-{{ version }}.tar.gz\n    url: https://github.com/SciTools/cf_units/archive/v{{ version }}.tar.gz\n    sha256: a2041d5ee6804385cf77aaf9fd0a4aef119f829eff95e496a53e3fbef3fd3596\n\nbuild:\n    number: 0\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - six\n        - udunits2\n        - netcdf4\n        - numpy\n\ntest:\n    imports:\n        - cf_units\n\nabout:\n    home: http://www.scitools.org.uk/iris\n    license: GNU Lesser General Public License\n    summary: 'Units of measure as required by the Climate and Forecast (CF) metadata conventions.'\n\nextra:\n    recipe-maintainers:\n        - bjlittle\n        - dkillick\n        - ocefpaf\n        - pelson\n",
+ "rendered_recipe": {},
+ "version": "1.1.3"
+}

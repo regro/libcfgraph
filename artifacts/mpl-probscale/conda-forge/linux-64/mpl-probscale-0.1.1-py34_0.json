@@ -1,0 +1,103 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/probscale-0.1.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/probscale-0.1.1-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/probscale/__init__.py",
+  "lib/python3.4/site-packages/probscale/formatters.py",
+  "lib/python3.4/site-packages/probscale/probscale.py",
+  "lib/python3.4/site-packages/probscale/tests/__init__.py",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/__init__.py",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/test_probscale/__init__.py",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/test_probscale/test_the_scale_beta.png",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/test_probscale/test_the_scale_default.png",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/test_probscale/test_the_scale_not_as_pct.png",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/test_viz/__init__.py",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/test_viz/test_probplot_pp.png",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/test_viz/test_probplot_pp_bestfit.png",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/test_viz/test_probplot_pp_bestfit_probax_y.png",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/test_viz/test_probplot_pp_probax_y.png",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/test_viz/test_probplot_prob.png",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/test_viz/test_probplot_prob_bestfit.png",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/test_viz/test_probplot_prob_bestfit_probax_y.png",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/test_viz/test_probplot_prob_probax_y.png",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/test_viz/test_probplot_qq.png",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/test_viz/test_probplot_qq_bestfit.png",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/test_viz/test_probplot_qq_bestfit_probax_y.png",
+  "lib/python3.4/site-packages/probscale/tests/baseline_images/test_viz/test_probplot_qq_probax_y.png",
+  "lib/python3.4/site-packages/probscale/tests/test_formatters.py",
+  "lib/python3.4/site-packages/probscale/tests/test_probscale.py",
+  "lib/python3.4/site-packages/probscale/tests/test_transforms.py",
+  "lib/python3.4/site-packages/probscale/tests/test_validate.py",
+  "lib/python3.4/site-packages/probscale/tests/test_viz.py",
+  "lib/python3.4/site-packages/probscale/transforms.py",
+  "lib/python3.4/site-packages/probscale/validate.py",
+  "lib/python3.4/site-packages/probscale/viz.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib",
+   "nose",
+   "numpy",
+   "python 3.4*"
+  ],
+  "license": "BSD 3-clause",
+  "name": "mpl-probscale",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1.1"
+ },
+ "metadata_version": 1,
+ "name": "mpl-probscale",
+ "raw_recipe": "package:\n  name: mpl-probscale\n  version: 0.1.1\n\nsource:\n  git_url: https://github.com/phobson/mpl-probscale.git\n  git_tag: v0.1.1\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - numpy\n    - matplotlib\n\n  run:\n    - python\n    - numpy\n    - matplotlib\n    - nose\n\ntest:\n  imports:\n    - probscale\n\n  commands:\n    - python -c \"import matplotlib; matplotlib.use('agg'); import probscale; probscale.test()\"\n\nabout:\n  home: http://phobson.github.io/mpl-probscale/\n  license:  BSD 3-clause\n  summary: 'Probability scales for matplotlib.'\n\nextra:\n    recipe-maintainers:\n        - phobson\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://phobson.github.io/mpl-probscale/",
+   "license": "BSD 3-clause",
+   "summary": "Probability scales for matplotlib."
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "phobson"
+   ]
+  },
+  "package": {
+   "name": "mpl-probscale",
+   "version": "0.1.1"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "numpy",
+    "matplotlib"
+   ],
+   "run": [
+    "python",
+    "numpy",
+    "matplotlib",
+    "nose"
+   ]
+  },
+  "source": {
+   "git_tag": "v0.1.1",
+   "git_url": "https://github.com/phobson/mpl-probscale.git"
+  },
+  "test": {
+   "commands": [
+    "python -c \"import matplotlib; matplotlib.use('agg'); import probscale; probscale.test()\""
+   ],
+   "imports": [
+    "probscale"
+   ]
+  }
+ },
+ "version": "0.1.1"
+}

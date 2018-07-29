@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "https://github.com/ClinicalGraphics/pyopcode",
+  "license": "LGPL-3.0",
+  "summary": "OPCODE collision detection wrapped library with numpy bindings (mesh-mesh and mesh-ray)"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/_pyopcode.so",
+  "lib/python3.4/site-packages/pyopcode-0.3.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pyopcode-0.3.1-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/pyopcode/__init__.py",
+  "lib/python3.4/site-packages/pyopcode/tests/__init__.py",
+  "lib/python3.4/site-packages/pyopcode/tests/test_pyopcode.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np110py34_0",
+  "build_number": 0,
+  "depends": [
+   "boost 1.61.*",
+   "numpy 1.10*",
+   "python 3.4*"
+  ],
+  "license": "LGPL-3.0",
+  "name": "pyopcode",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3.3"
+ },
+ "metadata_version": 1,
+ "name": "pyopcode",
+ "raw_recipe": "{% set version = \"0.3.3\" %}\n\npackage:\n  name: pyopcode\n  version: {{ version }}\n\nsource:\n  fn: {{ version }}.tar.gz\n  url: https://github.com/ClinicalGraphics/pyopcode/archive/{{ version }}.tar.gz\n  md5: 2aea781fec665c83fe292177b2cfcd2c\n  \nbuild:\n  features:\n  - vc9  # [win and py27]\n  - vc10  # [win and py34]\n  - vc14  # [win and py35]\n  number: 0\n  skip: true  # [osx or win32 or linux32]\n\nrequirements:\n  build:\n  - python\n  - numpy x.x\n  - cmake\n  - boost 1.61.*\n  - setuptools\n  - pyyaml\n  run:\n  - python\n  - numpy x.x\n  - boost 1.61.*\n\ntest:\n  commands:\n    - py.test --pyargs pyopcode\n  imports:\n    - pyopcode\n  requires:\n    - pytest\n  \nabout:\n  home: https://github.com/ClinicalGraphics/pyopcode\n  license: LGPL-3.0\n  summary: OPCODE collision detection wrapped library with numpy bindings (mesh-mesh and mesh-ray)\n  \nextra:\n  recipe-maintainers:\n    - ivoflipse\n    - Korijn\n    - Maxyme\n    - EelcoHoogendoorn\n",
+ "rendered_recipe": {},
+ "version": "0.3.3"
+}

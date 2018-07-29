@@ -1,0 +1,56 @@
+{
+ "about": {
+  "home": "http://github.com/blink1073/oct2py",
+  "license": "MIT",
+  "summary": "Python to GNU Octave bridge --> run m-files from python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/oct2py-3.6.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/oct2py-3.6.0-py2.7.egg-info/pbr.json",
+  "lib/python2.7/site-packages/oct2py/__init__.py",
+  "lib/python2.7/site-packages/oct2py/_make_figs.m",
+  "lib/python2.7/site-packages/oct2py/compat.py",
+  "lib/python2.7/site-packages/oct2py/core.py",
+  "lib/python2.7/site-packages/oct2py/demo.py",
+  "lib/python2.7/site-packages/oct2py/ipython/__init__.py",
+  "lib/python2.7/site-packages/oct2py/ipython/octavemagic.py",
+  "lib/python2.7/site-packages/oct2py/ipython/tests/__init__.py",
+  "lib/python2.7/site-packages/oct2py/ipython/tests/test_octavemagic.py",
+  "lib/python2.7/site-packages/oct2py/matread.py",
+  "lib/python2.7/site-packages/oct2py/matwrite.py",
+  "lib/python2.7/site-packages/oct2py/speed_check.py",
+  "lib/python2.7/site-packages/oct2py/tests/__init__.py",
+  "lib/python2.7/site-packages/oct2py/tests/roundtrip.m",
+  "lib/python2.7/site-packages/oct2py/tests/test_conversions.py",
+  "lib/python2.7/site-packages/oct2py/tests/test_datatypes.m",
+  "lib/python2.7/site-packages/oct2py/tests/test_misc.py",
+  "lib/python2.7/site-packages/oct2py/tests/test_nodocstring.m",
+  "lib/python2.7/site-packages/oct2py/tests/test_numpy.py",
+  "lib/python2.7/site-packages/oct2py/tests/test_roundtrip.py",
+  "lib/python2.7/site-packages/oct2py/tests/test_usage.py",
+  "lib/python2.7/site-packages/oct2py/thread_check.py",
+  "lib/python2.7/site-packages/oct2py/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "ipython",
+   "numpy",
+   "python 2.7*",
+   "scipy"
+  ],
+  "license": "MIT",
+  "name": "oct2py",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "3.6.0"
+ },
+ "metadata_version": 1,
+ "name": "oct2py",
+ "raw_recipe": "{% set version = \"3.6.0\" %}\n\npackage:\n    name: oct2py\n    version: {{ version }}\n\nsource:\n    fn: oct2py-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/o/oct2py/oct2py-{{ version }}.tar.gz\n    sha256: b356daf63a80c778fcf81b380c187863b86e9aae88f8321bb543c5512835c69f\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - scipy\n        - ipython\n\nabout:\n    home: http://github.com/blink1073/oct2py\n    license: MIT\n    summary: Python to GNU Octave bridge --> run m-files from python\n\nextra:\n    recipe-maintainers:\n        - blink1073\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "3.6.0"
+}

@@ -1,0 +1,89 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Library/lib/udunits2.exp",
+  "Library/lib/udunits2.lib",
+  "Library/share/udunits/udunits2-accepted.xml",
+  "Library/share/udunits/udunits2-base.xml",
+  "Library/share/udunits/udunits2-common.xml",
+  "Library/share/udunits/udunits2-derived.xml",
+  "Library/share/udunits/udunits2-prefixes.xml",
+  "Library/share/udunits/udunits2.xml",
+  "Scripts/udunits2.dll",
+  "Scripts/udunits2.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc10_1",
+  "build_number": 1,
+  "depends": [
+   "expat"
+  ],
+  "features": "vc10",
+  "license": "https://github.com/Unidata/UDUNITS-2/blob/master/COPYRIGHT",
+  "name": "udunits2",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.2.20"
+ },
+ "metadata_version": 1,
+ "name": "udunits2",
+ "raw_recipe": "package:\n    name: udunits2\n    version: 2.2.20\n\nsource:\n    fn: v2.2.20.tar.gz\n    url: https://github.com/Unidata/UDUNITS-2/archive/v2.2.20.tar.gz\n    sha1: a0d30024af16749a4a5ca60133b32735ae52f9e2\n\nbuild:\n    number: 1\n    detect_binary_files_with_prefix: true\n    features:\n        - vc9  # [win and py27]\n        - vc10  # [win and py34]\n        - vc14  # [win and py35]\n\nrequirements:\n    build:\n        - python  # [win]\n        - cmake  # [win]\n        - automake  # [not win]\n        - libtool  # [not win]\n        - texinfo  # [not win]\n        - expat\n    run:\n        - expat\n\ntest:\n    requires:\n        # Tests don't really need Python, but conda throws\n        - python {{ environ['PY_VER'] + '*' }}  # [win]\n    commands:\n        - udunits2 -h\n        - udunits2 -H meter -W miles\n        - conda inspect linkages udunits2 --name _test  # [linux]\n\nabout:\n    home: http://www.unidata.ucar.edu/software/udunits/\n    license: https://github.com/Unidata/UDUNITS-2/blob/master/COPYRIGHT\n    summary: The UDUNITS package supports units of physical quantities.\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n        - ocefpaf\n        - pelson\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.unidata.ucar.edu/software/udunits/",
+   "license": "https://github.com/Unidata/UDUNITS-2/blob/master/COPYRIGHT",
+   "summary": "The UDUNITS package supports units of physical quantities."
+  },
+  "build": {
+   "detect_binary_files_with_prefix": true,
+   "features": [
+    "vc9",
+    "vc10",
+    "vc14"
+   ],
+   "number": 1
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "kwilcox",
+    "ocefpaf",
+    "pelson"
+   ]
+  },
+  "package": {
+   "name": "udunits2",
+   "version": "2.2.20"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "cmake",
+    "automake",
+    "libtool",
+    "texinfo",
+    "expat"
+   ],
+   "run": [
+    "expat"
+   ]
+  },
+  "source": {
+   "fn": "v2.2.20.tar.gz",
+   "sha1": "a0d30024af16749a4a5ca60133b32735ae52f9e2",
+   "url": "https://github.com/Unidata/UDUNITS-2/archive/v2.2.20.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "udunits2 -h",
+    "udunits2 -H meter -W miles",
+    "conda inspect linkages udunits2 --name _test"
+   ],
+   "requires": [
+    "python {{ environ['PY_VER'] + '*' }}"
+   ]
+  }
+ },
+ "version": "2.2.20"
+}

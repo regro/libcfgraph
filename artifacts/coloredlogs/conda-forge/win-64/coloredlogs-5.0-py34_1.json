@@ -1,0 +1,34 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/coloredlogs-5.0-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/coloredlogs/__init__.py",
+  "Lib/site-packages/coloredlogs/cli.py",
+  "Lib/site-packages/coloredlogs/converter.py",
+  "Lib/site-packages/coloredlogs/demo.py",
+  "Lib/site-packages/coloredlogs/syslog.py",
+  "Lib/site-packages/coloredlogs/tests.py",
+  "Scripts/coloredlogs-script.py",
+  "Scripts/coloredlogs.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_1",
+  "build_number": 1,
+  "depends": [
+   "humanfriendly >=1.42",
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "coloredlogs",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "5.0"
+ },
+ "metadata_version": 1,
+ "name": "coloredlogs",
+ "raw_recipe": "{% set version = \"5.0\" %}\n\npackage:\n    name: coloredlogs\n    version: {{ version }}\n\nsource:\n    fn: coloredlogs-5.0.tar.gz\n    url: https://pypi.io/packages/source/c/coloredlogs/coloredlogs-{{ version }}.tar.gz\n    sha256: 612354a11acd2e1d603c24fe7be21d736c53a23ad27f244cd9e3fdb4a99661d4\n\nbuild:\n    number: 1\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    entry_points:\n        - coloredlogs = coloredlogs.cli:main\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - humanfriendly >=1.42\n    run:\n        - python\n        - humanfriendly >=1.42\n\ntest:\n    imports:\n        - coloredlogs\n    commands:\n        - coloredlogs --help  # [not osx]\n    requires:\n        - capturer  # [not win]\n        - verboselogs\n\nabout:\n    home: https://coloredlogs.readthedocs.org\n    license: MIT\n    summary: \"Colored terminal output for Python's logging module.\"\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "5.0"
+}

@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "https://github.com/sakov/nn-c",
+  "license": "BSD 2-Clause (bundled triangle code is non-free for commercial use)",
+  "summary": "Natural Neighbours interpolation."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/minell",
+  "bin/nnbathy",
+  "include/nn.h",
+  "lib/libnn.a"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [],
+  "license": "BSD 2-Clause (bundled triangle code is non-free for commercial use)",
+  "name": "nn",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.86.0"
+ },
+ "metadata_version": 1,
+ "name": "nn",
+ "raw_recipe": "{% set version = \"1.86.0\" %}\n{% set commit = \"33cbf70dec4f64836a26dcb4a885cb09b7279dd3\" %}\n\npackage:\n    name: nn\n    version: {{ version }}\n\nsource:\n    fn: {{ commit }}.tar.gz\n    url: https://github.com/sakov/nn-c/archive/{{ commit }}.tar.gz\n    sha256: eb00f951bbe36e933d16de520db44acf93e9becf6e0182e391c1c7f98441972b\n\nbuild:\n    number: 1\n    skip: True  # [win]\n\ntest:\n    commands:\n        - nnbathy -V\n        - conda inspect linkages -n _test nn  # [not win]\n\nabout:\n    home: https://github.com/sakov/nn-c\n    license: BSD 2-Clause (bundled triangle code is non-free for commercial use)\n    summary: 'Natural Neighbours interpolation.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.86.0"
+}

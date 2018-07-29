@@ -1,0 +1,161 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Now you don't need to worry about people constantly complaining that you are\nusing double-quotes and not single-quotes.\n",
+  "dev_url": "https://github.com/zheller/flake8-quotes",
+  "doc_url": "https://pypi.python.org/pypi/flake8-quotes",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/zheller/flake8-quotes",
+  "license": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-1",
+   "conda-forge::certifi-2017.4.17-py35_0",
+   "conda-forge::chardet-3.0.2-py35_1",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.10-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.12.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::openssl-1.0.2k-0",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-3",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2017.2-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Flake8 lint for quotes."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/flake8_quotes-0.10.0-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/flake8_quotes-0.10.0-py3.6.egg-info/pbr.json",
+  "lib/python3.6/site-packages/flake8_quotes-0.10.0-py3.6.egg-info/zip-safe",
+  "lib/python3.6/site-packages/flake8_quotes/__about__.py",
+  "lib/python3.6/site-packages/flake8_quotes/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "flake8 >=3.0.4,<4.0.0",
+   "python 3.6*"
+  ],
+  "license": "MIT",
+  "name": "flake8-quotes",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.10.0"
+ },
+ "metadata_version": 1,
+ "name": "flake8-quotes",
+ "raw_recipe": "{% set name = \"flake8-quotes\" %}\n{% set version = \"0.10.0\" %}\n{% set sha256 = \"e71b13113ee373e6451343972a22bd375f29c97de9abde6a6d0be2ff3668385a\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  preserve_egg_dir: True\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - flake8 >=3.0.4,<4.0.0\n\ntest:\n  imports:\n    - flake8_quotes\n\nabout:\n  home: https://github.com/zheller/flake8-quotes\n  license: MIT\n  license_file: LICENSE\n  summary: Flake8 lint for quotes.\n\n  description: |\n    Now you don't need to worry about people constantly complaining that you are\n    using double-quotes and not single-quotes.\n  doc_url: https://pypi.python.org/pypi/flake8-quotes\n  dev_url: https://github.com/zheller/flake8-quotes\n\nextra:\n  recipe-maintainers:\n    - flamingbear\n    - michael-brandt-cu\n    - michaeljb\n    - dopplershift\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Now you don't need to worry about people constantly complaining that you are\nusing double-quotes and not single-quotes.\n",
+   "dev_url": "https://github.com/zheller/flake8-quotes",
+   "doc_url": "https://pypi.python.org/pypi/flake8-quotes",
+   "home": "https://github.com/zheller/flake8-quotes",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Flake8 lint for quotes."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "preserve_egg_dir": "True",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py36_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "flamingbear",
+    "michael-brandt-cu",
+    "michaeljb",
+    "dopplershift"
+   ]
+  },
+  "package": {
+   "name": "flake8-quotes",
+   "version": "0.10.0"
+  },
+  "requirements": {
+   "build": [
+    "certifi 2017.4.17 py36_0",
+    "openssl 1.0.2k 0",
+    "setuptools 33.1.1 py36_0",
+    "ca-certificates 2017.4.17 0",
+    "xz 5.2.2 0",
+    "tk 8.5.19 1",
+    "ncurses 5.9 10",
+    "sqlite 3.13.0 1",
+    "readline 6.2 0",
+    "zlib 1.2.11 0",
+    "python 3.6.1 2"
+   ],
+   "run": [
+    "python",
+    "flake8 >=3.0.4,<4.0.0"
+   ]
+  },
+  "source": {
+   "fn": "flake8-quotes-0.10.0.tar.gz",
+   "sha256": "e71b13113ee373e6451343972a22bd375f29c97de9abde6a6d0be2ff3668385a",
+   "url": "https://pypi.io/packages/source/f/flake8-quotes/flake8-quotes-0.10.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "flake8_quotes"
+   ]
+  }
+ },
+ "version": "0.10.0"
+}

@@ -1,0 +1,164 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.16",
+  "conda_private": false,
+  "conda_version": "4.2.16",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/gboeing/osmnx",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "clyent-1.2.2-py36_0",
+   "conda-forge::conda-4.2.16-py36_0",
+   "conda-build-2.1.4-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.0-0",
+   "conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.8-py36_1",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_0",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Retrieve, construct, analyze, and visualize street networks from OpenStreetMap"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/osmnx/utils.py",
+  "lib/python3.5/site-packages/osmnx/core.py",
+  "lib/python3.5/site-packages/osmnx/projection.py",
+  "lib/python3.5/site-packages/osmnx/simplify.py",
+  "lib/python3.5/site-packages/osmnx/globals.py",
+  "lib/python3.5/site-packages/osmnx/buildings.py",
+  "lib/python3.5/site-packages/osmnx-0.3.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/osmnx/plot.py",
+  "lib/python3.5/site-packages/osmnx/save_load.py",
+  "lib/python3.5/site-packages/osmnx/stats.py",
+  "lib/python3.5/site-packages/osmnx/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "descartes",
+   "folium",
+   "geopandas >=0.2.1",
+   "geopy",
+   "matplotlib >=2.0",
+   "networkx",
+   "numpy",
+   "pandas >=0.19",
+   "python 3.5*",
+   "requests",
+   "rtree >=0.8.3",
+   "shapely"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "osmnx",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.1"
+ },
+ "metadata_version": 1,
+ "name": "osmnx",
+ "raw_recipe": "{% set name = \"osmnx\" %}\n{% set version = \"0.3.1\" %}\n{% set md5 = \"2dfb203a849fc8ae2211f2b8ae78517f\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - requests\n    - numpy\n    - pandas >=0.19\n    - geopandas >=0.2.1\n    - networkx\n    - matplotlib >=2.0\n    - shapely\n    - descartes\n    - geopy\n    - rtree >=0.8.3\n    - folium\n\ntest:\n  imports:\n    - osmnx\n\nabout:\n  home: https://github.com/gboeing/osmnx\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'Retrieve, construct, analyze, and visualize street networks from OpenStreetMap'\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - gboeing\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/gboeing/osmnx",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE.txt",
+   "summary": "Retrieve, construct, analyze, and visualize street networks from OpenStreetMap"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py35_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "gboeing"
+   ]
+  },
+  "package": {
+   "name": "osmnx",
+   "version": "0.3.1"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "requests",
+    "numpy",
+    "pandas >=0.19",
+    "geopandas >=0.2.1",
+    "networkx",
+    "matplotlib >=2.0",
+    "shapely",
+    "descartes",
+    "geopy",
+    "rtree >=0.8.3",
+    "folium"
+   ]
+  },
+  "source": {
+   "fn": "osmnx-0.3.1.tar.gz",
+   "md5": "2dfb203a849fc8ae2211f2b8ae78517f",
+   "url": "https://pypi.io/packages/source/o/osmnx/osmnx-0.3.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "osmnx"
+   ]
+  }
+ },
+ "version": "0.3.1"
+}

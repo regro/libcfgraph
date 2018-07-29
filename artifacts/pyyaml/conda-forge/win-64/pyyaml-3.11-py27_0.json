@@ -1,0 +1,89 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/PyYAML-3.11-py2.7.egg-info",
+  "Lib/site-packages/_yaml.pyd",
+  "Lib/site-packages/yaml/__init__.py",
+  "Lib/site-packages/yaml/composer.py",
+  "Lib/site-packages/yaml/constructor.py",
+  "Lib/site-packages/yaml/cyaml.py",
+  "Lib/site-packages/yaml/dumper.py",
+  "Lib/site-packages/yaml/emitter.py",
+  "Lib/site-packages/yaml/error.py",
+  "Lib/site-packages/yaml/events.py",
+  "Lib/site-packages/yaml/loader.py",
+  "Lib/site-packages/yaml/nodes.py",
+  "Lib/site-packages/yaml/parser.py",
+  "Lib/site-packages/yaml/reader.py",
+  "Lib/site-packages/yaml/representer.py",
+  "Lib/site-packages/yaml/resolver.py",
+  "Lib/site-packages/yaml/scanner.py",
+  "Lib/site-packages/yaml/serializer.py",
+  "Lib/site-packages/yaml/tokens.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "yaml"
+  ],
+  "license": "MIT",
+  "name": "pyyaml",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "3.11"
+ },
+ "metadata_version": 1,
+ "name": "pyyaml",
+ "raw_recipe": "{% set version = \"3.11\" %}\n\n\npackage:\n  name: pyyaml\n  version: {{ version }}\n\nsource:\n  fn: PyYAML-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/P/PyYAML/PyYAML-{{ version }}.tar.gz\n  md5: f50e08ef0fe55178479d3a618efe21db\n\nbuild:\n  number: 0\n  script:\n    - python setup.py --with-libyaml build_ext --include-dirs=\"${PREFIX}/include\" --library-dirs=\"${PREFIX}/lib\"  # [unix]\n    - python setup.py --with-libyaml build_ext --include-dirs=\"%LIBRARY_INC% --library-dirs=%LIBRARY_LIB%         # [win]\n    - python setup.py install\n    - python setup.py test\n\nrequirements:\n  build:\n    - python\n    - yaml\n\n  run:\n    - python\n    - yaml\n\ntest:\n  imports:\n    - yaml\n    - _yaml\n\nabout:\n  home: http://pyyaml.org/wiki/PyYAML\n  license: MIT\n  summary: YAML parser and emitter for Python\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - msarahan\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://pyyaml.org/wiki/PyYAML",
+   "license": "MIT",
+   "summary": "YAML parser and emitter for Python"
+  },
+  "build": {
+   "number": "0",
+   "script": [
+    "python setup.py --with-libyaml build_ext --include-dirs=\"%LIBRARY_INC% --library-dirs=%LIBRARY_LIB%",
+    "python setup.py install",
+    "python setup.py test"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham",
+    "msarahan"
+   ]
+  },
+  "package": {
+   "name": "pyyaml",
+   "version": "3.11"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "yaml"
+   ],
+   "run": [
+    "python",
+    "yaml"
+   ]
+  },
+  "source": {
+   "fn": "PyYAML-3.11.tar.gz",
+   "md5": "f50e08ef0fe55178479d3a618efe21db",
+   "url": "https://pypi.io/packages/source/P/PyYAML/PyYAML-3.11.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "yaml",
+    "_yaml"
+   ]
+  }
+ },
+ "version": "3.11"
+}

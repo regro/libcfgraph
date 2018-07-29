@@ -1,0 +1,35 @@
+{
+ "about": {
+  "description": "Pybroom is a small python 3+ library for converting collections\nof fit results (curve fitting or other optimizations) to Pandas DataFrame\nin tidy format (or long-form). Once fit results are in tidy DataFrames,\nit is possible to leverage common patterns for tidy data analysis.\nand visual explorations\n",
+  "dev_url": "https://github.com/tritemio/pybroom",
+  "doc_url": "http://pybroom.readthedocs.io/",
+  "home": "http://pybroom.readthedocs.io/",
+  "license": "MIT",
+  "summary": "Broom for python: convert fit results to tidy pandas.DataFrame."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pybroom-0.2-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pybroom.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "lmfit",
+   "pandas",
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "pybroom",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2"
+ },
+ "metadata_version": 1,
+ "name": "pybroom",
+ "raw_recipe": "{% set name = \"pybroom\" %}\n{% set version = \"0.2\" %}\n{% set sha256 = \"45761b81e64556a8a649f4561cdc2f102a269aff114e23dc93081762724cd123\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/tritemio/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: true  # [py2k]\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pandas\n    - lmfit\n\ntest:\n  imports:\n    - pybroom\n\nabout:\n  home: http://pybroom.readthedocs.io/\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'Broom for python: convert fit results to tidy pandas.DataFrame.'\n  description: |\n    Pybroom is a small python 3+ library for converting collections\n    of fit results (curve fitting or other optimizations) to Pandas DataFrame\n    in tidy format (or long-form). Once fit results are in tidy DataFrames,\n    it is possible to leverage common patterns for tidy data analysis.\n    and visual explorations\n  doc_url: http://pybroom.readthedocs.io/\n  dev_url: https://github.com/tritemio/pybroom\n\nextra:\n  recipe-maintainers:\n    - tritemio\n",
+ "rendered_recipe": {},
+ "version": "0.2"
+}

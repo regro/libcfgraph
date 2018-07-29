@@ -1,0 +1,48 @@
+{
+ "about": {
+  "description": "pycparser is a parser for the C language, written in pure Python. It is a module designed to be easily\nintegrated into applications that need to parse C source code.\n",
+  "dev_url": "https://github.com/eliben/pycparser",
+  "home": "https://github.com/eliben/pycparser",
+  "license": "BSD 3-clause",
+  "summary": "C parser in Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pycparser-2.14-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/pycparser/__init__.py",
+  "Lib/site-packages/pycparser/_ast_gen.py",
+  "Lib/site-packages/pycparser/_build_tables.py",
+  "Lib/site-packages/pycparser/_c_ast.cfg",
+  "Lib/site-packages/pycparser/ast_transforms.py",
+  "Lib/site-packages/pycparser/c_ast.py",
+  "Lib/site-packages/pycparser/c_generator.py",
+  "Lib/site-packages/pycparser/c_lexer.py",
+  "Lib/site-packages/pycparser/c_parser.py",
+  "Lib/site-packages/pycparser/lextab.py",
+  "Lib/site-packages/pycparser/ply/__init__.py",
+  "Lib/site-packages/pycparser/ply/cpp.py",
+  "Lib/site-packages/pycparser/ply/ctokens.py",
+  "Lib/site-packages/pycparser/ply/lex.py",
+  "Lib/site-packages/pycparser/ply/yacc.py",
+  "Lib/site-packages/pycparser/plyparser.py",
+  "Lib/site-packages/pycparser/yacctab.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-clause",
+  "name": "pycparser",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.14"
+ },
+ "metadata_version": 1,
+ "name": "pycparser",
+ "raw_recipe": "{% set name = \"pycparser\" %}\n{% set version = \"2.14\" %}\n{% set sha256 = \"7959b4a74abdc27b312fed1c21e6caf9309ce0b29ea86b591fd2e99ecdf27f73\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - pycparser\n    - pycparser.ply\n\nabout:\n  home: https://github.com/eliben/pycparser\n  license: BSD 3-clause\n  license_file: LICENSE\n  summary: 'C parser in Python'\n  description: |\n    pycparser is a parser for the C language, written in pure Python. It is a module designed to be easily \n    integrated into applications that need to parse C source code.\n  dev_url: https://github.com/eliben/pycparser\n\nextra:\n  recipe-maintainers:\n    - synapticarbors\n",
+ "rendered_recipe": {},
+ "version": "2.14"
+}

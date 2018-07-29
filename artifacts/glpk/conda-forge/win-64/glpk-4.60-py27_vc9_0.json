@@ -1,0 +1,35 @@
+{
+ "about": {
+  "description": "The GLPK (GNU Linear Programming Kit) package is intended for solving\nlarge-scale linear programming (LP), mixed integer programming (MIP), and\nother related problems. It is a set of routines written in ANSI C and\norganized in the form of a callable library.\n",
+  "home": "https://www.gnu.org/software/glpk/",
+  "license": "GNU General Public License v3",
+  "summary": "GNU Linear Programming Kit"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/glpk.dll",
+  "Library/bin/glpk_4_60.dll",
+  "Library/bin/glpsol.exe",
+  "Library/include/glpk.h",
+  "Library/lib/glpk.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_vc9_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "features": "vc9",
+  "license": "GNU General Public License v3",
+  "name": "glpk",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "4.60"
+ },
+ "metadata_version": 1,
+ "name": "glpk",
+ "raw_recipe": "{% set name = \"glpk\" %}\n{% set version = \"4.60\" %}\n{% set sha256 = \"1356620cb0a0d33ac3411dd49d9fd40d53ece73eaec8f6b8d19a77887ff5e297\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://ftp.gnu.org/gnu/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n   number: 0\n   features:\n     - vc9   # [win and py27]\n     - vc10  # [win and py34]\n     - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - gmp     # [not win]\n\n  run:\n    # python is a Windows run dependency in order to get the correct vc feature\n    - python  # [win]\n    - gmp     # [not win]\n\ntest:\n  requires:\n    - python\n    - setuptools\n  files:\n    - test.c\n    - setup.py\n    - spam.c\n    - plan.mps\n    - test_ctypes.py\n\n  commands:\n    # test glpsol executable\n    - glpsol --mps plan.mps\n\n    # test python extension using cython\n    - python setup.py develop test\n\n    # test shared library using python ctypes module\n    - python test_ctypes.py\n\n    - test -f ${PREFIX}/lib/libglpk.a        # [linux]\n    - test -f ${PREFIX}/lib/libglpk.so       # [linux]\n    # static library not available on os x\n    - test -f ${PREFIX}/lib/libglpk.dylib    # [osx]\n\nabout:\n  home: https://www.gnu.org/software/glpk/\n  license: GNU General Public License v3\n  summary: GNU Linear Programming Kit\n  description: |\n    The GLPK (GNU Linear Programming Kit) package is intended for solving\n    large-scale linear programming (LP), mixed integer programming (MIP), and\n    other related problems. It is a set of routines written in ANSI C and\n    organized in the form of a callable library.\n\nextra:\n  recipe-maintainers:\n    - jjhelmus\n    - aebrahim\n    - jakirkham\n    - snorfalorpagus\n",
+ "rendered_recipe": {},
+ "version": "4.60"
+}

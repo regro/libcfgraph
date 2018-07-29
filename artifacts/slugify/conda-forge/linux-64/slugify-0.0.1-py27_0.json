@@ -1,0 +1,34 @@
+{
+ "about": {
+  "dev_url": "http://github.com/zacharyvoase/slugify",
+  "home": "http://github.com/zacharyvoase/slugify",
+  "license": "Public Domain",
+  "license_family": "Other",
+  "summary": "A generic slugifier."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/slugify",
+  "lib/python2.7/site-packages/slugify-0.0.1-py2.7.egg-info",
+  "lib/python2.7/site-packages/slugify.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "Public Domain",
+  "license_family": "Other",
+  "name": "slugify",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.0.1"
+ },
+ "metadata_version": 1,
+ "name": "slugify",
+ "raw_recipe": "{% set name = \"slugify\" %}\n{% set version = \"0.0.1\" %}\n{% set sha256 = \"c5703cc11c1a6947536f3ce8bb306766b8bb5a84a53717f5a703ce0f18235e4c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n  skip: True  # [win and py3k]\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - slugify\n\nabout:\n  home: http://github.com/zacharyvoase/slugify\n  license: Public Domain\n  license_family: Other\n  # license_file: UNLICENSE # When added to MANIFEST.in \u2013 zacharyvoase/slugify#4\n  summary: 'A generic slugifier.'\n  dev_url: http://github.com/zacharyvoase/slugify\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
+ "rendered_recipe": {},
+ "version": "0.0.1"
+}

@@ -1,0 +1,40 @@
+{
+ "about": {
+  "home": "http://github.com/calsto/octave_kernel",
+  "license": "BSD",
+  "license_family": "BSD",
+  "summary": "A Jupyter kernel for Octave."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/.octave_kernel-post-link.sh",
+  "lib/python2.7/site-packages/octave_kernel-0.19.14-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/octave_kernel/__init__.py",
+  "lib/python2.7/site-packages/octave_kernel/__main__.py",
+  "lib/python2.7/site-packages/octave_kernel/_make_figures.m",
+  "lib/python2.7/site-packages/octave_kernel/install.py",
+  "lib/python2.7/site-packages/octave_kernel/kernel.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "ipykernel",
+   "jupyter_client",
+   "metakernel >=0.16.1",
+   "python 2.7*"
+  ],
+  "license": "BSD",
+  "license_family": "BSD",
+  "name": "octave_kernel",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.19.14"
+ },
+ "metadata_version": 1,
+ "name": "octave_kernel",
+ "raw_recipe": "{% set version = \"0.19.14\" %}\n\npackage:\n  name: octave_kernel\n  version: {{ version }}\n\nsource:\n  fn: octave_kernel-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/o/octave_kernel/octave_kernel-{{ version }}.tar.gz\n  sha256: da0df70b40c2ed3cbedaf63d9f7f42910ff755e1d7ef68d5f2375df580780692\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - metakernel >=0.16.1\n    - jupyter_client\n    - ipykernel\n\n  run:\n    - python\n    - metakernel >=0.16.1\n    - jupyter_client\n    - ipykernel\n\ntest:\n  # Python imports\n  imports:\n    - octave_kernel\n    - octave_kernel.install\n\nabout:\n  home: http://github.com/calsto/octave_kernel\n  license: BSD\n  summary: 'A Jupyter kernel for Octave.'\n  license_family: BSD\n\n\nextra:\n    recipe-maintainers:\n        - blink1073\n",
+ "rendered_recipe": {},
+ "version": "0.19.14"
+}

@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "https://github.com/jayfk/statuspage",
+  "license": "MIT",
+  "summary": "A statuspage generator that lets you host your statuspage for free on Github."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/statuspage",
+  "etc/conda/activate.d/statuspage_activate.sh",
+  "etc/conda/deactivate.d/statuspage_deactivate.sh"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "ca-certificates"
+  ],
+  "license": "MIT",
+  "name": "statuspage",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.4.0"
+ },
+ "metadata_version": 1,
+ "name": "statuspage",
+ "raw_recipe": "{% set version = \"0.4.0\" %}\n\npackage:\n  name: statuspage\n  version: {{ version }}\n\nsource:\n  fn: python-statuspage-{{ version }}.tar.gz\n  url: https://github.com/jayfk/statuspage/archive/{{ version }}.tar.gz\n  sha256: 045beba839e758f760fa21915f96684d303eff27ee5459d1265b4ed4a82f6bcb\n\nbuild:\n  number: 0\n  skip: true  # [win or py3k]\n\nrequirements:\n  build:\n    - curl\n    - python\n    - openssl\n    - setuptools\n    - packaging\n    - pyinstaller\n    - click\n    - jinja2\n    - tqdm\n    - six\n\n  run:\n    - ca-certificates\n\ntest:\n  commands:\n    - statuspage --help\n\nabout:\n  home: https://github.com/jayfk/statuspage\n  license: MIT\n  summary: A statuspage generator that lets you host your statuspage for free on Github.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.4.0"
+}

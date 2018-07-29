@@ -1,0 +1,37 @@
+{
+ "about": {
+  "home": "https://github.com/beregond/super_state_machine",
+  "license": "BSD 3-Clause",
+  "summary": "Super State Machine gives you utilities to build finite state machines."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/super_state_machine-1.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/super_state_machine-1.0-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/super_state_machine/__init__.py",
+  "lib/python2.7/site-packages/super_state_machine/errors.py",
+  "lib/python2.7/site-packages/super_state_machine/extras.py",
+  "lib/python2.7/site-packages/super_state_machine/machines.py",
+  "lib/python2.7/site-packages/super_state_machine/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "enum34",
+   "python 2.7*",
+   "six"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "super_state_machine",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0"
+ },
+ "metadata_version": 1,
+ "name": "super_state_machine",
+ "raw_recipe": "{% set version = \"1.0\" %}\n\npackage:\n  name: super_state_machine\n  version: {{ version }}\n\nsource:\n  url: https://github.com/beregond/super_state_machine/archive/{{ version }}.tar.gz\n  fn: super_state_machine-{{ version }}.tar.gz\n  sha256: a4aac93307f381c64e25b24de347b0527608cc551b66f41c34b2f2df80b445b3\n  patches:\n    - __init__.py.patch\n    - setup.py.patch\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - enum34  # [py2k]\n    - six\n\ntest:\n  imports:\n    - super_state_machine\n\nabout:\n  home: https://github.com/beregond/super_state_machine\n  license: BSD 3-Clause\n  summary: Super State Machine gives you utilities to build finite state machines.\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - licode\n    - tacaswell\n",
+ "rendered_recipe": {},
+ "version": "1.0"
+}

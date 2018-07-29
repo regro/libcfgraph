@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "http://bitbucket.org/gsakkis/pytrie/",
+  "license": "BSD 3-Clause",
+  "summary": "A pure Python implementation of the trie data structure."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/PyTrie-0.2-py2.7.egg-info",
+  "Lib/site-packages/pytrie.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pytrie",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2"
+ },
+ "metadata_version": 1,
+ "name": "pytrie",
+ "raw_recipe": "{%set name = \"pytrie\" %}\n{%set camelName = \"PyTrie\" %}\n{%set version = \"0.2\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"b272021351efadc6757591aac03ed4794bdfd091122204a4673e94bfb66cc500\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - {{ name }}\nabout:\n  home: http://bitbucket.org/gsakkis/pytrie/\n  license: BSD 3-Clause\n  summary: 'A pure Python implementation of the trie data structure.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.2"
+}

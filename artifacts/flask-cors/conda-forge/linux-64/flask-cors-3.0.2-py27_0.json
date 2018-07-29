@@ -1,0 +1,41 @@
+{
+ "about": {
+  "dev_url": "https://github.com/corydolphin/flask-cors",
+  "doc_url": "http://flask-cors.corydolphin.com/en/latest/",
+  "home": "https://github.com/corydolphin/flask-cors",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "A Flask extension adding a decorator for CORS support"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/Flask_Cors-3.0.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/Flask_Cors-3.0.2-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/flask_cors/__init__.py",
+  "lib/python2.7/site-packages/flask_cors/core.py",
+  "lib/python2.7/site-packages/flask_cors/decorator.py",
+  "lib/python2.7/site-packages/flask_cors/extension.py",
+  "lib/python2.7/site-packages/flask_cors/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "flask >=0.9",
+   "python 2.7*",
+   "six"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "flask-cors",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "3.0.2"
+ },
+ "metadata_version": 1,
+ "name": "flask-cors",
+ "raw_recipe": "{%set name = \"Flask-Cors\" %}\n{%set version = \"3.0.2\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"0a09f3559ded4759387dfa2a355de59bc161f67269a1f4b7b0712a64b1f7dad6\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - flask >=0.9\n    - six\n\ntest:\n  imports:\n    - flask_cors\n    - flask_cors.core\n    - flask_cors.decorator\n    - flask_cors.extension\n    - flask_cors.version\n\nabout:\n  home: https://github.com/corydolphin/flask-cors\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: 'A Flask extension adding a decorator for CORS support'\n  doc_url: http://flask-cors.corydolphin.com/en/latest/\n  dev_url: https://github.com/corydolphin/flask-cors\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "3.0.2"
+}

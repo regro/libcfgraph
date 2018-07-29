@@ -1,0 +1,37 @@
+{
+ "about": {
+  "home": "http://dlib.net/",
+  "license": "Boost 1.0",
+  "summary": "Modern C++ toolkit containing machine learning algorithms with Python bindings"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/dlib.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py35_blas_openblas_200",
+  "build_number": 200,
+  "depends": [
+   "blas 1.1 openblas",
+   "boost 1.61.*",
+   "jpeg 9*",
+   "libpng >=1.6.21,<1.7",
+   "numpy 1.11*",
+   "openblas 0.2.18|0.2.18.*.",
+   "python 3.5*",
+   "sqlite 3.13.*"
+  ],
+  "features": "blas_openblas",
+  "license": "Boost 1.0",
+  "name": "dlib",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "19.0"
+ },
+ "metadata_version": 1,
+ "name": "dlib",
+ "raw_recipe": "{% set name = \"dlib\" %}\n{% set version = \"19.0\" %}\n{% set blas_variant = \"openblas\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/davisking/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: a6463524cdb1d275ab408f182b0d47af143179fde7f1dd97074dc25f2f9a2676\n\n  patches:\n    - osx_jpeg.patch                # [osx]\n    - lapack_sgetrf.patch           # [unix]\n    - win_boost.patch               # [win]\n    - win_png.patch                 # [win]\n    - add_global_cxx_release.patch\n\nbuild:\n  number: 200\n  features:                    # [not win]\n    - blas_{{ blas_variant }}  # [not win]\n\nrequirements:\n  build:\n   - python\n   - cmake\n   - toolchain\n   - openblas 0.2.18|0.2.18.*.    # [not win]\n   - blas 1.1 {{ blas_variant }}  # [not win]\n   - numpy x.x\n   - boost 1.61.*\n   - jpeg 9*                      # [not win]\n   - libpng >=1.6.21,<1.7\n   - sqlite 3.13.*                # [not win]\n\n  run:\n   - python\n   - openblas 0.2.18|0.2.18.*.    # [not win]\n   - blas 1.1 {{ blas_variant }}  # [not win]\n   - numpy x.x\n   - boost 1.61.*\n   - jpeg 9*                      # [not win]\n   - libpng >=1.6.21,<1.7\n   - sqlite 3.13.*                # [not win]\n\ntest:\n  files:\n    - test_data/face.jpg\n    - test_data/face.png\n    - test_data/images.xml\n\n  requires:\n    - tqdm\n    - pillow\n\n  imports:\n    - dlib\n\nabout:\n  home: http://dlib.net/\n  license: Boost 1.0\n  license_file: dlib/LICENSE.txt\n  summary: Modern C++ toolkit containing machine learning algorithms with Python bindings\n\nextra:\n  recipe-maintainers:\n    - patricksnape\n",
+ "rendered_recipe": {},
+ "version": "19.0"
+}

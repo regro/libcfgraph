@@ -1,0 +1,54 @@
+{
+ "about": {
+  "home": "http://flake8.pycqa.org/",
+  "license": "MIT",
+  "summary": "Your Tool For Style Guide Enforcement"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/flake8",
+  "lib/python3.5/site-packages/flake8-2.6.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/flake8/__init__.py",
+  "lib/python3.5/site-packages/flake8/__main__.py",
+  "lib/python3.5/site-packages/flake8/_pyflakes.py",
+  "lib/python3.5/site-packages/flake8/callbacks.py",
+  "lib/python3.5/site-packages/flake8/compat.py",
+  "lib/python3.5/site-packages/flake8/engine.py",
+  "lib/python3.5/site-packages/flake8/hooks.py",
+  "lib/python3.5/site-packages/flake8/main.py",
+  "lib/python3.5/site-packages/flake8/reporter.py",
+  "lib/python3.5/site-packages/flake8/run.py",
+  "lib/python3.5/site-packages/flake8/tests/__init__.py",
+  "lib/python3.5/site-packages/flake8/tests/_test_warnings.py",
+  "lib/python3.5/site-packages/flake8/tests/test_engine.py",
+  "lib/python3.5/site-packages/flake8/tests/test_hooks.py",
+  "lib/python3.5/site-packages/flake8/tests/test_integration.py",
+  "lib/python3.5/site-packages/flake8/tests/test_main.py",
+  "lib/python3.5/site-packages/flake8/tests/test_pyflakes.py",
+  "lib/python3.5/site-packages/flake8/tests/test_reporter.py",
+  "lib/python3.5/site-packages/flake8/tests/test_util.py",
+  "lib/python3.5/site-packages/flake8/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "mccabe",
+   "pycodestyle",
+   "pyflakes",
+   "python 3.5*",
+   "setuptools"
+  ],
+  "license": "MIT",
+  "name": "flake8",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.6.2"
+ },
+ "metadata_version": 1,
+ "name": "flake8",
+ "raw_recipe": "{%set name = \"flake8\" %}\n{%set version = \"2.6.2\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"231cd86194aaec4bdfaa553ae1a1cd9b7b4558332fbc10136c044940d587a778\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n\n  run:\n    - python\n    - setuptools\n    - mccabe\n    - pycodestyle\n    - pyflakes\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: http://flake8.pycqa.org/\n  license: MIT\n  summary: 'Your Tool For Style Guide Enforcement'\n\nextra:\n  recipe-maintainers:\n    - sigmavirus24\n",
+ "rendered_recipe": {},
+ "version": "2.6.2"
+}

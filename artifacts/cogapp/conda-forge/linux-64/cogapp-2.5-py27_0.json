@@ -1,0 +1,39 @@
+{
+ "about": {
+  "home": "http://nedbatchelder.com/code/cog",
+  "license": "MIT",
+  "summary": "Cog: A code generator for executing Python snippets in source files."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/cog.py",
+  "lib/python2.7/site-packages/cogapp-2.5-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/cogapp/__init__.py",
+  "lib/python2.7/site-packages/cogapp/__main__.py",
+  "lib/python2.7/site-packages/cogapp/backward.py",
+  "lib/python2.7/site-packages/cogapp/cogapp.py",
+  "lib/python2.7/site-packages/cogapp/makefiles.py",
+  "lib/python2.7/site-packages/cogapp/test_cogapp.py",
+  "lib/python2.7/site-packages/cogapp/test_makefiles.py",
+  "lib/python2.7/site-packages/cogapp/test_whiteutils.py",
+  "lib/python2.7/site-packages/cogapp/whiteutils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "cogapp",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.5"
+ },
+ "metadata_version": 1,
+ "name": "cogapp",
+ "raw_recipe": "{% set version = \"2.5\" %}\n{% set sha256 = \"b0c8efdc7d232b9e66064bae93c259946fdabad153a8c78025bc173f7245bfd7\" %}\n\npackage:\n  name: cogapp\n  version: {{ version }}\n\nsource:\n  fn: cogapp-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/cogapp/cogapp-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - cogapp\n\nabout:\n  home: http://nedbatchelder.com/code/cog\n  license: MIT\n  summary: 'Cog: A code generator for executing Python snippets in source files.'\n\nextra:\n  recipe-maintainers:\n    - johannesring\n    - edisongustavo\n",
+ "rendered_recipe": {},
+ "version": "2.5"
+}

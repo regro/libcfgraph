@@ -1,0 +1,57 @@
+{
+ "about": {
+  "home": "https://github.com/alimanfoo/zarr",
+  "license": "MIT",
+  "summary": "An implementation of chunked, compressed, N-dimensional arrays for Python."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/zarr-2.1.3-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/zarr/__init__.py",
+  "Lib/site-packages/zarr/attrs.py",
+  "Lib/site-packages/zarr/blosc.cp35-win_amd64.pyd",
+  "Lib/site-packages/zarr/codecs.py",
+  "Lib/site-packages/zarr/compat.py",
+  "Lib/site-packages/zarr/core.py",
+  "Lib/site-packages/zarr/creation.py",
+  "Lib/site-packages/zarr/errors.py",
+  "Lib/site-packages/zarr/hierarchy.py",
+  "Lib/site-packages/zarr/meta.py",
+  "Lib/site-packages/zarr/meta_v1.py",
+  "Lib/site-packages/zarr/storage.py",
+  "Lib/site-packages/zarr/sync.py",
+  "Lib/site-packages/zarr/tests/__init__.py",
+  "Lib/site-packages/zarr/tests/test_attrs.py",
+  "Lib/site-packages/zarr/tests/test_codecs.py",
+  "Lib/site-packages/zarr/tests/test_core.py",
+  "Lib/site-packages/zarr/tests/test_creation.py",
+  "Lib/site-packages/zarr/tests/test_filters.py",
+  "Lib/site-packages/zarr/tests/test_hierarchy.py",
+  "Lib/site-packages/zarr/tests/test_meta.py",
+  "Lib/site-packages/zarr/tests/test_storage.py",
+  "Lib/site-packages/zarr/tests/test_sync.py",
+  "Lib/site-packages/zarr/tests/test_util.py",
+  "Lib/site-packages/zarr/util.py",
+  "Lib/site-packages/zarr/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "fasteners",
+   "numpy",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "zarr",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.1.3"
+ },
+ "metadata_version": 1,
+ "name": "zarr",
+ "raw_recipe": "{% set version = \"2.1.3\" %}\n\npackage:\n  name: zarr\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/alimanfoo/zarr.git\n  git_tag: v{{ version }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - cython\n    - setuptools\n    - setuptools_scm\n  run:\n    - python\n    - numpy\n    - fasteners\n\ntest:\n  requires:\n    - nose\n  imports:\n    - zarr\n    - zarr.blosc\n  commands:\n    - nosetests -v zarr\n\nabout:\n  home: https://github.com/alimanfoo/zarr\n  license: MIT\n  summary: An implementation of chunked, compressed, N-dimensional arrays for Python.\n\nextra:\n  recipe-maintainers:\n    - alimanfoo\n",
+ "rendered_recipe": {},
+ "version": "2.1.3"
+}

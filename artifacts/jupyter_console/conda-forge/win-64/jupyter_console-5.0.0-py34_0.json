@@ -1,0 +1,43 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/jupyter_console-5.0.0-py3.4.egg-info",
+  "Lib/site-packages/jupyter_console/__init__.py",
+  "Lib/site-packages/jupyter_console/__main__.py",
+  "Lib/site-packages/jupyter_console/_version.py",
+  "Lib/site-packages/jupyter_console/app.py",
+  "Lib/site-packages/jupyter_console/completer.py",
+  "Lib/site-packages/jupyter_console/ptshell.py",
+  "Lib/site-packages/jupyter_console/tests/__init__.py",
+  "Lib/site-packages/jupyter_console/tests/test_console.py",
+  "Lib/site-packages/jupyter_console/tests/test_image_handler.py",
+  "Lib/site-packages/jupyter_console/tests/writetofile.py",
+  "Lib/site-packages/jupyter_console/zmqhistory.py",
+  "Scripts/jupyter-console-script.py",
+  "Scripts/jupyter-console.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "ipykernel",
+   "ipython",
+   "jupyter_client",
+   "prompt_toolkit",
+   "pygments",
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "jupyter_console",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "5.0.0"
+ },
+ "metadata_version": 1,
+ "name": "jupyter_console",
+ "raw_recipe": "{% set version = \"5.0.0\" %}\n\npackage:\n  name: jupyter_console\n  version: {{ version }}\n\nsource:\n  fn: jupyter_console-{{ version }}.tar.gz\n  url: https://github.com/jupyter/jupyter_console/archive/{{ version }}.tar.gz\n  sha256: e966b2b5bf9a1e8c5bd11a6335bb11f68ec585ea39b801721b2ed9dd964468fa\n\nbuild:\n  number: 0\n  script: python setup.py install\n  entry_points:\n    - jupyter-console = jupyter_console.app:main\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - jupyter_client\n    - ipython\n    - ipykernel\n    - prompt_toolkit\n    - pygments\n    - pexpect  # [not win]\n\ntest:\n  commands:\n    - jupyter-console -h\n  imports:\n    - jupyter_console\n\nabout:\n  home: http://jupyter.org\n  license: BSD 3-Clause\n  summary: Jupyter terminal console\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n    - pelson\n    - takluyver\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "5.0.0"
+}

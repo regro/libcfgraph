@@ -1,0 +1,45 @@
+{
+ "about": {
+  "description": "JSON (JavaScript Object Notation) is a lightweight data-interchange format.\nIt can represents integer, real number, string, an ordered sequence of value,\nand a collection of name/value pairs.\nQJson is a Qt-based library that maps JSON data to QVariant objects and vice versa.\n",
+  "dev_url": "https://github.com/flavio/qjson",
+  "doc_url": "http://qjson.sourceforge.net/usage/",
+  "home": "http://qjson.sourceforge.net/",
+  "license": "LGPLv2.1",
+  "summary": "QJson is a qt-based library that maps JSON data to QVariant objects"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/qjson/parser.h",
+  "include/qjson/parserrunnable.h",
+  "include/qjson/qjson_export.h",
+  "include/qjson/qobjecthelper.h",
+  "include/qjson/serializer.h",
+  "include/qjson/serializerrunnable.h",
+  "lib/cmake/qjson/QJSONConfig.cmake",
+  "lib/cmake/qjson/QJSONConfigVersion.cmake",
+  "lib/cmake/qjson/QJSONTargets-noconfig.cmake",
+  "lib/cmake/qjson/QJSONTargets.cmake",
+  "lib/libqjson.so",
+  "lib/libqjson.so.0",
+  "lib/libqjson.so.0.8.1",
+  "lib/pkgconfig/QJson.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "qt >=4.8"
+  ],
+  "license": "LGPLv2.1",
+  "name": "qjson",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.8.1"
+ },
+ "metadata_version": 1,
+ "name": "qjson",
+ "raw_recipe": "{% set name = \"qjson\" %}\n{% set version = \"0.8.1\" %}\n{% set sha256 = \"920c94166cb91b1cf11c7d2745bdbcc8c0ea82411ca7b3732ce0b00ee2d56e98\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/flavio/{{ name }}/archive/{{ version }}.tar.gz \n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - qt >=4.8\n    - cmake\n  run:\n    - qt >=4.8\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libqjson.so  # [linux]\n    - test -f ${PREFIX}/lib/libqjson.dylib  # [osx]\n\nabout:\n  home: http://qjson.sourceforge.net/ \n  license: LGPLv2.1 \n  license_file: README.license \n  summary: 'QJson is a qt-based library that maps JSON data to QVariant objects'\n  description: |\n      JSON (JavaScript Object Notation) is a lightweight data-interchange format.\n      It can represents integer, real number, string, an ordered sequence of value,\n      and a collection of name/value pairs.\n      QJson is a Qt-based library that maps JSON data to QVariant objects and vice versa.\n  doc_url: http://qjson.sourceforge.net/usage/\n  dev_url: https://github.com/flavio/qjson\n\nextra:\n  recipe-maintainers:\n    - ceholden \n",
+ "rendered_recipe": {},
+ "version": "0.8.1"
+}

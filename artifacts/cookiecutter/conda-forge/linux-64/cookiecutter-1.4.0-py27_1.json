@@ -1,0 +1,51 @@
+{
+ "about": {
+  "home": "https://github.com/audreyr/cookiecutter",
+  "license": "BSD-3-Clause",
+  "summary": "A command-line utility that creates projects from cookiecutters (project templates). E.g. Python package projects, jQuery plugin projects.\n"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/cookiecutter",
+  "lib/python2.7/site-packages/cookiecutter-1.4.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/cookiecutter-1.4.0-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/cookiecutter/__init__.py",
+  "lib/python2.7/site-packages/cookiecutter/cli.py",
+  "lib/python2.7/site-packages/cookiecutter/config.py",
+  "lib/python2.7/site-packages/cookiecutter/environment.py",
+  "lib/python2.7/site-packages/cookiecutter/exceptions.py",
+  "lib/python2.7/site-packages/cookiecutter/find.py",
+  "lib/python2.7/site-packages/cookiecutter/generate.py",
+  "lib/python2.7/site-packages/cookiecutter/hooks.py",
+  "lib/python2.7/site-packages/cookiecutter/main.py",
+  "lib/python2.7/site-packages/cookiecutter/prompt.py",
+  "lib/python2.7/site-packages/cookiecutter/replay.py",
+  "lib/python2.7/site-packages/cookiecutter/utils.py",
+  "lib/python2.7/site-packages/cookiecutter/vcs.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "binaryornot >=0.2.0",
+   "click >=5.0",
+   "future >=0.15.2",
+   "jinja2 >=2.7",
+   "jinja2-time >=0.1.0",
+   "poyo >=0.1.0",
+   "python 2.7*",
+   "whichcraft >=0.3.1"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "cookiecutter",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.4.0"
+ },
+ "metadata_version": 1,
+ "name": "cookiecutter",
+ "raw_recipe": "{% set version = \"1.4.0\" %}\n{% set gh_org = \"audreyr\" %}\n{% set gh_repo = \"cookiecutter\" %}\n\n\npackage:\n  name: {{ gh_repo }}\n  version: {{ version }}\n\nsource:\n  fn: {{ gh_repo }}-{{ version }}.tar.gz\n  url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/{{ version }}.tar.gz\n  sha256: 7697b1d64cd9b8eb5abd9e7594e318a80f1382f45d879c425944175697b29db2\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - cookiecutter = cookiecutter.cli:main\n    # master has changed it's setup a bit as of 4a64e48... will have to fix\n    # - cookiecutter = cookiecutter.__main__:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - binaryornot >=0.2.0\n    - click >=5.0\n    - future >=0.15.2\n    - jinja2 >=2.7\n    - jinja2-time >=0.1.0\n    - poyo >=0.1.0\n    - python\n    - whichcraft >=0.3.1\n\ntest:\n  requires:\n    - git\n    - pytest\n    - pytest-cov\n    - pytest-mock\n    - python\n    - freezegun\n  commands:\n    # Run basic commands.\n    - cookiecutter --version\n    - cookiecutter --help\n    # Run test suite.\n    - cd {{ environ[\"SRC_DIR\"] }}\n    - py.test --cov=cookiecutter -k \"not _hg_ and not mercurial and not test_make_sure_path_exists and not pypackage_git\"\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: BSD-3-Clause\n  summary: >\n            A command-line utility that creates projects from cookiecutters\n            (project templates). E.g. Python package projects, jQuery plugin\n            projects.\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n    - jakirkham\n    - pydanny\n",
+ "rendered_recipe": {},
+ "version": "1.4.0"
+}

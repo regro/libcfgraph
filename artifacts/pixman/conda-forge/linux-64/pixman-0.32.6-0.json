@@ -1,0 +1,60 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "include/pixman-1/pixman-version.h",
+  "include/pixman-1/pixman.h",
+  "lib/libpixman-1.a",
+  "lib/libpixman-1.la",
+  "lib/libpixman-1.so",
+  "lib/libpixman-1.so.0",
+  "lib/libpixman-1.so.0.32.6",
+  "lib/pkgconfig/pixman-1.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "MIT",
+  "name": "pixman",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.32.6"
+ },
+ "metadata_version": 1,
+ "name": "pixman",
+ "raw_recipe": "package:\n  name: pixman\n  version: 0.32.6\n\nsource:\n  fn: pixman-0.32.6.tar.gz\n  url: http://cairographics.org/releases/pixman-0.32.6.tar.gz\n  md5: 3a30859719a41bd0f5cccffbfefdd4c2\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\ntest:\n  commands:\n    - exit $(test -f ${PREFIX}/lib/libpixman-1.a)   # [not win]\n\nabout:\n  home: http://cgit.freedesktop.org/pixman/\n  license: MIT\n  summary: A low-level software library for pixel manipulation\n\n\nextra:\n  recipe-maintainers:\n    - ccordoba12\n    - jakirkham\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://cgit.freedesktop.org/pixman/",
+   "license": "MIT",
+   "summary": "A low-level software library for pixel manipulation"
+  },
+  "build": {
+   "number": 0,
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ccordoba12",
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "pixman",
+   "version": "0.32.6"
+  },
+  "source": {
+   "fn": "pixman-0.32.6.tar.gz",
+   "md5": "3a30859719a41bd0f5cccffbfefdd4c2",
+   "url": "http://cairographics.org/releases/pixman-0.32.6.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "exit $(test -f ${PREFIX}/lib/libpixman-1.a)"
+   ]
+  }
+ },
+ "version": "0.32.6"
+}

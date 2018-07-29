@@ -1,0 +1,32 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/prefsync",
+  "lib/python2.7/site-packages/prefsync-1.2-py2.7.egg-info",
+  "lib/python2.7/site-packages/prefsync/README",
+  "lib/python2.7/site-packages/prefsync/__init__.py",
+  "lib/python2.7/site-packages/prefsync/__main__.py",
+  "lib/python2.7/site-packages/prefsync/binarytoxml.plist",
+  "lib/python2.7/site-packages/prefsync/prefsync.py",
+  "lib/python2.7/site-packages/prefsync/xmltobinary.plist"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "prefsync",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.2"
+ },
+ "metadata_version": 1,
+ "name": "prefsync",
+ "raw_recipe": "{% set version = \"1.2\" %}\n{% set sha256 = \"66f0d3870b442e715de23b632e83f27f5971885b40bb3f6b211437138c554496\" %}\n\npackage:\n  name: prefsync\n  version: {{ version }}\n\nsource:\n  fn: prefsync-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/prefsync/prefsync-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [not osx]\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - prefsync\n\n  commands:\n    - python -m prefsync --help\n    - prefsync --help\n\nabout:\n  home: https://github.com/asmeurer/prefsync\n  license: MIT\n  summary: |\n    A little tool to help synchronize Mac OS X plist files (used for\n    preferences for most Mac Apps) seamlessly, in a way that can be tracked by\n    git.\n  doc_url: https://github.com/asmeurer/prefsync\n  dev_url: https://github.com/asmeurer/prefsync\n\nextra:\n  recipe-maintainers:\n    - asmeurer\n",
+ "rendered_recipe": {},
+ "version": "1.2"
+}

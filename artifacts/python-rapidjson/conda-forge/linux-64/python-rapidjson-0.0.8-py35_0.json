@@ -1,0 +1,35 @@
+{
+ "about": {
+  "description": "Python wrapper around RapidJSON. RapidJSON is an extremely fast C++ json serialization library.\nWe do not support legacy python versions, you will need to upgrade to Python 3 to use this library.\n",
+  "dev_url": "https://github.com/kenrobbins/python-rapidjson",
+  "doc_url": "https://python-rapidjson.readthedocs.io",
+  "home": "https://github.com/kenrobbins/python-rapidjson",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Python wrapper around rapidjson"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/python_rapidjson-0.0.8-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/rapidjson.cpython-35m-x86_64-linux-gnu.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "python-rapidjson",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.0.8"
+ },
+ "metadata_version": 1,
+ "name": "python-rapidjson",
+ "raw_recipe": "{% set name = \"python-rapidjson\" %}\n{% set version = \"0.0.8\" %}\n{% set sha256 = \"236aa31f00bbdaae51e78cc44c4424db653e1ded005b19617303e1c422a4664a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  features:\n    - vc10  # [win and py34]\n    - vc14  # [win and py>34]\n  skip: True  # [py<34 or win]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - toolchain\n\n  run:\n    - python\n\ntest:\n  imports:\n    - rapidjson \n\nabout:\n  home: https://github.com/kenrobbins/python-rapidjson\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Python wrapper around rapidjson'\n  description: |\n    Python wrapper around RapidJSON. RapidJSON is an extremely fast C++ json serialization library.\n    We do not support legacy python versions, you will need to upgrade to Python 3 to use this library.\n  doc_url: https://python-rapidjson.readthedocs.io\n  dev_url: https://github.com/kenrobbins/python-rapidjson\n\nextra:\n  recipe-maintainers:\n    - hajapy\n",
+ "rendered_recipe": {},
+ "version": "0.0.8"
+}

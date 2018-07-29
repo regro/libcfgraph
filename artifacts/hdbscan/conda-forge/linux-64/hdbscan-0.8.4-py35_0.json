@@ -1,0 +1,40 @@
+{
+ "about": {
+  "home": "http://github.com/lmcinnes/hdbscan",
+  "license": "BSD 3-Clause",
+  "summary": "Clustering based on density with variable density clusters"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/hdbscan-0.8.4-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/hdbscan/__init__.py",
+  "lib/python3.5/site-packages/hdbscan/_hdbscan_boruvka.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/hdbscan/_hdbscan_linkage.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/hdbscan/_hdbscan_reachability.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/hdbscan/_hdbscan_tree.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/hdbscan/dist_metrics.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/hdbscan/hdbscan_.py",
+  "lib/python3.5/site-packages/hdbscan/plots.py",
+  "lib/python3.5/site-packages/hdbscan/robust_single_linkage_.py",
+  "lib/python3.5/site-packages/hdbscan/validity.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "scikit-learn >=0.16"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "hdbscan",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.8.4"
+ },
+ "metadata_version": 1,
+ "name": "hdbscan",
+ "raw_recipe": "{% set version = \"0.8.4\" %}\n\npackage:\n  name: hdbscan\n  version: {{ version }}\n\nsource:\n  fn: hdbscan-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/h/hdbscan/hdbscan-{{ version }}.tar.gz\n  sha256: 85e8a82387d66a71b520a2d06af71d5a0a338e9c6b07b92aa04f85127159bbe6\n\nbuild:\n  number: 0\n  script: \n    # FIXME: This is a hack to make sure the environment is activated.\n    # The reason this is required is due to the conda-build issue\n    # mentioned below.\n    #\n    # https://github.com/conda/conda-build/issues/910\n    #\n    - source activate \"${CONDA_DEFAULT_ENV}\"  # [unix]\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n    - scikit-learn >=0.16\n    - cython >=0.17\n\n  run:\n    - python\n    - scikit-learn >=0.16\n\ntest:\n  imports:\n    - hdbscan\n\nabout:\n  home: http://github.com/lmcinnes/hdbscan\n  license: BSD 3-Clause\n  summary: 'Clustering based on density with variable density clusters'\n\nextra:\n  recipe-maintainers:\n    - lmcinnes\n",
+ "rendered_recipe": {},
+ "version": "0.8.4"
+}

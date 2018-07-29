@@ -1,0 +1,48 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pyFFTW-0.10.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pyfftw/__init__.py",
+  "lib/python3.4/site-packages/pyfftw/__pycache__/__init__.cpython-34.pyo",
+  "lib/python3.4/site-packages/pyfftw/__pycache__/version.cpython-34.pyo",
+  "lib/python3.4/site-packages/pyfftw/builders/__init__.py",
+  "lib/python3.4/site-packages/pyfftw/builders/__pycache__/__init__.cpython-34.pyo",
+  "lib/python3.4/site-packages/pyfftw/builders/__pycache__/_utils.cpython-34.pyo",
+  "lib/python3.4/site-packages/pyfftw/builders/__pycache__/builders.cpython-34.pyo",
+  "lib/python3.4/site-packages/pyfftw/builders/_utils.py",
+  "lib/python3.4/site-packages/pyfftw/builders/builders.py",
+  "lib/python3.4/site-packages/pyfftw/interfaces/__init__.py",
+  "lib/python3.4/site-packages/pyfftw/interfaces/__pycache__/__init__.cpython-34.pyo",
+  "lib/python3.4/site-packages/pyfftw/interfaces/__pycache__/_utils.cpython-34.pyo",
+  "lib/python3.4/site-packages/pyfftw/interfaces/__pycache__/cache.cpython-34.pyo",
+  "lib/python3.4/site-packages/pyfftw/interfaces/__pycache__/numpy_fft.cpython-34.pyo",
+  "lib/python3.4/site-packages/pyfftw/interfaces/__pycache__/scipy_fftpack.cpython-34.pyo",
+  "lib/python3.4/site-packages/pyfftw/interfaces/_utils.py",
+  "lib/python3.4/site-packages/pyfftw/interfaces/cache.py",
+  "lib/python3.4/site-packages/pyfftw/interfaces/numpy_fft.py",
+  "lib/python3.4/site-packages/pyfftw/interfaces/scipy_fftpack.py",
+  "lib/python3.4/site-packages/pyfftw/pyfftw.so",
+  "lib/python3.4/site-packages/pyfftw/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py34_0",
+  "build_number": 0,
+  "depends": [
+   "fftw",
+   "numpy 1.11*",
+   "python 3.4*"
+  ],
+  "license": "BSD or GPL 2",
+  "name": "pyfftw",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.10.1"
+ },
+ "metadata_version": 1,
+ "name": "pyfftw",
+ "raw_recipe": "{% set version = \"0.10.1\" %}\n\npackage:\n    name: pyfftw\n    version: {{ version }}\n\nsource:\n    fn: pyFFTW-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/p/pyFFTW/pyFFTW-{{ version }}.tar.gz\n    md5: dab57de9d23f3b333115265914f3d240\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n    build:\n        - cython\n        - python\n        - numpy x.x\n        - fftw\n\n    run:\n        - python\n        - numpy x.x\n        - fftw\n\ntest:\n    imports:\n        - pyfftw\n        - pyfftw.builders\n        - pyfftw.interfaces\n\nabout:\n    home: http://hgomersall.github.com/pyFFTW/\n    license: BSD or GPL 2\n    summary: 'A pythonic wrapper around FFTW, the FFT library, presenting a unified interface for all the supported transforms.'\n\nextra:\n    recipe-maintainers:\n        - jakirkham\n        - jjhelmus\n",
+ "rendered_recipe": {},
+ "version": "0.10.1"
+}

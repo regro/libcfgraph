@@ -1,0 +1,147 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "dev_url": "https://github.com/graph-algorithms/edge-addition-planarity-suite",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/graph-algorithms/edge-addition-planarity-suite",
+  "license": "3-clause BSD",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.4-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "This code project provides a library for implementing graph algorithms as well\nas implementations of several planarity-related graph algorithms\n"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/planarity/stack.h",
+  "include/planarity/graphFunctionTable.h",
+  "lib/libplanarity.0.dylib",
+  "lib/libplanarity.dylib",
+  "include/planarity/graphK33Search.h",
+  "include/planarity/graphK4Search.private.h",
+  "include/planarity/platformTime.h",
+  "include/planarity/graphK23Search.h",
+  "include/planarity/graphK4Search.h",
+  "include/planarity/graphStructures.h",
+  "include/planarity/graphDrawPlanar.h",
+  "include/planarity/graphK23Search.private.h",
+  "include/planarity/appconst.h",
+  "include/planarity/planarity.h",
+  "include/planarity/graphExtensions.h",
+  "lib/libplanarity.la",
+  "share/man/man1/planarity.1",
+  "include/planarity/graph.h",
+  "lib/libplanarity.a",
+  "bin/planarity",
+  "include/planarity/listcoll.h",
+  "include/planarity/graphExtensions.private.h",
+  "include/planarity/graphDrawPlanar.private.h",
+  "include/planarity/graphK33Search.private.h"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "3-clause BSD",
+  "name": "planarity",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "3.0.0.5"
+ },
+ "metadata_version": 1,
+ "name": "planarity",
+ "raw_recipe": "{% set version = \"3.0.0.5\" %}\n{% set name = \"planarity\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/graph-algorithms/edge-addition-planarity-suite/archive/Version_{{ version }}.tar.gz\n  sha256: a019eedf67087bba1996c8b9ad47a6f1cda166c2d8976f13bfcff5c0d23e5578\n  patches:\n    # variables declared in headers should be marked extern\n    # https://github.com/graph-algorithms/edge-addition-planarity-suite/pull/3\n    - extern.patch\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - automake\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/{{ name }}/{{ name }}.h\n    - test -f ${PREFIX}/lib/lib{{ name }}.a\n    - test -f ${PREFIX}/lib/lib{{ name }}.dylib  # [osx]\n    - test -f ${PREFIX}/lib/lib{{ name }}.so     # [linux]\n\nabout:\n  home: https://github.com/graph-algorithms/edge-addition-planarity-suite\n  license: 3-clause BSD\n  license_file: LICENSE.TXT\n  summary: |\n    This code project provides a library for implementing graph algorithms as well\n    as implementations of several planarity-related graph algorithms\n  dev_url: https://github.com/graph-algorithms/edge-addition-planarity-suite\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "https://github.com/graph-algorithms/edge-addition-planarity-suite",
+   "home": "https://github.com/graph-algorithms/edge-addition-planarity-suite",
+   "license": "3-clause BSD",
+   "license_file": "LICENSE.TXT",
+   "summary": "This code project provides a library for implementing graph algorithms as well\nas implementations of several planarity-related graph algorithms\n"
+  },
+  "build": {
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "isuruf"
+   ]
+  },
+  "package": {
+   "name": "planarity",
+   "version": "3.0.0.5"
+  },
+  "requirements": {
+   "build": [],
+   "run": []
+  },
+  "source": {
+   "fn": "planarity-3.0.0.5.tar.gz",
+   "patches": [
+    "extern.patch"
+   ],
+   "sha256": "a019eedf67087bba1996c8b9ad47a6f1cda166c2d8976f13bfcff5c0d23e5578",
+   "url": "https://github.com/graph-algorithms/edge-addition-planarity-suite/archive/Version_3.0.0.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/include/planarity/planarity.h",
+    "test -f ${PREFIX}/lib/libplanarity.a",
+    "test -f ${PREFIX}/lib/libplanarity.dylib"
+   ]
+  }
+ },
+ "version": "3.0.0.5"
+}

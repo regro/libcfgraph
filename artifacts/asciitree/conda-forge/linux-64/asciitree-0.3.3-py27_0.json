@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "http://github.com/mbr/asciitree",
+  "license": "MIT",
+  "summary": "Draws ASCII trees."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/asciitree-0.3.3-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/asciitree/__init__.py",
+  "lib/python2.7/site-packages/asciitree/drawing.py",
+  "lib/python2.7/site-packages/asciitree/traversal.py",
+  "lib/python2.7/site-packages/asciitree/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "asciitree",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3.3"
+ },
+ "metadata_version": 1,
+ "name": "asciitree",
+ "raw_recipe": "{% set version = \"0.3.3\" %}\n{% set sha256 = \"4aa4b9b649f85e3fcb343363d97564aa1fb62e249677f2e18a96765145cc0f6e\" %}\n\npackage:\n  name: asciitree\n  version: {{ version }}\n\nsource:\n  fn: asciitree-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/a/asciitree/asciitree-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - asciitree\n\nabout:\n  home: http://github.com/mbr/asciitree\n  license: MIT\n  license_file: LICENSE\n  summary: 'Draws ASCII trees.'\n\nextra:\n  recipe-maintainers:\n    - kain88-de\n    - dotsdl\n",
+ "rendered_recipe": {},
+ "version": "0.3.3"
+}

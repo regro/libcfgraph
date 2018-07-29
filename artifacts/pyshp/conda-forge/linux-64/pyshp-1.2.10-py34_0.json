@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "https://pypi.python.org/pypi/pyshp",
+  "license": "MIT",
+  "summary": "Pure Python read/write support for ESRI Shapefile format."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pyshp-1.2.10-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pyshp-1.2.10-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/shapefile.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "pyshp",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.2.10"
+ },
+ "metadata_version": 1,
+ "name": "pyshp",
+ "raw_recipe": "{% set version = \"1.2.10\" %}\n\npackage:\n    name: pyshp\n    version: {{ version }}\n\nsource:\n    fn: pyshp-{{ version }}.tar.gz\n    url: https://github.com/GeospatialPython/pyshp/archive/{{ version }}.tar.gz\n    sha256: 009e02b281d7f509c34d31aca3545334e45bea15136f3bb81a37b4d13e21f9bd\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - shapefile\n\nabout:\n    home: https://pypi.python.org/pypi/pyshp\n    license: MIT\n    summary: 'Pure Python read/write support for ESRI Shapefile format.'\n\nextra:\n    recipe-maintainers:\n        - pelson\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.2.10"
+}

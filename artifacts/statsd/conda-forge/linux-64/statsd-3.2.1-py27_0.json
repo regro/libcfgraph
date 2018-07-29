@@ -1,0 +1,76 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/statsd-3.2.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/statsd/__init__.py",
+  "lib/python2.7/site-packages/statsd/client.py",
+  "lib/python2.7/site-packages/statsd/defaults/__init__.py",
+  "lib/python2.7/site-packages/statsd/defaults/django.py",
+  "lib/python2.7/site-packages/statsd/defaults/env.py",
+  "lib/python2.7/site-packages/statsd/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "statsd",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "3.2.1"
+ },
+ "metadata_version": 1,
+ "name": "statsd",
+ "raw_recipe": "{% set version = \"3.2.1\" %}\n{% set gh_org = \"jsocol\" %}\n{% set gh_repo = \"pystatsd\" %}\n{% set pkg_name = \"statsd\" %}\n\npackage:\n  name: {{ pkg_name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ pkg_name }}-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/s/{{ pkg_name }}/{{ pkg_name }}-{{ version }}.tar.gz\n  sha256: 3fa92bf0192af926f7a0d9be031fe3fd0fbaa1992d42cf2f07e68f76ac18288e\n\nbuild:\n  number: 0\n  script:\n    - python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  requires:\n    - nose\n    - python\n    - mock\n  commands:\n    - python -m nose statsd\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: MIT\n  summary: A Python client for statsd\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/jsocol/pystatsd",
+   "license": "MIT",
+   "summary": "A Python client for statsd"
+  },
+  "build": {
+   "number": "0",
+   "script": [
+    "python setup.py install --single-version-externally-managed --record=record.txt"
+   ]
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "statsd",
+   "version": "3.2.1"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "statsd-3.2.1.tar.gz",
+   "sha256": "3fa92bf0192af926f7a0d9be031fe3fd0fbaa1992d42cf2f07e68f76ac18288e",
+   "url": "https://pypi.python.org/packages/source/s/statsd/statsd-3.2.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python -m nose statsd"
+   ],
+   "requires": [
+    "nose",
+    "python",
+    "mock"
+   ]
+  }
+ },
+ "version": "3.2.1"
+}

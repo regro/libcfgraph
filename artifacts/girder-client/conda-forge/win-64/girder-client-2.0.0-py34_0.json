@@ -1,0 +1,42 @@
+{
+ "about": {
+  "dev_url": "https://github.com/girder/girder/tree/master/clients/python",
+  "doc_url": "http://girder.readthedocs.org/en/latest/python-client.html",
+  "home": "http://girder.readthedocs.org/en/latest/python-client.html",
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "summary": "Python client for interacting with Girder servers"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/girder_client-2.0.0-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/girder_client-2.0.0-py3.4.egg-info/not-zip-safe",
+  "Lib/site-packages/girder_client/__init__.py",
+  "Lib/site-packages/girder_client/__main__.py",
+  "Lib/site-packages/girder_client/cli.py",
+  "Scripts/girder-cli-script.py",
+  "Scripts/girder-cli.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "diskcache",
+   "python 3.4*",
+   "requests >=2.4.2",
+   "six"
+  ],
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "name": "girder-client",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.0.0"
+ },
+ "metadata_version": 1,
+ "name": "girder-client",
+ "raw_recipe": "{%set name = \"girder-client\" %}\n{%set version = \"2.0.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"5724050e044b1d06093c22e6a004c7b8a074739e6fc0a7bb6cdf33a55beaeec4\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  entry_points:\n    - girder-cli = girder_client.cli:main\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - diskcache\n    - requests >=2.4.2\n    - six\n\ntest:\n  imports:\n    - girder_client\n\n  commands:\n    - girder-cli --help\n\nabout:\n  home: http://girder.readthedocs.org/en/latest/python-client.html\n  license: Apache 2.0\n  license_family: Apache\n  summary: 'Python client for interacting with Girder servers'\n  doc_url: http://girder.readthedocs.org/en/latest/python-client.html\n  dev_url: https://github.com/girder/girder/tree/master/clients/python\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "2.0.0"
+}

@@ -1,0 +1,33 @@
+{
+ "about": {
+  "description": "An implementation of the Promises/A+ specification and test suite in Python\n",
+  "dev_url": "https://github.com/xogeny/aplus",
+  "doc_url": "https://github.com/xogeny/aplus",
+  "home": "https://github.com/xogeny/aplus",
+  "license": "MIT",
+  "summary": "Promises/A+ for Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/aplus-0.11.0-py2.7.egg-info",
+  "Lib/site-packages/aplus/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "aplus",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.11.0"
+ },
+ "metadata_version": 1,
+ "name": "aplus",
+ "raw_recipe": "{% set name = \"aplus\" %}\n{% set version = \"0.11.0\" %}\n{% set sha256 = \"4f57025413bd9611fb54782b8f46946ea874ae7bb6dd876c0ec45c6a8d60f6e7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install  --record record.txt\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n\ntest:\n  imports:\n    - aplus\n\nabout:\n  home: https://github.com/xogeny/aplus\n  license: MIT\n  summary: 'Promises/A+ for Python'\n  description: |\n    An implementation of the Promises/A+ specification and test suite in Python\n  doc_url: https://github.com/xogeny/aplus\n  dev_url: https://github.com/xogeny/aplus\n\nextra:\n  recipe-maintainers:\n    - maartenbreddels\n",
+ "rendered_recipe": {},
+ "version": "0.11.0"
+}

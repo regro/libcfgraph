@@ -1,0 +1,85 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/partd-0.3.4-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/partd-0.3.4-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/partd/__init__.py",
+  "lib/python3.4/site-packages/partd/buffer.py",
+  "lib/python3.4/site-packages/partd/compatibility.py",
+  "lib/python3.4/site-packages/partd/compressed.py",
+  "lib/python3.4/site-packages/partd/core.py",
+  "lib/python3.4/site-packages/partd/dict.py",
+  "lib/python3.4/site-packages/partd/encode.py",
+  "lib/python3.4/site-packages/partd/file.py",
+  "lib/python3.4/site-packages/partd/numpy.py",
+  "lib/python3.4/site-packages/partd/pandas.py",
+  "lib/python3.4/site-packages/partd/pickle.py",
+  "lib/python3.4/site-packages/partd/python.py",
+  "lib/python3.4/site-packages/partd/utils.py",
+  "lib/python3.4/site-packages/partd/zmq.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "locket",
+   "python 3.4*",
+   "toolz"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "partd",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3.4"
+ },
+ "metadata_version": 1,
+ "name": "partd",
+ "raw_recipe": "{% set version = \"0.3.4\" %}\n\npackage:\n  name: partd\n  version: {{ version }}\n\nsource:\n  fn: partd-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/partd/partd-{{ version }}.tar.gz\n  md5: 6581f265299ceaf1df86422fc8c0a754\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - locket\n    - toolz\n\n  run:\n    - python\n    - locket\n    - toolz\n\ntest:\n  imports:\n    - partd\n\nabout:\n  home: https://github.com/dask/partd\n  license: BSD 3-Clause\n  summary: Concurrent appendable key-value storage\n\nextra:\n  recipe-maintainers:\n    - jcrist\n    - mrocklin\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/dask/partd",
+   "license": "BSD 3-Clause",
+   "summary": "Concurrent appendable key-value storage"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jcrist",
+    "mrocklin"
+   ]
+  },
+  "package": {
+   "name": "partd",
+   "version": "0.3.4"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "locket",
+    "toolz"
+   ],
+   "run": [
+    "python",
+    "locket",
+    "toolz"
+   ]
+  },
+  "source": {
+   "fn": "partd-0.3.4.tar.gz",
+   "md5": "6581f265299ceaf1df86422fc8c0a754",
+   "url": "https://pypi.io/packages/source/p/partd/partd-0.3.4.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "partd"
+   ]
+  }
+ },
+ "version": "0.3.4"
+}

@@ -1,0 +1,29 @@
+{
+ "about": {
+  "home": "http://nixos.org/patchelf.html",
+  "license": "GPL 3",
+  "summary": "A small utility to modify the dynamic linker and RPATH of ELF executables."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/patchelf",
+  "share/doc/patchelf/README",
+  "share/man/man1/patchelf.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [],
+  "license": "GPL 3",
+  "name": "patchelf",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.9"
+ },
+ "metadata_version": 1,
+ "name": "patchelf",
+ "raw_recipe": "{% set version = \"0.9\" %}\n\npackage:\n  name: patchelf\n  version: {{ version }}\n\nsource:\n  fn: patchelf-{{ version }}.tar.gz\n  url: http://nixos.org/releases/patchelf/patchelf-{{ version }}/patchelf-{{ version }}.tar.gz\n  md5: 3c265508526760f233620f35d79c79fc\n\nbuild:\n  number: 1\n  skip: true  # [not linux]\n\ntest:\n  commands:\n    - patchelf --help\n\nabout:\n  home: http://nixos.org/patchelf.html\n  license: GPL 3\n  license_file: COPYING\n  summary: A small utility to modify the dynamic linker and RPATH of ELF executables.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - mjuric\n",
+ "rendered_recipe": {},
+ "version": "0.9"
+}

@@ -1,0 +1,146 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Ipopt (Interior Point OPTimizer, pronounced eye-pea-Opt) is a software\npackage for large-scale nonlinear optimization. cyipopt is a python wrapper\naround Ipopt. It enables using Ipopt from the comfort of the great Python\nscripting language. Ipopt is available from the COIN-OR initiative, under\nthe Eclipse Public License (EPL).\n",
+  "dev_url": "https://github.com/matthias-k/cyipopt",
+  "doc_url": "http://pythonhosted.org/ipopt/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/matthias-k/cyipopt",
+  "license": "EPL-1.0",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "A Cython wrapper to the IPOPT optimization package"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/ipopt/ipopt_wrapper.py",
+  "lib/python2.7/site-packages/ipopt/__init__.py",
+  "lib/python2.7/site-packages/cyipopt.so",
+  "lib/python2.7/site-packages/ipopt-0.1.7-py2.7.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np112py27_0",
+  "build_number": 0,
+  "depends": [
+   "future",
+   "ipopt",
+   "numpy 1.12*",
+   "python 2.7*",
+   "scipy",
+   "six"
+  ],
+  "license": "EPL-1.0",
+  "name": "cyipopt",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.7"
+ },
+ "metadata_version": 1,
+ "name": "cyipopt",
+ "raw_recipe": "{% set name = \"cyipopt\" %}\n{% set version = \"0.1.7\" %}\n{% set sha256 = \"e62d4265743078c60f0af1426218310a9fbc1b6d0d0e60879e172d569dd3343d\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/matthias-k/cyipopt/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  # TODO: Once ipopt is available for Windows in conda forge, remove the\n  # following line.\n  skip: True  # [win]\n  # NOTE : Set CC to force gcc on OSX.\n  script: CC=gcc python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - gcc\n    - pkg-config  # [osx]\n    - python\n    - ipopt\n    - setuptools\n    - cython\n    - numpy x.x\n    - scipy\n    - six\n  run:\n    - python\n    - ipopt\n    - numpy x.x\n    - scipy\n    - six\n    - future\n\ntest:\n  imports:\n    - ipopt\n  files:\n    - examplehs071.py\n  commands:\n    - python examplehs071.py\n\nabout:\n  home: https://github.com/matthias-k/cyipopt\n  license: EPL-1.0\n  summary: 'A Cython wrapper to the IPOPT optimization package'\n\n  description: |\n    Ipopt (Interior Point OPTimizer, pronounced eye-pea-Opt) is a software\n    package for large-scale nonlinear optimization. cyipopt is a python wrapper\n    around Ipopt. It enables using Ipopt from the comfort of the great Python\n    scripting language. Ipopt is available from the COIN-OR initiative, under\n    the Eclipse Public License (EPL).\n  doc_url: http://pythonhosted.org/ipopt/\n  dev_url: https://github.com/matthias-k/cyipopt\n\nextra:\n  recipe-maintainers:\n    - moorepants\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Ipopt (Interior Point OPTimizer, pronounced eye-pea-Opt) is a software\npackage for large-scale nonlinear optimization. cyipopt is a python wrapper\naround Ipopt. It enables using Ipopt from the comfort of the great Python\nscripting language. Ipopt is available from the COIN-OR initiative, under\nthe Eclipse Public License (EPL).\n",
+   "dev_url": "https://github.com/matthias-k/cyipopt",
+   "doc_url": "http://pythonhosted.org/ipopt/",
+   "home": "https://github.com/matthias-k/cyipopt",
+   "license": "EPL-1.0",
+   "summary": "A Cython wrapper to the IPOPT optimization package"
+  },
+  "build": {
+   "number": "0",
+   "script": "CC=gcc python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "np112py27_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "moorepants"
+   ]
+  },
+  "package": {
+   "name": "cyipopt",
+   "version": "0.1.7"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "ipopt",
+    "numpy x.x",
+    "scipy",
+    "six",
+    "future"
+   ]
+  },
+  "source": {
+   "fn": "v0.1.7.tar.gz",
+   "sha256": "e62d4265743078c60f0af1426218310a9fbc1b6d0d0e60879e172d569dd3343d",
+   "url": "https://github.com/matthias-k/cyipopt/archive/v0.1.7.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python examplehs071.py"
+   ],
+   "files": [
+    "examplehs071.py"
+   ],
+   "imports": [
+    "ipopt"
+   ]
+  }
+ },
+ "version": "0.1.7"
+}

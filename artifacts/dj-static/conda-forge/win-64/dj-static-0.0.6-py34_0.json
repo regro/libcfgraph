@@ -1,0 +1,28 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/dj_static-0.0.6-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/dj_static-0.0.6-py3.4.egg-info/not-zip-safe",
+  "Lib/site-packages/dj_static.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "static"
+  ],
+  "license": "BSD License",
+  "name": "dj-static",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.0.6"
+ },
+ "metadata_version": 1,
+ "name": "dj-static",
+ "raw_recipe": "{% set name = \"dj-static\" %}\n{% set version = \"0.0.6\" %}\n{% set build = 0 %}\n{% set md5 = \"078c4d5a455b7811173ffdb0cb33ed0f\" %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    md5: {{ md5 }}\n\nbuild:\n    number: {{ build }}\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - static\n    run:\n        - python\n        - static\n\ntest:\n    requires:\n        - django\n    commands:\n        - python -c \"import django; from django.conf import settings; settings.configure(); django.setup(); import dj_static\"\n\nabout:\n    home: https://github.com/kennethreitz/dj-static\n    license: BSD License\n    summary: 'Serve production static files with Django.'\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n",
+ "rendered_recipe": {},
+ "version": "0.0.6"
+}

@@ -1,0 +1,40 @@
+{
+ "about": {
+  "description": "Multi-producer-multi-consumer signal dispatching mechanism\n",
+  "dev_url": "http://pydispatcher.sourceforge.net/",
+  "doc_url": "http://pydispatcher.sourceforge.net/",
+  "home": "http://pydispatcher.sourceforge.net",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Multi-producer-multi-consumer signal dispatching mechanism"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/PyDispatcher-2.0.5-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pydispatch/__init__.py",
+  "lib/python2.7/site-packages/pydispatch/dispatcher.py",
+  "lib/python2.7/site-packages/pydispatch/errors.py",
+  "lib/python2.7/site-packages/pydispatch/robust.py",
+  "lib/python2.7/site-packages/pydispatch/robustapply.py",
+  "lib/python2.7/site-packages/pydispatch/saferef.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "pydispatcher",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.5"
+ },
+ "metadata_version": 1,
+ "name": "pydispatcher",
+ "raw_recipe": "{% set name = \"PyDispatcher\" %}\n{% set version = \"2.0.5\" %}\n{% set sha256 = \"5570069e1b1769af1fe481de6dd1d3a388492acddd2cdad7a3bde145615d5caf\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - pydispatch\n\nabout:\n  home: http://pydispatcher.sourceforge.net\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: license.txt\n  summary: 'Multi-producer-multi-consumer signal dispatching mechanism'\n\n  description: |\n    Multi-producer-multi-consumer signal dispatching mechanism\n  doc_url: http://pydispatcher.sourceforge.net/\n  dev_url: http://pydispatcher.sourceforge.net/\n\nextra:\n  recipe-maintainers:\n    - shyuep\n",
+ "rendered_recipe": {},
+ "version": "2.0.5"
+}

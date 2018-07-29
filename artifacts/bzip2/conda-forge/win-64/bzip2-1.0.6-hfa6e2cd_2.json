@@ -1,0 +1,188 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.10.9",
+  "conda_private": false,
+  "conda_version": "4.5.8",
+  "description": "Bzip2 is a freely available high-quality data compressor. It typically\ncompresses files to within 10% to 15% of the best available techniques,\nwhilst being around twice as fast at compression and six times faster\nat decompression.\n",
+  "doc_url": "http://www.bzip.org/docs.html",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "home": "http://www.bzip.org/",
+  "license": "bzip2",
+  "license_family": "BSD",
+  "license_file": "LICENSE",
+  "root_pkgs": [
+   "anaconda-client 1.6.14 py_0",
+   "asn1crypto 0.24.0 py36_0",
+   "beautifulsoup4 4.6.0 py36_0",
+   "ca-certificates 2018.4.16 0",
+   "certifi 2018.4.16 py36_0",
+   "cffi 1.11.5 py36h945400d_0",
+   "chardet 3.0.4 py36h420ce6e_1",
+   "clyent 1.2.2 py_1",
+   "conda 4.5.8 py36_0",
+   "conda-build 3.10.9 py36_0",
+   "conda-env 2.6.0 h36134e3_1",
+   "conda-forge-ci-setup 1.3.5 0",
+   "conda-verify 2.0.0 py36_0",
+   "console_shortcut 0.1.1 h6bb2dd7_3",
+   "cryptography 2.2.2 py36hfa6e2cd_0",
+   "decorator 4.3.0 py_0",
+   "filelock 3.0.4 py36_0",
+   "glob2 0.6 py_0",
+   "idna 2.6 py36h148d497_1",
+   "ipython_genutils 0.2.0 py_1",
+   "jinja2 2.10 py_1",
+   "jsonschema 2.6.0 py36_1",
+   "jupyter_core 4.4.0 py_0",
+   "markupsafe 1.0 py36_0",
+   "menuinst 1.4.11 py36hfa6e2cd_0",
+   "nbformat 4.4.0 py36_0",
+   "openssl 1.0.2o vc14_0",
+   "pip 9.0.3 py36_0",
+   "pkginfo 1.4.2 py_1",
+   "psutil 5.4.6 py36_0",
+   "pycosat 0.6.3 py36h413d8a4_0",
+   "pycparser 2.18 py36hd053e01_1",
+   "pyopenssl 17.5.0 py36h5b7d817_0",
+   "pysocks 1.6.8 py36_0",
+   "python 3.6.5 h0c2934d_0",
+   "python-dateutil 2.7.3 py_0",
+   "pytz 2018.5 py_0",
+   "pywin32 223 py36hfa6e2cd_0",
+   "pyyaml 3.12 py36_1",
+   "requests 2.18.4 py36h4371aae_1",
+   "ruamel_yaml 0.15.35 py36hfa6e2cd_1",
+   "setuptools 39.0.1 py36_0",
+   "six 1.11.0 py36h4db2310_1",
+   "traitlets 4.3.2 py36_0",
+   "urllib3 1.22 py36h276f60a_0",
+   "vc 14 h0510ff6_3",
+   "vs2008_express_vc_python_patch 1.0.0 0",
+   "vs2015_runtime 14.0.25123 3",
+   "wheel 0.31.0 py36_0",
+   "wincertstore 0.2 py36h7fe50ca_0",
+   "win_inet_pton 1.0.1 py36he67d7fd_1",
+   "yaml 0.1.7 vc14_0"
+  ],
+  "summary": "high-quality data compressor"
+ },
+ "conda_build_config": {
+  "c_compiler": "vs2015",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "vs2015",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "python",
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.6",
+  "r_base": "3.4",
+  "target_platform": "win-64",
+  "vc": "14"
+ },
+ "files": [
+  "Library/bin/bzip2.dll",
+  "Library/bin/libbz2.dll",
+  "Library/include/bzlib.h",
+  "Library/lib/bzip2.lib",
+  "Library/lib/bzip2_static.lib",
+  "Library/lib/libbz2.lib",
+  "Library/lib/libbz2_static.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "hfa6e2cd_2",
+  "build_number": 2,
+  "depends": [
+   "vc 14.*"
+  ],
+  "license": "bzip2",
+  "license_family": "BSD",
+  "name": "bzip2",
+  "platform": "win",
+  "subdir": "win-64",
+  "timestamp": 1531585034347,
+  "version": "1.0.6"
+ },
+ "metadata_version": 1,
+ "name": "bzip2",
+ "raw_recipe": "{% set version = \"1.0.6\" %}\n\npackage:\n  name: bzip2\n  version: {{ version }}\n\nsource:\n  fn: bzip2-{{ version }}.tar.gz\n  url: http://www.bzip.org/{{ version }}/bzip2-{{ version }}.tar.gz\n  md5: 00b516f4704d4a7cb50a1d97e6e8e15b\n\nbuild:\n  number: 2\n  run_exports:\n    - {{ pin_subpackage('bzip2') }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n\ntest:\n  commands:\n    - bzip2 --help  # [unix]\n    {% set bzip2_executables = [\n      \"bunzip2\",\n      \"bzcat\",\n      \"bzcmp\",\n      \"bzdiff\",\n      \"bzegrep\",\n      \"bzfgrep\",\n      \"bzgrep\",\n      \"bzip2recover\",\n      \"bzip2\",\n      \"bzless\",\n      \"bzmore\"\n    ] %}\n    {% for executable in bzip2_executables %}\n    - test -f ${PREFIX}/bin/{{ executable }}  # [unix]\n    {% endfor %}\n    - test -f ${PREFIX}/include/bzlib.h  # [unix]\n    - test -f ${PREFIX}/lib/libbz2.a  # [unix]\n    - test -f ${PREFIX}/lib/libbz2.so  # [linux]\n    - test -f ${PREFIX}/lib/libbz2.dylib  # [osx]\n    - if not exist %LIBRARY_INC%\\\\bzlib.h exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\\\bzip2.lib exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\bzip2.dll exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\\\libbz2.lib exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\libbz2.dll exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\\\bzip2_static.lib exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\\\libbz2_static.lib exit 1  # [win]\n\nabout:\n  home: http://www.bzip.org/\n  license_family: BSD\n  license_file: LICENSE\n  license: bzip2\n  summary: high-quality data compressor\n  description: |\n    Bzip2 is a freely available high-quality data compressor. It typically\n    compresses files to within 10% to 15% of the best available techniques,\n    whilst being around twice as fast at compression and six times faster\n    at decompression.\n  doc_url: http://www.bzip.org/docs.html\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - jjhelmus\n    - pelson\n    - jlanga\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Bzip2 is a freely available high-quality data compressor. It typically\ncompresses files to within 10% to 15% of the best available techniques,\nwhilst being around twice as fast at compression and six times faster\nat decompression.\n",
+   "doc_url": "http://www.bzip.org/docs.html",
+   "home": "http://www.bzip.org/",
+   "license": "bzip2",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "high-quality data compressor"
+  },
+  "build": {
+   "number": "2",
+   "run_exports": [
+    "bzip2 >=1.0.6,<2.0a0"
+   ],
+   "string": "hfa6e2cd_2"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "jakirkham",
+    "jjhelmus",
+    "jlanga",
+    "pelson"
+   ]
+  },
+  "package": {
+   "name": "bzip2",
+   "version": "1.0.6"
+  },
+  "requirements": {
+   "build": [
+    "vs2015_win-64 14.0.25123 h17c34da_3"
+   ],
+   "host": [
+    "vc 14 0",
+    "vs2015_runtime 14.0.25420 0"
+   ],
+   "run": [
+    "vc 14.*"
+   ]
+  },
+  "source": {
+   "fn": "bzip2-1.0.6.tar.gz",
+   "md5": "00b516f4704d4a7cb50a1d97e6e8e15b",
+   "url": "http://www.bzip.org/1.0.6/bzip2-1.0.6.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "if not exist %LIBRARY_INC%\\\\bzlib.h exit 1",
+    "if not exist %LIBRARY_LIB%\\\\bzip2.lib exit 1",
+    "if not exist %LIBRARY_BIN%\\\\bzip2.dll exit 1",
+    "if not exist %LIBRARY_LIB%\\\\libbz2.lib exit 1",
+    "if not exist %LIBRARY_BIN%\\\\libbz2.dll exit 1",
+    "if not exist %LIBRARY_LIB%\\\\bzip2_static.lib exit 1",
+    "if not exist %LIBRARY_LIB%\\\\libbz2_static.lib exit 1"
+   ]
+  }
+ },
+ "version": "1.0.6"
+}

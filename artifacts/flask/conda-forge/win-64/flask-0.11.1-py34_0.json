@@ -1,0 +1,60 @@
+{
+ "about": {
+  "description": "Flask is a microframework for Python based on Werkzeug and Jinja2. It's\nintended for getting started very quickly and was developed with best\nintentions in mind.\n",
+  "dev_url": "https://github.com/pallets/flask",
+  "doc_url": "http://flask.pocoo.org/docs/0.11",
+  "home": "http://flask.pocoo.org",
+  "license": "BSD 3-Clause",
+  "summary": "A microframework based on Werkzeug, Jinja2 and good intentions."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/Flask-0.11.1-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/Flask-0.11.1-py3.4.egg-info/not-zip-safe",
+  "Lib/site-packages/flask/__init__.py",
+  "Lib/site-packages/flask/__main__.py",
+  "Lib/site-packages/flask/_compat.py",
+  "Lib/site-packages/flask/app.py",
+  "Lib/site-packages/flask/blueprints.py",
+  "Lib/site-packages/flask/cli.py",
+  "Lib/site-packages/flask/config.py",
+  "Lib/site-packages/flask/ctx.py",
+  "Lib/site-packages/flask/debughelpers.py",
+  "Lib/site-packages/flask/ext/__init__.py",
+  "Lib/site-packages/flask/exthook.py",
+  "Lib/site-packages/flask/globals.py",
+  "Lib/site-packages/flask/helpers.py",
+  "Lib/site-packages/flask/json.py",
+  "Lib/site-packages/flask/logging.py",
+  "Lib/site-packages/flask/sessions.py",
+  "Lib/site-packages/flask/signals.py",
+  "Lib/site-packages/flask/templating.py",
+  "Lib/site-packages/flask/testing.py",
+  "Lib/site-packages/flask/views.py",
+  "Lib/site-packages/flask/wrappers.py",
+  "Scripts/flask-script.py",
+  "Scripts/flask.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "click >=2.0",
+   "itsdangerous >=0.21",
+   "jinja2 >=2.4",
+   "python 3.4*",
+   "werkzeug >=0.7"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "flask",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.11.1"
+ },
+ "metadata_version": 1,
+ "name": "flask",
+ "raw_recipe": "{% set name = \"Flask\" %}\n{% set version = \"0.11.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"b4713f2bfb9ebc2966b8a49903ae0d3984781d5c878591cf2f7b484d28756b0e\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - flask = flask.cli:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - click >=2.0\n    - itsdangerous >=0.21\n    - jinja2 >=2.4\n    - werkzeug >=0.7\n\ntest:\n  imports:\n    - flask\n    - flask.ext\n\n  commands:\n    - flask --help\n\nabout:\n  home: http://flask.pocoo.org\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: A microframework based on Werkzeug, Jinja2 and good intentions.\n  description: |\n    Flask is a microframework for Python based on Werkzeug and Jinja2. It's\n    intended for getting started very quickly and was developed with best\n    intentions in mind.\n  doc_url: http://flask.pocoo.org/docs/0.11\n  dev_url: https://github.com/pallets/flask\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n",
+ "rendered_recipe": {},
+ "version": "0.11.1"
+}

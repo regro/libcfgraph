@@ -1,0 +1,149 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.5",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Cog is a file generation tool. It lets you use pieces of Python\ncode as generators in your source files to generate whatever text\nyou need.\n",
+  "dev_url": "https://bitbucket.org/ned/cog",
+  "doc_url": "http://nedbatchelder.com/code/cog",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://nedbatchelder.com/code/cog",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "clyent-1.2.2-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-build-2.1.5-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.0-0",
+   "conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_0",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Cog: A code generator for executing Python snippets in source files."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/cogapp/test_makefiles.py",
+  "lib/python3.6/site-packages/cogapp/backward.py",
+  "bin/cog.py",
+  "lib/python3.6/site-packages/cogapp/makefiles.py",
+  "lib/python3.6/site-packages/cogapp/__main__.py",
+  "lib/python3.6/site-packages/cogapp/cogapp.py",
+  "lib/python3.6/site-packages/cogapp-2.5.1-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/cogapp/test_cogapp.py",
+  "lib/python3.6/site-packages/cogapp/test_whiteutils.py",
+  "lib/python3.6/site-packages/cogapp/whiteutils.py",
+  "lib/python3.6/site-packages/cogapp/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.6*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "cogapp",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.5.1"
+ },
+ "metadata_version": 1,
+ "name": "cogapp",
+ "raw_recipe": "{% set name = \"cogapp\" %}\n{% set version = \"2.5.1\" %}\n{% set sha256 = \"f8cf2288fb5a2087eb4a00d8b347ddc86e9058d4ab26b8c868433eb401adfe1c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - cogapp\n\nabout:\n  home: http://nedbatchelder.com/code/cog\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE.txt\n  summary: 'Cog: A code generator for executing Python snippets in source files.'\n\n  description: |\n    Cog is a file generation tool. It lets you use pieces of Python\n    code as generators in your source files to generate whatever text\n    you need.\n  doc_url: http://nedbatchelder.com/code/cog\n  dev_url: https://bitbucket.org/ned/cog\n\nextra:\n  recipe-maintainers:\n    - johannesring\n    - edisongustavo\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Cog is a file generation tool. It lets you use pieces of Python\ncode as generators in your source files to generate whatever text\nyou need.\n",
+   "dev_url": "https://bitbucket.org/ned/cog",
+   "doc_url": "http://nedbatchelder.com/code/cog",
+   "home": "http://nedbatchelder.com/code/cog",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE.txt",
+   "summary": "Cog: A code generator for executing Python snippets in source files."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py36_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "johannesring",
+    "edisongustavo"
+   ]
+  },
+  "package": {
+   "name": "cogapp",
+   "version": "2.5.1"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "cogapp-2.5.1.tar.gz",
+   "sha256": "f8cf2288fb5a2087eb4a00d8b347ddc86e9058d4ab26b8c868433eb401adfe1c",
+   "url": "https://pypi.io/packages/source/c/cogapp/cogapp-2.5.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "cogapp"
+   ]
+  }
+ },
+ "version": "2.5.1"
+}

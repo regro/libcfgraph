@@ -1,0 +1,76 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/obvci_appveyor_python_build_env.cmd",
+  "bin/obvci_conda_build_dir",
+  "bin/obvci_install_conda_build_tools.py",
+  "bin/obvci_install_miniconda.ps1",
+  "bin/obvci_install_miniconda.sh",
+  "lib/python3.4/site-packages/Obvious_ci-0.5.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/obvci/__init__.py",
+  "lib/python3.4/site-packages/obvci/_version.py",
+  "lib/python3.4/site-packages/obvci/cli/__init__.py",
+  "lib/python3.4/site-packages/obvci/cli/conda_build_dir.py",
+  "lib/python3.4/site-packages/obvci/conda_tools/__init__.py",
+  "lib/python3.4/site-packages/obvci/conda_tools/build.py",
+  "lib/python3.4/site-packages/obvci/conda_tools/build_directory.py",
+  "lib/python3.4/site-packages/obvci/conda_tools/from_conda_manifest_core_vn_matrix.py",
+  "lib/python3.4/site-packages/obvci/conda_tools/inspect_binstar.py",
+  "lib/python3.4/site-packages/obvci/conda_tools/order_deps.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "anaconda-client",
+   "conda",
+   "conda-build",
+   "python 3.4*",
+   "setuptools"
+  ],
+  "name": "obvious-ci",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.5.0"
+ },
+ "metadata_version": 1,
+ "name": "obvious-ci",
+ "raw_recipe": "package:\n    name: obvious-ci\n    version: 0.5.0\n\nsource:\n    url: https://github.com/pelson/Obvious-CI/archive/v0.5.0.tar.gz\n    fn: obvious-ci_v0.5.0.tar.gz \n\nrequirements:\n    build:\n        - python\n        - setuptools\n\n    run:\n        - python\n        - setuptools\n        - anaconda-client\n        - conda\n        - conda-build\n\ntest:\n  imports:\n    - obvci\n    - obvci.conda_tools\n    - obvci.cli\n  commands:\n    - unset CONDA_NPY && obvci_conda_build_dir --help  # [not win]\n    - obvci_conda_build_dir --help  # [win]\n",
+ "rendered_recipe": {
+  "package": {
+   "name": "obvious-ci",
+   "version": "0.5.0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "setuptools",
+    "anaconda-client",
+    "conda",
+    "conda-build"
+   ]
+  },
+  "source": {
+   "fn": "obvious-ci_v0.5.0.tar.gz",
+   "url": "https://github.com/pelson/Obvious-CI/archive/v0.5.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "unset CONDA_NPY && obvci_conda_build_dir --help",
+    "obvci_conda_build_dir --help"
+   ],
+   "imports": [
+    "obvci",
+    "obvci.conda_tools",
+    "obvci.cli"
+   ]
+  }
+ },
+ "version": "0.5.0"
+}

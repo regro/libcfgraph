@@ -1,0 +1,40 @@
+{
+ "about": {
+  "dev_url": "https://github.com/jmdana/memprof",
+  "home": "https://jmdana.github.io/memprof/",
+  "license": "GPL 3",
+  "license_family": "GPL3",
+  "summary": "A memory profiler for Python. As easy as adding a decorator."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/mp_plot",
+  "lib/python3.4/site-packages/memprof-0.3.4-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/memprof-0.3.4-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/memprof/__init__.py",
+  "lib/python3.4/site-packages/memprof/__main__.py",
+  "lib/python3.4/site-packages/memprof/getsize.so",
+  "lib/python3.4/site-packages/memprof/memprof.py",
+  "lib/python3.4/site-packages/memprof/mp_utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "matplotlib",
+   "python 3.4*"
+  ],
+  "license": "GPL 3",
+  "license_family": "GPL3",
+  "name": "memprof",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.4"
+ },
+ "metadata_version": 1,
+ "name": "memprof",
+ "raw_recipe": "{% set name = \"memprof\" %}\n{% set version = \"0.3.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8aebb0ce5ec11a42bf06c1430fb5e9e1f91aec0709056bce4af94076c853a707\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n    - cython\n  run:\n    - python\n    - matplotlib\n\ntest:\n  imports:\n    - memprof\n  commands:\n    - python -m memprof --help\n    - mp_plot --help\n\nabout:\n  home: https://jmdana.github.io/memprof/\n  license: GPL 3\n  license_family: GPL3\n  license_file: LICENSE\n  summary: 'A memory profiler for Python. As easy as adding a decorator.'\n  dev_url: https://github.com/jmdana/memprof\n\nextra:\n  recipe-maintainers:\n    - kynan\n",
+ "rendered_recipe": {},
+ "version": "0.3.4"
+}

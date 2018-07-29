@@ -1,0 +1,168 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/bmcfee/resampy",
+  "license": "ISC",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py36_0",
+   "asn1crypto-0.22.0-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.10.0-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.8.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.5-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-1.0-py36_0",
+   "openssl-1.0.2l-0",
+   "packaging-16.8-py36_0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pycosat-0.6.2-py36_0",
+   "pycparser-2.17-py36_0",
+   "conda-forge::pycrypto-2.6.1-py36_1",
+   "pyopenssl-17.0.0-py36_0",
+   "pyparsing-2.1.4-py36_0",
+   "python-3.6.1-2",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.14.2-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Efficient signal resampling"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/resampy/data/kaiser_best.npz",
+  "lib/python2.7/site-packages/resampy/filters.py",
+  "lib/python2.7/site-packages/resampy/version.py",
+  "lib/python2.7/site-packages/resampy/core.py",
+  "lib/python2.7/site-packages/resampy/interp.so",
+  "lib/python2.7/site-packages/resampy-0.1.5-py2.7.egg-info/pbr.json",
+  "lib/python2.7/site-packages/resampy/__init__.py",
+  "lib/python2.7/site-packages/resampy/data/kaiser_fast.npz",
+  "lib/python2.7/site-packages/resampy-0.1.5-py2.7.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np113py27_1",
+  "build_number": 1,
+  "depends": [
+   "cython >=0.23",
+   "numpy 1.13*",
+   "python 2.7*",
+   "scipy >=0.13",
+   "setuptools",
+   "six >=1.3"
+  ],
+  "license": "ISC",
+  "name": "resampy",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.1.5"
+ },
+ "metadata_version": 1,
+ "name": "resampy",
+ "raw_recipe": "{% set version = \"0.1.5\" %}\n{% set hash_type = \"md5\" %}\n{% set hash_val = \"3790f06bf6006840bf3d64ef5fc2803f\" %}\n\npackage:\n  name: resampy\n  version: {{ version }}\n\nsource:\n  fn: resampy-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/r/resampy/resampy-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - scipy >=0.13\n    - six >=1.3\n    - cython >=0.23\n\n  run:\n    - python\n    - setuptools # necessary for pkg_resources at runtime\n    - numpy x.x\n    - scipy >=0.13\n    - six >=1.3\n    - cython >=0.23 # necessary for runtime cython dependency\n\ntest:\n  imports:\n    - resampy\n\nabout:\n  home: https://github.com/bmcfee/resampy\n  license: ISC\n  summary: 'Efficient signal resampling'\n\nextra:\n  recipe-maintainers:\n    - bmcfee\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/bmcfee/resampy",
+   "license": "ISC",
+   "summary": "Efficient signal resampling"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "1",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "np113py27_1"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "bmcfee"
+   ]
+  },
+  "package": {
+   "name": "resampy",
+   "version": "0.1.5"
+  },
+  "requirements": {
+   "build": [
+    "blas 1.1 openblas",
+    "ca-certificates 2017.4.17 0",
+    "certifi 2017.4.17 py27_0",
+    "cython 0.25.2 py27_1",
+    "libgfortran 3.0.0 0",
+    "ncurses 5.9 10",
+    "numpy 1.13.0 py27_blas_openblas_200",
+    "openblas 0.2.19 2",
+    "openssl 1.0.2k 0",
+    "python 2.7.13 1",
+    "readline 6.2 0",
+    "scipy 0.19.0 np113py27_blas_openblas_202",
+    "setuptools 33.1.1 py27_0",
+    "six 1.10.0 py27_1",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python",
+    "setuptools",
+    "numpy x.x",
+    "scipy >=0.13",
+    "six >=1.3",
+    "cython >=0.23"
+   ]
+  },
+  "source": {
+   "fn": "resampy-0.1.5.tar.gz",
+   "md5": "3790f06bf6006840bf3d64ef5fc2803f",
+   "url": "https://pypi.io/packages/source/r/resampy/resampy-0.1.5.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "resampy"
+   ]
+  }
+ },
+ "version": "0.1.5"
+}

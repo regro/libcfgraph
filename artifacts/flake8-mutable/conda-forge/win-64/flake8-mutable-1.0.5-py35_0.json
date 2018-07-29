@@ -1,0 +1,36 @@
+{
+ "about": {
+  "dev_url": "https://github.com/ebeweber/flake8-mutable",
+  "home": "https://github.com/ebeweber/flake8-mutable",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Flake8 plugin to check against using mutable values as default arguments."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/flake8_mutable-1.0.5-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/flake8_mutable-1.0.5-py3.5.egg-info/not-zip-safe",
+  "Lib/site-packages/flake8_mutable-1.0.5-py3.5.egg-info/pbr.json",
+  "Lib/site-packages/mutable_defaults.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "flake8",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "flake8-mutable",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.5"
+ },
+ "metadata_version": 1,
+ "name": "flake8-mutable",
+ "raw_recipe": "{% set name = \"flake8-mutable\" %}\n{% set version = \"1.0.5\" %}\n{% set sha256 = \"b9c4498e86f48c377b6ccf4e8ed112ae3861d7e5a2e496ab4b9ad35ab86b03b0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - flake8\n\ntest:\n  commands:\n    - \"flake8 --version | grep flake-mutable:\"\n\nabout:\n  home: https://github.com/ebeweber/flake8-mutable\n  license: MIT\n  license_family: MIT\n  # License file not in PyPI tarball: ebeweber/flake8-mutable#7\n  # license_file: LICENSE\n  summary: 'Flake8 plugin to check against using mutable values as default arguments.'\n  dev_url: https://github.com/ebeweber/flake8-mutable\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
+ "rendered_recipe": {},
+ "version": "1.0.5"
+}

@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "https://github.com/jaraco/path.py",
+  "license": "MIT",
+  "summary": "A module wrapper for os.path"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/path.py",
+  "lib/python3.4/site-packages/path.py-8.2.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/test_path.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "path.py",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "8.2.1"
+ },
+ "metadata_version": 1,
+ "name": "path.py",
+ "raw_recipe": "{% set name = \"path.py\" %}\n{% set version = \"8.2.1\" %}\n{% set checksum = \"c9ad2d462a7f8d7f6f6d2b89220bd50425221e399a4b8dfe5fa6725eb26fd708\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ checksum }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm >=1.9\n\n  run:\n    - python\n    - importlib  # [py26]\n\ntest:\n  imports:\n    - path\n\nabout:\n  home: https://github.com/jaraco/path.py\n  license: MIT\n  summary: A module wrapper for os.path\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "8.2.1"
+}

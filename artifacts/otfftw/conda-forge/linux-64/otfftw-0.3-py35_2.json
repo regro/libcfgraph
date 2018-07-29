@@ -1,0 +1,44 @@
+{
+ "about": {
+  "home": "http://openturns.org/",
+  "license": "LGPLv3",
+  "summary": "FFTW module"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/otfftw/FFTW.hxx",
+  "include/otfftw/OTFFTWprivate.hxx",
+  "include/otfftw/swig/FFTW.i",
+  "include/otfftw/swig/otfftw_module.i",
+  "lib/cmake/otfftw/Useotfftw.cmake",
+  "lib/cmake/otfftw/otfftwConfig.cmake",
+  "lib/libotfftw.so",
+  "lib/libotfftw.so.0",
+  "lib/libotfftw.so.0.1.0",
+  "lib/python3.5/site-packages/otfftw/__init__.py",
+  "lib/python3.5/site-packages/otfftw/_otfftw.so",
+  "lib/python3.5/site-packages/otfftw/otfftw.py",
+  "share/otfftw/examples/t_FFTW_std.cxx",
+  "share/otfftw/examples/t_FFTW_std.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_2",
+  "build_number": 2,
+  "depends": [
+   "fftw",
+   "openturns",
+   "python 3.5*"
+  ],
+  "license": "LGPLv3",
+  "name": "otfftw",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.3"
+ },
+ "metadata_version": 1,
+ "name": "otfftw",
+ "raw_recipe": "{% set version = \"0.3\" %}\n\npackage:\n  name: otfftw\n  version: {{ version }}\n\nsource:\n  fn: otfftw-{{ version }}.tar.gz  # [not win]\n  url: https://github.com/openturns/otfftw/archive/v{{ version }}.tar.gz  # [not win]\n  sha256: fc961af003f53419f9f9c2efd0caf002cc2eb43fa5c076a2e44cbd9542a15b26  # [not win]\n\n  fn: otfftw-{{ version }}-py2.7-i686.exe  # [win32 and py27]\n  url: https://github.com/openturns/build/releases/download/v1.8/otfftw-{{ version }}-py2.7-i686.exe  # [win32 and py27]\n  sha256: ee29f72a49cf232b842c3755d96e9f57cbf836e86306de6a92fd61607748e373  # [win32 and py27]\n\n  fn: otfftw-{{ version }}-py2.7-x86_64.exe  # [win64 and py27]\n  url: https://github.com/openturns/build/releases/download/v1.8/otfftw-{{ version }}-py2.7-x86_64.exe  # [win64 and py27]\n  sha256: 397e40e46ae24b2efbb23a16a2b1d78d79308006d279db6e6c158a04133a11b4  # [win64 and py27]\n\n  fn: otfftw-{{ version }}-py3.4-i686.exe  # [win32 and py34]\n  url: https://github.com/openturns/build/releases/download/v1.8/otfftw-{{ version }}-py3.4-i686.exe  # [win32 and py34]\n  sha256: 8a6e62e73b672891d62281acca2e483fb92dbe6be0d20ad64f77b0b139bbc292  # [win32 and py34]\n\n  fn: otfftw-{{ version }}-py3.4-x86_64.exe  # [win64 and py34]\n  url: https://github.com/openturns/build/releases/download/v1.8/otfftw-{{ version }}-py3.4-x86_64.exe  # [win64 and py34]\n  sha256: 04511b14ec1cf5bd7f30bd932031edf019a75296aac3e2f4b14f3ab122daf798  # [win64 and py34]\n\n  fn: otfftw-{{ version }}-py3.5-i686.exe  # [win32 and py35]\n  url: https://github.com/openturns/build/releases/download/v1.8/otfftw-{{ version }}-py3.5-i686.exe  # [win32 and py35]\n  sha256: 91b3d234b398c6e2a80d124f270d906755feb18519f33f5ddd587ef4fcc8cfd5  # [win32 and py35]\n\n  fn: otfftw-{{ version }}-py3.5-x86_64.exe  # [win64 and py35]\n  url: https://github.com/openturns/build/releases/download/v1.8/otfftw-{{ version }}-py3.5-x86_64.exe  # [win64 and py35]\n  sha256: 369392dff5451350794b72c06927c7c4ca8254e0474339741dc48e3dce5ab3db  # [win64 and py35]\n\nbuild:\n  number: 2\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - cmake  # [not win]\n    - swig  # [not win]\n    - openturns  # [not win]\n    - fftw  # [not win]\n\n  run:\n    - python\n    - openturns\n    - fftw  # [not win]\n\ntest:\n  imports:\n    - otfftw\n\nabout:\n  home: http://openturns.org/\n  license: LGPLv3\n  license_file: COPYING.LESSER  # [not win]\n  summary: FFTW module\n\nextra:\n  recipe-maintainers:\n    - jschueller\n",
+ "rendered_recipe": {},
+ "version": "0.3"
+}

@@ -1,0 +1,53 @@
+{
+ "about": {
+  "dev_url": "https://github.com/Horta/optimix",
+  "doc_url": "http://optimix.readthedocs.io/",
+  "home": "https://github.com/Horta/optimix",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Abstract function optimisation"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/optimix-1.1.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/optimix-1.1.0-py2.7.egg-info/zip-safe",
+  "Lib/site-packages/optimix/__init__.py",
+  "Lib/site-packages/optimix/_unicode.py",
+  "Lib/site-packages/optimix/check_grad.py",
+  "Lib/site-packages/optimix/function.py",
+  "Lib/site-packages/optimix/optimize/__init__.py",
+  "Lib/site-packages/optimix/optimize/brent.py",
+  "Lib/site-packages/optimix/optimize/tnc.py",
+  "Lib/site-packages/optimix/test/quadratic_function_reduces.py",
+  "Lib/site-packages/optimix/test/quadratic_functions.py",
+  "Lib/site-packages/optimix/test/test_layout.py",
+  "Lib/site-packages/optimix/test/test_layout_reduce.py",
+  "Lib/site-packages/optimix/test/test_usage.py",
+  "Lib/site-packages/optimix/test/vector_valued_functions.py",
+  "Lib/site-packages/optimix/types.py",
+  "Lib/site-packages/optimix/variables.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "brent_search",
+   "ndarray_listener",
+   "numpy",
+   "python 2.7*",
+   "scipy"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "optimix",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.1.0"
+ },
+ "metadata_version": 1,
+ "name": "optimix",
+ "raw_recipe": "{% set name = \"optimix\" %}\n{% set version = \"1.1.0\" %}\n{% set sha256 = \"3a55b6baade11b2e08541bc7754e14b331786d25232c14061e98687a7ef610d7\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n  run:\n    - python\n    - numpy\n    - scipy\n    - ndarray_listener\n    - brent_search\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - optimix\n  commands:\n    - python -c \"import optimix; optimix.test()\"\n\nabout:\n  home: https://github.com/Horta/optimix\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Abstract function optimisation'\n  doc_url: http://optimix.readthedocs.io/\n  dev_url: https://github.com/Horta/optimix\n\nextra:\n  recipe-maintainers:\n    - Horta\n",
+ "rendered_recipe": {},
+ "version": "1.1.0"
+}

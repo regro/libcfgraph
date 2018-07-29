@@ -1,0 +1,34 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/phreeqpy-0.2.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/phreeqpy-0.2.0-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/phreeqpy/__init__.py",
+  "Lib/site-packages/phreeqpy/iphreeqc/IPhreeqc.dll",
+  "Lib/site-packages/phreeqpy/iphreeqc/__init__.py",
+  "Lib/site-packages/phreeqpy/iphreeqc/iphreeqc.py",
+  "Lib/site-packages/phreeqpy/iphreeqc/libiphreeqc.0.dylib",
+  "Lib/site-packages/phreeqpy/iphreeqc/libiphreeqc.so.0.0.0",
+  "Lib/site-packages/phreeqpy/iphreeqc/phreeqc_com.py",
+  "Lib/site-packages/phreeqpy/iphreeqc/phreeqc_dll.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "phreeqpy",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2.0"
+ },
+ "metadata_version": 1,
+ "name": "phreeqpy",
+ "raw_recipe": "{% set version = \"0.2.0\" %}\n\npackage:\n    name: phreeqpy\n    version: {{ version }}\n\nsource:\n    fn: phreeqpy-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/p/phreeqpy/phreeqpy-{{ version }}.tar.gz\n    md5: 1da153e854fafb6d5fee03d854a059f5\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - phreeqpy\n        - phreeqpy.iphreeqc\n\nabout:\n    home: http://www.phreeqpy.com/\n    license: BSD 3-Clause\n    summary: Python tools for PHREEQC\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.2.0"
+}

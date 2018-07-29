@@ -1,0 +1,131 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Consul-template is a daemon that provides a convenient way to populate values from\nConsul into the file system.\n\nThe daemon consul-template queries a Consul or Vault cluster and updates any number\nof specified templates on the file system. As an added bonus, it can optionally run\narbitrary commands when the update process completes.\n",
+  "doc_url": "https://github.com/hashicorp/consul-template/blob/v0.18.3/README.md",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/hashicorp/consul-tempate",
+  "license": "MPL 2.0",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-1",
+   "conda-forge::certifi-2017.4.17-py35_0",
+   "conda-forge::chardet-3.0.2-py35_1",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.10-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.12.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::openssl-1.0.2k-0",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-3",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2017.2-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Consul-template is a daemon that provides a convenient way to populate values from Consul into the file system."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/consul-template"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "MPL 2.0",
+  "name": "consul-template",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.18.3"
+ },
+ "metadata_version": 1,
+ "name": "consul-template",
+ "raw_recipe": "{% set name = \"consul-template\" %}\n{% set version = \"0.18.3\" %}\n{% set build_number = 0 %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_linux_amd64.zip  # [linux64]\n  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_linux_386.zip  # [linux32]\n  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_darwin_amd64.zip  # [osx]\n  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]\n  url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_386.zip  # [win32]\n  fn: {{ name }}-{{ version }}.zip\n  sha256: a498afa9c7e182ad5622a63b93f7273b24d3dc8c27b635d8f15cb17e49ba436b  # [osx]\n  sha256: 9c29f8473ef517528d3f1e0d16029324306c6904c81536400cdc8b54356fdb36  # [linux32]\n  sha256: caf6018d7489d97d6cc2a1ac5f1cbd574c6db4cd61ed04b22b8db7b4bde64542  # [linux64]\n  sha256: 315eb7d09f09afcf9b7d95f6144ec4a3b10d8fe1d4b9d0d838aceedd6de78126  # [win32]\n  sha256: 2372199fd4c0ca2714ba342b3dd1ff8e4dd8ff25d247723a90319157bbbbd913  # [win64]\n\nbuild:\n  number: {{ build_number }}\n\ntest:\n  commands:\n    - {{ name }} -v\n\nabout:\n  home: https://github.com/hashicorp/consul-tempate\n  license: MPL 2.0\n  summary: Consul-template is a daemon that provides a convenient way to populate values from Consul into the file system.\n  description: |\n     Consul-template is a daemon that provides a convenient way to populate values from \n     Consul into the file system.\n\n     The daemon consul-template queries a Consul or Vault cluster and updates any number \n     of specified templates on the file system. As an added bonus, it can optionally run \n     arbitrary commands when the update process completes. \n\n  doc_url: https://github.com/hashicorp/consul-template/blob/v{{ version }}/README.md\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Consul-template is a daemon that provides a convenient way to populate values from\nConsul into the file system.\n\nThe daemon consul-template queries a Consul or Vault cluster and updates any number\nof specified templates on the file system. As an added bonus, it can optionally run\narbitrary commands when the update process completes.\n",
+   "doc_url": "https://github.com/hashicorp/consul-template/blob/v0.18.3/README.md",
+   "home": "https://github.com/hashicorp/consul-tempate",
+   "license": "MPL 2.0",
+   "summary": "Consul-template is a daemon that provides a convenient way to populate values from Consul into the file system."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "sodre"
+   ]
+  },
+  "package": {
+   "name": "consul-template",
+   "version": "0.18.3"
+  },
+  "requirements": {
+   "build": [],
+   "run": []
+  },
+  "source": {
+   "fn": "consul-template-0.18.3.zip",
+   "sha256": "caf6018d7489d97d6cc2a1ac5f1cbd574c6db4cd61ed04b22b8db7b4bde64542",
+   "url": "https://releases.hashicorp.com/consul-template/0.18.3/consul-template_0.18.3_linux_amd64.zip"
+  },
+  "test": {
+   "commands": [
+    "consul-template -v"
+   ]
+  }
+ },
+ "version": "0.18.3"
+}

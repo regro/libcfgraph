@@ -1,0 +1,120 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://www.algorithm.uni-bayreuth.de/en/research/SYMMETRICA/index.html",
+  "license": "ISC",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.4-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Symmetrica is a collection of routines to handle several topics including\nordinary representation theory of the symmetric group and related groups\n"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/symmetrica/macro.h",
+  "include/symmetrica/def.h",
+  "lib/libsymmetrica.a"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "ISC",
+  "name": "symmetrica",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.0"
+ },
+ "metadata_version": 1,
+ "name": "symmetrica",
+ "raw_recipe": "{% set version = \"2.0\" %}\n{% set name = \"symmetrica\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://www.algorithm.uni-bayreuth.de/en/research/SYMMETRICA/SYM2_0_tar.gz\n  sha256: bf52788dedc14c482e89f5e7efe8c60864a633314ddd446dd4602d5fdaca0ee2\n\n  # patches are not added here, because the files in the tarball have permission 400 and\n  # the permissions have to be corrected before patching.\n  #\n  # - patches/bruch.patch           # store integers in a temporary variable before freeing memory\n  # - patches/de.patch              # turn off banner\n  # - patches/int32.patch           # use int32_t and uint32_t for type INT.\n  # - patches/sort_sum_rename.patch # rename sort to sym_sort, sum to sym_sum\n  # - patches/makefile.patch        # Fix compiler, i.e., use $CC, and let it use $CFLAGS.\n  # - patches/return_values.patch   # return 0 in functions expecting int\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - libtool\n    - git\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/symmetrica/macro.h\n    - test -f ${PREFIX}/lib/libsymmetrica.a\n\nabout:\n  home: http://www.algorithm.uni-bayreuth.de/en/research/SYMMETRICA/index.html\n  license: ISC\n  license_file: {{ RECIPE_DIR }}/LICENSE\n  summary: |\n    Symmetrica is a collection of routines to handle several topics including\n    ordinary representation theory of the symmetric group and related groups\n\nextra:\n  recipe-maintainers:\n    - isuruf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.algorithm.uni-bayreuth.de/en/research/SYMMETRICA/index.html",
+   "license": "ISC",
+   "license_file": "/Users/travis/build/conda-forge/symmetrica-feedstock/recipe/LICENSE",
+   "summary": "Symmetrica is a collection of routines to handle several topics including\nordinary representation theory of the symmetric group and related groups\n"
+  },
+  "build": {
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "isuruf"
+   ]
+  },
+  "package": {
+   "name": "symmetrica",
+   "version": "2.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": []
+  },
+  "source": {
+   "fn": "symmetrica-2.0.tar.gz",
+   "sha256": "bf52788dedc14c482e89f5e7efe8c60864a633314ddd446dd4602d5fdaca0ee2",
+   "url": "http://www.algorithm.uni-bayreuth.de/en/research/SYMMETRICA/SYM2_0_tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/include/symmetrica/macro.h",
+    "test -f ${PREFIX}/lib/libsymmetrica.a"
+   ]
+  }
+ },
+ "version": "2.0"
+}

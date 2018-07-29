@@ -1,0 +1,27 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/pandoc",
+  "bin/pandoc-citeproc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "gmp",
+   "zlib"
+  ],
+  "license": "GPL",
+  "name": "pandoc",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.16.0.2"
+ },
+ "metadata_version": 1,
+ "name": "pandoc",
+ "raw_recipe": "{% set v = \"1.16.0.2\" %}\n\npackage:\n  name: pandoc\n  version: {{ v }}\n\nsource:\n  fn:   pandoc-{{ v }}-amd64.deb                                                            # [linux64]\n  url:  https://github.com/jgm/pandoc/releases/download/{{ v }}/pandoc-{{ v }}-1-amd64.deb  # [linux64]\n  md5:  00e0b312e764ada376444fb5835d0574                                                    # [linux64]\n  fn:   pandoc-{{ v }}.pkg                                                                  # [osx]\n  url:  https://github.com/jgm/pandoc/releases/download/{{ v }}/pandoc-{{ v }}-osx.pkg      # [osx]\n  md5:  c0a3e7af327e33c58e81ee567655304d                                                    # [osx]\n  fn:   pandoc-{{ v }}-windows.msi                                                          # [win]\n  url:  https://github.com/jgm/pandoc/releases/download/{{ v }}/pandoc-{{ v }}-windows.msi  # [win]\n  md5:  6be571c106d4099ca1066b8a9baa8f2b                                                    # [win]\n\nrequirements:\n  run:\n    - gmp               # [linux64]\n    - zlib              # [linux64]\n\ntest:\n  commands:\n    - pandoc --help\n    - pandoc --version\n\nabout:\n  home: http://johnmacfarlane.net/pandoc/\n  license: GPL\n  summary: Universal markup converter (repackaged binaries)\n\nextra:\n  recipe-maintainers:\n    -janschulz",
+ "rendered_recipe": {},
+ "version": "1.16.0.2"
+}

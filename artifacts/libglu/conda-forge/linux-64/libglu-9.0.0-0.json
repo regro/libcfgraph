@@ -1,0 +1,70 @@
+{
+ "about": {
+  "home": "http://www.mesa3d.org/glu.html",
+  "license": "SGI-2",
+  "summary": "Mesa OpenGL utility library (GLU)"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/GL/glu.h",
+  "include/GL/glu_mangle.h",
+  "lib/libGLU.a",
+  "lib/libGLU.la",
+  "lib/libGLU.so",
+  "lib/libGLU.so.1",
+  "lib/libGLU.so.1.3.1",
+  "lib/pkgconfig/glu.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "SGI-2",
+  "name": "libglu",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "9.0.0"
+ },
+ "metadata_version": 1,
+ "name": "libglu",
+ "raw_recipe": "package:\n    name: libglu\n    version: 9.0.0\n\nsource:\n    fn: glu-9.0.0.tar.gz\n    url: ftp://ftp.freedesktop.org/pub/mesa/glu/glu-9.0.0.tar.gz\n    md5: bbc57d4fe3bd3fb095bdbef6fcb977c4\n\nbuild:\n  number: 0\n  skip: True  # [win or osx]\n\nrequirements:\n    build:\n        - toolchain\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libGLU.a  # [not win]\n    - test -f ${PREFIX}/lib/libGLU.so  # [linux]\n    - test -f ${PREFIX}/lib/libGLU.dylib  # [osx]\n\nabout:\n  home: http://www.mesa3d.org/glu.html\n  license: SGI-2\n  summary: Mesa OpenGL utility library (GLU)\n\nextra:\n  recipe-maintainers:\n    - bgruening\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.mesa3d.org/glu.html",
+   "license": "SGI-2",
+   "summary": "Mesa OpenGL utility library (GLU)"
+  },
+  "build": {
+   "number": 0,
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bgruening"
+   ]
+  },
+  "package": {
+   "name": "libglu",
+   "version": "9.0.0"
+  },
+  "requirements": {
+   "build": [
+    "toolchain"
+   ]
+  },
+  "source": {
+   "fn": "glu-9.0.0.tar.gz",
+   "md5": "bbc57d4fe3bd3fb095bdbef6fcb977c4",
+   "url": "ftp://ftp.freedesktop.org/pub/mesa/glu/glu-9.0.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/lib/libGLU.a",
+    "test -f ${PREFIX}/lib/libGLU.so",
+    "test -f ${PREFIX}/lib/libGLU.dylib"
+   ]
+  }
+ },
+ "version": "9.0.0"
+}

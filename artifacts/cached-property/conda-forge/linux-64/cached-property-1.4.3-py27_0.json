@@ -1,0 +1,182 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.10.8",
+  "conda_private": false,
+  "conda_version": "4.5.4",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "home": "https://github.com/pydanny/cached-property",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "root_pkgs": [
+   "cffi 1.11.5 py36_0",
+   "pyopenssl 18.0.0 py36_0",
+   "cryptography 2.2.1 py36_0",
+   "xz 5.2.3 0",
+   "packaging 17.1 py_0",
+   "requests 2.18.4 py36_1",
+   "certifi 2018.4.16 py36_0",
+   "readline 7.0 0",
+   "chardet 3.0.4 py36_0",
+   "urllib3 1.22 py36_0",
+   "setuptools 39.2.0 py36_0",
+   "zlib 1.2.11 0",
+   "yaml 0.1.7 0",
+   "pycparser 2.18 py36_0",
+   "asn1crypto 0.24.0 py36_0",
+   "libffi 3.2.1 3",
+   "tk 8.6.7 0",
+   "conda 4.5.4 py36_0",
+   "ruamel_yaml 0.15.35 py36_0",
+   "pysocks 1.6.8 py36_1",
+   "pip 9.0.3 py36_0",
+   "idna 2.6 py36_1",
+   "wheel 0.31.0 py36_0",
+   "python 3.6.5 1",
+   "pycosat 0.6.3 py36_0",
+   "ncurses 5.9 10",
+   "six 1.11.0 py36_1",
+   "ca-certificates 2018.4.16 0",
+   "pyparsing 2.2.0 py36_0",
+   "sqlite 3.20.1 2",
+   "conda-env 2.6.0 0",
+   "openssl 1.0.2o 0",
+   "traitlets 4.3.2 py36_0",
+   "pytz 2018.4 py_0",
+   "git 2.14.2 3",
+   "conda-verify 2.0.0 py36_0",
+   "filelock 3.0.4 py36_0",
+   "jsonschema 2.6.0 py36_1",
+   "anaconda-client 1.6.14 py_0",
+   "pyyaml 3.12 py36_1",
+   "beautifulsoup4 4.6.0 py36_0",
+   "patchelf 0.9 2",
+   "clyent 1.2.2 py36_0",
+   "conda-forge-ci-setup 1.3.5 0",
+   "curl 7.60.0 0",
+   "tini 0.18.0 0",
+   "ipython_genutils 0.2.0 py36_0",
+   "libiconv 1.15 0",
+   "krb5 1.14.6 0",
+   "expat 2.2.5 0",
+   "nbformat 4.4.0 py36_0",
+   "decorator 4.3.0 py_0",
+   "glob2 0.6 py_0",
+   "libssh2 1.8.0 2",
+   "conda-build 3.10.8 py36_0",
+   "pkginfo 1.4.2 py36_0",
+   "python-dateutil 2.7.3 py_0",
+   "jinja2 2.10 py36_0",
+   "jupyter_core 4.4.0 py_0",
+   "markupsafe 1.0 py36_0",
+   "psutil 5.4.5 py36_0",
+   "gosu 1.10 0"
+  ],
+  "summary": "A decorator for caching properties in classes."
+ },
+ "conda_build_config": {
+  "c_compiler": "gcc",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "numpy",
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "2.7",
+  "r_base": "3.4",
+  "target_platform": "linux-64"
+ },
+ "files": [
+  "lib/python2.7/site-packages/cached_property-1.4.3-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/cached_property-1.4.3-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/cached_property.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python >=2.7,<2.8.0a0"
+  ],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "name": "cached-property",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1529095105571,
+  "version": "1.4.3"
+ },
+ "metadata_version": 1,
+ "name": "cached-property",
+ "raw_recipe": "{% set name = \"cached-property\" %}\n{% set version = \"1.4.3\" %}\n{% set sha256 = \"f1f9028757dc40b4cb0fd2234bd7b61a302d7b84c683cb8c2c529238a24b8938\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - cached_property\n\nabout:\n  home: https://github.com/pydanny/cached-property\n  license: BSD-3-Clause\n  license_family: BSD\n  summary: 'A decorator for caching properties in classes.'\n\nextra:\n  recipe-maintainers:\n    - mvdbeek\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/pydanny/cached-property",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "summary": "A decorator for caching properties in classes."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py27_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "mvdbeek"
+   ]
+  },
+  "package": {
+   "name": "cached-property",
+   "version": "1.4.3"
+  },
+  "requirements": {
+   "build": [
+    "ca-certificates 2018.4.16 0",
+    "certifi 2018.4.16 py27_0",
+    "libgcc-ng 7.2.0 hdf63c60_3",
+    "ncurses 5.9 10",
+    "openssl 1.0.2o 0",
+    "python 2.7.15 0",
+    "readline 7.0 0",
+    "setuptools 39.2.0 py27_0",
+    "sqlite 3.20.1 2",
+    "tk 8.6.7 0",
+    "zlib 1.2.11 h470a237_3"
+   ],
+   "run": [
+    "python >=2.7,<2.8.0a0"
+   ]
+  },
+  "source": {
+   "fn": "cached-property-1.4.3.tar.gz",
+   "sha256": "f1f9028757dc40b4cb0fd2234bd7b61a302d7b84c683cb8c2c529238a24b8938",
+   "url": "https://pypi.io/packages/source/c/cached-property/cached-property-1.4.3.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "cached_property"
+   ]
+  }
+ },
+ "version": "1.4.3"
+}

@@ -1,0 +1,41 @@
+{
+ "about": {
+  "home": "https://github.com/Drekin/win-unicode-console",
+  "license": "MIT",
+  "summary": "A Python package to enable Unicode input and display when running Python from Windows console."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/run.py",
+  "Lib/site-packages/win_unicode_console-0.5-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/win_unicode_console/__init__.py",
+  "Lib/site-packages/win_unicode_console/buffer.py",
+  "Lib/site-packages/win_unicode_console/console.py",
+  "Lib/site-packages/win_unicode_console/file_object.py",
+  "Lib/site-packages/win_unicode_console/info.py",
+  "Lib/site-packages/win_unicode_console/raw_input.py",
+  "Lib/site-packages/win_unicode_console/readline_hook.py",
+  "Lib/site-packages/win_unicode_console/runner.py",
+  "Lib/site-packages/win_unicode_console/streams.py",
+  "Lib/site-packages/win_unicode_console/tokenize_open.py",
+  "Lib/site-packages/win_unicode_console/unicode_argv.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "win_unicode_console",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.5"
+ },
+ "metadata_version": 1,
+ "name": "win_unicode_console",
+ "raw_recipe": "{% set version = \"0.5\" %}\n\npackage:\n    name: win_unicode_console\n    version: {{ version }}\n\nsource:\n    fn: win_unicode_console-{{ version }}.zip\n    url: https://pypi.io/packages/source/w/win_unicode_console/win_unicode_console-{{ version }}.zip\n    sha256: d4142d4d56d46f449d6f00536a73625a871cba040f0bc1a2e305a04578f07d1e\n\nbuild:\n  number: 0\n  skip: True  # [not win]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - win_unicode_console\n\nabout:\n    home: https://github.com/Drekin/win-unicode-console\n    summary: 'A Python package to enable Unicode input and display when running Python from Windows console.'\n    license: MIT\n\nextra:\n    recipe-maintainers:\n        - minrk\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.5"
+}

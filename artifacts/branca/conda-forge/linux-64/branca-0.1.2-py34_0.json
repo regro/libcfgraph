@@ -1,0 +1,37 @@
+{
+ "about": {
+  "home": "https://github.com/python-visualization/branca",
+  "license": "MIT",
+  "summary": "This library is a spinoff from Folium with the non-map-specific features."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/branca-master-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/branca-master-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/branca/__init__.py",
+  "lib/python3.4/site-packages/branca/colormap.py",
+  "lib/python3.4/site-packages/branca/element.py",
+  "lib/python3.4/site-packages/branca/six.py",
+  "lib/python3.4/site-packages/branca/templates/color_scale.js",
+  "lib/python3.4/site-packages/branca/utilities.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "jinja2",
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "branca",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1.2"
+ },
+ "metadata_version": 1,
+ "name": "branca",
+ "raw_recipe": "{% set version = \"0.1.2\" %}\n\npackage:\n    name: branca\n    version: {{ version }}\n\nsource:\n    fn: branca-{{ version }}.tar.gz\n    url: https://github.com/python-visualization/branca/archive/v{{ version }}.tar.gz\n    sha256: f4130a1ff9c85e5d7777b5abf8b01d22df692698a11b2eeed35fbd19a32330e2\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - jinja2\n\ntest:\n    imports:\n        - branca\n\nabout:\n    home: https://github.com/python-visualization/branca\n    license: MIT\n    summary: 'This library is a spinoff from Folium with the non-map-specific features.'\n\nextra:\n    recipe-maintainers:\n        - BibMartin\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.1.2"
+}

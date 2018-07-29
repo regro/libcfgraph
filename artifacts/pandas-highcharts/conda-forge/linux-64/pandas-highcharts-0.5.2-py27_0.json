@@ -1,0 +1,37 @@
+{
+ "about": {
+  "home": "https://github.com/gtnx/pandas-highcharts",
+  "license": "MIT",
+  "summary": "pandas-highcharts is a Python package which allows you to easily build Highcharts plots with pandas.DataFrame objects."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pandas_highcharts-0.5.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pandas_highcharts/__init__.py",
+  "lib/python2.7/site-packages/pandas_highcharts/core.py",
+  "lib/python2.7/site-packages/pandas_highcharts/data/ANGEL_SECTORS.csv",
+  "lib/python2.7/site-packages/pandas_highcharts/data/DEU_PCPIPCH.csv",
+  "lib/python2.7/site-packages/pandas_highcharts/display.py",
+  "lib/python2.7/site-packages/pandas_highcharts/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "ipython",
+   "pandas",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "pandas-highcharts",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.5.2"
+ },
+ "metadata_version": 1,
+ "name": "pandas-highcharts",
+ "raw_recipe": "{% set version = \"0.5.2\" %}\n{% set name = \"pandas-highcharts\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 2eace87c840dc430f40f739016f864df47721707feeeeb7db679218af73bcb22\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pandas\n    - ipython\n\ntest:\n  imports:\n    - {{ name.replace(\"-\", \"_\") }}\n\nabout:\n  home: https://github.com/gtnx/pandas-highcharts\n  license_file: LICENSE\n  license: MIT\n  summary: 'pandas-highcharts is a Python package which allows you to easily build Highcharts plots with pandas.DataFrame objects.'\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - mariusvniekerk\n",
+ "rendered_recipe": {},
+ "version": "0.5.2"
+}

@@ -1,0 +1,51 @@
+{
+ "about": {
+  "home": "https://github.com/giampaolo/psutil",
+  "license": "BSD 3-Clause",
+  "summary": "A cross-platform process and system utilities module for Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/psutil-4.2.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/psutil/__init__.py",
+  "Lib/site-packages/psutil/_common.py",
+  "Lib/site-packages/psutil/_compat.py",
+  "Lib/site-packages/psutil/_psbsd.py",
+  "Lib/site-packages/psutil/_pslinux.py",
+  "Lib/site-packages/psutil/_psosx.py",
+  "Lib/site-packages/psutil/_psposix.py",
+  "Lib/site-packages/psutil/_pssunos.py",
+  "Lib/site-packages/psutil/_psutil_windows.cp35-win_amd64.pyd",
+  "Lib/site-packages/psutil/_pswindows.py",
+  "Lib/site-packages/psutil/tests/__init__.py",
+  "Lib/site-packages/psutil/tests/runner.py",
+  "Lib/site-packages/psutil/tests/test_bsd.py",
+  "Lib/site-packages/psutil/tests/test_linux.py",
+  "Lib/site-packages/psutil/tests/test_memory_leaks.py",
+  "Lib/site-packages/psutil/tests/test_misc.py",
+  "Lib/site-packages/psutil/tests/test_osx.py",
+  "Lib/site-packages/psutil/tests/test_posix.py",
+  "Lib/site-packages/psutil/tests/test_process.py",
+  "Lib/site-packages/psutil/tests/test_sunos.py",
+  "Lib/site-packages/psutil/tests/test_system.py",
+  "Lib/site-packages/psutil/tests/test_windows.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "psutil",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "4.2.0"
+ },
+ "metadata_version": 1,
+ "name": "psutil",
+ "raw_recipe": "{% set version = \"4.2.0\" %}\n\npackage:\n  name: psutil\n  version: {{ version }}\n\nsource:\n  fn: psutil-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/psutil/psutil-{{ version }}.tar.gz\n  md5: 713f259f917a0c26acfbb7e6ae632ef7\n\nbuild:\n  number: 0\n  skip: true  # [win and py2k]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  requires:\n    - ipaddress    # [py<33]\n    - mock         # [py<33]\n    - unittest2    # [py<27]\n\n  imports:\n    - psutil\n    - psutil.tests\n\nabout:\n  home: https://github.com/giampaolo/psutil\n  license: BSD 3-Clause\n  summary: A cross-platform process and system utilities module for Python\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - pelson\n",
+ "rendered_recipe": {},
+ "version": "4.2.0"
+}

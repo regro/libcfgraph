@@ -1,0 +1,54 @@
+{
+ "about": {
+  "description": "Pweave is a scientific report generator and a literate programming\ntool for Python. It can capture the results and plots from data\nanalysis and works well with numpy, scipy and matplotlib.\n",
+  "dev_url": "https://github.com/mpastell/Pweave",
+  "doc_url": "http://mpastell.com/pweave",
+  "home": "http://mpastell.com/pweave",
+  "license": "BSD 3-Clause",
+  "summary": "Scientific reports with embedded python computations with reST, LaTeX or markdown"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/Pweave",
+  "bin/ptangle",
+  "bin/pweave-convert",
+  "bin/pypublish",
+  "lib/python2.7/site-packages/Pweave-0.25-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pweave/__init__.py",
+  "lib/python2.7/site-packages/pweave/config.py",
+  "lib/python2.7/site-packages/pweave/formatters.py",
+  "lib/python2.7/site-packages/pweave/markdownmath.py",
+  "lib/python2.7/site-packages/pweave/processors.py",
+  "lib/python2.7/site-packages/pweave/pweb.py",
+  "lib/python2.7/site-packages/pweave/readers.py",
+  "lib/python2.7/site-packages/pweave/scripts.py",
+  "lib/python2.7/site-packages/pweave/subsnippets.py",
+  "lib/python2.7/site-packages/pweave/templates.py",
+  "lib/python2.7/site-packages/pweave/themes/__init__.py",
+  "lib/python2.7/site-packages/pweave/themes/bootstrap.py",
+  "lib/python2.7/site-packages/pweave/themes/cerulean.py",
+  "lib/python2.7/site-packages/pweave/themes/journal.py",
+  "lib/python2.7/site-packages/pweave/themes/skeleton.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "beautifulsoup4",
+   "markdown",
+   "pygments",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pweave",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.25"
+ },
+ "metadata_version": 1,
+ "name": "pweave",
+ "raw_recipe": "{% set version = \"0.25\" %}\n{% set sha256 = \"1c0f6921196646243eb7ff9eee742305909be2bc7a5eeeb06a7d1f66cc9758c7\" %}\n\npackage:\n  name: pweave\n  version: {{ version }}\n\nsource:\n  fn: Pweave-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/pweave/Pweave-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - Pweave = pweave.scripts:weave\n    - pweave = pweave.scripts:weave\n    - Ptangle = pweave.scripts:tangle\n    - ptangle = pweave.scripts:tangle\n    - pypublish = pweave.scripts:publish\n    - pweave-convert = pweave.scripts:convert\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - markdown\n    - pygments\n    - beautifulsoup4\n\ntest:\n  imports:\n    - pweave\n    - pweave.formatters\n    - pweave.themes\n    - pweave.formatters\n    - pweave.processors\n\n  commands:\n    - Pweave --help\n    - Ptangle --help\n    - pypublish --help\n    - pweave-convert --help\n\nabout:\n  home: http://mpastell.com/pweave\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Scientific reports with embedded python computations with reST, LaTeX or markdown'\n  description: |\n    Pweave is a scientific report generator and a literate programming\n    tool for Python. It can capture the results and plots from data\n    analysis and works well with numpy, scipy and matplotlib.\n  doc_url: http://mpastell.com/pweave\n  dev_url: https://github.com/mpastell/Pweave\n\nextra:\n  recipe-maintainers:\n    - mpastell\n",
+ "rendered_recipe": {},
+ "version": "0.25"
+}

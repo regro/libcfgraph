@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "https://tmux.github.io/",
+  "license": "ISC",
+  "summary": "A terminal multiplexer."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/tmux",
+  "share/man/man1/tmux.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "libevent 2.0.*",
+   "ncurses 5.9*"
+  ],
+  "license": "ISC",
+  "name": "tmux",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.2"
+ },
+ "metadata_version": 1,
+ "name": "tmux",
+ "raw_recipe": "{% set version = \"2.2\" %}\n\npackage:\n  name: tmux\n  version: {{ version }}\n\nsource:\n  fn: tmux-{{ version }}.tar.gz\n  url: https://github.com/tmux/tmux/archive/{{ version }}.tar.gz\n  sha256: f17f4d98454bd87d0065047ef0a4cf78da180ec5e957124bedee3a5fdd72a598\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - toolchain\n    - autoconf\n    - automake\n    - libtool\n    - m4\n    - pkg-config\n    - libevent 2.0.*\n    - ncurses 5.9*\n\n  run:\n    - libevent 2.0.*\n    - ncurses 5.9*\n\ntest:\n  commands:\n    # Verify command existence.\n    - which tmux\n\n    # Check that no server is running.\n    - $(tmux info || true) 2> >(grep \"no server running on\")\n\nabout:\n  home: https://tmux.github.io/\n  license: ISC\n  license_file: COPYING\n  summary: A terminal multiplexer.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "2.2"
+}

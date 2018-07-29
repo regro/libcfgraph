@@ -1,0 +1,30 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/binaryornot-0.4.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/binaryornot-0.4.0-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/binaryornot/__init__.py",
+  "lib/python3.4/site-packages/binaryornot/check.py",
+  "lib/python3.4/site-packages/binaryornot/helpers.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "chardet",
+   "python 3.4*"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "binaryornot",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.4.0"
+ },
+ "metadata_version": 1,
+ "name": "binaryornot",
+ "raw_recipe": "{% set version = \"0.4.0\" %}\n{% set gh_org = \"audreyr\" %}\n{% set gh_repo = \"binaryornot\" %}\n\n\npackage:\n  name: {{ gh_repo }}\n  version: {{ version }}\n\nsource:\n  fn: {{ gh_repo }}-{{ version }}.tar.gz\n  url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/{{ version }}.tar.gz\n  sha256: 2d2fa466cf6755638af0295b6ad048543e31332b40e905bbf546e28f63eeb9be\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - chardet\n\ntest:\n  files:\n    - requirements.txt\n  requires:\n    - coverage\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: BSD-3-Clause\n  summary: >\n            Ultra-lightweight pure Python package to check if a file is binary\n            or text.\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "rendered_recipe": {},
+ "version": "0.4.0"
+}

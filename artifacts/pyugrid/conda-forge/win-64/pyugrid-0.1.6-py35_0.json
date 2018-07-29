@@ -1,0 +1,49 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pyugrid-0.1.6-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/pyugrid/__init__.py",
+  "Lib/site-packages/pyugrid/data_set.py",
+  "Lib/site-packages/pyugrid/read_netcdf.py",
+  "Lib/site-packages/pyugrid/test_examples.py",
+  "Lib/site-packages/pyugrid/ugrid.py",
+  "Lib/site-packages/pyugrid/ugrid_wx.py",
+  "Lib/site-packages/pyugrid/util.py",
+  "Lib/site-packages/test/__init__.py",
+  "Lib/site-packages/test/point_in_triangle_test.py",
+  "Lib/site-packages/test/sample_script.py",
+  "Lib/site-packages/test/test_add_data.py",
+  "Lib/site-packages/test/test_dataset.py",
+  "Lib/site-packages/test/test_find_data_set.py",
+  "Lib/site-packages/test/test_find_nodes.py",
+  "Lib/site-packages/test/test_grid_manipulation.py",
+  "Lib/site-packages/test/test_read.py",
+  "Lib/site-packages/test/test_save_as_netcdf.py",
+  "Lib/site-packages/test/test_ugrid.py",
+  "Lib/site-packages/test/test_write_read.py",
+  "Lib/site-packages/test/utilities.py",
+  "Scripts/ugrid_wx-script.pyw",
+  "Scripts/ugrid_wx.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "netcdf4",
+   "numpy",
+   "python 3.5*"
+  ],
+  "license": "BSD",
+  "name": "pyugrid",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.1.6"
+ },
+ "metadata_version": 1,
+ "name": "pyugrid",
+ "raw_recipe": "{% set version = \"0.1.6\" %}\n\npackage:\n    name: pyugrid\n    version: {{ version }}\n\nsource:\n    fn: pyugrid-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/p/pyugrid/pyugrid-{{ version }}.tar.gz\n    md5: cb1c1196fefa44fae555659aeb91b7ee\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - netcdf4\n\ntest:\n    imports:\n        - pyugrid\n\nabout:\n    home: https://github.com/pyugrid/pyugrid\n    license: BSD\n    summary: A Python API to utilize data written using the unstructured grid UGRID conventions.\n\nextra:\n    recipe-maintainers:\n        - pelson\n        - rhattersley\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.1.6"
+}

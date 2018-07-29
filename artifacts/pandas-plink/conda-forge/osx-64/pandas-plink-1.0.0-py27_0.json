@@ -1,0 +1,47 @@
+{
+ "about": {
+  "dev_url": "https://github.com/glimix/pandas-plink",
+  "doc_url": "http://pandas-plink.readthedocs.io",
+  "home": "http://github.com/glimix/pandas-plink",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Convert PLINK files to Pandas data frame"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/_bed_reader.so",
+  "lib/python2.7/site-packages/pandas_plink-1.0.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pandas_plink-1.0.0-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/pandas_plink/__init__.py",
+  "lib/python2.7/site-packages/pandas_plink/_bed_read.py",
+  "lib/python2.7/site-packages/pandas_plink/_builder.py",
+  "lib/python2.7/site-packages/pandas_plink/_read.py",
+  "lib/python2.7/site-packages/pandas_plink/test/data_files/data.bed",
+  "lib/python2.7/site-packages/pandas_plink/test/data_files/data.bim",
+  "lib/python2.7/site-packages/pandas_plink/test/data_files/data.fam",
+  "lib/python2.7/site-packages/pandas_plink/test/test_reader.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "cffi >=1.7",
+   "numpy >=1.9",
+   "pandas >=0.17",
+   "python 2.7*",
+   "tqdm >=4.10"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "pandas-plink",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0.0"
+ },
+ "metadata_version": 1,
+ "name": "pandas-plink",
+ "raw_recipe": "{% set name = \"pandas-plink\" %}\n{% set version = \"1.0.0\" %}\n{% set sha256 = \"17409b97a9aba3319b304a6c6dc5ef717ff36ecc2e12aaf0fb4fce641e882ed1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win or (osx or unix) and not py27]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cffi >=1.7\n    - pytest-runner\n  run:\n    - python\n    - cffi >=1.7\n    - numpy >=1.9\n    - pandas >=0.17\n    - tqdm >=4.10\n\ntest:\n  requires:\n    - pytest >=3\n    - python 3.5.*  # [win and py35]\n  imports:\n    - pandas_plink\n  commands:\n    - python -c \"import sys; import pandas_plink; sys.exit(pandas_plink.test())\"\n\nabout:\n  home: http://github.com/glimix/pandas-plink\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Convert PLINK files to Pandas data frame'\n  doc_url: http://pandas-plink.readthedocs.io\n  dev_url: https://github.com/glimix/pandas-plink\n\nextra:\n  recipe-maintainers:\n    - Horta\n",
+ "rendered_recipe": {},
+ "version": "1.0.0"
+}

@@ -1,0 +1,54 @@
+{
+ "about": {
+  "home": "http://wradlib.org/",
+  "license": "MIT",
+  "summary": "Open Source Library for Weather Radar Data Processing"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/wradlib-0.9.0-py3.4.egg-info",
+  "lib/python3.4/site-packages/wradlib/__init__.py",
+  "lib/python3.4/site-packages/wradlib/adjust.py",
+  "lib/python3.4/site-packages/wradlib/atten.py",
+  "lib/python3.4/site-packages/wradlib/clutter.py",
+  "lib/python3.4/site-packages/wradlib/comp.py",
+  "lib/python3.4/site-packages/wradlib/dp.py",
+  "lib/python3.4/site-packages/wradlib/fill.py",
+  "lib/python3.4/site-packages/wradlib/georef.py",
+  "lib/python3.4/site-packages/wradlib/io.py",
+  "lib/python3.4/site-packages/wradlib/ipol.py",
+  "lib/python3.4/site-packages/wradlib/qual.py",
+  "lib/python3.4/site-packages/wradlib/trafo.py",
+  "lib/python3.4/site-packages/wradlib/util.py",
+  "lib/python3.4/site-packages/wradlib/verify.py",
+  "lib/python3.4/site-packages/wradlib/version.py",
+  "lib/python3.4/site-packages/wradlib/vis.py",
+  "lib/python3.4/site-packages/wradlib/vpr.py",
+  "lib/python3.4/site-packages/wradlib/zonalstats.py",
+  "lib/python3.4/site-packages/wradlib/zr.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_1",
+  "build_number": 1,
+  "depends": [
+   "gdal 2.1.*",
+   "h5py",
+   "matplotlib",
+   "netcdf4",
+   "numpy",
+   "python 3.4*",
+   "scipy"
+  ],
+  "license": "MIT",
+  "name": "wradlib",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.9.0"
+ },
+ "metadata_version": 1,
+ "name": "wradlib",
+ "raw_recipe": "{% set version = \"0.9.0\" %}\n\npackage:\n    name: wradlib\n    version: {{ version }}\n\nsource:\n    fn: wradlib-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/w/wradlib/wradlib-{{ version }}.tar.gz\n    sha256: 2d8b1c2871bd038c84f12bfc55b3e02a8fd5285666f8180cc641f94a20005937\n\nbuild:\n    number: 1\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n        - numpy\n        - scipy\n        - matplotlib\n        - h5py\n        - netcdf4\n        - gdal 2.1.*\n    run:\n        - python\n        - numpy\n        - scipy\n        - matplotlib\n        - h5py\n        - netcdf4\n        - gdal 2.1.*\n\ntest:\n    imports:\n        - wradlib  # [not osx]\n    commands:\n        # hack to get macosx matplotlib running\n        # see https://github.com/conda-forge/wradlib-feedstock/pull/20\n        - python -c \"import matplotlib as mpl; mpl.use('Agg'); import wradlib\"  # [osx]\n\nabout:\n    home: http://wradlib.org/\n    license: MIT\n    summary: \"Open Source Library for Weather Radar Data Processing\"\n\nextra:\n    recipe-maintainers:\n        - jjhelmus\n        - kmuehlbauer\n",
+ "rendered_recipe": {},
+ "version": "0.9.0"
+}

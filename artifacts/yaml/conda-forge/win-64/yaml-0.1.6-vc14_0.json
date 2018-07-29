@@ -1,0 +1,73 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Library/bin/yaml.dll",
+  "Library/include/yaml.h",
+  "Library/lib/yaml.lib",
+  "Library/lib/yaml_static.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "vc14_0",
+  "build_number": 0,
+  "depends": [],
+  "features": "vc14",
+  "license": "MIT",
+  "name": "yaml",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.1.6"
+ },
+ "metadata_version": 1,
+ "name": "yaml",
+ "raw_recipe": "{% set version = \"0.1.6\" %}\n\npackage:\n  name: yaml\n  version: {{ version }}\n\nsource:\n  fn: yaml-{{ version }}.tar.gz\n  url: http://pyyaml.org/download/libyaml/yaml-{{ version }}.tar.gz\n  md5: 5fe00cda18ca5daeb43762b80c38e06e\n  patches:\n    # Change CMakeLists so that we can build static and shared libraries.\n    # See this PR ( https://github.com/yaml/libyaml/pull/10 ) for details.\n    - CMakeLists.txt.patch\n\nbuild:\n  number: 0\n  features:\n    - vc9                # [win and py27]\n    - vc10               # [win and py34]\n    - vc14               # [win and py35]\n\nrequirements:\n  build:\n    - cmake              # [win]\n    - python             # [win]\n    - pkg-config         # [unix]\n    - libtool            # [unix]\n\ntest:\n  requires:\n    - python {{ environ['PY_VER'] + '*' }}            # [win]\n\n  commands:\n    # Check headers.\n    - test -f \"${PREFIX}/include/yaml.h\"              # [unix]\n    - if not exist %LIBRARY_INC%\\\\yaml.h exit 1       # [win]\n\n    # Check libraries.\n    - test -f \"${PREFIX}/lib/libyaml.a\"               # [unix]\n    - test -f \"${PREFIX}/lib/libyaml.dylib\"           # [osx]\n    - test -f \"${PREFIX}/lib/libyaml.so\"              # [linux]\n    - if not exist %LIBRARY_LIB%\\\\yaml_static.lib exit 1     # [win]\n    - if not exist %LIBRARY_LIB%\\\\yaml.lib exit 1     # [win]\n    - if not exist %LIBRARY_BIN%\\\\yaml.dll exit 1     # [win]\n\nabout:\n  home: http://pyyaml.org/wiki/LibYAML'\n  license: MIT\n  summary: A C library for parsing and emitting YAML.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://pyyaml.org/wiki/LibYAML'",
+   "license": "MIT",
+   "summary": "A C library for parsing and emitting YAML."
+  },
+  "build": {
+   "features": [
+    "vc14"
+   ],
+   "number": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "yaml",
+   "version": "0.1.6"
+  },
+  "requirements": {
+   "build": [
+    "cmake",
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "yaml-0.1.6.tar.gz",
+   "md5": "5fe00cda18ca5daeb43762b80c38e06e",
+   "patches": [
+    "CMakeLists.txt.patch"
+   ],
+   "url": "http://pyyaml.org/download/libyaml/yaml-0.1.6.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "if not exist %LIBRARY_INC%\\\\yaml.h exit 1",
+    "if not exist %LIBRARY_LIB%\\\\yaml_static.lib exit 1",
+    "if not exist %LIBRARY_LIB%\\\\yaml.lib exit 1",
+    "if not exist %LIBRARY_BIN%\\\\yaml.dll exit 1"
+   ],
+   "requires": [
+    "python 3.5*"
+   ]
+  }
+ },
+ "version": "0.1.6"
+}

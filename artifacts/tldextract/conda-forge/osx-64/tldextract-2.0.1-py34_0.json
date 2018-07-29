@@ -1,0 +1,43 @@
+{
+ "about": {
+  "home": "https://github.com/john-kurkowski/tldextract",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Accurately separate the TLD from the registered domain andsubdomains of a URL, using the Public Suffix List."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/tldextract",
+  "lib/python3.4/site-packages/tldextract-2.0.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/tldextract-2.0.1-py3.4.egg-info/pbr.json",
+  "lib/python3.4/site-packages/tldextract/.tld_set_snapshot",
+  "lib/python3.4/site-packages/tldextract/__init__.py",
+  "lib/python3.4/site-packages/tldextract/__main__.py",
+  "lib/python3.4/site-packages/tldextract/cli.py",
+  "lib/python3.4/site-packages/tldextract/remote.py",
+  "lib/python3.4/site-packages/tldextract/tldextract.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "idna",
+   "python 3.4*",
+   "requests >=2.1.0",
+   "requests-file >=1.4",
+   "setuptools"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "tldextract",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.0.1"
+ },
+ "metadata_version": 1,
+ "name": "tldextract",
+ "raw_recipe": "{%set name = \"tldextract\" %}\n{%set version = \"2.0.1\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"ad4e07999142b9effc29d5a5c762f85cfe04f90f681d3b3729ac09616b4d61d6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  preserve_egg_dir: True\n  entry_points:\n    - tldextract = tldextract.cli:main\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - idna\n    - requests >=2.1.0\n    - requests-file >=1.4\n\ntest:\n  imports:\n    - tldextract\n\n  commands:\n    - tldextract --help\n\nabout:\n  home: https://github.com/john-kurkowski/tldextract\n  license: BSD 3-Clause\n  # license_file: LICENSE not in MANIFEST - see https://github.com/john-kurkowski/tldextract/pull/108\n  license_family: BSD\n  summary: 'Accurately separate the TLD from the registered domain andsubdomains of a URL, using the Public Suffix List.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "2.0.1"
+}

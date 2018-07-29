@@ -1,0 +1,117 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/cytoolz-0.8.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/cytoolz-0.8.0-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/cytoolz/__init__.pxd",
+  "Lib/site-packages/cytoolz/__init__.py",
+  "Lib/site-packages/cytoolz/_signatures.py",
+  "Lib/site-packages/cytoolz/_version.py",
+  "Lib/site-packages/cytoolz/compatibility.py",
+  "Lib/site-packages/cytoolz/cpython.pxd",
+  "Lib/site-packages/cytoolz/curried/__init__.py",
+  "Lib/site-packages/cytoolz/curried/exceptions.py",
+  "Lib/site-packages/cytoolz/curried/operator.py",
+  "Lib/site-packages/cytoolz/dicttoolz.pxd",
+  "Lib/site-packages/cytoolz/dicttoolz.pyd",
+  "Lib/site-packages/cytoolz/dicttoolz.pyx",
+  "Lib/site-packages/cytoolz/functoolz.pxd",
+  "Lib/site-packages/cytoolz/functoolz.pyd",
+  "Lib/site-packages/cytoolz/functoolz.pyx",
+  "Lib/site-packages/cytoolz/itertoolz.pxd",
+  "Lib/site-packages/cytoolz/itertoolz.pyd",
+  "Lib/site-packages/cytoolz/itertoolz.pyx",
+  "Lib/site-packages/cytoolz/recipes.pxd",
+  "Lib/site-packages/cytoolz/recipes.pyd",
+  "Lib/site-packages/cytoolz/recipes.pyx",
+  "Lib/site-packages/cytoolz/tests/dev_skip_test.py",
+  "Lib/site-packages/cytoolz/tests/test_compatibility.py",
+  "Lib/site-packages/cytoolz/tests/test_curried.py",
+  "Lib/site-packages/cytoolz/tests/test_curried_toolzlike.py",
+  "Lib/site-packages/cytoolz/tests/test_dev_skip_test.py",
+  "Lib/site-packages/cytoolz/tests/test_dicttoolz.py",
+  "Lib/site-packages/cytoolz/tests/test_docstrings.py",
+  "Lib/site-packages/cytoolz/tests/test_doctests.py",
+  "Lib/site-packages/cytoolz/tests/test_embedded_sigs.py",
+  "Lib/site-packages/cytoolz/tests/test_functoolz.py",
+  "Lib/site-packages/cytoolz/tests/test_inspect_args.py",
+  "Lib/site-packages/cytoolz/tests/test_itertoolz.py",
+  "Lib/site-packages/cytoolz/tests/test_none_safe.py",
+  "Lib/site-packages/cytoolz/tests/test_recipes.py",
+  "Lib/site-packages/cytoolz/tests/test_serialization.py",
+  "Lib/site-packages/cytoolz/tests/test_signatures.py",
+  "Lib/site-packages/cytoolz/tests/test_utils.py",
+  "Lib/site-packages/cytoolz/utils.pxd",
+  "Lib/site-packages/cytoolz/utils.pyd",
+  "Lib/site-packages/cytoolz/utils.pyx"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "toolz >=0.8.0"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "cytoolz",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.8.0"
+ },
+ "metadata_version": 1,
+ "name": "cytoolz",
+ "raw_recipe": "{% set version = \"0.8.0\" %}\n\npackage:\n  name: cytoolz\n  version: {{ version }}\n\nsource:\n  fn: cytoolz-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/cytoolz/cytoolz-{{ version }}.tar.gz\n  md5: 432f0a17e04223942ebb5312d8f895ad\n\nbuild:\n  number: 0\n  script: python setup.py install --no-cython --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - setuptools\n    - python\n    - toolz >=0.8.0\n  run:\n    - python\n    - toolz >=0.8.0\n\ntest:\n  requires:\n    - nose\n  imports:\n    - cytoolz\n    - cytoolz.curried\n  commands:\n    - nosetests --with-doctest cytoolz\n\nabout:\n  home: https://github.com/pytoolz/cytoolz\n  license: BSD 3-Clause\n  summary: Cython implementation of Toolz. High performance functional utilities.\n\nextra:\n  recipe-maintainers:\n    - eriknw\n    - mrocklin\n    - jcrist\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/pytoolz/cytoolz",
+   "license": "BSD 3-Clause",
+   "summary": "Cython implementation of Toolz. High performance functional utilities."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --no-cython --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "eriknw",
+    "mrocklin",
+    "jcrist"
+   ]
+  },
+  "package": {
+   "name": "cytoolz",
+   "version": "0.8.0"
+  },
+  "requirements": {
+   "build": [
+    "setuptools",
+    "python",
+    "toolz >=0.8.0"
+   ],
+   "run": [
+    "python",
+    "toolz >=0.8.0"
+   ]
+  },
+  "source": {
+   "fn": "cytoolz-0.8.0.tar.gz",
+   "md5": "432f0a17e04223942ebb5312d8f895ad",
+   "url": "https://pypi.io/packages/source/c/cytoolz/cytoolz-0.8.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "nosetests --with-doctest cytoolz"
+   ],
+   "imports": [
+    "cytoolz",
+    "cytoolz.curried"
+   ],
+   "requires": [
+    "nose"
+   ]
+  }
+ },
+ "version": "0.8.0"
+}

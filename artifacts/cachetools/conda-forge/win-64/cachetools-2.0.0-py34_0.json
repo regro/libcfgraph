@@ -1,0 +1,43 @@
+{
+ "about": {
+  "description": "This module provides various memoizing collections and decorators, including variants of the Python 3 Standard Library @lru_cache function decorator.\n",
+  "dev_url": "https://github.com/tkem/cachetools",
+  "doc_url": "http://pythonhosted.org/cachetools/",
+  "home": "https://github.com/tkem/cachetools",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Extensible memoizing collections and decorators"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/cachetools-2.0.0-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/cachetools/__init__.py",
+  "Lib/site-packages/cachetools/abc.py",
+  "Lib/site-packages/cachetools/cache.py",
+  "Lib/site-packages/cachetools/func.py",
+  "Lib/site-packages/cachetools/keys.py",
+  "Lib/site-packages/cachetools/lfu.py",
+  "Lib/site-packages/cachetools/lru.py",
+  "Lib/site-packages/cachetools/rr.py",
+  "Lib/site-packages/cachetools/ttl.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "cachetools",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.0.0"
+ },
+ "metadata_version": 1,
+ "name": "cachetools",
+ "raw_recipe": "{% set name = \"cachetools\" %}\n{% set version = \"2.0.0\" %}\n{% set sha256 = \"715a7202240dc20dbe83abdb2d804d543e2d4f07af146f53c82166bd75f3a628\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - cachetools\n\nabout:\n  home: https://github.com/tkem/cachetools\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Extensible memoizing collections and decorators'\n\n  description: |\n    This module provides various memoizing collections and decorators, including variants of the Python 3 Standard Library @lru_cache function decorator.\n  doc_url: http://pythonhosted.org/cachetools/\n  dev_url: https://github.com/tkem/cachetools\n\nextra:\n  recipe-maintainers:\n    - MaartenBreddels\n",
+ "rendered_recipe": {},
+ "version": "2.0.0"
+}

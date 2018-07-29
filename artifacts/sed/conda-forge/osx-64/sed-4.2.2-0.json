@@ -1,0 +1,26 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/sed",
+  "share/info/dir",
+  "share/info/sed.info",
+  "share/man/man1/sed.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "GPL-3",
+  "name": "sed",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "4.2.2"
+ },
+ "metadata_version": 1,
+ "name": "sed",
+ "raw_recipe": "{% set version = \"4.2.2\" %}\n{% set sha256 = \"fea0a94d4b605894f3e2d5572e3f96e4413bcad3a085aae7367c2cf07908b2ff\" %}\n\npackage:\n  name: sed\n  version: {{ version }}\n\nsource:\n  fn: sed-{{ version }}.tar.gz\n  url: http://ftp.gnu.org/gnu/sed/sed-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/bin/sed\"  # [unix]\n\nabout:\n  home: https://www.gnu.org/software/sed/\n  license: GPL-3\n  summary: 'sed (stream editor) is a non-interactive command-line text editor.'\n\nextra:\n  recipe-maintainers:\n    - tfors\n",
+ "rendered_recipe": {},
+ "version": "4.2.2"
+}

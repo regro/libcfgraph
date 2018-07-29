@@ -1,0 +1,30 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/flatc",
+  "include/flatbuffers/flatbuffers.h",
+  "include/flatbuffers/hash.h",
+  "include/flatbuffers/idl.h",
+  "include/flatbuffers/reflection.h",
+  "include/flatbuffers/reflection_generated.h",
+  "include/flatbuffers/util.h",
+  "lib/libflatbuffers.a"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "Apache License 2.0",
+  "name": "flatbuffers",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.3.0"
+ },
+ "metadata_version": 1,
+ "name": "flatbuffers",
+ "raw_recipe": "{% set version = \"1.3.0\" %}\n\npackage:\n  name: flatbuffers\n  version: {{ version }}\n\nsource:\n  fn: flatbuffers-{{ version }}.tar.gz\n  url: https://github.com/google/flatbuffers/archive/v{{ version }}.tar.gz\n  md5: 86d13e8c4c19c2bbadff86c5435b2fca\n\nbuild:\n  skip: true  # [win]\n  number: 0\n\nrequirements:\n  build:\n    - cmake\n\ntest:\n  commands:\n    - test -f $PREFIX/bin/flatc\n    - test -f $PREFIX/include/flatbuffers/flatbuffers.h\n\nabout:\n  home: http://google.github.io/flatbuffers/\n  license: Apache License 2.0\n  summary: Memory Efficient Serialization Library\n\nextra:\n  recipe-maintainers:\n    - wesm\n    - msarahan\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.3.0"
+}

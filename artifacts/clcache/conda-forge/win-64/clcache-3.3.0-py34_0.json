@@ -1,0 +1,32 @@
+{
+ "about": {
+  "description": "clcache.py is a little Python script which attempts to avoid unnecessary\nrecompilation by reusing previously cached object files if possible.\nIt is meant to be called instead of the original 'cl.exe' executable.\nThe script analyses the command line to decide whether source code is to be compiled.\nIf so, a cache will be queried for a previously stored object file.\n\nIf the script is called in an unsupported way (e.g. if the compiler is called for linking),\nthe script will simply relay the invocation to the real 'cl.exe' program.\n",
+  "home": "https://github.com/frerich/clcache",
+  "license": "BSD 3-Clause",
+  "summary": "a compiler cache for Microsoft Visual Studio"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Scripts/clcache-script.py",
+  "Scripts/clcache.exe",
+  "Scripts/clcache.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "clcache",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "3.3.0"
+ },
+ "metadata_version": 1,
+ "name": "clcache",
+ "raw_recipe": "{% set name = \"clcache\" %}\n{% set version = \"3.3.0\" %}\n{% set sha256 = \"57659520283809b96035bc1a39678588df1143435e3b3467f1fe82d564d93ad4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/frerich/clcache/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  entry_points:\n    - clcache = clcache:main\n  skip: True  # [not win or py2k]\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  commands:\n    - clcache --help\n\nabout:\n  home: https://github.com/frerich/clcache\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'a compiler cache for Microsoft Visual Studio'\n\n  description: |\n    clcache.py is a little Python script which attempts to avoid unnecessary\n    recompilation by reusing previously cached object files if possible.\n    It is meant to be called instead of the original 'cl.exe' executable.\n    The script analyses the command line to decide whether source code is to be compiled.\n    If so, a cache will be queried for a previously stored object file.\n\n    If the script is called in an unsupported way (e.g. if the compiler is called for linking),\n    the script will simply relay the invocation to the real 'cl.exe' program.\n\nextra:\n  recipe-maintainers:\n    - edisongustavo\n",
+ "rendered_recipe": {},
+ "version": "3.3.0"
+}

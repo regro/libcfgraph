@@ -1,0 +1,61 @@
+{
+ "about": {
+  "home": "https://bitbucket.org/regebro/pyroma",
+  "license": "MIT",
+  "summary": "Test your project's packaging friendliness"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/pyroma",
+  "lib/python3.4/site-packages/pyroma-2.0.2-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pyroma-2.0.2-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/pyroma/__init__.py",
+  "lib/python3.4/site-packages/pyroma/distributiondata.py",
+  "lib/python3.4/site-packages/pyroma/projectdata.py",
+  "lib/python3.4/site-packages/pyroma/pypidata.py",
+  "lib/python3.4/site-packages/pyroma/ratings.py",
+  "lib/python3.4/site-packages/pyroma/testdata/complete/complete/__init__.py",
+  "lib/python3.4/site-packages/pyroma/testdata/complete/complete/tests.py",
+  "lib/python3.4/site-packages/pyroma/testdata/complete/setup.cfg",
+  "lib/python3.4/site-packages/pyroma/testdata/complete/setup.py",
+  "lib/python3.4/site-packages/pyroma/testdata/custom_test/minimal/__init__.py",
+  "lib/python3.4/site-packages/pyroma/testdata/custom_test/setup.cfg",
+  "lib/python3.4/site-packages/pyroma/testdata/custom_test/setup.py",
+  "lib/python3.4/site-packages/pyroma/testdata/distributions/complete-1.0.dev1.tar",
+  "lib/python3.4/site-packages/pyroma/testdata/distributions/complete-1.0.dev1.tar.bz2",
+  "lib/python3.4/site-packages/pyroma/testdata/distributions/complete-1.0.dev1.tar.gz",
+  "lib/python3.4/site-packages/pyroma/testdata/distributions/complete-1.0.dev1.zip",
+  "lib/python3.4/site-packages/pyroma/testdata/distributions/distribute-0.6.15.tar.gz",
+  "lib/python3.4/site-packages/pyroma/testdata/lacking/lacking/__init__.py",
+  "lib/python3.4/site-packages/pyroma/testdata/lacking/setup.cfg",
+  "lib/python3.4/site-packages/pyroma/testdata/lacking/setup.py",
+  "lib/python3.4/site-packages/pyroma/testdata/minimal/minimal/__init__.py",
+  "lib/python3.4/site-packages/pyroma/testdata/minimal/setup.cfg",
+  "lib/python3.4/site-packages/pyroma/testdata/minimal/setup.py",
+  "lib/python3.4/site-packages/pyroma/testdata/xmlrpcdata/complete/1.0.dev1.html",
+  "lib/python3.4/site-packages/pyroma/testdata/xmlrpcdata/completedata.py",
+  "lib/python3.4/site-packages/pyroma/testdata/xmlrpcdata/distribute/0.6.15.html",
+  "lib/python3.4/site-packages/pyroma/testdata/xmlrpcdata/distributedata.py",
+  "lib/python3.4/site-packages/pyroma/tests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "docutils",
+   "python 3.4*",
+   "setuptools"
+  ],
+  "license": "MIT",
+  "name": "pyroma",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.2"
+ },
+ "metadata_version": 1,
+ "name": "pyroma",
+ "raw_recipe": "{% set name = \"pyroma\" %}\n{% set version = \"2.0.2\" %}\n{% set sha256 = \"281da392738e5eafaa81fc7a9f0a29cb5c1dccc1e0cae87278300c54f54608d6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  {% set pypi_name = name.replace(\"_\", \"-\") %}\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/{{ pypi_name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  preserve_egg_dir: True\n  entry_points:\n    - pyroma = pyroma:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - docutils\n\n  run:\n    - python\n    - setuptools\n    - docutils\n\ntest:\n  imports:\n    - pyroma\n\n  commands:\n    - pyroma --help\n\nabout:\n  home: https://bitbucket.org/regebro/pyroma\n  license: MIT\n  summary: \"Test your project's packaging friendliness\"\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "2.0.2"
+}

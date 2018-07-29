@@ -1,0 +1,42 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/.nb_conda_kernels-post-link.sh",
+  "bin/.nb_conda_kernels-pre-unlink.sh",
+  "lib/python2.7/site-packages/nb_conda_kernels-1.0.3-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/nb_conda_kernels-1.0.3-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/nb_conda_kernels/__init__.py",
+  "lib/python2.7/site-packages/nb_conda_kernels/_version.py",
+  "lib/python2.7/site-packages/nb_conda_kernels/install.py",
+  "lib/python2.7/site-packages/nb_conda_kernels/logos/python/logo-32x32.png",
+  "lib/python2.7/site-packages/nb_conda_kernels/logos/python/logo-64x64.png",
+  "lib/python2.7/site-packages/nb_conda_kernels/logos/r/logo-64x64.png",
+  "lib/python2.7/site-packages/nb_conda_kernels/manager.py",
+  "lib/python2.7/site-packages/nb_conda_kernels/tests/__init__.py",
+  "lib/python2.7/site-packages/nb_conda_kernels/tests/js/_utils.js",
+  "lib/python2.7/site-packages/nb_conda_kernels/tests/js/test_notebook_basic.js",
+  "lib/python2.7/site-packages/nb_conda_kernels/tests/js/test_notebook_py.js",
+  "lib/python2.7/site-packages/nb_conda_kernels/tests/js/test_notebook_r.js",
+  "lib/python2.7/site-packages/nb_conda_kernels/tests/test_notebook.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "notebook >=4.2.0",
+   "python 2.7*"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "nb_conda_kernels",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0.3"
+ },
+ "metadata_version": 1,
+ "name": "nb_conda_kernels",
+ "raw_recipe": "{% set version = \"1.0.3\" %}\n{% set gh_org = \"Anaconda-Platform\" %}\n{% set gh_repo = \"nb_conda_kernels\" %}\n\npackage:\n  name: {{ gh_repo }}\n  version: {{ version }}\n\nsource:\n  fn: {{ gh_repo }}-{{ version }}.tar.gz\n  url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/{{ version }}.tar.gz\n  sha256: 6cdc08c3337c06e5cffacce150dbd10f87334489768e4c8804e045d28f65532a\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - notebook >=4.2.0\n    - python\n\ntest:\n  requires:\n    - coverage\n    - flake8\n    - nodejs\n    - nose\n    - notebook >=4.2.0\n    - python\n    - requests\n    - mock  # [py2k]\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: BSD-3-Clause\n  summary: Launch Jupyter kernels for any installed conda environment\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "rendered_recipe": {},
+ "version": "1.0.3"
+}

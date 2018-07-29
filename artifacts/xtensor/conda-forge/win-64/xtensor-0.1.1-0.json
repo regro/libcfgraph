@@ -1,0 +1,47 @@
+{
+ "about": {
+  "description": "Multi dimensional arrays with broadcasting and lazy computing",
+  "dev_url": "https://github.com/QuantStack/xtensor",
+  "doc_url": "http://xtensor.readthedocs.io",
+  "home": "http://quantstack.net/xtensor",
+  "license": "BSD",
+  "summary": "The C++ tensor algebra library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/xtensor/xarray.hpp",
+  "include/xtensor/xarray_base.hpp",
+  "include/xtensor/xassign.hpp",
+  "include/xtensor/xexception.hpp",
+  "include/xtensor/xexpression.hpp",
+  "include/xtensor/xfunction.hpp",
+  "include/xtensor/xindex.hpp",
+  "include/xtensor/xio.hpp",
+  "include/xtensor/xiterator.hpp",
+  "include/xtensor/xmath.hpp",
+  "include/xtensor/xnoalias.hpp",
+  "include/xtensor/xoperation.hpp",
+  "include/xtensor/xscalar.hpp",
+  "include/xtensor/xsemantic.hpp",
+  "include/xtensor/xslice.hpp",
+  "include/xtensor/xutils.hpp",
+  "include/xtensor/xvectorize.hpp",
+  "include/xtensor/xview.hpp"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "BSD",
+  "name": "xtensor",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.1.1"
+ },
+ "metadata_version": 1,
+ "name": "xtensor",
+ "raw_recipe": "{% set name = \"xtensor\" %}\n{% set version = \"0.1.1\" %}\n{% set sha256 = \"2995a57763d1ac73bdfad27b41e32810aec574a1185805e5ad2a71f68800ee4a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/QuantStack/xtensor/archive/{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\ntest:\n  requires:\n    - gtest\n    - cmake\n\n  commands:\n    - test -d ${PREFIX}/include/xtensor  # [unix]\n    - test -f ${PREFIX}/include/xtensor/xarray.hpp  # [unix]\n    - if exist %PREFIX%\\include\\xtensor\\xarray.hpp (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://quantstack.net/xtensor\n  license: BSD\n  license_file: LICENSE\n  summary: 'The C++ tensor algebra library'\n  description: 'Multi dimensional arrays with broadcasting and lazy computing'\n  doc_url: http://xtensor.readthedocs.io\n  dev_url: https://github.com/QuantStack/xtensor\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n",
+ "rendered_recipe": {},
+ "version": "0.1.1"
+}

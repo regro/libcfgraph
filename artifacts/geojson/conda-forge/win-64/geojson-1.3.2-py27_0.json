@@ -1,0 +1,76 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/geojson-1.3.2-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/geojson/__init__.py",
+  "Lib/site-packages/geojson/_version.py",
+  "Lib/site-packages/geojson/base.py",
+  "Lib/site-packages/geojson/codec.py",
+  "Lib/site-packages/geojson/crs.py",
+  "Lib/site-packages/geojson/examples.py",
+  "Lib/site-packages/geojson/factory.py",
+  "Lib/site-packages/geojson/feature.py",
+  "Lib/site-packages/geojson/geometry.py",
+  "Lib/site-packages/geojson/mapping.py",
+  "Lib/site-packages/geojson/utils.py",
+  "Lib/site-packages/geojson/validation.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD License",
+  "name": "geojson",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.3.2"
+ },
+ "metadata_version": 1,
+ "name": "geojson",
+ "raw_recipe": "package:\n    name: geojson\n    version: 1.3.2\n\nsource:\n    fn: geojson-1.3.2.tar.gz\n    url: https://pypi.python.org/packages/source/g/geojson/geojson-1.3.2.tar.gz\n    md5: 27b75a4edbf9059e9aeb819eaad38593\n\nbuild:\n    number: 0\n    preserve_egg_dir: True\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - geojson\n\nabout:\n    home: https://github.com/frewsxcv/python-geojson\n    license: BSD License\n    summary: Python bindings and utilities for GeoJSON\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/frewsxcv/python-geojson",
+   "license": "BSD License",
+   "summary": "Python bindings and utilities for GeoJSON"
+  },
+  "build": {
+   "number": 0,
+   "preserve_egg_dir": true,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "geojson",
+   "version": "1.3.2"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "geojson-1.3.2.tar.gz",
+   "md5": "27b75a4edbf9059e9aeb819eaad38593",
+   "url": "https://pypi.python.org/packages/source/g/geojson/geojson-1.3.2.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "geojson"
+   ]
+  }
+ },
+ "version": "1.3.2"
+}

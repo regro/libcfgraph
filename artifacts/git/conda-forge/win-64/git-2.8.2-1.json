@@ -1,0 +1,62 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Menu/git-for-windows.ico",
+  "Menu/menu-windows.json"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [],
+  "license": "GPL v2 and LGPL 2.1",
+  "name": "git",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.8.2"
+ },
+ "metadata_version": 1,
+ "name": "git",
+ "raw_recipe": "{% set version = \"2.8.2\" %}\n\npackage:\n  name: git\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz                                                                                                       # [unix]\n  url: https://github.com/git/git/archive/v{{ version }}.tar.gz                                                                   # [unix]\n  sha256: b8645cb549f8f7210495fea36fa968de6537ad3c74be17d45e53c99f5b0c4de4                                                        # [unix]\n  fn: PortableGit-{{ version }}-32-bit.7z.exe                                                                                     # [win]\n  url: https://github.com/git-for-windows/git/releases/download/v{{ version }}.windows.1/PortableGit-{{ version }}-32-bit.7z.exe  # [win]\n  sha256: da25bc12efa864cda53dc6485c84dd8b0d41883dd360db505c026c284ef58d8e                                                        # [win]\n\nbuild:\n  number: 1\n  # git hardcodes paths to external utilities (e.g. curl)\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - autoconf        # [unix]\n    - curl            # [unix]\n    - expat           # [unix]\n    - openssl  1.0*   # [unix]\n    - zlib     1.2*   # [unix]\n    - 7za             # [win]\n  run:\n    - curl            # [unix]\n    - expat           # [unix]\n    - openssl  1.0*   # [unix]\n    - zlib     1.2*   # [unix]\n\ntest:\n  commands:\n    - git --version\n    - git clone https://github.com/conda-forge/git-feedstock\n\nabout:\n  home: https://git-scm.com/\n  license: GPL v2 and LGPL 2.1\n  summary: distributed version control system\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - msarahan\n    - pelson\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://git-scm.com/",
+   "license": "GPL v2 and LGPL 2.1",
+   "summary": "distributed version control system"
+  },
+  "build": {
+   "detect_binary_files_with_prefix": "true",
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham",
+    "msarahan",
+    "pelson"
+   ]
+  },
+  "package": {
+   "name": "git",
+   "version": "2.8.2"
+  },
+  "requirements": {
+   "build": [
+    "7za"
+   ],
+   "run": ""
+  },
+  "source": {
+   "fn": "PortableGit-2.8.2-32-bit.7z.exe",
+   "sha256": "da25bc12efa864cda53dc6485c84dd8b0d41883dd360db505c026c284ef58d8e",
+   "url": "https://github.com/git-for-windows/git/releases/download/v2.8.2.windows.1/PortableGit-2.8.2-32-bit.7z.exe"
+  },
+  "test": {
+   "commands": [
+    "git --version",
+    "git clone https://github.com/conda-forge/git-feedstock"
+   ]
+  }
+ },
+ "version": "2.8.2"
+}

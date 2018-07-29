@@ -1,0 +1,49 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/mpld3-0.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/mpld3/__about__.py",
+  "lib/python2.7/site-packages/mpld3/__init__.py",
+  "lib/python2.7/site-packages/mpld3/_display.py",
+  "lib/python2.7/site-packages/mpld3/_server.py",
+  "lib/python2.7/site-packages/mpld3/js/d3.v3.min.js",
+  "lib/python2.7/site-packages/mpld3/js/mpld3.v0.2.js",
+  "lib/python2.7/site-packages/mpld3/js/mpld3.v0.2.min.js",
+  "lib/python2.7/site-packages/mpld3/mpld3renderer.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/__init__.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/_py3k_compat.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/exporter.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/renderers/__init__.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/renderers/base.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/renderers/fake_renderer.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/renderers/vega_renderer.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/renderers/vincent_renderer.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/tools.py",
+  "lib/python2.7/site-packages/mpld3/mplexporter/utils.py",
+  "lib/python2.7/site-packages/mpld3/plugins.py",
+  "lib/python2.7/site-packages/mpld3/urls.py",
+  "lib/python2.7/site-packages/mpld3/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "jinja2",
+   "matplotlib",
+   "mplexporter",
+   "python 2.7*"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "mpld3",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2"
+ },
+ "metadata_version": 1,
+ "name": "mpld3",
+ "raw_recipe": "{% set version = \"0.2\" %}\n\npackage:\n    name: mpld3\n    version: {{ version }}\n\nsource:\n    fn: mpld3-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/m/mpld3/mpld3-{{ version }}.tar.gz\n    md5: 266f4e51a094f8ff1aaf7e2018f763b4\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - mplexporter\n    run:\n        - python\n        - jinja2\n        - matplotlib\n        - mplexporter\n\ntest:\n    imports:\n        - mpld3\n\nabout:\n    home: http://mpld3.github.com\n    license: BSD-3-Clause\n    summary: D3 Viewer for Matplotlib\n\nextra:\n    recipe-maintainers:\n        - jakevdp\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.2"
+}

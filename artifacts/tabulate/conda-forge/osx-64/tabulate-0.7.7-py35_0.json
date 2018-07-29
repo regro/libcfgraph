@@ -1,0 +1,35 @@
+{
+ "about": {
+  "dev_url": "https://bitbucket.org/astanin/python-tabulate",
+  "home": "https://bitbucket.org/astanin/python-tabulate",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Pretty-print tabular data in Python, a library and a command-line utility."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/tabulate",
+  "lib/python3.5/site-packages/tabulate-0.7.7-py3.5.egg-info/.PKG-INFO.swp",
+  "lib/python3.5/site-packages/tabulate-0.7.7-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/tabulate.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "tabulate",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.7.7"
+ },
+ "metadata_version": 1,
+ "name": "tabulate",
+ "raw_recipe": "{% set name = \"tabulate\" %}\n{% set version = \"0.7.7\" %}\n{% set sha256 = \"83a0b8e17c09f012090a50e1e97ae897300a72b35e0c86c0b53d3bd2ae86d8c6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - tabulate = tabulate:_main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - tabulate\n\n  commands:\n    - tabulate --help\n\nabout:\n  home: https://bitbucket.org/astanin/python-tabulate\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Pretty-print tabular data in Python, a library and a command-line utility.'\n  dev_url: https://bitbucket.org/astanin/python-tabulate\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - synapticarbors\n",
+ "rendered_recipe": {},
+ "version": "0.7.7"
+}

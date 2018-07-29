@@ -1,0 +1,119 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/iconv",
+  "include/iconv.h",
+  "include/libcharset.h",
+  "include/localcharset.h",
+  "lib/charset.alias",
+  "lib/libcharset.a",
+  "lib/libcharset.la",
+  "lib/libcharset.so",
+  "lib/libcharset.so.1",
+  "lib/libcharset.so.1.0.0",
+  "lib/libiconv.la",
+  "lib/libiconv.so",
+  "lib/libiconv.so.2",
+  "lib/libiconv.so.2.5.1",
+  "lib/preloadable_libiconv.so",
+  "share/doc/libiconv/iconv.1.html",
+  "share/doc/libiconv/iconv.3.html",
+  "share/doc/libiconv/iconv_close.3.html",
+  "share/doc/libiconv/iconv_open.3.html",
+  "share/doc/libiconv/iconv_open_into.3.html",
+  "share/doc/libiconv/iconvctl.3.html",
+  "share/locale/af/LC_MESSAGES/libiconv.mo",
+  "share/locale/bg/LC_MESSAGES/libiconv.mo",
+  "share/locale/ca/LC_MESSAGES/libiconv.mo",
+  "share/locale/cs/LC_MESSAGES/libiconv.mo",
+  "share/locale/da/LC_MESSAGES/libiconv.mo",
+  "share/locale/de/LC_MESSAGES/libiconv.mo",
+  "share/locale/el/LC_MESSAGES/libiconv.mo",
+  "share/locale/eo/LC_MESSAGES/libiconv.mo",
+  "share/locale/es/LC_MESSAGES/libiconv.mo",
+  "share/locale/et/LC_MESSAGES/libiconv.mo",
+  "share/locale/fi/LC_MESSAGES/libiconv.mo",
+  "share/locale/fr/LC_MESSAGES/libiconv.mo",
+  "share/locale/ga/LC_MESSAGES/libiconv.mo",
+  "share/locale/gl/LC_MESSAGES/libiconv.mo",
+  "share/locale/hr/LC_MESSAGES/libiconv.mo",
+  "share/locale/hu/LC_MESSAGES/libiconv.mo",
+  "share/locale/id/LC_MESSAGES/libiconv.mo",
+  "share/locale/it/LC_MESSAGES/libiconv.mo",
+  "share/locale/ja/LC_MESSAGES/libiconv.mo",
+  "share/locale/nl/LC_MESSAGES/libiconv.mo",
+  "share/locale/pl/LC_MESSAGES/libiconv.mo",
+  "share/locale/pt_BR/LC_MESSAGES/libiconv.mo",
+  "share/locale/rm/LC_MESSAGES/libiconv.mo",
+  "share/locale/ro/LC_MESSAGES/libiconv.mo",
+  "share/locale/ru/LC_MESSAGES/libiconv.mo",
+  "share/locale/sk/LC_MESSAGES/libiconv.mo",
+  "share/locale/sl/LC_MESSAGES/libiconv.mo",
+  "share/locale/sq/LC_MESSAGES/libiconv.mo",
+  "share/locale/sr/LC_MESSAGES/libiconv.mo",
+  "share/locale/sv/LC_MESSAGES/libiconv.mo",
+  "share/locale/tr/LC_MESSAGES/libiconv.mo",
+  "share/locale/uk/LC_MESSAGES/libiconv.mo",
+  "share/locale/vi/LC_MESSAGES/libiconv.mo",
+  "share/locale/wa/LC_MESSAGES/libiconv.mo",
+  "share/locale/zh_CN/LC_MESSAGES/libiconv.mo",
+  "share/locale/zh_TW/LC_MESSAGES/libiconv.mo",
+  "share/man/man1/iconv.1",
+  "share/man/man3/iconv.3",
+  "share/man/man3/iconv_close.3",
+  "share/man/man3/iconv_open.3",
+  "share/man/man3/iconv_open_into.3",
+  "share/man/man3/iconvctl.3"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [],
+  "license": "GPL and LGPL",
+  "name": "libiconv",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.14"
+ },
+ "metadata_version": 1,
+ "name": "libiconv",
+ "raw_recipe": "package:\n    name: libiconv\n    version: 1.14\n\nsource:\n    fn: libiconv-1.14.tar.gz\n    url: http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.14.tar.gz\n    md5: e34509b1623cec449dfeb73d7ce9c6c6\n    patches:\n        - patch1.patch  # [linux]\n\nbuild:\n    number: 1\n    skip: True  # [win]\n\ntest:\n    commands:\n        - iconv --help\n\nabout:\n    home: https://www.gnu.org/software/libiconv/\n    license: GPL and LGPL\n    summary: Provides iconv for systems which don't have one (or that cannot convert from/to Unicode.)\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - jakirkham\n        - jhamman\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://www.gnu.org/software/libiconv/",
+   "license": "GPL and LGPL",
+   "summary": "Provides iconv for systems which don't have one (or that cannot convert from/to Unicode.)"
+  },
+  "build": {
+   "number": 1,
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "jakirkham",
+    "jhamman"
+   ]
+  },
+  "package": {
+   "name": "libiconv",
+   "version": 1.14
+  },
+  "source": {
+   "fn": "libiconv-1.14.tar.gz",
+   "md5": "e34509b1623cec449dfeb73d7ce9c6c6",
+   "patches": [
+    "patch1.patch"
+   ],
+   "url": "http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.14.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "iconv --help"
+   ]
+  }
+ },
+ "version": "1.14"
+}

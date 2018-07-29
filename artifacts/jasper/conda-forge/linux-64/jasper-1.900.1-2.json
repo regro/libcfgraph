@@ -1,0 +1,96 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/imgcmp",
+  "bin/imginfo",
+  "bin/jasper",
+  "bin/tmrdemo",
+  "include/jasper/jas_cm.h",
+  "include/jasper/jas_config.h",
+  "include/jasper/jas_config2.h",
+  "include/jasper/jas_debug.h",
+  "include/jasper/jas_fix.h",
+  "include/jasper/jas_getopt.h",
+  "include/jasper/jas_icc.h",
+  "include/jasper/jas_image.h",
+  "include/jasper/jas_init.h",
+  "include/jasper/jas_malloc.h",
+  "include/jasper/jas_math.h",
+  "include/jasper/jas_seq.h",
+  "include/jasper/jas_stream.h",
+  "include/jasper/jas_string.h",
+  "include/jasper/jas_tmr.h",
+  "include/jasper/jas_tvp.h",
+  "include/jasper/jas_types.h",
+  "include/jasper/jas_version.h",
+  "include/jasper/jasper.h",
+  "lib/libjasper.a",
+  "lib/libjasper.la",
+  "lib/libjasper.so",
+  "lib/libjasper.so.1",
+  "lib/libjasper.so.1.0.0",
+  "man/man1/imgcmp.1",
+  "man/man1/imginfo.1",
+  "man/man1/jasper.1",
+  "man/man1/jiv.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "2",
+  "build_number": 2,
+  "depends": [
+   "jpeg 9b"
+  ],
+  "license": "http://www.ece.uvic.ca/~frodo/jasper/LICENSE",
+  "name": "jasper",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.900.1"
+ },
+ "metadata_version": 1,
+ "name": "jasper",
+ "raw_recipe": "package:\n    name: jasper\n    version: 1.900.1\n\nsource:\n    fn: jasper-1.900.1.zip\n    url: http://www.ece.uvic.ca/~frodo/jasper/software/jasper-1.900.1.zip\n    sha1: 9c5735f773922e580bf98c7c7dfda9bbed4c5191\n\nbuild:\n    number: 2\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - jpeg 9b\n    run:\n        - jpeg 9b\n\ntest:\n    commands:\n        - jasper --version\n        - conda inspect linkages -n _test jasper  # [linux]\n\nabout:\n  home: http://www.ece.uvic.ca/~frodo/jasper/\n  license: http://www.ece.uvic.ca/~frodo/jasper/LICENSE\n  summary: A reference implementation of the codec specified in the JPEG-2000 Part-1 standard.\n\nextra:\n    recipe-maintainers:\n        - jakirkham\n        - jhamman\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.ece.uvic.ca/~frodo/jasper/",
+   "license": "http://www.ece.uvic.ca/~frodo/jasper/LICENSE",
+   "summary": "A reference implementation of the codec specified in the JPEG-2000 Part-1 standard."
+  },
+  "build": {
+   "number": 2,
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham",
+    "jhamman",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "jasper",
+   "version": "1.900.1"
+  },
+  "requirements": {
+   "build": [
+    "jpeg 9b"
+   ],
+   "run": [
+    "jpeg 9b"
+   ]
+  },
+  "source": {
+   "fn": "jasper-1.900.1.zip",
+   "sha1": "9c5735f773922e580bf98c7c7dfda9bbed4c5191",
+   "url": "http://www.ece.uvic.ca/~frodo/jasper/software/jasper-1.900.1.zip"
+  },
+  "test": {
+   "commands": [
+    "jasper --version",
+    "conda inspect linkages -n _test jasper"
+   ]
+  }
+ },
+ "version": "1.900.1"
+}

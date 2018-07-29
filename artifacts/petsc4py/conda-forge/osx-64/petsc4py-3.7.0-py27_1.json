@@ -1,0 +1,51 @@
+{
+ "about": {
+  "home": "https://bitbucket.org/petsc/petsc4py",
+  "license": "BSD 2-Clause",
+  "summary": "Python bindings for PETSc"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/petsc4py-3.7.0.dist-info/DESCRIPTION.rst",
+  "lib/python2.7/site-packages/petsc4py-3.7.0.dist-info/INSTALLER",
+  "lib/python2.7/site-packages/petsc4py-3.7.0.dist-info/METADATA",
+  "lib/python2.7/site-packages/petsc4py-3.7.0.dist-info/RECORD",
+  "lib/python2.7/site-packages/petsc4py-3.7.0.dist-info/WHEEL",
+  "lib/python2.7/site-packages/petsc4py-3.7.0.dist-info/metadata.json",
+  "lib/python2.7/site-packages/petsc4py/PETSc.py",
+  "lib/python2.7/site-packages/petsc4py/__init__.py",
+  "lib/python2.7/site-packages/petsc4py/__main__.py",
+  "lib/python2.7/site-packages/petsc4py/include/petsc4py/PETSc.pxd",
+  "lib/python2.7/site-packages/petsc4py/include/petsc4py/__init__.pxd",
+  "lib/python2.7/site-packages/petsc4py/include/petsc4py/__init__.pyx",
+  "lib/python2.7/site-packages/petsc4py/include/petsc4py/numpy.h",
+  "lib/python2.7/site-packages/petsc4py/include/petsc4py/petsc4py.PETSc.h",
+  "lib/python2.7/site-packages/petsc4py/include/petsc4py/petsc4py.PETSc_api.h",
+  "lib/python2.7/site-packages/petsc4py/include/petsc4py/petsc4py.h",
+  "lib/python2.7/site-packages/petsc4py/include/petsc4py/petsc4py.i",
+  "lib/python2.7/site-packages/petsc4py/lib/PETSc.so",
+  "lib/python2.7/site-packages/petsc4py/lib/__init__.py",
+  "lib/python2.7/site-packages/petsc4py/lib/petsc.cfg"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "mpich",
+   "numpy",
+   "petsc 3.7*",
+   "python 2.7*"
+  ],
+  "license": "BSD 2-Clause",
+  "name": "petsc4py",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "3.7.0"
+ },
+ "metadata_version": 1,
+ "name": "petsc4py",
+ "raw_recipe": "{% set build = 1 %}\n{% set version = '3.7.0' %}\n{% set md5 = '816a20040a6a477bd637f397c9fb5b6d' %}\n{% set mpi = os.environ.get('MPI') or 'mpich' %}\n\npackage:\n  name: petsc4py\n  version: {{version}}\n\nsource:\n  fn: petsc4py-{{version}}.tar.gz\n  url: https://bitbucket.org/petsc/petsc4py/downloads/petsc4py-{{version}}.tar.gz\n  md5: {{md5}}\n\nbuild:\n  number: {{build}}\n  script: PETSC_DIR=$PREFIX pip install --no-deps .\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - python\n    - pip\n    - numpy\n    - {{mpi}}\n    - petsc {{version[:3]}}*\n  run:\n    - python\n    - numpy\n    - {{mpi}}\n    - petsc {{version[:3]}}*\n\ntest:\n  imports:\n    - petsc4py\n    - petsc4py.PETSc\n\nabout:\n  home: https://bitbucket.org/petsc/petsc4py\n  summary: Python bindings for PETSc\n  license: BSD 2-Clause\n  license_file: LICENSE.rst\n\nextra:\n  recipe-maintainers:\n    - dalcinl\n    - minrk\n",
+ "rendered_recipe": {},
+ "version": "3.7.0"
+}

@@ -1,0 +1,52 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/bqplot-0.6.1-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/bqplot-0.6.1-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/bqplot/USMapData.json",
+  "Lib/site-packages/bqplot/WorldMapData.json",
+  "Lib/site-packages/bqplot/__init__.py",
+  "Lib/site-packages/bqplot/_version.py",
+  "Lib/site-packages/bqplot/axes.py",
+  "Lib/site-packages/bqplot/colorschemes.py",
+  "Lib/site-packages/bqplot/default_tooltip.py",
+  "Lib/site-packages/bqplot/figure.py",
+  "Lib/site-packages/bqplot/install.py",
+  "Lib/site-packages/bqplot/interacts.py",
+  "Lib/site-packages/bqplot/market_map.py",
+  "Lib/site-packages/bqplot/marks.py",
+  "Lib/site-packages/bqplot/pyplot.py",
+  "Lib/site-packages/bqplot/scales.py",
+  "Lib/site-packages/bqplot/static/extension.js",
+  "Lib/site-packages/bqplot/static/index.js",
+  "Lib/site-packages/bqplot/static/index.js.map",
+  "Lib/site-packages/bqplot/toolbar.py",
+  "Lib/site-packages/bqplot/traits.py",
+  "Scripts/.bqplot-post-link.bat",
+  "share/jupyter/nbextensions/bqplot/extension.js",
+  "share/jupyter/nbextensions/bqplot/index.js",
+  "share/jupyter/nbextensions/bqplot/index.js.map"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "ipywidgets >=5.1.3",
+   "numpy",
+   "pandas",
+   "python 2.7*"
+  ],
+  "license": "Apache License 2.0",
+  "name": "bqplot",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.6.1"
+ },
+ "metadata_version": 1,
+ "name": "bqplot",
+ "raw_recipe": "{% set version = \"0.6.1\" %}\n\npackage:\n    name: bqplot\n    version: {{ version }}\n\nsource:\n    fn: bqplot-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/b/bqplot/bqplot-{{ version }}.tar.gz\n    md5: e0ab4e1f478b85c59e774eb58317cd67\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - jupyter\n    run:\n        - python\n        - ipywidgets >=5.1.3\n        - numpy\n        - pandas\n\ntest:\n    imports:\n        - bqplot\n\nabout:\n    home: https://github.com/bloomberg/bqplot\n    license: Apache License 2.0\n    summary: Plotting library for Jupyter\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - jasongrout\n",
+ "rendered_recipe": {},
+ "version": "0.6.1"
+}

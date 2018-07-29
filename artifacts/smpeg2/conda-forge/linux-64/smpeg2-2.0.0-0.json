@@ -1,0 +1,49 @@
+{
+ "about": {
+  "description": "MPEG2 Libraries for SDL2.",
+  "home": "https://www.libsdl.org/",
+  "license": "GPLv2",
+  "summary": "SDL2 Mpeg2 libraries"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/plaympeg",
+  "bin/smpeg2-config",
+  "include/smpeg2/MPEG.h",
+  "include/smpeg2/MPEGaction.h",
+  "include/smpeg2/MPEGaudio.h",
+  "include/smpeg2/MPEGerror.h",
+  "include/smpeg2/MPEGframe.h",
+  "include/smpeg2/MPEGlist.h",
+  "include/smpeg2/MPEGring.h",
+  "include/smpeg2/MPEGstream.h",
+  "include/smpeg2/MPEGsystem.h",
+  "include/smpeg2/MPEGvideo.h",
+  "include/smpeg2/smpeg.h",
+  "lib/libsmpeg2-2.0.so.0",
+  "lib/libsmpeg2-2.0.so.0.0.0",
+  "lib/libsmpeg2.a",
+  "lib/libsmpeg2.la",
+  "lib/libsmpeg2.so",
+  "share/aclocal/smpeg2.m4",
+  "share/man/man1/plaympeg.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "sdl2"
+  ],
+  "license": "GPLv2",
+  "name": "smpeg2",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.0"
+ },
+ "metadata_version": 1,
+ "name": "smpeg2",
+ "raw_recipe": "{% set name = \"smpeg2\" %}\n{% set version = \"2.0.0\" %}\n{% set sha256 = \"979a65b211744a44fa641a9b6e4d64e64a12ff703ae776bafe3c4c4cd85494b3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://www.libsdl.org/projects/smpeg/release/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - windows_find_memset.patch  # [win]\n\nbuild:\n  number: 0\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - cmake  # [win]\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n    - pkgconfig  # [unix]\n    - autoconf  # [unix]\n    - automake  # [unix]\n    - libtool  # [unix]\n    - toolchain\n    - sdl2\n  run:\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n    - sdl2\n\ntest:\n  requires:\n    - python {{ environ['PY_VER'] + '*' }}  # [win]\n  commands:\n    - test -f $PREFIX/lib/libsmpeg2.a  # [unix]\n    - test -f $PREFIX/lib/libsmpeg2.dylib  # [osx]\n    - test -f $PREFIX/lib/libsmpeg2.so  # [linux]\n    - test -f $PREFIX/bin/plaympeg  # [unix]\n    - test -f $PREFIX/bin/smpeg2-config  # [unix]\n    - test -f $PREFIX/include/smpeg2/smpeg.h  # [unix]\n    - test -f $PREFIX/include/smpeg2/MPEG.h  # [unix]\n    - if not exist %LIBRARY_LIB%\\\\smpeg2.lib exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\smpeg2.dll exit 1  # [win]\n    - if not exist %LIBRARY_INC%\\\\smpeg2\\\\smpeg.h exit 1  # [win]\n    - if not exist %LIBRARY_INC%\\\\smpeg2\\\\MPEG.h exit 1  # [win]\n\nabout:\n  home: https://www.libsdl.org/\n  license: GPLv2\n  license_file: COPYING\n  summary: \"SDL2 Mpeg2 libraries\"\n  description: MPEG2 Libraries for SDL2.\n\nextra:\n  recipe-maintainers:\n    - dschreij\n",
+ "rendered_recipe": {},
+ "version": "2.0.0"
+}

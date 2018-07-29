@@ -1,0 +1,49 @@
+{
+ "about": {
+  "dev_url": "https://github.com/cloudant/python-cloudant",
+  "doc_url": "https://python-cloudant.readthedocs.io/en/latest/",
+  "home": "https://github.com/cloudant/python-cloudant",
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "summary": "Asynchronous Cloudant / CouchDB Interface"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/cloudant-2.1.0-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/cloudant/_2to3.py",
+  "Lib/site-packages/cloudant/__init__.py",
+  "Lib/site-packages/cloudant/_common_util.py",
+  "Lib/site-packages/cloudant/adapters.py",
+  "Lib/site-packages/cloudant/client.py",
+  "Lib/site-packages/cloudant/database.py",
+  "Lib/site-packages/cloudant/design_document.py",
+  "Lib/site-packages/cloudant/document.py",
+  "Lib/site-packages/cloudant/error.py",
+  "Lib/site-packages/cloudant/feed.py",
+  "Lib/site-packages/cloudant/index.py",
+  "Lib/site-packages/cloudant/query.py",
+  "Lib/site-packages/cloudant/replicator.py",
+  "Lib/site-packages/cloudant/result.py",
+  "Lib/site-packages/cloudant/view.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "requests >=2.7.0,<3.0.0"
+  ],
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "name": "cloudant",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "2.1.0"
+ },
+ "metadata_version": 1,
+ "name": "cloudant",
+ "raw_recipe": "{%set name = \"cloudant\" %}\n{%set version = \"2.1.0\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"79d7ff6f1e8cae181950b906f0d6191d995e5ab542cb11a642069864d2e40902\" %}\n{%set build_num = \"0\"%}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - requests >=2.7.0,<3.0.0\n\ntest:\n  imports:\n    - cloudant\n\nabout:\n  home: https://github.com/cloudant/python-cloudant\n  license: Apache 2.0\n  # license_file: LICENSE not in MANIFEST.in\n  license_family: Apache\n  summary: 'Asynchronous Cloudant / CouchDB Interface'\n  dev_url: https://github.com/cloudant/python-cloudant\n  doc_url: https://python-cloudant.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "2.1.0"
+}

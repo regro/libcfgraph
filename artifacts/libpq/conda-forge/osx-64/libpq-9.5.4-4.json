@@ -1,0 +1,146 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://www.postgresql.org/",
+  "license": "PostgreSQL",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "The postgres runtime libraries and utilities (not the server itself)"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/libpq.dylib",
+  "lib/libpq.5.dylib",
+  "bin/pg_config",
+  "lib/libpq.5.8.dylib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "4",
+  "build_number": 4,
+  "depends": [
+   "krb5",
+   "openssl 1.0.*"
+  ],
+  "license": "PostgreSQL",
+  "name": "libpq",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "9.5.4"
+ },
+ "metadata_version": 1,
+ "name": "libpq",
+ "raw_recipe": "{% set version = \"9.5.4\" %}\n\npackage:\n  name: libpq\n  version: {{ version }}\n\nbuild:\n  number: 4\n  features:\n    - vc9               # [win and py27]\n    - vc14              # [win and py >= 35]\n  always_include_files:\n    - lib/libpq.so.5.8        # [linux]\n    - lib/libpq.so.5          # [linux]\n    - lib/libpq.so            # [linux]\n    - lib/libpq.5.8.dylib     # [osx]\n    - lib/libpq.5.dylib       # [osx]\n    - lib/libpq.dylib         # [osx]\n    - bin/pg_config           # [unix]\n    - Library/bin/libpq.dll       # [win]\n    - Library/bin/pg_config.exe   # [win]\n\nrequirements:\n  build:\n    - python  # [win]\n    - vc   9   # [win and py27]\n    - vc  14   # [win and py >= 35]\n    - postgresql  {{ version }}\n  run:\n    - vc   9   # [win and py27]\n    - vc  14   # [win and py >= 35]\n    - openssl 1.0.*\n    - krb5\n\ntest:\n  commands:\n    - pg_config\n    - test -f $PREFIX/lib/libpq.so.5.8   # [linux]\n    - test -f $PREFIX/lib/libpq.so.5     # [linux]\n    - test -f $PREFIX/lib/libpq.so       # [linux]\n    - test -f $PREFIX/lib/libpq.5.8.dylib   # [osx]\n    - test -f $PREFIX/lib/libpq.5.dylib     # [osx]\n    - test -f $PREFIX/lib/libpq.dylib       # [osx]\n    - IF NOT EXIST %LIBRARY_BIN%\\libpq.dll EXIT 1  # [win]\n    - IF NOT EXIST %LIBRARY_BIN%\\pg_config.exe EXIT 1  # [win]\n\nabout:\n  home: http://www.postgresql.org/\n  license: PostgreSQL\n  summary: The postgres runtime libraries and utilities (not the server itself)\n\nextra:\n  recipe-maintainers:\n    - msarahan\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.postgresql.org/",
+   "license": "PostgreSQL",
+   "summary": "The postgres runtime libraries and utilities (not the server itself)"
+  },
+  "build": {
+   "always_include_files": [
+    "lib/libpq.5.8.dylib",
+    "lib/libpq.5.dylib",
+    "lib/libpq.dylib",
+    "bin/pg_config"
+   ],
+   "features": "",
+   "noarch": "",
+   "noarch_python": false,
+   "number": "4",
+   "string": "4"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "msarahan",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "libpq",
+   "version": "9.5.4"
+  },
+  "requirements": {
+   "build": [
+    "ca-certificates 2017.1.23 0",
+    "krb5 1.14.2 0",
+    "openssl 1.0.2k 0",
+    "postgresql 9.5.4 3",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "openssl 1.0.*",
+    "krb5"
+   ]
+  },
+  "test": {
+   "commands": [
+    "pg_config",
+    "test -f $PREFIX/lib/libpq.5.8.dylib",
+    "test -f $PREFIX/lib/libpq.5.dylib",
+    "test -f $PREFIX/lib/libpq.dylib"
+   ]
+  }
+ },
+ "version": "9.5.4"
+}

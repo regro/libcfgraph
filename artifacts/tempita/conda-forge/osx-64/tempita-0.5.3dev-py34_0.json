@@ -1,0 +1,30 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/Tempita-0.5.3.dev0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/Tempita-0.5.3.dev0-py3.4.egg-info/zip-safe",
+  "lib/python3.4/site-packages/tempita/__init__.py",
+  "lib/python3.4/site-packages/tempita/__main__.py",
+  "lib/python3.4/site-packages/tempita/_looper.py",
+  "lib/python3.4/site-packages/tempita/compat3.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "tempita",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.5.3dev"
+ },
+ "metadata_version": 1,
+ "name": "tempita",
+ "raw_recipe": "{% set version=\"0.5.3dev\" %}\n\npackage:\n  name: tempita\n  version: {{ version }}\n\nsource:\n  fn: Tempita-{{ version }}dev.tar.gz\n  url: https://pypi.io/packages/source/T/Tempita/Tempita-{{ version }}.tar.gz\n  md5: 365c3b4f36435e2178902d5619301140\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - tempita\n\nabout:\n  home: http://pythonpaste.org/tempita/\n  license: MIT\n  summary: A small templating language\n  description: |\n    tempita is a small templating language. This language implements\n    if/elif/else, for/continue/break, expressions, and blocks of Python code.\n  doc_url: http://pythonpaste.org/tempita/\n  dev_url: https://bitbucket.org/ianb/tempita\n\nextra:\n  recipe-maintainers:\n    - msarahan\n",
+ "rendered_recipe": {},
+ "version": "0.5.3dev"
+}

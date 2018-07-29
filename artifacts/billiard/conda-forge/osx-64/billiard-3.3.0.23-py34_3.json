@@ -1,0 +1,63 @@
+{
+ "about": {
+  "home": "http://github.com/celery/billiard",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Python multiprocessing fork with improvements and bugfixes"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/billiard-3.3.0.23-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/billiard-3.3.0.23-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/billiard/__init__.py",
+  "lib/python3.4/site-packages/billiard/_ext.py",
+  "lib/python3.4/site-packages/billiard/_win.py",
+  "lib/python3.4/site-packages/billiard/common.py",
+  "lib/python3.4/site-packages/billiard/compat.py",
+  "lib/python3.4/site-packages/billiard/connection.py",
+  "lib/python3.4/site-packages/billiard/dummy/__init__.py",
+  "lib/python3.4/site-packages/billiard/dummy/connection.py",
+  "lib/python3.4/site-packages/billiard/einfo.py",
+  "lib/python3.4/site-packages/billiard/exceptions.py",
+  "lib/python3.4/site-packages/billiard/five.py",
+  "lib/python3.4/site-packages/billiard/forking.py",
+  "lib/python3.4/site-packages/billiard/heap.py",
+  "lib/python3.4/site-packages/billiard/managers.py",
+  "lib/python3.4/site-packages/billiard/pool.py",
+  "lib/python3.4/site-packages/billiard/process.py",
+  "lib/python3.4/site-packages/billiard/py3/__init__.py",
+  "lib/python3.4/site-packages/billiard/py3/connection.py",
+  "lib/python3.4/site-packages/billiard/py3/reduction.py",
+  "lib/python3.4/site-packages/billiard/queues.py",
+  "lib/python3.4/site-packages/billiard/reduction.py",
+  "lib/python3.4/site-packages/billiard/sharedctypes.py",
+  "lib/python3.4/site-packages/billiard/synchronize.py",
+  "lib/python3.4/site-packages/billiard/tests/__init__.py",
+  "lib/python3.4/site-packages/billiard/tests/compat.py",
+  "lib/python3.4/site-packages/billiard/tests/test_common.py",
+  "lib/python3.4/site-packages/billiard/tests/test_package.py",
+  "lib/python3.4/site-packages/billiard/tests/utils.py",
+  "lib/python3.4/site-packages/billiard/util.py",
+  "lib/python3.4/site-packages/funtests/__init__.py",
+  "lib/python3.4/site-packages/funtests/setup.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_3",
+  "build_number": 3,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "billiard",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "3.3.0.23"
+ },
+ "metadata_version": 1,
+ "name": "billiard",
+ "raw_recipe": "{% set version = \"3.3.0.23\" %}\n\npackage:\n  name: billiard\n  version: {{ version }}\n\nsource:\n  fn: billiard-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/b/billiard/billiard-{{ version }}.tar.gz\n  sha256: 692a2a5a55ee39a42bcb7557930e2541da85df9ea81c6e24827f63b80cd39d0b\n\nbuild:\n  number: 3\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - billiard\n    - billiard.dummy\n    - billiard.tests\n    - funtests\n\nabout:\n  home: http://github.com/celery/billiard\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Python multiprocessing fork with improvements and bugfixes\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - kwilcox\n",
+ "rendered_recipe": {},
+ "version": "3.3.0.23"
+}

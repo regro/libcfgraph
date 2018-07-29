@@ -1,0 +1,29 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/uritemplate.py-0.3.0-py3.4.egg-info",
+  "lib/python3.4/site-packages/uritemplate/__init__.py",
+  "lib/python3.4/site-packages/uritemplate/api.py",
+  "lib/python3.4/site-packages/uritemplate/template.py",
+  "lib/python3.4/site-packages/uritemplate/variable.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "uritemplate.py",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.0"
+ },
+ "metadata_version": 1,
+ "name": "uritemplate.py",
+ "raw_recipe": "{% set version = \"0.3.0\" %}\n\npackage:\n    name: uritemplate.py\n    version: {{ version }}\n\nsource:\n    fn: uritemplate.py-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/u/uritemplate.py/uritemplate.py-{{ version }}.tar.gz\n    md5: 4dd14904ba502c6ff8d6276e004404de\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n\ntest:\n    imports:\n        - uritemplate\n\nabout:\n    home: https://uritemplate.readthedocs.org\n    license: BSD-3-Clause\n    summary: URI templates\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.3.0"
+}

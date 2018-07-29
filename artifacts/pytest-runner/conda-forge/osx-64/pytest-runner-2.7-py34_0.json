@@ -1,0 +1,28 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/ptr.py",
+  "lib/python3.4/site-packages/pytest_runner-2.7-py3.4.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "pytest",
+   "python 3.4*",
+   "setuptools"
+  ],
+  "license": "MIT",
+  "name": "pytest-runner",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.7"
+ },
+ "metadata_version": 1,
+ "name": "pytest-runner",
+ "raw_recipe": "{% set version = \"2.7\" %}\n\npackage:\n  name: pytest-runner\n  version: {{ version }}\n\nsource:\n  fn: pytest-runner-{{version}}.tar.gz\n  url: https://pypi.python.org/packages/source/p/pytest-runner/pytest-runner-{{version}}.tar.gz\n  md5: 360a09bb80b505a7a093c20aeb4d1994\n\nbuild:\n    script: python setup.py install --single-version-externally-managed --record record.txt\n    number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm\n\n  run:\n    - python\n    - setuptools\n    - pytest\n\ntest:\n  imports:\n    - ptr\n\nabout:\n  home: https://github.com/pytest-dev/pytest-runner\n  license: MIT\n  summary: 'Invoke py.test as distutils command with dependency resolution.'\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
+ "rendered_recipe": {},
+ "version": "2.7"
+}

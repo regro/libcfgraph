@@ -1,0 +1,43 @@
+{
+ "about": {
+  "dev_url": "https://github.com/Unidata/netcdf4-python",
+  "doc_url": "https://unidata.github.io/netcdf4-python",
+  "home": "http://github.com/Unidata/netcdf4-python",
+  "license": "OSI Approved and MIT",
+  "summary": "Provides an object-oriented python interface to the netCDF version 4 library."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/nc3tonc4",
+  "bin/nc4tonc3",
+  "bin/ncinfo",
+  "lib/python3.4/site-packages/netCDF4-1.2.5-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/netCDF4/__init__.py",
+  "lib/python3.4/site-packages/netCDF4/_netCDF4.cpython-34m.so",
+  "lib/python3.4/site-packages/netCDF4/utils.py",
+  "lib/python3.4/site-packages/netcdftime/__init__.py",
+  "lib/python3.4/site-packages/netcdftime/_netcdftime.cpython-34m.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np110py34_0",
+  "build_number": 0,
+  "depends": [
+   "hdf5 1.8.17|1.8.17.*",
+   "libnetcdf 4.4.*",
+   "numpy 1.10*",
+   "python 3.4*",
+   "setuptools"
+  ],
+  "license": "OSI Approved and MIT",
+  "name": "netcdf4",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.2.5"
+ },
+ "metadata_version": 1,
+ "name": "netcdf4",
+ "raw_recipe": "{% set version = \"1.2.5\" %}\n\npackage:\n  name: netcdf4\n  version: {{ version }}\n\nsource:\n  fn: netCDF4-{{ version }}.tar.gz\n  url: https://github.com/Unidata/netcdf4-python/archive/v{{ version }}rel.tar.gz\n  sha256: 1d98b22bcfcd9f728ce7220587ebe97bcc53ebbeabfe9983cfa421168363991e\n\nbuild:\n  number: 0\n  entry_points:\n    - ncinfo = netCDF4.utils:ncinfo\n    - nc4tonc3 = netCDF4.utils:nc4tonc3\n    - nc3tonc4 = netCDF4.utils:nc3tonc4\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - cython\n    - hdf5 1.8.17|1.8.17.*\n    - libnetcdf 4.4.*\n  run:\n    - python\n    - setuptools\n    - numpy x.x\n    - hdf5 1.8.17|1.8.17.*\n    - libnetcdf 4.4.*\n\ntest:\n  imports:\n    - netCDF4\n    - netcdftime\n  commands:\n    - ncinfo -h\n    - nc4tonc3 -h\n    - nc3tonc4 -h\n    #- conda inspect linkages -p $PREFIX netcdf4  # [not win]\n    #- conda inspect objects -p $PREFIX netcdf4  # [osx]\n\nabout:\n  home: http://github.com/Unidata/netcdf4-python\n  license: OSI Approved and MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/COPYING'\n  summary: 'Provides an object-oriented python interface to the netCDF version 4 library.'\n  dev_url: https://github.com/Unidata/netcdf4-python\n  doc_url: https://unidata.github.io/netcdf4-python\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - pelson\n    - dopplershift\n",
+ "rendered_recipe": {},
+ "version": "1.2.5"
+}

@@ -1,0 +1,37 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/coveralls",
+  "lib/python2.7/site-packages/coveralls/__init__.py",
+  "lib/python2.7/site-packages/coveralls/api.py",
+  "lib/python2.7/site-packages/coveralls/control.py",
+  "lib/python2.7/site-packages/coveralls/report.py",
+  "lib/python2.7/site-packages/coveralls/repository.py",
+  "lib/python2.7/site-packages/coveralls/tests.py",
+  "lib/python2.7/site-packages/python_coveralls-2.5.0-py2.7.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "coverage ==3.7.1",
+   "python 2.7*",
+   "pyyaml",
+   "requests",
+   "sh",
+   "six"
+  ],
+  "license": "Apache 2.0",
+  "name": "python-coveralls",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.5.0"
+ },
+ "metadata_version": 1,
+ "name": "python-coveralls",
+ "raw_recipe": "{% set version = \"2.5.0\" %}\n\npackage:\n  name: python-coveralls\n  version: {{ version }}\n\nsource:\n  fn: python-coveralls-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/python-coveralls/python-coveralls-{{ version }}.tar.gz\n  md5: e66878a926b9d5dd04250e1a05080fbd\n\nbuild:\n  number: 0\n  skip: true  # [win]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - coveralls = coveralls:wear\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pyyaml\n    - requests\n    - coverage ==3.7.1\n    - six\n    - sh\n\n  run:\n    - python\n    - pyyaml\n    - requests\n    - coverage ==3.7.1\n    - six\n    - sh\n\ntest:\n  imports:\n    - coveralls\n\n  commands:\n    - coveralls --help\n\nabout:\n  home: http://github.com/z4r/python-coveralls\n  license: Apache 2.0\n  summary: 'Python interface to coveralls.io API\\n'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "2.5.0"
+}

@@ -1,0 +1,72 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/qimage2ndarray-1.5.1-py3.4.egg",
+  "lib/python3.4/site-packages/qimage2ndarray.pth"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "pyqt",
+   "python 3.4*",
+   "sip"
+  ],
+  "license": "BSD License",
+  "name": "qimage2ndarray",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.5.1"
+ },
+ "metadata_version": 1,
+ "name": "qimage2ndarray",
+ "raw_recipe": "package:\n  name: qimage2ndarray\n  version: \"1.5.1\"\n\nsource:\n  fn: qimage2ndarray-1.5.1.tar.gz\n  url: https://pypi.python.org/packages/source/q/qimage2ndarray/qimage2ndarray-1.5.1.tar.gz\n  md5: 73743819ccf6043f237c6b7f63732674\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n    - numpy\n    - sip\n    - pyqt\n\n  run:\n    - python\n    - numpy\n    - sip\n    - pyqt\n\ntest:\n  imports:\n    - qimage2ndarray\n\nabout:\n  home: https://github.com/hmeine/qimage2ndarray\n  license: BSD License\n  summary: 'Conversion between QImages and numpy.ndarrays.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/hmeine/qimage2ndarray",
+   "license": "BSD License",
+   "summary": "Conversion between QImages and numpy.ndarrays."
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "qimage2ndarray",
+   "version": "1.5.1"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "numpy",
+    "sip",
+    "pyqt"
+   ],
+   "run": [
+    "python",
+    "numpy",
+    "sip",
+    "pyqt"
+   ]
+  },
+  "source": {
+   "fn": "qimage2ndarray-1.5.1.tar.gz",
+   "md5": "73743819ccf6043f237c6b7f63732674",
+   "url": "https://pypi.python.org/packages/source/q/qimage2ndarray/qimage2ndarray-1.5.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "qimage2ndarray"
+   ]
+  }
+ },
+ "version": "1.5.1"
+}

@@ -1,0 +1,41 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/amqp-1.4.9-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/amqp-1.4.9-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/amqp/__init__.py",
+  "lib/python3.4/site-packages/amqp/abstract_channel.py",
+  "lib/python3.4/site-packages/amqp/basic_message.py",
+  "lib/python3.4/site-packages/amqp/channel.py",
+  "lib/python3.4/site-packages/amqp/connection.py",
+  "lib/python3.4/site-packages/amqp/exceptions.py",
+  "lib/python3.4/site-packages/amqp/five.py",
+  "lib/python3.4/site-packages/amqp/method_framing.py",
+  "lib/python3.4/site-packages/amqp/protocol.py",
+  "lib/python3.4/site-packages/amqp/serialization.py",
+  "lib/python3.4/site-packages/amqp/tests/__init__.py",
+  "lib/python3.4/site-packages/amqp/tests/case.py",
+  "lib/python3.4/site-packages/amqp/tests/test_channel.py",
+  "lib/python3.4/site-packages/amqp/transport.py",
+  "lib/python3.4/site-packages/amqp/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "GNU Library or Lesser General Public License (LGPL) or BSD License",
+  "name": "amqp",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.4.9"
+ },
+ "metadata_version": 1,
+ "name": "amqp",
+ "raw_recipe": "{% set version = \"1.4.9\" %}\n\npackage:\n    name: amqp\n    version: {{ version }}\n\nsource:\n    fn: amqp-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/a/amqp/amqp-{{ version }}.tar.gz\n    md5: df57dde763ba2dea25b3fa92dfe43c19\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - amqp\n\nabout:\n    home: http://github.com/celery/py-amqp\n    license: GNU Library or Lesser General Public License (LGPL) or BSD License\n    summary: Low-level AMQP client for Python (fork of amqplib)\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n",
+ "rendered_recipe": {},
+ "version": "1.4.9"
+}

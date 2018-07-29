@@ -1,0 +1,108 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pygridtools-0.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pygridtools/__init__.py",
+  "lib/python2.7/site-packages/pygridtools/core.py",
+  "lib/python2.7/site-packages/pygridtools/iotools.py",
+  "lib/python2.7/site-packages/pygridtools/misc.py",
+  "lib/python2.7/site-packages/pygridtools/qa.py",
+  "lib/python2.7/site-packages/pygridtools/testing/__init__.py",
+  "lib/python2.7/site-packages/pygridtools/testing/utils.py",
+  "lib/python2.7/site-packages/pygridtools/tests/__init__.py",
+  "lib/python2.7/site-packages/pygridtools/tests/baseline_images/__init__.py",
+  "lib/python2.7/site-packages/pygridtools/tests/baseline_images/test_core/__init__.py",
+  "lib/python2.7/site-packages/pygridtools/tests/test_core.py",
+  "lib/python2.7/site-packages/pygridtools/tests/test_iotools.py",
+  "lib/python2.7/site-packages/pygridtools/tests/test_misc.py",
+  "lib/python2.7/site-packages/pygridtools/tests/test_qa.py",
+  "lib/python2.7/site-packages/pygridtools/tests/test_viz/__init__.py",
+  "lib/python2.7/site-packages/pygridtools/tests/test_viz/baseline_images/__init__.py",
+  "lib/python2.7/site-packages/pygridtools/tests/test_viz/baseline_images/test_viz/__init__.py",
+  "lib/python2.7/site-packages/pygridtools/tests/test_viz/baseline_images/test_viz/test__viz_bokeh/__init__.py",
+  "lib/python2.7/site-packages/pygridtools/tests/test_viz/baseline_images/test_viz/test__viz_mpl/__init__.py",
+  "lib/python2.7/site-packages/pygridtools/tests/test_viz/test__viz_bokeh.py",
+  "lib/python2.7/site-packages/pygridtools/tests/test_viz/test__viz_mpl.py",
+  "lib/python2.7/site-packages/pygridtools/tests/test_viz/test_viz.py",
+  "lib/python2.7/site-packages/pygridtools/viz/__init__.py",
+  "lib/python2.7/site-packages/pygridtools/viz/_viz_bokeh.py",
+  "lib/python2.7/site-packages/pygridtools/viz/_viz_mpl.py",
+  "lib/python2.7/site-packages/pygridtools/viz/viz.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "fiona",
+   "gridgen",
+   "matplotlib",
+   "numpy",
+   "pandas",
+   "pygridgen",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-clause",
+  "name": "pygridtools",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2"
+ },
+ "metadata_version": 1,
+ "name": "pygridtools",
+ "raw_recipe": "package:\n    name: pygridtools\n    version: 0.2\n\nsource:\n    git_url: https://github.com/Geosyntec/pygridtools.git\n    git_tag: v0.2\n\nbuild:\n    number: 0\n    skip: True  # [win]\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - gridgen\n        - fiona\n        - python\n        - pandas\n        - numpy\n        - matplotlib\n        - pygridgen\n\ntest:\n    imports:\n        - pygridtools\n    commands:\n        - nosetests\n    requires:\n        - nose\n\nabout:\n    home: https://github.com/Geosyntec/pygridtools\n    license: BSD 3-clause\n    summary: Miscellaneous utilities built upon pygridgen\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - phobson\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/Geosyntec/pygridtools",
+   "license": "BSD 3-clause",
+   "summary": "Miscellaneous utilities built upon pygridgen"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "phobson"
+   ]
+  },
+  "package": {
+   "name": "pygridtools",
+   "version": 0.2
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "gridgen",
+    "fiona",
+    "python",
+    "pandas",
+    "numpy",
+    "matplotlib",
+    "pygridgen"
+   ]
+  },
+  "source": {
+   "git_tag": "v0.2",
+   "git_url": "https://github.com/Geosyntec/pygridtools.git"
+  },
+  "test": {
+   "commands": [
+    "nosetests"
+   ],
+   "imports": [
+    "pygridtools"
+   ],
+   "requires": [
+    "nose"
+   ]
+  }
+ },
+ "version": "0.2"
+}

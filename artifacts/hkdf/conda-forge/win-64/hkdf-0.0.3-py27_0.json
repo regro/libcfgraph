@@ -1,0 +1,35 @@
+{
+ "about": {
+  "description": "This module implements the HMAC Key Derivation function, defined at\nhttp://tools.ietf.org/html/draft-krawczyk-hkdf-01\nThere are two interfaces: a functional interface, with separate extract\nand expand functions as defined in the draft RFC, and a wrapper class for\nthese functions.\n",
+  "dev_url": "https://github.com/casebeer/python-hkdf",
+  "doc_url": "https://github.com/casebeer/python-hkdf",
+  "home": "https://github.com/casebeer/python-hkdf",
+  "license": "BSD-2",
+  "license_family": "BSD",
+  "summary": "This module implements the HMAC Key Derivation function, defined at http://tools.ietf.org/html/draft-krawczyk-hkdf-01 "
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/hkdf-0.0.3-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/hkdf.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD-2",
+  "license_family": "BSD",
+  "name": "hkdf",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.0.3"
+ },
+ "metadata_version": 1,
+ "name": "hkdf",
+ "raw_recipe": "{% set name = \"hkdf\" %}\n{% set version = \"0.0.3\" %}\n{% set sha256 = \"622a31c634bc185581530a4b44ffb731ed208acf4614f9c795bdd70e77991dca\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  requires:\n    - nose\n  commands:\n    - nosetests\nabout:\n  home: https://github.com/casebeer/python-hkdf\n  license: BSD-2\n  license_family: BSD\n#  license_file: LICENSE\n  summary: 'This module implements the HMAC Key Derivation function,\n  defined at http://tools.ietf.org/html/draft-krawczyk-hkdf-01 '\n  description: |\n    This module implements the HMAC Key Derivation function, defined at\n    http://tools.ietf.org/html/draft-krawczyk-hkdf-01\n    There are two interfaces: a functional interface, with separate extract\n    and expand functions as defined in the draft RFC, and a wrapper class for\n    these functions.\n  doc_url: https://github.com/casebeer/python-hkdf\n  dev_url: https://github.com/casebeer/python-hkdf\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
+ "rendered_recipe": {},
+ "version": "0.0.3"
+}

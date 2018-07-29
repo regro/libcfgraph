@@ -1,0 +1,181 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "The cdtime module contains functions for converting between\nthese forms, based on the common calendars used in climate\nsimulation. Basic arithmetic and comparison operators are also available.\n",
+  "dev_url": "https://github.com/UV-CDAT/cdtime",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://uvcdat.llnl.gov/documentation/cdms/cdms_3.html",
+  "license": "CCLRC",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.3-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Climate calendar manipulation tools"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/cdtime.so",
+  "lib/python2.7/site-packages/cdtime-3.2-py2.7.egg-info"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_0",
+  "build_number": 0,
+  "depends": [
+   "cdat_info",
+   "libcdms",
+   "libdrs_f",
+   "numpy 1.11*",
+   "python 2.7*",
+   "setuptools"
+  ],
+  "license": "CCLRC",
+  "name": "cdtime",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.10"
+ },
+ "metadata_version": 1,
+ "name": "cdtime",
+ "raw_recipe": "{% set name = \"cdtime\" %}\n{% set version = \"2.10\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://github.com/UV-CDAT/cdtime/archive/v2.10.tar.gz\n  sha256: ea93c7f5a02bf90d2df108f9e843b81793cb9fc3cabee86ecacbf3f8e29daca3\n\nbuild:\n  number: 0\n  skip: True  # [win or py3k] \n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - libcdms\n    - numpy x.x\n    - cdat_info\n    - libdrs_f\n    - gcc\n  run:\n    - python\n    - setuptools\n    - libcdms\n    - cdat_info\n    - libdrs_f\n    - numpy x.x\n\ntest:\n  imports:\n    - cdtime\n\nabout:\n  home: http://uvcdat.llnl.gov/documentation/cdms/cdms_3.html\n  license: 'CCLRC'\n  license_file: 'LICENSE'\n  summary: 'Climate calendar manipulation tools'\n  description: |\n      The cdtime module contains functions for converting between \n      these forms, based on the common calendars used in climate \n      simulation. Basic arithmetic and comparison operators are also available.\n  dev_url: https://github.com/UV-CDAT/cdtime\n\nextra:\n  recipe-maintainers:\n    - dnadeau4\n    - doutriaux1\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "The cdtime module contains functions for converting between\nthese forms, based on the common calendars used in climate\nsimulation. Basic arithmetic and comparison operators are also available.\n",
+   "dev_url": "https://github.com/UV-CDAT/cdtime",
+   "home": "http://uvcdat.llnl.gov/documentation/cdms/cdms_3.html",
+   "license": "CCLRC",
+   "license_file": "LICENSE",
+   "summary": "Climate calendar manipulation tools"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "string": "np111py27_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "dnadeau4",
+    "doutriaux1"
+   ]
+  },
+  "package": {
+   "name": "cdtime",
+   "version": "2.10"
+  },
+  "requirements": {
+   "build": [
+    "blas 1.1 openblas",
+    "ca-certificates 2017.1.23 1",
+    "cdat_info 2.10 py27_0",
+    "certifi 2017.4.17 py27_0",
+    "cloog 0.18.0 0",
+    "curl 7.52.1 0",
+    "g2clib 1.6.0 2",
+    "gcc 4.8.5 8",
+    "gmp 6.1.2 0",
+    "hdf4 4.2.12 0",
+    "hdf5 1.8.17 9",
+    "isl 0.12.2 1",
+    "jasper 1.900.1 4",
+    "jpeg 9b 0",
+    "libcdms 2.10 0",
+    "libdrs 2.10 1",
+    "libdrs_f 2.10 py27_0",
+    "libgcc 4.8.5 1",
+    "libgfortran 3.0.0 0",
+    "libnetcdf 4.4.1.1 4",
+    "libpng 1.6.28 0",
+    "libtiff 4.0.6 7",
+    "mpc 1.0.3 3",
+    "mpfr 3.1.5 0",
+    "ncurses 5.9 10",
+    "numpy 1.11.3 py27_blas_openblas_200",
+    "openblas 0.2.19 2",
+    "openssl 1.0.2k 0",
+    "python 2.7.13 1",
+    "readline 6.2 0",
+    "setuptools 33.1.1 py27_0",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python",
+    "setuptools",
+    "libcdms",
+    "cdat_info",
+    "libdrs_f",
+    "numpy x.x"
+   ]
+  },
+  "source": {
+   "sha256": "ea93c7f5a02bf90d2df108f9e843b81793cb9fc3cabee86ecacbf3f8e29daca3",
+   "url": "https://github.com/UV-CDAT/cdtime/archive/v2.10.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "cdtime"
+   ]
+  }
+ },
+ "version": "2.10"
+}

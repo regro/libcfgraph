@@ -1,0 +1,35 @@
+{
+ "about": {
+  "home": "https://github.com/kwilcox/pygc",
+  "license": "GNU General Public License v3 (GPLv3)",
+  "summary": "Great Circle calculations in Python using Vincenty's formulae."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/pygc-1.0.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/pygc/__init__.py",
+  "Lib/site-packages/pygc/gc.py",
+  "Lib/site-packages/pygc/tests/__init__.py",
+  "Lib/site-packages/pygc/tests/test_gc.py",
+  "Lib/site-packages/pygc/tests/test_gd.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 2.7*"
+  ],
+  "license": "GNU General Public License v3 (GPLv3)",
+  "name": "pygc",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.0"
+ },
+ "metadata_version": 1,
+ "name": "pygc",
+ "raw_recipe": "{% set version = \"1.0.0\" %}\npackage:\n    name: pygc\n    version: {{ version }}\n\nsource:\n    fn: pygc-{{ version }}.tar.gz\n    url: https://github.com/axiom-data-science/pygc/archive/{{ version }}.tar.gz\n    sha256: 70c5b3bdfc4d292abbdb5002ea17557da1bc977a14e812055817b341c965bc1f\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n\ntest:\n    imports:\n        - pygc\n\nabout:\n    home: https://github.com/kwilcox/pygc\n    license: GNU General Public License v3 (GPLv3)\n    summary: \"Great Circle calculations in Python using Vincenty's formulae.\"\n\nextra:\n    recipe-maintainers:\n        - kwilcox\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.0.0"
+}

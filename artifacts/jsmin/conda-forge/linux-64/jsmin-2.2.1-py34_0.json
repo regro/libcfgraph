@@ -1,0 +1,32 @@
+{
+ "about": {
+  "home": "https://github.com/tikitu/jsmin",
+  "license": "MIT",
+  "summary": "JavaScript minifier"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/jsmin-2.2.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/jsmin/__init__.py",
+  "lib/python3.4/site-packages/jsmin/__main__.py",
+  "lib/python3.4/site-packages/jsmin/test.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "jsmin",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.2.1"
+ },
+ "metadata_version": 1,
+ "name": "jsmin",
+ "raw_recipe": "{% set version = \"2.2.1\" %}\n\npackage:\n    name: jsmin\n    version: {{ version }}\n\nsource:\n    fn: jsmin-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/j/jsmin/jsmin-{{ version }}.tar.gz\n    sha256: df7fe41d6de1df42cb5dcfdefe1d7285b584ec6f2a714f6c05f6e6dbacff7f71\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - jsmin\n\nabout:\n    home: https://github.com/tikitu/jsmin\n    license: MIT\n    summary: 'JavaScript minifier'\n\nextra:\n    recipe-maintainers:\n        - daf\n",
+ "rendered_recipe": {},
+ "version": "2.2.1"
+}

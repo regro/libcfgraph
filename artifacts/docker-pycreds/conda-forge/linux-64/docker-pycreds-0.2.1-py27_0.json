@@ -1,0 +1,38 @@
+{
+ "about": {
+  "home": "https://github.com/shin-/docker-pycreds/",
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "summary": "Python bindings for the docker credentials store API"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/docker_pycreds-0.2.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/docker_pycreds-0.2.1-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/dockerpycreds/__init__.py",
+  "lib/python2.7/site-packages/dockerpycreds/constants.py",
+  "lib/python2.7/site-packages/dockerpycreds/errors.py",
+  "lib/python2.7/site-packages/dockerpycreds/store.py",
+  "lib/python2.7/site-packages/dockerpycreds/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "six >=1.4.0"
+  ],
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "name": "docker-pycreds",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2.1"
+ },
+ "metadata_version": 1,
+ "name": "docker-pycreds",
+ "raw_recipe": "{% set version = \"0.2.1\" %}\n\npackage:\n  name: docker-pycreds\n  version: {{ version }}\n\nsource:\n  fn: docker-pycreds-{{ version }}.tar.gz\n  url: https://github.com/shin-/dockerpy-creds/archive/{{ version }}.tar.gz\n  sha256: 7882efd95f44b5df166b4e34c054b486dc7287932a49cd491edf406763695351\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six >=1.4.0\n  run:\n    - python\n    - six >=1.4.0\n\ntest:\n  imports:\n    - dockerpycreds\n\nabout:\n  home: https://github.com/shin-/docker-pycreds/\n  license: Apache-2.0\n  summary: 'Python bindings for the docker credentials store API'\n  license_file: LICENSE\n  license_family: Apache\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.2.1"
+}

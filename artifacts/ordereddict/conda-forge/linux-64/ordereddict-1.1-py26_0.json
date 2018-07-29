@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "https://pypi.python.org/pypi/ordereddict",
+  "license": "MIT",
+  "summary": "A drop-in substitute for Py2.7's new collections.OrderedDict that works in Python 2.4-2.6."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.6/site-packages/ordereddict-1.1-py2.6.egg-info",
+  "lib/python2.6/site-packages/ordereddict.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py26_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.6*"
+  ],
+  "license": "MIT",
+  "name": "ordereddict",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.1"
+ },
+ "metadata_version": 1,
+ "name": "ordereddict",
+ "raw_recipe": "{% set name = \"ordereddict\" %}\n{% set version = \"1.1\" %}\n{% set checksum = \"1c35b4ac206cef2d24816c89f89cf289dd3d38cf7c449bb3fab7bf6d43f01b1f\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ checksum }}\n\nbuild:\n  skip: true  # [py>=27]\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - ordereddict\n\nabout:\n  # Had no home page. So pointed it to PyPI.\n  home: https://pypi.python.org/pypi/ordereddict\n  license: MIT\n  summary: A drop-in substitute for Py2.7's new collections.OrderedDict that works in Python 2.4-2.6.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.1"
+}

@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "https://github.com/dbtsai/python-mimeparse",
+  "license": "MIT License",
+  "summary": "A module provides basic functions for parsing mime-type names and matching them against a list of media-ranges."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/mimeparse.py",
+  "Lib/site-packages/python_mimeparse-1.5.2-py3.5.egg-info/PKG-INFO"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT License",
+  "name": "python-mimeparse",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.5.2"
+ },
+ "metadata_version": 1,
+ "name": "python-mimeparse",
+ "raw_recipe": "{%set name = \"python-mimeparse\" %}\n{%set version = \"1.5.2\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"bef134a59598cc6aa598f84553162aa7a0c01f3f431588225bb9a208964b1827\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - mimeparse\n\nabout:\n  home: https://github.com/dbtsai/python-mimeparse\n  license: MIT License\n  summary: 'A module provides basic functions for parsing mime-type names and matching them against a list of media-ranges.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.5.2"
+}

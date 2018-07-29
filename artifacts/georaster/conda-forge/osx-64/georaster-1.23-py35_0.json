@@ -1,0 +1,139 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "dev_url": "https://github.com/atedstone/georaster",
+  "doc_url": "http://georaster.readthedocs.io",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p481/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/atedstone/georaster",
+  "license": "GNU GPL v.3",
+  "license_family": "GPL3",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "easy processing and analysis of geographic and projected rasters"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/georaster-1.23-py3.5.egg-info",
+  "lib/python3.5/site-packages/georaster/__init__.py",
+  "lib/python3.5/site-packages/georaster/georaster.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "gdal",
+   "numpy",
+   "pyproj",
+   "python 3.5*",
+   "scipy"
+  ],
+  "license": "GNU GPL v.3",
+  "license_family": "GPL3",
+  "name": "georaster",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.23"
+ },
+ "metadata_version": 1,
+ "name": "georaster",
+ "raw_recipe": "{% set name = \"georaster\" %}\n{% set version = \"1.23\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 167e23d8e5bddb86816c6b24dc2f020c99af8a2c0a56df9e135a4485409c40f2\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n    - numpy\n    - scipy\n    - gdal\n    - pyproj\n\ntest:\n  imports:\n    - georaster\n\nabout:\n  home: https://github.com/atedstone/georaster\n  license: GNU GPL v.3\n  summary: 'easy processing and analysis of geographic and projected rasters'\n  license_family: GPL3\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt'\n  doc_url: http://georaster.readthedocs.io\n  dev_url: https://github.com/atedstone/georaster\n\nextra:\n  recipe-maintainers:\n    - atedstone\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "https://github.com/atedstone/georaster",
+   "doc_url": "http://georaster.readthedocs.io",
+   "home": "https://github.com/atedstone/georaster",
+   "license": "GNU GPL v.3",
+   "license_family": "GPL3",
+   "license_file": "/Users/travis/build/conda-forge/georaster-feedstock/recipe/LICENSE.txt",
+   "summary": "easy processing and analysis of geographic and projected rasters"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install",
+   "string": "py35_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "atedstone"
+   ]
+  },
+  "package": {
+   "name": "georaster",
+   "version": "1.23"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "numpy",
+    "scipy",
+    "gdal",
+    "pyproj"
+   ]
+  },
+  "source": {
+   "fn": "georaster-1.23.tar.gz",
+   "sha256": "167e23d8e5bddb86816c6b24dc2f020c99af8a2c0a56df9e135a4485409c40f2",
+   "url": "https://pypi.io/packages/source/g/georaster/georaster-1.23.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "georaster"
+   ]
+  }
+ },
+ "version": "1.23"
+}

@@ -1,0 +1,32 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/flann-1.8.4-py2.7.egg-info",
+  "lib/python2.7/site-packages/pyflann/__init__.py",
+  "lib/python2.7/site-packages/pyflann/exceptions.py",
+  "lib/python2.7/site-packages/pyflann/flann_ctypes.py",
+  "lib/python2.7/site-packages/pyflann/index.py",
+  "lib/python2.7/site-packages/pyflann/lib/libflann.dylib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "flann 1.8.4",
+   "numpy",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pyflann",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.8.4"
+ },
+ "metadata_version": 1,
+ "name": "pyflann",
+ "raw_recipe": "{% set version = \"1.8.4\" %}\n\npackage:\n    name: pyflann\n    version: {{ version }}\n\nsource:\n    fn: flann-{{ version }}.tar.gz\n    url: https://github.com/mariusmuja/flann/archive/{{ version }}.tar.gz\n    md5: 774b74580e3cbc5b0d45c6ec345a64ae\n\nbuild:\n    number: 0\n    skip: true  # [win]\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - flann {{ version }}\n        - cmake\n    run:\n        - python\n        - flann {{ version }}\n        - numpy\n\ntest:\n    imports:\n        - pyflann\n\nabout:\n    home: http://www.cs.ubc.ca/research/flann/\n    license: BSD 3-Clause\n    license_file: COPYING\n    summary: \"Python wrapper for FLANN\"\n\nextra:\n  recipe-maintainers:\n    - jakevdp\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.8.4"
+}

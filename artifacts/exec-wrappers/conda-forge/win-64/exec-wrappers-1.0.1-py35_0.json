@@ -1,0 +1,41 @@
+{
+ "about": {
+  "description": "exec-wrappers is a command line tool to create wrappers around executable\nfiles that need to be executed on a particular environment (e.g. conda, virtualenv, schroot)\n",
+  "dev_url": "https://github.com/gqmelo/exec-wrappers",
+  "doc_url": "https://github.com/gqmelo/exec-wrappers",
+  "home": "https://github.com/gqmelo/exec-wrappers",
+  "license": "MIT",
+  "summary": "command line tool to create wrappers around executables"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/exec_wrappers-1.0.1-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/exec_wrappers/__init__.py",
+  "Lib/site-packages/exec_wrappers/create_wrappers.py",
+  "Lib/site-packages/exec_wrappers/templates/conda/run-in",
+  "Lib/site-packages/exec_wrappers/templates/conda/run-in.bat",
+  "Lib/site-packages/exec_wrappers/templates/schroot/run-in",
+  "Lib/site-packages/exec_wrappers/templates/virtualenv/run-in",
+  "Lib/site-packages/exec_wrappers/templates/virtualenv/run-in.bat",
+  "Scripts/create-wrappers-script.py",
+  "Scripts/create-wrappers.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "exec-wrappers",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.1"
+ },
+ "metadata_version": 1,
+ "name": "exec-wrappers",
+ "raw_recipe": "{% set version = \"1.0.1\" %}\n{% set sha256 = \"388da53f32c3fc6d15f83dacb110afa697d85d14a4a50f2ab281221c830c691e\" %}\n\npackage:\n  name: exec-wrappers\n  version: {{ version }}\n\nsource:\n  fn: exec-wrappers-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/e/exec-wrappers/exec-wrappers-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - create-wrappers = exec_wrappers.create_wrappers:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - exec_wrappers\n  commands:\n    - create-wrappers --help\n\nabout:\n  home: https://github.com/gqmelo/exec-wrappers\n  license: MIT\n  summary: 'command line tool to create wrappers around executables'\n\n  description: |\n    exec-wrappers is a command line tool to create wrappers around executable\n    files that need to be executed on a particular environment (e.g. conda, virtualenv, schroot)\n  doc_url: https://github.com/gqmelo/exec-wrappers\n  dev_url: https://github.com/gqmelo/exec-wrappers\n\nextra:\n  recipe-maintainers:\n    - gqmelo\n",
+ "rendered_recipe": {},
+ "version": "1.0.1"
+}

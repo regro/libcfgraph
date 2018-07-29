@@ -1,0 +1,134 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/SciTools/mo_pack",
+  "license": "LGPL-3.0",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.4-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Python wrapper to libmo_unpack"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/mo_pack/tests/test_wgdos.py",
+  "lib/python2.7/site-packages/mo_pack/tests/test_compress_rle.py",
+  "lib/python2.7/site-packages/mo_pack/tests/test_decompress_rle.py",
+  "lib/python2.7/site-packages/mo_pack/_packing.so",
+  "lib/python2.7/site-packages/mo_pack-0.2.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/mo_pack/tests/test_data/nae.20100104-06_0001_0001.pp",
+  "lib/python2.7/site-packages/mo_pack/tests/__init__.py",
+  "lib/python2.7/site-packages/mo_pack/__init__.py",
+  "lib/python2.7/site-packages/mo_pack/tests/test_rle.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np112py27_0",
+  "build_number": 0,
+  "depends": [
+   "libmo_unpack",
+   "numpy 1.12*",
+   "python 2.7*"
+  ],
+  "license": "LGPL-3.0",
+  "name": "mo_pack",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.0"
+ },
+ "metadata_version": 1,
+ "name": "mo_pack",
+ "raw_recipe": "{% set version = \"0.2.0\" %}\n\npackage:\n  name: mo_pack\n  version: {{ version }}\n\nsource:\n  fn: v{{ version }}.tar.gz\n  url: https://github.com/SciTools/mo_pack/archive/v{{ version }}.tar.gz\n  sha256: 4aa70e1f846b666670843bc2514435dedf7393203e88abaf74d48f8f2717a726\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - numpy x.x\n    - setuptools\n    - cython\n    - libmo_unpack\n  run:\n    - python\n    - numpy x.x\n    - libmo_unpack\n\ntest:\n  imports:\n    - mo_pack\n\nabout:\n    home: https://github.com/SciTools/mo_pack\n    license: LGPL-3.0\n    license_file: COPYING.LESSER\n    summary: 'Python wrapper to libmo_unpack'\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/SciTools/mo_pack",
+   "license": "LGPL-3.0",
+   "license_file": "COPYING.LESSER",
+   "summary": "Python wrapper to libmo_unpack"
+  },
+  "build": {
+   "number": "0",
+   "string": "np112py27_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pelson",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "mo_pack",
+   "version": "0.2.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "numpy x.x",
+    "libmo_unpack"
+   ]
+  },
+  "source": {
+   "fn": "v0.2.0.tar.gz",
+   "sha256": "4aa70e1f846b666670843bc2514435dedf7393203e88abaf74d48f8f2717a726",
+   "url": "https://github.com/SciTools/mo_pack/archive/v0.2.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "mo_pack"
+   ]
+  }
+ },
+ "version": "0.2.0"
+}

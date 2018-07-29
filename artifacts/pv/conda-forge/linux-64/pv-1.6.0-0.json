@@ -1,0 +1,28 @@
+{
+ "about": {
+  "home": "http://www.ivarch.com/programs/pv.shtml",
+  "license": "Artistic-2.0",
+  "summary": "pv - monitor the progress of data through a pipe"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/pv",
+  "share/man/man1/pv.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "Artistic-2.0",
+  "name": "pv",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.6.0"
+ },
+ "metadata_version": 1,
+ "name": "pv",
+ "raw_recipe": "{% set pkgname = \"pv\" %}\n{% set version = \"1.6.0\" %}\n{% set sha1 = \"748280662bdc318c876cc9e759b52050c76f81ee\" %}\n{% set md5 = \"e163d8963c595b2032666724bc509bcc\" %}\n\npackage:\n  name: {{ pkgname }}\n  version: {{ version }}\n\nsource:\n  fn: {{ pkgname }}-{{ version }}.tar.bz2\n  url: http://www.ivarch.com/programs/sources/{{ pkgname }}-{{ version }}.tar.bz2\n  sha1: {{ sha1 }}\n  md5: {{ md5 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\ntest:\n  commands:\n    - pv --version\n\nabout:\n  home: http://www.ivarch.com/programs/pv.shtml\n  license: Artistic-2.0\n  summary: pv - monitor the progress of data through a pipe\n\nextra:\n  recipe-maintainers:\n    - shahin\n",
+ "rendered_recipe": {},
+ "version": "1.6.0"
+}

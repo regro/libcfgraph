@@ -1,0 +1,41 @@
+{
+ "about": {
+  "home": "http://stedolan.github.io/jq/",
+  "license": "MIT",
+  "summary": "A command-line JSON processor."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/jq",
+  "include/jq.h",
+  "include/jv.h",
+  "lib/libjq.a",
+  "lib/libjq.la",
+  "lib/libjq.so",
+  "lib/libjq.so.1",
+  "lib/libjq.so.1.0.4",
+  "share/doc/jq/AUTHORS",
+  "share/doc/jq/COPYING",
+  "share/doc/jq/README",
+  "share/doc/jq/README.md",
+  "share/man/man1/jq.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "2",
+  "build_number": 2,
+  "depends": [
+   "oniguruma 6.0.*"
+  ],
+  "license": "MIT",
+  "name": "jq",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.5"
+ },
+ "metadata_version": 1,
+ "name": "jq",
+ "raw_recipe": "{% set version = \"1.5\" %}\n\npackage:\n  name: jq\n  version: {{ version }}\n\nsource:\n  fn: jq-{{ version }}.tar.gz\n  url: https://github.com/stedolan/jq/releases/download/jq-{{ version }}/jq-{{ version }}.tar.gz\n  md5: 0933532b086bd8b6a41c1b162b1731f9\n\nbuild:\n  number: 2\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - oniguruma 6.0.*\n  run:\n    - oniguruma 6.0.*\n\ntest:\n  commands:\n    - jq --help  # [not win]\n\nabout:\n  home: http://stedolan.github.io/jq/\n  license: MIT\n  summary: A command-line JSON processor.\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.5"
+}

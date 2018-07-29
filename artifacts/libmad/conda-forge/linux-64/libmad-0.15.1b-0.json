@@ -1,0 +1,34 @@
+{
+ "about": {
+  "description": "MAD is a high-quality MPEG audio decoder. It currently supports MPEG-1 and the MPEG-2\nextension to lower sampling frequencies, as well as the de facto MPEG 2.5 format. All\nthree audio layers \u2014 Layer I, Layer II, and Layer III (i.e. MP3) \u2014 are fully implemented.\n",
+  "dev_url": "https://sourceforge.net/projects/mad/",
+  "doc_url": "http://www.underbit.com/products/mad/",
+  "home": "http://www.underbit.com/products/mad/",
+  "license": "GPLv2",
+  "summary": "MPEG audio decoder"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/mad.h",
+  "lib/libmad.la",
+  "lib/libmad.so",
+  "lib/libmad.so.0",
+  "lib/libmad.so.0.2.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "GPLv2",
+  "name": "libmad",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.15.1b"
+ },
+ "metadata_version": 1,
+ "name": "libmad",
+ "raw_recipe": "{% set name = \"mad\" %}\n{% set version = \"0.15.1b\" %}\n{% set sha256 = \"bbfac3ed6bfbc2823d3775ebb931087371e142bb0e9bb1bee51a76a6e0078690\" %}\n\npackage:\n  name: lib{{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn:  lib{{ name }}-{{ version }}.tar.gz\n  url: ftp://ftp.mars.org/pub/mpeg/lib{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - lib{{ name }}-{{ version }}-fixes-1.patch  # [unix]\n\nbuild:\n  number: 0\n  features:\n    - vc9  # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py35]\n\nrequirements:\n  build:\n    - python  # [win]\n    - cmake  # [win]\n    - vc 9  # [win and py27]\n    - vc 10  # [win and py34]\n    - vc 14  # [win and py35]\n    - pkgconfig  # [unix]\n    - autoconf  # [unix]\n    - automake  # [unix]\n    - libtool  # [unix]\n    - toolchain\n\ntest:\n  requires:\n    - python {{ environ['PY_VER'] + '*' }}  # [win]\n  commands:\n    - test -f $PREFIX/lib/libmad.la  # [unix]\n    - test -f $PREFIX/lib/libmad.dylib  # [osx]\n    - test -f $PREFIX/lib/libmad.so  # [linux]\n    - test -f $PREFIX/include/mad.h  # [unix]\n    - if not exist %LIBRARY_LIB%\\\\libmad.lib exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\\\libmad.dll exit 1  # [win]\n    - if not exist %LIBRARY_INC%\\\\libmad\\\\mad.h exit 1  # [win]\n    \nabout:\n  home: http://www.underbit.com/products/mad/\n  license: GPLv2\n  license_file: COPYING\n  summary: \"MPEG audio decoder\"\n  description: |\n    MAD is a high-quality MPEG audio decoder. It currently supports MPEG-1 and the MPEG-2 \n    extension to lower sampling frequencies, as well as the de facto MPEG 2.5 format. All \n    three audio layers \u2014 Layer I, Layer II, and Layer III (i.e. MP3) \u2014 are fully implemented.\n  doc_url: http://www.underbit.com/products/mad/\n  dev_url: https://sourceforge.net/projects/mad/\n\nextra:\n  recipe-maintainers:\n    - dschreij\n",
+ "rendered_recipe": {},
+ "version": "0.15.1b"
+}

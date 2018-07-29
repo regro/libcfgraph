@@ -1,0 +1,39 @@
+{
+ "about": {
+  "home": "http://mpir.org/",
+  "license": "LGPL 3",
+  "summary": "Multiple Precision Integers and Rationals."
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/mpir.h",
+  "include/mpirxx.h",
+  "lib/libmpir.16.dylib",
+  "lib/libmpir.a",
+  "lib/libmpir.dylib",
+  "lib/libmpir.la",
+  "lib/libmpirxx.8.dylib",
+  "lib/libmpirxx.a",
+  "lib/libmpirxx.dylib",
+  "lib/libmpirxx.la",
+  "share/info/mpir.info",
+  "share/info/mpir.info-1",
+  "share/info/mpir.info-2"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "3",
+  "build_number": 3,
+  "depends": [],
+  "license": "LGPL 3",
+  "name": "mpir",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.7.2"
+ },
+ "metadata_version": 1,
+ "name": "mpir",
+ "raw_recipe": "{% set version = \"2.7.2\" %}\n\npackage:\n  name: mpir\n  version: {{ version }}\n\nsource:\n  fn: mpir-{{ version }}.tar.bz2\n  url: http://mpir.org/mpir-{{ version }}.tar.bz2\n  md5: b31aa1ebc01b5fedf4ac43277c03feec\n\nbuild:\n  number: 3\n  skip: true          # [win and not (py34 or py35)]\n  features:\n    - vc10            # [win and py34]\n    - vc14            # [win and py35]\n\nrequirements:\n  build:\n    - m4              # [unix]\n    - python\n    - toolchain       # [unix]\n    - yasm            # [unix]\n\ntest:\n  requires:\n    - python\n  files:\n    - test.c\n  commands:\n    - if not exist %LIBRARY_INC%\\\\mpir.h exit 1                # [win]\n    - if not exist %LIBRARY_INC%\\\\mpirxx.h exit 1              # [win]\n    - if not exist %LIBRARY_INC%\\\\gmp.h exit 1                 # [win]\n    - if not exist %LIBRARY_INC%\\\\gmpxx.h exit 1               # [win]\n\n    - if not exist %LIBRARY_LIB%\\\\mpir.lib exit 1              # [win]\n    - if not exist %LIBRARY_LIB%\\\\gmp.lib exit 1               # [win]\n    - if not exist %LIBRARY_BIN%\\\\mpir.dll exit 1              # [win]\n    - if not exist %LIBRARY_BIN%\\\\gmp.dll exit 1               # [win]\n\n    - if not exist %LIBRARY_LIB%\\\\mpir_static.lib exit 1       # [win]\n    - if not exist %LIBRARY_LIB%\\\\mpirxx_static.lib exit 1     # [win]\n    - if not exist %LIBRARY_LIB%\\\\gmp_static.lib exit 1        # [win]\n    - if not exist %LIBRARY_LIB%\\\\gmpxx_static.lib exit 1      # [win]\n\n    - test -f $PREFIX/include/mpir.h                           # [unix]\n    - test -f $PREFIX/include/mpirxx.h                         # [unix]\n    - test -f $PREFIX/lib/libmpir.a                            # [unix]\n    - test -f $PREFIX/lib/libmpirxx.a                          # [unix]\n\n    - test -f $PREFIX/lib/libmpir.so                           # [linux]\n    - test -f $PREFIX/lib/libmpirxx.so                         # [linux]\n\n    - test -f $PREFIX/lib/libmpir.dylib                        # [osx]\n    - test -f $PREFIX/lib/libmpirxx.dylib                      # [osx]\n\nabout:\n  home: http://mpir.org/\n  license: LGPL 3\n  license_file: COPYING.LIB\n  summary: Multiple Precision Integers and Rationals.\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "2.7.2"
+}

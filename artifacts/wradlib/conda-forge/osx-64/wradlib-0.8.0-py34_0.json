@@ -1,0 +1,51 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/wradlib-0.8.0-py3.4.egg-info",
+  "lib/python3.4/site-packages/wradlib/__init__.py",
+  "lib/python3.4/site-packages/wradlib/adjust.py",
+  "lib/python3.4/site-packages/wradlib/atten.py",
+  "lib/python3.4/site-packages/wradlib/clutter.py",
+  "lib/python3.4/site-packages/wradlib/comp.py",
+  "lib/python3.4/site-packages/wradlib/dp.py",
+  "lib/python3.4/site-packages/wradlib/fill.py",
+  "lib/python3.4/site-packages/wradlib/georef.py",
+  "lib/python3.4/site-packages/wradlib/io.py",
+  "lib/python3.4/site-packages/wradlib/ipol.py",
+  "lib/python3.4/site-packages/wradlib/qual.py",
+  "lib/python3.4/site-packages/wradlib/trafo.py",
+  "lib/python3.4/site-packages/wradlib/util.py",
+  "lib/python3.4/site-packages/wradlib/verify.py",
+  "lib/python3.4/site-packages/wradlib/version.py",
+  "lib/python3.4/site-packages/wradlib/vis.py",
+  "lib/python3.4/site-packages/wradlib/vpr.py",
+  "lib/python3.4/site-packages/wradlib/zonalstats.py",
+  "lib/python3.4/site-packages/wradlib/zr.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "gdal",
+   "h5py >=2.0.1",
+   "krb5",
+   "matplotlib >=1.1.0",
+   "netcdf4 >=1.0",
+   "numpy >=1.7.0",
+   "python 3.4*",
+   "scipy >=0.9"
+  ],
+  "license": "MIT",
+  "name": "wradlib",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.8.0"
+ },
+ "metadata_version": 1,
+ "name": "wradlib",
+ "raw_recipe": "{% set version = \"0.8.0\" %}\n\npackage:\n    name: wradlib\n    version: {{ version }}\n\nsource:\n    fn: wradlib-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/w/wradlib/wradlib-{{ version }}.tar.gz\n    md5: 3ed24ca856a707757148a9ee298feb0c\n\nbuild:\n    number: 0\n    skip: True # [py35 and win]\n   \nrequirements:\n    build:\n        - python\n        - numpy >=1.7.0\n        - scipy >=0.9\n        - matplotlib >=1.1.0\n        - h5py >=2.0.1\n        - netcdf4 >=1.0\n        - gdal\n        # The gdal package on OS X is missing a dependency on krb5\n        - krb5  # [osx]\n    run:\n        - python\n        - numpy >=1.7.0\n        - scipy >=0.9\n        - matplotlib >=1.1.0\n        - h5py >=2.0.1\n        - netcdf4 >=1.0\n        - gdal\n        - krb5  # [osx]\n\ntest:\n    imports:\n        - wradlib\n\nabout:\n    home: http://wradlib.org/\n    license: MIT\n    summary: \"Open Source Library for Weather Radar Data Processing\"\n\nextra:\n    recipe-maintainers:\n        - jjhelmus\n        - kmuehlbauer\n",
+ "rendered_recipe": {},
+ "version": "0.8.0"
+}

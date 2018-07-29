@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "https://github.com/mewwts/addict",
+  "license": "MIT",
+  "summary": "Addict is a dictionary whose items can be set using both attribute and item syntax."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/addict-2.0.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/addict/__init__.py",
+  "lib/python3.5/site-packages/addict/addict.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "addict",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.0.0"
+ },
+ "metadata_version": 1,
+ "name": "addict",
+ "raw_recipe": "{% set version = \"2.0.0\" %}\n{% set sha256 = \"27c5a83bd7b4d4f1f57ac8704388ec52b766504c870876fba5807ab2d3fe16a7\" %}\n\npackage:\n  name: addict\n  version: {{ version }}\n\nsource:\n    fn: v{{ version }}.tar.gz\n    url: https://github.com/mewwts/addict/archive/v{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - addict\n\nabout:\n  home: https://github.com/mewwts/addict\n  license: MIT\n  summary: 'Addict is a dictionary whose items can be set using both attribute and item syntax.'\n\nextra:\n  recipe-maintainers:\n    - Ohjeah\n",
+ "rendered_recipe": {},
+ "version": "2.0.0"
+}

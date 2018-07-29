@@ -1,0 +1,26 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/contextlib2-0.5.1-py3.5.egg-info",
+  "lib/python3.5/site-packages/contextlib2.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "PSF License",
+  "name": "contextlib2",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.5.1"
+ },
+ "metadata_version": 1,
+ "name": "contextlib2",
+ "raw_recipe": "{% set version = \"0.5.1\" %}\n\npackage:\n  name: contextlib2\n  version: {{ version }}\n\nsource:\n  fn: contextlib2-{{ version }}.tar.gz\n  url: https://pypi.python.org/packages/source/c/contextlib2/contextlib2-{{ version }}.tar.gz\n  md5: b7f4c5a2b900c419b11b20f59838de1b\n\nbuild:\n  script: python setup.py install\n  number: 0\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - contextlib2\n\nabout:\n  home: http://contextlib2.readthedocs.org\n  license: PSF License\n  summary: 'Backports and enhancements for the contextlib module'\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
+ "rendered_recipe": {},
+ "version": "0.5.1"
+}

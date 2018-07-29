@@ -1,0 +1,28 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/azure/__init__.py",
+  "lib/python3.4/site-packages/azure_nspkg-1.0.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/azure_nspkg-1.0.0-py3.4.egg-info/not-zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "setuptools"
+  ],
+  "license": "Apache-2.0",
+  "name": "azure-nspkg",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0.0"
+ },
+ "metadata_version": 1,
+ "name": "azure-nspkg",
+ "raw_recipe": "{% set version = \"1.0.0\" %}\n\npackage:\n  name: azure-nspkg\n  version: {{ version }}\n\nsource:\n  fn: azure-nspkg-{{ version }}.zip\n  url: https://pypi.io/packages/source/a/azure-nspkg/azure-nspkg-{{ version }}.zip\n  md5: cb046beb44c3efdb8bf1688af6c011ca\n  \nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  \n  run:\n    - python\n    - setuptools\n\ntest:\n  imports:\n    - azure\n\nabout:\n  home: https://github.com/Azure/azure-sdk-for-python\n  license: Apache-2.0\n  summary: 'Microsoft Azure Namespace Package [Internal]'\n\nextra:\n  recipe-maintainers:\n    - ivoflipse\n    - Korijn\n    - Maxyme\n",
+ "rendered_recipe": {},
+ "version": "1.0.0"
+}

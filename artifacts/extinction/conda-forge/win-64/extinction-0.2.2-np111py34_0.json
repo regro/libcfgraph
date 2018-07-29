@@ -1,0 +1,35 @@
+{
+ "about": {
+  "description": "Cython-optimized implementations of empirical dust exitinction laws\nfound in astronomy literature.\n",
+  "dev_url": "https://github.com/kbarbary/extinction",
+  "doc_url": "https://extinction.readthedocs.io",
+  "home": "http://github.com/kbarbary/extinction",
+  "license": "MIT",
+  "summary": "Fast interstellar dust extinction laws"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/extinction-0.2.2-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/extinction.pyd"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py34_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.11*",
+   "python 3.4*",
+   "scipy"
+  ],
+  "license": "MIT",
+  "name": "extinction",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.2.2"
+ },
+ "metadata_version": 1,
+ "name": "extinction",
+ "raw_recipe": "{% set name = \"extinction\" %}\n{% set version = \"0.2.2\" %}\n{% set sha256 = \"448712ea7d4c32da7a24ccfde076d5ffe8b940cdb6dcb91332d4c1f6578d7924\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - toolchain\n  run:\n    - python\n    - numpy x.x\n    - scipy\n\ntest:\n  imports:\n    - extinction\n\nabout:\n  home: http://github.com/kbarbary/extinction\n  license: MIT\n  license_file: LICENSE\n  summary: 'Fast interstellar dust extinction laws'\n  description: |\n    Cython-optimized implementations of empirical dust exitinction laws\n    found in astronomy literature.\n  dev_url: https://github.com/kbarbary/extinction\n  doc_url: https://extinction.readthedocs.io\n\nextra:\n  recipe-maintainers:\n    - kbarbary\n",
+ "rendered_recipe": {},
+ "version": "0.2.2"
+}

@@ -1,0 +1,101 @@
+{
+ "about": {
+  "home": "https://github.com/pypa/auditwheel",
+  "license": "MIT License",
+  "summary": "Linux wheel verification tool to ensure compatibility"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/auditwheel",
+  "lib/python3.4/site-packages/auditwheel-1.1.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/auditwheel-1.1.0-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/auditwheel-1.1.0-py3.4.egg-info/pbr.json",
+  "lib/python3.4/site-packages/auditwheel/__init__.py",
+  "lib/python3.4/site-packages/auditwheel/__main__.py",
+  "lib/python3.4/site-packages/auditwheel/condatools.py",
+  "lib/python3.4/site-packages/auditwheel/genericpkgctx.py",
+  "lib/python3.4/site-packages/auditwheel/lddtree.py",
+  "lib/python3.4/site-packages/auditwheel/main.py",
+  "lib/python3.4/site-packages/auditwheel/main_addtag.py",
+  "lib/python3.4/site-packages/auditwheel/main_lddtree.py",
+  "lib/python3.4/site-packages/auditwheel/main_repair.py",
+  "lib/python3.4/site-packages/auditwheel/main_show.py",
+  "lib/python3.4/site-packages/auditwheel/policy/__init__.py",
+  "lib/python3.4/site-packages/auditwheel/policy/external_references.py",
+  "lib/python3.4/site-packages/auditwheel/policy/policy-schema.json",
+  "lib/python3.4/site-packages/auditwheel/policy/policy.json",
+  "lib/python3.4/site-packages/auditwheel/policy/versioned_symbols.py",
+  "lib/python3.4/site-packages/auditwheel/repair.py",
+  "lib/python3.4/site-packages/auditwheel/tmpdirs.py",
+  "lib/python3.4/site-packages/auditwheel/tools.py",
+  "lib/python3.4/site-packages/auditwheel/wheel_abi.py",
+  "lib/python3.4/site-packages/auditwheel/wheeltools.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_1",
+  "build_number": 1,
+  "depends": [
+   "pip",
+   "pyelftools",
+   "python 3.4*",
+   "setuptools",
+   "typing"
+  ],
+  "license": "MIT License",
+  "name": "auditwheel",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.1.0"
+ },
+ "metadata_version": 1,
+ "name": "auditwheel",
+ "raw_recipe": "package:\n  name: auditwheel\n  version: \"1.1.0\"\n\nsource:\n  fn: auditwheel-1.1.0.tar.gz\n  url: https://pypi.python.org/packages/source/a/auditwheel/auditwheel-1.1.0.tar.gz\n  md5: f42ec0ed1ce5e09e5ef5d3ce4f9826e6\n\nbuild:\n  number: 1\n  skip: True  # [py2k or not linux]\n\nrequirements:\n  build:\n    - pbr\n    - python\n    - setuptools\n    - pyelftools\n    - typing      # [py<35]\n\n  run:\n    - python\n    - setuptools\n    - pip\n    - pyelftools\n    - typing      # [py<35]\n\ntest:\n  commands:\n    - auditwheel -h\n\nabout:\n  home: https://github.com/pypa/auditwheel\n  license: MIT License\n  summary: Linux wheel verification tool to ensure compatibility\n\nextra:\n  recipe-maintainers:\n    - msarahan\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/pypa/auditwheel",
+   "license": "MIT License",
+   "summary": "Linux wheel verification tool to ensure compatibility"
+  },
+  "build": {
+   "number": 1,
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "msarahan"
+   ]
+  },
+  "package": {
+   "name": "auditwheel",
+   "version": "1.1.0"
+  },
+  "requirements": {
+   "build": [
+    "pbr",
+    "python",
+    "setuptools",
+    "pyelftools",
+    "typing"
+   ],
+   "run": [
+    "python",
+    "setuptools",
+    "pip",
+    "pyelftools",
+    "typing"
+   ]
+  },
+  "source": {
+   "fn": "auditwheel-1.1.0.tar.gz",
+   "md5": "f42ec0ed1ce5e09e5ef5d3ce4f9826e6",
+   "url": "https://pypi.python.org/packages/source/a/auditwheel/auditwheel-1.1.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "auditwheel -h"
+   ]
+  }
+ },
+ "version": "1.1.0"
+}

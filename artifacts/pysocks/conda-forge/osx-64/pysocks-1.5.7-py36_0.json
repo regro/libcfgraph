@@ -1,0 +1,136 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "dev_url": "https://github.com/Anorov/PySocks",
+  "doc_url": "https://github.com/Anorov/PySocks/blob/master/README.md",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/Anorov/PySocks",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "clyent-1.2.2-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-build-2.1.4-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.0-0",
+   "conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.8-py36_1",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_0",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "A Python SOCKS client module. See https://github.com/Anorov/PySocks for more information."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/sockshandler.py",
+  "lib/python3.6/site-packages/PySocks-1.5.7-py3.6.egg-info",
+  "lib/python3.6/site-packages/socks.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.6*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "pysocks",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.5.7"
+ },
+ "metadata_version": 1,
+ "name": "pysocks",
+ "raw_recipe": "{%set name = \"pysocks\" %}\n{%set camelName = \"PySocks\" %}\n{%set version = \"1.5.7\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"e51c7694b10288e6fd9a28e15c0bcce9aca0327e7b32ebcd9af05fcd56f38b88\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - socks\n\nabout:\n  home: https://github.com/Anorov/PySocks\n  license: BSD 3-Clause\n  # license_file: no MANIFEST listing or LICENSE - see https://github.com/Anorov/PySocks/issues/49\n  summary: 'A Python SOCKS client module. See https://github.com/Anorov/PySocks for more information.'\n  license_family: BSD\n  doc_url: https://github.com/Anorov/PySocks/blob/master/README.md\n  dev_url: https://github.com/Anorov/PySocks\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "https://github.com/Anorov/PySocks",
+   "doc_url": "https://github.com/Anorov/PySocks/blob/master/README.md",
+   "home": "https://github.com/Anorov/PySocks",
+   "license": "BSD 3-Clause",
+   "license_family": "BSD",
+   "summary": "A Python SOCKS client module. See https://github.com/Anorov/PySocks for more information."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install",
+   "string": "py36_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "pmlandwehr"
+   ]
+  },
+  "package": {
+   "name": "pysocks",
+   "version": "1.5.7"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "pysocks-1.5.7.tar.gz",
+   "sha256": "e51c7694b10288e6fd9a28e15c0bcce9aca0327e7b32ebcd9af05fcd56f38b88",
+   "url": "https://pypi.io/packages/source/p/pysocks/PySocks-1.5.7.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "socks"
+   ]
+  }
+ },
+ "version": "1.5.7"
+}

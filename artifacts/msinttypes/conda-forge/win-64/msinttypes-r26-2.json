@@ -1,0 +1,28 @@
+{
+ "about": {
+  "home": "https://code.google.com/archive/p/msinttypes/",
+  "license": "BSD-3-Clause",
+  "summary": "ISO C9x compliant stdint.h and inttypes.h for Microsoft Visual Studio."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/include/inttypes.h",
+  "Library/include/stdint.h"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "2",
+  "build_number": 2,
+  "depends": [],
+  "license": "BSD-3-Clause",
+  "name": "msinttypes",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "r26"
+ },
+ "metadata_version": 1,
+ "name": "msinttypes",
+ "raw_recipe": "{% set version = \"r26\" %}\npackage:\n    name: msinttypes\n    version: {{ version }}\n\nsource:\n    fn: msinttypes-{{ version }}.zip\n    url: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/msinttypes/msinttypes-{{ version }}.zip\n    sha256: 6e66d88de18aac0775890e94aa621853aa1d572136e3783ce130510d8fb6a55d\n\nbuild:\n    number: 2\n    skip: True  # [not win]\n\nabout:\n    home: https://code.google.com/archive/p/msinttypes/\n    license: BSD-3-Clause\n    summary: 'ISO C9x compliant stdint.h and inttypes.h for Microsoft Visual Studio.'\n\nextra:\n    recipe-maintainers:\n        - janschulz\n        - ocefpaf\n        - pelson\n",
+ "rendered_recipe": {},
+ "version": "r26"
+}

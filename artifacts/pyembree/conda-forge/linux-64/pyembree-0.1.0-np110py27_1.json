@@ -1,0 +1,44 @@
+{
+ "about": {
+  "dev_url": "https://github.com/scopatz/pyembree",
+  "home": "https://github.com/scopatz/pyembree",
+  "license": "BSD 2-clause",
+  "summary": "Python Wrapper for Embree"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/pyembree-0.0.0-py2.7-linux-x86_64.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pyembree-0.0.0-py2.7-linux-x86_64.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/pyembree/__init__.pxd",
+  "lib/python2.7/site-packages/pyembree/__init__.py",
+  "lib/python2.7/site-packages/pyembree/mesh_construction.so",
+  "lib/python2.7/site-packages/pyembree/rtcore.pxd",
+  "lib/python2.7/site-packages/pyembree/rtcore.so",
+  "lib/python2.7/site-packages/pyembree/rtcore_geometry.pxd",
+  "lib/python2.7/site-packages/pyembree/rtcore_geometry_user.pxd",
+  "lib/python2.7/site-packages/pyembree/rtcore_ray.pxd",
+  "lib/python2.7/site-packages/pyembree/rtcore_scene.pxd",
+  "lib/python2.7/site-packages/pyembree/rtcore_scene.so",
+  "lib/python2.7/site-packages/pyembree/trianges.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np110py27_1",
+  "build_number": 1,
+  "depends": [
+   "embree",
+   "numpy 1.10*",
+   "python 2.7*"
+  ],
+  "license": "BSD 2-clause",
+  "name": "pyembree",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.1.0"
+ },
+ "metadata_version": 1,
+ "name": "pyembree",
+ "raw_recipe": "{% set name = \"pyembree\" %}\n{% set org = \"scopatz\" %}\n{% set version = \"0.1.0\" %}\n{% set branch = \"0.1.0\" %}\n{% set sha256 = \"2f34c2807377bf8f24d26a4ca65bce00c25120188205e66438ee653a92db88d5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}-{{ sha256 }}.tar.gz\n  url: https://github.com/{{ org }}/{{ name }}/archive/{{ branch }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - cython\n    - numpy x.x\n    - embree\n  run:\n    - python\n    - numpy x.x\n    - embree\n\ntest:\n  imports:\n    - pyembree\n\nabout:\n  home: https://github.com/scopatz/pyembree\n  license: BSD 2-clause\n  license_file: LICENSE\n  summary: 'Python Wrapper for Embree'\n  dev_url: https://github.com/scopatz/pyembree\n\nextra:\n  recipe-maintainers:\n    - scopatz\n    - Xarthisius\n",
+ "rendered_recipe": {},
+ "version": "0.1.0"
+}

@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "https://github.com/Azure/azure-sdk-for-python",
+  "license": "Apache-2.0",
+  "summary": "Microsoft Azure Resource Management Client Library for Python (Common)"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/azure/mgmt/common/__init__.py",
+  "lib/python3.4/site-packages/azure/mgmt/common/arm.py",
+  "lib/python3.4/site-packages/azure/mgmt/common/filters.py",
+  "lib/python3.4/site-packages/azure_mgmt_common-0.20.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/azure_mgmt_common-0.20.0-py3.4.egg-info/not-zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "azure-common",
+   "azure-mgmt-nspkg",
+   "python 3.4*",
+   "requests"
+  ],
+  "license": "Apache-2.0",
+  "name": "azure-mgmt-common",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.20.0"
+ },
+ "metadata_version": 1,
+ "name": "azure-mgmt-common",
+ "raw_recipe": "{% set version = \"0.20.0\" %}\n\npackage:\n  name: azure-mgmt-common\n  version: {{ version }}\n\nsource:\n  fn: azure-mgmt-common{{ version }}.zip\n  url: https://pypi.io/packages/source/a/azure-mgmt-common/azure-mgmt-common-{{ version }}.zip\n  md5: f82f47f476964140576576734436ba4d\n  \nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - requests\n    - azure-common\n    - azure-mgmt-nspkg\n  run:\n    - python\n    - requests\n    - azure-common\n    - azure-mgmt-nspkg\n\ntest:\n  imports:\n    - azure\n    - azure.mgmt\n    - azure.mgmt.common\n  commands:\n    - python -m unittest discover -p \"test_*.py\"\n\nabout:\n  home: https://github.com/Azure/azure-sdk-for-python\n  license: Apache-2.0\n  summary: 'Microsoft Azure Resource Management Client Library for Python (Common)'\n\nextra:\n  recipe-maintainers:\n    - ivoflipse\n    - Korijn\n    - Maxyme\n",
+ "rendered_recipe": {},
+ "version": "0.20.0"
+}

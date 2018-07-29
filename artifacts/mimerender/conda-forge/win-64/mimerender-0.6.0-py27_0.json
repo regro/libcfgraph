@@ -1,0 +1,35 @@
+{
+ "about": {
+  "dev_url": "https://github.com/martinblech/mimerender",
+  "doc_url": "https://mimerender.readthedocs.io/en/latest/",
+  "home": "https://github.com/martinblech/mimerender",
+  "license": "MIT License",
+  "license_family": "MIT",
+  "summary": "RESTful HTTP Content Negotiation for Flask, Bottle, web.py and webapp2 (Google App Engine)"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/mimerender-0.6.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/mimerender.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "python-mimeparse >=0.1.4"
+  ],
+  "license": "MIT License",
+  "license_family": "MIT",
+  "name": "mimerender",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.6.0"
+ },
+ "metadata_version": 1,
+ "name": "mimerender",
+ "raw_recipe": "{%set name = \"mimerender\" %}\n{%set version = \"0.6.0\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"e7f1377efee18c3f562cee54907a3329223c824332889fb74b745ddfd0a9b1c6\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - python-mimeparse >=0.1.4\n\ntest:\n  imports:\n    - mimerender\n\nabout:\n  home: https://github.com/martinblech/mimerender\n  license: MIT License\n  # license_file: No MANIFEST.in - see https://github.com/martinblech/mimerender/issues/34\n  license_family: MIT\n  summary: 'RESTful HTTP Content Negotiation for Flask, Bottle, web.py and webapp2 (Google App Engine)'\n  dev_url: https://github.com/martinblech/mimerender\n  doc_url: https://mimerender.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.6.0"
+}

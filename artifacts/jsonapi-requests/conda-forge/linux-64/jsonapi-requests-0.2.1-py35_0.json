@@ -1,0 +1,172 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "dev_url": "https://github.com/socialwifi/jsonapi-requests",
+  "doc_url": "https://github.com/socialwifi/jsonapi-requests/wiki",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/socialwifi/jsonapi-requests",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-1",
+   "conda-forge::certifi-2017.4.17-py35_0",
+   "conda-forge::chardet-3.0.2-py35_1",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.10-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.12.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::openssl-1.0.2k-0",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-2",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2017.2-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Python client implementation for JSON API 1.0"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/jsonapi_requests/base.py",
+  "lib/python3.5/site-packages/jsonapi_requests/orm/api_model.py",
+  "lib/python3.5/site-packages/jsonapi_requests/data.py",
+  "lib/python3.5/site-packages/jsonapi_requests/__init__.py",
+  "lib/python3.5/site-packages/jsonapi_requests/orm/fields.py",
+  "lib/python3.5/site-packages/jsonapi_requests/request_factory.py",
+  "lib/python3.5/site-packages/jsonapi_requests/configuration.py",
+  "lib/python3.5/site-packages/jsonapi_requests/orm/__init__.py",
+  "lib/python3.5/site-packages/jsonapi_requests-0.2.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/jsonapi_requests/orm/api.py",
+  "lib/python3.5/site-packages/jsonapi_requests/orm/registry.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "requests",
+   "tenacity"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "jsonapi-requests",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2.1"
+ },
+ "metadata_version": 1,
+ "name": "jsonapi-requests",
+ "raw_recipe": "{% set name = \"jsonapi-requests\" %}\n{% set version = \"0.2.1\" %}\n{% set sha256 = \"d9438a15b752d74531edb48e5fa75d2387633b8daed2baacfbb3bec6231d2da2\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [py27]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - pip\n    - pytest-runner\n    - setuptools\n  run:\n    - python\n    - requests\n    - tenacity\n\ntest:\n  imports:\n    - jsonapi_requests\n    - jsonapi_requests.orm\n\nabout:\n  home: https://github.com/socialwifi/jsonapi-requests\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Python client implementation for JSON API 1.0'\n\n  doc_url: https://github.com/socialwifi/jsonapi-requests/wiki\n  dev_url: https://github.com/socialwifi/jsonapi-requests\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "https://github.com/socialwifi/jsonapi-requests",
+   "doc_url": "https://github.com/socialwifi/jsonapi-requests/wiki",
+   "home": "https://github.com/socialwifi/jsonapi-requests",
+   "license": "BSD 3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "Python client implementation for JSON API 1.0"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py35_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "sodre"
+   ]
+  },
+  "package": {
+   "name": "jsonapi-requests",
+   "version": "0.2.1"
+  },
+  "requirements": {
+   "build": [
+    "readline 6.2 0",
+    "py 1.4.33 py35_0",
+    "pytest-runner 2.11.1 py35_0",
+    "wheel 0.29.0 py35_0",
+    "sqlite 3.13.0 1",
+    "zlib 1.2.11 0",
+    "pip 9.0.1 py35_0",
+    "pytest 3.0.7 py35_0",
+    "python 3.5.3 2",
+    "xz 5.2.2 0",
+    "ncurses 5.9 10",
+    "certifi 2017.4.17 py35_0",
+    "tk 8.5.19 1",
+    "ca-certificates 2017.1.23 1",
+    "openssl 1.0.2k 0",
+    "setuptools 33.1.1 py35_0"
+   ],
+   "run": [
+    "python",
+    "requests",
+    "tenacity"
+   ]
+  },
+  "source": {
+   "fn": "jsonapi-requests-0.2.1.tar.gz",
+   "sha256": "d9438a15b752d74531edb48e5fa75d2387633b8daed2baacfbb3bec6231d2da2",
+   "url": "https://pypi.io/packages/source/j/jsonapi-requests/jsonapi-requests-0.2.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "jsonapi_requests",
+    "jsonapi_requests.orm"
+   ]
+  }
+ },
+ "version": "0.2.1"
+}

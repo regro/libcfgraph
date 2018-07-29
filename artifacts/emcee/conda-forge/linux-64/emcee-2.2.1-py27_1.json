@@ -1,0 +1,40 @@
+{
+ "about": {
+  "home": "http://danfm.ca/emcee/",
+  "license": "MIT",
+  "summary": "Kick ass affine-invariant ensemble MCMC sampling"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/emcee-2.2.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/emcee/__init__.py",
+  "lib/python2.7/site-packages/emcee/autocorr.py",
+  "lib/python2.7/site-packages/emcee/ensemble.py",
+  "lib/python2.7/site-packages/emcee/interruptible_pool.py",
+  "lib/python2.7/site-packages/emcee/mh.py",
+  "lib/python2.7/site-packages/emcee/mpi_pool.py",
+  "lib/python2.7/site-packages/emcee/ptsampler.py",
+  "lib/python2.7/site-packages/emcee/sampler.py",
+  "lib/python2.7/site-packages/emcee/tests.py",
+  "lib/python2.7/site-packages/emcee/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "numpy",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "emcee",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.2.1"
+ },
+ "metadata_version": 1,
+ "name": "emcee",
+ "raw_recipe": "{% set version = \"2.2.1\" %}\n\npackage:\n  name: emcee\n  version: {{ version }}\n\nsource:\n  fn: emcee-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/e/emcee/emcee-{{ version }}.tar.gz\n  md5: cd3f7a6ff6a8124fed86afeea69b9cac\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy\n\n  run:\n    - python\n    - numpy\n\ntest:\n  imports:\n    - emcee\n  requires:\n    - nose\n  commands: \n    - nosetests {{ environ.SRC_DIR }}/emcee -sv\n\nabout:\n  home: http://danfm.ca/emcee/\n  license: MIT\n  summary: 'Kick ass affine-invariant ensemble MCMC sampling'\n\nextra:\n  recipe-maintainers:\n    - ericdill\n    - tacaswell\n    - licode\n    - dfm\n    - danielballan\n",
+ "rendered_recipe": {},
+ "version": "2.2.1"
+}

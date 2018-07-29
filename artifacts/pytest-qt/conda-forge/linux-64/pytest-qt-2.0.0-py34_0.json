@@ -1,0 +1,38 @@
+{
+ "about": {
+  "home": "https://github.com/pytest-dev/pytest-qt",
+  "license": "LGPL",
+  "summary": "pytest support for PyQt and PySide applications"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pytest_qt-2.0.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pytestqt/__init__.py",
+  "lib/python3.4/site-packages/pytestqt/exceptions.py",
+  "lib/python3.4/site-packages/pytestqt/logging.py",
+  "lib/python3.4/site-packages/pytestqt/modeltest.py",
+  "lib/python3.4/site-packages/pytestqt/plugin.py",
+  "lib/python3.4/site-packages/pytestqt/qt_compat.py",
+  "lib/python3.4/site-packages/pytestqt/qtbot.py",
+  "lib/python3.4/site-packages/pytestqt/wait_signal.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "pytest",
+   "python 3.4*"
+  ],
+  "license": "LGPL",
+  "name": "pytest-qt",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.0"
+ },
+ "metadata_version": 1,
+ "name": "pytest-qt",
+ "raw_recipe": "{% set name = \"pytest-qt\" %}\n{% set version = \"2.0.0\" %}\n{% set hash_type = \"md5\" %}\n{% set hash = \"d6c5159e1a4db8dff3f5e3baa463012f\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/p/pytest-qt/pytest-qt-{{ version }}.zip\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - pytest\n    - setuptools\n  run:\n    - python\n    - pytest\n\ntest:\n  requires:\n    - pyqt\n    - pytest\n  imports:\n    - pytestqt\n  commands:\n    - py.test --help\n\nabout:\n  home: https://github.com/pytest-dev/pytest-qt\n  license: LGPL\n  summary: pytest support for PyQt and PySide applications\n\nextra:\n  recipe-maintainers:\n    - nicoddemus",
+ "rendered_recipe": {},
+ "version": "2.0.0"
+}

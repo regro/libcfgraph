@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "http://www.grantjenks.com/docs/sortedcontainers/",
+  "license": "Apache 2.0",
+  "summary": "Python Sorted Container Types: SortedList, SortedDict, and SortedSet"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/sortedcontainers-1.5.3-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/sortedcontainers/__init__.py",
+  "lib/python3.4/site-packages/sortedcontainers/sorteddict.py",
+  "lib/python3.4/site-packages/sortedcontainers/sortedlist.py",
+  "lib/python3.4/site-packages/sortedcontainers/sortedset.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "Apache 2.0",
+  "name": "sortedcontainers",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.5.3"
+ },
+ "metadata_version": 1,
+ "name": "sortedcontainers",
+ "raw_recipe": "{% set name=\"sortedcontainers\" %}\n{% set version=\"1.5.3\" %}\n{% set sha256=\"37190869bdd8405426b72b75a0e3a699b7fd6a7285905892acb49bd905d8625d\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - sortedcontainers\n\nabout:\n  home: http://www.grantjenks.com/docs/sortedcontainers/\n  license: Apache 2.0\n  summary: 'Python Sorted Container Types: SortedList, SortedDict, and SortedSet'\n\nextra:\n  recipe-maintainers:\n    - grantjenks\n    - msarahan\n    - richafrank\n",
+ "rendered_recipe": {},
+ "version": "1.5.3"
+}

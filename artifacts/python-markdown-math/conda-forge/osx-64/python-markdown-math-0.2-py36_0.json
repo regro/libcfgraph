@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "https://github.com/mitya57/python-markdown-math",
+  "license": "BSD 3-Clause",
+  "summary": "Math extension for Python-Markdown"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/mdx_math.py",
+  "lib/python3.6/site-packages/python_markdown_math-0.2-py3.6.egg-info"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "markdown",
+   "python 3.6*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "python-markdown-math",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2"
+ },
+ "metadata_version": 1,
+ "name": "python-markdown-math",
+ "raw_recipe": "{% set version = \"0.2\" %}\n\npackage:\n  name: python-markdown-math\n  version: {{ version }}\n\nsource:\n  fn: python-markdown-math-0.2.tar.gz\n  url: https://github.com/mitya57/python-markdown-math/archive/0.2.tar.gz\n  sha256: e36a78ff5752406752b6b2523cd7c7ba77a1400b3148a6c4bda96bf89ac565d5\n\nbuild:\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - markdown\n\ntest:\n  imports:\n    - mdx_math\n\nabout:\n  home: https://github.com/mitya57/python-markdown-math\n  license: BSD 3-Clause\n  license_file: LICENSE\n  summary: 'Math extension for Python-Markdown'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.2"
+}

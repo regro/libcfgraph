@@ -1,0 +1,175 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.0.12",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p481/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://nco.sourceforge.net/",
+  "license": "GPL-3.0",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-build-2.0.12-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-3.4.2-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_0",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Suite of programs for manipulating NetCDF/HDF4 files."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/ncap",
+  "bin/ncap2",
+  "bin/ncatted",
+  "bin/ncbo",
+  "bin/ncclimo",
+  "bin/ncdiff",
+  "bin/ncea",
+  "bin/ncecat",
+  "bin/nces",
+  "bin/ncflint",
+  "bin/ncks",
+  "bin/ncpdq",
+  "bin/ncra",
+  "bin/ncrcat",
+  "bin/ncremap",
+  "bin/ncrename",
+  "bin/ncwa",
+  "include/libnco_c++.hh",
+  "include/nco_att.hh",
+  "include/nco_dmn.hh",
+  "include/nco_fl.hh",
+  "include/nco_hgh.hh",
+  "include/nco_utl.hh",
+  "include/nco_var.hh",
+  "lib/libnco.a",
+  "lib/libnco.la",
+  "lib/libnco_c++.a",
+  "lib/libnco_c++.la",
+  "share/man/man1/ncap.1",
+  "share/man/man1/ncap2.1",
+  "share/man/man1/ncatted.1",
+  "share/man/man1/ncbo.1",
+  "share/man/man1/ncclimo.1",
+  "share/man/man1/ncecat.1",
+  "share/man/man1/nces.1",
+  "share/man/man1/ncflint.1",
+  "share/man/man1/ncks.1",
+  "share/man/man1/nco.1",
+  "share/man/man1/ncpdq.1",
+  "share/man/man1/ncra.1",
+  "share/man/man1/ncrcat.1",
+  "share/man/man1/ncremap.1",
+  "share/man/man1/ncrename.1",
+  "share/man/man1/ncwa.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "esmf",
+   "expat",
+   "gsl",
+   "hdf5 1.8.17|1.8.17.*",
+   "libgcc",
+   "libnetcdf 4.4.*",
+   "udunits2"
+  ],
+  "license": "GPL-3.0",
+  "name": "nco",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "4.6.3"
+ },
+ "metadata_version": 1,
+ "name": "nco",
+ "raw_recipe": "{% set version = \"4.6.3\" %}\n\npackage:\n  name: nco\n  version: {{ version }}\n\nsource:\n  fn: nco-{{ version }}.tar.gz\n  url: https://github.com/nco/nco/archive/{{ version }}.tar.gz\n  sha256: 414ccb349ed25cb37b669fb87f9e2e4ca8d58c2f45538feda199bf895b982bf8\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - gsl\n    - antlr\n    - curl\n    - zlib 1.2.*\n    - hdf5 1.8.17|1.8.17.*\n    - libnetcdf 4.4.*\n    - udunits2\n    - expat\n    - krb5\n    - texinfo\n    - bison\n    - flex 2.6.0\n    - m4\n  run:\n    - gsl\n    - hdf5 1.8.17|1.8.17.*\n    - libnetcdf 4.4.*\n    - udunits2\n    - expat\n    - libgcc\n    - esmf\n\ntest:\n  commands:\n    - ncks --help\n    - ncap2 --help\n    #- conda inspect linkages -p $PREFIX nco  # [not win]\n    #- conda inspect objects -p $PREFIX nco  # [osx]\n\nabout:\n  home: http://nco.sourceforge.net/\n  license: GPL-3.0\n  summary: 'Suite of programs for manipulating NetCDF/HDF4 files.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n    - kwilcox\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://nco.sourceforge.net/",
+   "license": "GPL-3.0",
+   "summary": "Suite of programs for manipulating NetCDF/HDF4 files."
+  },
+  "build": {
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "kwilcox"
+   ]
+  },
+  "package": {
+   "name": "nco",
+   "version": "4.6.3"
+  },
+  "requirements": {
+   "build": null,
+   "run": [
+    "gsl",
+    "hdf5 1.8.17|1.8.17.*",
+    "libnetcdf 4.4.*",
+    "udunits2",
+    "expat",
+    "libgcc",
+    "esmf"
+   ]
+  },
+  "source": {
+   "fn": "nco-4.6.3.tar.gz",
+   "sha256": "414ccb349ed25cb37b669fb87f9e2e4ca8d58c2f45538feda199bf895b982bf8",
+   "url": "https://github.com/nco/nco/archive/4.6.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "ncks --help",
+    "ncap2 --help"
+   ]
+  }
+ },
+ "version": "4.6.3"
+}

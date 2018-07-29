@@ -1,0 +1,39 @@
+{
+ "about": {
+  "home": "https://github.com/TuragaLab/zwatershed",
+  "license": "MIT",
+  "summary": "Code for fast watersheds."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/zwatershed-0.8-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/zwatershed-0.8-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/zwatershed/__init__.py",
+  "lib/python2.7/site-packages/zwatershed/edgelist_methods.py",
+  "lib/python2.7/site-packages/zwatershed/par_funcs.py",
+  "lib/python2.7/site-packages/zwatershed/setup.py",
+  "lib/python2.7/site-packages/zwatershed/zwatershed.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_0",
+  "build_number": 0,
+  "depends": [
+   "boost 1.61.*",
+   "h5py",
+   "numpy 1.11*",
+   "numpy >=1.7",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "zwatershed",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.8"
+ },
+ "metadata_version": 1,
+ "name": "zwatershed",
+ "raw_recipe": "{% set name = \"zwatershed\" %}\n{% set version = \"0.8\" %}\n{% set checksum = \"e48b08909ad95785d9adfee0d1f8d318\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ checksum }}\n\nbuild:\n  skip: true  # [win or py3k]\n  number: 0\n  script:\n    # FIXME: This is a hack to make sure the environment is activated.\n    # The reason this is required is due to the conda-build issue\n    # mentioned below.\n    #\n    # https://github.com/conda/conda-build/issues/910\n    #\n    - source activate \"${CONDA_DEFAULT_ENV}\"\n    - python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - boost 1.61.*\n    - python\n    - setuptools >=18.0\n    - numpy x.x\n    - numpy >=1.7\n    - cython >=0.23\n    - h5py\n\n  run:\n    - boost 1.61.*\n    - python\n    - numpy x.x\n    - numpy >=1.7\n    - h5py\n\ntest:\n  imports:\n    - zwatershed\n\nabout:\n  home: https://github.com/TuragaLab/zwatershed\n  license: MIT\n  summary: 'Code for fast watersheds.'\n\nextra:\n  recipe-maintainers:\n    - csinva\n",
+ "rendered_recipe": {},
+ "version": "0.8"
+}

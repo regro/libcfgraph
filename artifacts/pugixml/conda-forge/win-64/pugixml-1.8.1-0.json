@@ -1,0 +1,36 @@
+{
+ "about": {
+  "description": "pugixml is a C++ XML processing library, which consists of a DOM-like interface\nwith rich traversal/modification capabilities, an extremely fast XML parser which\nconstructs the DOM tree from an XML file/buffer, and an XPath 1.0 implementation\nfor complex data-driven tree queries. Full Unicode support is also available, with\nUnicode interface variants and conversions between different Unicode encodings\n(which happen automatically during parsing/saving)\n",
+  "dev_url": "https://github.com/zeux/pugixml",
+  "doc_url": "http://pugixml.org/",
+  "home": "http://pugixml.org/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Light-weight, simple and fast XML parser for C++ with XPath support"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Library/include/pugiconfig.hpp",
+  "Library/include/pugixml.hpp",
+  "Library/lib/cmake/pugixml/pugixml-config-release.cmake",
+  "Library/lib/cmake/pugixml/pugixml-config.cmake",
+  "Library/lib/pugixml.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "pugixml",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.8.1"
+ },
+ "metadata_version": 1,
+ "name": "pugixml",
+ "raw_recipe": "{% set name = \"pugixml\" %}\n{% set version = \"1.8.1\" %}\n{% set sha256 = \"4445a8db1421c2d2ce61140ece0837dd2651fb1049ddd820e71a7fe44be1a7cc\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/zeux/{{ name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/lib64/libpugixml.a\"  # [linux]\n    - test -f \"${PREFIX}/lib/libpugixml.a\"  # [osx]\n    - test -f \"${PREFIX}/include/pugixml.hpp\"  # [unix]\n    - if not exist %LIBRARY_LIB%\\\\pugixml.lib exit 1  # [win]\n    - if not exist %LIBRARY_INC%\\\\pugiconfig.hpp exit 1  # [win]\n\nabout:\n  home: http://pugixml.org/\n  license: MIT\n  license_family: MIT\n  license_file: README.md\n  summary: 'Light-weight, simple and fast XML parser for C++ with XPath support'\n  description: |\n    pugixml is a C++ XML processing library, which consists of a DOM-like interface\n    with rich traversal/modification capabilities, an extremely fast XML parser which\n    constructs the DOM tree from an XML file/buffer, and an XPath 1.0 implementation\n    for complex data-driven tree queries. Full Unicode support is also available, with\n    Unicode interface variants and conversions between different Unicode encodings\n    (which happen automatically during parsing/saving)\n  doc_url: http://pugixml.org/\n  dev_url: https://github.com/zeux/pugixml\n\nextra:\n  recipe-maintainers:\n    - scopatz\n",
+ "rendered_recipe": {},
+ "version": "1.8.1"
+}

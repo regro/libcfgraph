@@ -1,0 +1,44 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/GDP_XML_Generator.py",
+  "lib/python2.7/site-packages/pyGDP-2.0.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pyGDP.py",
+  "lib/python2.7/site-packages/pygdp/__init__.py",
+  "lib/python2.7/site-packages/pygdp/_execute_request.py",
+  "lib/python2.7/site-packages/pygdp/_feature_gen.py",
+  "lib/python2.7/site-packages/pygdp/_get_geotype.py",
+  "lib/python2.7/site-packages/pygdp/_webdata_xml_generate.py",
+  "lib/python2.7/site-packages/pygdp/bioclim.py",
+  "lib/python2.7/site-packages/pygdp/feature_coverage.py",
+  "lib/python2.7/site-packages/pygdp/fwgs.py",
+  "lib/python2.7/site-packages/pygdp/namespaces.py",
+  "lib/python2.7/site-packages/pygdp/shape_to_zip.py",
+  "lib/python2.7/site-packages/pygdp/shapefile_id_handle.py",
+  "lib/python2.7/site-packages/pygdp/shapefile_value_handle.py",
+  "lib/python2.7/site-packages/pygdp/upload_shapefile.py",
+  "lib/python2.7/site-packages/pygdp/webdata_handle.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "lxml",
+   "owslib",
+   "python 2.7*",
+   "python-dateutil"
+  ],
+  "license": "Public Domain",
+  "name": "pygdp",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.1"
+ },
+ "metadata_version": 1,
+ "name": "pygdp",
+ "raw_recipe": "{% set version = \"2.0.1\" %}\n\npackage:\n    name: pygdp\n    version: {{ version }}\n\nsource:\n    fn: v{{ version }}.tar.gz\n    url: https://github.com/USGS-CIDA/pyGDP/archive/v{{ version }}.tar.gz\n    sha256: fb64a5d665a5218b2bc105beb768ece199d21166c99a445a0792c372ba2e99a3\n\nbuild:\n    number: 0\n    skip: True  # [py3k]\n    script: python setup.py install --single-version-externally-managed  --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - owslib\n    run:\n        - python\n        - owslib\n        - python-dateutil\n        - lxml\ntest:\n    imports:\n        - pyGDP\n\nabout:\n    home: https://github.com/USGS-CIDA/pyGDP\n    license: Public Domain\n    summary: Python interface to facilitate working with USGS-CIDA Geo Data Portal web services\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - ayan-usgs\n",
+ "rendered_recipe": {},
+ "version": "2.0.1"
+}

@@ -1,0 +1,42 @@
+{
+ "about": {
+  "description": "Flask-Marshmallow is a thin integration layer for Flask (a Python web\nframework) and marshmallow (an object serialization/deserialization\nlibrary) that adds additional features to marshmallow, including URL and\nHyperlinks fields for HATEOAS-ready APIs. It also (optionally) integrates\nwith Flask-SQLAlchemy.\n",
+  "dev_url": "https://github.com/marshmallow-code/flask-marshmallow",
+  "doc_url": "http://flask-marshmallow.readthedocs.io/",
+  "home": "https://github.com/marshmallow-code/flask-marshmallow",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Flask + marshmallow for beautiful APIs"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/flask_marshmallow-0.7.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/flask_marshmallow-0.7.0-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/flask_marshmallow/__init__.py",
+  "Lib/site-packages/flask_marshmallow/fields.py",
+  "Lib/site-packages/flask_marshmallow/schema.py",
+  "Lib/site-packages/flask_marshmallow/sqla.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "flask",
+   "marshmallow >=1.2.0",
+   "python 2.7*",
+   "six >=1.9.0"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "flask-marshmallow",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.7.0"
+ },
+ "metadata_version": 1,
+ "name": "flask-marshmallow",
+ "raw_recipe": "{% set name = \"flask-marshmallow\" %}\n{% set version = \"0.7.0\" %}\n{% set sha256 = \"83e2a3bb767a97db63c23a84345430cd3fda51615e7e99131a6b313295f6b7f0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - flask\n    - marshmallow >=1.2.0\n    - six >=1.9.0\n\ntest:\n  imports:\n    - flask_marshmallow\n\nabout:\n  home: https://github.com/marshmallow-code/flask-marshmallow\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Flask + marshmallow for beautiful APIs'\n\n  description: |\n    Flask-Marshmallow is a thin integration layer for Flask (a Python web\n    framework) and marshmallow (an object serialization/deserialization\n    library) that adds additional features to marshmallow, including URL and\n    Hyperlinks fields for HATEOAS-ready APIs. It also (optionally) integrates\n    with Flask-SQLAlchemy.\n  doc_url: http://flask-marshmallow.readthedocs.io/\n  dev_url: https://github.com/marshmallow-code/flask-marshmallow\n\nextra:\n  recipe-maintainers:\n    - frol\n",
+ "rendered_recipe": {},
+ "version": "0.7.0"
+}

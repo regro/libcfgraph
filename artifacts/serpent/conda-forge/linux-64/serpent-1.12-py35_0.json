@@ -1,0 +1,26 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/serpent-1.12-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/serpent.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "serpent",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.12"
+ },
+ "metadata_version": 1,
+ "name": "serpent",
+ "raw_recipe": "{% set version = \"1.12\" %}\n\npackage:\n  name: serpent\n  version: {{ version }}\n\nsource:\n  fn: serpent-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/s/serpent/serpent-{{ version }}.tar.gz\n  md5: 05869ac7b062828b34f8f927f0457b65\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - serpent\n\nabout:\n  home: https://github.com/irmen/Serpent\n  license: MIT\n  summary: 'Serialization based on ast.literal_eval'\n\nextra:\n  recipe-maintainers:\n    - whart222\n    - Juanlu001\n",
+ "rendered_recipe": {},
+ "version": "1.12"
+}

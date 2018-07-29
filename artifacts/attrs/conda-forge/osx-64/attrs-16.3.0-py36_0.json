@@ -1,0 +1,158 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "attrs is the Python package that will bring back the joy of writing\nclasses by relieving you from the drudgery of implementing object\nprotocols (aka dunder methods). Its main goal is to help you to write\nconcise and correct software without slowing down your code. For that, it\ngives you a class decorator and a way to declaratively define the\nattributes on that class:\n",
+  "dev_url": "https://github.com/python-attrs/attrs",
+  "doc_url": "https://attrs.readthedocs.io/en/stable/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://attrs.readthedocs.io/en/stable/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "anaconda-client-1.6.2-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.9.1-py36_0",
+   "conda-forge::chardet-2.3.0-py36_0",
+   "clyent-1.2.2-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.4-py36_1",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.1-0",
+   "conda-verify-2.0.0-py36_0",
+   "cryptography-1.7.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.2-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-0.23-py36_1",
+   "openssl-1.0.2k-0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pyasn1-0.1.9-py36_0",
+   "pycosat-0.6.1-py36_1",
+   "pycparser-2.17-py36_0",
+   "pycrypto-2.6.1-py36_4",
+   "pyopenssl-16.2.0-py36_0",
+   "python-3.6.0-0",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2016.10-py36_0",
+   "conda-forge::pyyaml-3.12-py36_0",
+   "readline-6.2-2",
+   "requests-2.12.4-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "attrs is the Python package that will bring back the joy of writing classes by relieving you from the drudgery of implementing object protocols (aka dunder methods)."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/attr/validators.py",
+  "lib/python3.6/site-packages/attrs-16.3.0-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/attrs-16.3.0-py3.6.egg-info/not-zip-safe",
+  "lib/python3.6/site-packages/attr/_config.py",
+  "lib/python3.6/site-packages/attr/exceptions.py",
+  "lib/python3.6/site-packages/attr/_funcs.py",
+  "lib/python3.6/site-packages/attr/filters.py",
+  "lib/python3.6/site-packages/attr/__init__.py",
+  "lib/python3.6/site-packages/attr/_make.py",
+  "lib/python3.6/site-packages/attr/_compat.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "hypothesis",
+   "pympler",
+   "python 3.6*",
+   "zope"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "attrs",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "16.3.0"
+ },
+ "metadata_version": 1,
+ "name": "attrs",
+ "raw_recipe": "{% set name = \"attrs\" %}\n{% set version = \"16.3.0\" %}\n{% set sha256 = \"80203177723e36f3bbe15aa8553da6e80d47bfe53647220ccaa9ad7a5e473ccc\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - zope\n    - pympler\n    - hypothesis\n\ntest:\n  requires:\n    - pytest\n  source_files:\n    - tests/*\n  command:\n    - py.test\n\nabout:\n  home: https://attrs.readthedocs.io/en/stable/\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: \"attrs is the Python package that will bring back the joy of\n  writing classes by relieving you from the drudgery of implementing object\n  protocols (aka dunder methods).\"\n\n  description: |\n    attrs is the Python package that will bring back the joy of writing\n    classes by relieving you from the drudgery of implementing object\n    protocols (aka dunder methods). Its main goal is to help you to write\n    concise and correct software without slowing down your code. For that, it\n    gives you a class decorator and a way to declaratively define the\n    attributes on that class:\n  doc_url: https://attrs.readthedocs.io/en/stable/\n  dev_url: https://github.com/python-attrs/attrs\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "attrs is the Python package that will bring back the joy of writing\nclasses by relieving you from the drudgery of implementing object\nprotocols (aka dunder methods). Its main goal is to help you to write\nconcise and correct software without slowing down your code. For that, it\ngives you a class decorator and a way to declaratively define the\nattributes on that class:\n",
+   "dev_url": "https://github.com/python-attrs/attrs",
+   "doc_url": "https://attrs.readthedocs.io/en/stable/",
+   "home": "https://attrs.readthedocs.io/en/stable/",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "attrs is the Python package that will bring back the joy of writing classes by relieving you from the drudgery of implementing object protocols (aka dunder methods)."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py36_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "CJ-Wright"
+   ]
+  },
+  "package": {
+   "name": "attrs",
+   "version": "16.3.0"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "python",
+    "zope",
+    "pympler",
+    "hypothesis"
+   ]
+  },
+  "source": {
+   "fn": "attrs-16.3.0.tar.gz",
+   "sha256": "80203177723e36f3bbe15aa8553da6e80d47bfe53647220ccaa9ad7a5e473ccc",
+   "url": "https://pypi.io/packages/source/a/attrs/attrs-16.3.0.tar.gz"
+  },
+  "test": {
+   "command": [
+    "py.test"
+   ],
+   "requires": [
+    "pytest"
+   ],
+   "source_files": [
+    "tests/*"
+   ]
+  }
+ },
+ "version": "16.3.0"
+}

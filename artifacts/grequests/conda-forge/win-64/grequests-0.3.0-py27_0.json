@@ -1,0 +1,35 @@
+{
+ "about": {
+  "home": "https://github.com/kennethreitz/grequests",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Requests + Gevent"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/grequests-0.3.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/grequests-0.3.0-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/grequests.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "gevent",
+   "python 2.7*",
+   "requests"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "grequests",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.3.0"
+ },
+ "metadata_version": 1,
+ "name": "grequests",
+ "raw_recipe": "{%set name = \"grequests\" %}\n{%set version = \"0.3.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"0f41c4eee83bab39f5543af49665c08681637a0562a5704a3f7b2e4a996531c9\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - gevent\n    - requests\n\ntest:\n  imports:\n    - grequests\n\nabout:\n  home: https://github.com/kennethreitz/grequests\n  license: BSD 3-Clause\n  # license_file: No MANIFEST included in package - see https://github.com/kennethreitz/grequests/issues/95\n  license_family: BSD\n  summary: 'Requests + Gevent'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.3.0"
+}

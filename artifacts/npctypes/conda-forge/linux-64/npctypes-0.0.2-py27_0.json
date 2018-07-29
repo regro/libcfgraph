@@ -1,0 +1,39 @@
+{
+ "about": {
+  "dev_url": "https://github.com/jakirkham/npctypes",
+  "doc_url": "https://npctypes.readthedocs.io/",
+  "home": "https://github.com/jakirkham/npctypes",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Python utility functions for slices."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/npctypes-0.0.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/npctypes-0.0.2-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/npctypes/__init__.py",
+  "lib/python2.7/site-packages/npctypes/_version.py",
+  "lib/python2.7/site-packages/npctypes/shared.py",
+  "lib/python2.7/site-packages/npctypes/types.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "npctypes",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.0.2"
+ },
+ "metadata_version": 1,
+ "name": "npctypes",
+ "raw_recipe": "{% set name = \"npctypes\" %}\n{% set version = \"0.0.2\" %}\n{% set sha256 = \"79e27d0358d9768f64a30ba20f4d5e8391fb7e9eaefe112955e8e066abce3005\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy\n\ntest:\n  imports:\n    - npctypes\n\nabout:\n  home: https://github.com/jakirkham/npctypes\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Python utility functions for slices.\n  doc_url: https://npctypes.readthedocs.io/\n  dev_url: https://github.com/jakirkham/npctypes\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.0.2"
+}

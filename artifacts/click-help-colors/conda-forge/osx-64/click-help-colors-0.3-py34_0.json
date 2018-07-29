@@ -1,0 +1,34 @@
+{
+ "about": {
+  "dev_url": "https://github.com/r-m-n/click-help-colors",
+  "home": "https://github.com/r-m-n/click-help-colors",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Colorization of help messages in Click"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/click_help_colors-0.3-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/click_help_colors/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "click",
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "click-help-colors",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3"
+ },
+ "metadata_version": 1,
+ "name": "click-help-colors",
+ "raw_recipe": "{% set name = \"click-help-colors\" %}\n{% set version = \"0.3\" %}\n{% set sha256 = \"dd1f2de37ab30a127314423c0e20346632b7c42eb562e9afc34005635c04563f\" %}\n\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - click\n\ntest:\n  imports:\n    - click_help_colors\n\nabout:\n  home: https://github.com/r-m-n/click-help-colors\n  license: MIT\n  # License file missing on pypi. See: https://github.com/r-m-n/click-help-colors/issues/2\n  #license_file: LICENSE.txt\n  summary: 'Colorization of help messages in Click'\n  dev_url: https://github.com/r-m-n/click-help-colors\n  license_family: MIT\n\nextra:\n  recipe-maintainers:\n    - saketkc\n",
+ "rendered_recipe": {},
+ "version": "0.3"
+}

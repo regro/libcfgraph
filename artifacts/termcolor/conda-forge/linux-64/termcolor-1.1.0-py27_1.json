@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "http://pypi.python.org/pypi/termcolor",
+  "license": "MIT License",
+  "summary": "ANSII Color formatting for output in terminal."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/termcolor-1.1.0-py2.7.egg-info",
+  "lib/python2.7/site-packages/termcolor.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT License",
+  "name": "termcolor",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.1.0"
+ },
+ "metadata_version": 1,
+ "name": "termcolor",
+ "raw_recipe": "{% set version = \"1.1.0\" %}\n\npackage:\n  name: termcolor\n  version: {{ version }}\n\nsource:\n  fn: termcolor-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/t/termcolor/termcolor-{{ version }}.tar.gz\n  md5: 043e89644f8909d462fbbfa511c768df\n\nbuild:\n  number: 1\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - termcolor\n\nabout:\n  home: http://pypi.python.org/pypi/termcolor\n  license: MIT License\n  license_file: COPYING.txt\n  summary: 'ANSII Color formatting for output in terminal.'\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.1.0"
+}

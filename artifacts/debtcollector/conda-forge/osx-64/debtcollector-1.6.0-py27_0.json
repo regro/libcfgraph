@@ -1,0 +1,42 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/debtcollector-1.6.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/debtcollector-1.6.0-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/debtcollector-1.6.0-py2.7.egg-info/pbr.json",
+  "lib/python2.7/site-packages/debtcollector/__init__.py",
+  "lib/python2.7/site-packages/debtcollector/_utils.py",
+  "lib/python2.7/site-packages/debtcollector/fixtures/__init__.py",
+  "lib/python2.7/site-packages/debtcollector/fixtures/disable.py",
+  "lib/python2.7/site-packages/debtcollector/moves.py",
+  "lib/python2.7/site-packages/debtcollector/removals.py",
+  "lib/python2.7/site-packages/debtcollector/renames.py",
+  "lib/python2.7/site-packages/debtcollector/tests/__init__.py",
+  "lib/python2.7/site-packages/debtcollector/tests/base.py",
+  "lib/python2.7/site-packages/debtcollector/tests/test_deprecation.py",
+  "lib/python2.7/site-packages/debtcollector/updating.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "funcsigs >=0.4",
+   "pbr >=1.6",
+   "python 2.7*",
+   "six >=1.9.0",
+   "wrapt >=1.7.0"
+  ],
+  "license": "Apache 2.0",
+  "name": "debtcollector",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.6.0"
+ },
+ "metadata_version": 1,
+ "name": "debtcollector",
+ "raw_recipe": "{%set name = \"debtcollector\" %}\n{%set version = \"1.6.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"366046b5d25bbca6c3da7111cffd2f3d8e8502eebc6f7a292492d7a8592fd4d2\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pbr >=1.8\n\n  run:\n    - python\n    - pbr >=1.6\n    - six >=1.9.0\n    - wrapt >=1.7.0\n    - funcsigs >=0.4  # [py26 or py27]\n\ntest:\n  imports:\n    - debtcollector\n    - debtcollector.moves\n    - debtcollector.renames\n    - debtcollector.removals\n    - debtcollector.fixtures\n\nabout:\n  home: http://docs.openstack.org/developer/debtcollector/\n  license: Apache 2.0\n  summary: 'A collection of Python deprecation patterns and strategies that help you collect your technical debt in a non-destructive manner.'\n\nextra:\n  recipe-maintainers:\n    - anguslees\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.6.0"
+}

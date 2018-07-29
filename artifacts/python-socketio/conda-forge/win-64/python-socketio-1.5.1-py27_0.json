@@ -1,0 +1,45 @@
+{
+ "about": {
+  "dev_url": "http://github.com/miguelgrinberg/python-socketio/",
+  "doc_url": "https://python-socketio.readthedocs.io",
+  "home": "http://github.com/miguelgrinberg/python-socketio/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Socket.IO server"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/python_socketio-1.5.1-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/python_socketio-1.5.1-py2.7.egg-info/not-zip-safe",
+  "Lib/site-packages/socketio/__init__.py",
+  "Lib/site-packages/socketio/base_manager.py",
+  "Lib/site-packages/socketio/kombu_manager.py",
+  "Lib/site-packages/socketio/middleware.py",
+  "Lib/site-packages/socketio/namespace.py",
+  "Lib/site-packages/socketio/packet.py",
+  "Lib/site-packages/socketio/pubsub_manager.py",
+  "Lib/site-packages/socketio/redis_manager.py",
+  "Lib/site-packages/socketio/server.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "python-engineio >=1.0.0",
+   "six >=1.9.0"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "python-socketio",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.5.1"
+ },
+ "metadata_version": 1,
+ "name": "python-socketio",
+ "raw_recipe": "{%set name = \"python-socketio\" %}\n{%set version = \"1.5.1\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"1b2ec154517c174b319a6fc19d8a2b6bd195ae02787ec1ebfa92f18a56750b15\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - six >=1.9.0\n    - python-engineio >=1.0.0\n\ntest:\n  imports:\n    - socketio\n    - socketio.base_manager\n    - socketio.kombu_manager\n    - socketio.middleware\n    - socketio.namespace\n    - socketio.packet\n    - socketio.pubsub_manager\n    - socketio.redis_manager\n    - socketio.server\n\nabout:\n  home: http://github.com/miguelgrinberg/python-socketio/\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: 'Socket.IO server'\n  doc_url: https://python-socketio.readthedocs.io\n  dev_url: http://github.com/miguelgrinberg/python-socketio/\n\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.5.1"
+}

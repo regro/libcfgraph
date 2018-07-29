@@ -1,0 +1,155 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.1",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "Coveralls.io is service to publish your coverage stats online with a lot\nof nice features. This package provides seamless integration with\ncoverage.py in your python projects.\n",
+  "dev_url": "https://github.com/coagulant/coveralls-python",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "https://github.com/coagulant/coveralls-python",
+  "license": "MIT",
+  "license_family": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-build-2.1.1-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.2.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.49.1-2",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_0",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.2-3",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.4-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-32.3.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.8-3"
+  ],
+  "summary": "Show coverage stats online via coveralls.io"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/coveralls",
+  "lib/python2.7/site-packages/coveralls-1.1-py2.7.egg-info/pbr.json",
+  "lib/python2.7/site-packages/coveralls/reporter.py",
+  "lib/python2.7/site-packages/coveralls/cli.py",
+  "lib/python2.7/site-packages/coveralls-1.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/coveralls/__init__.py",
+  "lib/python2.7/site-packages/coveralls/api.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "coverage >=3.6",
+   "docopt >=0.6.1",
+   "python 2.7*",
+   "pyyaml >=3.10",
+   "requests >=1.0.0"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "coveralls",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.1"
+ },
+ "metadata_version": 1,
+ "name": "coveralls",
+ "raw_recipe": "{% set name = \"coveralls\" %}\n{% set version = \"1.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"34160385c13b0c43691ab11c080d4b10dabe3280fc0b2173c731efc5db836808\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - coveralls = coveralls.cli:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - coverage >=3.6\n    - docopt >=0.6.1\n    - python\n    - pyyaml >=3.10\n    - requests >=1.0.0\n\ntest:\n  commands:\n    - coveralls --help\n\nabout:\n  home: https://github.com/coagulant/coveralls-python\n  license: MIT\n  license_family: MIT\n  license_file: LICENCE  # Yes it is a typo, will be fixed in the next release\n  summary: Show coverage stats online via coveralls.io\n  description: |\n    Coveralls.io is service to publish your coverage stats online with a lot\n    of nice features. This package provides seamless integration with\n    coverage.py in your python projects.\n  dev_url: https://github.com/coagulant/coveralls-python\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Coveralls.io is service to publish your coverage stats online with a lot\nof nice features. This package provides seamless integration with\ncoverage.py in your python projects.\n",
+   "dev_url": "https://github.com/coagulant/coveralls-python",
+   "home": "https://github.com/coagulant/coveralls-python",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENCE",
+   "summary": "Show coverage stats online via coveralls.io"
+  },
+  "build": {
+   "entry_points": [
+    "coveralls = coveralls.cli:main"
+   ],
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt",
+   "string": "py27_0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "goanpeca"
+   ]
+  },
+  "package": {
+   "name": "coveralls",
+   "version": "1.1"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "coverage >=3.6",
+    "docopt >=0.6.1",
+    "python",
+    "pyyaml >=3.10",
+    "requests >=1.0.0"
+   ]
+  },
+  "source": {
+   "fn": "coveralls-1.1.tar.gz",
+   "sha256": "34160385c13b0c43691ab11c080d4b10dabe3280fc0b2173c731efc5db836808",
+   "url": "https://pypi.io/packages/source/c/coveralls/coveralls-1.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "coveralls --help"
+   ]
+  }
+ },
+ "version": "1.1"
+}

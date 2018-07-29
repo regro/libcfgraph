@@ -1,0 +1,38 @@
+{
+ "about": {
+  "home": "https://github.com/sgillies/mercantile",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Spherical mercator and XYZ tile utilities."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/mercantile-0.9.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/mercantile-0.9.0-py3.5.egg-info/not-zip-safe",
+  "Lib/site-packages/mercantile/__init__.py",
+  "Lib/site-packages/mercantile/scripts/__init__.py",
+  "Scripts/mercantile-script.py",
+  "Scripts/mercantile.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "click >=3.0",
+   "python 3.5*",
+   "setuptools"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "mercantile",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.9.0"
+ },
+ "metadata_version": 1,
+ "name": "mercantile",
+ "raw_recipe": "{% set version = \"0.9.0\" %}\n\npackage:\n  name: mercantile\n  version: {{ version }}\n\nsource:\n  fn: mercantile-{{ version }}.tar.gz\n  url: https://github.com/mapbox/mercantile/archive/{{ version }}.tar.gz\n  sha256: a4b0e8f87d6a7790678be71b496a3706373fda1d740a674c308847ef609a5cbd\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  preserve_egg_dir: True\n  entry_points:\n    - mercantile=mercantile.scripts:cli\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - setuptools\n    - click >=3.0\n\ntest:\n  imports:\n    - mercantile\n    - mercantile.scripts\n  commands:\n    - mercantile --help\n\nabout:\n  home: https://github.com/sgillies/mercantile\n  license: BSD 3-Clause\n  summary: 'Spherical mercator and XYZ tile utilities.'\n  license_family: BSD\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.9.0"
+}

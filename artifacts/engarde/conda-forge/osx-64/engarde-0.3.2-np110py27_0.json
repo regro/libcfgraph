@@ -1,0 +1,41 @@
+{
+ "about": {
+  "description": "A python package for defensive data analysis.\n",
+  "dev_url": "https://github.com/tomaugspurger/engarde",
+  "doc_url": "http://engarde.readthedocs.io",
+  "home": "https://github.com/tomaugspurger/engarde",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "A python package for defensive data analysis."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/engarde-0.3.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/engarde/__init__.py",
+  "lib/python2.7/site-packages/engarde/_version.py",
+  "lib/python2.7/site-packages/engarde/checks.py",
+  "lib/python2.7/site-packages/engarde/decorators.py",
+  "lib/python2.7/site-packages/engarde/generic.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np110py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.10*",
+   "pandas",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "engarde",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.2"
+ },
+ "metadata_version": 1,
+ "name": "engarde",
+ "raw_recipe": "{% set name = \"engarde\" %}\n{% set version = \"0.3.2\" %}\n{% set sha256 = \"70df13ed1470d099b359c514f8da6835ce5645c8f79b3edd537f641a8699e1db\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - numpy x.x\n    - pandas\n  run:\n    - python\n    - numpy x.x\n    - pandas\ntest:\n  imports:\n    - engarde\n\nabout:\n  home: https://github.com/tomaugspurger/engarde\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'A python package for defensive data analysis.'\n  description: |\n    A python package for defensive data analysis.\n  doc_url: http://engarde.readthedocs.io\n  dev_url: https://github.com/tomaugspurger/engarde\n\nextra:\n  recipe-maintainers:\n    - TomAugspurger\n    - phobson\n",
+ "rendered_recipe": {},
+ "version": "0.3.2"
+}

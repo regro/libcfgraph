@@ -1,0 +1,70 @@
+{
+ "about": {
+  "home": "https://software.ecmwf.int/wiki/display/WEBAPI",
+  "license": "Apache Licence Version 2.0",
+  "summary": "Python client for ECMWF web services API."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/ecmwf_api_client-1.4.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/ecmwf_api_client-1.4.0-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/ecmwfapi/__init__.py",
+  "lib/python3.4/site-packages/ecmwfapi/api.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "Apache Licence Version 2.0",
+  "name": "ecmwf-api-client",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.4"
+ },
+ "metadata_version": 1,
+ "name": "ecmwf-api-client",
+ "raw_recipe": "package:\n  name: ecmwf-api-client\n  version: \"1.4\"\n\nsource:\n  fn: ecmwf-api-client-python.tgz\n  url: https://software.ecmwf.int/wiki/download/attachments/56664858/ecmwf-api-client-python.tgz\n  sha256: 423331f2ace3b247ff0d7db8c96952003136b5859ad0840a045c311ee857bcfb\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - ecmwfapi\n\nabout:\n  home: https://software.ecmwf.int/wiki/display/WEBAPI \n  license: Apache Licence Version 2.0\n  summary: 'Python client for ECMWF web services API.'\n\nextra:\n  recipe-maintainers:\n    - Ohjeah\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://software.ecmwf.int/wiki/display/WEBAPI",
+   "license": "Apache Licence Version 2.0",
+   "summary": "Python client for ECMWF web services API."
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "Ohjeah"
+   ]
+  },
+  "package": {
+   "name": "ecmwf-api-client",
+   "version": "1.4"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "ecmwf-api-client-python.tgz",
+   "sha256": "423331f2ace3b247ff0d7db8c96952003136b5859ad0840a045c311ee857bcfb",
+   "url": "https://software.ecmwf.int/wiki/download/attachments/56664858/ecmwf-api-client-python.tgz"
+  },
+  "test": {
+   "imports": [
+    "ecmwfapi"
+   ]
+  }
+ },
+ "version": "1.4"
+}

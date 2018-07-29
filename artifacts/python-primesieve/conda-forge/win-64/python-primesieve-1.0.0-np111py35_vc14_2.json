@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "https://github.com/hickford/primesieve-python",
+  "license": "MIT",
+  "summary": "Fast prime number generator. Python bindings for primesieve C/C++ library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/primesieve-1.0.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/primesieve/__init__.py",
+  "Lib/site-packages/primesieve/_primesieve.cp35-win_amd64.pyd",
+  "Lib/site-packages/primesieve/numpy/__init__.py",
+  "Lib/site-packages/primesieve/numpy/_generate.cp35-win_amd64.pyd"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py35_vc14_2",
+  "build_number": 2,
+  "depends": [
+   "numpy 1.11*",
+   "primesieve",
+   "python 3.5*"
+  ],
+  "features": "vc14",
+  "license": "MIT",
+  "name": "python-primesieve",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0.0"
+ },
+ "metadata_version": 1,
+ "name": "python-primesieve",
+ "raw_recipe": "{% set version = \"1.0.0\" %}\n\npackage:\n  name: python-primesieve\n  version: {{ version }}\n\nsource:\n  fn: primesieve-{{ version }}.zip\n  url: https://pypi.python.org/packages/source/p/primesieve/primesieve-{{ version }}.zip\n  md5: 37458cd8ca2757e17fd0446c395fc87b\n\nbuild:\n  # Seem primesieve is encountering hangs on Windows with Python 2.7.\n  # So, neither primesieve nor these Python bindings are built in that case.\n  skip: true  # [win and py2k]\n  number: 2\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  features:\n    - vc10              # [win and py34]\n    - vc14              # [win and py35]\n\nrequirements:\n  build:\n    - gcc               # [unix]\n    - python\n    - setuptools\n    - cython\n    - numpy x.x\n    - primesieve\n\n  run:\n    - libgcc            # [unix]\n    - python\n    - numpy x.x\n    - primesieve\n\ntest:\n  imports:\n    - primesieve\n\n  commands:\n    - python -c \"import primesieve; assert primesieve.nth_prime(1) == 2\"\n\nabout:\n  home: https://github.com/hickford/primesieve-python\n  license: MIT\n  summary: Fast prime number generator. Python bindings for primesieve C/C++ library\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.0.0"
+}

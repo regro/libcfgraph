@@ -1,0 +1,109 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/impala/__init__.py",
+  "Lib/site-packages/impala/_thrift_api.py",
+  "Lib/site-packages/impala/compat.py",
+  "Lib/site-packages/impala/dbapi.py",
+  "Lib/site-packages/impala/error.py",
+  "Lib/site-packages/impala/hiveserver2.py",
+  "Lib/site-packages/impala/interface.py",
+  "Lib/site-packages/impala/sasl_compat.py",
+  "Lib/site-packages/impala/sqlalchemy.py",
+  "Lib/site-packages/impala/tests/__init__.py",
+  "Lib/site-packages/impala/tests/_dbapi20_tests.py",
+  "Lib/site-packages/impala/tests/compat.py",
+  "Lib/site-packages/impala/tests/conftest.py",
+  "Lib/site-packages/impala/tests/test_data_types.py",
+  "Lib/site-packages/impala/tests/test_dbapi_compliance.py",
+  "Lib/site-packages/impala/tests/test_dbapi_connect.py",
+  "Lib/site-packages/impala/tests/test_hive.py",
+  "Lib/site-packages/impala/tests/test_hive_dict_cursor.py",
+  "Lib/site-packages/impala/tests/test_query_parameters.py",
+  "Lib/site-packages/impala/tests/test_sqlalchemy.py",
+  "Lib/site-packages/impala/tests/util.py",
+  "Lib/site-packages/impala/thrift/ExecStats.thrift",
+  "Lib/site-packages/impala/thrift/ImpalaService.thrift",
+  "Lib/site-packages/impala/thrift/Status.thrift",
+  "Lib/site-packages/impala/thrift/TCLIService.thrift",
+  "Lib/site-packages/impala/thrift/Types.thrift",
+  "Lib/site-packages/impala/thrift/__init__.py",
+  "Lib/site-packages/impala/thrift/beeswax.thrift",
+  "Lib/site-packages/impala/thrift/fb303.thrift",
+  "Lib/site-packages/impala/thrift/hive_metastore.thrift",
+  "Lib/site-packages/impala/util.py",
+  "Lib/site-packages/impyla-0.13.8-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/impyla-0.13.8-py3.5.egg-info/not-zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "bitarray",
+   "python 3.5*",
+   "setuptools",
+   "six",
+   "thriftpy >=0.3.5"
+  ],
+  "license": "Apache 2.0",
+  "name": "impyla",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.13.8"
+ },
+ "metadata_version": 1,
+ "name": "impyla",
+ "raw_recipe": "package:\n  name: impyla\n  version: \"0.13.8\"\n\nsource:\n  fn: impyla-0.13.8.tar.gz\n  url: https://pypi.python.org/packages/36/35/bcf5ac18e3689948e980e2a0b33d48f46cb8569e1d0f2b17ea7147e88356/impyla-0.13.8.tar.gz\n  md5: c2a71ec00447832aabcd53b1dd7c5ecb\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - six\n    - bitarray\n    - thrift  # [py2k]\n    - thriftpy >=0.3.5\n\n  run:\n    - python\n    - setuptools\n    - six\n    - bitarray\n    - thriftpy >=0.3.5\n    - thrift  # [py2k]\n\ntest:\n  imports:\n    - impala\n    - impala.tests\n    - impala.thrift\n\nabout:\n  home: https://github.com/cloudera/impyla\n  license: Apache 2.0\n  summary: 'Python client for the Impala distributed query engine'\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n    - wesm\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/cloudera/impyla",
+   "license": "Apache 2.0",
+   "summary": "Python client for the Impala distributed query engine"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mariusvniekerk",
+    "wesm"
+   ]
+  },
+  "package": {
+   "name": "impyla",
+   "version": "0.13.8"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "six",
+    "bitarray",
+    "thriftpy >=0.3.5"
+   ],
+   "run": [
+    "python",
+    "setuptools",
+    "six",
+    "bitarray",
+    "thriftpy >=0.3.5"
+   ]
+  },
+  "source": {
+   "fn": "impyla-0.13.8.tar.gz",
+   "md5": "c2a71ec00447832aabcd53b1dd7c5ecb",
+   "url": "https://pypi.python.org/packages/36/35/bcf5ac18e3689948e980e2a0b33d48f46cb8569e1d0f2b17ea7147e88356/impyla-0.13.8.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "impala",
+    "impala.tests",
+    "impala.thrift"
+   ]
+  }
+ },
+ "version": "0.13.8"
+}

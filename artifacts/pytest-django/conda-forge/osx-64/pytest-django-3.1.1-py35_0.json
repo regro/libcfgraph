@@ -1,0 +1,41 @@
+{
+ "about": {
+  "home": "http://pytest-django.readthedocs.org/",
+  "license": "BSD 3-Clause",
+  "summary": "A Django plugin for py.test."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/pytest11",
+  "lib/python3.5/site-packages/pytest_django-3.1.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/pytest_django/__init__.py",
+  "lib/python3.5/site-packages/pytest_django/compat.py",
+  "lib/python3.5/site-packages/pytest_django/db_reuse.py",
+  "lib/python3.5/site-packages/pytest_django/django_compat.py",
+  "lib/python3.5/site-packages/pytest_django/fixtures.py",
+  "lib/python3.5/site-packages/pytest_django/lazy_django.py",
+  "lib/python3.5/site-packages/pytest_django/live_server_helper.py",
+  "lib/python3.5/site-packages/pytest_django/migrations.py",
+  "lib/python3.5/site-packages/pytest_django/plugin.py",
+  "lib/python3.5/site-packages/pytest_django/pytest_compat.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "pytest >=2.9",
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pytest-django",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "3.1.1"
+ },
+ "metadata_version": 1,
+ "name": "pytest-django",
+ "raw_recipe": "{% set version = \"3.1.1\" %}\n\npackage:\n  name: pytest-django\n  version: {{ version }}\n\nsource:\n  fn: pytest-django-{{ version }}.tar.gz\n  url:  https://pypi.io/packages/source/p/pytest-django/pytest-django-{{ version }}.tar.gz\n  sha256: eb0d79d24ab2c0064c2d956603b77041508e25e6da50e92136ae1050d022ceaf\n\nbuild:\n  number: 0\n  preserve_egg_dir: True\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - pytest11 = django:pytest_django.plugin\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm 1.11.1\n  run:\n    - python\n    - pytest >=2.9\n\ntest:\n  imports:\n    - pytest_django\n\nabout:\n  home: http://pytest-django.readthedocs.org/\n  license: BSD 3-Clause\n  summary: 'A Django plugin for py.test.'\n\nextra:\n  recipe-maintainers:\n    - kwilcox\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "3.1.1"
+}

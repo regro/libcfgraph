@@ -1,0 +1,46 @@
+{
+ "about": {
+  "description": "*phconvert* is a python 2 & 3 library that helps writing valid\nPhoton-HDF5 <http://photon-hdf5.org/>\nfiles, a file format for time stamp-based single-molecule spectroscopy.\nAdditionally, phconvert can convert a few common binary formats\nused in in single-molecule spectroscopy (e.g. PicoQuant .HT3,\nBecker & Hickl .SPC/.SET) to Photon-HDF5.\n",
+  "dev_url": "https://github.com/Photon-HDF5/phconvert",
+  "doc_url": "http://phconvert.readthedocs.io/",
+  "home": "http://photon-hdf5.github.io/phconvert",
+  "license": "MIT",
+  "summary": "Convert and write Photon-HDF5 files."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/phconvert-0.7-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/phconvert/__init__.py",
+  "lib/python3.5/site-packages/phconvert/_version.py",
+  "lib/python3.5/site-packages/phconvert/bhreader.py",
+  "lib/python3.5/site-packages/phconvert/hdf5.py",
+  "lib/python3.5/site-packages/phconvert/loader.py",
+  "lib/python3.5/site-packages/phconvert/metadata.py",
+  "lib/python3.5/site-packages/phconvert/plotter.py",
+  "lib/python3.5/site-packages/phconvert/pqreader.py",
+  "lib/python3.5/site-packages/phconvert/smreader.py",
+  "lib/python3.5/site-packages/phconvert/specs/photon-hdf5_specs.json"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "future",
+   "numpy >=1.9",
+   "pytables",
+   "python 3.5*",
+   "setuptools"
+  ],
+  "license": "MIT",
+  "name": "phconvert",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.7"
+ },
+ "metadata_version": 1,
+ "name": "phconvert",
+ "raw_recipe": "{% set name = \"phconvert\" %}\n{% set version = \"0.7\" %}\n{% set sha256 = \"d4a5335d9f3a5c8df753cb31c6152dbb3d7ded01266a1188804289e0236df2c5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/Photon-HDF5/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - numpy >=1.9\n    - pytables\n    - future\n    \ntest:\n  imports:\n    - phconvert\n\nabout:\n  home: http://photon-hdf5.github.io/phconvert\n  license: MIT\n  license_file: LICENSE.txt\n  summary: 'Convert and write Photon-HDF5 files.'\n  description: |\n    *phconvert* is a python 2 & 3 library that helps writing valid\n    Photon-HDF5 <http://photon-hdf5.org/>\n    files, a file format for time stamp-based single-molecule spectroscopy.\n    Additionally, phconvert can convert a few common binary formats\n    used in in single-molecule spectroscopy (e.g. PicoQuant .HT3,\n    Becker & Hickl .SPC/.SET) to Photon-HDF5.\n  doc_url: http://phconvert.readthedocs.io/\n  dev_url: https://github.com/Photon-HDF5/phconvert\n\nextra:\n  recipe-maintainers:\n    - tritemio\n",
+ "rendered_recipe": {},
+ "version": "0.7"
+}

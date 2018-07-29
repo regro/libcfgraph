@@ -1,0 +1,145 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/dec2",
+  "lib/python3.5/site-packages/dec2-0.2.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/dec2/__init__.py",
+  "lib/python3.5/site-packages/dec2/_version.py",
+  "lib/python3.5/site-packages/dec2/cli/__init__.py",
+  "lib/python3.5/site-packages/dec2/cli/dask_shell.py",
+  "lib/python3.5/site-packages/dec2/cli/daskd.py",
+  "lib/python3.5/site-packages/dec2/cli/main.py",
+  "lib/python3.5/site-packages/dec2/cli/notebook.py",
+  "lib/python3.5/site-packages/dec2/cli/utils.py",
+  "lib/python3.5/site-packages/dec2/cluster.py",
+  "lib/python3.5/site-packages/dec2/compatibility.py",
+  "lib/python3.5/site-packages/dec2/config.py",
+  "lib/python3.5/site-packages/dec2/ec2.py",
+  "lib/python3.5/site-packages/dec2/exceptions.py",
+  "lib/python3.5/site-packages/dec2/formulas/pillar/top.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/conda/debug.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/conda/init.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/conda/settings.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/conda/templates/conda.sh",
+  "lib/python3.5/site-packages/dec2/formulas/salt/dask/distributed/debug.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/dask/distributed/init.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/dask/distributed/scheduler/init.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/dask/distributed/settings.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/dask/distributed/templates/dscheduler.conf",
+  "lib/python3.5/site-packages/dec2/formulas/salt/dask/distributed/templates/dworker.conf",
+  "lib/python3.5/site-packages/dec2/formulas/salt/dask/distributed/worker/init.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/java/debug.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/java/init.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/java/openjdk/env.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/java/openjdk/init.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/java/openjdk/settings.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/java/openjdk/templates/java.sh",
+  "lib/python3.5/site-packages/dec2/formulas/salt/java/settings.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/jupyter/init.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/jupyter/notebook/init.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/jupyter/settings.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/jupyter/templates/jupyter-notebook.conf",
+  "lib/python3.5/site-packages/dec2/formulas/salt/supervisor/init.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/supervisor/settings.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/system/base.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/system/macros.sls",
+  "lib/python3.5/site-packages/dec2/formulas/salt/system/templates/limits.conf",
+  "lib/python3.5/site-packages/dec2/formulas/salt/top.sls",
+  "lib/python3.5/site-packages/dec2/instance.py",
+  "lib/python3.5/site-packages/dec2/libpepper.py",
+  "lib/python3.5/site-packages/dec2/salt.py",
+  "lib/python3.5/site-packages/dec2/ssh.py",
+  "lib/python3.5/site-packages/dec2/templates/auto_accept.conf",
+  "lib/python3.5/site-packages/dec2/templates/external_auth.conf",
+  "lib/python3.5/site-packages/dec2/templates/mine_functions.conf",
+  "lib/python3.5/site-packages/dec2/templates/rest_cherrypy.conf",
+  "lib/python3.5/site-packages/dec2/tests/__init__.py",
+  "lib/python3.5/site-packages/dec2/tests/salt/__init__.py",
+  "lib/python3.5/site-packages/dec2/tests/salt/test_distributed.py",
+  "lib/python3.5/site-packages/dec2/tests/salt/test_salt.py",
+  "lib/python3.5/site-packages/dec2/tests/test_cluster.py",
+  "lib/python3.5/site-packages/dec2/tests/test_ec2.py",
+  "lib/python3.5/site-packages/dec2/tests/test_instance.py",
+  "lib/python3.5/site-packages/dec2/tests/test_ssh.py",
+  "lib/python3.5/site-packages/dec2/tests/test_utils_retry.py",
+  "lib/python3.5/site-packages/dec2/tests/utils.py",
+  "lib/python3.5/site-packages/dec2/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "boto3",
+   "click",
+   "paramiko",
+   "python 3.5*",
+   "pyyaml",
+   "six"
+  ],
+  "license": "Apache 2.0",
+  "name": "dec2",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2.1"
+ },
+ "metadata_version": 1,
+ "name": "dec2",
+ "raw_recipe": "{% set version = \"0.2.1\" %}\n\npackage:\n  name: dec2\n  version: \"{{ version }}\"\n\nsource:\n  fn: dec2-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/dec2/dec2-{{ version }}.tar.gz\n  md5: 6ce7d6eb13105f7f7697f2ce80250018\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - dec2=dec2.cli.main:start\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - six\n    - click\n    - paramiko\n    - boto3\n    - pyyaml\n\ntest:\n  imports:\n    - dec2\n    - dec2.cli\n    - dec2.tests\n    - dec2.tests.salt\n  commands:\n    - dec2 --help\n\nabout:\n  home: https://github.com/dask/dec2\n  license: Apache 2.0\n  summary: 'Start a cluster in EC2 for dask.distributed'\n\nextra:\n  recipe-maintainers:\n    - danielfrg\n    - koverholt\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/dask/dec2",
+   "license": "Apache 2.0",
+   "summary": "Start a cluster in EC2 for dask.distributed"
+  },
+  "build": {
+   "entry_points": [
+    "dec2=dec2.cli.main:start"
+   ],
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "danielfrg",
+    "koverholt"
+   ]
+  },
+  "package": {
+   "name": "dec2",
+   "version": "0.2.1"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "six",
+    "click",
+    "paramiko",
+    "boto3",
+    "pyyaml"
+   ]
+  },
+  "source": {
+   "fn": "dec2-0.2.1.tar.gz",
+   "md5": "6ce7d6eb13105f7f7697f2ce80250018",
+   "url": "https://pypi.io/packages/source/d/dec2/dec2-0.2.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "dec2 --help"
+   ],
+   "imports": [
+    "dec2",
+    "dec2.cli",
+    "dec2.tests",
+    "dec2.tests.salt"
+   ]
+  }
+ },
+ "version": "0.2.1"
+}

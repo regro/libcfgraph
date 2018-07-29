@@ -1,0 +1,27 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/cdo-1.3.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/cdo.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "cdo",
+   "python 3.5*"
+  ],
+  "license": "GPLv2",
+  "name": "python-cdo",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.3.0"
+ },
+ "metadata_version": 1,
+ "name": "python-cdo",
+ "raw_recipe": "{% set version = \"1.3.0\" %}\n\npackage:\n    name: python-cdo\n    version: {{ version }}\n\nsource:\n    fn: cdo-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/c/cdo/cdo-{{ version }}.tar.gz\n    md5: 08d0bf10cbc7451b73a68441ed477a9d\n\nbuild:\n    number: 0\n    skip: True  # [win]\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - cdo\n    run:\n        - python\n        - cdo\n\ntest:\n    imports:\n        - cdo\n\nabout:\n    home: https://code.zmaw.de/projects/cdo/wiki/Cdo%7Brbpy%7D\n    license: GPLv2\n    summary: Use CDO in the context of Python as if it would be a native library.\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.3.0"
+}

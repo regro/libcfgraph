@@ -1,0 +1,82 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_1",
+  "build_number": 1,
+  "depends": [
+   "ipython",
+   "openpyxl",
+   "pymysql",
+   "pyodbc",
+   "pyro4",
+   "python 3.4*",
+   "pyyaml",
+   "suds-jurko",
+   "sympy",
+   "xlrd"
+  ],
+  "license": "BSD 3-clause",
+  "name": "pyomo.extras",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "3.0"
+ },
+ "metadata_version": 1,
+ "name": "pyomo.extras",
+ "raw_recipe": "# Do metapackages have a version?\n# Do metapackages have a license?\n\npackage:\n  name: pyomo.extras\n  version: 3.0\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - python\n  run:\n    - python\n    - ipython\n    - openpyxl\n    - sympy\n    - pymysql\n    - pyodbc\n    - pyro4\n    - pyyaml\n    - suds-jurko\n    - xlrd\n\ntest:\n  imports:\n    - IPython\n    - openpyxl\n    - sympy\n    - pymysql\n    - pyodbc\n    - Pyro4\n    - yaml\n    - suds\n    - xlrd\n\nabout:\n  home: http://pyomo.org\n  license: BSD 3-clause\n  summary: 'Extra Python packages that enhance the functionality of Pyomo'\n\nextra:\n  recipe-maintainers:\n    - whart222\n    - Juanlu001\n    - jsiirola\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://pyomo.org",
+   "license": "BSD 3-clause",
+   "summary": "Extra Python packages that enhance the functionality of Pyomo"
+  },
+  "build": {
+   "number": 1
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "whart222",
+    "Juanlu001",
+    "jsiirola"
+   ]
+  },
+  "package": {
+   "name": "pyomo.extras",
+   "version": 3.0
+  },
+  "requirements": {
+   "build": [
+    "python"
+   ],
+   "run": [
+    "python",
+    "ipython",
+    "openpyxl",
+    "sympy",
+    "pymysql",
+    "pyodbc",
+    "pyro4",
+    "pyyaml",
+    "suds-jurko",
+    "xlrd"
+   ]
+  },
+  "test": {
+   "imports": [
+    "IPython",
+    "openpyxl",
+    "sympy",
+    "pymysql",
+    "pyodbc",
+    "Pyro4",
+    "yaml",
+    "suds",
+    "xlrd"
+   ]
+  }
+ },
+ "version": "3.0"
+}

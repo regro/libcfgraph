@@ -1,0 +1,153 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/dask-0.9.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/dask-0.9.0-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/dask/__init__.py",
+  "lib/python3.4/site-packages/dask/array/__init__.py",
+  "lib/python3.4/site-packages/dask/array/chunk.py",
+  "lib/python3.4/site-packages/dask/array/conftest.py",
+  "lib/python3.4/site-packages/dask/array/core.py",
+  "lib/python3.4/site-packages/dask/array/creation.py",
+  "lib/python3.4/site-packages/dask/array/fft.py",
+  "lib/python3.4/site-packages/dask/array/ghost.py",
+  "lib/python3.4/site-packages/dask/array/image.py",
+  "lib/python3.4/site-packages/dask/array/learn.py",
+  "lib/python3.4/site-packages/dask/array/linalg.py",
+  "lib/python3.4/site-packages/dask/array/numpy_compat.py",
+  "lib/python3.4/site-packages/dask/array/optimization.py",
+  "lib/python3.4/site-packages/dask/array/percentile.py",
+  "lib/python3.4/site-packages/dask/array/random.py",
+  "lib/python3.4/site-packages/dask/array/rechunk.py",
+  "lib/python3.4/site-packages/dask/array/reductions.py",
+  "lib/python3.4/site-packages/dask/array/slicing.py",
+  "lib/python3.4/site-packages/dask/array/utils.py",
+  "lib/python3.4/site-packages/dask/array/wrap.py",
+  "lib/python3.4/site-packages/dask/async.py",
+  "lib/python3.4/site-packages/dask/bag/__init__.py",
+  "lib/python3.4/site-packages/dask/bag/core.py",
+  "lib/python3.4/site-packages/dask/bag/text.py",
+  "lib/python3.4/site-packages/dask/base.py",
+  "lib/python3.4/site-packages/dask/bytes/__init__.py",
+  "lib/python3.4/site-packages/dask/bytes/compression.py",
+  "lib/python3.4/site-packages/dask/bytes/core.py",
+  "lib/python3.4/site-packages/dask/bytes/local.py",
+  "lib/python3.4/site-packages/dask/bytes/s3.py",
+  "lib/python3.4/site-packages/dask/bytes/utils.py",
+  "lib/python3.4/site-packages/dask/cache.py",
+  "lib/python3.4/site-packages/dask/callbacks.py",
+  "lib/python3.4/site-packages/dask/compatibility.py",
+  "lib/python3.4/site-packages/dask/context.py",
+  "lib/python3.4/site-packages/dask/core.py",
+  "lib/python3.4/site-packages/dask/dataframe/__init__.py",
+  "lib/python3.4/site-packages/dask/dataframe/categorical.py",
+  "lib/python3.4/site-packages/dask/dataframe/core.py",
+  "lib/python3.4/site-packages/dask/dataframe/csv.py",
+  "lib/python3.4/site-packages/dask/dataframe/demo.py",
+  "lib/python3.4/site-packages/dask/dataframe/groupby.py",
+  "lib/python3.4/site-packages/dask/dataframe/io.py",
+  "lib/python3.4/site-packages/dask/dataframe/multi.py",
+  "lib/python3.4/site-packages/dask/dataframe/optimize.py",
+  "lib/python3.4/site-packages/dask/dataframe/rolling.py",
+  "lib/python3.4/site-packages/dask/dataframe/shuffle.py",
+  "lib/python3.4/site-packages/dask/dataframe/tseries/__init__.py",
+  "lib/python3.4/site-packages/dask/dataframe/tseries/resample.py",
+  "lib/python3.4/site-packages/dask/dataframe/utils.py",
+  "lib/python3.4/site-packages/dask/delayed.py",
+  "lib/python3.4/site-packages/dask/diagnostics/__init__.py",
+  "lib/python3.4/site-packages/dask/diagnostics/profile.py",
+  "lib/python3.4/site-packages/dask/diagnostics/profile_visualize.py",
+  "lib/python3.4/site-packages/dask/diagnostics/progress.py",
+  "lib/python3.4/site-packages/dask/distributed.py",
+  "lib/python3.4/site-packages/dask/dot.py",
+  "lib/python3.4/site-packages/dask/imperative.py",
+  "lib/python3.4/site-packages/dask/multiprocessing.py",
+  "lib/python3.4/site-packages/dask/optimize.py",
+  "lib/python3.4/site-packages/dask/order.py",
+  "lib/python3.4/site-packages/dask/rewrite.py",
+  "lib/python3.4/site-packages/dask/store/__init__.py",
+  "lib/python3.4/site-packages/dask/store/core.py",
+  "lib/python3.4/site-packages/dask/threaded.py",
+  "lib/python3.4/site-packages/dask/utils.py",
+  "lib/python3.4/site-packages/dask/utils_test.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_2",
+  "build_number": 2,
+  "depends": [
+   "bokeh",
+   "cloudpickle >=0.2.1",
+   "numpy",
+   "pandas >=0.18.0",
+   "partd >=0.3.3",
+   "python 3.4*",
+   "toolz >=0.7.2"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "dask",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.9.0"
+ },
+ "metadata_version": 1,
+ "name": "dask",
+ "raw_recipe": "{% set version = \"0.9.0\" %}\n\npackage:\n  name: dask\n  version: \"{{ version }}\"\n\nsource:\n  fn: dask-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/dask/dask-{{ version }}.tar.gz\n  md5: f111b837ae969a690cf23cd75add92e2\n\nbuild:\n  number: 2\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy\n    - toolz >=0.7.2\n    - pandas >=0.18.0\n    - partd >=0.3.3\n    - cloudpickle >=0.2.1\n    - bokeh\n\ntest:\n  imports:\n    - dask\n    - dask.array\n    - dask.bag\n    - dask.bytes\n    - dask.dataframe\n    - dask.dataframe.tseries\n    - dask.delayed\n    - dask.diagnostics\n    - dask.store\n\nabout:\n  home: http://github.com/dask/dask/\n  license: BSD 3-Clause\n  summary: 'Minimal task scheduling abstraction'\n\nextra:\n  recipe-maintainers:\n    - mrocklin\n    - jcrist\n    - koverholt\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://github.com/dask/dask/",
+   "license": "BSD 3-Clause",
+   "summary": "Minimal task scheduling abstraction"
+  },
+  "build": {
+   "number": "2",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mrocklin",
+    "jcrist",
+    "koverholt"
+   ]
+  },
+  "package": {
+   "name": "dask",
+   "version": "0.9.0"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python",
+    "numpy",
+    "toolz >=0.7.2",
+    "pandas >=0.18.0",
+    "partd >=0.3.3",
+    "cloudpickle >=0.2.1",
+    "bokeh"
+   ]
+  },
+  "source": {
+   "fn": "dask-0.9.0.tar.gz",
+   "md5": "f111b837ae969a690cf23cd75add92e2",
+   "url": "https://pypi.io/packages/source/d/dask/dask-0.9.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "dask",
+    "dask.array",
+    "dask.bag",
+    "dask.bytes",
+    "dask.dataframe",
+    "dask.dataframe.tseries",
+    "dask.delayed",
+    "dask.diagnostics",
+    "dask.store"
+   ]
+  }
+ },
+ "version": "0.9.0"
+}

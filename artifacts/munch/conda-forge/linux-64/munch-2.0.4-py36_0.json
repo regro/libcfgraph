@@ -1,0 +1,31 @@
+{
+ "about": {
+  "home": "http://github.com/Infinidat/munch",
+  "license": "MIT",
+  "summary": "A dot-accessible dictionary (a la JavaScript objects)."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/munch-2.0.4-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/munch/__init__.py",
+  "lib/python3.6/site-packages/munch/python3_compat.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.6*"
+  ],
+  "license": "MIT",
+  "name": "munch",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.0.4"
+ },
+ "metadata_version": 1,
+ "name": "munch",
+ "raw_recipe": "{% set version = \"2.0.4\" %}\n\npackage:\n  name: munch\n  version: {{ version }}\n\nsource:\n  fn: munch-{{ version }}.tar.gz\n  url: https://github.com/Infinidat/munch/archive/{{ version }}.tar.gz\n  sha256: ec4f073cc6437787383a44f5e70148469abbc6123bc8798cd2443e7c5361c8ab\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - munch\n\nabout:\n  home: http://github.com/Infinidat/munch\n  license: MIT\n  summary: 'A dot-accessible dictionary (a la JavaScript objects).'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "2.0.4"
+}

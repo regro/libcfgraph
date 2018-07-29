@@ -1,0 +1,38 @@
+{
+ "about": {
+  "dev_url": "https://github.com/RDFLib/sparqlwrapper",
+  "doc_url": "http://rdflib.github.io/sparqlwrapper",
+  "home": "https://github.com/RDFLib/sparqlwrapper",
+  "license": "W3C",
+  "summary": "SPARQL Endpoint interface to Python for use with rdflib"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/SPARQLWrapper-1.7.6-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/SPARQLWrapper/KeyCaseInsensitiveDict.py",
+  "lib/python2.7/site-packages/SPARQLWrapper/SPARQLExceptions.py",
+  "lib/python2.7/site-packages/SPARQLWrapper/SPARQLUtils.py",
+  "lib/python2.7/site-packages/SPARQLWrapper/SmartWrapper.py",
+  "lib/python2.7/site-packages/SPARQLWrapper/Wrapper.py",
+  "lib/python2.7/site-packages/SPARQLWrapper/__init__.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "keepalive",
+   "python 2.7*"
+  ],
+  "license": "W3C",
+  "name": "sparqlwrapper",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.7.6"
+ },
+ "metadata_version": 1,
+ "name": "sparqlwrapper",
+ "raw_recipe": "{% set name = \"SPARQLWrapper\" %}\n{% set version = \"1.7.6\" %}\n{% set sha256 = \"dccabec900eb9c97cb47834bd4b66ceaeb4d9ea11bae24a24fe734e9f48522f8\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - keepalive\n\ntest:\n  imports:\n    - SPARQLWrapper\n\nabout:\n  home: https://github.com/RDFLib/sparqlwrapper\n  license: W3C\n  # 'LICENSE file is missing in source due to the project missing a MANIFEST.in to copy into the release.'\n  summary: 'SPARQL Endpoint interface to Python for use with rdflib'\n  dev_url: https://github.com/RDFLib/sparqlwrapper\n  doc_url: http://rdflib.github.io/sparqlwrapper\n\nextra:\n  recipe-maintainers:\n    - satra\n",
+ "rendered_recipe": {},
+ "version": "1.7.6"
+}

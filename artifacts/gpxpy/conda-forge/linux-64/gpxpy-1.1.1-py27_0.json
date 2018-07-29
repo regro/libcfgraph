@@ -1,0 +1,33 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/gpxinfo",
+  "lib/python2.7/site-packages/gpxpy-1.1.1-py2.7.egg-info",
+  "lib/python2.7/site-packages/gpxpy/__init__.py",
+  "lib/python2.7/site-packages/gpxpy/geo.py",
+  "lib/python2.7/site-packages/gpxpy/gpx.py",
+  "lib/python2.7/site-packages/gpxpy/gpxfield.py",
+  "lib/python2.7/site-packages/gpxpy/gpxxml.py",
+  "lib/python2.7/site-packages/gpxpy/parser.py",
+  "lib/python2.7/site-packages/gpxpy/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "Apache-2.0",
+  "name": "gpxpy",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.1.1"
+ },
+ "metadata_version": 1,
+ "name": "gpxpy",
+ "raw_recipe": "{% set version = \"1.1.1\" %}\n\npackage:\n    name: gpxpy\n    version: {{ version }}\n\nsource:\n    fn: gpxpy-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/g/gpxpy/gpxpy-{{ version }}.tar.gz\n    md5: 55b62ccd2acc7cc441efb82230b10b48\n\nbuild:\n    number: 0\n    script: python setup.py install\n\nrequirements:\n    build:\n        - python\n    run:\n        - python\n\ntest:\n    imports:\n        - gpxpy\n\nabout:\n    home: http://www.trackprofiler.com/gpxpy/index.html\n    license: Apache-2.0\n    summary: GPX file parser and GPS track manipulation library\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.1.1"
+}

@@ -1,0 +1,39 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/tika-python",
+  "lib/python2.7/site-packages/tika-1.13.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/tika-1.13.1-py2.7.egg-info/zip-safe",
+  "lib/python2.7/site-packages/tika/__init__.py",
+  "lib/python2.7/site-packages/tika/config.py",
+  "lib/python2.7/site-packages/tika/detector.py",
+  "lib/python2.7/site-packages/tika/language.py",
+  "lib/python2.7/site-packages/tika/parser.py",
+  "lib/python2.7/site-packages/tika/tests/__init__.py",
+  "lib/python2.7/site-packages/tika/tests/test_tika.py",
+  "lib/python2.7/site-packages/tika/tests/tests_params.py",
+  "lib/python2.7/site-packages/tika/tika.py",
+  "lib/python2.7/site-packages/tika/translate.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "requests",
+   "setuptools"
+  ],
+  "license": "Apache 2.0",
+  "name": "tika",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.13.1"
+ },
+ "metadata_version": 1,
+ "name": "tika",
+ "raw_recipe": "{%set name = \"tika\" %}\n{%set version = \"1.13.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"9d32ecb41206ee7f1f3960946d6a79b18f9711162ce1a116bdd2700fcf7ddd2f\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  preserve_egg_dir: True\n  entry_points:\n    - tika-python = tika.tika:main\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - setuptools\n    - requests\n\ntest:\n  imports:\n    - tika\n    - tika.tests\n\n  commands:\n    - tika-python --help\n\nabout:\n  home: http://github.com/chrismattmann/tika-python\n  license: Apache 2.0\n  summary: 'Apache Tika Python library'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - chrismattmann\n",
+ "rendered_recipe": {},
+ "version": "1.13.1"
+}

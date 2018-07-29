@@ -1,0 +1,76 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/azure/common/__init__.py",
+  "lib/python3.5/site-packages/azure/common/credentials.py",
+  "lib/python3.5/site-packages/azure/common/exceptions.py",
+  "lib/python3.5/site-packages/azure_common-1.1.4-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/azure_common-1.1.4-py3.5.egg-info/not-zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "azure-nspkg",
+   "python 3.5*"
+  ],
+  "license": "Apache-2.0",
+  "name": "azure-common",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.1.4"
+ },
+ "metadata_version": 1,
+ "name": "azure-common",
+ "raw_recipe": "{% set version = \"1.1.4\" %}\n\npackage:\n  name: azure-common\n  version: {{ version }}\n\nsource:\n  fn: azure-common-{{ version }}.zip\n  url: https://pypi.io/packages/source/a/azure-common/azure-common-{{ version }}.zip\n  sha256: f8c8d97d0a7de202a47d7081c39c0e4a827c78900719d02c2ebe936e44ff152f\n  \nbuild:\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - azure-nspkg\n  run:\n    - python\n    - azure-nspkg\n\ntest:\n  imports:\n    - azure\n    - azure.common\n  commands:\n    - python -m unittest discover -p \"test_*.py\"\n\nabout:\n  home: https://github.com/Azure/azure-sdk-for-python\n  license: Apache-2.0\n  summary: 'Microsoft Azure Client Libraries for Python'\n\nextra:\n  recipe-maintainers:\n    - ivoflipse\n    - Korijn\n    - Maxyme\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/Azure/azure-sdk-for-python",
+   "license": "Apache-2.0",
+   "summary": "Microsoft Azure Client Libraries for Python"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record=record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ivoflipse",
+    "Korijn",
+    "Maxyme"
+   ]
+  },
+  "package": {
+   "name": "azure-common",
+   "version": "1.1.4"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "azure-nspkg"
+   ],
+   "run": [
+    "python",
+    "azure-nspkg"
+   ]
+  },
+  "source": {
+   "fn": "azure-common-1.1.4.zip",
+   "sha256": "f8c8d97d0a7de202a47d7081c39c0e4a827c78900719d02c2ebe936e44ff152f",
+   "url": "https://pypi.io/packages/source/a/azure-common/azure-common-1.1.4.zip"
+  },
+  "test": {
+   "commands": [
+    "python -m unittest discover -p \"test_*.py\""
+   ],
+   "imports": [
+    "azure",
+    "azure.common"
+   ]
+  }
+ },
+ "version": "1.1.4"
+}

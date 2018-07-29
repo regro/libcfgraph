@@ -1,0 +1,41 @@
+{
+ "about": {
+  "home": "https://github.com/SciTools-incubator/centrally-managed-conda",
+  "license": "BSD-3",
+  "license_family": "BSD",
+  "summary": "Tools and documentation for centrally managed conda environment deployment"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/centrally_managed_conda-0.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/centrally_managed_conda/__init__.py",
+  "lib/python3.5/site-packages/centrally_managed_conda/_version.py",
+  "lib/python3.5/site-packages/centrally_managed_conda/compose_recipes.py",
+  "lib/python3.5/site-packages/centrally_managed_conda/fetch_recipes.py",
+  "lib/python3.5/site-packages/centrally_managed_conda/fetch_sources.py",
+  "lib/python3.5/site-packages/centrally_managed_conda/list_pkgs.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "conda-build",
+   "conda-build-all",
+   "gitpython",
+   "python 3.5*",
+   "pyyaml"
+  ],
+  "license": "BSD-3",
+  "license_family": "BSD",
+  "name": "centrally-managed-conda",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2"
+ },
+ "metadata_version": 1,
+ "name": "centrally-managed-conda",
+ "raw_recipe": "{% set name = \"centrally-managed-conda\" %}\n{% set version = \"0.2\" %}\n{% set sha256 = \"fd80f8e0a6ea23be32b5c3df16f9d8bc2a01117d57a3e5a8c09f95e31801b430\" %}\n\npackage:\n    name: {{ name|lower }}\n    version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/SciTools-incubator/{{ name }}/archive/v{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - conda-build\n        - gitpython\n        - conda-build-all\n        - pyyaml\n\ntest:\n  imports:\n    - centrally_managed_conda\n\nabout:\n  home: https://github.com/SciTools-incubator/centrally-managed-conda\n  license: BSD-3\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Tools and documentation for centrally managed conda environment deployment'\n\nextra:\n  recipe-maintainers:\n    - bjlittle\n    - lbdreyer\n    - pelson\n",
+ "rendered_recipe": {},
+ "version": "0.2"
+}

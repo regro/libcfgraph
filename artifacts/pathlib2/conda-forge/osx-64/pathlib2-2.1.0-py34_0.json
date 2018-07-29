@@ -1,0 +1,27 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pathlib2-2.1.0-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pathlib2.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "six"
+  ],
+  "license": "MIT",
+  "name": "pathlib2",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.1.0"
+ },
+ "metadata_version": 1,
+ "name": "pathlib2",
+ "raw_recipe": "{% set version = \"2.1.0\" %}\n\npackage:\n  name: pathlib2\n  version: {{ version }}\n\nsource:\n  fn: pathlib2-{{ version }}.tar.gz\n  url: https://github.com/mcmtroffaes/pathlib2/archive/{{ version }}.tar.gz\n  md5: 5ef144f5050f17962e9cef35c0e93ed7\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - pathlib2\n\nabout:\n  home: https://github.com/mcmtroffaes/pathlib2\n  license: MIT\n  summary: \"Fork of pathlib aiming to support the full stdlib Python API.\"\n\nextra:\n  recipe-maintainers:\n    - pelson\n    - takluyver\n",
+ "rendered_recipe": {},
+ "version": "2.1.0"
+}

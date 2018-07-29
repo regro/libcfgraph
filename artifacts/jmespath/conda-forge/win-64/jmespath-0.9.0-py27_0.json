@@ -1,0 +1,39 @@
+{
+ "about": {
+  "home": "https://github.com/jmespath/jmespath.py",
+  "license": "MIT",
+  "summary": "JSON Matching Expressions"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/jmespath-0.9.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/jmespath-0.9.0-py2.7.egg-info/pbr.json",
+  "Lib/site-packages/jmespath/__init__.py",
+  "Lib/site-packages/jmespath/ast.py",
+  "Lib/site-packages/jmespath/compat.py",
+  "Lib/site-packages/jmespath/exceptions.py",
+  "Lib/site-packages/jmespath/functions.py",
+  "Lib/site-packages/jmespath/lexer.py",
+  "Lib/site-packages/jmespath/parser.py",
+  "Lib/site-packages/jmespath/visitor.py",
+  "Scripts/jp.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "jmespath",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.9.0"
+ },
+ "metadata_version": 1,
+ "name": "jmespath",
+ "raw_recipe": "{%set name = \"jmespath\" %}\n{%set version = \"0.9.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"08dfaa06d4397f283a01e57089f3360e3b52b5b9da91a70e1fd91e9f0cdd3d3d\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - {{ name }}\n\n\nabout:\n  home: https://github.com/jmespath/jmespath.py\n  license: MIT\n  summary: 'JSON Matching Expressions'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.9.0"
+}

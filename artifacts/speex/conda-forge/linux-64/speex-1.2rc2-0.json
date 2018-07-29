@@ -1,0 +1,158 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.6",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://www.speex.org",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-0",
+   "conda-forge::certifi-2017.1.23-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.6-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.1-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_2",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.12-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "Speex: A Free Codec For Free Speech"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/pkgconfig/speex.pc",
+  "include/speex/speex_header.h",
+  "lib/libspeex.a",
+  "share/man/man1/speexenc.1",
+  "lib/libspeex.so",
+  "include/speex/speex_config_types.h",
+  "lib/libspeex.so.1.5.0",
+  "include/speex/speex_bits.h",
+  "include/speex/speex.h",
+  "include/speex/speex_types.h",
+  "include/speex/speex_stereo.h",
+  "lib/libspeex.la",
+  "include/speex/speex_callbacks.h",
+  "bin/speexdec",
+  "share/aclocal/speex.m4",
+  "lib/libspeex.so.1",
+  "bin/speexenc",
+  "share/doc/speex/manual.pdf",
+  "share/man/man1/speexdec.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "libogg"
+  ],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "name": "speex",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.2rc2"
+ },
+ "metadata_version": 1,
+ "name": "speex",
+ "raw_recipe": "{% set version = \"1.2rc2\" %}\n{% set md5 = \"6ae7db3bab01e1d4b86bacfa8ca33e81\" %}\n\npackage:\n  name: speex\n  version: {{ version }}\n\nsource:\n  fn: speex-{{ version }}.tar.gz\n  url: http://downloads.xiph.org/releases/speex/speex-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 0\n  skip: true  # [not linux]\n\nrequirements:\n  build:\n    - toolchain\n    - libogg\n\n  run:\n    - libogg\n\ntest:\n  commands:\n    - speexenc -v\n    - speexdec -v\n\nabout:\n  home: http://www.speex.org\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: COPYING\n  summary: \"Speex: A Free Codec For Free Speech\"\n\nextra:\n  recipe-maintainers:\n    - mcernak\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.speex.org",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "COPYING",
+   "summary": "Speex: A Free Codec For Free Speech"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "mcernak"
+   ]
+  },
+  "package": {
+   "name": "speex",
+   "version": "1.2rc2"
+  },
+  "requirements": {
+   "build": [
+    "libogg 1.3.2 0",
+    "toolchain 2.0.0 0"
+   ],
+   "run": [
+    "libogg"
+   ]
+  },
+  "source": {
+   "fn": "speex-1.2rc2.tar.gz",
+   "md5": "6ae7db3bab01e1d4b86bacfa8ca33e81",
+   "url": "http://downloads.xiph.org/releases/speex/speex-1.2rc2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "speexenc -v",
+    "speexdec -v"
+   ]
+  }
+ },
+ "version": "1.2rc2"
+}

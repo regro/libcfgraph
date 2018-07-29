@@ -1,0 +1,92 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "bin/curl",
+  "bin/curl-config",
+  "include/curl/curl.h",
+  "include/curl/curlbuild.h",
+  "include/curl/curlrules.h",
+  "include/curl/curlver.h",
+  "include/curl/easy.h",
+  "include/curl/mprintf.h",
+  "include/curl/multi.h",
+  "include/curl/stdcheaders.h",
+  "include/curl/typecheck-gcc.h",
+  "lib/libcurl.a",
+  "lib/libcurl.la",
+  "lib/libcurl.so",
+  "lib/libcurl.so.4",
+  "lib/libcurl.so.4.4.0",
+  "lib/pkgconfig/libcurl.pc"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "2",
+  "build_number": 2,
+  "depends": [
+   "openssl",
+   "zlib"
+  ],
+  "license": "MIT/X derivate (http://curl.haxx.se/docs/copyright.html)",
+  "license_family": "MIT",
+  "name": "curl",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "7.48.0"
+ },
+ "metadata_version": 1,
+ "name": "curl",
+ "raw_recipe": "{% set version = \"7.48.0\" %}\n\npackage:\n  name: curl\n  version: {{ version }}\n\nsource:\n  fn: curl-{{ version }}.tar.bz2\n  url: http://curl.haxx.se/download/curl-{{ version }}.tar.bz2\n  sha256: 864e7819210b586d42c674a1fdd577ce75a78b3dda64c63565abe5aefd72c753\n\nbuild:\n  number: 2\n  detect_binary_files_with_prefix: true\n  features:\n    - vc9     # [win and py27]\n    - vc10    # [win and py34]\n    - vc14    # [win and py35]\n\nrequirements:\n  build:\n    # python is a build requirement on Windows to resolve features.\n    - python      # [win]\n    - pkg-config  # [unix]\n    - openssl     # [unix]\n    - zlib\n  run:\n    - openssl     # [unix]\n    - zlib\n\ntest:\n  requires:\n    - python 2.7.*  # [win and py27]\n    - python 3.4.*  # [win and py34]\n    - python 3.5.*  # [win and py35]\n\n  commands:\n    # curl help commands on Windows have non-zero status codes.  Need other test.\n    - curl --help\n    - curl-config --features       # [not win]\n    - curl-config --protocols      # [not win]\n\n    # Try downloading something from https to make sure the certs are used correctly.\n    - curl https://raw.githubusercontent.com/conda-forge/curl-feedstock/master/LICENSE\n\nabout:\n  home: http://curl.haxx.se/\n  license: MIT/X derivate (http://curl.haxx.se/docs/copyright.html)\n  license_family: MIT\n  license_file: COPYING\n  summary: tool and library for transferring data with URL syntax\n\nextra:\n  recipe-maintainers:\n    - msarahan\n    - jakirkham\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://curl.haxx.se/",
+   "license": "MIT/X derivate (http://curl.haxx.se/docs/copyright.html)",
+   "license_family": "MIT",
+   "license_file": "COPYING",
+   "summary": "tool and library for transferring data with URL syntax"
+  },
+  "build": {
+   "detect_binary_files_with_prefix": "true",
+   "features": "",
+   "number": "2"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "msarahan",
+    "jakirkham",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "curl",
+   "version": "7.48.0"
+  },
+  "requirements": {
+   "build": [
+    "pkg-config",
+    "openssl",
+    "zlib"
+   ],
+   "run": [
+    "openssl",
+    "zlib"
+   ]
+  },
+  "source": {
+   "fn": "curl-7.48.0.tar.bz2",
+   "sha256": "864e7819210b586d42c674a1fdd577ce75a78b3dda64c63565abe5aefd72c753",
+   "url": "http://curl.haxx.se/download/curl-7.48.0.tar.bz2"
+  },
+  "test": {
+   "commands": [
+    "curl --help",
+    "curl-config --features",
+    "curl-config --protocols",
+    "curl https://raw.githubusercontent.com/conda-forge/curl-feedstock/master/LICENSE"
+   ],
+   "requires": ""
+  }
+ },
+ "version": "7.48.0"
+}

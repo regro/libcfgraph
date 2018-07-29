@@ -1,0 +1,33 @@
+{
+ "about": {
+  "dev_url": "https://github.com/alex/pretend",
+  "home": "https://github.com/alex/pretend",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "A library for stubbing in Python"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pretend-1.0.8-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pretend.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "pretend",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.0.8"
+ },
+ "metadata_version": 1,
+ "name": "pretend",
+ "raw_recipe": "{% set name = \"pretend\" %}\n{% set version = \"1.0.8\" %}\n{% set sha256 = \"930f2c1e18503e8f8c403abe2e02166c4a881941745147e712cdd4f49f3fb964\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pretend\n\nabout:\n  home: https://github.com/alex/pretend\n  license: BSD 3-Clause\n  license_file: LICENSE.rst\n  license_family: BSD\n  summary: 'A library for stubbing in Python'\n  dev_url: https://github.com/alex/pretend\n\nextra:\n  recipe-maintainers:\n    - sodre\n",
+ "rendered_recipe": {},
+ "version": "1.0.8"
+}

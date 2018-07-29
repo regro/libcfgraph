@@ -1,0 +1,120 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/thrift-0.9.3-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/thrift/TMultiplexedProcessor.py",
+  "lib/python2.7/site-packages/thrift/TMultiplexedProcessor.pyo",
+  "lib/python2.7/site-packages/thrift/TSCons.py",
+  "lib/python2.7/site-packages/thrift/TSCons.pyo",
+  "lib/python2.7/site-packages/thrift/TSerialization.py",
+  "lib/python2.7/site-packages/thrift/TSerialization.pyo",
+  "lib/python2.7/site-packages/thrift/TTornado.py",
+  "lib/python2.7/site-packages/thrift/TTornado.pyo",
+  "lib/python2.7/site-packages/thrift/Thrift.py",
+  "lib/python2.7/site-packages/thrift/Thrift.pyo",
+  "lib/python2.7/site-packages/thrift/__init__.py",
+  "lib/python2.7/site-packages/thrift/__init__.pyo",
+  "lib/python2.7/site-packages/thrift/protocol/TBase.py",
+  "lib/python2.7/site-packages/thrift/protocol/TBase.pyo",
+  "lib/python2.7/site-packages/thrift/protocol/TBinaryProtocol.py",
+  "lib/python2.7/site-packages/thrift/protocol/TBinaryProtocol.pyo",
+  "lib/python2.7/site-packages/thrift/protocol/TCompactProtocol.py",
+  "lib/python2.7/site-packages/thrift/protocol/TCompactProtocol.pyo",
+  "lib/python2.7/site-packages/thrift/protocol/TJSONProtocol.py",
+  "lib/python2.7/site-packages/thrift/protocol/TJSONProtocol.pyo",
+  "lib/python2.7/site-packages/thrift/protocol/TMultiplexedProtocol.py",
+  "lib/python2.7/site-packages/thrift/protocol/TMultiplexedProtocol.pyo",
+  "lib/python2.7/site-packages/thrift/protocol/TProtocol.py",
+  "lib/python2.7/site-packages/thrift/protocol/TProtocol.pyo",
+  "lib/python2.7/site-packages/thrift/protocol/TProtocolDecorator.py",
+  "lib/python2.7/site-packages/thrift/protocol/TProtocolDecorator.pyo",
+  "lib/python2.7/site-packages/thrift/protocol/__init__.py",
+  "lib/python2.7/site-packages/thrift/protocol/__init__.pyo",
+  "lib/python2.7/site-packages/thrift/protocol/fastbinary.so",
+  "lib/python2.7/site-packages/thrift/server/THttpServer.py",
+  "lib/python2.7/site-packages/thrift/server/THttpServer.pyo",
+  "lib/python2.7/site-packages/thrift/server/TNonblockingServer.py",
+  "lib/python2.7/site-packages/thrift/server/TNonblockingServer.pyo",
+  "lib/python2.7/site-packages/thrift/server/TProcessPoolServer.py",
+  "lib/python2.7/site-packages/thrift/server/TProcessPoolServer.pyo",
+  "lib/python2.7/site-packages/thrift/server/TServer.py",
+  "lib/python2.7/site-packages/thrift/server/TServer.pyo",
+  "lib/python2.7/site-packages/thrift/server/__init__.py",
+  "lib/python2.7/site-packages/thrift/server/__init__.pyo",
+  "lib/python2.7/site-packages/thrift/transport/THttpClient.py",
+  "lib/python2.7/site-packages/thrift/transport/THttpClient.pyo",
+  "lib/python2.7/site-packages/thrift/transport/TSSLSocket.py",
+  "lib/python2.7/site-packages/thrift/transport/TSSLSocket.pyo",
+  "lib/python2.7/site-packages/thrift/transport/TSocket.py",
+  "lib/python2.7/site-packages/thrift/transport/TSocket.pyo",
+  "lib/python2.7/site-packages/thrift/transport/TTransport.py",
+  "lib/python2.7/site-packages/thrift/transport/TTransport.pyo",
+  "lib/python2.7/site-packages/thrift/transport/TTwisted.py",
+  "lib/python2.7/site-packages/thrift/transport/TTwisted.pyo",
+  "lib/python2.7/site-packages/thrift/transport/TZlibTransport.py",
+  "lib/python2.7/site-packages/thrift/transport/TZlibTransport.pyo",
+  "lib/python2.7/site-packages/thrift/transport/__init__.py",
+  "lib/python2.7/site-packages/thrift/transport/__init__.pyo"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "Apache 2.0",
+  "name": "thrift",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.9.3"
+ },
+ "metadata_version": 1,
+ "name": "thrift",
+ "raw_recipe": "package:\n  name: thrift\n  version: \"0.9.3\"\n\nsource:\n  fn: thrift-0.9.3.tar.gz\n  url: https://pypi.python.org/packages/source/t/thrift/thrift-0.9.3.tar.gz\n  md5: b519551d7a086bb0b4f222a8f566b7e8\n\nbuild:\n  number: 0\n  skip: True  # [not py27]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - thrift\n    - thrift.protocol\n    - thrift.server\n    - thrift.transport\n\nabout:\n  home: http://thrift.apache.org\n  license: Apache 2.0\n  summary: 'Python bindings for the Apache Thrift RPC system'\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://thrift.apache.org",
+   "license": "Apache 2.0",
+   "summary": "Python bindings for the Apache Thrift RPC system"
+  },
+  "build": {
+   "number": 0,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "skip": true
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "mariusvniekerk"
+   ]
+  },
+  "package": {
+   "name": "thrift",
+   "version": "0.9.3"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "thrift-0.9.3.tar.gz",
+   "md5": "b519551d7a086bb0b4f222a8f566b7e8",
+   "url": "https://pypi.python.org/packages/source/t/thrift/thrift-0.9.3.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "thrift",
+    "thrift.protocol",
+    "thrift.server",
+    "thrift.transport"
+   ]
+  }
+ },
+ "version": "0.9.3"
+}

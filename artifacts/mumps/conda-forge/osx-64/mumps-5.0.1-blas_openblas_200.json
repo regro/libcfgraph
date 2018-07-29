@@ -1,0 +1,56 @@
+{
+ "about": {
+  "description": "MUMPS (\u201cMUltifrontal Massively Parallel Solver\u201d) is a package for solving\nsystems of linear equations of the form Ax = b, where A is a square sparse\nmatrix that can be either unsymmetric, symmetric positive definite, or\ngeneral symmetric, on distributed memory computers. MUMPS implements a\ndirect method based on a multifrontal approach which performs a Gaussian\nfactorization.\n",
+  "doc_url": "http://mumps.enseeiht.fr/index.php?page=doc",
+  "home": "http://mumps.enseeiht.fr/",
+  "license": "CeCILL-C",
+  "summary": "MUMPS: a parallel sparse direct solver"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/cmumps_c.h",
+  "include/cmumps_root.h",
+  "include/cmumps_struc.h",
+  "include/dmumps_c.h",
+  "include/dmumps_root.h",
+  "include/dmumps_struc.h",
+  "include/mumps_c_types.h",
+  "include/mumps_compat.h",
+  "include/smumps_c.h",
+  "include/smumps_root.h",
+  "include/smumps_struc.h",
+  "include/zmumps_c.h",
+  "include/zmumps_root.h",
+  "include/zmumps_struc.h",
+  "lib/libcmumps.a",
+  "lib/libdmumps.a",
+  "lib/libmpiseq.a",
+  "lib/libmumps_common.a",
+  "lib/libpord.a",
+  "lib/libsmumps.a",
+  "lib/libzmumps.a"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "blas_openblas_200",
+  "build_number": 200,
+  "depends": [
+   "blas 1.1 openblas",
+   "libgfortran",
+   "metis",
+   "openblas 0.2.18|0.2.18.*",
+   "scotch"
+  ],
+  "features": "blas_openblas",
+  "license": "CeCILL-C",
+  "name": "mumps",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "5.0.1"
+ },
+ "metadata_version": 1,
+ "name": "mumps",
+ "raw_recipe": "{% set name = \"mumps\" %}\n{% set version = \"5.0.1\" %}\n{% set sha256 = \"50355b2e67873e2239b4998a46f2bbf83f70cdad6517730ab287ae3aae9340a0\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: mumps\n  version: {{ version }}\n\nsource:\n  fn: MUMPS_{{ version }}.tar.gz\n  url: http://mumps.enseeiht.fr/MUMPS_{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 200\n  skip: true  # [win]\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - toolchain\n    - metis\n    - scotch\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.18|0.2.18.*\n    - gcc\n  run:\n    - metis\n    - scotch\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.18|0.2.18.*\n    - libgfortran\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/lib/libzmumps.a\"\n    - test -f \"${PREFIX}/lib/libcmumps.a\"\n    - test -f \"${PREFIX}/lib/libdmumps.a\"\n    - test -f \"${PREFIX}/lib/libsmumps.a\"\n    - test -f \"${PREFIX}/lib/libmumps_common.a\"\n    - test -f \"${PREFIX}/lib/libpord.a\"\n    - test -f \"${PREFIX}/lib/libmpiseq.a\"\n    - test -f \"${PREFIX}/include/dmumps_struc.h\"\n    - test -f \"${PREFIX}/include/zmumps_struc.h\"\n    - test -f \"${PREFIX}/include/cmumps_struc.h\"\n    - test -f \"${PREFIX}/include/smumps_struc.h\"\n\nabout:\n  home: http://mumps.enseeiht.fr/\n  license: CeCILL-C\n  license_file: LICENSE\n  summary: 'MUMPS: a parallel sparse direct solver'\n  description: |\n    MUMPS (\u201cMUltifrontal Massively Parallel Solver\u201d) is a package for solving \n    systems of linear equations of the form Ax = b, where A is a square sparse \n    matrix that can be either unsymmetric, symmetric positive definite, or \n    general symmetric, on distributed memory computers. MUMPS implements a \n    direct method based on a multifrontal approach which performs a Gaussian \n    factorization.\n  doc_url: http://mumps.enseeiht.fr/index.php?page=doc\n\nextra:\n  recipe-maintainers:\n    - basnijholt\n",
+ "rendered_recipe": {},
+ "version": "5.0.1"
+}

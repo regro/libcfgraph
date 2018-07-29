@@ -1,0 +1,44 @@
+{
+ "about": {
+  "description": "Easy to use Python module to extract Exif metadata from tiff and jpeg files.\n",
+  "home": "https://github.com/ianare/exif-py",
+  "license": "BSD 3-Clause",
+  "summary": "Read Exif metadata from tiff and jpeg files."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/EXIF.py",
+  "lib/python3.5/site-packages/ExifRead-2.1.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/exifread/__init__.py",
+  "lib/python3.5/site-packages/exifread/classes.py",
+  "lib/python3.5/site-packages/exifread/exif_log.py",
+  "lib/python3.5/site-packages/exifread/tags/__init__.py",
+  "lib/python3.5/site-packages/exifread/tags/exif.py",
+  "lib/python3.5/site-packages/exifread/tags/makernote/__init__.py",
+  "lib/python3.5/site-packages/exifread/tags/makernote/apple.py",
+  "lib/python3.5/site-packages/exifread/tags/makernote/canon.py",
+  "lib/python3.5/site-packages/exifread/tags/makernote/casio.py",
+  "lib/python3.5/site-packages/exifread/tags/makernote/fujifilm.py",
+  "lib/python3.5/site-packages/exifread/tags/makernote/nikon.py",
+  "lib/python3.5/site-packages/exifread/tags/makernote/olympus.py",
+  "lib/python3.5/site-packages/exifread/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "exifread",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.1.2"
+ },
+ "metadata_version": 1,
+ "name": "exifread",
+ "raw_recipe": "{% set name = \"ExifRead\" %}\n{% set version = \"2.1.2\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"79e244f2eb466709029e8806fe5e2cdd557870c3db5f68954db0ef548d9320ad\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - exifread\n  commands:\n    - EXIF.py --help\n\nabout:\n  home: https://github.com/ianare/exif-py\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: Read Exif metadata from tiff and jpeg files.\n  description: |\n    Easy to use Python module to extract Exif metadata from tiff and jpeg files.\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n",
+ "rendered_recipe": {},
+ "version": "2.1.2"
+}

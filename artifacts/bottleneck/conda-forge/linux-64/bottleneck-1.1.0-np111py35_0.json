@@ -1,0 +1,61 @@
+{
+ "about": {
+  "description": "Bottleneck is a collection of fast NumPy array functions written in\nCython.\n",
+  "dev_url": "https://github.com/kwgoodman/bottleneck",
+  "doc_url": "http://berkeleyanalytics.com/bottleneck",
+  "home": "http://berkeleyanalytics.com/bottleneck",
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "summary": "Fast NumPy array functions written in Cython."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/Bottleneck-1.1.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/bottleneck/LICENSE",
+  "lib/python3.5/site-packages/bottleneck/__init__.py",
+  "lib/python3.5/site-packages/bottleneck/benchmark/__init__.py",
+  "lib/python3.5/site-packages/bottleneck/benchmark/autotimeit.py",
+  "lib/python3.5/site-packages/bottleneck/benchmark/bench.py",
+  "lib/python3.5/site-packages/bottleneck/move.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/bottleneck/nonreduce.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/bottleneck/nonreduce_axis.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/bottleneck/reduce.cpython-35m-x86_64-linux-gnu.so",
+  "lib/python3.5/site-packages/bottleneck/slow/__init__.py",
+  "lib/python3.5/site-packages/bottleneck/slow/move.py",
+  "lib/python3.5/site-packages/bottleneck/slow/nonreduce.py",
+  "lib/python3.5/site-packages/bottleneck/slow/nonreduce_axis.py",
+  "lib/python3.5/site-packages/bottleneck/slow/reduce.py",
+  "lib/python3.5/site-packages/bottleneck/template/__init__.py",
+  "lib/python3.5/site-packages/bottleneck/template/template.py",
+  "lib/python3.5/site-packages/bottleneck/tests/__init__.py",
+  "lib/python3.5/site-packages/bottleneck/tests/functions.py",
+  "lib/python3.5/site-packages/bottleneck/tests/input_modifcation_test.py",
+  "lib/python3.5/site-packages/bottleneck/tests/list_input_test.py",
+  "lib/python3.5/site-packages/bottleneck/tests/move_test.py",
+  "lib/python3.5/site-packages/bottleneck/tests/nonreduce_axis_test.py",
+  "lib/python3.5/site-packages/bottleneck/tests/nonreduce_test.py",
+  "lib/python3.5/site-packages/bottleneck/tests/reduce_test.py",
+  "lib/python3.5/site-packages/bottleneck/tests/scalar_input_test.py",
+  "lib/python3.5/site-packages/bottleneck/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py35_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.11*",
+   "python 3.5*"
+  ],
+  "license": "BSD 2-Clause",
+  "license_family": "BSD",
+  "name": "bottleneck",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.1.0"
+ },
+ "metadata_version": 1,
+ "name": "bottleneck",
+ "raw_recipe": "{% set version = \"1.1.0\" %}\n\npackage:\n  name: bottleneck\n  version: {{ version }}\n\nsource:\n  fn: Bottleneck-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/B/Bottleneck/Bottleneck-{{ version }}.tar.gz\n  sha256: c3a52b843509bd8d9ef240f0ce2f3e57d05277f85c3239196e3d8979fe5d33de\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - setuptools\n    - numpy x.x\n\n  run:\n    - python\n    - numpy x.x\n\ntest:\n  requires:\n    - nose\n\n  imports:\n    - bottleneck\n    - bottleneck.slow\n    - bottleneck.tests\n    - bottleneck.reduce\n    - bottleneck.nonreduce\n    - bottleneck.nonreduce_axis\n    - bottleneck.move\n\n  commands:\n    - python -c \"import bottleneck; bottleneck.test()\"\n\nabout:\n  home: http://berkeleyanalytics.com/bottleneck\n  license: BSD 2-Clause\n  license_family: BSD\n  license_file: bottleneck/LICENSE\n  summary: Fast NumPy array functions written in Cython.\n  description: |\n    Bottleneck is a collection of fast NumPy array functions written in\n    Cython.\n  doc_url: http://berkeleyanalytics.com/bottleneck\n  dev_url: https://github.com/kwgoodman/bottleneck\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - msarahan\n",
+ "rendered_recipe": {},
+ "version": "1.1.0"
+}

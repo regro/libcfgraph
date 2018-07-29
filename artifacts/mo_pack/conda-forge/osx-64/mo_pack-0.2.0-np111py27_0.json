@@ -1,0 +1,35 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/mo_pack-0.2.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/mo_pack/__init__.py",
+  "lib/python2.7/site-packages/mo_pack/_packing.so",
+  "lib/python2.7/site-packages/mo_pack/tests/__init__.py",
+  "lib/python2.7/site-packages/mo_pack/tests/test_compress_rle.py",
+  "lib/python2.7/site-packages/mo_pack/tests/test_data/nae.20100104-06_0001_0001.pp",
+  "lib/python2.7/site-packages/mo_pack/tests/test_decompress_rle.py",
+  "lib/python2.7/site-packages/mo_pack/tests/test_rle.py",
+  "lib/python2.7/site-packages/mo_pack/tests/test_wgdos.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_0",
+  "build_number": 0,
+  "depends": [
+   "libmo_unpack",
+   "numpy 1.11*",
+   "python 2.7*"
+  ],
+  "license": "LGPL-3.0",
+  "name": "mo_pack",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.0"
+ },
+ "metadata_version": 1,
+ "name": "mo_pack",
+ "raw_recipe": "{% set version = \"0.2.0\" %}\n\npackage:\n    name: mo_pack\n    version: {{ version }}\n\nsource:\n    fn: v{{ version }}.tar.gz\n    url: https://github.com/SciTools/mo_pack/archive/v{{ version }}.tar.gz\n    md5: c8dbbabd2a267c1e7457c2f0603e7838\n\nbuild:\n    number: 0\n    skip: True  # [win]\n\nrequirements:\n    build:\n        - python\n        - numpy x.x\n        - setuptools\n        - cython\n        - libmo_unpack\n    run:\n        - python\n        - numpy x.x\n        - libmo_unpack\n\ntest:\n    imports:\n        - mo_pack\n\nabout:\n    home: https://github.com/SciTools/mo_pack\n    license: LGPL-3.0\n    summary: Python wrapper to libmo_unpack\n\nextra:\n    recipe-maintainers:\n        - pelson\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.2.0"
+}

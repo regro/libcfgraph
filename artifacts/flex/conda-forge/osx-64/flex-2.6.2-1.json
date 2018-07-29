@@ -1,0 +1,144 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.0.12",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p481@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p481/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://flex.sourceforge.net/",
+  "license": "BSD 2-Clause",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-build-2.0.12-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-3.4.1-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_0",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "The Fast Lexical Analyzer"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/flex",
+  "bin/flex++",
+  "include/FlexLexer.h",
+  "lib/libfl.2.dylib",
+  "lib/libfl.a",
+  "lib/libfl.dylib",
+  "lib/libfl.la",
+  "lib/libfl_pic.2.dylib",
+  "lib/libfl_pic.a",
+  "lib/libfl_pic.dylib",
+  "lib/libfl_pic.la",
+  "share/doc/flex/AUTHORS",
+  "share/doc/flex/COPYING",
+  "share/doc/flex/NEWS",
+  "share/doc/flex/ONEWS",
+  "share/doc/flex/README.md",
+  "share/info/flex.info",
+  "share/info/flex.info-1",
+  "share/info/flex.info-2",
+  "share/man/man1/flex.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [
+   "libiconv"
+  ],
+  "license": "BSD 2-Clause",
+  "name": "flex",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.6.2"
+ },
+ "metadata_version": 1,
+ "name": "flex",
+ "raw_recipe": "{% set version = \"2.6.2\" %}\n\npackage:\n  name: flex\n  version: {{ version }}\n\nsource:\n  fn: flex-{{ version }}.tar.gz\n  url: https://github.com/westes/flex/releases/download/v{{ version }}/flex-{{ version }}.tar.gz\n  sha256: 9a01437a1155c799b7dc2508620564ef806ba66250c36bf5f9034b1c207cb2c9\n\nbuild:\n  skip: true  # [win]\n  number: 1\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - automake\n    - libiconv\n\n  run:\n    - libiconv\n\ntest:\n  commands:\n    # CLI tests\n    - flex --help\n\n    # Include test\n    - test -f ${PREFIX}/include/FlexLexer.h\n\n    # Lib tests\n    - test -f ${PREFIX}/lib/libfl.a\n    - test -f ${PREFIX}/lib/libfl_pic.a\n    - test -f ${PREFIX}/lib/libfl.dylib      # [osx]\n    - test -f ${PREFIX}/lib/libfl_pic.dylib  # [osx]\n    - test -f ${PREFIX}/lib/libfl.so         # [linux]\n    - test -f ${PREFIX}/lib/libfl_pic.so     # [linux]\n\nabout:\n  home: http://flex.sourceforge.net/\n  license: BSD 2-Clause\n  summary: The Fast Lexical Analyzer\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://flex.sourceforge.net/",
+   "license": "BSD 2-Clause",
+   "summary": "The Fast Lexical Analyzer"
+  },
+  "build": {
+   "detect_binary_files_with_prefix": "true",
+   "number": "1",
+   "string": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "jakirkham",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "flex",
+   "version": "2.6.2"
+  },
+  "requirements": {
+   "build": null,
+   "run": [
+    "libiconv"
+   ]
+  },
+  "source": {
+   "fn": "flex-2.6.2.tar.gz",
+   "sha256": "9a01437a1155c799b7dc2508620564ef806ba66250c36bf5f9034b1c207cb2c9",
+   "url": "https://github.com/westes/flex/releases/download/v2.6.2/flex-2.6.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "flex --help",
+    "test -f ${PREFIX}/include/FlexLexer.h",
+    "test -f ${PREFIX}/lib/libfl.a",
+    "test -f ${PREFIX}/lib/libfl_pic.a",
+    "test -f ${PREFIX}/lib/libfl.dylib",
+    "test -f ${PREFIX}/lib/libfl_pic.dylib"
+   ]
+  }
+ },
+ "version": "2.6.2"
+}

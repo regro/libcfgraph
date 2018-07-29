@@ -1,0 +1,32 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/valideer-0.4.2-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/valideer/__init__.py",
+  "Lib/site-packages/valideer/base.py",
+  "Lib/site-packages/valideer/compat.py",
+  "Lib/site-packages/valideer/tests/__init__.py",
+  "Lib/site-packages/valideer/tests/test_validators.py",
+  "Lib/site-packages/valideer/validators.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "decorator",
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "valideer",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.4.2"
+ },
+ "metadata_version": 1,
+ "name": "valideer",
+ "raw_recipe": "{% set version = \"0.4.2\" %}\n\npackage:\n    name: valideer\n    version: {{ version }}\n\nsource:\n    fn: valideer-{{ version }}.tar.gz\n    url: https://pypi.python.org/packages/source/v/valideer/valideer-{{ version }}.tar.gz\n    md5: 9129e0c2394e2b30947f07c5e1bf5d4a\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - decorator\n\ntest:\n    imports:\n        - valideer\n        - valideer.tests\n\nabout:\n    home: https://github.com/podio/valideer\n    license: MIT\n    summary: Lightweight data validation and adaptation library for Python\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - emiliom\n",
+ "rendered_recipe": {},
+ "version": "0.4.2"
+}

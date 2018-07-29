@@ -1,0 +1,59 @@
+{
+ "about": {
+  "dev_url": "https://github.com/adrienverge/yamllint",
+  "doc_url": "https://yamllint.readthedocs.io/",
+  "home": "https://github.com/adrienverge/yamllint",
+  "license": "GPLv3",
+  "summary": "A linter for YAML files."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/yamllint",
+  "lib/python2.7/site-packages/yamllint-1.5.0-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/yamllint/__init__.py",
+  "lib/python2.7/site-packages/yamllint/cli.py",
+  "lib/python2.7/site-packages/yamllint/conf/default.yaml",
+  "lib/python2.7/site-packages/yamllint/conf/relaxed.yaml",
+  "lib/python2.7/site-packages/yamllint/config.py",
+  "lib/python2.7/site-packages/yamllint/linter.py",
+  "lib/python2.7/site-packages/yamllint/parser.py",
+  "lib/python2.7/site-packages/yamllint/rules/__init__.py",
+  "lib/python2.7/site-packages/yamllint/rules/braces.py",
+  "lib/python2.7/site-packages/yamllint/rules/brackets.py",
+  "lib/python2.7/site-packages/yamllint/rules/colons.py",
+  "lib/python2.7/site-packages/yamllint/rules/commas.py",
+  "lib/python2.7/site-packages/yamllint/rules/comments.py",
+  "lib/python2.7/site-packages/yamllint/rules/comments_indentation.py",
+  "lib/python2.7/site-packages/yamllint/rules/common.py",
+  "lib/python2.7/site-packages/yamllint/rules/document_end.py",
+  "lib/python2.7/site-packages/yamllint/rules/document_start.py",
+  "lib/python2.7/site-packages/yamllint/rules/empty_lines.py",
+  "lib/python2.7/site-packages/yamllint/rules/hyphens.py",
+  "lib/python2.7/site-packages/yamllint/rules/indentation.py",
+  "lib/python2.7/site-packages/yamllint/rules/key_duplicates.py",
+  "lib/python2.7/site-packages/yamllint/rules/line_length.py",
+  "lib/python2.7/site-packages/yamllint/rules/new_line_at_end_of_file.py",
+  "lib/python2.7/site-packages/yamllint/rules/new_lines.py",
+  "lib/python2.7/site-packages/yamllint/rules/trailing_spaces.py",
+  "lib/python2.7/site-packages/yamllint/rules/truthy.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "pyyaml"
+  ],
+  "license": "GPLv3",
+  "name": "yamllint",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.5.0"
+ },
+ "metadata_version": 1,
+ "name": "yamllint",
+ "raw_recipe": "{% set name = \"yamllint\" %}\n{% set version = \"1.5.0\" %}\n{% set sha256 = \"aa7c864a269cac655c2899abef92fb195abcd1141bf7b38ea436a71994c9c9e6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - pyyaml\n\ntest:\n  imports:\n    - yamllint\n  requires:\n    - nose\n\nabout:\n  home: https://github.com/adrienverge/yamllint\n  license: GPLv3\n  license_file: LICENSE\n  summary: 'A linter for YAML files.'\n  doc_url: https://yamllint.readthedocs.io/\n  dev_url: https://github.com/adrienverge/yamllint\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
+ "rendered_recipe": {},
+ "version": "1.5.0"
+}

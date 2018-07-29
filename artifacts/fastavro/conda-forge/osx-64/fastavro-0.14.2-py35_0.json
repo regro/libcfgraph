@@ -1,0 +1,163 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "dev_url": "https://github.com/tebeka/fastavro",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "https://github.com/tebeka/fastavro",
+  "license": "MIT",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py36_0",
+   "asn1crypto-0.22.0-py36_0",
+   "conda-forge::beautifulsoup4-4.5.3-py36_0",
+   "cffi-1.10.0-py36_0",
+   "conda-forge::chardet-3.0.2-py36_1",
+   "conda-forge::clyent-1.2.1-py36_0",
+   "conda-forge::conda-4.2.13-py36_0",
+   "conda-forge::conda-build-2.1.10-py36_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py36_0",
+   "cryptography-1.8.1-py36_0",
+   "conda-forge::filelock-2.0.6-py36_0",
+   "idna-2.5-py36_0",
+   "conda-forge::jinja2-2.9.5-py36_0",
+   "conda-forge::markupsafe-1.0-py36_0",
+   "openssl-1.0.2l-0",
+   "packaging-16.8-py36_0",
+   "pip-9.0.1-py36_1",
+   "conda-forge::pkginfo-1.2.1-py36_0",
+   "pycosat-0.6.2-py36_0",
+   "pycparser-2.17-py36_0",
+   "conda-forge::pycrypto-2.6.1-py36_1",
+   "pyopenssl-17.0.0-py36_0",
+   "pyparsing-2.1.4-py36_0",
+   "python-3.6.1-2",
+   "conda-forge::python-dateutil-2.6.0-py36_0",
+   "conda-forge::pytz-2017.2-py36_0",
+   "conda-forge::pyyaml-3.12-py36_1",
+   "readline-6.2-2",
+   "requests-2.14.2-py36_0",
+   "ruamel_yaml-0.11.14-py36_1",
+   "setuptools-27.2.0-py36_0",
+   "six-1.10.0-py36_0",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py36_0",
+   "xz-5.2.2-1",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Fast read/write of AVRO files"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/fastavro-0.14.2-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/fastavro/reader.py",
+  "lib/python3.5/site-packages/fastavro/_writer.cpython-35m-darwin.so",
+  "lib/python3.5/site-packages/fastavro/_six.cpython-35m-darwin.so",
+  "lib/python3.5/site-packages/fastavro/writer.py",
+  "lib/python3.5/site-packages/fastavro/six.py",
+  "lib/python3.5/site-packages/fastavro/__main__.py",
+  "lib/python3.5/site-packages/fastavro-0.14.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/fastavro/__init__.py",
+  "lib/python3.5/site-packages/fastavro/schema.py",
+  "lib/python3.5/site-packages/fastavro/_reader.cpython-35m-darwin.so",
+  "bin/fastavro",
+  "lib/python3.5/site-packages/fastavro/_schema.cpython-35m-darwin.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "fastavro",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.14.2"
+ },
+ "metadata_version": 1,
+ "name": "fastavro",
+ "raw_recipe": "{% set name = \"fastavro\" %}\n{% set version = \"0.14.2\" %}\n{% set sha256 = \"b4b2e0f76836bc4e9aa8116f2c159def46d18d2a2509da41aff3d434fdc1afb8\" %}\n\npackage:\n    name: {{ name }}\n    version: {{ version }}\n\nsource:\n    fn: {{name}}-{{ version }}.tar.gz\n    url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\n\n\nrequirements:\n    build:\n        - python\n        - cython\n        - setuptools\n    run:\n        - python\n\ntest:\n    requires:\n        - nose\n        - flake8\n    imports:\n        - {{ name }}\n\nabout:\n    home: https://github.com/tebeka/{{ name }}\n    license: MIT\n    summary: Fast read/write of AVRO files\n    dev_url: https://github.com/tebeka/{{ name }}\n\nextra:\n    recipe-maintainers:\n        - tebeka\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "https://github.com/tebeka/fastavro",
+   "home": "https://github.com/tebeka/fastavro",
+   "license": "MIT",
+   "summary": "Fast read/write of AVRO files"
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py35_0"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "tebeka"
+   ]
+  },
+  "package": {
+   "name": "fastavro",
+   "version": "0.14.2"
+  },
+  "requirements": {
+   "build": [
+    "ca-certificates 2017.4.17 0",
+    "certifi 2017.4.17 py35_0",
+    "cython 0.25.2 py35_1",
+    "ncurses 5.9 10",
+    "openssl 1.0.2k 0",
+    "python 3.5.3 3",
+    "readline 6.2 0",
+    "setuptools 33.1.1 py35_0",
+    "sqlite 3.13.0 1",
+    "tk 8.5.19 1",
+    "xz 5.2.2 0",
+    "zlib 1.2.11 0"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "fastavro-0.14.2.tar.gz",
+   "sha256": "b4b2e0f76836bc4e9aa8116f2c159def46d18d2a2509da41aff3d434fdc1afb8",
+   "url": "https://files.pythonhosted.org/packages/source/f/fastavro/fastavro-0.14.2.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "fastavro"
+   ],
+   "requires": [
+    "nose",
+    "flake8"
+   ]
+  }
+ },
+ "version": "0.14.2"
+}

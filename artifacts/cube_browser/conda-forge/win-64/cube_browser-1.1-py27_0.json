@@ -1,0 +1,44 @@
+{
+ "about": {
+  "home": "http://scitools.org.uk/cube_browser",
+  "license": "BSD 3-clause",
+  "summary": "Working with Jupyter Notebooks to interactively visualise Iris cubes."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/cube_browser-1.1.0-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/cube_browser/__init__.py",
+  "Lib/site-packages/cube_browser/explorer.py",
+  "Lib/site-packages/cube_browser/tests/__init__.py",
+  "Lib/site-packages/cube_browser/tests/unit/__init__.py",
+  "Lib/site-packages/cube_browser/tests/unit/test_Browser.py",
+  "Lib/site-packages/cube_browser/tests/unit/test_Contour.py",
+  "Lib/site-packages/cube_browser/tests/unit/test_Contourf.py",
+  "Lib/site-packages/cube_browser/tests/unit/test_Pcolormesh.py",
+  "Lib/site-packages/cube_browser/tests/unit/test_Plot2D.py",
+  "Lib/site-packages/cube_browser/tests/unit/test__AxisAlias.py",
+  "Lib/site-packages/cube_browser/tests/unit/test__AxisDefn.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "ipywidgets >=5.1",
+   "iris >=1.10",
+   "iris-sample-data",
+   "matplotlib",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-clause",
+  "name": "cube_browser",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.1"
+ },
+ "metadata_version": 1,
+ "name": "cube_browser",
+ "raw_recipe": "{% set version = \"1.1\" %}\n\npackage:\n    name: cube_browser\n    version: {{ version }}\n\nsource:\n    fn: cube_browser-{{ version }}.tar.gz\n    url: https://github.com/SciTools/cube_browser/archive/v{{ version }}.tar.gz\n    sha256: b3c10cdc92fb732e2ff3f7b85c0a5e246692a9349a334f2e011f430d98c64fa0\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - ipywidgets >=5.1\n        - iris >=1.10\n        - matplotlib\n        - iris-sample-data\n\ntest:\n    imports:\n        - cube_browser\n\nabout:\n    home: http://scitools.org.uk/cube_browser\n    license: BSD 3-clause\n    summary: 'Working with Jupyter Notebooks to interactively visualise Iris cubes.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.1"
+}

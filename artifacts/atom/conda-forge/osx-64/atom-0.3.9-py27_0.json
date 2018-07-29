@@ -1,0 +1,50 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/atom-0.3.9-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/atom/__init__.py",
+  "lib/python2.7/site-packages/atom/api.py",
+  "lib/python2.7/site-packages/atom/atom.py",
+  "lib/python2.7/site-packages/atom/catom.so",
+  "lib/python2.7/site-packages/atom/coerced.py",
+  "lib/python2.7/site-packages/atom/containerlist.py",
+  "lib/python2.7/site-packages/atom/datastructures/__init__.py",
+  "lib/python2.7/site-packages/atom/datastructures/api.py",
+  "lib/python2.7/site-packages/atom/datastructures/sortedmap.so",
+  "lib/python2.7/site-packages/atom/delegator.py",
+  "lib/python2.7/site-packages/atom/dict.py",
+  "lib/python2.7/site-packages/atom/enum.py",
+  "lib/python2.7/site-packages/atom/event.py",
+  "lib/python2.7/site-packages/atom/instance.py",
+  "lib/python2.7/site-packages/atom/intenum.py",
+  "lib/python2.7/site-packages/atom/list.py",
+  "lib/python2.7/site-packages/atom/property.py",
+  "lib/python2.7/site-packages/atom/scalars.py",
+  "lib/python2.7/site-packages/atom/signal.py",
+  "lib/python2.7/site-packages/atom/subclass.py",
+  "lib/python2.7/site-packages/atom/tuple.py",
+  "lib/python2.7/site-packages/atom/typed.py",
+  "lib/python2.7/site-packages/atom/version.py",
+  "lib/python2.7/site-packages/tests/__init__.py",
+  "lib/python2.7/site-packages/tests/test_atomlist.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "atom",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.9"
+ },
+ "metadata_version": 1,
+ "name": "atom",
+ "raw_recipe": "{% set version = \"0.3.9\" %}\npackage:\n  name: atom\n  version: {{ version }}\n\nsource:\n  url: https://github.com/nucleic/atom/archive/{{ version }}.tar.gz\n  fn: atom-{{ version }}.tar.gz\n  sha256: 10d797874a5bf4467804343a3e42ada4b0ce6c09cc76ae3997aeed66cb781dc5\n\nbuild:\n  number: 0\n  skip: True  # [py3k]\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - atom\n    - atom.datastructures\n    - tests\n\nabout:\n  home: https://github.com/nucleic/atom\n  license: BSD 3-Clause\n  summary: Memory efficient Python objects\n\nextra:\n  recipe-maintainers:\n    - blink1073\n    - ericdill\n    - licode\n    - MatthieuDartiailh\n    - sccolbert\n    - tacaswell\n",
+ "rendered_recipe": {},
+ "version": "0.3.9"
+}

@@ -1,0 +1,36 @@
+{
+ "about": {
+  "home": "https://github.com/jquast/wcwidth",
+  "license": "MIT",
+  "summary": "Measures number of Terminal column cells of wide-character codes."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/wcwidth-0.1.7-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/wcwidth-0.1.7-py2.7.egg-info/zip-safe",
+  "Lib/site-packages/wcwidth/__init__.py",
+  "Lib/site-packages/wcwidth/table_wide.py",
+  "Lib/site-packages/wcwidth/table_zero.py",
+  "Lib/site-packages/wcwidth/tests/__init__.py",
+  "Lib/site-packages/wcwidth/tests/test_core.py",
+  "Lib/site-packages/wcwidth/wcwidth.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "name": "wcwidth",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.1.7"
+ },
+ "metadata_version": 1,
+ "name": "wcwidth",
+ "raw_recipe": "{% set version = \"0.1.7\" %}\n\npackage:\n    name: wcwidth\n    version: {{ version }}\n\nsource:\n    fn: wcwidth-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/w/wcwidth/wcwidth-{{ version }}.tar.gz\n    sha256: 3df37372226d6e63e1b1e1eda15c594bca98a22d33a23832a90998faa96bc65e\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - wcwidth\n        - wcwidth.tests\n\nabout:\n    home: https://github.com/jquast/wcwidth\n    license: MIT\n    summary: 'Measures number of Terminal column cells of wide-character codes.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "0.1.7"
+}

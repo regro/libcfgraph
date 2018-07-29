@@ -1,0 +1,50 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/clint-0.5.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/clint-0.5.1-py3.4.egg-info/pbr.json",
+  "lib/python3.4/site-packages/clint/__init__.py",
+  "lib/python3.4/site-packages/clint/arguments.py",
+  "lib/python3.4/site-packages/clint/eng.py",
+  "lib/python3.4/site-packages/clint/packages/__init__.py",
+  "lib/python3.4/site-packages/clint/packages/appdirs.py",
+  "lib/python3.4/site-packages/clint/packages/colorama/__init__.py",
+  "lib/python3.4/site-packages/clint/packages/colorama/ansi.py",
+  "lib/python3.4/site-packages/clint/packages/colorama/ansitowin32.py",
+  "lib/python3.4/site-packages/clint/packages/colorama/initialise.py",
+  "lib/python3.4/site-packages/clint/packages/colorama/win32.py",
+  "lib/python3.4/site-packages/clint/packages/colorama/winterm.py",
+  "lib/python3.4/site-packages/clint/packages/ordereddict.py",
+  "lib/python3.4/site-packages/clint/pipes.py",
+  "lib/python3.4/site-packages/clint/resources.py",
+  "lib/python3.4/site-packages/clint/textui/__init__.py",
+  "lib/python3.4/site-packages/clint/textui/colored.py",
+  "lib/python3.4/site-packages/clint/textui/cols.py",
+  "lib/python3.4/site-packages/clint/textui/core.py",
+  "lib/python3.4/site-packages/clint/textui/formatters.py",
+  "lib/python3.4/site-packages/clint/textui/progress.py",
+  "lib/python3.4/site-packages/clint/textui/prompt.py",
+  "lib/python3.4/site-packages/clint/textui/validators.py",
+  "lib/python3.4/site-packages/clint/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "args",
+   "python 3.4*"
+  ],
+  "license": "ISC License (ISCL)",
+  "name": "clint",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.5.1"
+ },
+ "metadata_version": 1,
+ "name": "clint",
+ "raw_recipe": "{% set version = \"0.5.1\" %}\n\npackage:\n  name: clint\n  version: {{ version }}\n\nsource:\n  fn: clint-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/c/clint/clint-{{ version }}.tar.gz\n  md5: 8afd569f077886e2f4e6cca377da2623\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - args\n\n  run:\n    - python\n    - args\n\ntest:\n  imports:\n    - clint\n    - clint.packages\n    - clint.packages.colorama\n    - clint.textui\n\nabout:\n  home: https://github.com/kennethreitz/clint\n  license: ISC License (ISCL)\n  summary: 'Python Command Line Interface Tools'\n\nextra:\n  recipe-maintainers:\n    - janschulz\n",
+ "rendered_recipe": {},
+ "version": "0.5.1"
+}

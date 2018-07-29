@@ -1,0 +1,41 @@
+{
+ "about": {
+  "home": "http://gmplib.org/",
+  "license": "GPL 2 and LGPL 3",
+  "summary": "The GNU multiprecision library."
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/gmp.h",
+  "include/gmpxx.h",
+  "lib/libgmp.a",
+  "lib/libgmp.la",
+  "lib/libgmp.so",
+  "lib/libgmp.so.10",
+  "lib/libgmp.so.10.3.1",
+  "lib/libgmpxx.a",
+  "lib/libgmpxx.la",
+  "lib/libgmpxx.so",
+  "lib/libgmpxx.so.4",
+  "lib/libgmpxx.so.4.5.1",
+  "share/info/gmp.info",
+  "share/info/gmp.info-1",
+  "share/info/gmp.info-2"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "GPL 2 and LGPL 3",
+  "name": "gmp",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "6.1.1"
+ },
+ "metadata_version": 1,
+ "name": "gmp",
+ "raw_recipe": "{% set version = \"6.1.1\" %}\n\npackage:\n  name: gmp\n  version: {{ version }}\n\nsource:\n  fn: gmp-{{ version }}.tar.bz2\n  url: https://gmplib.org/download/gmp/gmp-{{ version }}.tar.bz2\n  md5: 4c175f86e11eb32d8bf9872ca3a8e11d\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - m4\n\ntest:\n  files:\n    - test.c\n\n  commands:\n    - test -f ${PREFIX}/lib/libgmp.a        # [unix]\n    - test -f ${PREFIX}/lib/libgmp.dylib    # [osx]\n    - test -f ${PREFIX}/lib/libgmp.so       # [linux]\n    - test -f ${PREFIX}/lib/libgmpxx.a      # [unix]\n    - test -f ${PREFIX}/lib/libgmpxx.dylib  # [osx]\n    - test -f ${PREFIX}/lib/libgmpxx.so     # [linux]\n\nabout:\n  home: http://gmplib.org/\n  license: GPL 2 and LGPL 3\n  summary: The GNU multiprecision library.\n\nextra:\n  recipe-maintainers:\n    - asmeurer\n    - isuruf\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "6.1.1"
+}

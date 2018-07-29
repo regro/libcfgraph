@@ -1,0 +1,56 @@
+{
+ "about": {
+  "home": "https://github.com/Julian/jsonschema",
+  "license": "MIT",
+  "summary": "Python implementation of JSON Schema,"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/jsonschema",
+  "lib/python3.6/site-packages/jsonschema-2.5.1.dist-info/DESCRIPTION.rst",
+  "lib/python3.6/site-packages/jsonschema-2.5.1.dist-info/INSTALLER",
+  "lib/python3.6/site-packages/jsonschema-2.5.1.dist-info/METADATA",
+  "lib/python3.6/site-packages/jsonschema-2.5.1.dist-info/RECORD",
+  "lib/python3.6/site-packages/jsonschema-2.5.1.dist-info/WHEEL",
+  "lib/python3.6/site-packages/jsonschema-2.5.1.dist-info/metadata.json",
+  "lib/python3.6/site-packages/jsonschema-2.5.1.dist-info/pbr.json",
+  "lib/python3.6/site-packages/jsonschema/__init__.py",
+  "lib/python3.6/site-packages/jsonschema/__main__.py",
+  "lib/python3.6/site-packages/jsonschema/_format.py",
+  "lib/python3.6/site-packages/jsonschema/_reflect.py",
+  "lib/python3.6/site-packages/jsonschema/_utils.py",
+  "lib/python3.6/site-packages/jsonschema/_validators.py",
+  "lib/python3.6/site-packages/jsonschema/_version.py",
+  "lib/python3.6/site-packages/jsonschema/cli.py",
+  "lib/python3.6/site-packages/jsonschema/compat.py",
+  "lib/python3.6/site-packages/jsonschema/exceptions.py",
+  "lib/python3.6/site-packages/jsonschema/schemas/draft3.json",
+  "lib/python3.6/site-packages/jsonschema/schemas/draft4.json",
+  "lib/python3.6/site-packages/jsonschema/tests/__init__.py",
+  "lib/python3.6/site-packages/jsonschema/tests/compat.py",
+  "lib/python3.6/site-packages/jsonschema/tests/test_cli.py",
+  "lib/python3.6/site-packages/jsonschema/tests/test_exceptions.py",
+  "lib/python3.6/site-packages/jsonschema/tests/test_format.py",
+  "lib/python3.6/site-packages/jsonschema/tests/test_jsonschema_test_suite.py",
+  "lib/python3.6/site-packages/jsonschema/tests/test_validators.py",
+  "lib/python3.6/site-packages/jsonschema/validators.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.6*"
+  ],
+  "license": "MIT",
+  "name": "jsonschema",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.5.1"
+ },
+ "metadata_version": 1,
+ "name": "jsonschema",
+ "raw_recipe": "{% set version = \"2.5.1\" %}\n\npackage:\n  name: jsonschema\n  version: {{ version }}\n\nsource:\n  fn: jsonschema-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/j/jsonschema/jsonschema-{{ version }}.tar.gz\n  sha256: 36673ac378feed3daa5956276a829699056523d7961027911f064b52255ead41\n\nbuild:\n  number: 0\n  script: pip install .\n\nrequirements:\n  build:\n    - python\n    - pip\n    - vcversioner\n  run:\n    - python\n    - functools32  # [py27]\n\ntest:\n  imports:\n    - jsonschema\n\nabout:\n  home: https://github.com/Julian/jsonschema\n  license: MIT\n  license_file: COPYING\n  summary: 'Python implementation of JSON Schema,'\n\nextra:\n  recipe-maintainers:\n    - minrk\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "2.5.1"
+}

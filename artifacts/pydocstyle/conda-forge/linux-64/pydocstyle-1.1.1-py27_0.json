@@ -1,0 +1,42 @@
+{
+ "about": {
+  "description": "pydocstyle is a static analysis tool for checking compliance with Python\ndocstring conventions. pydocstyle supports most of PEP 257 out of the box,\nbut it should not be considered a reference implementation.\nThe framework for checking docstring style is flexible, and custom checks\ncan be easily added, for example to cover NumPy docstring conventions.\npydocstyle supports Python 2.6, 2.7, 3.3, 3.4, 3.5, pypy and pypy3.\n",
+  "dev_url": "https://github.com/PyCQA/pydocstyle",
+  "doc_url": "http://pydocstyle.readthedocs.org",
+  "home": "https://github.com/PyCQA/pydocstyle",
+  "license": "MIT License",
+  "summary": "Python docstring style checker (formerly pep257)"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/pep257",
+  "bin/pydocstyle",
+  "lib/python2.7/site-packages/pydocstyle-1.1.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/pydocstyle/__init__.py",
+  "lib/python2.7/site-packages/pydocstyle/__main__.py",
+  "lib/python2.7/site-packages/pydocstyle/checker.py",
+  "lib/python2.7/site-packages/pydocstyle/cli.py",
+  "lib/python2.7/site-packages/pydocstyle/config.py",
+  "lib/python2.7/site-packages/pydocstyle/parser.py",
+  "lib/python2.7/site-packages/pydocstyle/utils.py",
+  "lib/python2.7/site-packages/pydocstyle/violations.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT License",
+  "name": "pydocstyle",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.1.1"
+ },
+ "metadata_version": 1,
+ "name": "pydocstyle",
+ "raw_recipe": "{% set name = \"pydocstyle\" %}\n{% set version = \"1.1.1\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"f808d8fc23952fe93c2d85598732bfa854cb5ee8a25f8191f60600710f898e8d\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.zip\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n    number: 0\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - pydocstyle\n\nabout:\n  home: https://github.com/PyCQA/pydocstyle\n  license: MIT License\n  summary: 'Python docstring style checker (formerly pep257)'\n  description: |\n    pydocstyle is a static analysis tool for checking compliance with Python\n    docstring conventions. pydocstyle supports most of PEP 257 out of the box,\n    but it should not be considered a reference implementation.\n    The framework for checking docstring style is flexible, and custom checks\n    can be easily added, for example to cover NumPy docstring conventions.\n    pydocstyle supports Python 2.6, 2.7, 3.3, 3.4, 3.5, pypy and pypy3.\n  doc_url: http://pydocstyle.readthedocs.org\n  dev_url: https://github.com/PyCQA/pydocstyle\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n    - jakirkham\n    - Nurdok\n",
+ "rendered_recipe": {},
+ "version": "1.1.1"
+}

@@ -1,0 +1,57 @@
+{
+ "about": {
+  "dev_url": "https://github.com/MongoEngine/mongoengine",
+  "doc_url": "https://mongoengine-odm.readthedocs.io/",
+  "home": "http://mongoengine.org/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "MongoEngine is a Python Object-Document Mapper for working with MongoDB."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/mongoengine-0.10.6-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/mongoengine/__init__.py",
+  "lib/python3.5/site-packages/mongoengine/base/__init__.py",
+  "lib/python3.5/site-packages/mongoengine/base/common.py",
+  "lib/python3.5/site-packages/mongoengine/base/datastructures.py",
+  "lib/python3.5/site-packages/mongoengine/base/document.py",
+  "lib/python3.5/site-packages/mongoengine/base/fields.py",
+  "lib/python3.5/site-packages/mongoengine/base/metaclasses.py",
+  "lib/python3.5/site-packages/mongoengine/common.py",
+  "lib/python3.5/site-packages/mongoengine/connection.py",
+  "lib/python3.5/site-packages/mongoengine/context_managers.py",
+  "lib/python3.5/site-packages/mongoengine/dereference.py",
+  "lib/python3.5/site-packages/mongoengine/document.py",
+  "lib/python3.5/site-packages/mongoengine/errors.py",
+  "lib/python3.5/site-packages/mongoengine/fields.py",
+  "lib/python3.5/site-packages/mongoengine/python_support.py",
+  "lib/python3.5/site-packages/mongoengine/queryset/__init__.py",
+  "lib/python3.5/site-packages/mongoengine/queryset/base.py",
+  "lib/python3.5/site-packages/mongoengine/queryset/field_list.py",
+  "lib/python3.5/site-packages/mongoengine/queryset/manager.py",
+  "lib/python3.5/site-packages/mongoengine/queryset/queryset.py",
+  "lib/python3.5/site-packages/mongoengine/queryset/transform.py",
+  "lib/python3.5/site-packages/mongoengine/queryset/visitor.py",
+  "lib/python3.5/site-packages/mongoengine/signals.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "pymongo >=2.7.1",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "mongoengine",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.10.6"
+ },
+ "metadata_version": 1,
+ "name": "mongoengine",
+ "raw_recipe": "{%set name = \"mongoengine\" %}\n{%set version = \"0.10.6\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"007e3ac452c0a670e89c1d9755f7ddfc2f10982e6edda555e3671ee4cf7b12a5\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - pymongo >=2.7.1\n\ntest:\n  imports:\n    - mongoengine\n    - mongoengine.base\n    - mongoengine.queryset\n\nabout:\n  home: http://mongoengine.org/\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: 'MongoEngine is a Python Object-Document Mapper for working with MongoDB.'\n  doc_url: https://mongoengine-odm.readthedocs.io/\n  dev_url: https://github.com/MongoEngine/mongoengine\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.10.6"
+}

@@ -1,0 +1,42 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/click-6.6-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/click/__init__.py",
+  "lib/python3.5/site-packages/click/_bashcomplete.py",
+  "lib/python3.5/site-packages/click/_compat.py",
+  "lib/python3.5/site-packages/click/_termui_impl.py",
+  "lib/python3.5/site-packages/click/_textwrap.py",
+  "lib/python3.5/site-packages/click/_unicodefun.py",
+  "lib/python3.5/site-packages/click/_winconsole.py",
+  "lib/python3.5/site-packages/click/core.py",
+  "lib/python3.5/site-packages/click/decorators.py",
+  "lib/python3.5/site-packages/click/exceptions.py",
+  "lib/python3.5/site-packages/click/formatting.py",
+  "lib/python3.5/site-packages/click/globals.py",
+  "lib/python3.5/site-packages/click/parser.py",
+  "lib/python3.5/site-packages/click/termui.py",
+  "lib/python3.5/site-packages/click/testing.py",
+  "lib/python3.5/site-packages/click/types.py",
+  "lib/python3.5/site-packages/click/utils.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "click",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "6.6"
+ },
+ "metadata_version": 1,
+ "name": "click",
+ "raw_recipe": "{%set name = \"click\" %}\n{%set version = \"6.6\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"cc6a19da8ebff6e7074f731447ef7e112bd23adf3de5c597cf9989f2fd8defe9\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: https://github.com/pallets/click\n  license: BSD 3-Clause\n  summary: 'A simple wrapper around optparse for powerful command line utilities.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "6.6"
+}

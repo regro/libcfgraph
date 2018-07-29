@@ -1,0 +1,33 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/rfc3986-0.3.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/rfc3986/__init__.py",
+  "lib/python3.5/site-packages/rfc3986/api.py",
+  "lib/python3.5/site-packages/rfc3986/compat.py",
+  "lib/python3.5/site-packages/rfc3986/exceptions.py",
+  "lib/python3.5/site-packages/rfc3986/misc.py",
+  "lib/python3.5/site-packages/rfc3986/normalizers.py",
+  "lib/python3.5/site-packages/rfc3986/parseresult.py",
+  "lib/python3.5/site-packages/rfc3986/uri.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "Apache 2.0",
+  "name": "rfc3986",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.3.1"
+ },
+ "metadata_version": 1,
+ "name": "rfc3986",
+ "raw_recipe": "{%set name = \"rfc3986\" %}\n{%set version = \"0.3.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"b94638db542896ccf89dc62785ec26dbcbd6a97d337f64e02615b164b974f2e5\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: https://rfc3986.readthedocs.io\n  license: Apache 2.0\n  summary: 'Validating URI References per RFC 3986'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n    - sigmavirus24\n",
+ "rendered_recipe": {},
+ "version": "0.3.1"
+}

@@ -1,0 +1,32 @@
+{
+ "about": {
+  "home": "http://github.com/soft-matter/slicerator",
+  "license": "BSD 3-Clause",
+  "summary": "A lazy-loading, fancy-sliceable iterable."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/_slicerator_version.py",
+  "lib/python3.4/site-packages/slicerator-0+unknown-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/slicerator.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "six"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "slicerator",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.9.8"
+ },
+ "metadata_version": 1,
+ "name": "slicerator",
+ "raw_recipe": "{% set version = \"0.9.8\" %}\n\npackage:\n    name: slicerator\n    version: {{ version }}\n\nsource:\n    fn: slicerator-v{{ version }}.tar.gz\n    url: https://github.com/soft-matter/slicerator/archive/v{{ version }}.tar.gz\n    sha256: 5f2622aa4fa59b4e41434342780af64220f39c25a99db95967e915f4e624e465\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - six\n\n    run:\n        - python\n        - six\n\ntest:\n    imports:\n        - slicerator\n    requires:\n        - nose\n        - six\n        - numpy\n    commands:\n        - python {{ environ.SRC_DIR }}/tests.py -vs\n\nabout:\n    home: http://github.com/soft-matter/slicerator\n    license: BSD 3-Clause\n    summary: 'A lazy-loading, fancy-sliceable iterable.'\n\nextra:\n    recipe-maintainers:\n        - danielballan\n        - ericdill\n        - licode\n        - tacaswell\n        - caspervdw\n",
+ "rendered_recipe": {},
+ "version": "0.9.8"
+}

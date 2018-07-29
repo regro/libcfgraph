@@ -1,0 +1,32 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "include/mpc.h",
+  "lib/libmpc.a",
+  "lib/libmpc.la",
+  "lib/libmpc.so",
+  "lib/libmpc.so.3",
+  "lib/libmpc.so.3.0.0",
+  "share/info/mpc.info"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "gmp",
+   "mpfr"
+  ],
+  "license": "LGPL 3",
+  "name": "mpc",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0.3"
+ },
+ "metadata_version": 1,
+ "name": "mpc",
+ "raw_recipe": "{% set version = \"1.0.3\" %}\n\npackage:\n  name: mpc\n  version: {{ version }}\n\nsource:\n  fn: mpc-{{ version }}.tar.gz\n  url: http://www.multiprecision.org/mpc/download/mpc-{{ version }}.tar.gz\n  sha1: b8be66396c726fdc36ebb0f692ed8a8cca3bcc66\n\nbuild:\n  number: 0\n  skip: true  # [win]\n\nrequirements:\n  build:\n    - libtool\n    - m4\n    - gmp\n    - mpfr\n  run:\n    - gmp\n    - mpfr\n\ntest:\n  commands:\n    - test -f ${PREFIX}/lib/libmpc.a      # [unix]\n    - test -f ${PREFIX}/lib/libmpc.dylib  # [osx]\n    - test -f ${PREFIX}/lib/libmpc.so     # [linux]\n\nabout:\n  home: http://www.multiprecision.org/\n  license: LGPL 3\n  summary: A C library for the arithmetic of complex numbers with arbitrarily high precision.\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.0.3"
+}

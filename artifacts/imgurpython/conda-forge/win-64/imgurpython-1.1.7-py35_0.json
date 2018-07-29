@@ -1,0 +1,50 @@
+{
+ "about": {
+  "home": "https://github.com/Imgur/imgurpython",
+  "license": "MIT",
+  "summary": "Official Imgur python library with OAuth2 and samples"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/imgurpython-1.1.7-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/imgurpython/__init__.py",
+  "Lib/site-packages/imgurpython/client.py",
+  "Lib/site-packages/imgurpython/helpers/__init__.py",
+  "Lib/site-packages/imgurpython/helpers/error.py",
+  "Lib/site-packages/imgurpython/helpers/format.py",
+  "Lib/site-packages/imgurpython/imgur/__init__.py",
+  "Lib/site-packages/imgurpython/imgur/models/__init__.py",
+  "Lib/site-packages/imgurpython/imgur/models/account.py",
+  "Lib/site-packages/imgurpython/imgur/models/account_settings.py",
+  "Lib/site-packages/imgurpython/imgur/models/album.py",
+  "Lib/site-packages/imgurpython/imgur/models/comment.py",
+  "Lib/site-packages/imgurpython/imgur/models/conversation.py",
+  "Lib/site-packages/imgurpython/imgur/models/custom_gallery.py",
+  "Lib/site-packages/imgurpython/imgur/models/gallery_album.py",
+  "Lib/site-packages/imgurpython/imgur/models/gallery_image.py",
+  "Lib/site-packages/imgurpython/imgur/models/image.py",
+  "Lib/site-packages/imgurpython/imgur/models/message.py",
+  "Lib/site-packages/imgurpython/imgur/models/notification.py",
+  "Lib/site-packages/imgurpython/imgur/models/tag.py",
+  "Lib/site-packages/imgurpython/imgur/models/tag_vote.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*",
+   "requests"
+  ],
+  "license": "MIT",
+  "name": "imgurpython",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.1.7"
+ },
+ "metadata_version": 1,
+ "name": "imgurpython",
+ "raw_recipe": "{% set version = \"1.1.7\" %}\n\npackage:\n  name: imgurpython\n  version: {{ version }}\n\nsource:\n  fn: imgurpython-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/i/imgurpython/imgurpython-{{ version }}.tar.gz\n  md5: f2eb3a55c495d80812bae2238721da06\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - requests\n  run:\n    - python\n    - requests\n\ntest:\n  imports:\n    - imgurpython\n    - imgurpython.helpers\n    - imgurpython.imgur\n    - imgurpython.imgur.models\n\nabout:\n  home: https://github.com/Imgur/imgurpython\n  license: MIT\n  summary: 'Official Imgur python library with OAuth2 and samples'\n\nextra:\n  recipe-maintainers:\n    - asmeurer\n",
+ "rendered_recipe": {},
+ "version": "1.1.7"
+}

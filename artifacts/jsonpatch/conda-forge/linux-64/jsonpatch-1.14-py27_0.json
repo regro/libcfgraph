@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "https://github.com/stefankoegl/python-json-patch",
+  "license": "BSD 3-Clause",
+  "summary": "Apply JSON-Patches (RFC 6902)"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/jsondiff",
+  "bin/jsonpatch",
+  "lib/python2.7/site-packages/jsonpatch-1.14-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/jsonpatch.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "jsonpointer >=1.9",
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "jsonpatch",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.14"
+ },
+ "metadata_version": 1,
+ "name": "jsonpatch",
+ "raw_recipe": "{%set name = \"jsonpatch\" %}\n{%set version = \"1.14\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"776d828d6f7b4581862529cf413439a652d74b9e3a0261fa08c36fd761a78b4a\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - jsonpointer >=1.9\n\ntest:\n  imports:\n    - {{ name }}\n\nabout:\n  home: https://github.com/stefankoegl/python-json-patch\n  license: BSD 3-Clause\n  summary: 'Apply JSON-Patches (RFC 6902)'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.14"
+}

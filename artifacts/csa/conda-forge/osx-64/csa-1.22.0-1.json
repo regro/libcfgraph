@@ -1,0 +1,30 @@
+{
+ "about": {
+  "home": "https://github.com/sakov/csa-c",
+  "license": "BSD 2-Clause",
+  "summary": "Cubic Spline Approximation."
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/csabathy",
+  "include/csa.h",
+  "lib/libcsa.a",
+  "lib/libcsa.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [],
+  "license": "BSD 2-Clause",
+  "name": "csa",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.22.0"
+ },
+ "metadata_version": 1,
+ "name": "csa",
+ "raw_recipe": "{% set version = \"1.22.0\" %}\n\npackage:\n    name: csa\n    version: {{ version }}\n\nsource:\n    fn: v{{ version }}.tar.gz\n    url: https://github.com/sakov/csa-c/archive/v{{ version }}.tar.gz\n    sha256: b6d6ebeea146e09fc7aef827a3a3b22b7af674c2f0c67169c2275237e54c0c02\n\nbuild:\n    number: 1\n    skip: True  # [win]\n\ntest:\n    commands:\n        - csabathy -V\n        - conda inspect linkages -n _test csa  # [not win]\n\nabout:\n    home: https://github.com/sakov/csa-c\n    license: BSD 2-Clause\n    summary: 'Cubic Spline Approximation.'\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.22.0"
+}

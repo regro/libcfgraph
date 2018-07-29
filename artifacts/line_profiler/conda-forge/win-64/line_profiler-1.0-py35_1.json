@@ -1,0 +1,35 @@
+{
+ "about": {
+  "home": "https://github.com/rkern/line_profiler",
+  "license": "BSD 3-Clause",
+  "summary": "A module for monitoring memory usage of a python program"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/_line_profiler.cp35-win_amd64.pyd",
+  "Lib/site-packages/kernprof.py",
+  "Lib/site-packages/line_profiler-1.0-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/line_profiler.py",
+  "Scripts/kernprof-script.py",
+  "Scripts/kernprof.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "psutil",
+   "python 3.5*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "line_profiler",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.0"
+ },
+ "metadata_version": 1,
+ "name": "line_profiler",
+ "raw_recipe": "{% set version = \"1.0\" %}\n\npackage:\n  name: line_profiler\n  version: {{ version }}\n\nsource:\n  fn: line_profiler-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/l/line_profiler/line_profiler-{{ version }}.tar.gz\n  md5: 2f8352acfedf83f701a564583db5e14d\n\nbuild:\n  number: 1\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n  entry_points:\n    - kernprof=kernprof:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - psutil\n\ntest:\n  imports:\n    - kernprof\n    - line_profiler\n\n  commands:\n    - kernprof --help\n    - python -m kernprof --help\n    - python -m line_profiler --help\n\nabout:\n  home: https://github.com/rkern/line_profiler\n  license: BSD 3-Clause\n  summary: A module for monitoring memory usage of a python program\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - koverholt\n",
+ "rendered_recipe": {},
+ "version": "1.0"
+}

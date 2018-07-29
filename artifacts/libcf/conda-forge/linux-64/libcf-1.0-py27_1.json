@@ -1,0 +1,180 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.10",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "By using libcf, a data producer can produce files that conform to the CF\nstandards, without having to write netCDF code to create and decode all\nthe attributes that the CF convention uses to store meta-data. A data consumer\ncan use libcf to read any file which conforms to the CF conventions; the\nfile does not need to be created with libcf to be read by libcf\n",
+  "dev_url": "https://sourceforge.net/projects/libcf/",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://www.unidata.ucar.edu/software/libcf/",
+  "license": "UCAR/UNIDATA",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.6.3-py35_0",
+   "conda-forge::beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.4.17-0",
+   "conda-forge::certifi-2017.4.17-py35_0",
+   "conda-forge::chardet-3.0.2-py35_1",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.10-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.4-0",
+   "conda-forge::conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.12.2-4",
+   "conda-forge::jinja2-2.9.5-py35_0",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-1.0-py35_0",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::openssl-1.0.2k-0",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_1",
+   "conda-forge::python-3.5.3-3",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2017.2-py35_0",
+   "conda-forge::pyyaml-3.12-py35_1",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.1-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "LibCF library access data files in accordance with the CF Conventions."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/libcf-1.0_beta11-py2.7.egg-info",
+  "lib/python2.7/site-packages/pycf/__init__.py",
+  "lib/python2.7/site-packages/pycf/generateLibCFConfig.py",
+  "lib/python2.7/site-packages/pycf/pylibcf.so",
+  "lib/python2.7/site-packages/pycf/libCFConfig.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "clapack >=3.2.1",
+   "curl",
+   "hdf5 1.8.18|1.8.18.*",
+   "lapack >=3.4.2",
+   "libgfortran",
+   "libnetcdf 4.4.*",
+   "ossuuid",
+   "python 2.7*"
+  ],
+  "license": "UCAR/UNIDATA",
+  "name": "libcf",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0"
+ },
+ "metadata_version": 1,
+ "name": "libcf",
+ "raw_recipe": "{% set name = \"libcf\" %}\n{% set version = \"1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}-beta11.tar.gz\n  url: http://uvcdat.llnl.gov/cdat/resources/{{ name }}-{{ version }}-beta11.tar.gz\n  sha256: e40d3826ca2b47538b075f69f716798e255fe396fd3ae68e8b051be57a951bb4\n\nbuild:\n  number: 1\n  skip: True  # [win or py3k]\n\nrequirements:\n  build:\n    - toolchain\n    - python\n    - hdf5 1.8.18|1.8.18.*\n    - libnetcdf 4.4.*\n    - lapack >=3.4.2\n    - clapack >=3.2.1\n    - curl\n    - ossuuid\n    - gcc\n\n  run:\n    - python\n    - hdf5 1.8.18|1.8.18.*\n    - libnetcdf  4.4.*\n    - lapack >=3.4.2\n    - clapack >=3.2.1\n    - curl\n    - ossuuid\n    - libgfortran\n\ntest:\n  imports:\n    - pycf\n\nabout:\n  home: http://www.unidata.ucar.edu/software/libcf/\n  license: 'UCAR/UNIDATA'\n  license_file: 'COPYRIGHT'\n  summary: 'LibCF library access data files in accordance with the CF Conventions.'\n  description: |\n    By using libcf, a data producer can produce files that conform to the CF\n    standards, without having to write netCDF code to create and decode all\n    the attributes that the CF convention uses to store meta-data. A data consumer\n    can use libcf to read any file which conforms to the CF conventions; the\n    file does not need to be created with libcf to be read by libcf\n  dev_url: https://sourceforge.net/projects/libcf/\n\nextra:\n  recipe-maintainers:\n    - dnadeau4\n    - doutriaux1\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "By using libcf, a data producer can produce files that conform to the CF\nstandards, without having to write netCDF code to create and decode all\nthe attributes that the CF convention uses to store meta-data. A data consumer\ncan use libcf to read any file which conforms to the CF conventions; the\nfile does not need to be created with libcf to be read by libcf\n",
+   "dev_url": "https://sourceforge.net/projects/libcf/",
+   "home": "http://www.unidata.ucar.edu/software/libcf/",
+   "license": "UCAR/UNIDATA",
+   "license_file": "COPYRIGHT",
+   "summary": "LibCF library access data files in accordance with the CF Conventions."
+  },
+  "build": {
+   "noarch": "",
+   "noarch_python": false,
+   "number": "1",
+   "string": "py27_1"
+  },
+  "extra": {
+   "final": true,
+   "recipe-maintainers": [
+    "dnadeau4",
+    "doutriaux1"
+   ]
+  },
+  "package": {
+   "name": "libcf",
+   "version": "1.0"
+  },
+  "requirements": {
+   "build": [
+    "libgfortran 3.0.0 1",
+    "tk 8.5.19 1",
+    "toolchain 2.0.0 0",
+    "ossuuid 1.6.2 0",
+    "hdf4 4.2.12 0",
+    "libnetcdf 4.4.1.1 5",
+    "clapack 3.2.1 0",
+    "mpc 1.0.3 4",
+    "gmp 6.1.2 0",
+    "readline 6.2 0",
+    "openssl 1.0.2k 0",
+    "gcc 4.8.5 7",
+    "ncurses 5.9 10",
+    "hdf5 1.8.18 0",
+    "ca-certificates 2017.4.17 0",
+    "python 2.7.13 1",
+    "curl 7.52.1 0",
+    "zlib 1.2.11 0",
+    "jpeg 9b 0",
+    "mpfr 3.1.5 0",
+    "cloog 0.18.0 0",
+    "isl 0.12.2 0",
+    "lapack 3.6.1 1",
+    "sqlite 3.13.0 1"
+   ],
+   "run": [
+    "python",
+    "hdf5 1.8.18|1.8.18.*",
+    "libnetcdf  4.4.*",
+    "lapack >=3.4.2",
+    "clapack >=3.2.1",
+    "curl",
+    "ossuuid",
+    "libgfortran"
+   ]
+  },
+  "source": {
+   "fn": "libcf-1.0-beta11.tar.gz",
+   "sha256": "e40d3826ca2b47538b075f69f716798e255fe396fd3ae68e8b051be57a951bb4",
+   "url": "http://uvcdat.llnl.gov/cdat/resources/libcf-1.0-beta11.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "pycf"
+   ]
+  }
+ },
+ "version": "1.0"
+}

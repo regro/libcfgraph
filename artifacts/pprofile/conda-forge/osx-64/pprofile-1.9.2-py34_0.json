@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "http://github.com/vpelletier/pprofile",
+  "license": "GPL2",
+  "summary": "Line-granularity, thread-aware deterministic and statistic pure-python profiler"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/pprofile",
+  "lib/python3.4/site-packages/pprofile-1.9.2-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pprofile-1.9.2-py3.4.egg-info/zip-safe",
+  "lib/python3.4/site-packages/pprofile.py",
+  "lib/python3.4/site-packages/zpprofile.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "GPL2",
+  "name": "pprofile",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "1.9.2"
+ },
+ "metadata_version": 1,
+ "name": "pprofile",
+ "raw_recipe": "{% set name = \"pprofile\" %}\n{% set version = \"1.9.2\" %}\n{% set sha256 = \"98ec97bbbf524ee9af0b73738f70b02e8f049f7edcd86f6c96d1b9470483831a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - pprofile=pprofile:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n\ntest:\n  imports:\n    - pprofile\n    - zpprofile\n  commands:\n    - pprofile --help\n\nabout:\n  home: http://github.com/vpelletier/pprofile\n  license: GPL2\n  # PyPI missing license file. Added PR to add it to future sdists.\n  #\n  # xref: https://github.com/vpelletier/pprofile/pull/17\n  #\n  #license_file: COPYING\n  summary: Line-granularity, thread-aware deterministic and statistic pure-python profiler\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "1.9.2"
+}

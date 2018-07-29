@@ -1,0 +1,58 @@
+{
+ "about": {
+  "home": "http://github.com/spotify/snakebite",
+  "license": "Apache 2.0",
+  "summary": "Pure Python HDFS client"
+ },
+ "conda_build_config": {},
+ "files": [
+  "LICENSE",
+  "bin/snakebite",
+  "etc/bash_completion.d/snakebite-completion.bash",
+  "lib/python2.7/site-packages/snakebite-2.10.1-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/snakebite/__init__.py",
+  "lib/python2.7/site-packages/snakebite/channel.py",
+  "lib/python2.7/site-packages/snakebite/client.py",
+  "lib/python2.7/site-packages/snakebite/commandlineparser.py",
+  "lib/python2.7/site-packages/snakebite/config.py",
+  "lib/python2.7/site-packages/snakebite/crc32c.py",
+  "lib/python2.7/site-packages/snakebite/errors.py",
+  "lib/python2.7/site-packages/snakebite/formatter.py",
+  "lib/python2.7/site-packages/snakebite/glob.py",
+  "lib/python2.7/site-packages/snakebite/kerberos.py",
+  "lib/python2.7/site-packages/snakebite/logger.py",
+  "lib/python2.7/site-packages/snakebite/minicluster.py",
+  "lib/python2.7/site-packages/snakebite/namenode.py",
+  "lib/python2.7/site-packages/snakebite/platformutils.py",
+  "lib/python2.7/site-packages/snakebite/protobuf/ClientNamenodeProtocol_pb2.py",
+  "lib/python2.7/site-packages/snakebite/protobuf/IpcConnectionContext_pb2.py",
+  "lib/python2.7/site-packages/snakebite/protobuf/ProtobufRpcEngine_pb2.py",
+  "lib/python2.7/site-packages/snakebite/protobuf/RpcHeader_pb2.py",
+  "lib/python2.7/site-packages/snakebite/protobuf/Security_pb2.py",
+  "lib/python2.7/site-packages/snakebite/protobuf/__init__.py",
+  "lib/python2.7/site-packages/snakebite/protobuf/datatransfer_pb2.py",
+  "lib/python2.7/site-packages/snakebite/protobuf/hdfs_pb2.py",
+  "lib/python2.7/site-packages/snakebite/rpc_sasl.py",
+  "lib/python2.7/site-packages/snakebite/service.py",
+  "lib/python2.7/site-packages/snakebite/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "protobuf >2.4.1",
+   "python 2.7*"
+  ],
+  "license": "Apache 2.0",
+  "name": "snakebite",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.10.1"
+ },
+ "metadata_version": 1,
+ "name": "snakebite",
+ "raw_recipe": "{%set name = \"snakebite\" %}\n{%set version = \"2.10.1\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"5827bb94a0c92ede9fa54f1bfe9d9d65d7941e72a3b5e545dc19cc3f3e389f50\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  skip: True  # [py3k]\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - protobuf >2.4.1\n    - argparse  # [py26]\n\ntest:\n  imports:\n    - snakebite\n    - snakebite.protobuf\n\nabout:\n  home: http://github.com/spotify/snakebite\n  license: Apache 2.0\n  summary: 'Pure Python HDFS client'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "2.10.1"
+}

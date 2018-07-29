@@ -1,0 +1,33 @@
+{
+ "about": {
+  "dev_url": "https://github.com/adamchainz/flake8-comprehensions",
+  "home": "https://github.com/adamchainz/flake8-comprehensions",
+  "license": "ISC",
+  "summary": "A flake8 plugin that helps you write better list/set/dict comprehensions."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/flake8_comprehensions-1.2.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/flake8_comprehensions-1.2.1-py3.5.egg-info/not-zip-safe",
+  "lib/python3.5/site-packages/flake8_comprehensions.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "flake8",
+   "python 3.5*"
+  ],
+  "license": "ISC",
+  "name": "flake8-comprehensions",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.2.1"
+ },
+ "metadata_version": 1,
+ "name": "flake8-comprehensions",
+ "raw_recipe": "{% set name = \"flake8-comprehensions\" %}\n{% set version = \"1.2.1\" %}\n{% set sha256 = \"8ab9e758ee664bf517dbfef76903b61533491ad9dbe40f93b8eb4e5190ec81e0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - flake8\n\ntest:\n  commands:\n    - \"flake8 --version | grep flake8-comprehensions:\"\n\nabout:\n  home: https://github.com/adamchainz/flake8-comprehensions\n  license: ISC\n  license_file: LICENSE\n  summary: 'A flake8 plugin that helps you write better list/set/dict comprehensions.'\n  dev_url: https://github.com/adamchainz/flake8-comprehensions\n\nextra:\n  recipe-maintainers:\n    - dopplershift\n",
+ "rendered_recipe": {},
+ "version": "1.2.1"
+}

@@ -1,0 +1,181 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/osx-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/osx-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/osx-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.2",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "DYLD_LIBRARY_PATH": "<not set>",
+   "PATH": "/Users/travis/miniconda3/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643/bin:/Users/travis/.rvm/gems/ruby-2.0.0-p643@global/bin:/Users/travis/.rvm/rubies/ruby-2.0.0-p643/bin:/Users/travis/.rvm/bin:/Users/travis/bin:/Users/travis/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "<not set>"
+  },
+  "home": "http://libgd.github.io/",
+  "license": "GD",
+  "license_family": "BSD",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.2-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.3.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "openssl-1.0.2j-0",
+   "pip-8.1.2-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "pycosat-0.6.1-py35_1",
+   "pycrypto-2.6.1-py35_4",
+   "python-3.5.2-0",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "readline-6.2-2",
+   "requests-2.11.1-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "setuptools-27.2.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "sqlite-3.13.0-0",
+   "tk-8.5.18-0",
+   "wheel-0.29.0-py35_0",
+   "xz-5.2.2-0",
+   "yaml-0.1.6-0",
+   "zlib-1.2.8-3"
+  ],
+  "summary": "Library for the dynamic creation of images."
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/gd_color_map.h",
+  "include/gd_errors.h",
+  "include/gdfontmb.h",
+  "lib/libgd.dylib",
+  "bin/gd2topng",
+  "include/gdcache.h",
+  "bin/bdftogd",
+  "bin/pngtogd",
+  "bin/annotate",
+  "include/gdpp.h",
+  "lib/libgd.a",
+  "include/gdfx.h",
+  "include/entities.h",
+  "include/gdfontg.h",
+  "bin/gd2copypal",
+  "bin/gdlib-config",
+  "include/gdfonts.h",
+  "bin/gdtopng",
+  "bin/gd2togif",
+  "lib/libgd.la",
+  "bin/pngtogd2",
+  "bin/gdcmpgif",
+  "lib/pkgconfig/gdlib.pc",
+  "include/gdfontl.h",
+  "bin/webpng",
+  "bin/giftogd2",
+  "bin/gdparttopng",
+  "include/gd_io.h",
+  "include/gdfontt.h",
+  "lib/libgd.3.dylib",
+  "include/gd.h"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [
+   "expat",
+   "fontconfig 2.12.*",
+   "freetype 2.7|2.7.*",
+   "icu 58.*",
+   "jpeg 9*",
+   "libiconv",
+   "libpng >=1.6.28,<1.7",
+   "libtiff 4.0.*",
+   "libwebp",
+   "zlib 1.2.*"
+  ],
+  "license": "GD",
+  "license_family": "BSD",
+  "name": "libgd",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.2.4"
+ },
+ "metadata_version": 1,
+ "name": "libgd",
+ "raw_recipe": "{% set version = \"2.2.4\" %}\n{% set sha256 = \"487a650aa614217ed08ab1bd1aa5d282f9d379cfd95c756aed0b43406381be65\" %}\n\npackage:\n  name: libgd\n  version: {{ version }}\n\nsource:\n  fn: libgd-{{ version }}.tar.gz\n  url: https://github.com/libgd/libgd/releases/download/gd-{{version}}/libgd-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    # see: https://github.com/libgd/libgd/issues/367\n    - patches/linux-fontconfig-basic.patch\n    - patches/55ac28a293.patch\n\nbuild:\n  skip: True  # [win]\n  number: 1\n\nrequirements:\n  build:\n    - pkg-config\n    - gettext\n    - zlib 1.2.*\n    - freetype 2.7|2.7.*\n    - jpeg 9*\n    - libpng >=1.6.28,<1.7\n    - libtiff 4.0.*\n    - fontconfig 2.12.*\n    - libiconv\n    - icu 58.*\n    - expat\n    - libwebp\n    - automake\n  run:\n    - zlib 1.2.*\n    - freetype 2.7|2.7.*\n    - jpeg 9*\n    - libpng >=1.6.28,<1.7\n    - libtiff 4.0.*\n    - fontconfig 2.12.*\n    - libiconv\n    - icu 58.*\n    - expat\n    - libwebp\n\ntest:\n  commands:\n    - test -f $PREFIX/lib/libgd.a      # [linux]\n    - test -f $PREFIX/lib/libgd.dylib  # [osx]\n    - test -f $PREFIX/lib/libgd.la\n    - conda inspect linkages -p $PREFIX libgd  # [not win]\n    - conda inspect objects -p $PREFIX libgd  # [osx]\n\nabout:\n    home: http://libgd.github.io/\n    summary: 'Library for the dynamic creation of images.'\n    license: GD\n    license_family: BSD\n    license_file: COPYING\n\nextra:\n  recipe-maintainers:\n    - croth1\n    - ChrisBarker-NOAA\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://libgd.github.io/",
+   "license": "GD",
+   "license_family": "BSD",
+   "license_file": "COPYING",
+   "summary": "Library for the dynamic creation of images."
+  },
+  "build": {
+   "number": "1",
+   "string": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "croth1",
+    "ChrisBarker-NOAA",
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "libgd",
+   "version": "2.2.4"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "zlib 1.2.*",
+    "freetype 2.7|2.7.*",
+    "jpeg 9*",
+    "libpng >=1.6.28,<1.7",
+    "libtiff 4.0.*",
+    "fontconfig 2.12.*",
+    "libiconv",
+    "icu 58.*",
+    "expat",
+    "libwebp"
+   ]
+  },
+  "source": {
+   "fn": "libgd-2.2.4.tar.gz",
+   "patches": [
+    "patches/linux-fontconfig-basic.patch",
+    "patches/55ac28a293.patch"
+   ],
+   "sha256": "487a650aa614217ed08ab1bd1aa5d282f9d379cfd95c756aed0b43406381be65",
+   "url": "https://github.com/libgd/libgd/releases/download/gd-2.2.4/libgd-2.2.4.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/lib/libgd.dylib",
+    "test -f $PREFIX/lib/libgd.la",
+    "conda inspect linkages -p $PREFIX libgd",
+    "conda inspect objects -p $PREFIX libgd"
+   ]
+  }
+ },
+ "version": "2.2.4"
+}

@@ -1,0 +1,48 @@
+{
+ "about": {
+  "home": "https://github.com/crucialfelix/django-ajax-selects/",
+  "license": "MIT",
+  "summary": "Edit ForeignKey, ManyToManyField and CharField in Django Admin using jQuery UI AutoComplete."
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/ajax_select/__init__.py",
+  "Lib/site-packages/ajax_select/admin.py",
+  "Lib/site-packages/ajax_select/apps.py",
+  "Lib/site-packages/ajax_select/fields.py",
+  "Lib/site-packages/ajax_select/helpers.py",
+  "Lib/site-packages/ajax_select/lookup_channel.py",
+  "Lib/site-packages/ajax_select/models.py",
+  "Lib/site-packages/ajax_select/registry.py",
+  "Lib/site-packages/ajax_select/static/ajax_select/css/ajax_select.css",
+  "Lib/site-packages/ajax_select/static/ajax_select/images/loading-indicator.gif",
+  "Lib/site-packages/ajax_select/static/ajax_select/js/ajax_select.js",
+  "Lib/site-packages/ajax_select/static/ajax_select/js/bootstrap.js",
+  "Lib/site-packages/ajax_select/templates/ajax_select/autocomplete.html",
+  "Lib/site-packages/ajax_select/templates/ajax_select/autocompleteselect.html",
+  "Lib/site-packages/ajax_select/templates/ajax_select/autocompleteselectmultiple.html",
+  "Lib/site-packages/ajax_select/urls.py",
+  "Lib/site-packages/ajax_select/views.py",
+  "Lib/site-packages/django_ajax_selects-1.5.2-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/django_ajax_selects-1.5.2-py3.4.egg-info/not-zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "django",
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "name": "django-ajax-selects",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.5.2"
+ },
+ "metadata_version": 1,
+ "name": "django-ajax-selects",
+ "raw_recipe": "{% set version = \"1.5.2\" %}\n\npackage:\n  name: django-ajax-selects\n  version: {{ version }}\n\nsource:\n  fn: django-ajax-selects-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/d/django-ajax-selects/django-ajax-selects-{{ version }}.tar.gz\n  sha256: 8ca9b2f153507bf814386349778f7ee136f769d3a12c05fbcb567650cad9886b\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - django\n\ntest:\n  imports:\n    - ajax_select\n\nabout:\n  home: https://github.com/crucialfelix/django-ajax-selects/\n  license: MIT\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'Edit ForeignKey, ManyToManyField and CharField in Django Admin using jQuery UI AutoComplete.'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "1.5.2"
+}

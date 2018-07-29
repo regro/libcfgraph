@@ -1,0 +1,125 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/geopandas-0.2-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/geopandas/__init__.py",
+  "lib/python2.7/site-packages/geopandas/_version.py",
+  "lib/python2.7/site-packages/geopandas/base.py",
+  "lib/python2.7/site-packages/geopandas/datasets/__init__.py",
+  "lib/python2.7/site-packages/geopandas/datasets/naturalearth_cities/naturalearth_cities.README.html",
+  "lib/python2.7/site-packages/geopandas/datasets/naturalearth_cities/naturalearth_cities.cpg",
+  "lib/python2.7/site-packages/geopandas/datasets/naturalearth_cities/naturalearth_cities.dbf",
+  "lib/python2.7/site-packages/geopandas/datasets/naturalearth_cities/naturalearth_cities.prj",
+  "lib/python2.7/site-packages/geopandas/datasets/naturalearth_cities/naturalearth_cities.shp",
+  "lib/python2.7/site-packages/geopandas/datasets/naturalearth_cities/naturalearth_cities.shx",
+  "lib/python2.7/site-packages/geopandas/datasets/naturalearth_lowres/naturalearth_lowres.cpg",
+  "lib/python2.7/site-packages/geopandas/datasets/naturalearth_lowres/naturalearth_lowres.dbf",
+  "lib/python2.7/site-packages/geopandas/datasets/naturalearth_lowres/naturalearth_lowres.prj",
+  "lib/python2.7/site-packages/geopandas/datasets/naturalearth_lowres/naturalearth_lowres.shp",
+  "lib/python2.7/site-packages/geopandas/datasets/naturalearth_lowres/naturalearth_lowres.shx",
+  "lib/python2.7/site-packages/geopandas/geodataframe.py",
+  "lib/python2.7/site-packages/geopandas/geoseries.py",
+  "lib/python2.7/site-packages/geopandas/io/__init__.py",
+  "lib/python2.7/site-packages/geopandas/io/file.py",
+  "lib/python2.7/site-packages/geopandas/io/sql.py",
+  "lib/python2.7/site-packages/geopandas/plotting.py",
+  "lib/python2.7/site-packages/geopandas/sindex.py",
+  "lib/python2.7/site-packages/geopandas/tools/__init__.py",
+  "lib/python2.7/site-packages/geopandas/tools/geocoding.py",
+  "lib/python2.7/site-packages/geopandas/tools/overlay.py",
+  "lib/python2.7/site-packages/geopandas/tools/sjoin.py",
+  "lib/python2.7/site-packages/geopandas/tools/util.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "descartes",
+   "fiona",
+   "gdal 1.11.4",
+   "geopy ==1.10.0",
+   "matplotlib",
+   "pandas",
+   "psycopg2",
+   "pyproj",
+   "pysal",
+   "python 2.7*",
+   "rtree",
+   "shapely",
+   "six",
+   "sqlalchemy"
+  ],
+  "license": "BSD-3-clause",
+  "name": "geopandas",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.2"
+ },
+ "metadata_version": 1,
+ "name": "geopandas",
+ "raw_recipe": "{% set version = \"0.2\" %}\n\npackage:\n    name: geopandas\n    version: {{ version }}\n\nsource:\n    fn: geopandas-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/g/geopandas/geopandas-{{ version }}.tar.gz\n    md5: 47061076aa5e385b4ed773872397c86d\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n        - cython\n    run:\n        - python\n        - pandas\n        - pyproj\n        - shapely\n        - fiona\n        - gdal 1.11.4\n        - six\n        - rtree\n        - descartes\n        - matplotlib\n        - psycopg2  # [not win]\n        - sqlalchemy\n        - geopy ==1.10.0\n        - pysal\n\ntest:\n    imports:\n        - geopandas\n        - geopandas.io\n    files:\n        - test.cpg\n        - test.dbf\n        - test.shp\n        - test.shx\n\nabout:\n    home: http://geopandas.org\n    license: BSD-3-clause\n    summary: Geographic pandas extensions\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n        - jorisvandenbossche\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://geopandas.org",
+   "license": "BSD-3-clause",
+   "summary": "Geographic pandas extensions"
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf",
+    "jorisvandenbossche"
+   ]
+  },
+  "package": {
+   "name": "geopandas",
+   "version": "0.2"
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools",
+    "cython"
+   ],
+   "run": [
+    "python",
+    "pandas",
+    "pyproj",
+    "shapely",
+    "fiona",
+    "gdal 1.11.4",
+    "six",
+    "rtree",
+    "descartes",
+    "matplotlib",
+    "psycopg2",
+    "sqlalchemy",
+    "geopy ==1.10.0",
+    "pysal"
+   ]
+  },
+  "source": {
+   "fn": "geopandas-0.2.tar.gz",
+   "md5": "47061076aa5e385b4ed773872397c86d",
+   "url": "https://pypi.io/packages/source/g/geopandas/geopandas-0.2.tar.gz"
+  },
+  "test": {
+   "files": [
+    "test.cpg",
+    "test.dbf",
+    "test.shp",
+    "test.shx"
+   ],
+   "imports": [
+    "geopandas",
+    "geopandas.io"
+   ]
+  }
+ },
+ "version": "0.2"
+}

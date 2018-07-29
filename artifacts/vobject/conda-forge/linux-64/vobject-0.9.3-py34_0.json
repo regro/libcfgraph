@@ -1,0 +1,46 @@
+{
+ "about": {
+  "dev_url": "http://eventable.github.io/vobject/",
+  "home": "http://eventable.github.io/vobject/",
+  "license": "Apache",
+  "license_family": "Apache",
+  "summary": "A full-featured Python package for parsing and creating iCalendar and vCard files"
+ },
+ "conda_build_config": {},
+ "files": [
+  "bin/change_tz",
+  "bin/ics_diff",
+  "lib/python3.4/site-packages/vobject-0.9.3-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/vobject-0.9.3-py3.4.egg-info/pbr.json",
+  "lib/python3.4/site-packages/vobject-0.9.3-py3.4.egg-info/zip-safe",
+  "lib/python3.4/site-packages/vobject/__init__.py",
+  "lib/python3.4/site-packages/vobject/base.py",
+  "lib/python3.4/site-packages/vobject/behavior.py",
+  "lib/python3.4/site-packages/vobject/change_tz.py",
+  "lib/python3.4/site-packages/vobject/hcalendar.py",
+  "lib/python3.4/site-packages/vobject/icalendar.py",
+  "lib/python3.4/site-packages/vobject/ics_diff.py",
+  "lib/python3.4/site-packages/vobject/vcard.py",
+  "lib/python3.4/site-packages/vobject/win32tz.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*",
+   "python-dateutil >=2.4.0"
+  ],
+  "license": "Apache",
+  "license_family": "Apache",
+  "name": "vobject",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "0.9.3"
+ },
+ "metadata_version": 1,
+ "name": "vobject",
+ "raw_recipe": "{% set name = \"vobject\" %}\n{% set version = \"0.9.3\" %}\n{% set md5 = \"fe5996008d5e4858d63156b37b43d59c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  md5: {{ md5 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - ics_diff = vobject.ics_diff:main\n    - change_tz = vobject.change_tz:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - python-dateutil >=2.4.0\n\ntest:\n  imports:\n    - vobject\n\n  commands:\n    - ics_diff --help\n    - change_tz --help\n\nabout:\n  home: http://eventable.github.io/vobject/\n  license: Apache\n  license_family: Apache\n  license_file: LICENSE-2.0.txt\n  summary: 'A full-featured Python package for parsing and creating iCalendar and vCard files'\n  dev_url: http://eventable.github.io/vobject/\n\nextra:\n  recipe-maintainers:\n    - proinsias\n",
+ "rendered_recipe": {},
+ "version": "0.9.3"
+}

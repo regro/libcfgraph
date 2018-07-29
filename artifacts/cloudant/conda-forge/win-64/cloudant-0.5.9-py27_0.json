@@ -1,0 +1,40 @@
+{
+ "about": {
+  "home": "https://github.com/cloudant-labs/cloudant",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Asynchronous Cloudant / CouchDB Interface"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/cloudant-0.5.9-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/cloudant/__init__.py",
+  "Lib/site-packages/cloudant/account.py",
+  "Lib/site-packages/cloudant/attachment.py",
+  "Lib/site-packages/cloudant/database.py",
+  "Lib/site-packages/cloudant/design.py",
+  "Lib/site-packages/cloudant/document.py",
+  "Lib/site-packages/cloudant/index.py",
+  "Lib/site-packages/cloudant/resource.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*",
+   "requests-futures ==0.9.4"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "cloudant",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.5.9"
+ },
+ "metadata_version": 1,
+ "name": "cloudant",
+ "raw_recipe": "{%set name = \"cloudant\" %}\n{%set version = \"0.5.9\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"2ef6e911f320f9d0ed48f045e7eaef0a614cf35fd314ad9a25ec689eee53ea85\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  skip: True  # [py3k]\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - requests-futures ==0.9.4\n\ntest:\n  imports:\n    - cloudant\n\nabout:\n  home: https://github.com/cloudant-labs/cloudant\n  license: MIT\n  license_family: MIT\n  summary: 'Asynchronous Cloudant / CouchDB Interface'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.5.9"
+}

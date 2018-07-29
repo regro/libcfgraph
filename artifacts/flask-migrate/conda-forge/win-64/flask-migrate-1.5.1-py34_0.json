@@ -1,0 +1,46 @@
+{
+ "about": {
+  "dev_url": "https://flask-migrate.readthedocs.io/en/latest/",
+  "home": "http://github.com/miguelgrinberg/flask-migrate/",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "SQLAlchemy database migrations for Flask applications using Alembic"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/Flask_Migrate-1.5.1-py3.4.egg-info/PKG-INFO",
+  "Lib/site-packages/Flask_Migrate-1.5.1-py3.4.egg-info/not-zip-safe",
+  "Lib/site-packages/flask_migrate/__init__.py",
+  "Lib/site-packages/flask_migrate/templates/flask-multidb/README",
+  "Lib/site-packages/flask_migrate/templates/flask-multidb/alembic.ini.mako",
+  "Lib/site-packages/flask_migrate/templates/flask-multidb/env.py",
+  "Lib/site-packages/flask_migrate/templates/flask-multidb/script.py.mako",
+  "Lib/site-packages/flask_migrate/templates/flask/README",
+  "Lib/site-packages/flask_migrate/templates/flask/alembic.ini.mako",
+  "Lib/site-packages/flask_migrate/templates/flask/env.py",
+  "Lib/site-packages/flask_migrate/templates/flask/script.py.mako"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "alembic >=0.6",
+   "flask >=0.9",
+   "flask-script >=0.6",
+   "flask-sqlalchemy >=1.0",
+   "python 3.4*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "flask-migrate",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.5.1"
+ },
+ "metadata_version": 1,
+ "name": "flask-migrate",
+ "raw_recipe": "{%set name = \"Flask-Migrate\" %}\n{%set version = \"1.5.1\" %}\n{%set compress_type = \"tar.gz\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"4af99e7d581f1169e774662f69fd913608126d8925614432dc2b42144bc328cb\" %}\n{%set build_num = \"0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.{{ compress_type }}\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  preserve_egg_dir: True\n  number: {{ build_num }}\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - flask >=0.9\n    - flask-sqlalchemy >=1.0\n    - alembic >=0.6\n    - flask-script >=0.6\n\ntest:\n  imports:\n    - flask_migrate\n\nabout:\n  home: http://github.com/miguelgrinberg/flask-migrate/\n  license: MIT\n  license_file: LICENSE\n  license_family: MIT\n  summary: 'SQLAlchemy database migrations for Flask applications using Alembic'\n  dev_url: https://flask-migrate.readthedocs.io/en/latest/\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.5.1"
+}

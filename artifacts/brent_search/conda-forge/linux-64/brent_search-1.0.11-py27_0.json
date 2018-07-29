@@ -1,0 +1,41 @@
+{
+ "about": {
+  "description": "Univariate function optimization based on Brent's method.\n",
+  "dev_url": "https://github.com/Horta/brent-search",
+  "doc_url": "https://github.com/Horta/brent-search",
+  "home": "https://github.com/Horta/brent-search",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "Brent search"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/brent_search-1.0.11-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/brent_search-1.0.11-py2.7.egg-info/zip-safe",
+  "lib/python2.7/site-packages/brent_search/__init__.py",
+  "lib/python2.7/site-packages/brent_search/_bracket.py",
+  "lib/python2.7/site-packages/brent_search/_brent.py",
+  "lib/python2.7/site-packages/brent_search/_optimize.py",
+  "lib/python2.7/site-packages/brent_search/test/test_brent.py",
+  "lib/python2.7/site-packages/brent_search/test/test_minimize.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "brent_search",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.0.11"
+ },
+ "metadata_version": 1,
+ "name": "brent_search",
+ "raw_recipe": "{% set name = \"brent_search\" %}\n{% set version = \"1.0.11\" %}\n{% set sha256 = \"583f0f6ff8640abb6d3c0a7b97ad7523750585266122ffccd3f8c1f29089937f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pytest-runner\n  run:\n    - python\n\ntest:\n  requires:\n    - pytest\n  imports:\n    - brent_search\n  commands:\n    - python -c \"import brent_search; brent_search.test()\"\n\nabout:\n  home: https://github.com/Horta/brent-search\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'Brent search'\n\n  description: |\n    Univariate function optimization based on Brent's method.\n  doc_url: https://github.com/Horta/brent-search\n  dev_url: https://github.com/Horta/brent-search\n\nextra:\n  recipe-maintainers:\n    - Horta\n",
+ "rendered_recipe": {},
+ "version": "1.0.11"
+}

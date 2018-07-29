@@ -1,0 +1,181 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.0",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "description": "MUMPS (\u201cMUltifrontal Massively Parallel Solver\u201d) is a package for solving\nsystems of linear equations of the form Ax = b, where A is a square sparse\nmatrix that can be either unsymmetric, symmetric positive definite, or\ngeneral symmetric, on distributed memory computers. MUMPS implements a\ndirect method based on a multifrontal approach which performs a Gaussian\nfactorization.\n",
+  "doc_url": "http://mumps.enseeiht.fr/index.php?page=doc",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://mumps.enseeiht.fr/",
+  "license": "CeCILL-C",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "conda-forge::ca-certificates-2016.9.26-0",
+   "conda-forge::certifi-2016.9.26-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-build-2.1.0-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.1.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.49.1-2",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_0",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_1",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.2-3",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.12.4-py35_0",
+   "ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-32.3.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.8-3"
+  ],
+  "summary": "MUMPS: a parallel sparse direct solver"
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/libsmumps.a",
+  "include/elapse.h",
+  "include/mumps_compat.h",
+  "lib/libdmumps.a",
+  "include/zmumps_struc.h",
+  "include/mpif.h",
+  "include/dmumps_root.h",
+  "lib/libcmumps.a",
+  "lib/libmpiseq.a",
+  "include/dmumps_struc.h",
+  "lib/libpord.a",
+  "include/cmumps_c.h",
+  "include/dmumps_c.h",
+  "include/smumps_struc.h",
+  "lib/libmumps_common.a",
+  "lib/libzmumps.a",
+  "include/cmumps_struc.h",
+  "include/zmumps_c.h",
+  "include/cmumps_root.h",
+  "include/mumps_c_types.h",
+  "include/zmumps_root.h",
+  "include/mumps_mpi.h",
+  "include/smumps_root.h",
+  "include/smumps_c.h"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "blas_openblas_202",
+  "build_number": 202,
+  "depends": [
+   "blas 1.1 openblas",
+   "libgfortran",
+   "metis",
+   "openblas 0.2.19|0.2.19.*",
+   "scotch"
+  ],
+  "features": "blas_openblas",
+  "license": "CeCILL-C",
+  "name": "mumps",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "5.0.2"
+ },
+ "metadata_version": 1,
+ "name": "mumps",
+ "raw_recipe": "{% set name = \"mumps\" %}\n{% set version = \"5.0.2\" %}\n{% set sha256 = \"77292b204942640256097a3da482c2abcd1e0d5a74ecd1d4bab0f5ef6e60fe45\" %}\n{% set variant = \"openblas\" %}\n\npackage:\n  name: mumps\n  version: {{ version }}\n\nsource:\n  fn: MUMPS_{{ version }}.tar.gz\n  url: http://mumps.enseeiht.fr/MUMPS_{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - mumps_mpi.patch\n\nbuild:\n  number: 202\n  skip: true  # [win]\n  features:\n    - blas_{{ variant }}\n\nrequirements:\n  build:\n    - toolchain\n    - metis\n    - scotch\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n    - gcc\n  run:\n    - metis\n    - scotch\n    - blas 1.1 {{ variant }}\n    - openblas 0.2.19|0.2.19.*\n    - libgfortran\n\ntest:\n  commands:\n    - test -f \"${PREFIX}/lib/libzmumps.a\"\n    - test -f \"${PREFIX}/lib/libcmumps.a\"\n    - test -f \"${PREFIX}/lib/libdmumps.a\"\n    - test -f \"${PREFIX}/lib/libsmumps.a\"\n    - test -f \"${PREFIX}/lib/libmumps_common.a\"\n    - test -f \"${PREFIX}/lib/libpord.a\"\n    - test -f \"${PREFIX}/lib/libmpiseq.a\"\n    - test -f \"${PREFIX}/include/dmumps_struc.h\"\n    - test -f \"${PREFIX}/include/zmumps_struc.h\"\n    - test -f \"${PREFIX}/include/cmumps_struc.h\"\n    - test -f \"${PREFIX}/include/smumps_struc.h\"\n    - test -f \"${PREFIX}/include/mumps_mpi.h\"\n\nabout:\n  home: http://mumps.enseeiht.fr/\n  license: CeCILL-C\n  license_file: LICENSE\n  summary: 'MUMPS: a parallel sparse direct solver'\n  description: |\n    MUMPS (\u201cMUltifrontal Massively Parallel Solver\u201d) is a package for solving \n    systems of linear equations of the form Ax = b, where A is a square sparse \n    matrix that can be either unsymmetric, symmetric positive definite, or \n    general symmetric, on distributed memory computers. MUMPS implements a \n    direct method based on a multifrontal approach which performs a Gaussian \n    factorization.\n  doc_url: http://mumps.enseeiht.fr/index.php?page=doc\n\nextra:\n  recipe-maintainers:\n    - basnijholt\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "MUMPS (\u201cMUltifrontal Massively Parallel Solver\u201d) is a package for solving\nsystems of linear equations of the form Ax = b, where A is a square sparse\nmatrix that can be either unsymmetric, symmetric positive definite, or\ngeneral symmetric, on distributed memory computers. MUMPS implements a\ndirect method based on a multifrontal approach which performs a Gaussian\nfactorization.\n",
+   "doc_url": "http://mumps.enseeiht.fr/index.php?page=doc",
+   "home": "http://mumps.enseeiht.fr/",
+   "license": "CeCILL-C",
+   "license_file": "LICENSE",
+   "summary": "MUMPS: a parallel sparse direct solver"
+  },
+  "build": {
+   "features": [
+    "blas_openblas"
+   ],
+   "number": "202",
+   "string": "blas_openblas_202"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "basnijholt"
+   ]
+  },
+  "package": {
+   "name": "mumps",
+   "version": "5.0.2"
+  },
+  "requirements": {
+   "build": [],
+   "run": [
+    "metis",
+    "scotch",
+    "blas 1.1 openblas",
+    "openblas 0.2.19|0.2.19.*",
+    "libgfortran"
+   ]
+  },
+  "source": {
+   "fn": "MUMPS_5.0.2.tar.gz",
+   "patches": [
+    "mumps_mpi.patch"
+   ],
+   "sha256": "77292b204942640256097a3da482c2abcd1e0d5a74ecd1d4bab0f5ef6e60fe45",
+   "url": "http://mumps.enseeiht.fr/MUMPS_5.0.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f \"${PREFIX}/lib/libzmumps.a\"",
+    "test -f \"${PREFIX}/lib/libcmumps.a\"",
+    "test -f \"${PREFIX}/lib/libdmumps.a\"",
+    "test -f \"${PREFIX}/lib/libsmumps.a\"",
+    "test -f \"${PREFIX}/lib/libmumps_common.a\"",
+    "test -f \"${PREFIX}/lib/libpord.a\"",
+    "test -f \"${PREFIX}/lib/libmpiseq.a\"",
+    "test -f \"${PREFIX}/include/dmumps_struc.h\"",
+    "test -f \"${PREFIX}/include/zmumps_struc.h\"",
+    "test -f \"${PREFIX}/include/cmumps_struc.h\"",
+    "test -f \"${PREFIX}/include/smumps_struc.h\"",
+    "test -f \"${PREFIX}/include/mumps_mpi.h\""
+   ]
+  }
+ },
+ "version": "5.0.2"
+}

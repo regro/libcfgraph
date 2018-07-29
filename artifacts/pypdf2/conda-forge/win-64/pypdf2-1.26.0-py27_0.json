@@ -1,0 +1,38 @@
+{
+ "about": {
+  "home": "http://mstamy2.github.com/PyPDF2",
+  "license": "BSD 3-Clause",
+  "summary": "PDF toolkit"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/PyPDF2-1.26.0-py2.7.egg-info",
+  "Lib/site-packages/PyPDF2/__init__.py",
+  "Lib/site-packages/PyPDF2/_version.py",
+  "Lib/site-packages/PyPDF2/filters.py",
+  "Lib/site-packages/PyPDF2/generic.py",
+  "Lib/site-packages/PyPDF2/merger.py",
+  "Lib/site-packages/PyPDF2/pagerange.py",
+  "Lib/site-packages/PyPDF2/pdf.py",
+  "Lib/site-packages/PyPDF2/utils.py",
+  "Lib/site-packages/PyPDF2/xmp.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "pypdf2",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "1.26.0"
+ },
+ "metadata_version": 1,
+ "name": "pypdf2",
+ "raw_recipe": "{% set name = \"pypdf2\" %}\n{% set camelName = \"PyPDF2\" %}\n{% set version = \"1.26.0\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz\n  md5: 2301acc0ecbab0633d4c9b883d50ee5e\n\nbuild:\n\n  number: 0\n  script: python setup.py install\n\nrequirements:\n  build:\n    - python\n\n  run:\n    - python\n\ntest:\n  imports:\n    - PyPDF2\n\nabout:\n  home: http://mstamy2.github.com/PyPDF2\n  license: BSD 3-Clause\n  summary: 'PDF toolkit'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.26.0"
+}

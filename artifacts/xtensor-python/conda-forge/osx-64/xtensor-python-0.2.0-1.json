@@ -1,0 +1,37 @@
+{
+ "about": {
+  "description": "Multi dimensional arrays with broadcasting and lazy computing",
+  "dev_url": "https://github.com/QuantStack/xtensor-python",
+  "doc_url": "http://xtensor.readthedocs.io",
+  "home": "http://quantstack.net/xtensor",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Python bindings for xtensor, the C++ tensor algebra library"
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/xtensor-python/pyarray.hpp",
+  "include/xtensor-python/pybind11_backport.hpp",
+  "include/xtensor-python/pyvectorize.hpp"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [
+   "pybind11 ==1.8.1",
+   "xtensor ==0.2.1"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "xtensor-python",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.0"
+ },
+ "metadata_version": 1,
+ "name": "xtensor-python",
+ "raw_recipe": "{% set name = \"xtensor-python\" %}\n{% set version = \"0.2.0\" %}\n{% set sha256 = \"195907c0f7788be3ab063947c56faf8a1d919bb085d3f67e1b9adbc92d2e3388\" %} \n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n    fn: {{ name }}-{{ version }}.tar.gz\n    url: https://github.com/QuantStack/xtensor-python/archive/{{ version }}.tar.gz\n    sha256: {{ sha256 }}\n\nbuild:\n  number: 1\n\nrequirements:\n  run:\n    - xtensor ==0.2.1\n    - pybind11 ==1.8.1\n\ntest:\n  commands:\n    - test -d ${PREFIX}/include/xtensor-python  # [unix]\n    - test -f ${PREFIX}/include/xtensor-python/pyarray.hpp  # [unix]\n    - if exist %PREFIX%\\include\\xtensor-python\\pyarray.hpp (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: http://quantstack.net/xtensor\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Python bindings for xtensor, the C++ tensor algebra library'\n  description: 'Multi dimensional arrays with broadcasting and lazy computing'\n  doc_url: http://xtensor.readthedocs.io\n  dev_url: https://github.com/QuantStack/xtensor-python\n\nextra:\n  recipe-maintainers:\n    - SylvainCorlay\n    - JohanMabille\n",
+ "rendered_recipe": {},
+ "version": "0.2.0"
+}

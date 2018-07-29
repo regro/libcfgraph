@@ -1,0 +1,33 @@
+{
+ "about": {
+  "home": "https://github.com/spotify/annoy",
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "summary": "Approximate Nearest Neighbors in C++/Python optimized for memory usage and loading/saving to disk."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/annoy-1.8.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/annoy/__init__.py",
+  "lib/python3.5/site-packages/annoy/annoylib.cpython-35m-x86_64-linux-gnu.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "name": "python-annoy",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.8.0"
+ },
+ "metadata_version": 1,
+ "name": "python-annoy",
+ "raw_recipe": "{%set conda_forge_name = \"python-annoy\" %}\n{%set pypi_name = \"annoy\" %}\n{%set version = \"1.8.0\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"9ac9bd931a4ced34a27c6a8719de3c9a662fe30ea6cfedaa95b3941067b1fe3e\" %}\n\npackage:\n  name: {{ conda_forge_name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ pypi_name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/{{ pypi_name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  skip: True  # [win]\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - nose >=1.0\n\n  run:\n    - python\n\ntest:\n  imports:\n    - annoy\n\nabout:\n  home: https://github.com/spotify/annoy\n  license: Apache 2.0\n  license_file: LICENSE\n  license_family: Apache\n  summary: 'Approximate Nearest Neighbors in C++/Python optimized for memory usage and loading/saving to disk.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "1.8.0"
+}

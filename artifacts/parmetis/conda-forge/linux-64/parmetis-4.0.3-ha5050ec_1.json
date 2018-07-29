@@ -1,0 +1,203 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.10.9",
+  "conda_private": false,
+  "conda_version": "4.5.4",
+  "description": "ParMETIS is an MPI-based parallel library that implements a\nvariety of algorithms for partitioning unstructured graphs,\nmeshes, and for computing fill-reducing orderings of sparse\nmatrices. ParMETIS extends the functionality provided by METIS and\nincludes routines that are especially suited for parallel AMR\ncomputations and large scale numerical simulations. The algorithms\nimplemented in ParMETIS are based on the parallel multilevel k-way\ngraph-partitioning, adaptive repartitioning, and parallel\nmulti-constrained partitioning schemes developed in our lab.\n",
+  "doc_url": "http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/manual.pdf",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "home": "http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview",
+  "license": "Non-free for commercial use",
+  "license_file": "LICENSE.txt",
+  "root_pkgs": [
+   "cffi 1.11.5 py36_0",
+   "pyopenssl 18.0.0 py36_0",
+   "cryptography 2.2.1 py36_0",
+   "xz 5.2.3 0",
+   "packaging 17.1 py_0",
+   "requests 2.18.4 py36_1",
+   "certifi 2018.4.16 py36_0",
+   "readline 7.0 0",
+   "chardet 3.0.4 py36_0",
+   "urllib3 1.22 py36_0",
+   "setuptools 39.2.0 py36_0",
+   "zlib 1.2.11 0",
+   "yaml 0.1.7 0",
+   "pycparser 2.18 py36_0",
+   "asn1crypto 0.24.0 py36_0",
+   "libffi 3.2.1 3",
+   "tk 8.6.7 0",
+   "conda 4.5.4 py36_0",
+   "ruamel_yaml 0.15.35 py36_0",
+   "pysocks 1.6.8 py36_1",
+   "pip 9.0.3 py36_0",
+   "idna 2.6 py36_1",
+   "wheel 0.31.0 py36_0",
+   "python 3.6.5 1",
+   "pycosat 0.6.3 py36_0",
+   "ncurses 5.9 10",
+   "six 1.11.0 py36_1",
+   "ca-certificates 2018.4.16 0",
+   "pyparsing 2.2.0 py36_0",
+   "sqlite 3.20.1 2",
+   "conda-env 2.6.0 0",
+   "openssl 1.0.2o 0",
+   "traitlets 4.3.2 py36_0",
+   "pytz 2018.4 py_0",
+   "git 2.14.2 3",
+   "conda-verify 2.0.0 py36_0",
+   "filelock 3.0.4 py36_0",
+   "jsonschema 2.6.0 py36_1",
+   "anaconda-client 1.6.14 py_0",
+   "pyyaml 3.12 py36_1",
+   "beautifulsoup4 4.6.0 py36_0",
+   "patchelf 0.9 2",
+   "clyent 1.2.2 py36_0",
+   "conda-forge-ci-setup 1.3.5 0",
+   "curl 7.60.0 0",
+   "conda-build 3.10.9 py36_0",
+   "tini 0.18.0 0",
+   "ipython_genutils 0.2.0 py36_0",
+   "libiconv 1.15 0",
+   "krb5 1.14.6 0",
+   "expat 2.2.5 0",
+   "nbformat 4.4.0 py36_0",
+   "decorator 4.3.0 py_0",
+   "glob2 0.6 py_0",
+   "libssh2 1.8.0 2",
+   "pkginfo 1.4.2 py36_0",
+   "python-dateutil 2.7.3 py_0",
+   "jinja2 2.10 py36_0",
+   "jupyter_core 4.4.0 py_0",
+   "markupsafe 1.0 py36_0",
+   "psutil 5.4.5 py36_0",
+   "gosu 1.10 0"
+  ],
+  "summary": "ParMETIS - Parallel Graph Partitioning and Fill-reducing Matrix Ordering"
+ },
+ "conda_build_config": {
+  "c_compiler": "gcc",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "python",
+  "lua": "5",
+  "mpi": "mpich",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "mpich": "x.x",
+   "openmpi": "x.x",
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.6",
+  "r_base": "3.4",
+  "target_platform": "linux-64"
+ },
+ "files": [
+  "bin/mtest",
+  "bin/parmetis",
+  "bin/pometis",
+  "bin/ptest",
+  "include/parmetis.h",
+  "lib/libparmetis.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "ha5050ec_1",
+  "build_number": 1,
+  "depends": [
+   "mpich >=3.2,<3.3.0a0"
+  ],
+  "license": "Non-free for commercial use",
+  "name": "parmetis",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1529337768972,
+  "version": "4.0.3"
+ },
+ "metadata_version": 1,
+ "name": "parmetis",
+ "raw_recipe": "{% set build = 1 %}\n{% set version = \"4.0.3\" %}\n{% set sha256 = \"f2d9a231b7cf97f1fee6e8c9663113ebf6c240d407d3c118c55b3633d6be6e5f\" %}\n\npackage:\n  name: parmetis\n  version: {{ version }}\n\nsource:\n  fn: parmetis-{{ version }}.tar.gz\n  url: http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/parmetis-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  skip: true  # [win]\n  number: {{ build }}\n\nrequirements:\n  build:\n    - toolchain\n    - cmake\n    - {{ mpi }}\n  run:\n    - {{ mpi }}\n\ntest:\n  commands:\n    - conda inspect objects  parmetis  # [osx]\n    - conda inspect linkages parmetis  # [not win]\n    - test -f \"${PREFIX}/include/parmetis.h\"\n    - test -f \"${PREFIX}/lib/libparmetis.dylib\"  # [osx]\n    - test -f \"${PREFIX}/lib/libparmetis.so\"     # [linux]\n\nabout:\n  home: http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview\n  license: Non-free for commercial use\n  license_file: LICENSE.txt\n  summary: 'ParMETIS - Parallel Graph Partitioning and Fill-reducing Matrix Ordering'\n  description: |\n    ParMETIS is an MPI-based parallel library that implements a\n    variety of algorithms for partitioning unstructured graphs,\n    meshes, and for computing fill-reducing orderings of sparse\n    matrices. ParMETIS extends the functionality provided by METIS and\n    includes routines that are especially suited for parallel AMR\n    computations and large scale numerical simulations. The algorithms\n    implemented in ParMETIS are based on the parallel multilevel k-way\n    graph-partitioning, adaptive repartitioning, and parallel\n    multi-constrained partitioning schemes developed in our lab.\n  doc_url: http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/manual.pdf\n\nextra:\n  recipe-maintainers:\n    - basnijholt\n    - dalcinl\n    - isuruf\n    - minrk\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "ParMETIS is an MPI-based parallel library that implements a\nvariety of algorithms for partitioning unstructured graphs,\nmeshes, and for computing fill-reducing orderings of sparse\nmatrices. ParMETIS extends the functionality provided by METIS and\nincludes routines that are especially suited for parallel AMR\ncomputations and large scale numerical simulations. The algorithms\nimplemented in ParMETIS are based on the parallel multilevel k-way\ngraph-partitioning, adaptive repartitioning, and parallel\nmulti-constrained partitioning schemes developed in our lab.\n",
+   "doc_url": "http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/manual.pdf",
+   "home": "http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview",
+   "license": "Non-free for commercial use",
+   "license_file": "LICENSE.txt",
+   "summary": "ParMETIS - Parallel Graph Partitioning and Fill-reducing Matrix Ordering"
+  },
+  "build": {
+   "number": "1",
+   "string": "ha5050ec_1"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "basnijholt",
+    "dalcinl",
+    "isuruf",
+    "minrk"
+   ]
+  },
+  "package": {
+   "name": "parmetis",
+   "version": "4.0.3"
+  },
+  "requirements": {
+   "build": [
+    "bzip2 1.0.6 1",
+    "ca-certificates 2018.4.16 0",
+    "cmake 3.11.4 0",
+    "curl 7.60.0 0",
+    "expat 2.2.5 0",
+    "krb5 1.14.6 0",
+    "libgcc 7.2.0 h69d50b8_2",
+    "libgcc-ng 7.2.0 hdf63c60_3",
+    "libssh2 1.8.0 2",
+    "libstdcxx-ng 7.2.0 hdf63c60_3",
+    "libuv 1.20.3 0",
+    "mpi 1.0 mpich",
+    "mpich 3.2.1 1",
+    "ncurses 5.9 10",
+    "openssl 1.0.2o 0",
+    "rhash 1.3.4 0",
+    "toolchain 2.1.5 0",
+    "xz 5.2.3 0",
+    "zlib 1.2.11 h470a237_3"
+   ],
+   "run": [
+    "mpich >=3.2,<3.3.0a0"
+   ]
+  },
+  "source": {
+   "fn": "parmetis-4.0.3.tar.gz",
+   "sha256": "f2d9a231b7cf97f1fee6e8c9663113ebf6c240d407d3c118c55b3633d6be6e5f",
+   "url": "http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/parmetis-4.0.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "conda inspect linkages parmetis",
+    "test -f \"${PREFIX}/include/parmetis.h\"",
+    "test -f \"${PREFIX}/lib/libparmetis.so\""
+   ]
+  }
+ },
+ "version": "4.0.3"
+}

@@ -1,0 +1,43 @@
+{
+ "about": {
+  "dev_url": "https://github.com/jaraco/keyrings.alt/",
+  "doc_url": "http://pythonhosted.org/keyrings.alt/",
+  "home": "https://github.com/jaraco/keyrings.alt",
+  "license": "MIT",
+  "summary": "Alternate keyring backend implementations for use with the keyring package."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.5/site-packages/keyrings.alt-1.1.1-py3.5-nspkg.pth",
+  "lib/python3.5/site-packages/keyrings.alt-1.1.1-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/keyrings/alt/Gnome.py",
+  "lib/python3.5/site-packages/keyrings/alt/Google.py",
+  "lib/python3.5/site-packages/keyrings/alt/Windows.py",
+  "lib/python3.5/site-packages/keyrings/alt/__init__.py",
+  "lib/python3.5/site-packages/keyrings/alt/_win_crypto.py",
+  "lib/python3.5/site-packages/keyrings/alt/file.py",
+  "lib/python3.5/site-packages/keyrings/alt/keyczar.py",
+  "lib/python3.5/site-packages/keyrings/alt/kwallet.py",
+  "lib/python3.5/site-packages/keyrings/alt/multi.py",
+  "lib/python3.5/site-packages/keyrings/alt/pyfs.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "keyring",
+   "python 3.5*"
+  ],
+  "license": "MIT",
+  "name": "keyrings.alt",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "1.1.1"
+ },
+ "metadata_version": 1,
+ "name": "keyrings.alt",
+ "raw_recipe": "{% set name = \"keyrings.alt\" %}\n{% set version = \"1.1.1\" %}\n{% set sha256 = \"2f1a55849504644795076291bcc66a7266e0388dea13fe23a89d25c99e355d22\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - setuptools_scm\n  run:\n    - keyring\n    - python\n\ntest:\n  imports:\n    - keyrings.alt\n\nabout:\n  home: https://github.com/jaraco/keyrings.alt\n  license: MIT\n  summary: 'Alternate keyring backend implementations for use with the keyring package.'\n\n  doc_url: http://pythonhosted.org/keyrings.alt/\n  dev_url: https://github.com/jaraco/keyrings.alt/\n\nextra:\n  recipe-maintainers:\n    - astaric\n",
+ "rendered_recipe": {},
+ "version": "1.1.1"
+}

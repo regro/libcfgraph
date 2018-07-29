@@ -1,0 +1,35 @@
+{
+ "about": {
+  "home": "http://www.grantjenks.com/docs/diskcache/",
+  "license": "Apache 2.0",
+  "summary": "Disk and file backed cache."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/diskcache-2.0.2-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/diskcache/__init__.py",
+  "lib/python3.4/site-packages/diskcache/cli.py",
+  "lib/python3.4/site-packages/diskcache/core.py",
+  "lib/python3.4/site-packages/diskcache/djangocache.py",
+  "lib/python3.4/site-packages/diskcache/fanout.py",
+  "lib/python3.4/site-packages/diskcache/stampede.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.4*"
+  ],
+  "license": "Apache 2.0",
+  "name": "diskcache",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2.0.2"
+ },
+ "metadata_version": 1,
+ "name": "diskcache",
+ "raw_recipe": "{%set name = \"diskcache\" %}\n{%set version = \"2.0.2\" %}\n{%set hash_type = \"sha256\" %}\n{%set hash_val = \"3e586e152725a260d75c774a468e02001980fd2b47b05a7c691eb380f0dde767\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - diskcache\n\nabout:\n  home: http://www.grantjenks.com/docs/diskcache/\n  license: Apache 2.0\n  summary: 'Disk and file backed cache.'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "2.0.2"
+}

@@ -1,0 +1,48 @@
+{
+ "about": {
+  "description": "The dateutil module provides powerful extensions to the standard datetime\nmodule, available in Python.\n",
+  "dev_url": "https://github.com/dateutil/dateutil/",
+  "doc_url": "https://dateutil.readthedocs.org/en/latest/",
+  "home": "https://dateutil.readthedocs.org/",
+  "license": "BSD 3-clause",
+  "summary": "Extensions to the standard Python datetime module."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.6/site-packages/dateutil/__init__.py",
+  "lib/python3.6/site-packages/dateutil/_common.py",
+  "lib/python3.6/site-packages/dateutil/easter.py",
+  "lib/python3.6/site-packages/dateutil/parser.py",
+  "lib/python3.6/site-packages/dateutil/relativedelta.py",
+  "lib/python3.6/site-packages/dateutil/rrule.py",
+  "lib/python3.6/site-packages/dateutil/tz/__init__.py",
+  "lib/python3.6/site-packages/dateutil/tz/_common.py",
+  "lib/python3.6/site-packages/dateutil/tz/tz.py",
+  "lib/python3.6/site-packages/dateutil/tz/win.py",
+  "lib/python3.6/site-packages/dateutil/tzwin.py",
+  "lib/python3.6/site-packages/dateutil/zoneinfo/__init__.py",
+  "lib/python3.6/site-packages/dateutil/zoneinfo/dateutil-zoneinfo.tar.gz",
+  "lib/python3.6/site-packages/dateutil/zoneinfo/rebuild.py",
+  "lib/python3.6/site-packages/python_dateutil-2.6.0-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/python_dateutil-2.6.0-py3.6.egg-info/zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_0",
+  "build_number": 0,
+  "depends": [
+   "python 3.6*",
+   "six"
+  ],
+  "license": "BSD 3-clause",
+  "name": "python-dateutil",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.6.0"
+ },
+ "metadata_version": 1,
+ "name": "python-dateutil",
+ "raw_recipe": "{% set version=\"2.6.0\" %}\n\npackage:\n  name: python-dateutil\n  version: {{ version }}\n\nsource:\n  fn: python-dateutil-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/p/python-dateutil/python-dateutil-{{ version }}.tar.gz\n  sha256: 62a2f8df3d66f878373fd0072eacf4ee52194ba302e00082828e0d263b0418d2\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - six\n\ntest:\n  imports:\n    - dateutil\n    - dateutil.rrule\n\nabout:\n  home: https://dateutil.readthedocs.org/\n  license: BSD 3-clause\n  license_file: LICENSE\n  summary: 'Extensions to the standard Python datetime module.'\n  description: |\n    The dateutil module provides powerful extensions to the standard datetime\n    module, available in Python.\n  doc_url: https://dateutil.readthedocs.org/en/latest/\n  dev_url: https://github.com/dateutil/dateutil/\n\nextra:\n  recipe-maintainers:\n    - msarahan\n    - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "2.6.0"
+}

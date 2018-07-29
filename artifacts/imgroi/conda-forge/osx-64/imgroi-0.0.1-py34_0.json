@@ -1,0 +1,39 @@
+{
+ "about": {
+  "dev_url": "https://github.com/jakirkham/imgroi",
+  "doc_url": "https://imgroi.readthedocs.io/",
+  "home": "https://github.com/jakirkham/imgroi",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "summary": "Python utility functions for slices."
+ },
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/imgroi-0.0.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/imgroi-0.0.1-py3.4.egg-info/not-zip-safe",
+  "lib/python3.4/site-packages/imgroi/__init__.py",
+  "lib/python3.4/site-packages/imgroi/_version.py",
+  "lib/python3.4/site-packages/imgroi/core.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "mahotas",
+   "numpy",
+   "python 3.4*"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "imgroi",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.0.1"
+ },
+ "metadata_version": 1,
+ "name": "imgroi",
+ "raw_recipe": "{% set name = \"imgroi\" %}\n{% set version = \"0.0.1\" %}\n{% set sha256 = \"0d00021107f3131a1c2bbfae8bc94e0ffc04758544a48fe63743d455f7a8c415\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n    - numpy\n    - mahotas\n\ntest:\n  imports:\n    - imgroi\n\nabout:\n  home: https://github.com/jakirkham/imgroi\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: Python utility functions for slices.\n  doc_url: https://imgroi.readthedocs.io/\n  dev_url: https://github.com/jakirkham/imgroi\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n",
+ "rendered_recipe": {},
+ "version": "0.0.1"
+}

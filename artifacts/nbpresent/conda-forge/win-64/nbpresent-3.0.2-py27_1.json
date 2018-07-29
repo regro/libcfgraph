@@ -1,0 +1,119 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/nbpresent-3.0.2-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/nbpresent/__init__.py",
+  "Lib/site-packages/nbpresent/_version.py",
+  "Lib/site-packages/nbpresent/export.py",
+  "Lib/site-packages/nbpresent/exporters/__init__.py",
+  "Lib/site-packages/nbpresent/exporters/base.py",
+  "Lib/site-packages/nbpresent/exporters/html.py",
+  "Lib/site-packages/nbpresent/exporters/pdf.py",
+  "Lib/site-packages/nbpresent/exporters/pdf_capture.py",
+  "Lib/site-packages/nbpresent/exporters/pdf_ghost.py",
+  "Lib/site-packages/nbpresent/static/nbpresent/css/nbpresent.min.css",
+  "Lib/site-packages/nbpresent/static/nbpresent/js/nbpresent.deps.min.js",
+  "Lib/site-packages/nbpresent/static/nbpresent/js/nbpresent.min.js",
+  "Lib/site-packages/nbpresent/static/nbpresent/js/nbpresent.notebook.min.js",
+  "Lib/site-packages/nbpresent/static/nbpresent/js/nbpresent.standalone.min.js",
+  "Lib/site-packages/nbpresent/static/nbpresent/js/nbpresent.static.min.js",
+  "Lib/site-packages/nbpresent/tasks/__init__.py",
+  "Lib/site-packages/nbpresent/tasks/_env.py",
+  "Lib/site-packages/nbpresent/tasks/build.py",
+  "Lib/site-packages/nbpresent/tasks/clean.py",
+  "Lib/site-packages/nbpresent/tasks/deps.py",
+  "Lib/site-packages/nbpresent/tasks/index.py",
+  "Lib/site-packages/nbpresent/tasks/less.py",
+  "Lib/site-packages/nbpresent/tasks/notebook.py",
+  "Lib/site-packages/nbpresent/tasks/requirejs.py",
+  "Lib/site-packages/nbpresent/tasks/standalone.py",
+  "Lib/site-packages/nbpresent/templates/nbpresent.tpl",
+  "Lib/site-packages/nbpresent/tests/__init__.py",
+  "Lib/site-packages/nbpresent/tests/js/_utils.js",
+  "Lib/site-packages/nbpresent/tests/js/test_export_html.js",
+  "Lib/site-packages/nbpresent/tests/js/test_notebook_basic.js",
+  "Lib/site-packages/nbpresent/tests/js/test_notebook_create.js",
+  "Lib/site-packages/nbpresent/tests/js/test_notebook_no_regions.js",
+  "Lib/site-packages/nbpresent/tests/notebooks/Basics.ipynb",
+  "Lib/site-packages/nbpresent/tests/test_export.py",
+  "Lib/site-packages/nbpresent/tests/test_notebook.py",
+  "Scripts/.nbpresent-post-link.bat",
+  "Scripts/.nbpresent-pre-unlink.bat",
+  "Scripts/nbpresent-script.py",
+  "Scripts/nbpresent.exe",
+  "share/jupyter/nbextensions/nbpresent/css/nbpresent.min.css",
+  "share/jupyter/nbextensions/nbpresent/js/nbpresent.deps.min.js",
+  "share/jupyter/nbextensions/nbpresent/js/nbpresent.min.js",
+  "share/jupyter/nbextensions/nbpresent/js/nbpresent.notebook.min.js",
+  "share/jupyter/nbextensions/nbpresent/js/nbpresent.standalone.min.js",
+  "share/jupyter/nbextensions/nbpresent/js/nbpresent.static.min.js"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_1",
+  "build_number": 1,
+  "depends": [
+   "notebook >=4.2.0",
+   "python 2.7*"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "nbpresent",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "3.0.2"
+ },
+ "metadata_version": 1,
+ "name": "nbpresent",
+ "raw_recipe": "{% set version = \"3.0.2\" %}\n{% set gh_org = \"Anaconda-Platform\" %}\n{% set gh_repo = \"nbpresent\" %}\n\npackage:\n  name: {{ gh_repo }}\n  version: {{ version }}\n\nsource:\n  fn: {{ gh_repo }}-{{ version }}.tar.gz\n  url: https://github.com/{{ gh_org }}/{{ gh_repo }}/archive/{{ version }}.tar.gz\n  sha256: 65f4937b7756d62a507a2701501f5d0c119e4391b0b15e661164b4276b06af11\n\nbuild:\n  number: 1\n\nrequirements:\n  build:\n    - nodejs\n    - notebook >=4.2.0\n    - python\n    - setuptools\n\n  run:\n    - notebook >=4.2.0\n    - python\n\ntest:\n  requires:\n    - coverage\n    - flake8\n    - ipywidgets >=5.1.5\n    - nodejs\n    - nose\n    - notebook >=4.2.0\n    - python\n    - requests\n    - mock  # [py2k]\n\nabout:\n  home: https://github.com/{{ gh_org }}/{{ gh_repo }}\n  license: BSD-3-Clause\n  summary: Next generation slides for Jupyter Notebooks\n\nextra:\n  recipe-maintainers:\n    - bollwyvl\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/Anaconda-Platform/nbpresent",
+   "license": "BSD-3-Clause",
+   "summary": "Next generation slides for Jupyter Notebooks"
+  },
+  "build": {
+   "number": "1"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "bollwyvl"
+   ]
+  },
+  "package": {
+   "name": "nbpresent",
+   "version": "3.0.2"
+  },
+  "requirements": {
+   "build": [
+    "nodejs",
+    "notebook >=4.2.0",
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "notebook >=4.2.0",
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "nbpresent-3.0.2.tar.gz",
+   "sha256": "65f4937b7756d62a507a2701501f5d0c119e4391b0b15e661164b4276b06af11",
+   "url": "https://github.com/Anaconda-Platform/nbpresent/archive/3.0.2.tar.gz"
+  },
+  "test": {
+   "requires": [
+    "coverage",
+    "flake8",
+    "ipywidgets >=5.1.5",
+    "nodejs",
+    "nose",
+    "notebook >=4.2.0",
+    "python",
+    "requests",
+    "mock"
+   ]
+  }
+ },
+ "version": "3.0.2"
+}

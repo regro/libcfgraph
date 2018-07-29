@@ -1,0 +1,48 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python3.4/site-packages/pytools-2016.2.1-py3.4.egg-info/PKG-INFO",
+  "lib/python3.4/site-packages/pytools/__init__.py",
+  "lib/python3.4/site-packages/pytools/arithmetic_container.py",
+  "lib/python3.4/site-packages/pytools/batchjob.py",
+  "lib/python3.4/site-packages/pytools/convergence.py",
+  "lib/python3.4/site-packages/pytools/datatable.py",
+  "lib/python3.4/site-packages/pytools/debug.py",
+  "lib/python3.4/site-packages/pytools/decorator.py",
+  "lib/python3.4/site-packages/pytools/diskdict.py",
+  "lib/python3.4/site-packages/pytools/lex.py",
+  "lib/python3.4/site-packages/pytools/log.py",
+  "lib/python3.4/site-packages/pytools/mpi.py",
+  "lib/python3.4/site-packages/pytools/mpiwrap.py",
+  "lib/python3.4/site-packages/pytools/obj_array.py",
+  "lib/python3.4/site-packages/pytools/persistent_dict.py",
+  "lib/python3.4/site-packages/pytools/prefork.py",
+  "lib/python3.4/site-packages/pytools/py_codegen.py",
+  "lib/python3.4/site-packages/pytools/spatial_btree.py",
+  "lib/python3.4/site-packages/pytools/stopwatch.py",
+  "lib/python3.4/site-packages/pytools/test.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py34_0",
+  "build_number": 0,
+  "depends": [
+   "appdirs >=1.4.0",
+   "decorator >=3.2.0",
+   "numpy",
+   "python 3.4*",
+   "six"
+  ],
+  "license": "MIT",
+  "name": "pytools",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "2016.2.1"
+ },
+ "metadata_version": 1,
+ "name": "pytools",
+ "raw_recipe": "{% set version = \"2016.2.1\" %}\n\npackage:\n    name: pytools\n    version: {{ version }}\n\nsource:\n    fn: pytools-{{ version }}.tar.gz\n    url: https://pypi.io/packages/source/p/pytools/pytools-{{ version }}.tar.gz\n    md5: 452dfa3023733a675cc1bee91c536cbd\n    patches:\n        - encoding.patch  # [win and py3k]\n\nbuild:\n    number: 0\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n        - numpy\n        - decorator >=3.2.0\n        - appdirs >=1.4.0\n        - six\n\ntest:\n    imports:\n        - pytools\n\nabout:\n    home: http://pypi.python.org/pypi/pytools\n    license: MIT\n    summary: A collection of tools for Python\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {},
+ "version": "2016.2.1"
+}

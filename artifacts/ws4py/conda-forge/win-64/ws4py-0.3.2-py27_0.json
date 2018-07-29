@@ -1,0 +1,47 @@
+{
+ "about": {
+  "home": "https://github.com/Lawouach/WebSocket-for-Python",
+  "license": "BSD 3-Clause",
+  "summary": "WebSocket client and server library for Python 2, 3, and PyPy"
+ },
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/ws4py-0.3.2-py2.7.egg-info/PKG-INFO",
+  "Lib/site-packages/ws4py/__init__.py",
+  "Lib/site-packages/ws4py/client/__init__.py",
+  "Lib/site-packages/ws4py/client/geventclient.py",
+  "Lib/site-packages/ws4py/client/threadedclient.py",
+  "Lib/site-packages/ws4py/client/tornadoclient.py",
+  "Lib/site-packages/ws4py/compat.py",
+  "Lib/site-packages/ws4py/exc.py",
+  "Lib/site-packages/ws4py/framing.py",
+  "Lib/site-packages/ws4py/manager.py",
+  "Lib/site-packages/ws4py/messaging.py",
+  "Lib/site-packages/ws4py/server/__init__.py",
+  "Lib/site-packages/ws4py/server/cherrypyserver.py",
+  "Lib/site-packages/ws4py/server/geventserver.py",
+  "Lib/site-packages/ws4py/server/wsgirefserver.py",
+  "Lib/site-packages/ws4py/server/wsgiutils.py",
+  "Lib/site-packages/ws4py/streaming.py",
+  "Lib/site-packages/ws4py/utf8validator.py",
+  "Lib/site-packages/ws4py/websocket.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "python 2.7*"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "ws4py",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.3.2"
+ },
+ "metadata_version": 1,
+ "name": "ws4py",
+ "raw_recipe": "{% set version = \"0.3.2\" %}\n\npackage:\n  name: ws4py\n  version: {{ version }}\n\nsource:\n  fn: ws4py-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/w/ws4py/ws4py-{{ version }}.tar.gz\n  sha256: 48a4e005496a60081f74ca130ce55603ff87e1507483535acf902b94761bda8b\n\nbuild:\n\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record=record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n\n  run:\n    - python\n\ntest:\n  imports:\n    - ws4py\n    - ws4py.client\n    - ws4py.server\n\nabout:\n  home: https://github.com/Lawouach/WebSocket-for-Python\n  license: BSD 3-Clause\n  summary: 'WebSocket client and server library for Python 2, 3, and PyPy'\n\nextra:\n  recipe-maintainers:\n    - pmlandwehr\n",
+ "rendered_recipe": {},
+ "version": "0.3.2"
+}

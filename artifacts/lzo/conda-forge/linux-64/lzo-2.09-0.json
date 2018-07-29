@@ -1,0 +1,154 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge/linux-64",
+   "https://conda.anaconda.org/conda-forge/noarch",
+   "https://repo.continuum.io/pkgs/free/linux-64",
+   "https://repo.continuum.io/pkgs/free/noarch",
+   "https://repo.continuum.io/pkgs/pro/linux-64",
+   "https://repo.continuum.io/pkgs/pro/noarch"
+  ],
+  "conda_build_version": "2.1.4",
+  "conda_env_version": "4.2.13",
+  "conda_private": false,
+  "conda_version": "4.2.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>",
+   "CONDA_DEFAULT_ENV": "root",
+   "CONDA_ENVS_PATH": "<not set>",
+   "LD_LIBRARY_PATH": "/opt/rh/devtoolset-2/root/usr/lib64:/opt/rh/devtoolset-2/root/usr/lib",
+   "PATH": "/opt/conda/bin:/opt/rh/devtoolset-2/root/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/bin",
+   "PYTHONHOME": "<not set>",
+   "PYTHONPATH": "/opt/rh/devtoolset-2/root/usr/lib64/python2.6/site-packages:/opt/rh/devtoolset-2/root/usr/lib/python2.6/site-packages"
+  },
+  "home": "http://www.oberhumer.com/opensource/lzo/",
+  "license": "GPL v2+",
+  "offline": false,
+  "root_pkgs": [
+   "conda-forge::anaconda-client-1.5.1-py35_0",
+   "beautifulsoup4-4.5.3-py35_0",
+   "conda-forge::ca-certificates-2017.1.23-0",
+   "conda-forge::certifi-2017.1.23-py35_0",
+   "conda-forge::chardet-2.3.0-py35_0",
+   "conda-forge::clyent-1.2.1-py35_0",
+   "conda-forge::conda-4.2.13-py35_0",
+   "conda-forge::conda-build-2.1.4-py35_0",
+   "conda-forge::conda-env-2.6.0-0",
+   "conda-forge::conda-forge-build-setup-4.4.0-0",
+   "conda-verify-2.0.0-py35_0",
+   "conda-forge::curl-7.52.1-0",
+   "conda-forge::expat-2.1.0-2",
+   "conda-forge::filelock-2.0.6-py35_0",
+   "conda-forge::git-2.8.2-4",
+   "conda-forge::jinja2-2.8-py35_1",
+   "conda-forge::libiconv-1.14-4",
+   "conda-forge::markupsafe-0.23-py35_1",
+   "conda-forge::ncurses-5.9-10",
+   "conda-forge::obvious-ci-0.6.1-py35_2",
+   "conda-forge::openssl-1.0.2h-3",
+   "conda-forge::patchelf-0.9-1",
+   "conda-forge::pip-9.0.1-py35_0",
+   "conda-forge::pkginfo-1.2.1-py35_0",
+   "conda-forge::pycosat-0.6.1-py35_0",
+   "conda-forge::pycrypto-2.6.1-py35_0",
+   "conda-forge::python-3.5.3-1",
+   "conda-forge::python-dateutil-2.6.0-py35_0",
+   "conda-forge::pytz-2016.10-py35_0",
+   "conda-forge::pyyaml-3.11-py35_0",
+   "conda-forge::readline-6.2-0",
+   "conda-forge::requests-2.13.0-py35_0",
+   "conda-forge::ruamel_yaml-0.11.14-py35_0",
+   "conda-forge::setuptools-33.1.0-py35_0",
+   "conda-forge::six-1.10.0-py35_1",
+   "conda-forge::sqlite-3.13.0-1",
+   "conda-forge::tk-8.5.19-1",
+   "conda-forge::wheel-0.29.0-py35_0",
+   "conda-forge::xz-5.2.2-0",
+   "conda-forge::yaml-0.1.6-0",
+   "conda-forge::zlib-1.2.11-0"
+  ],
+  "summary": "LZO is a portable lossless data compression library written in ANSI C."
+ },
+ "conda_build_config": {},
+ "files": [
+  "include/lzo/lzo1.h",
+  "share/doc/lzo/AUTHORS",
+  "lib/liblzo2.a",
+  "include/lzo/lzo1z.h",
+  "include/lzo/lzo1f.h",
+  "include/lzo/lzo2a.h",
+  "include/lzo/lzo1c.h",
+  "include/lzo/lzodefs.h",
+  "lib/liblzo2.so",
+  "include/lzo/lzo1y.h",
+  "share/doc/lzo/LZOAPI.TXT",
+  "share/doc/lzo/THANKS",
+  "include/lzo/lzo1a.h",
+  "include/lzo/lzo1b.h",
+  "include/lzo/lzoutil.h",
+  "lib/liblzo2.so.2.0.0",
+  "include/lzo/lzo1x.h",
+  "include/lzo/lzo_asm.h",
+  "share/doc/lzo/NEWS",
+  "lib/liblzo2.so.2",
+  "share/doc/lzo/LZO.TXT",
+  "share/doc/lzo/COPYING",
+  "include/lzo/lzoconf.h",
+  "share/doc/lzo/LZO.FAQ"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [],
+  "license": "GPL v2+",
+  "name": "lzo",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "version": "2.09"
+ },
+ "metadata_version": 1,
+ "name": "lzo",
+ "raw_recipe": "{% set name = \"lzo\" %}\n{% set version = \"2.09\" %}\n{% set version_major = \"2\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash_val = \"f294a7ced313063c057c504257f437c8335c41bfeed23531ee4e6a2b87bcb34c\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://www.oberhumer.com/opensource/{{ name }}/download/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash_val }}\n  patches:\n    # Patch imported from https://github.com/Microsoft/vcpkg/tree/ed8e7ca79dad5b7bcf716efe25d975571e8e8c05/ports/lzo\n    - do-not-declare-setargv.patch  # [win]\n\nbuild:\n  number: 0\n  features:\n    - vc9   # [win and py27]\n    - vc10  # [win and py34]\n    - vc14  # [win and py>=35]\n\nrequirements:\n  build:\n    - toolchain\n    - cmake 3.*\n    - python     # [win]\n    - vc 9       # [win and py27]\n    - vc 10      # [win and py34]\n    - vc 14      # [win and py>=35]\n\n  run:\n    - vc 9       # [win and py27]\n    - vc 10      # [win and py34]\n    - vc 14      # [win and py>=35]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/lzo/lzoconf.h                                 # [unix]\n    - test -f ${PREFIX}/lib/liblzo{{ version_major }}.a                       # [unix]\n    - test -f ${PREFIX}/lib/liblzo{{ version_major }}.dylib                   # [osx]\n    - test -f ${PREFIX}/lib/liblzo{{ version_major }}.so                      # [linux]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\lzo\\\\lzoconf.h exit 1          # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\lzo{{ version_major }}.lib exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\lzo{{ version_major }}.dll exit 1  # [win]\n    - conda inspect linkages -p $PREFIX {{ name }}                            # [unix]\n    - conda inspect objects -p $PREFIX {{ name }}                             # [osx]\n\nabout:\n  home: http://www.oberhumer.com/opensource/lzo/\n  license: GPL v2+\n  license_file: COPYING\n  summary: LZO is a portable lossless data compression library written in ANSI C.\n\nextra:\n  recipe-maintainers:\n    - rolando\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://www.oberhumer.com/opensource/lzo/",
+   "license": "GPL v2+",
+   "license_file": "COPYING",
+   "summary": "LZO is a portable lossless data compression library written in ANSI C."
+  },
+  "build": {
+   "features": "",
+   "number": "0",
+   "string": "0"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "rolando"
+   ]
+  },
+  "package": {
+   "name": "lzo",
+   "version": "2.09"
+  },
+  "requirements": {
+   "build": [],
+   "run": ""
+  },
+  "source": {
+   "fn": "lzo-2.09.tar.gz",
+   "patches": "",
+   "sha256": "f294a7ced313063c057c504257f437c8335c41bfeed23531ee4e6a2b87bcb34c",
+   "url": "http://www.oberhumer.com/opensource/lzo/download/lzo-2.09.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/include/lzo/lzoconf.h",
+    "test -f ${PREFIX}/lib/liblzo2.a",
+    "test -f ${PREFIX}/lib/liblzo2.so",
+    "conda inspect linkages -p $PREFIX lzo"
+   ]
+  }
+ },
+ "version": "2.09"
+}

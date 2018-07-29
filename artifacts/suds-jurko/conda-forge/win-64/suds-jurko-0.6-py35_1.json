@@ -1,0 +1,153 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "Lib/site-packages/suds/__init__.py",
+  "Lib/site-packages/suds/argparser.py",
+  "Lib/site-packages/suds/bindings/__init__.py",
+  "Lib/site-packages/suds/bindings/binding.py",
+  "Lib/site-packages/suds/bindings/document.py",
+  "Lib/site-packages/suds/bindings/multiref.py",
+  "Lib/site-packages/suds/bindings/rpc.py",
+  "Lib/site-packages/suds/builder.py",
+  "Lib/site-packages/suds/cache.py",
+  "Lib/site-packages/suds/client.py",
+  "Lib/site-packages/suds/metrics.py",
+  "Lib/site-packages/suds/mx/__init__.py",
+  "Lib/site-packages/suds/mx/appender.py",
+  "Lib/site-packages/suds/mx/basic.py",
+  "Lib/site-packages/suds/mx/core.py",
+  "Lib/site-packages/suds/mx/encoded.py",
+  "Lib/site-packages/suds/mx/literal.py",
+  "Lib/site-packages/suds/mx/typer.py",
+  "Lib/site-packages/suds/options.py",
+  "Lib/site-packages/suds/plugin.py",
+  "Lib/site-packages/suds/properties.py",
+  "Lib/site-packages/suds/reader.py",
+  "Lib/site-packages/suds/resolver.py",
+  "Lib/site-packages/suds/sax/__init__.py",
+  "Lib/site-packages/suds/sax/attribute.py",
+  "Lib/site-packages/suds/sax/date.py",
+  "Lib/site-packages/suds/sax/document.py",
+  "Lib/site-packages/suds/sax/element.py",
+  "Lib/site-packages/suds/sax/enc.py",
+  "Lib/site-packages/suds/sax/parser.py",
+  "Lib/site-packages/suds/sax/text.py",
+  "Lib/site-packages/suds/servicedefinition.py",
+  "Lib/site-packages/suds/serviceproxy.py",
+  "Lib/site-packages/suds/soaparray.py",
+  "Lib/site-packages/suds/store.py",
+  "Lib/site-packages/suds/sudsobject.py",
+  "Lib/site-packages/suds/transport/__init__.py",
+  "Lib/site-packages/suds/transport/http.py",
+  "Lib/site-packages/suds/transport/https.py",
+  "Lib/site-packages/suds/transport/options.py",
+  "Lib/site-packages/suds/umx/__init__.py",
+  "Lib/site-packages/suds/umx/attrlist.py",
+  "Lib/site-packages/suds/umx/basic.py",
+  "Lib/site-packages/suds/umx/core.py",
+  "Lib/site-packages/suds/umx/encoded.py",
+  "Lib/site-packages/suds/umx/typed.py",
+  "Lib/site-packages/suds/version.py",
+  "Lib/site-packages/suds/wsdl.py",
+  "Lib/site-packages/suds/wsse.py",
+  "Lib/site-packages/suds/xsd/__init__.py",
+  "Lib/site-packages/suds/xsd/deplist.py",
+  "Lib/site-packages/suds/xsd/doctor.py",
+  "Lib/site-packages/suds/xsd/query.py",
+  "Lib/site-packages/suds/xsd/schema.py",
+  "Lib/site-packages/suds/xsd/sxbase.py",
+  "Lib/site-packages/suds/xsd/sxbasic.py",
+  "Lib/site-packages/suds/xsd/sxbuiltin.py",
+  "Lib/site-packages/suds_jurko-0.6-py3.5.egg-info/PKG-INFO",
+  "Lib/site-packages/tests/__init__.py",
+  "Lib/site-packages/tests/conftest.py",
+  "Lib/site-packages/tests/external/__init__.py",
+  "Lib/site-packages/tests/external/axis1.py",
+  "Lib/site-packages/tests/external/axis2.py",
+  "Lib/site-packages/tests/external/jasper.py",
+  "Lib/site-packages/tests/external/public.py",
+  "Lib/site-packages/tests/external/rhq.py",
+  "Lib/site-packages/tests/external/saxenc.py",
+  "Lib/site-packages/tests/indirect_parametrize.py",
+  "Lib/site-packages/tests/test_argument_parser.py",
+  "Lib/site-packages/tests/test_cache.py",
+  "Lib/site-packages/tests/test_client_cache.py",
+  "Lib/site-packages/tests/test_date_time.py",
+  "Lib/site-packages/tests/test_document_store.py",
+  "Lib/site-packages/tests/test_input_parameters.py",
+  "Lib/site-packages/tests/test_reply_handling.py",
+  "Lib/site-packages/tests/test_request_construction.py",
+  "Lib/site-packages/tests/test_suds.py",
+  "Lib/site-packages/tests/test_timezone.py",
+  "Lib/site-packages/tests/test_transport.py",
+  "Lib/site-packages/tests/test_transport_http.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_1",
+  "build_number": 1,
+  "depends": [
+   "python 3.5*"
+  ],
+  "license": "GNU Library or Lesser General Public License (LGPL)",
+  "name": "suds-jurko",
+  "platform": "win",
+  "subdir": "win-64",
+  "version": "0.6"
+ },
+ "metadata_version": 1,
+ "name": "suds-jurko",
+ "raw_recipe": "package:\n    name: suds-jurko\n    version: 0.6\n\nsource:\n    fn: suds-jurko-0.6.tar.bz2\n    url: https://pypi.python.org/packages/source/s/suds-jurko/suds-jurko-0.6.tar.bz2\n    md5: 1309e9bc2454aa3434041f0a24ae4e11\n\nbuild:\n    number: 1\n    script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n    build:\n        - python\n        - setuptools\n    run:\n        - python\n\ntest:\n    imports:\n        - suds\n        - suds.bindings\n        - suds.mx\n        - suds.sax\n        - suds.transport\n        - suds.umx\n        - suds.xsd\n        - tests\n        - tests.external\n    requires:\n        - pytest\n\nabout:\n    home: http://bitbucket.org/jurko/suds\n    license: GNU Library or Lesser General Public License (LGPL)\n    summary: Lightweight SOAP client (Jurko's fork)\n\nextra:\n    recipe-maintainers:\n        - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://bitbucket.org/jurko/suds",
+   "license": "GNU Library or Lesser General Public License (LGPL)",
+   "summary": "Lightweight SOAP client (Jurko's fork)"
+  },
+  "build": {
+   "number": 1,
+   "script": "python setup.py install --single-version-externally-managed --record record.txt"
+  },
+  "extra": {
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "suds-jurko",
+   "version": 0.6
+  },
+  "requirements": {
+   "build": [
+    "python",
+    "setuptools"
+   ],
+   "run": [
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "suds-jurko-0.6.tar.bz2",
+   "md5": "1309e9bc2454aa3434041f0a24ae4e11",
+   "url": "https://pypi.python.org/packages/source/s/suds-jurko/suds-jurko-0.6.tar.bz2"
+  },
+  "test": {
+   "imports": [
+    "suds",
+    "suds.bindings",
+    "suds.mx",
+    "suds.sax",
+    "suds.transport",
+    "suds.umx",
+    "suds.xsd",
+    "tests",
+    "tests.external"
+   ],
+   "requires": [
+    "pytest"
+   ]
+  }
+ },
+ "version": "0.6"
+}

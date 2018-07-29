@@ -1,0 +1,41 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/python2.7/site-packages/MANIFEST.in",
+  "lib/python2.7/site-packages/scikit_umfpack-0.2.3-py2.7.egg-info/PKG-INFO",
+  "lib/python2.7/site-packages/scikit_umfpack-0.2.3-py2.7.egg-info/not-zip-safe",
+  "lib/python2.7/site-packages/scikits/__init__.py",
+  "lib/python2.7/site-packages/scikits/umfpack/__init__.py",
+  "lib/python2.7/site-packages/scikits/umfpack/__umfpack.so",
+  "lib/python2.7/site-packages/scikits/umfpack/_umfpack.py",
+  "lib/python2.7/site-packages/scikits/umfpack/interface.py",
+  "lib/python2.7/site-packages/scikits/umfpack/setup.py",
+  "lib/python2.7/site-packages/scikits/umfpack/tests/test_interface.py",
+  "lib/python2.7/site-packages/scikits/umfpack/tests/test_umfpack.py",
+  "lib/python2.7/site-packages/scikits/umfpack/tests/try_umfpack.py",
+  "lib/python2.7/site-packages/scikits/umfpack/umfpack.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "np111py27_0",
+  "build_number": 0,
+  "depends": [
+   "numpy 1.11*",
+   "python 2.7*",
+   "scipy",
+   "setuptools",
+   "suitesparse"
+  ],
+  "license": "GPL 2",
+  "name": "scikit-umfpack",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "0.2.3"
+ },
+ "metadata_version": 1,
+ "name": "scikit-umfpack",
+ "raw_recipe": "{% set version = \"0.2.3\" %}\n\npackage:\n  name: scikit-umfpack\n  version: {{ version }}\n\nsource:\n  fn: scikit-umfpack--{{ version }}.tar.gz\n  url: https://files.pythonhosted.org/packages/source/s/scikit-umfpack/scikit-umfpack-{{ version }}.tar.gz\n  sha256: 9c8935717b17e8b43ad8ec989c2ca0e48c1e1b01fe0d1a16e19feecde2ee9524\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - numpy x.x\n    - scipy\n    - suitesparse\n    - swig\n    - setuptools\n  run:\n    - python\n    - numpy x.x\n    - scipy\n    - suitesparse\n    - setuptools\n\ntest:\n  requires:\n    - nose\n  imports:\n    - scikits.umfpack\n\nabout:\n  home: https://scikit-umfpack.github.io/scikit-umfpack\n  license: GPL 2\n  summary: The umfpack scikit provides a wrapper of the UMFPACK sparse direct solver to SciPy.\n\nextra:\n    recipe-maintainers:\n      - grlee77\n      - cmutel\n",
+ "rendered_recipe": {},
+ "version": "0.2.3"
+}
