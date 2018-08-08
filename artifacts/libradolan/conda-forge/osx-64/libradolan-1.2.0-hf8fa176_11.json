@@ -1,0 +1,237 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.12.1",
+  "conda_private": false,
+  "conda_version": "4.5.9",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "kmuehlbauer",
+    "JuergenSimon"
+   ]
+  },
+  "home": "http://meteo-ubonn.github.io/radolan/",
+  "license": "MIT",
+  "root_pkgs": [
+   "anaconda-client 1.7.1 py_0",
+   "asn1crypto 0.24.0 py36_0",
+   "beautifulsoup4 4.6.1 py36_0",
+   "ca-certificates 2018.4.16 0",
+   "certifi 2018.4.16 py36_0",
+   "cffi 1.11.5 py36h342bebf_0",
+   "chardet 3.0.4 py36h96c241c_1",
+   "clyent 1.2.2 py_1",
+   "conda 4.5.9 py36_0",
+   "conda-build 3.12.1 py36_0",
+   "conda-env 2.6.0 h36134e3_0",
+   "conda-forge-ci-setup 1.3.6 0",
+   "cryptography 2.2.2 py36h1de35cc_0",
+   "decorator 4.3.0 py_0",
+   "filelock 3.0.4 py_1",
+   "glob2 0.6 py_0",
+   "idna 2.6 py36h8628d0a_1",
+   "ipython_genutils 0.2.0 py_1",
+   "jinja2 2.10 py_1",
+   "jsonschema 2.6.0 py36_1",
+   "jupyter_core 4.4.0 py_0",
+   "libcxx 4.0.1 h579ed51_0",
+   "libcxxabi 4.0.1 hebd6815_0",
+   "libedit 3.1.20170329 hb402a30_2",
+   "libffi 3.2.1 h475c297_4",
+   "markupsafe 1.0 py36_0",
+   "nbformat 4.4.0 py_1",
+   "ncurses 6.1 h0a44026_0",
+   "openssl 1.0.2o h470a237_1",
+   "pip 10.0.1 py36_0",
+   "pkginfo 1.4.2 py_1",
+   "psutil 5.4.6 py36_0",
+   "pycosat 0.6.3 py36hee92d8f_0",
+   "pycparser 2.18 py36h724b2fc_1",
+   "pyopenssl 18.0.0 py36_0",
+   "pysocks 1.6.8 py36_0",
+   "python 3.6.5 hc167b69_1",
+   "python-dateutil 2.7.3 py_0",
+   "python.app 2 py36_8",
+   "pytz 2018.5 py_0",
+   "pyyaml 3.12 py36_1",
+   "readline 7.0 hc1231fa_4",
+   "requests 2.18.4 py36h4516966_1",
+   "ruamel_yaml 0.15.37 py36h1de35cc_2",
+   "setuptools 39.2.0 py36_0",
+   "six 1.11.0 py36h0e22d5e_1",
+   "sqlite 3.23.1 hf1716c9_0",
+   "tk 8.6.7 h35a86e2_3",
+   "traitlets 4.3.2 py36_0",
+   "urllib3 1.22 py36h68b9469_0",
+   "wheel 0.31.1 py36_0",
+   "xz 5.2.4 h1de35cc_4",
+   "yaml 0.1.7 hc338f04_2",
+   "zlib 1.2.11 hf3cbc9b_2"
+  ],
+  "summary": "C++ library for reading and working with the RADOLAN data format of the German Weather Service (DWD)."
+ },
+ "conda_build_config": {
+  "CONDA_BUILD_SYSROOT": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk",
+  "MACOSX_DEPLOYMENT_TARGET": "10.9",
+  "boost_cpp": "1.67.0",
+  "c_compiler": "toolchain_c",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "toolchain_cxx",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "python",
+  "lua": "5",
+  "macos_machine": "x86_64-apple-darwin13.4.0",
+  "macos_min_version": "10.9",
+  "netcdf_cxx4": "4.3",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "boost-cpp": {
+    "max_pin": "x.x.x"
+   },
+   "netcdf-cxx4": {
+    "max_pin": "x.x"
+   },
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.6",
+  "r_base": "3.4",
+  "target_platform": "osx-64"
+ },
+ "files": [
+  "bin/radolan2netcdf",
+  "bin/radolan2shapefile",
+  "include/radolan/config.h",
+  "include/radolan/conversion_exeption.h",
+  "include/radolan/coordinate_system.h",
+  "include/radolan/endianess.h",
+  "include/radolan/netcdf_converter.h",
+  "include/radolan/radolan.h",
+  "include/radolan/radolan_utils.h",
+  "include/radolan/read.h",
+  "include/radolan/shapefile_converter.h",
+  "include/radolan/types.h",
+  "include/radolan/version.h",
+  "include/radolan/version.h.in",
+  "lib/libradolan.dylib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "hf8fa176_11",
+  "build_number": 11,
+  "depends": [
+   "boost-cpp >=1.67.0,<1.67.1.0a0",
+   "netcdf-cxx4 >=4.3.0,<4.4.0a0",
+   "shapelib"
+  ],
+  "license": "MIT",
+  "name": "libradolan",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "timestamp": 1533683484420,
+  "version": "1.2.0"
+ },
+ "metadata_version": 1,
+ "name": "libradolan",
+ "raw_recipe": "{% set version = \"1.2.0\" %}\n{% set commit = \"131684d7d20f4e93dc9e829a74962d75e7ff78fa\" %}\n\npackage:\n  name: libradolan\n  version: {{ version }}\n\nsource:\n  fn: libradolan-{{ version }}.tar.gz\n  url: https://github.com/meteo-ubonn/radolan/archive/{{ commit }}.tar.gz\n  sha256: d435f21b6f74ba42669e390d43a3b6ab401ec3a9420e7fb13d7971a7a71c3c0e\n\nbuild:\n  number: 11\n  skip: True   # [win]\n\nrequirements:\n  build:\n    - cmake\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - boost-cpp\n    - netcdf-cxx4\n    - shapelib\n\n  run:\n    - boost-cpp\n    - netcdf-cxx4\n    - shapelib\n\ntest:\n  commands:\n    - test -d $PREFIX/include/radolan  # [not win]\n    - test -e $PREFIX/lib/libradolan.so  # [linux]\n    - test -e $PREFIX/lib/libradolan.dylib  # [osx]\n    - radolan2netcdf --version\n    - radolan2netcdf --endianess\n    - radolan2shapefile --version\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://meteo-ubonn.github.io/radolan/\n  license: MIT\n  summary: 'C++ library for reading and working with the RADOLAN data format of the German Weather Service (DWD).'\n\nextra:\n  recipe-maintainers:\n    - kmuehlbauer\n    - JuergenSimon\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://meteo-ubonn.github.io/radolan/",
+   "license": "MIT",
+   "summary": "C++ library for reading and working with the RADOLAN data format of the German Weather Service (DWD)."
+  },
+  "build": {
+   "number": "11",
+   "string": "hf8fa176_11"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "JuergenSimon",
+    "kmuehlbauer"
+   ]
+  },
+  "package": {
+   "name": "libradolan",
+   "version": "1.2.0"
+  },
+  "requirements": {
+   "build": [
+    "bzip2 1.0.6 1",
+    "ca-certificates 2018.4.16 0",
+    "cmake 3.12.0 h011004d_2",
+    "curl 7.61.0 h93b3f91_1",
+    "expat 2.2.5 hfc679d8_1",
+    "krb5 1.14.6 0",
+    "libssh2 1.8.0 h5b517e9_2",
+    "libuv 1.20.3 0",
+    "ncurses 6.1 hfc679d8_1",
+    "openssl 1.0.2o h470a237_1",
+    "rhash 1.3.4 h470a237_1",
+    "toolchain 2.1.6 0",
+    "toolchain_c_osx-64 2.1.6 0",
+    "toolchain_cxx_osx-64 2.1.6 0",
+    "xz 5.2.4 h470a237_1",
+    "zlib 1.2.11 h470a237_3"
+   ],
+   "host": [
+    "boost-cpp 1.67.0 h3a22d5f_0",
+    "bzip2 1.0.6 1",
+    "ca-certificates 2018.4.16 0",
+    "curl 7.61.0 h93b3f91_1",
+    "hdf4 4.2.13 0",
+    "hdf5 1.10.2 hc401514_1",
+    "icu 58.2 hfc679d8_0",
+    "jpeg 9c h470a237_0",
+    "krb5 1.14.6 0",
+    "libgfortran 3.0.0 0",
+    "libnetcdf 4.6.1 h039f2a5_4",
+    "libssh2 1.8.0 h5b517e9_2",
+    "netcdf-cxx4 4.3.0 h703b707_8",
+    "openssl 1.0.2o h470a237_1",
+    "shapelib 1.4.1 0",
+    "xz 5.2.4 h470a237_1",
+    "zlib 1.2.11 h470a237_3"
+   ],
+   "run": [
+    "boost-cpp >=1.67.0,<1.67.1.0a0",
+    "netcdf-cxx4 >=4.3.0,<4.4.0a0",
+    "shapelib"
+   ]
+  },
+  "source": {
+   "fn": "libradolan-1.2.0.tar.gz",
+   "sha256": "d435f21b6f74ba42669e390d43a3b6ab401ec3a9420e7fb13d7971a7a71c3c0e",
+   "url": "https://github.com/meteo-ubonn/radolan/archive/131684d7d20f4e93dc9e829a74962d75e7ff78fa.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -d $PREFIX/include/radolan",
+    "test -e $PREFIX/lib/libradolan.dylib",
+    "radolan2netcdf --version",
+    "radolan2netcdf --endianess",
+    "radolan2shapefile --version",
+    "conda inspect linkages -p $PREFIX $PKG_NAME",
+    "conda inspect objects -p $PREFIX $PKG_NAME"
+   ]
+  }
+ },
+ "version": "1.2.0"
+}
