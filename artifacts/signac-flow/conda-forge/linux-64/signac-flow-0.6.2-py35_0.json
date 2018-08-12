@@ -1,0 +1,262 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.12.1",
+  "conda_private": false,
+  "conda_version": "4.5.9",
+  "description": "The signac-flow tool provides the basic components to setup simple to\ncomplex workflows for signac projects. That includes the definition of\ndata pipelines, execution of data space operations and the submission\nof operations to high-performance super computers.\nThe implementation is in pure Python, requires signac and is tested for\nPython versions 2.7 and 3.4+.\n",
+  "dev_url": "https://bitbucket.org/glotzer/signac-flow",
+  "doc_url": "https://signac-flow.readthedocs.io",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "csadorf"
+   ]
+  },
+  "home": "http://glotzerlab.engin.umich.edu/signac",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "license_file": "LICENSE.txt",
+  "root_pkgs": [
+   "traitlets 4.3.2 py36_0",
+   "libstdcxx-ng 7.2.0 hdf63c60_3",
+   "requests 2.19.1 py36_1",
+   "cffi 1.11.5 py36_0",
+   "pyopenssl 18.0.0 py36_0",
+   "pycparser 2.18 py_1",
+   "filelock 3.0.4 py_1",
+   "libiconv 1.15 h470a237_1",
+   "cryptography 2.2.1 py36_0",
+   "psutil 5.4.6 py36_0",
+   "git 2.18.0 pl526hbb17d3c_1",
+   "xz 5.2.3 0",
+   "curl 7.61.0 h93b3f91_1",
+   "openssl 1.0.2o h470a237_1",
+   "packaging 17.1 py_0",
+   "tk 8.6.8 0",
+   "jsonschema 2.6.0 py36_1",
+   "conda 4.5.9 py36_0",
+   "idna 2.7 py36_2",
+   "pyyaml 3.12 py36_1",
+   "certifi 2018.4.16 py36_0",
+   "readline 7.0 0",
+   "patchelf 0.9 2",
+   "anaconda-client 1.7.1 py_0",
+   "zlib 1.2.11 0",
+   "yaml 0.1.7 0",
+   "krb5 1.14.6 0",
+   "asn1crypto 0.24.0 py_1",
+   "libffi 3.2.1 3",
+   "expat 2.2.5 hfc679d8_1",
+   "chardet 3.0.4 py36_3",
+   "wheel 0.31.1 py36_1",
+   "tini 0.18.0 h470a237_1",
+   "decorator 4.3.0 py_0",
+   "setuptools 40.0.0 py36_1",
+   "glob2 0.6 py_0",
+   "pytz 2018.5 py_0",
+   "gettext 0.19.8.1 0",
+   "jinja2 2.10 py_1",
+   "ruamel_yaml 0.15.35 py36_0",
+   "pysocks 1.6.8 py36_1",
+   "nbformat 4.4.0 py_1",
+   "python-dateutil 2.7.3 py_0",
+   "urllib3 1.23 py36_1",
+   "pkginfo 1.4.2 py_1",
+   "python 3.6.5 1",
+   "perl 5.26.2 h470a237_0",
+   "pyparsing 2.2.0 py_1",
+   "ipython_genutils 0.2.0 py_1",
+   "beautifulsoup4 4.6.1 py36_0",
+   "pycosat 0.6.3 py36_0",
+   "ncurses 5.9 10",
+   "jupyter_core 4.4.0 py_0",
+   "markupsafe 1.0 py36_0",
+   "six 1.11.0 py36_1",
+   "ca-certificates 2018.4.16 0",
+   "libssh2 1.8.0 h5b517e9_2",
+   "pip 18.0 py36_1",
+   "sqlite 3.20.1 2",
+   "conda-env 2.6.0 0",
+   "clyent 1.2.2 py_1",
+   "libgcc-ng 7.2.0 hdf63c60_3",
+   "gosu 1.10 0",
+   "conda-forge-ci-setup 1.3.6 0",
+   "conda-build 3.12.1 py36_0"
+  ],
+  "summary": "Project workflow management for signac projects."
+ },
+ "conda_build_config": {
+  "c_compiler": "gcc",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "numpy",
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.5",
+  "r_base": "3.4",
+  "target_platform": "linux-64"
+ },
+ "files": [
+  "bin/flow",
+  "bin/simple-scheduler",
+  "lib/python3.5/site-packages/flow/__init__.py",
+  "lib/python3.5/site-packages/flow/__main__.py",
+  "lib/python3.5/site-packages/flow/environment.py",
+  "lib/python3.5/site-packages/flow/environments/__init__.py",
+  "lib/python3.5/site-packages/flow/environments/incite.py",
+  "lib/python3.5/site-packages/flow/environments/umich.py",
+  "lib/python3.5/site-packages/flow/environments/xsede.py",
+  "lib/python3.5/site-packages/flow/errors.py",
+  "lib/python3.5/site-packages/flow/labels.py",
+  "lib/python3.5/site-packages/flow/legacy.py",
+  "lib/python3.5/site-packages/flow/operations.py",
+  "lib/python3.5/site-packages/flow/project.py",
+  "lib/python3.5/site-packages/flow/scheduling/__init__.py",
+  "lib/python3.5/site-packages/flow/scheduling/base.py",
+  "lib/python3.5/site-packages/flow/scheduling/fakescheduler.py",
+  "lib/python3.5/site-packages/flow/scheduling/simple_scheduler.py",
+  "lib/python3.5/site-packages/flow/scheduling/slurm.py",
+  "lib/python3.5/site-packages/flow/scheduling/status.py",
+  "lib/python3.5/site-packages/flow/scheduling/torque.py",
+  "lib/python3.5/site-packages/flow/template.py",
+  "lib/python3.5/site-packages/flow/templates/base_script.sh",
+  "lib/python3.5/site-packages/flow/templates/bridges.sh",
+  "lib/python3.5/site-packages/flow/templates/comet.sh",
+  "lib/python3.5/site-packages/flow/templates/eos.sh",
+  "lib/python3.5/site-packages/flow/templates/project_example.pyt",
+  "lib/python3.5/site-packages/flow/templates/project_minimal.pyt",
+  "lib/python3.5/site-packages/flow/templates/script.sh",
+  "lib/python3.5/site-packages/flow/templates/simple_scheduler.sh",
+  "lib/python3.5/site-packages/flow/templates/slurm.sh",
+  "lib/python3.5/site-packages/flow/templates/stampede2.sh",
+  "lib/python3.5/site-packages/flow/templates/titan.sh",
+  "lib/python3.5/site-packages/flow/templates/torque.sh",
+  "lib/python3.5/site-packages/flow/templates/umich.sh",
+  "lib/python3.5/site-packages/flow/util/__init__.py",
+  "lib/python3.5/site-packages/flow/util/config.py",
+  "lib/python3.5/site-packages/flow/util/dependencies.py",
+  "lib/python3.5/site-packages/flow/util/execution.py",
+  "lib/python3.5/site-packages/flow/util/misc.py",
+  "lib/python3.5/site-packages/flow/util/progressbar.py",
+  "lib/python3.5/site-packages/flow/util/tabulate.py",
+  "lib/python3.5/site-packages/flow/util/template_filters.py",
+  "lib/python3.5/site-packages/flow/util/tqdm/__init__.py",
+  "lib/python3.5/site-packages/flow/util/tqdm/__main__.py",
+  "lib/python3.5/site-packages/flow/util/tqdm/_main.py",
+  "lib/python3.5/site-packages/flow/util/tqdm/_tqdm.py",
+  "lib/python3.5/site-packages/flow/util/tqdm/_tqdm_gui.py",
+  "lib/python3.5/site-packages/flow/util/tqdm/_tqdm_notebook.py",
+  "lib/python3.5/site-packages/flow/util/tqdm/_tqdm_pandas.py",
+  "lib/python3.5/site-packages/flow/util/tqdm/_utils.py",
+  "lib/python3.5/site-packages/flow/util/tqdm/_version.py",
+  "lib/python3.5/site-packages/flow/util/translate.py",
+  "lib/python3.5/site-packages/signac_flow-0.6.2-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/signac_flow-0.6.2-py3.5.egg-info/zip-safe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "jinja2 >=2.8",
+   "python >=3.5,<3.6.0a0",
+   "signac"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "signac-flow",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1534090322563,
+  "version": "0.6.2"
+ },
+ "metadata_version": 1,
+ "name": "signac-flow",
+ "raw_recipe": "{% set name = \"signac-flow\" %}\n{% set version = \"0.6.2\" %}\n{% set sha256 = \"7325400faae005a9144d19866228b9d3990c01652bf2d670e281b16aa6616be0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://bitbucket.org/glotzer/signac-flow/get/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  script: python setup.py install --single-version-externally-managed --record record.txt\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - enum34  # [py27]\n    - jinja2 >=2.8\n  run:\n    - python\n    - enum34  # [py27]\n    - signac\n    - jinja2 >=2.8\n\ntest:\n  imports:\n    - flow\n\nabout:\n  home: http://glotzerlab.engin.umich.edu/signac\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.txt\n  summary: 'Project workflow management for signac projects.'\n  description: |\n    The signac-flow tool provides the basic components to setup simple to\n    complex workflows for signac projects. That includes the definition of\n    data pipelines, execution of data space operations and the submission\n    of operations to high-performance super computers.\n    The implementation is in pure Python, requires signac and is tested for\n    Python versions 2.7 and 3.4+.\n  doc_url: https://signac-flow.readthedocs.io\n  dev_url: https://bitbucket.org/glotzer/signac-flow\n\nextra:\n  recipe-maintainers:\n    - csadorf\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "The signac-flow tool provides the basic components to setup simple to\ncomplex workflows for signac projects. That includes the definition of\ndata pipelines, execution of data space operations and the submission\nof operations to high-performance super computers.\nThe implementation is in pure Python, requires signac and is tested for\nPython versions 2.7 and 3.4+.\n",
+   "dev_url": "https://bitbucket.org/glotzer/signac-flow",
+   "doc_url": "https://signac-flow.readthedocs.io",
+   "home": "http://glotzerlab.engin.umich.edu/signac",
+   "license": "BSD 3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE.txt",
+   "summary": "Project workflow management for signac projects."
+  },
+  "build": {
+   "number": "0",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py35_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "csadorf"
+   ]
+  },
+  "package": {
+   "name": "signac-flow",
+   "version": "0.6.2"
+  },
+  "requirements": {
+   "build": [
+    "bzip2 1.0.6 h470a237_2",
+    "ca-certificates 2018.4.16 0",
+    "certifi 2018.4.16 py35_0",
+    "jinja2 2.10 py_1",
+    "libffi 3.2.1 hfc679d8_4",
+    "libgcc-ng 7.2.0 hdf63c60_3",
+    "libstdcxx-ng 7.2.0 hdf63c60_3",
+    "markupsafe 1.0 py35_0",
+    "ncurses 6.1 hfc679d8_1",
+    "openssl 1.0.2o h470a237_1",
+    "python 3.5.5 h5001a0f_2",
+    "readline 7.0 haf1bffa_1",
+    "setuptools 40.0.0 py35_1",
+    "sqlite 3.24.0 h2f33b56_0",
+    "tk 8.6.8 0",
+    "xz 5.2.4 h470a237_1",
+    "zlib 1.2.11 h470a237_3"
+   ],
+   "run": [
+    "jinja2 >=2.8",
+    "python >=3.5,<3.6.0a0",
+    "signac"
+   ]
+  },
+  "source": {
+   "fn": "signac-flow-0.6.2.tar.gz",
+   "sha256": "7325400faae005a9144d19866228b9d3990c01652bf2d670e281b16aa6616be0",
+   "url": "https://bitbucket.org/glotzer/signac-flow/get/v0.6.2.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "flow"
+   ]
+  }
+ },
+ "version": "0.6.2"
+}
