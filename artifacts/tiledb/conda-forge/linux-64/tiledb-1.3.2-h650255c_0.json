@@ -1,0 +1,294 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.12.1",
+  "conda_private": false,
+  "conda_version": "4.5.10",
+  "description": "TileDB is an efficient multi-dimensional array management system which introduces\na novel on-disk format that can effectively store dense and sparse array data with\nsupport for fast updates and reads. It features excellent compression, and an efficient\nparallel I/O system with high scalability.\n",
+  "dev_url": "https://github.com/TileDB-Inc/TileDB",
+  "doc_url": "http://docs.tiledb.io",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "stavrospapadopoulos",
+    "jakebolewski",
+    "tdenniston"
+   ]
+  },
+  "home": "http://tiledb.io",
+  "license": "MIT",
+  "license_family": "MIT",
+  "license_file": "LICENSE",
+  "root_pkgs": [
+   "traitlets 4.3.2 py36_0",
+   "libstdcxx-ng 7.2.0 hdf63c60_3",
+   "requests 2.19.1 py36_1",
+   "cffi 1.11.5 py36_0",
+   "pyopenssl 18.0.0 py36_0",
+   "pycparser 2.18 py_1",
+   "filelock 3.0.4 py_1",
+   "cryptography 2.2.1 py36_0",
+   "psutil 5.4.6 py36_0",
+   "git 2.18.0 pl526hbb17d3c_1",
+   "xz 5.2.3 0",
+   "curl 7.61.0 h93b3f91_1",
+   "openssl 1.0.2o h470a237_1",
+   "packaging 17.1 py_0",
+   "tk 8.6.8 0",
+   "jsonschema 2.6.0 py36_1",
+   "idna 2.7 py36_2",
+   "pyyaml 3.12 py36_1",
+   "readline 7.0 0",
+   "anaconda-client 1.7.1 py_0",
+   "zlib 1.2.11 0",
+   "yaml 0.1.7 0",
+   "krb5 1.14.6 0",
+   "libffi 3.2.1 3",
+   "expat 2.2.5 hfc679d8_1",
+   "chardet 3.0.4 py36_3",
+   "wheel 0.31.1 py36_1",
+   "tini 0.18.0 h470a237_1",
+   "asn1crypto 0.24.0 py36_2",
+   "decorator 4.3.0 py_0",
+   "setuptools 40.0.0 py36_1",
+   "glob2 0.6 py_0",
+   "pytz 2018.5 py_0",
+   "gettext 0.19.8.1 0",
+   "jinja2 2.10 py_1",
+   "ruamel_yaml 0.15.35 py36_0",
+   "pysocks 1.6.8 py36_1",
+   "nbformat 4.4.0 py_1",
+   "conda-build 3.12.1 py36_0",
+   "libiconv 1.15 h470a237_2",
+   "conda-env 2.6.0 1",
+   "python-dateutil 2.7.3 py_0",
+   "urllib3 1.23 py36_1",
+   "pkginfo 1.4.2 py_1",
+   "patchelf 0.9 hfc679d8_2",
+   "python 3.6.5 1",
+   "perl 5.26.2 h470a237_0",
+   "pyparsing 2.2.0 py_1",
+   "ipython_genutils 0.2.0 py_1",
+   "beautifulsoup4 4.6.1 py36_0",
+   "pycosat 0.6.3 py36_0",
+   "ncurses 5.9 10",
+   "jupyter_core 4.4.0 py_0",
+   "markupsafe 1.0 py36_0",
+   "six 1.11.0 py36_1",
+   "ca-certificates 2018.4.16 0",
+   "libssh2 1.8.0 h5b517e9_2",
+   "pip 18.0 py36_1",
+   "sqlite 3.20.1 2",
+   "clyent 1.2.2 py_1",
+   "libgcc-ng 7.2.0 hdf63c60_3",
+   "gosu 1.10 0",
+   "conda-forge-ci-setup 1.3.6 0",
+   "conda 4.5.10 py36_0",
+   "certifi 2018.8.13 py36_0"
+  ],
+  "summary": "TileDB sparse and dense multi-dimensional array data management"
+ },
+ "conda_build_config": {
+  "bzip2": "1",
+  "c_compiler": "toolchain_c",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "toolchain_cxx",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "python",
+  "lua": "5",
+  "lz4_c": "1.8.1",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "bzip2": {
+    "max_pin": "x"
+   },
+   "lz4-c": {
+    "max_pin": "x.x.x"
+   },
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   },
+   "zlib": {
+    "max_pin": "x.x"
+   },
+   "zstd": {
+    "max_pin": "x.x.x"
+   }
+  },
+  "python": "3.6",
+  "r_base": "3.4",
+  "target_platform": "linux-64",
+  "zlib": "1.2",
+  "zstd": "1.3.3"
+ },
+ "files": [
+  "include/tiledb/array.h",
+  "include/tiledb/array_schema.h",
+  "include/tiledb/attribute.h",
+  "include/tiledb/compressor.h",
+  "include/tiledb/config.h",
+  "include/tiledb/context.h",
+  "include/tiledb/core_interface.h",
+  "include/tiledb/deleter.h",
+  "include/tiledb/dimension.h",
+  "include/tiledb/domain.h",
+  "include/tiledb/exception.h",
+  "include/tiledb/group.h",
+  "include/tiledb/map.h",
+  "include/tiledb/map_schema.h",
+  "include/tiledb/object.h",
+  "include/tiledb/object_iter.h",
+  "include/tiledb/query.h",
+  "include/tiledb/schema_base.h",
+  "include/tiledb/stats.h",
+  "include/tiledb/tiledb",
+  "include/tiledb/tiledb.h",
+  "include/tiledb/tiledb_enum.h",
+  "include/tiledb/tiledb_export.h",
+  "include/tiledb/tiledb_version.h",
+  "include/tiledb/type.h",
+  "include/tiledb/utils.h",
+  "include/tiledb/version.h",
+  "include/tiledb/vfs.h",
+  "lib/cmake/TileDB/TileDBConfig.cmake",
+  "lib/cmake/TileDB/TileDBTargets-release.cmake",
+  "lib/cmake/TileDB/TileDBTargets.cmake",
+  "lib/libtiledb.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "h650255c_0",
+  "build_number": 0,
+  "depends": [
+   "aws-sdk-cpp 1.4.*",
+   "blosc 1.*",
+   "bzip2 >=1.0.6,<2.0a0",
+   "libgcc-ng >=4.9",
+   "libstdcxx-ng >=4.9",
+   "lz4-c >=1.8.1.2,<1.8.2.0a0",
+   "tbb 2018.0.5.*",
+   "zlib >=1.2.11,<1.3.0a0",
+   "zstd >=1.3.3,<1.3.4.0a0"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "tiledb",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1534197464404,
+  "version": "1.3.2"
+ },
+ "metadata_version": 1,
+ "name": "tiledb",
+ "raw_recipe": "{% set name = \"TileDB\" %}\n{% set version = \"1.3.2\" %}\n{% set sha256 = \"9e3aec499ebb086b79ed62ffc7373d20dd4fb1caf639dd1e11d3a591c04b7b92\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://github.com/TileDB-Inc/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - cmake >=3.2\n    - pkg-config  # [not win]\n  host:\n    - aws-sdk-cpp 1.4.*\n    - zlib\n    - bzip2\n    - zstd\n    - lz4-c\n    - blosc 1.*\n    - tbb-devel 2018.0.5\n  run:\n    - aws-sdk-cpp 1.4.*\n    - zlib\n    - bzip2\n    - zstd\n    - lz4-c\n    - blosc 1.*\n    - tbb 2018.0.5\n\ntest:\n  commands:\n    - test -e $PREFIX/include/tiledb/tiledb.h  # [unix]\n    - test -e $PREFIX/include/tiledb/tiledb  # [unix]\n    - test -e $PREFIX/lib/libtiledb$SHLIB_EXT  # [unix]\n    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]\n    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]\n\nabout:\n  home: http://tiledb.io\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'TileDB sparse and dense multi-dimensional array data management'\n  description: |\n    TileDB is an efficient multi-dimensional array management system which introduces\n    a novel on-disk format that can effectively store dense and sparse array data with\n    support for fast updates and reads. It features excellent compression, and an efficient\n    parallel I/O system with high scalability.\n  doc_url: http://docs.tiledb.io\n  dev_url: https://github.com/TileDB-Inc/TileDB\n\nextra:\n  recipe-maintainers:\n    - stavrospapadopoulos\n    - jakebolewski\n    - tdenniston\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "TileDB is an efficient multi-dimensional array management system which introduces\na novel on-disk format that can effectively store dense and sparse array data with\nsupport for fast updates and reads. It features excellent compression, and an efficient\nparallel I/O system with high scalability.\n",
+   "dev_url": "https://github.com/TileDB-Inc/TileDB",
+   "doc_url": "http://docs.tiledb.io",
+   "home": "http://tiledb.io",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "TileDB sparse and dense multi-dimensional array data management"
+  },
+  "build": {
+   "number": "0",
+   "string": "h650255c_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "jakebolewski",
+    "stavrospapadopoulos",
+    "tdenniston"
+   ]
+  },
+  "package": {
+   "name": "tiledb",
+   "version": "1.3.2"
+  },
+  "requirements": {
+   "build": [
+    "bzip2 1.0.6 h470a237_2",
+    "ca-certificates 2018.4.16 0",
+    "cmake 3.12.0 h011004d_2",
+    "curl 7.61.0 h93b3f91_1",
+    "expat 2.2.5 hfc679d8_1",
+    "krb5 1.14.6 0",
+    "libgcc-ng 7.2.0 hdf63c60_3",
+    "libssh2 1.8.0 h5b517e9_2",
+    "libstdcxx-ng 7.2.0 hdf63c60_3",
+    "libuv 1.22.0 h470a237_1",
+    "ncurses 6.1 hfc679d8_1",
+    "openssl 1.0.2o h470a237_1",
+    "pkg-config 0.29.2 h470a237_3",
+    "rhash 1.3.4 0",
+    "toolchain 2.1.6 0",
+    "toolchain_c_linux-64 2.1.6 0",
+    "toolchain_cxx_linux-64 2.1.6 0",
+    "xz 5.2.4 h470a237_1",
+    "zlib 1.2.11 h470a237_3"
+   ],
+   "host": [
+    "aws-sdk-cpp 1.4.93 h635df5c_0",
+    "blosc 1.14.4 hfc679d8_0",
+    "bzip2 1.0.6 h470a237_2",
+    "ca-certificates 2018.4.16 0",
+    "curl 7.61.0 h93b3f91_1",
+    "krb5 1.14.6 0",
+    "libgcc-ng 7.2.0 hdf63c60_3",
+    "libssh2 1.8.0 h5b517e9_2",
+    "libstdcxx-ng 7.2.0 hdf63c60_3",
+    "lz4-c 1.8.1.2 0",
+    "openssl 1.0.2o h470a237_1",
+    "tbb 2018.0.5 h2d50403_0",
+    "tbb-devel 2018.0.5 h2d50403_0",
+    "zlib 1.2.11 h470a237_3",
+    "zstd 1.3.3 0"
+   ],
+   "run": [
+    "aws-sdk-cpp 1.4.*",
+    "blosc 1.*",
+    "bzip2 >=1.0.6,<2.0a0",
+    "bzip2 >=1.0.6,<2.0a0",
+    "libgcc-ng >=4.9",
+    "libstdcxx-ng >=4.9",
+    "lz4-c >=1.8.1.2,<1.8.2.0a0",
+    "tbb 2018.0.5.*",
+    "zlib >=1.2.11,<1.3.0a0",
+    "zlib >=1.2.11,<1.3.0a0",
+    "zstd >=1.3.3,<1.3.4.0a0"
+   ]
+  },
+  "source": {
+   "fn": "TileDB-1.3.2.tar.gz",
+   "sha256": "9e3aec499ebb086b79ed62ffc7373d20dd4fb1caf639dd1e11d3a591c04b7b92",
+   "url": "https://github.com/TileDB-Inc/TileDB/archive/1.3.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -e $PREFIX/include/tiledb/tiledb.h",
+    "test -e $PREFIX/include/tiledb/tiledb",
+    "test -e $PREFIX/lib/libtiledb$SHLIB_EXT",
+    "conda inspect linkages -p $PREFIX $PKG_NAME"
+   ]
+  }
+ },
+ "version": "1.3.2"
+}
