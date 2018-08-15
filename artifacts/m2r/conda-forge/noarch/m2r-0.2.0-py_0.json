@@ -1,0 +1,206 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.12.1",
+  "conda_private": false,
+  "conda_version": "4.5.10",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "home": "https://github.com/miyakogi/m2r",
+  "license": "MIT",
+  "license_family": "MIT",
+  "license_file": "LICENSE",
+  "root_pkgs": [
+   "traitlets 4.3.2 py36_0",
+   "libstdcxx-ng 7.2.0 hdf63c60_3",
+   "requests 2.19.1 py36_1",
+   "cffi 1.11.5 py36_0",
+   "pyopenssl 18.0.0 py36_0",
+   "pycparser 2.18 py_1",
+   "filelock 3.0.4 py_1",
+   "cryptography 2.2.1 py36_0",
+   "psutil 5.4.6 py36_0",
+   "git 2.18.0 pl526hbb17d3c_1",
+   "xz 5.2.3 0",
+   "curl 7.61.0 h93b3f91_1",
+   "openssl 1.0.2o h470a237_1",
+   "packaging 17.1 py_0",
+   "tk 8.6.8 0",
+   "jsonschema 2.6.0 py36_1",
+   "idna 2.7 py36_2",
+   "pyyaml 3.12 py36_1",
+   "readline 7.0 0",
+   "anaconda-client 1.7.1 py_0",
+   "zlib 1.2.11 0",
+   "yaml 0.1.7 0",
+   "krb5 1.14.6 0",
+   "libffi 3.2.1 3",
+   "expat 2.2.5 hfc679d8_1",
+   "chardet 3.0.4 py36_3",
+   "wheel 0.31.1 py36_1",
+   "tini 0.18.0 h470a237_1",
+   "asn1crypto 0.24.0 py36_2",
+   "decorator 4.3.0 py_0",
+   "setuptools 40.0.0 py36_1",
+   "glob2 0.6 py_0",
+   "pytz 2018.5 py_0",
+   "gettext 0.19.8.1 0",
+   "jinja2 2.10 py_1",
+   "ruamel_yaml 0.15.35 py36_0",
+   "pysocks 1.6.8 py36_1",
+   "nbformat 4.4.0 py_1",
+   "conda-build 3.12.1 py36_0",
+   "libiconv 1.15 h470a237_2",
+   "conda-env 2.6.0 1",
+   "python-dateutil 2.7.3 py_0",
+   "urllib3 1.23 py36_1",
+   "pkginfo 1.4.2 py_1",
+   "patchelf 0.9 hfc679d8_2",
+   "python 3.6.5 1",
+   "perl 5.26.2 h470a237_0",
+   "pyparsing 2.2.0 py_1",
+   "ipython_genutils 0.2.0 py_1",
+   "beautifulsoup4 4.6.1 py36_0",
+   "pycosat 0.6.3 py36_0",
+   "ncurses 5.9 10",
+   "jupyter_core 4.4.0 py_0",
+   "markupsafe 1.0 py36_0",
+   "six 1.11.0 py36_1",
+   "ca-certificates 2018.4.16 0",
+   "libssh2 1.8.0 h5b517e9_2",
+   "pip 18.0 py36_1",
+   "sqlite 3.20.1 2",
+   "clyent 1.2.2 py_1",
+   "libgcc-ng 7.2.0 hdf63c60_3",
+   "gosu 1.10 0",
+   "conda-forge-ci-setup 1.3.6 0",
+   "conda 4.5.10 py36_0",
+   "certifi 2018.8.13 py36_0"
+  ],
+  "summary": "Markdown and reStructuredText in a single file"
+ },
+ "conda_build_config": {
+  "c_compiler": "gcc",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "python",
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "2.7",
+  "r_base": "3.4",
+  "target_platform": "linux-64"
+ },
+ "files": [
+  "site-packages/m2r-0.2.0-py2.7.egg-info/PKG-INFO",
+  "site-packages/m2r-0.2.0-py2.7.egg-info/not-zip-safe",
+  "site-packages/m2r.py"
+ ],
+ "index": {
+  "arch": null,
+  "build": "py_0",
+  "build_number": 0,
+  "depends": [
+   "docutils",
+   "mistune",
+   "python"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "m2r",
+  "noarch": "python",
+  "platform": null,
+  "subdir": "noarch",
+  "timestamp": 1534290041737,
+  "version": "0.2.0"
+ },
+ "metadata_version": 1,
+ "name": "m2r",
+ "raw_recipe": "{% set version = \"0.2.0\" %}\n\npackage:\n  name: m2r\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/m/m2r/m2r-{{ version }}.tar.gz\n  sha256: b64ee5ac870311a69967fe787be8607df67b02a329f0fc76c8bf477336a99c78\n\nbuild:\n  number: 0\n  noarch: python\n  entry_points:\n    - m2r = m2r:main\n  script: \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - docutils\n    - mistune\n\ntest:\n  commands:\n    - m2r --help\n\nabout:\n  home: https://github.com/miyakogi/m2r\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: Markdown and reStructuredText in a single file\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/miyakogi/m2r",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Markdown and reStructuredText in a single file"
+  },
+  "build": {
+   "entry_points": [
+    "m2r = m2r:main"
+   ],
+   "noarch": "python",
+   "number": "0",
+   "script": "/home/conda/feedstock_root/build_artifacts/m2r_1534289992114/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/bin/python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv",
+   "string": "py_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "m2r",
+   "version": "0.2.0"
+  },
+  "requirements": {
+   "host": [
+    "bzip2 1.0.6 h470a237_2",
+    "ca-certificates 2018.4.16 0",
+    "certifi 2018.8.13 py27_0",
+    "libgcc-ng 7.2.0 hdf63c60_3",
+    "libstdcxx-ng 7.2.0 hdf63c60_3",
+    "ncurses 6.1 hfc679d8_1",
+    "openssl 1.0.2o h470a237_1",
+    "pip 18.0 py27_1",
+    "python 2.7.15 h9fef7bc_0",
+    "readline 7.0 haf1bffa_1",
+    "setuptools 40.0.0 py27_1",
+    "sqlite 3.24.0 h2f33b56_0",
+    "tk 8.6.8 0",
+    "wheel 0.31.1 py27_1",
+    "zlib 1.2.11 h470a237_3"
+   ],
+   "run": [
+    "docutils",
+    "mistune",
+    "python"
+   ]
+  },
+  "source": {
+   "sha256": "b64ee5ac870311a69967fe787be8607df67b02a329f0fc76c8bf477336a99c78",
+   "url": "https://pypi.io/packages/source/m/m2r/m2r-0.2.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "m2r --help"
+   ]
+  }
+ },
+ "version": "0.2.0"
+}
