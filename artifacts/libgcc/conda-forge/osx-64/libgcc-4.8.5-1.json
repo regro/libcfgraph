@@ -1,0 +1,78 @@
+{
+ "about": {},
+ "conda_build_config": {},
+ "files": [
+  "lib/libgcc_s.1.dylib",
+  "lib/libgcc_s_ppc64.1.dylib",
+  "lib/libgcc_s_x86_64.1.dylib",
+  "lib/libgfortran.3.dylib",
+  "lib/libgfortran.dylib",
+  "lib/libgomp.1.dylib",
+  "lib/libgomp.dylib",
+  "lib/libquadmath.0.dylib",
+  "lib/libquadmath.dylib",
+  "lib/libstdc++.6.dylib",
+  "lib/libstdc++.dylib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [],
+  "license": "GPL",
+  "name": "libgcc",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "version": "4.8.5"
+ },
+ "metadata_version": 1,
+ "name": "libgcc",
+ "raw_recipe": "package:\n  name: libgcc\n  version: 4.8.5\n\n\nrequirements:\n  build:\n    - gcc 4.8.5\n\nbuild:\n  number: 1\n  always_include_files:\n    - lib/libgcc_s.1.dylib # [osx]\n    - lib/libgcc_s_ppc64.1.dylib # [osx]\n    - lib/libgcc_s_x86_64.1.dylib # [osx]\n    - lib/libgcc_s.so.1 # [linux]\n    - lib/libgcc_s.so # [linux]\n\n    - lib/libgomp.1.dylib # [osx]\n    - lib/libgomp.dylib # [osx]\n    - lib/libgomp.so # [linux]\n    - lib/libgomp.so.1 # [linux]\n    - lib/libgomp.so.1.0.0 # [linux]\n\n    - lib/libgfortran.3.dylib # [osx]\n    - lib/libgfortran.dylib # [osx]\n    - lib/libgfortran.so # [linux]\n    - lib/libgfortran.so.3 # [linux]\n    - lib/libgfortran.so.3.0.0 # [linux]\n\n    - lib/libquadmath.0.dylib # [osx]\n    - lib/libquadmath.dylib # [osx]\n    - lib/libquadmath.so # [linux]\n    - lib/libquadmath.so.0 # [linux]\n    - lib/libquadmath.so.0.0.0 # [linux]\n\n    - lib/libstdc++.6.dylib # [osx]\n    - lib/libstdc++.dylib # [osx]\n    - lib/libstdc++.so # [linux]\n    - lib/libstdc++.so.6 # [linux]\n    - lib/libstdc++.so.6.0.19 # [linux]\n\nabout:\n  home: http://gcc.gnu.org/\n  summary: Shared libraries for the GNU Compiler Collection\n  license: GPL\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://gcc.gnu.org/",
+   "license": "GPL",
+   "summary": "Shared libraries for the GNU Compiler Collection"
+  },
+  "build": {
+   "always_include_files": [
+    "lib/libgcc_s.1.dylib",
+    "lib/libgcc_s_ppc64.1.dylib",
+    "lib/libgcc_s_x86_64.1.dylib",
+    "lib/libgcc_s.so.1",
+    "lib/libgcc_s.so",
+    "lib/libgomp.1.dylib",
+    "lib/libgomp.dylib",
+    "lib/libgomp.so",
+    "lib/libgomp.so.1",
+    "lib/libgomp.so.1.0.0",
+    "lib/libgfortran.3.dylib",
+    "lib/libgfortran.dylib",
+    "lib/libgfortran.so",
+    "lib/libgfortran.so.3",
+    "lib/libgfortran.so.3.0.0",
+    "lib/libquadmath.0.dylib",
+    "lib/libquadmath.dylib",
+    "lib/libquadmath.so",
+    "lib/libquadmath.so.0",
+    "lib/libquadmath.so.0.0.0",
+    "lib/libstdc++.6.dylib",
+    "lib/libstdc++.dylib",
+    "lib/libstdc++.so",
+    "lib/libstdc++.so.6",
+    "lib/libstdc++.so.6.0.19"
+   ],
+   "number": 1
+  },
+  "package": {
+   "name": "libgcc",
+   "version": "4.8.5"
+  },
+  "requirements": {
+   "build": [
+    "gcc 4.8.5"
+   ]
+  }
+ },
+ "version": "4.8.5"
+}
