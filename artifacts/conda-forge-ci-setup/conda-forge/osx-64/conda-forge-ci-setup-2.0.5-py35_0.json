@@ -1,0 +1,246 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.13.0",
+  "conda_private": false,
+  "conda_version": "4.5.11",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "isuruf",
+    "jakirkham",
+    "jjhelmus",
+    "msarahan",
+    "mwcraig",
+    "ocefpaf",
+    "patricksnape",
+    "pelson",
+    "scopatz",
+    "mariusvniekerk",
+    "CJ-Wright"
+   ]
+  },
+  "home": "https://github.com/conda-forge/conda-forge-build-setup-feedstock",
+  "license": "BSD 3-clause",
+  "root_pkgs": [
+   "anaconda-client 1.7.1 py36_0",
+   "asn1crypto 0.24.0 py36_0",
+   "beautifulsoup4 4.6.3 py36_0",
+   "ca-certificates 2018.03.07 0",
+   "certifi 2018.8.24 py36_1",
+   "cffi 1.11.5 py36h342bebf_0",
+   "chardet 3.0.4 py36h96c241c_1",
+   "click 6.7 py36hec950be_0",
+   "clyent 1.2.2 py36_1",
+   "conda 4.5.11 py36_0",
+   "conda-build 3.13.0 py36_0",
+   "conda-env 2.6.0 h36134e3_0",
+   "conda-forge-ci-setup 2.0.3 py36_0",
+   "cryptography 2.2.2 py36h1de35cc_0",
+   "decorator 4.3.0 py36_0",
+   "filelock 3.0.6 py36_0",
+   "glob2 0.6 py36_0",
+   "idna 2.6 py36h8628d0a_1",
+   "ipython_genutils 0.2.0 py36h241746c_0",
+   "jinja2 2.10 py36_0",
+   "jsonschema 2.6.0 py36hb385e00_0",
+   "jupyter_core 4.4.0 py36_0",
+   "libcxx 4.0.1 h579ed51_0",
+   "libcxxabi 4.0.1 hebd6815_0",
+   "libedit 3.1.20170329 hb402a30_2",
+   "libffi 3.2.1 h475c297_4",
+   "markupsafe 1.0 py36h1de35cc_1",
+   "nbformat 4.4.0 py36h827af21_0",
+   "ncurses 6.1 h0a44026_0",
+   "openssl 1.0.2p h1de35cc_0",
+   "pip 10.0.1 py36_0",
+   "pkginfo 1.4.2 py36_1",
+   "psutil 5.4.7 py36h1de35cc_0",
+   "pycosat 0.6.3 py36hee92d8f_0",
+   "pycparser 2.18 py36h724b2fc_1",
+   "pyopenssl 18.0.0 py36_0",
+   "pysocks 1.6.8 py36_0",
+   "python 3.6.5 hc167b69_1",
+   "python-dateutil 2.7.3 py36_0",
+   "python.app 2 py36_8",
+   "pytz 2018.5 py36_0",
+   "pyyaml 3.13 py36h1de35cc_0",
+   "readline 7.0 hc1231fa_4",
+   "requests 2.18.4 py36h4516966_1",
+   "ruamel_yaml 0.15.37 py36h1de35cc_2",
+   "setuptools 39.2.0 py36_0",
+   "six 1.11.0 py36h0e22d5e_1",
+   "sqlite 3.23.1 hf1716c9_0",
+   "tk 8.6.7 h35a86e2_3",
+   "traitlets 4.3.2 py36h65bd3ce_0",
+   "urllib3 1.22 py36h68b9469_0",
+   "wheel 0.31.1 py36_0",
+   "xz 5.2.4 h1de35cc_4",
+   "yaml 0.1.7 hc338f04_2",
+   "zlib 1.2.11 hf3cbc9b_2"
+  ],
+  "summary": "A package installed by conda-forge each time a build is run on CI. This package has side-effects to your conda config."
+ },
+ "conda_build_config": {
+  "CONDA_BUILD_SYSROOT": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk",
+  "MACOSX_DEPLOYMENT_TARGET": "10.9",
+  "build_number_decrement": "0",
+  "c_compiler": "clang",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "clangxx",
+  "docker_image": "condaforge/linux-anvil",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "numpy",
+  "lua": "5",
+  "macos_machine": "x86_64-apple-darwin13.4.0",
+  "macos_min_version": "10.9",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.5",
+  "r_base": "3.4",
+  "target_platform": "osx-64"
+ },
+ "files": [
+  "bin/ff_ci_pr_build",
+  "bin/make_build_number",
+  "bin/mangle_compiler",
+  "bin/run_conda_forge_build_setup",
+  "bin/setup_conda_rc",
+  "bin/upload_or_check_non_existence",
+  "bin/upload_package",
+  "lib/python3.5/site-packages/conda_forge_ci_setup-2.0.0-py3.5.egg-info/PKG-INFO",
+  "lib/python3.5/site-packages/conda_forge_ci_setup/__init__.py",
+  "lib/python3.5/site-packages/conda_forge_ci_setup/build_utils.py",
+  "lib/python3.5/site-packages/conda_forge_ci_setup/ff_ci_pr_build.py",
+  "lib/python3.5/site-packages/conda_forge_ci_setup/upload_or_check_non_existence.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35_0",
+  "build_number": 0,
+  "depends": [
+   "anaconda-client",
+   "click",
+   "conda >=4.3",
+   "conda-build 3.*",
+   "conda-env",
+   "jinja2",
+   "python >=3.5,<3.6.0a0"
+  ],
+  "license": "BSD 3-clause",
+  "name": "conda-forge-ci-setup",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "timestamp": 1535555989845,
+  "version": "2.0.5"
+ },
+ "metadata_version": 1,
+ "name": "conda-forge-ci-setup",
+ "raw_recipe": "{% set name = \"conda-forge-ci-setup\" %}\n{% set version = \"2.0.5\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nbuild:\n  number: 0\n  script:\n    - if not exist \"%LIBRARY_BIN%\" mkdir \"%LIBRARY_BIN%\"                                                                 # [win]\n    - mkdir -p \"${PREFIX}/bin\"                                                                                           # [unix]\n    - COPY \"%RECIPE_DIR%\\\\run_conda_forge_build_setup_win.bat\" \"%SCRIPTS%\\\\run_conda_forge_build_setup.bat\"              # [win]\n    - cp \"${RECIPE_DIR}/run_conda_forge_build_setup_osx\" \"${PREFIX}/bin/run_conda_forge_build_setup\"                     # [osx]\n    - cp \"${RECIPE_DIR}/run_conda_forge_build_setup_linux\" \"${PREFIX}/bin/run_conda_forge_build_setup\"                   # [linux]\n    - cd \"%RECIPE_DIR%\"   # [win]\n    - cd \"${RECIPE_DIR}\"  # [unix]\n    - \"{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv\"\n    - echo \"${RECIPE_DIR}\"\n  entry_points:\n    - ff_ci_pr_build = conda_forge_ci_setup.ff_ci_pr_build:main\n    - upload_or_check_non_existence = conda_forge_ci_setup.upload_or_check_non_existence:main\n    - setup_conda_rc = conda_forge_ci_setup.build_utils:setup_conda_rc\n    - upload_package = conda_forge_ci_setup.build_utils:upload_package\n    - mangle_compiler = conda_forge_ci_setup.build_utils:mangle_compiler\n    - make_build_number = conda_forge_ci_setup.build_utils:make_build_number\n  skip: True  # [py2k]\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - python\n    - conda >=4.3\n    - conda-env\n    - click\n    - jinja2\n    - anaconda-client\n    - conda-build 3.*\n    - vs2008_express_vc_python_patch  # [win]\n\ntest:\n  commands:\n    - if not exist \"%PREFIX%\\\\Scripts\\\\run_conda_forge_build_setup.bat\" exit 1    # [win]\n    - test -f \"${PREFIX}/bin/run_conda_forge_build_setup\"                         # [unix]\n    - ff_ci_pr_build --help\n    - upload_or_check_non_existence --help\n    - setup_conda_rc --help\n    - upload_package --help\n    - make_build_number --help\n\n\nabout:\n  home: https://github.com/conda-forge/conda-forge-build-setup-feedstock\n  summary: A package installed by conda-forge each time a build is run on CI. This package has side-effects to your conda config.\n  license: BSD 3-clause\n\nextra:\n  recipe-maintainers:\n    - isuruf\n    - jakirkham\n    - jjhelmus\n    - msarahan\n    - mwcraig\n    - ocefpaf\n    - patricksnape\n    - pelson\n    - scopatz\n    - mariusvniekerk\n    - CJ-Wright\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/conda-forge/conda-forge-build-setup-feedstock",
+   "license": "BSD 3-clause",
+   "summary": "A package installed by conda-forge each time a build is run on CI. This package has side-effects to your conda config."
+  },
+  "build": {
+   "entry_points": [
+    "ff_ci_pr_build = conda_forge_ci_setup.ff_ci_pr_build:main",
+    "make_build_number = conda_forge_ci_setup.build_utils:make_build_number",
+    "mangle_compiler = conda_forge_ci_setup.build_utils:mangle_compiler",
+    "setup_conda_rc = conda_forge_ci_setup.build_utils:setup_conda_rc",
+    "upload_or_check_non_existence = conda_forge_ci_setup.upload_or_check_non_existence:main",
+    "upload_package = conda_forge_ci_setup.build_utils:upload_package"
+   ],
+   "number": "0",
+   "script": [
+    "mkdir -p \"${PREFIX}/bin\"",
+    "cp \"${RECIPE_DIR}/run_conda_forge_build_setup_osx\" \"${PREFIX}/bin/run_conda_forge_build_setup\"",
+    "cd \"${RECIPE_DIR}\"",
+    "/Users/travis/miniconda3/conda-bld/conda-forge-ci-setup_1535555945861/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehol/bin/python -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv",
+    "echo \"${RECIPE_DIR}\""
+   ],
+   "string": "py35_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "CJ-Wright",
+    "isuruf",
+    "jakirkham",
+    "jjhelmus",
+    "mariusvniekerk",
+    "msarahan",
+    "mwcraig",
+    "ocefpaf",
+    "patricksnape",
+    "pelson",
+    "scopatz"
+   ]
+  },
+  "package": {
+   "name": "conda-forge-ci-setup",
+   "version": "2.0.5"
+  },
+  "requirements": {
+   "host": [
+    "bzip2 1.0.6 1",
+    "ca-certificates 2018.8.24 ha4d7672_0",
+    "certifi 2018.8.24 py35_1",
+    "libffi 3.2.1 hfc679d8_4",
+    "ncurses 6.1 hfc679d8_1",
+    "openssl 1.0.2p h470a237_0",
+    "pip 18.0 py35_1",
+    "python 3.5.5 h5001a0f_2",
+    "readline 7.0 haf1bffa_1",
+    "setuptools 40.2.0 py35_0",
+    "sqlite 3.24.0 h2f33b56_0",
+    "tk 8.6.8 0",
+    "wheel 0.31.1 py35_1",
+    "xz 5.2.4 h470a237_1",
+    "zlib 1.2.11 h470a237_3"
+   ],
+   "run": [
+    "anaconda-client",
+    "click",
+    "conda >=4.3",
+    "conda-build 3.*",
+    "conda-env",
+    "jinja2",
+    "python >=3.5,<3.6.0a0"
+   ]
+  },
+  "test": {
+   "commands": [
+    "test -f \"${PREFIX}/bin/run_conda_forge_build_setup\"",
+    "ff_ci_pr_build --help",
+    "upload_or_check_non_existence --help",
+    "setup_conda_rc --help",
+    "upload_package --help",
+    "make_build_number --help"
+   ]
+  }
+ },
+ "version": "2.0.5"
+}
