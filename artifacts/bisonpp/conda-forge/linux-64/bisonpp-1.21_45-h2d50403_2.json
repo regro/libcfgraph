@@ -1,0 +1,212 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.14.4",
+  "conda_private": false,
+  "conda_version": "4.5.11",
+  "description": "bisonpp was created from bison by A. Coetmeur in the 1990s.\nThis program provided seamless integration with C++, allowing developers\nto code actions in C++ and embed a parser and scanner within a class\nby private inheritance. The latter capability allows multiple scanners a\nnd parsers to be used within a single program,\nsomething that is difficult with bison.\n",
+  "dev_url": "https://github.com/jarro2783/bisonpp",
+  "doc_url": "https://code.google.com/archive/p/flexpp-bisonpp/wikis/WikiSourceCode.wiki",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "xmnlab"
+   ]
+  },
+  "home": "https://github.com/jarro2783/bisonpp",
+  "identifiers": [],
+  "keywords": [],
+  "license": "GPL-2.0",
+  "license_family": "GPL",
+  "license_file": "/home/conda/recipe_root/LICENSE.txt",
+  "root_pkgs": [
+   "traitlets 4.3.2 py36_0",
+   "libstdcxx-ng 7.2.0 hdf63c60_3",
+   "requests 2.19.1 py36_1",
+   "pyopenssl 18.0.0 py36_0",
+   "pycparser 2.18 py_1",
+   "python 3.6.6 h5001a0f_0",
+   "conda 4.5.11 py36_0",
+   "bzip2 1.0.6 h470a237_2",
+   "filelock 3.0.4 py_1",
+   "git 2.18.0 pl526hbb17d3c_1",
+   "tk 8.6.8 0",
+   "libedit 3.1.20170329 haf1bffa_1",
+   "idna 2.7 py36_2",
+   "readline 7.0 haf1bffa_1",
+   "anaconda-client 1.7.1 py_0",
+   "xz 5.2.4 h470a237_1",
+   "ncurses 6.1 hfc679d8_1",
+   "pycosat 0.6.3 py36h470a237_1",
+   "sqlite 3.24.0 h2f33b56_1",
+   "jsonschema 2.6.0 py36_2",
+   "libiconv 1.15 h470a237_3",
+   "yaml 0.1.7 h470a237_1",
+   "certifi 2018.8.24 py36_1",
+   "krb5 1.14.6 0",
+   "psutil 5.4.7 py36h470a237_1",
+   "chardet 3.0.4 py36_3",
+   "zlib 1.2.11 h470a237_3",
+   "wheel 0.31.1 py36_1",
+   "tini 0.18.0 h470a237_1",
+   "pyyaml 3.13 py36h470a237_1",
+   "curl 7.61.0 h93b3f91_2",
+   "decorator 4.3.0 py_0",
+   "glob2 0.6 py_0",
+   "pytz 2018.5 py_0",
+   "jinja2 2.10 py_1",
+   "cryptography 2.3.1 py36hdffb7b8_0",
+   "nbformat 4.4.0 py_1",
+   "conda-env 2.6.0 1",
+   "cryptography-vectors 2.3.1 py36_0",
+   "python-dateutil 2.7.3 py_0",
+   "urllib3 1.23 py36_1",
+   "pkginfo 1.4.2 py_1",
+   "patchelf 0.9 hfc679d8_2",
+   "perl 5.26.2 h470a237_0",
+   "ruamel_yaml 0.15.63 py36h470a237_0",
+   "setuptools 40.2.0 py36_0",
+   "markupsafe 1.0 py36h470a237_1",
+   "beautifulsoup4 4.6.3 py36_0",
+   "ipython_genutils 0.2.0 py_1",
+   "asn1crypto 0.24.0 py36_3",
+   "libffi 3.2.1 hfc679d8_5",
+   "jupyter_core 4.4.0 py_0",
+   "cffi 1.11.5 py36h5e8e0c9_1",
+   "pysocks 1.6.8 py36_2",
+   "expat 2.2.5 hfc679d8_2",
+   "six 1.11.0 py36_1",
+   "libssh2 1.8.0 h5b517e9_2",
+   "gettext 0.19.8.1 h5e8e0c9_1",
+   "pip 18.0 py36_1",
+   "clyent 1.2.2 py_1",
+   "libgcc-ng 7.2.0 hdf63c60_3",
+   "gosu 1.10 0",
+   "tqdm 4.25.0 py36h28b3542_0",
+   "click 6.7 py36_0",
+   "openssl 1.0.2p h14c3975_0",
+   "conda-forge-ci-setup 2.0.6 py36_0",
+   "ca-certificates 2018.03.07 0",
+   "conda-build 3.14.4 py36_0"
+  ],
+  "summary": "The original bison++ project, brought up to date with modern compilers",
+  "tags": []
+ },
+ "conda_build_config": {
+  "build_number_decrement": "1000",
+  "c_compiler": "gcc",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "toolchain_cxx",
+  "docker_image": "condaforge/linux-anvil",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "numpy",
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.6",
+  "r_base": "3.5",
+  "target_platform": "linux-64",
+  "zip_keys": [
+   [
+    "cxx_compiler",
+    "channel_sources",
+    "channel_targets",
+    "docker_image",
+    "build_number_decrement"
+   ]
+  ]
+ },
+ "files": [
+  "bin/bison++",
+  "lib/bison.cc",
+  "lib/bison.h",
+  "man/man1/bison++.1"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "h2d50403_2",
+  "build_number": 2,
+  "depends": [
+   "libstdcxx-ng >=4.9"
+  ],
+  "license": "GPL-2.0",
+  "license_family": "GPL",
+  "name": "bisonpp",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1536702803089,
+  "version": "1.21_45"
+ },
+ "metadata_version": 1,
+ "name": "bisonpp",
+ "raw_recipe": "{% set name = \"bisonpp\" %}\n{% set version = \"1.21-45\" %}\n{% set sha256 = \"0b72facde5587d9908077ec16868f404f3d879902c15360754349ac17a8f1129\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url: https://github.com/jarro2783/{{ name }}/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1002\n  skip: true  # [win]\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n\ntest:\n  commands:\n    - bison++ --version\n\nabout:\n  home: https://github.com/jarro2783/bisonpp\n  license: GPL-2.0\n  license_family: GPL\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE.txt'\n  summary: 'The original bison++ project, brought up to date with modern compilers'\n\n  description: |\n    bisonpp was created from bison by A. Coetmeur in the 1990s. \n    This program provided seamless integration with C++, allowing developers \n    to code actions in C++ and embed a parser and scanner within a class \n    by private inheritance. The latter capability allows multiple scanners a\n    nd parsers to be used within a single program, \n    something that is difficult with bison.\n  doc_url: https://code.google.com/archive/p/flexpp-bisonpp/wikis/WikiSourceCode.wiki\n  dev_url: https://github.com/jarro2783/bisonpp\n\nextra:\n  recipe-maintainers:\n    - xmnlab\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "bisonpp was created from bison by A. Coetmeur in the 1990s.\nThis program provided seamless integration with C++, allowing developers\nto code actions in C++ and embed a parser and scanner within a class\nby private inheritance. The latter capability allows multiple scanners a\nnd parsers to be used within a single program,\nsomething that is difficult with bison.\n",
+   "dev_url": "https://github.com/jarro2783/bisonpp",
+   "doc_url": "https://code.google.com/archive/p/flexpp-bisonpp/wikis/WikiSourceCode.wiki",
+   "home": "https://github.com/jarro2783/bisonpp",
+   "license": "GPL-2.0",
+   "license_family": "GPL",
+   "license_file": "/home/conda/recipe_root/LICENSE.txt",
+   "summary": "The original bison++ project, brought up to date with modern compilers"
+  },
+  "build": {
+   "number": "2",
+   "string": "h2d50403_2"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "xmnlab"
+   ]
+  },
+  "package": {
+   "name": "bisonpp",
+   "version": "1.21_45"
+  },
+  "requirements": {
+   "build": [
+    "toolchain 2.1.6 0",
+    "toolchain_cxx_linux-64 2.1.6 0"
+   ],
+   "host": [
+    "libstdcxx-ng 7.2.0 hdf63c60_3"
+   ],
+   "run": [
+    "libstdcxx-ng >=4.9"
+   ]
+  },
+  "source": {
+   "sha256": "0b72facde5587d9908077ec16868f404f3d879902c15360754349ac17a8f1129",
+   "url": "https://github.com/jarro2783/bisonpp/archive/1.21-45.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "bison++ --version"
+   ]
+  }
+ },
+ "version": "1.21_45"
+}
