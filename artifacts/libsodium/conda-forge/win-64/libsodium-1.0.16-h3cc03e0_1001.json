@@ -1,0 +1,273 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.14.4",
+  "conda_private": false,
+  "conda_version": "4.5.11",
+  "description": "Sodium is a new, easy-to-use software library for encryption, decryption,\nsignatures, password hashing and more. It is a portable, cross-compilable,\ninstallable, packageable fork of NaCl, with a compatible API, and an\nextended API to improve usability even further. Its goal is to provide all\nof the core operations needed to build higher-level cryptographic tools.\n",
+  "dev_url": "https://github.com/jedisct1/libsodium",
+  "doc_url": "https://download.libsodium.org/doc",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "jakirkham",
+    "minrk"
+   ]
+  },
+  "home": "http://libsodium.org",
+  "identifiers": [],
+  "keywords": [],
+  "license": "ISC",
+  "license_file": "LICENSE",
+  "root_pkgs": [
+   "anaconda-client 1.7.1 py_0",
+   "asn1crypto 0.24.0 py36_0",
+   "beautifulsoup4 4.6.3 py36_0",
+   "ca-certificates 2018.8.24 ha4d7672_0",
+   "certifi 2018.8.24 py36_0",
+   "cffi 1.11.5 py36h945400d_0",
+   "chardet 3.0.4 py36h420ce6e_1",
+   "click 6.7 py_1",
+   "clyent 1.2.2 py_1",
+   "conda 4.5.11 py36_0",
+   "conda-build 3.14.4 py36_0",
+   "conda-env 2.6.0 h36134e3_1",
+   "conda-forge-ci-setup 2.0.6 py36_0",
+   "console_shortcut 0.1.1 h6bb2dd7_3",
+   "cryptography 2.2.2 py36hfa6e2cd_0",
+   "decorator 4.3.0 py_0",
+   "filelock 3.0.4 py_1",
+   "glob2 0.6 py_0",
+   "idna 2.6 py36h148d497_1",
+   "ipython_genutils 0.2.0 py_1",
+   "jinja2 2.10 py_1",
+   "jsonschema 2.6.0 py36_2",
+   "jupyter_core 4.4.0 py_0",
+   "markupsafe 1.0 py36hfa6e2cd_1",
+   "menuinst 1.4.11 py36hfa6e2cd_0",
+   "nbformat 4.4.0 py_1",
+   "openssl 1.0.2p hfa6e2cd_1000",
+   "pip 9.0.3 py36_0",
+   "pkginfo 1.4.2 py_1",
+   "psutil 5.4.7 py36hfa6e2cd_1",
+   "pycosat 0.6.3 py36h413d8a4_0",
+   "pycparser 2.18 py36hd053e01_1",
+   "pyopenssl 17.5.0 py36h5b7d817_0",
+   "pysocks 1.6.8 py36_0",
+   "python 3.6.5 h0c2934d_0",
+   "python-dateutil 2.7.3 py_0",
+   "pytz 2018.5 py_0",
+   "pywin32 223 py36hfa6e2cd_0",
+   "pyyaml 3.13 py36hfa6e2cd_1",
+   "requests 2.18.4 py36h4371aae_1",
+   "ruamel_yaml 0.15.35 py36hfa6e2cd_1",
+   "setuptools 39.0.1 py36_0",
+   "six 1.11.0 py36h4db2310_1",
+   "tqdm 4.26.0 py_0",
+   "traitlets 4.3.2 py36_0",
+   "urllib3 1.22 py36h276f60a_0",
+   "vc 14 h0510ff6_3",
+   "vs2008_express_vc_python_patch 1.0.0 0",
+   "vs2015_runtime 14.0.25123 3",
+   "wheel 0.31.0 py36_0",
+   "wincertstore 0.2 py36h7fe50ca_0",
+   "win_inet_pton 1.0.1 py36he67d7fd_1",
+   "yaml 0.1.7 vc14_0"
+  ],
+  "summary": "A modern and easy-to-use crypto library.",
+  "tags": []
+ },
+ "conda_build_config": {
+  "c_compiler": "vs2008",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "vs2015",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "python",
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   },
+   "vc": {
+    "max_pin": "x"
+   }
+  },
+  "python": "3.6",
+  "r_base": "3.5",
+  "target_platform": "win-64",
+  "vc": "9",
+  "zip_keys": [
+   [
+    "vc",
+    "c_compiler"
+   ]
+  ]
+ },
+ "files": [
+  "Library/bin/libsodium.dll",
+  "Library/include/sodium.h",
+  "Library/include/sodium/core.h",
+  "Library/include/sodium/crypto_aead_aes256gcm.h",
+  "Library/include/sodium/crypto_aead_chacha20poly1305.h",
+  "Library/include/sodium/crypto_aead_xchacha20poly1305.h",
+  "Library/include/sodium/crypto_auth.h",
+  "Library/include/sodium/crypto_auth_hmacsha256.h",
+  "Library/include/sodium/crypto_auth_hmacsha512.h",
+  "Library/include/sodium/crypto_auth_hmacsha512256.h",
+  "Library/include/sodium/crypto_box.h",
+  "Library/include/sodium/crypto_box_curve25519xchacha20poly1305.h",
+  "Library/include/sodium/crypto_box_curve25519xsalsa20poly1305.h",
+  "Library/include/sodium/crypto_core_ed25519.h",
+  "Library/include/sodium/crypto_core_hchacha20.h",
+  "Library/include/sodium/crypto_core_hsalsa20.h",
+  "Library/include/sodium/crypto_core_salsa20.h",
+  "Library/include/sodium/crypto_core_salsa2012.h",
+  "Library/include/sodium/crypto_core_salsa208.h",
+  "Library/include/sodium/crypto_generichash.h",
+  "Library/include/sodium/crypto_generichash_blake2b.h",
+  "Library/include/sodium/crypto_hash.h",
+  "Library/include/sodium/crypto_hash_sha256.h",
+  "Library/include/sodium/crypto_hash_sha512.h",
+  "Library/include/sodium/crypto_kdf.h",
+  "Library/include/sodium/crypto_kdf_blake2b.h",
+  "Library/include/sodium/crypto_kx.h",
+  "Library/include/sodium/crypto_onetimeauth.h",
+  "Library/include/sodium/crypto_onetimeauth_poly1305.h",
+  "Library/include/sodium/crypto_pwhash.h",
+  "Library/include/sodium/crypto_pwhash_argon2i.h",
+  "Library/include/sodium/crypto_pwhash_argon2id.h",
+  "Library/include/sodium/crypto_pwhash_scryptsalsa208sha256.h",
+  "Library/include/sodium/crypto_scalarmult.h",
+  "Library/include/sodium/crypto_scalarmult_curve25519.h",
+  "Library/include/sodium/crypto_scalarmult_ed25519.h",
+  "Library/include/sodium/crypto_secretbox.h",
+  "Library/include/sodium/crypto_secretbox_xchacha20poly1305.h",
+  "Library/include/sodium/crypto_secretbox_xsalsa20poly1305.h",
+  "Library/include/sodium/crypto_secretstream_xchacha20poly1305.h",
+  "Library/include/sodium/crypto_shorthash.h",
+  "Library/include/sodium/crypto_shorthash_siphash24.h",
+  "Library/include/sodium/crypto_sign.h",
+  "Library/include/sodium/crypto_sign_ed25519.h",
+  "Library/include/sodium/crypto_sign_edwards25519sha512batch.h",
+  "Library/include/sodium/crypto_stream.h",
+  "Library/include/sodium/crypto_stream_chacha20.h",
+  "Library/include/sodium/crypto_stream_salsa20.h",
+  "Library/include/sodium/crypto_stream_salsa2012.h",
+  "Library/include/sodium/crypto_stream_salsa208.h",
+  "Library/include/sodium/crypto_stream_xchacha20.h",
+  "Library/include/sodium/crypto_stream_xsalsa20.h",
+  "Library/include/sodium/crypto_verify_16.h",
+  "Library/include/sodium/crypto_verify_32.h",
+  "Library/include/sodium/crypto_verify_64.h",
+  "Library/include/sodium/export.h",
+  "Library/include/sodium/private/common.h",
+  "Library/include/sodium/private/ed25519_ref10.h",
+  "Library/include/sodium/private/ed25519_ref10_fe_25_5.h",
+  "Library/include/sodium/private/ed25519_ref10_fe_51.h",
+  "Library/include/sodium/private/implementations.h",
+  "Library/include/sodium/private/mutex.h",
+  "Library/include/sodium/private/sse2_64_32.h",
+  "Library/include/sodium/randombytes.h",
+  "Library/include/sodium/randombytes_nativeclient.h",
+  "Library/include/sodium/randombytes_salsa20_random.h",
+  "Library/include/sodium/randombytes_sysrandom.h",
+  "Library/include/sodium/runtime.h",
+  "Library/include/sodium/utils.h",
+  "Library/include/sodium/version.h",
+  "Library/include/sodium/version.h.in",
+  "Library/lib/libsodium.lib",
+  "Library/lib/libsodium_static.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "h3cc03e0_1001",
+  "build_number": 1001,
+  "depends": [
+   "vc >=9,<10.0a0"
+  ],
+  "license": "ISC",
+  "name": "libsodium",
+  "platform": "win",
+  "subdir": "win-64",
+  "timestamp": 1536911851721,
+  "version": "1.0.16"
+ },
+ "metadata_version": 1,
+ "name": "libsodium",
+ "raw_recipe": "{% set version = \"1.0.16\" %}\n\npackage:\n  name: libsodium\n  version: {{ version }}\n\nsource:\n  fn: libsodium-{{ version }}.tar.gz\n  url: https://github.com/jedisct1/libsodium/releases/download/{{ version }}/libsodium-{{ version }}.tar.gz\n  sha256: eeadc7e1e1bcef09680fb4837d448fbdf57224978f865ac1c16745868fbd0533\n\nbuild:\n  number: 1001\n  run_exports:\n    # libsodium can bump its ABI version in patch releases,\n    # so we have to pin it down\n    - {{ pin_subpackage(\"libsodium\", max_pin=\"x.x.x\") }}\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n  host:\n    - msinttypes  # [win and vc<14]\n\ntest:\n  commands:\n    - test -f ${PREFIX}/include/sodium.h         # [unix]\n    - test -f ${PREFIX}/lib/libsodium.a          # [unix]\n    - test -f ${PREFIX}/lib/libsodium.dylib      # [osx]\n    - test -f ${PREFIX}/lib/libsodium.so         # [linux]\n\n    - if not exist %LIBRARY_INC%\\sodium.h              exit 1  # [win]\n    - if not exist %LIBRARY_INC%\\sodium\\version.h      exit 1  # [win]\n    - if not exist %LIBRARY_BIN%\\libsodium.dll         exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\libsodium.lib         exit 1  # [win]\n    - if not exist %LIBRARY_LIB%\\libsodium_static.lib  exit 1  # [win]\n\nabout:\n  home: http://libsodium.org\n  license: ISC\n  license_file: LICENSE\n  summary: A modern and easy-to-use crypto library.\n  description: |\n    Sodium is a new, easy-to-use software library for encryption, decryption,\n    signatures, password hashing and more. It is a portable, cross-compilable,\n    installable, packageable fork of NaCl, with a compatible API, and an\n    extended API to improve usability even further. Its goal is to provide all\n    of the core operations needed to build higher-level cryptographic tools.\n  doc_url: https://download.libsodium.org/doc\n  dev_url: https://github.com/jedisct1/libsodium\n\nextra:\n  recipe-maintainers:\n    - jakirkham\n    - minrk\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Sodium is a new, easy-to-use software library for encryption, decryption,\nsignatures, password hashing and more. It is a portable, cross-compilable,\ninstallable, packageable fork of NaCl, with a compatible API, and an\nextended API to improve usability even further. Its goal is to provide all\nof the core operations needed to build higher-level cryptographic tools.\n",
+   "dev_url": "https://github.com/jedisct1/libsodium",
+   "doc_url": "https://download.libsodium.org/doc",
+   "home": "http://libsodium.org",
+   "license": "ISC",
+   "license_file": "LICENSE",
+   "summary": "A modern and easy-to-use crypto library."
+  },
+  "build": {
+   "number": "1001",
+   "run_exports": [
+    "libsodium >=1.0.16,<1.0.17.0a0"
+   ],
+   "string": "h3cc03e0_1001"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "jakirkham",
+    "minrk"
+   ]
+  },
+  "package": {
+   "name": "libsodium",
+   "version": "1.0.16"
+  },
+  "requirements": {
+   "build": [
+    "vs2008_win-64 9.00.30729.1 hb7fc0b5_1"
+   ],
+   "host": [
+    "msinttypes r26 vc9_1",
+    "vc 9 0",
+    "vs2008_runtime 9.0.30729.6161 0"
+   ],
+   "run": [
+    "vc >=9,<10.0a0"
+   ]
+  },
+  "source": {
+   "fn": "libsodium-1.0.16.tar.gz",
+   "sha256": "eeadc7e1e1bcef09680fb4837d448fbdf57224978f865ac1c16745868fbd0533",
+   "url": "https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "if not exist %LIBRARY_INC%\\sodium.h              exit 1",
+    "if not exist %LIBRARY_INC%\\sodium\\version.h      exit 1",
+    "if not exist %LIBRARY_BIN%\\libsodium.dll         exit 1",
+    "if not exist %LIBRARY_LIB%\\libsodium.lib         exit 1",
+    "if not exist %LIBRARY_LIB%\\libsodium_static.lib  exit 1"
+   ]
+  }
+ },
+ "version": "1.0.16"
+}
