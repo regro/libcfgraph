@@ -1,0 +1,273 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.15.1",
+  "conda_private": false,
+  "conda_version": "4.5.11",
+  "description": "This library provides a common high-level API for openPMD writing and\nreading. It provides a common interface to I/O libraries and file formats\nsuch as HDF5 and ADIOS.\nThis conda-forge package only provides serial I/O, please build from source\nfor MPI parallel I/O on HPC systems. Window support is limited to HDF5 and\nPython 3.\n",
+  "dev_url": "https://github.com/openPMD/openPMD-api",
+  "doc_url": "https://openpmd-api.readthedocs.io",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "ax3l",
+    "C0nsultant"
+   ]
+  },
+  "home": "https://www.openPMD.org",
+  "identifiers": [],
+  "keywords": [],
+  "license": "LGPL 3",
+  "license_family": "LGPL",
+  "license_file": "COPYING.LESSER",
+  "root_pkgs": [
+   "anaconda-client 1.7.1 py_0",
+   "asn1crypto 0.24.0 py36_3",
+   "beautifulsoup4 4.6.3 py36_0",
+   "ca-certificates 2018.8.24 ha4d7672_0",
+   "certifi 2018.8.24 py36_1001",
+   "cffi 1.11.5 py36hfa6e2cd_1",
+   "chardet 3.0.4 py36_3",
+   "click 6.7 py_1",
+   "clyent 1.2.2 py_1",
+   "conda 4.5.11 py36_0",
+   "conda-build 3.15.1 py36_0",
+   "conda-env 2.6.0 1",
+   "conda-forge-ci-setup 2.0.6 py36_0",
+   "console_shortcut 0.1.1 3",
+   "cryptography 2.3.1 py36h74b6da3_0",
+   "cryptography-vectors 2.3.1 py36_0",
+   "decorator 4.3.0 py_0",
+   "filelock 3.0.4 py_1",
+   "glob2 0.6 py_0",
+   "idna 2.7 py36_2",
+   "ipython_genutils 0.2.0 py_1",
+   "jinja2 2.10 py_1",
+   "jsonschema 2.6.0 py36_2",
+   "jupyter_core 4.4.0 py_0",
+   "markupsafe 1.0 py36hfa6e2cd_1",
+   "menuinst 1.4.14 py36_0",
+   "nbformat 4.4.0 py_1",
+   "openssl 1.0.2p hfa6e2cd_1000",
+   "pip 18.0 py36_1",
+   "pkginfo 1.4.2 py_1",
+   "psutil 5.4.7 py36hfa6e2cd_1",
+   "pycosat 0.6.3 py36hfa6e2cd_1",
+   "pycparser 2.19 py_0",
+   "pyopenssl 18.0.0 py36_0",
+   "pysocks 1.6.8 py36_2",
+   "python 3.6.6 he025d50_0",
+   "python-dateutil 2.7.3 py_0",
+   "pytz 2018.5 py_0",
+   "pywin32 223 py36hfa6e2cd_1000",
+   "pyyaml 3.13 py36hfa6e2cd_1",
+   "requests 2.19.1 py36_1",
+   "ruamel_yaml 0.15.63 py36hfa6e2cd_0",
+   "setuptools 40.4.0 py36_1000",
+   "six 1.11.0 py36_1",
+   "tqdm 4.26.0 py_0",
+   "traitlets 4.3.2 py36_0",
+   "urllib3 1.23 py36_1",
+   "vc 14 h0510ff6_3",
+   "vs2008_express_vc_python_patch 1.0.0 0",
+   "vs2015_runtime 14.0.25123 3",
+   "wheel 0.31.1 py36_1001",
+   "wincertstore 0.2 py36_1002",
+   "win_inet_pton 1.0.1 py36_2",
+   "yaml 0.1.7 vc14_0"
+  ],
+  "summary": "C++ & Python API for writing & reading (H5, BP, ...), serial & MPI parallel openPMD files.",
+  "tags": []
+ },
+ "conda_build_config": {
+  "c_compiler": "vs2015",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "vs2015",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "numpy",
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.5",
+  "r_base": "3.4",
+  "target_platform": "win-64",
+  "vc": "14",
+  "zip_keys": [
+   [
+    "python",
+    "cxx_compiler"
+   ]
+  ]
+ },
+ "files": [
+  "Lib/openPMD.ADIOS1.Parallel.lib",
+  "Lib/openPMD.ADIOS1.Serial.lib",
+  "Lib/openPMD.lib",
+  "Lib/site-packages/openPMD.cp35-win_amd64.pyd",
+  "bin/openPMD.ADIOS1.Parallel.dll",
+  "bin/openPMD.ADIOS1.Serial.dll",
+  "cmake/Modules/FindADIOS.cmake",
+  "cmake/openPMDConfig.cmake",
+  "cmake/openPMDConfigVersion.cmake",
+  "cmake/openPMDTargets-release.cmake",
+  "cmake/openPMDTargets.cmake",
+  "include/mpark/variant.hpp",
+  "include/openPMD/Dataset.hpp",
+  "include/openPMD/Datatype.hpp",
+  "include/openPMD/IO/ADIOS/ADIOS1Auxiliary.hpp",
+  "include/openPMD/IO/ADIOS/ADIOS1FilePosition.hpp",
+  "include/openPMD/IO/ADIOS/ADIOS1IOHandler.hpp",
+  "include/openPMD/IO/ADIOS/ADIOS1IOHandlerImpl.hpp",
+  "include/openPMD/IO/ADIOS/ADIOS2FilePosition.hpp",
+  "include/openPMD/IO/ADIOS/ADIOS2IOHandler.hpp",
+  "include/openPMD/IO/ADIOS/ParallelADIOS1IOHandler.hpp",
+  "include/openPMD/IO/ADIOS/ParallelADIOS1IOHandlerImpl.hpp",
+  "include/openPMD/IO/AbstractFilePosition.hpp",
+  "include/openPMD/IO/AbstractIOHandler.hpp",
+  "include/openPMD/IO/AbstractIOHandlerHelper.hpp",
+  "include/openPMD/IO/AbstractIOHandlerImpl.hpp",
+  "include/openPMD/IO/AccessType.hpp",
+  "include/openPMD/IO/Format.hpp",
+  "include/openPMD/IO/HDF5/HDF5Auxiliary.hpp",
+  "include/openPMD/IO/HDF5/HDF5FilePosition.hpp",
+  "include/openPMD/IO/HDF5/HDF5IOHandler.hpp",
+  "include/openPMD/IO/HDF5/HDF5IOHandlerImpl.hpp",
+  "include/openPMD/IO/HDF5/ParallelHDF5IOHandler.hpp",
+  "include/openPMD/IO/HDF5/ParallelHDF5IOHandlerImpl.hpp",
+  "include/openPMD/IO/IOTask.hpp",
+  "include/openPMD/Iteration.hpp",
+  "include/openPMD/IterationEncoding.hpp",
+  "include/openPMD/Mesh.hpp",
+  "include/openPMD/ParticlePatches.hpp",
+  "include/openPMD/ParticleSpecies.hpp",
+  "include/openPMD/Record.hpp",
+  "include/openPMD/RecordComponent.hpp",
+  "include/openPMD/Series.hpp",
+  "include/openPMD/auxiliary/Filesystem.hpp",
+  "include/openPMD/auxiliary/Memory.hpp",
+  "include/openPMD/auxiliary/OutOfRangeMsg.hpp",
+  "include/openPMD/auxiliary/ShareRaw.hpp",
+  "include/openPMD/auxiliary/StringManip.hpp",
+  "include/openPMD/auxiliary/Variant.hpp",
+  "include/openPMD/backend/Attributable.hpp",
+  "include/openPMD/backend/Attribute.hpp",
+  "include/openPMD/backend/BaseRecord.hpp",
+  "include/openPMD/backend/BaseRecordComponent.hpp",
+  "include/openPMD/backend/Container.hpp",
+  "include/openPMD/backend/MeshRecordComponent.hpp",
+  "include/openPMD/backend/PatchRecord.hpp",
+  "include/openPMD/backend/PatchRecordComponent.hpp",
+  "include/openPMD/backend/Writable.hpp",
+  "include/openPMD/binding/python/Numpy.hpp",
+  "include/openPMD/openPMD.hpp",
+  "include/openPMD/version.hpp"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py35he980bc4_0",
+  "build_number": 0,
+  "depends": [
+   "hdf5 >=1.8.13",
+   "numpy >=1.15.0",
+   "python >=3.5,<3.6.0a0",
+   "vc 14.*"
+  ],
+  "license": "LGPL 3",
+  "license_family": "LGPL",
+  "name": "openpmd-api",
+  "platform": "win",
+  "subdir": "win-64",
+  "timestamp": 1537792294432,
+  "version": "0.6.1a"
+ },
+ "metadata_version": 1,
+ "name": "openpmd-api",
+ "raw_recipe": "{% set name = \"openpmd-api\" %}\n{% set version = \"0.6.1a\" %}\n{% set sha256 = \"9fc6d5fc9892927d00e8a34c87785b80d9cdb8002047eca6d86423143128fdf6\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: 0.6.1-alpha.tar.gz\n  url: https://github.com/openPMD/openPMD-api/archive/0.6.1-alpha.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  # Python 2.7 stack is build with too ancient vc9 (VS2008)\n  skip: True  # [win and py27]\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pybind11 >=2.2.3\n    - cmake >=3.10\n    - adios >=1.13.1  # [unix]\n    - hdf5  >=1.8.13\n  run:\n    - python\n    - adios >=1.13.1  # [unix]\n    - hdf5  >=1.8.13\n    - numpy >=1.15.0\n\ntest:\n  requires:\n    - numpy >=1.15.0\n  imports:\n    - openPMD\n  commands:\n    - python -c \"import openPMD; print(openPMD.__version__);\"\n    - python -c \"import openPMD; print(openPMD.variants)\"\n    - test -f ${PREFIX}/lib/cmake/openPMD/openPMDConfig.cmake             # [unix]\n    - if exist %PREFIX%\\cmake\\openPMDConfig.cmake (exit 0) else (exit 1)  # [win]\n\nabout:\n  home: https://www.openPMD.org\n  license: LGPL 3\n  license_family: LGPL\n  license_file: COPYING.LESSER\n  summary: 'C++ & Python API for writing & reading (H5, BP, ...), serial & MPI parallel openPMD files.'\n\n  description: |\n    This library provides a common high-level API for openPMD writing and\n    reading. It provides a common interface to I/O libraries and file formats\n    such as HDF5 and ADIOS.\n    This conda-forge package only provides serial I/O, please build from source\n    for MPI parallel I/O on HPC systems. Window support is limited to HDF5 and\n    Python 3.\n  doc_url: https://openpmd-api.readthedocs.io\n  dev_url: https://github.com/openPMD/openPMD-api\n\nextra:\n  recipe-maintainers:\n    - ax3l\n    - C0nsultant\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "This library provides a common high-level API for openPMD writing and\nreading. It provides a common interface to I/O libraries and file formats\nsuch as HDF5 and ADIOS.\nThis conda-forge package only provides serial I/O, please build from source\nfor MPI parallel I/O on HPC systems. Window support is limited to HDF5 and\nPython 3.\n",
+   "dev_url": "https://github.com/openPMD/openPMD-api",
+   "doc_url": "https://openpmd-api.readthedocs.io",
+   "home": "https://www.openPMD.org",
+   "license": "LGPL 3",
+   "license_family": "LGPL",
+   "license_file": "COPYING.LESSER",
+   "summary": "C++ & Python API for writing & reading (H5, BP, ...), serial & MPI parallel openPMD files."
+  },
+  "build": {
+   "number": "0",
+   "string": "py35he980bc4_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "C0nsultant",
+    "ax3l"
+   ]
+  },
+  "package": {
+   "name": "openpmd-api",
+   "version": "0.6.1a"
+  },
+  "requirements": {
+   "build": [
+    "vs2015_win-64 14.0.25123 h17c34da_3"
+   ],
+   "host": [
+    "cmake 3.12.2 he025d50_0",
+    "hdf5 1.10.3 he51fdeb_2",
+    "pybind11 2.2.4 py35he980bc4_1000",
+    "python 3.5.5 he025d50_2",
+    "vc 14 0",
+    "vs2015_runtime 14.0.25420 0",
+    "zlib 1.2.11 vc14_0"
+   ],
+   "run": [
+    "hdf5 >=1.8.13",
+    "numpy >=1.15.0",
+    "python >=3.5,<3.6.0a0",
+    "vc 14.*"
+   ]
+  },
+  "source": {
+   "fn": "0.6.1-alpha.tar.gz",
+   "sha256": "9fc6d5fc9892927d00e8a34c87785b80d9cdb8002047eca6d86423143128fdf6",
+   "url": "https://github.com/openPMD/openPMD-api/archive/0.6.1-alpha.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python -c \"import openPMD; print(openPMD.__version__);\"",
+    "python -c \"import openPMD; print(openPMD.variants)\"",
+    "if exist %PREFIX%\\cmake\\openPMDConfig.cmake (exit 0) else (exit 1)"
+   ],
+   "imports": [
+    "openPMD"
+   ],
+   "requires": [
+    "numpy >=1.15.0"
+   ]
+  }
+ },
+ "version": "0.6.1a"
+}
