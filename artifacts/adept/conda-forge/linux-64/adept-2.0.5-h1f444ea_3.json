@@ -1,0 +1,274 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.15.1",
+  "conda_private": false,
+  "conda_version": "4.5.11",
+  "description": "Adept (Automatic Differentiation using Expression Templates) is a free C++\nsoftware library that enables algorithms to be automatically differentiated,\nvery useful for a wide range of applications that involve mathematical\noptimization. It uses an operator overloading approach, so very little code\nmodification is required. Moreover, the way that expression templates have been\nused and several other important optimizations mean that reverse-mode\ndifferentiation is significantly faster than other C++ libraries that provide\nequivalent functionality.\n\nThe fundamental object of most mathematical software is the array, and it is\ntherefore natural to want to differentiate array expressions. There are numerous\nmature C++ array libraries that support a wide variety of array operations, but\nbecause they also use expression templates to optimize array expressions, they\ndo not work efficiently with Adept. The solution provided in version 2 of\nAdept is to use a single expression-template framework that incorporates both\narray and automatic-differentiation capabilities at a low level, thus enabling\nefficient differentiation of array expressions. Arrays of up to 7 dimensions are\nsupported along with matrix multiplication and basic linear algebra operations.\nOf course, the library also works well with passive arrays (those that do not\nneed to be differentiated).\n",
+  "dev_url": "https://github.com/rjhogan/Adept-2",
+  "doc_url": "http://www.met.reading.ac.uk/clouds/adept/documentation.html",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "arghdos"
+   ]
+  },
+  "home": "http://www.met.reading.ac.uk/clouds/adept/",
+  "identifiers": [],
+  "keywords": [],
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "license_file": "COPYING",
+  "root_pkgs": [
+   "setuptools 40.4.0 py36_1000",
+   "traitlets 4.3.2 py36_0",
+   "libstdcxx-ng 7.2.0 hdf63c60_3",
+   "requests 2.19.1 py36_1",
+   "pyopenssl 18.0.0 py36_0",
+   "python 3.6.6 h5001a0f_0",
+   "conda 4.5.11 py36_0",
+   "bzip2 1.0.6 h470a237_2",
+   "filelock 3.0.4 py_1",
+   "sqlite 3.25.2 hb1c47c0_0",
+   "libedit 3.1.20170329 haf1bffa_1",
+   "idna 2.7 py36_2",
+   "wheel 0.31.1 py36_1001",
+   "readline 7.0 haf1bffa_1",
+   "anaconda-client 1.7.1 py_0",
+   "xz 5.2.4 h470a237_1",
+   "ncurses 6.1 hfc679d8_1",
+   "pycosat 0.6.3 py36h470a237_1",
+   "jsonschema 2.6.0 py36_2",
+   "libiconv 1.15 h470a237_3",
+   "yaml 0.1.7 h470a237_1",
+   "krb5 1.14.6 0",
+   "psutil 5.4.7 py36h470a237_1",
+   "pycparser 2.19 py_0",
+   "chardet 3.0.4 py36_3",
+   "zlib 1.2.11 h470a237_3",
+   "tini 0.18.0 h470a237_1",
+   "pyyaml 3.13 py36h470a237_1",
+   "curl 7.61.0 h93b3f91_2",
+   "decorator 4.3.0 py_0",
+   "glob2 0.6 py_0",
+   "pytz 2018.5 py_0",
+   "jinja2 2.10 py_1",
+   "cryptography 2.3.1 py36hdffb7b8_0",
+   "nbformat 4.4.0 py_1",
+   "conda-build 3.15.1 py36_0",
+   "conda-env 2.6.0 1",
+   "cryptography-vectors 2.3.1 py36_0",
+   "python-dateutil 2.7.3 py_0",
+   "urllib3 1.23 py36_1",
+   "pkginfo 1.4.2 py_1",
+   "patchelf 0.9 hfc679d8_2",
+   "perl 5.26.2 h470a237_0",
+   "tk 8.6.8 ha92aebf_0",
+   "markupsafe 1.0 py36h470a237_1",
+   "beautifulsoup4 4.6.3 py36_0",
+   "ipython_genutils 0.2.0 py_1",
+   "asn1crypto 0.24.0 py36_3",
+   "ruamel_yaml 0.15.71 py36h470a237_0",
+   "libffi 3.2.1 hfc679d8_5",
+   "jupyter_core 4.4.0 py_0",
+   "cffi 1.11.5 py36h5e8e0c9_1",
+   "pysocks 1.6.8 py36_2",
+   "expat 2.2.5 hfc679d8_2",
+   "six 1.11.0 py36_1",
+   "libssh2 1.8.0 h5b517e9_2",
+   "gettext 0.19.8.1 h5e8e0c9_1",
+   "pip 18.0 py36_1",
+   "tqdm 4.26.0 py_0",
+   "clyent 1.2.2 py_1",
+   "git 2.19.0 pl526hbb17d3c_0",
+   "libgcc-ng 7.2.0 hdf63c60_3",
+   "gosu 1.10 0",
+   "conda-forge-ci-setup 2.0.8 py36_0",
+   "openssl 1.0.2p h14c3975_0",
+   "certifi 2018.8.24 py36_1",
+   "ca-certificates 2018.03.07 0",
+   "click 7.0 py36_0"
+  ],
+  "summary": "Fast automatic differentiation library in C++",
+  "tags": []
+ },
+ "conda_build_config": {
+  "c_compiler": "toolchain_c",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "toolchain_cxx",
+  "docker_image": "condaforge/linux-anvil",
+  "fortran_compiler": "toolchain_fort",
+  "ignore_build_only_deps": "python",
+  "lua": "5",
+  "numpy": "1.11",
+  "openblas": "0.2.20",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "openblas": {
+    "max_pin": "x.x.x"
+   },
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.6",
+  "r_base": "3.5",
+  "target_platform": "linux-64"
+ },
+ "files": [
+  "include/adept.h",
+  "include/adept/Active.h",
+  "include/adept/ActiveConstReference.h",
+  "include/adept/ActiveReference.h",
+  "include/adept/Allocator.h",
+  "include/adept/Array.h",
+  "include/adept/ArrayWrapper.h",
+  "include/adept/BinaryOperation.h",
+  "include/adept/Expression.h",
+  "include/adept/ExpressionSize.h",
+  "include/adept/FixedArray.h",
+  "include/adept/IndexedArray.h",
+  "include/adept/Packet.h",
+  "include/adept/RangeIndex.h",
+  "include/adept/ScratchVector.h",
+  "include/adept/SpecialMatrix.h",
+  "include/adept/Stack.h",
+  "include/adept/StackStorage.h",
+  "include/adept/StackStorageOrig.h",
+  "include/adept/StackStorageOrigStl.h",
+  "include/adept/Statement.h",
+  "include/adept/Storage.h",
+  "include/adept/UnaryOperation.h",
+  "include/adept/array_shortcuts.h",
+  "include/adept/base.h",
+  "include/adept/contiguous_matrix.h",
+  "include/adept/cppblas.h",
+  "include/adept/eval.h",
+  "include/adept/exception.h",
+  "include/adept/interp.h",
+  "include/adept/inv.h",
+  "include/adept/matmul.h",
+  "include/adept/noalias.h",
+  "include/adept/outer_product.h",
+  "include/adept/reduce.h",
+  "include/adept/scalar_shortcuts.h",
+  "include/adept/settings.h",
+  "include/adept/solve.h",
+  "include/adept/spread.h",
+  "include/adept/store_transpose.h",
+  "include/adept/traits.h",
+  "include/adept/vector_utilities.h",
+  "include/adept/where.h",
+  "include/adept_arrays.h",
+  "lib/libadept.a",
+  "lib/libadept.so",
+  "lib/libadept.so.0",
+  "lib/libadept.so.0.0.0",
+  "share/adept/AUTHORS",
+  "share/adept/COPYING",
+  "share/adept/ChangeLog",
+  "share/adept/NEWS",
+  "share/adept/README"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "h1f444ea_3",
+  "build_number": 3,
+  "depends": [
+   "libgcc-ng >=4.9",
+   "libgfortran >=3.0",
+   "libstdcxx-ng >=4.9",
+   "openblas >=0.2.20,<0.2.21.0a0"
+  ],
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "name": "adept",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1538690237690,
+  "version": "2.0.5"
+ },
+ "metadata_version": 1,
+ "name": "adept",
+ "raw_recipe": "{% set name = \"Adept\" %}\n{% set version = \"2.0.5\" %}\n{% set build_number = \"3\" %}\n{% set sha256 = \"6e5e4b29d3a983c97ae0d120c73bba2dded3cac4802e282b097c8bb2f52c43a3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: http://www.met.reading.ac.uk/clouds/adept/adept-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: {{ build_number }}\n  skip: True  # [not unix]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n  host:\n    - openblas\n  run:\n    - openblas\n\ntest:\n  commands:\n    - ls -la $PREFIX/lib\n    - ls -la $PREFIX/include\n    - test -L $PREFIX/lib/libadept$SHLIB_EXT\n    - test -f $PREFIX/lib/libadept.so.0.0.0  # [linux]\n    - test -f $PREFIX/lib/libadept.0.dylib   # [osx]\n    - test -f $PREFIX/lib/libadept.a\n    - test -f $PREFIX/include/adept.h\n    - test -f $PREFIX/include/adept_arrays.h\n    - test -d $PREFIX/include/adept/\n\nabout:\n  home: http://www.met.reading.ac.uk/clouds/adept/\n  license: Apache-2.0\n  license_family: Apache\n  license_file: COPYING\n  summary: 'Fast automatic differentiation library in C++'\n  description: |\n    Adept (Automatic Differentiation using Expression Templates) is a free C++\n    software library that enables algorithms to be automatically differentiated,\n    very useful for a wide range of applications that involve mathematical\n    optimization. It uses an operator overloading approach, so very little code\n    modification is required. Moreover, the way that expression templates have been\n    used and several other important optimizations mean that reverse-mode\n    differentiation is significantly faster than other C++ libraries that provide\n    equivalent functionality.\n\n    The fundamental object of most mathematical software is the array, and it is\n    therefore natural to want to differentiate array expressions. There are numerous\n    mature C++ array libraries that support a wide variety of array operations, but\n    because they also use expression templates to optimize array expressions, they\n    do not work efficiently with Adept. The solution provided in version 2 of\n    Adept is to use a single expression-template framework that incorporates both\n    array and automatic-differentiation capabilities at a low level, thus enabling\n    efficient differentiation of array expressions. Arrays of up to 7 dimensions are\n    supported along with matrix multiplication and basic linear algebra operations.\n    Of course, the library also works well with passive arrays (those that do not\n    need to be differentiated).\n  doc_url: http://www.met.reading.ac.uk/clouds/adept/documentation.html\n  dev_url: https://github.com/rjhogan/Adept-2\n\nextra:\n  recipe-maintainers:\n    - arghdos\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Adept (Automatic Differentiation using Expression Templates) is a free C++\nsoftware library that enables algorithms to be automatically differentiated,\nvery useful for a wide range of applications that involve mathematical\noptimization. It uses an operator overloading approach, so very little code\nmodification is required. Moreover, the way that expression templates have been\nused and several other important optimizations mean that reverse-mode\ndifferentiation is significantly faster than other C++ libraries that provide\nequivalent functionality.\n\nThe fundamental object of most mathematical software is the array, and it is\ntherefore natural to want to differentiate array expressions. There are numerous\nmature C++ array libraries that support a wide variety of array operations, but\nbecause they also use expression templates to optimize array expressions, they\ndo not work efficiently with Adept. The solution provided in version 2 of\nAdept is to use a single expression-template framework that incorporates both\narray and automatic-differentiation capabilities at a low level, thus enabling\nefficient differentiation of array expressions. Arrays of up to 7 dimensions are\nsupported along with matrix multiplication and basic linear algebra operations.\nOf course, the library also works well with passive arrays (those that do not\nneed to be differentiated).\n",
+   "dev_url": "https://github.com/rjhogan/Adept-2",
+   "doc_url": "http://www.met.reading.ac.uk/clouds/adept/documentation.html",
+   "home": "http://www.met.reading.ac.uk/clouds/adept/",
+   "license": "Apache-2.0",
+   "license_family": "Apache",
+   "license_file": "COPYING",
+   "summary": "Fast automatic differentiation library in C++"
+  },
+  "build": {
+   "number": "3",
+   "string": "h1f444ea_3"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "arghdos"
+   ]
+  },
+  "package": {
+   "name": "adept",
+   "version": "2.0.5"
+  },
+  "requirements": {
+   "build": [
+    "toolchain 2.2.0 0",
+    "toolchain_c_linux-64 2.2.0 0",
+    "toolchain_cxx_linux-64 2.2.0 0",
+    "toolchain_fort_linux-64 2.2.0 0"
+   ],
+   "host": [
+    "libgcc-ng 7.2.0 hdf63c60_3",
+    "libgfortran 3.0.0 1",
+    "libstdcxx-ng 7.2.0 hdf63c60_3",
+    "openblas 0.2.20 8"
+   ],
+   "run": [
+    "libgcc-ng >=4.9",
+    "libgfortran >=3.0",
+    "libstdcxx-ng >=4.9",
+    "openblas >=0.2.20,<0.2.21.0a0"
+   ]
+  },
+  "source": {
+   "fn": "Adept-2.0.5.tar.gz",
+   "sha256": "6e5e4b29d3a983c97ae0d120c73bba2dded3cac4802e282b097c8bb2f52c43a3",
+   "url": "http://www.met.reading.ac.uk/clouds/adept/adept-2.0.5.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "ls -la $PREFIX/lib",
+    "ls -la $PREFIX/include",
+    "test -L $PREFIX/lib/libadept$SHLIB_EXT",
+    "test -f $PREFIX/lib/libadept.so.0.0.0",
+    "test -f $PREFIX/lib/libadept.a",
+    "test -f $PREFIX/include/adept.h",
+    "test -f $PREFIX/include/adept_arrays.h",
+    "test -d $PREFIX/include/adept/"
+   ]
+  }
+ },
+ "version": "2.0.5"
+}
