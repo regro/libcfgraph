@@ -1,0 +1,279 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.15.1",
+  "conda_private": false,
+  "conda_version": "4.5.11",
+  "description": "mr.bob is a tool that takes a directory skeleton, copies over its directory\nstructure to a target folder and can use the Jinja2 (or some other)\ntemplating engine to dynamically generate the files. Additionally, it can\nask you questions needed to render the structure, or provide a config file\nto answer them.\n",
+  "dev_url": "https://github.com/domenkozar/mr.bob",
+  "doc_url": "http://mrbob.readthedocs.io/",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "mariusvniekerk"
+   ]
+  },
+  "home": "https://github.com/domenkozar/mr.bob",
+  "identifiers": [],
+  "keywords": [],
+  "license": "BSD-3",
+  "license_family": "BSD",
+  "license_file": "LICENSE",
+  "root_pkgs": [
+   "anaconda-client 1.7.2 py36_0",
+   "asn1crypto 0.24.0 py36_0",
+   "beautifulsoup4 4.6.3 py36_0",
+   "ca-certificates 2018.03.07 0",
+   "certifi 2018.8.24 py36_1",
+   "cffi 1.11.5 py36h6174b99_1",
+   "chardet 3.0.4 py36_1",
+   "click 7.0 py36_0",
+   "clyent 1.2.2 py36_1",
+   "conda 4.5.11 py36_0",
+   "conda-build 3.15.1 py36_0",
+   "conda-env 2.6.0 1",
+   "conda-forge-ci-setup 2.0.8 py36_0",
+   "cryptography 2.3.1 py36hdbc3d79_0",
+   "decorator 4.3.0 py36_0",
+   "filelock 3.0.8 py36_0",
+   "glob2 0.6 py36_1",
+   "idna 2.7 py36_0",
+   "ipython_genutils 0.2.0 py36h241746c_0",
+   "jinja2 2.10 py36_0",
+   "jsonschema 2.6.0 py36hb385e00_0",
+   "jupyter_core 4.4.0 py36_0",
+   "libcxx 4.0.1 h579ed51_0",
+   "libcxxabi 4.0.1 hebd6815_0",
+   "libedit 3.1.20170329 hb402a30_2",
+   "libffi 3.2.1 h475c297_4",
+   "markupsafe 1.0 py36h1de35cc_1",
+   "nbformat 4.4.0 py36h827af21_0",
+   "ncurses 6.1 h0a44026_0",
+   "openssl 1.0.2p h1de35cc_0",
+   "pip 10.0.1 py36_0",
+   "pkginfo 1.4.2 py36_1",
+   "psutil 5.4.7 py36h1de35cc_0",
+   "pycosat 0.6.3 py36h1de35cc_0",
+   "pycparser 2.19 py36_0",
+   "pyopenssl 18.0.0 py36_0",
+   "pysocks 1.6.8 py36_0",
+   "python 3.6.6 hc167b69_0",
+   "python-dateutil 2.7.3 py36_0",
+   "python.app 2 py36_9",
+   "pytz 2018.5 py36_0",
+   "pyyaml 3.13 py36h1de35cc_0",
+   "readline 7.0 h1de35cc_5",
+   "requests 2.19.1 py36_0",
+   "ruamel_yaml 0.15.46 py36h1de35cc_0",
+   "setuptools 40.4.3 py36_0",
+   "six 1.11.0 py36_1",
+   "sqlite 3.24.0 ha441bb4_0",
+   "tk 8.6.8 ha441bb4_0",
+   "tqdm 4.26.0 py36h28b3542_0",
+   "traitlets 4.3.2 py36h65bd3ce_0",
+   "urllib3 1.23 py36_0",
+   "wheel 0.32.0 py36_0",
+   "xz 5.2.4 h1de35cc_4",
+   "yaml 0.1.7 hc338f04_2",
+   "zlib 1.2.11 hf3cbc9b_2"
+  ],
+  "summary": "Bob renders directory structure templates",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CONDA_BUILD_SYSROOT": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk",
+  "MACOSX_DEPLOYMENT_TARGET": "10.9",
+  "build_number_decrement": "0",
+  "c_compiler": "clang",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "clangxx",
+  "docker_image": "condaforge/linux-anvil",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "python",
+  "lua": "5",
+  "macos_machine": "x86_64-apple-darwin13.4.0",
+  "macos_min_version": "10.9",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.6",
+  "r_base": "3.5",
+  "target_platform": "osx-64",
+  "zip_keys": [
+   [
+    "channel_sources",
+    "channel_targets",
+    "build_number_decrement"
+   ]
+  ]
+ },
+ "files": [
+  "bin/mrbob",
+  "lib/python3.6/site-packages/mr.bob-0.1.2-py3.6.egg-info/PKG-INFO",
+  "lib/python3.6/site-packages/mr.bob-0.1.2-py3.6.egg-info/not-zip-safe",
+  "lib/python3.6/site-packages/mrbob/__init__.py",
+  "lib/python3.6/site-packages/mrbob/bobexceptions.py",
+  "lib/python3.6/site-packages/mrbob/cli.py",
+  "lib/python3.6/site-packages/mrbob/configurator.py",
+  "lib/python3.6/site-packages/mrbob/hooks.py",
+  "lib/python3.6/site-packages/mrbob/parsing.py",
+  "lib/python3.6/site-packages/mrbob/rendering.py",
+  "lib/python3.6/site-packages/mrbob/template_sample/.mrbob.ini",
+  "lib/python3.6/site-packages/mrbob/template_sample/sample.txt.bob",
+  "lib/python3.6/site-packages/mrbob/template_starter/.mrbob.ini",
+  "lib/python3.6/site-packages/mrbob/template_starter/sample.txt.bob",
+  "lib/python3.6/site-packages/mrbob/tests/__init__.py",
+  "lib/python3.6/site-packages/mrbob/tests/example.ini",
+  "lib/python3.6/site-packages/mrbob/tests/example2.ini",
+  "lib/python3.6/site-packages/mrbob/tests/example3.ini",
+  "lib/python3.6/site-packages/mrbob/tests/example4.ini",
+  "lib/python3.6/site-packages/mrbob/tests/example5.ini",
+  "lib/python3.6/site-packages/mrbob/tests/example6.ini",
+  "lib/python3.6/site-packages/mrbob/tests/ignored.ini",
+  "lib/python3.6/site-packages/mrbob/tests/ignored_dirs.ini",
+  "lib/python3.6/site-packages/mrbob/tests/question_order.ini",
+  "lib/python3.6/site-packages/mrbob/tests/templates/ask_hooks/.mrbob.ini",
+  "lib/python3.6/site-packages/mrbob/tests/templates/ds_store/.mrbob.ini",
+  "lib/python3.6/site-packages/mrbob/tests/templates/empty/.mrbob.ini",
+  "lib/python3.6/site-packages/mrbob/tests/templates/empty2/.mrbob.ini",
+  "lib/python3.6/site-packages/mrbob/tests/templates/encodingc\u030c/mapc\u030ca/c\u0301a.bob",
+  "lib/python3.6/site-packages/mrbob/tests/templates/ignored/.mrbob.ini",
+  "lib/python3.6/site-packages/mrbob/tests/templates/ignored/ignored",
+  "lib/python3.6/site-packages/mrbob/tests/templates/ignored/not_ignored",
+  "lib/python3.6/site-packages/mrbob/tests/templates/ignored_dirs/.mrbob.ini",
+  "lib/python3.6/site-packages/mrbob/tests/templates/ignored_dirs/ignored/ignored_subdir/.gitignore",
+  "lib/python3.6/site-packages/mrbob/tests/templates/ignored_dirs/ignored_stuff/stuff",
+  "lib/python3.6/site-packages/mrbob/tests/templates/ignored_dirs/not_ignored/.gitignore",
+  "lib/python3.6/site-packages/mrbob/tests/templates/missing_namespace_key/foo.bob",
+  "lib/python3.6/site-packages/mrbob/tests/templates/missing_namespace_key/foo_jinja2.bob",
+  "lib/python3.6/site-packages/mrbob/tests/templates/multiconfig/.mrbob.ini",
+  "lib/python3.6/site-packages/mrbob/tests/templates/multiconfig/vars.bob",
+  "lib/python3.6/site-packages/mrbob/tests/templates/questions1/.mrbob.ini",
+  "lib/python3.6/site-packages/mrbob/tests/templates/questions2/.mrbob.ini",
+  "lib/python3.6/site-packages/mrbob/tests/templates/questions3/.mrbob.ini",
+  "lib/python3.6/site-packages/mrbob/tests/templates/questions4/.mrbob.ini",
+  "lib/python3.6/site-packages/mrbob/tests/templates/questions5/.mrbob.ini",
+  "lib/python3.6/site-packages/mrbob/tests/templates/renamed/+module+parts/+name+_etc/+name+.conf.bob",
+  "lib/python3.6/site-packages/mrbob/tests/templates/renamedfile/foo.+name+.rst",
+  "lib/python3.6/site-packages/mrbob/tests/templates/renamedir/parts+name+/part",
+  "lib/python3.6/site-packages/mrbob/tests/templates/renamedtemplate/+name+_endpoint.py.bob",
+  "lib/python3.6/site-packages/mrbob/tests/templates/renamedtemplate2/+author.name+_endpoint.py.bob",
+  "lib/python3.6/site-packages/mrbob/tests/templates/render_hooks/.mrbob.ini",
+  "lib/python3.6/site-packages/mrbob/tests/templates/renderer/.mrbob.ini",
+  "lib/python3.6/site-packages/mrbob/tests/templates/skip_mrbobini/.mrbob.ini",
+  "lib/python3.6/site-packages/mrbob/tests/templates/skip_mrbobini/test.bob",
+  "lib/python3.6/site-packages/mrbob/tests/templates/strict_undefined.bob",
+  "lib/python3.6/site-packages/mrbob/tests/templates/unbound/etc/rc.conf",
+  "lib/python3.6/site-packages/mrbob/tests/templates/unbound/usr/local/etc/unbound/unbound.conf.bob",
+  "lib/python3.6/site-packages/mrbob/tests/test_cli.py",
+  "lib/python3.6/site-packages/mrbob/tests/test_configurator.py",
+  "lib/python3.6/site-packages/mrbob/tests/test_hooks.py",
+  "lib/python3.6/site-packages/mrbob/tests/test_parsing.py",
+  "lib/python3.6/site-packages/mrbob/tests/test_rendering.py",
+  "lib/python3.6/site-packages/mrbob/tests/unbound.ini"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36_1000",
+  "build_number": 1000,
+  "depends": [
+   "jinja2",
+   "python >=3.6,<3.7.0a0",
+   "six"
+  ],
+  "license": "BSD-3",
+  "license_family": "BSD",
+  "name": "mr.bob",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "timestamp": 1538708899559,
+  "version": "0.1.2"
+ },
+ "metadata_version": 1,
+ "name": "mr.bob",
+ "raw_recipe": "{% set name = \"mr.bob\" %}\n{% set version = \"0.1.2\" %}\n{% set sha256 = \"6737eaf98aaeae85e07ebef844ee5156df2f06a8b28d7c3dcb056f811c588121\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1000\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    - jinja2\n    - six\n\ntest:\n  imports:\n    - mrbob\n    - mrbob.tests\n\n  commands:\n    - mrbob --help\n\nabout:\n  home: https://github.com/domenkozar/mr.bob\n  license: BSD-3\n  license_family: BSD\n  license_file: LICENSE\n  summary: 'Bob renders directory structure templates'\n\n  description: |\n    mr.bob is a tool that takes a directory skeleton, copies over its directory\n    structure to a target folder and can use the Jinja2 (or some other)\n    templating engine to dynamically generate the files. Additionally, it can\n    ask you questions needed to render the structure, or provide a config file\n    to answer them.\n  doc_url: http://mrbob.readthedocs.io/\n  dev_url: https://github.com/domenkozar/mr.bob\n\nextra:\n  recipe-maintainers:\n    - mariusvniekerk\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "mr.bob is a tool that takes a directory skeleton, copies over its directory\nstructure to a target folder and can use the Jinja2 (or some other)\ntemplating engine to dynamically generate the files. Additionally, it can\nask you questions needed to render the structure, or provide a config file\nto answer them.\n",
+   "dev_url": "https://github.com/domenkozar/mr.bob",
+   "doc_url": "http://mrbob.readthedocs.io/",
+   "home": "https://github.com/domenkozar/mr.bob",
+   "license": "BSD-3",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "Bob renders directory structure templates"
+  },
+  "build": {
+   "number": "1000",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py36_1000"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "mariusvniekerk"
+   ]
+  },
+  "package": {
+   "name": "mr.bob",
+   "version": "0.1.2"
+  },
+  "requirements": {
+   "build": [
+    "bzip2 1.0.6 1",
+    "ca-certificates 2018.8.24 ha4d7672_0",
+    "certifi 2018.8.24 py36_1001",
+    "libffi 3.2.1 hfc679d8_5",
+    "ncurses 6.1 hfc679d8_1",
+    "openssl 1.0.2p h470a237_0",
+    "python 3.6.6 h5001a0f_0",
+    "readline 7.0 haf1bffa_1",
+    "setuptools 40.4.3 py36_0",
+    "sqlite 3.25.2 hb1c47c0_0",
+    "tk 8.6.8 ha92aebf_0",
+    "xz 5.2.4 h470a237_1",
+    "zlib 1.2.11 h470a237_3"
+   ],
+   "run": [
+    "jinja2",
+    "python >=3.6,<3.7.0a0",
+    "six"
+   ]
+  },
+  "source": {
+   "fn": "mr.bob-0.1.2.tar.gz",
+   "sha256": "6737eaf98aaeae85e07ebef844ee5156df2f06a8b28d7c3dcb056f811c588121",
+   "url": "https://pypi.io/packages/source/m/mr.bob/mr.bob-0.1.2.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "mrbob --help"
+   ],
+   "imports": [
+    "mrbob",
+    "mrbob.tests"
+   ]
+  }
+ },
+ "version": "0.1.2"
+}
