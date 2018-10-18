@@ -1,0 +1,287 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.16.1",
+  "conda_private": false,
+  "conda_version": "4.5.11",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "dpryan79",
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak"
+   ]
+  },
+  "home": "http://ff.r-forge.r-project.org/",
+  "identifiers": [],
+  "keywords": [],
+  "license": "GPL-2",
+  "license_family": "GPL2",
+  "root_pkgs": [
+   "setuptools 40.4.3 py36_0",
+   "krb5 1.16.1 hbb41f41_0",
+   "libstdcxx-ng 7.2.0 hdf63c60_3",
+   "six 1.11.0 py36_1001",
+   "bzip2 1.0.6 h470a237_2",
+   "beautifulsoup4 4.6.3 py36_1000",
+   "asn1crypto 0.24.0 py36_1003",
+   "sqlite 3.25.2 hb1c47c0_0",
+   "libedit 3.1.20170329 haf1bffa_1",
+   "python-libarchive-c 2.8 py36_1003",
+   "readline 7.0 haf1bffa_1",
+   "anaconda-client 1.7.1 py_0",
+   "xz 5.2.4 h470a237_1",
+   "ncurses 6.1 hfc679d8_1",
+   "pycosat 0.6.3 py36h470a237_1",
+   "idna 2.7 py36_1002",
+   "wheel 0.32.1 py36_0",
+   "python 3.6.6 h5001a0f_3",
+   "libiconv 1.15 h470a237_3",
+   "yaml 0.1.7 h470a237_1",
+   "psutil 5.4.7 py36h470a237_1",
+   "pycparser 2.19 py_0",
+   "zlib 1.2.11 h470a237_3",
+   "tini 0.18.0 h470a237_1",
+   "pyyaml 3.13 py36h470a237_1",
+   "conda-build 3.16.1 py36_0",
+   "git 2.19.1 pl526hbb17d3c_0",
+   "cryptography-vectors 2.3.1 py36_1000",
+   "pysocks 1.6.8 py36_1002",
+   "decorator 4.3.0 py_0",
+   "glob2 0.6 py_0",
+   "pytz 2018.5 py_0",
+   "urllib3 1.23 py36_1001",
+   "jinja2 2.10 py_1",
+   "cryptography 2.3.1 py36hdffb7b8_0",
+   "nbformat 4.4.0 py_1",
+   "jsonschema 2.6.0 py36_1002",
+   "chardet 3.0.4 py36_1003",
+   "traitlets 4.3.2 py36_1000",
+   "conda-env 2.6.0 1",
+   "python-dateutil 2.7.3 py_0",
+   "pkginfo 1.4.2 py_1",
+   "patchelf 0.9 hfc679d8_2",
+   "libcurl 7.61.1 hbdb9355_2",
+   "curl 7.61.1 h74213dd_2",
+   "pip 18.1 py36_1000",
+   "perl 5.26.2 h470a237_0",
+   "filelock 3.0.9 py_0",
+   "tk 8.6.8 ha92aebf_0",
+   "markupsafe 1.0 py36h470a237_1",
+   "ipython_genutils 0.2.0 py_1",
+   "ruamel_yaml 0.15.71 py36h470a237_0",
+   "libffi 3.2.1 hfc679d8_5",
+   "jupyter_core 4.4.0 py_0",
+   "cffi 1.11.5 py36h5e8e0c9_1",
+   "pyopenssl 18.0.0 py36_1000",
+   "expat 2.2.5 hfc679d8_2",
+   "libssh2 1.8.0 h5b517e9_2",
+   "gettext 0.19.8.1 h5e8e0c9_1",
+   "gosu 1.10 h81701ea_1001",
+   "tqdm 4.26.0 py_0",
+   "requests 2.19.1 py36_1001",
+   "clyent 1.2.2 py_1",
+   "libgcc-ng 7.2.0 hdf63c60_3",
+   "libarchive 3.3.3 h823be47_0",
+   "conda 4.5.11 py36_0",
+   "conda-forge-ci-setup 2.0.8 py36_0",
+   "openssl 1.0.2p h14c3975_0",
+   "certifi 2018.10.15 py36_0",
+   "ca-certificates 2018.03.07 0",
+   "click 7.0 py36_0"
+  ],
+  "summary": "The ff package provides data structures that are stored on disk but behave (almost)\nas if they were in RAM by transparently  mapping only a section (pagesize) in main\nmemory - the effective  virtual memory consumption per ff object. ff supports R''s\nstandard  atomic data types ''double'', ''logical'', ''raw'' and ''integer'' and  non-standard\natomic types boolean (1 bit), quad (2 bit unsigned),  nibble (4 bit unsigned), byte\n(1 byte signed with NAs), ubyte (1 byte  unsigned), short (2 byte signed with NAs),\nushort (2 byte unsigned),  single (4 byte float with NAs). For example ''quad''\nallows efficient  storage of genomic data as an ''A'',''T'',''G'',''C'' factor.\nThe unsigned  types support ''circular'' arithmetic. There is also support for  close-to-atomic\ntypes ''factor'', ''ordered'', ''POSIXct'', ''Date'' and  custom close-to-atomic\ntypes.  ff not only has native C-support for vectors, matrices and arrays  with\nflexible dimorder (major column-order, major row-order and  generalizations for\narrays). There is also a ffdf class not unlike  data.frames and import/export filters\nfor csv files. ff objects store raw data in binary flat files in native encoding,\nand complement this with metadata stored in R as physical and virtual attributes.\nff objects have well-defined hybrid copying semantics,  which gives rise to certain\nperformance improvements through  virtualization. ff objects can be stored and reopened\nacross R  sessions. ff files can be shared by multiple ff R objects  (using different\ndata en/de-coding schemes) in the same process  or from multiple R processes to\nexploit parallelism. A wide choice of  finalizer options allows to work with ''permanent''\nfiles as well as  creating/removing ''temporary'' ff files completely transparent\nto the  user. On certain OS/Filesystem combinations, creating the ff files works\nwithout notable delay thanks to using sparse file allocation. Several access optimization\ntechniques such as Hybrid Index  Preprocessing and Virtualization are implemented\nto achieve good  performance even with large datasets, for example virtual matrix  transpose\nwithout touching a single byte on disk. Further, to reduce  disk I/O, ''logicals''\nand non-standard data types get stored native and  compact on binary flat files\ni.e. logicals take up exactly 2 bits to  represent TRUE, FALSE and NA.  Beyond basic\naccess functions, the ff package also provides  compatibility functions that facilitate\nwriting code for ff and ram  objects and support for batch processing on ff objects\n(e.g. as.ram,  as.ff, ffapply). ff interfaces closely with functionality from package  ''bit'':\nchunked looping, fast bit operations and coercions between  different objects that\ncan store subscript information (''bit'',  ''bitwhich'', ff ''boolean'', ri range\nindex, hi hybrid index). This allows to work interactively with selections of large\ndatasets and quickly  modify selection criteria.  Further high-performance enhancements\ncan be made available upon request.\n",
+  "tags": []
+ },
+ "conda_build_config": {
+  "c_compiler": "toolchain_c",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "toolchain_cxx",
+  "docker_image": "condaforge/linux-anvil",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "numpy",
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x"
+   }
+  },
+  "python": "3.6",
+  "r_base": "3.4.1",
+  "target_platform": "linux-64"
+ },
+ "files": [
+  "lib/R/library/ff/DESCRIPTION",
+  "lib/R/library/ff/INDEX",
+  "lib/R/library/ff/LICENSE",
+  "lib/R/library/ff/Meta/Rd.rds",
+  "lib/R/library/ff/Meta/features.rds",
+  "lib/R/library/ff/Meta/hsearch.rds",
+  "lib/R/library/ff/Meta/links.rds",
+  "lib/R/library/ff/Meta/nsInfo.rds",
+  "lib/R/library/ff/Meta/package.rds",
+  "lib/R/library/ff/NAMESPACE",
+  "lib/R/library/ff/NEWS",
+  "lib/R/library/ff/R/ff",
+  "lib/R/library/ff/R/ff.rdb",
+  "lib/R/library/ff/R/ff.rdx",
+  "lib/R/library/ff/exec/make_rd.pl",
+  "lib/R/library/ff/exec/prebuild.sh",
+  "lib/R/library/ff/help/AnIndex",
+  "lib/R/library/ff/help/aliases.rds",
+  "lib/R/library/ff/help/ff.rdb",
+  "lib/R/library/ff/help/ff.rdx",
+  "lib/R/library/ff/help/paths.rds",
+  "lib/R/library/ff/html/00Index.html",
+  "lib/R/library/ff/html/R.css",
+  "lib/R/library/ff/libs/ff.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "r341hfc679d8_2",
+  "build_number": 2,
+  "depends": [
+   "libgcc-ng >=4.9",
+   "libstdcxx-ng >=4.9",
+   "r-base >=3.4.1,<3.4.2.0a0",
+   "r-bit >=1.1_12"
+  ],
+  "license": "GPL-2",
+  "license_family": "GPL2",
+  "name": "r-ff",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1539847059998,
+  "version": "2.2_13"
+ },
+ "metadata_version": 1,
+ "name": "r-ff",
+ "raw_recipe": "{% set version = '2.2-13' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-ff\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: ff_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/ff_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/ff/ff_{{ version }}.tar.gz\n  sha256: 8bfb08afe0651ef3c23aaad49208146d5f929af5af12a25262fe7743fa346ddb\n\nbuild:\n  merge_build_host: True  # [win]\n  number: 2\n  skip: true  # [win32]\n\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - posix                # [win]\n    - {{ compiler('c') }}        # [unix]\n    - {{ compiler('m2w64_c') }}  # [win]\n    - {{ compiler('cxx') }}        # [unix]\n    - {{ compiler('m2w64_cxx') }}  # [win]\n  host:\n    - r-base\n    - r-bit >=1.1_12\n\n  run:\n    - r-base\n    - r-bit >=1.1_12\n\ntest:\n  commands:\n    - $R -e \"library('ff')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('ff')\\\"\"  # [win]\n\nabout:\n  home: http://ff.r-forge.r-project.org/\n  license: GPL-2\n  summary: |\n    The ff package provides data structures that are stored on disk but behave (almost)\n    as if they were in RAM by transparently  mapping only a section (pagesize) in main\n    memory - the effective  virtual memory consumption per ff object. ff supports R''s\n    standard  atomic data types ''double'', ''logical'', ''raw'' and ''integer'' and  non-standard\n    atomic types boolean (1 bit), quad (2 bit unsigned),  nibble (4 bit unsigned), byte\n    (1 byte signed with NAs), ubyte (1 byte  unsigned), short (2 byte signed with NAs),\n    ushort (2 byte unsigned),  single (4 byte float with NAs). For example ''quad''\n    allows efficient  storage of genomic data as an ''A'',''T'',''G'',''C'' factor.\n    The unsigned  types support ''circular'' arithmetic. There is also support for  close-to-atomic\n    types ''factor'', ''ordered'', ''POSIXct'', ''Date'' and  custom close-to-atomic\n    types.  ff not only has native C-support for vectors, matrices and arrays  with\n    flexible dimorder (major column-order, major row-order and  generalizations for\n    arrays). There is also a ffdf class not unlike  data.frames and import/export filters\n    for csv files. ff objects store raw data in binary flat files in native encoding,\n    and complement this with metadata stored in R as physical and virtual attributes.\n    ff objects have well-defined hybrid copying semantics,  which gives rise to certain\n    performance improvements through  virtualization. ff objects can be stored and reopened\n    across R  sessions. ff files can be shared by multiple ff R objects  (using different\n    data en/de-coding schemes) in the same process  or from multiple R processes to\n    exploit parallelism. A wide choice of  finalizer options allows to work with ''permanent''\n    files as well as  creating/removing ''temporary'' ff files completely transparent\n    to the  user. On certain OS/Filesystem combinations, creating the ff files works\n    without notable delay thanks to using sparse file allocation. Several access optimization\n    techniques such as Hybrid Index  Preprocessing and Virtualization are implemented\n    to achieve good  performance even with large datasets, for example virtual matrix  transpose\n    without touching a single byte on disk. Further, to reduce  disk I/O, ''logicals''\n    and non-standard data types get stored native and  compact on binary flat files\n    i.e. logicals take up exactly 2 bits to  represent TRUE, FALSE and NA.  Beyond basic\n    access functions, the ff package also provides  compatibility functions that facilitate\n    writing code for ff and ram  objects and support for batch processing on ff objects\n    (e.g. as.ram,  as.ff, ffapply). ff interfaces closely with functionality from package  ''bit'':\n    chunked looping, fast bit operations and coercions between  different objects that\n    can store subscript information (''bit'',  ''bitwhich'', ff ''boolean'', ri range\n    index, hi hybrid index). This allows to work interactively with selections of large\n    datasets and quickly  modify selection criteria.  Further high-performance enhancements\n    can be made available upon request.\n  license_family: GPL2\n\nextra:\n  recipe-maintainers:\n    - dpryan79\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://ff.r-forge.r-project.org/",
+   "license": "GPL-2",
+   "license_family": "GPL2",
+   "summary": "The ff package provides data structures that are stored on disk but behave (almost)\nas if they were in RAM by transparently  mapping only a section (pagesize) in main\nmemory - the effective  virtual memory consumption per ff object. ff supports R''s\nstandard  atomic data types ''double'', ''logical'', ''raw'' and ''integer'' and  non-standard\natomic types boolean (1 bit), quad (2 bit unsigned),  nibble (4 bit unsigned), byte\n(1 byte signed with NAs), ubyte (1 byte  unsigned), short (2 byte signed with NAs),\nushort (2 byte unsigned),  single (4 byte float with NAs). For example ''quad''\nallows efficient  storage of genomic data as an ''A'',''T'',''G'',''C'' factor.\nThe unsigned  types support ''circular'' arithmetic. There is also support for  close-to-atomic\ntypes ''factor'', ''ordered'', ''POSIXct'', ''Date'' and  custom close-to-atomic\ntypes.  ff not only has native C-support for vectors, matrices and arrays  with\nflexible dimorder (major column-order, major row-order and  generalizations for\narrays). There is also a ffdf class not unlike  data.frames and import/export filters\nfor csv files. ff objects store raw data in binary flat files in native encoding,\nand complement this with metadata stored in R as physical and virtual attributes.\nff objects have well-defined hybrid copying semantics,  which gives rise to certain\nperformance improvements through  virtualization. ff objects can be stored and reopened\nacross R  sessions. ff files can be shared by multiple ff R objects  (using different\ndata en/de-coding schemes) in the same process  or from multiple R processes to\nexploit parallelism. A wide choice of  finalizer options allows to work with ''permanent''\nfiles as well as  creating/removing ''temporary'' ff files completely transparent\nto the  user. On certain OS/Filesystem combinations, creating the ff files works\nwithout notable delay thanks to using sparse file allocation. Several access optimization\ntechniques such as Hybrid Index  Preprocessing and Virtualization are implemented\nto achieve good  performance even with large datasets, for example virtual matrix  transpose\nwithout touching a single byte on disk. Further, to reduce  disk I/O, ''logicals''\nand non-standard data types get stored native and  compact on binary flat files\ni.e. logicals take up exactly 2 bits to  represent TRUE, FALSE and NA.  Beyond basic\naccess functions, the ff package also provides  compatibility functions that facilitate\nwriting code for ff and ram  objects and support for batch processing on ff objects\n(e.g. as.ram,  as.ff, ffapply). ff interfaces closely with functionality from package  ''bit'':\nchunked looping, fast bit operations and coercions between  different objects that\ncan store subscript information (''bit'',  ''bitwhich'', ff ''boolean'', ri range\nindex, hi hybrid index). This allows to work interactively with selections of large\ndatasets and quickly  modify selection criteria.  Further high-performance enhancements\ncan be made available upon request.\n"
+  },
+  "build": {
+   "number": "2",
+   "rpaths": [
+    "lib/",
+    "lib/R/lib/"
+   ],
+   "string": "r341hfc679d8_2"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "bgruening",
+    "daler",
+    "dpryan79",
+    "jdblischak",
+    "johanneskoester"
+   ]
+  },
+  "package": {
+   "name": "r-ff",
+   "version": "2.2_13"
+  },
+  "requirements": {
+   "build": [
+    "toolchain 2.2.2 0",
+    "toolchain_c_linux-64 2.2.2 0",
+    "toolchain_cxx_linux-64 2.2.2 0"
+   ],
+   "host": [
+    "bzip2 1.0.6 h470a237_2",
+    "ca-certificates 2018.10.15 ha4d7672_0",
+    "cairo 1.14.12 h276e583_5",
+    "curl 7.61.0 h93b3f91_2",
+    "fontconfig 2.13.1 h65d0f4c_0",
+    "freetype 2.9.1 h6debe1e_4",
+    "gettext 0.19.8.1 h5e8e0c9_1",
+    "glib 2.56.2 h464dc38_0",
+    "graphite2 1.3.12 hfc679d8_1",
+    "gsl 2.2.1 h0c605f7_3",
+    "harfbuzz 1.9.0 h04dbb29_1",
+    "icu 58.2 hfc679d8_0",
+    "jpeg 9c h470a237_1",
+    "krb5 1.14.6 0",
+    "libffi 3.2.1 hfc679d8_5",
+    "libgcc-ng 7.2.0 hdf63c60_3",
+    "libgfortran 3.0.0 1",
+    "libiconv 1.15 h470a237_3",
+    "libpng 1.6.35 ha92aebf_2",
+    "libssh2 1.8.0 h5b517e9_2",
+    "libstdcxx-ng 7.2.0 hdf63c60_3",
+    "libtiff 4.0.9 he6b73bb_2",
+    "libuuid 2.32.1 h470a237_2",
+    "libxcb 1.13 h470a237_2",
+    "libxml2 2.9.8 h422b904_5",
+    "ncurses 6.1 hfc679d8_1",
+    "openssl 1.0.2p h470a237_1",
+    "pango 1.40.14 he752989_2",
+    "pcre 8.41 hfc679d8_3",
+    "pixman 0.34.0 h470a237_3",
+    "pthread-stubs 0.4 h470a237_1",
+    "r-base 3.4.1 h4fe35fd_8",
+    "r-bit 1.1_12 r341h470a237_2",
+    "readline 7.0 haf1bffa_1",
+    "tk 8.6.8 ha92aebf_0",
+    "xorg-kbproto 1.0.7 h470a237_2",
+    "xorg-libice 1.0.9 h470a237_4",
+    "xorg-libsm 1.2.3 h8c8a85c_0",
+    "xorg-libx11 1.6.6 h470a237_0",
+    "xorg-libxau 1.0.8 h470a237_6",
+    "xorg-libxdmcp 1.1.2 h470a237_7",
+    "xorg-libxext 1.3.3 h470a237_4",
+    "xorg-libxrender 0.9.10 h470a237_2",
+    "xorg-libxt 1.1.5 h470a237_2",
+    "xorg-renderproto 0.11.1 h470a237_2",
+    "xorg-xextproto 7.3.0 h470a237_2",
+    "xorg-xproto 7.0.31 h470a237_7",
+    "xz 5.2.4 h470a237_1",
+    "zlib 1.2.11 h470a237_3"
+   ],
+   "run": [
+    "libgcc-ng >=4.9",
+    "libstdcxx-ng >=4.9",
+    "r-base >=3.4.1,<3.4.2.0a0",
+    "r-bit >=1.1_12"
+   ]
+  },
+  "source": {
+   "fn": "ff_2.2-13.tar.gz",
+   "sha256": "8bfb08afe0651ef3c23aaad49208146d5f929af5af12a25262fe7743fa346ddb",
+   "url": [
+    "https://cran.r-project.org/src/contrib/Archive/ff/ff_2.2-13.tar.gz",
+    "https://cran.r-project.org/src/contrib/ff_2.2-13.tar.gz"
+   ]
+  },
+  "test": {
+   "commands": [
+    "$R -e \"library('ff')\""
+   ]
+  }
+ },
+ "version": "2.2_13"
+}
