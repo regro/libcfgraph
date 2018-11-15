@@ -1,0 +1,349 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.15.1",
+  "conda_private": false,
+  "conda_version": "4.5.11",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "grlee77",
+    "jakirkham",
+    "basnijholt"
+   ]
+  },
+  "home": "http://faculty.cse.tamu.edu/davis/suitesparse.html",
+  "identifiers": [],
+  "keywords": [],
+  "license": "LGPL v2 (AMD, BTF, etc), BSD 3-clause (UFget), GPL v2 (UMFPACK, RBIO, SPQR, GPUQRENGINE), Apache 2.0 (Metis)",
+  "root_pkgs": [
+   "anaconda-client 1.7.1 py_0",
+   "asn1crypto 0.24.0 py36_0",
+   "attrs 18.2.0 py_0",
+   "beautifulsoup4 4.6.3 py36_1000",
+   "ca-certificates 2018.10.15 ha4d7672_0",
+   "certifi 2018.10.15 py36_1000",
+   "cffi 1.11.5 py36h945400d_0",
+   "chardet 3.0.4 py36h420ce6e_1",
+   "click 7.0 py_0",
+   "clyent 1.2.2 py_1",
+   "conda 4.5.11 py36_1000",
+   "conda-build 3.15.1 py36_0",
+   "conda-env 2.6.0 h36134e3_1",
+   "conda-forge-ci-setup 2.1.0 py36_0",
+   "console_shortcut 0.1.1 h6bb2dd7_3",
+   "cryptography 2.3.1 py36h74b6da3_1000",
+   "decorator 4.3.0 py_0",
+   "filelock 3.0.10 py_0",
+   "glob2 0.6 py_0",
+   "idna 2.6 py36h148d497_1",
+   "ipython_genutils 0.2.0 py_1",
+   "jinja2 2.10 py_1",
+   "jsonschema 3.0.0a3 py36_1000",
+   "jupyter_core 4.4.0 py_0",
+   "markupsafe 1.1.0 py36hfa6e2cd_1000",
+   "menuinst 1.4.14 py36hfa6e2cd_0",
+   "nbformat 4.4.0 py_1",
+   "openssl 1.0.2p hfa6e2cd_1001",
+   "pip 10.0.1 py36_0",
+   "pkginfo 1.4.2 py_1",
+   "psutil 5.4.8 py36hfa6e2cd_1000",
+   "pycosat 0.6.3 py36h413d8a4_0",
+   "pycparser 2.18 py36hd053e01_1",
+   "pyopenssl 18.0.0 py36_0",
+   "pyrsistent 0.14.5 py36hfa6e2cd_1001",
+   "pysocks 1.6.8 py36_0",
+   "python 3.6.5 h0c2934d_0",
+   "python-dateutil 2.7.5 py_0",
+   "pytz 2018.7 py_0",
+   "pywin32 223 py36hfa6e2cd_1",
+   "pyyaml 3.13 py36hfa6e2cd_1001",
+   "requests 2.18.4 py36h4371aae_1",
+   "ruamel_yaml 0.15.37 py36hfa6e2cd_2",
+   "setuptools 39.2.0 py36_0",
+   "six 1.11.0 py36h4db2310_1",
+   "tqdm 4.28.1 py_0",
+   "traitlets 4.3.2 py36_1000",
+   "urllib3 1.22 py36h276f60a_0",
+   "vc 14.1 h0510ff6_4",
+   "vs2008_express_vc_python_patch 1.0.0 0",
+   "vs2015_runtime 14.15.26706 h3a45250_0",
+   "wheel 0.31.1 py36_0",
+   "wincertstore 0.2 py36h7fe50ca_0",
+   "win_inet_pton 1.0.1 py36he67d7fd_1",
+   "yaml 0.1.7 vc14_0"
+  ],
+  "summary": "A suite of sparse matrix algorithms",
+  "tags": []
+ },
+ "conda_build_config": {
+  "c_compiler": "vs2015",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "vs2015",
+  "fortran_compiler": "flang",
+  "ignore_build_only_deps": "numpy",
+  "lua": "5",
+  "metis": "5.1",
+  "numpy": "1.11",
+  "openblas": "0.3.3",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "metis": {
+    "max_pin": "x.x"
+   },
+   "openblas": {
+    "max_pin": "x.x.x"
+   },
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   },
+   "vc": {
+    "max_pin": "x"
+   }
+  },
+  "python": "3.6",
+  "r_base": "3.4",
+  "target_platform": "win-64",
+  "vc": "14",
+  "zip_keys": [
+   [
+    "vc",
+    "c_compiler",
+    "cxx_compiler"
+   ]
+  ]
+ },
+ "files": [
+  "Library/bin/amd.dll",
+  "Library/bin/btf.dll",
+  "Library/bin/camd.dll",
+  "Library/bin/ccolamd.dll",
+  "Library/bin/cholmod.dll",
+  "Library/bin/colamd.dll",
+  "Library/bin/cxsparse.dll",
+  "Library/bin/klu.dll",
+  "Library/bin/ldl.dll",
+  "Library/bin/spqr.dll",
+  "Library/bin/umfpack.dll",
+  "Library/include/suitesparse/SuiteSparseQR.hpp",
+  "Library/include/suitesparse/SuiteSparseQR_C.h",
+  "Library/include/suitesparse/SuiteSparseQR_definitions.h",
+  "Library/include/suitesparse/SuiteSparse_config.h",
+  "Library/include/suitesparse/amd.h",
+  "Library/include/suitesparse/amd_internal.h",
+  "Library/include/suitesparse/btf.h",
+  "Library/include/suitesparse/btf_internal.h",
+  "Library/include/suitesparse/camd.h",
+  "Library/include/suitesparse/camd_internal.h",
+  "Library/include/suitesparse/ccolamd.h",
+  "Library/include/suitesparse/cholmod.h",
+  "Library/include/suitesparse/cholmod_blas.h",
+  "Library/include/suitesparse/cholmod_camd.h",
+  "Library/include/suitesparse/cholmod_check.h",
+  "Library/include/suitesparse/cholmod_cholesky.h",
+  "Library/include/suitesparse/cholmod_complexity.h",
+  "Library/include/suitesparse/cholmod_config.h",
+  "Library/include/suitesparse/cholmod_core.h",
+  "Library/include/suitesparse/cholmod_function.h",
+  "Library/include/suitesparse/cholmod_gpu.h",
+  "Library/include/suitesparse/cholmod_gpu_kernels.h",
+  "Library/include/suitesparse/cholmod_internal.h",
+  "Library/include/suitesparse/cholmod_io64.h",
+  "Library/include/suitesparse/cholmod_matrixops.h",
+  "Library/include/suitesparse/cholmod_modify.h",
+  "Library/include/suitesparse/cholmod_partition.h",
+  "Library/include/suitesparse/cholmod_supernodal.h",
+  "Library/include/suitesparse/cholmod_template.h",
+  "Library/include/suitesparse/colamd.h",
+  "Library/include/suitesparse/cs.h",
+  "Library/include/suitesparse/klu.h",
+  "Library/include/suitesparse/klu_internal.h",
+  "Library/include/suitesparse/klu_version.h",
+  "Library/include/suitesparse/ldl.h",
+  "Library/include/suitesparse/spqr.hpp",
+  "Library/include/suitesparse/spqrgpu.hpp",
+  "Library/include/suitesparse/umfpack.h",
+  "Library/include/suitesparse/umfpack_col_to_triplet.h",
+  "Library/include/suitesparse/umfpack_defaults.h",
+  "Library/include/suitesparse/umfpack_free_numeric.h",
+  "Library/include/suitesparse/umfpack_free_symbolic.h",
+  "Library/include/suitesparse/umfpack_get_determinant.h",
+  "Library/include/suitesparse/umfpack_get_lunz.h",
+  "Library/include/suitesparse/umfpack_get_numeric.h",
+  "Library/include/suitesparse/umfpack_get_symbolic.h",
+  "Library/include/suitesparse/umfpack_global.h",
+  "Library/include/suitesparse/umfpack_load_numeric.h",
+  "Library/include/suitesparse/umfpack_load_symbolic.h",
+  "Library/include/suitesparse/umfpack_numeric.h",
+  "Library/include/suitesparse/umfpack_qsymbolic.h",
+  "Library/include/suitesparse/umfpack_report_control.h",
+  "Library/include/suitesparse/umfpack_report_info.h",
+  "Library/include/suitesparse/umfpack_report_matrix.h",
+  "Library/include/suitesparse/umfpack_report_numeric.h",
+  "Library/include/suitesparse/umfpack_report_perm.h",
+  "Library/include/suitesparse/umfpack_report_status.h",
+  "Library/include/suitesparse/umfpack_report_symbolic.h",
+  "Library/include/suitesparse/umfpack_report_triplet.h",
+  "Library/include/suitesparse/umfpack_report_vector.h",
+  "Library/include/suitesparse/umfpack_save_numeric.h",
+  "Library/include/suitesparse/umfpack_save_symbolic.h",
+  "Library/include/suitesparse/umfpack_scale.h",
+  "Library/include/suitesparse/umfpack_solve.h",
+  "Library/include/suitesparse/umfpack_symbolic.h",
+  "Library/include/suitesparse/umfpack_tictoc.h",
+  "Library/include/suitesparse/umfpack_timer.h",
+  "Library/include/suitesparse/umfpack_transpose.h",
+  "Library/include/suitesparse/umfpack_triplet_to_col.h",
+  "Library/include/suitesparse/umfpack_wsolve.h",
+  "Library/lib/amd.lib",
+  "Library/lib/btf.lib",
+  "Library/lib/camd.lib",
+  "Library/lib/ccolamd.lib",
+  "Library/lib/cholmod.lib",
+  "Library/lib/cmake/suitesparse-5.1.0/SuiteSparse-targets-release.cmake",
+  "Library/lib/cmake/suitesparse-5.1.0/SuiteSparse-targets.cmake",
+  "Library/lib/cmake/suitesparse-5.1.0/suitesparse-config-version.cmake",
+  "Library/lib/cmake/suitesparse-5.1.0/suitesparse-config.cmake",
+  "Library/lib/colamd.lib",
+  "Library/lib/cxsparse.lib",
+  "Library/lib/klu.lib",
+  "Library/lib/ldl.lib",
+  "Library/lib/spqr.lib",
+  "Library/lib/suitesparseconfig.lib",
+  "Library/lib/umfpack.lib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "blas_openblash21943ff_202",
+  "build_number": 202,
+  "depends": [
+   "blas 1.1 openblas",
+   "libflang >=5.0.0",
+   "metis >=5.1.0,<5.2.0a0",
+   "openblas >=0.3.3,<0.3.4.0a0",
+   "tbb",
+   "vc >=14,<15.0a0"
+  ],
+  "features": "blas_openblas",
+  "license": "LGPL v2 (AMD, BTF, etc), BSD 3-clause (UFget), GPL v2 (UMFPACK, RBIO, SPQR, GPUQRENGINE), Apache 2.0 (Metis)",
+  "name": "suitesparse",
+  "platform": "win",
+  "subdir": "win-64",
+  "timestamp": 1542251296121,
+  "version": "5.1.2"
+ },
+ "metadata_version": 1,
+ "name": "suitesparse",
+ "raw_recipe": "{% set version = \"5.1.2\" %}\n{% set commit = \"9fff863f2a60fc18869c330dcdf5945e2f8930df\" %}\n\n{% set variant = \"openblas\" %}\n\npackage:\n  name: suitesparse\n  version: {{ version }}\n\nsource:\n  fn: SuiteSparse-{{ version }}.tar.gz\n  url: https://github.com/jlblancoc/suitesparse-metis-for-windows/archive/{{ commit }}.tar.gz  # [win]\n  sha256: ff150a85b26e9c6a87a56770d5e26b08fd1208b35da8c28d37a436142a65e2b7  # [win]\n  patches:\n    - gh_56.patch  # [win]\n\nbuild:\n  skip: true  # [win32 or unix]\n  number: 202\n  features:\n    - blas_{{ variant }}\n  skip: True  # [win and vc<14]\n\nrequirements:\n  build:\n    - cmake\n    - ninja  # [win]\n    - {{ compiler('fortran') }}\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - blas 1.1 {{ variant }}\n    - openblas\n    - tbb\n    - metis\n\n  run:\n    - blas 1.1 {{ variant }}\n    - openblas\n    - tbb\n    - metis\n\ntest:\n  commands:\n    {% set suitesparse_libs = [\n        \"amd\",\n        \"btf\",\n        \"camd\",\n        \"ccolamd\",\n        \"cholmod\",\n        \"colamd\",\n        \"cxsparse\",\n        \"klu\",\n        \"ldl\",\n        \"spqr\",\n        \"umfpack\"\n    ] %}\n    {% for each_lib in suitesparse_libs %}\n    - if not exist %LIBRARY_PREFIX%\\\\bin\\\\{{ each_lib }}.dll exit 1                        # [win]\n    - if not exist %LIBRARY_PREFIX%\\\\lib\\\\{{ each_lib }}.lib exit 1                        # [win]\n    {% endfor %}\n\n    - conda inspect linkages -p ${PREFIX} suitesparse  # [not win]\n    - conda inspect objects -p ${PREFIX} suitesparse  # [osx]\n\nabout:\n  home: http://faculty.cse.tamu.edu/davis/suitesparse.html\n  license: LGPL v2 (AMD, BTF, etc), BSD 3-clause (UFget), GPL v2 (UMFPACK, RBIO, SPQR, GPUQRENGINE), Apache 2.0 (Metis)\n  summary: A suite of sparse matrix algorithms\n\nextra:\n  recipe-maintainers:\n    - grlee77\n    - jakirkham\n    - basnijholt\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://faculty.cse.tamu.edu/davis/suitesparse.html",
+   "license": "LGPL v2 (AMD, BTF, etc), BSD 3-clause (UFget), GPL v2 (UMFPACK, RBIO, SPQR, GPUQRENGINE), Apache 2.0 (Metis)",
+   "summary": "A suite of sparse matrix algorithms"
+  },
+  "build": {
+   "features": [
+    "blas_openblas"
+   ],
+   "number": "202",
+   "string": "blas_openblash21943ff_202"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "basnijholt",
+    "grlee77",
+    "jakirkham"
+   ]
+  },
+  "package": {
+   "name": "suitesparse",
+   "version": "5.1.2"
+  },
+  "requirements": {
+   "build": [
+    "clangdev 5.0.0 flang_3",
+    "cmake 3.12.4 he025d50_1000",
+    "flang 5.0.0 he025d50_20180525",
+    "flang_win-64 5.0.0 20180525",
+    "libflang 5.0.0 h6538335_20180525",
+    "llvm-meta 5.0.0 0",
+    "ninja 1.8.2 h1ad3211_1001",
+    "openmp 5.0.0 vc14_1",
+    "vc 14 0",
+    "vs2015_runtime 14.0.25420 0",
+    "vs2015_win-64 14.0.25123 h17c34da_3"
+   ],
+   "host": [
+    "blas 1.1 openblas",
+    "libflang 5.0.0 vc14_20180208",
+    "llvm-meta 5.0.0 0",
+    "metis 5.1.0 vc14_3",
+    "openblas 0.3.3 h535eed3_1001",
+    "openmp 5.0.0 vc14_1",
+    "tbb 2019.2 he980bc4_1000",
+    "vc 14 0",
+    "vs2015_runtime 14.0.25420 0"
+   ],
+   "run": [
+    "blas 1.1 openblas",
+    "libflang >=5.0.0",
+    "metis >=5.1.0,<5.2.0a0",
+    "openblas >=0.3.3,<0.3.4.0a0",
+    "tbb",
+    "vc >=14,<15.0a0"
+   ]
+  },
+  "source": {
+   "fn": "SuiteSparse-5.1.2.tar.gz",
+   "patches": [
+    "gh_56.patch"
+   ],
+   "sha256": "ff150a85b26e9c6a87a56770d5e26b08fd1208b35da8c28d37a436142a65e2b7",
+   "url": "https://github.com/jlblancoc/suitesparse-metis-for-windows/archive/9fff863f2a60fc18869c330dcdf5945e2f8930df.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "if not exist %LIBRARY_PREFIX%\\\\bin\\\\amd.dll exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\lib\\\\amd.lib exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\bin\\\\btf.dll exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\lib\\\\btf.lib exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\bin\\\\camd.dll exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\lib\\\\camd.lib exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\bin\\\\ccolamd.dll exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\lib\\\\ccolamd.lib exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\bin\\\\cholmod.dll exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\lib\\\\cholmod.lib exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\bin\\\\colamd.dll exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\lib\\\\colamd.lib exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\bin\\\\cxsparse.dll exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\lib\\\\cxsparse.lib exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\bin\\\\klu.dll exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\lib\\\\klu.lib exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\bin\\\\ldl.dll exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\lib\\\\ldl.lib exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\bin\\\\spqr.dll exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\lib\\\\spqr.lib exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\bin\\\\umfpack.dll exit 1",
+    "if not exist %LIBRARY_PREFIX%\\\\lib\\\\umfpack.lib exit 1"
+   ]
+  }
+ },
+ "version": "5.1.2"
+}
