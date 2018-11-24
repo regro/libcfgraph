@@ -1,0 +1,301 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.16.3",
+  "conda_private": false,
+  "conda_version": "4.5.11",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "johanneskoester",
+    "bgruening",
+    "daler",
+    "jdblischak",
+    "cbrueffer"
+   ]
+  },
+  "home": "https://CRAN.R-project.org/package=flock",
+  "identifiers": [],
+  "keywords": [],
+  "license": "Apache-2-0",
+  "license_family": "APACHE",
+  "root_pkgs": [
+   "filelock 3.0.10 py_0",
+   "six 1.11.0 py36_1001",
+   "bzip2 1.0.6 h470a237_2",
+   "beautifulsoup4 4.6.3 py36_1000",
+   "asn1crypto 0.24.0 py36_1003",
+   "python-libarchive-c 2.8 py36_1004",
+   "libedit 3.1.20170329 haf1bffa_1",
+   "readline 7.0 haf1bffa_1",
+   "anaconda-client 1.7.1 py_0",
+   "xz 5.2.4 h470a237_1",
+   "ncurses 6.1 hfc679d8_1",
+   "pycosat 0.6.3 py36h470a237_1",
+   "idna 2.7 py36_1002",
+   "libiconv 1.15 h470a237_3",
+   "yaml 0.1.7 h470a237_1",
+   "markupsafe 1.1.0 py36h470a237_0",
+   "pycparser 2.19 py_0",
+   "attrs 18.2.0 py_0",
+   "zlib 1.2.11 h470a237_3",
+   "tini 0.18.0 h470a237_1",
+   "pyyaml 3.13 py36h470a237_1",
+   "pytz 2018.7 py_0",
+   "sqlite 3.25.3 hb1c47c0_0",
+   "cryptography-vectors 2.3.1 py36_1000",
+   "pysocks 1.6.8 py36_1002",
+   "decorator 4.3.0 py_0",
+   "glob2 0.6 py_0",
+   "psutil 5.4.8 py36h470a237_0",
+   "urllib3 1.23 py36_1001",
+   "python-dateutil 2.7.5 py_0",
+   "jinja2 2.10 py_1",
+   "nbformat 4.4.0 py_1",
+   "chardet 3.0.4 py36_1003",
+   "traitlets 4.3.2 py36_1000",
+   "conda-env 2.6.0 1",
+   "wheel 0.32.3 py36_0",
+   "pkginfo 1.4.2 py_1",
+   "patchelf 0.9 hfc679d8_2",
+   "tk 8.6.9 ha92aebf_0",
+   "pip 18.1 py36_1000",
+   "perl 5.26.2 h470a237_0",
+   "pyrsistent 0.14.6 py36h470a237_0",
+   "ipython_genutils 0.2.0 py_1",
+   "ruamel_yaml 0.15.71 py36h470a237_0",
+   "libffi 3.2.1 hfc679d8_5",
+   "jupyter_core 4.4.0 py_0",
+   "tqdm 4.28.1 py_0",
+   "cffi 1.11.5 py36h5e8e0c9_1",
+   "pyopenssl 18.0.0 py36_1000",
+   "expat 2.2.5 hfc679d8_2",
+   "jsonschema 3.0.0a3 py36_1000",
+   "requests 2.20.1 py36_1000",
+   "gettext 0.19.8.1 h5e8e0c9_1",
+   "gosu 1.10 h81701ea_1001",
+   "setuptools 40.6.2 py36_0",
+   "clyent 1.2.2 py_1",
+   "conda 4.5.11 py36_0",
+   "zstd 1.3.7 h0b5b093_0",
+   "cryptography 2.4.1 py36h1ba5d50_0",
+   "libssh2 1.8.0 h1ba5d50_4",
+   "conda-build 3.16.3 py36_0",
+   "libcurl 7.62.0 h20c2e04_0",
+   "libgcc-ng 8.2.0 hdf63c60_1",
+   "conda-forge-ci-setup 2.0.8 py36_0",
+   "libxml2 2.9.8 h26e45fe_1",
+   "curl 7.62.0 hbc83047_0",
+   "git 2.8.2 0",
+   "lz4-c 1.8.1.2 h14c3975_0",
+   "libarchive 3.3.3 h5d8350f_4",
+   "certifi 2018.10.15 py36_0",
+   "icu 58.2 h9c2bf20_1",
+   "python 3.6.7 h0371630_0",
+   "openssl 1.1.1a h7b6447c_0",
+   "ca-certificates 2018.03.07 0",
+   "lzo 2.10 h49e0be7_2",
+   "krb5 1.16.1 h173b8e3_7",
+   "libstdcxx-ng 8.2.0 hdf63c60_1",
+   "click 7.0 py36_0"
+  ],
+  "summary": "Implements synchronization between R processes (spawned by using the \"parallel\" package for instance) using file locks. Supports both exclusive and shared locking.",
+  "tags": []
+ },
+ "conda_build_config": {
+  "build_number_decrement": "1000",
+  "c_compiler": "toolchain_c",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "toolchain_cxx",
+  "docker_image": "condaforge/linux-anvil",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "python",
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x"
+   }
+  },
+  "python": "3.6",
+  "r_base": "3.5.1",
+  "target_platform": "linux-64",
+  "zip_keys": [
+   [
+    "c_compiler",
+    "cxx_compiler",
+    "channel_sources",
+    "channel_targets",
+    "docker_image",
+    "build_number_decrement"
+   ]
+  ]
+ },
+ "files": [
+  "lib/R/library/flock/DESCRIPTION",
+  "lib/R/library/flock/INDEX",
+  "lib/R/library/flock/Meta/Rd.rds",
+  "lib/R/library/flock/Meta/features.rds",
+  "lib/R/library/flock/Meta/hsearch.rds",
+  "lib/R/library/flock/Meta/links.rds",
+  "lib/R/library/flock/Meta/nsInfo.rds",
+  "lib/R/library/flock/Meta/package.rds",
+  "lib/R/library/flock/NAMESPACE",
+  "lib/R/library/flock/R/flock",
+  "lib/R/library/flock/R/flock.rdb",
+  "lib/R/library/flock/R/flock.rdx",
+  "lib/R/library/flock/help/AnIndex",
+  "lib/R/library/flock/help/aliases.rds",
+  "lib/R/library/flock/help/flock.rdb",
+  "lib/R/library/flock/help/flock.rdx",
+  "lib/R/library/flock/help/paths.rds",
+  "lib/R/library/flock/html/00Index.html",
+  "lib/R/library/flock/html/R.css",
+  "lib/R/library/flock/libs/flock.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "r351hfc679d8_1",
+  "build_number": 1,
+  "depends": [
+   "libgcc-ng >=4.9",
+   "libstdcxx-ng >=4.9",
+   "r-base >=3.5.1,<3.5.2.0a0",
+   "r-rcpp"
+  ],
+  "license": "Apache-2-0",
+  "license_family": "APACHE",
+  "name": "r-flock",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1543066728134,
+  "version": "0.7"
+ },
+ "metadata_version": 1,
+ "name": "r-flock",
+ "raw_recipe": "{% set version = '0.7' %}\n\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-flock\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  fn: flock_{{ version }}.tar.gz\n  url:\n    - https://cran.r-project.org/src/contrib/flock_{{ version }}.tar.gz\n    - https://cran.r-project.org/src/contrib/Archive/flock/flock_{{ version }}.tar.gz\n  sha256: 47ebdeaeeb63ec93c800782bafa7f2846f73bb905adb6a3b5c44b248ce1de9fd\n\nbuild:\n  merge_build_host: True  # [win]\n  number: 1001\n  skip: true  # [win32]\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - posix                # [win]\n    - {{ compiler('c') }}        # [unix]\n    - {{ compiler('m2w64_c') }}  # [win]\n    - {{ compiler('cxx') }}        # [unix]\n    - {{ compiler('m2w64_cxx') }}  # [win]\n  host:\n    - r-base\n    - r-rcpp\n\n  run:\n    - r-base\n    - r-rcpp\n\ntest:\n  commands:\n    - $R -e \"library('flock')\"  # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('flock')\\\"\"  # [win]\n\nabout:\n  home: https://CRAN.R-project.org/package=flock\n  license: Apache-2-0\n  summary: Implements synchronization between R processes (spawned by using the \"parallel\" package\n    for instance) using file locks. Supports both exclusive and shared locking.\n  license_family: APACHE\n\nextra:\n  recipe-maintainers:\n    - johanneskoester\n    - bgruening\n    - daler\n    - jdblischak\n    - cbrueffer\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://CRAN.R-project.org/package=flock",
+   "license": "Apache-2-0",
+   "license_family": "APACHE",
+   "summary": "Implements synchronization between R processes (spawned by using the \"parallel\" package for instance) using file locks. Supports both exclusive and shared locking."
+  },
+  "build": {
+   "number": "1",
+   "rpaths": [
+    "lib/",
+    "lib/R/lib/"
+   ],
+   "string": "r351hfc679d8_1"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "bgruening",
+    "cbrueffer",
+    "daler",
+    "jdblischak",
+    "johanneskoester"
+   ]
+  },
+  "package": {
+   "name": "r-flock",
+   "version": "0.7"
+  },
+  "requirements": {
+   "build": [
+    "toolchain 2.3.0 0",
+    "toolchain_c_linux-64 2.3.0 0",
+    "toolchain_cxx_linux-64 2.3.0 0"
+   ],
+   "host": [
+    "bzip2 1.0.6 h470a237_2",
+    "ca-certificates 2018.10.15 ha4d7672_0",
+    "cairo 1.14.12 h276e583_5",
+    "curl 7.61.0 h93b3f91_2",
+    "fontconfig 2.13.1 h65d0f4c_0",
+    "freetype 2.9.1 h6debe1e_4",
+    "gettext 0.19.8.1 h5e8e0c9_1",
+    "glib 2.56.2 h464dc38_1",
+    "graphite2 1.3.12 hfc679d8_1",
+    "gsl 2.2.1 h0c605f7_3",
+    "harfbuzz 1.9.0 h04dbb29_1",
+    "icu 58.2 hfc679d8_0",
+    "jpeg 9c h470a237_1",
+    "krb5 1.14.6 0",
+    "libffi 3.2.1 hfc679d8_5",
+    "libgcc-ng 7.2.0 hdf63c60_3",
+    "libgfortran 3.0.0 1",
+    "libiconv 1.15 h470a237_3",
+    "libpng 1.6.35 ha92aebf_2",
+    "libssh2 1.8.0 h5b517e9_3",
+    "libstdcxx-ng 7.2.0 hdf63c60_3",
+    "libtiff 4.0.9 he6b73bb_2",
+    "libuuid 2.32.1 h470a237_2",
+    "libxcb 1.13 h470a237_2",
+    "libxml2 2.9.8 h422b904_5",
+    "ncurses 6.1 hfc679d8_1",
+    "openssl 1.0.2p h470a237_1",
+    "pango 1.40.14 he752989_2",
+    "pcre 8.41 hfc679d8_3",
+    "pixman 0.34.0 h470a237_3",
+    "pthread-stubs 0.4 h470a237_1",
+    "r-base 3.5.1 h4fe35fd_1",
+    "r-rcpp 1.0.0 r351h9d2a408_0",
+    "readline 7.0 haf1bffa_1",
+    "tk 8.6.9 ha92aebf_0",
+    "xorg-kbproto 1.0.7 h470a237_2",
+    "xorg-libice 1.0.9 h470a237_4",
+    "xorg-libsm 1.2.3 h8c8a85c_0",
+    "xorg-libx11 1.6.6 h470a237_0",
+    "xorg-libxau 1.0.8 h470a237_6",
+    "xorg-libxdmcp 1.1.2 h470a237_7",
+    "xorg-libxext 1.3.3 h470a237_4",
+    "xorg-libxrender 0.9.10 h470a237_2",
+    "xorg-libxt 1.1.5 h470a237_2",
+    "xorg-renderproto 0.11.1 h470a237_2",
+    "xorg-xextproto 7.3.0 h470a237_2",
+    "xorg-xproto 7.0.31 h470a237_7",
+    "xz 5.2.4 h470a237_1",
+    "zlib 1.2.11 h470a237_3"
+   ],
+   "run": [
+    "libgcc-ng >=4.9",
+    "libstdcxx-ng >=4.9",
+    "r-base >=3.5.1,<3.5.2.0a0",
+    "r-rcpp"
+   ]
+  },
+  "source": {
+   "fn": "flock_0.7.tar.gz",
+   "sha256": "47ebdeaeeb63ec93c800782bafa7f2846f73bb905adb6a3b5c44b248ce1de9fd",
+   "url": [
+    "https://cran.r-project.org/src/contrib/Archive/flock/flock_0.7.tar.gz",
+    "https://cran.r-project.org/src/contrib/flock_0.7.tar.gz"
+   ]
+  },
+  "test": {
+   "commands": [
+    "$R -e \"library('flock')\""
+   ]
+  }
+ },
+ "version": "0.7"
+}
