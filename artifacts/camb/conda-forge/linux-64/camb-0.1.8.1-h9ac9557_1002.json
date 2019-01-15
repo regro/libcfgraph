@@ -1,0 +1,233 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge/label/gcc7",
+   "defaults"
+  ],
+  "conda_build_version": "3.17.5",
+  "conda_private": false,
+  "conda_version": "4.5.12",
+  "description": "Code for Anisotropies in the Microwave Background\nby Antony Lewis and Anthony Challinor\n\nFeatures:\n  - Support for closed, open and flat models\n  - Scalar, vector and tensor modes including polarization\n  - Output Cl, matter transfer functions, matter power spectrum and \u03c38\n  - Fast computation to ~0.3-0.1% accuracy, with controllable accuracy level\n  - Relatively structured and easily extendable Fortran 90 code\n  - Efficient support for massive neutrinos\n  - Absolute computations from correctly normalized initial power spectra\n  - Computation of lensed CMB power spectra and lensing potential power spectrum\n  - Internally parallelized for fast execution on multi-processor machines\n  - Use CAMB with CosmoMC for Monte-Carlo parameter estimation\n  - Constant equation of state quintessence (or variable PPF)\n  - Support for general correlated adiabatic/isocurvature initial conditions\n  - Accurate full-sky calculation of lensed power spectra (astro-ph/0502425)\n  - Integrated interface to HALOFIT for non-linear fitting\n  - support for arbitrary neutrino mass splittings\n  - For 21cm, lensing and number count power spectra see this extension\n  - For perturbed recombination and effect on small-scale baryons see this extension\n  - Calculation of local primordial and CMB lensing bispectra\n  - Easy-to-use Python wrapper\n",
+  "dev_url": "https://github.com/cmbant/CAMB",
+  "doc_url": "https://camb.info/readme.html",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "beckermr",
+    "cmbant"
+   ]
+  },
+  "home": "https://camb.info/",
+  "identifiers": [],
+  "keywords": [],
+  "license": "modified LGPL",
+  "license_family": "LGPL",
+  "license_file": "/home/conda/recipe_root/LICENSE",
+  "root_pkgs": [
+   "filelock 3.0.10 py_0",
+   "conda-build 3.17.5 py36_0",
+   "libstdcxx-ng 7.2.0 hdf63c60_3",
+   "bzip2 1.0.6 h470a237_2",
+   "beautifulsoup4 4.6.3 py36_1000",
+   "sqlite 3.26.0 hb1c47c0_0",
+   "asn1crypto 0.24.0 py36_1003",
+   "python-libarchive-c 2.8 py36_1004",
+   "libssh2 1.8.0 h5b517e9_3",
+   "libedit 3.1.20170329 haf1bffa_1",
+   "krb5 1.16.2 hbb41f41_0",
+   "readline 7.0 haf1bffa_1",
+   "anaconda-client 1.7.1 py_0",
+   "xz 5.2.4 h470a237_1",
+   "pycosat 0.6.3 py36h470a237_1",
+   "libiconv 1.15 h470a237_3",
+   "yaml 0.1.7 h470a237_1",
+   "curl 7.63.0 h74213dd_0",
+   "markupsafe 1.1.0 py36h470a237_0",
+   "pycparser 2.19 py_0",
+   "attrs 18.2.0 py_0",
+   "zlib 1.2.11 h470a237_3",
+   "ca-certificates 2018.11.29 ha4d7672_0",
+   "tini 0.18.0 h470a237_1",
+   "pyyaml 3.13 py36h470a237_1",
+   "setuptools 40.6.3 py36_0",
+   "six 1.12.0 py36_1000",
+   "pytz 2018.7 py_0",
+   "cryptography-vectors 2.3.1 py36_1000",
+   "pysocks 1.6.8 py36_1002",
+   "requests 2.21.0 py36_1000",
+   "decorator 4.3.0 py_0",
+   "glob2 0.6 py_0",
+   "psutil 5.4.8 py36h470a237_0",
+   "python-dateutil 2.7.5 py_0",
+   "jinja2 2.10 py_1",
+   "cryptography 2.3.1 py36hdffb7b8_0",
+   "pyrsistent 0.14.7 py36h470a237_0",
+   "nbformat 4.4.0 py_1",
+   "chardet 3.0.4 py36_1003",
+   "traitlets 4.3.2 py36_1000",
+   "conda-env 2.6.0 1",
+   "wheel 0.32.3 py36_0",
+   "pkginfo 1.4.2 py_1",
+   "patchelf 0.9 hfc679d8_2",
+   "tk 8.6.9 ha92aebf_0",
+   "certifi 2018.11.29 py36_1000",
+   "pip 18.1 py36_1000",
+   "libcurl 7.63.0 hbdb9355_0",
+   "perl 5.26.2 h470a237_0",
+   "ncurses 6.1 hfc679d8_2",
+   "git 2.20.1 pl526hbb17d3c_0",
+   "ipython_genutils 0.2.0 py_1",
+   "ruamel_yaml 0.15.71 py36h470a237_0",
+   "libffi 3.2.1 hfc679d8_5",
+   "jupyter_core 4.4.0 py_0",
+   "tqdm 4.28.1 py_0",
+   "cffi 1.11.5 py36h5e8e0c9_1",
+   "openssl 1.0.2p h470a237_1",
+   "urllib3 1.24.1 py36_1000",
+   "pyopenssl 18.0.0 py36_1000",
+   "py-lief 0.9.0 py36h1532aa0_0",
+   "expat 2.2.5 hfc679d8_2",
+   "liblief 0.9.0 h1532aa0_0",
+   "jsonschema 3.0.0a3 py36_1000",
+   "idna 2.8 py36_1000",
+   "gettext 0.19.8.1 h5e8e0c9_1",
+   "python 3.6.7 h5001a0f_1",
+   "gosu 1.10 h81701ea_1001",
+   "clyent 1.2.2 py_1",
+   "libgcc-ng 7.2.0 hdf63c60_3",
+   "libarchive 3.3.3 h823be47_0",
+   "conda 4.5.12 py36_1000",
+   "conda-forge-ci-setup 2.1.1 py36_0",
+   "click 7.0 py_0"
+  ],
+  "summary": "Code for Anisotropies in the Microwave Background",
+  "tags": []
+ },
+ "conda_build_config": {
+  "build_number_decrement": "0",
+  "c_compiler": "gcc",
+  "channel_sources": "conda-forge/label/gcc7,defaults",
+  "channel_targets": "conda-forge gcc7",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "docker_image": "condaforge/linux-anvil-comp7",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "python",
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "2.7",
+  "r_base": "3.5",
+  "target_platform": "linux-64",
+  "zip_keys": [
+   [
+    "c_compiler",
+    "fortran_compiler",
+    "channel_sources",
+    "channel_targets",
+    "docker_image",
+    "build_number_decrement"
+   ]
+  ]
+ },
+ "files": [
+  "bin/camb",
+  "share/camb/HighLExtrapTemplate_lenspotentialCls.dat"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "h9ac9557_1002",
+  "build_number": 1002,
+  "depends": [
+   "libgcc-ng >=7.3.0",
+   "libgfortran-ng >=7,<8.0a0"
+  ],
+  "license": "modified LGPL",
+  "license_family": "LGPL",
+  "name": "camb",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1545403110126,
+  "version": "0.1.8.1"
+ },
+ "metadata_version": 1,
+ "name": "camb",
+ "raw_recipe": "{% set name = \"camb\" %}\n{% set version = \"0.1.8.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  git_url: https://github.com/cmbant/CAMB\n  # corresponds to the tag above\n  git_tag: 021c70c2b4bac717f2b2e6f7a21471883caf345e\n  patches:\n    - modules.f90.patch\n    - inidriver.F90.patch\n    - camb_python.f90.patch\n    - Makefile.patch  # [not win]\n    - Makefile-win.patch  # [win]\n    - setup.py.patch\n    - symbolic.py.patch\n\nbuild:\n  number: 1002\n\nrequirements:\n  build:\n    - {{ compiler('c') }}  # [not win]\n    - {{ compiler('fortran') }}  # [not win]\n    - m2w64-toolchain  # [win]\n    - git  # [not win]\n    - m2-git  # [win]\n    - make  # [not win]\n    - m2-make  # [win]\n    # FIXME: for -ffast-math, remove once upstream patch to gfortran is merged\n    - gcc =4.8.5  # [osx and c_compiler != \"toolchain_c\"]\n    - python\n    - setuptools\n    - pip\n\noutputs:\n  - name: camb\n    script: install-camb.sh  # [not win]\n    script: install-camb.bat  # [win]\n    requirements:\n      build:\n        # these are needed to convince conda-build to pin the requirements\n        - {{ compiler('c') }}  # [not win]\n        - {{ compiler('fortran') }}  # [not win]\n      host:\n        # we don't need this, I am just trying to convince conda to make\n        # the env\n        - git  # [win]\n    test:\n      files:\n        - params.ini\n      commands:\n        - camb params.ini  # [not win]\n      script: test_camb.bat  # [win]\n\n  - name: pycamb\n    script: install-pycamb.sh  # [not win]\n    script: install-pycamb.bat  # [win]\n    requirements:\n      build:\n        # these are needed to convince conda-build to pin the requirements\n        - {{ compiler('c') }}  # [not win]\n        - {{ compiler('fortran') }}  # [not win]\n      host:\n        - python\n        - pip\n        - setuptools\n      run:\n        - python\n        - numpy\n        - matplotlib\n        - six\n        - mock\n        - sympy >=1.0\n        - scipy\n        - {{ compiler('fortran') }}  # [not win]\n    test:\n      imports:\n        - camb\n      script: test_pycamb.py\n\nabout:\n  home: https://camb.info/\n  license: modified LGPL\n  license_family: LGPL\n  license_file: {{ RECIPE_DIR }}/LICENSE\n  summary: Code for Anisotropies in the Microwave Background\n  description: |\n    Code for Anisotropies in the Microwave Background\n    by Antony Lewis and Anthony Challinor\n\n    Features:\n      - Support for closed, open and flat models\n      - Scalar, vector and tensor modes including polarization\n      - Output Cl, matter transfer functions, matter power spectrum and \u03c38\n      - Fast computation to ~0.3-0.1% accuracy, with controllable accuracy level\n      - Relatively structured and easily extendable Fortran 90 code\n      - Efficient support for massive neutrinos\n      - Absolute computations from correctly normalized initial power spectra\n      - Computation of lensed CMB power spectra and lensing potential power spectrum\n      - Internally parallelized for fast execution on multi-processor machines\n      - Use CAMB with CosmoMC for Monte-Carlo parameter estimation\n      - Constant equation of state quintessence (or variable PPF)\n      - Support for general correlated adiabatic/isocurvature initial conditions\n      - Accurate full-sky calculation of lensed power spectra (astro-ph/0502425)\n      - Integrated interface to HALOFIT for non-linear fitting\n      - support for arbitrary neutrino mass splittings\n      - For 21cm, lensing and number count power spectra see this extension\n      - For perturbed recombination and effect on small-scale baryons see this extension\n      - Calculation of local primordial and CMB lensing bispectra\n      - Easy-to-use Python wrapper\n  doc_url: https://camb.info/readme.html\n  dev_url: https://github.com/cmbant/CAMB\n\nextra:\n  recipe-maintainers:\n    - beckermr\n    - cmbant\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Code for Anisotropies in the Microwave Background\nby Antony Lewis and Anthony Challinor\n\nFeatures:\n  - Support for closed, open and flat models\n  - Scalar, vector and tensor modes including polarization\n  - Output Cl, matter transfer functions, matter power spectrum and \u03c38\n  - Fast computation to ~0.3-0.1% accuracy, with controllable accuracy level\n  - Relatively structured and easily extendable Fortran 90 code\n  - Efficient support for massive neutrinos\n  - Absolute computations from correctly normalized initial power spectra\n  - Computation of lensed CMB power spectra and lensing potential power spectrum\n  - Internally parallelized for fast execution on multi-processor machines\n  - Use CAMB with CosmoMC for Monte-Carlo parameter estimation\n  - Constant equation of state quintessence (or variable PPF)\n  - Support for general correlated adiabatic/isocurvature initial conditions\n  - Accurate full-sky calculation of lensed power spectra (astro-ph/0502425)\n  - Integrated interface to HALOFIT for non-linear fitting\n  - support for arbitrary neutrino mass splittings\n  - For 21cm, lensing and number count power spectra see this extension\n  - For perturbed recombination and effect on small-scale baryons see this extension\n  - Calculation of local primordial and CMB lensing bispectra\n  - Easy-to-use Python wrapper\n",
+   "dev_url": "https://github.com/cmbant/CAMB",
+   "doc_url": "https://camb.info/readme.html",
+   "home": "https://camb.info/",
+   "license": "modified LGPL",
+   "license_family": "LGPL",
+   "license_file": "/home/conda/recipe_root/LICENSE",
+   "summary": "Code for Anisotropies in the Microwave Background"
+  },
+  "build": {
+   "number": "1002",
+   "string": "h9ac9557_1002"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "beckermr",
+    "cmbant"
+   ]
+  },
+  "package": {
+   "name": "camb",
+   "version": "0.1.8.1"
+  },
+  "requirements": {
+   "build": [
+    "binutils_impl_linux-64 2.31.1 h6176602_1",
+    "binutils_linux-64 2.31.1 h6176602_3",
+    "gcc_impl_linux-64 7.3.0 habb00fd_1",
+    "gcc_linux-64 7.3.0 h553295d_3",
+    "gfortran_impl_linux-64 7.3.0 hdf63c60_1",
+    "gfortran_linux-64 7.3.0 h553295d_3",
+    "libgcc-ng 7.3.0 hdf63c60_0",
+    "libgfortran-ng 7.3.0 hdf63c60_0",
+    "libstdcxx-ng 7.3.0 hdf63c60_0"
+   ],
+   "host": [
+    "libgcc-ng 7.3.0 hdf63c60_0",
+    "libgfortran-ng 7.3.0 hdf63c60_0"
+   ],
+   "run": [
+    "libgcc-ng >=7.3.0",
+    "libgfortran-ng >=7,<8.0a0"
+   ]
+  },
+  "source": {
+   "git_rev": "021c70c2b4bac717f2b2e6f7a21471883caf345e",
+   "git_url": "https://github.com/cmbant/CAMB",
+   "patches": [
+    "Makefile.patch",
+    "camb_python.f90.patch",
+    "inidriver.F90.patch",
+    "modules.f90.patch",
+    "setup.py.patch",
+    "symbolic.py.patch"
+   ]
+  }
+ },
+ "version": "0.1.8.1"
+}
