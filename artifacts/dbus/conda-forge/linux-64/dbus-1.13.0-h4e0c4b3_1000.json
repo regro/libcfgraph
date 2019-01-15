@@ -1,0 +1,289 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge/label/gcc7",
+   "defaults"
+  ],
+  "conda_build_version": "3.15.1",
+  "conda_private": false,
+  "conda_version": "4.5.11",
+  "description": "D-Bus is a message bus system, a simple way for applications\nto talk to one another. In addition to interprocess communication, D-Bus helps\ncoordinate process lifecycle; it makes it simple and reliable to code a \"single\ninstance\" application or daemon, and to launch applications and daemons on\ndemand when their services are needed.\n",
+  "dev_url": "git://anongit.freedesktop.org/dbus/dbus",
+  "doc_source_url": "https://cgit.freedesktop.org/dbus/dbus/tree/doc",
+  "doc_url": "https://www.freedesktop.org/wiki/IntroductionToDBus/",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "mingwandroid",
+    "ccordoba12",
+    "nehaljwani"
+   ]
+  },
+  "home": "http://www.freedesktop.org/wiki/Software/dbus/",
+  "identifiers": [],
+  "keywords": [],
+  "license": "GPL2",
+  "license_file": "COPYING",
+  "root_pkgs": [
+   "expat 2.2.6 he6710b0_0",
+   "libssh2 1.8.0 h9cfc8f7_4",
+   "readline 7.0 h7b6447c_5",
+   "libgcc-ng 8.2.0 hdf63c60_1",
+   "libffi 3.2.1 hd88cf55_4",
+   "libcurl 7.61.0 h1ad7b7a_0",
+   "gcc_linux-64 7.3.0 h553295d_3",
+   "openssl 1.0.2p h14c3975_0",
+   "perl 5.26.2 h14c3975_0",
+   "git 2.18.0 pl526hb37396a_0",
+   "tk 8.6.8 hbc83047_0",
+   "sqlite 3.24.0 h84994c4_0",
+   "xz 5.2.4 h14c3975_4",
+   "binutils_linux-64 2.31.1 h6176602_3",
+   "conda-env 2.6.0 1",
+   "patchelf 0.9 hf484d3e_2",
+   "libedit 3.1.20170329 h6b74fdf_2",
+   "gcc_impl_linux-64 7.3.0 habb00fd_1",
+   "yaml 0.1.7 had09818_2",
+   "curl 7.61.0 h84994c4_0",
+   "binutils_impl_linux-64 2.31.1 h6176602_1",
+   "ncurses 6.1 hf484d3e_0",
+   "ca-certificates 2018.03.07 0",
+   "gxx_impl_linux-64 7.3.0 hdf63c60_1",
+   "libstdcxx-ng 8.2.0 hdf63c60_1",
+   "gxx_linux-64 7.3.0 h553295d_3",
+   "zlib 1.2.11 ha838bed_2",
+   "setuptools 40.4.3 py36_0",
+   "cryptography 2.3.1 py36hc365091_0",
+   "traitlets 4.3.2 py36_0",
+   "urllib3 1.23 py36_0",
+   "pyopenssl 18.0.0 py36_0",
+   "wheel 0.32.0 py36_0",
+   "conda 4.5.11 py36_0",
+   "tqdm 4.26.0 py36h28b3542_0",
+   "python-dateutil 2.7.3 py36_0",
+   "glob2 0.6 py36_1",
+   "cffi 1.11.5 py36he75722e_1",
+   "clyent 1.2.2 py36_1",
+   "python 3.6.6 hc3d631a_0",
+   "conda-forge-ci-setup 2.0.8 py36_0",
+   "requests 2.19.1 py36_0",
+   "ipython_genutils 0.2.0 py36_0",
+   "certifi 2018.8.24 py36_1",
+   "asn1crypto 0.24.0 py36_0",
+   "anaconda-client 1.7.2 py36_0",
+   "ruamel_yaml 0.15.46 py36h14c3975_0",
+   "decorator 4.3.0 py36_0",
+   "idna 2.7 py36_0",
+   "jupyter_core 4.4.0 py36_0",
+   "nbformat 4.4.0 py36_0",
+   "pyyaml 3.13 py36h14c3975_0",
+   "chardet 3.0.4 py36_1",
+   "filelock 3.0.8 py36_0",
+   "pycosat 0.6.3 py36h14c3975_0",
+   "conda-build 3.15.1 py36_0",
+   "markupsafe 1.0 py36h14c3975_1",
+   "jinja2 2.10 py36_0",
+   "jsonschema 2.6.0 py36_0",
+   "psutil 5.4.7 py36h14c3975_0",
+   "pytz 2018.5 py36_0",
+   "pip 10.0.1 py36_0",
+   "beautifulsoup4 4.6.3 py36_0",
+   "pycparser 2.19 py36_0",
+   "six 1.11.0 py36_1",
+   "pysocks 1.6.8 py36_0",
+   "pkginfo 1.4.2 py36_1",
+   "click 7.0 py36_0"
+  ],
+  "summary": "Simple message bus system for applications to talk to one another",
+  "tags": []
+ },
+ "conda_build_config": {
+  "build_number_decrement": "0",
+  "c_compiler": "gcc",
+  "channel_sources": "conda-forge/label/gcc7,defaults",
+  "channel_targets": "conda-forge gcc7",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "docker_image": "conda/c3i-linux-64",
+  "expat": "2.2",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "python",
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "expat": {
+    "max_pin": "x.x"
+   },
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.6",
+  "r_base": "3.5",
+  "target_platform": "linux-64",
+  "zip_keys": [
+   [
+    "c_compiler",
+    "channel_sources",
+    "channel_targets",
+    "docker_image",
+    "build_number_decrement"
+   ]
+  ]
+ },
+ "files": [
+  "bin/.dbus-post-link.sh",
+  "bin/dbus-cleanup-sockets",
+  "bin/dbus-daemon",
+  "bin/dbus-launch",
+  "bin/dbus-monitor",
+  "bin/dbus-run-session",
+  "bin/dbus-send",
+  "bin/dbus-test-tool",
+  "bin/dbus-update-activation-environment",
+  "bin/dbus-uuidgen",
+  "etc/dbus-1/session.conf",
+  "etc/dbus-1/system.conf",
+  "include/dbus-1.0/dbus/dbus-address.h",
+  "include/dbus-1.0/dbus/dbus-bus.h",
+  "include/dbus-1.0/dbus/dbus-connection.h",
+  "include/dbus-1.0/dbus/dbus-errors.h",
+  "include/dbus-1.0/dbus/dbus-macros.h",
+  "include/dbus-1.0/dbus/dbus-memory.h",
+  "include/dbus-1.0/dbus/dbus-message.h",
+  "include/dbus-1.0/dbus/dbus-misc.h",
+  "include/dbus-1.0/dbus/dbus-pending-call.h",
+  "include/dbus-1.0/dbus/dbus-protocol.h",
+  "include/dbus-1.0/dbus/dbus-server.h",
+  "include/dbus-1.0/dbus/dbus-shared.h",
+  "include/dbus-1.0/dbus/dbus-signature.h",
+  "include/dbus-1.0/dbus/dbus-syntax.h",
+  "include/dbus-1.0/dbus/dbus-threads.h",
+  "include/dbus-1.0/dbus/dbus-types.h",
+  "include/dbus-1.0/dbus/dbus.h",
+  "lib/cmake/DBus1/DBus1Config.cmake",
+  "lib/cmake/DBus1/DBus1ConfigVersion.cmake",
+  "lib/dbus-1.0/include/dbus/dbus-arch-deps.h",
+  "lib/libdbus-1.a",
+  "lib/libdbus-1.so",
+  "lib/libdbus-1.so.3",
+  "lib/libdbus-1.so.3.21.0",
+  "lib/pkgconfig/dbus-1.pc",
+  "libexec/dbus-daemon-launch-helper",
+  "share/dbus-1/session.conf",
+  "share/dbus-1/system.conf",
+  "share/doc/dbus/diagram.png",
+  "share/doc/dbus/diagram.svg",
+  "share/doc/dbus/examples/GetAllMatchRules.py",
+  "share/doc/dbus/examples/example-session-disable-stats.conf",
+  "share/doc/dbus/examples/example-system-enable-stats.conf",
+  "share/xml/dbus-1/busconfig.dtd",
+  "share/xml/dbus-1/introspect.dtd"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "h4e0c4b3_1000",
+  "build_number": 1000,
+  "depends": [
+   "expat >=2.2.5,<2.3.0a0",
+   "libgcc-ng >=7.3.0"
+  ],
+  "license": "GPL2",
+  "name": "dbus",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1538845547990,
+  "version": "1.13.0"
+ },
+ "metadata_version": 1,
+ "name": "dbus",
+ "raw_recipe": "{% set version = \"1.13.0\" %}\n{% set sha256 = \"837abf414c0cdac4c8586ea6f93a999446470b10abcfeefe19ed8a7921854d2e\" %}\n\npackage:\n  name: dbus\n  version: {{ version }}\n\nsource:\n  url: http://dbus.freedesktop.org/releases/dbus/dbus-{{ version }}.tar.gz\n  sha256:  {{ sha256 }}\n  patches:\n    - 0001-Add-var-lib-dbus-machine-id-as-a-fallback.patch  # [linux]\n    - 0002-Make-it-possible-to-read-files-on-proc-which-reports.patch  # [linux]\n    - 0003-Use-proc-sys-kernel-random-boot_id-as-last-resort-fa.patch  # [linux]\n\nbuild:\n  skip: true  # [win]\n  number: 1000\n  detect_binary_files_with_prefix: true\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - pkg-config\n    - python\n  host:\n    - expat\n  run:\n    - expat\n\ntest:\n  commands:\n    - dbus-daemon --version\n    - dbus-uuidgen\n\nabout:\n  home: http://www.freedesktop.org/wiki/Software/dbus/\n  license: GPL2\n  license_file: COPYING\n  summary: \"Simple message bus system for applications to talk to one another\"\n  description: |\n    D-Bus is a message bus system, a simple way for applications\n    to talk to one another. In addition to interprocess communication, D-Bus helps\n    coordinate process lifecycle; it makes it simple and reliable to code a \"single\n    instance\" application or daemon, and to launch applications and daemons on\n    demand when their services are needed.\n  dev_url: git://anongit.freedesktop.org/dbus/dbus\n  doc_url: https://www.freedesktop.org/wiki/IntroductionToDBus/\n  doc_source_url: https://cgit.freedesktop.org/dbus/dbus/tree/doc\n\nextra:\n  recipe-maintainers:\n    - mingwandroid\n    - ccordoba12\n    - nehaljwani\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "D-Bus is a message bus system, a simple way for applications\nto talk to one another. In addition to interprocess communication, D-Bus helps\ncoordinate process lifecycle; it makes it simple and reliable to code a \"single\ninstance\" application or daemon, and to launch applications and daemons on\ndemand when their services are needed.\n",
+   "dev_url": "git://anongit.freedesktop.org/dbus/dbus",
+   "doc_source_url": "https://cgit.freedesktop.org/dbus/dbus/tree/doc",
+   "doc_url": "https://www.freedesktop.org/wiki/IntroductionToDBus/",
+   "home": "http://www.freedesktop.org/wiki/Software/dbus/",
+   "license": "GPL2",
+   "license_file": "COPYING",
+   "summary": "Simple message bus system for applications to talk to one another"
+  },
+  "build": {
+   "detect_binary_files_with_prefix": true,
+   "number": "1000",
+   "string": "h4e0c4b3_1000"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "ccordoba12",
+    "mingwandroid",
+    "nehaljwani"
+   ]
+  },
+  "package": {
+   "name": "dbus",
+   "version": "1.13.0"
+  },
+  "requirements": {
+   "build": [
+    "binutils_impl_linux-64 2.31.1 h6176602_1",
+    "binutils_linux-64 2.31.1 h6176602_3",
+    "ca-certificates 2018.03.07 0",
+    "gcc_impl_linux-64 7.3.0 habb00fd_1",
+    "gcc_linux-64 7.3.0 h553295d_3",
+    "libffi 3.2.1 hf484d3e_1005",
+    "libgcc-ng 7.3.0 hdf63c60_0",
+    "libstdcxx-ng 7.3.0 hdf63c60_0",
+    "ncurses 6.1 hf484d3e_1001",
+    "openssl 1.0.2p h14c3975_1000",
+    "pkg-config 0.29.2 h14c3975_1003",
+    "python 3.6.6 hd21baee_1000",
+    "readline 7.0 hf8c457e_1001",
+    "sqlite 3.25.2 h67949de_1000",
+    "tk 8.6.8 h84994c4_1000",
+    "xz 5.2.4 h14c3975_1001",
+    "zlib 1.2.11 h14c3975_1003"
+   ],
+   "host": [
+    "expat 2.2.5 hf484d3e_1002",
+    "libgcc-ng 7.3.0 hdf63c60_0",
+    "libstdcxx-ng 7.3.0 hdf63c60_0"
+   ],
+   "run": [
+    "expat >=2.2.5,<2.3.0a0",
+    "expat >=2.2.5,<2.3.0a0",
+    "libgcc-ng >=7.3.0"
+   ]
+  },
+  "source": {
+   "patches": [
+    "0001-Add-var-lib-dbus-machine-id-as-a-fallback.patch",
+    "0002-Make-it-possible-to-read-files-on-proc-which-reports.patch",
+    "0003-Use-proc-sys-kernel-random-boot_id-as-last-resort-fa.patch"
+   ],
+   "sha256": "837abf414c0cdac4c8586ea6f93a999446470b10abcfeefe19ed8a7921854d2e",
+   "url": "http://dbus.freedesktop.org/releases/dbus/dbus-1.13.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "dbus-daemon --version",
+    "dbus-uuidgen"
+   ]
+  }
+ },
+ "version": "1.13.0"
+}
