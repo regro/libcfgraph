@@ -1,0 +1,244 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.17.5",
+  "conda_private": false,
+  "conda_version": "4.5.12",
+  "description": "Kuyruk is a simple and easy way of distributing tasks to run on servers.\nIt uses RabbitMQ as message broker and depends on amqp which is a\npure-Python RabbitMQ client library. Compatible with Python 2.7+ and 3.4+.\nAll design decisions is based on simplicity. Speed is not first priority.\nKuyruk only supports RabbitMQ and does not plan to support any other\nbackend. Kuyruk is designed for long running mission critical jobs. For\nthis reason Kuyruk sends acknowledgement only after the task is fully\nprocessed.\n",
+  "dev_url": "https://github.com/cenkalti/kuyruk",
+  "doc_url": "http://kuyruk.readthedocs.io/",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "frol",
+    "cenkalti"
+   ]
+  },
+  "home": "https://github.com/cenkalti/kuyruk",
+  "identifiers": [],
+  "keywords": [],
+  "license": "MIT",
+  "license_file": "LICENSE",
+  "root_pkgs": [
+   "anaconda-client 1.7.1 py_0",
+   "asn1crypto 0.24.0 py37_0",
+   "attrs 18.2.0 py_0",
+   "beautifulsoup4 4.7.1 py37_1001",
+   "bzip2 1.0.6 h1de35cc_1002",
+   "ca-certificates 2018.11.29 ha4d7672_0",
+   "certifi 2018.11.29 py37_1000",
+   "cffi 1.11.5 py37h6174b99_1",
+   "chardet 3.0.4 py37_1",
+   "click 7.0 py_0",
+   "clyent 1.2.2 py_1",
+   "conda 4.5.12 py37_1000",
+   "conda-build 3.17.5 py37_0",
+   "conda-env 2.6.0 1",
+   "conda-forge-ci-setup 2.1.1 py37_0",
+   "cryptography 2.3.1 py37hdbc3d79_1000",
+   "decorator 4.3.0 py_0",
+   "expat 2.2.5 h0a44026_1002",
+   "filelock 3.0.10 py_0",
+   "glob2 0.6 py_0",
+   "idna 2.8 py37_0",
+   "ipython_genutils 0.2.0 py_1",
+   "jinja2 2.10 py_1",
+   "jsonschema 3.0.0a3 py37_1000",
+   "jupyter_core 4.4.0 py_0",
+   "libarchive 3.3.3 hb60c381_1000",
+   "libcxx 4.0.1 hcfea43d_1",
+   "libcxxabi 4.0.1 hcfea43d_1",
+   "libedit 3.1.20170329 hb402a30_2",
+   "libffi 3.2.1 h475c297_4",
+   "libiconv 1.15 h1de35cc_1004",
+   "liblief 0.9.0 h2a1bed3_2",
+   "markupsafe 1.1.0 py37h1de35cc_1000",
+   "nbformat 4.4.0 py_1",
+   "ncurses 6.1 h0a44026_1",
+   "openssl 1.0.2p h1de35cc_1002",
+   "pip 18.1 py37_0",
+   "pkginfo 1.5.0.1 py_0",
+   "psutil 5.4.8 py37h1de35cc_1000",
+   "py-lief 0.9.0 py37h1413db1_2",
+   "pycosat 0.6.3 py37h1de35cc_0",
+   "pycparser 2.19 py37_0",
+   "pyopenssl 18.0.0 py37_0",
+   "pyrsistent 0.14.9 py37h1de35cc_1000",
+   "pysocks 1.6.8 py37_0",
+   "python 3.7.1 h145921a_1000",
+   "python-dateutil 2.7.5 py_0",
+   "python-libarchive-c 2.8 py37_1004",
+   "python.app 2 py37_9",
+   "pytz 2018.9 py_0",
+   "pyyaml 3.13 py37h1de35cc_1001",
+   "readline 7.0 h1de35cc_5",
+   "requests 2.21.0 py37_0",
+   "ruamel_yaml 0.15.46 py37h1de35cc_0",
+   "setuptools 40.6.3 py37_0",
+   "six 1.12.0 py37_0",
+   "soupsieve 1.7.1 py37_1000",
+   "sqlite 3.26.0 ha441bb4_0",
+   "tk 8.6.8 ha441bb4_0",
+   "tqdm 4.29.1 py_0",
+   "traitlets 4.3.2 py37_1000",
+   "urllib3 1.24.1 py37_0",
+   "wheel 0.32.3 py37_0",
+   "xz 5.2.4 h1de35cc_4",
+   "yaml 0.1.7 hc338f04_2",
+   "zlib 1.2.11 h1de35cc_3"
+  ],
+  "summary": "Simple task queue for Python",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CONDA_BUILD_SYSROOT": "/Applications/Xcode-9.4.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk",
+  "MACOSX_DEPLOYMENT_TARGET": "10.9",
+  "build_number_decrement": "0",
+  "c_compiler": "clang",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "clangxx",
+  "docker_image": "condaforge/linux-anvil",
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": "numpy",
+  "lua": "5",
+  "macos_machine": "x86_64-apple-darwin13.4.0",
+  "macos_min_version": "10.9",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.7",
+  "r_base": "3.5",
+  "target_platform": "osx-64"
+ },
+ "files": [
+  "bin/kuyruk",
+  "lib/python3.7/site-packages/Kuyruk-9.1.0-py3.7.egg-info/PKG-INFO",
+  "lib/python3.7/site-packages/Kuyruk-9.1.0-py3.7.egg-info/zip-safe",
+  "lib/python3.7/site-packages/kuyruk/__init__.py",
+  "lib/python3.7/site-packages/kuyruk/__main__.py",
+  "lib/python3.7/site-packages/kuyruk/config.py",
+  "lib/python3.7/site-packages/kuyruk/exceptions.py",
+  "lib/python3.7/site-packages/kuyruk/heartbeat.py",
+  "lib/python3.7/site-packages/kuyruk/importer.py",
+  "lib/python3.7/site-packages/kuyruk/kuyruk.py",
+  "lib/python3.7/site-packages/kuyruk/result.py",
+  "lib/python3.7/site-packages/kuyruk/signals.py",
+  "lib/python3.7/site-packages/kuyruk/task.py",
+  "lib/python3.7/site-packages/kuyruk/worker.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py37_1000",
+  "build_number": 1000,
+  "depends": [
+   "amqp >=1.4.6",
+   "blinker >=1.3",
+   "monotonic >=1.2",
+   "python >=3.7,<3.8.0a0",
+   "setproctitle >=1.1.8",
+   "setuptools",
+   "six >=1.10.0"
+  ],
+  "license": "MIT",
+  "name": "kuyruk",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "timestamp": 1547683224771,
+  "version": "9.1.0"
+ },
+ "metadata_version": 1,
+ "name": "kuyruk",
+ "raw_recipe": "{% set name = \"Kuyruk\" %}\n{% set version = \"9.1.0\" %}\n{% set sha256 = \"72d8e939c1cf7ecb32a1e864eb494cf50ac98e47e2e6ccbf50b34cda78343d6a\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 1000\n  skip: true  # [py27]\n  script: python setup.py install --single-version-externally-managed --record record.txt\n  entry_points:\n    - kuyruk = kuyruk.__main__:main\n\nrequirements:\n  build:\n    - python\n    - setuptools\n  run:\n    - python\n    # setuptools is required as a run dependency:\n    # https://github.com/cenkalti/kuyruk/pull/45\n    - setuptools\n    - six >=1.10.0\n    - amqp >=1.4.6\n    - setproctitle >=1.1.8\n    - blinker >=1.3\n    - monotonic >=1.2\n\ntest:\n  imports:\n    - kuyruk\n  commands:\n    - kuyruk --help\n\nabout:\n  home: https://github.com/cenkalti/kuyruk\n  license: MIT\n  license_file: LICENSE\n  summary: 'Simple task queue for Python'\n  description: |\n    Kuyruk is a simple and easy way of distributing tasks to run on servers.\n    It uses RabbitMQ as message broker and depends on amqp which is a\n    pure-Python RabbitMQ client library. Compatible with Python 2.7+ and 3.4+.\n    All design decisions is based on simplicity. Speed is not first priority.\n    Kuyruk only supports RabbitMQ and does not plan to support any other\n    backend. Kuyruk is designed for long running mission critical jobs. For\n    this reason Kuyruk sends acknowledgement only after the task is fully\n    processed.\n  doc_url: http://kuyruk.readthedocs.io/\n  dev_url: https://github.com/cenkalti/kuyruk\n\nextra:\n  recipe-maintainers:\n    - frol\n    - cenkalti\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Kuyruk is a simple and easy way of distributing tasks to run on servers.\nIt uses RabbitMQ as message broker and depends on amqp which is a\npure-Python RabbitMQ client library. Compatible with Python 2.7+ and 3.4+.\nAll design decisions is based on simplicity. Speed is not first priority.\nKuyruk only supports RabbitMQ and does not plan to support any other\nbackend. Kuyruk is designed for long running mission critical jobs. For\nthis reason Kuyruk sends acknowledgement only after the task is fully\nprocessed.\n",
+   "dev_url": "https://github.com/cenkalti/kuyruk",
+   "doc_url": "http://kuyruk.readthedocs.io/",
+   "home": "https://github.com/cenkalti/kuyruk",
+   "license": "MIT",
+   "license_file": "LICENSE",
+   "summary": "Simple task queue for Python"
+  },
+  "build": {
+   "entry_points": [
+    "kuyruk = kuyruk.__main__:main"
+   ],
+   "number": "1000",
+   "script": "python setup.py install --single-version-externally-managed --record record.txt",
+   "string": "py37_1000"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "cenkalti",
+    "frol"
+   ]
+  },
+  "package": {
+   "name": "kuyruk",
+   "version": "9.1.0"
+  },
+  "requirements": {
+   "build": [
+    "bzip2 1.0.6 h1de35cc_1002",
+    "ca-certificates 2018.11.29 ha4d7672_0",
+    "certifi 2018.11.29 py37_1000",
+    "libcxx 7.0.0 h2d50403_2",
+    "libffi 3.2.1 h0a44026_1005",
+    "llvm-meta 7.0.0 0",
+    "ncurses 6.1 h0a44026_1002",
+    "openssl 1.0.2p h1de35cc_1002",
+    "python 3.7.1 h145921a_1000",
+    "readline 7.0 hcfe32e1_1001",
+    "setuptools 40.6.3 py37_0",
+    "sqlite 3.26.0 h1765d9f_1000",
+    "tk 8.6.9 ha441bb4_1000",
+    "xz 5.2.4 h1de35cc_1001",
+    "zlib 1.2.11 h1de35cc_1004"
+   ],
+   "run": [
+    "amqp >=1.4.6",
+    "blinker >=1.3",
+    "monotonic >=1.2",
+    "python >=3.7,<3.8.0a0",
+    "setproctitle >=1.1.8",
+    "setuptools",
+    "six >=1.10.0"
+   ]
+  },
+  "source": {
+   "fn": "Kuyruk-9.1.0.tar.gz",
+   "sha256": "72d8e939c1cf7ecb32a1e864eb494cf50ac98e47e2e6ccbf50b34cda78343d6a",
+   "url": "https://pypi.io/packages/source/K/Kuyruk/Kuyruk-9.1.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "kuyruk --help"
+   ],
+   "imports": [
+    "kuyruk"
+   ]
+  }
+ },
+ "version": "9.1.0"
+}
