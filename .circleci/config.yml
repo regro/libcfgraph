@@ -16,9 +16,14 @@ jobs:
             conda install pip
             pip install git+https:///github.com/regro/libcflib@master
       - run:
-          name: Run fetcher
+          name: Run preloader
           command: |
             python -m libcflib.preloader artifacts
+          no_output_timeout: 60m
+      - run:
+          name: Run package harvester
+          command: |
+            python -m libcflib.harvest_pkgs
           no_output_timeout: 60m
       - run:
           name: Report diff
