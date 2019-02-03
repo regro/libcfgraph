@@ -1,0 +1,282 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.17.8",
+  "conda_private": false,
+  "conda_version": "4.6.2",
+  "description": "A Python package to read SAS (sas7bdat, sas7bcat, xport/xpt), SPSS (sav, zsav, por) and Stata (dta) files into pandas data frames. It is a wrapper around the C library readstat.\n",
+  "dev_url": "https://github.com/Roche/pyreadstat",
+  "doc_url": "https://github.com/Roche/pyreadstat",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "ofajardo"
+   ]
+  },
+  "home": "https://github.com/Roche/pyreadstat",
+  "identifiers": [],
+  "keywords": [],
+  "license": "Apache",
+  "license_family": "Apache",
+  "license_file": "LICENSE.txt",
+  "root_pkgs": [
+   "anaconda-client 1.7.2 py_0",
+   "asn1crypto 0.24.0 py36_0",
+   "attrs 18.2.0 py_0",
+   "beautifulsoup4 4.7.1 py36_1001",
+   "bzip2 1.0.6 hfa6e2cd_1002",
+   "ca-certificates 2018.11.29 ha4d7672_0",
+   "certifi 2018.11.29 py36_1000",
+   "cffi 1.11.5 py36h945400d_0",
+   "chardet 3.0.4 py36h420ce6e_1",
+   "click 7.0 py_0",
+   "clyent 1.2.2 py_1",
+   "conda 4.6.2 py36_0",
+   "conda-build 3.17.8 py36_0",
+   "conda-env 2.6.0 h36134e3_1",
+   "conda-forge-ci-setup 2.1.4 py36_0",
+   "console_shortcut 0.1.1 h6bb2dd7_3",
+   "cryptography 2.4.2 py36h7a1dbc1_0",
+   "decorator 4.3.2 py_0",
+   "filelock 3.0.10 py_0",
+   "glob2 0.6 py_0",
+   "idna 2.6 py36h148d497_1",
+   "ipython_genutils 0.2.0 py_1",
+   "jinja2 2.10 py_1",
+   "jsonschema 3.0.0a3 py36_1000",
+   "jupyter_core 4.4.0 py_0",
+   "libarchive 3.3.3 h0643e63_2",
+   "libiconv 1.15 hfa6e2cd_1004",
+   "liblief 0.9.0 ha925a31_2",
+   "libxml2 2.9.8 h9ce36c8_1005",
+   "lz4-c 1.8.3 he025d50_1001",
+   "lzo 2.10 hfa6e2cd_1000",
+   "markupsafe 1.1.0 py36hfa6e2cd_1000",
+   "menuinst 1.4.14 py36hfa6e2cd_0",
+   "nbformat 4.4.0 py_1",
+   "openssl 1.1.1a hfa6e2cd_1000",
+   "pip 10.0.1 py36_0",
+   "pkginfo 1.5.0.1 py_0",
+   "psutil 5.5.0 py36hfa6e2cd_0",
+   "py-lief 0.9.0 py36ha925a31_2",
+   "pycosat 0.6.3 py36h413d8a4_0",
+   "pycparser 2.18 py36hd053e01_1",
+   "pyopenssl 18.0.0 py36_0",
+   "pyrsistent 0.14.9 py36hfa6e2cd_1000",
+   "pysocks 1.6.8 py36_0",
+   "python 3.6.5 h0c2934d_0",
+   "python-dateutil 2.7.5 py_0",
+   "python-libarchive-c 2.8 py36_1004",
+   "pytz 2018.9 py_0",
+   "pywin32 223 py36hfa6e2cd_1",
+   "pyyaml 3.13 py36hfa6e2cd_1001",
+   "requests 2.18.4 py36h4371aae_1",
+   "ruamel_yaml 0.15.37 py36hfa6e2cd_2",
+   "setuptools 39.2.0 py36_0",
+   "six 1.11.0 py36h4db2310_1",
+   "soupsieve 1.7.3 py36_0",
+   "tqdm 4.30.0 py_0",
+   "traitlets 4.3.2 py36_1000",
+   "urllib3 1.22 py36h276f60a_0",
+   "vc 14.1 h0510ff6_4",
+   "vs2008_express_vc_python_patch 1.0.0 0",
+   "vs2015_runtime 14.15.26706 h3a45250_0",
+   "wheel 0.31.1 py36_0",
+   "wincertstore 0.2 py36h7fe50ca_0",
+   "win_inet_pton 1.0.1 py36he67d7fd_1",
+   "xz 5.2.4 h2fa13f4_1001",
+   "yaml 0.1.7 hc54c509_2",
+   "zlib 1.2.11 h2fa13f4_1004",
+   "zstd 1.3.3 vc14_1"
+  ],
+  "summary": "read SAS, SPSS and STATA files into pandas data frames",
+  "tags": []
+ },
+ "conda_build_config": {
+  "c_compiler": "vs2015",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "vs2015",
+  "extend_keys": [
+   "pin_run_as_build",
+   "extend_keys",
+   "ignore_build_only_deps",
+   "ignore_version"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "numpy",
+   "python"
+  ],
+  "lua": "5",
+  "m2w64_c_compiler": "m2w64-toolchain",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.6",
+  "r_base": "3.4",
+  "target_platform": "win-64",
+  "vc": "14"
+ },
+ "files": [
+  "Lib/site-packages/pyreadstat-0.2.1.dist-info/INSTALLER",
+  "Lib/site-packages/pyreadstat-0.2.1.dist-info/METADATA",
+  "Lib/site-packages/pyreadstat-0.2.1.dist-info/RECORD",
+  "Lib/site-packages/pyreadstat-0.2.1.dist-info/WHEEL",
+  "Lib/site-packages/pyreadstat/__init__.py",
+  "Lib/site-packages/pyreadstat/_readstat_parser.cp36-win_amd64.pyd",
+  "Lib/site-packages/pyreadstat/pyreadstat.cp36-win_amd64.pyd",
+  "libiconv-2.dll",
+  "zlib1.dll"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py36h301d43c_0",
+  "build_number": 0,
+  "depends": [
+   "m2w64-gcc-libs",
+   "pandas",
+   "python >=3.6,<3.7.0a0"
+  ],
+  "license": "Apache",
+  "license_family": "Apache",
+  "name": "pyreadstat",
+  "platform": "win",
+  "subdir": "win-64",
+  "timestamp": 1549231258572,
+  "version": "0.2.1"
+ },
+ "metadata_version": 1,
+ "name": "pyreadstat",
+ "raw_recipe": "{% set name = \"pyreadstat\" %}\n{% set version = \"0.2.1\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 8e48f4ad426dce82ee0036f5874223fd7688709cc4a7a337fd9896cefca73596\n\nbuild:\n  number: 0\n  skip: True  # [py<35]\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  build:\n    - {{ compiler(\"m2w64_c\") }}  # [win]\n    - {{ compiler('c') }}  # [not win]\n  host:\n    - python\n    - pip\n    - cython\n    - m2w64-toolchain  # [win]\n    - libpython  # [win]\n    - zlib  # [not win]\n  run:\n    - python\n    - pandas\n    - m2w64-gcc-libs  # [win]\n    - zlib  # [not win]\n\ntest:\n  imports:\n    - pyreadstat\n   \nabout:\n  home: https://github.com/Roche/pyreadstat\n  license: Apache\n  license_family: Apache\n  license_file: LICENSE.txt\n  summary: 'read SAS, SPSS and STATA files into pandas data frames'\n  description: |\n    A Python package to read SAS (sas7bdat, sas7bcat, xport/xpt), SPSS (sav, zsav, por) and Stata (dta) files into pandas data frames. It is a wrapper around the C library readstat.\n  doc_url: https://github.com/Roche/pyreadstat\n  dev_url: https://github.com/Roche/pyreadstat\n\nextra:\n  recipe-maintainers:\n    - ofajardo\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "A Python package to read SAS (sas7bdat, sas7bcat, xport/xpt), SPSS (sav, zsav, por) and Stata (dta) files into pandas data frames. It is a wrapper around the C library readstat.\n",
+   "dev_url": "https://github.com/Roche/pyreadstat",
+   "doc_url": "https://github.com/Roche/pyreadstat",
+   "home": "https://github.com/Roche/pyreadstat",
+   "license": "Apache",
+   "license_family": "Apache",
+   "license_file": "LICENSE.txt",
+   "summary": "read SAS, SPSS and STATA files into pandas data frames"
+  },
+  "build": {
+   "number": "0",
+   "script": "C:\\bld\\pyreadstat_1549231116053\\_h_env\\python.exe -m pip install . --no-deps -vv",
+   "string": "py36h301d43c_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "ofajardo"
+   ]
+  },
+  "package": {
+   "name": "pyreadstat",
+   "version": "0.2.1"
+  },
+  "requirements": {
+   "build": [
+    "m2w64-binutils 2.25.1 5",
+    "m2w64-bzip2 1.0.6 6",
+    "m2w64-crt-git 5.0.0.4636.2595836 2",
+    "m2w64-gcc 5.3.0 6",
+    "m2w64-gcc-ada 5.3.0 6",
+    "m2w64-gcc-fortran 5.3.0 6",
+    "m2w64-gcc-libgfortran 5.3.0 6",
+    "m2w64-gcc-libs 5.3.0 7",
+    "m2w64-gcc-libs-core 5.3.0 7",
+    "m2w64-gcc-objc 5.3.0 6",
+    "m2w64-gmp 6.1.0 2",
+    "m2w64-headers-git 5.0.0.4636.c0ad18a 2",
+    "m2w64-isl 0.16.1 2",
+    "m2w64-libiconv 1.14 6",
+    "m2w64-libmangle-git 5.0.0.4509.2e5a9a2 2",
+    "m2w64-libwinpthread-git 5.0.0.4634.697f757 2",
+    "m2w64-make 4.1.2351.a80a8b8 2",
+    "m2w64-mpc 1.0.3 3",
+    "m2w64-mpfr 3.1.4 4",
+    "m2w64-pkg-config 0.29.1 2",
+    "m2w64-toolchain 5.3.0 7",
+    "m2w64-toolchain_win-64 2.4.0 0",
+    "m2w64-tools-git 5.0.0.4592.90b8472 2",
+    "m2w64-windows-default-manifest 6.4 3",
+    "m2w64-winpthreads-git 5.0.0.4634.697f757 2",
+    "m2w64-zlib 1.2.8 10",
+    "msys2-conda-epoch 20160418 1"
+   ],
+   "host": [
+    "certifi 2018.11.29 py36_1000",
+    "cython 0.29.4 py36h6538335_0",
+    "libpython 2.1 py36_0",
+    "m2w64-binutils 2.25.1 5",
+    "m2w64-bzip2 1.0.6 6",
+    "m2w64-crt-git 5.0.0.4636.2595836 2",
+    "m2w64-gcc 5.3.0 6",
+    "m2w64-gcc-ada 5.3.0 6",
+    "m2w64-gcc-fortran 5.3.0 6",
+    "m2w64-gcc-libgfortran 5.3.0 6",
+    "m2w64-gcc-libs 5.3.0 7",
+    "m2w64-gcc-libs-core 5.3.0 7",
+    "m2w64-gcc-objc 5.3.0 6",
+    "m2w64-gmp 6.1.0 2",
+    "m2w64-headers-git 5.0.0.4636.c0ad18a 2",
+    "m2w64-isl 0.16.1 2",
+    "m2w64-libiconv 1.14 6",
+    "m2w64-libmangle-git 5.0.0.4509.2e5a9a2 2",
+    "m2w64-libwinpthread-git 5.0.0.4634.697f757 2",
+    "m2w64-make 4.1.2351.a80a8b8 2",
+    "m2w64-mpc 1.0.3 3",
+    "m2w64-mpfr 3.1.4 4",
+    "m2w64-pkg-config 0.29.1 2",
+    "m2w64-toolchain 5.3.0 7",
+    "m2w64-tools-git 5.0.0.4592.90b8472 2",
+    "m2w64-windows-default-manifest 6.4 3",
+    "m2w64-winpthreads-git 5.0.0.4634.697f757 2",
+    "m2w64-zlib 1.2.8 10",
+    "msys2-conda-epoch 20160418 1",
+    "pip 19.0.1 py36_0",
+    "python 3.6.6 he025d50_0",
+    "setuptools 40.7.1 py36_0",
+    "vc 14 0",
+    "vs2015_runtime 14.0.25420 0",
+    "wheel 0.32.3 py36_0",
+    "wincertstore 0.2 py36_1002"
+   ],
+   "run": [
+    "m2w64-gcc-libs",
+    "pandas",
+    "python >=3.6,<3.7.0a0"
+   ]
+  },
+  "source": {
+   "sha256": "8e48f4ad426dce82ee0036f5874223fd7688709cc4a7a337fd9896cefca73596",
+   "url": "https://pypi.io/packages/source/p/pyreadstat/pyreadstat-0.2.1.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "pyreadstat"
+   ]
+  }
+ },
+ "version": "0.2.1"
+}
