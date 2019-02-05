@@ -1,0 +1,293 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge/label/gcc7",
+   "defaults"
+  ],
+  "conda_build_version": "3.17.8",
+  "conda_private": false,
+  "conda_version": "4.6.2",
+  "description": "LAMMPS is a classical molecular dynamics simulation code designed to\nrun efficiently on parallel computers.  It was developed at Sandia\nNational Laboratories, a US Department of Energy facility, with\nfunding from the DOE.  It is an open-source code, distributed freely\nunder the terms of the GNU Public License (GPL).\n",
+  "dev_url": "https://github.com/lammps/lammps",
+  "doc_url": "http://lammps.sandia.gov/doc/Manual.html",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "jan-janssen"
+   ]
+  },
+  "home": "http://lammps.sandia.gov",
+  "identifiers": [],
+  "keywords": [],
+  "license": "GPL-2.0",
+  "license_family": "GPL",
+  "license_file": "/Users/travis/build/conda-forge/lammps-feedstock/recipe/LICENSE",
+  "root_pkgs": [
+   "anaconda-client 1.7.2 py37_0",
+   "asn1crypto 0.24.0 py37_0",
+   "beautifulsoup4 4.7.1 py37_1",
+   "bzip2 1.0.6 h1de35cc_5",
+   "ca-certificates 2018.12.5 0",
+   "certifi 2018.11.29 py37_0",
+   "cffi 1.11.5 py37h6174b99_1",
+   "chardet 3.0.4 py37_1",
+   "click 7.0 py37_0",
+   "clyent 1.2.2 py37_1",
+   "conda 4.6.2 py37_0",
+   "conda-build 3.17.8 py37_0",
+   "conda-env 2.6.0 1",
+   "conda-forge-ci-setup 2.1.4 py37_0",
+   "cryptography 2.4.2 py37ha12b0ac_0",
+   "decorator 4.3.0 py37_0",
+   "filelock 3.0.10 py37_0",
+   "glob2 0.6 py37_1",
+   "icu 58.2 h4b95b61_1",
+   "idna 2.8 py37_0",
+   "ipython_genutils 0.2.0 py37_0",
+   "jinja2 2.10 py37_0",
+   "jsonschema 2.6.0 py37_0",
+   "jupyter_core 4.4.0 py37_0",
+   "libarchive 3.3.3 h786848e_5",
+   "libcxx 4.0.1 hcfea43d_1",
+   "libcxxabi 4.0.1 hcfea43d_1",
+   "libedit 3.1.20170329 hb402a30_2",
+   "libffi 3.2.1 h475c297_4",
+   "libiconv 1.15 hdd342a3_7",
+   "liblief 0.9.0 h2a1bed3_2",
+   "libxml2 2.9.9 hab757c2_0",
+   "lz4-c 1.8.1.2 h1de35cc_0",
+   "lzo 2.10 h362108e_2",
+   "markupsafe 1.1.0 py37h1de35cc_0",
+   "nbformat 4.4.0 py37_0",
+   "ncurses 6.1 h0a44026_1",
+   "openssl 1.1.1a h1de35cc_0",
+   "pip 18.1 py37_0",
+   "pkginfo 1.5.0.1 py37_0",
+   "psutil 5.4.8 py37h1de35cc_0",
+   "py-lief 0.9.0 py37h1413db1_2",
+   "pycosat 0.6.3 py37h1de35cc_0",
+   "pycparser 2.19 py37_0",
+   "pyopenssl 18.0.0 py37_0",
+   "pysocks 1.6.8 py37_0",
+   "python 3.7.1 haf84260_7",
+   "python-dateutil 2.7.5 py37_0",
+   "python-libarchive-c 2.8 py37_6",
+   "python.app 2 py37_9",
+   "pytz 2018.9 py37_0",
+   "pyyaml 3.13 py37h1de35cc_0",
+   "readline 7.0 h1de35cc_5",
+   "requests 2.21.0 py37_0",
+   "ruamel_yaml 0.15.46 py37h1de35cc_0",
+   "setuptools 40.6.3 py37_0",
+   "six 1.12.0 py37_0",
+   "soupsieve 1.7.1 py37_0",
+   "sqlite 3.26.0 ha441bb4_0",
+   "tk 8.6.8 ha441bb4_0",
+   "tqdm 4.29.1 py_0",
+   "traitlets 4.3.2 py37_0",
+   "urllib3 1.24.1 py37_0",
+   "wheel 0.32.3 py37_0",
+   "xz 5.2.4 h1de35cc_4",
+   "yaml 0.1.7 hc338f04_2",
+   "zlib 1.2.11 h1de35cc_3",
+   "zstd 1.3.7 h5bba6e5_0"
+  ],
+  "summary": "LAMMPS stands for Large-scale Atomic/Molecular Massively Parallel Simulator.",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CONDA_BUILD_SYSROOT": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk",
+  "MACOSX_DEPLOYMENT_TARGET": "10.9",
+  "build_number_decrement": "0",
+  "c_compiler": "clang",
+  "channel_sources": "conda-forge/label/gcc7,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "clangxx",
+  "extend_keys": [
+   "pin_run_as_build",
+   "ignore_version",
+   "extend_keys",
+   "ignore_build_only_deps"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "python",
+   "numpy"
+  ],
+  "lua": "5",
+  "macos_machine": "x86_64-apple-darwin13.4.0",
+  "macos_min_version": "10.9",
+  "mpi": "openmpi",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "2.7",
+  "r_base": "3.5",
+  "target_platform": "osx-64",
+  "zip_keys": [
+   [
+    "c_compiler",
+    "cxx_compiler",
+    "fortran_compiler",
+    "channel_sources",
+    "channel_targets",
+    "mpi",
+    "build_number_decrement"
+   ]
+  ]
+ },
+ "files": [
+  "bin/lmp_mpi",
+  "bin/lmp_serial",
+  "lib/python2.7/site-packages/lammps-12Dec2018-py2.7.egg-info",
+  "lib/python2.7/site-packages/lammps.py",
+  "lib/python2.7/site-packages/liblammps.dylib"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_openmpi_2",
+  "build_number": 2,
+  "depends": [
+   "fftw",
+   "libcxx >=4.0.1",
+   "libgfortran >=3.0.1,<4.0.0.a0",
+   "openmpi 3.1.*",
+   "openmpi >=3.1,<3.2.0a0",
+   "python >=2.7,<2.8.0a0",
+   "zlib >=1.2.11,<1.3.0a0"
+  ],
+  "license": "GPL-2.0",
+  "license_family": "GPL",
+  "name": "lammps",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "timestamp": 1549350078299,
+  "version": "2018.12.12"
+ },
+ "metadata_version": 1,
+ "name": "lammps",
+ "raw_recipe": "{% set build = 2 %}\n{% set name = \"lammps\" %}\n{% set version = \"stable_12Dec2018\" %}\n{% set sha256 = \"643eaf2c677e2590e04df2b5be72acaa19007cb34992efe82d0e5beb79b9c865\" %}\n{% set date = datetime.datetime.strptime(version.split('_')[1], \"%d%b%Y\") %}\n{% set conda_version = \"{:%Y.%m.%d}\".format(date) %}\n{% set mpi = os.environ.get('MPI_VARIANT', 'mpich') %}\n{% set mpi_version = {'mpich': '3.2.*', 'openmpi': '3.1.*'}[mpi] %}\n{% set build_string = \"py{}_{}_{}\".format(environ.get('CONDA_PY', ''), mpi, build) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ conda_version }}\n\nsource:\n  fn: {{ name }}-{{ conda_version }}.tar.gz\n  url: https://github.com/lammps/lammps/archive/{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n  patches:\n    - macos_python_install.patch\n    - macos_python_lammps.patch\n\nbuild:\n  number: {{ build }}\n  string: {{ build_string }}\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n    - {{ compiler('fortran') }}\n    - cmake\n    - make \n  \n  host:\n    - python\n    - setuptools\n    - {{ mpi }} {{ mpi_version }}\n    - zlib\n    - fftw\n\n  run:\n    - python\n    - {{ mpi }} {{ mpi_version }}\n    - zlib\n    - fftw\n\ntest:\n  imports:\n    - lammps\n  commands: \n    - lmp_serial -help > help_serial.txt\n    - mpiexec -n 1 lmp_mpi -help > help_mpi.txt  # [mpi == 'mpich']\n\nabout:\n  home: http://lammps.sandia.gov\n  license: GPL-2.0\n  license_family: GPL\n  license_file: '{{ environ[\"RECIPE_DIR\"] }}/LICENSE'\n  summary: 'LAMMPS stands for Large-scale Atomic/Molecular Massively Parallel Simulator.'\n\n  description: |\n    LAMMPS is a classical molecular dynamics simulation code designed to\n    run efficiently on parallel computers.  It was developed at Sandia\n    National Laboratories, a US Department of Energy facility, with\n    funding from the DOE.  It is an open-source code, distributed freely\n    under the terms of the GNU Public License (GPL).\n  doc_url: http://lammps.sandia.gov/doc/Manual.html\n  dev_url: https://github.com/lammps/lammps\n\nextra:\n  recipe-maintainers:\n    - jan-janssen\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "LAMMPS is a classical molecular dynamics simulation code designed to\nrun efficiently on parallel computers.  It was developed at Sandia\nNational Laboratories, a US Department of Energy facility, with\nfunding from the DOE.  It is an open-source code, distributed freely\nunder the terms of the GNU Public License (GPL).\n",
+   "dev_url": "https://github.com/lammps/lammps",
+   "doc_url": "http://lammps.sandia.gov/doc/Manual.html",
+   "home": "http://lammps.sandia.gov",
+   "license": "GPL-2.0",
+   "license_family": "GPL",
+   "license_file": "/Users/travis/build/conda-forge/lammps-feedstock/recipe/LICENSE",
+   "summary": "LAMMPS stands for Large-scale Atomic/Molecular Massively Parallel Simulator."
+  },
+  "build": {
+   "number": "2",
+   "string": "py27_openmpi_2"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "jan-janssen"
+   ]
+  },
+  "package": {
+   "name": "lammps",
+   "version": "2018.12.12"
+  },
+  "requirements": {
+   "build": [
+    "bzip2 1.0.6 h1de35cc_1002",
+    "ca-certificates 2018.10.15 ha4d7672_0",
+    "cctools 895 h7512d6f_0",
+    "clang 4.0.1 h662ec87_0",
+    "clang_osx-64 4.0.1 h1ce6c1d_11",
+    "clangxx 4.0.1 hc9b4283_0",
+    "clangxx_osx-64 4.0.1 h22b1bf0_11",
+    "cmake 3.13.2 h1e01633_1000",
+    "compiler-rt 4.0.1 h5487866_0",
+    "curl 7.63.0 heae2a1f_1000",
+    "expat 2.2.5 h0a44026_1002",
+    "gfortran_osx-64 4.8.5 h22b1bf0_8",
+    "krb5 1.16.3 h24a3359_1000",
+    "ld64 274.2 h7c2db76_0",
+    "libcurl 7.63.0 h76de61e_1000",
+    "libcxx 4.0.1 h579ed51_0",
+    "libcxxabi 4.0.1 hebd6815_0",
+    "libedit 3.1.20170329 hcfe32e1_1001",
+    "libgfortran 3.0.1 h93005f0_2",
+    "libssh2 1.8.0 hf30b1f0_1003",
+    "libuv 1.24.0 h1de35cc_1000",
+    "llvm 4.0.1 hc748206_0",
+    "llvm-lto-tapi 4.0.1 h6701bc3_0",
+    "make 4.2.1 h1de35cc_2004",
+    "ncurses 6.1 h0a44026_1002",
+    "openssl 1.0.2p h1de35cc_1002",
+    "rhash 1.3.6 h1de35cc_1001",
+    "tk 8.6.9 ha441bb4_1000",
+    "xz 5.2.4 h1de35cc_1001",
+    "zlib 1.2.11 h1de35cc_1004"
+   ],
+   "host": [
+    "ca-certificates 2018.10.15 ha4d7672_0",
+    "certifi 2018.8.24 py27_1001",
+    "fftw 3.3.8 h1de35cc_1001",
+    "libcxx 4.0.1 hcfea43d_1",
+    "libcxxabi 4.0.1 hcfea43d_1",
+    "libffi 3.2.1 h0a44026_1005",
+    "libgfortran 3.0.1 h93005f0_2",
+    "llvm-openmp 4.0.1 hcfea43d_1",
+    "mpi 1.0 openmpi",
+    "ncurses 6.1 h0a44026_1002",
+    "openmpi 3.1.3 h12d9a10_1000",
+    "openssl 1.0.2p h1de35cc_1002",
+    "python 2.7.15 h61312e0_1006",
+    "readline 7.0 hcfe32e1_1001",
+    "setuptools 40.4.0 py27_1000",
+    "sqlite 3.26.0 h1765d9f_1000",
+    "tk 8.6.9 ha441bb4_1000",
+    "zlib 1.2.11 h1de35cc_1004"
+   ],
+   "run": [
+    "fftw",
+    "libcxx >=4.0.1",
+    "libgfortran >=3.0.1,<4.0.0.a0",
+    "openmpi 3.1.*",
+    "openmpi >=3.1,<3.2.0a0",
+    "python >=2.7,<2.8.0a0",
+    "zlib >=1.2.11,<1.3.0a0"
+   ]
+  },
+  "source": {
+   "fn": "lammps-2018.12.12.tar.gz",
+   "patches": [
+    "macos_python_install.patch",
+    "macos_python_lammps.patch"
+   ],
+   "sha256": "643eaf2c677e2590e04df2b5be72acaa19007cb34992efe82d0e5beb79b9c865",
+   "url": "https://github.com/lammps/lammps/archive/stable_12Dec2018.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "lmp_serial -help > help_serial.txt"
+   ],
+   "imports": [
+    "lammps"
+   ]
+  }
+ },
+ "version": "2018.12.12"
+}
