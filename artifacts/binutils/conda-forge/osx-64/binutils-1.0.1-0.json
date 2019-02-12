@@ -1,0 +1,273 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.17.8",
+  "conda_private": false,
+  "conda_version": "4.6.3",
+  "description": "This package is a generic way to obtain binutils for your system\nthat conda-forge used to compile its ecosystem.  This compiler is,\ntherefore, guaranteed to be ABI compatible with the conda packages\nyou have installed.\n\nThis compiler metapackage is a convenience ONLY for users.\nDo NOT use this package as a build or host dependency in other\nrecipes.\n",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "parent_recipe": {
+    "name": "compilers",
+    "path": "/Users/travis/build/conda-forge/compilers-feedstock/recipe",
+    "version": "1.0.1"
+   },
+   "recipe-maintainers": [
+    "duncanmmacleod",
+    "scopatz",
+    "chrisburr"
+   ]
+  },
+  "home": "https://conda-forge.org",
+  "identifiers": [],
+  "keywords": [],
+  "license": "BSD",
+  "root_pkgs": [
+   "anaconda-client 1.7.2 py_0",
+   "asn1crypto 0.24.0 py37_0",
+   "attrs 18.2.0 py_0",
+   "beautifulsoup4 4.7.1 py37_1001",
+   "bzip2 1.0.6 h1de35cc_1002",
+   "ca-certificates 2018.11.29 ha4d7672_0",
+   "certifi 2018.11.29 py37_1000",
+   "cffi 1.11.5 py37h6174b99_1",
+   "chardet 3.0.4 py37_1",
+   "click 7.0 py_0",
+   "clyent 1.2.2 py_1",
+   "conda 4.6.3 py37_0",
+   "conda-build 3.17.8 py37_0",
+   "conda-env 2.6.0 1",
+   "conda-forge-ci-setup 2.1.4 py37_0",
+   "cryptography 2.4.2 py37ha12b0ac_0",
+   "decorator 4.3.2 py_0",
+   "filelock 3.0.10 py_0",
+   "glob2 0.6 py_0",
+   "icu 58.2 h0a44026_1000",
+   "idna 2.8 py37_0",
+   "ipython_genutils 0.2.0 py_1",
+   "jinja2 2.10 py_1",
+   "jsonschema 3.0.0a3 py37_1000",
+   "jupyter_core 4.4.0 py_0",
+   "libarchive 3.3.3 he8b1da1_2",
+   "libcxx 4.0.1 hcfea43d_1",
+   "libcxxabi 4.0.1 hcfea43d_1",
+   "libedit 3.1.20170329 hb402a30_2",
+   "libffi 3.2.1 h475c297_4",
+   "libiconv 1.15 h1de35cc_1004",
+   "liblief 0.9.0 h2a1bed3_2",
+   "libxml2 2.9.8 hf14e9c8_1005",
+   "lz4-c 1.8.3 h0a44026_1001",
+   "lzo 2.10 h1de35cc_1000",
+   "markupsafe 1.1.0 py37h1de35cc_1000",
+   "nbformat 4.4.0 py_1",
+   "ncurses 6.1 h0a44026_1",
+   "openssl 1.1.1a h1de35cc_1000",
+   "pip 18.1 py37_0",
+   "pkginfo 1.5.0.1 py_0",
+   "psutil 5.5.0 py37h1de35cc_0",
+   "py-lief 0.9.0 py37h1413db1_2",
+   "pycosat 0.6.3 py37h1de35cc_0",
+   "pycparser 2.19 py37_0",
+   "pyopenssl 18.0.0 py37_0",
+   "pyrsistent 0.14.10 py37h1de35cc_0",
+   "pysocks 1.6.8 py37_0",
+   "python 3.7.1 haf84260_7",
+   "python-dateutil 2.8.0 py_0",
+   "python-libarchive-c 2.8 py37_1004",
+   "python.app 2 py37_9",
+   "pytz 2018.9 py_0",
+   "pyyaml 3.13 py37h1de35cc_1001",
+   "readline 7.0 h1de35cc_5",
+   "requests 2.21.0 py37_0",
+   "ruamel_yaml 0.15.46 py37h1de35cc_0",
+   "setuptools 40.6.3 py37_0",
+   "six 1.12.0 py37_0",
+   "soupsieve 1.7.3 py37_0",
+   "sqlite 3.26.0 ha441bb4_0",
+   "tk 8.6.8 ha441bb4_0",
+   "tqdm 4.31.1 py_0",
+   "traitlets 4.3.2 py37_1000",
+   "urllib3 1.24.1 py37_0",
+   "wheel 0.32.3 py37_0",
+   "xz 5.2.4 h1de35cc_4",
+   "yaml 0.1.7 hc338f04_2",
+   "zlib 1.2.11 h1de35cc_3",
+   "zstd 1.3.3 1"
+  ],
+  "summary": "A metapackage to obtain binutils",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CONDA_BUILD_SYSROOT": "/Applications/Xcode-9.4.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk",
+  "MACOSX_DEPLOYMENT_TARGET": "10.9",
+  "c_compiler": "clang",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "clangxx",
+  "extend_keys": [
+   "extend_keys",
+   "pin_run_as_build",
+   "ignore_version",
+   "ignore_build_only_deps"
+  ],
+  "fortran_compiler": "gfortran",
+  "fortran_compiler_version": "4",
+  "ignore_build_only_deps": [
+   "numpy",
+   "python"
+  ],
+  "lua": "5",
+  "macos_machine": "x86_64-apple-darwin13.4.0",
+  "macos_min_version": "10.9",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.7",
+  "r_base": "3.5",
+  "target_platform": "osx-64"
+ },
+ "files": [
+  "bin/ar",
+  "bin/as",
+  "bin/checksyms",
+  "bin/codesign_allocate",
+  "bin/indr",
+  "bin/install_name_tool",
+  "bin/ld",
+  "bin/libtool",
+  "bin/lipo",
+  "bin/nm",
+  "bin/nmedit",
+  "bin/otool",
+  "bin/pagestuff",
+  "bin/ranlib",
+  "bin/redo_prebinding",
+  "bin/seg_addr_table",
+  "bin/seg_hack",
+  "bin/segedit",
+  "bin/size",
+  "bin/strings",
+  "bin/strip"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "cctools",
+   "ld64"
+  ],
+  "license": "BSD",
+  "name": "binutils",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "timestamp": 1549965667543,
+  "version": "1.0.1"
+ },
+ "metadata_version": 1,
+ "name": "binutils",
+ "raw_recipe": "# This file created by conda-build 3.17.8\n# ------------------------------------------------\n\npackage:\n    name: binutils\n    version: 1.0.1\nbuild:\n    number: 0\n    string: '0'\nrequirements:\n    host:\n        - cctools 895 h7512d6f_0\n        - ld64 274.2 h7c2db76_0\n        - libcxx 4.0.1 h579ed51_0\n        - libcxxabi 4.0.1 hebd6815_0\n        - llvm-lto-tapi 4.0.1 h6701bc3_0\n    run:\n        - cctools\n        - ld64\ntest:\n    commands:\n        - echo \"Checking ar resolves to a path containing ${BUILD}\"\n        - readlink $(which ar) | grep -q \"${BUILD}\"\n        - echo \"Checking as resolves to a path containing ${BUILD}\"\n        - readlink $(which as) | grep -q \"${BUILD}\"\n        - echo \"Checking ld resolves to a path containing ${BUILD}\"\n        - readlink $(which ld) | grep -q \"${BUILD}\"\n        - echo \"Checking nm resolves to a path containing ${BUILD}\"\n        - readlink $(which nm) | grep -q \"${BUILD}\"\n        - echo \"Checking size resolves to a path containing ${BUILD}\"\n        - readlink $(which size) | grep -q \"${BUILD}\"\n        - echo \"Checking strings resolves to a path containing ${BUILD}\"\n        - readlink $(which strings) | grep -q \"${BUILD}\"\n        - echo \"Checking strip resolves to a path containing ${BUILD}\"\n        - readlink $(which strip) | grep -q \"${BUILD}\"\n        - echo \"Checking checksyms resolves to a path containing ${BUILD}\"\n        - readlink $(which checksyms) | grep -q \"${BUILD}\"\n        - echo \"Checking codesign_allocate resolves to a path containing ${BUILD}\"\n        - readlink $(which codesign_allocate) | grep -q \"${BUILD}\"\n        - echo \"Checking indr resolves to a path containing ${BUILD}\"\n        - readlink $(which indr) | grep -q \"${BUILD}\"\n        - echo \"Checking install_name_tool resolves to a path containing ${BUILD}\"\n        - readlink $(which install_name_tool) | grep -q \"${BUILD}\"\n        - echo \"Checking libtool resolves to a path containing ${BUILD}\"\n        - readlink $(which libtool) | grep -q \"${BUILD}\"\n        - echo \"Checking lipo resolves to a path containing ${BUILD}\"\n        - readlink $(which lipo) | grep -q \"${BUILD}\"\n        - echo \"Checking nmedit resolves to a path containing ${BUILD}\"\n        - readlink $(which nmedit) | grep -q \"${BUILD}\"\n        - echo \"Checking otool resolves to a path containing ${BUILD}\"\n        - readlink $(which otool) | grep -q \"${BUILD}\"\n        - echo \"Checking pagestuff resolves to a path containing ${BUILD}\"\n        - readlink $(which pagestuff) | grep -q \"${BUILD}\"\n        - echo \"Checking ranlib resolves to a path containing ${BUILD}\"\n        - readlink $(which ranlib) | grep -q \"${BUILD}\"\n        - echo \"Checking redo_prebinding resolves to a path containing ${BUILD}\"\n        - readlink $(which redo_prebinding) | grep -q \"${BUILD}\"\n        - echo \"Checking seg_addr_table resolves to a path containing ${BUILD}\"\n        - readlink $(which seg_addr_table) | grep -q \"${BUILD}\"\n        - echo \"Checking seg_hack resolves to a path containing ${BUILD}\"\n        - readlink $(which seg_hack) | grep -q \"${BUILD}\"\n        - echo \"Checking segedit resolves to a path containing ${BUILD}\"\n        - readlink $(which segedit) | grep -q \"${BUILD}\"\nabout:\n    description: 'This package is a generic way to obtain binutils for your system\n\n        that conda-forge used to compile its ecosystem.  This compiler is,\n\n        therefore, guaranteed to be ABI compatible with the conda packages\n\n        you have installed.\n\n\n        This compiler metapackage is a convenience ONLY for users.\n\n        Do NOT use this package as a build or host dependency in other\n\n        recipes.\n\n        '\n    home: https://conda-forge.org\n    license: BSD\n    summary: A metapackage to obtain binutils\nextra:\n    copy_test_source_files: true\n    final: true\n    recipe-maintainers:\n        - chrisburr\n        - duncanmmacleod\n        - scopatz\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "This package is a generic way to obtain binutils for your system\nthat conda-forge used to compile its ecosystem.  This compiler is,\ntherefore, guaranteed to be ABI compatible with the conda packages\nyou have installed.\n\nThis compiler metapackage is a convenience ONLY for users.\nDo NOT use this package as a build or host dependency in other\nrecipes.\n",
+   "home": "https://conda-forge.org",
+   "license": "BSD",
+   "summary": "A metapackage to obtain binutils"
+  },
+  "build": {
+   "number": 0,
+   "string": "0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "chrisburr",
+    "duncanmmacleod",
+    "scopatz"
+   ]
+  },
+  "package": {
+   "name": "binutils",
+   "version": "1.0.1"
+  },
+  "requirements": {
+   "host": [
+    "cctools 895 h7512d6f_0",
+    "ld64 274.2 h7c2db76_0",
+    "libcxx 4.0.1 h579ed51_0",
+    "libcxxabi 4.0.1 hebd6815_0",
+    "llvm-lto-tapi 4.0.1 h6701bc3_0"
+   ],
+   "run": [
+    "cctools",
+    "ld64"
+   ]
+  },
+  "test": {
+   "commands": [
+    "echo \"Checking ar resolves to a path containing ${BUILD}\"",
+    "readlink $(which ar) | grep -q \"${BUILD}\"",
+    "echo \"Checking as resolves to a path containing ${BUILD}\"",
+    "readlink $(which as) | grep -q \"${BUILD}\"",
+    "echo \"Checking ld resolves to a path containing ${BUILD}\"",
+    "readlink $(which ld) | grep -q \"${BUILD}\"",
+    "echo \"Checking nm resolves to a path containing ${BUILD}\"",
+    "readlink $(which nm) | grep -q \"${BUILD}\"",
+    "echo \"Checking size resolves to a path containing ${BUILD}\"",
+    "readlink $(which size) | grep -q \"${BUILD}\"",
+    "echo \"Checking strings resolves to a path containing ${BUILD}\"",
+    "readlink $(which strings) | grep -q \"${BUILD}\"",
+    "echo \"Checking strip resolves to a path containing ${BUILD}\"",
+    "readlink $(which strip) | grep -q \"${BUILD}\"",
+    "echo \"Checking checksyms resolves to a path containing ${BUILD}\"",
+    "readlink $(which checksyms) | grep -q \"${BUILD}\"",
+    "echo \"Checking codesign_allocate resolves to a path containing ${BUILD}\"",
+    "readlink $(which codesign_allocate) | grep -q \"${BUILD}\"",
+    "echo \"Checking indr resolves to a path containing ${BUILD}\"",
+    "readlink $(which indr) | grep -q \"${BUILD}\"",
+    "echo \"Checking install_name_tool resolves to a path containing ${BUILD}\"",
+    "readlink $(which install_name_tool) | grep -q \"${BUILD}\"",
+    "echo \"Checking libtool resolves to a path containing ${BUILD}\"",
+    "readlink $(which libtool) | grep -q \"${BUILD}\"",
+    "echo \"Checking lipo resolves to a path containing ${BUILD}\"",
+    "readlink $(which lipo) | grep -q \"${BUILD}\"",
+    "echo \"Checking nmedit resolves to a path containing ${BUILD}\"",
+    "readlink $(which nmedit) | grep -q \"${BUILD}\"",
+    "echo \"Checking otool resolves to a path containing ${BUILD}\"",
+    "readlink $(which otool) | grep -q \"${BUILD}\"",
+    "echo \"Checking pagestuff resolves to a path containing ${BUILD}\"",
+    "readlink $(which pagestuff) | grep -q \"${BUILD}\"",
+    "echo \"Checking ranlib resolves to a path containing ${BUILD}\"",
+    "readlink $(which ranlib) | grep -q \"${BUILD}\"",
+    "echo \"Checking redo_prebinding resolves to a path containing ${BUILD}\"",
+    "readlink $(which redo_prebinding) | grep -q \"${BUILD}\"",
+    "echo \"Checking seg_addr_table resolves to a path containing ${BUILD}\"",
+    "readlink $(which seg_addr_table) | grep -q \"${BUILD}\"",
+    "echo \"Checking seg_hack resolves to a path containing ${BUILD}\"",
+    "readlink $(which seg_hack) | grep -q \"${BUILD}\"",
+    "echo \"Checking segedit resolves to a path containing ${BUILD}\"",
+    "readlink $(which segedit) | grep -q \"${BUILD}\""
+   ]
+  }
+ },
+ "version": "1.0.1"
+}
