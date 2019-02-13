@@ -1,0 +1,293 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.17.8",
+  "conda_private": false,
+  "conda_version": "4.6.3",
+  "description": "Cygrid allows to resample a number of spectra (or data points) to a\nregular grid - a data cube - using any valid astronomical FITS/WCS\nprojection. The method is a based on serialized convolution with finite\ngridding kernels. Currently, only Gaussian (radial-symmetric or\nelliptical) kernels are provided (which has the drawback of slight\ndegradation of the effective resolution). The algorithm has very small\nmemory footprint, allows easy parallelization, and is very fast.\n",
+  "dev_url": "https://github.com/bwinkel/cygrid",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "bwinkel",
+    "DanielLenz"
+   ]
+  },
+  "home": "https://github.com/bwinkel/cygrid",
+  "identifiers": [],
+  "keywords": [],
+  "license": "GPL-3.0",
+  "license_family": "GPL",
+  "license_file": "licenses/README.rst",
+  "root_pkgs": [
+   "filelock 3.0.10 py_0",
+   "beautifulsoup4 4.7.1 py37_1001",
+   "lz4-c 1.8.3 hf484d3e_1001",
+   "pyrsistent 0.14.10 py37h14c3975_0",
+   "liblief 0.9.0 h7725739_2",
+   "lzo 2.10 h14c3975_1000",
+   "pycosat 0.6.3 py37h14c3975_1001",
+   "conda-build 3.17.8 py37_0",
+   "expat 2.2.6 he6710b0_0",
+   "traitlets 4.3.2 py37_1000",
+   "openssl 1.1.1a h14c3975_1000",
+   "readline 7.0 hf8c457e_1001",
+   "libarchive 3.3.3 h5d8350f_2",
+   "conda 4.6.3 py37_0",
+   "pytz 2018.9 py_0",
+   "soupsieve 1.7.3 py37_0",
+   "anaconda-client 1.7.2 py_0",
+   "libcurl 7.62.0 h20c2e04_0",
+   "python 3.7.2 h0371630_0",
+   "gettext 0.19.8.1 h9745a5d_1001",
+   "requests 2.21.0 py37_1000",
+   "wheel 0.32.3 py37_0",
+   "urllib3 1.24.1 py37_1000",
+   "sqlite 3.26.0 h67949de_1000",
+   "libedit 3.1.20170329 hf8c457e_1001",
+   "pkginfo 1.5.0.1 py_0",
+   "python-dateutil 2.8.0 py_0",
+   "setuptools 40.8.0 py37_0",
+   "cffi 1.11.5 py37h9745a5d_1001",
+   "idna 2.8 py37_1000",
+   "libgcc-ng 7.3.0 hdf63c60_0",
+   "decorator 4.3.2 py_0",
+   "zstd 1.3.3 1",
+   "yaml 0.1.7 h14c3975_1001",
+   "krb5 1.14.6 0",
+   "pycparser 2.19 py_0",
+   "attrs 18.2.0 py_0",
+   "ca-certificates 2018.11.29 ha4d7672_0",
+   "py-lief 0.9.0 py37h7725739_2",
+   "icu 58.2 hf484d3e_1000",
+   "tk 8.6.9 h84994c4_1000",
+   "tini 0.18.0 h14c3975_1001",
+   "curl 7.62.0 hbc83047_0",
+   "markupsafe 1.1.0 py37h14c3975_1000",
+   "glob2 0.6 py_0",
+   "libssh2 1.8.0 1",
+   "libstdcxx-ng 7.3.0 hdf63c60_0",
+   "patchelf 0.9 hf484d3e_1002",
+   "certifi 2018.11.29 py37_1000",
+   "jinja2 2.10 py_1",
+   "nbformat 4.4.0 py_1",
+   "cryptography 2.5 py37h1ba5d50_0",
+   "git 2.19.1 pl526hacde149_0",
+   "conda-env 2.6.0 1",
+   "asn1crypto 0.24.0 py37_1003",
+   "tqdm 4.31.0 py_0",
+   "bzip2 1.0.6 h14c3975_1002",
+   "jsonschema 3.0.0a3 py37_1000",
+   "libiconv 1.15 h14c3975_1004",
+   "ipython_genutils 0.2.0 py_1",
+   "six 1.12.0 py37_1000",
+   "python-libarchive-c 2.8 py37_1004",
+   "ncurses 6.1 hf484d3e_1002",
+   "jupyter_core 4.4.0 py_0",
+   "xz 5.2.4 h14c3975_1001",
+   "libffi 3.2.1 hf484d3e_1005",
+   "ruamel_yaml 0.15.71 py37h14c3975_1000",
+   "pyyaml 3.13 py37h14c3975_1001",
+   "psutil 5.5.0 py37h14c3975_0",
+   "chardet 3.0.4 py37_1003",
+   "pyopenssl 19.0.0 py37_0",
+   "libxml2 2.9.8 h143f9aa_1005",
+   "gosu 1.10 h81701ea_1001",
+   "perl 5.26.2 h14c3975_1001",
+   "pysocks 1.6.8 py37_1002",
+   "pip 19.0.2 py37_0",
+   "clyent 1.2.2 py_1",
+   "zlib 1.2.11 h14c3975_1004",
+   "conda-forge-ci-setup 2.1.4 py37_0",
+   "click 7.0 py_0"
+  ],
+  "summary": "Cygrid is a cython-powered convolution-based gridding module for astronomy",
+  "tags": []
+ },
+ "conda_build_config": {
+  "c_compiler": "gcc",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "docker_image": "condaforge/linux-anvil-comp7",
+  "extend_keys": [
+   "extend_keys",
+   "pin_run_as_build",
+   "ignore_version",
+   "ignore_build_only_deps"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "numpy",
+   "python"
+  ],
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "3.7",
+  "r_base": "3.5",
+  "target_platform": "linux-64"
+ },
+ "files": [
+  "bin/astropy-package-template-example",
+  "lib/python3.7/site-packages/cygrid-1.0.1-py3.7.egg-info/PKG-INFO",
+  "lib/python3.7/site-packages/cygrid-1.0.1-py3.7.egg-info/not-zip-safe",
+  "lib/python3.7/site-packages/cygrid/__init__.py",
+  "lib/python3.7/site-packages/cygrid/_astropy_init.py",
+  "lib/python3.7/site-packages/cygrid/_compiler.c",
+  "lib/python3.7/site-packages/cygrid/_compiler.cpython-37m-x86_64-linux-gnu.so",
+  "lib/python3.7/site-packages/cygrid/conftest.py",
+  "lib/python3.7/site-packages/cygrid/cygrid.cpython-37m-x86_64-linux-gnu.so",
+  "lib/python3.7/site-packages/cygrid/cython_version.py",
+  "lib/python3.7/site-packages/cygrid/healpix.cpython-37m-x86_64-linux-gnu.so",
+  "lib/python3.7/site-packages/cygrid/helpers.cpython-37m-x86_64-linux-gnu.so",
+  "lib/python3.7/site-packages/cygrid/hphashtab.cpython-37m-x86_64-linux-gnu.so",
+  "lib/python3.7/site-packages/cygrid/kernels.cpython-37m-x86_64-linux-gnu.so",
+  "lib/python3.7/site-packages/cygrid/mock.py",
+  "lib/python3.7/site-packages/cygrid/setup_package.py",
+  "lib/python3.7/site-packages/cygrid/tests/__init__.py",
+  "lib/python3.7/site-packages/cygrid/tests/coveragerc",
+  "lib/python3.7/site-packages/cygrid/tests/setup_package.py",
+  "lib/python3.7/site-packages/cygrid/tests/test_cygrid.py",
+  "lib/python3.7/site-packages/cygrid/tests/test_healpix.py",
+  "lib/python3.7/site-packages/cygrid/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py37ha8d69ae_2",
+  "build_number": 2,
+  "depends": [
+   "astropy >=2.1",
+   "libgcc-ng >=7.3.0",
+   "libstdcxx-ng >=7.3.0",
+   "numpy >=1.11.3,<2.0a0",
+   "python >=3.7,<3.8.0a0"
+  ],
+  "license": "GPL-3.0",
+  "license_family": "GPL",
+  "name": "cygrid",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1550013382074,
+  "version": "1.0.1"
+ },
+ "metadata_version": 1,
+ "name": "cygrid",
+ "raw_recipe": "{% set name = \"cygrid\" %}\n{% set version = \"1.0.1\" %}\n{% set sha256 = \"a32de71407b414375ff477e73078c44438b602de050ad90995bdaf6f8b39d390\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 2\n  skip: True  # [py27]\n  script: \"{{ PYTHON }} setup.py install --single-version-externally-managed --record record.txt --offline\"\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n    - llvm-openmp  # [osx]\n\n  host:\n    - llvm-openmp  # [osx]\n    - python\n    - pip\n    - setuptools\n    - astropy >=2.1\n    - cython\n    - numpy\n\n  run:\n    - python\n    - llvm-openmp  # [osx]\n    - astropy >=2.1\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - cygrid\n\n  commands:\n     python -c \"import cygrid; cygrid.test()\"\n\nabout:\n  home: https://github.com/bwinkel/{{ name }}\n  license: GPL-3.0\n  license_family: GPL\n  license_file: licenses/README.rst\n  summary: 'Cygrid is a cython-powered convolution-based gridding module for astronomy'\n  description: |\n      Cygrid allows to resample a number of spectra (or data points) to a\n      regular grid - a data cube - using any valid astronomical FITS/WCS\n      projection. The method is a based on serialized convolution with finite\n      gridding kernels. Currently, only Gaussian (radial-symmetric or\n      elliptical) kernels are provided (which has the drawback of slight\n      degradation of the effective resolution). The algorithm has very small\n      memory footprint, allows easy parallelization, and is very fast.\n  dev_url: https://github.com/bwinkel/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - bwinkel\n    - DanielLenz\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Cygrid allows to resample a number of spectra (or data points) to a\nregular grid - a data cube - using any valid astronomical FITS/WCS\nprojection. The method is a based on serialized convolution with finite\ngridding kernels. Currently, only Gaussian (radial-symmetric or\nelliptical) kernels are provided (which has the drawback of slight\ndegradation of the effective resolution). The algorithm has very small\nmemory footprint, allows easy parallelization, and is very fast.\n",
+   "dev_url": "https://github.com/bwinkel/cygrid",
+   "home": "https://github.com/bwinkel/cygrid",
+   "license": "GPL-3.0",
+   "license_family": "GPL",
+   "license_file": "licenses/README.rst",
+   "summary": "Cygrid is a cython-powered convolution-based gridding module for astronomy"
+  },
+  "build": {
+   "number": "2",
+   "script": "/home/conda/feedstock_root/build_artifacts/cygrid_1550013231363/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_plac/bin/python setup.py install --single-version-externally-managed --record record.txt --offline",
+   "string": "py37ha8d69ae_2"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "DanielLenz",
+    "bwinkel"
+   ]
+  },
+  "package": {
+   "name": "cygrid",
+   "version": "1.0.1"
+  },
+  "requirements": {
+   "build": [
+    "binutils_impl_linux-64 2.31.1 h6176602_1",
+    "binutils_linux-64 2.31.1 h6176602_3",
+    "gcc_impl_linux-64 7.3.0 habb00fd_1",
+    "gcc_linux-64 7.3.0 h553295d_3",
+    "gxx_impl_linux-64 7.3.0 hdf63c60_1",
+    "gxx_linux-64 7.3.0 h553295d_3",
+    "libgcc-ng 7.3.0 hdf63c60_0",
+    "libstdcxx-ng 7.3.0 hdf63c60_0"
+   ],
+   "host": [
+    "astropy 3.0.5 py37h14c3975_1001",
+    "atomicwrites 1.3.0 py_0",
+    "attrs 18.2.0 py_0",
+    "blas 1.1 openblas",
+    "bzip2 1.0.6 h14c3975_1002",
+    "ca-certificates 2018.11.29 ha4d7672_0",
+    "certifi 2018.11.29 py37_1000",
+    "cython 0.29.5 py37hf484d3e_0",
+    "libffi 3.2.1 hf484d3e_1005",
+    "libgcc-ng 7.3.0 hdf63c60_0",
+    "libgfortran-ng 7.2.0 hdf63c60_3",
+    "libstdcxx-ng 7.3.0 hdf63c60_0",
+    "more-itertools 4.3.0 py37_1000",
+    "ncurses 6.1 hf484d3e_1002",
+    "numpy 1.11.3 py37_blas_openblash1522bff_1205",
+    "openblas 0.3.3 h9ac9557_1001",
+    "openssl 1.0.2p h14c3975_1002",
+    "pip 19.0.2 py37_0",
+    "pluggy 0.8.1 py_0",
+    "psutil 5.5.0 py37h14c3975_0",
+    "py 1.7.0 py_0",
+    "pytest 3.10.1 py37_1000",
+    "pytest-arraydiff 0.3 py_0",
+    "pytest-astropy 0.4.0 py_0",
+    "pytest-doctestplus 0.1.3 py_0",
+    "pytest-openfiles 0.3.1 py_0",
+    "pytest-remotedata 0.3.1 py_0",
+    "python 3.7.1 hd21baee_1000",
+    "readline 7.0 hf8c457e_1001",
+    "setuptools 40.8.0 py37_0",
+    "six 1.12.0 py37_1000",
+    "sqlite 3.26.0 h67949de_1000",
+    "tk 8.6.9 h84994c4_1000",
+    "wheel 0.33.0 py37_0",
+    "xz 5.2.4 h14c3975_1001",
+    "zlib 1.2.11 h14c3975_1004"
+   ],
+   "run": [
+    "astropy >=2.1",
+    "libgcc-ng >=7.3.0",
+    "libstdcxx-ng >=7.3.0",
+    "numpy >=1.11.3,<2.0a0",
+    "python >=3.7,<3.8.0a0"
+   ]
+  },
+  "source": {
+   "fn": "cygrid-1.0.1.tar.gz",
+   "sha256": "a32de71407b414375ff477e73078c44438b602de050ad90995bdaf6f8b39d390",
+   "url": "https://pypi.io/packages/source/c/cygrid/cygrid-1.0.1.tar.gz"
+  },
+  "test": {
+   "commands": "python -c \"import cygrid; cygrid.test()\"",
+   "imports": [
+    "cygrid"
+   ]
+  }
+ },
+ "version": "1.0.1"
+}
