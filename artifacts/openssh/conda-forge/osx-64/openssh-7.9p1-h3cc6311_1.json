@@ -1,0 +1,294 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.17.8",
+  "conda_private": false,
+  "conda_version": "4.6.8",
+  "description": "OpenSSH is the premier connectivity tool for remote login with the SSH\nprotocol. It encrypts all traffic to eliminate eavesdropping, connection\nhijacking, and other attacks. In addition, OpenSSH provides a large suite\nof secure tunneling capabilities, several authentication methods, and\nsophisticated configuration options.\n",
+  "dev_url": "https://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "nehaljwani"
+   ]
+  },
+  "home": "https://www.openssh.com/",
+  "identifiers": [],
+  "keywords": [],
+  "license": "BSD-style",
+  "license_family": "BSD",
+  "license_file": "LICENCE",
+  "root_pkgs": [
+   "anaconda-client 1.7.2 py_0",
+   "asn1crypto 0.24.0 py37_0",
+   "attrs 19.1.0 py_0",
+   "beautifulsoup4 4.7.1 py37_1001",
+   "bzip2 1.0.6 h1de35cc_1002",
+   "ca-certificates 2019.3.9 hecc5488_0",
+   "certifi 2019.3.9 py37_0",
+   "cffi 1.11.5 py37h6174b99_1",
+   "chardet 3.0.4 py37_1",
+   "click 7.0 py_0",
+   "clyent 1.2.2 py_1",
+   "conda 4.6.8 py37_0",
+   "conda-build 3.17.8 py37_0",
+   "conda-env 2.6.0 1",
+   "conda-forge-ci-setup 2.1.7 py37_0",
+   "cryptography 2.4.2 py37ha12b0ac_0",
+   "decorator 4.3.2 py_0",
+   "filelock 3.0.10 py_0",
+   "glob2 0.6 py_0",
+   "icu 58.2 h0a44026_1000",
+   "idna 2.8 py37_0",
+   "ipython_genutils 0.2.0 py_1",
+   "jinja2 2.10 py_1",
+   "jq 1.6 h1de35cc_1000",
+   "jsonschema 3.0.1 py37_0",
+   "jupyter_core 4.4.0 py_0",
+   "libarchive 3.3.3 heb9f7fe_1003",
+   "libcxx 4.0.1 hcfea43d_1",
+   "libcxxabi 4.0.1 hcfea43d_1",
+   "libedit 3.1.20170329 hb402a30_2",
+   "libffi 3.2.1 h475c297_4",
+   "libiconv 1.15 h1de35cc_1004",
+   "liblief 0.9.0 h2a1bed3_2",
+   "libxml2 2.9.8 hf14e9c8_1005",
+   "lz4-c 1.8.1.2 0",
+   "lzo 2.10 h1de35cc_1000",
+   "markupsafe 1.1.1 py37h1de35cc_0",
+   "nbformat 4.4.0 py_1",
+   "ncurses 6.1 h0a44026_1",
+   "oniguruma 6.9.1 h1de35cc_1",
+   "openssl 1.1.1b h1de35cc_1",
+   "pip 18.1 py37_0",
+   "pkginfo 1.5.0.1 py_0",
+   "psutil 5.6.0 py37h1de35cc_0",
+   "py-lief 0.9.0 py37h1413db1_2",
+   "pycosat 0.6.3 py37h1de35cc_0",
+   "pycparser 2.19 py37_0",
+   "pyopenssl 18.0.0 py37_0",
+   "pyrsistent 0.14.11 py37h1de35cc_0",
+   "pysocks 1.6.8 py37_0",
+   "python 3.7.1 haf84260_7",
+   "python-dateutil 2.8.0 py_0",
+   "python-libarchive-c 2.8 py37_1004",
+   "python.app 2 py37_9",
+   "pytz 2018.9 py_0",
+   "pyyaml 3.13 py37h1de35cc_1001",
+   "readline 7.0 h1de35cc_5",
+   "requests 2.21.0 py37_0",
+   "ruamel_yaml 0.15.46 py37h1de35cc_0",
+   "setuptools 40.6.3 py37_0",
+   "shyaml 0.5.2 py_0",
+   "six 1.12.0 py37_0",
+   "soupsieve 1.8 py37_0",
+   "sqlite 3.26.0 ha441bb4_0",
+   "tk 8.6.8 ha441bb4_0",
+   "tqdm 4.31.1 py_0",
+   "traitlets 4.3.2 py37_1000",
+   "urllib3 1.24.1 py37_0",
+   "wheel 0.32.3 py37_0",
+   "xz 5.2.4 h1de35cc_4",
+   "yaml 0.1.7 hc338f04_2",
+   "zlib 1.2.11 h1de35cc_3",
+   "zstd 1.3.3 1"
+  ],
+  "summary": "A suite of secure networking utilities based on the SSH protocol",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CONDA_BUILD_SYSROOT": "/Applications/Xcode-9.4.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk",
+  "MACOSX_DEPLOYMENT_TARGET": "10.9",
+  "c_compiler": "clang",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "clangxx",
+  "extend_keys": [
+   "ignore_version",
+   "pin_run_as_build",
+   "ignore_build_only_deps",
+   "extend_keys"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "numpy",
+   "python"
+  ],
+  "krb5": "1.16",
+  "lua": "5",
+  "macos_machine": "x86_64-apple-darwin13.4.0",
+  "macos_min_version": "10.9",
+  "numpy": "1.11",
+  "openssl": "1.1.1a",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "krb5": {
+    "max_pin": "x.x"
+   },
+   "openssl": {
+    "max_pin": "x.x.x"
+   },
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   },
+   "zlib": {
+    "max_pin": "x.x"
+   }
+  },
+  "python": "3.7",
+  "r_base": "3.5",
+  "target_platform": "osx-64",
+  "zlib": "1.2"
+ },
+ "files": [
+  "bin/scp",
+  "bin/sftp",
+  "bin/ssh",
+  "bin/ssh-add",
+  "bin/ssh-agent",
+  "bin/ssh-keygen",
+  "bin/ssh-keyscan",
+  "bin/sshd",
+  "etc/moduli",
+  "etc/ssh_config",
+  "etc/ssh_host_dsa_key",
+  "etc/ssh_host_dsa_key.pub",
+  "etc/ssh_host_ecdsa_key",
+  "etc/ssh_host_ecdsa_key.pub",
+  "etc/ssh_host_ed25519_key",
+  "etc/ssh_host_ed25519_key.pub",
+  "etc/ssh_host_rsa_key",
+  "etc/ssh_host_rsa_key.pub",
+  "etc/sshd_config",
+  "libexec/sftp-server",
+  "libexec/ssh-keysign",
+  "libexec/ssh-pkcs11-helper",
+  "share/man/man1/scp.1",
+  "share/man/man1/sftp.1",
+  "share/man/man1/ssh-add.1",
+  "share/man/man1/ssh-agent.1",
+  "share/man/man1/ssh-keygen.1",
+  "share/man/man1/ssh-keyscan.1",
+  "share/man/man1/ssh.1",
+  "share/man/man5/moduli.5",
+  "share/man/man5/ssh_config.5",
+  "share/man/man5/sshd_config.5",
+  "share/man/man8/sftp-server.8",
+  "share/man/man8/ssh-keysign.8",
+  "share/man/man8/ssh-pkcs11-helper.8",
+  "share/man/man8/sshd.8"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "h3cc6311_1",
+  "build_number": 1,
+  "depends": [
+   "krb5 >=1.16.3,<1.17.0a0",
+   "openssl >=1.1.1a,<1.1.2a",
+   "zlib >=1.2.11,<1.3.0a0"
+  ],
+  "license": "BSD-style",
+  "license_family": "BSD",
+  "name": "openssh",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "timestamp": 1552237881507,
+  "version": "7.9p1"
+ },
+ "metadata_version": 1,
+ "name": "openssh",
+ "raw_recipe": "{% set name = \"openssh\" %}\n{% set version = \"7.9p1\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/{{ name }}-{{ version }}.tar.gz\n  sha256: 6b4b3ba2253d84ed3771c8050728d597c91cfce898713beb7b64a305b6f11aad\n\nbuild:\n  number: 1\n  skip: True  # [win]\n\nrequirements:\n  build:\n    - autoconf\n    - pkg-config\n    - {{ compiler('c') }}\n    - make\n  host:\n    - zlib\n    - libedit\n    - krb5\n    - openssl\n\ntest:\n  commands:\n    - ssh-keygen -t rsa -b 4096 -f id_rsa -P do-not-pass-passwords\n    - type -f scp\n    - type -f sftp\n    - type -f ssh\n    - type -f ssh-add\n    - type -f ssh-agent\n    - type -f sshd\n    - type -f ssh-keygen\n    - type -f ssh-keyscan\n\nabout:\n  home: https://www.openssh.com/\n  license: BSD-style\n  license_family: BSD\n  license_file: LICENCE\n  summary: 'A suite of secure networking utilities based on the SSH protocol'\n  description: |\n    OpenSSH is the premier connectivity tool for remote login with the SSH\n    protocol. It encrypts all traffic to eliminate eavesdropping, connection\n    hijacking, and other attacks. In addition, OpenSSH provides a large suite\n    of secure tunneling capabilities, several authentication methods, and\n    sophisticated configuration options.\n  dev_url: https://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/\n\nextra:\n  recipe-maintainers:\n    - nehaljwani\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "OpenSSH is the premier connectivity tool for remote login with the SSH\nprotocol. It encrypts all traffic to eliminate eavesdropping, connection\nhijacking, and other attacks. In addition, OpenSSH provides a large suite\nof secure tunneling capabilities, several authentication methods, and\nsophisticated configuration options.\n",
+   "dev_url": "https://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.bin/ssh/",
+   "home": "https://www.openssh.com/",
+   "license": "BSD-style",
+   "license_family": "BSD",
+   "license_file": "LICENCE",
+   "summary": "A suite of secure networking utilities based on the SSH protocol"
+  },
+  "build": {
+   "number": "1",
+   "string": "h3cc6311_1"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "nehaljwani"
+   ]
+  },
+  "package": {
+   "name": "openssh",
+   "version": "7.9p1"
+  },
+  "requirements": {
+   "build": [
+    "autoconf 2.69 pl526h1de35cc_9",
+    "cctools 895 h7512d6f_0",
+    "clang 4.0.1 h662ec87_0",
+    "clang_osx-64 4.0.1 h1ce6c1d_11",
+    "compiler-rt 4.0.1 h5487866_0",
+    "ld64 274.2 h7c2db76_0",
+    "libcxx 4.0.1 h579ed51_0",
+    "libcxxabi 4.0.1 hebd6815_0",
+    "libiconv 1.15 h1de35cc_1004",
+    "llvm 4.0.1 hc748206_0",
+    "llvm-lto-tapi 4.0.1 h6701bc3_0",
+    "m4 1.4.18 h1de35cc_1001",
+    "make 4.2.1 h1de35cc_2004",
+    "perl 5.26.2 h79c3c89_1002",
+    "pkg-config 0.29.2 h112b980_1004"
+   ],
+   "host": [
+    "ca-certificates 2019.3.9 hecc5488_0",
+    "krb5 1.16.3 hcfa6398_1001",
+    "libcxx 7.0.0 h2d50403_1",
+    "libedit 3.1.20170329 hcfe32e1_1001",
+    "llvm-meta 7.0.0 0",
+    "ncurses 6.1 h0a44026_1002",
+    "openssl 1.1.1a h1de35cc_1001",
+    "tk 8.6.9 ha441bb4_1000",
+    "zlib 1.2.11 h1de35cc_1004"
+   ],
+   "run": [
+    "krb5 >=1.16.3,<1.17.0a0",
+    "openssl >=1.1.1a,<1.1.2a",
+    "zlib >=1.2.11,<1.3.0a0"
+   ]
+  },
+  "source": {
+   "sha256": "6b4b3ba2253d84ed3771c8050728d597c91cfce898713beb7b64a305b6f11aad",
+   "url": "http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-7.9p1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "ssh-keygen -t rsa -b 4096 -f id_rsa -P do-not-pass-passwords",
+    "type -f scp",
+    "type -f sftp",
+    "type -f ssh",
+    "type -f ssh-add",
+    "type -f ssh-agent",
+    "type -f sshd",
+    "type -f ssh-keygen",
+    "type -f ssh-keyscan"
+   ]
+  }
+ },
+ "version": "7.9p1"
+}
