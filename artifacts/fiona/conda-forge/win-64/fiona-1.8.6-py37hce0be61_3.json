@@ -1,0 +1,364 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.17.8",
+  "conda_private": false,
+  "conda_version": "4.6.13",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "home": "http://github.com/Toblerity/Fiona",
+  "identifiers": [],
+  "keywords": [],
+  "license": "BSD-3-Clause",
+  "license_file": "LICENSE.txt",
+  "root_pkgs": [
+   "anaconda-client 1.7.2 py_0",
+   "asn1crypto 0.24.0 py36_0",
+   "attrs 19.1.0 py_0",
+   "beautifulsoup4 4.7.1 py36_1001",
+   "bzip2 1.0.6 hfa6e2cd_1002",
+   "ca-certificates 2019.3.9 hecc5488_0",
+   "certifi 2019.3.9 py36_0",
+   "cffi 1.11.5 py36h945400d_0",
+   "chardet 3.0.4 py36h420ce6e_1",
+   "click 7.0 py_0",
+   "clyent 1.2.2 py_1",
+   "conda 4.6.13 py36_0",
+   "conda-build 3.17.8 py36_1",
+   "conda-env 2.6.0 h36134e3_1",
+   "conda-forge-ci-setup 2.2.1 py36_0",
+   "console_shortcut 0.1.1 h6bb2dd7_3",
+   "cryptography 2.6.1 py36h7a1dbc1_0",
+   "decorator 4.4.0 py_0",
+   "filelock 3.0.10 py_0",
+   "glob2 0.6 py_0",
+   "idna 2.6 py36h148d497_1",
+   "ipython_genutils 0.2.0 py_1",
+   "jinja2 2.10.1 py_0",
+   "jsonschema 3.0.1 py36_0",
+   "jupyter_core 4.4.0 py_0",
+   "libarchive 3.3.3 h0005e80_1004",
+   "libiconv 1.15 hfa6e2cd_1005",
+   "liblief 0.9.0 ha925a31_2",
+   "libxml2 2.9.8 h9ce36c8_1005",
+   "lz4-c 1.8.3 he025d50_1001",
+   "lzo 2.10 hfa6e2cd_1000",
+   "markupsafe 1.1.1 py36hfa6e2cd_0",
+   "menuinst 1.4.14 py36hfa6e2cd_0",
+   "nbformat 4.4.0 py_1",
+   "openssl 1.1.1b hfa6e2cd_2",
+   "pip 10.0.1 py36_0",
+   "pkginfo 1.5.0.1 py_0",
+   "psutil 5.6.1 py36hfa6e2cd_0",
+   "py-lief 0.9.0 py36ha925a31_2",
+   "pycosat 0.6.3 py36h413d8a4_0",
+   "pycparser 2.18 py36hd053e01_1",
+   "pyopenssl 18.0.0 py36_0",
+   "pyrsistent 0.14.11 py36hfa6e2cd_0",
+   "pysocks 1.6.8 py36_0",
+   "python 3.6.5 h0c2934d_0",
+   "python-dateutil 2.8.0 py_0",
+   "python-libarchive-c 2.8 py36_1004",
+   "pytz 2019.1 py_0",
+   "pywin32 223 py36hfa6e2cd_1",
+   "pyyaml 5.1 py36hfa6e2cd_0",
+   "requests 2.18.4 py36h4371aae_1",
+   "ruamel_yaml 0.15.37 py36hfa6e2cd_2",
+   "setuptools 39.2.0 py36_0",
+   "six 1.11.0 py36h4db2310_1",
+   "soupsieve 1.9.1 py36_0",
+   "tqdm 4.31.1 py_0",
+   "traitlets 4.3.2 py36_1000",
+   "urllib3 1.22 py36h276f60a_0",
+   "vc 14.1 h0510ff6_4",
+   "vs2008_express_vc_python_patch 1.0.0 0",
+   "vs2015_runtime 14.15.26706 h3a45250_0",
+   "wheel 0.31.1 py36_0",
+   "wincertstore 0.2 py36h7fe50ca_0",
+   "win_inet_pton 1.0.1 py36he67d7fd_1",
+   "xz 5.2.4 h2fa13f4_1001",
+   "yaml 0.1.7 hc54c509_2",
+   "zlib 1.2.11 h2fa13f4_1004",
+   "zstd 1.3.3 vc14_1"
+  ],
+  "summary": "Fiona reads and writes spatial data files",
+  "tags": []
+ },
+ "conda_build_config": {
+  "c_compiler": "vs2015",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "vs2015",
+  "extend_keys": [
+   "extend_keys",
+   "ignore_version",
+   "pin_run_as_build",
+   "ignore_build_only_deps"
+  ],
+  "fortran_compiler": "gfortran",
+  "gdal": "2.4",
+  "ignore_build_only_deps": [
+   "python",
+   "numpy"
+  ],
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "gdal": {
+    "max_pin": "x.x"
+   },
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   },
+   "vc": {
+    "max_pin": "x"
+   }
+  },
+  "python": "3.7",
+  "r_base": "3.4",
+  "target_platform": "win-64",
+  "vc": "14",
+  "zip_keys": [
+   [
+    "python",
+    "vc",
+    "c_compiler",
+    "cxx_compiler"
+   ]
+  ]
+ },
+ "files": [
+  "Lib/site-packages/Fiona-1.8.6-py3.7.egg-info/PKG-INFO",
+  "Lib/site-packages/fiona/__init__.py",
+  "Lib/site-packages/fiona/_crs.cp37-win_amd64.pyd",
+  "Lib/site-packages/fiona/_drivers.cp37-win_amd64.pyd",
+  "Lib/site-packages/fiona/_env.cp37-win_amd64.pyd",
+  "Lib/site-packages/fiona/_err.cp37-win_amd64.pyd",
+  "Lib/site-packages/fiona/_geometry.cp37-win_amd64.pyd",
+  "Lib/site-packages/fiona/_shim.cp37-win_amd64.pyd",
+  "Lib/site-packages/fiona/_transform.cp37-win_amd64.pyd",
+  "Lib/site-packages/fiona/collection.py",
+  "Lib/site-packages/fiona/compat.py",
+  "Lib/site-packages/fiona/crs.py",
+  "Lib/site-packages/fiona/drvsupport.py",
+  "Lib/site-packages/fiona/env.py",
+  "Lib/site-packages/fiona/errors.py",
+  "Lib/site-packages/fiona/fio/__init__.py",
+  "Lib/site-packages/fiona/fio/bounds.py",
+  "Lib/site-packages/fiona/fio/calc.py",
+  "Lib/site-packages/fiona/fio/cat.py",
+  "Lib/site-packages/fiona/fio/collect.py",
+  "Lib/site-packages/fiona/fio/distrib.py",
+  "Lib/site-packages/fiona/fio/dump.py",
+  "Lib/site-packages/fiona/fio/env.py",
+  "Lib/site-packages/fiona/fio/filter.py",
+  "Lib/site-packages/fiona/fio/helpers.py",
+  "Lib/site-packages/fiona/fio/info.py",
+  "Lib/site-packages/fiona/fio/insp.py",
+  "Lib/site-packages/fiona/fio/load.py",
+  "Lib/site-packages/fiona/fio/ls.py",
+  "Lib/site-packages/fiona/fio/main.py",
+  "Lib/site-packages/fiona/fio/options.py",
+  "Lib/site-packages/fiona/fio/rm.py",
+  "Lib/site-packages/fiona/inspector.py",
+  "Lib/site-packages/fiona/io.py",
+  "Lib/site-packages/fiona/logutils.py",
+  "Lib/site-packages/fiona/ogrext.cp37-win_amd64.pyd",
+  "Lib/site-packages/fiona/path.py",
+  "Lib/site-packages/fiona/rfc3339.py",
+  "Lib/site-packages/fiona/schema.cp37-win_amd64.pyd",
+  "Lib/site-packages/fiona/session.py",
+  "Lib/site-packages/fiona/transform.py",
+  "Lib/site-packages/fiona/vfs.py",
+  "Scripts/fio-script.py",
+  "Scripts/fio.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py37hce0be61_3",
+  "build_number": 3,
+  "depends": [
+   "attrs >=17",
+   "click >=4.0,<8",
+   "click-plugins >=1.0",
+   "cligj >=0.5",
+   "gdal >=2.4.1,<2.5.0a0",
+   "munch",
+   "numpy >=1.11.3,<2.0a0",
+   "python >=3.7,<3.8.0a0",
+   "setuptools",
+   "shapely",
+   "six >=1.7",
+   "vc >=14,<15.0a0"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "fiona",
+  "platform": "win",
+  "subdir": "win-64",
+  "timestamp": 1555602902366,
+  "version": "1.8.6"
+ },
+ "metadata_version": 1,
+ "name": "fiona",
+ "raw_recipe": "{% set version = \"1.8.6\" %}\n\npackage:\n  name: fiona\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/F/Fiona/Fiona-{{ version }}.tar.gz\n  sha256: fa31dfe8855b9cd0b128b47a4df558f1b8eda90d2181bff1dd9854e5556efb3e\n\nbuild:\n  number: 3\n  skip: True  # [win and vc<14]\n  entry_points:\n    - fio = fiona.fio.main:main_group\n\nrequirements:\n  build:\n    - {{ compiler('c') }}\n    - {{ compiler('cxx') }}\n  host:\n    - python\n    - pip\n    - cython >=0.28.3\n    - numpy\n    - gdal\n  run:\n    - python\n    - setuptools\n    - gdal\n    - {{ pin_compatible('numpy') }}\n    - attrs >=17\n    - click >=4.0,<8\n    - cligj >=0.5\n    - click-plugins >=1.0\n    - six >=1.7\n    - munch\n    - shapely\n    - enum34  # [py<34]\n\ntest:\n  source_files:\n    - tests\n  imports:\n    - fiona\n    - fiona.fio\n  requires:\n    - pytest >=3\n    - boto3 >=1.2.4\n    - packaging\n    - pytest-catchlog\n    - mock  # [py2k]\n  files:\n    - test_data\n  commands:\n    - fio --help\n    - fio ls test_data/test.shp\n    - fio info test_data/test.shp\n\nabout:\n  home: http://github.com/Toblerity/Fiona\n  license: BSD-3-Clause\n  license_file: LICENSE.txt\n  summary: 'Fiona reads and writes spatial data files'\n\nextra:\n  recipe-maintainers:\n    - ocefpaf\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "http://github.com/Toblerity/Fiona",
+   "license": "BSD-3-Clause",
+   "license_file": "LICENSE.txt",
+   "summary": "Fiona reads and writes spatial data files"
+  },
+  "build": {
+   "entry_points": [
+    "fio = fiona.fio.main:main_group"
+   ],
+   "number": "3",
+   "string": "py37hce0be61_3"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "ocefpaf"
+   ]
+  },
+  "package": {
+   "name": "fiona",
+   "version": "1.8.6"
+  },
+  "requirements": {
+   "build": [
+    "vs2015_win-64 14.0.25123 h17c34da_3"
+   ],
+   "host": [
+    "boost-cpp 1.68.0 h6a4c333_1000",
+    "bzip2 1.0.6 hfa6e2cd_1002",
+    "ca-certificates 2019.3.9 hecc5488_0",
+    "certifi 2019.3.9 py37_0",
+    "curl 7.64.1 h4496350_0",
+    "cython 0.29.7 py37h6538335_0",
+    "expat 2.2.5 he025d50_1002",
+    "freetype 2.10.0 h5db478b_0",
+    "freexl 1.0.5 hd288d7e_1002",
+    "gdal 2.4.1 py37hdf5ee75_2",
+    "geos 3.7.1 he025d50_1000",
+    "geotiff 1.5.1 h7bfc4c5_1",
+    "gettext 0.19.8.1 hb01d8f6_1002",
+    "glib 2.58.3 hc0c2ac7_1001",
+    "hdf4 4.2.13 hf8e6fe8_1002",
+    "hdf5 1.10.4 nompi_hcc15c50_1106",
+    "intel-openmp 2019.3 203",
+    "jpeg 9c hfa6e2cd_1001",
+    "kealib 1.4.10 heacb130_1003",
+    "krb5 1.16.3 hdd46e55_1001",
+    "libblas 3.8.0 5_mkl",
+    "libcblas 3.8.0 5_mkl",
+    "libcurl 7.64.1 h4496350_0",
+    "libffi 3.2.1 h6538335_1006",
+    "libgdal 2.4.1 h47faea2_2",
+    "libiconv 1.15 hfa6e2cd_1005",
+    "libkml 1.3.0 h4fd0f3b_1009",
+    "liblapack 3.8.0 5_mkl",
+    "libnetcdf 4.6.2 h396784b_1001",
+    "libpng 1.6.37 h7602738_0",
+    "libpq 11.2 hb0bdaea_0",
+    "libspatialite 4.3.0a h505de5d_1027",
+    "libssh2 1.8.2 h642c060_2",
+    "libtiff 4.0.10 h36446d0_1001",
+    "libxml2 2.9.8 h9ce36c8_1005",
+    "m2w64-expat 2.1.1 2",
+    "m2w64-gcc-libgfortran 5.3.0 6",
+    "m2w64-gcc-libs 5.3.0 7",
+    "m2w64-gcc-libs-core 5.3.0 7",
+    "m2w64-gettext 0.19.7 2",
+    "m2w64-gmp 6.1.0 2",
+    "m2w64-libiconv 1.14 6",
+    "m2w64-libwinpthread-git 5.0.0.4634.697f757 2",
+    "m2w64-xz 5.2.2 2",
+    "mkl 2019.3 203",
+    "msys2-conda-epoch 20160418 1",
+    "numpy 1.11.3 py37h873a0b8_1207",
+    "openjpeg 2.3.1 ha922770_0",
+    "openssl 1.1.1b hfa6e2cd_2",
+    "pcre 8.41 h6538335_1003",
+    "pip 19.0.3 py37_0",
+    "poppler 0.67.0 heddaa77_6",
+    "poppler-data 0.4.9 1",
+    "postgresql 11.2 h06f7779_0",
+    "proj4 6.0.0 ha7a8c7b_0",
+    "python 3.7.3 hb12ca83_0",
+    "setuptools 41.0.0 py37_0",
+    "sqlite 3.26.0 hfa6e2cd_1001",
+    "tk 8.6.9 hfa6e2cd_1001",
+    "vc 14 0",
+    "vs2015_runtime 14.0.25420 0",
+    "wheel 0.33.1 py37_0",
+    "wincertstore 0.2 py37_1002",
+    "xerces-c 3.2.2 h6538335_1001",
+    "xz 5.2.4 h2fa13f4_1001",
+    "zlib 1.2.11 h2fa13f4_1004"
+   ],
+   "run": [
+    "attrs >=17",
+    "click >=4.0,<8",
+    "click-plugins >=1.0",
+    "cligj >=0.5",
+    "gdal >=2.4.1,<2.5.0a0",
+    "munch",
+    "numpy >=1.11.3,<2.0a0",
+    "python >=3.7,<3.8.0a0",
+    "setuptools",
+    "shapely",
+    "six >=1.7",
+    "vc >=14,<15.0a0"
+   ]
+  },
+  "source": {
+   "sha256": "fa31dfe8855b9cd0b128b47a4df558f1b8eda90d2181bff1dd9854e5556efb3e",
+   "url": "https://pypi.io/packages/source/F/Fiona/Fiona-1.8.6.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "fio --help",
+    "fio ls test_data/test.shp",
+    "fio info test_data/test.shp"
+   ],
+   "files": [
+    "test_data"
+   ],
+   "imports": [
+    "fiona",
+    "fiona.fio"
+   ],
+   "requires": [
+    "boto3 >=1.2.4",
+    "packaging",
+    "pytest >=3",
+    "pytest-catchlog"
+   ],
+   "source_files": [
+    "tests"
+   ]
+  }
+ },
+ "version": "1.8.6"
+}
