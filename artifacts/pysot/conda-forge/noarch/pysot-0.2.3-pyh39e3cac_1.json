@@ -1,0 +1,316 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.17.8",
+  "conda_private": false,
+  "conda_version": "4.7.5",
+  "description": "pySOT is an asynchronous parallel optimization toolbox for global deterministic optimization problems. The main purpose of\nthe toolbox is for optimization of computationally expensive black-box objective functions with continuous and/or integer\nvariables where the number of evaluations is limited. If there are several processors available it may make sense to evaluate\nthe objective function using either asynchronous or synchronous parallel. pySOT uses the event-driven framework for\nasynchronous optimization strategies POAP (https://github.com/dbindel/POAP) to provide this functionality.\n",
+  "dev_url": "https://github.com/dme65/pySOT",
+  "doc_url": "http://http://pysot.readthedocs.io/",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "tadeu",
+    "jaimeambrus"
+   ]
+  },
+  "home": "https://github.com/dme65/pySOT",
+  "identifiers": [],
+  "keywords": [],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "license_file": "LICENSE.rst",
+  "root_pkgs": [
+   "py-lief 0.9.0 py37he1b5a44_1",
+   "liblief 0.9.0 hf8a498c_1",
+   "attrs 19.1.0 py_0",
+   "conda-build 3.17.8 py37_1",
+   "clyent 1.2.2 py_1",
+   "sqlite 3.28.0 hcee41ef_1",
+   "libiconv 1.15 h516909a_1005",
+   "xz 5.2.4 h14c3975_1001",
+   "patch 2.7.6 h14c3975_1001",
+   "bzip2 1.0.6 h14c3975_1002",
+   "tqdm 4.32.2 py_0",
+   "icu 58.2 hf484d3e_1000",
+   "patchelf 0.10 he1b5a44_0",
+   "libffi 3.2.1 he1b5a44_1006",
+   "pycparser 2.19 py37_1",
+   "libgcc-ng 9.1.0 hdf63c60_0",
+   "jsonschema 3.0.1 py37_0",
+   "pyopenssl 19.0.0 py37_0",
+   "anaconda-client 1.7.2 py_0",
+   "python-dateutil 2.8.0 py_0",
+   "glob2 0.7 py_0",
+   "libarchive 3.3.3 hb44662c_1005",
+   "libcurl 7.64.1 hda55be3_0",
+   "pip 19.1.1 py37_0",
+   "conda 4.7.5 py37_0",
+   "ruamel_yaml 0.15.71 py37h14c3975_1000",
+   "soupsieve 1.9.2 py37_0",
+   "python-libarchive-c 2.8 py37_1004",
+   "pyyaml 5.1.1 py37h516909a_0",
+   "pycosat 0.6.3 py37h14c3975_1001",
+   "zstd 1.4.0 h3b9ef0a_0",
+   "jupyter_core 4.4.0 py_0",
+   "expat 2.2.5 he1b5a44_1003",
+   "certifi 2019.6.16 py37_0",
+   "ncurses 6.1 hf484d3e_1002",
+   "psutil 5.6.3 py37h516909a_0",
+   "six 1.12.0 py37_1000",
+   "cryptography 2.7 py37h72c5cf5_0",
+   "pysocks 1.7.0 py37_0",
+   "jinja2 2.10.1 py_0",
+   "tini 0.18.0 h14c3975_1001",
+   "pkginfo 1.5.0.1 py_0",
+   "pytz 2019.1 py_0",
+   "gettext 0.19.8.1 hc5be6a0_1002",
+   "readline 8.0 hf8c457e_0",
+   "idna 2.8 py37_1000",
+   "traitlets 4.3.2 py37_1000",
+   "decorator 4.4.0 py_0",
+   "libstdcxx-ng 9.1.0 hdf63c60_0",
+   "tk 8.6.9 hed695b0_1002",
+   "git 2.22.0 pl526hce37bd2_0",
+   "nbformat 4.4.0 py_1",
+   "pyrsistent 0.15.3 py37h516909a_0",
+   "curl 7.64.1 hf8cf82a_0",
+   "requests 2.22.0 py37_0",
+   "ipython_genutils 0.2.0 py_1",
+   "asn1crypto 0.24.0 py37_1003",
+   "lz4-c 1.8.3 he1b5a44_1001",
+   "markupsafe 1.1.1 py37h14c3975_0",
+   "libedit 3.1.20170329 hf8c457e_1001",
+   "setuptools 41.0.1 py37_0",
+   "beautifulsoup4 4.7.1 py37_1001",
+   "openssl 1.1.1b h14c3975_1",
+   "gosu 1.10 h81701ea_1001",
+   "chardet 3.0.4 py37_1003",
+   "_libgcc_mutex 0.1 main",
+   "wheel 0.33.4 py37_0",
+   "ca-certificates 2019.6.16 hecc5488_0",
+   "conda-package-handling 1.3.10 py37_0",
+   "filelock 3.0.10 py_0",
+   "python 3.7.3 h33d41f4_1",
+   "krb5 1.16.3 h05b26f9_1001",
+   "zlib 1.2.11 h14c3975_1004",
+   "libxml2 2.9.9 h13577e0_1",
+   "libssh2 1.8.2 h22169c7_2",
+   "cffi 1.12.3 py37h8022711_0",
+   "perl 5.26.2 h516909a_1006",
+   "urllib3 1.24.3 py37_0",
+   "yaml 0.1.7 h14c3975_1001",
+   "lzo 2.10 h14c3975_1000",
+   "click 7.0 py_0",
+   "conda-env 2.6.0 1",
+   "conda-forge-ci-setup 2.3.1 py37_0"
+  ],
+  "summary": "Surrogate Optimization Toolbox",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CI": "azure",
+  "c_compiler": "gcc",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "docker_image": "condaforge/linux-anvil-comp7",
+  "extend_keys": [
+   "extend_keys",
+   "ignore_build_only_deps",
+   "pin_run_as_build",
+   "ignore_version"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "numpy",
+   "python"
+  ],
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "2.7",
+  "r_base": "3.5",
+  "target_platform": "linux-64"
+ },
+ "files": [
+  "site-packages/pySOT-0.2.3.dist-info/INSTALLER",
+  "site-packages/pySOT-0.2.3.dist-info/LICENSE.rst",
+  "site-packages/pySOT-0.2.3.dist-info/METADATA",
+  "site-packages/pySOT-0.2.3.dist-info/RECORD",
+  "site-packages/pySOT-0.2.3.dist-info/WHEEL",
+  "site-packages/pySOT/__init__.py",
+  "site-packages/pySOT/auxiliary_problems.py",
+  "site-packages/pySOT/controller.py",
+  "site-packages/pySOT/examples/__init__.py",
+  "site-packages/pySOT/examples/example_checkpointing_serial.py",
+  "site-packages/pySOT/examples/example_checkpointing_threaded.py",
+  "site-packages/pySOT/examples/example_expected_improvement.py",
+  "site-packages/pySOT/examples/example_extra_vals.py",
+  "site-packages/pySOT/examples/example_gp_regression.py",
+  "site-packages/pySOT/examples/example_lower_confidence_bounds.py",
+  "site-packages/pySOT/examples/example_mars.py",
+  "site-packages/pySOT/examples/example_matlab_engine.py",
+  "site-packages/pySOT/examples/example_simple.py",
+  "site-packages/pySOT/examples/example_sop.py",
+  "site-packages/pySOT/examples/example_subprocess.py",
+  "site-packages/pySOT/examples/example_subprocess_files.py",
+  "site-packages/pySOT/examples/example_subprocess_partial_info.py",
+  "site-packages/pySOT/examples/mpiexample_simple.py",
+  "site-packages/pySOT/examples/mpiexample_subprocess.py",
+  "site-packages/pySOT/experimental_design.py",
+  "site-packages/pySOT/optimization_problems.py",
+  "site-packages/pySOT/strategy.py",
+  "site-packages/pySOT/surrogate.py",
+  "site-packages/pySOT/tests/__init__.py",
+  "site-packages/pySOT/tests/test_auxiliary_problems.py",
+  "site-packages/pySOT/tests/test_controller.py",
+  "site-packages/pySOT/tests/test_experimental_designs.py",
+  "site-packages/pySOT/tests/test_optimization_problems.py",
+  "site-packages/pySOT/tests/test_strategies.py",
+  "site-packages/pySOT/tests/test_surrogates.py",
+  "site-packages/pySOT/tests/test_utils.py",
+  "site-packages/pySOT/utils.py"
+ ],
+ "index": {
+  "arch": null,
+  "build": "pyh39e3cac_1",
+  "build_number": 1,
+  "depends": [
+   "dill",
+   "poap >=0.1.25",
+   "py_dempster_shafer",
+   "pydoe2",
+   "pytest",
+   "python",
+   "scipy",
+   "six"
+  ],
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "name": "pysot",
+  "noarch": "python",
+  "platform": null,
+  "subdir": "noarch",
+  "timestamp": 1562766274636,
+  "version": "0.2.3"
+ },
+ "metadata_version": 1,
+ "name": "pysot",
+ "raw_recipe": "{% set name = \"pySOT\" %}\n{% set version = \"0.2.3\" %}\n{% set sha256 = \"025162c3eaacd073774d28662dacb689720d2e22a6911b9ae7722ac63a8bc14c\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ name }}-{{ version }}.tar.gz\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  noarch: python\n  number: 1\n  script: \"{{ PYTHON }} -m pip install . --no-deps -vv\"\n\nrequirements:\n  host:\n    - pip\n    - python\n    # `numpy` is required to avoid the following error during `pip install`:\n    # RuntimeError: Setuptools downloading is disabled in conda build. Be sure to add all dependencies in the meta.yaml\n    - numpy\n\n  run:\n    - python\n    - scipy\n    - pydoe2\n    - poap >=0.1.25\n    - py_dempster_shafer\n    - six\n    - dill\n    - pytest\n\ntest:\n  imports:\n    - pySOT\n    - pySOT.tests\n\n  source_files:\n    - pySOT/tests\n\n  commands:\n    - cd pySOT\n    - cd tests\n    - python test_auxiliary_problems.py\n    - python test_controller.py\n    - python test_experimental_designs.py\n    - python test_optimization_problems.py\n    - python test_strategies.py\n    - python test_surrogates.py\n    - python test_utils.py\n\n  requires:\n    - scikit-learn\n\nabout:\n  home: https://github.com/dme65/pySOT\n  license: BSD 3-Clause\n  license_family: BSD\n  license_file: LICENSE.rst\n  summary: 'Surrogate Optimization Toolbox'\n  description: |\n    pySOT is an asynchronous parallel optimization toolbox for global deterministic optimization problems. The main purpose of\n    the toolbox is for optimization of computationally expensive black-box objective functions with continuous and/or integer\n    variables where the number of evaluations is limited. If there are several processors available it may make sense to evaluate\n    the objective function using either asynchronous or synchronous parallel. pySOT uses the event-driven framework for\n    asynchronous optimization strategies POAP (https://github.com/dbindel/POAP) to provide this functionality.\n  doc_url: http://http://pysot.readthedocs.io/\n  dev_url: https://github.com/dme65/pySOT\n\nextra:\n  recipe-maintainers:\n    - tadeu\n    - jaimeambrus\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "pySOT is an asynchronous parallel optimization toolbox for global deterministic optimization problems. The main purpose of\nthe toolbox is for optimization of computationally expensive black-box objective functions with continuous and/or integer\nvariables where the number of evaluations is limited. If there are several processors available it may make sense to evaluate\nthe objective function using either asynchronous or synchronous parallel. pySOT uses the event-driven framework for\nasynchronous optimization strategies POAP (https://github.com/dbindel/POAP) to provide this functionality.\n",
+   "dev_url": "https://github.com/dme65/pySOT",
+   "doc_url": "http://http://pysot.readthedocs.io/",
+   "home": "https://github.com/dme65/pySOT",
+   "license": "BSD 3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE.rst",
+   "summary": "Surrogate Optimization Toolbox"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "1",
+   "script": "/home/conda/feedstock_root/build_artifacts/pysot_1562766202414/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_place/bin/python -m pip install . --no-deps -vv",
+   "string": "pyh39e3cac_1"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "jaimeambrus",
+    "tadeu"
+   ]
+  },
+  "package": {
+   "name": "pysot",
+   "version": "0.2.3"
+  },
+  "requirements": {
+   "host": [
+    "_libgcc_mutex 0.1 main",
+    "ca-certificates 2019.6.16 hecc5488_0",
+    "certifi 2019.6.16 py27_0",
+    "libblas 3.8.0 10_openblas",
+    "libcblas 3.8.0 10_openblas",
+    "libffi 3.2.1 he1b5a44_1006",
+    "libgcc-ng 9.1.0 hdf63c60_0",
+    "libgfortran-ng 7.3.0 hdf63c60_0",
+    "liblapack 3.8.0 10_openblas",
+    "libopenblas 0.3.6 h6e990d7_4",
+    "libstdcxx-ng 9.1.0 hdf63c60_0",
+    "ncurses 6.1 hf484d3e_1002",
+    "numpy 1.11.3 py27he5ce36f_1207",
+    "openblas 0.3.6 h6e990d7_4",
+    "openssl 1.1.1b h14c3975_1",
+    "pip 19.1.1 py27_0",
+    "python 2.7.15 h5a48372_1009",
+    "readline 8.0 hf8c457e_0",
+    "setuptools 41.0.1 py27_0",
+    "sqlite 3.28.0 hcee41ef_1",
+    "tk 8.6.9 hed695b0_1002",
+    "wheel 0.33.4 py27_0",
+    "zlib 1.2.11 h14c3975_1004"
+   ],
+   "run": [
+    "dill",
+    "poap >=0.1.25",
+    "py_dempster_shafer",
+    "pydoe2",
+    "pytest",
+    "python",
+    "scipy",
+    "six"
+   ]
+  },
+  "source": {
+   "fn": "pySOT-0.2.3.tar.gz",
+   "sha256": "025162c3eaacd073774d28662dacb689720d2e22a6911b9ae7722ac63a8bc14c",
+   "url": "https://pypi.io/packages/source/p/pySOT/pySOT-0.2.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "cd pySOT",
+    "cd tests",
+    "python test_auxiliary_problems.py",
+    "python test_controller.py",
+    "python test_experimental_designs.py",
+    "python test_optimization_problems.py",
+    "python test_strategies.py",
+    "python test_surrogates.py",
+    "python test_utils.py"
+   ],
+   "imports": [
+    "pySOT",
+    "pySOT.tests"
+   ],
+   "requires": [
+    "scikit-learn"
+   ],
+   "source_files": [
+    "pySOT/tests"
+   ]
+  }
+ },
+ "version": "0.2.3"
+}
