@@ -1,0 +1,270 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.17.8",
+  "conda_private": false,
+  "conda_version": "4.7.5",
+  "description": "Mongomock is a small library to help testing Python code that interacts with\nMongoDB via Pymongo.\n\nMongoDB is complex. This library aims at a reasonably complete mock of\nMongoDB for testing purposes, not a perfect replica. This means some\nfeatures are not likely to make it in any time soon.\n\nAlso, since many corner cases are encountered along the way, our goal is to\ntry and TDD our way into completeness. This means that every time we\nencounter a missing or broken (incompatible) feature, we write a test for\nit and fix it. There are probably lots of such issues hiding around\nlurking, so feel free to open issues and/or pull requests and help the\nproject out!\n\nNOTE: We don't include pymongo functionality as \"stubs\" or \"placeholders\".\nSince this library is used to validate production code, it is unacceptable\nto behave differently than the real pymongo implementation. In such cases\nit is better to throw NotImplementedError than implement a modified version\nof the original behavior.\n",
+  "dev_url": "https://github.com/mongomock/mongomock",
+  "doc_url": "https://github.com/mongomock/mongomock",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "birnbaum",
+    "mathiaseitz",
+    "trendelkampschroer"
+   ]
+  },
+  "home": "https://github.com/mongomock/mongomock",
+  "identifiers": [],
+  "keywords": [],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "license_file": "LICENSE",
+  "root_pkgs": [
+   "py-lief 0.9.0 py37he1b5a44_1",
+   "liblief 0.9.0 hf8a498c_1",
+   "attrs 19.1.0 py_0",
+   "conda-build 3.17.8 py37_1",
+   "clyent 1.2.2 py_1",
+   "sqlite 3.28.0 hcee41ef_1",
+   "libiconv 1.15 h516909a_1005",
+   "xz 5.2.4 h14c3975_1001",
+   "patch 2.7.6 h14c3975_1001",
+   "bzip2 1.0.6 h14c3975_1002",
+   "tqdm 4.32.2 py_0",
+   "icu 58.2 hf484d3e_1000",
+   "patchelf 0.10 he1b5a44_0",
+   "libffi 3.2.1 he1b5a44_1006",
+   "pycparser 2.19 py37_1",
+   "libgcc-ng 9.1.0 hdf63c60_0",
+   "jsonschema 3.0.1 py37_0",
+   "pyopenssl 19.0.0 py37_0",
+   "anaconda-client 1.7.2 py_0",
+   "python-dateutil 2.8.0 py_0",
+   "glob2 0.7 py_0",
+   "libarchive 3.3.3 hb44662c_1005",
+   "libcurl 7.64.1 hda55be3_0",
+   "pip 19.1.1 py37_0",
+   "conda 4.7.5 py37_0",
+   "ruamel_yaml 0.15.71 py37h14c3975_1000",
+   "soupsieve 1.9.2 py37_0",
+   "python-libarchive-c 2.8 py37_1004",
+   "pyyaml 5.1.1 py37h516909a_0",
+   "pycosat 0.6.3 py37h14c3975_1001",
+   "zstd 1.4.0 h3b9ef0a_0",
+   "jupyter_core 4.4.0 py_0",
+   "expat 2.2.5 he1b5a44_1003",
+   "certifi 2019.6.16 py37_0",
+   "ncurses 6.1 hf484d3e_1002",
+   "psutil 5.6.3 py37h516909a_0",
+   "six 1.12.0 py37_1000",
+   "cryptography 2.7 py37h72c5cf5_0",
+   "pysocks 1.7.0 py37_0",
+   "jinja2 2.10.1 py_0",
+   "tini 0.18.0 h14c3975_1001",
+   "pkginfo 1.5.0.1 py_0",
+   "pytz 2019.1 py_0",
+   "gettext 0.19.8.1 hc5be6a0_1002",
+   "readline 8.0 hf8c457e_0",
+   "idna 2.8 py37_1000",
+   "traitlets 4.3.2 py37_1000",
+   "decorator 4.4.0 py_0",
+   "libstdcxx-ng 9.1.0 hdf63c60_0",
+   "tk 8.6.9 hed695b0_1002",
+   "git 2.22.0 pl526hce37bd2_0",
+   "nbformat 4.4.0 py_1",
+   "pyrsistent 0.15.3 py37h516909a_0",
+   "curl 7.64.1 hf8cf82a_0",
+   "requests 2.22.0 py37_0",
+   "ipython_genutils 0.2.0 py_1",
+   "asn1crypto 0.24.0 py37_1003",
+   "lz4-c 1.8.3 he1b5a44_1001",
+   "markupsafe 1.1.1 py37h14c3975_0",
+   "libedit 3.1.20170329 hf8c457e_1001",
+   "setuptools 41.0.1 py37_0",
+   "beautifulsoup4 4.7.1 py37_1001",
+   "gosu 1.10 h81701ea_1001",
+   "chardet 3.0.4 py37_1003",
+   "_libgcc_mutex 0.1 main",
+   "wheel 0.33.4 py37_0",
+   "ca-certificates 2019.6.16 hecc5488_0",
+   "conda-package-handling 1.3.10 py37_0",
+   "filelock 3.0.10 py_0",
+   "python 3.7.3 h33d41f4_1",
+   "krb5 1.16.3 h05b26f9_1001",
+   "zlib 1.2.11 h14c3975_1004",
+   "libxml2 2.9.9 h13577e0_1",
+   "libssh2 1.8.2 h22169c7_2",
+   "cffi 1.12.3 py37h8022711_0",
+   "perl 5.26.2 h516909a_1006",
+   "urllib3 1.24.3 py37_0",
+   "yaml 0.1.7 h14c3975_1001",
+   "lzo 2.10 h14c3975_1000",
+   "click 7.0 py_0",
+   "conda-env 2.6.0 1",
+   "conda-forge-ci-setup 2.3.1 py37_0",
+   "openssl 1.1.1c h516909a_0"
+  ],
+  "summary": "Small library for mocking pymongo collection objects for testing purposes",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CI": "azure",
+  "c_compiler": "gcc",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "docker_image": "condaforge/linux-anvil-comp7",
+  "extend_keys": [
+   "ignore_build_only_deps",
+   "pin_run_as_build",
+   "ignore_version",
+   "extend_keys"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "numpy",
+   "python"
+  ],
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x.x",
+    "min_pin": "x.x.x"
+   }
+  },
+  "python": "2.7",
+  "r_base": "3.5",
+  "target_platform": "linux-64"
+ },
+ "files": [
+  "site-packages/mongomock-3.17.0.dist-info/INSTALLER",
+  "site-packages/mongomock-3.17.0.dist-info/LICENSE",
+  "site-packages/mongomock-3.17.0.dist-info/METADATA",
+  "site-packages/mongomock-3.17.0.dist-info/RECORD",
+  "site-packages/mongomock-3.17.0.dist-info/WHEEL",
+  "site-packages/mongomock-3.17.0.dist-info/pbr.json",
+  "site-packages/mongomock/__init__.py",
+  "site-packages/mongomock/__version__.py",
+  "site-packages/mongomock/aggregate.py",
+  "site-packages/mongomock/collection.py",
+  "site-packages/mongomock/command_cursor.py",
+  "site-packages/mongomock/database.py",
+  "site-packages/mongomock/filtering.py",
+  "site-packages/mongomock/gridfs.py",
+  "site-packages/mongomock/helpers.py",
+  "site-packages/mongomock/mongo_client.py",
+  "site-packages/mongomock/object_id.py",
+  "site-packages/mongomock/patch.py",
+  "site-packages/mongomock/read_preferences.py",
+  "site-packages/mongomock/results.py",
+  "site-packages/mongomock/store.py",
+  "site-packages/mongomock/write_concern.py"
+ ],
+ "index": {
+  "arch": null,
+  "build": "py_0",
+  "build_number": 0,
+  "depends": [
+   "python",
+   "sentinels",
+   "setuptools",
+   "six"
+  ],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "name": "mongomock",
+  "noarch": "python",
+  "platform": null,
+  "subdir": "noarch",
+  "timestamp": 1562842849863,
+  "version": "3.17.0"
+ },
+ "metadata_version": 1,
+ "name": "mongomock",
+ "raw_recipe": "{% set name = \"mongomock\" %}\n{% set version = \"3.17.0\" %}\n{% set sha256 = \"7c9c829abfcb7ae9074a3d2e3db15e279edea73f560da3b0b306d929619cca45\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  noarch: python\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - python\n    - setuptools\n    - pbr\n  run:\n    - python\n    - setuptools\n    - six\n    - sentinels\n\ntest:\n  imports:\n    - mongomock\n\nabout:\n  home: https://github.com/mongomock/mongomock\n  license: BSD-3-Clause\n  license_family: BSD\n  license_file: LICENSE\n  summary: Small library for mocking pymongo collection objects for testing purposes\n  description: |\n    Mongomock is a small library to help testing Python code that interacts with\n    MongoDB via Pymongo.\n\n    MongoDB is complex. This library aims at a reasonably complete mock of\n    MongoDB for testing purposes, not a perfect replica. This means some\n    features are not likely to make it in any time soon.\n\n    Also, since many corner cases are encountered along the way, our goal is to\n    try and TDD our way into completeness. This means that every time we\n    encounter a missing or broken (incompatible) feature, we write a test for\n    it and fix it. There are probably lots of such issues hiding around\n    lurking, so feel free to open issues and/or pull requests and help the\n    project out!\n\n    NOTE: We don't include pymongo functionality as \"stubs\" or \"placeholders\".\n    Since this library is used to validate production code, it is unacceptable\n    to behave differently than the real pymongo implementation. In such cases\n    it is better to throw NotImplementedError than implement a modified version\n    of the original behavior.\n  doc_url: https://github.com/mongomock/mongomock\n  dev_url: https://github.com/mongomock/mongomock\n\nextra:\n  recipe-maintainers:\n    - birnbaum\n    - mathiaseitz\n    - trendelkampschroer\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Mongomock is a small library to help testing Python code that interacts with\nMongoDB via Pymongo.\n\nMongoDB is complex. This library aims at a reasonably complete mock of\nMongoDB for testing purposes, not a perfect replica. This means some\nfeatures are not likely to make it in any time soon.\n\nAlso, since many corner cases are encountered along the way, our goal is to\ntry and TDD our way into completeness. This means that every time we\nencounter a missing or broken (incompatible) feature, we write a test for\nit and fix it. There are probably lots of such issues hiding around\nlurking, so feel free to open issues and/or pull requests and help the\nproject out!\n\nNOTE: We don't include pymongo functionality as \"stubs\" or \"placeholders\".\nSince this library is used to validate production code, it is unacceptable\nto behave differently than the real pymongo implementation. In such cases\nit is better to throw NotImplementedError than implement a modified version\nof the original behavior.\n",
+   "dev_url": "https://github.com/mongomock/mongomock",
+   "doc_url": "https://github.com/mongomock/mongomock",
+   "home": "https://github.com/mongomock/mongomock",
+   "license": "BSD-3-Clause",
+   "license_family": "BSD",
+   "license_file": "LICENSE",
+   "summary": "Small library for mocking pymongo collection objects for testing purposes"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "0",
+   "script": "/home/conda/feedstock_root/build_artifacts/mongomock_1562842797136/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p/bin/python -m pip install . -vv",
+   "string": "py_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "birnbaum",
+    "mathiaseitz",
+    "trendelkampschroer"
+   ]
+  },
+  "package": {
+   "name": "mongomock",
+   "version": "3.17.0"
+  },
+  "requirements": {
+   "build": [
+    "_libgcc_mutex 0.1 main",
+    "ca-certificates 2019.6.16 hecc5488_0",
+    "certifi 2019.6.16 py27_0",
+    "libffi 3.2.1 he1b5a44_1006",
+    "libgcc-ng 9.1.0 hdf63c60_0",
+    "libstdcxx-ng 9.1.0 hdf63c60_0",
+    "ncurses 6.1 hf484d3e_1002",
+    "openssl 1.1.1c h516909a_0",
+    "pbr 5.3.0 py_0",
+    "pip 19.1.1 py27_0",
+    "python 2.7.15 h5a48372_1009",
+    "readline 8.0 hf8c457e_0",
+    "setuptools 41.0.1 py27_0",
+    "sqlite 3.29.0 hcee41ef_0",
+    "tk 8.6.9 hed695b0_1002",
+    "wheel 0.33.4 py27_0",
+    "zlib 1.2.11 h14c3975_1004"
+   ],
+   "run": [
+    "python",
+    "sentinels",
+    "setuptools",
+    "six"
+   ]
+  },
+  "source": {
+   "sha256": "7c9c829abfcb7ae9074a3d2e3db15e279edea73f560da3b0b306d929619cca45",
+   "url": "https://pypi.io/packages/source/m/mongomock/mongomock-3.17.0.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "mongomock"
+   ]
+  }
+ },
+ "version": "3.17.0"
+}
