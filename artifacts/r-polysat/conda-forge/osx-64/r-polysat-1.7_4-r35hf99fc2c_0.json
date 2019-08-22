@@ -1,0 +1,318 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.18.9",
+  "conda_private": false,
+  "conda_version": "4.7.11",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "conda-forge/r"
+   ]
+  },
+  "home": "https://github.com/lvclark/polysat/wiki",
+  "identifiers": [],
+  "keywords": [],
+  "license": "GPL-2",
+  "license_family": "GPL2",
+  "license_file": "/usr/local/miniconda/conda-bld/r-polysat_1566479124994/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pla/lib/R/share/licenses/GPL-2",
+  "root_pkgs": [
+   "anaconda-client 1.7.2 py_0",
+   "asn1crypto 0.24.0 py37_1003",
+   "attrs 19.1.0 py_0",
+   "beautifulsoup4 4.8.0 py37_0",
+   "bzip2 1.0.8 h01d97ff_0",
+   "ca-certificates 2019.6.16 hecc5488_0",
+   "certifi 2019.6.16 py37_1",
+   "cffi 1.12.3 py37hccf1714_0",
+   "chardet 3.0.4 py37_1003",
+   "click 7.0 py_0",
+   "clyent 1.2.2 py_1",
+   "conda 4.7.11 py37_0",
+   "conda-build 3.18.9 py37_3",
+   "conda-env 2.6.0 1",
+   "conda-forge-ci-setup 2.3.2 py37_0",
+   "conda-package-handling 1.4.1 py37_0",
+   "cryptography 2.7 py37h212c5bf_0",
+   "decorator 4.4.0 py_0",
+   "filelock 3.0.10 py_0",
+   "glob2 0.7 py_0",
+   "icu 64.2 h6de7cb9_0",
+   "idna 2.8 py37_1000",
+   "ipython_genutils 0.2.0 py_1",
+   "jinja2 2.10.1 py_0",
+   "jq 1.6 h1de35cc_1000",
+   "jsonschema 3.0.2 py37_0",
+   "jupyter_core 4.4.0 py_0",
+   "libarchive 3.3.3 h5c473cc_1006",
+   "libcxx 8.0.1 0",
+   "libcxxabi 8.0.1 0",
+   "libffi 3.2.1 h6de7cb9_1006",
+   "libiconv 1.15 h01d97ff_1005",
+   "liblief 0.9.0 h2a1bed3_1",
+   "libxml2 2.9.9 h12c6b28_2",
+   "lz4-c 1.8.3 h6de7cb9_1001",
+   "lzo 2.10 h1de35cc_1000",
+   "markupsafe 1.1.1 py37h1de35cc_0",
+   "nbformat 4.4.0 py_1",
+   "ncurses 6.1 h0a44026_1002",
+   "oniguruma 6.9.2 h01d97ff_0",
+   "openssl 1.1.1c h01d97ff_0",
+   "pkginfo 1.5.0.1 py_0",
+   "psutil 5.6.3 py37h01d97ff_0",
+   "py-lief 0.9.0 py37h6d6d4d2_1",
+   "pycosat 0.6.3 py37h1de35cc_1001",
+   "pycparser 2.19 py37_1",
+   "pyopenssl 19.0.0 py37_0",
+   "pyrsistent 0.15.4 py37h01d97ff_0",
+   "pysocks 1.7.0 py37_0",
+   "python 3.7.3 h93065d6_1",
+   "python-dateutil 2.8.0 py_0",
+   "python-libarchive-c 2.8 py37_1004",
+   "pytz 2019.2 py_0",
+   "pyyaml 5.1.2 py37h01d97ff_0",
+   "readline 8.0 hcfe32e1_0",
+   "requests 2.22.0 py37_1",
+   "ripgrep 11.0.2 0",
+   "ruamel_yaml 0.15.71 py37h1de35cc_1000",
+   "setuptools 41.2.0 py37_0",
+   "shyaml 0.6.0 py_0",
+   "six 1.12.0 py37_1000",
+   "soupsieve 1.9.3 py37_0",
+   "sqlite 3.29.0 hb7d70f7_0",
+   "tk 8.6.9 h2573ce8_1002",
+   "tqdm 4.34.0 py_0",
+   "traitlets 4.3.2 py37_1000",
+   "urllib3 1.25.3 py37_0",
+   "xz 5.2.4 h1de35cc_1001",
+   "yaml 0.1.7 h1de35cc_1001",
+   "zlib 1.2.11 h01d97ff_1005",
+   "zstd 1.4.0 ha9f0a20_0"
+  ],
+  "summary": "A collection of tools to handle microsatellite data of any ploidy (and samples of mixed ploidy) where allele copy number is not known in partially heterozygous genotypes.  It can import and export data in ABI 'GeneMapper', 'Structure', 'ATetra', 'Tetrasat'/'Tetra', 'GenoDive', 'SPAGeDi', 'POPDIST', 'STRand', and binary presence/absence formats.  It can calculate pairwise distances between individuals using a stepwise mutation model or infinite alleles model, with or without taking ploidies and allele frequencies into account.  These distances can be used for the calculation of clonal diversity statistics or used for further analysis in R.  Allelic diversity statistics and Polymorphic Information Content are also available.  polysat can  assist the user in estimating the ploidy of samples, and it can estimate allele  frequencies in populations, calculate pairwise or global differentiation statistics  based on those frequencies, and export allele frequencies to 'SPAGeDi' and 'adegenet'.   Functions are also included for assigning alleles to isoloci in cases where one pair  of microsatellite primers amplifies alleles from two or more independently segregating isoloci.  polysat is described by Clark and Jasieniuk (2011) <doi:10.1111/j.1755-0998.2011.02985.x> and Clark and Schreier (2017) <doi:10.1111/1755-0998.12639>.",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CI": "azure",
+  "CONDA_BUILD_SYSROOT": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk",
+  "MACOSX_DEPLOYMENT_TARGET": "10.9",
+  "c_compiler": "clang",
+  "c_compiler_version": "4",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "clangxx",
+  "cxx_compiler_version": "4",
+  "extend_keys": [
+   "ignore_version",
+   "ignore_build_only_deps",
+   "extend_keys",
+   "pin_run_as_build"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "numpy",
+   "python"
+  ],
+  "lua": "5",
+  "macos_machine": "x86_64-apple-darwin13.4.0",
+  "macos_min_version": "10.9",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   }
+  },
+  "python": "3.7",
+  "r_base": "3.5.1",
+  "target_platform": "osx-64"
+ },
+ "files": [
+  "lib/R/library/polysat/CITATION",
+  "lib/R/library/polysat/DESCRIPTION",
+  "lib/R/library/polysat/INDEX",
+  "lib/R/library/polysat/Meta/Rd.rds",
+  "lib/R/library/polysat/Meta/data.rds",
+  "lib/R/library/polysat/Meta/features.rds",
+  "lib/R/library/polysat/Meta/hsearch.rds",
+  "lib/R/library/polysat/Meta/links.rds",
+  "lib/R/library/polysat/Meta/nsInfo.rds",
+  "lib/R/library/polysat/Meta/package.rds",
+  "lib/R/library/polysat/Meta/vignette.rds",
+  "lib/R/library/polysat/NAMESPACE",
+  "lib/R/library/polysat/NEWS",
+  "lib/R/library/polysat/R/polysat",
+  "lib/R/library/polysat/R/polysat.rdb",
+  "lib/R/library/polysat/R/polysat.rdx",
+  "lib/R/library/polysat/data/AllopolyTutorialData.RData",
+  "lib/R/library/polysat/data/FCRinfo.txt.gz",
+  "lib/R/library/polysat/data/simgen.RData",
+  "lib/R/library/polysat/data/testgenotypes.RData",
+  "lib/R/library/polysat/doc/allopolyVignette.R",
+  "lib/R/library/polysat/doc/allopolyVignette.Rnw",
+  "lib/R/library/polysat/doc/allopolyVignette.pdf",
+  "lib/R/library/polysat/doc/index.html",
+  "lib/R/library/polysat/doc/polysattutorial.R",
+  "lib/R/library/polysat/doc/polysattutorial.Rnw",
+  "lib/R/library/polysat/doc/polysattutorial.pdf",
+  "lib/R/library/polysat/extdata/simgen.R",
+  "lib/R/library/polysat/help/AnIndex",
+  "lib/R/library/polysat/help/aliases.rds",
+  "lib/R/library/polysat/help/paths.rds",
+  "lib/R/library/polysat/help/polysat.rdb",
+  "lib/R/library/polysat/help/polysat.rdx",
+  "lib/R/library/polysat/html/00Index.html",
+  "lib/R/library/polysat/html/R.css",
+  "lib/R/library/polysat/libs/polysat.so"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "r35hf99fc2c_0",
+  "build_number": 0,
+  "depends": [
+   "libcxx >=4.0.1",
+   "r-base >=3.5,<3.6.0a0",
+   "r-rcpp"
+  ],
+  "license": "GPL-2",
+  "license_family": "GPL2",
+  "name": "r-polysat",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "timestamp": 1566479652138,
+  "version": "1.7_4"
+ },
+ "metadata_version": 1,
+ "name": "r-polysat",
+ "raw_recipe": "{% set version = '1.7-4' %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: r-polysat\n  version: {{ version|replace(\"-\", \"_\") }}\n\nsource:\n  url:\n    - {{ cran_mirror }}/src/contrib/polysat_{{ version }}.tar.gz\n    - {{ cran_mirror }}/src/contrib/Archive/polysat/polysat_{{ version }}.tar.gz\n  sha256: b721a790d3a079989c4e99e33e62035a4cf0c00691f071ed0f27084d669c5522\n\nbuild:\n  merge_build_host: True  # [win]\n  number: 0\n  rpaths:\n    - lib/R/lib/\n    - lib/\n\nrequirements:\n  build:\n    - {{ compiler('c') }}              # [not win]\n    - {{ compiler('m2w64_c') }}        # [win]\n    - {{ compiler('cxx') }}            # [not win]\n    - {{ compiler('m2w64_cxx') }}      # [win]\n    - {{posix}}filesystem        # [win]\n    - {{posix}}make\n    - {{posix}}sed               # [win]\n    - {{posix}}coreutils         # [win]\n    - {{posix}}zip               # [win]\n  host:\n    - r-base\n    - r-rcpp\n  run:\n    - r-base\n    - {{native}}gcc-libs         # [win]\n    - r-rcpp\n\ntest:\n  commands:\n    - $R -e \"library('polysat')\"           # [not win]\n    - \"\\\"%R%\\\" -e \\\"library('polysat')\\\"\"  # [win]\n\nabout:\n  home: https://github.com/lvclark/polysat/wiki\n  license: GPL-2\n  summary: A collection of tools to handle microsatellite data of any ploidy (and samples of\n    mixed ploidy) where allele copy number is not known in partially heterozygous genotypes.  It\n    can import and export data in ABI 'GeneMapper', 'Structure', 'ATetra', 'Tetrasat'/'Tetra',\n    'GenoDive', 'SPAGeDi', 'POPDIST', 'STRand', and binary presence/absence formats.  It\n    can calculate pairwise distances between individuals using a stepwise mutation model\n    or infinite alleles model, with or without taking ploidies and allele frequencies\n    into account.  These distances can be used for the calculation of clonal diversity\n    statistics or used for further analysis in R.  Allelic diversity statistics and\n    Polymorphic Information Content are also available.  polysat can  assist the user\n    in estimating the ploidy of samples, and it can estimate allele  frequencies in\n    populations, calculate pairwise or global differentiation statistics  based on those\n    frequencies, and export allele frequencies to 'SPAGeDi' and 'adegenet'.   Functions\n    are also included for assigning alleles to isoloci in cases where one pair  of microsatellite\n    primers amplifies alleles from two or more independently segregating isoloci.  polysat\n    is described by Clark and Jasieniuk (2011) <doi:10.1111/j.1755-0998.2011.02985.x>\n    and Clark and Schreier (2017) <doi:10.1111/1755-0998.12639>.\n  license_family: GPL2\n  license_file: '{{ environ[\"PREFIX\"] }}/lib/R/share/licenses/GPL-2'\n\nextra:\n  recipe-maintainers:\n    - conda-forge/r\n\n# Package: polysat\n# Version: 1.7-4\n# Date: 2019-03-03\n# Title: Tools for Polyploid Microsatellite Analysis\n# Authors@R: c(person(\"Lindsay V.\", \"Clark\", email = \"lvclark@illinois.edu\", role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0002-3881-9252\")), person(\"Alistair J.\", \"Hall\", role = \"ctb\", comment = c(ORCID = \"0000-0001-9293-8909\")), person(\"Handunnethi Nihal\", \"de Silva\", role = \"ctb\"), person(\"Tyler William\", \"Smith\", role = \"ctb\", comment = c(ORCID = \"0000-0001-7683-2653\")))\n# Imports: methods, stats, utils, grDevices, graphics, Rcpp\n# Suggests: ade4, adegenet, ape\n# LinkingTo: Rcpp\n# Description: A collection of tools to handle microsatellite data of any ploidy (and samples of mixed ploidy) where allele copy number is not known in partially heterozygous genotypes.  It can import and export data in ABI 'GeneMapper', 'Structure', 'ATetra', 'Tetrasat'/'Tetra', 'GenoDive', 'SPAGeDi', 'POPDIST', 'STRand', and binary presence/absence formats.  It can calculate pairwise distances between individuals using a stepwise mutation model or infinite alleles model, with or without taking ploidies and allele frequencies into account.  These distances can be used for the calculation of clonal diversity statistics or used for further analysis in R.  Allelic diversity statistics and Polymorphic Information Content are also available.  polysat can  assist the user in estimating the ploidy of samples, and it can estimate allele  frequencies in populations, calculate pairwise or global differentiation statistics  based on those frequencies, and export allele frequencies to 'SPAGeDi' and 'adegenet'.   Functions are also included for assigning alleles to isoloci in cases where one pair  of microsatellite primers amplifies alleles from two or more independently segregating isoloci.  polysat is described by Clark and Jasieniuk (2011) <doi:10.1111/j.1755-0998.2011.02985.x> and Clark and Schreier (2017) <doi:10.1111/1755-0998.12639>.\n# License: GPL-2\n# URL: https://github.com/lvclark/polysat/wiki\n# NeedsCompilation: yes\n# Packaged: 2019-03-04 17:36:08 UTC; lvclark\n# Author: Lindsay V. Clark [aut, cre] (<https://orcid.org/0000-0002-3881-9252>), Alistair J. Hall [ctb] (<https://orcid.org/0000-0001-9293-8909>), Handunnethi Nihal de Silva [ctb], Tyler William Smith [ctb] (<https://orcid.org/0000-0001-7683-2653>)\n# Maintainer: Lindsay V. Clark <lvclark@illinois.edu>\n# Repository: CRAN\n# Date/Publication: 2019-03-06 22:10:12 UTC\n",
+ "rendered_recipe": {
+  "about": {
+   "home": "https://github.com/lvclark/polysat/wiki",
+   "license": "GPL-2",
+   "license_family": "GPL2",
+   "license_file": "/usr/local/miniconda/conda-bld/r-polysat_1566479124994/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pla/lib/R/share/licenses/GPL-2",
+   "summary": "A collection of tools to handle microsatellite data of any ploidy (and samples of mixed ploidy) where allele copy number is not known in partially heterozygous genotypes.  It can import and export data in ABI 'GeneMapper', 'Structure', 'ATetra', 'Tetrasat'/'Tetra', 'GenoDive', 'SPAGeDi', 'POPDIST', 'STRand', and binary presence/absence formats.  It can calculate pairwise distances between individuals using a stepwise mutation model or infinite alleles model, with or without taking ploidies and allele frequencies into account.  These distances can be used for the calculation of clonal diversity statistics or used for further analysis in R.  Allelic diversity statistics and Polymorphic Information Content are also available.  polysat can  assist the user in estimating the ploidy of samples, and it can estimate allele  frequencies in populations, calculate pairwise or global differentiation statistics  based on those frequencies, and export allele frequencies to 'SPAGeDi' and 'adegenet'.   Functions are also included for assigning alleles to isoloci in cases where one pair  of microsatellite primers amplifies alleles from two or more independently segregating isoloci.  polysat is described by Clark and Jasieniuk (2011) <doi:10.1111/j.1755-0998.2011.02985.x> and Clark and Schreier (2017) <doi:10.1111/1755-0998.12639>."
+  },
+  "build": {
+   "number": "0",
+   "rpaths": [
+    "lib/",
+    "lib/R/lib/"
+   ],
+   "string": "r35hf99fc2c_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "conda-forge/r"
+   ]
+  },
+  "package": {
+   "name": "r-polysat",
+   "version": "1.7_4"
+  },
+  "requirements": {
+   "build": [
+    "cctools 895 h7512d6f_0",
+    "clang 4.0.1 h662ec87_0",
+    "clang_osx-64 4.0.1 h1ce6c1d_17",
+    "clangxx 4.0.1 hc9b4283_0",
+    "clangxx_osx-64 4.0.1 h22b1bf0_17",
+    "compiler-rt 4.0.1 h5487866_0",
+    "ld64 274.2 h7c2db76_0",
+    "libcxx 4.0.1 h579ed51_0",
+    "libcxxabi 4.0.1 hebd6815_0",
+    "llvm 4.0.1 hc748206_0",
+    "llvm-lto-tapi 4.0.1 h6701bc3_0",
+    "make 4.2.1 h1de35cc_2004"
+   ],
+   "host": [
+    "_r-mutex 1.0.1 anacondar_1",
+    "bwidget 1.9.11 0",
+    "bzip2 1.0.8 h01d97ff_0",
+    "ca-certificates 2019.6.16 hecc5488_0",
+    "cairo 1.14.12 h9d4d9ac_1005",
+    "cctools 895 1",
+    "clang 8.0.1 h770b8ee_0",
+    "clang_osx-64 8.0.1 h22b1bf0_18",
+    "clangxx 8.0.1 0",
+    "clangxx_osx-64 8.0.1 h22b1bf0_18",
+    "compiler-rt 8.0.1 hef50cfd_0",
+    "curl 7.65.3 h22ea746_0",
+    "fontconfig 2.13.1 h1027ab8_1000",
+    "freetype 2.10.0 h24853df_1",
+    "gettext 0.19.8.1 h46ab8bc_1002",
+    "gfortran_osx-64 4.8.5 h22b1bf0_8",
+    "glib 2.56.2 h67dad55_1001",
+    "graphite2 1.3.13 h2098e52_1000",
+    "harfbuzz 1.9.0 h9889186_1001",
+    "icu 58.2 h0a44026_1000",
+    "jpeg 9c h1de35cc_1001",
+    "krb5 1.16.3 hcfa6398_1001",
+    "ld64 274.2 h7c2db76_0",
+    "libcurl 7.65.3 h16faf7d_0",
+    "libcxx 8.0.1 0",
+    "libcxxabi 8.0.1 0",
+    "libedit 3.1.20170329 hcfe32e1_1001",
+    "libffi 3.2.1 h6de7cb9_1006",
+    "libgfortran 3.0.1 0",
+    "libiconv 1.15 h01d97ff_1005",
+    "libllvm8 8.0.1 h770b8ee_0",
+    "libpng 1.6.37 h2573ce8_0",
+    "libssh2 1.8.2 hcdc9a53_2",
+    "libtiff 4.0.10 hd08fb8f_1003",
+    "libxml2 2.9.9 hd80cff7_2",
+    "llvm-lto-tapi 4.0.1 h6701bc3_0",
+    "llvm-openmp 8.0.1 h770b8ee_0",
+    "lz4-c 1.8.3 h6de7cb9_1001",
+    "make 4.2.1 h1de35cc_2004",
+    "ncurses 6.1 h0a44026_1002",
+    "openssl 1.1.1c h01d97ff_0",
+    "pango 1.40.14 h57a785b_1003",
+    "pcre 8.41 h0a44026_1003",
+    "pixman 0.34.0 h1de35cc_1003",
+    "r-base 3.5.1 he1ce5cd_1005",
+    "r-rcpp 1.0.2 r35hf99fc2c_0",
+    "readline 7.0 hcfe32e1_1001",
+    "tk 8.6.9 h2573ce8_1002",
+    "tktable 2.10 hfa822fa_1",
+    "xz 5.2.4 h1de35cc_1001",
+    "zlib 1.2.11 h01d97ff_1005",
+    "zstd 1.4.0 ha9f0a20_0"
+   ],
+   "run": [
+    "libcxx >=4.0.1",
+    "r-base >=3.5,<3.6.0a0",
+    "r-rcpp"
+   ]
+  },
+  "source": {
+   "sha256": "b721a790d3a079989c4e99e33e62035a4cf0c00691f071ed0f27084d669c5522",
+   "url": [
+    "https://cran.r-project.org/src/contrib/Archive/polysat/polysat_1.7-4.tar.gz",
+    "https://cran.r-project.org/src/contrib/polysat_1.7-4.tar.gz"
+   ]
+  },
+  "test": {
+   "commands": [
+    "$R -e \"library('polysat')\""
+   ]
+  }
+ },
+ "version": "1.7_4"
+}
