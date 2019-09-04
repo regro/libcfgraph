@@ -1,0 +1,292 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.18.9",
+  "conda_private": false,
+  "conda_version": "4.7.11",
+  "description": "A Python 2.7 and 3.4+ implementation of the Language Server Protocol\nmaking use of Jedi, pycodestyle, Pyflakes and YAPF.\n",
+  "dev_url": "https://github.com/palantir/python-language-server",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "goanpeca",
+    "ccordoba12",
+    "rlaverde",
+    "andfoy",
+    "mariusvniekerk"
+   ]
+  },
+  "home": "https://github.com/palantir/python-language-server",
+  "identifiers": [],
+  "keywords": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "license_file": "LICENSE",
+  "root_pkgs": [
+   "anaconda-client 1.7.2 py_0",
+   "asn1crypto 0.24.0 py36_0",
+   "attrs 19.1.0 py_0",
+   "beautifulsoup4 4.8.0 py36_0",
+   "bzip2 1.0.8 he774522_0",
+   "ca-certificates 2019.6.16 hecc5488_0",
+   "certifi 2019.6.16 py36_1",
+   "cffi 1.11.5 py36h945400d_0",
+   "chardet 3.0.4 py36h420ce6e_1",
+   "click 7.0 py_0",
+   "clyent 1.2.2 py_1",
+   "conda 4.7.11 py36_0",
+   "conda-build 3.18.9 py36_3",
+   "conda-env 2.6.0 h36134e3_1",
+   "conda-forge-ci-setup 2.4.0 py36_0",
+   "conda-package-handling 1.3.11 py36_0",
+   "console_shortcut 0.1.1 h6bb2dd7_3",
+   "cryptography 2.7 py36h7a1dbc1_0",
+   "decorator 4.4.0 py_0",
+   "filelock 3.0.10 py_0",
+   "glob2 0.7 py_0",
+   "idna 2.6 py36h148d497_1",
+   "ipython_genutils 0.2.0 py_1",
+   "jinja2 2.10.1 py_0",
+   "jsonschema 3.0.2 py36_0",
+   "jupyter_core 4.4.0 py_0",
+   "libarchive 3.3.3 h0643e63_5",
+   "libiconv 1.15 h1df5818_7",
+   "liblief 0.9.0 ha925a31_2",
+   "libxml2 2.9.9 h464c3ec_0",
+   "lz4-c 1.8.1.2 h2fa13f4_0",
+   "lzo 2.10 h6df0209_2",
+   "markupsafe 1.1.1 py36hfa6e2cd_0",
+   "menuinst 1.4.14 py36hfa6e2cd_0",
+   "nbformat 4.4.0 py_1",
+   "openssl 1.1.1c hfa6e2cd_0",
+   "pip 10.0.1 py36_0",
+   "pkginfo 1.5.0.1 py_0",
+   "psutil 5.6.3 py36hfa6e2cd_0",
+   "py-lief 0.9.0 py36ha925a31_2",
+   "pycosat 0.6.3 py36h413d8a4_0",
+   "pycparser 2.18 py36hd053e01_1",
+   "pyopenssl 18.0.0 py36_0",
+   "pyrsistent 0.15.4 py36hfa6e2cd_0",
+   "pysocks 1.6.8 py36_0",
+   "python 3.6.5 h0c2934d_0",
+   "python-dateutil 2.8.0 py_0",
+   "python-libarchive-c 2.8 py36_13",
+   "pytz 2019.2 py_0",
+   "pywin32 223 py36hfa6e2cd_1",
+   "pyyaml 5.1.2 py36hfa6e2cd_0",
+   "requests 2.18.4 py36h4371aae_1",
+   "ripgrep 11.0.2 0",
+   "ruamel_yaml 0.15.37 py36hfa6e2cd_2",
+   "setuptools 39.2.0 py36_0",
+   "six 1.11.0 py36h4db2310_1",
+   "soupsieve 1.9.3 py36_0",
+   "tqdm 4.32.1 py_0",
+   "traitlets 4.3.2 py36_1000",
+   "urllib3 1.22 py36h276f60a_0",
+   "vc 14.1 h0510ff6_4",
+   "vs2008_express_vc_python_patch 1.0.0 0",
+   "vs2015_runtime 14.15.26706 h3a45250_4",
+   "wheel 0.31.1 py36_0",
+   "wincertstore 0.2 py36h7fe50ca_0",
+   "win_inet_pton 1.0.1 py36he67d7fd_1",
+   "xz 5.2.4 h2fa13f4_4",
+   "yaml 0.1.7 hc54c509_2",
+   "zlib 1.2.11 h62dcd97_3",
+   "zstd 1.3.7 h508b16e_0"
+  ],
+  "summary": "An implementation of the Language Server Protocol for Python",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CI": "appveyor",
+  "c_compiler": "vs2017",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "vs2017",
+  "extend_keys": [
+   "pin_run_as_build",
+   "ignore_build_only_deps",
+   "ignore_version",
+   "extend_keys"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "python",
+   "numpy"
+  ],
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   }
+  },
+  "python": "2.7",
+  "r_base": "3.4",
+  "target_platform": "win-64",
+  "vc": "14"
+ },
+ "files": [
+  "Lib/site-packages/pyls/__init__.py",
+  "Lib/site-packages/pyls/__main__.py",
+  "Lib/site-packages/pyls/_utils.py",
+  "Lib/site-packages/pyls/_version.py",
+  "Lib/site-packages/pyls/config/__init__.py",
+  "Lib/site-packages/pyls/config/config.py",
+  "Lib/site-packages/pyls/config/flake8_conf.py",
+  "Lib/site-packages/pyls/config/pycodestyle_conf.py",
+  "Lib/site-packages/pyls/config/source.py",
+  "Lib/site-packages/pyls/hookspecs.py",
+  "Lib/site-packages/pyls/lsp.py",
+  "Lib/site-packages/pyls/plugins/__init__.py",
+  "Lib/site-packages/pyls/plugins/autopep8_format.py",
+  "Lib/site-packages/pyls/plugins/definition.py",
+  "Lib/site-packages/pyls/plugins/highlight.py",
+  "Lib/site-packages/pyls/plugins/hover.py",
+  "Lib/site-packages/pyls/plugins/jedi_completion.py",
+  "Lib/site-packages/pyls/plugins/mccabe_lint.py",
+  "Lib/site-packages/pyls/plugins/preload_imports.py",
+  "Lib/site-packages/pyls/plugins/pycodestyle_lint.py",
+  "Lib/site-packages/pyls/plugins/pydocstyle_lint.py",
+  "Lib/site-packages/pyls/plugins/pyflakes_lint.py",
+  "Lib/site-packages/pyls/plugins/pylint_lint.py",
+  "Lib/site-packages/pyls/plugins/references.py",
+  "Lib/site-packages/pyls/plugins/rope_completion.py",
+  "Lib/site-packages/pyls/plugins/rope_rename.py",
+  "Lib/site-packages/pyls/plugins/signature.py",
+  "Lib/site-packages/pyls/plugins/symbols.py",
+  "Lib/site-packages/pyls/plugins/yapf_format.py",
+  "Lib/site-packages/pyls/python_ls.py",
+  "Lib/site-packages/pyls/uris.py",
+  "Lib/site-packages/pyls/workspace.py",
+  "Lib/site-packages/python_language_server-0.28.3.dist-info/INSTALLER",
+  "Lib/site-packages/python_language_server-0.28.3.dist-info/LICENSE",
+  "Lib/site-packages/python_language_server-0.28.3.dist-info/METADATA",
+  "Lib/site-packages/python_language_server-0.28.3.dist-info/RECORD",
+  "Lib/site-packages/python_language_server-0.28.3.dist-info/WHEEL",
+  "Scripts/pyls-script.py",
+  "Scripts/pyls.exe"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+   "autopep8",
+   "configparser",
+   "future >=0.14",
+   "futures",
+   "jedi >=0.14.1,<0.15",
+   "mccabe",
+   "pluggy",
+   "pycodestyle",
+   "pydocstyle >=2.0.0",
+   "pyflakes >=1.6.0",
+   "pylint",
+   "python >=2.7,<2.8.0a0",
+   "python-jsonrpc-server >=0.1.0",
+   "rope >=0.10.5",
+   "setuptools",
+   "yapf"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "python-language-server",
+  "platform": "win",
+  "subdir": "win-64",
+  "timestamp": 1567554008139,
+  "version": "0.28.3"
+ },
+ "metadata_version": 1,
+ "name": "python-language-server",
+ "raw_recipe": "{% set name = \"python-language-server\" %}\n{% set version = \"0.28.3\" %}\n{% set hash_type = \"sha256\" %}\n{% set hash = \"bf172c9c21fc5c2baa293155ddcb27712905f1ea1ebc0ba90985f7fd13039550\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  {{ hash_type }}: {{ hash }}\n\nbuild:\n  number: 0\n  script: python -m pip install --no-deps --ignore-installed .\n  entry_points:\n    - pyls = pyls.__main__:main\n    # This recipe has pyls entrypoints\n\nrequirements:\n  host:\n    - python\n    - pip\n  run:\n    - configparser  # [py27]\n    - futures       # [py27]     \n    - future >=0.14\n    - jedi >=0.14.1,<0.15\n    - python-jsonrpc-server >=0.1.0\n    - pycodestyle\n    - pydocstyle >=2.0.0\n    - pyflakes >=1.6.0\n    - pylint\n    - python\n    - yapf\n    - pluggy\n    - autopep8\n    - mccabe\n    - setuptools\n    - rope >=0.10.5\n\ntest:\n  commands:\n    - pyls --help\n\nabout:\n  home: https://github.com/palantir/python-language-server\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: An implementation of the Language Server Protocol for Python\n  description: |\n    A Python 2.7 and 3.4+ implementation of the Language Server Protocol \n    making use of Jedi, pycodestyle, Pyflakes and YAPF.\n  dev_url: https://github.com/palantir/python-language-server\n\nextra:\n  recipe-maintainers:\n    - goanpeca\n    - ccordoba12\n    - rlaverde\n    - andfoy\n    - mariusvniekerk\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "A Python 2.7 and 3.4+ implementation of the Language Server Protocol\nmaking use of Jedi, pycodestyle, Pyflakes and YAPF.\n",
+   "dev_url": "https://github.com/palantir/python-language-server",
+   "home": "https://github.com/palantir/python-language-server",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "An implementation of the Language Server Protocol for Python"
+  },
+  "build": {
+   "entry_points": [
+    "pyls = pyls.__main__:main"
+   ],
+   "number": "0",
+   "script": "python -m pip install --no-deps --ignore-installed .",
+   "string": "py27_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "andfoy",
+    "ccordoba12",
+    "goanpeca",
+    "mariusvniekerk",
+    "rlaverde"
+   ]
+  },
+  "package": {
+   "name": "python-language-server",
+   "version": "0.28.3"
+  },
+  "requirements": {
+   "host": [
+    "certifi 2019.6.16 py27_1",
+    "pip 19.2.3 py27_0",
+    "python 2.7.15 h2880e7c_1009",
+    "setuptools 41.2.0 py27_0",
+    "vc 9 h7299396_1",
+    "vs2008_runtime 9.0.30729.6161 0",
+    "wheel 0.33.6 py27_0",
+    "wincertstore 0.2 py27_1002"
+   ],
+   "run": [
+    "autopep8",
+    "configparser",
+    "future >=0.14",
+    "futures",
+    "jedi >=0.14.1,<0.15",
+    "mccabe",
+    "pluggy",
+    "pycodestyle",
+    "pydocstyle >=2.0.0",
+    "pyflakes >=1.6.0",
+    "pylint",
+    "python >=2.7,<2.8.0a0",
+    "python-jsonrpc-server >=0.1.0",
+    "rope >=0.10.5",
+    "setuptools",
+    "yapf"
+   ]
+  },
+  "source": {
+   "sha256": "bf172c9c21fc5c2baa293155ddcb27712905f1ea1ebc0ba90985f7fd13039550",
+   "url": "https://pypi.org/packages/source/p/python-language-server/python-language-server-0.28.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "pyls --help"
+   ]
+  }
+ },
+ "version": "0.28.3"
+}
