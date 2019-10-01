@@ -1,0 +1,254 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.18.9",
+  "conda_private": false,
+  "conda_version": "4.7.12",
+  "dev_url": "https://github.com/ing-bank/sparse_dot_topn",
+  "doc_url": "https://pypi.org/project/sparse-dot-topn/",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "oblute",
+    "benhuff",
+    "rluria14"
+   ]
+  },
+  "home": "https://github.com/ing-bank/sparse_dot_topn",
+  "identifiers": [],
+  "keywords": [],
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "license_file": "LICENSE",
+  "root_pkgs": [
+   "anaconda-client 1.7.2 py_0",
+   "asn1crypto 0.24.0 py36_0",
+   "attrs 19.2.0 py_0",
+   "beautifulsoup4 4.8.0 py36_0",
+   "bzip2 1.0.8 hfa6e2cd_1",
+   "ca-certificates 2019.9.11 hecc5488_0",
+   "certifi 2019.9.11 py36_0",
+   "cffi 1.11.5 py36h945400d_0",
+   "chardet 3.0.4 py36h420ce6e_1",
+   "click 7.0 py_0",
+   "clyent 1.2.2 py_1",
+   "conda 4.7.12 py36_0",
+   "conda-build 3.18.9 py36_5",
+   "conda-env 2.6.0 h36134e3_1",
+   "conda-forge-ci-setup 2.5.2 py36_0",
+   "conda-package-handling 1.6.0 py36h62dcd97_0",
+   "console_shortcut 0.1.1 h6bb2dd7_3",
+   "cryptography 2.7 py36h7a1dbc1_0",
+   "decorator 4.4.0 py_0",
+   "filelock 3.0.10 py_0",
+   "glob2 0.7 py_0",
+   "idna 2.6 py36h148d497_1",
+   "ipython_genutils 0.2.0 py_1",
+   "jinja2 2.10.1 py_0",
+   "jsonschema 3.0.2 py36_0",
+   "jupyter_core 4.4.0 py_0",
+   "libarchive 3.3.3 h4890af2_1006",
+   "libiconv 1.15 hfa6e2cd_1005",
+   "liblief 0.9.0 ha925a31_2",
+   "libxml2 2.9.9 h9ce36c8_5",
+   "lz4-c 1.8.3 he025d50_1001",
+   "lzo 2.10 hfa6e2cd_1000",
+   "m2w64-gcc-libgfortran 5.3.0 6",
+   "m2w64-gcc-libs 5.3.0 7",
+   "m2w64-gcc-libs-core 5.3.0 7",
+   "m2w64-gmp 6.1.0 2",
+   "m2w64-libwinpthread-git 5.0.0.4634.697f757 2",
+   "markupsafe 1.1.1 py36hfa6e2cd_0",
+   "menuinst 1.4.14 py36hfa6e2cd_0",
+   "msys2-conda-epoch 20160418 1",
+   "nbformat 4.4.0 py_1",
+   "openssl 1.1.1c hfa6e2cd_0",
+   "pip 10.0.1 py36_0",
+   "pkginfo 1.5.0.1 py_0",
+   "psutil 5.6.3 py36hfa6e2cd_0",
+   "py-lief 0.9.0 py36ha925a31_2",
+   "pycosat 0.6.3 py36h413d8a4_0",
+   "pycparser 2.18 py36hd053e01_1",
+   "pyopenssl 18.0.0 py36_0",
+   "pyrsistent 0.15.4 py36hfa6e2cd_0",
+   "pysocks 1.6.8 py36_0",
+   "python 3.6.5 h0c2934d_0",
+   "python-dateutil 2.8.0 py_0",
+   "python-libarchive-c 2.8 py36_1004",
+   "pytz 2019.2 py_0",
+   "pywin32 223 py36hfa6e2cd_1",
+   "pyyaml 5.1.2 py36hfa6e2cd_0",
+   "requests 2.18.4 py36h4371aae_1",
+   "ripgrep 11.0.2 h301d43c_3",
+   "ruamel_yaml 0.15.37 py36hfa6e2cd_2",
+   "setuptools 39.2.0 py36_0",
+   "six 1.11.0 py36h4db2310_1",
+   "soupsieve 1.9.4 py36_0",
+   "tqdm 4.36.1 py_0",
+   "traitlets 4.3.2 py36_1000",
+   "urllib3 1.22 py36h276f60a_0",
+   "vc 14.1 h0510ff6_4",
+   "vs2008_express_vc_python_patch 1.0.0 0",
+   "vs2015_runtime 14.16.27012 hf0eaf9b_0",
+   "wheel 0.31.1 py36_0",
+   "wincertstore 0.2 py36h7fe50ca_0",
+   "win_inet_pton 1.0.1 py36he67d7fd_1",
+   "xz 5.2.4 h2fa13f4_1001",
+   "yaml 0.1.7 hc54c509_2",
+   "zlib 1.2.11 h2fa13f4_1006",
+   "zstd 1.4.0 hd8a0e53_0"
+  ],
+  "summary": "Sparse_dot_topn provides a fast way to performing a sparse matrix multiplication\nfollowed by top-n multiplication result selections. Comparing very large feature\nvectors and picking the best matches, in practice often results in performing a\nsparse matrix multiplication followed by selecting the top-n multiplication results.\nIn this package, we implement a customized Cython function for this purpose.\nWhen comparing our Cythonic approach to doing the same use with SciPy and NumPy\nfunctions, our approach improves the speed by about 40% and reduces memory consumption.\n",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CI": "appveyor",
+  "c_compiler": "vs2017",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "vs2015",
+  "extend_keys": [
+   "ignore_build_only_deps",
+   "ignore_version",
+   "pin_run_as_build",
+   "extend_keys"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "python",
+   "numpy"
+  ],
+  "lua": "5",
+  "numpy": "1.14",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   }
+  },
+  "python": "3.7",
+  "r_base": "3.4",
+  "target_platform": "win-64",
+  "vc": "14",
+  "zip_keys": [
+   [
+    "python",
+    "cxx_compiler"
+   ]
+  ]
+ },
+ "files": [
+  "Lib/site-packages/sparse_dot_topn-0.2.5.dist-info/INSTALLER",
+  "Lib/site-packages/sparse_dot_topn-0.2.5.dist-info/METADATA",
+  "Lib/site-packages/sparse_dot_topn-0.2.5.dist-info/RECORD",
+  "Lib/site-packages/sparse_dot_topn-0.2.5.dist-info/WHEEL",
+  "Lib/site-packages/sparse_dot_topn/__init__.py",
+  "Lib/site-packages/sparse_dot_topn/awesome_cossim_topn.py",
+  "Lib/site-packages/sparse_dot_topn/sparse_dot_topn.cp37-win_amd64.pyd"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py37h79cbd7a_0",
+  "build_number": 0,
+  "depends": [
+   "numpy >=1.14.6,<2.0a0",
+   "python >=3.7,<3.8.0a0",
+   "scipy",
+   "vc >=14,<15.0a0"
+  ],
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "name": "sparse_dot_topn",
+  "platform": "win",
+  "subdir": "win-64",
+  "timestamp": 1569958155753,
+  "version": "0.2.5"
+ },
+ "metadata_version": 1,
+ "name": "sparse_dot_topn",
+ "raw_recipe": "{% set name = \"sparse_dot_topn\" %}\n{% set version = \"0.2.5\" %}\n\npackage:\n  name: \"{{ name|lower }}\"\n  version: \"{{ version }}\"\n\nsource:\n  url: \"https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\"\n  sha256: \"2028d451d81cf5a73cf9d5fc56de35f80ac8dbd528a6abe3b723bec9c1adcc38\"\n\nbuild:\n  number: 0\n  script: \"{{ PYTHON }} -m pip install . -vv\"\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n  host:\n    - pip\n    - python\n    - numpy\n    - cython\n  run:\n    - python\n    - {{ pin_compatible('numpy') }}\n    - scipy\n\ntest:\n  imports:\n    - sparse_dot_topn\n\nabout:\n  home: \"https://github.com/ing-bank/sparse_dot_topn\"\n  license: \"Apache-2.0\"\n  license_family: \"Apache\"\n  license_file: \"LICENSE\"\n  summary: |\n    Sparse_dot_topn provides a fast way to performing a sparse matrix multiplication\n    followed by top-n multiplication result selections. Comparing very large feature\n    vectors and picking the best matches, in practice often results in performing a\n    sparse matrix multiplication followed by selecting the top-n multiplication results.\n    In this package, we implement a customized Cython function for this purpose.\n    When comparing our Cythonic approach to doing the same use with SciPy and NumPy\n    functions, our approach improves the speed by about 40% and reduces memory consumption.\n  doc_url: \"https://pypi.org/project/sparse-dot-topn/\"\n  dev_url: \"https://github.com/ing-bank/sparse_dot_topn\"\n\nextra:\n  recipe-maintainers:\n    - oblute\n    - benhuff\n    - rluria14\n",
+ "rendered_recipe": {
+  "about": {
+   "dev_url": "https://github.com/ing-bank/sparse_dot_topn",
+   "doc_url": "https://pypi.org/project/sparse-dot-topn/",
+   "home": "https://github.com/ing-bank/sparse_dot_topn",
+   "license": "Apache-2.0",
+   "license_family": "Apache",
+   "license_file": "LICENSE",
+   "summary": "Sparse_dot_topn provides a fast way to performing a sparse matrix multiplication\nfollowed by top-n multiplication result selections. Comparing very large feature\nvectors and picking the best matches, in practice often results in performing a\nsparse matrix multiplication followed by selecting the top-n multiplication results.\nIn this package, we implement a customized Cython function for this purpose.\nWhen comparing our Cythonic approach to doing the same use with SciPy and NumPy\nfunctions, our approach improves the speed by about 40% and reduces memory consumption.\n"
+  },
+  "build": {
+   "number": "0",
+   "script": "C:\\bld\\sparse_dot_topn_1569957928918\\_h_env\\python.exe -m pip install . -vv",
+   "string": "py37h79cbd7a_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "benhuff",
+    "oblute",
+    "rluria14"
+   ]
+  },
+  "package": {
+   "name": "sparse_dot_topn",
+   "version": "0.2.5"
+  },
+  "requirements": {
+   "build": [
+    "vs2015_win-64 14.0.25420 h55c1224_11"
+   ],
+   "host": [
+    "ca-certificates 2019.9.11 hecc5488_0",
+    "certifi 2019.6.16 py37_1",
+    "cython 0.29.13 py37h6538335_0",
+    "intel-openmp 2019.4 245",
+    "libblas 3.8.0 12_mkl",
+    "libcblas 3.8.0 12_mkl",
+    "liblapack 3.8.0 12_mkl",
+    "mkl 2019.4 245",
+    "numpy 1.14.6 py37h873a0b8_1201",
+    "openssl 1.1.1c hfa6e2cd_0",
+    "pip 19.2.3 py37_0",
+    "python 3.7.3 h510b542_1",
+    "setuptools 41.2.0 py37_0",
+    "sqlite 3.29.0 hfa6e2cd_1",
+    "vc 14.1 h0510ff6_4",
+    "vs2015_runtime 14.16.27012 hf0eaf9b_0",
+    "wheel 0.33.6 py37_0",
+    "wincertstore 0.2 py37_1002"
+   ],
+   "run": [
+    "numpy >=1.14.6,<2.0a0",
+    "python >=3.7,<3.8.0a0",
+    "scipy",
+    "vc >=14,<15.0a0"
+   ]
+  },
+  "source": {
+   "sha256": "2028d451d81cf5a73cf9d5fc56de35f80ac8dbd528a6abe3b723bec9c1adcc38",
+   "url": "https://pypi.io/packages/source/s/sparse_dot_topn/sparse_dot_topn-0.2.5.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "sparse_dot_topn"
+   ]
+  }
+ },
+ "version": "0.2.5"
+}
