@@ -1,0 +1,264 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.18.11",
+  "conda_private": false,
+  "conda_version": "4.7.12",
+  "description": "This is a C-level implementation of a fast, re-entrant,\noptimistic lock for CPython. It is a drop-in replacement for\nthreading.RLock. FastRLock is implemented in Cython and also provides a\nC-API for direct use from Cython code via from fastrlock cimport rlock.\n\nUnder normal conditions, it is about 10x faster than threading.RLock in\nPython 2.7 because it avoids all locking unless two or more threads try to\nacquire it at the same time. Under congestion, it is still about 10% faster\nthan RLock due to being implemented in Cython.\n\nThis is mostly equivalent to the revised RLock implementation in Python\n3.2, but still faster due to being implemented in Cython. Note that the\nthreading.RLock implementation in Python 3.4 and later tends to be as fast\nor even faster than the lock provided by this package, when called through\nthe Python API. FastRLock is still faster also on these systems when called\nthrough its Cython API.\n",
+  "dev_url": "https://github.com/scoder/fastrlock",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "hmaarrfk"
+   ]
+  },
+  "home": "https://github.com/scoder/fastrlock",
+  "identifiers": [],
+  "keywords": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "license_file": "LICENSE",
+  "root_pkgs": [
+   "python-libarchive-c 2.9 py37_0",
+   "pycparser 2.19 py37_1",
+   "tini 0.18.0 h14c3975_1001",
+   "_libgcc_mutex 0.1 main",
+   "pyrsistent 0.15.5 py37h516909a_0",
+   "xz 5.2.4 h14c3975_1001",
+   "ripgrep 11.0.2 h516909a_3",
+   "zipp 0.6.0 py_0",
+   "markupsafe 1.1.1 py37h14c3975_0",
+   "urllib3 1.25.6 py37_0",
+   "conda 4.7.12 py37_0",
+   "pytz 2019.3 py_0",
+   "soupsieve 1.9.4 py37_0",
+   "gosu 1.10 h81701ea_1001",
+   "libxml2 2.9.10 hee79883_0",
+   "importlib_metadata 0.23 py37_0",
+   "glob2 0.7 py_0",
+   "zlib 1.2.11 h516909a_1006",
+   "cryptography 2.7 py37h72c5cf5_0",
+   "patch 2.7.6 h14c3975_1001",
+   "git 2.23.0 pl526hce37bd2_2",
+   "clyent 1.2.2 py_1",
+   "nbformat 4.4.0 py_1",
+   "sqlite 3.30.1 hcee41ef_0",
+   "ncurses 6.1 hf484d3e_1002",
+   "zstd 1.4.0 h3b9ef0a_0",
+   "tqdm 4.36.1 py_0",
+   "libarchive 3.3.3 hb44662c_1005",
+   "traitlets 4.3.3 py37_0",
+   "liblief 0.9.0 hf8a498c_1",
+   "libedit 3.1.20170329 hf8c457e_1001",
+   "pyopenssl 19.0.0 py37_0",
+   "setuptools 41.6.0 py37_1",
+   "jinja2 2.10.3 py_0",
+   "openssl 1.1.1c h516909a_0",
+   "certifi 2019.9.11 py37_0",
+   "filelock 3.0.10 py_0",
+   "lz4-c 1.8.3 he1b5a44_1001",
+   "conda-package-handling 1.6.0 py37h516909a_0",
+   "decorator 4.4.1 py_0",
+   "chardet 3.0.4 py37_1003",
+   "jsonschema 3.1.1 py37_0",
+   "ipython_genutils 0.2.0 py_1",
+   "libcurl 7.65.3 hda55be3_0",
+   "psutil 5.6.3 py37h516909a_0",
+   "asn1crypto 1.2.0 py37_0",
+   "krb5 1.16.3 h05b26f9_1001",
+   "beautifulsoup4 4.8.1 py37_0",
+   "icu 64.2 he1b5a44_1",
+   "pysocks 1.7.1 py37_0",
+   "cffi 1.13.1 py37h8022711_0",
+   "ruamel_yaml 0.15.71 py37h14c3975_1000",
+   "attrs 19.3.0 py_0",
+   "yaml 0.1.7 h14c3975_1001",
+   "requests 2.22.0 py37_1",
+   "libiconv 1.15 h516909a_1005",
+   "jupyter_core 4.5.0 py_0",
+   "patchelf 0.10 he1b5a44_0",
+   "libgcc-ng 9.1.0 hdf63c60_0",
+   "pkginfo 1.5.0.1 py_0",
+   "libstdcxx-ng 9.1.0 hdf63c60_0",
+   "gettext 0.19.8.1 hc5be6a0_1002",
+   "idna 2.8 py37_1000",
+   "perl 5.26.2 h516909a_1006",
+   "py-lief 0.9.0 py37he1b5a44_1",
+   "ca-certificates 2019.9.11 hecc5488_0",
+   "conda-build 3.18.11 py37_0",
+   "expat 2.2.5 he1b5a44_1004",
+   "pycosat 0.6.3 py37h14c3975_1001",
+   "tk 8.6.9 hed695b0_1003",
+   "readline 8.0 hf8c457e_0",
+   "bzip2 1.0.8 h516909a_1",
+   "six 1.12.0 py37_1000",
+   "libssh2 1.8.2 h22169c7_2",
+   "anaconda-client 1.7.2 py_0",
+   "lzo 2.10 h14c3975_1000",
+   "pcre 8.43 he1b5a44_0",
+   "wheel 0.33.6 py37_0",
+   "pyyaml 5.1.2 py37h516909a_0",
+   "python 3.7.3 h33d41f4_1",
+   "libffi 3.2.1 he1b5a44_1006",
+   "pip 19.3.1 py37_0",
+   "more-itertools 7.2.0 py_0",
+   "python-dateutil 2.8.0 py_0",
+   "curl 7.65.3 hf8cf82a_0",
+   "click 7.0 py_0",
+   "conda-forge-ci-setup 2.5.3 py37_0",
+   "conda-env 2.6.0 1"
+  ],
+  "summary": "This is a C-level implementation of a fast, re-entrant, optimistic lock for CPython",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CI": "azure",
+  "c_compiler": "gcc",
+  "c_compiler_version": "7",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "cxx_compiler_version": "7",
+  "docker_image": "condaforge/linux-anvil-comp7",
+  "extend_keys": [
+   "extend_keys",
+   "pin_run_as_build",
+   "ignore_version",
+   "ignore_build_only_deps"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "numpy",
+   "python"
+  ],
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   }
+  },
+  "python": "3.8",
+  "r_base": "3.5",
+  "target_platform": "linux-64"
+ },
+ "files": [
+  "lib/python3.8/site-packages/fastrlock-0.4-py3.8.egg-info/PKG-INFO",
+  "lib/python3.8/site-packages/fastrlock-0.4-py3.8.egg-info/not-zip-safe",
+  "lib/python3.8/site-packages/fastrlock/__init__.pxd",
+  "lib/python3.8/site-packages/fastrlock/__init__.py",
+  "lib/python3.8/site-packages/fastrlock/_lock.pxi",
+  "lib/python3.8/site-packages/fastrlock/rlock.cpython-38-x86_64-linux-gnu.so",
+  "lib/python3.8/site-packages/fastrlock/rlock.pxd"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py38he1b5a44_1000",
+  "build_number": 1000,
+  "depends": [
+   "libgcc-ng >=7.3.0",
+   "libstdcxx-ng >=7.3.0",
+   "python >=3.8,<3.9.0a0"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "fastrlock",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1572702122875,
+  "version": "0.4"
+ },
+ "metadata_version": 1,
+ "name": "fastrlock",
+ "raw_recipe": "{% set name = \"fastrlock\" %}\n{% set version = \"0.4\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 6abdbb35205792e2d2a8c441aaa41a613d43ee2d88b3af4fd9735ae7a5f7db6b\n\nbuild:\n  number: 1000\n  # We need to pass --with-cython to force cython to regenerate the .c file\n  script: \"{{ PYTHON }} -m pip install . --global-option=\\\"--with-cython\\\" --no-deps --ignore-installed --no-cache-dir -vvv\"\n\nrequirements:\n  build:\n    - {{ compiler(\"c\") }}\n    - {{ compiler(\"cxx\") }}\n  host:\n    - python\n    - pip\n    - cython\n  run:\n    - python\n\ntest:\n  imports:\n    - fastrlock\n\nabout:\n  home: https://github.com/scoder/fastrlock\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'This is a C-level implementation of a fast, re-entrant, optimistic lock for CPython'\n  description: |\n    This is a C-level implementation of a fast, re-entrant,\n    optimistic lock for CPython. It is a drop-in replacement for\n    threading.RLock. FastRLock is implemented in Cython and also provides a\n    C-API for direct use from Cython code via from fastrlock cimport rlock.\n\n    Under normal conditions, it is about 10x faster than threading.RLock in\n    Python 2.7 because it avoids all locking unless two or more threads try to\n    acquire it at the same time. Under congestion, it is still about 10% faster\n    than RLock due to being implemented in Cython.\n\n    This is mostly equivalent to the revised RLock implementation in Python\n    3.2, but still faster due to being implemented in Cython. Note that the\n    threading.RLock implementation in Python 3.4 and later tends to be as fast\n    or even faster than the lock provided by this package, when called through\n    the Python API. FastRLock is still faster also on these systems when called\n    through its Cython API.\n  dev_url: https://github.com/scoder/fastrlock\n\nextra:\n  recipe-maintainers:\n    - hmaarrfk\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "This is a C-level implementation of a fast, re-entrant,\noptimistic lock for CPython. It is a drop-in replacement for\nthreading.RLock. FastRLock is implemented in Cython and also provides a\nC-API for direct use from Cython code via from fastrlock cimport rlock.\n\nUnder normal conditions, it is about 10x faster than threading.RLock in\nPython 2.7 because it avoids all locking unless two or more threads try to\nacquire it at the same time. Under congestion, it is still about 10% faster\nthan RLock due to being implemented in Cython.\n\nThis is mostly equivalent to the revised RLock implementation in Python\n3.2, but still faster due to being implemented in Cython. Note that the\nthreading.RLock implementation in Python 3.4 and later tends to be as fast\nor even faster than the lock provided by this package, when called through\nthe Python API. FastRLock is still faster also on these systems when called\nthrough its Cython API.\n",
+   "dev_url": "https://github.com/scoder/fastrlock",
+   "home": "https://github.com/scoder/fastrlock",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "This is a C-level implementation of a fast, re-entrant, optimistic lock for CPython"
+  },
+  "build": {
+   "number": "1000",
+   "script": "/home/conda/feedstock_root/build_artifacts/fastrlock_1572702022355/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p/bin/python -m pip install . --global-option=\"--with-cython\" --no-deps --ignore-installed --no-cache-dir -vvv",
+   "string": "py38he1b5a44_1000"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "hmaarrfk"
+   ]
+  },
+  "package": {
+   "name": "fastrlock",
+   "version": "0.4"
+  },
+  "requirements": {
+   "build": [
+    "_libgcc_mutex 0.1 main",
+    "binutils_impl_linux-64 2.31.1 h7fc9f1b_2",
+    "binutils_linux-64 2.31.1 h6176602_12",
+    "gcc_impl_linux-64 7.3.0 habb00fd_2",
+    "gcc_linux-64 7.3.0 h553295d_12",
+    "gxx_impl_linux-64 7.3.0 hdf63c60_2",
+    "gxx_linux-64 7.3.0 h553295d_12",
+    "libgcc-ng 9.1.0 hdf63c60_0",
+    "libstdcxx-ng 9.1.0 hdf63c60_0"
+   ],
+   "host": [
+    "_libgcc_mutex 0.1 main",
+    "ca-certificates 2019.9.11 hecc5488_0",
+    "certifi 2019.9.11 py38_0",
+    "cython 0.29.14 py38he1b5a44_0",
+    "libffi 3.2.1 he1b5a44_1006",
+    "libgcc-ng 9.1.0 hdf63c60_0",
+    "libstdcxx-ng 9.1.0 hdf63c60_0",
+    "ncurses 6.1 hf484d3e_1002",
+    "openssl 1.1.1c h516909a_0",
+    "pip 19.3.1 py38_0",
+    "python 3.8.0 h357f687_0",
+    "readline 8.0 hf8c457e_0",
+    "setuptools 41.6.0 py38_1",
+    "sqlite 3.30.1 hcee41ef_0",
+    "tk 8.6.9 hed695b0_1003",
+    "wheel 0.33.6 py38_0",
+    "xz 5.2.4 h14c3975_1001",
+    "zlib 1.2.11 h516909a_1006"
+   ],
+   "run": [
+    "libgcc-ng >=7.3.0",
+    "libstdcxx-ng >=7.3.0",
+    "python >=3.8,<3.9.0a0"
+   ]
+  },
+  "source": {
+   "sha256": "6abdbb35205792e2d2a8c441aaa41a613d43ee2d88b3af4fd9735ae7a5f7db6b",
+   "url": "https://pypi.io/packages/source/f/fastrlock/fastrlock-0.4.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "fastrlock"
+   ]
+  }
+ },
+ "version": "0.4"
+}
