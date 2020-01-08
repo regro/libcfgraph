@@ -1,0 +1,341 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.18.11",
+  "conda_private": false,
+  "conda_version": "4.8.0",
+  "description": "Classified Advertisements (classads) are the lingua franca of\nHTCondor. They are used for describing jobs, workstations, and other\nresources. They are exchanged by HTCondor processes to schedule\njobs. They are logged to files for statistical and debugging\npurposes. They are used to enquire about current state of the system.\n\nA classad is a mapping from attribute names to expressions. In the\nsimplest cases, the expressions are simple constants (integer,\nfloating point, or string). A classad is thus a form of property\nlist. Attribute expressions can also be more complicated. There is a\nprotocol for evaluating an attribute expression of a classad vis a vis\nanother ad. For example, the expression \"other.size > 3\" in one ad\nevaluates to true if the other ad has an attribute named size and the\nvalue of that attribute is (or evaluates to) an integer greater than\nthree. Two classads match if each ad has an attribute requirements\nthat evaluates to true in the context of the other ad. Classad\nmatching is used by the HTCondor central manager to determine the\ncompatibility of jobs and workstations where they may be run.\n",
+  "dev_url": "https://github.com/htcondor/htcondor",
+  "doc_url": "https://htcondor.readthedocs.io/",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "parent_recipe": {
+    "name": "htcondor-build",
+    "path": "/home/conda/recipe_root",
+    "version": "8.9.4"
+   },
+   "recipe-maintainers": [
+    "duncanmmacleod",
+    "jasoncpatton"
+   ]
+  },
+  "home": "http://htcondor.org/",
+  "identifiers": [],
+  "keywords": [],
+  "license": "Apache-2.0",
+  "license_family": "APACHE",
+  "license_file": "LICENSE-2.0.txt",
+  "root_pkgs": [
+   "six 1.13.0 py37_0",
+   "decorator 4.4.1 py_0",
+   "attrs 19.3.0 py_0",
+   "conda 4.8.0 py37_1",
+   "conda-package-handling 1.6.0 py37h516909a_1",
+   "traitlets 4.3.3 py37_0",
+   "pkginfo 1.5.0.1 py_0",
+   "pyyaml 5.3 py37h516909a_0",
+   "bzip2 1.0.8 h516909a_2",
+   "pyopenssl 19.1.0 py37_0",
+   "py-lief 0.9.0 py37he1b5a44_1",
+   "asn1crypto 1.3.0 py37_0",
+   "ld_impl_linux-64 2.33.1 h53a641e_7",
+   "libgomp 9.2.0 h24d8f2e_1",
+   "clyent 1.2.2 py_1",
+   "openmp_impl 4.5 0_gnu",
+   "ncurses 6.1 hf484d3e_1002",
+   "python-dateutil 2.8.1 py_0",
+   "git 2.24.0 pl526hce37bd2_1",
+   "beautifulsoup4 4.8.2 py37_0",
+   "xz 5.2.4 h14c3975_1001",
+   "expat 2.2.5 he1b5a44_1004",
+   "zlib 1.2.11 h516909a_1006",
+   "pcre 8.43 he1b5a44_0",
+   "jinja2 2.10.3 py_0",
+   "tqdm 4.41.1 py_0",
+   "perl 5.26.2 h516909a_1006",
+   "urllib3 1.25.7 py37_0",
+   "gosu 1.10 h81701ea_1001",
+   "requests 2.22.0 py37_1",
+   "idna 2.8 py37_1000",
+   "chardet 3.0.4 py37_1003",
+   "libstdcxx-ng 9.2.0 hdf63c60_1",
+   "libarchive 3.3.3 hc47fbbf_1007",
+   "more-itertools 8.0.2 py_0",
+   "libiconv 1.15 h516909a_1005",
+   "zstd 1.4.4 h3b9ef0a_1",
+   "pytz 2019.3 py_0",
+   "pyrsistent 0.15.7 py37h516909a_0",
+   "libgcc-ng 9.2.0 h24d8f2e_1",
+   "pip 19.3.1 py37_0",
+   "anaconda-client 1.7.2 py_0",
+   "pysocks 1.7.1 py37_0",
+   "patch 2.7.6 h14c3975_1001",
+   "libcurl 7.65.3 hda55be3_0",
+   "glob2 0.7 py_0",
+   "liblief 0.9.0 hf8a498c_1",
+   "psutil 5.6.7 py37h516909a_0",
+   "gettext 0.19.8.1 hc5be6a0_1002",
+   "lzo 2.10 h14c3975_1000",
+   "zipp 0.6.0 py_0",
+   "yaml 0.2.2 h516909a_1",
+   "markupsafe 1.1.1 py37h516909a_0",
+   "icu 64.2 he1b5a44_1",
+   "wheel 0.33.6 py37_0",
+   "curl 7.65.3 hf8cf82a_0",
+   "libffi 3.2.1 he1b5a44_1006",
+   "jsonschema 3.2.0 py37_0",
+   "openssl 1.1.1d h516909a_0",
+   "ripgrep 11.0.2 h516909a_3",
+   "libxml2 2.9.10 hee79883_0",
+   "patchelf 0.10 he1b5a44_0",
+   "ruamel_yaml 0.15.80 py37h516909a_1000",
+   "cffi 1.13.2 py37h8022711_0",
+   "libssh2 1.8.2 h22169c7_2",
+   "setuptools 44.0.0 py37_0",
+   "soupsieve 1.9.4 py37_0",
+   "conda-build 3.18.11 py37_0",
+   "krb5 1.16.4 h2fd8d38_0",
+   "readline 8.0 hf8c457e_0",
+   "filelock 3.0.10 py_0",
+   "_libgcc_mutex 0.1 conda_forge",
+   "tini 0.18.0 h14c3975_1001",
+   "jupyter_core 4.6.1 py37_0",
+   "nbformat 5.0.3 py_0",
+   "python-libarchive-c 2.9 py37_0",
+   "importlib_metadata 1.3.0 py37_0",
+   "pycosat 0.6.3 py37h516909a_1002",
+   "libedit 3.1.20170329 hf8c457e_1001",
+   "python 3.7.6 h357f687_2",
+   "tk 8.6.10 hed695b0_0",
+   "ca-certificates 2019.11.28 hecc5488_0",
+   "cryptography 2.8 py37h72c5cf5_1",
+   "ipython_genutils 0.2.0 py_1",
+   "sqlite 3.30.1 hcee41ef_0",
+   "lz4-c 1.8.3 he1b5a44_1001",
+   "certifi 2019.11.28 py37_0",
+   "pycparser 2.19 py37_1",
+   "conda-forge-ci-setup 2.5.3 py37_0",
+   "conda-env 2.6.0 1",
+   "click 7.0 py_0"
+  ],
+  "summary": "HTCondor's classified advertisement language",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CI": "azure",
+  "boost": "1.70.0",
+  "c_compiler": "gcc",
+  "c_compiler_version": "7",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "cxx_compiler_version": "7",
+  "docker_image": "condaforge/linux-anvil-comp7",
+  "expat": "2.2",
+  "extend_keys": [
+   "ignore_build_only_deps",
+   "pin_run_as_build",
+   "extend_keys",
+   "ignore_version"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "numpy",
+   "python"
+  ],
+  "krb5": "1.16",
+  "libcurl": "7.64",
+  "libuuid": "2.32.1",
+  "libxml2": "2.9",
+  "lua": "5",
+  "numpy": "1.11",
+  "openssl": "1.1.1a",
+  "perl": "5.26.2",
+  "pin_run_as_build": {
+   "boost": {
+    "max_pin": "x.x.x"
+   },
+   "expat": {
+    "max_pin": "x.x"
+   },
+   "krb5": {
+    "max_pin": "x.x"
+   },
+   "libcurl": {
+    "max_pin": "x"
+   },
+   "libuuid": {
+    "max_pin": "x"
+   },
+   "libxml2": {
+    "max_pin": "x.x"
+   },
+   "openssl": {
+    "max_pin": "x.x.x"
+   },
+   "perl": {
+    "max_pin": "x.x.x"
+   },
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "sqlite": {
+    "max_pin": "x"
+   }
+  },
+  "python": "3.7",
+  "r_base": "3.5",
+  "sqlite": "3",
+  "target_platform": "linux-64"
+ },
+ "files": [
+  "bin/classad_functional_tester",
+  "bin/classad_version",
+  "include/classad/attrrefs.h",
+  "include/classad/cclassad.h",
+  "include/classad/classad.h",
+  "include/classad/classadCache.h",
+  "include/classad/classadErrno.h",
+  "include/classad/classadItor.h",
+  "include/classad/classad_distribution.h",
+  "include/classad/classad_stl.h",
+  "include/classad/collection.h",
+  "include/classad/collectionBase.h",
+  "include/classad/common.h",
+  "include/classad/debug.h",
+  "include/classad/exprList.h",
+  "include/classad/exprTree.h",
+  "include/classad/fnCall.h",
+  "include/classad/indexfile.h",
+  "include/classad/jsonSink.h",
+  "include/classad/jsonSource.h",
+  "include/classad/lexer.h",
+  "include/classad/lexerSource.h",
+  "include/classad/literals.h",
+  "include/classad/matchClassad.h",
+  "include/classad/operators.h",
+  "include/classad/query.h",
+  "include/classad/sink.h",
+  "include/classad/source.h",
+  "include/classad/transaction.h",
+  "include/classad/util.h",
+  "include/classad/value.h",
+  "include/classad/view.h",
+  "include/classad/xmlLexer.h",
+  "include/classad/xmlSink.h",
+  "include/classad/xmlSource.h",
+  "lib/libclassad.a",
+  "lib/libclassad.so",
+  "lib/libclassad.so.10",
+  "lib/libclassad.so.8.9.4"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "he1b5a44_1",
+  "build_number": 1,
+  "depends": [
+   "libgcc-ng >=7.3.0",
+   "libstdcxx-ng >=7.3.0",
+   "pcre >=8.43,<9.0a0"
+  ],
+  "license": "Apache-2.0",
+  "license_family": "APACHE",
+  "name": "htcondor-classads",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1578498836165,
+  "version": "8.9.4"
+ },
+ "metadata_version": 1,
+ "name": "htcondor-classads",
+ "raw_recipe": "# This file created by conda-build 3.18.11\n# ------------------------------------------------\n\npackage:\n    name: htcondor-classads\n    version: 8.9.4\nsource:\n    patches:\n        - paths.patch\n        - python-archlib.patch\n        - rpath.patch\n    sha256: 02be972708f17b57af607e77998fef0da819cd240dc44df4d4f4dbe6f54ae707\n    url: https://github.com/htcondor/htcondor/archive/V8_9_4.tar.gz\nbuild:\n    number: 1\n    run_exports:\n        - htcondor-classads >=8.9.4,<8.10.0a0\n    string: he1b5a44_1\nrequirements:\n    build:\n        - _libgcc_mutex 0.1 conda_forge\n        - binutils_impl_linux-64 2.33.1 he1b5a44_7\n        - binutils_linux-64 2.33.1 h9595d00_16\n        - gcc_impl_linux-64 7.3.0 habb00fd_2\n        - gcc_linux-64 7.3.0 h553295d_16\n        - gxx_impl_linux-64 7.3.0 hdf63c60_2\n        - gxx_linux-64 7.3.0 h553295d_16\n        - ld_impl_linux-64 2.33.1 h53a641e_7\n        - libgcc-ng 9.2.0 h24d8f2e_1\n        - libgomp 9.2.0 h24d8f2e_1\n        - libstdcxx-ng 9.2.0 hdf63c60_1\n        - openmp_impl 4.5 0_gnu\n    host:\n        - _libgcc_mutex 0.1 conda_forge\n        - libgcc-ng 9.2.0 h24d8f2e_1\n        - libgomp 9.2.0 h24d8f2e_1\n        - libstdcxx-ng 9.2.0 hdf63c60_1\n        - openmp_impl 4.5 0_gnu\n        - pcre 8.43 he1b5a44_0\n    run:\n        - libgcc-ng >=7.3.0\n        - libstdcxx-ng >=7.3.0\n        - pcre >=8.43,<9.0a0\ntest:\n    commands:\n        - classad_version\nabout:\n    description: 'Classified Advertisements (classads) are the lingua franca of\n\n        HTCondor. They are used for describing jobs, workstations, and other\n\n        resources. They are exchanged by HTCondor processes to schedule\n\n        jobs. They are logged to files for statistical and debugging\n\n        purposes. They are used to enquire about current state of the system.\n\n\n        A classad is a mapping from attribute names to expressions. In the\n\n        simplest cases, the expressions are simple constants (integer,\n\n        floating point, or string). A classad is thus a form of property\n\n        list. Attribute expressions can also be more complicated. There is a\n\n        protocol for evaluating an attribute expression of a classad vis a vis\n\n        another ad. For example, the expression \"other.size > 3\" in one ad\n\n        evaluates to true if the other ad has an attribute named size and the\n\n        value of that attribute is (or evaluates to) an integer greater than\n\n        three. Two classads match if each ad has an attribute requirements\n\n        that evaluates to true in the context of the other ad. Classad\n\n        matching is used by the HTCondor central manager to determine the\n\n        compatibility of jobs and workstations where they may be run.\n\n        '\n    dev_url: https://github.com/htcondor/htcondor\n    doc_url: https://htcondor.readthedocs.io/\n    home: http://htcondor.org/\n    license: Apache-2.0\n    license_family: APACHE\n    license_file: LICENSE-2.0.txt\n    summary: HTCondor's classified advertisement language\nextra:\n    copy_test_source_files: true\n    final: true\n    recipe-maintainers:\n        - duncanmmacleod\n        - jasoncpatton\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Classified Advertisements (classads) are the lingua franca of\nHTCondor. They are used for describing jobs, workstations, and other\nresources. They are exchanged by HTCondor processes to schedule\njobs. They are logged to files for statistical and debugging\npurposes. They are used to enquire about current state of the system.\n\nA classad is a mapping from attribute names to expressions. In the\nsimplest cases, the expressions are simple constants (integer,\nfloating point, or string). A classad is thus a form of property\nlist. Attribute expressions can also be more complicated. There is a\nprotocol for evaluating an attribute expression of a classad vis a vis\nanother ad. For example, the expression \"other.size > 3\" in one ad\nevaluates to true if the other ad has an attribute named size and the\nvalue of that attribute is (or evaluates to) an integer greater than\nthree. Two classads match if each ad has an attribute requirements\nthat evaluates to true in the context of the other ad. Classad\nmatching is used by the HTCondor central manager to determine the\ncompatibility of jobs and workstations where they may be run.\n",
+   "dev_url": "https://github.com/htcondor/htcondor",
+   "doc_url": "https://htcondor.readthedocs.io/",
+   "home": "http://htcondor.org/",
+   "license": "Apache-2.0",
+   "license_family": "APACHE",
+   "license_file": "LICENSE-2.0.txt",
+   "summary": "HTCondor's classified advertisement language"
+  },
+  "build": {
+   "number": 1,
+   "run_exports": [
+    "htcondor-classads >=8.9.4,<8.10.0a0"
+   ],
+   "string": "he1b5a44_1"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "duncanmmacleod",
+    "jasoncpatton"
+   ]
+  },
+  "package": {
+   "name": "htcondor-classads",
+   "version": "8.9.4"
+  },
+  "requirements": {
+   "build": [
+    "_libgcc_mutex 0.1 conda_forge",
+    "binutils_impl_linux-64 2.33.1 he1b5a44_7",
+    "binutils_linux-64 2.33.1 h9595d00_16",
+    "gcc_impl_linux-64 7.3.0 habb00fd_2",
+    "gcc_linux-64 7.3.0 h553295d_16",
+    "gxx_impl_linux-64 7.3.0 hdf63c60_2",
+    "gxx_linux-64 7.3.0 h553295d_16",
+    "ld_impl_linux-64 2.33.1 h53a641e_7",
+    "libgcc-ng 9.2.0 h24d8f2e_1",
+    "libgomp 9.2.0 h24d8f2e_1",
+    "libstdcxx-ng 9.2.0 hdf63c60_1",
+    "openmp_impl 4.5 0_gnu"
+   ],
+   "host": [
+    "_libgcc_mutex 0.1 conda_forge",
+    "libgcc-ng 9.2.0 h24d8f2e_1",
+    "libgomp 9.2.0 h24d8f2e_1",
+    "libstdcxx-ng 9.2.0 hdf63c60_1",
+    "openmp_impl 4.5 0_gnu",
+    "pcre 8.43 he1b5a44_0"
+   ],
+   "run": [
+    "libgcc-ng >=7.3.0",
+    "libstdcxx-ng >=7.3.0",
+    "pcre >=8.43,<9.0a0"
+   ]
+  },
+  "source": {
+   "patches": [
+    "paths.patch",
+    "python-archlib.patch",
+    "rpath.patch"
+   ],
+   "sha256": "02be972708f17b57af607e77998fef0da819cd240dc44df4d4f4dbe6f54ae707",
+   "url": "https://github.com/htcondor/htcondor/archive/V8_9_4.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "classad_version"
+   ]
+  }
+ },
+ "version": "8.9.4"
+}
