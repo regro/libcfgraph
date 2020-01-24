@@ -1,0 +1,277 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.18.11",
+  "conda_private": false,
+  "conda_version": "4.8.0",
+  "description": "This library implements the SPAKE2 password-authenticated key exchange (\"PAKE\") algorithm. This allows two parties, who share a weak password, to safely derive a strong shared secret (and therefore build an encrypted+authenticated channel). A passive attacker who eavesdrops on the connection learns no information about the password or the generated secret. An active attacker (man-in-the-middle) gets exactly one guess at the password, and unless they get it right, they learn no information about the password or the generated secret. Each execution of the protocol enables one guess. The use of a weak password is made safer by the rate-limiting of guesses: no off-line dictionary attack is available to the network-level attacker, and the protocol does not depend upon having previously-established confidentiality of the network (unlike e.g. sending a plaintext password over TLS). The protocol requires the exchange of one pair of messages, so only one round trip is necessary to establish the session key. If key-confirmation is necessary, that will require a second round trip. All messages are bytestrings. For the default security level (using the Ed25519 elliptic curve, roughly equivalent to an 128-bit symmetric key), the message is 33 bytes long.\n",
+  "dev_url": "https://github.com/warner/python-spake2",
+  "doc_url": "https://github.com/warner/python-spake2",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "CJ-Wright"
+   ]
+  },
+  "home": "https://github.com/warner/python-spake2",
+  "identifiers": [],
+  "keywords": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "license_file": "LICENSE",
+  "root_pkgs": [
+   "traitlets 4.3.3 py37_0",
+   "liblief 0.9.0 hf8a498c_1",
+   "_libgcc_mutex 0.1 conda_forge",
+   "libssh2 1.8.2 h22169c7_2",
+   "tk 8.6.10 hed695b0_0",
+   "asn1crypto 1.3.0 py37_0",
+   "python-libarchive-c 2.9 py37_0",
+   "pycosat 0.6.3 py37h516909a_1002",
+   "tqdm 4.41.1 py_0",
+   "patchelf 0.10 he1b5a44_0",
+   "psutil 5.6.7 py37h516909a_0",
+   "libffi 3.2.1 he1b5a44_1006",
+   "gettext 0.19.8.1 hc5be6a0_1002",
+   "pcre 8.43 he1b5a44_0",
+   "more-itertools 8.1.0 py_0",
+   "importlib_metadata 1.4.0 py37_0",
+   "ncurses 6.1 hf484d3e_1002",
+   "icu 64.2 he1b5a44_1",
+   "ld_impl_linux-64 2.33.1 h53a641e_7",
+   "libgcc-ng 9.2.0 h24d8f2e_2",
+   "patch 2.7.6 h14c3975_1001",
+   "filelock 3.0.10 py_0",
+   "conda-build 3.18.11 py37_0",
+   "cryptography 2.8 py37h72c5cf5_1",
+   "yaml 0.2.2 h516909a_1",
+   "gosu 1.10 h81701ea_1001",
+   "libgomp 9.2.0 h24d8f2e_2",
+   "libxml2 2.9.10 hee79883_0",
+   "xz 5.2.4 h14c3975_1001",
+   "pysocks 1.7.1 py37_0",
+   "zstd 1.4.4 h3b9ef0a_1",
+   "glob2 0.7 py_0",
+   "bzip2 1.0.8 h516909a_2",
+   "pyrsistent 0.15.7 py37h516909a_0",
+   "ipython_genutils 0.2.0 py_1",
+   "setuptools 45.1.0 py37_0",
+   "libiconv 1.15 h516909a_1005",
+   "cffi 1.13.2 py37h8022711_0",
+   "requests 2.22.0 py37_1",
+   "lz4-c 1.8.3 he1b5a44_1001",
+   "decorator 4.4.1 py_0",
+   "_openmp_mutex 4.5 0_gnu",
+   "pkginfo 1.5.0.1 py_0",
+   "wheel 0.33.6 py37_0",
+   "certifi 2019.11.28 py37_0",
+   "curl 7.65.3 hf8cf82a_0",
+   "beautifulsoup4 4.8.2 py37_0",
+   "readline 8.0 hf8c457e_0",
+   "zlib 1.2.11 h516909a_1006",
+   "sqlite 3.30.1 hcee41ef_0",
+   "jsonschema 3.2.0 py37_0",
+   "libedit 3.1.20170329 hf8c457e_1001",
+   "libarchive 3.3.3 hc47fbbf_1007",
+   "lzo 2.10 h14c3975_1000",
+   "clyent 1.2.2 py_1",
+   "zipp 2.0.0 py_2",
+   "krb5 1.16.4 h2fd8d38_0",
+   "chardet 3.0.4 py37_1003",
+   "anaconda-client 1.7.2 py_0",
+   "tini 0.18.0 h14c3975_1001",
+   "ripgrep 11.0.2 h516909a_3",
+   "attrs 19.3.0 py_0",
+   "six 1.14.0 py37_0",
+   "pyopenssl 19.1.0 py37_0",
+   "idna 2.8 py37_1000",
+   "python 3.7.6 h357f687_2",
+   "openssl 1.1.1d h516909a_0",
+   "pycparser 2.19 py37_1",
+   "conda-package-handling 1.6.0 py37h516909a_1",
+   "soupsieve 1.9.4 py37_0",
+   "pytz 2019.3 py_0",
+   "ruamel_yaml 0.15.80 py37h516909a_1000",
+   "pyyaml 5.3 py37h516909a_0",
+   "perl 5.26.2 h516909a_1006",
+   "pip 20.0.1 py37_0",
+   "py-lief 0.9.0 py37he1b5a44_1",
+   "python-dateutil 2.8.1 py_0",
+   "jupyter_core 4.6.1 py37_0",
+   "conda 4.8.0 py37_1",
+   "libstdcxx-ng 9.2.0 hdf63c60_2",
+   "git 2.24.0 pl526hce37bd2_1",
+   "libcurl 7.65.3 hda55be3_0",
+   "urllib3 1.25.7 py37_0",
+   "jinja2 2.10.3 py_0",
+   "expat 2.2.5 he1b5a44_1004",
+   "markupsafe 1.1.1 py37h516909a_0",
+   "nbformat 5.0.4 py_0",
+   "ca-certificates 2019.11.28 hecc5488_0",
+   "conda-forge-ci-setup 2.5.4 py37_0",
+   "conda-env 2.6.0 1",
+   "click 7.0 py_0"
+  ],
+  "summary": "This library implements the SPAKE2 password-authenticated key exchange (\"PAKE\") algorithm. ",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CI": "azure",
+  "c_compiler": "gcc",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "docker_image": "condaforge/linux-anvil-comp7",
+  "extend_keys": [
+   "ignore_version",
+   "extend_keys",
+   "pin_run_as_build",
+   "ignore_build_only_deps"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "numpy",
+   "python"
+  ],
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   }
+  },
+  "python": "2.7",
+  "r_base": "3.5",
+  "target_platform": "linux-64"
+ },
+ "files": [
+  "site-packages/spake2-0.8.dist-info/INSTALLER",
+  "site-packages/spake2-0.8.dist-info/LICENSE",
+  "site-packages/spake2-0.8.dist-info/METADATA",
+  "site-packages/spake2-0.8.dist-info/RECORD",
+  "site-packages/spake2-0.8.dist-info/WHEEL",
+  "site-packages/spake2/__init__.py",
+  "site-packages/spake2/_version.py",
+  "site-packages/spake2/ed25519_basic.py",
+  "site-packages/spake2/ed25519_group.py",
+  "site-packages/spake2/groups.py",
+  "site-packages/spake2/parameters/__init__.py",
+  "site-packages/spake2/parameters/all.py",
+  "site-packages/spake2/parameters/ed25519.py",
+  "site-packages/spake2/parameters/i1024.py",
+  "site-packages/spake2/parameters/i2048.py",
+  "site-packages/spake2/parameters/i3072.py",
+  "site-packages/spake2/params.py",
+  "site-packages/spake2/six.py",
+  "site-packages/spake2/spake2.py",
+  "site-packages/spake2/test/__init__.py",
+  "site-packages/spake2/test/common.py",
+  "site-packages/spake2/test/myhkdf.py",
+  "site-packages/spake2/test/test_compat.py",
+  "site-packages/spake2/test/test_group.py",
+  "site-packages/spake2/test/test_spake2.py",
+  "site-packages/spake2/test/test_utils.py",
+  "site-packages/spake2/util.py"
+ ],
+ "index": {
+  "arch": null,
+  "build": "py_3",
+  "build_number": 3,
+  "depends": [
+   "hkdf",
+   "python"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "spake2",
+  "noarch": "python",
+  "platform": null,
+  "subdir": "noarch",
+  "timestamp": 1579834723151,
+  "version": "0.8"
+ },
+ "metadata_version": 1,
+ "name": "spake2",
+ "raw_recipe": "{% set url_name = \"python-spake2\" %}\n{% set name = \"spake2\" %}\n{% set version = \"0.8\" %}\n{% set sha256 = \"c96c1d9438ca7f738959690b0860473b5bf8f8b95884f78fd5af11d2e6db662f\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  fn: {{ url_name }}-{{ version }}.tar.gz\n  url: https://github.com/warner/{{ url_name }}/archive/v{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 3 \n  script: \"{{ PYTHON }} -m pip install . -vv\"\n  noarch: python\n\nrequirements:\n  host:\n    - python\n    - pip \n  run:\n    - python\n    - hkdf\n\ntest:\n  imports:\n    - spake2\n\nabout:\n  home: https://github.com/warner/python-spake2\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: 'This library implements the SPAKE2 password-authenticated key exchange (\"PAKE\") algorithm. '\n\n  description: |\n    This library implements the SPAKE2 password-authenticated key exchange (\"PAKE\") algorithm. This allows two parties, who share a weak password, to safely derive a strong shared secret (and therefore build an encrypted+authenticated channel). A passive attacker who eavesdrops on the connection learns no information about the password or the generated secret. An active attacker (man-in-the-middle) gets exactly one guess at the password, and unless they get it right, they learn no information about the password or the generated secret. Each execution of the protocol enables one guess. The use of a weak password is made safer by the rate-limiting of guesses: no off-line dictionary attack is available to the network-level attacker, and the protocol does not depend upon having previously-established confidentiality of the network (unlike e.g. sending a plaintext password over TLS). The protocol requires the exchange of one pair of messages, so only one round trip is necessary to establish the session key. If key-confirmation is necessary, that will require a second round trip. All messages are bytestrings. For the default security level (using the Ed25519 elliptic curve, roughly equivalent to an 128-bit symmetric key), the message is 33 bytes long.\n  doc_url: https://github.com/warner/python-spake2\n  dev_url: https://github.com/warner/python-spake2\n\nextra:\n  recipe-maintainers:\n    - CJ-Wright\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "This library implements the SPAKE2 password-authenticated key exchange (\"PAKE\") algorithm. This allows two parties, who share a weak password, to safely derive a strong shared secret (and therefore build an encrypted+authenticated channel). A passive attacker who eavesdrops on the connection learns no information about the password or the generated secret. An active attacker (man-in-the-middle) gets exactly one guess at the password, and unless they get it right, they learn no information about the password or the generated secret. Each execution of the protocol enables one guess. The use of a weak password is made safer by the rate-limiting of guesses: no off-line dictionary attack is available to the network-level attacker, and the protocol does not depend upon having previously-established confidentiality of the network (unlike e.g. sending a plaintext password over TLS). The protocol requires the exchange of one pair of messages, so only one round trip is necessary to establish the session key. If key-confirmation is necessary, that will require a second round trip. All messages are bytestrings. For the default security level (using the Ed25519 elliptic curve, roughly equivalent to an 128-bit symmetric key), the message is 33 bytes long.\n",
+   "dev_url": "https://github.com/warner/python-spake2",
+   "doc_url": "https://github.com/warner/python-spake2",
+   "home": "https://github.com/warner/python-spake2",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "This library implements the SPAKE2 password-authenticated key exchange (\"PAKE\") algorithm. "
+  },
+  "build": {
+   "noarch": "python",
+   "number": "3",
+   "script": "/home/conda/feedstock_root/build_artifacts/spake2_1579834650309/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_plac/bin/python -m pip install . -vv",
+   "string": "py_3"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "CJ-Wright"
+   ]
+  },
+  "package": {
+   "name": "spake2",
+   "version": "0.8"
+  },
+  "requirements": {
+   "host": [
+    "_libgcc_mutex 0.1 conda_forge",
+    "_openmp_mutex 4.5 0_gnu",
+    "ca-certificates 2019.11.28 hecc5488_0",
+    "certifi 2019.11.28 py27_0",
+    "libffi 3.2.1 he1b5a44_1006",
+    "libgcc-ng 9.2.0 h24d8f2e_2",
+    "libgomp 9.2.0 h24d8f2e_2",
+    "libstdcxx-ng 9.2.0 hdf63c60_2",
+    "ncurses 6.1 hf484d3e_1002",
+    "openssl 1.1.1d h516909a_0",
+    "pip 20.0.1 py27_0",
+    "python 2.7.15 h5a48372_1009",
+    "readline 8.0 hf8c457e_0",
+    "setuptools 44.0.0 py27_0",
+    "sqlite 3.30.1 hcee41ef_0",
+    "tk 8.6.10 hed695b0_0",
+    "wheel 0.33.6 py27_0",
+    "zlib 1.2.11 h516909a_1006"
+   ],
+   "run": [
+    "hkdf",
+    "python"
+   ]
+  },
+  "source": {
+   "fn": "python-spake2-0.8.tar.gz",
+   "sha256": "c96c1d9438ca7f738959690b0860473b5bf8f8b95884f78fd5af11d2e6db662f",
+   "url": "https://github.com/warner/python-spake2/archive/v0.8.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "spake2"
+   ]
+  }
+ },
+ "version": "0.8"
+}
