@@ -1,0 +1,277 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.19.0",
+  "conda_private": false,
+  "conda_version": "4.8.3",
+  "description": "genozip\ngenozip is a compressor for VCF genomic files (it compresses .vcf or .vcf.gz or .vcf.bz2 files).\n\nIt achieves x2 to x5 better compression ratios than gzip because it leverages some properties of the genomic data, such as linkage disequilibrium, to compress better. It is also a lot faster than gzip.\n\nThe compression is lossless - the decompressed VCF file is 100% identical to the original VCF file.\n\nThe command line options are similar to gzip and bcftools, so if you're familiar with these, it works pretty much the same. To get started, try: genozip --help\n\nCommands:\ngenozip   - compress one or more files\ngenounzip - decompress one or more files\ngenols    - show metadata of files or the entire directory\ngenocat   - view one or more files\n\nSome advanced options:\n\nLookups:\ngenocat -r ^Y,MT file1.vcf       -- displays all chromosomes except Y and MT\ngenocat -r -10000 file1.vcf      -- displays positions up to 10000\ngenocat -s SMPL1,SMPL2 file1.vcf -- displays 2 samples\nNote: there is no need for a separate indexing step or index file\n\nConcatenating & splitting:\ngenozip file1.vcf file2.vcf -o concat.vcf.genozip\ngenounzip concat.vcf.genozip -O\n\nCalculating the MD5 of the VCF file:\ngenozip file.vcf --md5\ngenols file.vcf.genozip --md5\nNote: the MD5 is always calculated under the hood in genozip, and automatically verified during genounzip\n\nEncryption:\ngenozip file.vcf --password abc\n\nFeature requests and bug reports: bugs@genozip.com\n\ngenozip is free for non-commercial use. For a commercial license, please contact sales@genozip.com\n\nUsage is subject to terms and conditions. The license can be viewed with genozip --license\n\nTHIS SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+  "dev_url": "https://github.com/divonlan/genozip",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "divonlan"
+   ]
+  },
+  "home": "https://github.com/divonlan/genozip",
+  "identifiers": [],
+  "keywords": [],
+  "license": "CUSTOM",
+  "license_family": "OTHER",
+  "license_file": [
+   "LICENSE.non-commercial.txt",
+   "LICENSE.commercial.txt"
+  ],
+  "root_pkgs": [
+   "importlib-metadata 1.5.0 py37hc8dfbb8_1",
+   "pysocks 1.7.1 py37hc8dfbb8_1",
+   "python-dateutil 2.8.1 py_0",
+   "attrs 19.3.0 py_0",
+   "jsonschema 3.2.0 py37hc8dfbb8_1",
+   "liblief 0.9.0 hf8a498c_1",
+   "conda 4.8.3 py37hc8dfbb8_0",
+   "ruamel_yaml 0.15.80 py37h516909a_1000",
+   "clyent 1.2.2 py_1",
+   "libffi 3.2.1 he1b5a44_1006",
+   "py-lief 0.9.0 py37he1b5a44_1",
+   "wheel 0.34.2 py_1",
+   "pycparser 2.20 py_0",
+   "perl 5.26.2 h516909a_1006",
+   "urllib3 1.25.7 py37hc8dfbb8_1",
+   "libiconv 1.15 h516909a_1005",
+   "soupsieve 1.9.4 py37hc8dfbb8_1",
+   "ipython_genutils 0.2.0 py_1",
+   "zipp 3.1.0 py_0",
+   "glob2 0.7 py_0",
+   "psutil 5.7.0 py37h516909a_0",
+   "tqdm 4.43.0 py_0",
+   "markupsafe 1.1.1 py37h8f50634_1",
+   "pytz 2019.3 py_0",
+   "libstdcxx-ng 9.2.0 hdf63c60_2",
+   "cffi 1.14.0 py37hd463f26_0",
+   "idna 2.9 py_1",
+   "tini 0.18.0 h14c3975_1001",
+   "gosu 1.10 h81701ea_1001",
+   "libgomp 9.2.0 h24d8f2e_2",
+   "requests 2.23.0 py37hc8dfbb8_1",
+   "jinja2 2.11.1 py_0",
+   "icu 64.2 he1b5a44_1",
+   "chardet 3.0.4 py37hc8dfbb8_1006",
+   "python_abi 3.7 1_cp37m",
+   "curl 7.68.0 hf8cf82a_0",
+   "patch 2.7.6 h14c3975_1001",
+   "python 3.7.6 h357f687_4_cpython",
+   "lz4-c 1.8.3 he1b5a44_1001",
+   "conda-package-handling 1.6.0 py37h516909a_1",
+   "libcurl 7.68.0 hda55be3_0",
+   "importlib_metadata 1.5.0 1",
+   "jupyter_core 4.6.3 py37hc8dfbb8_1",
+   "traitlets 4.3.3 py37hc8dfbb8_1",
+   "libedit 3.1.20170329 hf8c457e_1001",
+   "gettext 0.19.8.1 hc5be6a0_1002",
+   "anaconda-client 1.7.2 py_0",
+   "nbformat 5.0.4 py_0",
+   "setuptools 46.0.0 py37hc8dfbb8_2",
+   "libxml2 2.9.10 hee79883_0",
+   "ld_impl_linux-64 2.33.1 h53a641e_8",
+   "certifi 2019.11.28 py37hc8dfbb8_1",
+   "asn1crypto 1.3.0 py37_0",
+   "pkginfo 1.5.0.1 py_0",
+   "readline 8.0 hf8c457e_0",
+   "krb5 1.16.4 h2fd8d38_0",
+   "pcre 8.44 he1b5a44_0",
+   "yaml 0.2.2 h516909a_1",
+   "libgcc-ng 9.2.0 h24d8f2e_2",
+   "zlib 1.2.11 h516909a_1006",
+   "sqlite 3.30.1 hcee41ef_0",
+   "patchelf 0.10 he1b5a44_0",
+   "conda-build 3.19.0 py37hc8dfbb8_0",
+   "openssl 1.1.1d h516909a_0",
+   "_openmp_mutex 4.5 0_gnu",
+   "expat 2.2.9 he1b5a44_2",
+   "git 2.25.0 pl526hce37bd2_0",
+   "libarchive 3.3.3 hc47fbbf_1007",
+   "filelock 3.0.10 py_0",
+   "pycosat 0.6.3 py37h8f50634_1004",
+   "_libgcc_mutex 0.1 conda_forge",
+   "beautifulsoup4 4.8.2 py37_0",
+   "pip 20.0.2 py_2",
+   "pyrsistent 0.15.7 py37h8f50634_1",
+   "bzip2 1.0.8 h516909a_2",
+   "ncurses 6.1 hf484d3e_1002",
+   "python-libarchive-c 2.9 py37_0",
+   "decorator 4.4.2 py_0",
+   "six 1.14.0 py_1",
+   "xz 5.2.4 h14c3975_1001",
+   "ca-certificates 2019.11.28 hecc5488_0",
+   "libssh2 1.8.2 h22169c7_2",
+   "ripgrep 11.0.2 h516909a_3",
+   "tk 8.6.10 hed695b0_0",
+   "pyyaml 5.3 py37h8f50634_1",
+   "cryptography 2.8 py37hb09aad4_2",
+   "zstd 1.4.4 h3b9ef0a_1",
+   "pyopenssl 19.1.0 py_1",
+   "lzo 2.10 h14c3975_1000",
+   "click 7.1.1 pyh8c360ce_0",
+   "conda-forge-ci-setup 2.5.5 py37_0",
+   "conda-env 2.6.0 1"
+  ],
+  "summary": "Compressor for VCF genomic files, up to 5x better than gzip and faster too",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CI": "azure",
+  "bzip2": "1",
+  "c_compiler": "gcc",
+  "c_compiler_version": "7",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "docker_image": "condaforge/linux-anvil-comp7",
+  "extend_keys": [
+   "ignore_version",
+   "extend_keys",
+   "ignore_build_only_deps",
+   "pin_run_as_build"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "python",
+   "numpy"
+  ],
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "bzip2": {
+    "max_pin": "x"
+   },
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "zlib": {
+    "max_pin": "x.x"
+   }
+  },
+  "python": "3.7",
+  "r_base": "3.5",
+  "target_platform": "linux-64",
+  "zlib": "1.2"
+ },
+ "files": [
+  "bin/genocat",
+  "bin/genols",
+  "bin/genounzip",
+  "bin/genozip"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "h2f06484_0",
+  "build_number": 0,
+  "depends": [
+   "bzip2 >=1.0.8,<2.0a0",
+   "libgcc-ng >=7.3.0",
+   "zlib >=1.2.11,<1.3.0a0"
+  ],
+  "license": "CUSTOM",
+  "license_family": "OTHER",
+  "name": "genozip",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1584409495767,
+  "version": "3.0.0"
+ },
+ "metadata_version": 1,
+ "name": "genozip",
+ "raw_recipe": "{% set version = \"3.0.0\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: genozip\n  version: {{ version }}\n\nsource:\n  url: https://github.com/divonlan/genozip/archive/genozip-{{ version }}.tar.gz\n  sha256: 7f142167a24c96caffa41f26a10b78bca94ba678ac5f7b809fb9a96896b61911\n \nbuild:\n  skip: True  # [win]\n  number: 0\n\nrequirements:\n  build:    \n    - {{ compiler('c') }}        # [not win]\n    - {{ compiler('m2w64_c') }}  # [win]\n    - {{posix}}make\n    - {{posix}}sed               # [win]\n    - {{posix}}coreutils         # [win]\n    - bzip2\n  host:\n    - {{native}}gcc-libs         # [win]\n    - zlib\n    - bzip2\n  run:\n    - {{native}}gcc-libs         # [win]\n    - zlib\n    - bzip2\n\ntest:\n  source_files: \n    - test-file.vcf\n\n  commands:\n    {% set genozip_executables = [\n      \"genozip\",\n      \"genounzip\",\n      \"genocat\",\n      \"genols\"\n    ] %}\n    {% for executable in genozip_executables %}\n    - test -f ${PREFIX}/bin/{{ executable }}  # [unix]\n    {% endfor %}\n    - which genozip.exe  # [win]\n    - genozip --password abc --test test-file.vcf 2>&1  \n\nabout:\n  home: https://github.com/divonlan/genozip\n  dev_url: https://github.com/divonlan/genozip\n  license: CUSTOM\n  license_family: OTHER\n  license_file: \n    - LICENSE.non-commercial.txt\n    - LICENSE.commercial.txt\n  summary: Compressor for VCF genomic files, up to 5x better than gzip and faster too\n  description: |\n    genozip\n    genozip is a compressor for VCF genomic files (it compresses .vcf or .vcf.gz or .vcf.bz2 files).\n    \n    It achieves x2 to x5 better compression ratios than gzip because it leverages some properties of the genomic data, such as linkage disequilibrium, to compress better. It is also a lot faster than gzip.\n    \n    The compression is lossless - the decompressed VCF file is 100% identical to the original VCF file.\n    \n    The command line options are similar to gzip and bcftools, so if you're familiar with these, it works pretty much the same. To get started, try: genozip --help\n    \n    Commands: \n    genozip   - compress one or more files \n    genounzip - decompress one or more files \n    genols    - show metadata of files or the entire directory \n    genocat   - view one or more files \n    \n    Some advanced options:\n    \n    Lookups:\n    genocat -r ^Y,MT file1.vcf       -- displays all chromosomes except Y and MT\n    genocat -r -10000 file1.vcf      -- displays positions up to 10000\n    genocat -s SMPL1,SMPL2 file1.vcf -- displays 2 samples\n    Note: there is no need for a separate indexing step or index file\n    \n    Concatenating & splitting:\n    genozip file1.vcf file2.vcf -o concat.vcf.genozip \n    genounzip concat.vcf.genozip -O \n    \n    Calculating the MD5 of the VCF file:\n    genozip file.vcf --md5 \n    genols file.vcf.genozip --md5 \n    Note: the MD5 is always calculated under the hood in genozip, and automatically verified during genounzip \n    \n    Encryption:\n    genozip file.vcf --password abc \n    \n    Feature requests and bug reports: bugs@genozip.com \n    \n    genozip is free for non-commercial use. For a commercial license, please contact sales@genozip.com \n    \n    Usage is subject to terms and conditions. The license can be viewed with genozip --license\n    \n    THIS SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nextra:\n  recipe-maintainers:\n    - divonlan\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "genozip\ngenozip is a compressor for VCF genomic files (it compresses .vcf or .vcf.gz or .vcf.bz2 files).\n\nIt achieves x2 to x5 better compression ratios than gzip because it leverages some properties of the genomic data, such as linkage disequilibrium, to compress better. It is also a lot faster than gzip.\n\nThe compression is lossless - the decompressed VCF file is 100% identical to the original VCF file.\n\nThe command line options are similar to gzip and bcftools, so if you're familiar with these, it works pretty much the same. To get started, try: genozip --help\n\nCommands:\ngenozip   - compress one or more files\ngenounzip - decompress one or more files\ngenols    - show metadata of files or the entire directory\ngenocat   - view one or more files\n\nSome advanced options:\n\nLookups:\ngenocat -r ^Y,MT file1.vcf       -- displays all chromosomes except Y and MT\ngenocat -r -10000 file1.vcf      -- displays positions up to 10000\ngenocat -s SMPL1,SMPL2 file1.vcf -- displays 2 samples\nNote: there is no need for a separate indexing step or index file\n\nConcatenating & splitting:\ngenozip file1.vcf file2.vcf -o concat.vcf.genozip\ngenounzip concat.vcf.genozip -O\n\nCalculating the MD5 of the VCF file:\ngenozip file.vcf --md5\ngenols file.vcf.genozip --md5\nNote: the MD5 is always calculated under the hood in genozip, and automatically verified during genounzip\n\nEncryption:\ngenozip file.vcf --password abc\n\nFeature requests and bug reports: bugs@genozip.com\n\ngenozip is free for non-commercial use. For a commercial license, please contact sales@genozip.com\n\nUsage is subject to terms and conditions. The license can be viewed with genozip --license\n\nTHIS SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+   "dev_url": "https://github.com/divonlan/genozip",
+   "home": "https://github.com/divonlan/genozip",
+   "license": "CUSTOM",
+   "license_family": "OTHER",
+   "license_file": [
+    "LICENSE.commercial.txt",
+    "LICENSE.non-commercial.txt"
+   ],
+   "summary": "Compressor for VCF genomic files, up to 5x better than gzip and faster too"
+  },
+  "build": {
+   "number": "0",
+   "string": "h2f06484_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "divonlan"
+   ]
+  },
+  "package": {
+   "name": "genozip",
+   "version": "3.0.0"
+  },
+  "requirements": {
+   "build": [
+    "_libgcc_mutex 0.1 conda_forge",
+    "_openmp_mutex 4.5 0_gnu",
+    "binutils_impl_linux-64 2.33.1 h53a641e_8",
+    "binutils_linux-64 2.33.1 h9595d00_17",
+    "bzip2 1.0.8 h516909a_2",
+    "gcc_impl_linux-64 7.3.0 hd420e75_5",
+    "gcc_linux-64 7.3.0 h553295d_17",
+    "ld_impl_linux-64 2.33.1 h53a641e_8",
+    "libgcc-ng 9.2.0 h24d8f2e_2",
+    "libgomp 9.2.0 h24d8f2e_2",
+    "libstdcxx-ng 9.2.0 hdf63c60_2",
+    "make 4.3 h516909a_0"
+   ],
+   "host": [
+    "_libgcc_mutex 0.1 conda_forge",
+    "_openmp_mutex 4.5 0_gnu",
+    "bzip2 1.0.8 h516909a_2",
+    "libgcc-ng 9.2.0 h24d8f2e_2",
+    "libgomp 9.2.0 h24d8f2e_2",
+    "zlib 1.2.11 h516909a_1006"
+   ],
+   "run": [
+    "bzip2 >=1.0.8,<2.0a0",
+    "bzip2 >=1.0.8,<2.0a0",
+    "libgcc-ng >=7.3.0",
+    "zlib >=1.2.11,<1.3.0a0",
+    "zlib >=1.2.11,<1.3.0a0"
+   ]
+  },
+  "source": {
+   "sha256": "7f142167a24c96caffa41f26a10b78bca94ba678ac5f7b809fb9a96896b61911",
+   "url": "https://github.com/divonlan/genozip/archive/genozip-3.0.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f ${PREFIX}/bin/genozip",
+    "test -f ${PREFIX}/bin/genounzip",
+    "test -f ${PREFIX}/bin/genocat",
+    "test -f ${PREFIX}/bin/genols",
+    "genozip --password abc --test test-file.vcf 2>&1"
+   ],
+   "source_files": [
+    "test-file.vcf"
+   ]
+  }
+ },
+ "version": "3.0.0"
+}
