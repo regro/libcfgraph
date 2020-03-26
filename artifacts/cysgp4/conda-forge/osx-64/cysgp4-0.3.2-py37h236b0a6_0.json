@@ -1,0 +1,293 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.19.1",
+  "conda_private": false,
+  "conda_version": "4.8.3",
+  "description": "The cysgp4 package is a Cython-powered wrapper of the sgp4 C++ library\nby Daniel Warner to compute satellite positions from two-line elements\n(TLE). It provides similar functionality as the well-known sgp4 Python\npackage by Brandon Rhodes, which uses Numba internally to speed-up the\ncalculations. In contrast to sgp4, cysgp4 can work well with arrays of\nTLEs and/or times and make use of multi-core platforms (via OpenMP) to\nboost processing times a lot.\n",
+  "dev_url": "https://github.com/bwinkel/cysgp4",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "bwinkel"
+   ]
+  },
+  "home": "https://github.com/bwinkel/cysgp4",
+  "identifiers": [],
+  "keywords": [],
+  "license": "GPL-3.0 AND Apache-2.0 AND BSD-3-Clause",
+  "license_file": [
+   "COPYING.GPLv3.txt",
+   "COPYING.Apache2",
+   "TEMPLATE_LICENCE.rst"
+  ],
+  "root_pkgs": [
+   "bzip2 1.0.8 h0b31af3_2",
+   "libcxx 9.0.1 1",
+   "conda-env 2.6.0 1",
+   "openssl 1.1.1e h0b31af3_0",
+   "icu 64.2 h6de7cb9_1",
+   "certifi 2019.11.28 py37hc8dfbb8_1",
+   "chardet 3.0.4 py37hc8dfbb8_1006",
+   "jq 1.6 h1de35cc_1000",
+   "libffi 3.2.1 h4a8c4bd_1007",
+   "libxml2 2.9.10 h53d96d6_0",
+   "anaconda-client 1.7.2 py_0",
+   "py-lief 0.9.0 py37h0ceac7d_1",
+   "readline 8.0 hcfe32e1_0",
+   "click 7.1.1 pyh8c360ce_0",
+   "glob2 0.7 py_0",
+   "tqdm 4.43.0 py_0",
+   "shyaml 0.6.1 py_0",
+   "beautifulsoup4 4.8.2 py37hc8dfbb8_1",
+   "yaml 0.2.2 h0b31af3_1",
+   "jsonschema 3.2.0 py37hc8dfbb8_1",
+   "decorator 4.4.2 py_0",
+   "nbformat 5.0.4 py_0",
+   "pysocks 1.7.1 py37hc8dfbb8_1",
+   "cffi 1.14.0 py37h356ff06_0",
+   "libiconv 1.15 h0b31af3_1006",
+   "importlib-metadata 1.5.2 py37hc8dfbb8_0",
+   "conda-forge-ci-setup 2.6.0 py37hc8dfbb8_0",
+   "python.app 1.3 py37h9bfed18_1",
+   "libarchive 3.3.3 h8912c15_1007",
+   "filelock 3.0.10 py_0",
+   "pycparser 2.20 py_0",
+   "tk 8.6.10 hbbe82c9_0",
+   "conda-build 3.19.1 py37hc8dfbb8_0",
+   "markupsafe 1.1.1 py37h9bfed18_1",
+   "ripgrep 11.0.2 h01d97ff_3",
+   "pyopenssl 19.1.0 py_1",
+   "pyrsistent 0.16.0 py37h9bfed18_0",
+   "zlib 1.2.11 h0b31af3_1006",
+   "jupyter_core 4.6.3 py37hc8dfbb8_1",
+   "attrs 19.3.0 py_0",
+   "zstd 1.4.4 hed8d7c8_2",
+   "cryptography 2.8 py37he655712_2",
+   "pycosat 0.6.3 py37h9bfed18_1004",
+   "lz4-c 1.8.3 h6de7cb9_1001",
+   "jinja2 2.11.1 py_0",
+   "python_abi 3.7 1_cp37m",
+   "psutil 5.7.0 py37h9bfed18_1",
+   "setuptools 46.1.3 py37hc8dfbb8_0",
+   "idna 2.9 py_1",
+   "soupsieve 1.9.4 py37hc8dfbb8_1",
+   "pyyaml 5.3.1 py37h9bfed18_0",
+   "xz 5.2.4 h0b31af3_1002",
+   "liblief 0.9.0 h3e78482_1",
+   "clyent 1.2.2 py_1",
+   "pkginfo 1.5.0.1 py_0",
+   "ruamel_yaml 0.15.80 py37h9bfed18_1001",
+   "pytz 2019.3 py_0",
+   "requests 2.23.0 pyh8c360ce_2",
+   "importlib_metadata 1.5.2 0",
+   "zipp 3.1.0 py_0",
+   "ncurses 6.1 h0a44026_1002",
+   "sqlite 3.30.1 h93121df_0",
+   "urllib3 1.25.7 py37hc8dfbb8_1",
+   "conda 4.8.3 py37hc8dfbb8_1",
+   "ipython_genutils 0.2.0 py_1",
+   "lzo 2.10 h1de35cc_1000",
+   "ca-certificates 2019.11.28 hecc5488_0",
+   "oniguruma 6.9.3 h01d97ff_0",
+   "six 1.14.0 py_1",
+   "python-libarchive-c 2.9 py37_0",
+   "python-dateutil 2.8.1 py_0",
+   "traitlets 4.3.3 py37hc8dfbb8_1",
+   "conda-package-handling 1.6.0 py37h9bfed18_2",
+   "python 3.7.6 h90870a6_5_cpython"
+  ],
+  "summary": "Cysgp4 is a wrapper around the SGP4 package, for sat TLE calculations",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CI": "azure",
+  "CONDA_BUILD_SYSROOT": "/Applications/Xcode_11.3.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk",
+  "MACOSX_DEPLOYMENT_TARGET": "10.9",
+  "c_compiler": "clang",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "clangxx",
+  "cxx_compiler_version": "9",
+  "extend_keys": [
+   "ignore_version",
+   "extend_keys",
+   "ignore_build_only_deps",
+   "pin_run_as_build"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "numpy",
+   "python"
+  ],
+  "lua": "5",
+  "macos_machine": "x86_64-apple-darwin13.4.0",
+  "macos_min_version": "10.9",
+  "numpy": "1.14",
+  "perl": "5.26.0",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   }
+  },
+  "python": "3.7.* *_cpython",
+  "r_base": "3.5",
+  "target_platform": "osx-64",
+  "zip_keys": [
+   [
+    "numpy",
+    "python"
+   ]
+  ]
+ },
+ "files": [
+  "lib/python3.7/site-packages/cysgp4-0.3.2.dist-info/COPYING.Apache2",
+  "lib/python3.7/site-packages/cysgp4-0.3.2.dist-info/INSTALLER",
+  "lib/python3.7/site-packages/cysgp4-0.3.2.dist-info/METADATA",
+  "lib/python3.7/site-packages/cysgp4-0.3.2.dist-info/RECORD",
+  "lib/python3.7/site-packages/cysgp4-0.3.2.dist-info/WHEEL",
+  "lib/python3.7/site-packages/cysgp4/__init__.py",
+  "lib/python3.7/site-packages/cysgp4/cysgp4.cpython-37m-darwin.so",
+  "lib/python3.7/site-packages/cysgp4/helpers.py",
+  "lib/python3.7/site-packages/cysgp4/init_testrunner.py",
+  "lib/python3.7/site-packages/cysgp4/tests/__init__.py",
+  "lib/python3.7/site-packages/cysgp4/tests/conftest.py",
+  "lib/python3.7/site-packages/cysgp4/tests/test_cysgp4.py",
+  "lib/python3.7/site-packages/cysgp4/tests/test_utils.py",
+  "lib/python3.7/site-packages/cysgp4/utils.cpython-37m-darwin.so",
+  "lib/python3.7/site-packages/cysgp4/version.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py37h236b0a6_0",
+  "build_number": 0,
+  "depends": [
+   "libcxx >=9.0.1",
+   "numpy >=1.14.6,<2.0a0",
+   "openmp 4.0.*",
+   "python >=3.7,<3.8.0a0",
+   "python_abi 3.7.* *_cp37m",
+   "setuptools"
+  ],
+  "license": "GPL-3.0 AND Apache-2.0 AND BSD-3-Clause",
+  "name": "cysgp4",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "timestamp": 1585249002564,
+  "version": "0.3.2"
+ },
+ "metadata_version": 1,
+ "name": "cysgp4",
+ "raw_recipe": "{% set name = \"cysgp4\" %}\n{% set version = \"0.3.2\" %}\n{% set sha256 = \"b4f58bc19a50e54a27a57d4b66b31af47805bb408f2f8665548ae4c08fef1db3\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: {{ sha256 }}\n\nbuild:\n  number: 0\n  skip: true  # [py27]\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - {{ compiler('cxx') }}\n\n  host:\n    - openmp 4.0.*  # [osx]\n    - python\n    - pip\n    - setuptools\n    - setuptools_scm\n    - cython\n    - numpy\n\n  run:\n    - python\n    - setuptools\n    - openmp 4.0.*  # [osx]\n    - {{ pin_compatible('numpy') }}\n\ntest:\n  imports:\n    - cysgp4\n\n  commands: python -c \"import cysgp4; cysgp4.test()\"\n\nabout:\n  home: https://github.com/bwinkel/{{ name }}\n  license: GPL-3.0 AND Apache-2.0 AND BSD-3-Clause\n  license_file:\n    - COPYING.GPLv3.txt\n    - COPYING.Apache2\n    - TEMPLATE_LICENCE.rst\n  summary: Cysgp4 is a wrapper around the SGP4 package, for sat TLE calculations\n  description: |\n    The cysgp4 package is a Cython-powered wrapper of the sgp4 C++ library\n    by Daniel Warner to compute satellite positions from two-line elements\n    (TLE). It provides similar functionality as the well-known sgp4 Python\n    package by Brandon Rhodes, which uses Numba internally to speed-up the\n    calculations. In contrast to sgp4, cysgp4 can work well with arrays of\n    TLEs and/or times and make use of multi-core platforms (via OpenMP) to\n    boost processing times a lot.\n  dev_url: https://github.com/bwinkel/{{ name }}\n\nextra:\n  recipe-maintainers:\n    - bwinkel\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "The cysgp4 package is a Cython-powered wrapper of the sgp4 C++ library\nby Daniel Warner to compute satellite positions from two-line elements\n(TLE). It provides similar functionality as the well-known sgp4 Python\npackage by Brandon Rhodes, which uses Numba internally to speed-up the\ncalculations. In contrast to sgp4, cysgp4 can work well with arrays of\nTLEs and/or times and make use of multi-core platforms (via OpenMP) to\nboost processing times a lot.\n",
+   "dev_url": "https://github.com/bwinkel/cysgp4",
+   "home": "https://github.com/bwinkel/cysgp4",
+   "license": "GPL-3.0 AND Apache-2.0 AND BSD-3-Clause",
+   "license_file": [
+    "COPYING.Apache2",
+    "COPYING.GPLv3.txt",
+    "TEMPLATE_LICENCE.rst"
+   ],
+   "summary": "Cysgp4 is a wrapper around the SGP4 package, for sat TLE calculations"
+  },
+  "build": {
+   "number": "0",
+   "script": "/usr/local/miniconda/conda-bld/cysgp4_1585248783110/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeh/bin/python -m pip install . --no-deps -vv",
+   "string": "py37h236b0a6_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "bwinkel"
+   ]
+  },
+  "package": {
+   "name": "cysgp4",
+   "version": "0.3.2"
+  },
+  "requirements": {
+   "build": [
+    "cctools 927.0.2 h5ba7a2e_4",
+    "clang 9.0.1 default_hf57f61e_0",
+    "clang_osx-64 9.0.1 h05bbb7f_0",
+    "clangxx 9.0.1 default_hf57f61e_0",
+    "clangxx_osx-64 9.0.1 h05bbb7f_0",
+    "compiler-rt 9.0.1 h6a512c6_3",
+    "compiler-rt_osx-64 9.0.1 h99342c6_3",
+    "ld64 450.3 h3c32e8a_4",
+    "libcxx 9.0.1 1",
+    "libllvm9 9.0.1 ha1b3eb9_0",
+    "tapi 1000.10.8 ha1b3eb9_4"
+   ],
+   "host": [
+    "ca-certificates 2019.11.28 hecc5488_0",
+    "certifi 2019.11.28 py37hc8dfbb8_1",
+    "clangdev 4.0.0 default_0",
+    "cython 0.29.16 py37h570ac47_0",
+    "icu 64.2 h6de7cb9_1",
+    "libblas 3.8.0 14_openblas",
+    "libcblas 3.8.0 14_openblas",
+    "libcxx 9.0.1 1",
+    "libffi 3.2.1 h4a8c4bd_1007",
+    "libgfortran 4.0.0 0",
+    "libiconv 1.15 h0b31af3_1006",
+    "liblapack 3.8.0 14_openblas",
+    "libopenblas 0.3.7 h3d69b6c_4",
+    "libxml2 2.9.10 h53d96d6_0",
+    "llvmdev 4.0.0 default_0",
+    "ncurses 6.1 h0a44026_1002",
+    "numpy 1.14.6 py37hde6bac1_1201",
+    "openmp 4.0.0 1",
+    "openssl 1.1.1e h0b31af3_0",
+    "pip 20.0.2 py_2",
+    "python 3.7.6 h90870a6_5_cpython",
+    "python_abi 3.7 1_cp37m",
+    "readline 8.0 hcfe32e1_0",
+    "setuptools 46.1.3 py37hc8dfbb8_0",
+    "setuptools-scm 3.5.0 py_1",
+    "setuptools_scm 3.5.0 1",
+    "sqlite 3.30.1 h93121df_0",
+    "tk 8.6.10 hbbe82c9_0",
+    "wheel 0.34.2 py_1",
+    "xz 5.2.4 h0b31af3_1002",
+    "zlib 1.2.11 h0b31af3_1006"
+   ],
+   "run": [
+    "libcxx >=9.0.1",
+    "numpy >=1.14.6,<2.0a0",
+    "openmp 4.0.*",
+    "python >=3.7,<3.8.0a0",
+    "python_abi 3.7.* *_cp37m",
+    "setuptools"
+   ]
+  },
+  "source": {
+   "sha256": "b4f58bc19a50e54a27a57d4b66b31af47805bb408f2f8665548ae4c08fef1db3",
+   "url": "https://pypi.io/packages/source/c/cysgp4/cysgp4-0.3.2.tar.gz"
+  },
+  "test": {
+   "commands": "python -c \"import cysgp4; cysgp4.test()\"",
+   "imports": [
+    "cysgp4"
+   ]
+  }
+ },
+ "version": "0.3.2"
+}
