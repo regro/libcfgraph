@@ -1,0 +1,235 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.20.2",
+  "conda_private": false,
+  "conda_version": "4.8.4",
+  "description": "As of writing, conda-forge has versions of the linux compilers that are ahead of the\nones in the global pinnings. The current_repodata.json file only pulls in the latest\nversion of a package by default. Thus anytime one asks for the compilers in the pinnings,\nthe solver will always fail on current_repodata.json and have to pull all of the repodata.\nThe packages here make sure the latest versions of the compilers we use are in\ncurrent_repodata.json by depending on those packages. Thus it solves the solver inefficiency.\nIt also helps in cases when the solver appears to pull older builds of the compilers when they are\nnot explicitly asked for in the environment.\n",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "parent_recipe": {
+    "name": "_current_repodata_hack",
+    "path": "/home/conda/recipe_root",
+    "version": "0.0.3"
+   },
+   "recipe-maintainers": [
+    "isuruf"
+   ]
+  },
+  "home": "https://github.com/conda-forge/_current_repodata_hack-feedstock",
+  "identifiers": [],
+  "keywords": [],
+  "license": "LicenseRef-OTHER",
+  "root_pkgs": [
+   "idna 2.10 pyh9f0ad1d_0",
+   "ripgrep 12.1.1 h516909a_0",
+   "pytz 2020.1 pyh9f0ad1d_0",
+   "pkginfo 1.5.0.1 py_0",
+   "lzo 2.10 h516909a_1000",
+   "perl 5.26.2 h516909a_1006",
+   "cffi 1.14.1 py37h2b28604_0",
+   "krb5 1.17.1 hfafb76e_3",
+   "libedit 3.1.20191231 he28a2e2_2",
+   "certifi 2020.6.20 py37hc8dfbb8_0",
+   "openssl 1.1.1g h516909a_1",
+   "libcurl 7.71.1 hcdd3856_5",
+   "gettext 0.19.8.1 hc5be6a0_1002",
+   "libgomp 9.3.0 h24d8f2e_16",
+   "pyyaml 5.3.1 py37h8f50634_0",
+   "nbformat 5.0.7 py_0",
+   "curl 7.71.1 he644dc0_5",
+   "libssh2 1.9.0 hab1572f_5",
+   "jsonschema 3.2.0 py37hc8dfbb8_1",
+   "libev 4.33 h516909a_1",
+   "patchelf 0.11 he1b5a44_0",
+   "python 3.7.8 h6f2ec95_1_cpython",
+   "tk 8.6.10 hed695b0_0",
+   "expat 2.2.9 he1b5a44_2",
+   "libarchive 3.3.3 hddc7a2b_1008",
+   "pip 20.2.3 py_0",
+   "libiconv 1.16 h516909a_0",
+   "pysocks 1.7.1 py37hc8dfbb8_1",
+   "pycparser 2.20 pyh9f0ad1d_2",
+   "soupsieve 2.0.1 py_1",
+   "wheel 0.35.1 pyh9f0ad1d_0",
+   "importlib_metadata 1.7.0 0",
+   "pyrsistent 0.17.3 py37h8f50634_0",
+   "tini 0.18.0 h14c3975_1001",
+   "pyopenssl 19.1.0 py_1",
+   "lz4-c 1.9.2 he1b5a44_3",
+   "glob2 0.7 py_0",
+   "filelock 3.0.12 pyh9f0ad1d_0",
+   "pycosat 0.6.3 py37h8f50634_1004",
+   "git 2.28.0 pl526h5e3e691_1",
+   "traitlets 5.0.4 py_0",
+   "liblief 0.10.1 he1b5a44_1",
+   "_openmp_mutex 4.5 1_gnu",
+   "tqdm 4.49.0 pyh9f0ad1d_0",
+   "libffi 3.2.1 he1b5a44_1007",
+   "libstdcxx-ng 9.3.0 hdf63c60_16",
+   "zlib 1.2.11 h516909a_1009",
+   "ca-certificates 2020.6.20 hecda079_0",
+   "ipython_genutils 0.2.0 py_1",
+   "six 1.15.0 pyh9f0ad1d_0",
+   "patch 2.7.6 h14c3975_1001",
+   "jupyter_core 4.6.3 py37hc8dfbb8_1",
+   "readline 8.0 he28a2e2_2",
+   "python-libarchive-c 2.9 py37_0",
+   "sqlite 3.33.0 h4cf870e_0",
+   "anaconda-client 1.7.2 py_0",
+   "ruamel_yaml 0.15.80 py37h8f50634_1002",
+   "importlib-metadata 1.7.0 py37hc8dfbb8_0",
+   "brotlipy 0.7.0 py37h8f50634_1000",
+   "conda-package-handling 1.7.0 py37h8f50634_4",
+   "xz 5.2.5 h516909a_1",
+   "_libgcc_mutex 0.1 conda_forge",
+   "python_abi 3.7 1_cp37m",
+   "jinja2 2.11.2 pyh9f0ad1d_0",
+   "psutil 5.7.2 py37h8f50634_0",
+   "bzip2 1.0.8 h516909a_3",
+   "setuptools 49.6.0 py37hc8dfbb8_0",
+   "urllib3 1.25.10 py_0",
+   "conda 4.8.4 py37hc8dfbb8_2",
+   "clyent 1.2.2 py_1",
+   "libgcc-ng 9.3.0 h24d8f2e_16",
+   "libnghttp2 1.41.0 h8cfc5f6_2",
+   "zstd 1.4.5 h6597ccf_2",
+   "attrs 20.2.0 pyh9f0ad1d_0",
+   "pcre 8.44 he1b5a44_0",
+   "py-lief 0.10.1 py37h3340039_1",
+   "conda-build 3.20.2 py37hc8dfbb8_0",
+   "c-ares 1.16.1 h516909a_3",
+   "cryptography 3.1 py37hb09aad4_0",
+   "python-dateutil 2.8.1 py_0",
+   "libxml2 2.9.10 h68273f3_2",
+   "yaml 0.2.5 h516909a_0",
+   "ld_impl_linux-64 2.35 h769bd43_9",
+   "ncurses 6.2 he1b5a44_1",
+   "beautifulsoup4 4.9.1 py_1",
+   "su-exec 0.2 h516909a_1002",
+   "chardet 3.0.4 py37hc8dfbb8_1006",
+   "requests 2.24.0 pyh9f0ad1d_0",
+   "icu 67.1 he1b5a44_0",
+   "zipp 3.1.0 py_0",
+   "markupsafe 1.1.1 py37h8f50634_1",
+   "conda-env 2.6.0 1",
+   "oniguruma 6.9.3 h516909a_0",
+   "jq 1.6 h14c3975_1000",
+   "shyaml 0.6.1 py_0",
+   "conda-forge-ci-setup 3.2.1 py37h71091ce_0",
+   "click 7.1.2 pyh9f0ad1d_0"
+  ],
+  "summary": "Meta-package to fix current_repodata",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CI": "azure",
+  "c_compiler": "gcc",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "docker_image": "condaforge/linux-anvil-comp7",
+  "extend_keys": [
+   "extend_keys",
+   "ignore_build_only_deps",
+   "ignore_version",
+   "pin_run_as_build"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "python",
+   "numpy"
+  ],
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.2",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   }
+  },
+  "python": "3.7",
+  "r_base": "3.5",
+  "target_platform": "linux-64"
+ },
+ "files": [],
+ "index": {
+  "arch": "x86_64",
+  "build": "0",
+  "build_number": 0,
+  "depends": [
+   "gcc_impl_linux-64 7.5.*",
+   "gcc_linux-64 7.5.*",
+   "gfortran_impl_linux-64 7.5.*",
+   "gfortran_linux-64 7.5.*",
+   "gxx_impl_linux-64 7.5.*",
+   "gxx_linux-64 7.5.*",
+   "libgcc-devel_linux-64 7.5.*",
+   "libstdcxx-devel_linux-64 7.5.*"
+  ],
+  "license": "LicenseRef-OTHER",
+  "name": "_current_repodata_hack_gcc_linux_64_75",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1600100196643,
+  "version": "0.0.3"
+ },
+ "metadata_version": 1,
+ "name": "_current_repodata_hack_gcc_linux_64_75",
+ "raw_recipe": "# This file created by conda-build 3.20.2\n# ------------------------------------------------\n\npackage:\n    name: _current_repodata_hack_gcc_linux_64_75\n    version: 0.0.3\nbuild:\n    number: 0\n    string: '0'\nrequirements:\n    run:\n        - gcc_impl_linux-64 7.5.*\n        - gcc_linux-64 7.5.*\n        - gfortran_impl_linux-64 7.5.*\n        - gfortran_linux-64 7.5.*\n        - gxx_impl_linux-64 7.5.*\n        - gxx_linux-64 7.5.*\n        - libgcc-devel_linux-64 7.5.*\n        - libstdcxx-devel_linux-64 7.5.*\ntest:\n    commands:\n        - echo \"hello\"\nabout:\n    description: 'As of writing, conda-forge has versions of the linux compilers that\n        are ahead of the\n\n        ones in the global pinnings. The current_repodata.json file only pulls in\n        the latest\n\n        version of a package by default. Thus anytime one asks for the compilers in\n        the pinnings,\n\n        the solver will always fail on current_repodata.json and have to pull all\n        of the repodata.\n\n        The packages here make sure the latest versions of the compilers we use are\n        in\n\n        current_repodata.json by depending on those packages. Thus it solves the solver\n        inefficiency.\n\n        It also helps in cases when the solver appears to pull older builds of the\n        compilers when they are\n\n        not explicitly asked for in the environment.\n\n        '\n    home: https://github.com/conda-forge/_current_repodata_hack-feedstock\n    license: LicenseRef-OTHER\n    summary: Meta-package to fix current_repodata\nextra:\n    copy_test_source_files: true\n    final: true\n    recipe-maintainers:\n        - isuruf\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "As of writing, conda-forge has versions of the linux compilers that are ahead of the\nones in the global pinnings. The current_repodata.json file only pulls in the latest\nversion of a package by default. Thus anytime one asks for the compilers in the pinnings,\nthe solver will always fail on current_repodata.json and have to pull all of the repodata.\nThe packages here make sure the latest versions of the compilers we use are in\ncurrent_repodata.json by depending on those packages. Thus it solves the solver inefficiency.\nIt also helps in cases when the solver appears to pull older builds of the compilers when they are\nnot explicitly asked for in the environment.\n",
+   "home": "https://github.com/conda-forge/_current_repodata_hack-feedstock",
+   "license": "LicenseRef-OTHER",
+   "summary": "Meta-package to fix current_repodata"
+  },
+  "build": {
+   "number": 0,
+   "string": "0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "isuruf"
+   ]
+  },
+  "package": {
+   "name": "_current_repodata_hack_gcc_linux_64_75",
+   "version": "0.0.3"
+  },
+  "requirements": {
+   "run": [
+    "gcc_impl_linux-64 7.5.*",
+    "gcc_linux-64 7.5.*",
+    "gfortran_impl_linux-64 7.5.*",
+    "gfortran_linux-64 7.5.*",
+    "gxx_impl_linux-64 7.5.*",
+    "gxx_linux-64 7.5.*",
+    "libgcc-devel_linux-64 7.5.*",
+    "libstdcxx-devel_linux-64 7.5.*"
+   ]
+  },
+  "test": {
+   "commands": [
+    "echo \"hello\""
+   ]
+  }
+ },
+ "version": "0.0.3"
+}
