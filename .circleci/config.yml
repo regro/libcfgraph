@@ -32,7 +32,7 @@ jobs:
       - run:
           name: list files
           command: |
-            xonsh -c "import json; json.dump(g`artifacts/**`, open('.file_listing.json', 'w'), indent=2)"
+            python -c "import json; import glob; json.dump(glob.glob('artifacts/**/*.json', recursive=True), open('.file_listing.json', 'w'), indent=2)"
       - run:
           name: Report diff
           command: |
