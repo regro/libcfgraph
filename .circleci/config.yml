@@ -26,6 +26,10 @@ jobs:
             python -m libcflib.harvest_pkgs
           no_output_timeout: 60m
       - run:
+          name: make import mapping
+          command: |
+            python -m libcflib.analyze_pkgs
+      - run:
           name: list files
           command: |
             xonsh -c "import json; json.dump(g`artifacts/**`, open('.file_listing.json', 'w'), indent=2)"
