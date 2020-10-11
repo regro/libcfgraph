@@ -1,0 +1,372 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.20.3",
+  "conda_private": false,
+  "conda_version": "4.8.5",
+  "description": "Faiss is a library for efficient similarity search and clustering of dense vectors.\nIt contains algorithms that search in sets of vectors of any size, up to ones that\npossibly do not fit in RAM. It also contains supporting code for evaluation and\nparameter tuning. Faiss is written in C++ with complete wrappers for Python/numpy.\nSome of the most useful algorithms are implemented on the GPU. It is developed by\n[Facebook AI Research](https://research.fb.com/category/facebook-ai-research-fair/).\n\nFor best performance, the maintainers of the package\n[recommend](https://github.com/conda-forge/staged-recipes/pull/11337#issuecomment-623718460)\nusing the MKL implementation of blas/lapack. You can ensure that this is installed\nby adding \"libblas =*=*mkl\" to your dependencies.\n",
+  "dev_url": "https://github.com/facebookresearch/faiss",
+  "doc_url": "https://rawgit.com/facebookresearch/faiss/master/docs/html/annotated.html",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "parent_recipe": {
+    "name": "faiss-split",
+    "path": "/home/conda/recipe_root",
+    "version": "1.6.3"
+   },
+   "recipe-maintainers": [
+    "h-vetinari"
+   ]
+  },
+  "home": "https://github.com/facebookresearch/faiss",
+  "identifiers": [],
+  "keywords": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "license_file": "LICENSE",
+  "root_pkgs": [
+   "pytz 2020.1 pyh9f0ad1d_0",
+   "urllib3 1.25.10 py_0",
+   "bzip2 1.0.8 h516909a_3",
+   "filelock 3.0.12 pyh9f0ad1d_0",
+   "zstd 1.4.5 h6597ccf_2",
+   "libgomp 9.3.0 h5dbcf3e_17",
+   "tk 8.6.10 hed695b0_1",
+   "pyopenssl 19.1.0 py_1",
+   "patchelf 0.11 he1b5a44_0",
+   "setuptools 49.6.0 py38h924ce5b_2",
+   "readline 8.0 he28a2e2_2",
+   "lz4-c 1.9.2 he1b5a44_3",
+   "zlib 1.2.11 h516909a_1009",
+   "patch 2.7.6 h14c3975_1001",
+   "zipp 3.3.0 py_0",
+   "anaconda-client 1.7.2 py_0",
+   "pycparser 2.20 pyh9f0ad1d_2",
+   "git 2.28.0 pl526h5e3e691_1",
+   "lzo 2.10 h516909a_1000",
+   "python-libarchive-c 2.9 py38h32f6830_1",
+   "pip 20.2.3 py_0",
+   "attrs 20.2.0 pyh9f0ad1d_0",
+   "liblief 0.10.1 he1b5a44_1",
+   "tini 0.18.0 h14c3975_1001",
+   "libev 4.33 h516909a_1",
+   "sqlite 3.33.0 h4cf870e_1",
+   "yaml 0.2.5 h516909a_0",
+   "clyent 1.2.2 py_1",
+   "libnghttp2 1.41.0 h8cfc5f6_2",
+   "importlib-metadata 2.0.0 py_1",
+   "pkginfo 1.5.0.1 py_0",
+   "idna 2.10 pyh9f0ad1d_0",
+   "py-lief 0.10.1 py38h950e882_1",
+   "ruamel_yaml 0.15.80 py38h1e0a361_1002",
+   "openssl 1.1.1h h516909a_0",
+   "psutil 5.7.2 py38h8df0ef7_1",
+   "curl 7.71.1 he644dc0_8",
+   "cffi 1.14.3 py38h5bae8af_0",
+   "conda-build 3.20.3 py38h32f6830_0",
+   "pycosat 0.6.3 py38h8df0ef7_1005",
+   "conda 4.8.5 py38h924ce5b_2",
+   "nbformat 5.0.7 py_0",
+   "perl 5.26.2 h516909a_1006",
+   "six 1.15.0 pyh9f0ad1d_0",
+   "jinja2 2.11.2 pyh9f0ad1d_0",
+   "ncurses 6.2 he1b5a44_1",
+   "jupyter_core 4.6.3 py38h32f6830_1",
+   "libarchive 3.4.3 hf837322_0",
+   "conda-package-handling 1.7.0 py38h1e0a361_5",
+   "libffi 3.2.1 he1b5a44_1007",
+   "requests 2.24.0 pyh9f0ad1d_0",
+   "_openmp_mutex 4.5 1_gnu",
+   "cryptography 3.1.1 py38h766eaa4_0",
+   "gettext 0.19.8.1 hc5be6a0_1002",
+   "tqdm 4.50.2 pyh9f0ad1d_0",
+   "su-exec 0.2 h516909a_1002",
+   "traitlets 5.0.4 py_1",
+   "ripgrep 12.1.1 h516909a_0",
+   "beautifulsoup4 4.9.3 pyhb0f4dca_0",
+   "jsonschema 3.2.0 py38h32f6830_1",
+   "soupsieve 2.0.1 py_1",
+   "wheel 0.35.1 pyh9f0ad1d_0",
+   "expat 2.2.9 he1b5a44_2",
+   "libiconv 1.16 h516909a_0",
+   "pcre 8.44 he1b5a44_0",
+   "ld_impl_linux-64 2.35 h769bd43_9",
+   "ipython_genutils 0.2.0 py_1",
+   "icu 67.1 he1b5a44_0",
+   "ca-certificates 2020.6.20 hecda079_0",
+   "libgcc-ng 9.3.0 h5dbcf3e_17",
+   "libssh2 1.9.0 hab1572f_5",
+   "libxml2 2.9.10 h68273f3_2",
+   "xz 5.2.5 h516909a_1",
+   "libcurl 7.71.1 hcdd3856_8",
+   "_libgcc_mutex 0.1 conda_forge",
+   "libstdcxx-ng 9.3.0 h2ae2ef3_17",
+   "brotlipy 0.7.0 py38h1e0a361_1000",
+   "python 3.8.6 h852b56e_0_cpython",
+   "c-ares 1.16.1 h516909a_3",
+   "python-dateutil 2.8.1 py_0",
+   "krb5 1.17.1 hfafb76e_3",
+   "pyyaml 5.3.1 py38h1e0a361_0",
+   "pyrsistent 0.17.3 py38h1e0a361_1",
+   "chardet 3.0.4 py38h924ce5b_1008",
+   "markupsafe 1.1.1 py38h8df0ef7_2",
+   "libedit 3.1.20191231 he28a2e2_2",
+   "python_abi 3.8 1_cp38",
+   "importlib_metadata 2.0.0 1",
+   "certifi 2020.6.20 py38h924ce5b_2",
+   "pysocks 1.7.1 py38h924ce5b_2",
+   "glob2 0.7 py_0",
+   "oniguruma 6.9.3 h516909a_0",
+   "conda-env 2.6.0 1",
+   "jq 1.6 h14c3975_1000",
+   "conda-forge-ci-setup 3.4.0 py38h9b328fc_0",
+   "shyaml 0.6.1 py_0",
+   "click 7.1.2 pyh9f0ad1d_0"
+  ],
+  "summary": "A library for efficient similarity search and clustering of dense vectors.",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CI": "azure",
+  "c_compiler": "gcc",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cuda_compiler": "nvcc",
+  "cuda_compiler_version": "11.0",
+  "cxx_compiler": "gxx",
+  "cxx_compiler_version": "7",
+  "docker_image": "condaforge/linux-anvil-cuda:11.0",
+  "extend_keys": [
+   "ignore_build_only_deps",
+   "pin_run_as_build",
+   "extend_keys",
+   "ignore_version"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "python",
+   "numpy"
+  ],
+  "libblas": "3.8 *netlib",
+  "liblapack": "3.8.0 *netlib",
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.2",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   }
+  },
+  "python": "3.8.* *_cpython",
+  "r_base": "3.5",
+  "target_platform": "linux-64",
+  "zip_keys": [
+   [
+    "cuda_compiler_version",
+    "docker_image"
+   ]
+  ]
+ },
+ "files": [
+  "lib/python3.8/site-packages/faiss-1.6.3.dist-info/INSTALLER",
+  "lib/python3.8/site-packages/faiss-1.6.3.dist-info/METADATA",
+  "lib/python3.8/site-packages/faiss-1.6.3.dist-info/RECORD",
+  "lib/python3.8/site-packages/faiss-1.6.3.dist-info/REQUESTED",
+  "lib/python3.8/site-packages/faiss-1.6.3.dist-info/WHEEL",
+  "lib/python3.8/site-packages/faiss-1.6.3.dist-info/direct_url.json",
+  "lib/python3.8/site-packages/faiss/__init__.py",
+  "lib/python3.8/site-packages/faiss/_swigfaiss.so",
+  "lib/python3.8/site-packages/faiss/swigfaiss.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py38hb61388c_3_cuda",
+  "build_number": 3,
+  "constrains": [
+   "faiss-proc * cuda"
+  ],
+  "depends": [
+   "__glibc >=2.17",
+   "_openmp_mutex >=4.5",
+   "cudatoolkit 11.0|11.0.*",
+   "libblas >=3.8.0,<4.0a0",
+   "libfaiss 1.6.3 *_cuda",
+   "libgcc-ng >=7.5.0",
+   "liblapack >=3.8.0,<3.9.0a0",
+   "libstdcxx-ng >=7.5.0",
+   "numpy >=1.14.6,<2.0a0",
+   "python_abi 3.8.* *_cp38"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "faiss",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1602376025487,
+  "version": "1.6.3"
+ },
+ "metadata_version": 1,
+ "name": "faiss",
+ "raw_recipe": "# This file created by conda-build 3.20.3\n# ------------------------------------------------\n\npackage:\n    name: faiss\n    version: 1.6.3\nsource:\n    patches:\n        - patches/0001-change-python-Makefile-to-point-to-libfaiss.-SHLIB_E.patch\n        - patches/0003-remove-deleted-files-from-template-change.patch\n        - patches/0004-CUDA-8-fixes.patch\n        - patches/0005-CUDA-10-fixes.patch\n        - patches/0006-update-util-guard-for-ampere-backport-of-facebookres.patch\n        - patches/0007-use-c-14.patch\n        - patches/0008-backport-facebookresearch-faiss-1388.patch\n    sha256: e1a41c159f0b896975fbb133e0240a233af5c9286c09a28fde6aefff5336e542\n    url: https://github.com/facebookresearch/faiss/archive/v1.6.3.tar.gz\nbuild:\n    number: 3\n    string: py38hb61388c_3_cuda\nrequirements:\n    build:\n        - _libgcc_mutex 0.1 conda_forge\n        - _openmp_mutex 4.5 1_gnu\n        - _sysroot_linux-64_curr_repodata_hack 3 ha9d2b57_10\n        - binutils_impl_linux-64 2.35 h18a2f87_9\n        - binutils_linux-64 2.35 hc3fd857_29\n        - bzip2 1.0.8 h516909a_3\n        - c-ares 1.16.1 h516909a_3\n        - ca-certificates 2020.6.20 hecda079_0\n        - cmake 3.18.2 h5c55442_0\n        - expat 2.2.9 he1b5a44_2\n        - gcc_impl_linux-64 7.5.0 hd9e1a51_17\n        - gcc_linux-64 7.5.0 he2a3fca_29\n        - gxx_impl_linux-64 7.5.0 h7ea4de1_17\n        - gxx_linux-64 7.5.0 h547f3ba_29\n        - kernel-headers_linux-64 3.10.0 h77966d4_10\n        - krb5 1.17.1 hfafb76e_3\n        - ld_impl_linux-64 2.35 h769bd43_9\n        - libcurl 7.71.1 hcdd3856_8\n        - libedit 3.1.20191231 he28a2e2_2\n        - libev 4.33 h516909a_1\n        - libgcc-devel_linux-64 7.5.0 h42c25f5_17\n        - libgcc-ng 9.3.0 h5dbcf3e_17\n        - libgomp 9.3.0 h5dbcf3e_17\n        - libnghttp2 1.41.0 h8cfc5f6_2\n        - libssh2 1.9.0 hab1572f_5\n        - libstdcxx-devel_linux-64 7.5.0 h4084dd6_17\n        - libstdcxx-ng 9.3.0 h2ae2ef3_17\n        - libuv 1.40.0 h516909a_0\n        - ncurses 6.2 he1b5a44_1\n        - nvcc_linux-64 11.0 he443bbd_6\n        - openssl 1.1.1h h516909a_0\n        - pcre 8.44 he1b5a44_0\n        - rhash 1.3.6 h14c3975_1001\n        - swig 4.0.2 he1b5a44_0\n        - sysroot_linux-64 2.17 h77966d4_10\n        - tk 8.6.10 hed695b0_1\n        - xz 5.2.5 h516909a_1\n        - zlib 1.2.11 h516909a_1009\n    host:\n        - _libgcc_mutex 0.1 conda_forge\n        - _openmp_mutex 4.5 1_gnu\n        - ca-certificates 2020.6.20 hecda079_0\n        - certifi 2020.6.20 py38h924ce5b_2\n        - cudatoolkit 11.0.221 h6bb024c_0\n        - ld_impl_linux-64 2.35 h769bd43_9\n        - libblas 3.8.0 8_h6e990d7_netlib\n        - libcblas 3.8.0 8_h6e990d7_netlib\n        - libfaiss =1.6.3=*_cuda\n        - libffi 3.2.1 he1b5a44_1007\n        - libgcc-ng 9.3.0 h5dbcf3e_17\n        - libgfortran-ng 7.5.0 hae1eefd_17\n        - libgfortran4 7.5.0 hae1eefd_17\n        - libgomp 9.3.0 h5dbcf3e_17\n        - liblapack 3.8.0 8_h6e990d7_netlib\n        - libstdcxx-ng 9.3.0 h2ae2ef3_17\n        - ncurses 6.2 he1b5a44_1\n        - numpy 1.14.6 py38h95a1406_1201\n        - openssl 1.1.1h h516909a_0\n        - pip 20.2.3 py_0\n        - python 3.8.6 h852b56e_0_cpython\n        - python_abi 3.8 1_cp38\n        - readline 8.0 he28a2e2_2\n        - setuptools 49.6.0 py38h924ce5b_2\n        - sqlite 3.33.0 h4cf870e_1\n        - tk 8.6.10 hed695b0_1\n        - wheel 0.35.1 pyh9f0ad1d_0\n        - xz 5.2.5 h516909a_1\n        - zlib 1.2.11 h516909a_1009\n    run:\n        - __glibc >=2.17\n        - _openmp_mutex >=4.5\n        - cudatoolkit 11.0|11.0.*\n        - libblas >=3.8.0,<4.0a0\n        - libfaiss =1.6.3=*_cuda\n        - libgcc-ng >=7.5.0\n        - liblapack >=3.8.0,<3.9.0a0\n        - libstdcxx-ng >=7.5.0\n        - numpy >=1.14.6,<2.0a0\n        - python_abi 3.8.* *_cp38\n    run_constrained:\n        - faiss-proc * cuda\ntest:\n    commands:\n        - python conda/faiss/run_test.py\n        - python -m unittest discover tests\n    imports:\n        - faiss\n    requires:\n        - blas =*=mkl\n        - scipy\n    source_files:\n        - conda/faiss-gpu/run_test.py\n        - conda/faiss/run_test.py\n        - tests/\nabout:\n    description: 'Faiss is a library for efficient similarity search and clustering\n        of dense vectors.\n\n        It contains algorithms that search in sets of vectors of any size, up to ones\n        that\n\n        possibly do not fit in RAM. It also contains supporting code for evaluation\n        and\n\n        parameter tuning. Faiss is written in C++ with complete wrappers for Python/numpy.\n\n        Some of the most useful algorithms are implemented on the GPU. It is developed\n        by\n\n        [Facebook AI Research](https://research.fb.com/category/facebook-ai-research-fair/).\n\n\n        For best performance, the maintainers of the package\n\n        [recommend](https://github.com/conda-forge/staged-recipes/pull/11337#issuecomment-623718460)\n\n        using the MKL implementation of blas/lapack. You can ensure that this is installed\n\n        by adding \"libblas =*=*mkl\" to your dependencies.\n\n        '\n    dev_url: https://github.com/facebookresearch/faiss\n    doc_url: https://rawgit.com/facebookresearch/faiss/master/docs/html/annotated.html\n    home: https://github.com/facebookresearch/faiss\n    license: MIT\n    license_family: MIT\n    license_file: LICENSE\n    summary: A library for efficient similarity search and clustering of dense vectors.\nextra:\n    copy_test_source_files: true\n    final: true\n    recipe-maintainers:\n        - h-vetinari\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Faiss is a library for efficient similarity search and clustering of dense vectors.\nIt contains algorithms that search in sets of vectors of any size, up to ones that\npossibly do not fit in RAM. It also contains supporting code for evaluation and\nparameter tuning. Faiss is written in C++ with complete wrappers for Python/numpy.\nSome of the most useful algorithms are implemented on the GPU. It is developed by\n[Facebook AI Research](https://research.fb.com/category/facebook-ai-research-fair/).\n\nFor best performance, the maintainers of the package\n[recommend](https://github.com/conda-forge/staged-recipes/pull/11337#issuecomment-623718460)\nusing the MKL implementation of blas/lapack. You can ensure that this is installed\nby adding \"libblas =*=*mkl\" to your dependencies.\n",
+   "dev_url": "https://github.com/facebookresearch/faiss",
+   "doc_url": "https://rawgit.com/facebookresearch/faiss/master/docs/html/annotated.html",
+   "home": "https://github.com/facebookresearch/faiss",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "A library for efficient similarity search and clustering of dense vectors."
+  },
+  "build": {
+   "number": 3,
+   "string": "py38hb61388c_3_cuda"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "h-vetinari"
+   ]
+  },
+  "package": {
+   "name": "faiss",
+   "version": "1.6.3"
+  },
+  "requirements": {
+   "build": [
+    "_libgcc_mutex 0.1 conda_forge",
+    "_openmp_mutex 4.5 1_gnu",
+    "_sysroot_linux-64_curr_repodata_hack 3 ha9d2b57_10",
+    "binutils_impl_linux-64 2.35 h18a2f87_9",
+    "binutils_linux-64 2.35 hc3fd857_29",
+    "bzip2 1.0.8 h516909a_3",
+    "c-ares 1.16.1 h516909a_3",
+    "ca-certificates 2020.6.20 hecda079_0",
+    "cmake 3.18.2 h5c55442_0",
+    "expat 2.2.9 he1b5a44_2",
+    "gcc_impl_linux-64 7.5.0 hd9e1a51_17",
+    "gcc_linux-64 7.5.0 he2a3fca_29",
+    "gxx_impl_linux-64 7.5.0 h7ea4de1_17",
+    "gxx_linux-64 7.5.0 h547f3ba_29",
+    "kernel-headers_linux-64 3.10.0 h77966d4_10",
+    "krb5 1.17.1 hfafb76e_3",
+    "ld_impl_linux-64 2.35 h769bd43_9",
+    "libcurl 7.71.1 hcdd3856_8",
+    "libedit 3.1.20191231 he28a2e2_2",
+    "libev 4.33 h516909a_1",
+    "libgcc-devel_linux-64 7.5.0 h42c25f5_17",
+    "libgcc-ng 9.3.0 h5dbcf3e_17",
+    "libgomp 9.3.0 h5dbcf3e_17",
+    "libnghttp2 1.41.0 h8cfc5f6_2",
+    "libssh2 1.9.0 hab1572f_5",
+    "libstdcxx-devel_linux-64 7.5.0 h4084dd6_17",
+    "libstdcxx-ng 9.3.0 h2ae2ef3_17",
+    "libuv 1.40.0 h516909a_0",
+    "ncurses 6.2 he1b5a44_1",
+    "nvcc_linux-64 11.0 he443bbd_6",
+    "openssl 1.1.1h h516909a_0",
+    "pcre 8.44 he1b5a44_0",
+    "rhash 1.3.6 h14c3975_1001",
+    "swig 4.0.2 he1b5a44_0",
+    "sysroot_linux-64 2.17 h77966d4_10",
+    "tk 8.6.10 hed695b0_1",
+    "xz 5.2.5 h516909a_1",
+    "zlib 1.2.11 h516909a_1009"
+   ],
+   "host": [
+    "_libgcc_mutex 0.1 conda_forge",
+    "_openmp_mutex 4.5 1_gnu",
+    "ca-certificates 2020.6.20 hecda079_0",
+    "certifi 2020.6.20 py38h924ce5b_2",
+    "cudatoolkit 11.0.221 h6bb024c_0",
+    "ld_impl_linux-64 2.35 h769bd43_9",
+    "libblas 3.8.0 8_h6e990d7_netlib",
+    "libcblas 3.8.0 8_h6e990d7_netlib",
+    "libfaiss =1.6.3=*_cuda",
+    "libffi 3.2.1 he1b5a44_1007",
+    "libgcc-ng 9.3.0 h5dbcf3e_17",
+    "libgfortran-ng 7.5.0 hae1eefd_17",
+    "libgfortran4 7.5.0 hae1eefd_17",
+    "libgomp 9.3.0 h5dbcf3e_17",
+    "liblapack 3.8.0 8_h6e990d7_netlib",
+    "libstdcxx-ng 9.3.0 h2ae2ef3_17",
+    "ncurses 6.2 he1b5a44_1",
+    "numpy 1.14.6 py38h95a1406_1201",
+    "openssl 1.1.1h h516909a_0",
+    "pip 20.2.3 py_0",
+    "python 3.8.6 h852b56e_0_cpython",
+    "python_abi 3.8 1_cp38",
+    "readline 8.0 he28a2e2_2",
+    "setuptools 49.6.0 py38h924ce5b_2",
+    "sqlite 3.33.0 h4cf870e_1",
+    "tk 8.6.10 hed695b0_1",
+    "wheel 0.35.1 pyh9f0ad1d_0",
+    "xz 5.2.5 h516909a_1",
+    "zlib 1.2.11 h516909a_1009"
+   ],
+   "run": [
+    "__glibc >=2.17",
+    "_openmp_mutex >=4.5",
+    "cudatoolkit 11.0|11.0.*",
+    "libblas >=3.8.0,<4.0a0",
+    "libfaiss =1.6.3=*_cuda",
+    "libgcc-ng >=7.5.0",
+    "liblapack >=3.8.0,<3.9.0a0",
+    "libstdcxx-ng >=7.5.0",
+    "numpy >=1.14.6,<2.0a0",
+    "python_abi 3.8.* *_cp38"
+   ],
+   "run_constrained": [
+    "faiss-proc * cuda"
+   ]
+  },
+  "source": {
+   "patches": [
+    "patches/0001-change-python-Makefile-to-point-to-libfaiss.-SHLIB_E.patch",
+    "patches/0003-remove-deleted-files-from-template-change.patch",
+    "patches/0004-CUDA-8-fixes.patch",
+    "patches/0005-CUDA-10-fixes.patch",
+    "patches/0006-update-util-guard-for-ampere-backport-of-facebookres.patch",
+    "patches/0007-use-c-14.patch",
+    "patches/0008-backport-facebookresearch-faiss-1388.patch"
+   ],
+   "sha256": "e1a41c159f0b896975fbb133e0240a233af5c9286c09a28fde6aefff5336e542",
+   "url": "https://github.com/facebookresearch/faiss/archive/v1.6.3.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "python conda/faiss/run_test.py",
+    "python -m unittest discover tests"
+   ],
+   "imports": [
+    "faiss"
+   ],
+   "requires": [
+    "blas =*=mkl",
+    "scipy"
+   ],
+   "source_files": [
+    "conda/faiss-gpu/run_test.py",
+    "conda/faiss/run_test.py",
+    "tests/"
+   ]
+  }
+ },
+ "version": "1.6.3"
+}
