@@ -34,7 +34,12 @@ jobs:
         if: success() && ! env.CI_SKIP
         run: |
           conda install pip -y
-          pip install git+https:///github.com/regro/libcflib@master
+          git clone --depth=1 https:///github.com/regro/libcflib
+          pushd libcflib
+          python setup.py install
+          conda install --file requirements/run.txt -y
+          popd
+          rm -rf libcflib
 
       - name: preloader
         shell: bash -l {0}
