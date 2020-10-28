@@ -33,7 +33,7 @@ jobs:
         shell: bash -l {0}
         if: success() && ! env.CI_SKIP
         run: |
-          conda install pip
+          conda install pip -y
           pip install git+https:///github.com/regro/libcflib@master
 
       - name: preloader
