@@ -52,11 +52,11 @@ jobs:
         run: |
           python -m libcflib.preloader artifacts
 
-      - name: harvester
-        shell: bash -l {0}
-        if: success() && ! env.CI_SKIP
-        run: |
-          python -m libcflib.harvest_pkgs
+#       - name: harvester
+#         shell: bash -l {0}
+#         if: success() && ! env.CI_SKIP
+#         run: |
+#           python -m libcflib.harvest_pkgs
 
       - name: import mapper
         shell: bash -l {0}
