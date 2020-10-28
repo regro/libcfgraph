@@ -1,12 +1,17 @@
 name: reap
 
 on:
-  schedule:
-    - cron:  '0 * * * *'
-
+  push:
+    branches: 
+      - *
+#   schedule:
+#     - cron:  '0 * * * *'
+  
+  
+  
 jobs:
   reap:
-    name: reapt
+    name: reap
     runs-on: "ubuntu-latest"
     steps:
       - name: skip me
