@@ -1,6 +1,5 @@
 # libcfgraph
-
-Cron Status: [![CircleCI](https://circleci.com/gh/regro/libcfgraph.svg?style=svg)](https://circleci.com/gh/regro/libcfgraph)
+![reap](https://github.com/regro/libcfgraph/workflows/reap/badge.svg)
 
 Graph Data for Conda Forge Library
 
