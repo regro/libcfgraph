@@ -68,7 +68,7 @@ jobs:
         shell: bash -l {0}
         if: success() && ! env.CI_SKIP
         run: |
-          python -c "import json; import glob; json.dump(glob.glob('artifacts/**/*.json', recursive=True), open('.file_listing.json', 'w'), indent=2)"
+          python -c "import json; import glob; json.dump(glob.glob('**/*.json', recursive=True), open('.file_listing.json', 'w'), indent=2)"
 
       - name: report diff
         shell: bash -l {0}
