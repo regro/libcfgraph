@@ -1,0 +1,271 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge",
+   "defaults"
+  ],
+  "conda_build_version": "3.20.5",
+  "conda_private": false,
+  "conda_version": "4.9.2",
+  "description": "Genozip\n\n(available on Conda, Docker Hub and https://github.com/divonlan/genozip)\n\nGenozip is a compressor for genomic files - while it can compress any file (i.e. not only genomic files), it is optimized to compress FASTQ, SAM/BAM/CRAM, VCF/BCF, FASTA, GVF and 23andMe files. If can even compress them if they are already compressed with .gz .bz2 .xz (for full list of supported file types see 'genozip --help=input').\n\nIt achieves x2 to x5 better compression ratios than gzip because it leverages some properties specific to genomic data to compress better. It is also a lot faster than gzip.\n\nSign up to receive low-frequency updates related to Genozip: https://tinyurl.com/genozip\n\nThe compression is lossless - the decompressed file is 100% identical to the original file.\nNotes:\n1. Losslessness when the original file is already compressed (with .gz, .bz2 or .xz as well as .bam) is relative to the underlying uncompressed file. If the original file was compressed with BGZF (as in BAM and most genomic files with a .gz extension) - genounzip will re-compresses the file with BGZF upon decompression (unless --plain is specified), and, further, it will attempt to recover the exact same BGZF compression as in the original file. However, sometimes exact-same BGZF compression is not possible due to different libraries used.\n2. The one exception to Genozip's strict losslessness is when using the --optimize option which is lossy (see --help for details)\n\nThe command line options are similar to gzip and samtools/bcftools, so if you are familiar with these, it works pretty much the same. To get started, try: genozip --help\n\nCommands:\ngenozip   - compress one or more files\ngenounzip - decompress one or more files\ngenols    - show metadata of one or more files or the entire directory\ngenocat   - view one or more files\n\nSome examples:\n\nCreating a reference file:\ngenozip --make-reference myfasta.fa\n\nCompressing a FASTQ, SAM/BAM or VCF file(s) with a reference:\ngenozip --reference myfasta.ref.genozip mysample1.fq mysample2.fq mysample3.fq\ngenozip --reference myfasta.ref.genozip mysample.bam\ngenozip --reference myfasta.ref.genozip mysamples.vcf.gz\ngenozip --reference myfasta.ref.genozip *     \u2190compresses all files in the current directory\n\nNotes:\n1. Genozip can compress with or without a reference - using a reference achieves much better compression when compressing FASTQ or unaligned SAM/BAM, and modestly better compression in other cases\n2. SAM/BAM - compression of aligned or unaligned SAM/BAM files is possible. Sorting makes no difference\n3. Long reads - compression of long reads (Pac Bio / Nanopore) achieves signficantly better results when compressing an aligned BAM vs an unaligned BAM or FASTQ\n4. Compression of CRAM (but not SAM or BAM) files requires samtools to be installed\n5. Use --REFERENCE instead of --reference to store the relevant parts of the reference file as part of the compressed file itself, which will then allow decompression with genounzip without need of the reference file.\n\nCompressing and uncompressing paired-end reads with --pair - better than compressing FASTQs individually\ngenozip --reference myfasta.ref.genozip --pair mysample-R1.fastq.gz mysample-R2.fastq.gz\ngenounzip --reference myfasta.ref.genozip --unbind mysample-R1+2.fastq.genozip\n\nUsing genozip in a pipline:\ngenocat mysample.sam.genozip | samtools - .....\nmy-sam-outputing-method | genozip - --input sam --output mysample.sam.genozip\n\nLookups:\ngenocat --regions chr1:10000-20000 mysamples.vcf.genozip   \u2190displays a specific region\ngenocat --regions ^Y,MT mysamples.vcf.genozip   \u2190displays all chromosomes except Y and MT\ngenocat --regions -10000 mysample.sam.genozip   \u2190displays positions up to 10000\ngenocat --samples SMPL1,SMPL2 mysamples.vcf.genozip   \u2190displays 2 samples\ngenocat --grep August-10 myfasta.fa.genozip   \u2190displays contigs/reads that have \"August-10\" in the header\nNotes:\n1. --regions works with VCF, SAM/BAM, FASTA, 23andMe, GVF and reference files ; --grep works with FASTQ, FASTA ; --samples works with VCF\n2. There is no need for a separate indexing step or index file\n3. Many more options (see --help for full list): --no-header ; --header-only ; --sequential ; --list-chroms ; --drop-genotypes ; --GT-only\n\nBinding mutiple files into a single genozip file and unbinding:\ngenozip *.fq.gz -o all-samples.fq.genozip   \u2190binds all .fq.gz files in the current directory\ngenounzip my-project.fq.genozip --unbind\n\nCompressing even better, with some minor modifications of the data (therefore not lossless, see --help for details):\ngenozip file.bam --optimize\n\nCompressing faster, sacrificing a bit of compression ratio:\ngenozip file.bam --fast\n\nEncrypting (256 bit AES):\ngenozip file.vcf --password abc\ngenounzip file.vcf.genozip --password abc\n\nConverting SAM/BAM to FASTQ:\ngenounzip file.bam.genozip --fastq\n\nConverting 23andMe to VCF:\ngenounzip genome_mydata-Full.txt.genozip --vcf -e GRCh37.ref.genozip\n\nCalculating the MD5 of the underlying textual file (also included in --test):\ngenozip file.vcf --md5\ngenounzip file.vcf.genozip --md5\ngenols file.vcf.genozip\n\nCompressing and then verifying that the compressed file decompresses correctly:\ngenozip file.vcf --test\n\nCiting\nDo you find Genozip useful? Please support continued development by citing:\nLan, D., et al. Bioinformatics, 36, 4091\u20134092, July 2020, https://doi.org/10.1093/bioinformatics/btaa290\n\nFeature requests and bug reports: bugs@genozip.com\n\nGenozip is free for non-commercial use. For a commercial license, please contact sales@genozip.com\n\nUsage is subject to terms and conditions. The non-commercial license can be viewed with genozip --license\n\nTHIS SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+  "dev_url": "https://github.com/divonlan/genozip",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "divonlan"
+   ]
+  },
+  "home": "https://github.com/divonlan/genozip",
+  "identifiers": [],
+  "keywords": [],
+  "license": "CUSTOM",
+  "license_family": "OTHER",
+  "license_file": [
+   "LICENSE.non-commercial.txt",
+   "LICENSE.commercial.txt"
+  ],
+  "root_pkgs": [
+   "conda-build 3.20.5 py38h924ce5b_0",
+   "patch 2.7.6 h516909a_1001",
+   "python_abi 3.8 1_cp38",
+   "jupyter_core 4.7.0 py38h578d9bd_0",
+   "zstd 1.4.5 h6597ccf_2",
+   "gettext 0.19.8.1 hf34092f_1004",
+   "psutil 5.7.3 py38h8df0ef7_0",
+   "lzo 2.10 h516909a_1000",
+   "certifi 2020.11.8 py38h578d9bd_0",
+   "requests 2.25.0 pyhd3deb0d_0",
+   "tqdm 4.53.0 pyhd8ed1ab_1",
+   "c-ares 1.17.1 h36c2ea0_0",
+   "openssl 1.1.1h h516909a_0",
+   "jsonschema 3.2.0 py_2",
+   "libev 4.33 h516909a_1",
+   "wheel 0.35.1 pyh9f0ad1d_0",
+   "setuptools 49.6.0 py38h924ce5b_2",
+   "conda 4.9.2 py38h578d9bd_0",
+   "glob2 0.7 py_0",
+   "ipython_genutils 0.2.0 py_1",
+   "liblief 0.10.1 he1b5a44_2",
+   "pycosat 0.6.3 py38h8df0ef7_1005",
+   "cffi 1.14.4 py38ha312104_0",
+   "libcurl 7.71.1 hcdd3856_8",
+   "libiconv 1.16 h516909a_0",
+   "libxml2 2.9.10 h68273f3_2",
+   "ripgrep 12.1.1 h516909a_1",
+   "six 1.15.0 pyh9f0ad1d_0",
+   "pkginfo 1.6.1 pyh9f0ad1d_0",
+   "beautifulsoup4 4.9.3 pyhb0f4dca_0",
+   "tini 0.18.0 h14c3975_1001",
+   "curl 7.71.1 he644dc0_8",
+   "_libgcc_mutex 0.1 conda_forge",
+   "pysocks 1.7.1 py38h924ce5b_2",
+   "libssh2 1.9.0 hab1572f_5",
+   "libgcc-ng 9.3.0 h5dbcf3e_17",
+   "libgomp 9.3.0 h5dbcf3e_17",
+   "importlib_metadata 3.1.0 hd8ed1ab_0",
+   "bzip2 1.0.8 h516909a_3",
+   "conda-package-handling 1.7.2 py38h8df0ef7_0",
+   "yaml 0.2.5 h516909a_0",
+   "python 3.8.6 h852b56e_0_cpython",
+   "krb5 1.17.2 h926e7f8_0",
+   "tk 8.6.10 hed695b0_1",
+   "libstdcxx-ng 9.3.0 h2ae2ef3_17",
+   "py-lief 0.10.1 py38h348cfbe_2",
+   "xz 5.2.5 h516909a_1",
+   "cryptography 3.2.1 py38h7699a38_0",
+   "icu 67.1 he1b5a44_0",
+   "attrs 20.3.0 pyhd3deb0d_0",
+   "expat 2.2.9 he1b5a44_2",
+   "zlib 1.2.11 h516909a_1010",
+   "brotlipy 0.7.0 py38h8df0ef7_1001",
+   "sqlite 3.33.0 h4cf870e_1",
+   "pyyaml 5.3.1 py38h8df0ef7_1",
+   "chardet 3.0.4 py38h924ce5b_1008",
+   "traitlets 5.0.5 py_0",
+   "importlib-metadata 3.1.0 pyhd8ed1ab_0",
+   "libffi 3.2.1 he1b5a44_1007",
+   "libarchive 3.4.3 hf837322_0",
+   "anaconda-client 1.7.2 py_0",
+   "markupsafe 1.1.1 py38h8df0ef7_2",
+   "filelock 3.0.12 pyh9f0ad1d_0",
+   "python-dateutil 2.8.1 py_0",
+   "pyopenssl 19.1.0 py_1",
+   "libedit 3.1.20191231 he28a2e2_2",
+   "lz4-c 1.9.2 he1b5a44_3",
+   "pycparser 2.20 pyh9f0ad1d_2",
+   "ncurses 6.2 h58526e2_4",
+   "ld_impl_linux-64 2.35.1 hed1e6ac_0",
+   "patchelf 0.11 he1b5a44_0",
+   "readline 8.0 he28a2e2_2",
+   "ca-certificates 2020.11.8 ha878542_0",
+   "libnghttp2 1.41.0 h8cfc5f6_2",
+   "pcre 8.44 he1b5a44_0",
+   "perl 5.32.0 h36c2ea0_0",
+   "soupsieve 2.0.1 py_1",
+   "su-exec 0.2 h516909a_1002",
+   "ruamel_yaml 0.15.80 py38h8df0ef7_1003",
+   "pytz 2020.4 pyhd8ed1ab_0",
+   "idna 2.10 pyh9f0ad1d_0",
+   "nbformat 5.0.8 py_0",
+   "pyrsistent 0.17.3 py38h25fe258_1",
+   "git 2.29.2 pl5320h78be0e9_1",
+   "python-libarchive-c 2.9 py38h924ce5b_2",
+   "zipp 3.4.0 py_0",
+   "urllib3 1.25.11 py_0",
+   "_openmp_mutex 4.5 1_gnu",
+   "jinja2 2.11.2 pyh9f0ad1d_0",
+   "clyent 1.2.2 py_1",
+   "oniguruma 6.9.3 h36c2ea0_0",
+   "click 7.1.2 pyh9f0ad1d_0",
+   "conda-forge-ci-setup 3.5.2 py38h904d315_0",
+   "shyaml 0.6.1 py_0",
+   "pip 20.3 pyhd8ed1ab_0",
+   "jq 1.6 h14c3975_1000",
+   "conda-env 2.6.0 1"
+  ],
+  "summary": "Compressor for genomic files (FASTQ, SAM/BAM/CRAM, VCF/BCF, FASTA, GVF, 23andMe), up to 5x better than gzip and faster too",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CI": "azure",
+  "bzip2": "1",
+  "c_compiler": "gcc",
+  "c_compiler_version": "7",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "docker_image": "condaforge/linux-anvil-comp7",
+  "extend_keys": [
+   "ignore_version",
+   "extend_keys",
+   "pin_run_as_build",
+   "ignore_build_only_deps"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "numpy",
+   "python"
+  ],
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.2",
+  "pin_run_as_build": {
+   "bzip2": {
+    "max_pin": "x"
+   },
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   }
+  },
+  "python": "3.8",
+  "r_base": "3.5",
+  "target_platform": "linux-64"
+ },
+ "files": [
+  "bin/genocat",
+  "bin/genols",
+  "bin/genounzip",
+  "bin/genozip"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "h6ca4f20_0",
+  "build_number": 0,
+  "depends": [
+   "bzip2 >=1.0.8,<2.0a0",
+   "curl",
+   "libgcc-ng >=7.5.0"
+  ],
+  "license": "CUSTOM",
+  "license_family": "OTHER",
+  "name": "genozip",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1606911191235,
+  "version": "9.0.10"
+ },
+ "metadata_version": 1,
+ "name": "genozip",
+ "raw_recipe": "{% set version = \"9.0.10\" %}\n{% set posix = 'm2-' if win else '' %}\n{% set native = 'm2w64-' if win else '' %}\n\npackage:\n  name: genozip\n  version: {{ version }}\n\nsource:\n  url: https://github.com/divonlan/genozip/archive/genozip-{{ version }}.tar.gz\n  sha256: fe66e81e86bef6d8f66ab9b0d432df3ab22657c3260479616321a97bf8c65968\n \nbuild:\n  skip: True  # [win]\n  number: 0\n\nrequirements:\n  build:    \n    - {{ compiler('c') }}        # [not win]\n    - {{ compiler('m2w64_c') }}  # [win]\n    - {{posix}}make\n    - {{posix}}sed               # [win]\n    - {{posix}}coreutils         # [win]\n    - bzip2\n  host:\n    - {{native}}gcc-libs         # [win]\n    - bzip2\n  run:\n    - {{native}}gcc-libs         # [win]\n    - bzip2\n    - curl\n\ntest:\n\n  commands:\n    {% set genozip_executables = [\n      \"genozip\",\n      \"genounzip\",\n      \"genocat\",\n      \"genols\"\n    ] %}\n    - genozip --help\n\nabout:\n  home: https://github.com/divonlan/genozip\n  dev_url: https://github.com/divonlan/genozip\n  license: CUSTOM\n  license_family: OTHER\n  license_file: \n    - LICENSE.non-commercial.txt\n    - LICENSE.commercial.txt\n  summary: Compressor for genomic files (FASTQ, SAM/BAM/CRAM, VCF/BCF, FASTA, GVF, 23andMe), up to 5x better than gzip and faster too\n  description: |\n    Genozip\n    \n    (available on Conda, Docker Hub and https://github.com/divonlan/genozip)\n    \n    Genozip is a compressor for genomic files - while it can compress any file (i.e. not only genomic files), it is optimized to compress FASTQ, SAM/BAM/CRAM, VCF/BCF, FASTA, GVF and 23andMe files. If can even compress them if they are already compressed with .gz .bz2 .xz (for full list of supported file types see 'genozip --help=input').\n    \n    It achieves x2 to x5 better compression ratios than gzip because it leverages some properties specific to genomic data to compress better. It is also a lot faster than gzip.\n    \n    Sign up to receive low-frequency updates related to Genozip: https://tinyurl.com/genozip\n    \n    The compression is lossless - the decompressed file is 100% identical to the original file.\n    Notes: \n    1. Losslessness when the original file is already compressed (with .gz, .bz2 or .xz as well as .bam) is relative to the underlying uncompressed file. If the original file was compressed with BGZF (as in BAM and most genomic files with a .gz extension) - genounzip will re-compresses the file with BGZF upon decompression (unless --plain is specified), and, further, it will attempt to recover the exact same BGZF compression as in the original file. However, sometimes exact-same BGZF compression is not possible due to different libraries used.\n    2. The one exception to Genozip's strict losslessness is when using the --optimize option which is lossy (see --help for details)\n    \n    The command line options are similar to gzip and samtools/bcftools, so if you are familiar with these, it works pretty much the same. To get started, try: genozip --help\n    \n    Commands: \n    genozip   - compress one or more files \n    genounzip - decompress one or more files \n    genols    - show metadata of one or more files or the entire directory \n    genocat   - view one or more files \n    \n    Some examples:\n    \n    Creating a reference file:\n    genozip --make-reference myfasta.fa\n    \n    Compressing a FASTQ, SAM/BAM or VCF file(s) with a reference:\n    genozip --reference myfasta.ref.genozip mysample1.fq mysample2.fq mysample3.fq\n    genozip --reference myfasta.ref.genozip mysample.bam\n    genozip --reference myfasta.ref.genozip mysamples.vcf.gz\n    genozip --reference myfasta.ref.genozip *     \u2190compresses all files in the current directory\n    \n    Notes:\n    1. Genozip can compress with or without a reference - using a reference achieves much better compression when compressing FASTQ or unaligned SAM/BAM, and modestly better compression in other cases\n    2. SAM/BAM - compression of aligned or unaligned SAM/BAM files is possible. Sorting makes no difference\n    3. Long reads - compression of long reads (Pac Bio / Nanopore) achieves signficantly better results when compressing an aligned BAM vs an unaligned BAM or FASTQ\n    4. Compression of CRAM (but not SAM or BAM) files requires samtools to be installed\n    5. Use --REFERENCE instead of --reference to store the relevant parts of the reference file as part of the compressed file itself, which will then allow decompression with genounzip without need of the reference file.\n    \n    Compressing and uncompressing paired-end reads with --pair - better than compressing FASTQs individually\n    genozip --reference myfasta.ref.genozip --pair mysample-R1.fastq.gz mysample-R2.fastq.gz\n    genounzip --reference myfasta.ref.genozip --unbind mysample-R1+2.fastq.genozip\n    \n    Using genozip in a pipline:\n    genocat mysample.sam.genozip | samtools - .....\n    my-sam-outputing-method | genozip - --input sam --output mysample.sam.genozip\n    \n    Lookups:\n    genocat --regions chr1:10000-20000 mysamples.vcf.genozip   \u2190displays a specific region\n    genocat --regions ^Y,MT mysamples.vcf.genozip   \u2190displays all chromosomes except Y and MT\n    genocat --regions -10000 mysample.sam.genozip   \u2190displays positions up to 10000\n    genocat --samples SMPL1,SMPL2 mysamples.vcf.genozip   \u2190displays 2 samples\n    genocat --grep August-10 myfasta.fa.genozip   \u2190displays contigs/reads that have \"August-10\" in the header\n    Notes:\n    1. --regions works with VCF, SAM/BAM, FASTA, 23andMe, GVF and reference files ; --grep works with FASTQ, FASTA ; --samples works with VCF\n    2. There is no need for a separate indexing step or index file\n    3. Many more options (see --help for full list): --no-header ; --header-only ; --sequential ; --list-chroms ; --drop-genotypes ; --GT-only\n    \n    Binding mutiple files into a single genozip file and unbinding:\n    genozip *.fq.gz -o all-samples.fq.genozip   \u2190binds all .fq.gz files in the current directory\n    genounzip my-project.fq.genozip --unbind \n    \n    Compressing even better, with some minor modifications of the data (therefore not lossless, see --help for details):\n    genozip file.bam --optimize \n    \n    Compressing faster, sacrificing a bit of compression ratio:\n    genozip file.bam --fast \n    \n    Encrypting (256 bit AES):\n    genozip file.vcf --password abc \n    genounzip file.vcf.genozip --password abc \n    \n    Converting SAM/BAM to FASTQ:\n    genounzip file.bam.genozip --fastq\n    \n    Converting 23andMe to VCF:\n    genounzip genome_mydata-Full.txt.genozip --vcf -e GRCh37.ref.genozip\n    \n    Calculating the MD5 of the underlying textual file (also included in --test):\n    genozip file.vcf --md5 \n    genounzip file.vcf.genozip --md5 \n    genols file.vcf.genozip\n    \n    Compressing and then verifying that the compressed file decompresses correctly:\n    genozip file.vcf --test \n    \n    Citing\n    Do you find Genozip useful? Please support continued development by citing:\n    Lan, D., et al. Bioinformatics, 36, 4091\u20134092, July 2020, https://doi.org/10.1093/bioinformatics/btaa290\n     \n    Feature requests and bug reports: bugs@genozip.com \n    \n    Genozip is free for non-commercial use. For a commercial license, please contact sales@genozip.com \n    \n    Usage is subject to terms and conditions. The non-commercial license can be viewed with genozip --license\n    \n    THIS SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\nextra:\n  recipe-maintainers:\n    - divonlan\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Genozip\n\n(available on Conda, Docker Hub and https://github.com/divonlan/genozip)\n\nGenozip is a compressor for genomic files - while it can compress any file (i.e. not only genomic files), it is optimized to compress FASTQ, SAM/BAM/CRAM, VCF/BCF, FASTA, GVF and 23andMe files. If can even compress them if they are already compressed with .gz .bz2 .xz (for full list of supported file types see 'genozip --help=input').\n\nIt achieves x2 to x5 better compression ratios than gzip because it leverages some properties specific to genomic data to compress better. It is also a lot faster than gzip.\n\nSign up to receive low-frequency updates related to Genozip: https://tinyurl.com/genozip\n\nThe compression is lossless - the decompressed file is 100% identical to the original file.\nNotes:\n1. Losslessness when the original file is already compressed (with .gz, .bz2 or .xz as well as .bam) is relative to the underlying uncompressed file. If the original file was compressed with BGZF (as in BAM and most genomic files with a .gz extension) - genounzip will re-compresses the file with BGZF upon decompression (unless --plain is specified), and, further, it will attempt to recover the exact same BGZF compression as in the original file. However, sometimes exact-same BGZF compression is not possible due to different libraries used.\n2. The one exception to Genozip's strict losslessness is when using the --optimize option which is lossy (see --help for details)\n\nThe command line options are similar to gzip and samtools/bcftools, so if you are familiar with these, it works pretty much the same. To get started, try: genozip --help\n\nCommands:\ngenozip   - compress one or more files\ngenounzip - decompress one or more files\ngenols    - show metadata of one or more files or the entire directory\ngenocat   - view one or more files\n\nSome examples:\n\nCreating a reference file:\ngenozip --make-reference myfasta.fa\n\nCompressing a FASTQ, SAM/BAM or VCF file(s) with a reference:\ngenozip --reference myfasta.ref.genozip mysample1.fq mysample2.fq mysample3.fq\ngenozip --reference myfasta.ref.genozip mysample.bam\ngenozip --reference myfasta.ref.genozip mysamples.vcf.gz\ngenozip --reference myfasta.ref.genozip *     \u2190compresses all files in the current directory\n\nNotes:\n1. Genozip can compress with or without a reference - using a reference achieves much better compression when compressing FASTQ or unaligned SAM/BAM, and modestly better compression in other cases\n2. SAM/BAM - compression of aligned or unaligned SAM/BAM files is possible. Sorting makes no difference\n3. Long reads - compression of long reads (Pac Bio / Nanopore) achieves signficantly better results when compressing an aligned BAM vs an unaligned BAM or FASTQ\n4. Compression of CRAM (but not SAM or BAM) files requires samtools to be installed\n5. Use --REFERENCE instead of --reference to store the relevant parts of the reference file as part of the compressed file itself, which will then allow decompression with genounzip without need of the reference file.\n\nCompressing and uncompressing paired-end reads with --pair - better than compressing FASTQs individually\ngenozip --reference myfasta.ref.genozip --pair mysample-R1.fastq.gz mysample-R2.fastq.gz\ngenounzip --reference myfasta.ref.genozip --unbind mysample-R1+2.fastq.genozip\n\nUsing genozip in a pipline:\ngenocat mysample.sam.genozip | samtools - .....\nmy-sam-outputing-method | genozip - --input sam --output mysample.sam.genozip\n\nLookups:\ngenocat --regions chr1:10000-20000 mysamples.vcf.genozip   \u2190displays a specific region\ngenocat --regions ^Y,MT mysamples.vcf.genozip   \u2190displays all chromosomes except Y and MT\ngenocat --regions -10000 mysample.sam.genozip   \u2190displays positions up to 10000\ngenocat --samples SMPL1,SMPL2 mysamples.vcf.genozip   \u2190displays 2 samples\ngenocat --grep August-10 myfasta.fa.genozip   \u2190displays contigs/reads that have \"August-10\" in the header\nNotes:\n1. --regions works with VCF, SAM/BAM, FASTA, 23andMe, GVF and reference files ; --grep works with FASTQ, FASTA ; --samples works with VCF\n2. There is no need for a separate indexing step or index file\n3. Many more options (see --help for full list): --no-header ; --header-only ; --sequential ; --list-chroms ; --drop-genotypes ; --GT-only\n\nBinding mutiple files into a single genozip file and unbinding:\ngenozip *.fq.gz -o all-samples.fq.genozip   \u2190binds all .fq.gz files in the current directory\ngenounzip my-project.fq.genozip --unbind\n\nCompressing even better, with some minor modifications of the data (therefore not lossless, see --help for details):\ngenozip file.bam --optimize\n\nCompressing faster, sacrificing a bit of compression ratio:\ngenozip file.bam --fast\n\nEncrypting (256 bit AES):\ngenozip file.vcf --password abc\ngenounzip file.vcf.genozip --password abc\n\nConverting SAM/BAM to FASTQ:\ngenounzip file.bam.genozip --fastq\n\nConverting 23andMe to VCF:\ngenounzip genome_mydata-Full.txt.genozip --vcf -e GRCh37.ref.genozip\n\nCalculating the MD5 of the underlying textual file (also included in --test):\ngenozip file.vcf --md5\ngenounzip file.vcf.genozip --md5\ngenols file.vcf.genozip\n\nCompressing and then verifying that the compressed file decompresses correctly:\ngenozip file.vcf --test\n\nCiting\nDo you find Genozip useful? Please support continued development by citing:\nLan, D., et al. Bioinformatics, 36, 4091\u20134092, July 2020, https://doi.org/10.1093/bioinformatics/btaa290\n\nFeature requests and bug reports: bugs@genozip.com\n\nGenozip is free for non-commercial use. For a commercial license, please contact sales@genozip.com\n\nUsage is subject to terms and conditions. The non-commercial license can be viewed with genozip --license\n\nTHIS SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+   "dev_url": "https://github.com/divonlan/genozip",
+   "home": "https://github.com/divonlan/genozip",
+   "license": "CUSTOM",
+   "license_family": "OTHER",
+   "license_file": [
+    "LICENSE.commercial.txt",
+    "LICENSE.non-commercial.txt"
+   ],
+   "summary": "Compressor for genomic files (FASTQ, SAM/BAM/CRAM, VCF/BCF, FASTA, GVF, 23andMe), up to 5x better than gzip and faster too"
+  },
+  "build": {
+   "number": "0",
+   "string": "h6ca4f20_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "divonlan"
+   ]
+  },
+  "package": {
+   "name": "genozip",
+   "version": "9.0.10"
+  },
+  "requirements": {
+   "build": [
+    "_libgcc_mutex 0.1 conda_forge",
+    "_openmp_mutex 4.5 1_gnu",
+    "binutils_impl_linux-64 2.35.1 h17ad2fc_0",
+    "binutils_linux-64 2.35 hc3fd857_29",
+    "bzip2 1.0.8 h7f98852_4",
+    "gcc_impl_linux-64 7.5.0 hda68d29_13",
+    "gcc_linux-64 7.5.0 he2a3fca_29",
+    "kernel-headers_linux-64 2.6.32 h77966d4_13",
+    "ld_impl_linux-64 2.35.1 hed1e6ac_0",
+    "libgcc-ng 9.3.0 h5dbcf3e_17",
+    "libgomp 9.3.0 h5dbcf3e_17",
+    "libstdcxx-ng 9.3.0 h2ae2ef3_17",
+    "make 4.3 hd18ef5c_1",
+    "sysroot_linux-64 2.12 h77966d4_13"
+   ],
+   "host": [
+    "_libgcc_mutex 0.1 conda_forge",
+    "_openmp_mutex 4.5 1_gnu",
+    "bzip2 1.0.8 h7f98852_4",
+    "libgcc-ng 9.3.0 h5dbcf3e_17",
+    "libgomp 9.3.0 h5dbcf3e_17"
+   ],
+   "run": [
+    "bzip2 >=1.0.8,<2.0a0",
+    "bzip2 >=1.0.8,<2.0a0",
+    "curl",
+    "libgcc-ng >=7.5.0"
+   ]
+  },
+  "source": {
+   "sha256": "fe66e81e86bef6d8f66ab9b0d432df3ab22657c3260479616321a97bf8c65968",
+   "url": "https://github.com/divonlan/genozip/archive/genozip-9.0.10.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "genozip --help"
+   ]
+  }
+ },
+ "version": "9.0.10"
+}
