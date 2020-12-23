@@ -1,0 +1,301 @@
+{
+ "about": {
+  "channels": [
+   "conda-forge"
+  ],
+  "conda_build_version": "3.20.5",
+  "conda_private": false,
+  "conda_version": "4.9.2",
+  "description": "Epoxy is a library for handling OpenGL function pointer management for you.\n\nIt hides the complexity of dlopen(), dlsym(), glXGetProcAddress(),\neglGetProcAddress(), etc. from the app developer, with very little\nknowledge needed on their part. They get to read GL specs and write code\nusing undecorated function names like glCompileShader().\n\nDon't forget to check for your extensions or versions being present before\nyou use them, just like before! We'll tell you what you forgot to check\nfor instead of just segfaulting, though.\n",
+  "dev_url": "https://github.com/anholt/libepoxy",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "ryanvolz",
+    "stuarteberg",
+    "tschoonj"
+   ]
+  },
+  "home": "https://github.com/anholt/libepoxy",
+  "identifiers": [],
+  "keywords": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "license_file": "COPYING",
+  "root_pkgs": [
+   "cffi 1.14.4 py38hba996e7_1",
+   "liblief 0.10.1 he1b5a44_2",
+   "ruamel_yaml 0.15.80 py38ha7d8a94_1003",
+   "yaml 0.2.5 h516909a_0",
+   "jupyter_core 4.7.0 py38h2063c64_0",
+   "conda-build 3.20.5 py38h0cee959_0",
+   "requests 2.25.0 pyhd3deb0d_0",
+   "zlib 1.2.11 h516909a_1009",
+   "setuptools 49.6.0 py38h0cee959_2",
+   "attrs 20.3.0 pyhd3deb0d_0",
+   "beautifulsoup4 4.9.3 pyhb0f4dca_0",
+   "lz4-c 1.9.2 he1b5a44_3",
+   "py-lief 0.10.1 py38h0d71b83_2",
+   "python 3.8.6 h3bd6a85_1_cpython",
+   "jsonschema 3.2.0 py_2",
+   "curl 7.71.1 he644dc0_8",
+   "python_abi 3.8 1_cp38",
+   "libffi 3.3 h884eca8_1",
+   "importlib_metadata 3.1.1 hd8ed1ab_0",
+   "chardet 3.0.4 py38h0cee959_1008",
+   "glob2 0.7 py_0",
+   "pkginfo 1.6.1 pyh9f0ad1d_0",
+   "markupsafe 1.1.1 py38ha7d8a94_2",
+   "perl 5.32.0 hb9de7d4_0",
+   "xz 5.2.5 h6dd45c4_1",
+   "six 1.15.0 pyh9f0ad1d_0",
+   "jinja2 2.11.2 pyh9f0ad1d_0",
+   "soupsieve 2.0.1 py_1",
+   "pytz 2020.4 pyhd8ed1ab_0",
+   "pycosat 0.6.3 py38ha7d8a94_1005",
+   "lzo 2.10 h516909a_1000",
+   "tqdm 4.54.0 pyhd8ed1ab_0",
+   "python-libarchive-c 2.9 py38h0cee959_2",
+   "icu 67.1 h4c5d2ac_0",
+   "c-ares 1.17.1 hb9de7d4_0",
+   "sqlite 3.34.0 h43e6a2a_0",
+   "patchelf 0.11 h4c5d2ac_0",
+   "nbformat 5.0.8 py_0",
+   "conda 4.9.2 py38h2063c64_0",
+   "psutil 5.7.3 py38ha7d8a94_0",
+   "pyyaml 5.3.1 py38ha7d8a94_1",
+   "traitlets 5.0.5 py_0",
+   "pycparser 2.20 pyh9f0ad1d_2",
+   "libgomp 9.3.0 h8ab15db_17",
+   "cryptography 3.2.1 py38h8c63fa4_0",
+   "gettext 0.19.8.1 h4454c44_1005",
+   "libxml2 2.9.10 hc040a3b_2",
+   "idna 2.10 pyh9f0ad1d_0",
+   "libnghttp2 1.41.0 h8cfc5f6_2",
+   "ripgrep 12.1.1 h516909a_1",
+   "krb5 1.17.2 he08ec14_0",
+   "brotlipy 0.7.0 py38ha7d8a94_1001",
+   "libstdcxx-ng 9.3.0 h7a64470_17",
+   "pyopenssl 20.0.0 pyhd8ed1ab_0",
+   "su-exec 0.2 h516909a_1002",
+   "filelock 3.0.12 pyh9f0ad1d_0",
+   "libcurl 7.71.1 hcdd3856_8",
+   "expat 2.2.9 h4c5d2ac_2",
+   "libiconv 1.16 h6dd45c4_0",
+   "libarchive 3.5.0 h50ebc09_0",
+   "_openmp_mutex 4.5 1_gnu",
+   "git 2.29.2 pl5320h4bda1d3_1",
+   "libgcc-ng 9.3.0 h8ab15db_17",
+   "anaconda-client 1.7.2 py_0",
+   "patch 2.7.6 h516909a_1001",
+   "pysocks 1.7.1 py38h0cee959_2",
+   "libev 4.33 h516909a_1",
+   "python-dateutil 2.8.1 py_0",
+   "libssh2 1.9.0 hab1572f_5",
+   "zipp 3.4.0 py_0",
+   "tini 0.18.0 h14c3975_1001",
+   "ncurses 6.2 h7fd3ca4_4",
+   "urllib3 1.25.11 py_0",
+   "conda-package-handling 1.7.2 py38ha7d8a94_0",
+   "libedit 3.1.20191231 he28a2e2_2",
+   "pcre 8.44 he1b5a44_0",
+   "wheel 0.36.0 pyhd3deb0d_0",
+   "ipython_genutils 0.2.0 py_1",
+   "tk 8.6.10 he2b207e_1",
+   "readline 8.0 h607064a_2",
+   "bzip2 1.0.8 hf897c2e_4",
+   "ld_impl_linux-aarch64 2.35.1 h36823c2_0",
+   "clyent 1.2.2 py_1",
+   "zstd 1.4.5 h6597ccf_2",
+   "pyrsistent 0.17.3 py38ha89ca9b_1",
+   "importlib-metadata 3.1.1 pyhd8ed1ab_0",
+   "certifi 2020.12.5 py38h2063c64_0",
+   "openssl 1.1.1i hf897c2e_0",
+   "shyaml 0.6.2 pyhd3deb0d_0",
+   "ca-certificates 2020.12.5 h4fd8a4c_0",
+   "jq 1.6 hb9de7d4_1000",
+   "click 7.1.2 pyh9f0ad1d_0",
+   "pip 20.3.3 pyhd8ed1ab_0",
+   "conda-forge-ci-setup 3.6.0 py38hc086270_0",
+   "conda-env 2.6.0 1",
+   "oniguruma 6.9.3 hb9de7d4_0"
+  ],
+  "summary": "A library for handling OpenGL function pointer management for you.",
+  "tags": []
+ },
+ "conda_build_config": {
+  "BUILD": "aarch64-conda_cos7-linux-gnu",
+  "CI": "azure",
+  "c_compiler": "gcc",
+  "c_compiler_version": "9",
+  "cdt_arch": "aarch64",
+  "cdt_name": "cos7",
+  "channel_sources": "conda-forge",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "docker_image": "quay.io/condaforge/linux-anvil-aarch64",
+  "extend_keys": [
+   "ignore_version",
+   "extend_keys",
+   "ignore_build_only_deps",
+   "pin_run_as_build"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "python",
+   "numpy"
+  ],
+  "lua": "5",
+  "numpy": "1.11",
+  "perl": "5.26.2",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   }
+  },
+  "python": "3.8",
+  "r_base": "3.5",
+  "target_platform": "linux-aarch64"
+ },
+ "files": [
+  "include/epoxy/common.h",
+  "include/epoxy/egl.h",
+  "include/epoxy/egl_generated.h",
+  "include/epoxy/gl.h",
+  "include/epoxy/gl_generated.h",
+  "include/epoxy/glx.h",
+  "include/epoxy/glx_generated.h",
+  "lib/libepoxy.so",
+  "lib/libepoxy.so.0",
+  "lib/libepoxy.so.0.0.0",
+  "lib/pkgconfig/epoxy.pc"
+ ],
+ "index": {
+  "arch": "aarch64",
+  "build": "hf897c2e_0",
+  "build_number": 0,
+  "depends": [
+   "libgcc-ng >=9.3.0"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "epoxy",
+  "platform": "linux",
+  "subdir": "linux-aarch64",
+  "timestamp": 1608707572809,
+  "version": "1.5.5"
+ },
+ "metadata_version": 1,
+ "name": "epoxy",
+ "raw_recipe": "# Prior to conda-forge, Copyright 2018-2019 Peter Williams and collaborators.\n# This file is licensed under a 3-clause BSD license; see LICENSE.txt.\n\n{% set name = \"epoxy\" %}\n{% set version = \"1.5.5\" %}\n{% set version_majmin = '.'.join(version.split('.', 2)[:2]) %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://download.gnome.org/sources/libepoxy/{{ version_majmin }}/libepoxy-{{ version }}.tar.xz\n  sha256: 261663db21bcc1cc232b07ea683252ee6992982276536924271535875f5b0556\n\nbuild:\n  number: 0\n  skip: true  # [win and vc<14]\n  run_exports:\n    - {{ pin_subpackage('epoxy', max_pin='x.x') }}\n\nrequirements:\n  build:\n    - meson\n    # see https://github.com/mesonbuild/meson/issues/7611\n    - meson !=0.56.*  # [win]\n    - ninja\n    - pkg-config\n    - pthread-stubs  # [linux]\n    - {{ compiler('c') }}\n    - {{ cdt('mesa-libEGL-devel') }}  # [linux]\n    - {{ cdt('mesa-libGL-devel') }}  # [linux]\n    - {{ cdt('libx11-devel') }}  # [linux]\n    - {{ cdt('xorg-x11-proto-devel') }}  # [linux]\n    - {{ cdt('xorg-x11-util-macros') }}  # [linux]\n\ntest:\n  commands:\n    - test -f $PREFIX/include/epoxy/common.h  # [unix]\n    - test -f $PREFIX/lib/libepoxy${SHLIB_EXT}  # [unix]\n    - if not exist %PREFIX%\\\\Library\\\\include\\\\epoxy\\\\common.h exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\bin\\\\epoxy-0.dll exit 1  # [win]\n    - if not exist %PREFIX%\\\\Library\\\\lib\\\\epoxy.lib exit 1  # [win]\n\nabout:\n  home: https://github.com/anholt/libepoxy\n  license: MIT\n  license_family: MIT\n  license_file: COPYING\n  summary: 'A library for handling OpenGL function pointer management for you.'\n  description: |\n    Epoxy is a library for handling OpenGL function pointer management for you.\n\n    It hides the complexity of dlopen(), dlsym(), glXGetProcAddress(),\n    eglGetProcAddress(), etc. from the app developer, with very little\n    knowledge needed on their part. They get to read GL specs and write code\n    using undecorated function names like glCompileShader().\n\n    Don't forget to check for your extensions or versions being present before\n    you use them, just like before! We'll tell you what you forgot to check\n    for instead of just segfaulting, though.\n  dev_url: https://github.com/anholt/libepoxy\n\nextra:\n  recipe-maintainers:\n    - ryanvolz\n    - stuarteberg\n    - tschoonj\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Epoxy is a library for handling OpenGL function pointer management for you.\n\nIt hides the complexity of dlopen(), dlsym(), glXGetProcAddress(),\neglGetProcAddress(), etc. from the app developer, with very little\nknowledge needed on their part. They get to read GL specs and write code\nusing undecorated function names like glCompileShader().\n\nDon't forget to check for your extensions or versions being present before\nyou use them, just like before! We'll tell you what you forgot to check\nfor instead of just segfaulting, though.\n",
+   "dev_url": "https://github.com/anholt/libepoxy",
+   "home": "https://github.com/anholt/libepoxy",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "COPYING",
+   "summary": "A library for handling OpenGL function pointer management for you."
+  },
+  "build": {
+   "number": "0",
+   "run_exports": [
+    "epoxy >=1.5.5,<1.6.0a0"
+   ],
+   "string": "hf897c2e_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "ryanvolz",
+    "stuarteberg",
+    "tschoonj"
+   ]
+  },
+  "package": {
+   "name": "epoxy",
+   "version": "1.5.5"
+  },
+  "requirements": {
+   "build": [
+    "_openmp_mutex 4.5 1_gnu",
+    "binutils_impl_linux-aarch64 2.35.1 h026399b_1",
+    "binutils_linux-aarch64 2.35 h0a73b0c_29",
+    "ca-certificates 2020.12.5 h4fd8a4c_0",
+    "certifi 2020.12.5 py39ha65689a_0",
+    "gcc_impl_linux-aarch64 9.3.0 h5b547fa_17",
+    "gcc_linux-aarch64 9.3.0 h3f8fa26_29",
+    "kernel-headers_linux-aarch64 4.18.0 hca5cc2b_10",
+    "ld_impl_linux-aarch64 2.35.1 h02ad14f_1",
+    "libdrm-cos7-aarch64 2.4.97 h9d98e8f_1104",
+    "libffi 3.3 h884eca8_2",
+    "libgcc-devel_linux-aarch64 9.3.0 h2e979a9_17",
+    "libgcc-ng 9.3.0 h8ab15db_17",
+    "libglvnd-cos7-aarch64 1.0.1 h9d98e8f_1104",
+    "libglvnd-glx-cos7-aarch64 1.0.1 h9d98e8f_1104",
+    "libgomp 9.3.0 h8ab15db_17",
+    "libstdcxx-ng 9.3.0 h7a64470_17",
+    "libx11-common-cos7-aarch64 1.6.7 h9d98e8f_1104",
+    "libx11-cos7-aarch64 1.6.7 h9d98e8f_1104",
+    "libx11-devel-cos7-aarch64 1.6.7 h9d98e8f_1104",
+    "mesa-khr-devel-cos7-aarch64 18.3.4 h9d98e8f_1104",
+    "mesa-libegl-cos7-aarch64 18.3.4 h9d98e8f_1104",
+    "mesa-libegl-devel-cos7-aarch64 18.3.4 h9d98e8f_1104",
+    "mesa-libgbm-cos7-aarch64 18.3.4 h9d98e8f_1104",
+    "mesa-libgl-cos7-aarch64 18.3.4 h9d98e8f_1104",
+    "mesa-libgl-devel-cos7-aarch64 18.3.4 h9d98e8f_1104",
+    "mesa-libglapi-cos7-aarch64 18.3.4 h9d98e8f_1104",
+    "meson 0.56.0 pyhd8ed1ab_2",
+    "ncurses 6.2 h7fd3ca4_4",
+    "ninja 1.10.2 hd62202e_0",
+    "openssl 1.1.1i hf897c2e_0",
+    "pkg-config 0.29.2 hb9de7d4_1008",
+    "pthread-stubs 0.4 hb9de7d4_1001",
+    "python 3.9.1 h3bd6a85_2_cpython",
+    "python_abi 3.9 1_cp39",
+    "readline 8.0 h607064a_2",
+    "setuptools 49.6.0 py39he6e36c9_2",
+    "sqlite 3.34.0 h43e6a2a_0",
+    "sysroot_linux-aarch64 2.17 h4744778_10",
+    "tk 8.6.10 ha99a2a3_1",
+    "tzdata 2020d h516909a_0",
+    "xorg-x11-proto-devel-cos7-aarch64 2018.4 h9d98e8f_1104",
+    "xorg-x11-util-macros-cos7-aarch64 1.19.0 h9d98e8f_1104",
+    "xz 5.2.5 h6dd45c4_1",
+    "zlib 1.2.11 h516909a_1009"
+   ],
+   "host": [
+    "_openmp_mutex 4.5 1_gnu",
+    "libgcc-ng 9.3.0 h8ab15db_17",
+    "libgomp 9.3.0 h8ab15db_17"
+   ],
+   "run": [
+    "libgcc-ng >=9.3.0"
+   ]
+  },
+  "source": {
+   "sha256": "261663db21bcc1cc232b07ea683252ee6992982276536924271535875f5b0556",
+   "url": "https://download.gnome.org/sources/libepoxy/1.5/libepoxy-1.5.5.tar.xz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/include/epoxy/common.h",
+    "test -f $PREFIX/lib/libepoxy${SHLIB_EXT}"
+   ]
+  }
+ },
+ "version": "1.5.5"
+}
