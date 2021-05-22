@@ -6,19 +6,28 @@ jobs:
     docker:
       - image: continuumio/miniconda3:latest
     steps:
-      - checkout
+      - run:
+          name: checkout
+          command: |
+            git clone --depth 1 "$CIRCLE_REPOSITORY_URL" --branch "$CIRCLE_BRANCH"
       - run:
           name: Update Conda
           command: |
             conda config --set always_yes True
             conda config --add channels conda-forge
             conda update --all
-            conda install pip
-            pip install git+https:///github.com/regro/libcflib@master
+            git clone --depth=1 https:///github.com/regro/libcflib
+            pushd libcflib
+            python setup.py install
+            conda install --file requirements/run.txt -y
+            popd
+            rm -rf libcflib            
       - run:
           name: Run preloader
           command: |
+            pushd libcfgraph
             python -m libcflib.preloader artifacts
+            popd
           no_output_timeout: 60m
 #       - run:
 #           name: Run package harvester
@@ -28,26 +37,36 @@ jobs:
       - run:
           name: make import mapping
           command: |
+            pushd libcfgraph
             python -m libcflib.analyze_pkgs
+            popd
       - run:
           name: list files
           command: |
+            pushd libcfgraph
             python -c "import json; import glob; json.dump(glob.glob('artifacts/**/*.json', recursive=True), open('.file_listing.json', 'w'), indent=2)"
+            popd
       - run:
           name: Report diff
           command: |
+            pushd libcfgraph
             git add .
             git diff
+            popd
       - run:
           name: commit changes
           command: |
+            pushd libcfgraph
             git config user.name circleci
             git config user.email circleci@libcfgraph.regro.github.com
             git commit -m "[ci skip] Updated graph"
+            popd
       - run:
           name: push changes
           command: |
+            pushd libcfgraph
             git push https://${GH_PUSH_TOKEN}@github.com/regro/libcfgraph.git |& grep -Fv -e "https://"
+            popd
 
 workflows:
   version: 2
