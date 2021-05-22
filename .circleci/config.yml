@@ -10,7 +10,7 @@ jobs:
       - run:
           name: checkout
           command: |
-            git clone --depth 1 "$CIRCLE_REPOSITORY_URL" --branch "$CIRCLE_BRANCH"
+            git clone --depth 1 https://github.com/regro/libcfgraph.git --branch "$CIRCLE_BRANCH"
       - run:
           name: Update Conda
           command: |
