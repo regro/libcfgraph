@@ -1,0 +1,63 @@
+version: 2
+
+jobs:
+  reap:
+    working_directory: ~/repo
+    docker:
+      - image: continuumio/miniconda3:latest
+    steps:
+      - checkout
+      - run:
+          name: Update Conda
+          command: |
+            conda config --set always_yes True
+            conda config --add channels conda-forge
+            conda update --all
+            conda install pip
+            pip install git+https:///github.com/regro/libcflib@master
+      - run:
+          name: Run preloader
+          command: |
+            python -m libcflib.preloader artifacts
+          no_output_timeout: 60m
+      - run:
+          name: Run package harvester
+          command: |
+            python -m libcflib.harvest_pkgs
+          no_output_timeout: 60m
+      - run:
+          name: make import mapping
+          command: |
+            python -m libcflib.analyze_pkgs
+      - run:
+          name: list files
+          command: |
+            python -c "import json; import glob; json.dump(glob.glob('artifacts/**/*.json', recursive=True), open('.file_listing.json', 'w'), indent=2)"
+      - run:
+          name: Report diff
+          command: |
+            git add .
+            git diff
+      - run:
+          name: commit changes
+          command: |
+            git config user.name circleci
+            git config user.email circleci@libcfgraph.regro.github.com
+            git commit -m "Updated graph"
+      - run:
+          name: push changes
+          command: |
+            git push https://${GH_PUSH_TOKEN}@github.com/regro/libcfgraph.git |& grep -Fv -e "https://"
+
+workflows:
+  version: 2
+  hourly:
+    triggers:
+      - schedule:
+          cron: "0 * * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - reap
