@@ -6,11 +6,11 @@ jobs:
     docker:
       - image: continuumio/miniconda3:latest
     steps:
-      - checkout
-#       - run:
-#           name: checkout
-#           command: |
-#             git clone --depth 1 "$CIRCLE_REPOSITORY_URL" --branch "$CIRCLE_BRANCH"
+#       - checkout
+      - run:
+          name: checkout
+          command: |
+            git clone --depth 1 "$CIRCLE_REPOSITORY_URL" --branch "$CIRCLE_BRANCH"
       - run:
           name: Update Conda
           command: |
