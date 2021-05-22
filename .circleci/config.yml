@@ -10,7 +10,7 @@ jobs:
       - run:
           name: checkout
           command: |
-            git clone --depth 1 https://github.com/regro/libcfgraph.git --branch "$CIRCLE_BRANCH"
+            git clone --depth 5 https://github.com/regro/libcfgraph.git --branch "$CIRCLE_BRANCH"
       - run:
           name: Update Conda
           command: |
@@ -68,7 +68,7 @@ jobs:
           name: push changes
           command: |
             pushd libcfgraph
-            git push https://${GH_PUSH_TOKEN}@github.com/regro/libcfgraph.git |& grep -Fv -e "https://"
+            git push https://${GH_PUSH_TOKEN}@github.com/regro/libcfgraph.git
             popd
 
 workflows:
