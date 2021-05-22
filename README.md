@@ -1,5 +1,5 @@
 # libcfgraph
-![reap](https://github.com/regro/libcfgraph/workflows/reap/badge.svg)
+[![reap](https://circleci.com/gh/regro/libcfgraph.svg?style=svg)](https://circleci.com/gh/regro/libcfgraph)
 
 Graph Data for Conda Forge Library
 
