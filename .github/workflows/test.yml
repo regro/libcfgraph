@@ -1,0 +1,14 @@
+name: test
+
+on:
+  pull_request: null  
+  
+jobs:
+  clone:
+    name: clone
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: clone
+        shell: bash -l {0}
+        run: |
+          git clone --depth=1 https://github.com/regro/libcfgraph.git
