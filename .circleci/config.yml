@@ -20,11 +20,11 @@ jobs:
           command: |
             python -m libcflib.preloader artifacts
           no_output_timeout: 60m
-      - run:
-          name: Run package harvester
-          command: |
-            python -m libcflib.harvest_pkgs
-          no_output_timeout: 60m
+#       - run:
+#           name: Run package harvester
+#           command: |
+#             python -m libcflib.harvest_pkgs
+#           no_output_timeout: 60m
       - run:
           name: make import mapping
           command: |
@@ -51,6 +51,9 @@ jobs:
 
 workflows:
   version: 2
+  commit:
+    jobs:
+      - reap
   hourly:
     triggers:
       - schedule:
