@@ -1,0 +1,363 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge"
+  ],
+  "conda_build_version": "3.21.4",
+  "conda_private": false,
+  "conda_version": "4.10.1",
+  "description": "Almost everything in ROOT should be supported in this Conda package; ROOT was built with lots of options turned\non. Here are a few things to try:\n\n* `root`: you can start up a session and see the splash screen; Control-D to exit.\n* `python` followed by `import ROOT` will load PyROOT.\n* `root --notebook` will start a notebook server with a ROOT kernel choice.\n* `rootbrowse` will open a TBrowser session so you can look through files.\n* `root -l -q $ROOTSYS/tutorials/dataframe/df013_InspectAnalysis.C` will run a DataFrame example with an animated plot.\n* `root -b -q -l -n -e \"std::cout << TROOT::GetTutorialDir() << std::endl;\"` will print the tutorial dir.\n* `root -b -l -q -e 'std::cout << (float) TPython::Eval(\"1+1\") << endl;'` will run Python from C++ ROOT.\n\nSee the post [here](https://iscinumpy.gitlab.io/post/root-conda/) for more information about using this Conda package.\n\nThe ROOT package will prepare the required compilers. Everything in Conda is symlinked into\n`$CONDA_PREFIX` if you build things by hand; tools like CMake should find it automatically. The `thisroot.*`\nscripts should not be used and are not provided. Graphics, `rootbrowse`, etc. all should work. OpenGL is enabled.\n\nThere is also a `root_base` package, with minimal dependecies, that libraries should depend on this to avoid\nhaving a runtime dependency on the `compilers` package. `root-dependencies` and `root-binaries` are also available.\nIn most cases users should use the `root` package directly, since it adds both of these, along with compilers,\nJupyter, and a few other things to facilitate using ROOT or PyROOT.\n\nROOT was built with and will report `-std=c++17` from `root-config`.\n",
+  "dev_url": "https://github.com/root-project/root/",
+  "doc_url": "https://root.cern/documentation",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "parent_recipe": {
+    "name": "root_base",
+    "path": "/drone/src/recipe",
+    "version": "6.24.0"
+   },
+   "recipe-maintainers": [
+    "chrisburr",
+    "henryiii",
+    "eguiraud"
+   ]
+  },
+  "home": "https://root.cern/",
+  "identifiers": [],
+  "keywords": [],
+  "license": "LGPL-2.1-only",
+  "license_file": "root-source/LICENSE",
+  "root_pkgs": [
+   "c-ares 1.17.1 hf897c2e_1",
+   "lz4-c 1.9.3 h01db608_0",
+   "brotlipy 0.7.0 py38h9544abe_1001",
+   "certifi 2020.12.5 py38h2063c64_1",
+   "bzip2 1.0.8 hf897c2e_4",
+   "su-exec 0.2 h516909a_1002",
+   "krb5 1.19.1 h4f20351_0",
+   "pip 21.1.1 pyhd8ed1ab_0",
+   "libgcc-ng 9.3.0 he1ea209_19",
+   "importlib-metadata 4.0.1 py38h2063c64_0",
+   "pyopenssl 20.0.1 pyhd8ed1ab_0",
+   "ipython_genutils 0.2.0 py_1",
+   "cffi 1.14.5 py38hba996e7_0",
+   "pyrsistent 0.17.3 py38h9544abe_2",
+   "libedit 3.1.20191231 he28a2e2_2",
+   "setuptools 49.6.0 py38h2063c64_3",
+   "jupyter_core 4.7.1 py38h2063c64_0",
+   "libcurl 7.76.1 hcafe9da_2",
+   "libgomp 9.3.0 he1ea209_19",
+   "patch 2.7.6 hf897c2e_1002",
+   "libssh2 1.9.0 h1ab2c7b_6",
+   "six 1.16.0 pyh6c4a22f_0",
+   "perl 5.32.0 hb9de7d4_0",
+   "idna 2.10 pyh9f0ad1d_0",
+   "nbformat 5.1.3 pyhd8ed1ab_0",
+   "urllib3 1.26.4 pyhd8ed1ab_0",
+   "conda 4.10.1 py38h2063c64_0",
+   "pycosat 0.6.3 py38h9544abe_1006",
+   "anaconda-client 1.7.2 pyhd8ed1ab_1",
+   "xz 5.2.5 h6dd45c4_1",
+   "psutil 5.8.0 py38h9544abe_1",
+   "zipp 3.4.1 pyhd8ed1ab_0",
+   "attrs 21.2.0 pyhd8ed1ab_0",
+   "wheel 0.36.2 pyhd3deb0d_0",
+   "ncurses 6.2 h7fd3ca4_4",
+   "chardet 4.0.0 py38h2063c64_1",
+   "jsonschema 3.2.0 pyhd8ed1ab_3",
+   "pkginfo 1.7.0 pyhd8ed1ab_0",
+   "zstd 1.4.9 h41fb7a4_0",
+   "conda-package-handling 1.7.3 py38h9544abe_0",
+   "traitlets 5.0.5 py_0",
+   "cryptography 3.4.7 py38h06f97cd_0",
+   "openssl 1.1.1k hf897c2e_0",
+   "pysocks 1.7.1 py38h2063c64_3",
+   "python_abi 3.8 1_cp38",
+   "pycparser 2.20 pyh9f0ad1d_2",
+   "python 3.8.10 h4f4e160_1_cpython",
+   "markupsafe 2.0.0 py38h9544abe_0",
+   "curl 7.76.1 ha8e03fa_2",
+   "ripgrep 12.1.1 h516909a_1",
+   "readline 8.1 h1a49cc3_0",
+   "_openmp_mutex 4.5 1_gnu",
+   "glob2 0.7 py_0",
+   "clyent 1.2.2 py_1",
+   "lzo 2.10 h516909a_1000",
+   "libiconv 1.16 h6dd45c4_0",
+   "libarchive 3.5.1 h1023f6c_1",
+   "git 2.30.2 pl5320h15a82ca_1",
+   "libev 4.33 h516909a_1",
+   "yaml 0.2.5 h516909a_0",
+   "py-lief 0.10.1 py38h0d71b83_2",
+   "sqlite 3.35.5 h43e6a2a_0",
+   "python-libarchive-c 2.9 py38h2063c64_2",
+   "conda-build 3.21.4 py38h2063c64_0",
+   "patchelf 0.11 h4c5d2ac_0",
+   "filelock 3.0.12 pyh9f0ad1d_0",
+   "libxml2 2.9.12 hd674cf7_0",
+   "libffi 3.3 h884eca8_2",
+   "expat 2.3.0 h3621d8e_0",
+   "python-dateutil 2.8.1 py_0",
+   "tk 8.6.10 ha99a2a3_1",
+   "ld_impl_linux-aarch64 2.35.1 h02ad14f_2",
+   "pytz 2021.1 pyhd8ed1ab_0",
+   "ruamel_yaml 0.15.80 py38h9544abe_1004",
+   "ca-certificates 2020.12.5 h4fd8a4c_0",
+   "soupsieve 2.0.1 py_1",
+   "pcre 8.44 he1b5a44_0",
+   "libstdcxx-ng 9.3.0 h1ed1776_19",
+   "libnghttp2 1.43.0 h097699d_0",
+   "tini 0.18.0 h14c3975_1001",
+   "liblief 0.10.1 he1b5a44_2",
+   "icu 68.1 h884eca8_0",
+   "gettext 0.19.8.1 h4454c44_1005",
+   "beautifulsoup4 4.9.3 pyhb0f4dca_0",
+   "zlib 1.2.11 h516909a_1009",
+   "jinja2 3.0.0 pyhd8ed1ab_0",
+   "tqdm 4.60.0 pyhd8ed1ab_0",
+   "pyyaml 5.4.1 py38h9544abe_0",
+   "requests 2.25.1 pyhd3deb0d_0",
+   "conda-forge-ci-setup 3.9.4 py38hc086270_0",
+   "oniguruma 6.9.7.1 hf897c2e_0",
+   "jq 1.6 hb9de7d4_1000",
+   "click 8.0.0 py38h2063c64_0",
+   "conda-env 2.6.0 1",
+   "shyaml 0.6.2 pyhd3deb0d_0"
+  ],
+  "summary": "ROOT is a modular scientific software toolkit. It provides all the functionalities needed to deal with big data\nprocessing, statistical analysis, visualisation and storage. It is mainly written in C++ but integrated with other\nlanguages such as Python and R.\n",
+  "tags": []
+ },
+ "conda_build_config": {
+  "BUILD": "aarch64-conda_cos7-linux-gnu",
+  "CI": "drone",
+  "c_compiler": "gcc",
+  "c_compiler_version": "9",
+  "cdt_arch": "aarch64",
+  "cdt_name": "cos7",
+  "cfitsio": "3.470",
+  "channel_sources": "conda-forge",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "cxx_compiler_version": "9",
+  "docker_image": "quay.io/condaforge/linux-anvil-aarch64",
+  "extend_keys": [
+   "extend_keys",
+   "ignore_build_only_deps",
+   "pin_run_as_build",
+   "ignore_version"
+  ],
+  "fftw": "3",
+  "fortran_compiler": "gfortran",
+  "freetype": "2",
+  "gdk_pixbuf": "2",
+  "giflib": "5.2",
+  "glew": "2.1",
+  "graphviz": "2.47",
+  "gsl": "2.6",
+  "ignore_build_only_deps": [
+   "python",
+   "numpy"
+  ],
+  "libblas": "3.8 *netlib",
+  "libcblas": "3.8 *netlib",
+  "libpng": "1.6",
+  "librsvg": "2",
+  "libtiff": "4",
+  "libxml2": "2.9",
+  "lua": "5",
+  "lz4_c": "1.9.3",
+  "numpy": "1.17",
+  "openssl": "1.1.1",
+  "pcre": "8",
+  "perl": "5.26.2",
+  "pin_run_as_build": {
+   "fftw": {
+    "max_pin": "x"
+   },
+   "freetype": {
+    "max_pin": "x"
+   },
+   "glew": {
+    "max_pin": "x.x"
+   },
+   "graphviz": {
+    "max_pin": "x"
+   },
+   "libpng": {
+    "max_pin": "x.x"
+   },
+   "librsvg": {
+    "max_pin": "x"
+   },
+   "libtiff": {
+    "max_pin": "x"
+   },
+   "libxml2": {
+    "max_pin": "x.x"
+   },
+   "lz4-c": {
+    "max_pin": "x.x.x"
+   },
+   "openssl": {
+    "max_pin": "x.x.x"
+   },
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "sqlite": {
+    "max_pin": "x"
+   },
+   "xz": {
+    "max_pin": "x.x"
+   },
+   "zlib": {
+    "max_pin": "x.x"
+   }
+  },
+  "python": "3.7.* *_cpython",
+  "r_base": "3.5",
+  "sqlite": "3",
+  "target_platform": "linux-aarch64",
+  "tbb": "2020",
+  "tbb_devel": "2020",
+  "xrootd": "5",
+  "xz": "5.2",
+  "zip_keys": [
+   [
+    "python",
+    "numpy"
+   ],
+   [
+    "c_compiler_version",
+    "cxx_compiler_version"
+   ]
+  ],
+  "zlib": "1.2",
+  "zstd": "1.5"
+ },
+ "files": [],
+ "index": {
+  "arch": "aarch64",
+  "build": "py37ha200abb_1",
+  "build_number": 1,
+  "depends": [
+   "compilers",
+   "ipython",
+   "metakernel",
+   "notebook",
+   "numba",
+   "python >=3.7,<3.8.0a0",
+   "python_abi 3.7.* *_cp37m",
+   "root_base 6.24.0 py37hed1d754_1"
+  ],
+  "license": "LGPL-2.1-only",
+  "name": "root",
+  "platform": "linux",
+  "subdir": "linux-aarch64",
+  "timestamp": 1621409324512,
+  "version": "6.24.0"
+ },
+ "metadata_version": 1,
+ "name": "root",
+ "raw_recipe": "# This file created by conda-build 3.21.4\n# ------------------------------------------------\n\npackage:\n  name: root\n  version: 6.24.0\nsource:\n  folder: root-source\n  patches:\n    - patches/0001-Hacks.patch\n    - patches/0001-Patch-for-apple-silicon.patch\n    - patches/0001-Set-LLVM_REQUIRES_EH-for-Cling.patch\n    - patches/root-x.xx.xx_cling-runtime-sysroot.patch\n  sha256: 847833b264cb708bf133f91e0d65ba4ccdb40fccbc4a84c90394edc36c60d992\n  url: https://github.com/root-project/root/archive/v6-24-00.tar.gz\nbuild:\n  number: 1\n  string: py37ha200abb_1\nrequirements:\n  host:\n    - _openmp_mutex 4.5 1_gnu\n    - ca-certificates 2020.12.5 h4fd8a4c_0\n    - ld_impl_linux-aarch64 2.35.1 h02ad14f_2\n    - libffi 3.3 h884eca8_2\n    - libgcc-ng 9.3.0 he1ea209_19\n    - libgomp 9.3.0 he1ea209_19\n    - libstdcxx-ng 9.3.0 h1ed1776_19\n    - ncurses 6.2 h7fd3ca4_4\n    - openssl 1.1.1k hf897c2e_0\n    - python 3.7.10 h3bd6a85_100_cpython\n    - readline 8.1 h1a49cc3_0\n    - root_base 6.24.0 py37hed1d754_1\n    - sqlite 3.35.5 h43e6a2a_0\n    - tk 8.6.10 ha99a2a3_1\n    - xz 5.2.5 h6dd45c4_1\n    - zlib 1.2.11 h516909a_1009\n  run:\n    - compilers\n    - ipython\n    - metakernel\n    - notebook\n    - numba\n    - python >=3.7,<3.8.0a0\n    - python_abi 3.7.* *_cp37m\n    - root_base 6.24.0 py37hed1d754_1\ntest:\n  commands:\n    - ipython -c \"import JsMVA\"\n    - python test_pyroot.py\n    - root -l -b -q -x test.cpp\n    - root -b -l -q -x -e 'gSystem->LoadAllLibraries(); 0'\n    - root -b -l -q -x \"${PREFIX}/tutorials/eve/geom_lhcb.C\" || true\n    - root -b -l -q -x \"${PREFIX}/tutorials/tree/run_h1analysis.C\"\n    - root -l -b -q -x test.cpp++\n  files:\n    - test.cpp\n    - test_pyroot.py\n  imports:\n    - JupyROOT\n    - ROOT\nabout:\n  description: 'Almost everything in ROOT should be supported in this Conda package;\n    ROOT was built with lots of options turned\n\n    on. Here are a few things to try:\n\n\n    * `root`: you can start up a session and see the splash screen; Control-D to exit.\n\n    * `python` followed by `import ROOT` will load PyROOT.\n\n    * `root --notebook` will start a notebook server with a ROOT kernel choice.\n\n    * `rootbrowse` will open a TBrowser session so you can look through files.\n\n    * `root -l -q $ROOTSYS/tutorials/dataframe/df013_InspectAnalysis.C` will run a\n    DataFrame example with an animated plot.\n\n    * `root -b -q -l -n -e \"std::cout << TROOT::GetTutorialDir() << std::endl;\"` will\n    print the tutorial dir.\n\n    * `root -b -l -q -e ''std::cout << (float) TPython::Eval(\"1+1\") << endl;''` will\n    run Python from C++ ROOT.\n\n\n    See the post [here](https://iscinumpy.gitlab.io/post/root-conda/) for more information\n    about using this Conda package.\n\n\n    The ROOT package will prepare the required compilers. Everything in Conda is symlinked\n    into\n\n    `$CONDA_PREFIX` if you build things by hand; tools like CMake should find it automatically.\n    The `thisroot.*`\n\n    scripts should not be used and are not provided. Graphics, `rootbrowse`, etc.\n    all should work. OpenGL is enabled.\n\n\n    There is also a `root_base` package, with minimal dependecies, that libraries\n    should depend on this to avoid\n\n    having a runtime dependency on the `compilers` package. `root-dependencies` and\n    `root-binaries` are also available.\n\n    In most cases users should use the `root` package directly, since it adds both\n    of these, along with compilers,\n\n    Jupyter, and a few other things to facilitate using ROOT or PyROOT.\n\n\n    ROOT was built with and will report `-std=c++17` from `root-config`.\n\n    '\n  dev_url: https://github.com/root-project/root/\n  doc_url: https://root.cern/documentation\n  home: https://root.cern/\n  license: LGPL-2.1-only\n  license_file: root-source/LICENSE\n  summary: 'ROOT is a modular scientific software toolkit. It provides all the functionalities\n    needed to deal with big data\n\n    processing, statistical analysis, visualisation and storage. It is mainly written\n    in C++ but integrated with other\n\n    languages such as Python and R.\n\n    '\nextra:\n  copy_test_source_files: true\n  final: true\n  recipe-maintainers:\n    - chrisburr\n    - eguiraud\n    - henryiii\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Almost everything in ROOT should be supported in this Conda package; ROOT was built with lots of options turned\non. Here are a few things to try:\n\n* `root`: you can start up a session and see the splash screen; Control-D to exit.\n* `python` followed by `import ROOT` will load PyROOT.\n* `root --notebook` will start a notebook server with a ROOT kernel choice.\n* `rootbrowse` will open a TBrowser session so you can look through files.\n* `root -l -q $ROOTSYS/tutorials/dataframe/df013_InspectAnalysis.C` will run a DataFrame example with an animated plot.\n* `root -b -q -l -n -e \"std::cout << TROOT::GetTutorialDir() << std::endl;\"` will print the tutorial dir.\n* `root -b -l -q -e 'std::cout << (float) TPython::Eval(\"1+1\") << endl;'` will run Python from C++ ROOT.\n\nSee the post [here](https://iscinumpy.gitlab.io/post/root-conda/) for more information about using this Conda package.\n\nThe ROOT package will prepare the required compilers. Everything in Conda is symlinked into\n`$CONDA_PREFIX` if you build things by hand; tools like CMake should find it automatically. The `thisroot.*`\nscripts should not be used and are not provided. Graphics, `rootbrowse`, etc. all should work. OpenGL is enabled.\n\nThere is also a `root_base` package, with minimal dependecies, that libraries should depend on this to avoid\nhaving a runtime dependency on the `compilers` package. `root-dependencies` and `root-binaries` are also available.\nIn most cases users should use the `root` package directly, since it adds both of these, along with compilers,\nJupyter, and a few other things to facilitate using ROOT or PyROOT.\n\nROOT was built with and will report `-std=c++17` from `root-config`.\n",
+   "dev_url": "https://github.com/root-project/root/",
+   "doc_url": "https://root.cern/documentation",
+   "home": "https://root.cern/",
+   "license": "LGPL-2.1-only",
+   "license_file": "root-source/LICENSE",
+   "summary": "ROOT is a modular scientific software toolkit. It provides all the functionalities needed to deal with big data\nprocessing, statistical analysis, visualisation and storage. It is mainly written in C++ but integrated with other\nlanguages such as Python and R.\n"
+  },
+  "build": {
+   "number": 1,
+   "string": "py37ha200abb_1"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "chrisburr",
+    "eguiraud",
+    "henryiii"
+   ]
+  },
+  "package": {
+   "name": "root",
+   "version": "6.24.0"
+  },
+  "requirements": {
+   "host": [
+    "_openmp_mutex 4.5 1_gnu",
+    "ca-certificates 2020.12.5 h4fd8a4c_0",
+    "ld_impl_linux-aarch64 2.35.1 h02ad14f_2",
+    "libffi 3.3 h884eca8_2",
+    "libgcc-ng 9.3.0 he1ea209_19",
+    "libgomp 9.3.0 he1ea209_19",
+    "libstdcxx-ng 9.3.0 h1ed1776_19",
+    "ncurses 6.2 h7fd3ca4_4",
+    "openssl 1.1.1k hf897c2e_0",
+    "python 3.7.10 h3bd6a85_100_cpython",
+    "readline 8.1 h1a49cc3_0",
+    "root_base 6.24.0 py37hed1d754_1",
+    "sqlite 3.35.5 h43e6a2a_0",
+    "tk 8.6.10 ha99a2a3_1",
+    "xz 5.2.5 h6dd45c4_1",
+    "zlib 1.2.11 h516909a_1009"
+   ],
+   "run": [
+    "compilers",
+    "ipython",
+    "metakernel",
+    "notebook",
+    "numba",
+    "python >=3.7,<3.8.0a0",
+    "python_abi 3.7.* *_cp37m",
+    "root_base 6.24.0 py37hed1d754_1"
+   ]
+  },
+  "source": {
+   "folder": "root-source",
+   "patches": [
+    "patches/0001-Hacks.patch",
+    "patches/0001-Patch-for-apple-silicon.patch",
+    "patches/0001-Set-LLVM_REQUIRES_EH-for-Cling.patch",
+    "patches/root-x.xx.xx_cling-runtime-sysroot.patch"
+   ],
+   "sha256": "847833b264cb708bf133f91e0d65ba4ccdb40fccbc4a84c90394edc36c60d992",
+   "url": "https://github.com/root-project/root/archive/v6-24-00.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "ipython -c \"import JsMVA\"",
+    "python test_pyroot.py",
+    "root -l -b -q -x test.cpp",
+    "root -b -l -q -x -e 'gSystem->LoadAllLibraries(); 0'",
+    "root -b -l -q -x \"${PREFIX}/tutorials/eve/geom_lhcb.C\" || true",
+    "root -b -l -q -x \"${PREFIX}/tutorials/tree/run_h1analysis.C\"",
+    "root -l -b -q -x test.cpp++"
+   ],
+   "files": [
+    "test.cpp",
+    "test_pyroot.py"
+   ],
+   "imports": [
+    "JupyROOT",
+    "ROOT"
+   ]
+  }
+ },
+ "version": "6.24.0"
+}
