@@ -68,6 +68,7 @@ jobs:
           name: push changes
           command: |
             pushd libcfgraph
+            git pull
             git push https://${GH_PUSH_TOKEN}@github.com/regro/libcfgraph.git
             popd
 
