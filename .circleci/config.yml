@@ -62,7 +62,7 @@ jobs:
             pushd libcfgraph
             git config user.name circleci
             git config user.email circleci@libcfgraph.regro.github.com
-            git commit -m "[ci skip] Updated graph"
+            git diff-index --quiet HEAD || git commit -m "[ci skip] Updated graph"
             popd
       - run:
           name: push changes
