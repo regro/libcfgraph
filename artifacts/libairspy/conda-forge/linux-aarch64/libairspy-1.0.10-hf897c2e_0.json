@@ -1,0 +1,313 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge"
+  ],
+  "conda_build_version": "3.21.4",
+  "conda_private": false,
+  "conda_version": "4.10.3",
+  "description": "Airspy is a line of Popular Software-Defined Radio (SDR) receivers\ndeveloped to achieve High Performance and Affordable Price using innovative\ncombinations of DSP and RF techniques. The goal is to satisfy the most\ndemanding telecommunications professionals and radio enthusiasts while\nbeing a serious alternative to both cost sensitive and higher end\nreceivers. Airspy Radios feature world class reception quality and ease of\nuse thanks to the tight integration with the de facto standard free SDR#\nsoftware for signal acquisition, analysis and demodulation.\n\nThe `libairspy` package contains the library for Airspy devices, and the\n`airspy` package contains command line tools for using the devices.\n\nFor Linux users of `airspy`, you will likely want to link the provided\nudev rule into your system installation in order for the hardware to have\nthe correct permissions:\n\n    sudo ln -s $CONDA_PREFIX/lib/udev/rules.d/52-airspy.rules /etc/udev/rules.d/\n    sudo udevadm control --reload\n    sudo udevadm trigger\n\nThen, make sure your user account belongs to the plugdev group in order to\nbe able to access your device:\n\n    sudo usermod -a -G plugdev <user>\n\nYou may have to restart for this change to take effect.\n",
+  "dev_url": "https://github.com/airspy/airspyone_host",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "feedstock-name": "airspy",
+   "final": true,
+   "parent_recipe": {
+    "name": "airspy-split",
+    "path": "/drone/src/recipe",
+    "version": "1.0.10"
+   },
+   "recipe-maintainers": [
+    "ryanvolz"
+   ]
+  },
+  "home": "https://github.com/airspy/airspyone_host",
+  "identifiers": [],
+  "keywords": [],
+  "license": "BSD-3-Clause AND MIT AND GPL-2.0-or-later AND LGPL-2.1-or-later",
+  "license_file": [
+   "libairspy/LICENSE.md",
+   "libairspy/vc/getopt/LICENSE.md",
+   "airspy-tools/LICENSE.md",
+   "airspy-tools/getopt/LICENSE.md"
+  ],
+  "root_pkgs": [
+   "bzip2 1.0.8 hf897c2e_4",
+   "traitlets 5.0.5 py_0",
+   "ipython_genutils 0.2.0 py_1",
+   "pycosat 0.6.3 py38h9544abe_1006",
+   "libiconv 1.16 h6dd45c4_0",
+   "anaconda-client 1.7.2 pyhd8ed1ab_1",
+   "cffi 1.14.6 py38hba996e7_0",
+   "readline 8.1 h1a49cc3_0",
+   "libgomp 11.1.0 h3322914_2",
+   "jsonschema 3.2.0 pyhd8ed1ab_3",
+   "tk 8.6.10 ha99a2a3_1",
+   "lz4-c 1.9.3 h01db608_0",
+   "importlib-metadata 4.6.1 py38h2063c64_0",
+   "expat 2.4.1 h3621d8e_0",
+   "ruamel_yaml 0.15.80 py38h9544abe_1004",
+   "libxml2 2.9.12 hd674cf7_0",
+   "patchelf 0.11 h4c5d2ac_0",
+   "python 3.8.10 h4f4e160_1_cpython",
+   "attrs 21.2.0 pyhd8ed1ab_0",
+   "filelock 3.0.12 pyh9f0ad1d_0",
+   "psutil 5.8.0 py38h9544abe_1",
+   "sqlite 3.36.0 hc164836_0",
+   "beautifulsoup4 4.9.3 pyhb0f4dca_0",
+   "jupyter_core 4.7.1 py38h2063c64_0",
+   "ripgrep 13.0.0 h26d3e4c_0",
+   "krb5 1.19.1 h4f20351_0",
+   "pycparser 2.20 pyh9f0ad1d_2",
+   "clyent 1.2.2 py_1",
+   "c-ares 1.17.1 hf897c2e_1",
+   "openssl 1.1.1k hf897c2e_0",
+   "brotlipy 0.7.0 py38h9544abe_1001",
+   "libffi 3.3 h884eca8_2",
+   "soupsieve 2.0.1 py_1",
+   "charset-normalizer 2.0.0 pyhd8ed1ab_0",
+   "cryptography 3.4.7 py38h06f97cd_0",
+   "libedit 3.1.20191231 he28a2e2_2",
+   "wheel 0.36.2 pyhd3deb0d_0",
+   "git 2.32.0 pl5321h063bab8_0",
+   "curl 7.77.0 ha8e03fa_0",
+   "libarchive 3.5.1 h37be732_2",
+   "pip 21.2.1 pyhd8ed1ab_0",
+   "setuptools 49.6.0 py38h2063c64_3",
+   "libnghttp2 1.43.0 h097699d_0",
+   "requests 2.26.0 pyhd8ed1ab_0",
+   "conda 4.10.3 py38h2063c64_0",
+   "glob2 0.7 py_0",
+   "urllib3 1.26.6 pyhd8ed1ab_0",
+   "libev 4.33 h516909a_1",
+   "su-exec 0.2 h516909a_1002",
+   "yaml 0.2.5 h516909a_0",
+   "pkginfo 1.7.1 pyhd8ed1ab_0",
+   "libstdcxx-ng 11.1.0 h5eeca4d_2",
+   "py-lief 0.11.5 py38h0119ad3_0",
+   "pcre2 10.37 h73360fb_0",
+   "zipp 3.5.0 pyhd8ed1ab_0",
+   "pyyaml 5.4.1 py38h9544abe_0",
+   "jinja2 3.0.1 pyhd8ed1ab_0",
+   "ncurses 6.2 h7fd3ca4_4",
+   "ca-certificates 2021.5.30 h4fd8a4c_0",
+   "chardet 4.0.0 py38h2063c64_1",
+   "perl 5.32.1 0_hf897c2e_perl5",
+   "libssh2 1.9.0 h1ab2c7b_6",
+   "certifi 2021.5.30 py38h2063c64_0",
+   "pyrsistent 0.17.3 py38h9544abe_2",
+   "pysocks 1.7.1 py38h2063c64_3",
+   "lzo 2.10 h516909a_1000",
+   "six 1.16.0 pyh6c4a22f_0",
+   "tini 0.18.0 h14c3975_1001",
+   "ld_impl_linux-aarch64 2.36.1 h02ad14f_1",
+   "zstd 1.5.0 h41fb7a4_0",
+   "nbformat 5.1.3 pyhd8ed1ab_0",
+   "conda-build 3.21.4 py38h2063c64_0",
+   "pyopenssl 20.0.1 pyhd8ed1ab_0",
+   "python-libarchive-c 3.1 py38h2063c64_0",
+   "markupsafe 2.0.1 py38h9544abe_0",
+   "zlib 1.2.11 h516909a_1009",
+   "idna 3.1 pyhd3deb0d_0",
+   "conda-package-handling 1.7.3 py38h9544abe_0",
+   "gettext 0.19.8.1 h4454c44_1005",
+   "patch 2.7.6 hf897c2e_1002",
+   "_openmp_mutex 4.5 1_gnu",
+   "python_abi 3.8 2_cp38",
+   "libgcc-ng 11.1.0 h3322914_2",
+   "liblief 0.11.5 h01db608_0",
+   "tqdm 4.61.2 pyhd8ed1ab_1",
+   "icu 68.1 h884eca8_0",
+   "xz 5.2.5 h6dd45c4_1",
+   "libcurl 7.77.0 hcafe9da_0",
+   "python-dateutil 2.8.2 pyhd8ed1ab_0",
+   "pytz 2021.1 pyhd8ed1ab_0",
+   "jq 1.6 hb9de7d4_1000",
+   "conda-env 2.6.0 1",
+   "oniguruma 6.9.7.1 hf897c2e_0",
+   "click 8.0.1 py38h2063c64_0",
+   "shyaml 0.6.2 pyhd3deb0d_0",
+   "conda-forge-ci-setup 3.9.6 py38hc086270_0"
+  ],
+  "summary": "Host software for AirSpy, a low cost, open source software radio platform",
+  "tags": []
+ },
+ "conda_build_config": {
+  "BUILD": "aarch64-conda_cos7-linux-gnu",
+  "CI": "drone",
+  "c_compiler": "gcc",
+  "c_compiler_version": "9",
+  "cdt_arch": "aarch64",
+  "cdt_name": "cos7",
+  "channel_sources": "conda-forge",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "cxx_compiler_version": "9",
+  "docker_image": "quay.io/condaforge/linux-anvil-aarch64",
+  "extend_keys": [
+   "pin_run_as_build",
+   "ignore_build_only_deps",
+   "ignore_version",
+   "extend_keys"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "python",
+   "numpy"
+  ],
+  "lua": "5",
+  "numpy": "1.16",
+  "perl": "5.26.2",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   }
+  },
+  "python": "3.8",
+  "r_base": "3.5",
+  "target_platform": "linux-aarch64",
+  "zip_keys": [
+   [
+    "c_compiler_version",
+    "cxx_compiler_version"
+   ]
+  ]
+ },
+ "files": [
+  "include/libairspy/airspy.h",
+  "include/libairspy/airspy_commands.h",
+  "include/libairspy/filters.h",
+  "include/libairspy/iqconverter_float.h",
+  "include/libairspy/iqconverter_int16.h",
+  "lib/libairspy.so",
+  "lib/libairspy.so.0",
+  "lib/libairspy.so.1.0.10",
+  "lib/pkgconfig/libairspy.pc"
+ ],
+ "index": {
+  "arch": "aarch64",
+  "build": "hf897c2e_0",
+  "build_number": 0,
+  "depends": [
+   "libgcc-ng >=9.3.0",
+   "libusb >=1.0.24,<2.0a0"
+  ],
+  "license": "BSD-3-Clause AND MIT AND GPL-2.0-or-later AND LGPL-2.1-or-later",
+  "name": "libairspy",
+  "platform": "linux",
+  "subdir": "linux-aarch64",
+  "timestamp": 1627322163457,
+  "version": "1.0.10"
+ },
+ "metadata_version": 1,
+ "name": "libairspy",
+ "raw_recipe": "# This file created by conda-build 3.21.4\n# ------------------------------------------------\n\npackage:\n  name: libairspy\n  version: 1.0.10\nsource:\n  sha256: fcca23911c9a9da71cebeffeba708c59d1d6401eec6eb2dd73cae35b8ea3c613\n  url: https://github.com/airspy/airspyone_host/archive/v1.0.10.tar.gz\nbuild:\n  number: 0\n  run_exports:\n    - libairspy >=1.0.10,<2.0a0\n  string: hf897c2e_0\nrequirements:\n  build:\n    - _openmp_mutex 4.5 1_gnu\n    - binutils_impl_linux-aarch64 2.36.1 h026399b_1\n    - binutils_linux-aarch64 2.36 h7854541_33\n    - bzip2 1.0.8 hf897c2e_4\n    - c-ares 1.17.1 hf897c2e_1\n    - ca-certificates 2021.5.30 h4fd8a4c_0\n    - cmake 3.21.0 h1da9803_0\n    - expat 2.4.1 h3621d8e_0\n    - gcc_impl_linux-aarch64 9.3.0 h88a1608_19\n    - gcc_linux-aarch64 9.3.0 h5551ba8_33\n    - kernel-headers_linux-aarch64 4.18.0 h5b4a56d_12\n    - krb5 1.19.1 h4f20351_0\n    - ld_impl_linux-aarch64 2.36.1 h02ad14f_1\n    - libcurl 7.77.0 hcafe9da_0\n    - libedit 3.1.20191231 he28a2e2_2\n    - libev 4.33 h516909a_1\n    - libgcc-devel_linux-aarch64 9.3.0 h246fbc7_19\n    - libgcc-ng 11.1.0 h3322914_2\n    - libgomp 11.1.0 h3322914_2\n    - libnghttp2 1.43.0 h097699d_0\n    - libssh2 1.9.0 h1ab2c7b_6\n    - libstdcxx-ng 11.1.0 h5eeca4d_2\n    - libuv 1.42.0 hf897c2e_0\n    - lz4-c 1.9.3 h01db608_0\n    - ncurses 6.2 h7fd3ca4_4\n    - ninja 1.10.2 hd62202e_0\n    - openssl 1.1.1k hf897c2e_0\n    - rhash 1.4.1 hf897c2e_0\n    - sysroot_linux-aarch64 2.17 h43d7e78_12\n    - tk 8.6.10 ha99a2a3_1\n    - xz 5.2.5 h6dd45c4_1\n    - zlib 1.2.11 h516909a_1009\n    - zstd 1.5.0 h41fb7a4_0\n  host:\n    - _openmp_mutex 4.5 1_gnu\n    - libgcc-ng 11.1.0 h3322914_2\n    - libgomp 11.1.0 h3322914_2\n    - libstdcxx-ng 11.1.0 h5eeca4d_2\n    - libusb 1.0.24 hdb429d0_4\n    - patchelf 0.11 h4c5d2ac_0\n  run:\n    - libgcc-ng >=9.3.0\n    - libusb >=1.0.24,<2.0a0\ntest:\n  commands:\n    - test -f $PREFIX/include/libairspy/airspy.h\n    - test -f $PREFIX/include/libairspy/airspy_commands.h\n    - test -f $PREFIX/include/libairspy/iqconverter_float.h\n    - test -f $PREFIX/include/libairspy/iqconverter_int16.h\n    - test -f $PREFIX/include/libairspy/filters.h\n    - test -f $PREFIX/lib/libairspy${SHLIB_EXT}\nabout:\n  description: \"Airspy is a line of Popular Software-Defined Radio (SDR) receivers\\n\\\n    developed to achieve High Performance and Affordable Price using innovative\\n\\\n    combinations of DSP and RF techniques. The goal is to satisfy the most\\ndemanding\\\n    \\ telecommunications professionals and radio enthusiasts while\\nbeing a serious\\\n    \\ alternative to both cost sensitive and higher end\\nreceivers. Airspy Radios\\\n    \\ feature world class reception quality and ease of\\nuse thanks to the tight integration\\\n    \\ with the de facto standard free SDR#\\nsoftware for signal acquisition, analysis\\\n    \\ and demodulation.\\n\\nThe `libairspy` package contains the library for Airspy\\\n    \\ devices, and the\\n`airspy` package contains command line tools for using the\\\n    \\ devices.\\n\\nFor Linux users of `airspy`, you will likely want to link the provided\\n\\\n    udev rule into your system installation in order for the hardware to have\\nthe\\\n    \\ correct permissions:\\n\\n    sudo ln -s $CONDA_PREFIX/lib/udev/rules.d/52-airspy.rules\\\n    \\ /etc/udev/rules.d/\\n    sudo udevadm control --reload\\n    sudo udevadm trigger\\n\\\n    \\nThen, make sure your user account belongs to the plugdev group in order to\\n\\\n    be able to access your device:\\n\\n    sudo usermod -a -G plugdev <user>\\n\\nYou\\\n    \\ may have to restart for this change to take effect.\\n\"\n  dev_url: https://github.com/airspy/airspyone_host\n  home: https://github.com/airspy/airspyone_host\n  license: BSD-3-Clause AND MIT AND GPL-2.0-or-later AND LGPL-2.1-or-later\n  license_file:\n    - airspy-tools/LICENSE.md\n    - airspy-tools/getopt/LICENSE.md\n    - libairspy/LICENSE.md\n    - libairspy/vc/getopt/LICENSE.md\n  summary: Host software for AirSpy, a low cost, open source software radio platform\nextra:\n  copy_test_source_files: true\n  feedstock-name: airspy\n  final: true\n  recipe-maintainers:\n    - ryanvolz\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Airspy is a line of Popular Software-Defined Radio (SDR) receivers\ndeveloped to achieve High Performance and Affordable Price using innovative\ncombinations of DSP and RF techniques. The goal is to satisfy the most\ndemanding telecommunications professionals and radio enthusiasts while\nbeing a serious alternative to both cost sensitive and higher end\nreceivers. Airspy Radios feature world class reception quality and ease of\nuse thanks to the tight integration with the de facto standard free SDR#\nsoftware for signal acquisition, analysis and demodulation.\n\nThe `libairspy` package contains the library for Airspy devices, and the\n`airspy` package contains command line tools for using the devices.\n\nFor Linux users of `airspy`, you will likely want to link the provided\nudev rule into your system installation in order for the hardware to have\nthe correct permissions:\n\n    sudo ln -s $CONDA_PREFIX/lib/udev/rules.d/52-airspy.rules /etc/udev/rules.d/\n    sudo udevadm control --reload\n    sudo udevadm trigger\n\nThen, make sure your user account belongs to the plugdev group in order to\nbe able to access your device:\n\n    sudo usermod -a -G plugdev <user>\n\nYou may have to restart for this change to take effect.\n",
+   "dev_url": "https://github.com/airspy/airspyone_host",
+   "home": "https://github.com/airspy/airspyone_host",
+   "license": "BSD-3-Clause AND MIT AND GPL-2.0-or-later AND LGPL-2.1-or-later",
+   "license_file": [
+    "airspy-tools/LICENSE.md",
+    "airspy-tools/getopt/LICENSE.md",
+    "libairspy/LICENSE.md",
+    "libairspy/vc/getopt/LICENSE.md"
+   ],
+   "summary": "Host software for AirSpy, a low cost, open source software radio platform"
+  },
+  "build": {
+   "number": 0,
+   "run_exports": [
+    "libairspy >=1.0.10,<2.0a0"
+   ],
+   "string": "hf897c2e_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "feedstock-name": "airspy",
+   "final": true,
+   "recipe-maintainers": [
+    "ryanvolz"
+   ]
+  },
+  "package": {
+   "name": "libairspy",
+   "version": "1.0.10"
+  },
+  "requirements": {
+   "build": [
+    "_openmp_mutex 4.5 1_gnu",
+    "binutils_impl_linux-aarch64 2.36.1 h026399b_1",
+    "binutils_linux-aarch64 2.36 h7854541_33",
+    "bzip2 1.0.8 hf897c2e_4",
+    "c-ares 1.17.1 hf897c2e_1",
+    "ca-certificates 2021.5.30 h4fd8a4c_0",
+    "cmake 3.21.0 h1da9803_0",
+    "expat 2.4.1 h3621d8e_0",
+    "gcc_impl_linux-aarch64 9.3.0 h88a1608_19",
+    "gcc_linux-aarch64 9.3.0 h5551ba8_33",
+    "kernel-headers_linux-aarch64 4.18.0 h5b4a56d_12",
+    "krb5 1.19.1 h4f20351_0",
+    "ld_impl_linux-aarch64 2.36.1 h02ad14f_1",
+    "libcurl 7.77.0 hcafe9da_0",
+    "libedit 3.1.20191231 he28a2e2_2",
+    "libev 4.33 h516909a_1",
+    "libgcc-devel_linux-aarch64 9.3.0 h246fbc7_19",
+    "libgcc-ng 11.1.0 h3322914_2",
+    "libgomp 11.1.0 h3322914_2",
+    "libnghttp2 1.43.0 h097699d_0",
+    "libssh2 1.9.0 h1ab2c7b_6",
+    "libstdcxx-ng 11.1.0 h5eeca4d_2",
+    "libuv 1.42.0 hf897c2e_0",
+    "lz4-c 1.9.3 h01db608_0",
+    "ncurses 6.2 h7fd3ca4_4",
+    "ninja 1.10.2 hd62202e_0",
+    "openssl 1.1.1k hf897c2e_0",
+    "rhash 1.4.1 hf897c2e_0",
+    "sysroot_linux-aarch64 2.17 h43d7e78_12",
+    "tk 8.6.10 ha99a2a3_1",
+    "xz 5.2.5 h6dd45c4_1",
+    "zlib 1.2.11 h516909a_1009",
+    "zstd 1.5.0 h41fb7a4_0"
+   ],
+   "host": [
+    "_openmp_mutex 4.5 1_gnu",
+    "libgcc-ng 11.1.0 h3322914_2",
+    "libgomp 11.1.0 h3322914_2",
+    "libstdcxx-ng 11.1.0 h5eeca4d_2",
+    "libusb 1.0.24 hdb429d0_4",
+    "patchelf 0.11 h4c5d2ac_0"
+   ],
+   "run": [
+    "libgcc-ng >=9.3.0",
+    "libusb >=1.0.24,<2.0a0"
+   ]
+  },
+  "source": {
+   "sha256": "fcca23911c9a9da71cebeffeba708c59d1d6401eec6eb2dd73cae35b8ea3c613",
+   "url": "https://github.com/airspy/airspyone_host/archive/v1.0.10.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "test -f $PREFIX/include/libairspy/airspy.h",
+    "test -f $PREFIX/include/libairspy/airspy_commands.h",
+    "test -f $PREFIX/include/libairspy/iqconverter_float.h",
+    "test -f $PREFIX/include/libairspy/iqconverter_int16.h",
+    "test -f $PREFIX/include/libairspy/filters.h",
+    "test -f $PREFIX/lib/libairspy${SHLIB_EXT}"
+   ]
+  }
+ },
+ "version": "1.0.10"
+}
