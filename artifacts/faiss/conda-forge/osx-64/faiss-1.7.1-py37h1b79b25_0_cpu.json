@@ -1,0 +1,384 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge"
+  ],
+  "conda_build_version": "3.21.4",
+  "conda_private": false,
+  "conda_version": "4.10.3",
+  "description": "Faiss is a library for efficient similarity search and clustering of dense vectors.\nIt contains algorithms that search in sets of vectors of any size, up to ones that\npossibly do not fit in RAM. It also contains supporting code for evaluation and\nparameter tuning. Faiss is written in C++ with complete wrappers for Python/numpy.\nSome of the most useful algorithms are implemented on the GPU. It is developed by\n[Facebook AI Research](https://research.fb.com/category/facebook-ai-research-fair/).\n\nFor best performance, the maintainers of the package\n[recommend](https://github.com/conda-forge/staged-recipes/pull/11337#issuecomment-623718460)\nusing the MKL implementation of blas/lapack. You can ensure that this is installed\nby adding \"libblas =*=*mkl\" to your dependencies.\n",
+  "dev_url": "https://github.com/facebookresearch/faiss",
+  "doc_url": "https://rawgit.com/facebookresearch/faiss/master/docs/html/annotated.html",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "parent_recipe": {
+    "name": "faiss-split",
+    "path": "/Users/runner/work/1/s/recipe",
+    "version": "1.7.1"
+   },
+   "recipe-maintainers": [
+    "h-vetinari"
+   ]
+  },
+  "home": "https://github.com/facebookresearch/faiss",
+  "identifiers": [],
+  "keywords": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "license_file": "LICENSE",
+  "root_pkgs": [
+   "gettext 0.19.8.1 hd1a6beb_1008",
+   "importlib-metadata 4.8.1 py39h6e9494a_0",
+   "nbformat 5.1.3 pyhd8ed1ab_0",
+   "conda-env 2.6.0 1",
+   "six 1.16.0 pyh6c4a22f_0",
+   "jq 1.6 hc929b4f_1000",
+   "filelock 3.3.0 pyhd8ed1ab_0",
+   "setuptools 58.0.4 py39h6e9494a_2",
+   "ncurses 6.2 h2e338ed_4",
+   "curl 7.79.1 hf45b732_1",
+   "pycparser 2.20 pyh9f0ad1d_2",
+   "attrs 21.2.0 pyhd8ed1ab_0",
+   "soupsieve 2.0.1 py_1",
+   "requests 2.26.0 pyhd8ed1ab_0",
+   "libcxx 12.0.1 habf9029_0",
+   "liblief 0.11.5 he49afe7_0",
+   "glob2 0.7 py_0",
+   "python-dateutil 2.8.2 pyhd8ed1ab_0",
+   "conda-forge-ci-setup 3.12.0 py39hb0a6171_0",
+   "jsonschema 4.1.0 pyhd8ed1ab_0",
+   "libedit 3.1.20191231 h0678c8f_2",
+   "libcurl 7.79.1 hf45b732_1",
+   "conda 4.10.3 py39h6e9494a_2",
+   "libffi 3.4.2 he49afe7_4",
+   "cryptography 3.4.7 py39ha2c9959_0",
+   "ruamel_yaml 0.15.80 py39h89e85a6_1004",
+   "krb5 1.19.2 hcfbf3a7_2",
+   "click 8.0.3 py39h6e9494a_0",
+   "pycosat 0.6.3 py39h89e85a6_1006",
+   "ld64_osx-64 530 he8994da_22",
+   "libiconv 1.16 haf1e3a3_0",
+   "brotlipy 0.7.0 py39h89e85a6_1001",
+   "wheel 0.37.0 pyhd8ed1ab_1",
+   "tzdata 2021a he74cb21_1",
+   "xz 5.2.5 haf1e3a3_1",
+   "perl 5.32.1 1_h0d85af4_perl5",
+   "pyyaml 5.4.1 py39h89e85a6_1",
+   "zipp 3.6.0 pyhd8ed1ab_0",
+   "colorama 0.4.4 pyh9f0ad1d_0",
+   "cctools 949.0.1 hd9211c8_22",
+   "psutil 5.8.0 py39h89e85a6_1",
+   "zlib 1.2.11 h7795811_1010",
+   "tk 8.6.11 h5dbffcc_1",
+   "markupsafe 2.0.1 py39h89e85a6_0",
+   "jinja2 3.0.2 pyhd8ed1ab_0",
+   "py-lief 0.11.5 py39h9fcab8e_0",
+   "pyopenssl 20.0.1 pyhd8ed1ab_0",
+   "chardet 4.0.0 py39h6e9494a_1",
+   "conda-package-handling 1.7.3 py39h89e85a6_0",
+   "python-libarchive-c 3.1 py39h6e9494a_0",
+   "conda-build 3.21.4 py39h6e9494a_0",
+   "pysocks 1.7.1 py39h6e9494a_3",
+   "libnghttp2 1.43.0 h6f36284_1",
+   "zstd 1.5.0 h582d3a0_0",
+   "sqlite 3.36.0 h23a322b_2",
+   "libarchive 3.5.2 h2b60450_1",
+   "tapi 1100.0.11 h9ce4665_0",
+   "c-ares 1.17.2 h0d85af4_0",
+   "charset-normalizer 2.0.0 pyhd8ed1ab_0",
+   "yaml 0.2.5 haf1e3a3_0",
+   "git 2.33.0 pl5321h9a53687_1",
+   "readline 8.1 h05e3726_0",
+   "openssl 1.1.1l h0d85af4_0",
+   "libxml2 2.9.12 h93ec3fd_0",
+   "anaconda-client 1.8.0 pyhd8ed1ab_0",
+   "pkginfo 1.7.1 pyhd8ed1ab_0",
+   "bzip2 1.0.8 h0d85af4_4",
+   "beautifulsoup4 4.10.0 pyha770c72_0",
+   "ripgrep 13.0.0 h80d2146_1",
+   "shyaml 0.6.2 pyhd3deb0d_0",
+   "libssh2 1.10.0 h52ee1ee_2",
+   "clyent 1.2.2 py_1",
+   "python 3.9.7 h1248fe1_2_cpython",
+   "pcre2 10.37 ha16e1b2_0",
+   "pip 21.3 pyhd8ed1ab_0",
+   "python_abi 3.9 2_cp39",
+   "lz4-c 1.9.3 he49afe7_1",
+   "ca-certificates 2021.10.8 h033912b_0",
+   "idna 3.1 pyhd3deb0d_0",
+   "tqdm 4.62.3 pyhd8ed1ab_0",
+   "jupyter_core 4.8.1 py39h6e9494a_0",
+   "cffi 1.14.6 py39he338e87_1",
+   "traitlets 5.1.0 pyhd8ed1ab_0",
+   "certifi 2021.10.8 py39h6e9494a_0",
+   "pytz 2021.3 pyhd8ed1ab_0",
+   "cctools_osx-64 949.0.1 h6407bdd_22",
+   "ldid 2.1.2 h6a69015_3",
+   "pyrsistent 0.17.3 py39h89e85a6_2",
+   "ipython_genutils 0.2.0 py_1",
+   "lzo 2.10 haf1e3a3_1000",
+   "urllib3 1.26.7 pyhd8ed1ab_0",
+   "libllvm12 12.0.1 hd011deb_2",
+   "ld64 530 hd2e7500_22",
+   "expat 2.4.1 he49afe7_0",
+   "libev 4.33 haf1e3a3_1",
+   "oniguruma 6.9.7.1 h0d85af4_0",
+   "icu 68.1 h74dc148_0"
+  ],
+  "summary": "A library for efficient similarity search and clustering of dense vectors.",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CI": "azure",
+  "CONDA_BUILD_SYSROOT": "/Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk",
+  "MACOSX_DEPLOYMENT_TARGET": "10.9",
+  "c_compiler": "clang",
+  "channel_sources": "conda-forge",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cuda_compiler_version": "None",
+  "cxx_compiler": "clangxx",
+  "cxx_compiler_version": "10",
+  "extend_keys": [
+   "ignore_version",
+   "extend_keys",
+   "ignore_build_only_deps",
+   "pin_run_as_build"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "python",
+   "numpy"
+  ],
+  "libblas": "3.8 *netlib",
+  "liblapack": "3.8 *netlib",
+  "llvm_openmp": "11",
+  "lua": "5",
+  "macos_machine": "x86_64-apple-darwin13.4.0",
+  "numpy": "1.18",
+  "perl": "5.26.2",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   }
+  },
+  "python": "3.7.* *_cpython",
+  "r_base": "3.5",
+  "target_platform": "osx-64",
+  "zip_keys": [
+   [
+    "python",
+    "numpy"
+   ]
+  ]
+ },
+ "files": [
+  "lib/python3.7/site-packages/faiss-1.7.1-py3.7.egg-info/PKG-INFO",
+  "lib/python3.7/site-packages/faiss/__init__.py",
+  "lib/python3.7/site-packages/faiss/_swigfaiss.so",
+  "lib/python3.7/site-packages/faiss/_swigfaiss_avx2.so",
+  "lib/python3.7/site-packages/faiss/contrib/client_server.py",
+  "lib/python3.7/site-packages/faiss/contrib/datasets.py",
+  "lib/python3.7/site-packages/faiss/contrib/evaluation.py",
+  "lib/python3.7/site-packages/faiss/contrib/exhaustive_search.py",
+  "lib/python3.7/site-packages/faiss/contrib/factory_tools.py",
+  "lib/python3.7/site-packages/faiss/contrib/inspect_tools.py",
+  "lib/python3.7/site-packages/faiss/contrib/ivf_tools.py",
+  "lib/python3.7/site-packages/faiss/contrib/ondisk.py",
+  "lib/python3.7/site-packages/faiss/contrib/rpc.py",
+  "lib/python3.7/site-packages/faiss/contrib/torch_utils.py",
+  "lib/python3.7/site-packages/faiss/contrib/vecs_io.py",
+  "lib/python3.7/site-packages/faiss/loader.py",
+  "lib/python3.7/site-packages/faiss/swigfaiss.py",
+  "lib/python3.7/site-packages/faiss/swigfaiss_avx2.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py37h1b79b25_0_cpu",
+  "build_number": 0,
+  "constrains": [
+   "faiss-proc =*=cpu",
+   "faiss-gpu ==9999999999"
+  ],
+  "depends": [
+   "libblas >=3.8.0,<4.0a0",
+   "libcxx >=10.0.1",
+   "libfaiss 1.7.1 *_cpu",
+   "libfaiss-avx2 1.7.1 *_cpu",
+   "liblapack >=3.8.0,<4.0a0",
+   "llvm-openmp >=11.1.0",
+   "llvm-openmp >=12.0.1",
+   "numpy >=1.18.5,<2.0a0",
+   "python >=3.7,<3.8.0a0",
+   "python_abi 3.7.* *_cp37m"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "name": "faiss",
+  "platform": "osx",
+  "subdir": "osx-64",
+  "timestamp": 1634120557061,
+  "version": "1.7.1"
+ },
+ "metadata_version": 1,
+ "name": "faiss",
+ "raw_recipe": "# This file created by conda-build 3.21.4\n# ------------------------------------------------\n\npackage:\n  name: faiss\n  version: 1.7.1\nsource:\n  patches:\n    - patches/0001-use-c-17.patch\n    - patches/0002-adapt-header-target-directory-to-outputname.patch\n    - patches/0003-skip-test_stress-for-GPU-on-windows.patch\n    - patches/0004-enable-building-libfaiss_avx2-without-libfaiss.patch\n    - patches/0005-add-missing-headers-re-alphabetize.patch\n    - patches/0006-add-missing-algorithm-for-min-max.patch\n    - patches/0007-increase-tolerance-for-marginally-failing-test.patch\n    - patches/0008-add-bigobj-to-swigfaiss-compile-options-on-windows.patch\n  sha256: d676d3107ad41203a49e0afda2630519299dc8666f8d23322cbe1eac0c431871\n  url: https://github.com/facebookresearch/faiss/archive/v1.7.1.tar.gz\nbuild:\n  number: 0\n  string: py37h1b79b25_0_cpu\nrequirements:\n  build:\n    - bzip2 1.0.8 h0d85af4_4\n    - c-ares 1.17.2 h0d85af4_0\n    - ca-certificates 2021.10.8 h033912b_0\n    - cctools_osx-64 949.0.1 h6407bdd_22\n    - clang 10.0.1 default_hf57f61e_1\n    - clang_osx-64 10.0.1 h05bbb7f_10\n    - clangxx 10.0.1 default_hf57f61e_1\n    - clangxx_osx-64 10.0.1 h05bbb7f_10\n    - cmake 3.21.3 hdbd2f3e_0\n    - compiler-rt 10.0.1 he6db49b_0\n    - compiler-rt_osx-64 10.0.1 h033240e_0\n    - expat 2.4.1 he49afe7_0\n    - krb5 1.19.2 h289aae4_2\n    - ld64_osx-64 530 hea264c1_17\n    - ldid 2.1.2 h6a69015_3\n    - libclang-cpp10 10.0.1 default_hf57f61e_1\n    - libcurl 7.79.1 h97da3c1_1\n    - libcxx 12.0.1 habf9029_0\n    - libedit 3.1.20191231 h0678c8f_2\n    - libev 4.33 haf1e3a3_1\n    - libllvm10 10.0.1 h009f743_3\n    - libllvm12 12.0.1 hd011deb_2\n    - libnghttp2 1.43.0 hfd382f3_1\n    - libssh2 1.10.0 hd3787cc_2\n    - libuv 1.42.0 h0d85af4_0\n    - libzlib 1.2.11 h9173be1_1013\n    - llvm-openmp 11.1.0 hda6cdc1_1\n    - llvm-tools 10.0.1 h1341992_3\n    - lz4-c 1.9.3 he49afe7_1\n    - ncurses 6.2 h2e338ed_4\n    - openssl 3.0.0 h0d85af4_1\n    - pcre 8.45 he49afe7_0\n    - rhash 1.4.1 h35c211d_0\n    - swig 4.0.2 hce5123c_2\n    - tapi 1100.0.11 h9ce4665_0\n    - tk 8.6.11 h5dbffcc_1\n    - xz 5.2.5 haf1e3a3_1\n    - zlib 1.2.11 h9173be1_1013\n    - zstd 1.5.0 h582d3a0_0\n  host:\n    - ca-certificates 2021.10.8 h033912b_0\n    - libblas 3.8.0 11_h508aa58_netlib\n    - libcblas 3.8.0 11_h508aa58_netlib\n    - libcxx 12.0.1 habf9029_0\n    - libfaiss =1.7.1=*_cpu\n    - libfaiss-avx2 =1.7.1=*_cpu\n    - libffi 3.4.2 he49afe7_4\n    - libgfortran 5.0.0 9_3_0_h6c81a4c_23\n    - libgfortran5 9.3.0 h6c81a4c_23\n    - liblapack 3.8.0 11_h508aa58_netlib\n    - libzlib 1.2.11 h9173be1_1013\n    - llvm-openmp 12.0.1 hda6cdc1_1\n    - ncurses 6.2 h2e338ed_4\n    - numpy 1.18.5 py37h7687784_0\n    - openssl 3.0.0 h0d85af4_1\n    - pip 21.3 pyhd8ed1ab_0\n    - python 3.7.10 hf3644f1_103_cpython\n    - python_abi 3.7 2_cp37m\n    - readline 8.1 h05e3726_0\n    - setuptools 58.2.0 py37hf985489_0\n    - sqlite 3.36.0 h23a322b_2\n    - tk 8.6.11 h5dbffcc_1\n    - wheel 0.37.0 pyhd8ed1ab_1\n    - xz 5.2.5 haf1e3a3_1\n    - zlib 1.2.11 h9173be1_1013\n  run:\n    - libblas >=3.8.0,<4.0a0\n    - libcxx >=10.0.1\n    - libfaiss =1.7.1=*_cpu\n    - libfaiss-avx2 =1.7.1=*_cpu\n    - liblapack >=3.8.0,<4.0a0\n    - llvm-openmp >=11.1.0\n    - llvm-openmp >=12.0.1\n    - numpy >=1.18.5,<2.0a0\n    - python >=3.7,<3.8.0a0\n    - python_abi 3.7.* *_cp37m\n  run_constrained:\n    - faiss-gpu ==9999999999\n    - faiss-proc =*=cpu\ntest:\n  commands:\n    - export HAS_AVX2=NO  && ./test-pkg.sh\n  files:\n    - test-pkg.bat\n    - test-pkg.sh\n  imports:\n    - faiss\n  requires:\n    - blas =*=mkl\n    - pytest\n    - scipy\n  source_files:\n    - tests/\nabout:\n  description: 'Faiss is a library for efficient similarity search and clustering\n    of dense vectors.\n\n    It contains algorithms that search in sets of vectors of any size, up to ones\n    that\n\n    possibly do not fit in RAM. It also contains supporting code for evaluation and\n\n    parameter tuning. Faiss is written in C++ with complete wrappers for Python/numpy.\n\n    Some of the most useful algorithms are implemented on the GPU. It is developed\n    by\n\n    [Facebook AI Research](https://research.fb.com/category/facebook-ai-research-fair/).\n\n\n    For best performance, the maintainers of the package\n\n    [recommend](https://github.com/conda-forge/staged-recipes/pull/11337#issuecomment-623718460)\n\n    using the MKL implementation of blas/lapack. You can ensure that this is installed\n\n    by adding \"libblas =*=*mkl\" to your dependencies.\n\n    '\n  dev_url: https://github.com/facebookresearch/faiss\n  doc_url: https://rawgit.com/facebookresearch/faiss/master/docs/html/annotated.html\n  home: https://github.com/facebookresearch/faiss\n  license: MIT\n  license_family: MIT\n  license_file: LICENSE\n  summary: A library for efficient similarity search and clustering of dense vectors.\nextra:\n  copy_test_source_files: true\n  final: true\n  recipe-maintainers:\n    - h-vetinari\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Faiss is a library for efficient similarity search and clustering of dense vectors.\nIt contains algorithms that search in sets of vectors of any size, up to ones that\npossibly do not fit in RAM. It also contains supporting code for evaluation and\nparameter tuning. Faiss is written in C++ with complete wrappers for Python/numpy.\nSome of the most useful algorithms are implemented on the GPU. It is developed by\n[Facebook AI Research](https://research.fb.com/category/facebook-ai-research-fair/).\n\nFor best performance, the maintainers of the package\n[recommend](https://github.com/conda-forge/staged-recipes/pull/11337#issuecomment-623718460)\nusing the MKL implementation of blas/lapack. You can ensure that this is installed\nby adding \"libblas =*=*mkl\" to your dependencies.\n",
+   "dev_url": "https://github.com/facebookresearch/faiss",
+   "doc_url": "https://rawgit.com/facebookresearch/faiss/master/docs/html/annotated.html",
+   "home": "https://github.com/facebookresearch/faiss",
+   "license": "MIT",
+   "license_family": "MIT",
+   "license_file": "LICENSE",
+   "summary": "A library for efficient similarity search and clustering of dense vectors."
+  },
+  "build": {
+   "number": 0,
+   "string": "py37h1b79b25_0_cpu"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "h-vetinari"
+   ]
+  },
+  "package": {
+   "name": "faiss",
+   "version": "1.7.1"
+  },
+  "requirements": {
+   "build": [
+    "bzip2 1.0.8 h0d85af4_4",
+    "c-ares 1.17.2 h0d85af4_0",
+    "ca-certificates 2021.10.8 h033912b_0",
+    "cctools_osx-64 949.0.1 h6407bdd_22",
+    "clang 10.0.1 default_hf57f61e_1",
+    "clang_osx-64 10.0.1 h05bbb7f_10",
+    "clangxx 10.0.1 default_hf57f61e_1",
+    "clangxx_osx-64 10.0.1 h05bbb7f_10",
+    "cmake 3.21.3 hdbd2f3e_0",
+    "compiler-rt 10.0.1 he6db49b_0",
+    "compiler-rt_osx-64 10.0.1 h033240e_0",
+    "expat 2.4.1 he49afe7_0",
+    "krb5 1.19.2 h289aae4_2",
+    "ld64_osx-64 530 hea264c1_17",
+    "ldid 2.1.2 h6a69015_3",
+    "libclang-cpp10 10.0.1 default_hf57f61e_1",
+    "libcurl 7.79.1 h97da3c1_1",
+    "libcxx 12.0.1 habf9029_0",
+    "libedit 3.1.20191231 h0678c8f_2",
+    "libev 4.33 haf1e3a3_1",
+    "libllvm10 10.0.1 h009f743_3",
+    "libllvm12 12.0.1 hd011deb_2",
+    "libnghttp2 1.43.0 hfd382f3_1",
+    "libssh2 1.10.0 hd3787cc_2",
+    "libuv 1.42.0 h0d85af4_0",
+    "libzlib 1.2.11 h9173be1_1013",
+    "llvm-openmp 11.1.0 hda6cdc1_1",
+    "llvm-tools 10.0.1 h1341992_3",
+    "lz4-c 1.9.3 he49afe7_1",
+    "ncurses 6.2 h2e338ed_4",
+    "openssl 3.0.0 h0d85af4_1",
+    "pcre 8.45 he49afe7_0",
+    "rhash 1.4.1 h35c211d_0",
+    "swig 4.0.2 hce5123c_2",
+    "tapi 1100.0.11 h9ce4665_0",
+    "tk 8.6.11 h5dbffcc_1",
+    "xz 5.2.5 haf1e3a3_1",
+    "zlib 1.2.11 h9173be1_1013",
+    "zstd 1.5.0 h582d3a0_0"
+   ],
+   "host": [
+    "ca-certificates 2021.10.8 h033912b_0",
+    "libblas 3.8.0 11_h508aa58_netlib",
+    "libcblas 3.8.0 11_h508aa58_netlib",
+    "libcxx 12.0.1 habf9029_0",
+    "libfaiss =1.7.1=*_cpu",
+    "libfaiss-avx2 =1.7.1=*_cpu",
+    "libffi 3.4.2 he49afe7_4",
+    "libgfortran 5.0.0 9_3_0_h6c81a4c_23",
+    "libgfortran5 9.3.0 h6c81a4c_23",
+    "liblapack 3.8.0 11_h508aa58_netlib",
+    "libzlib 1.2.11 h9173be1_1013",
+    "llvm-openmp 12.0.1 hda6cdc1_1",
+    "ncurses 6.2 h2e338ed_4",
+    "numpy 1.18.5 py37h7687784_0",
+    "openssl 3.0.0 h0d85af4_1",
+    "pip 21.3 pyhd8ed1ab_0",
+    "python 3.7.10 hf3644f1_103_cpython",
+    "python_abi 3.7 2_cp37m",
+    "readline 8.1 h05e3726_0",
+    "setuptools 58.2.0 py37hf985489_0",
+    "sqlite 3.36.0 h23a322b_2",
+    "tk 8.6.11 h5dbffcc_1",
+    "wheel 0.37.0 pyhd8ed1ab_1",
+    "xz 5.2.5 haf1e3a3_1",
+    "zlib 1.2.11 h9173be1_1013"
+   ],
+   "run": [
+    "libblas >=3.8.0,<4.0a0",
+    "libcxx >=10.0.1",
+    "libfaiss =1.7.1=*_cpu",
+    "libfaiss-avx2 =1.7.1=*_cpu",
+    "liblapack >=3.8.0,<4.0a0",
+    "llvm-openmp >=11.1.0",
+    "llvm-openmp >=12.0.1",
+    "numpy >=1.18.5,<2.0a0",
+    "python >=3.7,<3.8.0a0",
+    "python_abi 3.7.* *_cp37m"
+   ],
+   "run_constrained": [
+    "faiss-gpu ==9999999999",
+    "faiss-proc =*=cpu"
+   ]
+  },
+  "source": {
+   "patches": [
+    "patches/0001-use-c-17.patch",
+    "patches/0002-adapt-header-target-directory-to-outputname.patch",
+    "patches/0003-skip-test_stress-for-GPU-on-windows.patch",
+    "patches/0004-enable-building-libfaiss_avx2-without-libfaiss.patch",
+    "patches/0005-add-missing-headers-re-alphabetize.patch",
+    "patches/0006-add-missing-algorithm-for-min-max.patch",
+    "patches/0007-increase-tolerance-for-marginally-failing-test.patch",
+    "patches/0008-add-bigobj-to-swigfaiss-compile-options-on-windows.patch"
+   ],
+   "sha256": "d676d3107ad41203a49e0afda2630519299dc8666f8d23322cbe1eac0c431871",
+   "url": "https://github.com/facebookresearch/faiss/archive/v1.7.1.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "export HAS_AVX2=NO  && ./test-pkg.sh"
+   ],
+   "files": [
+    "test-pkg.bat",
+    "test-pkg.sh"
+   ],
+   "imports": [
+    "faiss"
+   ],
+   "requires": [
+    "blas =*=mkl",
+    "pytest",
+    "scipy"
+   ],
+   "source_files": [
+    "tests/"
+   ]
+  }
+ },
+ "version": "1.7.1"
+}
