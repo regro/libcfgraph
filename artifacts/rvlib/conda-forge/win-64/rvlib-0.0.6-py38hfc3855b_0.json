@@ -1,0 +1,827 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge",
+   "https://repo.anaconda.com/pkgs/main"
+  ],
+  "conda_build_version": "3.21.7",
+  "conda_private": false,
+  "conda_version": "4.11.0",
+  "description": "rvlib is a statistical package that mimics the API of Julia's\nDistributions.jl package while at the same time achieves a similar\nperformance by exploiting numba.\n",
+  "dev_url": "https://github.com/QuantEcon/rvlib",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "knaaptime",
+    "danielcsaba",
+    "sglyon"
+   ]
+  },
+  "home": "https://github.com/QuantEcon/rvlib",
+  "identifiers": [],
+  "keywords": [],
+  "license": "BSD 3-Clause",
+  "license_file": "LICENSE.txt",
+  "root_pkgs": [
+   "anaconda-client 1.8.0 pyhd8ed1ab_0",
+   "attrs 21.2.0 pyhd8ed1ab_0",
+   "backports 1.0 py_2",
+   "backports.functools_lru_cache 1.6.4 pyhd8ed1ab_0",
+   "beautifulsoup4 4.10.0 pyha770c72_0",
+   "boa 0.8.1 pyha770c72_0",
+   "brotlipy 0.7.0 py39h2bbff1b_1003",
+   "bzip2 1.0.8 h8ffe710_4",
+   "ca-certificates 2021.10.8 h5b45459_0",
+   "certifi 2021.10.8 py39hcbf5309_1",
+   "cffi 1.15.0 py39h2bbff1b_0",
+   "chardet 4.0.0 py39hcbf5309_2",
+   "charset-normalizer 2.0.4 pyhd3eb1b0_0",
+   "click 8.0.3 py39hcbf5309_1",
+   "clyent 1.2.2 py_1",
+   "colorama 0.4.4 pyh9f0ad1d_0",
+   "commonmark 0.9.1 py_0",
+   "conda 4.11.0 py39hcbf5309_0",
+   "conda-build 3.21.7 py39hcbf5309_0",
+   "conda-env 2.6.0 1",
+   "conda-forge-ci-setup 3.18.0 py39ha538f94_0",
+   "conda-package-handling 1.7.3 py39h8cc25b3_1",
+   "console_shortcut 0.1.1 4",
+   "cryptography 36.0.0 py39h21b164f_0",
+   "dataclasses 0.8 pyhc8e2a94_3",
+   "filelock 3.4.0 pyhd8ed1ab_0",
+   "future 0.18.2 py39hcbf5309_4",
+   "glob2 0.7 py_0",
+   "idna 3.3 pyhd3eb1b0_0",
+   "importlib-metadata 4.8.2 py39hcbf5309_0",
+   "importlib_resources 5.4.0 pyhd8ed1ab_0",
+   "ipython_genutils 0.2.0 py_1",
+   "jinja2 3.0.3 pyhd8ed1ab_0",
+   "joblib 1.1.0 pyhd8ed1ab_0",
+   "json5 0.9.5 pyh9f0ad1d_0",
+   "jsonschema 4.2.1 pyhd8ed1ab_1",
+   "jupyter_core 4.9.1 py39hcbf5309_1",
+   "krb5 1.19.2 h20d022d_3",
+   "libarchive 3.5.2 hb45042f_1",
+   "libcurl 7.80.0 h789b8ee_1",
+   "libiconv 1.16 he774522_0",
+   "liblief 0.11.5 h0e60522_1",
+   "libmamba 0.19.1 h44daa3b_0",
+   "libmambapy 0.19.1 py39h9c8ecf5_0",
+   "libsolv 0.7.19 h7755175_5",
+   "libssh2 1.10.0 h680486a_2",
+   "libxml2 2.9.12 hf5bbc77_1",
+   "libzlib 1.2.11 h8ffe710_1013",
+   "lz4-c 1.9.3 h8ffe710_1",
+   "lzo 2.10 he774522_1000",
+   "m2-bash 4.3.042 5",
+   "m2-ca-certificates 20150426 103",
+   "m2-coreutils 8.25 102",
+   "m2-curl 7.47.1 3",
+   "m2-db 5.3.28 3",
+   "m2-expat 2.1.1 2",
+   "m2-findutils 4.6.0 2",
+   "m2-gcc-libs 5.3.0 4",
+   "m2-gdbm 1.11 4",
+   "m2-git 2.8.1 2",
+   "m2-gmp 6.1.0 3",
+   "m2-gzip 1.7 2",
+   "m2-heimdal 1.5.3 10",
+   "m2-heimdal-libs 1.5.3 10",
+   "m2-icu 56.1 2",
+   "m2-info 6.0 2",
+   "m2-less 481 2",
+   "m2-libcrypt 1.3 2",
+   "m2-libcurl 7.47.1 3",
+   "m2-libdb 5.3.28 3",
+   "m2-libedit 3.1 20150326",
+   "m2-libexpat 2.1.1 2",
+   "m2-libffi 3.2.1 2",
+   "m2-libgdbm 1.11 4",
+   "m2-libiconv 1.14 3",
+   "m2-libidn 1.32 2",
+   "m2-libintl 0.19.7 4",
+   "m2-libmetalink 0.1.2 3",
+   "m2-libopenssl 1.0.2.g 2",
+   "m2-libp11-kit 0.23.2 2",
+   "m2-libpcre 8.38 2",
+   "m2-libreadline 6.3.008 8",
+   "m2-libsqlite 3.10.0.0 2",
+   "m2-libssh2 1.6.0 2",
+   "m2-libtasn1 4.7 2",
+   "m2-msys2-runtime 2.5.0.17080.65c939c 3",
+   "m2-ncurses 6.0.20160220 2",
+   "m2-openssh 7.1p2 2",
+   "m2-openssl 1.0.2.g 2",
+   "m2-p11-kit 0.23.2 2",
+   "m2-patch 2.7.5 2",
+   "m2-perl 5.22.1 2",
+   "m2-perl-authen-sasl 2.16 3",
+   "m2-perl-convert-binhex 1.123 3",
+   "m2-perl-encode-locale 1.04 2",
+   "m2-perl-error 0.17024 2",
+   "m2-perl-file-listing 6.04 3",
+   "m2-perl-html-parser 3.71 4",
+   "m2-perl-html-tagset 3.20 3",
+   "m2-perl-http-cookies 6.01 3",
+   "m2-perl-http-daemon 6.01 3",
+   "m2-perl-http-date 6.02 3",
+   "m2-perl-http-message 6.06 3",
+   "m2-perl-http-negotiate 6.01 3",
+   "m2-perl-io-socket-ssl 2.016 2",
+   "m2-perl-io-stringy 2.111 2",
+   "m2-perl-libwww 6.13 2",
+   "m2-perl-lwp-mediatypes 6.02 3",
+   "m2-perl-mailtools 2.14 2",
+   "m2-perl-mime-tools 5.506 2",
+   "m2-perl-net-http 6.09 2",
+   "m2-perl-net-smtp-ssl 1.02 2",
+   "m2-perl-net-ssleay 1.72 2",
+   "m2-perl-termreadkey 2.33 2",
+   "m2-perl-timedate 2.30 3",
+   "m2-perl-uri 1.68 2",
+   "m2-perl-www-robotrules 6.02 3",
+   "m2-sed 4.2.2 3",
+   "m2-vim 7.4.1721 2",
+   "m2-zlib 1.2.8 4",
+   "m2w64-gcc-libgfortran 5.3.0 6",
+   "m2w64-gcc-libs 5.3.0 7",
+   "m2w64-gcc-libs-core 5.3.0 7",
+   "m2w64-gmp 6.1.0 2",
+   "m2w64-libwinpthread-git 5.0.0.4634.697f757 2",
+   "mamba 0.19.1 py39hb3d9227_0",
+   "markupsafe 2.0.1 py39hb82d6ee_1",
+   "menuinst 1.4.16 py39h2bbff1b_0",
+   "msys2-conda-epoch 20160418 1",
+   "nbformat 5.1.3 pyhd8ed1ab_0",
+   "openssl 1.1.1l h8ffe710_0",
+   "pip 21.3.1 pyhd8ed1ab_0",
+   "pkginfo 1.8.2 pyhd8ed1ab_0",
+   "powershell_shortcut 0.0.1 3",
+   "prompt-toolkit 3.0.24 pyha770c72_0",
+   "prompt_toolkit 3.0.24 hd8ed1ab_0",
+   "psutil 5.8.0 py39hb82d6ee_2",
+   "py-lief 0.11.5 py39h415ef7b_1",
+   "pybind11-abi 4 hd8ed1ab_3",
+   "pycosat 0.6.3 py39h2bbff1b_0",
+   "pycparser 2.21 pyhd3eb1b0_0",
+   "pygments 2.10.0 pyhd8ed1ab_0",
+   "pyopenssl 21.0.0 pyhd3eb1b0_1",
+   "pyrsistent 0.18.0 py39hb82d6ee_0",
+   "pysocks 1.7.1 py39haa95532_0",
+   "python 3.9.7 h7840368_3_cpython",
+   "python-dateutil 2.8.2 pyhd8ed1ab_0",
+   "python-libarchive-c 3.2 py39hcbf5309_0",
+   "python_abi 3.9 2_cp39",
+   "pytz 2021.3 pyhd8ed1ab_0",
+   "pywin32 228 py39hbaba5e8_1",
+   "pyyaml 6.0 py39hb82d6ee_3",
+   "reproc 14.2.3 h8ffe710_0",
+   "reproc-cpp 14.2.3 h0e60522_0",
+   "requests 2.26.0 pyhd3eb1b0_0",
+   "rich 10.16.1 pyhd8ed1ab_0",
+   "ripgrep 13.0.0 h7f3b576_1",
+   "ruamel.yaml 0.17.17 py39hb82d6ee_1",
+   "ruamel.yaml.clib 0.2.6 py39hb82d6ee_0",
+   "ruamel_yaml 0.15.100 py39h2bbff1b_0",
+   "setuptools 58.0.4 py39haa95532_0",
+   "shyaml 0.6.2 pyhd3deb0d_0",
+   "six 1.16.0 pyhd3eb1b0_0",
+   "soupsieve 2.3.1 pyhd8ed1ab_0",
+   "sqlite 3.36.0 h2bbff1b_0",
+   "tk 8.6.11 h8ffe710_1",
+   "tqdm 4.62.3 pyhd3eb1b0_1",
+   "traitlets 5.1.1 pyhd8ed1ab_0",
+   "typing_extensions 4.0.1 pyha770c72_0",
+   "tzdata 2021e hda174b7_0",
+   "urllib3 1.26.7 pyhd3eb1b0_0",
+   "vc 14.2 h21ff451_1",
+   "vs2008_express_vc_python_patch 1.0.0 0",
+   "vs2015_runtime 14.27.29016 h5e58377_2",
+   "watchgod 0.7 pyhd8ed1ab_0",
+   "wcwidth 0.2.5 pyh9f0ad1d_2",
+   "wheel 0.37.0 pyhd3eb1b0_1",
+   "wincertstore 0.2 py39haa95532_2",
+   "win_inet_pton 1.1.0 py39haa95532_0",
+   "xz 5.2.5 h62dcd97_1",
+   "yaml 0.2.5 he774522_0",
+   "yaml-cpp 0.6.3 ha925a31_4",
+   "zipp 3.6.0 pyhd8ed1ab_0",
+   "zlib 1.2.11 h8ffe710_1013",
+   "zstd 1.5.0 h6255e5f_0"
+  ],
+  "summary": "Mimicking the API of Distributions.jl in Python with added numba support.",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CI": "azure",
+  "CMAKE_GENERATOR": "NMake Makefiles",
+  "VERBOSE_AT": "V=1",
+  "VERBOSE_CM": "VERBOSE=1",
+  "_libgcc_mutex": "0.1 conda_forge",
+  "abseil_cpp": "20210324.2",
+  "alsa_lib": "1.2.3",
+  "arb": "2.19",
+  "arpack": "3.7",
+  "arrow_cpp": "4.0.1",
+  "aws_c_auth": "0.6.1",
+  "aws_c_cal": "0.5.11",
+  "aws_c_common": "0.6.8",
+  "aws_c_event_stream": "0.2.7",
+  "aws_c_http": "0.6.5",
+  "aws_c_io": "0.10.6",
+  "aws_c_mqtt": "0.7.6",
+  "aws_c_s3": "0.1.23",
+  "aws_checksums": "0.1.11",
+  "aws_crt_cpp": "0.14.5",
+  "aws_sdk_cpp": "1.8.186",
+  "blas_impl": "openblas",
+  "boost": "1.74.0",
+  "boost_cpp": "1.74.0",
+  "bzip2": "1",
+  "c_compiler": "m2w64-gcc",
+  "cairo": "1.16",
+  "cfitsio": "3.470",
+  "cgo_compiler": "go-cgo",
+  "channel_sources": "conda-forge,defaults",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cross_compiler_target_platform": "win-64",
+  "cuda_compiler_version": "None",
+  "cudnn": "undefined",
+  "curl": "7",
+  "cutensor": "1",
+  "cxx_compiler": "m2w64-gcc",
+  "dbus": "1",
+  "exiv2": "0.27",
+  "expat": "2",
+  "extend_keys": [
+   "ignore_build_only_deps",
+   "extend_keys",
+   "pin_run_as_build",
+   "ignore_version"
+  ],
+  "ffmpeg": "4.3",
+  "fftw": "3",
+  "flann": "1.9.1",
+  "fmt": "8",
+  "fontconfig": "2.13",
+  "fortran_compiler": "flang",
+  "fortran_compiler_version": "5",
+  "freetype": "2",
+  "gdal": "3.2",
+  "gdk_pixbuf": "2",
+  "geos": "3.9.1",
+  "geotiff": "1.6",
+  "gf2x": "1.3",
+  "gflags": "2.2",
+  "giflib": "5.2",
+  "glew": "2.1",
+  "glib": "2",
+  "glog": "0.5",
+  "glpk": "4.65",
+  "gmp": "6",
+  "gnuradio_core": "3.8.3",
+  "go_compiler": "go-nocgo",
+  "google_cloud_cpp": "1.29",
+  "google_cloud_cpp_common": "0.25.0",
+  "googleapis_cpp": "0.10",
+  "graphviz": "2.47",
+  "grpc_cpp": "1.38",
+  "gsl": "2.6",
+  "gst_plugins_base": "1.18",
+  "gstreamer": "1.18",
+  "harfbuzz": "2",
+  "hdf4": "4.2",
+  "hdf5": "1.10.6",
+  "icu": "68",
+  "ignore_build_only_deps": [
+   "python",
+   "numpy"
+  ],
+  "ipopt": "3.14",
+  "isl": "0.22",
+  "jasper": "2",
+  "jpeg": "9",
+  "json_c": "0.15",
+  "jsoncpp": "1.9.4",
+  "kealib": "1.4",
+  "krb5": "1.17.1",
+  "libarchive": "3.5",
+  "libblas": "3.8 *netlib",
+  "libblitz": "0.10",
+  "libcblas": "3.8 *netlib",
+  "libcrc32c": "1.1",
+  "libcurl": "7",
+  "libdap4": "3.20.6",
+  "libevent": "2.1.10",
+  "libffi": "3.3",
+  "libgdal": "3.2",
+  "libgit2": "1.1",
+  "libiconv": "1.16",
+  "libiio": "0.21",
+  "libjpeg_turbo": "2",
+  "libkml": "1.3",
+  "liblapack": "3.8 *netlib",
+  "liblapacke": "3.8 *netlib",
+  "libmatio": "1.5",
+  "libmicrohttpd": "0.9",
+  "libnetcdf": "4.7.4",
+  "libopencv": "4.5.2",
+  "libpcap": "1.10",
+  "libpng": "1.6",
+  "libprotobuf": "3.16",
+  "librdkafka": "1.6",
+  "librsvg": "2",
+  "libsecret": "0.18",
+  "libspatialindex": "1.9.3",
+  "libssh2": "1",
+  "libsvm": "3.21",
+  "libthrift": "0.14.2",
+  "libtiff": "4",
+  "libunwind": "1",
+  "libuuid": "2.32.1",
+  "libv8": "8.9.83",
+  "libwebp": "1",
+  "libwebp_base": "1",
+  "libxml2": "2.9",
+  "libzip": "1",
+  "log4cxx": "0.11.0",
+  "lua": "5",
+  "lz4_c": "1.9.3",
+  "lzo": "2",
+  "m2w64_c_compiler": "m2w64-toolchain",
+  "m2w64_cxx_compiler": "m2w64-toolchain",
+  "m2w64_fortran_compiler": "m2w64-toolchain",
+  "metis": "5.1",
+  "mimalloc": "1.6.3",
+  "mkl": "2021",
+  "mkl_devel": "2021",
+  "mpfr": "4",
+  "mpich": "3",
+  "mumps_mpi": "5.2",
+  "mumps_seq": "5.2",
+  "nccl": "2",
+  "ncurses": "6.2",
+  "netcdf_cxx4": "4.3",
+  "netcdf_fortran": "4.5",
+  "nettle": "3.7",
+  "nlopt": "2.7",
+  "nodejs": "14",
+  "nspr": "4",
+  "nss": "3",
+  "ntl": "11.4.3",
+  "numpy": "1.18",
+  "occt": "7.5",
+  "openblas": "0.3.*",
+  "openexr": "2.5",
+  "openjpeg": "2.4",
+  "openmpi": "4",
+  "openssl": "1.1.1",
+  "openturns": "1.16",
+  "orc": "1.6.9",
+  "pango": "1.42",
+  "pari": "2.13.* *_pthread",
+  "pcre": "8",
+  "pcre2": "10.37",
+  "perl": "5.26.2",
+  "petsc": "3.14",
+  "petsc4py": "3.14",
+  "pin_run_as_build": {
+   "arpack": {
+    "max_pin": "x.x.x"
+   },
+   "boost": {
+    "max_pin": "x.x.x"
+   },
+   "boost-cpp": {
+    "max_pin": "x.x.x"
+   },
+   "bzip2": {
+    "max_pin": "x"
+   },
+   "cairo": {
+    "max_pin": "x.x"
+   },
+   "curl": {
+    "max_pin": "x"
+   },
+   "dbus": {
+    "max_pin": "x"
+   },
+   "fftw": {
+    "max_pin": "x"
+   },
+   "flann": {
+    "max_pin": "x.x.x"
+   },
+   "fontconfig": {
+    "max_pin": "x"
+   },
+   "freetype": {
+    "max_pin": "x"
+   },
+   "gdal": {
+    "max_pin": "x.x"
+   },
+   "geotiff": {
+    "max_pin": "x.x.x"
+   },
+   "glew": {
+    "max_pin": "x.x"
+   },
+   "glpk": {
+    "max_pin": "x.x"
+   },
+   "gmp": {
+    "max_pin": "x"
+   },
+   "graphviz": {
+    "max_pin": "x"
+   },
+   "harfbuzz": {
+    "max_pin": "x"
+   },
+   "hdf4": {
+    "max_pin": "x.x"
+   },
+   "isl": {
+    "max_pin": "x.x"
+   },
+   "jasper": {
+    "max_pin": "x"
+   },
+   "jpeg": {
+    "max_pin": "x"
+   },
+   "json-c": {
+    "max_pin": "x.x"
+   },
+   "jsoncpp": {
+    "max_pin": "x.x.x"
+   },
+   "kealib": {
+    "max_pin": "x.x"
+   },
+   "krb5": {
+    "max_pin": "x.x"
+   },
+   "libblitz": {
+    "max_pin": "x.x"
+   },
+   "libcurl": {
+    "max_pin": "x"
+   },
+   "libevent": {
+    "max_pin": "x.x.x"
+   },
+   "libffi": {
+    "max_pin": "x.x"
+   },
+   "libgdal": {
+    "max_pin": "x.x"
+   },
+   "libiconv": {
+    "max_pin": "x.x"
+   },
+   "libjpeg_turbo": {
+    "max_pin": "x"
+   },
+   "libkml": {
+    "max_pin": "x.x"
+   },
+   "libpng": {
+    "max_pin": "x.x"
+   },
+   "librsvg": {
+    "max_pin": "x"
+   },
+   "libsvm": {
+    "max_pin": "x.x"
+   },
+   "libtiff": {
+    "max_pin": "x"
+   },
+   "libuuid": {
+    "max_pin": "x"
+   },
+   "libxml2": {
+    "max_pin": "x.x"
+   },
+   "lz4-c": {
+    "max_pin": "x.x.x"
+   },
+   "lzo": {
+    "max_pin": "x"
+   },
+   "metis": {
+    "max_pin": "x.x"
+   },
+   "mpfr": {
+    "max_pin": "x"
+   },
+   "ncurses": {
+    "max_pin": "x.x"
+   },
+   "netcdf-cxx4": {
+    "max_pin": "x.x"
+   },
+   "netcdf-fortran": {
+    "max_pin": "x.x"
+   },
+   "nettle": {
+    "max_pin": "x.x"
+   },
+   "nlopt": {
+    "max_pin": "x.x.x"
+   },
+   "nspr": {
+    "max_pin": "x"
+   },
+   "nss": {
+    "max_pin": "x"
+   },
+   "occt": {
+    "max_pin": "x.x"
+   },
+   "openjpeg": {
+    "max_pin": "x.x"
+   },
+   "openssl": {
+    "max_pin": "x.x.x"
+   },
+   "openturns": {
+    "max_pin": "x.x"
+   },
+   "pango": {
+    "max_pin": "x.x"
+   },
+   "perl": {
+    "max_pin": "x.x.x"
+   },
+   "poppler": {
+    "max_pin": "x.x"
+   },
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "qt": {
+    "max_pin": "x.x"
+   },
+   "qtkeychain": {
+    "max_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "readline": {
+    "max_pin": "x"
+   },
+   "sox": {
+    "max_pin": "x.x.x"
+   },
+   "spdlog": {
+    "max_pin": "x.x"
+   },
+   "sqlite": {
+    "max_pin": "x"
+   },
+   "tiledb": {
+    "max_pin": "x.x"
+   },
+   "tk": {
+    "max_pin": "x.x"
+   },
+   "vlfeat": {
+    "max_pin": "x.x.x"
+   },
+   "vtk": {
+    "max_pin": "x.x.x"
+   },
+   "xz": {
+    "max_pin": "x.x"
+   },
+   "zeromq": {
+    "max_pin": "x.x.x"
+   },
+   "zlib": {
+    "max_pin": "x.x"
+   }
+  },
+  "pixman": "0",
+  "poco": "1.11.0",
+  "poppler": "21.03",
+  "proj": "7.2.0",
+  "ptscotch": "6.0.9",
+  "pybind11_abi": "4",
+  "python": "3.8.* *_cpython",
+  "python_impl": "cpython",
+  "qt": "5.12",
+  "qtkeychain": "0.12",
+  "r_base": "4.0",
+  "re2": "2021.06.01",
+  "readline": "8",
+  "rocksdb": "6.10",
+  "root_base": "6.24.0",
+  "ruby": "2.6",
+  "rust_compiler": "rust",
+  "s2n": "1.0.14",
+  "scotch": "6.0.9",
+  "singular": "4.2.0.p3",
+  "slepc": "3.14",
+  "slepc4py": "3.14",
+  "snappy": "1",
+  "soapysdr": "0.8",
+  "sox": "14.4.2",
+  "spdlog": "1.8",
+  "sqlite": "3",
+  "suitesparse": "5",
+  "target_goarch": "amd64",
+  "target_gobin": "%PREFIX%\\bin\\",
+  "target_goexe": ".exe",
+  "target_goos": "windows",
+  "target_platform": "win-64",
+  "tbb": "2020",
+  "tbb_devel": "2020",
+  "thrift_cpp": "0.14.2",
+  "tiledb": "2.3",
+  "tinyxml2": "9",
+  "tk": "8.6",
+  "uhd": "4.1.0",
+  "vc": "14",
+  "vlfeat": "0.9.20",
+  "volk": "2.5",
+  "vtk": "9.0.1",
+  "x264": "1!161.*",
+  "xerces_c": "3.2",
+  "xrootd": "5",
+  "xz": "5.2",
+  "zeromq": "4.3.4",
+  "zip_keys": [
+   [
+    "python",
+    "numpy"
+   ],
+   [
+    "python",
+    "numpy",
+    "python_impl"
+   ]
+  ],
+  "zlib": "1.2",
+  "zstd": "1.5"
+ },
+ "files": [
+  "Lib/site-packages/rvlib-0.0.6.dist-info/INSTALLER",
+  "Lib/site-packages/rvlib-0.0.6.dist-info/METADATA",
+  "Lib/site-packages/rvlib-0.0.6.dist-info/RECORD",
+  "Lib/site-packages/rvlib-0.0.6.dist-info/REQUESTED",
+  "Lib/site-packages/rvlib-0.0.6.dist-info/WHEEL",
+  "Lib/site-packages/rvlib-0.0.6.dist-info/direct_url.json",
+  "Lib/site-packages/rvlib/__init__.py",
+  "Lib/site-packages/rvlib/_rmath_ffi.pyd",
+  "Lib/site-packages/rvlib/metadata.yaml",
+  "Lib/site-packages/rvlib/specials.py",
+  "Lib/site-packages/rvlib/univariate.py",
+  "Lib/site-packages/rvlib/version.py",
+  "Scripts/build_interface.py"
+ ],
+ "index": {
+  "arch": "x86_64",
+  "build": "py38hfc3855b_0",
+  "build_number": 0,
+  "depends": [
+   "cffi",
+   "m2w64-gcc-libs",
+   "numba >=0.49",
+   "numpy",
+   "python >=3.8,<3.9.0a0",
+   "python_abi 3.8.* *_cp38",
+   "pyyaml"
+  ],
+  "license": "BSD 3-Clause",
+  "name": "rvlib",
+  "platform": "win",
+  "subdir": "win-64",
+  "timestamp": 1639598559984,
+  "version": "0.0.6"
+ },
+ "metadata_version": 1,
+ "name": "rvlib",
+ "raw_recipe": "{% set name = \"rvlib\" %}\n{% set version = \"0.0.6\" %}\n\npackage:\n  name: {{ name }}\n  version: {{ version }}\n\nsource:\n  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz\n  sha256: 05a4bbb74386ed083900029a8ef6f19d913d8e02dc997b409f4097f731d6918f\n\nbuild:\n  number: 0\n  script: {{ PYTHON }} -m pip install . --no-deps -vv\n\nrequirements:\n  build:\n    - cffi                                   # [build_platform != target_platform]\n    - python                                 # [build_platform != target_platform]\n    - cross-python_{{ target_platform }}     # [build_platform != target_platform]\n    - cython                                 # [build_platform != target_platform]\n    - numpy                                  # [build_platform != target_platform]\n    - {{ compiler('c') }}                    # [not win]\n    - {{ compiler('m2w64_c') }}              # [win]\n  host:\n    - python\n    - setuptools\n    - pip\n    - cffi\n    - pyyaml\n    - numpy\n    - libpython                              # [win]\n  run:\n    - python\n    - numpy\n    - cffi\n    - numba >=0.49\n    - pyyaml\n\ntest:\n  imports:\n    - rvlib\n\nabout:\n  home: https://github.com/QuantEcon/rvlib\n  license: BSD 3-Clause\n  license_file: LICENSE.txt\n  summary: 'Mimicking the API of Distributions.jl in Python with added numba support.'\n  description: |\n    rvlib is a statistical package that mimics the API of Julia's\n    Distributions.jl package while at the same time achieves a similar\n    performance by exploiting numba.\n  dev_url: https://github.com/QuantEcon/rvlib\n\nextra:\n  recipe-maintainers:\n    - knaaptime\n    - danielcsaba\n    - sglyon\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "rvlib is a statistical package that mimics the API of Julia's\nDistributions.jl package while at the same time achieves a similar\nperformance by exploiting numba.\n",
+   "dev_url": "https://github.com/QuantEcon/rvlib",
+   "home": "https://github.com/QuantEcon/rvlib",
+   "license": "BSD 3-Clause",
+   "license_file": "LICENSE.txt",
+   "summary": "Mimicking the API of Distributions.jl in Python with added numba support."
+  },
+  "build": {
+   "number": "0",
+   "script": "D:\\\\bld\\\\rvlib_1639597857408\\\\_h_env\\\\python.exe -m pip install . --no-deps -vv",
+   "string": "py38hfc3855b_0"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "danielcsaba",
+    "knaaptime",
+    "sglyon"
+   ]
+  },
+  "package": {
+   "name": "rvlib",
+   "version": "0.0.6"
+  },
+  "requirements": {
+   "build": [
+    "m2w64-binutils 2.25.1 5",
+    "m2w64-bzip2 1.0.6 6",
+    "m2w64-crt-git 5.0.0.4636.2595836 2",
+    "m2w64-gcc 5.3.0 6",
+    "m2w64-gcc-ada 5.3.0 6",
+    "m2w64-gcc-fortran 5.3.0 6",
+    "m2w64-gcc-libgfortran 5.3.0 6",
+    "m2w64-gcc-libs 5.3.0 7",
+    "m2w64-gcc-libs-core 5.3.0 7",
+    "m2w64-gcc-objc 5.3.0 6",
+    "m2w64-gmp 6.1.0 2",
+    "m2w64-headers-git 5.0.0.4636.c0ad18a 2",
+    "m2w64-isl 0.16.1 2",
+    "m2w64-libiconv 1.14 6",
+    "m2w64-libmangle-git 5.0.0.4509.2e5a9a2 2",
+    "m2w64-libwinpthread-git 5.0.0.4634.697f757 2",
+    "m2w64-make 4.1.2351.a80a8b8 2",
+    "m2w64-mpc 1.0.3 3",
+    "m2w64-mpfr 3.1.4 4",
+    "m2w64-pkg-config 0.29.1 2",
+    "m2w64-toolchain 5.3.0 7",
+    "m2w64-toolchain_win-64 2.4.0 0",
+    "m2w64-tools-git 5.0.0.4592.90b8472 2",
+    "m2w64-windows-default-manifest 6.4 3",
+    "m2w64-winpthreads-git 5.0.0.4634.697f757 2",
+    "m2w64-zlib 1.2.8 10",
+    "msys2-conda-epoch 20160418 1"
+   ],
+   "host": [
+    "ca-certificates 2021.10.8 h5b45459_0",
+    "cffi 1.15.0 py38hd8c33c5_0",
+    "intel-openmp 2021.4.0 h57928b3_3556",
+    "libblas 3.9.0 12_win64_mkl",
+    "libcblas 3.9.0 12_win64_mkl",
+    "liblapack 3.9.0 12_win64_mkl",
+    "libpython 2.1 py38haa244fe_1",
+    "m2w64-gcc-libgfortran 5.3.0 6",
+    "m2w64-gcc-libs 5.3.0 7",
+    "m2w64-gcc-libs-core 5.3.0 7",
+    "m2w64-gmp 6.1.0 2",
+    "m2w64-libwinpthread-git 5.0.0.4634.697f757 2",
+    "mkl 2021.4.0 h0e2418a_729",
+    "msys2-conda-epoch 20160418 1",
+    "numpy 1.18.5 py38h72c728b_0",
+    "openssl 3.0.0 h8ffe710_2",
+    "pip 21.3.1 pyhd8ed1ab_0",
+    "pycparser 2.21 pyhd8ed1ab_0",
+    "python 3.8.12 h900ac77_2_cpython",
+    "python_abi 3.8 2_cp38",
+    "pyyaml 6.0 py38h294d835_3",
+    "setuptools 59.6.0 py38haa244fe_0",
+    "sqlite 3.37.0 h8ffe710_0",
+    "tbb 2021.4.0 h2d74725_1",
+    "ucrt 10.0.20348.0 h57928b3_0",
+    "vc 14.2 hb210afc_5",
+    "vs2015_runtime 14.29.30037 h902a5da_5",
+    "wheel 0.37.0 pyhd8ed1ab_1",
+    "yaml 0.2.5 he774522_0"
+   ],
+   "run": [
+    "cffi",
+    "m2w64-gcc-libs",
+    "numba >=0.49",
+    "numpy",
+    "python >=3.8,<3.9.0a0",
+    "python_abi 3.8.* *_cp38",
+    "pyyaml"
+   ]
+  },
+  "source": {
+   "sha256": "05a4bbb74386ed083900029a8ef6f19d913d8e02dc997b409f4097f731d6918f",
+   "url": "https://pypi.io/packages/source/r/rvlib/rvlib-0.0.6.tar.gz"
+  },
+  "test": {
+   "imports": [
+    "rvlib"
+   ]
+  }
+ },
+ "version": "0.0.6"
+}
