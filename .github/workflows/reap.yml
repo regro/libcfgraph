@@ -65,7 +65,7 @@ jobs:
         shell: bash -l {0}
         if: success() && ! env.CI_SKIP
         run: |
-          python -m libcflib.analyze_pkgs
+          python -m libcflib.analyze_pkgs 10000
 
       - name: list files
         shell: bash -l {0}

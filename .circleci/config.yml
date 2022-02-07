@@ -41,7 +41,7 @@ jobs:
           name: make import mapping
           command: |
             pushd libcfgraph
-            python -m libcflib.analyze_pkgs
+            python -m libcflib.analyze_pkgs 10000
             popd
       - run:
           name: list files
