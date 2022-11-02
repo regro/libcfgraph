@@ -4,7 +4,7 @@ jobs:
   reap:
     working_directory: ~/repo
     docker:
-      - image: continuumio/miniconda3:latest
+      - image: condaforge/mambaforge:latest
     steps:
 #       - checkout
       - run:
@@ -14,10 +14,6 @@ jobs:
       - run:
           name: Update Conda
           command: |
-            conda config --set always_yes True
-            conda config --add channels conda-forge
-            conda install mamba -y
-            mamba install pip -y
             mamba update --all -y
             git clone --depth=1 https:///github.com/regro/libcflib
             pushd libcflib
