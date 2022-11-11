@@ -1,0 +1,311 @@
+{
+ "about": {
+  "channels": [
+   "https://conda.anaconda.org/conda-forge"
+  ],
+  "conda_build_version": "3.22.0",
+  "conda_private": false,
+  "conda_version": "22.9.0",
+  "description": "Intro\n-----\n\nThis conda package provides the `lsb_release` command for Debian-based Linux\ndistributions such as Debian and Ubuntu. It provides a simple command-line interface\nfor accessing metadata about the installed Linux distribution.\n\nMotivation\n----------\n\nInstallation instructions for many Linux programs rely on the `lsb_release` command\nto detect the release number and/or codename of the installed Linux distribution.\nFor example, as of the time of writing,\n[PostgreSQL](https://www.postgresql.org/download/linux/ubuntu/) uses\nthe `lsb_release -cs` command to detect the proper codename for the apt repository.\n\nThe Debian-based\n[lsb-release package](https://packages.debian.org/stable/lsb-release)\nunfortunately depends on a system-wide installation of `python3`. This conda\npackage avoids the need for a system-wide installation of `python3` when a conda\nenvironment is already available. The distribution-specific data is comes from\na tiny system package named\n[distro-info-data](https://packages.debian.org/stable/distro-info-data),\nwhich can be installed with `apt-get install -y distro-info-data`.\n\nExamples\n--------\n\nBash:\n```bash\nsudo apt-get install -y distro-info-data\nmamba install -y lsb-release\nlsb_release -a\n```\n\n(Substitute `conda` for `mamba` above in case you use that instead.)\n\nDocker:\n```dockerfile\nFROM condaforge/mambaforge:4.10.1-0\n\nRUN : \\\n    && apt-get update \\\n    && apt-get install -y distro-info-data \\\n    && rm -rf /var/lib/apt/lists/* \\\n    && mamba install -y lsb-release \\\n    && conda clean -afy \\\n;\n\nRUN lsb_release -a\n```\n",
+  "dev_url": "https://salsa.debian.org/debian/lsb",
+  "env_vars": {
+   "CIO_TEST": "<not set>"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "maresb"
+   ]
+  },
+  "home": "https://wiki.linuxfoundation.org/lsb/start",
+  "identifiers": [],
+  "keywords": [],
+  "license": "GPL-2.0-only",
+  "license_family": "GPL2",
+  "license_file": "debian/copyright",
+  "root_pkgs": [
+   "pkginfo 1.8.3 pyhd8ed1ab_0",
+   "tqdm 4.64.1 pyhd8ed1ab_0",
+   "urllib3 1.26.11 pyhd8ed1ab_0",
+   "libedit 3.1.20191231 he28a2e2_2",
+   "backports 1.0 py_2",
+   "libzlib 1.2.13 h166bdaf_4",
+   "icu 70.1 h27087fc_0",
+   "_openmp_mutex 4.5 2_gnu",
+   "libmambapy 0.27.0 py310hab0e683_0",
+   "pkgutil-resolve-name 1.3.10 pyhd8ed1ab_0",
+   "yaml-cpp 0.7.0 h27087fc_2",
+   "libssh2 1.10.0 haa6b8db_3",
+   "attrs 22.1.0 pyh71513ae_1",
+   "backports.functools_lru_cache 1.6.4 pyhd8ed1ab_0",
+   "ruamel.yaml 0.17.21 py310h5764c6d_2",
+   "bzip2 1.0.8 h7f98852_4",
+   "conda-package-handling 1.9.0 py310h5764c6d_1",
+   "cffi 1.15.1 py310h255011f_2",
+   "requests 2.28.1 pyhd8ed1ab_1",
+   "libsqlite 3.39.4 h753d276_0",
+   "expat 2.5.0 h27087fc_0",
+   "certifi 2022.9.24 pyhd8ed1ab_0",
+   "watchgod 0.8.2 pyhd8ed1ab_0",
+   "wheel 0.37.1 pyhd8ed1ab_0",
+   "libcurl 7.86.0 h7bff187_0",
+   "sniffio 1.3.0 pyhd8ed1ab_0",
+   "python-dateutil 2.8.2 pyhd8ed1ab_0",
+   "conda-build 3.22.0 py310hff52083_2",
+   "setuptools 65.5.0 pyhd8ed1ab_0",
+   "pcre2 10.37 hc3806b6_1",
+   "brotlipy 0.7.0 py310h5764c6d_1005",
+   "patch 2.7.6 h7f98852_1002",
+   "ca-certificates 2022.9.24 ha878542_0",
+   "future 0.18.2 pyhd8ed1ab_6",
+   "libmamba 0.27.0 h0dd8ff0_0",
+   "toolz 0.12.0 pyhd8ed1ab_0",
+   "ruamel.yaml.clib 0.2.7 py310h5764c6d_0",
+   "ripgrep 13.0.0 h2f28480_2",
+   "pytz 2022.5 pyhd8ed1ab_0",
+   "importlib-metadata 5.0.0 pyha770c72_1",
+   "charset-normalizer 2.1.1 pyhd8ed1ab_0",
+   "cryptography 38.0.2 py310h597c629_2",
+   "xz 5.2.6 h166bdaf_0",
+   "keyutils 1.6.1 h166bdaf_0",
+   "json5 0.9.5 pyh9f0ad1d_0",
+   "libnsl 2.0.0 h7f98852_0",
+   "pyrsistent 0.18.1 py310h5764c6d_2",
+   "krb5 1.19.3 h3790be6_0",
+   "markupsafe 2.1.1 py310h5764c6d_2",
+   "pycparser 2.21 pyhd8ed1ab_0",
+   "lz4-c 1.9.3 h9c3ff4c_1",
+   "libev 4.33 h516909a_1",
+   "commonmark 0.9.1 py_0",
+   "readline 8.1.2 h0f457ee_0",
+   "git 2.38.1 pl5321h5fbbf19_0",
+   "chardet 5.0.0 py310hff52083_1",
+   "psutil 5.9.3 py310h5764c6d_1",
+   "jsonschema 4.16.0 pyhd8ed1ab_0",
+   "mamba 0.27.0 py310hf87f941_0",
+   "conda 22.9.0 py310hff52083_1",
+   "python 3.10.6 h582c2e5_0_cpython",
+   "pybind11-abi 4 hd8ed1ab_3",
+   "importlib_resources 5.10.0 pyhd8ed1ab_0",
+   "libnghttp2 1.47.0 hdcd2b5c_1",
+   "wcwidth 0.2.5 pyh9f0ad1d_2",
+   "soupsieve 2.3.2.post1 pyhd8ed1ab_0",
+   "glob2 0.7 py_0",
+   "python-fastjsonschema 2.16.2 pyhd8ed1ab_0",
+   "libarchive 3.5.2 hb890918_3",
+   "joblib 1.2.0 pyhd8ed1ab_0",
+   "ncurses 6.3 h27087fc_1",
+   "curl 7.86.0 h7bff187_0",
+   "pysocks 1.7.1 pyha2e5f31_6",
+   "libiconv 1.17 h166bdaf_0",
+   "python-libarchive-c 4.0 py310hff52083_2",
+   "rich 12.6.0 pyhd8ed1ab_0",
+   "pycosat 0.6.4 py310h5764c6d_1",
+   "tk 8.6.12 h27826a3_0",
+   "jupyter_core 4.11.1 py310hff52083_1",
+   "libuuid 2.32.1 h7f98852_1000",
+   "libffi 3.4.2 h7f98852_5",
+   "ruamel_yaml 0.15.80 py310h5764c6d_1008",
+   "c-ares 1.18.1 h7f98852_0",
+   "su-exec 0.2 h166bdaf_1003",
+   "reproc 14.2.3 h7f98852_0",
+   "zstd 1.5.2 h6239696_4",
+   "openssl 1.1.1q h166bdaf_1",
+   "gettext 0.21.1 h27087fc_0",
+   "six 1.16.0 pyh6c4a22f_0",
+   "idna 3.4 pyhd8ed1ab_0",
+   "typing_extensions 4.4.0 pyha770c72_0",
+   "beautifulsoup4 4.11.1 pyha770c72_0",
+   "patchelf 0.16.1 h58526e2_0",
+   "libxml2 2.10.3 h7463322_0",
+   "perl 5.32.1 2_h7f98852_perl5",
+   "lzo 2.10 h516909a_1000",
+   "traitlets 5.5.0 pyhd8ed1ab_0",
+   "pygments 2.13.0 pyhd8ed1ab_0",
+   "anyio 3.6.2 pyhd8ed1ab_0",
+   "liblief 0.12.2 h27087fc_1",
+   "colorama 0.4.6 pyhd8ed1ab_0",
+   "nbformat 5.7.0 pyhd8ed1ab_0",
+   "ld_impl_linux-64 2.39 hc81fddc_0",
+   "tzdata 2022e h191b570_0",
+   "pyopenssl 22.1.0 pyhd8ed1ab_0",
+   "python_abi 3.10 2_cp310",
+   "reproc-cpp 14.2.3 h9c3ff4c_0",
+   "anaconda-client 1.8.0 pyhd8ed1ab_0",
+   "libstdcxx-ng 12.2.0 h46fd767_19",
+   "jinja2 3.1.2 pyhd8ed1ab_1",
+   "libgomp 12.2.0 h65d4601_19",
+   "py-lief 0.12.2 py310hd8f1fbe_1",
+   "filelock 3.8.0 pyhd8ed1ab_0",
+   "_libgcc_mutex 0.1 conda_forge",
+   "tini 0.19.0 h166bdaf_1",
+   "clyent 1.2.2 py_1",
+   "dataclasses 0.8 pyhc8e2a94_3",
+   "libgcc-ng 12.2.0 h65d4601_19",
+   "toml 0.10.2 pyhd8ed1ab_0",
+   "libsolv 0.7.22 h6239696_0",
+   "prompt-toolkit 3.0.31 pyha770c72_0",
+   "zipp 3.10.0 pyhd8ed1ab_0",
+   "pip 22.3 pyhd8ed1ab_0",
+   "yaml 0.2.5 h7f98852_2",
+   "pyyaml 6.0 py310h5764c6d_5",
+   "prompt_toolkit 3.0.31 hd8ed1ab_0",
+   "boa 0.12.0 pyha770c72_4",
+   "conda-env 2.6.0 1",
+   "oniguruma 6.9.8 h166bdaf_0",
+   "jq 1.6 h36c2ea0_1000",
+   "conda-forge-ci-setup 3.21.0 py310hce54274_100",
+   "click 8.1.3 unix_pyhd8ed1ab_2",
+   "shyaml 0.6.2 pyhd3deb0d_0"
+  ],
+  "summary": "LSB release detection module for Debian",
+  "tags": []
+ },
+ "conda_build_config": {
+  "CI": "azure",
+  "c_compiler": "gcc",
+  "cdt_name": "cos6",
+  "channel_sources": "conda-forge",
+  "channel_targets": "conda-forge main",
+  "cpu_optimization_target": "nocona",
+  "cran_mirror": "https://cran.r-project.org",
+  "cxx_compiler": "gxx",
+  "docker_image": "quay.io/condaforge/linux-anvil-cos7-x86_64",
+  "extend_keys": [
+   "ignore_version",
+   "pin_run_as_build",
+   "extend_keys",
+   "ignore_build_only_deps"
+  ],
+  "fortran_compiler": "gfortran",
+  "ignore_build_only_deps": [
+   "python",
+   "numpy"
+  ],
+  "lua": "5",
+  "numpy": "1.16",
+  "perl": "5.26.2",
+  "pin_run_as_build": {
+   "python": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   },
+   "r-base": {
+    "max_pin": "x.x",
+    "min_pin": "x.x"
+   }
+  },
+  "python": "3.10.* *_cpython",
+  "r_base": "3.5",
+  "target_platform": "linux-64"
+ },
+ "files": [
+  "python-scripts/lsb_release",
+  "site-packages/lsb_release.py"
+ ],
+ "index": {
+  "arch": null,
+  "build": "pyhd8ed1ab_4",
+  "build_number": 4,
+  "depends": [
+   "python >=3.6"
+  ],
+  "license": "GPL-2.0-only",
+  "license_family": "GPL2",
+  "name": "lsb-release",
+  "noarch": "python",
+  "platform": null,
+  "subdir": "noarch",
+  "timestamp": 1667254710145,
+  "version": "11.1.0"
+ },
+ "metadata_version": 1,
+ "name": "lsb-release",
+ "raw_recipe": "{% set name = \"lsb-release\" %}\n{% set version = \"11.1.0\" %}\n\npackage:\n  name: {{ name|lower }}\n  version: {{ version }}\n\nsource:\n  url: https://salsa.debian.org/debian/lsb/-/archive/debian/{{ version }}/{{ name }}-{{ version }}.tar.gz\n  sha256: c8a7e2bbabca87301cf259339c532d67f1760ed0d8611ffe986e82a253e6e6a9\n  patches:\n    - patches/handle-missing-distro-info-data.patch\n\nbuild:\n  noarch: python\n  number: 4\n  script:\n    # Use the sed command to substitute the current conda prefix into the shebang.\n    # (On conda install, all occurences of this prefix will be automatically replaced\n    # with the prefix of the active environment.)\n    # Explanation of the sed command:\n    #   1s\n    #     perform search/replace on first line\n    #   :\n    #     search/replace delimiter, typically '/' but we use ':' to avoid conflicts.\n    #   ${PREFIX//:/\\:}\n    #     value of the $PREFIX variable, but with any occurences of : escaped to \\:\n    - sed -i \"1s:/usr/bin:${PREFIX//:/\\:}/bin:\" lsb_release\n    - sed -i \"1s:/usr/bin:${PREFIX//:/\\:}/bin:\" lsb_release.py\n\n    # Remove the -E and -s options to python3\n    # For original motivation, see <https://salsa.debian.org/debian/lsb/-/commit/3ef4021>.\n    # This seems to be no big deal, and anyways, it's impossible to leave them in due to\n    # this problem with conda: <https://github.com/conda/conda/pull/10727>.\n    - sed -i \"1s:python3 -Es:python3:\" lsb_release\n\n    # Copy the command-line script into bin/ for packaging.\n    - cp lsb_release \"${PREFIX}/bin\"\n\n    # Copy the python module into the site-packages directory for packaging.\n    - cp lsb_release.py \"${SP_DIR}\"\n\nrequirements:\n  host:\n    - python >=3.6\n  run:\n    - python >=3.6\n\ntest:\n  commands:\n    # Without having distro-info-data installed, importing lsb_release fails.\n    # For testing, edit the source code to replace the hard-coded debian.csv with our mock.\n    - >\n      sed -i \"s|/usr/share/distro-info/debian.csv|$(pwd)/mock-debian.csv|; s|/usr/share/distro-info|$(pwd)|\"\n      $(python -c 'import importlib.util; print(importlib.util.find_spec(\"lsb_release\").origin)')\n\n    # Prepare to run tests; enable mock apt-cache command, etc.\n    - export PATH=${PWD}/test:${PATH}\n    - sed -i \"1s:/usr/bin/python3:/usr/bin/env python3:\" test/apt-cache\n    - sed -i \"1s:/usr/bin/python3:/usr/bin/env python3:\" test/dpkg-query\n\n    # Fix problematic encoding in CPython 3.6 and PyPy 3.7 regarding output of `test/apt-cache`\n    - sed -i 's:import sys:import sys\\nimport codecs\\nsys.stdout = codecs.getwriter(\"utf-8\")(sys.stdout.detach()):' test/apt-cache\n    # Alternative fix:\n    # - export PYTHONIOENCODING=utf-8:surrogateescape\n    # (I disfavor this because it also affects `lsb_release`.)\n\n    # Run the tests.\n    - python test/test_lsb_release.py\n\n    # Test the raw command\n    - lsb_release\n\n  source_files:\n    - test\n  files:\n    - mock-debian.csv\n\nabout:\n  home: https://wiki.linuxfoundation.org/lsb/start\n  license: GPL-2.0-only\n  license_family: GPL2\n  license_file: debian/copyright\n  summary: LSB release detection module for Debian\n  description: |\n    Intro\n    -----\n\n    This conda package provides the `lsb_release` command for Debian-based Linux\n    distributions such as Debian and Ubuntu. It provides a simple command-line interface\n    for accessing metadata about the installed Linux distribution.\n\n    Motivation\n    ----------\n\n    Installation instructions for many Linux programs rely on the `lsb_release` command\n    to detect the release number and/or codename of the installed Linux distribution.\n    For example, as of the time of writing,\n    [PostgreSQL](https://www.postgresql.org/download/linux/ubuntu/) uses\n    the `lsb_release -cs` command to detect the proper codename for the apt repository.\n\n    The Debian-based\n    [lsb-release package](https://packages.debian.org/stable/lsb-release)\n    unfortunately depends on a system-wide installation of `python3`. This conda\n    package avoids the need for a system-wide installation of `python3` when a conda\n    environment is already available. The distribution-specific data is comes from\n    a tiny system package named\n    [distro-info-data](https://packages.debian.org/stable/distro-info-data),\n    which can be installed with `apt-get install -y distro-info-data`.\n\n    Examples\n    --------\n\n    Bash:\n    ```bash\n    sudo apt-get install -y distro-info-data\n    mamba install -y lsb-release\n    lsb_release -a\n    ```\n\n    (Substitute `conda` for `mamba` above in case you use that instead.)\n\n    Docker:\n    ```dockerfile\n    FROM condaforge/mambaforge:4.10.1-0\n\n    RUN : \\\n        # Install distro-info-data and clean up.\n        && apt-get update \\\n        && apt-get install -y distro-info-data \\\n        && rm -rf /var/lib/apt/lists/* \\\n        # Install lsb-release and clean up.\n        && mamba install -y lsb-release \\\n        && conda clean -afy \\\n    ;\n\n    # Print release information.\n    RUN lsb_release -a\n    ```\n  dev_url: https://salsa.debian.org/debian/lsb\n\nextra:\n  recipe-maintainers:\n    - maresb\n",
+ "rendered_recipe": {
+  "about": {
+   "description": "Intro\n-----\n\nThis conda package provides the `lsb_release` command for Debian-based Linux\ndistributions such as Debian and Ubuntu. It provides a simple command-line interface\nfor accessing metadata about the installed Linux distribution.\n\nMotivation\n----------\n\nInstallation instructions for many Linux programs rely on the `lsb_release` command\nto detect the release number and/or codename of the installed Linux distribution.\nFor example, as of the time of writing,\n[PostgreSQL](https://www.postgresql.org/download/linux/ubuntu/) uses\nthe `lsb_release -cs` command to detect the proper codename for the apt repository.\n\nThe Debian-based\n[lsb-release package](https://packages.debian.org/stable/lsb-release)\nunfortunately depends on a system-wide installation of `python3`. This conda\npackage avoids the need for a system-wide installation of `python3` when a conda\nenvironment is already available. The distribution-specific data is comes from\na tiny system package named\n[distro-info-data](https://packages.debian.org/stable/distro-info-data),\nwhich can be installed with `apt-get install -y distro-info-data`.\n\nExamples\n--------\n\nBash:\n```bash\nsudo apt-get install -y distro-info-data\nmamba install -y lsb-release\nlsb_release -a\n```\n\n(Substitute `conda` for `mamba` above in case you use that instead.)\n\nDocker:\n```dockerfile\nFROM condaforge/mambaforge:4.10.1-0\n\nRUN : \\\n    && apt-get update \\\n    && apt-get install -y distro-info-data \\\n    && rm -rf /var/lib/apt/lists/* \\\n    && mamba install -y lsb-release \\\n    && conda clean -afy \\\n;\n\nRUN lsb_release -a\n```\n",
+   "dev_url": "https://salsa.debian.org/debian/lsb",
+   "home": "https://wiki.linuxfoundation.org/lsb/start",
+   "license": "GPL-2.0-only",
+   "license_family": "GPL2",
+   "license_file": "debian/copyright",
+   "summary": "LSB release detection module for Debian"
+  },
+  "build": {
+   "noarch": "python",
+   "number": "4",
+   "script": [
+    "sed -i \"1s:/usr/bin:${PREFIX//:/\\:}/bin:\" lsb_release",
+    "sed -i \"1s:/usr/bin:${PREFIX//:/\\:}/bin:\" lsb_release.py",
+    "sed -i \"1s:python3 -Es:python3:\" lsb_release",
+    "cp lsb_release \"${PREFIX}/bin\"",
+    "cp lsb_release.py \"${SP_DIR}\""
+   ],
+   "string": "pyhd8ed1ab_4"
+  },
+  "extra": {
+   "copy_test_source_files": true,
+   "final": true,
+   "recipe-maintainers": [
+    "maresb"
+   ]
+  },
+  "package": {
+   "name": "lsb-release",
+   "version": "11.1.0"
+  },
+  "requirements": {
+   "host": [
+    "_libgcc_mutex 0.1 conda_forge",
+    "_openmp_mutex 4.5 2_gnu",
+    "bzip2 1.0.8 h7f98852_4",
+    "ca-certificates 2022.9.24 ha878542_0",
+    "ld_impl_linux-64 2.39 hc81fddc_0",
+    "libffi 3.4.2 h7f98852_5",
+    "libgcc-ng 12.2.0 h65d4601_19",
+    "libgomp 12.2.0 h65d4601_19",
+    "libnsl 2.0.0 h7f98852_0",
+    "libsqlite 3.39.4 h753d276_0",
+    "libuuid 2.32.1 h7f98852_1000",
+    "libzlib 1.2.13 h166bdaf_4",
+    "ncurses 6.3 h27087fc_1",
+    "openssl 3.0.5 h166bdaf_2",
+    "python 3.11.0 ha86cf86_0_cpython",
+    "readline 8.1.2 h0f457ee_0",
+    "tk 8.6.12 h27826a3_0",
+    "tzdata 2022e h191b570_0",
+    "xz 5.2.6 h166bdaf_0"
+   ],
+   "run": [
+    "python >=3.6"
+   ]
+  },
+  "source": {
+   "patches": [
+    "patches/handle-missing-distro-info-data.patch"
+   ],
+   "sha256": "c8a7e2bbabca87301cf259339c532d67f1760ed0d8611ffe986e82a253e6e6a9",
+   "url": "https://salsa.debian.org/debian/lsb/-/archive/debian/11.1.0/lsb-release-11.1.0.tar.gz"
+  },
+  "test": {
+   "commands": [
+    "sed -i \"s|/usr/share/distro-info/debian.csv|$(pwd)/mock-debian.csv|; s|/usr/share/distro-info|$(pwd)|\" $(python -c 'import importlib.util; print(importlib.util.find_spec(\"lsb_release\").origin)')\n",
+    "export PATH=${PWD}/test:${PATH}",
+    "sed -i \"1s:/usr/bin/python3:/usr/bin/env python3:\" test/apt-cache",
+    "sed -i \"1s:/usr/bin/python3:/usr/bin/env python3:\" test/dpkg-query",
+    "sed -i 's:import sys:import sys\\nimport codecs\\nsys.stdout = codecs.getwriter(\"utf-8\")(sys.stdout.detach()):' test/apt-cache",
+    "python test/test_lsb_release.py",
+    "lsb_release"
+   ],
+   "files": [
+    "mock-debian.csv"
+   ],
+   "source_files": [
+    "test"
+   ]
+  }
+ },
+ "version": "11.1.0"
+}
