@@ -51,7 +51,7 @@ jobs:
           name: Report diff
           command: |
             pushd libcfgraph
-            git diff --name-status
+            git diff .file_listing.json
             git add .
             popd
       - run:
