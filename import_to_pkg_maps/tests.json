@@ -41,6 +41,8 @@
    "andes",
    "arelle-release",
    "arosics",
+   "artificial-adversary",
+   "ascii_magic",
    "astroid",
    "atlassian-python-api",
    "atom",
@@ -50,9 +52,11 @@
    "awacs",
    "aws-parallelcluster",
    "awslogs",
+   "backstage",
    "bamnostic",
    "baycomp",
    "benchmark-4dn",
+   "biom-format",
    "bionc",
    "birch",
    "birdy",
@@ -60,6 +64,7 @@
    "borb",
    "bqplot",
    "btrack",
+   "buildver",
    "bulk",
    "burau",
    "caper",
@@ -82,15 +87,21 @@
    "csv-diff",
    "cyberpandas",
    "daops",
+   "dataframe_image",
+   "dbt",
+   "dbxfs",
    "decaylanguage",
    "deepforest",
    "deeptime",
+   "dexplot",
+   "diffprivlib",
    "django-versatileimagefield",
    "djangocms-admin-style",
    "dlint",
    "doppel-cli",
    "dphtools",
    "dpu-utils",
+   "dvclive",
    "e3sm_diags",
    "edgetest",
    "edgetest-conda",
@@ -103,20 +114,25 @@
    "eventkit",
    "explainerdashboard",
    "extract_model",
+   "fair-research-login",
    "fancylog",
+   "farmos",
    "fasttsne",
    "ffx",
+   "flake8-simplify",
    "flask-restless",
    "flask-restplus",
    "flask-security-too",
    "flox",
    "foundry_ml",
    "fps",
+   "fugue",
    "gemgis",
    "genestboost",
    "geoarray",
    "geofileops",
    "ghost.py",
+   "gitflow",
    "glidertools",
    "glymur",
    "google-cloud-bigquery",
@@ -126,25 +142,33 @@
    "goosehdf5",
    "gpflow",
    "gputools",
+   "graspy",
    "graypy",
    "grayskull",
    "greedy",
    "gridtest",
    "gruut",
    "gruut-ipa",
+   "hackernote",
    "hickle",
    "histogrammar",
    "human-learn",
+   "hydrofunctions",
    "ibm_db",
    "icet",
    "igl",
+   "imagedataextractor",
    "implicit",
+   "intake-accumulo",
    "intake-geopandas",
+   "intake-parquet",
    "intake-spark",
    "iohexperimenter",
    "ioos_qc",
    "ipygany",
+   "ipyvue",
    "ipywebrtc",
+   "isofit",
    "jaws",
    "jesth",
    "jupyter_server",
@@ -157,6 +181,7 @@
    "kim-edn",
    "kim-property",
    "kylinpy",
+   "labelme",
    "landlab",
    "larch",
    "lava",
@@ -168,6 +193,7 @@
    "lux-api",
    "magicgui",
    "magpylib",
+   "marinvaders",
    "matrixprofile",
    "medcam",
    "mesmerize-core",
@@ -176,12 +202,15 @@
    "mktestdocs",
    "mlconjug3",
    "mleap",
+   "modelbase",
    "mols2grid",
    "moviepy",
    "mpire",
    "mpl-interactions",
+   "mpl_plotter",
    "msal",
    "muttlib",
+   "mvt",
    "nb_cron",
    "nbgitpuller-link",
    "ncar-jobqueue",
@@ -192,15 +221,19 @@
    "nr.types",
    "onnx-caffe2",
    "ooipy",
+   "openamundsen",
    "openfisca-france",
    "openmichrom",
+   "openskill",
    "optimade",
+   "optuna",
    "osmapi",
    "otwrapy",
    "panda3d_viewer",
    "pandera-core",
    "panedr",
    "pangeo-forge-recipes",
+   "param_persist",
    "pastel",
    "pathy",
    "pcmdi_metrics",
@@ -233,23 +266,30 @@
    "pyls-memestra",
    "pymapd",
    "pymatsolver",
+   "pymc-base",
    "pyomeca",
    "pyomniscidb",
    "pyoos",
    "pyopenrivercam",
    "pyprocessmacro",
+   "pyproject-metadata",
    "pyremo",
    "pyrobuf",
+   "pyrsmq",
    "pystac",
    "pystac-client",
    "pysyncrosim",
    "pytermgui",
    "python-flair",
+   "python-fsutil",
+   "python-geotiff",
+   "python-gitlab",
    "python-utils",
    "pytmc",
    "pyusid",
    "pyxel-sim",
    "qhub",
+   "qme",
    "quacc",
    "quickle",
    "quilt",
@@ -261,6 +301,8 @@
    "reciprocalspaceship",
    "redframes",
    "remove_dagmc_tags",
+   "riccati",
+   "rivgraph",
    "rse",
    "rubicon-ml",
    "sanic",
@@ -271,8 +313,12 @@
    "sed-plume",
    "seqlike",
    "servicestack",
+   "shared",
+   "sheet2dict",
    "sketchnu",
+   "small-text",
    "smdebug-rulesconfig",
+   "snntoolbox",
    "spatialmath-python",
    "sphinx-js",
    "stanza",
@@ -304,11 +350,13 @@
    "verta",
    "viewable",
    "vizlo",
+   "waternetworkanalysis",
    "webdavclient3",
    "wrighttools",
    "xclim",
    "xcube_geodb",
    "xdmfwrite_h5py",
+   "xmip",
    "xopt",
    "xplique",
    "xrd_simulator",
@@ -1306,7 +1354,8 @@
  "tests.backends":{
   "__set__":true,
   "elements":[
-   "aiida-core"
+   "aiida-core",
+   "pymc-base"
   ]
  },
  "tests.backends.aiida_django":{
@@ -1433,6 +1482,36 @@
   "__set__":true,
   "elements":[
    "aiida-core"
+  ]
+ },
+ "tests.backends.fixtures":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.backends.test_arviz":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.backends.test_base":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.backends.test_mcbackend":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.backends.test_ndarray":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
   ]
  },
  "tests.base":{
@@ -2047,6 +2126,12 @@
   "__set__":true,
   "elements":[
    "cbsyst"
+  ]
+ },
+ "tests.checks":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
   ]
  },
  "tests.cheese_shop":{
@@ -2787,6 +2872,7 @@
   "elements":[
    "aiida-core",
    "birdy",
+   "mvt",
    "raven-wps"
   ]
  },
@@ -2812,6 +2898,12 @@
   "__set__":true,
   "elements":[
    "aiida-core"
+  ]
+ },
+ "tests.common.test_indicators":{
+  "__set__":true,
+  "elements":[
+   "mvt"
   ]
  },
  "tests.common.test_links":{
@@ -2982,6 +3074,12 @@
    "yggdrasil"
   ]
  },
+ "tests.compare":{
+  "__set__":true,
+  "elements":[
+   "openamundsen"
+  ]
+ },
  "tests.compat":{
   "__set__":true,
   "elements":[
@@ -3108,6 +3206,36 @@
    "vyper"
   ]
  },
+ "tests.compiler.LLL":{
+  "__set__":true,
+  "elements":[
+   "vyper"
+  ]
+ },
+ "tests.compiler.LLL.test_compile_lll":{
+  "__set__":true,
+  "elements":[
+   "vyper"
+  ]
+ },
+ "tests.compiler.LLL.test_optimize_lll":{
+  "__set__":true,
+  "elements":[
+   "vyper"
+  ]
+ },
+ "tests.compiler.LLL.test_repeat":{
+  "__set__":true,
+  "elements":[
+   "vyper"
+  ]
+ },
+ "tests.compiler.LLL.test_with":{
+  "__set__":true,
+  "elements":[
+   "vyper"
+  ]
+ },
  "tests.compiler.ir":{
   "__set__":true,
   "elements":[
@@ -3145,6 +3273,12 @@
   ]
  },
  "tests.compiler.test_calldatacopy":{
+  "__set__":true,
+  "elements":[
+   "vyper"
+  ]
+ },
+ "tests.compiler.test_clamps":{
   "__set__":true,
   "elements":[
    "vyper"
@@ -3871,8 +4005,10 @@
    "daops",
    "deepforest",
    "deeptime",
+   "dvclive",
    "edgetest",
    "esmlab",
+   "farmos",
    "flask-security-too",
    "fps",
    "genestboost",
@@ -3892,7 +4028,10 @@
    "magicgui",
    "mikeio",
    "mktestdocs",
+   "modelbase",
+   "mvt",
    "notion-client",
+   "openamundsen",
    "optimade",
    "osmapi",
    "pandera-core",
@@ -3907,8 +4046,10 @@
    "pygpcca",
    "pykafka",
    "pymapd",
+   "pymc-base",
    "pyomniscidb",
    "pyopenrivercam",
+   "pyproject-metadata",
    "pyrobuf",
    "python-flair",
    "pytmc",
@@ -3919,6 +4060,8 @@
    "reciprocalspaceship",
    "sanic",
    "scikit-lego",
+   "sheet2dict",
+   "snntoolbox",
    "suds-jurko",
    "tempeh",
    "terrainbento",
@@ -4113,6 +4256,12 @@
    "airflow"
   ]
  },
+ "tests.conversion":{
+  "__set__":true,
+  "elements":[
+   "snntoolbox"
+  ]
+ },
  "tests.conversion_test":{
   "__set__":true,
   "elements":[
@@ -4183,6 +4332,7 @@
    "gputools",
    "great-expectations",
    "landlab",
+   "modelbase",
    "pandera-core",
    "pdpipe",
    "pycroscopy",
@@ -4210,6 +4360,42 @@
    "smdebug-rulesconfig"
   ]
  },
+ "tests.core.algebraic":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.core.algebraic.test_algebraic_mixin":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.core.algebraic.test_derived_compounds":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.core.algebraic.test_generate_source_code":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.core.algebraic.test_sort_module":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.core.algebraic.test_update_algebraic_module":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
  "tests.core.checks_fixtures":{
   "__set__":true,
   "elements":[
@@ -4222,10 +4408,46 @@
    "theseus-ai"
   ]
  },
+ "tests.core.compounds":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.core.compounds.test_compound_mixin":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.core.compounds.test_generate_source_code":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
  "tests.core.conftest":{
   "__set__":true,
   "elements":[
    "pandera-core"
+  ]
+ },
+ "tests.core.functions":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.core.functions.test_functions":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.core.functions.test_generate_source_code":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
   ]
  },
  "tests.core.io":{
@@ -4270,6 +4492,48 @@
    "pycroscopy"
   ]
  },
+ "tests.core.parameters":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.core.parameters.test_generate_source_code":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.core.parameters.test_parameter_mixin":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.core.rate":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.core.rate.test_generate_source_code":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.core.rate.test_rate_mixin":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.core.rate.test_update_rate":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
  "tests.core.test_adhoc_stage":{
   "__set__":true,
   "elements":[
@@ -4280,6 +4544,12 @@
   "__set__":true,
   "elements":[
    "pdpipe"
+  ]
+ },
+ "tests.core.test_base_model":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
   ]
  },
  "tests.core.test_checks":{
@@ -4412,6 +4682,12 @@
   "__set__":true,
   "elements":[
    "xcube_geodb"
+  ]
+ },
+ "tests.core.test_ids":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
   ]
  },
  "tests.core.test_load_params":{
@@ -4582,6 +4858,12 @@
    "pandera-core"
   ]
  },
+ "tests.core.test_stoichiometric_mixin":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
  "tests.core.test_subset":{
   "__set__":true,
   "elements":[
@@ -4609,7 +4891,8 @@
  "tests.core.test_utils":{
   "__set__":true,
   "elements":[
-   "alive-progress"
+   "alive-progress",
+   "modelbase"
   ]
  },
  "tests.core.test_variable":{
@@ -5419,6 +5702,12 @@
    "great-expectations"
   ]
  },
+ "tests.datasets":{
+  "__set__":true,
+  "elements":[
+   "snntoolbox"
+  ]
+ },
  "tests.datasource":{
   "__set__":true,
   "elements":[
@@ -6006,6 +6295,12 @@
    "adversarial-robustness-toolbox"
   ]
  },
+ "tests.delete_test_results":{
+  "__set__":true,
+  "elements":[
+   "dataframe_image"
+  ]
+ },
  "tests.demos":{
   "__set__":true,
   "elements":[
@@ -6202,6 +6497,96 @@
   "__set__":true,
   "elements":[
    "plum-dispatch"
+  ]
+ },
+ "tests.distributions":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.distributions.test_bound":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.distributions.test_censored":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.distributions.test_continuous":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.distributions.test_discrete":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.distributions.test_dist_math":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.distributions.test_distribution":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.distributions.test_mixture":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.distributions.test_multivariate":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.distributions.test_shape_utils":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.distributions.test_simulator":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.distributions.test_timeseries":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.distributions.test_transform":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.distributions.test_truncated":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.distributions.util":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
   ]
  },
  "tests.disturb_mem":{
@@ -6979,6 +7364,12 @@
    "datarobot"
   ]
  },
+ "tests.experimental.model.test_combined_model":{
+  "__set__":true,
+  "elements":[
+   "datarobot"
+  ]
+ },
  "tests.experimental.model.test_custom_task":{
   "__set__":true,
   "elements":[
@@ -7010,6 +7401,12 @@
   ]
  },
  "tests.experimental.model.test_project":{
+  "__set__":true,
+  "elements":[
+   "datarobot"
+  ]
+ },
+ "tests.experimental.model.test_restore_discarded_features":{
   "__set__":true,
   "elements":[
    "datarobot"
@@ -7141,6 +7538,18 @@
    "pystac"
   ]
  },
+ "tests.extensions.test_custom":{
+  "__set__":true,
+  "elements":[
+   "pystac"
+  ]
+ },
+ "tests.extensions.test_datacube":{
+  "__set__":true,
+  "elements":[
+   "pystac"
+  ]
+ },
  "tests.extensions.test_eo":{
   "__set__":true,
   "elements":[
@@ -7153,13 +7562,55 @@
    "pystac"
   ]
  },
+ "tests.extensions.test_file":{
+  "__set__":true,
+  "elements":[
+   "pystac"
+  ]
+ },
+ "tests.extensions.test_item_assets":{
+  "__set__":true,
+  "elements":[
+   "pystac"
+  ]
+ },
  "tests.extensions.test_label":{
   "__set__":true,
   "elements":[
    "pystac"
   ]
  },
+ "tests.extensions.test_pointcloud":{
+  "__set__":true,
+  "elements":[
+   "pystac"
+  ]
+ },
  "tests.extensions.test_projection":{
+  "__set__":true,
+  "elements":[
+   "pystac"
+  ]
+ },
+ "tests.extensions.test_raster":{
+  "__set__":true,
+  "elements":[
+   "pystac"
+  ]
+ },
+ "tests.extensions.test_sar":{
+  "__set__":true,
+  "elements":[
+   "pystac"
+  ]
+ },
+ "tests.extensions.test_sat":{
+  "__set__":true,
+  "elements":[
+   "pystac"
+  ]
+ },
+ "tests.extensions.test_scientific":{
   "__set__":true,
   "elements":[
    "pystac"
@@ -7172,6 +7623,12 @@
   ]
  },
  "tests.extensions.test_timestamps":{
+  "__set__":true,
+  "elements":[
+   "pystac"
+  ]
+ },
+ "tests.extensions.test_version":{
   "__set__":true,
   "elements":[
    "pystac"
@@ -7259,6 +7716,12 @@
   "__set__":true,
   "elements":[
    "theseus-ai"
+  ]
+ },
+ "tests.fake_data":{
+  "__set__":true,
+  "elements":[
+   "dbt"
   ]
  },
  "tests.fdv":{
@@ -7458,6 +7921,576 @@
   "__set__":true,
   "elements":[
    "django-versatileimagefield"
+  ]
+ },
+ "tests.fugue":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.collections":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.collections.test_partition":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.column":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.column.test_expressions":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.column.test_functions":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.column.test_sql":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.dataframe":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.dataframe.test_array_dataframe":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.dataframe.test_arrow_dataframe":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.dataframe.test_dataframe":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.dataframe.test_dataframe_iterable_dataframe":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.dataframe.test_dataframes":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.dataframe.test_iterable_dataframe":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.dataframe.test_pandas_dataframe":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.dataframe.test_utils":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.execution":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.execution.test_execution_engine":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.execution.test_factory":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.execution.test_naive_execution_engine":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.extensions":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.extensions.creator":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.extensions.creator.test_convert":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.extensions.outputter":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.extensions.outputter.test_convert":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.extensions.processor":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.extensions.processor.test_convert":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.extensions.test_utils":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.extensions.transformer":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.extensions.transformer.test_convert_cotransformer":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.extensions.transformer.test_convert_output_cotransformer":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.extensions.transformer.test_convert_output_transformer":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.extensions.transformer.test_convert_transformer":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.rpc":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.rpc.test_base":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.rpc.test_flask":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.rpc.test_func":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.test_interfaceless":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.utils":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.utils.test_interfaceless":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.utils.test_io":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.utils.test_misc":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.workflow":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.workflow.test_module":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.workflow.test_workflow":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.workflow.test_workflow_determinism":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue.workflow.test_workflow_parallel":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_dask":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_dask.test_dataframe":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_dask.test_execution_engine":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_dask.test_io":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_dask.test_sql":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_notebook":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_spark":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_spark.test_dataframe":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_spark.test_execution_engine":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_spark.test_sql":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_spark.utils":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_spark.utils.test_convert":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_spark.utils.test_io":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_spark.utils.test_partition":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_sql":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_sql.test_syntax":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_sql.test_utils":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_sql.test_visitors":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_sql.test_workflow":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_sql.test_workflow_parse":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_sql.utils":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.functional":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api.test_clusters":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api.test_current_user":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api.test_deploy_keys":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api.test_deploy_tokens":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api.test_gitlab":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api.test_groups":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api.test_import_export":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api.test_issues":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api.test_keys":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api.test_merge_requests":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api.test_packages":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api.test_projects":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api.test_releases":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api.test_repository":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api.test_snippets":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api.test_users":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.api.test_variables":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.cli":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.cli.conftest":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.cli.test_cli_artifacts":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.cli.test_cli_packages":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.cli.test_cli_v4":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.cli.test_cli_variables":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.conftest":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.functional.ee-test":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
   ]
  },
  "tests.functional_tests":{
@@ -7833,6 +8866,30 @@
    "ghost.py"
   ]
  },
+ "tests.gitflow":{
+  "__set__":true,
+  "elements":[
+   "gitflow"
+  ]
+ },
+ "tests.gitflow.test_bin":{
+  "__set__":true,
+  "elements":[
+   "gitflow"
+  ]
+ },
+ "tests.gitflow.test_branches":{
+  "__set__":true,
+  "elements":[
+   "gitflow"
+  ]
+ },
+ "tests.gitflow.test_core":{
+  "__set__":true,
+  "elements":[
+   "gitflow"
+  ]
+ },
  "tests.gof":{
   "__set__":true,
   "elements":[
@@ -7951,6 +9008,36 @@
   "__set__":true,
   "elements":[
    "theano-pymc"
+  ]
+ },
+ "tests.gp":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.gp.test_cov":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.gp.test_gp":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.gp.test_mean":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.gp.test_util":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
   ]
  },
  "tests.gpflow":{
@@ -9146,7 +10233,15 @@
   "__set__":true,
   "elements":[
    "flask-restless",
+   "gitflow",
+   "pymc-base",
    "pystac-client"
+  ]
+ },
+ "tests.helpers.factory":{
+  "__set__":true,
+  "elements":[
+   "gitflow"
   ]
  },
  "tests.html_test":{
@@ -9347,6 +10442,30 @@
    "superset"
   ]
  },
+ "tests.importance_tests":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.importance_tests.test_fanova":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.importance_tests.test_init":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.importance_tests.test_mean_decrease_impurity":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
  "tests.indirect_parametrize":{
   "__set__":true,
   "elements":[
@@ -9374,20 +10493,38 @@
  "tests.integration":{
   "__set__":true,
   "elements":[
+   "fair-research-login",
    "gpflow",
    "graypy",
    "great-expectations",
    "histolab",
    "looker-sdk",
    "neo4j-python-driver",
+   "pdfstream",
    "quilt",
-   "quilt3"
+   "quilt3",
+   "rivgraph",
+   "small-text"
+  ]
+ },
+ "tests.integration.classifiers":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.classifiers.test_svm":{
+  "__set__":true,
+  "elements":[
+   "small-text"
   ]
  },
  "tests.integration.conftest":{
   "__set__":true,
   "elements":[
-   "neo4j-python-driver"
+   "fair-research-login",
+   "neo4j-python-driver",
+   "rivgraph"
   ]
  },
  "tests.integration.examples":{
@@ -9546,6 +10683,156 @@
    "neo4j-python-driver"
   ]
  },
+ "tests.integration.small_text":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.classifiers":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.classifiers.test_classification":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.pytorch":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.pytorch.classifiers":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.pytorch.classifiers.test_base":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.pytorch.classifiers.test_kimcnn":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.pytorch.classifiers.test_kimcnn_embeddings":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.pytorch.models":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.pytorch.models.test_kimcnn":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.pytorch.test_datasets":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.pytorch.test_model_selection":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.pytorch.test_query_strategies":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.pytorch.test_serialization":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.transformers":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.transformers.classifiers":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.transformers.classifiers.test_classification":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.transformers.query_strategies":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.transformers.query_strategies.test_dal":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.transformers.test_datasets":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.integrations.transformers.test_serialization":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.query_strategies":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.query_strategies.test_query_strategies":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.test_serialization":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
  "tests.integration.test_autocommit":{
   "__set__":true,
   "elements":[
@@ -9570,6 +10857,12 @@
    "graypy"
   ]
  },
+ "tests.integration.test_client_refresh":{
+  "__set__":true,
+  "elements":[
+   "fair-research-login"
+  ]
+ },
  "tests.integration.test_common_logging":{
   "__set__":true,
   "elements":[
@@ -9588,10 +10881,28 @@
    "graypy"
   ]
  },
+ "tests.integration.test_delta_int":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
+  ]
+ },
+ "tests.integration.test_directionality_int":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
+  ]
+ },
  "tests.integration.test_dynamic_shapes":{
   "__set__":true,
   "elements":[
    "gpflow"
+  ]
+ },
+ "tests.integration.test_errors_int":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
   ]
  },
  "tests.integration.test_explicit_tx":{
@@ -9612,10 +10923,40 @@
    "neo4j-python-driver"
   ]
  },
+ "tests.integration.test_im_utils_int":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
+  ]
+ },
  "tests.integration.test_image_filters":{
   "__set__":true,
   "elements":[
    "histolab"
+  ]
+ },
+ "tests.integration.test_ln_utils_int":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
+  ]
+ },
+ "tests.integration.test_login":{
+  "__set__":true,
+  "elements":[
+   "fair-research-login"
+  ]
+ },
+ "tests.integration.test_main":{
+  "__set__":true,
+  "elements":[
+   "pdfstream"
+  ]
+ },
+ "tests.integration.test_mask_utils_int":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
   ]
  },
  "tests.integration.test_masks":{
@@ -9652,6 +10993,12 @@
   "__set__":true,
   "elements":[
    "looker-sdk"
+  ]
+ },
+ "tests.integration.test_network_io_int":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
   ]
  },
  "tests.integration.test_notebooks":{
@@ -9697,6 +11044,18 @@
    "neo4j-python-driver"
   ]
  },
+ "tests.integration.test_river_int":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
+  ]
+ },
+ "tests.integration.test_river_utils_int":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
+  ]
+ },
  "tests.integration.test_scorer":{
   "__set__":true,
   "elements":[
@@ -9727,6 +11086,12 @@
    "neo4j-python-driver"
   ]
  },
+ "tests.integration.test_synthetic_int":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
+  ]
+ },
  "tests.integration.test_temporal_types":{
   "__set__":true,
   "elements":[
@@ -9745,6 +11110,12 @@
    "histolab"
   ]
  },
+ "tests.integration.test_tools":{
+  "__set__":true,
+  "elements":[
+   "pdfstream"
+  ]
+ },
  "tests.integration.test_tx_functions":{
   "__set__":true,
   "elements":[
@@ -9755,6 +11126,12 @@
   "__set__":true,
   "elements":[
    "histolab"
+  ]
+ },
+ "tests.integration.test_verbosity_int":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
   ]
  },
  "tests.integration.test_workflows":{
@@ -9781,10 +11158,178 @@
    "great-expectations"
   ]
  },
+ "tests.integration_evaluation":{
+  "__set__":true,
+  "elements":[
+   "marinvaders"
+  ]
+ },
  "tests.integration_test":{
   "__set__":true,
   "elements":[
    "llnl-sina"
+  ]
+ },
+ "tests.integration_tests":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.allennlp_tests":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.allennlp_tests.test_allennlp":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.allennlp_tests.tiny_single_id":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.lightgbm_tuner_tests":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.lightgbm_tuner_tests.test_alias":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.lightgbm_tuner_tests.test_optimize":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_catalyst":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_chainer":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_chainermn":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_cma":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_fastai":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_integration":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_keras":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_lightgbm":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_mlflow":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_mxnet":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_pytorch_ignite":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_pytorch_lightning":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_sampler":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_sklearn":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_skopt":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_skorch":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_tensorboard":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_tensorflow":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_tfkeras":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.integration_tests.test_xgboost":{
+  "__set__":true,
+  "elements":[
+   "optuna"
   ]
  },
  "tests.integrations":{
@@ -10086,6 +11631,36 @@
   "__set__":true,
   "elements":[
    "pybtex"
+  ]
+ },
+ "tests.ios":{
+  "__set__":true,
+  "elements":[
+   "mvt"
+  ]
+ },
+ "tests.ios.test_backup_info":{
+  "__set__":true,
+  "elements":[
+   "mvt"
+  ]
+ },
+ "tests.ios.test_datausage":{
+  "__set__":true,
+  "elements":[
+   "mvt"
+  ]
+ },
+ "tests.ios.test_manifest":{
+  "__set__":true,
+  "elements":[
+   "mvt"
+  ]
+ },
+ "tests.ios.test_tcc":{
+  "__set__":true,
+  "elements":[
+   "mvt"
   ]
  },
  "tests.ip":{
@@ -10880,6 +12455,84 @@
    "foundry_ml"
   ]
  },
+ "tests.logprob":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.logprob.test_abstract":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.logprob.test_censoring":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.logprob.test_composite_logprob":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.logprob.test_cumsum":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.logprob.test_joint_logprob":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.logprob.test_mixture":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.logprob.test_rewriting":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.logprob.test_scan":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.logprob.test_tensor":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.logprob.test_transforms":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.logprob.test_utils":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.logprob.utils":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
  "tests.loss_functions":{
   "__set__":true,
   "elements":[
@@ -11503,6 +13156,198 @@
   "__set__":true,
   "elements":[
    "pybtex"
+  ]
+ },
+ "tests.mechanisms":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_BernoulliNegExp":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_Binary":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_Bingham":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_DPMachine":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_DPMechanism":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_Exponential":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_ExponentialCategorical":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_ExponentialHierarchical":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_Gaussian":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_GaussianAnalytic":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_GaussianDiscrete":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_Geometric":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_GeometricFolded":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_GeometricTruncated":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_Laplace":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_LaplaceBoundedDomain":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_LaplaceBoundedNoise":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_LaplaceFolded":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_LaplaceTruncated":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_PermuteAndFlip":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_Snapping":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_Staircase":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_TruncationAndFoldingMixin":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_Uniform":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_Vector":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.test_Wishart":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.transforms":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.transforms.test_DPTransformer":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.transforms.test_IntToString":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.transforms.test_RoundedInteger":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.mechanisms.transforms.test_StringToInt":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
   ]
  },
  "tests.messages":{
@@ -12246,6 +14091,12 @@
    "datarobot"
   ]
  },
+ "tests.model_proxy_test":{
+  "__set__":true,
+  "elements":[
+   "llnl-sina"
+  ]
+ },
  "tests.model_test":{
   "__set__":true,
   "elements":[
@@ -12262,8 +14113,11 @@
   "__set__":true,
   "elements":[
    "airflow",
+   "diffprivlib",
    "django-versatileimagefield",
+   "openskill",
    "optimade",
+   "pymc-base",
    "verta"
   ]
  },
@@ -12285,16 +14139,106 @@
    "verta"
   ]
  },
+ "tests.models.test_DecisionTreeClassifier":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.models.test_FittingTree":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.models.test_GaussianNB":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.models.test_KMeans":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.models.test_LinearRegression":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.models.test_LogisticRegression":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.models.test_PCA":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.models.test_RandomForestClassifier":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.models.test_StandardScaler":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
  "tests.models.test_baseinfo":{
   "__set__":true,
   "elements":[
    "optimade"
   ]
  },
+ "tests.models.test_bradley_terry_full":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.models.test_bradley_terry_full_series":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.models.test_bradley_terry_part":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.models.test_bradley_terry_part_series":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.models.test_covariance_eig":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
  "tests.models.test_entries":{
   "__set__":true,
   "elements":[
    "optimade"
+  ]
+ },
+ "tests.models.test_incremental_mean_and_var":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
   ]
  },
  "tests.models.test_jsonapi":{
@@ -12309,10 +14253,28 @@
    "optimade"
   ]
  },
+ "tests.models.test_logistic_regression_path":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
  "tests.models.test_optimade_json":{
   "__set__":true,
   "elements":[
    "optimade"
+  ]
+ },
+ "tests.models.test_plackett_luce":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.models.test_plackett_luce_series":{
+  "__set__":true,
+  "elements":[
+   "openskill"
   ]
  },
  "tests.models.test_references":{
@@ -12325,6 +14287,30 @@
   "__set__":true,
   "elements":[
    "optimade"
+  ]
+ },
+ "tests.models.test_thurstone_mosteller_full":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.models.test_thurstone_mosteller_full_series":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.models.test_thurstone_mosteller_part":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.models.test_thurstone_mosteller_part_series":{
+  "__set__":true,
+  "elements":[
+   "openskill"
   ]
  },
  "tests.models.test_utils":{
@@ -12445,6 +14431,120 @@
   "__set__":true,
   "elements":[
    "aiobotocore"
+  ]
+ },
+ "tests.multi_objective":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective.samplers_tests":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective.samplers_tests.test_nsga2":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective.samplers_tests.test_samplers":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective.test_study":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective.test_trial":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective.visualization_tests":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective.visualization_tests.test_pareto_front":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective_tests":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective_tests.hypervolume_tests":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective_tests.hypervolume_tests.test_utils":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective_tests.hypervolume_tests.test_wfg":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective_tests.samplers_tests":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective_tests.samplers_tests.test_nsga2":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective_tests.samplers_tests.test_samplers":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective_tests.test_study":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective_tests.test_trial":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective_tests.visualization_tests":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.multi_objective_tests.visualization_tests.test_pareto_front":{
+  "__set__":true,
+  "elements":[
+   "optuna"
   ]
  },
  "tests.mysql_test":{
@@ -13287,6 +15387,133 @@
    "deeptime"
   ]
  },
+ "tests.ode":{
+  "__set__":true,
+  "elements":[
+   "modelbase",
+   "pymc-base"
+  ]
+ },
+ "tests.ode.integrators":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.integrators.test_integrator_assimulo":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.integrators.test_integrator_scipy":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.model":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.model.test_generate_source_code":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.model.test_label_model":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.model.test_linear_label_model":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.model.test_model":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.simulator":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.simulator.test_base_simulator":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.simulator.test_label_simulator":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.simulator.test_linear_label_simulator":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.simulator.test_simulator":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.simulator.test_simulator_plotting":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.test_algebraicfunctions":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.test_mca":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.test_ode":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.ode.test_ratefunctions":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.test_ratelaws":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.ode.test_utils":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
  "tests.onnx_backend_test":{
   "__set__":true,
   "elements":[
@@ -13621,6 +15848,30 @@
   "__set__":true,
   "elements":[
    "aiida-core"
+  ]
+ },
+ "tests.parsing":{
+  "__set__":true,
+  "elements":[
+   "snntoolbox"
+  ]
+ },
+ "tests.parsing.models":{
+  "__set__":true,
+  "elements":[
+   "snntoolbox"
+  ]
+ },
+ "tests.parsing.models.pytorch":{
+  "__set__":true,
+  "elements":[
+   "snntoolbox"
+  ]
+ },
+ "tests.parsing.test_pytorch":{
+  "__set__":true,
+  "elements":[
+   "snntoolbox"
   ]
  },
  "tests.pcluster":{
@@ -14689,7 +16940,8 @@
   "__set__":true,
   "elements":[
    "amset",
-   "landlab"
+   "landlab",
+   "openamundsen"
   ]
  },
  "tests.plot.network_sediment_transporter":{
@@ -14848,6 +17100,30 @@
   "__set__":true,
   "elements":[
    "django-versatileimagefield"
+  ]
+ },
+ "tests.predictions":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.predictions.test_predict_draw":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.predictions.test_predict_rank":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.predictions.test_predict_win":{
+  "__set__":true,
+  "elements":[
+   "openskill"
   ]
  },
  "tests.preprocessing":{
@@ -15092,6 +17368,48 @@
    "tranquilizer"
   ]
  },
+ "tests.pruners_tests":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.pruners_tests.test_hyperband":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.pruners_tests.test_median":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.pruners_tests.test_nop":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.pruners_tests.test_percentile":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.pruners_tests.test_successive_halving":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.pruners_tests.test_threshold":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
  "tests.psycopg2_mock":{
   "__set__":true,
   "elements":[
@@ -15289,6 +17607,24 @@
   "__set__":true,
   "elements":[
    "trio-asyncio",
+   "trio_asyncio"
+  ]
+ },
+ "tests.python.echo":{
+  "__set__":true,
+  "elements":[
+   "trio_asyncio"
+  ]
+ },
+ "tests.python.echo2":{
+  "__set__":true,
+  "elements":[
+   "trio_asyncio"
+  ]
+ },
+ "tests.python.echo3":{
+  "__set__":true,
+  "elements":[
    "trio_asyncio"
   ]
  },
@@ -15993,6 +18329,102 @@
    "aiomysql"
   ]
  },
+ "tests.sampler_fixtures":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.samplers_tests":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.samplers_tests.test_cmaes":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.samplers_tests.test_grid":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.samplers_tests.test_samplers":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.samplers_tests.tpe_tests":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.samplers_tests.tpe_tests.test_multivariate_parzen_estomator":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.samplers_tests.tpe_tests.test_parzen_estimator":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.samplers_tests.tpe_tests.test_sampler":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.sampling":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.sampling.test_forward":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.sampling.test_jax":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.sampling.test_mcmc":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.sampling.test_mcmc_external":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.sampling.test_parallel":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.sampling.test_population":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
  "tests.sandbox":{
   "__set__":true,
   "elements":[
@@ -16039,6 +18471,18 @@
   "__set__":true,
   "elements":[
    "theano-pymc"
+  ]
+ },
+ "tests.sbml":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
+  ]
+ },
+ "tests.sbml.test_import":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
   ]
  },
  "tests.scalar":{
@@ -16599,6 +19043,12 @@
    "django-versatileimagefield"
   ]
  },
+ "tests.setup":{
+  "__set__":true,
+  "elements":[
+   "mpl_plotter"
+  ]
+ },
  "tests.setup_test_data":{
   "__set__":true,
   "elements":[
@@ -16627,6 +19077,24 @@
   "__set__":true,
   "elements":[
    "adagio"
+  ]
+ },
+ "tests.simulation":{
+  "__set__":true,
+  "elements":[
+   "snntoolbox"
+  ]
+ },
+ "tests.simulation.test_conv":{
+  "__set__":true,
+  "elements":[
+   "snntoolbox"
+  ]
+ },
+ "tests.simulation.test_pooling":{
+  "__set__":true,
+  "elements":[
+   "snntoolbox"
   ]
  },
  "tests.sindy":{
@@ -16771,6 +19239,18 @@
   "__set__":true,
   "elements":[
    "pdpipe"
+  ]
+ },
+ "tests.smc":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.smc.test_smc":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
   ]
  },
  "tests.smoketests":{
@@ -16948,6 +19428,54 @@
    "onnx-caffe2"
   ]
  },
+ "tests.statistics":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.statistics.test_v":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.statistics.test_vt":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.statistics.test_w":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.statistics.test_wt":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.stats":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.stats.test_convergence":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.stats.test_log_likelihood":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
  "tests.stats_logger_tests":{
   "__set__":true,
   "elements":[
@@ -16958,6 +19486,96 @@
   "__set__":true,
   "elements":[
    "pytermgui"
+  ]
+ },
+ "tests.step_methods":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.step_methods.hmc":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.step_methods.hmc.test_hmc":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.step_methods.hmc.test_nuts":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.step_methods.hmc.test_quadpotential":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.step_methods.test_compound":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.step_methods.test_metropolis":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.step_methods.test_slicer":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.storages_tests":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.storages_tests.rdb_tests":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.storages_tests.rdb_tests.test_models":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.storages_tests.rdb_tests.test_storage":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.storages_tests.rdb_tests.test_with_server":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.storages_tests.test_cached_storage":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.storages_tests.test_storages":{
+  "__set__":true,
+  "elements":[
+   "optuna"
   ]
  },
  "tests.store":{
@@ -17422,7 +20040,8 @@
   "__set__":true,
   "elements":[
    "benchmark-4dn",
-   "jaws"
+   "jaws",
+   "python-fsutil"
   ]
  },
  "tests.test-confluence-attach":{
@@ -18139,6 +20758,12 @@
    "ibm_db"
   ]
  },
+ "tests.test_1_xlsx":{
+  "__set__":true,
+  "elements":[
+   "sheet2dict"
+  ]
+ },
  "tests.test_1st_system":{
   "__set__":true,
   "elements":[
@@ -18259,6 +20884,12 @@
    "ibm_db"
   ]
  },
+ "tests.test_2_csv":{
+  "__set__":true,
+  "elements":[
+   "sheet2dict"
+  ]
+ },
  "tests.test_2nd_order_grads":{
   "__set__":true,
   "elements":[
@@ -18281,6 +20912,12 @@
   "__set__":true,
   "elements":[
    "ibm_db"
+  ]
+ },
+ "tests.test_3_xlsx":{
+  "__set__":true,
+  "elements":[
+   "sheet2dict"
   ]
  },
  "tests.test_52949_TestSPIntVarcharXml":{
@@ -18335,6 +20972,18 @@
   "__set__":true,
   "elements":[
    "pymatsolver"
+  ]
+ },
+ "tests.test_Budget":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.test_BudgetAccountant":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
   ]
  },
  "tests.test_COREG":{
@@ -18541,6 +21190,12 @@
    "moviepy"
   ]
  },
+ "tests.test_WaterNetworkAnalysis":{
+  "__set__":true,
+  "elements":[
+   "waternetworkanalysis"
+  ]
+ },
  "tests.test_aaSeqLike_ntSeqLike":{
   "__set__":true,
   "elements":[
@@ -18631,6 +21286,12 @@
    "planetary-computer"
   ]
  },
+ "tests.test_adversary":{
+  "__set__":true,
+  "elements":[
+   "artificial-adversary"
+  ]
+ },
  "tests.test_affinities":{
   "__set__":true,
   "elements":[
@@ -18659,6 +21320,7 @@
  "tests.test_all":{
   "__set__":true,
   "elements":[
+   "marinvaders",
    "ukpopulation"
   ]
  },
@@ -18726,6 +21388,7 @@
   "__set__":true,
   "elements":[
    "flask-restplus",
+   "marinvaders",
    "nb_cron",
    "pastel",
    "quilt",
@@ -18742,6 +21405,7 @@
  "tests.test_app":{
   "__set__":true,
   "elements":[
+   "labelme",
    "localtileserver",
    "sanic"
   ]
@@ -18770,6 +21434,12 @@
   "__set__":true,
   "elements":[
    "suds-jurko"
+  ]
+ },
+ "tests.test_array":{
+  "__set__":true,
+  "elements":[
+   "intake-accumulo"
   ]
  },
  "tests.test_artifacts":{
@@ -18818,6 +21488,12 @@
   "__set__":true,
   "elements":[
    "atom"
+  ]
+ },
+ "tests.test_attacks":{
+  "__set__":true,
+  "elements":[
+   "artificial-adversary"
   ]
  },
  "tests.test_auth":{
@@ -19133,6 +21809,12 @@
    "dlint"
   ]
  },
+ "tests.test_bar":{
+  "__set__":true,
+  "elements":[
+   "dexplot"
+  ]
+ },
  "tests.test_base":{
   "__set__":true,
   "elements":[
@@ -19143,6 +21825,7 @@
    "crystals",
    "embetter",
    "erdantic",
+   "mpl_plotter",
    "pathy",
    "sanic"
   ]
@@ -19199,6 +21882,12 @@
   "__set__":true,
   "elements":[
    "aiida-core"
+  ]
+ },
+ "tests.test_base_embed":{
+  "__set__":true,
+  "elements":[
+   "graspy"
   ]
  },
  "tests.test_base_level_capture_node_baselevel_handler":{
@@ -19415,6 +22104,12 @@
    "cbsyst"
   ]
  },
+ "tests.test_box":{
+  "__set__":true,
+  "elements":[
+   "dexplot"
+  ]
+ },
  "tests.test_breakpoint":{
   "__set__":true,
   "elements":[
@@ -19458,6 +22153,7 @@
  "tests.test_cache":{
   "__set__":true,
   "elements":[
+   "pystac",
    "suds-jurko",
    "typhos"
   ]
@@ -19504,6 +22200,12 @@
   "__set__":true,
   "elements":[
    "pyopenrivercam"
+  ]
+ },
+ "tests.test_canopy":{
+  "__set__":true,
+  "elements":[
+   "openamundsen"
   ]
  },
  "tests.test_caper_labels":{
@@ -19554,6 +22256,12 @@
   "__set__":true,
   "elements":[
    "daops"
+  ]
+ },
+ "tests.test_catalyst":{
+  "__set__":true,
+  "elements":[
+   "dvclive"
   ]
  },
  "tests.test_cats_only":{
@@ -19634,6 +22342,12 @@
    "pydifact"
   ]
  },
+ "tests.test_charts":{
+  "__set__":true,
+  "elements":[
+   "hydrofunctions"
+  ]
+ },
  "tests.test_chebfun":{
   "__set__":true,
   "elements":[
@@ -19644,6 +22358,24 @@
   "__set__":true,
   "elements":[
    "chebfun"
+  ]
+ },
+ "tests.test_check_bounds":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.test_check_epsilon_delta":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.test_check_random_state":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
   ]
  },
  "tests.test_checks":{
@@ -19694,6 +22426,12 @@
    "mktestdocs"
   ]
  },
+ "tests.test_classes":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
+  ]
+ },
  "tests.test_classification":{
   "__set__":true,
   "elements":[
@@ -19734,6 +22472,7 @@
   "__set__":true,
   "elements":[
    "andes",
+   "biom-format",
    "birdy",
    "compaction",
    "csv-diff",
@@ -19743,6 +22482,8 @@
    "goosehdf5",
    "jupytext",
    "nbgitpuller-link",
+   "openamundsen",
+   "optuna",
    "pathy",
    "pyremo",
    "pystac-client",
@@ -19753,6 +22494,12 @@
    "sed-plume",
    "typhos",
    "verta"
+  ]
+ },
+ "tests.test_cli.test_add_metadata":{
+  "__set__":true,
+  "elements":[
+   "biom-format"
   ]
  },
  "tests.test_cli.test_endpoint":{
@@ -19771,6 +22518,48 @@
   "__set__":true,
   "elements":[
    "verta"
+  ]
+ },
+ "tests.test_cli.test_show_install_info":{
+  "__set__":true,
+  "elements":[
+   "biom-format"
+  ]
+ },
+ "tests.test_cli.test_subset_table":{
+  "__set__":true,
+  "elements":[
+   "biom-format"
+  ]
+ },
+ "tests.test_cli.test_summarize_table":{
+  "__set__":true,
+  "elements":[
+   "biom-format"
+  ]
+ },
+ "tests.test_cli.test_table_converter":{
+  "__set__":true,
+  "elements":[
+   "biom-format"
+  ]
+ },
+ "tests.test_cli.test_table_normalizer":{
+  "__set__":true,
+  "elements":[
+   "biom-format"
+  ]
+ },
+ "tests.test_cli.test_uc_processor":{
+  "__set__":true,
+  "elements":[
+   "biom-format"
+  ]
+ },
+ "tests.test_cli.test_validate_table":{
+  "__set__":true,
+  "elements":[
+   "biom-format"
   ]
  },
  "tests.test_cli_run":{
@@ -19847,6 +22636,18 @@
   "__set__":true,
   "elements":[
    "esmlab"
+  ]
+ },
+ "tests.test_clip_to_bounds":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.test_clip_to_norm":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
   ]
  },
  "tests.test_clock":{
@@ -20050,6 +22851,12 @@
    "stanza"
   ]
  },
+ "tests.test_common_metadata":{
+  "__set__":true,
+  "elements":[
+   "pystac"
+  ]
+ },
  "tests.test_comms":{
   "__set__":true,
   "elements":[
@@ -20074,10 +22881,22 @@
    "blimpy"
   ]
  },
+ "tests.test_comparison":{
+  "__set__":true,
+  "elements":[
+   "mpl_plotter"
+  ]
+ },
  "tests.test_compat":{
   "__set__":true,
   "elements":[
    "kylinpy"
+  ]
+ },
+ "tests.test_compilation":{
+  "__set__":true,
+  "elements":[
+   "dbt"
   ]
  },
  "tests.test_compiler":{
@@ -20165,6 +22984,7 @@
    "gpflow",
    "ioos_qc",
    "lux-api",
+   "openamundsen",
    "pytermgui",
    "sanic",
    "theano-pymc",
@@ -20226,6 +23046,7 @@
  "tests.test_constants":{
   "__set__":true,
   "elements":[
+   "openskill",
    "sanic",
    "tifftools"
   ]
@@ -20282,6 +23103,7 @@
  "tests.test_convert":{
   "__set__":true,
   "elements":[
+   "dataframe_image",
    "decaylanguage"
   ]
  },
@@ -20447,6 +23269,12 @@
   "__set__":true,
   "elements":[
    "terrainbento"
+  ]
+ },
+ "tests.test_create_rating":{
+  "__set__":true,
+  "elements":[
+   "openskill"
   ]
  },
  "tests.test_create_runoff_generator":{
@@ -20618,15 +23446,19 @@
  "tests.test_dashboard":{
   "__set__":true,
   "elements":[
-   "explainerdashboard"
+   "explainerdashboard",
+   "optuna"
   ]
  },
  "tests.test_data":{
   "__set__":true,
   "elements":[
    "aiida-castep",
+   "biom-format",
    "deepforest",
+   "hydrofunctions",
    "pygments",
+   "pymc-base",
    "xugrid"
   ]
  },
@@ -20694,7 +23526,8 @@
  "tests.test_database":{
   "__set__":true,
   "elements":[
-   "rse"
+   "rse",
+   "shared"
   ]
  },
  "tests.test_dataclasses":{
@@ -20702,6 +23535,12 @@
   "elements":[
    "aiida-core",
    "erdantic"
+  ]
+ },
+ "tests.test_dataframe":{
+  "__set__":true,
+  "elements":[
+   "intake-accumulo"
   ]
  },
  "tests.test_dataframes":{
@@ -20822,6 +23661,7 @@
   "elements":[
    "causalml",
    "esmlab",
+   "graspy",
    "matrixprofile",
    "python-flair",
    "scikit-lego",
@@ -21003,6 +23843,12 @@
    "adagio"
   ]
  },
+ "tests.test_deploy":{
+  "__set__":true,
+  "elements":[
+   "qhub"
+  ]
+ },
  "tests.test_deployment":{
   "__set__":true,
   "elements":[
@@ -21019,6 +23865,12 @@
   "__set__":true,
   "elements":[
    "stanza"
+  ]
+ },
+ "tests.test_deprecated":{
+  "__set__":true,
+  "elements":[
+   "optuna"
   ]
  },
  "tests.test_deprecated_field":{
@@ -21068,6 +23920,12 @@
   "elements":[
    "aesara",
    "theano-pymc"
+  ]
+ },
+ "tests.test_df_image":{
+  "__set__":true,
+  "elements":[
+   "dataframe_image"
   ]
  },
  "tests.test_dfs0":{
@@ -21137,6 +23995,18 @@
    "theano-pymc"
   ]
  },
+ "tests.test_directionality":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
+  ]
+ },
+ "tests.test_discovery":{
+  "__set__":true,
+  "elements":[
+   "intake-parquet"
+  ]
+ },
  "tests.test_discrete":{
   "__set__":true,
   "elements":[
@@ -21167,6 +24037,12 @@
   "__set__":true,
   "elements":[
    "magpylib"
+  ]
+ },
+ "tests.test_distributions":{
+  "__set__":true,
+  "elements":[
+   "optuna"
   ]
  },
  "tests.test_django":{
@@ -21215,6 +24091,12 @@
    "larch"
   ]
  },
+ "tests.test_document":{
+  "__set__":true,
+  "elements":[
+   "shared"
+  ]
+ },
  "tests.test_document_store":{
   "__set__":true,
   "elements":[
@@ -21234,6 +24116,12 @@
    "pyremo"
   ]
  },
+ "tests.test_dossier":{
+  "__set__":true,
+  "elements":[
+   "shared"
+  ]
+ },
  "tests.test_dotnet":{
   "__set__":true,
   "elements":[
@@ -21249,7 +24137,8 @@
  "tests.test_drift_removal":{
   "__set__":true,
   "elements":[
-   "cmip6_preprocessing"
+   "cmip6_preprocessing",
+   "xmip"
   ]
  },
  "tests.test_dsamp":{
@@ -21436,7 +24325,19 @@
    "erdantic"
   ]
  },
+ "tests.test_err":{
+  "__set__":true,
+  "elements":[
+   "biom-format"
+  ]
+ },
  "tests.test_error_generation":{
+  "__set__":true,
+  "elements":[
+   "swot_simulator"
+  ]
+ },
+ "tests.test_error_utils":{
   "__set__":true,
   "elements":[
    "swot_simulator"
@@ -21457,7 +24358,8 @@
  "tests.test_errors":{
   "__set__":true,
   "elements":[
-   "flask-restplus"
+   "flask-restplus",
+   "rivgraph"
   ]
  },
  "tests.test_escape_magics":{
@@ -21623,6 +24525,12 @@
    "xopt"
   ]
  },
+ "tests.test_evapotranspiration":{
+  "__set__":true,
+  "elements":[
+   "openamundsen"
+  ]
+ },
  "tests.test_events":{
   "__set__":true,
   "elements":[
@@ -21661,6 +24569,7 @@
  "tests.test_exceptions":{
   "__set__":true,
   "elements":[
+   "hydrofunctions",
    "magpylib",
    "sanic",
    "webdavclient3",
@@ -21685,10 +24594,28 @@
    "lux-api"
   ]
  },
+ "tests.test_executor_shell":{
+  "__set__":true,
+  "elements":[
+   "qme"
+  ]
+ },
+ "tests.test_executor_slurm":{
+  "__set__":true,
+  "elements":[
+   "qme"
+  ]
+ },
  "tests.test_expectations":{
   "__set__":true,
   "elements":[
    "gpflow"
+  ]
+ },
+ "tests.test_experimental":{
+  "__set__":true,
+  "elements":[
+   "optuna"
   ]
  },
  "tests.test_experimentrun":{
@@ -21725,6 +24652,12 @@
   "__set__":true,
   "elements":[
    "verta"
+  ]
+ },
+ "tests.test_export":{
+  "__set__":true,
+  "elements":[
+   "lux-api"
   ]
  },
  "tests.test_exporters":{
@@ -21788,6 +24721,12 @@
    "soupsieve"
   ]
  },
+ "tests.test_extraction":{
+  "__set__":true,
+  "elements":[
+   "imagedataextractor"
+  ]
+ },
  "tests.test_ezc3d":{
   "__set__":true,
   "elements":[
@@ -21811,6 +24750,12 @@
   "__set__":true,
   "elements":[
    "pytermgui"
+  ]
+ },
+ "tests.test_fastai":{
+  "__set__":true,
+  "elements":[
+   "dvclive"
   ]
  },
  "tests.test_features":{
@@ -21935,6 +24880,12 @@
    "jupyter_server"
   ]
  },
+ "tests.test_filesystem":{
+  "__set__":true,
+  "elements":[
+   "qme"
+  ]
+ },
  "tests.test_filetree":{
   "__set__":true,
   "elements":[
@@ -22016,7 +24967,8 @@
  "tests.test_forecast":{
   "__set__":true,
   "elements":[
-   "muttlib"
+   "muttlib",
+   "pycsep"
   ]
  },
  "tests.test_format":{
@@ -22063,6 +25015,36 @@
    "pyopenrivercam"
   ]
  },
+ "tests.test_from_clipboard":{
+  "__set__":true,
+  "elements":[
+   "ascii_magic"
+  ]
+ },
+ "tests.test_from_dalle":{
+  "__set__":true,
+  "elements":[
+   "ascii_magic"
+  ]
+ },
+ "tests.test_from_file":{
+  "__set__":true,
+  "elements":[
+   "ascii_magic"
+  ]
+ },
+ "tests.test_from_image_object":{
+  "__set__":true,
+  "elements":[
+   "ascii_magic"
+  ]
+ },
+ "tests.test_from_url":{
+  "__set__":true,
+  "elements":[
+   "ascii_magic"
+  ]
+ },
  "tests.test_func":{
   "__set__":true,
   "elements":[
@@ -22073,6 +25055,12 @@
   "__set__":true,
   "elements":[
    "daops"
+  ]
+ },
+ "tests.test_func_utils":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
   ]
  },
  "tests.test_functions":{
@@ -22187,6 +25175,12 @@
    "py-tools-ds"
   ]
  },
+ "tests.test_geo_utils":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
+  ]
+ },
  "tests.test_geoarray":{
   "__set__":true,
   "elements":[
@@ -22245,6 +25239,12 @@
   "__set__":true,
   "elements":[
    "geofileops"
+  ]
+ },
+ "tests.test_geotiff":{
+  "__set__":true,
+  "elements":[
+   "python-geotiff"
   ]
  },
  "tests.test_getBH_dict":{
@@ -22338,11 +25338,24 @@
    "geofileops"
   ]
  },
+ "tests.test_gridcal":{
+  "__set__":true,
+  "elements":[
+   "andes"
+  ]
+ },
+ "tests.test_gridded_output":{
+  "__set__":true,
+  "elements":[
+   "openamundsen"
+  ]
+ },
  "tests.test_grids":{
   "__set__":true,
   "elements":[
    "cmip6_preprocessing",
-   "gridtest"
+   "gridtest",
+   "xmip"
   ]
  },
  "tests.test_gridtest":{
@@ -22479,6 +25492,8 @@
    "awacs",
    "cellpy",
    "dlint",
+   "hydrofunctions",
+   "localtileserver",
    "mikeio",
    "mpl-interactions",
    "notion-client",
@@ -22615,6 +25630,12 @@
    "pydifact"
   ]
  },
+ "tests.test_huggingface":{
+  "__set__":true,
+  "elements":[
+   "dvclive"
+  ]
+ },
  "tests.test_human_text":{
   "__set__":true,
   "elements":[
@@ -22625,6 +25646,12 @@
   "__set__":true,
   "elements":[
    "propka"
+  ]
+ },
+ "tests.test_hydrofunctions":{
+  "__set__":true,
+  "elements":[
+   "hydrofunctions"
   ]
  },
  "tests.test_hyperloglog":{
@@ -22670,6 +25697,12 @@
    "theano-pymc"
   ]
  },
+ "tests.test_im_utils":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
+  ]
+ },
  "tests.test_image":{
   "__set__":true,
   "elements":[
@@ -22679,8 +25712,10 @@
  "tests.test_import":{
   "__set__":true,
   "elements":[
+   "dbt",
    "panda3d_viewer",
-   "python-utils"
+   "python-utils",
+   "rse"
   ]
  },
  "tests.test_imported_enums":{
@@ -22692,7 +25727,8 @@
  "tests.test_imports":{
   "__set__":true,
   "elements":[
-   "glidertools"
+   "glidertools",
+   "optuna"
   ]
  },
  "tests.test_in_out":{
@@ -22736,6 +25772,12 @@
   "elements":[
    "qhub",
    "sphinx-js"
+  ]
+ },
+ "tests.test_initial_point":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
   ]
  },
  "tests.test_inline_pronunciations":{
@@ -22809,6 +25851,7 @@
   "elements":[
    "cmyt",
    "edgetest",
+   "mpl_plotter",
    "pymapd",
    "pyomniscidb",
    "vizlo"
@@ -22890,6 +25933,7 @@
   "elements":[
    "amset",
    "btrack",
+   "graspy",
    "matrixprofile",
    "py-tools-ds",
    "redframes",
@@ -23184,6 +26228,12 @@
   "__set__":true,
   "elements":[
    "sanic"
+  ]
+ },
+ "tests.test_keras":{
+  "__set__":true,
+  "elements":[
+   "dvclive"
   ]
  },
  "tests.test_keras_retinanet":{
@@ -23522,6 +26572,18 @@
    "larch"
   ]
  },
+ "tests.test_latentdistributiontest":{
+  "__set__":true,
+  "elements":[
+   "graspy"
+  ]
+ },
+ "tests.test_latentpositiontest":{
+  "__set__":true,
+  "elements":[
+   "graspy"
+  ]
+ },
  "tests.test_latex_formatter":{
   "__set__":true,
   "elements":[
@@ -23544,6 +26606,12 @@
   "__set__":true,
   "elements":[
    "swot_simulator"
+  ]
+ },
+ "tests.test_layout":{
+  "__set__":true,
+  "elements":[
+   "pystac"
   ]
  },
  "tests.test_layouts":{
@@ -24033,6 +27101,12 @@
    "pygments"
   ]
  },
+ "tests.test_lgbm":{
+  "__set__":true,
+  "elements":[
+   "dvclive"
+  ]
+ },
  "tests.test_lib":{
   "__set__":true,
   "elements":[
@@ -24046,10 +27120,22 @@
    "glymur"
   ]
  },
+ "tests.test_lightning":{
+  "__set__":true,
+  "elements":[
+   "dvclive"
+  ]
+ },
  "tests.test_likelihoods":{
   "__set__":true,
   "elements":[
    "gpflow"
+  ]
+ },
+ "tests.test_line":{
+  "__set__":true,
+  "elements":[
+   "dexplot"
   ]
  },
  "tests.test_linear":{
@@ -24073,7 +27159,14 @@
  "tests.test_link":{
   "__set__":true,
   "elements":[
-   "nbgitpuller-link"
+   "nbgitpuller-link",
+   "pystac"
+  ]
+ },
+ "tests.test_linker":{
+  "__set__":true,
+  "elements":[
+   "dbt"
   ]
  },
  "tests.test_lint":{
@@ -24086,6 +27179,12 @@
   "__set__":true,
   "elements":[
    "pyrobuf"
+  ]
+ },
+ "tests.test_ln_utils":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
   ]
  },
  "tests.test_load_local":{
@@ -24146,6 +27245,7 @@
   "__set__":true,
   "elements":[
    "daops",
+   "optuna",
    "sanic"
   ]
  },
@@ -24165,6 +27265,7 @@
   "__set__":true,
   "elements":[
    "deepforest",
+   "dvclive",
    "mikeio",
    "sumy",
    "tifftools",
@@ -24225,6 +27326,12 @@
    "flask-restplus"
   ]
  },
+ "tests.test_mase":{
+  "__set__":true,
+  "elements":[
+   "graspy"
+  ]
+ },
  "tests.test_mask":{
   "__set__":true,
   "elements":[
@@ -24252,13 +27359,20 @@
  "tests.test_math":{
   "__set__":true,
   "elements":[
-   "pycsep"
+   "pycsep",
+   "pymc-base"
   ]
  },
  "tests.test_maths":{
   "__set__":true,
   "elements":[
    "bionc"
+  ]
+ },
+ "tests.test_mds":{
+  "__set__":true,
+  "elements":[
+   "graspy"
   ]
  },
  "tests.test_mean_functions":{
@@ -24416,6 +27530,18 @@
    "jupytext"
   ]
  },
+ "tests.test_meteo":{
+  "__set__":true,
+  "elements":[
+   "openamundsen"
+  ]
+ },
+ "tests.test_meteo_input":{
+  "__set__":true,
+  "elements":[
+   "openamundsen"
+  ]
+ },
  "tests.test_method_equivalence":{
   "__set__":true,
   "elements":[
@@ -24526,6 +27652,12 @@
    "mlconjug3"
   ]
  },
+ "tests.test_mmcv":{
+  "__set__":true,
+  "elements":[
+   "dvclive"
+  ]
+ },
  "tests.test_mnist_benckmarks":{
   "__set__":true,
   "elements":[
@@ -24543,7 +27675,9 @@
   "elements":[
    "deepforest",
    "flask-restplus",
-   "gpflow"
+   "gpflow",
+   "openamundsen",
+   "pymc-base"
   ]
  },
  "tests.test_model5":{
@@ -24684,6 +27818,12 @@
    "bionc"
   ]
  },
+ "tests.test_model_graph":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
  "tests.test_model_group":{
   "__set__":true,
   "elements":[
@@ -24743,6 +27883,7 @@
   "elements":[
    "avalanche-lib",
    "btrack",
+   "graspy",
    "python-flair",
    "sumy"
   ]
@@ -25025,6 +28166,12 @@
    "pyrobuf"
   ]
  },
+ "tests.test_network_io":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
+  ]
+ },
  "tests.test_nextset":{
   "__set__":true,
   "elements":[
@@ -25127,6 +28274,12 @@
   "__set__":true,
   "elements":[
    "py-tools-ds"
+  ]
+ },
+ "tests.test_numerical":{
+  "__set__":true,
+  "elements":[
+   "openamundsen"
   ]
  },
  "tests.test_numerical_stability":{
@@ -25249,10 +28402,22 @@
    "geofileops"
   ]
  },
+ "tests.test_omni":{
+  "__set__":true,
+  "elements":[
+   "graspy"
+  ]
+ },
  "tests.test_oneof":{
   "__set__":true,
   "elements":[
    "pyrobuf"
+  ]
+ },
+ "tests.test_online_resources":{
+  "__set__":true,
+  "elements":[
+   "hydrofunctions"
   ]
  },
  "tests.test_openjp2":{
@@ -25286,6 +28451,12 @@
    "pyxel-sim",
    "saws",
    "tifftools"
+  ]
+ },
+ "tests.test_ordinal":{
+  "__set__":true,
+  "elements":[
+   "openskill"
   ]
  },
  "tests.test_organization":{
@@ -25373,6 +28544,12 @@
    "typhos"
   ]
  },
+ "tests.test_panes":{
+  "__set__":true,
+  "elements":[
+   "mpl_plotter"
+  ]
+ },
  "tests.test_param":{
   "__set__":true,
   "elements":[
@@ -25400,6 +28577,7 @@
  "tests.test_parse":{
   "__set__":true,
   "elements":[
+   "biom-format",
    "yarg"
   ]
  },
@@ -25442,6 +28620,12 @@
   "__set__":true,
   "elements":[
    "pyrobuf"
+  ]
+ },
+ "tests.test_parser_custom":{
+  "__set__":true,
+  "elements":[
+   "rse"
   ]
  },
  "tests.test_parser_github":{
@@ -25535,6 +28719,12 @@
   "__set__":true,
   "elements":[
    "cellpy"
+  ]
+ },
+ "tests.test_pep8":{
+  "__set__":true,
+  "elements":[
+   "isofit"
   ]
  },
  "tests.test_performance":{
@@ -25698,6 +28888,7 @@
  "tests.test_plot":{
   "__set__":true,
   "elements":[
+   "graspy",
    "typhos",
    "xugrid"
   ]
@@ -25745,6 +28936,12 @@
   "__set__":true,
   "elements":[
    "sed-plume"
+  ]
+ },
+ "tests.test_point_output":{
+  "__set__":true,
+  "elements":[
+   "openamundsen"
   ]
  },
  "tests.test_polycrystal":{
@@ -25799,7 +28996,8 @@
  "tests.test_postprocessing":{
   "__set__":true,
   "elements":[
-   "cmip6_preprocessing"
+   "cmip6_preprocessing",
+   "xmip"
   ]
  },
  "tests.test_praat":{
@@ -25857,7 +29055,8 @@
    "cmip6_preprocessing",
    "openfisca-france",
    "py-cordex",
-   "scikit-lego"
+   "scikit-lego",
+   "xmip"
   ]
  },
  "tests.test_preprocessing.test_columncapper":{
@@ -25941,13 +29140,20 @@
  "tests.test_preprocessing_cloud":{
   "__set__":true,
   "elements":[
-   "cmip6_preprocessing"
+   "cmip6_preprocessing",
+   "xmip"
   ]
  },
  "tests.test_preserve_empty_cells":{
   "__set__":true,
   "elements":[
    "jupytext"
+  ]
+ },
+ "tests.test_presets":{
+  "__set__":true,
+  "elements":[
+   "mpl_plotter"
   ]
  },
  "tests.test_pretrain":{
@@ -25961,6 +29167,7 @@
   "elements":[
    "aesara",
    "glymur",
+   "pymc-base",
    "theano-pymc"
   ]
  },
@@ -25968,6 +29175,12 @@
   "__set__":true,
   "elements":[
    "gpflow"
+  ]
+ },
+ "tests.test_privy":{
+  "__set__":true,
+  "elements":[
+   "dbxfs"
   ]
  },
  "tests.test_prms":{
@@ -26102,6 +29315,12 @@
    "autodynatrace"
   ]
  },
+ "tests.test_ptr":{
+  "__set__":true,
+  "elements":[
+   "graspy"
+  ]
+ },
  "tests.test_py_base":{
   "__set__":true,
   "elements":[
@@ -26143,6 +29362,12 @@
   "__set__":true,
   "elements":[
    "pysyncrosim"
+  ]
+ },
+ "tests.test_pytensorf":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
   ]
  },
  "tests.test_python":{
@@ -26199,6 +29424,12 @@
    "verta"
   ]
  },
+ "tests.test_quick_test":{
+  "__set__":true,
+  "elements":[
+   "ascii_magic"
+  ]
+ },
  "tests.test_quickle":{
   "__set__":true,
   "elements":[
@@ -26217,6 +29448,18 @@
    "autouri"
   ]
  },
+ "tests.test_radiation":{
+  "__set__":true,
+  "elements":[
+   "openamundsen"
+  ]
+ },
+ "tests.test_radionuclide":{
+  "__set__":true,
+  "elements":[
+   "radioactivedecay"
+  ]
+ },
  "tests.test_random_signal":{
   "__set__":true,
   "elements":[
@@ -26233,6 +29476,24 @@
   "__set__":true,
   "elements":[
    "gemgis"
+  ]
+ },
+ "tests.test_raster_input":{
+  "__set__":true,
+  "elements":[
+   "openamundsen"
+  ]
+ },
+ "tests.test_rate":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.test_rating":{
+  "__set__":true,
+  "elements":[
+   "openskill"
   ]
  },
  "tests.test_reacnetgen":{
@@ -26403,7 +29664,8 @@
  "tests.test_regionmask":{
   "__set__":true,
   "elements":[
-   "cmip6_preprocessing"
+   "cmip6_preprocessing",
+   "xmip"
   ]
  },
  "tests.test_regions":{
@@ -26449,6 +29711,12 @@
    "python-flair"
   ]
  },
+ "tests.test_relational":{
+  "__set__":true,
+  "elements":[
+   "qme"
+  ]
+ },
  "tests.test_release":{
   "__set__":true,
   "elements":[
@@ -26488,6 +29756,7 @@
  "tests.test_report":{
   "__set__":true,
   "elements":[
+   "dvclive",
    "edgetest"
   ]
  },
@@ -26615,6 +29884,12 @@
    "sanic"
   ]
  },
+ "tests.test_restapi":{
+  "__set__":true,
+  "elements":[
+   "aiida-core"
+  ]
+ },
  "tests.test_result_set":{
   "__set__":true,
   "elements":[
@@ -26626,6 +29901,24 @@
   "elements":[
    "pymapd",
    "pyomniscidb"
+  ]
+ },
+ "tests.test_rfc822":{
+  "__set__":true,
+  "elements":[
+   "pyproject-metadata"
+  ]
+ },
+ "tests.test_riccati":{
+  "__set__":true,
+  "elements":[
+   "riccati"
+  ]
+ },
+ "tests.test_river_utils":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
   ]
  },
  "tests.test_rmd_to_ipynb":{
@@ -26651,6 +29944,18 @@
   "__set__":true,
   "elements":[
    "sanic"
+  ]
+ },
+ "tests.test_rsmq":{
+  "__set__":true,
+  "elements":[
+   "pyrsmq"
+  ]
+ },
+ "tests.test_rt_libradtran":{
+  "__set__":true,
+  "elements":[
+   "isofit"
   ]
  },
  "tests.test_rtf_formatter":{
@@ -26721,6 +30026,12 @@
    "saws"
   ]
  },
+ "tests.test_scalebar_detection":{
+  "__set__":true,
+  "elements":[
+   "imagedataextractor"
+  ]
+ },
  "tests.test_scaling":{
   "__set__":true,
   "elements":[
@@ -26731,6 +30042,12 @@
   "__set__":true,
   "elements":[
    "yggdrasil"
+  ]
+ },
+ "tests.test_scatter":{
+  "__set__":true,
+  "elements":[
+   "dexplot"
   ]
  },
  "tests.test_scatterer":{
@@ -26879,6 +30196,12 @@
   "__set__":true,
   "elements":[
    "mols2grid"
+  ]
+ },
+ "tests.test_select_dimension":{
+  "__set__":true,
+  "elements":[
+   "graspy"
   ]
  },
  "tests.test_semgrex":{
@@ -27041,6 +30364,12 @@
    "stitchm"
   ]
  },
+ "tests.test_sg":{
+  "__set__":true,
+  "elements":[
+   "graspy"
+  ]
+ },
  "tests.test_shapely":{
   "__set__":true,
   "elements":[
@@ -27126,6 +30455,24 @@
    "terrainbento"
   ]
  },
+ "tests.test_simplify":{
+  "__set__":true,
+  "elements":[
+   "flake8-simplify"
+  ]
+ },
+ "tests.test_sims":{
+  "__set__":true,
+  "elements":[
+   "graspy"
+  ]
+ },
+ "tests.test_sims_corr":{
+  "__set__":true,
+  "elements":[
+   "graspy"
+  ]
+ },
  "tests.test_simulation":{
   "__set__":true,
   "elements":[
@@ -27154,6 +30501,12 @@
   "__set__":true,
   "elements":[
    "matrixprofile"
+  ]
+ },
+ "tests.test_sklearn":{
+  "__set__":true,
+  "elements":[
+   "graspy"
   ]
  },
  "tests.test_skorch_models":{
@@ -27193,10 +30546,28 @@
    "matrixprofile"
   ]
  },
+ "tests.test_snow":{
+  "__set__":true,
+  "elements":[
+   "openamundsen"
+  ]
+ },
  "tests.test_sns":{
   "__set__":true,
   "elements":[
    "aiobotocore"
+  ]
+ },
+ "tests.test_sorting":{
+  "__set__":true,
+  "elements":[
+   "extract_model"
+  ]
+ },
+ "tests.test_source":{
+  "__set__":true,
+  "elements":[
+   "intake-parquet"
   ]
  },
  "tests.test_spark":{
@@ -27234,6 +30605,12 @@
   "__set__":true,
   "elements":[
    "adagio"
+  ]
+ },
+ "tests.test_spectral_embed":{
+  "__set__":true,
+  "elements":[
+   "graspy"
   ]
  },
  "tests.test_sph":{
@@ -27308,10 +30685,22 @@
    "pystac-client"
   ]
  },
+ "tests.test_stac_io":{
+  "__set__":true,
+  "elements":[
+   "pystac"
+  ]
+ },
  "tests.test_stack":{
   "__set__":true,
   "elements":[
    "pastel"
+  ]
+ },
+ "tests.test_standard_metadata":{
+  "__set__":true,
+  "elements":[
+   "pyproject-metadata"
   ]
  },
  "tests.test_stat_dist":{
@@ -27324,6 +30713,12 @@
   "__set__":true,
   "elements":[
    "sanic"
+  ]
+ },
+ "tests.test_station":{
+  "__set__":true,
+  "elements":[
+   "hydrofunctions"
   ]
  },
  "tests.test_statistics":{
@@ -27418,6 +30813,12 @@
    "quickle"
   ]
  },
+ "tests.test_structs":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
  "tests.test_structured":{
   "__set__":true,
   "elements":[
@@ -27428,6 +30829,12 @@
   "__set__":true,
   "elements":[
    "nr.types"
+  ]
+ },
+ "tests.test_study":{
+  "__set__":true,
+  "elements":[
+   "optuna"
   ]
  },
  "tests.test_stuf":{
@@ -27471,6 +30878,12 @@
   "__set__":true,
   "elements":[
    "typhos"
+  ]
+ },
+ "tests.test_summaries":{
+  "__set__":true,
+  "elements":[
+   "pystac"
   ]
  },
  "tests.test_summarize_mtz_dtypes":{
@@ -27563,6 +30976,12 @@
    "crystals"
   ]
  },
+ "tests.test_svd":{
+  "__set__":true,
+  "elements":[
+   "graspy"
+  ]
+ },
  "tests.test_swagger":{
   "__set__":true,
   "elements":[
@@ -27591,6 +31010,7 @@
  "tests.test_table":{
   "__set__":true,
   "elements":[
+   "biom-format",
    "magicgui",
    "pdfme"
   ]
@@ -27644,6 +31064,12 @@
    "andes"
   ]
  },
+ "tests.test_team_rating":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
  "tests.test_techstacks":{
   "__set__":true,
   "elements":[
@@ -27685,6 +31111,12 @@
   "__set__":true,
   "elements":[
    "pygments"
+  ]
+ },
+ "tests.test_terrain":{
+  "__set__":true,
+  "elements":[
+   "openamundsen"
   ]
  },
  "tests.test_test_client_port":{
@@ -27772,6 +31204,12 @@
    "glymur"
   ]
  },
+ "tests.test_time_series":{
+  "__set__":true,
+  "elements":[
+   "plonk"
+  ]
+ },
  "tests.test_time_utilities":{
   "__set__":true,
   "elements":[
@@ -27818,6 +31256,24 @@
   "__set__":true,
   "elements":[
    "sanic"
+  ]
+ },
+ "tests.test_to_file":{
+  "__set__":true,
+  "elements":[
+   "ascii_magic"
+  ]
+ },
+ "tests.test_to_html_file":{
+  "__set__":true,
+  "elements":[
+   "ascii_magic"
+  ]
+ },
+ "tests.test_to_terminal":{
+  "__set__":true,
+  "elements":[
+   "ascii_magic"
   ]
  },
  "tests.test_token":{
@@ -28022,10 +31478,22 @@
    "dlint"
   ]
  },
+ "tests.test_trial":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
  "tests.test_triang":{
   "__set__":true,
   "elements":[
    "gpflow"
+  ]
+ },
+ "tests.test_tridiag":{
+  "__set__":true,
+  "elements":[
+   "openamundsen"
   ]
  },
  "tests.test_trust_notebook":{
@@ -28129,7 +31597,8 @@
  "tests.test_typing":{
   "__set__":true,
   "elements":[
-   "erdantic"
+   "erdantic",
+   "hydrofunctions"
   ]
  },
  "tests.test_ugrid1d":{
@@ -28269,6 +31738,7 @@
   "__set__":true,
   "elements":[
    "amset",
+   "biom-format",
    "borb",
    "dlint",
    "emperor",
@@ -28276,6 +31746,7 @@
    "pdpipe",
    "plum-dispatch",
    "pygments",
+   "pymc-base",
    "quilt",
    "quilt3",
    "yodatools"
@@ -28313,6 +31784,7 @@
    "adversarial-robustness-toolbox",
    "aiida-castep",
    "airflow",
+   "artificial-adversary",
    "baycomp",
    "birdy",
    "blimpy",
@@ -28327,9 +31799,11 @@
    "flask-restplus",
    "flask-security-too",
    "gemgis",
+   "graspy",
    "grayskull",
    "ioos_qc",
    "jupyter_server",
+   "lux-api",
    "matrixprofile",
    "mols2grid",
    "mpire",
@@ -28339,6 +31813,7 @@
    "pangeo-forge-recipes",
    "pygpcca",
    "pyremo",
+   "pyrsmq",
    "pystac",
    "python-flair",
    "rabpro",
@@ -28352,6 +31827,7 @@
    "typhos",
    "verta",
    "xclim",
+   "xmip",
    "xopt",
    "xrd_simulator"
   ]
@@ -28611,10 +32087,22 @@
    "localtileserver"
   ]
  },
+ "tests.test_vue_widget":{
+  "__set__":true,
+  "elements":[
+   "ipyvue"
+  ]
+ },
  "tests.test_waiter":{
   "__set__":true,
   "elements":[
    "aiobotocore"
+  ]
+ },
+ "tests.test_walk":{
+  "__set__":true,
+  "elements":[
+   "rivgraph"
   ]
  },
  "tests.test_warn":{
@@ -28935,6 +32423,12 @@
   "__set__":true,
   "elements":[
    "daops"
+  ]
+ },
+ "tests.test_xgboost":{
+  "__set__":true,
+  "elements":[
+   "dvclive"
   ]
  },
  "tests.test_xgboost_explainer":{
@@ -29609,6 +33103,7 @@
   "elements":[
    "aiida-core",
    "amset",
+   "diffprivlib",
    "xyzspaces"
   ]
  },
@@ -29852,16 +33347,106 @@
    "aiida-core"
   ]
  },
+ "tests.tools.test_count_nonzero":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
  "tests.tools.test_deformation":{
   "__set__":true,
   "elements":[
    "amset"
   ]
  },
+ "tests.tools.test_histogram":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.tools.test_histogram2d":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.tools.test_histogramdd":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.tools.test_mean":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.tools.test_median":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.tools.test_nanmean":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.tools.test_nanstd":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.tools.test_nansum":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.tools.test_nanvar":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.tools.test_percentile":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.tools.test_quantile":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.tools.test_std":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
+ "tests.tools.test_sum":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
+  ]
+ },
  "tests.tools.test_tools":{
   "__set__":true,
   "elements":[
    "xyzspaces"
+  ]
+ },
+ "tests.tools.test_var":{
+  "__set__":true,
+  "elements":[
+   "diffprivlib"
   ]
  },
  "tests.tools.visualization":{
@@ -29966,6 +33551,30 @@
    "eventkit"
   ]
  },
+ "tests.transformation":{
+  "__set__":true,
+  "elements":[
+   "pdfstream"
+  ]
+ },
+ "tests.transformation.test_cli":{
+  "__set__":true,
+  "elements":[
+   "pdfstream"
+  ]
+ },
+ "tests.transformation.test_main":{
+  "__set__":true,
+  "elements":[
+   "pdfstream"
+  ]
+ },
+ "tests.transformation.test_tools":{
+  "__set__":true,
+  "elements":[
+   "pdfstream"
+  ]
+ },
  "tests.transforms":{
   "__set__":true,
   "elements":[
@@ -30029,6 +33638,7 @@
  "tests.tuning":{
   "__set__":true,
   "elements":[
+   "pymc-base",
    "wrighttools"
   ]
  },
@@ -30042,6 +33652,18 @@
   "__set__":true,
   "elements":[
    "wrighttools"
+  ]
+ },
+ "tests.tuning.test_scaling":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.tuning.test_starting":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
   ]
  },
  "tests.two_funcs":{
@@ -30083,6 +33705,7 @@
  "tests.unit":{
   "__set__":true,
   "elements":[
+   "fair-research-login",
    "google-cloud-bigquery",
    "google-cloud-monitoring",
    "google-cloud-resource-manager",
@@ -30090,13 +33713,17 @@
    "histolab",
    "jupyterlab-git",
    "neo4j-python-driver",
+   "python-gitlab",
    "readchar",
-   "serverlessrepo"
+   "serverlessrepo",
+   "small-text"
   ]
  },
  "tests.unit.conftest":{
   "__set__":true,
   "elements":[
+   "fair-research-login",
+   "python-gitlab",
    "serverlessrepo"
   ]
  },
@@ -30239,6 +33866,570 @@
    "neo4j-python-driver"
   ]
  },
+ "tests.unit.mixins":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.mixins.test_meta_mixins":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.mixins.test_mixin_methods":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.mixins.test_object_mixins_attributes":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.mocks":{
+  "__set__":true,
+  "elements":[
+   "fair-research-login"
+  ]
+ },
+ "tests.unit.objects":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.conftest":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_appearance":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_applications":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_audit_events":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_badges":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_bridges":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_commits":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_deploy_tokens":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_deployments":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_environments":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_groups":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_hooks":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_issues":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_job_artifacts":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_jobs":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_keys":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_members":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_merge_request_pipelines":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_merge_requests":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_mro":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_packages":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_personal_access_tokens":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_pipeline_schedules":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_pipelines":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_project_access_tokens":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_project_import_export":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_project_merge_request_approvals":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_project_statistics":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_projects":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_releases":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_remote_mirrors":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_repositories":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_resource_label_events":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_resource_milestone_events":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_resource_state_events":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_runners":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_services":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_snippets":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_submodules":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_todos":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_users":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.objects.test_variables":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.small_text":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.classifiers":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.classifiers.test_classifiers":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.classifiers.test_factories":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.conftest":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.data":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.data.test_datasets":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.data.test_sampling":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.initialization":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.initialization.test_strategies":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.pytorch":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.pytorch.classifiers":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.pytorch.classifiers.test_base":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.pytorch.classifiers.test_factories":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.pytorch.classifiers.test_kimcnn":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.pytorch.models":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.pytorch.models.test_kimcnn":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.pytorch.test_datasets":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.pytorch.test_strategies":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.pytorch.test_utils":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.pytorch.utils":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.pytorch.utils.test_data":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.pytorch.utils.test_labels":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.transformers":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.transformers.classifiers":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.transformers.classifiers.test_classification":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.transformers.classifiers.test_factories":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.transformers.test_datasets":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.query_strategies":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.query_strategies.test_base":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.query_strategies.test_coresets":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.query_strategies.test_strategies":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.stopping_criteria":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.stopping_criteria.test_base":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.stopping_criteria.test_kappa":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.test_active_learner":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.test_base":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.test_version":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.utils":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.utils.test_classification":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.utils.test_clustering":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.utils.test_data":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.utils.test_datetime":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.utils.test_labels":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.utils.test_logging":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
  "tests.unit.test_ExcludeFilter":{
   "__set__":true,
   "elements":[
@@ -30294,15 +34485,28 @@
    "serverlessrepo"
   ]
  },
+ "tests.unit.test_base":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
  "tests.unit.test_branch":{
   "__set__":true,
   "elements":[
    "jupyterlab-git"
   ]
  },
+ "tests.unit.test_cli":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
  "tests.unit.test_client":{
   "__set__":true,
   "elements":[
+   "fair-research-login",
    "google-cloud-bigquery",
    "google-cloud-monitoring"
   ]
@@ -30311,6 +34515,12 @@
   "__set__":true,
   "elements":[
    "jupyterlab-git"
+  ]
+ },
+ "tests.unit.test_code_handler":{
+  "__set__":true,
+  "elements":[
+   "fair-research-login"
   ]
  },
  "tests.unit.test_compositions":{
@@ -30328,7 +34538,8 @@
  "tests.unit.test_config":{
   "__set__":true,
   "elements":[
-   "jupyterlab-git"
+   "jupyterlab-git",
+   "python-gitlab"
   ]
  },
  "tests.unit.test_data":{
@@ -30353,7 +34564,26 @@
   "__set__":true,
   "elements":[
    "histolab",
-   "neo4j-python-driver"
+   "neo4j-python-driver",
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.test_gitlab":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.test_gitlab_auth":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
+  ]
+ },
+ "tests.unit.test_gitlab_http_methods":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
   ]
  },
  "tests.unit.test_group":{
@@ -30396,6 +34626,12 @@
   "__set__":true,
   "elements":[
    "google-cloud-monitoring"
+  ]
+ },
+ "tests.unit.test_local_server":{
+  "__set__":true,
+  "elements":[
+   "fair-research-login"
   ]
  },
  "tests.unit.test_masks":{
@@ -30483,6 +34719,18 @@
    "histolab"
   ]
  },
+ "tests.unit.test_storage_classes":{
+  "__set__":true,
+  "elements":[
+   "fair-research-login"
+  ]
+ },
+ "tests.unit.test_storage_tools":{
+  "__set__":true,
+  "elements":[
+   "fair-research-login"
+  ]
+ },
  "tests.unit.test_table":{
   "__set__":true,
   "elements":[
@@ -30510,13 +34758,20 @@
  "tests.unit.test_types":{
   "__set__":true,
   "elements":[
-   "neo4j-python-driver"
+   "neo4j-python-driver",
+   "python-gitlab"
   ]
  },
  "tests.unit.test_util":{
   "__set__":true,
   "elements":[
    "histolab"
+  ]
+ },
+ "tests.unit.test_utils":{
+  "__set__":true,
+  "elements":[
+   "python-gitlab"
   ]
  },
  "tests.unit.time":{
@@ -30570,8 +34825,39 @@
  "tests.unit_tests":{
   "__set__":true,
   "elements":[
+   "param_persist",
    "verta",
    "vizlo"
+  ]
+ },
+ "tests.unit_tests.agents":{
+  "__set__":true,
+  "elements":[
+   "param_persist"
+  ]
+ },
+ "tests.unit_tests.agents.sqlalchemy_agent":{
+  "__set__":true,
+  "elements":[
+   "param_persist"
+  ]
+ },
+ "tests.unit_tests.agents.sqlalchemy_agent.conftest":{
+  "__set__":true,
+  "elements":[
+   "param_persist"
+  ]
+ },
+ "tests.unit_tests.agents.sqlalchemy_agent.test_sqlalchemy_agent":{
+  "__set__":true,
+  "elements":[
+   "param_persist"
+  ]
+ },
+ "tests.unit_tests.agents.test_base_agent":{
+  "__set__":true,
+  "elements":[
+   "param_persist"
   ]
  },
  "tests.unit_tests.conftest":{
@@ -30590,6 +34876,30 @@
   "__set__":true,
   "elements":[
    "verta"
+  ]
+ },
+ "tests.unit_tests.sqlalchemy_data_models":{
+  "__set__":true,
+  "elements":[
+   "param_persist"
+  ]
+ },
+ "tests.unit_tests.sqlalchemy_data_models.conftest":{
+  "__set__":true,
+  "elements":[
+   "param_persist"
+  ]
+ },
+ "tests.unit_tests.sqlalchemy_data_models.test_instance_model":{
+  "__set__":true,
+  "elements":[
+   "param_persist"
+  ]
+ },
+ "tests.unit_tests.sqlalchemy_data_models.test_param_model":{
+  "__set__":true,
+  "elements":[
+   "param_persist"
   ]
  },
  "tests.unit_tests.strategies":{
@@ -30972,14 +35282,28 @@
    "django-versatileimagefield"
   ]
  },
+ "tests.usecases":{
+  "__set__":true,
+  "elements":[
+   "gitflow"
+  ]
+ },
+ "tests.usecases.test_creation":{
+  "__set__":true,
+  "elements":[
+   "gitflow"
+  ]
+ },
  "tests.util":{
   "__set__":true,
   "elements":[
    "deeptime",
    "intake-spark",
+   "openskill",
    "plum-dispatch",
    "pyathena",
-   "quacc"
+   "quacc",
+   "shared"
   ]
  },
  "tests.util.conftest":{
@@ -31012,6 +35336,12 @@
    "deeptime"
   ]
  },
+ "tests.util.test_ladder_pairs":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
  "tests.util.test_pop_analysis":{
   "__set__":true,
   "elements":[
@@ -31030,6 +35360,18 @@
    "deeptime"
   ]
  },
+ "tests.util.test_rankings":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.util.test_score":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
  "tests.util.test_slabs":{
   "__set__":true,
   "elements":[
@@ -31046,6 +35388,30 @@
   "__set__":true,
   "elements":[
    "deeptime"
+  ]
+ },
+ "tests.util.test_unwind":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.util.test_util_a":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.util.test_util_c":{
+  "__set__":true,
+  "elements":[
+   "openskill"
+  ]
+ },
+ "tests.util.test_util_sum_q":{
+  "__set__":true,
+  "elements":[
+   "openskill"
   ]
  },
  "tests.utilities":{
@@ -31069,14 +35435,18 @@
    "esmlab",
    "extract_model",
    "genestboost",
+   "intake-parquet",
    "iohexperimenter",
    "ipygany",
    "jupyter_server",
    "jupytext",
    "landlab",
+   "modelbase",
    "mpire",
+   "mvt",
    "nr.types",
    "pdfme",
+   "pdfstream",
    "polyfempy",
    "pyannote.core",
    "pybtex",
@@ -31085,6 +35455,7 @@
    "pystac",
    "quilt",
    "quilt3",
+   "small-text",
    "sumy",
    "superset",
    "triad",
@@ -31121,6 +35492,12 @@
    "triad"
   ]
  },
+ "tests.utils.datasets":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
  "tests.utils.dates":{
   "__set__":true,
   "elements":[
@@ -31149,6 +35526,12 @@
   "__set__":true,
   "elements":[
    "genestboost"
+  ]
+ },
+ "tests.utils.object_factory":{
+  "__set__":true,
+  "elements":[
+   "small-text"
   ]
  },
  "tests.utils.processes":{
@@ -31197,6 +35580,12 @@
   "__set__":true,
   "elements":[
    "landlab"
+  ]
+ },
+ "tests.utils.test_dct_ops":{
+  "__set__":true,
+  "elements":[
+   "pdfstream"
   ]
  },
  "tests.utils.test_decorators":{
@@ -31266,6 +35655,12 @@
    "triad"
   ]
  },
+ "tests.utils.test_jupyter":{
+  "__set__":true,
+  "elements":[
+   "pdfstream"
+  ]
+ },
  "tests.utils.test_matrix":{
   "__set__":true,
   "elements":[
@@ -31282,6 +35677,12 @@
   "__set__":true,
   "elements":[
    "triad"
+  ]
+ },
+ "tests.utils.test_plotting":{
+  "__set__":true,
+  "elements":[
+   "modelbase"
   ]
  },
  "tests.utils.test_pyarrow":{
@@ -31363,10 +35764,22 @@
    "xyzspaces"
   ]
  },
+ "tests.utils.test_warppers":{
+  "__set__":true,
+  "elements":[
+   "pdfstream"
+  ]
+ },
  "tests.utils.test_watershed":{
   "__set__":true,
   "elements":[
    "landlab"
+  ]
+ },
+ "tests.utils.testing":{
+  "__set__":true,
+  "elements":[
+   "small-text"
   ]
  },
  "tests.utils.validator":{
@@ -31384,7 +35797,32 @@
  "tests.utils_tests":{
   "__set__":true,
   "elements":[
+   "labelme",
    "superset"
+  ]
+ },
+ "tests.utils_tests.test_draw":{
+  "__set__":true,
+  "elements":[
+   "labelme"
+  ]
+ },
+ "tests.utils_tests.test_image":{
+  "__set__":true,
+  "elements":[
+   "labelme"
+  ]
+ },
+ "tests.utils_tests.test_shape":{
+  "__set__":true,
+  "elements":[
+   "labelme"
+  ]
+ },
+ "tests.utils_tests.util":{
+  "__set__":true,
+  "elements":[
+   "labelme"
   ]
  },
  "tests.validation":{
@@ -31421,6 +35859,48 @@
   "__set__":true,
   "elements":[
    "landlab"
+  ]
+ },
+ "tests.variational":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.variational.test_approximations":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.variational.test_callbacks":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.variational.test_inference":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.variational.test_minibatch_rv":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.variational.test_opvi":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
+  ]
+ },
+ "tests.variational.test_updates":{
+  "__set__":true,
+  "elements":[
+   "pymc-base"
   ]
  },
  "tests.versioning":{
@@ -31481,6 +35961,90 @@
   "__set__":true,
   "elements":[
    "flask-security-too"
+  ]
+ },
+ "tests.visualization":{
+  "__set__":true,
+  "elements":[
+   "pdfstream"
+  ]
+ },
+ "tests.visualization.test_main":{
+  "__set__":true,
+  "elements":[
+   "pdfstream"
+  ]
+ },
+ "tests.visualization.test_tools":{
+  "__set__":true,
+  "elements":[
+   "pdfstream"
+  ]
+ },
+ "tests.visualization_tests":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.visualization_tests.matplotlib_tests":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.visualization_tests.matplotlib_tests.test_edf":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.visualization_tests.test_contour":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.visualization_tests.test_edf":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.visualization_tests.test_intermediate_plot":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.visualization_tests.test_optimization_history":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.visualization_tests.test_parallel_coordinate":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.visualization_tests.test_param_importances":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.visualization_tests.test_slice":{
+  "__set__":true,
+  "elements":[
+   "optuna"
+  ]
+ },
+ "tests.visualization_tests.test_utils":{
+  "__set__":true,
+  "elements":[
+   "optuna"
   ]
  },
  "tests.viz":{
@@ -31547,6 +36111,18 @@
   "__set__":true,
   "elements":[
    "genestboost"
+  ]
+ },
+ "tests.widgets_tests":{
+  "__set__":true,
+  "elements":[
+   "labelme"
+  ]
+ },
+ "tests.widgets_tests.test_label_dialog":{
+  "__set__":true,
+  "elements":[
+   "labelme"
   ]
  },
  "tests.wordclasses":{
@@ -31622,10 +36198,28 @@
    "airflow"
   ]
  },
+ "tests.x-custom_tests":{
+  "__set__":true,
+  "elements":[
+   "sheet2dict"
+  ]
+ },
  "tests.x_square_test":{
   "__set__":true,
   "elements":[
    "ffx"
+  ]
+ },
+ "tests.xr":{
+  "__set__":true,
+  "elements":[
+   "extract_model"
+  ]
+ },
+ "tests.xr.test_triangular_mesh_netcdf":{
+  "__set__":true,
+  "elements":[
+   "extract_model"
   ]
  },
  "tests.zipf":{
@@ -31671,6 +36265,12 @@
   ]
  },
  "tests_sql.test_sql_executor":{
+  "__set__":true,
+  "elements":[
+   "lux-api"
+  ]
+ },
+ "tests_sql.test_sql_export":{
   "__set__":true,
   "elements":[
    "lux-api"

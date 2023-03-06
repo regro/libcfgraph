@@ -171,7 +171,8 @@
  "openquake.baselib.datastore":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.baselib.general":{
@@ -247,13 +248,15 @@
  "openquake.baselib.tests.config_test":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.baselib.tests.datastore_test":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.baselib.tests.general_test":{
@@ -294,10 +297,18 @@
  "openquake.baselib.tests.workerpool_test":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.baselib.workerpool":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine",
+   "oq-engine"
+  ]
+ },
+ "openquake.baselib.writers":{
   "__set__":true,
   "elements":[
    "openquake.engine"
@@ -306,7 +317,8 @@
  "openquake.baselib.zeromq":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.calculators":{
@@ -351,6 +363,12 @@
    "oq-engine"
   ]
  },
+ "openquake.calculators.conditional_spectrum":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.calculators.disaggregation":{
   "__set__":true,
   "elements":[
@@ -369,6 +387,12 @@
   "elements":[
    "openquake.engine",
    "oq-engine"
+  ]
+ },
+ "openquake.calculators.event_based_damage":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
   ]
  },
  "openquake.calculators.event_based_risk":{
@@ -409,13 +433,15 @@
  "openquake.calculators.extract":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.calculators.getters":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.calculators.gmf_ebrisk":{
@@ -432,6 +458,18 @@
   ]
  },
  "openquake.calculators.post_risk":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.calculators.preclassical":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.calculators.reinsurance":{
   "__set__":true,
   "elements":[
    "openquake.engine"
@@ -607,7 +645,8 @@
  "openquake.commands.abort":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.commands.celery":{
@@ -625,7 +664,8 @@
  "openquake.commands.checksum":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.commands.compare":{
@@ -657,7 +697,8 @@
  "openquake.commands.dump":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.commands.engine":{
@@ -677,7 +718,8 @@
  "openquake.commands.extract":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.commands.from_shapefile":{
@@ -729,13 +771,15 @@
  "openquake.commands.plot_assets":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.commands.plot_hmaps":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.commands.plot_lc":{
@@ -831,7 +875,8 @@
  "openquake.commands.restore":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.commands.run":{
@@ -854,10 +899,17 @@
    "openquake.engine"
   ]
  },
- "openquake.commands.shell":{
+ "openquake.commands.shakemap2gmfs":{
   "__set__":true,
   "elements":[
    "openquake.engine"
+  ]
+ },
+ "openquake.commands.shell":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.commands.show":{
@@ -912,13 +964,15 @@
  "openquake.commands.workers":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.commands.zip":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.commonlib":{
@@ -944,7 +998,14 @@
  "openquake.commonlib.datastore":{
   "__set__":true,
   "elements":[
+   "openquake.engine",
    "oq-engine"
+  ]
+ },
+ "openquake.commonlib.dbapi":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
   ]
  },
  "openquake.commonlib.hazard_writers":{
@@ -1197,13 +1258,15 @@
  "openquake.engine.tests.engine_tools":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.engine.tests.engine_tools.correct_complex_sources_test":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.engine.tests.utils":{
@@ -1316,6 +1379,12 @@
    "oq-engine"
   ]
  },
+ "openquake.hazardlib.cross_correlation":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.hazardlib.geo":{
   "__set__":true,
   "elements":[
@@ -1342,6 +1411,12 @@
   "elements":[
    "openquake.engine",
    "oq-engine"
+  ]
+ },
+ "openquake.hazardlib.geo.multiline":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
   ]
  },
  "openquake.hazardlib.geo.nodalplane":{
@@ -1412,6 +1487,12 @@
    "oq-engine"
   ]
  },
+ "openquake.hazardlib.geo.surface.multi_old":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.hazardlib.geo.surface.planar":{
   "__set__":true,
   "elements":[
@@ -1460,6 +1541,12 @@
    "openquake.engine"
   ]
  },
+ "openquake.hazardlib.gsim.abrahamson_gulerce_2020":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.hazardlib.gsim.abrahamson_silva_1997":{
   "__set__":true,
   "elements":[
@@ -1477,7 +1564,8 @@
  "openquake.hazardlib.gsim.afshari_stewart_2016":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.gsim.akkar_2013":{
@@ -1542,6 +1630,18 @@
    "oq-engine"
   ]
  },
+ "openquake.hazardlib.gsim.arroyo_2010":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.hazardlib.gsim.arteta_2021":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.hazardlib.gsim.atkinson_2015":{
   "__set__":true,
   "elements":[
@@ -1577,6 +1677,18 @@
    "oq-engine"
   ]
  },
+ "openquake.hazardlib.gsim.bahrampouri_2021":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.hazardlib.gsim.bahrampouri_2021_duration":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.hazardlib.gsim.base":{
   "__set__":true,
   "elements":[
@@ -1585,6 +1697,12 @@
   ]
  },
  "openquake.hazardlib.gsim.baumont_2018":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.hazardlib.gsim.bayless_abrahamson_2018":{
   "__set__":true,
   "elements":[
    "openquake.engine"
@@ -1638,13 +1756,15 @@
  "openquake.hazardlib.gsim.bindi_2017":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.gsim.bommer_2009":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.gsim.boore_1993":{
@@ -1668,6 +1788,12 @@
    "oq-engine"
   ]
  },
+ "openquake.hazardlib.gsim.boore_2020":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.hazardlib.gsim.boore_atkinson_2008":{
   "__set__":true,
   "elements":[
@@ -1682,7 +1808,19 @@
    "oq-engine"
   ]
  },
+ "openquake.hazardlib.gsim.bora_2019":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.hazardlib.gsim.bozorgnia_campbell_2016":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.hazardlib.gsim.bozorgnia_campbell_2016_vh":{
   "__set__":true,
   "elements":[
    "openquake.engine"
@@ -1864,6 +2002,12 @@
    "oq-engine"
   ]
  },
+ "openquake.hazardlib.gsim.coeffs_table":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.hazardlib.gsim.convertito_2012":{
   "__set__":true,
   "elements":[
@@ -1874,7 +2018,8 @@
  "openquake.hazardlib.gsim.derras_2014":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.gsim.dost_2004":{
@@ -1946,6 +2091,12 @@
   ]
  },
  "openquake.hazardlib.gsim.eshm20_craton":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.hazardlib.gsim.example_a_2021":{
   "__set__":true,
   "elements":[
    "openquake.engine"
@@ -2024,11 +2175,23 @@
    "openquake.engine"
   ]
  },
+ "openquake.hazardlib.gsim.gulerce_abrahamson_2011":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.hazardlib.gsim.gupta_2010":{
   "__set__":true,
   "elements":[
    "openquake.engine",
    "oq-engine"
+  ]
+ },
+ "openquake.hazardlib.gsim.hassani_atkinson_2018":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
   ]
  },
  "openquake.hazardlib.gsim.hassani_atkinson_2020":{
@@ -2044,11 +2207,23 @@
    "oq-engine"
   ]
  },
+ "openquake.hazardlib.gsim.idini_2017":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.hazardlib.gsim.idriss_2014":{
   "__set__":true,
   "elements":[
    "openquake.engine",
    "oq-engine"
+  ]
+ },
+ "openquake.hazardlib.gsim.jaimes_2020":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
   ]
  },
  "openquake.hazardlib.gsim.kale_2015":{
@@ -2084,6 +2259,12 @@
    "openquake.engine"
   ]
  },
+ "openquake.hazardlib.gsim.kuehn_2020":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.hazardlib.gsim.lanzano_2016":{
   "__set__":true,
   "elements":[
@@ -2091,6 +2272,12 @@
   ]
  },
  "openquake.hazardlib.gsim.lanzano_2019":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.hazardlib.gsim.lanzano_2020":{
   "__set__":true,
   "elements":[
    "openquake.engine"
@@ -2114,6 +2301,12 @@
   "elements":[
    "openquake.engine",
    "oq-engine"
+  ]
+ },
+ "openquake.hazardlib.gsim.manea_2021":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
   ]
  },
  "openquake.hazardlib.gsim.mcverry_2006":{
@@ -2231,7 +2424,8 @@
  "openquake.hazardlib.gsim.munson_thurber_1997":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.gsim.nath_2012":{
@@ -2244,7 +2438,8 @@
  "openquake.hazardlib.gsim.nga_east":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.gsim.nshmp_2014":{
@@ -2257,7 +2452,8 @@
  "openquake.hazardlib.gsim.pankow_pechmann_2004":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.gsim.parker_2020":{
@@ -2286,6 +2482,12 @@
   ]
  },
  "openquake.hazardlib.gsim.projects.acme_2019":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.hazardlib.gsim.projects.acme_base":{
   "__set__":true,
   "elements":[
    "openquake.engine"
@@ -2336,6 +2538,12 @@
    "openquake.engine"
   ]
  },
+ "openquake.hazardlib.gsim.sgobba_2020":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.hazardlib.gsim.shahjouei_pezeshk_2016":{
   "__set__":true,
   "elements":[
@@ -2348,6 +2556,12 @@
   "elements":[
    "openquake.engine",
    "oq-engine"
+  ]
+ },
+ "openquake.hazardlib.gsim.si_2020":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
   ]
  },
  "openquake.hazardlib.gsim.si_midorikawa_1999":{
@@ -2390,11 +2604,29 @@
    "openquake.engine"
   ]
  },
+ "openquake.hazardlib.gsim.stewart_2016_vh":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.hazardlib.gsim.tavakoli_pezeshk_2005":{
   "__set__":true,
   "elements":[
    "openquake.engine",
    "oq-engine"
+  ]
+ },
+ "openquake.hazardlib.gsim.tem20":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.hazardlib.gsim.tem20.lin_2011":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
   ]
  },
  "openquake.hazardlib.gsim.toro_1997":{
@@ -2431,6 +2663,12 @@
    "oq-engine"
   ]
  },
+ "openquake.hazardlib.gsim.tusa_langer_azzaro_2019":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.hazardlib.gsim.usgs_ceus_2019":{
   "__set__":true,
   "elements":[
@@ -2463,6 +2701,12 @@
    "openquake.engine"
   ]
  },
+ "openquake.hazardlib.gsim.youd_etal_2002":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.hazardlib.gsim.youngs_1997":{
   "__set__":true,
   "elements":[
@@ -2473,7 +2717,8 @@
  "openquake.hazardlib.gsim.yu_2013":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.gsim.zalachoris_rathje_2019":{
@@ -2504,6 +2749,13 @@
   ]
  },
  "openquake.hazardlib.gsim.zhao_2016":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine",
+   "oq-engine"
+  ]
+ },
+ "openquake.hazardlib.gsim_lt":{
   "__set__":true,
   "elements":[
    "openquake.engine"
@@ -2591,6 +2843,12 @@
    "oq-engine"
   ]
  },
+ "openquake.hazardlib.nrml_to":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.hazardlib.pmf":{
   "__set__":true,
   "elements":[
@@ -2630,6 +2888,12 @@
   "elements":[
    "openquake.engine",
    "oq-engine"
+  ]
+ },
+ "openquake.hazardlib.scalerel.cscaling":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
   ]
  },
  "openquake.hazardlib.scalerel.germany2018":{
@@ -2705,6 +2969,24 @@
    "openquake.engine"
   ]
  },
+ "openquake.hazardlib.shakemap.gmfs":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.hazardlib.shakemap.maps":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.hazardlib.shakemap.parsers":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.hazardlib.shakemapconverter":{
   "__set__":true,
   "elements":[
@@ -2770,6 +3052,18 @@
   "elements":[
    "openquake.engine",
    "oq-engine"
+  ]
+ },
+ "openquake.hazardlib.source.multi_fault":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.hazardlib.source.multi_point":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
   ]
  },
  "openquake.hazardlib.source.non_parametric":{
@@ -2886,7 +3180,8 @@
  "openquake.hazardlib.tests.calc.filters_test":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.tests.calc.gmf_test":{
@@ -3102,7 +3397,8 @@
  "openquake.hazardlib.tests.gsim.afshari_stewart_2016_test":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.tests.gsim.akkar_2013_test":{
@@ -3227,13 +3523,15 @@
  "openquake.hazardlib.tests.gsim.bindi_2017_test":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.tests.gsim.bommer_2009_test":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.tests.gsim.boore_1993_test":{
@@ -3372,7 +3670,8 @@
  "openquake.hazardlib.tests.gsim.derras_2014_test":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.tests.gsim.dost_2004_test":{
@@ -3566,7 +3865,8 @@
  "openquake.hazardlib.tests.gsim.munson_thurber_1997_test":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.tests.gsim.nath_2012_test":{
@@ -3579,19 +3879,22 @@
  "openquake.hazardlib.tests.gsim.nga_east_full_uncertainty_test":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.tests.gsim.nga_east_median_test":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.tests.gsim.nga_east_total_sigma_test":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.tests.gsim.nshmp_2014_test":{
@@ -3604,7 +3907,8 @@
  "openquake.hazardlib.tests.gsim.pankow_pechmann_2004_test":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.tests.gsim.pezeshk_2011_test":{
@@ -3742,7 +4046,8 @@
  "openquake.hazardlib.tests.gsim.yu_2013_test":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.tests.gsim.zhao_2006_swiss_test":{
@@ -3762,7 +4067,8 @@
  "openquake.hazardlib.tests.gsim.zhao_2016_test":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.hazardlib.tests.imt_test":{
@@ -5486,11 +5792,113 @@
    "openquake.engine"
   ]
  },
+ "openquake.qa_tests_data.classical.case_63":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.classical.case_64":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.classical.case_65":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.classical.case_66":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.classical.case_67":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.classical.case_68":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.classical.case_69":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.qa_tests_data.classical.case_7":{
   "__set__":true,
   "elements":[
    "openquake.engine",
    "oq-engine"
+  ]
+ },
+ "openquake.qa_tests_data.classical.case_70":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.classical.case_71":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.classical.case_72":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.classical.case_73":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.classical.case_74":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.classical.case_75":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.classical.case_76":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.classical.case_77":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.classical.case_78":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.classical.case_79":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
   ]
  },
  "openquake.qa_tests_data.classical.case_8":{
@@ -5524,7 +5932,8 @@
  "openquake.qa_tests_data.classical_bcr.case_2":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.qa_tests_data.classical_damage":{
@@ -5737,6 +6146,12 @@
    "oq-engine"
   ]
  },
+ "openquake.qa_tests_data.conditional_spectrum.case_1":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.qa_tests_data.disagg":{
   "__set__":true,
   "elements":[
@@ -5751,6 +6166,24 @@
    "oq-engine"
   ]
  },
+ "openquake.qa_tests_data.disagg.case_10":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.disagg.case_11":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.disagg.case_12":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.qa_tests_data.disagg.case_2":{
   "__set__":true,
   "elements":[
@@ -5761,19 +6194,22 @@
  "openquake.qa_tests_data.disagg.case_3":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.qa_tests_data.disagg.case_4":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.qa_tests_data.disagg.case_5":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.qa_tests_data.disagg.case_6":{
@@ -5788,10 +6224,23 @@
    "openquake.engine"
   ]
  },
- "openquake.qa_tests_data.disagg.case_master":{
+ "openquake.qa_tests_data.disagg.case_8":{
   "__set__":true,
   "elements":[
    "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.disagg.case_9":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.disagg.case_master":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.qa_tests_data.event_based":{
@@ -5922,6 +6371,18 @@
    "openquake.engine"
   ]
  },
+ "openquake.qa_tests_data.event_based.case_27":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.event_based.case_28":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.qa_tests_data.event_based.case_3":{
   "__set__":true,
   "elements":[
@@ -5967,7 +6428,8 @@
  "openquake.qa_tests_data.event_based.case_9":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.qa_tests_data.event_based.mutex":{
@@ -6002,6 +6464,42 @@
   "elements":[
    "openquake.engine",
    "oq-engine"
+  ]
+ },
+ "openquake.qa_tests_data.event_based_damage":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.event_based_damage.case_11":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.event_based_damage.case_12":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.event_based_damage.case_13":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.event_based_damage.case_14":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.event_based_damage.case_15":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
   ]
  },
  "openquake.qa_tests_data.event_based_risk":{
@@ -6068,7 +6566,8 @@
  "openquake.qa_tests_data.event_based_risk.case_6c":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.qa_tests_data.event_based_risk.case_7a":{
@@ -6076,6 +6575,12 @@
   "elements":[
    "openquake.engine",
    "oq-engine"
+  ]
+ },
+ "openquake.qa_tests_data.event_based_risk.case_8":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
   ]
  },
  "openquake.qa_tests_data.event_based_risk.case_caracas":{
@@ -6129,19 +6634,22 @@
  "openquake.qa_tests_data.gmf_ebrisk.case_2":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.qa_tests_data.gmf_ebrisk.case_3":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.qa_tests_data.gmf_ebrisk.case_4":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.qa_tests_data.multi_risk":{
@@ -6151,6 +6659,36 @@
   ]
  },
  "openquake.qa_tests_data.multi_risk.case_1":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.reinsurance.case_1":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.reinsurance.case_2":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.reinsurance.case_3":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.reinsurance.case_4":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.reinsurance.case_5":{
   "__set__":true,
   "elements":[
    "openquake.engine"
@@ -6206,11 +6744,41 @@
    "openquake.engine"
   ]
  },
+ "openquake.qa_tests_data.scenario.case_16":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.scenario.case_17":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.scenario.case_18":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.scenario.case_19":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
  "openquake.qa_tests_data.scenario.case_2":{
   "__set__":true,
   "elements":[
    "openquake.engine",
    "oq-engine"
+  ]
+ },
+ "openquake.qa_tests_data.scenario.case_20":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
   ]
  },
  "openquake.qa_tests_data.scenario.case_3":{
@@ -6283,6 +6851,30 @@
   ]
  },
  "openquake.qa_tests_data.scenario_damage.case_11":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.scenario_damage.case_12":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.scenario_damage.case_13":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.scenario_damage.case_14":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.scenario_damage.case_15":{
   "__set__":true,
   "elements":[
    "openquake.engine"
@@ -6400,7 +6992,8 @@
  "openquake.qa_tests_data.scenario_risk.case_1h":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.qa_tests_data.scenario_risk.case_2":{
@@ -6455,7 +7048,8 @@
  "openquake.qa_tests_data.scenario_risk.case_8":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.qa_tests_data.scenario_risk.case_9":{
@@ -6472,6 +7066,12 @@
   ]
  },
  "openquake.qa_tests_data.scenario_risk.case_shakemap":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
+  ]
+ },
+ "openquake.qa_tests_data.scenario_risk.case_shapefile":{
   "__set__":true,
   "elements":[
    "openquake.engine"
@@ -6501,6 +7101,13 @@
  "openquake.risklib.asset":{
   "__set__":true,
   "elements":[
+   "openquake.engine",
+   "oq-engine"
+  ]
+ },
+ "openquake.risklib.connectivity":{
+  "__set__":true,
+  "elements":[
    "openquake.engine"
   ]
  },
@@ -6521,6 +7128,12 @@
   "elements":[
    "openquake.engine",
    "oq-engine"
+  ]
+ },
+ "openquake.risklib.reinsurance":{
+  "__set__":true,
+  "elements":[
+   "openquake.engine"
   ]
  },
  "openquake.risklib.riskinput":{
@@ -6575,7 +7188,8 @@
  "openquake.risklib.tests.read_nrml_test":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.risklib.tests.riskmodels_test":{
@@ -6722,7 +7336,8 @@
  "openquake.server.db.schema.upgrades.0002-job":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.server.db.schema.upgrades.0004-job":{
@@ -6831,7 +7446,8 @@
  "openquake.server.tests.tests":{
   "__set__":true,
   "elements":[
-   "openquake.engine"
+   "openquake.engine",
+   "oq-engine"
   ]
  },
  "openquake.server.tests.utils_config_test":{
