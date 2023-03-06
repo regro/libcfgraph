@@ -39,6 +39,7 @@
    "aiomcache",
    "aiomysql",
    "airflow",
+   "airflow-provider-great-expectations",
    "alive-progress",
    "amset",
    "andes",
@@ -71,6 +72,7 @@
    "buildver",
    "bulk",
    "burau",
+   "cadquery",
    "caper",
    "causalml",
    "cbsyst",
@@ -100,7 +102,12 @@
    "deepforest",
    "deeptime",
    "dexplot",
+   "dice-ml",
    "diffprivlib",
+   "disk-objectstore",
+   "django-filebrowser",
+   "django-pwa",
+   "django-tinymce",
    "django-versatileimagefield",
    "djangocms-admin-style",
    "dlint",
@@ -172,6 +179,7 @@
    "inflect",
    "intake-accumulo",
    "intake-avro",
+   "intake-esm",
    "intake-geopandas",
    "intake-parquet",
    "intake-spark",
@@ -193,6 +201,7 @@
    "kim-convergence",
    "kim-edn",
    "kim-property",
+   "kotsu",
    "kurl",
    "kylinpy",
    "labelme",
@@ -211,6 +220,7 @@
    "marinvaders",
    "matrixprofile",
    "medcam",
+   "mesa",
    "mesmerize-core",
    "metview-python",
    "mikeio",
@@ -226,7 +236,9 @@
    "msal",
    "muttlib",
    "mvt",
+   "mythx-models",
    "n2v",
+   "napkin",
    "nb_cron",
    "nbgitpuller-link",
    "ncar-jobqueue",
@@ -237,6 +249,7 @@
    "nr.types",
    "ogh",
    "onnx-caffe2",
+   "onnxmltools",
    "ooipy",
    "openamundsen",
    "openfisca-france",
@@ -248,6 +261,7 @@
    "oscan",
    "osmapi",
    "otwrapy",
+   "pampy",
    "panda3d_viewer",
    "pandera",
    "pandera-core",
@@ -261,9 +275,13 @@
    "pdpipe",
    "peppy",
    "pfapack",
+   "phasespace",
+   "phonenumbers",
    "planetary-computer",
    "plantcv",
+   "plateau",
    "plonk",
+   "plotext",
    "plum-dispatch",
    "point_cloud_utils",
    "polyfempy",
@@ -272,6 +290,7 @@
    "poster",
    "probed",
    "propka",
+   "psmpy",
    "py-cordex",
    "py-tools-ds",
    "pyannote.core",
@@ -282,22 +301,26 @@
    "pydeck",
    "pydifact",
    "pygments",
+   "pygml",
    "pygpcca",
    "pykafka",
    "pylama",
    "pyls-memestra",
    "pymapd",
+   "pymapvbvd",
    "pymatsolver",
    "pymc-base",
    "pyomeca",
    "pyomniscidb",
    "pyoos",
    "pyopenrivercam",
+   "pypandoc",
    "pyprocessmacro",
    "pyproject-metadata",
    "pyremo",
    "pyrobuf",
    "pyrsmq",
+   "pysentiment2",
    "pystac",
    "pystac-client",
    "pysyncrosim",
@@ -313,6 +336,7 @@
    "pyxel-sim",
    "qhub",
    "qme",
+   "qpd",
    "quacc",
    "quickle",
    "quilt",
@@ -320,6 +344,7 @@
    "rabpro",
    "radioactivedecay",
    "raven-wps",
+   "rdfpy",
    "reacnetgenerator",
    "reciprocalspaceship",
    "redframes",
@@ -337,6 +362,7 @@
    "sed-plume",
    "seqlike",
    "servicestack",
+   "setupinit",
    "shared",
    "sheet2dict",
    "simwrapper",
@@ -366,7 +392,9 @@
    "thredds_crawler",
    "tifftools",
    "tinydb",
+   "tkutil",
    "tomlkit",
+   "torch-optimizer",
    "tranquilizer",
    "triad",
    "trio-asyncio",
@@ -396,8 +424,57 @@
    "xyzservices",
    "yarg",
    "yggdrasil",
+   "yodapy",
    "yodatools",
    "yt_astro_analysis"
+  ]
+ },
+ "tests.TestCQGI":{
+  "__set__":true,
+  "elements":[
+   "cadquery"
+  ]
+ },
+ "tests.TestCQSelectors":{
+  "__set__":true,
+  "elements":[
+   "cadquery"
+  ]
+ },
+ "tests.TestCadObjects":{
+  "__set__":true,
+  "elements":[
+   "cadquery"
+  ]
+ },
+ "tests.TestCadQuery":{
+  "__set__":true,
+  "elements":[
+   "cadquery"
+  ]
+ },
+ "tests.TestExporters":{
+  "__set__":true,
+  "elements":[
+   "cadquery"
+  ]
+ },
+ "tests.TestImporters":{
+  "__set__":true,
+  "elements":[
+   "cadquery"
+  ]
+ },
+ "tests.TestLogging":{
+  "__set__":true,
+  "elements":[
+   "cadquery"
+  ]
+ },
+ "tests.TestWorkplanes":{
+  "__set__":true,
+  "elements":[
+   "cadquery"
   ]
  },
  "tests._common":{
@@ -708,6 +785,12 @@
   "__set__":true,
   "elements":[
    "sanic"
+  ]
+ },
+ "tests.asyoutypetest":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
   ]
  },
  "tests.attacks":{
@@ -1885,7 +1968,14 @@
  "tests.benchmark":{
   "__set__":true,
   "elements":[
-   "crccheck"
+   "crccheck",
+   "qpd"
+  ]
+ },
+ "tests.benchmark.test_pandas":{
+  "__set__":true,
+  "elements":[
+   "qpd"
   ]
  },
  "tests.benchmarks":{
@@ -2212,6 +2302,12 @@
   "__set__":true,
   "elements":[
    "osmapi"
+  ]
+ },
+ "tests.carriertest":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
   ]
  },
  "tests.cases":{
@@ -4233,6 +4329,8 @@
    "daops",
    "deepforest",
    "deeptime",
+   "dice-ml",
+   "disk-objectstore",
    "dvclive",
    "edgetest",
    "esmlab",
@@ -4245,6 +4343,7 @@
    "histogrammar",
    "human-learn",
    "icet",
+   "intake-esm",
    "ipywebrtc",
    "jupyter_server",
    "kedro-neptune",
@@ -4271,6 +4370,8 @@
    "pathy",
    "pdpipe",
    "peppy",
+   "phasespace",
+   "plateau",
    "portalocker",
    "pyathena",
    "pydeck",
@@ -4300,6 +4401,7 @@
    "textnets",
    "tinydb",
    "tomlkit",
+   "torch-optimizer",
    "trio-asyncio",
    "trio_asyncio",
    "typhos",
@@ -4794,6 +4896,12 @@
    "modelbase"
   ]
  },
+ "tests.core.test_calibration":{
+  "__set__":true,
+  "elements":[
+   "alive-progress"
+  ]
+ },
  "tests.core.test_checks":{
   "__set__":true,
   "elements":[
@@ -4984,6 +5092,12 @@
    "python-benedict"
   ]
  },
+ "tests.core.test_hook_manager":{
+  "__set__":true,
+  "elements":[
+   "alive-progress"
+  ]
+ },
  "tests.core.test_ids":{
   "__set__":true,
   "elements":[
@@ -5149,6 +5263,12 @@
   "__set__":true,
   "elements":[
    "pdpipe"
+  ]
+ },
+ "tests.core.test_progress":{
+  "__set__":true,
+  "elements":[
+   "alive-progress"
   ]
  },
  "tests.core.test_pydantic":{
@@ -7872,6 +7992,12 @@
    "caper"
   ]
  },
+ "tests.examplenumberstest":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
  "tests.examples":{
   "__set__":true,
   "elements":[
@@ -8701,6 +8827,12 @@
    "fugue"
   ]
  },
+ "tests.fugue.execution.test_ibis":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
  "tests.fugue.execution.test_naive_execution_engine":{
   "__set__":true,
   "elements":[
@@ -8851,6 +8983,12 @@
    "fugue"
   ]
  },
+ "tests.fugue.workflow.test_runtime_exception":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
  "tests.fugue.workflow.test_workflow":{
   "__set__":true,
   "elements":[
@@ -8887,6 +9025,18 @@
    "fugue"
   ]
  },
+ "tests.fugue_dask.test_ibis":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_dask.test_importless":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
  "tests.fugue_dask.test_io":{
   "__set__":true,
   "elements":[
@@ -8894,6 +9044,72 @@
   ]
  },
  "tests.fugue_dask.test_sql":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_duckdb":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_duckdb.test_dask":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_duckdb.test_dataframe":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_duckdb.test_execution_engine":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_duckdb.test_ibis":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_duckdb.test_importless":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_duckdb.test_utils":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_ibis":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_ibis.test_extensions":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_ibis.test_importless":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_ibis.test_utils":{
   "__set__":true,
   "elements":[
    "fugue"
@@ -8918,6 +9134,18 @@
   ]
  },
  "tests.fugue_spark.test_execution_engine":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_spark.test_ibis":{
+  "__set__":true,
+  "elements":[
+   "fugue"
+  ]
+ },
+ "tests.fugue_spark.test_importless":{
   "__set__":true,
   "elements":[
    "fugue"
@@ -9463,6 +9691,12 @@
   "__set__":true,
   "elements":[
    "mleap"
+  ]
+ },
+ "tests.geocodertest":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
   ]
  },
  "tests.geometry":{
@@ -11128,14 +11362,33 @@
   "elements":[
    "flask-restless",
    "gitflow",
+   "phasespace",
    "pymc-base",
    "pystac-client"
+  ]
+ },
+ "tests.helpers.decays":{
+  "__set__":true,
+  "elements":[
+   "phasespace"
   ]
  },
  "tests.helpers.factory":{
   "__set__":true,
   "elements":[
    "gitflow"
+  ]
+ },
+ "tests.helpers.plotting":{
+  "__set__":true,
+  "elements":[
+   "phasespace"
+  ]
+ },
+ "tests.helpers.rapidsim":{
+  "__set__":true,
+  "elements":[
+   "phasespace"
   ]
  },
  "tests.hessian_test_suite":{
@@ -11750,6 +12003,12 @@
   ]
  },
  "tests.integration.small_text.query_strategies":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.integration.small_text.query_strategies.test_multi_label":{
   "__set__":true,
   "elements":[
    "small-text"
@@ -12378,15 +12637,208 @@
    "landlab",
    "pandera",
    "pandera-core",
+   "plateau",
    "pydeck",
    "pyusid",
    "tyssue"
+  ]
+ },
+ "tests.io.dask":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.bag":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.bag.conftest":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.bag.test_index":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.bag.test_read":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.bag.test_write":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.conftest":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.dataframe":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.dataframe.conftest":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.dataframe.test_compression":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.dataframe.test_hashing":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.dataframe.test_read":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.dataframe.test_shuffle":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.dataframe.test_stats":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.dataframe.test_update":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.delayed":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.delayed.conftest":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.delayed.test_delete":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.delayed.test_gc":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.delayed.test_read":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.delayed.test_update":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.dask.delayed.test_write":{
+  "__set__":true,
+  "elements":[
+   "plateau"
   ]
  },
  "tests.io.data_utils":{
   "__set__":true,
   "elements":[
    "pyusid"
+  ]
+ },
+ "tests.io.eager":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.eager.conftest":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.eager.test_cleanup":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.eager.test_commit":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.eager.test_delete":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.eager.test_gc":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.eager.test_index":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.eager.test_read":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.eager.test_update":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.eager.test_write":{
+  "__set__":true,
+  "elements":[
+   "plateau"
   ]
  },
  "tests.io.hdf_utils":{
@@ -12411,6 +12863,42 @@
   "__set__":true,
   "elements":[
    "pyusid"
+  ]
+ },
+ "tests.io.iter":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.iter.conftest":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.iter.test_cleanup":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.iter.test_read":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.iter.test_update":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io.iter.test_write":{
+  "__set__":true,
+  "elements":[
+   "plateau"
   ]
  },
  "tests.io.netcdf":{
@@ -12586,6 +13074,48 @@
   "__set__":true,
   "elements":[
    "pyusid"
+  ]
+ },
+ "tests.io_components":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io_components.test_dataset":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io_components.test_dataset_metadata_factory":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io_components.test_metapartition":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io_components.test_read":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io_components.test_utils":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
+ "tests.io_components.test_write":{
+  "__set__":true,
+  "elements":[
+   "plateau"
   ]
  },
  "tests.io_test":{
@@ -13860,7 +14390,8 @@
  "tests.manage":{
   "__set__":true,
   "elements":[
-   "aiida-core"
+   "aiida-core",
+   "django-tinymce"
   ]
  },
  "tests.manage.backup":{
@@ -16057,6 +16588,12 @@
    "neptune-client"
   ]
  },
+ "tests.neptune.management.internal.test_api":{
+  "__set__":true,
+  "elements":[
+   "neptune-client"
+  ]
+ },
  "tests.neptune.management.internal.test_utils":{
   "__set__":true,
   "elements":[
@@ -16417,7 +16954,19 @@
    "neptune-client"
   ]
  },
+ "tests.neptune.new.internal.utils.test_deprecation":{
+  "__set__":true,
+  "elements":[
+   "neptune-client"
+  ]
+ },
  "tests.neptune.new.internal.utils.test_images":{
+  "__set__":true,
+  "elements":[
+   "neptune-client"
+  ]
+ },
+ "tests.neptune.new.internal.utils.test_iteration":{
   "__set__":true,
   "elements":[
    "neptune-client"
@@ -16835,7 +17384,8 @@
  "tests.operators":{
   "__set__":true,
   "elements":[
-   "airflow"
+   "airflow",
+   "airflow-provider-great-expectations"
   ]
  },
  "tests.operators.docker_operator":{
@@ -16878,6 +17428,12 @@
   "__set__":true,
   "elements":[
    "airflow"
+  ]
+ },
+ "tests.operators.test_great_expectations":{
+  "__set__":true,
+  "elements":[
+   "airflow-provider-great-expectations"
   ]
  },
  "tests.ops":{
@@ -18559,6 +19115,24 @@
   "__set__":true,
   "elements":[
    "pyrobuf"
+  ]
+ },
+ "tests.phonenumbermatchertest":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.phonenumbertest":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.phonenumberutiltest":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
   ]
  },
  "tests.pipette":{
@@ -20774,6 +21348,9 @@
  "tests.settings":{
   "__set__":true,
   "elements":[
+   "django-filebrowser",
+   "django-pwa",
+   "django-tinymce",
    "djangocms-admin-style"
   ]
  },
@@ -20823,6 +21400,12 @@
   "__set__":true,
   "elements":[
    "adagio"
+  ]
+ },
+ "tests.shortnumberinfotest":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
   ]
  },
  "tests.simple_app":{
@@ -21087,6 +21670,240 @@
   "__set__":true,
   "elements":[
    "xyzspaces"
+  ]
+ },
+ "tests.sparkml":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.profile_pipeline":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.r_pipeline":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.sparkml_test_base":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.sparkml_test_utils":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_PCA":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_aft_survival_regression":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_binarizer":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_bucketed_random_projection_lsh":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_bucketizer":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_chi_sql_selector":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_dct":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_decision_tree_classifier":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_decision_tree_regressor":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_element_wise_product":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_gbt_classifier":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_gbt_regressor":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_imputer":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_index_to_string":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_linear_classifier":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_linear_regressor":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_min_hash_lsh":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_naive_bayes":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_normalizer":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_one_vs_rest":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_onehot_encoder":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_pipeline":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_polynomial_expansion":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_random_forest_classifier":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_random_forest_classifier_tree":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_random_forest_regressor":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_scaler":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_stop_words_remover":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_string_indexer":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_tokenizer":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_vector_assembler":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_vector_indexer":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_vector_slicer":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
+  ]
+ },
+ "tests.sparkml.test_word2vec":{
+  "__set__":true,
+  "elements":[
+   "onnxmltools"
   ]
  },
  "tests.sparse":{
@@ -21507,9 +22324,34 @@
  "tests.strategies":{
   "__set__":true,
   "elements":[
+   "mythx-models",
    "pandera",
    "pandera-core",
    "verta"
+  ]
+ },
+ "tests.strategies.analysis":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.strategies.auth":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.strategies.group":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.strategies.report":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
   ]
  },
  "tests.strategies.test_strategies":{
@@ -21517,6 +22359,12 @@
   "elements":[
    "pandera",
    "pandera-core"
+  ]
+ },
+ "tests.strategies.version":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
   ]
  },
  "tests.strategy_tests":{
@@ -23306,6 +24154,54 @@
    "plonk"
   ]
  },
+ "tests.test_analysis_input_request":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_analysis_input_response":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_analysis_list_request":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_analysis_list_response":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_analysis_status_request":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_analysis_status_response":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_analysis_submission_request":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_analysis_submission_response":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
  "tests.test_analyze":{
   "__set__":true,
   "elements":[
@@ -23478,6 +24374,42 @@
    "conda-store-server"
   ]
  },
+ "tests.test_auth_login_request":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_auth_login_response":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_auth_logout_request":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_auth_logout_response":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_auth_refresh_request":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_auth_refresh_response":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
  "tests.test_authority":{
   "__set__":true,
   "elements":[
@@ -23536,6 +24468,12 @@
   "__set__":true,
   "elements":[
    "awacs"
+  ]
+ },
+ "tests.test_axisorder":{
+  "__set__":true,
+  "elements":[
+   "pygml"
   ]
  },
  "tests.test_azure_specific":{
@@ -23799,6 +24737,7 @@
    "codext",
    "crccheck",
    "crystals",
+   "django-filebrowser",
    "embetter",
    "erdantic",
    "mpl_plotter",
@@ -23912,9 +24851,12 @@
   "__set__":true,
   "elements":[
    "aiomysql",
+   "disk-objectstore",
    "histogrammar",
    "igl",
-   "pygments"
+   "pampy",
+   "pygments",
+   "torch-optimizer"
   ]
  },
  "tests.test_basic_api":{
@@ -23944,7 +24886,8 @@
  "tests.test_basics":{
   "__set__":true,
   "elements":[
-   "openfisca-france"
+   "openfisca-france",
+   "pygml"
   ]
  },
  "tests.test_basin_stats":{
@@ -23960,6 +24903,24 @@
    "cellpy"
   ]
  },
+ "tests.test_batch_run":{
+  "__set__":true,
+  "elements":[
+   "mesa"
+  ]
+ },
+ "tests.test_batchrunner":{
+  "__set__":true,
+  "elements":[
+   "mesa"
+  ]
+ },
+ "tests.test_batchrunnerMP":{
+  "__set__":true,
+  "elements":[
+   "mesa"
+  ]
+ },
  "tests.test_beam":{
   "__set__":true,
   "elements":[
@@ -23969,6 +24930,7 @@
  "tests.test_benchmark":{
   "__set__":true,
   "elements":[
+   "disk-objectstore",
    "typhos"
   ]
  },
@@ -24208,6 +25170,12 @@
    "aiida-core"
   ]
  },
+ "tests.test_calibration":{
+  "__set__":true,
+  "elements":[
+   "glidertools"
+  ]
+ },
  "tests.test_callbacks":{
   "__set__":true,
   "elements":[
@@ -24350,6 +25318,12 @@
    "sed-plume"
   ]
  },
+ "tests.test_cesm":{
+  "__set__":true,
+  "elements":[
+   "intake-esm"
+  ]
+ },
  "tests.test_cevae":{
   "__set__":true,
   "elements":[
@@ -24360,6 +25334,12 @@
   "__set__":true,
   "elements":[
    "pygments"
+  ]
+ },
+ "tests.test_chain":{
+  "__set__":true,
+  "elements":[
+   "phasespace"
   ]
  },
  "tests.test_changeable":{
@@ -24553,6 +25533,7 @@
    "openamundsen",
    "optuna",
    "pathy",
+   "plotext",
    "pyremo",
    "pystac-client",
    "quilt",
@@ -24760,6 +25741,12 @@
    "pygments"
   ]
  },
+ "tests.test_cmip":{
+  "__set__":true,
+  "elements":[
+   "intake-esm"
+  ]
+ },
  "tests.test_cmor":{
   "__set__":true,
   "elements":[
@@ -24890,6 +25877,7 @@
  "tests.test_commands":{
   "__set__":true,
   "elements":[
+   "django-filebrowser",
    "saws"
   ]
  },
@@ -24898,6 +25886,7 @@
   "elements":[
    "codext",
    "flask-security-too",
+   "intake-esm",
    "scikit-lego"
   ]
  },
@@ -25009,6 +25998,12 @@
    "inflect"
   ]
  },
+ "tests.test_compressor":{
+  "__set__":true,
+  "elements":[
+   "django-tinymce"
+  ]
+ },
  "tests.test_compute":{
   "__set__":true,
   "elements":[
@@ -25018,6 +26013,7 @@
  "tests.test_concurrency":{
   "__set__":true,
   "elements":[
+   "disk-objectstore",
    "verta"
   ]
  },
@@ -25068,6 +26064,7 @@
    "fps",
    "glymur",
    "gpflow",
+   "intake-esm",
    "ioos_qc",
    "lux-api",
    "openamundsen",
@@ -25115,6 +26112,12 @@
    "atlassian-python-api"
   ]
  },
+ "tests.test_conformance":{
+  "__set__":true,
+  "elements":[
+   "pystac-client"
+  ]
+ },
  "tests.test_connection":{
   "__set__":true,
   "elements":[
@@ -25148,6 +26151,12 @@
   "__set__":true,
   "elements":[
    "larch"
+  ]
+ },
+ "tests.test_container":{
+  "__set__":true,
+  "elements":[
+   "disk-objectstore"
   ]
  },
  "tests.test_content":{
@@ -25315,6 +26324,12 @@
   "__set__":true,
   "elements":[
    "flask-restplus"
+  ]
+ },
+ "tests.test_counterfactual_explanations":{
+  "__set__":true,
+  "elements":[
+   "dice-ml"
   ]
  },
  "tests.test_counterfactual_unit_selection":{
@@ -25562,6 +26577,7 @@
    "aiida-castep",
    "biom-format",
    "deepforest",
+   "dice-ml",
    "hydrofunctions",
    "pygments",
    "pymc-base",
@@ -25584,6 +26600,30 @@
   "__set__":true,
   "elements":[
    "adversarial-robustness-toolbox"
+  ]
+ },
+ "tests.test_data_interface":{
+  "__set__":true,
+  "elements":[
+   "dice-ml"
+  ]
+ },
+ "tests.test_data_interface.test_base_data_interface":{
+  "__set__":true,
+  "elements":[
+   "dice-ml"
+  ]
+ },
+ "tests.test_data_interface.test_private_data_interface":{
+  "__set__":true,
+  "elements":[
+   "dice-ml"
+  ]
+ },
+ "tests.test_data_interface.test_public_data_interface":{
+  "__set__":true,
+  "elements":[
+   "dice-ml"
   ]
  },
  "tests.test_data_no_nulls_cpu":{
@@ -25637,11 +26677,23 @@
    "shared"
   ]
  },
+ "tests.test_dataclass":{
+  "__set__":true,
+  "elements":[
+   "pampy"
+  ]
+ },
  "tests.test_dataclasses":{
   "__set__":true,
   "elements":[
    "aiida-core",
    "erdantic"
+  ]
+ },
+ "tests.test_datacollector":{
+  "__set__":true,
+  "elements":[
+   "mesa"
   ]
  },
  "tests.test_dataframe":{
@@ -25781,6 +26833,36 @@
    "python-flair"
   ]
  },
+ "tests.test_datasources":{
+  "__set__":true,
+  "elements":[
+   "yodapy"
+  ]
+ },
+ "tests.test_datasources.test_datasources":{
+  "__set__":true,
+  "elements":[
+   "yodapy"
+  ]
+ },
+ "tests.test_datasources.test_ooi":{
+  "__set__":true,
+  "elements":[
+   "yodapy"
+  ]
+ },
+ "tests.test_datasources.test_ooi.test_helpers":{
+  "__set__":true,
+  "elements":[
+   "yodapy"
+  ]
+ },
+ "tests.test_datasources.test_ooi.test_ooi":{
+  "__set__":true,
+  "elements":[
+   "yodapy"
+  ]
+ },
  "tests.test_datastore":{
   "__set__":true,
   "elements":[
@@ -25868,12 +26950,14 @@
  "tests.test_decorator":{
   "__set__":true,
   "elements":[
+   "napkin",
    "tranquilizer"
   ]
  },
  "tests.test_decorators":{
   "__set__":true,
   "elements":[
+   "django-filebrowser",
    "reciprocalspaceship",
    "stanza"
   ]
@@ -26011,6 +27095,18 @@
    "reacnetgenerator"
   ]
  },
+ "tests.test_detected_issues_request":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_detected_issues_response":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
  "tests.test_detector":{
   "__set__":true,
   "elements":[
@@ -26081,7 +27177,57 @@
  "tests.test_dice":{
   "__set__":true,
   "elements":[
-   "blimpy"
+   "blimpy",
+   "dice-ml"
+  ]
+ },
+ "tests.test_dice_interface":{
+  "__set__":true,
+  "elements":[
+   "dice-ml"
+  ]
+ },
+ "tests.test_dice_interface.test_dice_KD":{
+  "__set__":true,
+  "elements":[
+   "dice-ml"
+  ]
+ },
+ "tests.test_dice_interface.test_dice_genetic":{
+  "__set__":true,
+  "elements":[
+   "dice-ml"
+  ]
+ },
+ "tests.test_dice_interface.test_dice_pytorch":{
+  "__set__":true,
+  "elements":[
+   "dice-ml"
+  ]
+ },
+ "tests.test_dice_interface.test_dice_random":{
+  "__set__":true,
+  "elements":[
+   "dice-ml"
+  ]
+ },
+ "tests.test_dice_interface.test_dice_tensorflow":{
+  "__set__":true,
+  "elements":[
+   "dice-ml"
+  ]
+ },
+ "tests.test_dice_interface.test_explainer_base":{
+  "__set__":true,
+  "elements":[
+   "dice-ml"
+  ]
+ },
+ "tests.test_dict":{
+  "__set__":true,
+  "elements":[
+   "pampy",
+   "pysentiment2"
   ]
  },
  "tests.test_dict_tool":{
@@ -26101,6 +27247,12 @@
   "elements":[
    "aesara",
    "theano-pymc"
+  ]
+ },
+ "tests.test_dimensionality":{
+  "__set__":true,
+  "elements":[
+   "pygml"
   ]
  },
  "tests.test_directionality":{
@@ -26188,6 +27340,7 @@
   "elements":[
    "embetter",
    "magicgui",
+   "plateau",
    "scikit-partial"
   ]
  },
@@ -26323,6 +27476,12 @@
    "panedr"
   ]
  },
+ "tests.test_elaborate":{
+  "__set__":true,
+  "elements":[
+   "pampy"
+  ]
+ },
  "tests.test_elliptics":{
   "__set__":true,
   "elements":[
@@ -26377,6 +27536,12 @@
    "stitchm"
   ]
  },
+ "tests.test_end_to_end":{
+  "__set__":true,
+  "elements":[
+   "kotsu"
+  ]
+ },
  "tests.test_endless_cl_sim":{
   "__set__":true,
   "elements":[
@@ -26405,6 +27570,12 @@
   "__set__":true,
   "elements":[
    "stanza"
+  ]
+ },
+ "tests.test_ensembles":{
+  "__set__":true,
+  "elements":[
+   "xclim"
   ]
  },
  "tests.test_entities":{
@@ -26675,6 +27846,12 @@
    "plonk"
   ]
  },
+ "tests.test_example":{
+  "__set__":true,
+  "elements":[
+   "orbit-ml"
+  ]
+ },
  "tests.test_examplefiles":{
   "__set__":true,
   "elements":[
@@ -26686,10 +27863,18 @@
   "elements":[
    "awacs",
    "btrack",
+   "disk-objectstore",
    "larch",
    "localtileserver",
+   "mesa",
    "moviepy",
    "point_cloud_utils"
+  ]
+ },
+ "tests.test_exception":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
   ]
  },
  "tests.test_exceptions":{
@@ -26814,6 +27999,18 @@
   "__set__":true,
   "elements":[
    "dlint"
+  ]
+ },
+ "tests.test_extensions":{
+  "__set__":true,
+  "elements":[
+   "pystac-client"
+  ]
+ },
+ "tests.test_extensions.test_extensions_base":{
+  "__set__":true,
+  "elements":[
+   "pystac-client"
   ]
  },
  "tests.test_external":{
@@ -27091,10 +28288,22 @@
    "pangeo-forge-recipes"
   ]
  },
+ "tests.test_flags":{
+  "__set__":true,
+  "elements":[
+   "pymapvbvd"
+  ]
+ },
  "tests.test_flake8":{
   "__set__":true,
   "elements":[
    "yt_astro_analysis"
+  ]
+ },
+ "tests.test_flo_functions":{
+  "__set__":true,
+  "elements":[
+   "glidertools"
   ]
  },
  "tests.test_fmnist_benckmarks":{
@@ -27262,6 +28471,12 @@
    "geofileops"
   ]
  },
+ "tests.test_generate":{
+  "__set__":true,
+  "elements":[
+   "phasespace"
+  ]
+ },
  "tests.test_generate_datasets":{
   "__set__":true,
   "elements":[
@@ -27392,6 +28607,12 @@
    "geofileops"
   ]
  },
+ "tests.test_georss":{
+  "__set__":true,
+  "elements":[
+   "pygml"
+  ]
+ },
  "tests.test_geoseries_util":{
   "__set__":true,
   "elements":[
@@ -27495,6 +28716,12 @@
    "greedy"
   ]
  },
+ "tests.test_grid":{
+  "__set__":true,
+  "elements":[
+   "mesa"
+  ]
+ },
  "tests.test_grid_util":{
   "__set__":true,
   "elements":[
@@ -27531,6 +28758,54 @@
   "__set__":true,
   "elements":[
    "andes"
+  ]
+ },
+ "tests.test_group_creation_request":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_group_creation_response":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_group_list_request":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_group_list_response":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_group_operation_request":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_group_operation_response":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_group_status_request":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_group_status_response":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
   ]
  },
  "tests.test_groupby":{
@@ -27885,6 +29160,12 @@
    "panda3d_viewer",
    "python-utils",
    "rse"
+  ]
+ },
+ "tests.test_import_namespace":{
+  "__set__":true,
+  "elements":[
+   "mesa"
   ]
  },
  "tests.test_imported_enums":{
@@ -28248,6 +29529,12 @@
   "elements":[
    "pyrobuf",
    "tomlkit"
+  ]
+ },
+ "tests.test_iterable":{
+  "__set__":true,
+  "elements":[
+   "pampy"
   ]
  },
  "tests.test_ivlearner":{
@@ -29320,6 +30607,12 @@
    "glymur"
   ]
  },
+ "tests.test_lifespan":{
+  "__set__":true,
+  "elements":[
+   "mesa"
+  ]
+ },
  "tests.test_lightning":{
   "__set__":true,
   "elements":[
@@ -29479,6 +30772,7 @@
   "elements":[
    "deepforest",
    "dvclive",
+   "mesa",
    "mikeio",
    "sumy",
    "tifftools",
@@ -29501,6 +30795,12 @@
   "__set__":true,
   "elements":[
    "codext"
+  ]
+ },
+ "tests.test_mapping":{
+  "__set__":true,
+  "elements":[
+   "glidertools"
   ]
  },
  "tests.test_maps_ordereddict":{
@@ -29888,8 +31188,10 @@
   "__set__":true,
   "elements":[
    "deepforest",
+   "dice-ml",
    "flask-restplus",
    "gpflow",
+   "mesa",
    "openamundsen",
    "pymc-base"
   ]
@@ -30044,6 +31346,30 @@
    "larch"
   ]
  },
+ "tests.test_model_interface":{
+  "__set__":true,
+  "elements":[
+   "dice-ml"
+  ]
+ },
+ "tests.test_model_interface.test_base_model":{
+  "__set__":true,
+  "elements":[
+   "dice-ml"
+  ]
+ },
+ "tests.test_model_interface.test_keras_tensorflow_model":{
+  "__set__":true,
+  "elements":[
+   "dice-ml"
+  ]
+ },
+ "tests.test_model_interface.test_pytorch_model":{
+  "__set__":true,
+  "elements":[
+   "dice-ml"
+  ]
+ },
  "tests.test_model_registry":{
   "__set__":true,
   "elements":[
@@ -30096,7 +31422,9 @@
   "__set__":true,
   "elements":[
    "avalanche-lib",
+   "bertopic",
    "btrack",
+   "django-tinymce",
    "graspy",
    "python-flair",
    "sumy"
@@ -30295,6 +31623,12 @@
    "sanic"
   ]
  },
+ "tests.test_namers":{
+  "__set__":true,
+  "elements":[
+   "django-filebrowser"
+  ]
+ },
  "tests.test_namespace":{
   "__set__":true,
   "elements":[
@@ -30360,6 +31694,12 @@
   "__set__":true,
   "elements":[
    "pydeck"
+  ]
+ },
+ "tests.test_nbody_decay":{
+  "__set__":true,
+  "elements":[
+   "phasespace"
   ]
  },
  "tests.test_nc_mt_scenario":{
@@ -30456,6 +31796,7 @@
  "tests.test_notebooks":{
   "__set__":true,
   "elements":[
+   "dice-ml",
    "gpflow",
    "histogrammar"
   ]
@@ -30670,6 +32011,18 @@
    "glidertools"
   ]
  },
+ "tests.test_optimizer":{
+  "__set__":true,
+  "elements":[
+   "torch-optimizer"
+  ]
+ },
+ "tests.test_optimizer_with_nn":{
+  "__set__":true,
+  "elements":[
+   "torch-optimizer"
+  ]
+ },
  "tests.test_optimizers":{
   "__set__":true,
   "elements":[
@@ -30792,6 +32145,12 @@
   "__set__":true,
   "elements":[
    "gpflow"
+  ]
+ },
+ "tests.test_param_validation":{
+  "__set__":true,
+  "elements":[
+   "torch-optimizer"
   ]
  },
  "tests.test_parameters":{
@@ -31090,6 +32449,8 @@
  "tests.test_physics":{
   "__set__":true,
   "elements":[
+   "glidertools",
+   "phasespace",
    "pyremo"
   ]
  },
@@ -31151,6 +32512,7 @@
  "tests.test_plot":{
   "__set__":true,
   "elements":[
+   "glidertools",
    "graspy",
    "typhos",
    "xugrid",
@@ -31171,6 +32533,12 @@
    "blimpy",
    "lifelines",
    "muttlib"
+  ]
+ },
+ "tests.test_plotting.test_approximate":{
+  "__set__":true,
+  "elements":[
+   "bertopic"
   ]
  },
  "tests.test_plotting.test_bar":{
@@ -31335,6 +32703,12 @@
   "__set__":true,
   "elements":[
    "pygments"
+  ]
+ },
+ "tests.test_pre_v32":{
+  "__set__":true,
+  "elements":[
+   "pygml"
   ]
  },
  "tests.test_precip":{
@@ -31520,6 +32894,12 @@
    "cellpy"
   ]
  },
+ "tests.test_processing":{
+  "__set__":true,
+  "elements":[
+   "glidertools"
+  ]
+ },
  "tests.test_processing_algebra":{
   "__set__":true,
   "elements":[
@@ -31572,6 +32952,18 @@
   "__set__":true,
   "elements":[
    "pytmc"
+  ]
+ },
+ "tests.test_project_request":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_project_response":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
   ]
  },
  "tests.test_promotion":{
@@ -31851,6 +33243,12 @@
    "ezyrb"
   ]
  },
+ "tests.test_random":{
+  "__set__":true,
+  "elements":[
+   "phasespace"
+  ]
+ },
  "tests.test_random_signal":{
   "__set__":true,
   "elements":[
@@ -31887,10 +33285,22 @@
    "openskill"
   ]
  },
+ "tests.test_rdf":{
+  "__set__":true,
+  "elements":[
+   "rdfpy"
+  ]
+ },
  "tests.test_reacnetgen":{
   "__set__":true,
   "elements":[
    "reacnetgenerator"
+  ]
+ },
+ "tests.test_read":{
+  "__set__":true,
+  "elements":[
+   "pymapvbvd"
   ]
  },
  "tests.test_read_all_py":{
@@ -32094,6 +33504,12 @@
   "__set__":true,
   "elements":[
    "flask-security-too"
+  ]
+ },
+ "tests.test_registration":{
+  "__set__":true,
+  "elements":[
+   "kotsu"
   ]
  },
  "tests.test_registry":{
@@ -32419,6 +33835,7 @@
   "__set__":true,
   "elements":[
    "e3sm_diags",
+   "kotsu",
    "propka"
   ]
  },
@@ -32469,6 +33886,12 @@
   "__set__":true,
   "elements":[
    "saws"
+  ]
+ },
+ "tests.test_scaffold":{
+  "__set__":true,
+  "elements":[
+   "mesa"
   ]
  },
  "tests.test_scalebar_detection":{
@@ -32591,6 +34014,18 @@
   "__set__":true,
   "elements":[
    "fslpy"
+  ]
+ },
+ "tests.test_sd":{
+  "__set__":true,
+  "elements":[
+   "napkin"
+  ]
+ },
+ "tests.test_sd_frag":{
+  "__set__":true,
+  "elements":[
+   "napkin"
   ]
  },
  "tests.test_search":{
@@ -32803,16 +34238,24 @@
   "__set__":true,
   "elements":[
    "chebfun",
+   "django-filebrowser",
    "django-versatileimagefield",
    "planetary-computer",
    "pydeck"
+  ]
+ },
+ "tests.test_settings_attr":{
+  "__set__":true,
+  "elements":[
+   "django-pwa"
   ]
  },
  "tests.test_setup":{
   "__set__":true,
   "elements":[
    "blimpy",
-   "optimade"
+   "optimade",
+   "orbit-ml"
   ]
  },
  "tests.test_setup_commands":{
@@ -32954,6 +34397,12 @@
    "caper"
   ]
  },
+ "tests.test_sites":{
+  "__set__":true,
+  "elements":[
+   "django-filebrowser"
+  ]
+ },
  "tests.test_skimp":{
   "__set__":true,
   "elements":[
@@ -32975,13 +34424,20 @@
  "tests.test_slicing":{
   "__set__":true,
   "elements":[
-   "glymur"
+   "glymur",
+   "pymapvbvd"
   ]
  },
  "tests.test_smarty":{
   "__set__":true,
   "elements":[
    "pygments"
+  ]
+ },
+ "tests.test_smuserlist":{
+  "__set__":true,
+  "elements":[
+   "spatialmath-python"
   ]
  },
  "tests.test_snap":{
@@ -33032,6 +34488,12 @@
   "elements":[
    "intake-avro",
    "intake-parquet"
+  ]
+ },
+ "tests.test_space":{
+  "__set__":true,
+  "elements":[
+   "mesa"
   ]
  },
  "tests.test_spark":{
@@ -33149,10 +34611,17 @@
    "pystac-client"
   ]
  },
+ "tests.test_stac_api_object":{
+  "__set__":true,
+  "elements":[
+   "pystac-client"
+  ]
+ },
  "tests.test_stac_io":{
   "__set__":true,
   "elements":[
-   "pystac"
+   "pystac",
+   "pystac-client"
   ]
  },
  "tests.test_stack":{
@@ -33245,6 +34714,12 @@
   "__set__":true,
   "elements":[
    "tinydb"
+  ]
+ },
+ "tests.test_store":{
+  "__set__":true,
+  "elements":[
+   "kotsu"
   ]
  },
  "tests.test_stream":{
@@ -33354,6 +34829,12 @@
   "__set__":true,
   "elements":[
    "bertopic"
+  ]
+ },
+ "tests.test_subset":{
+  "__set__":true,
+  "elements":[
+   "xclim"
   ]
  },
  "tests.test_substitute":{
@@ -33482,6 +34963,12 @@
    "graspy"
   ]
  },
+ "tests.test_svs":{
+  "__set__":true,
+  "elements":[
+   "pymapvbvd"
+  ]
+ },
  "tests.test_swagger":{
   "__set__":true,
   "elements":[
@@ -33600,11 +35087,23 @@
    "xclim"
   ]
  },
+ "tests.test_template_tag_meta":{
+  "__set__":true,
+  "elements":[
+   "django-pwa"
+  ]
+ },
  "tests.test_templates":{
   "__set__":true,
   "elements":[
    "condorpy",
    "xrd_simulator"
+  ]
+ },
+ "tests.test_templatetags":{
+  "__set__":true,
+  "elements":[
+   "django-filebrowser"
   ]
  },
  "tests.test_terminal":{
@@ -33720,6 +35219,12 @@
   "__set__":true,
   "elements":[
    "glymur"
+  ]
+ },
+ "tests.test_time":{
+  "__set__":true,
+  "elements":[
+   "mesa"
   ]
  },
  "tests.test_time_series":{
@@ -33886,6 +35391,18 @@
   "__set__":true,
   "elements":[
    "matrixprofile"
+  ]
+ },
+ "tests.test_topic_representation":{
+  "__set__":true,
+  "elements":[
+   "bertopic"
+  ]
+ },
+ "tests.test_tornado":{
+  "__set__":true,
+  "elements":[
+   "mesa"
   ]
  },
  "tests.test_touchup":{
@@ -34116,7 +35633,8 @@
   "__set__":true,
   "elements":[
    "erdantic",
-   "hydrofunctions"
+   "hydrofunctions",
+   "pampy"
   ]
  },
  "tests.test_ugrid1d":{
@@ -34241,6 +35759,12 @@
    "sanic"
   ]
  },
+ "tests.test_usersettableparam":{
+  "__set__":true,
+  "elements":[
+   "mesa"
+  ]
+ },
  "tests.test_using_api":{
   "__set__":true,
   "elements":[
@@ -34261,6 +35785,7 @@
    "borb",
    "dlint",
    "emperor",
+   "napkin",
    "ncar-jobqueue",
    "pdpipe",
    "plum-dispatch",
@@ -34276,6 +35801,12 @@
   "__set__":true,
   "elements":[
    "larch"
+  ]
+ },
+ "tests.test_util_methods":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
   ]
  },
  "tests.test_utilities":{
@@ -34315,6 +35846,7 @@
    "cmip6_preprocessing",
    "cmyt",
    "conservedwatersearch",
+   "disk-objectstore",
    "dphtools",
    "edgetest",
    "extract_model",
@@ -34337,6 +35869,7 @@
    "pygpcca",
    "pyremo",
    "pyrsmq",
+   "pysentiment2",
    "pystac",
    "python-flair",
    "rabpro",
@@ -34348,12 +35881,14 @@
    "sumy",
    "tinydb",
    "tomlkit",
+   "torch-optimizer",
    "typhos",
    "verta",
    "xclim",
    "xmip",
    "xopt",
-   "xrd_simulator"
+   "xrd_simulator",
+   "yodapy"
   ]
  },
  "tests.test_utils.fake_datetime":{
@@ -34427,6 +35962,18 @@
   "__set__":true,
   "elements":[
    "nr.types"
+  ]
+ },
+ "tests.test_v32":{
+  "__set__":true,
+  "elements":[
+   "pygml"
+  ]
+ },
+ "tests.test_v33":{
+  "__set__":true,
+  "elements":[
+   "pygml"
   ]
  },
  "tests.test_validation":{
@@ -34523,6 +36070,18 @@
    "pystac"
   ]
  },
+ "tests.test_version_request":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
+ "tests.test_version_response":{
+  "__set__":true,
+  "elements":[
+   "mythx-models"
+  ]
+ },
  "tests.test_versioning":{
   "__set__":true,
   "elements":[
@@ -34563,7 +36122,8 @@
  "tests.test_versions":{
   "__set__":true,
   "elements":[
-   "awslogs"
+   "awslogs",
+   "django-filebrowser"
   ]
  },
  "tests.test_vhosts":{
@@ -34584,9 +36144,16 @@
    "moviepy"
   ]
  },
+ "tests.test_view":{
+  "__set__":true,
+  "elements":[
+   "django-pwa"
+  ]
+ },
  "tests.test_views":{
   "__set__":true,
   "elements":[
+   "django-tinymce",
    "sanic"
   ]
  },
@@ -34613,6 +36180,7 @@
   "elements":[
    "adversarial-robustness-toolbox",
    "gemgis",
+   "mesa",
    "optuna",
    "plonk"
   ]
@@ -34741,6 +36309,7 @@
  "tests.test_widgets":{
   "__set__":true,
   "elements":[
+   "django-tinymce",
    "magicgui",
    "typhos"
   ]
@@ -35070,10 +36639,286 @@
    "yggdrasil"
   ]
  },
+ "tests.testapp":{
+  "__set__":true,
+  "elements":[
+   "django-tinymce"
+  ]
+ },
+ "tests.testapp.admin":{
+  "__set__":true,
+  "elements":[
+   "django-tinymce"
+  ]
+ },
+ "tests.testapp.migrations":{
+  "__set__":true,
+  "elements":[
+   "django-tinymce"
+  ]
+ },
+ "tests.testapp.migrations.0001_initial":{
+  "__set__":true,
+  "elements":[
+   "django-tinymce"
+  ]
+ },
+ "tests.testapp.migrations.0002_testmodel":{
+  "__set__":true,
+  "elements":[
+   "django-tinymce"
+  ]
+ },
+ "tests.testapp.models":{
+  "__set__":true,
+  "elements":[
+   "django-tinymce"
+  ]
+ },
  "tests.testbasic":{
   "__set__":true,
   "elements":[
    "histogrammar"
+  ]
+ },
+ "tests.testcarrierdata":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testcarrierdata.data0":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_800":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_882":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_979":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_AD":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_AE":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_AM":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_AO":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_AR":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_AU":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_BB":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_BR":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_BS":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_BY":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_CA":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_CC":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_CN":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_CX":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_DE":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_FR":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_GB":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_GG":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_IT":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_JP":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_KR":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_MX":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_NZ":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_PL":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_RE":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_RU":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_SE":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_SG":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_TA":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_US":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_UZ":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testdata.region_YT":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testgeodata":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testgeodata.data0":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
   ]
  },
  "tests.testgpu":{
@@ -35092,6 +36937,12 @@
   "__set__":true,
   "elements":[
    "deeptime"
+  ]
+ },
+ "tests.testmetadatatest":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
   ]
  },
  "tests.testnumpy":{
@@ -35249,6 +37100,18 @@
   "__set__":true,
   "elements":[
    "histogrammar"
+  ]
+ },
+ "tests.testtzdata":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
+  ]
+ },
+ "tests.testtzdata.data0":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
   ]
  },
  "tests.text_stages":{
@@ -35465,6 +37328,12 @@
   "__set__":true,
   "elements":[
    "verta"
+  ]
+ },
+ "tests.timezonetest":{
+  "__set__":true,
+  "elements":[
+   "phonenumbers"
   ]
  },
  "tests.timing_test":{
@@ -35801,6 +37670,12 @@
   ]
  },
  "tests.tools.importexport.migration.test_migrations":{
+  "__set__":true,
+  "elements":[
+   "aiida-core"
+  ]
+ },
+ "tests.tools.importexport.migration.test_v01_to_v02":{
   "__set__":true,
   "elements":[
    "aiida-core"
@@ -36313,6 +38188,7 @@
    "jupyterlab-git",
    "neo4j-python-driver",
    "python-gitlab",
+   "qpd",
    "readchar",
    "serverlessrepo",
    "small-text"
@@ -36778,6 +38654,120 @@
    "python-gitlab"
   ]
  },
+ "tests.unit.qpd":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd._parser":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd._parser.test_sql":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd._parser.test_utils":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd._parser.test_visitors":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd.test_dataframe":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd.test_specs":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd.test_workflow":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd_dask":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd_dask.test_engine":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd_dask.test_sql":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd_pandas":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd_pandas.test_engine":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd_pandas.test_sql":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd_ray":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd_ray.test_engine":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd_ray.test_sql":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd_test":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
+ "tests.unit.qpd_test.test_utils":{
+  "__set__":true,
+  "elements":[
+   "qpd"
+  ]
+ },
  "tests.unit.small_text":{
   "__set__":true,
   "elements":[
@@ -36809,6 +38799,12 @@
   ]
  },
  "tests.unit.small_text.data":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.data.test_dataset_construction":{
   "__set__":true,
   "elements":[
    "small-text"
@@ -36886,7 +38882,19 @@
    "small-text"
   ]
  },
+ "tests.unit.small_text.integrations.pytorch.test_dataset_construction":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
  "tests.unit.small_text.integrations.pytorch.test_datasets":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.pytorch.test_imports":{
   "__set__":true,
   "elements":[
    "small-text"
@@ -36922,6 +38930,18 @@
    "small-text"
   ]
  },
+ "tests.unit.small_text.integrations.pytorch.utils.test_loss":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.pytorch.utils.test_misc":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
  "tests.unit.small_text.integrations.transformers":{
   "__set__":true,
   "elements":[
@@ -36946,7 +38966,19 @@
    "small-text"
   ]
  },
+ "tests.unit.small_text.integrations.transformers.test_dataset_construction":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
  "tests.unit.small_text.integrations.transformers.test_datasets":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.integrations.transformers.test_imports":{
   "__set__":true,
   "elements":[
    "small-text"
@@ -36970,6 +39002,12 @@
    "small-text"
   ]
  },
+ "tests.unit.small_text.query_strategies.test_multi_label":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
  "tests.unit.small_text.query_strategies.test_strategies":{
   "__set__":true,
   "elements":[
@@ -36988,7 +39026,25 @@
    "small-text"
   ]
  },
+ "tests.unit.small_text.stopping_criteria.test_change":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
  "tests.unit.small_text.stopping_criteria.test_kappa":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.stopping_criteria.test_uncertainty":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.stopping_criteria.test_utility":{
   "__set__":true,
   "elements":[
    "small-text"
@@ -37006,13 +39062,49 @@
    "small-text"
   ]
  },
+ "tests.unit.small_text.test_imports":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
  "tests.unit.small_text.test_version":{
   "__set__":true,
   "elements":[
    "small-text"
   ]
  },
+ "tests.unit.small_text.training":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.training.test_early_stopping":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.training.test_metrics":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.training.test_model_selection":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
  "tests.unit.small_text.utils":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
+ "tests.unit.small_text.utils.test_annotations":{
   "__set__":true,
   "elements":[
    "small-text"
@@ -37667,6 +39759,12 @@
    "tsfresh"
   ]
  },
+ "tests.units.feature_selection.test_benjamini_hochberg_test":{
+  "__set__":true,
+  "elements":[
+   "tsfresh"
+  ]
+ },
  "tests.units.feature_selection.test_checks":{
   "__set__":true,
   "elements":[
@@ -37995,6 +40093,8 @@
  "tests.urls":{
   "__set__":true,
   "elements":[
+   "django-filebrowser",
+   "django-tinymce",
    "django-versatileimagefield"
   ]
  },
@@ -38096,6 +40196,7 @@
    "openskill",
    "plum-dispatch",
    "pyathena",
+   "pygml",
    "quacc",
    "shared"
   ]
@@ -38222,6 +40323,7 @@
    "aiida-core",
    "aiocache",
    "airflow",
+   "alive-progress",
    "baycomp",
    "bionc",
    "crystals",
@@ -38243,6 +40345,7 @@
    "nr.types",
    "pdfme",
    "pdfstream",
+   "plateau",
    "polyfempy",
    "pyannote.core",
    "pybtex",
@@ -38255,6 +40358,7 @@
    "small-text",
    "sumy",
    "superset",
+   "torch-optimizer",
    "triad",
    "trio-asyncio",
    "trio_asyncio",
@@ -38325,6 +40429,12 @@
    "genestboost"
   ]
  },
+ "tests.utils.misc":{
+  "__set__":true,
+  "elements":[
+   "small-text"
+  ]
+ },
  "tests.utils.object_factory":{
   "__set__":true,
   "elements":[
@@ -38355,6 +40465,12 @@
    "pystac"
   ]
  },
+ "tests.utils.test_cells":{
+  "__set__":true,
+  "elements":[
+   "alive-progress"
+  ]
+ },
  "tests.utils.test_chunkwriter":{
   "__set__":true,
   "elements":[
@@ -38371,6 +40487,12 @@
   "__set__":true,
   "elements":[
    "triad"
+  ]
+ },
+ "tests.utils.test_converters":{
+  "__set__":true,
+  "elements":[
+   "plateau"
   ]
  },
  "tests.utils.test_count_repeats":{
@@ -38470,6 +40592,12 @@
    "landlab"
   ]
  },
+ "tests.utils.test_pandas":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
  "tests.utils.test_pandas_like":{
   "__set__":true,
   "elements":[
@@ -38530,6 +40658,12 @@
    "landlab"
   ]
  },
+ "tests.utils.test_store":{
+  "__set__":true,
+  "elements":[
+   "plateau"
+  ]
+ },
  "tests.utils.test_string":{
   "__set__":true,
   "elements":[
@@ -38552,6 +40686,12 @@
   "__set__":true,
   "elements":[
    "esmlab"
+  ]
+ },
+ "tests.utils.test_timing":{
+  "__set__":true,
+  "elements":[
+   "alive-progress"
   ]
  },
  "tests.utils.test_type_util":{
