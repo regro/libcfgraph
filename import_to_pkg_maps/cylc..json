@@ -1201,7 +1201,8 @@
  "cylc.flow.scripts.extract_resources":{
   "__set__":true,
   "elements":[
-   "cylc-flow"
+   "cylc-flow",
+   "cylc-flow-base"
   ]
  },
  "cylc.flow.scripts.function_run":{
@@ -2195,19 +2196,34 @@
   "__set__":true,
   "elements":[
    "cylc-uiserver",
-   "cylc-uiserver-base"
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.app":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.authorise":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
+  ]
+ },
+ "cylc.uiserver.config":{
+  "__set__":true,
+  "elements":[
+   "cylc-uiserver"
+  ]
+ },
+ "cylc.uiserver.config_defaults":{
+  "__set__":true,
+  "elements":[
+   "cylc-uiserver"
   ]
  },
  "cylc.uiserver.data_mgr":{
@@ -2219,32 +2235,38 @@
  "cylc.uiserver.data_store_mgr":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver",
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.handlers":{
   "__set__":true,
   "elements":[
    "cylc-uiserver",
-   "cylc-uiserver-base"
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.hubapp":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.jupyter_config":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.jupyterhub_config":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.main":{
@@ -2257,113 +2279,152 @@
   "__set__":true,
   "elements":[
    "cylc-uiserver",
-   "cylc-uiserver-base"
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.schema":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver",
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.scripts":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver",
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.scripts.gui":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.scripts.hub":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver",
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.scripts.hubapp":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
+  ]
+ },
+ "cylc.uiserver.scripts.uis":{
+  "__set__":true,
+  "elements":[
+   "cylc-uiserver"
   ]
  },
  "cylc.uiserver.tests":{
   "__set__":true,
   "elements":[
    "cylc-uiserver",
-   "cylc-uiserver-base"
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.tests.conftest":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver",
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.tests.test_auth":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.tests.test_authorise":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.tests.test_config":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver",
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.tests.test_data_store_mgr":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver",
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.tests.test_handlers":{
   "__set__":true,
   "elements":[
    "cylc-uiserver",
-   "cylc-uiserver-base"
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.tests.test_uiserver":{
   "__set__":true,
   "elements":[
    "cylc-uiserver",
-   "cylc-uiserver-base"
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.tests.test_workflows_mgr":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver",
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.websockets":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver",
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
+  ]
+ },
+ "cylc.uiserver.websockets.template":{
+  "__set__":true,
+  "elements":[
+   "cylc-uiserver"
   ]
  },
  "cylc.uiserver.websockets.tornado":{
   "__set__":true,
   "elements":[
-   "cylc-uiserver-base"
+   "cylc-uiserver",
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  },
  "cylc.uiserver.workflows_mgr":{
   "__set__":true,
   "elements":[
    "cylc-uiserver",
-   "cylc-uiserver-base"
+   "cylc-uiserver-base",
+   "cylc-uiserver-hub-base"
   ]
  }
 }
