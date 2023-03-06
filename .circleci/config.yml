@@ -34,13 +34,12 @@ jobs:
 #             python -m libcflib.harvest_pkgs
 #           no_output_timeout: 60m
 
-# DISABLED since the output format is too large
-#       - run:
-#           name: make import mapping
-#           command: |
-#             pushd libcfgraph
-#             python -m libcflib.analyze_pkgs 75000
-#             popd
+      - run:
+          name: make import to pkg mapping
+          command: |
+            pushd libcfgraph
+            python -m libcflib.import_to_pkg 75000
+            popd
       - run:
           name: list files
           command: |
