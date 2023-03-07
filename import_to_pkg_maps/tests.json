@@ -58,6 +58,7 @@
    "awslogs",
    "backstage",
    "bamnostic",
+   "bar_chart_race",
    "baycomp",
    "bdsim",
    "benchmark-4dn",
@@ -99,12 +100,14 @@
    "csv-diff",
    "ctrl-benchmark",
    "cyberpandas",
+   "cyberpunk-theme",
    "daops",
    "dask-geopandas",
    "dask_groupby",
    "dataframe_image",
    "dbt",
    "dbxfs",
+   "dcm2bids",
    "decaylanguage",
    "deepchecks",
    "deepforest",
@@ -163,6 +166,7 @@
    "gitflow",
    "glidertools",
    "globus-cli",
+   "globus-sdk",
    "glymur",
    "goes2go",
    "google-cloud-appengine-logging",
@@ -217,6 +221,7 @@
    "jigsawpy",
    "jsondate",
    "jupytab",
+   "jupytab-server",
    "jupyter_server",
    "jupyter_telemetry",
    "jupyter_to_medium",
@@ -294,6 +299,7 @@
    "nr.types",
    "numba_celltree",
    "oauth2",
+   "oceans",
    "ogh",
    "onnx-caffe2",
    "onnxmltools",
@@ -400,6 +406,7 @@
    "python-geotiff",
    "python-gitlab",
    "python-utils",
+   "pythx",
    "pytmc",
    "pyturbo",
    "pyusid",
@@ -441,6 +448,7 @@
    "setupinit",
    "shared",
    "sheet2dict",
+   "shtab",
    "simwrapper",
    "sketchnu",
    "skutil",
@@ -496,6 +504,7 @@
    "waternetworkanalysis",
    "waybackpy",
    "webdavclient3",
+   "winter-theme",
    "wrighttools",
    "xclim",
    "xcube_geodb",
@@ -2169,10 +2178,28 @@
    "avalanche-lib"
   ]
  },
+ "tests.benchmarks.test_avalanche_dataset":{
+  "__set__":true,
+  "elements":[
+   "avalanche-lib"
+  ]
+ },
  "tests.benchmarks.test_benchmarks":{
   "__set__":true,
   "elements":[
    "histolab"
+  ]
+ },
+ "tests.benchmarks.test_data_attribute":{
+  "__set__":true,
+  "elements":[
+   "avalanche-lib"
+  ]
+ },
+ "tests.benchmarks.test_flat_data":{
+  "__set__":true,
+  "elements":[
+   "avalanche-lib"
   ]
  },
  "tests.bending":{
@@ -2213,6 +2240,12 @@
   ]
  },
  "tests.bindings.pydeck_examples.geojson_layer":{
+  "__set__":true,
+  "elements":[
+   "pydeck"
+  ]
+ },
+ "tests.bindings.pydeck_examples.geojson_layer_with_gmaps":{
   "__set__":true,
   "elements":[
    "pydeck"
@@ -3702,6 +3735,7 @@
    "aiida-core",
    "birdy",
    "mvt",
+   "pythx",
    "raven-wps"
   ]
  },
@@ -4999,6 +5033,7 @@
    "server-thread",
    "sheet2dict",
    "snntoolbox",
+   "sphinx-js",
    "squidpy",
    "suds-jurko",
    "technical",
@@ -5014,6 +5049,7 @@
    "typhos",
    "verta",
    "xclim",
+   "xmip",
    "yggdrasil"
   ]
  },
@@ -9435,7 +9471,14 @@
  "tests.framework":{
   "__set__":true,
   "elements":[
-   "globus-cli"
+   "globus-cli",
+   "globus-sdk"
+  ]
+ },
+ "tests.framework.capturedio_testcase":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
   ]
  },
  "tests.framework.cli_testcase":{
@@ -9447,13 +9490,27 @@
  "tests.framework.constants":{
   "__set__":true,
   "elements":[
-   "globus-cli"
+   "globus-cli",
+   "globus-sdk"
+  ]
+ },
+ "tests.framework.patched_testcase":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
   ]
  },
  "tests.framework.tools":{
   "__set__":true,
   "elements":[
-   "globus-cli"
+   "globus-cli",
+   "globus-sdk"
+  ]
+ },
+ "tests.framework.transfer_client_testcase":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
   ]
  },
  "tests.frequencies":{
@@ -10859,6 +10916,12 @@
   ]
  },
  "tests.github.test_issue_0198":{
+  "__set__":true,
+  "elements":[
+   "python-benedict"
+  ]
+ },
+ "tests.github.test_issue_0226":{
   "__set__":true,
   "elements":[
    "python-benedict"
@@ -12710,6 +12773,7 @@
    "aloe",
    "fair-research-login",
    "globus-cli",
+   "globus-sdk",
    "gpflow",
    "graypy",
    "great-expectations",
@@ -13213,6 +13277,12 @@
    "small-text"
   ]
  },
+ "tests.integration.test_auth_client_flow":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
  "tests.integration.test_autocommit":{
   "__set__":true,
   "elements":[
@@ -13237,6 +13307,12 @@
    "graypy"
   ]
  },
+ "tests.integration.test_client_credentials_token_confidential_client":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
  "tests.integration.test_client_refresh":{
   "__set__":true,
   "elements":[
@@ -13247,6 +13323,12 @@
   "__set__":true,
   "elements":[
    "graypy"
+  ]
+ },
+ "tests.integration.test_confidential_client_flow":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
   ]
  },
  "tests.integration.test_core_types":{
@@ -13369,6 +13451,12 @@
    "histolab"
   ]
  },
+ "tests.integration.test_native_client_flow":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
  "tests.integration.test_neo4j_driver":{
   "__set__":true,
   "elements":[
@@ -13410,6 +13498,12 @@
   "__set__":true,
   "elements":[
    "neo4j-python-driver"
+  ]
+ },
+ "tests.integration.test_refresh_token_auth_client":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
   ]
  },
  "tests.integration.test_result":{
@@ -17252,6 +17346,48 @@
    "dpu-utils"
   ]
  },
+ "tests.mock":{
+  "__set__":true,
+  "elements":[
+   "actinia-python-client"
+  ]
+ },
+ "tests.mock.actinia_location_management_mock":{
+  "__set__":true,
+  "elements":[
+   "actinia-python-client"
+  ]
+ },
+ "tests.mock.actinia_mapset_management_mock":{
+  "__set__":true,
+  "elements":[
+   "actinia-python-client"
+  ]
+ },
+ "tests.mock.actinia_mock":{
+  "__set__":true,
+  "elements":[
+   "actinia-python-client"
+  ]
+ },
+ "tests.mock.actinia_process_chain_validation_mock":{
+  "__set__":true,
+  "elements":[
+   "actinia-python-client"
+  ]
+ },
+ "tests.mock.actinia_raster_management_mock":{
+  "__set__":true,
+  "elements":[
+   "actinia-python-client"
+  ]
+ },
+ "tests.mock.actinia_vector_management_mock":{
+  "__set__":true,
+  "elements":[
+   "actinia-python-client"
+  ]
+ },
  "tests.mock_server":{
   "__set__":true,
   "elements":[
@@ -18948,6 +19084,24 @@
   "__set__":true,
   "elements":[
    "gputools"
+  ]
+ },
+ "tests.notebooks":{
+  "__set__":true,
+  "elements":[
+   "pydeck"
+  ]
+ },
+ "tests.notebooks.notebook_utils":{
+  "__set__":true,
+  "elements":[
+   "pydeck"
+  ]
+ },
+ "tests.notebooks.test_nbconvert":{
+  "__set__":true,
+  "elements":[
+   "pydeck"
   ]
  },
  "tests.notes_test":{
@@ -26299,6 +26453,12 @@
    "markdown-it-py"
   ]
  },
+ "tests.test_api_handler":{
+  "__set__":true,
+  "elements":[
+   "pythx"
+  ]
+ },
  "tests.test_apidoc":{
   "__set__":true,
   "elements":[
@@ -26518,6 +26678,12 @@
   "__set__":true,
   "elements":[
    "waybackpy"
+  ]
+ },
+ "tests.test_avalanche_classification_dataset":{
+  "__set__":true,
+  "elements":[
+   "avalanche-lib"
   ]
  },
  "tests.test_avalanche_dataset":{
@@ -26789,6 +26955,12 @@
   "__set__":true,
   "elements":[
    "dexplot"
+  ]
+ },
+ "tests.test_bar_charts":{
+  "__set__":true,
+  "elements":[
+   "bar_chart_race"
   ]
  },
  "tests.test_bart":{
@@ -27811,6 +27983,7 @@
    "msal",
    "notion-client",
    "pystac-client",
+   "pythx",
    "server-thread",
    "servicestack",
    "stanza",
@@ -27839,6 +28012,12 @@
   "__set__":true,
   "elements":[
    "webdavclient3"
+  ]
+ },
+ "tests.test_client_tool_name_middleware":{
+  "__set__":true,
+  "elements":[
+   "pythx"
   ]
  },
  "tests.test_client_unit":{
@@ -28308,6 +28487,7 @@
    "gpflow",
    "intake-esm",
    "ioos_qc",
+   "jupytab-server",
    "lux-api",
    "openamundsen",
    "pygeoapi",
@@ -29207,6 +29387,18 @@
   "__set__":true,
   "elements":[
    "cellpy"
+  ]
+ },
+ "tests.test_dcm2bids":{
+  "__set__":true,
+  "elements":[
+   "dcm2bids"
+  ]
+ },
+ "tests.test_dcm2niix":{
+  "__set__":true,
+  "elements":[
+   "dcm2bids"
   ]
  },
  "tests.test_deallocate":{
@@ -31413,6 +31605,12 @@
    "mythx-models"
   ]
  },
+ "tests.test_group_data_middleware":{
+  "__set__":true,
+  "elements":[
+   "pythx"
+  ]
+ },
  "tests.test_group_list_request":{
   "__set__":true,
   "elements":[
@@ -31872,6 +32070,12 @@
    "parsevasp"
   ]
  },
+ "tests.test_incremental":{
+  "__set__":true,
+  "elements":[
+   "sphinx-js"
+  ]
+ },
  "tests.test_index":{
   "__set__":true,
   "elements":[
@@ -31906,6 +32110,12 @@
   "__set__":true,
   "elements":[
    "inflect"
+  ]
+ },
+ "tests.test_ingv_rcmt_reader_csv":{
+  "__set__":true,
+  "elements":[
+   "pycsep"
   ]
  },
  "tests.test_ingv_readers":{
@@ -34310,6 +34520,12 @@
    "scikit-lego"
   ]
  },
+ "tests.test_model_selection.test_grouptimeseriessplit":{
+  "__set__":true,
+  "elements":[
+   "scikit-lego"
+  ]
+ },
  "tests.test_model_selection.test_klusterfold":{
   "__set__":true,
   "elements":[
@@ -34691,6 +34907,12 @@
    "openfisca-france"
   ]
  },
+ "tests.test_nb_run":{
+  "__set__":true,
+  "elements":[
+   "jupytab-server"
+  ]
+ },
  "tests.test_nb_subproc_thread":{
   "__set__":true,
   "elements":[
@@ -34779,6 +35001,12 @@
   "__set__":true,
   "elements":[
    "larch"
+  ]
+ },
+ "tests.test_nocache_middleware":{
+  "__set__":true,
+  "elements":[
+   "pythx"
   ]
  },
  "tests.test_node":{
@@ -35934,6 +36162,7 @@
  "tests.test_prepare":{
   "__set__":true,
   "elements":[
+   "bar_chart_race",
    "pymonetdb",
    "sanic"
   ]
@@ -36217,6 +36446,12 @@
   "__set__":true,
   "elements":[
    "pygments"
+  ]
+ },
+ "tests.test_property_checking_middleware":{
+  "__set__":true,
+  "elements":[
+   "pythx"
   ]
  },
  "tests.test_protobuf":{
@@ -37707,10 +37942,22 @@
    "pyxel-sim"
   ]
  },
+ "tests.test_shtab":{
+  "__set__":true,
+  "elements":[
+   "shtab"
+  ]
+ },
  "tests.test_side_effects":{
   "__set__":true,
   "elements":[
    "redframes"
+  ]
+ },
+ "tests.test_sidecar":{
+  "__set__":true,
+  "elements":[
+   "dcm2bids"
   ]
  },
  "tests.test_sign_assets":{
@@ -38253,6 +38500,12 @@
    "optuna"
   ]
  },
+ "tests.test_structure":{
+  "__set__":true,
+  "elements":[
+   "dcm2bids"
+  ]
+ },
  "tests.test_structured":{
   "__set__":true,
   "elements":[
@@ -38481,6 +38734,12 @@
   "__set__":true,
   "elements":[
    "pymapvbvd"
+  ]
+ },
+ "tests.test_sw_extras":{
+  "__set__":true,
+  "elements":[
+   "oceans"
   ]
  },
  "tests.test_swagger":{
@@ -39787,6 +40046,7 @@
   "__set__":true,
   "elements":[
    "aiobotocore",
+   "dcm2bids",
    "geofileops",
    "jupyter_server",
    "propka",
@@ -41811,6 +42071,12 @@
    "avalanche-lib"
   ]
  },
+ "tests.training.test_dictionary_mbatches":{
+  "__set__":true,
+  "elements":[
+   "avalanche-lib"
+  ]
+ },
  "tests.training.test_losses":{
   "__set__":true,
   "elements":[
@@ -41824,6 +42090,12 @@
   ]
  },
  "tests.training.test_plugins":{
+  "__set__":true,
+  "elements":[
+   "avalanche-lib"
+  ]
+ },
+ "tests.training.test_regularization":{
   "__set__":true,
   "elements":[
    "avalanche-lib"
@@ -41854,6 +42126,12 @@
   ]
  },
  "tests.training.test_supervised_regression":{
+  "__set__":true,
+  "elements":[
+   "avalanche-lib"
+  ]
+ },
+ "tests.training.test_training_utils":{
   "__set__":true,
   "elements":[
    "avalanche-lib"
@@ -42023,6 +42301,7 @@
    "docarray",
    "fair-research-login",
    "globus-cli",
+   "globus-sdk",
    "google-cloud-appengine-logging",
    "google-cloud-bigquery",
    "google-cloud-monitoring",
@@ -43335,6 +43614,18 @@
    "google-cloud-monitoring"
   ]
  },
+ "tests.unit.test_access_token_authorizer":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
+ "tests.unit.test_activation_response":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
  "tests.unit.test_addressing":{
   "__set__":true,
   "elements":[
@@ -43359,10 +43650,28 @@
    "serverlessrepo"
   ]
  },
+ "tests.unit.test_auth_client":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
  "tests.unit.test_base":{
   "__set__":true,
   "elements":[
    "python-gitlab"
+  ]
+ },
+ "tests.unit.test_base_client":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
+ "tests.unit.test_basic_authorizer":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
   ]
  },
  "tests.unit.test_bookmark_commands":{
@@ -43397,6 +43706,12 @@
    "google-cloud-monitoring"
   ]
  },
+ "tests.unit.test_client_credentials_authorizer":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
  "tests.unit.test_clone":{
   "__set__":true,
   "elements":[
@@ -43427,16 +43742,30 @@
    "neo4j-python-driver"
   ]
  },
+ "tests.unit.test_confidential_client":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
  "tests.unit.test_config":{
   "__set__":true,
   "elements":[
+   "globus-sdk",
    "jupyterlab-git",
    "python-gitlab"
+  ]
+ },
+ "tests.unit.test_config_loading":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
   ]
  },
  "tests.unit.test_data":{
   "__set__":true,
   "elements":[
+   "globus-sdk",
    "neo4j-python-driver"
   ]
  },
@@ -43468,6 +43797,12 @@
   "__set__":true,
   "elements":[
    "globus-cli"
+  ]
+ },
+ "tests.unit.test_exc":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
   ]
  },
  "tests.unit.test_exceptions":{
@@ -43604,10 +43939,40 @@
    "pyproprop"
   ]
  },
+ "tests.unit.test_native_client":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
+ "tests.unit.test_null_authorizer":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
+ "tests.unit.test_oauth2_authorization_code":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
+ "tests.unit.test_oauth2_native_app":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
  "tests.unit.test_one_use_option":{
   "__set__":true,
   "elements":[
    "globus-cli"
+  ]
+ },
+ "tests.unit.test_paging":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
   ]
  },
  "tests.unit.test_parser":{
@@ -43672,16 +44037,34 @@
    "neo4j-python-driver"
   ]
  },
+ "tests.unit.test_refresh_token_authorizer":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
  "tests.unit.test_registry":{
   "__set__":true,
   "elements":[
    "aloe"
   ]
  },
+ "tests.unit.test_renewing_authorizer":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
  "tests.unit.test_resource":{
   "__set__":true,
   "elements":[
    "google-cloud-monitoring"
+  ]
+ },
+ "tests.unit.test_response":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
   ]
  },
  "tests.unit.test_scenario_parsing":{
@@ -43780,10 +44163,34 @@
    "google-cloud-monitoring"
   ]
  },
+ "tests.unit.test_token_response":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
  "tests.unit.test_tools":{
   "__set__":true,
   "elements":[
    "aloe"
+  ]
+ },
+ "tests.unit.test_transfer_client":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
+ "tests.unit.test_transfer_client_manager":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
+  ]
+ },
+ "tests.unit.test_transfer_client_shared":{
+  "__set__":true,
+  "elements":[
+   "globus-sdk"
   ]
  },
  "tests.unit.test_types":{
