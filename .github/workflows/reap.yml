@@ -15,43 +15,33 @@ jobs:
     name: reap
     runs-on: "ubuntu-latest"
     steps:
-      - name: skip me
-        shell: bash -l {0}
-        if: success() && contains(github.event.head_commit.message, 'ci skip')
-        run: |
-          echo "commit message: '${MSG}'"
-          echo "CI_SKIP=true" >> $GITHUB_ENV
-        env:
-          MSG: ${{ github.event.head_commit.message }}
-
       - uses: actions/checkout@v2
-        if: success() && ! env.CI_SKIP
         with:
-          fetch-depth: 1
+          fetch-depth: 10
 
       - uses: conda-incubator/setup-miniconda@v2
-        if: success() && ! env.CI_SKIP
         with:
-          python-version: 3.7
+          python-version: 3.10
           channels: conda-forge,defaults
           channel-priority: strict
           show-channel-urls: true
+          miniforge-version: latest
+          miniforge-variant: Mambaforge
+          use-mamba: true          
 
       - name: install
         shell: bash -l {0}
-        if: success() && ! env.CI_SKIP
         run: |
-          conda install pip -y
+          mamba install pip setuptools -y
           git clone --depth=1 https:///github.com/regro/libcflib
           pushd libcflib
           pip install --no-deps .
-          conda install --file requirements/run.txt -y
+          mamba install --file requirements/run.txt -y
           popd
           rm -rf libcflib
 
       - name: preloader
         shell: bash -l {0}
-        if: success() && ! env.CI_SKIP
         run: |
           python -m libcflib.preloader artifacts
 
@@ -63,33 +53,29 @@ jobs:
 
       - name: import mapper
         shell: bash -l {0}
-        if: success() && ! env.CI_SKIP
         run: |
-          python -m libcflib.analyze_pkgs 10000
+          python -m libcflib.import_to_pkg 75000
 
       - name: list files
         shell: bash -l {0}
-        if: success() && ! env.CI_SKIP
         run: |
           python -c "import json; import glob; json.dump(glob.glob('**/*.json', recursive=True), open('.file_listing.json', 'w'), indent=2)"
 
       - name: report diff
         shell: bash -l {0}
-        if: success() && ! env.CI_SKIP
         run: |
           git add .
-          git diff
 
       - name: commit changes
         shell: bash -l {0}
-        if: success() && ! env.CI_SKIP
         run: |
           git config user.name circleci
           git config user.email circleci@libcfgraph.regro.github.com
           git commit -m "Updated graph"
+          git diff-index --quiet HEAD || git commit -m "[ci skip] Updated graph"          
 
       - name: push changes
         shell: bash -l {0}
-        if: success() && ! env.CI_SKIP
         run: |
+          git pull
           git push
