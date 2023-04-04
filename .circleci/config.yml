@@ -40,18 +40,21 @@ jobs:
             pushd libcfgraph
             python -m libcflib.import_to_pkg 75000
             popd
+          no_output_timeout: 60m
       - run:
           name: list files
           command: |
             pushd libcfgraph
             python -c "import json; import glob; json.dump(glob.glob('artifacts/**/*.json', recursive=True), open('.file_listing.json', 'w'), indent=2)"
             popd
+          no_output_timeout: 60m
       - run:
           name: Report diff
           command: |
             pushd libcfgraph
             git add .
             popd
+          no_output_timeout: 60m
       - run:
           name: commit changes
           command: |
@@ -60,6 +63,7 @@ jobs:
             git config user.email circleci@libcfgraph.regro.github.com
             git diff-index --quiet HEAD || git commit -m "[ci skip] Updated graph"
             popd
+          no_output_timeout: 60m
       - run:
           name: push changes
           command: |
@@ -67,6 +71,7 @@ jobs:
             git pull
             git push https://${GH_PUSH_TOKEN}@github.com/regro/libcfgraph.git
             popd
+          no_output_timeout: 60m
 
 workflows:
   version: 2
