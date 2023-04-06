@@ -18,7 +18,7 @@ all_finds = [_fname_to_index(fname) for fname in all_fnames]
 for i in range(N_FILES):
     with open(".file_listing_%d.json" % i, "w") as fp:
         json.dump(
-            [fname for fname, find in zip(all_fnames, all_finds) if find == i],
+            sorted([fname for fname, find in zip(all_fnames, all_finds) if find == i]),
             fp,
             indent=2,
         )
