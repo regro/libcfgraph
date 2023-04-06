@@ -45,7 +45,7 @@ jobs:
           name: list files
           command: |
             pushd libcfgraph
-            python -c "import json; import glob; json.dump(glob.glob('artifacts/**/*.json', recursive=True), open('.file_listing.json', 'w'), indent=2)"
+            python generate_file_listing.py
             popd
           no_output_timeout: 60m
       - run:
