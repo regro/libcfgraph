@@ -38,7 +38,7 @@ jobs:
           name: make import to pkg mapping
           command: |
             pushd libcfgraph
-            python -m libcflib.import_to_pkg 75000
+            python -m libcflib.import_to_pkg 50000
             test -f .import_to_pkg_maps_indexed_files && rm -f .import_to_pkg_maps_indexed_files
             popd
           no_output_timeout: 60m
