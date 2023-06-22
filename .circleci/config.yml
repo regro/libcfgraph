@@ -39,6 +39,7 @@ jobs:
           command: |
             pushd libcfgraph
             python -m libcflib.import_to_pkg 50000
+            test -f .import_to_pkg_maps_indexed_files && rm -f .import_to_pkg_maps_indexed_files
             popd
           no_output_timeout: 60m
       - run:
@@ -61,7 +62,6 @@ jobs:
             pushd libcfgraph
             git config user.name circleci
             git config user.email circleci@libcfgraph.regro.github.com
-            test -f .import_to_pkg_maps_indexed_files && rm -f .import_to_pkg_maps_indexed_files
             git diff-index --quiet HEAD || git commit -m "[ci skip] Updated graph"
             popd
           no_output_timeout: 60m
