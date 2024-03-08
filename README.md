@@ -1,4 +1,4 @@
-# libcfgraph
+# **`libcfgraph` is deprecated - use the [conda-forge-metadata](https://github.com/regro/conda-forge-metadata) package instead!**
 [![reap](https://circleci.com/gh/regro/libcfgraph.svg?style=svg)](https://circleci.com/gh/regro/libcfgraph)
 
 Graph Data for Conda Forge Library
